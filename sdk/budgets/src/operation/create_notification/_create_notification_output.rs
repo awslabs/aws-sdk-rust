@@ -19,8 +19,8 @@ impl CreateNotificationOutput {
 }
 
 /// A builder for [`CreateNotificationOutput`](crate::operation::create_notification::CreateNotificationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNotificationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl RegisterDataLakeDelegatedAdministratorInput {
 }
 
 /// A builder for [`RegisterDataLakeDelegatedAdministratorInput`](crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterDataLakeDelegatedAdministratorInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl AssociateProactiveEngagementDetailsOutput {
 }
 
 /// A builder for [`AssociateProactiveEngagementDetailsOutput`](crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateProactiveEngagementDetailsOutputBuilder {
     _request_id: Option<String>,
 }

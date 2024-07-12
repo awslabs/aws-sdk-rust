@@ -21,8 +21,8 @@ impl TagQueryConfiguration {
 }
 
 /// A builder for [`TagQueryConfiguration`](crate::types::TagQueryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagQueryConfigurationBuilder {
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
 }

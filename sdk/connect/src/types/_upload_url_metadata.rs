@@ -33,8 +33,8 @@ impl UploadUrlMetadata {
 }
 
 /// A builder for [`UploadUrlMetadata`](crate::types::UploadUrlMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploadUrlMetadataBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) url_expiry: ::std::option::Option<::std::string::String>,

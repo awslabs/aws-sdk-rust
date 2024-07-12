@@ -33,8 +33,8 @@ impl AwsWafv2VisibilityConfigDetails {
 }
 
 /// A builder for [`AwsWafv2VisibilityConfigDetails`](crate::types::AwsWafv2VisibilityConfigDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafv2VisibilityConfigDetailsBuilder {
     pub(crate) cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,

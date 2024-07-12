@@ -125,8 +125,8 @@ impl UpdateCustomKeyStoreInput {
 }
 
 /// A builder for [`UpdateCustomKeyStoreInput`](crate::operation::update_custom_key_store::UpdateCustomKeyStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateCustomKeyStoreInputBuilder {
     pub(crate) custom_key_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_custom_key_store_name: ::std::option::Option<::std::string::String>,

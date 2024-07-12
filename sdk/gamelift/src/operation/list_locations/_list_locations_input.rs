@@ -34,8 +34,8 @@ impl ListLocationsInput {
 }
 
 /// A builder for [`ListLocationsInput`](crate::operation::list_locations::ListLocationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLocationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>>,
     pub(crate) limit: ::std::option::Option<i32>,

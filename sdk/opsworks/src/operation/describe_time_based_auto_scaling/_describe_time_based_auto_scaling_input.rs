@@ -22,8 +22,8 @@ impl DescribeTimeBasedAutoScalingInput {
 }
 
 /// A builder for [`DescribeTimeBasedAutoScalingInput`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTimeBasedAutoScalingInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

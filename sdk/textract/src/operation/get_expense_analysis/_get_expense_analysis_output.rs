@@ -66,8 +66,8 @@ impl GetExpenseAnalysisOutput {
 }
 
 /// A builder for [`GetExpenseAnalysisOutput`](crate::operation::get_expense_analysis::GetExpenseAnalysisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExpenseAnalysisOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,

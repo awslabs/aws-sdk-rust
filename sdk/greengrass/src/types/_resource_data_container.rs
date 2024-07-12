@@ -45,8 +45,8 @@ impl ResourceDataContainer {
 }
 
 /// A builder for [`ResourceDataContainer`](crate::types::ResourceDataContainer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceDataContainerBuilder {
     pub(crate) local_device_resource_data: ::std::option::Option<crate::types::LocalDeviceResourceData>,
     pub(crate) local_volume_resource_data: ::std::option::Option<crate::types::LocalVolumeResourceData>,

@@ -27,8 +27,8 @@ impl TileLayoutStyle {
 }
 
 /// A builder for [`TileLayoutStyle`](crate::types::TileLayoutStyle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TileLayoutStyleBuilder {
     pub(crate) gutter: ::std::option::Option<crate::types::GutterStyle>,
     pub(crate) margin: ::std::option::Option<crate::types::MarginStyle>,

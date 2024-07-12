@@ -85,8 +85,8 @@ impl JobData {
 }
 
 /// A builder for [`JobData`](crate::types::JobData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct JobDataBuilder {
     pub(crate) action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     pub(crate) action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,

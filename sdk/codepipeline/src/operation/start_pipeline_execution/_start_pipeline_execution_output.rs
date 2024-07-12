@@ -27,8 +27,8 @@ impl StartPipelineExecutionOutput {
 }
 
 /// A builder for [`StartPipelineExecutionOutput`](crate::operation::start_pipeline_execution::StartPipelineExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartPipelineExecutionOutputBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

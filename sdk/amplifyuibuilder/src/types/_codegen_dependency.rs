@@ -39,8 +39,8 @@ impl CodegenDependency {
 }
 
 /// A builder for [`CodegenDependency`](crate::types::CodegenDependency).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodegenDependencyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) supported_version: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl UpdateIpAccessSettingsOutput {
 }
 
 /// A builder for [`UpdateIpAccessSettingsOutput`](crate::operation::update_ip_access_settings::UpdateIpAccessSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIpAccessSettingsOutputBuilder {
     pub(crate) ip_access_settings: ::std::option::Option<crate::types::IpAccessSettings>,
     _request_id: Option<String>,

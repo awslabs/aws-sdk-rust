@@ -48,8 +48,8 @@ impl CreateMembershipInput {
 }
 
 /// A builder for [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMembershipInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,

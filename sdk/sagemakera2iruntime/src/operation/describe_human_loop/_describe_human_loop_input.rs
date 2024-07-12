@@ -20,8 +20,8 @@ impl DescribeHumanLoopInput {
 }
 
 /// A builder for [`DescribeHumanLoopInput`](crate::operation::describe_human_loop::DescribeHumanLoopInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHumanLoopInputBuilder {
     pub(crate) human_loop_name: ::std::option::Option<::std::string::String>,
 }

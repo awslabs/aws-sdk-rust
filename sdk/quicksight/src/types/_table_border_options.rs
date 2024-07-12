@@ -33,8 +33,8 @@ impl TableBorderOptions {
 }
 
 /// A builder for [`TableBorderOptions`](crate::types::TableBorderOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableBorderOptionsBuilder {
     pub(crate) color: ::std::option::Option<::std::string::String>,
     pub(crate) thickness: ::std::option::Option<i32>,

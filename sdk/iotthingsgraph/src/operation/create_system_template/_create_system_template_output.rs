@@ -26,8 +26,8 @@ impl CreateSystemTemplateOutput {
 }
 
 /// A builder for [`CreateSystemTemplateOutput`](crate::operation::create_system_template::CreateSystemTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSystemTemplateOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SystemTemplateSummary>,
     _request_id: Option<String>,

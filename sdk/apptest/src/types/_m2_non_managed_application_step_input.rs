@@ -46,8 +46,8 @@ impl M2NonManagedApplicationStepInput {
 }
 
 /// A builder for [`M2NonManagedApplicationStepInput`](crate::types::M2NonManagedApplicationStepInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct M2NonManagedApplicationStepInputBuilder {
     pub(crate) vpc_endpoint_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) listener_port: ::std::option::Option<i32>,

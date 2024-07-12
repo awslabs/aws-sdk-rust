@@ -65,8 +65,8 @@ impl StartDevEnvironmentSessionOutput {
 }
 
 /// A builder for [`StartDevEnvironmentSessionOutput`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartDevEnvironmentSessionOutputBuilder {
     pub(crate) access_details: ::std::option::Option<crate::types::DevEnvironmentAccessDetails>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,

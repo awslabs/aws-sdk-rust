@@ -51,8 +51,8 @@ impl EdgeDeploymentStatus {
 }
 
 /// A builder for [`EdgeDeploymentStatus`](crate::types::EdgeDeploymentStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EdgeDeploymentStatusBuilder {
     pub(crate) stage_status: ::std::option::Option<crate::types::StageStatus>,
     pub(crate) edge_deployment_success_in_stage: ::std::option::Option<i32>,

@@ -18,8 +18,8 @@ impl DeleteFaqOutput {
 }
 
 /// A builder for [`DeleteFaqOutput`](crate::operation::delete_faq::DeleteFaqOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFaqOutputBuilder {
     _request_id: Option<String>,
 }

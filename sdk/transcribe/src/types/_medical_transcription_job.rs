@@ -166,8 +166,8 @@ impl MedicalTranscriptionJob {
 }
 
 /// A builder for [`MedicalTranscriptionJob`](crate::types::MedicalTranscriptionJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MedicalTranscriptionJobBuilder {
     pub(crate) medical_transcription_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) transcription_job_status: ::std::option::Option<crate::types::TranscriptionJobStatus>,

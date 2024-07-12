@@ -26,8 +26,8 @@ impl GetAssistantAssociationOutput {
 }
 
 /// A builder for [`GetAssistantAssociationOutput`](crate::operation::get_assistant_association::GetAssistantAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssistantAssociationOutputBuilder {
     pub(crate) assistant_association: ::std::option::Option<crate::types::AssistantAssociationData>,
     _request_id: Option<String>,

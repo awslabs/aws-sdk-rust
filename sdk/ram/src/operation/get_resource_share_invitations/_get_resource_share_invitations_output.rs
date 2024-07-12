@@ -34,8 +34,8 @@ impl GetResourceShareInvitationsOutput {
 }
 
 /// A builder for [`GetResourceShareInvitationsOutput`](crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceShareInvitationsOutputBuilder {
     pub(crate) resource_share_invitations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareInvitation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

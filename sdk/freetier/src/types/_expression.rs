@@ -60,8 +60,8 @@ impl Expression {
 }
 
 /// A builder for [`Expression`](crate::types::Expression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExpressionBuilder {
     pub(crate) or: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
     pub(crate) and: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,

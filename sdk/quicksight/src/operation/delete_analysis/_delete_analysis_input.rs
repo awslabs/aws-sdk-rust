@@ -38,8 +38,8 @@ impl DeleteAnalysisInput {
 }
 
 /// A builder for [`DeleteAnalysisInput`](crate::operation::delete_analysis::DeleteAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAnalysisInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,

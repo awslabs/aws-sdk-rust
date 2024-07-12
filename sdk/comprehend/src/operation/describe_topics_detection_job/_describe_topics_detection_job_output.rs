@@ -26,8 +26,8 @@ impl DescribeTopicsDetectionJobOutput {
 }
 
 /// A builder for [`DescribeTopicsDetectionJobOutput`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTopicsDetectionJobOutputBuilder {
     pub(crate) topics_detection_job_properties: ::std::option::Option<crate::types::TopicsDetectionJobProperties>,
     _request_id: Option<String>,

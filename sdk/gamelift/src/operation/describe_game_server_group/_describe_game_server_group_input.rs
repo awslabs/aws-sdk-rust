@@ -20,8 +20,8 @@ impl DescribeGameServerGroupInput {
 }
 
 /// A builder for [`DescribeGameServerGroupInput`](crate::operation::describe_game_server_group::DescribeGameServerGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGameServerGroupInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
 }

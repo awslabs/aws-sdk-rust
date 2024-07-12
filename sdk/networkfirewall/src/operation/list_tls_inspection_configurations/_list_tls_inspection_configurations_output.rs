@@ -34,8 +34,8 @@ impl ListTlsInspectionConfigurationsOutput {
 }
 
 /// A builder for [`ListTlsInspectionConfigurationsOutput`](crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTlsInspectionConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) tls_inspection_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>>,

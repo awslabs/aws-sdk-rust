@@ -133,8 +133,8 @@ impl ChangesetSummary {
 }
 
 /// A builder for [`ChangesetSummary`](crate::types::ChangesetSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangesetSummaryBuilder {
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_arn: ::std::option::Option<::std::string::String>,

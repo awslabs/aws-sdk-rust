@@ -48,8 +48,8 @@ impl GetSmsTemplateInput {
 }
 
 /// A builder for [`GetSmsTemplateInput`](crate::operation::get_sms_template::GetSmsTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSmsTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl UnusedAccessConfiguration {
 }
 
 /// A builder for [`UnusedAccessConfiguration`](crate::types::UnusedAccessConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnusedAccessConfigurationBuilder {
     pub(crate) unused_access_age: ::std::option::Option<i32>,
 }

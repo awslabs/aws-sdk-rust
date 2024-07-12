@@ -28,8 +28,8 @@ impl DescribeAnalysisSchemesOutput {
 }
 
 /// A builder for [`DescribeAnalysisSchemesOutput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAnalysisSchemesOutputBuilder {
     pub(crate) analysis_schemes: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
     _request_id: Option<String>,

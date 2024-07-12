@@ -26,8 +26,8 @@ impl ExportSourceNetworkCfnTemplateOutput {
 }
 
 /// A builder for [`ExportSourceNetworkCfnTemplateOutput`](crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportSourceNetworkCfnTemplateOutputBuilder {
     pub(crate) s3_destination_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

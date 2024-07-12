@@ -57,8 +57,8 @@ impl GetServiceSettingInput {
 }
 
 /// A builder for [`GetServiceSettingInput`](crate::operation::get_service_setting::GetServiceSettingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceSettingInputBuilder {
     pub(crate) setting_id: ::std::option::Option<::std::string::String>,
 }

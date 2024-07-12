@@ -40,8 +40,8 @@ impl DescribeEcsClustersInput {
 }
 
 /// A builder for [`DescribeEcsClustersInput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEcsClustersInputBuilder {
     pub(crate) ecs_cluster_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,

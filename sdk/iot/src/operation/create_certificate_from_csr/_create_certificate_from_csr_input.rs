@@ -27,8 +27,8 @@ impl CreateCertificateFromCsrInput {
 }
 
 /// A builder for [`CreateCertificateFromCsrInput`](crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCertificateFromCsrInputBuilder {
     pub(crate) certificate_signing_request: ::std::option::Option<::std::string::String>,
     pub(crate) set_as_active: ::std::option::Option<bool>,

@@ -39,8 +39,8 @@ impl ProfileShareSummary {
 }
 
 /// A builder for [`ProfileShareSummary`](crate::types::ProfileShareSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProfileShareSummaryBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with: ::std::option::Option<::std::string::String>,

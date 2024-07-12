@@ -26,8 +26,8 @@ impl DeregisterAccountOutput {
 }
 
 /// A builder for [`DeregisterAccountOutput`](crate::operation::deregister_account::DeregisterAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterAccountOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AccountStatus>,
     _request_id: Option<String>,

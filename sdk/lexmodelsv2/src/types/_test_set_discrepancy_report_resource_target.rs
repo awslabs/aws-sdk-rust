@@ -21,8 +21,8 @@ impl TestSetDiscrepancyReportResourceTarget {
 }
 
 /// A builder for [`TestSetDiscrepancyReportResourceTarget`](crate::types::TestSetDiscrepancyReportResourceTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestSetDiscrepancyReportResourceTargetBuilder {
     pub(crate) bot_alias_target: ::std::option::Option<crate::types::TestSetDiscrepancyReportBotAliasTarget>,
 }

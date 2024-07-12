@@ -45,8 +45,8 @@ impl SecurityGroupReference {
 }
 
 /// A builder for [`SecurityGroupReference`](crate::types::SecurityGroupReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityGroupReferenceBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) referencing_vpc_id: ::std::option::Option<::std::string::String>,

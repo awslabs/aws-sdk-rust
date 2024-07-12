@@ -20,8 +20,8 @@ impl DeleteRunGroupInput {
 }
 
 /// A builder for [`DeleteRunGroupInput`](crate::operation::delete_run_group::DeleteRunGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRunGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

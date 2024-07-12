@@ -29,8 +29,8 @@ impl CreateInputSecurityGroupInput {
 }
 
 /// A builder for [`CreateInputSecurityGroupInput`](crate::operation::create_input_security_group::CreateInputSecurityGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInputSecurityGroupInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,

@@ -26,8 +26,8 @@ impl DeleteEphemerisOutput {
 }
 
 /// A builder for [`DeleteEphemerisOutput`](crate::operation::delete_ephemeris::DeleteEphemerisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEphemerisOutputBuilder {
     pub(crate) ephemeris_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

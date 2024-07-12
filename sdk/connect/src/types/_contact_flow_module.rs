@@ -63,8 +63,8 @@ impl ContactFlowModule {
 }
 
 /// A builder for [`ContactFlowModule`](crate::types::ContactFlowModule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContactFlowModuleBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

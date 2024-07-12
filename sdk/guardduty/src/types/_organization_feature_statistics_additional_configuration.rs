@@ -27,8 +27,8 @@ impl OrganizationFeatureStatisticsAdditionalConfiguration {
 }
 
 /// A builder for [`OrganizationFeatureStatisticsAdditionalConfiguration`](crate::types::OrganizationFeatureStatisticsAdditionalConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationFeatureStatisticsAdditionalConfigurationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     pub(crate) enabled_accounts_count: ::std::option::Option<i32>,

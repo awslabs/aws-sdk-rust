@@ -26,8 +26,8 @@ impl EnableFederationInput {
 }
 
 /// A builder for [`EnableFederationInput`](crate::operation::enable_federation::EnableFederationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableFederationInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) federation_role_arn: ::std::option::Option<::std::string::String>,

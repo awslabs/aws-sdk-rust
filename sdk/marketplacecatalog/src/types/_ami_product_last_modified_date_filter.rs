@@ -21,8 +21,8 @@ impl AmiProductLastModifiedDateFilter {
 }
 
 /// A builder for [`AmiProductLastModifiedDateFilter`](crate::types::AmiProductLastModifiedDateFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmiProductLastModifiedDateFilterBuilder {
     pub(crate) date_range: ::std::option::Option<crate::types::AmiProductLastModifiedDateFilterDateRange>,
 }

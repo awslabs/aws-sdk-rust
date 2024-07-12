@@ -45,8 +45,8 @@ impl RecommendationDisruptionCompliance {
 }
 
 /// A builder for [`RecommendationDisruptionCompliance`](crate::types::RecommendationDisruptionCompliance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationDisruptionComplianceBuilder {
     pub(crate) expected_compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
     pub(crate) expected_rto_in_secs: ::std::option::Option<i32>,

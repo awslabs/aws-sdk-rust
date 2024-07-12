@@ -45,8 +45,8 @@ impl CloudHsmTagException {
 }
 
 /// A builder for [`CloudHsmTagException`](crate::types::error::CloudHsmTagException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudHsmTagExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

@@ -33,8 +33,8 @@ impl CreateUserImportJobInput {
 }
 
 /// A builder for [`CreateUserImportJobInput`](crate::operation::create_user_import_job::CreateUserImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUserImportJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,

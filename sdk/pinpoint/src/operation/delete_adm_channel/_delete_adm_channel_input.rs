@@ -20,8 +20,8 @@ impl DeleteAdmChannelInput {
 }
 
 /// A builder for [`DeleteAdmChannelInput`](crate::operation::delete_adm_channel::DeleteAdmChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAdmChannelInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }

@@ -50,8 +50,8 @@ impl ListRestoreJobsByProtectedResourceInput {
 }
 
 /// A builder for [`ListRestoreJobsByProtectedResourceInput`](crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRestoreJobsByProtectedResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) by_status: ::std::option::Option<crate::types::RestoreJobStatus>,

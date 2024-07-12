@@ -38,8 +38,8 @@ impl CreateDetectorVersionOutput {
 }
 
 /// A builder for [`CreateDetectorVersionOutput`](crate::operation::create_detector_version::CreateDetectorVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDetectorVersionOutputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_version_id: ::std::option::Option<::std::string::String>,

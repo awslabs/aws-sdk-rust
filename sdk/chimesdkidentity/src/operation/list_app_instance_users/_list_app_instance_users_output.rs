@@ -50,8 +50,8 @@ impl ListAppInstanceUsersOutput {
 }
 
 /// A builder for [`ListAppInstanceUsersOutput`](crate::operation::list_app_instance_users::ListAppInstanceUsersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListAppInstanceUsersOutputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_instance_users: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserSummary>>,

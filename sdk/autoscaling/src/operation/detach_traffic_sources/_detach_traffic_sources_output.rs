@@ -18,8 +18,8 @@ impl DetachTrafficSourcesOutput {
 }
 
 /// A builder for [`DetachTrafficSourcesOutput`](crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachTrafficSourcesOutputBuilder {
     _request_id: Option<String>,
 }

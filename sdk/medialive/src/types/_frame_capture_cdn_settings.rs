@@ -21,8 +21,8 @@ impl FrameCaptureCdnSettings {
 }
 
 /// A builder for [`FrameCaptureCdnSettings`](crate::types::FrameCaptureCdnSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FrameCaptureCdnSettingsBuilder {
     pub(crate) frame_capture_s3_settings: ::std::option::Option<crate::types::FrameCaptureS3Settings>,
 }

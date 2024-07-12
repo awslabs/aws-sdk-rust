@@ -34,8 +34,8 @@ impl ListLfTagsOutput {
 }
 
 /// A builder for [`ListLfTagsOutput`](crate::operation::list_lf_tags::ListLfTagsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLfTagsOutputBuilder {
     pub(crate) lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

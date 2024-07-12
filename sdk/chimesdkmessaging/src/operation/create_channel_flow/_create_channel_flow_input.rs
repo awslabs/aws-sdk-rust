@@ -59,8 +59,8 @@ impl CreateChannelFlowInput {
 }
 
 /// A builder for [`CreateChannelFlowInput`](crate::operation::create_channel_flow::CreateChannelFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateChannelFlowInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,

@@ -22,8 +22,8 @@ impl EventBridgeDataSourceConfig {
 }
 
 /// A builder for [`EventBridgeDataSourceConfig`](crate::types::EventBridgeDataSourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventBridgeDataSourceConfigBuilder {
     pub(crate) event_bus_arn: ::std::option::Option<::std::string::String>,
 }

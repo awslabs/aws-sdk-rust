@@ -48,8 +48,8 @@ impl UpdateIdentityProviderSettingsInput {
 }
 
 /// A builder for [`UpdateIdentityProviderSettingsInput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIdentityProviderSettingsInputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     pub(crate) product: ::std::option::Option<::std::string::String>,

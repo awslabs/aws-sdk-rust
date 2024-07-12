@@ -34,8 +34,8 @@ impl ListTemplateGroupAccessControlEntriesOutput {
 }
 
 /// A builder for [`ListTemplateGroupAccessControlEntriesOutput`](crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateGroupAccessControlEntriesOutputBuilder {
     pub(crate) access_control_entries: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlEntrySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

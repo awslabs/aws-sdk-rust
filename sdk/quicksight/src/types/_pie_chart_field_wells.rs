@@ -22,8 +22,8 @@ impl PieChartFieldWells {
 }
 
 /// A builder for [`PieChartFieldWells`](crate::types::PieChartFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PieChartFieldWellsBuilder {
     pub(crate) pie_chart_aggregated_field_wells: ::std::option::Option<crate::types::PieChartAggregatedFieldWells>,
 }

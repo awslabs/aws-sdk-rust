@@ -21,8 +21,8 @@ impl Scte35Descriptor {
 }
 
 /// A builder for [`Scte35Descriptor`](crate::types::Scte35Descriptor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte35DescriptorBuilder {
     pub(crate) scte35_descriptor_settings: ::std::option::Option<crate::types::Scte35DescriptorSettings>,
 }

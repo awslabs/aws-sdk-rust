@@ -34,8 +34,8 @@ impl DescribeVoicesOutput {
 }
 
 /// A builder for [`DescribeVoicesOutput`](crate::operation::describe_voices::DescribeVoicesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVoicesOutputBuilder {
     pub(crate) voices: ::std::option::Option<::std::vec::Vec<crate::types::Voice>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

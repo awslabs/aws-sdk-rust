@@ -20,8 +20,8 @@ impl DeregisterRdsDbInstanceInput {
 }
 
 /// A builder for [`DeregisterRdsDbInstanceInput`](crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterRdsDbInstanceInputBuilder {
     pub(crate) rds_db_instance_arn: ::std::option::Option<::std::string::String>,
 }

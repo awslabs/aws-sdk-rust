@@ -69,8 +69,8 @@ impl TaskExecutionResultDetail {
 }
 
 /// A builder for [`TaskExecutionResultDetail`](crate::types::TaskExecutionResultDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskExecutionResultDetailBuilder {
     pub(crate) prepare_duration: ::std::option::Option<i64>,
     pub(crate) prepare_status: ::std::option::Option<crate::types::PhaseStatus>,

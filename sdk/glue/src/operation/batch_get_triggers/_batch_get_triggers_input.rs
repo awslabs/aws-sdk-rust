@@ -22,8 +22,8 @@ impl BatchGetTriggersInput {
 }
 
 /// A builder for [`BatchGetTriggersInput`](crate::operation::batch_get_triggers::BatchGetTriggersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetTriggersInputBuilder {
     pub(crate) trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

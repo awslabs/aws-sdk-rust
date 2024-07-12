@@ -26,8 +26,8 @@ impl DisassociateLibraryItemReviewInput {
 }
 
 /// A builder for [`DisassociateLibraryItemReviewInput`](crate::operation::disassociate_library_item_review::DisassociateLibraryItemReviewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateLibraryItemReviewInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) library_item_id: ::std::option::Option<::std::string::String>,

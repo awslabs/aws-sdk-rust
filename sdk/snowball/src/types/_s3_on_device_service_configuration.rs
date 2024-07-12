@@ -39,8 +39,8 @@ impl S3OnDeviceServiceConfiguration {
 }
 
 /// A builder for [`S3OnDeviceServiceConfiguration`](crate::types::S3OnDeviceServiceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3OnDeviceServiceConfigurationBuilder {
     pub(crate) storage_limit: ::std::option::Option<f64>,
     pub(crate) storage_unit: ::std::option::Option<crate::types::StorageUnit>,

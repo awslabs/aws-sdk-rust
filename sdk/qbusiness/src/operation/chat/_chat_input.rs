@@ -60,8 +60,8 @@ impl ChatInput {
 }
 
 /// A builder for [`ChatInput`](crate::operation::chat::ChatInput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChatInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

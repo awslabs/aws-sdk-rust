@@ -33,8 +33,8 @@ impl ListVpcIngressConnectionsOutput {
 }
 
 /// A builder for [`ListVpcIngressConnectionsOutput`](crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVpcIngressConnectionsOutputBuilder {
     pub(crate) vpc_ingress_connection_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::VpcIngressConnectionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

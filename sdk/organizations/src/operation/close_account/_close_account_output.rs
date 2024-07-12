@@ -18,8 +18,8 @@ impl CloseAccountOutput {
 }
 
 /// A builder for [`CloseAccountOutput`](crate::operation::close_account::CloseAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloseAccountOutputBuilder {
     _request_id: Option<String>,
 }

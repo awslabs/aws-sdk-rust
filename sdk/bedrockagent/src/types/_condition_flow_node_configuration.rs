@@ -29,8 +29,8 @@ impl ConditionFlowNodeConfiguration {
 }
 
 /// A builder for [`ConditionFlowNodeConfiguration`](crate::types::ConditionFlowNodeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConditionFlowNodeConfigurationBuilder {
     pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::FlowCondition>>,
 }

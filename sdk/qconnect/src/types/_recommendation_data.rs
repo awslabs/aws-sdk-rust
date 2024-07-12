@@ -52,8 +52,8 @@ impl RecommendationData {
 }
 
 /// A builder for [`RecommendationData`](crate::types::RecommendationData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationDataBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) document: ::std::option::Option<crate::types::Document>,

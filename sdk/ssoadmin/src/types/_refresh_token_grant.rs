@@ -12,8 +12,8 @@ impl RefreshTokenGrant {
 }
 
 /// A builder for [`RefreshTokenGrant`](crate::types::RefreshTokenGrant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RefreshTokenGrantBuilder {}
 impl RefreshTokenGrantBuilder {
     /// Consumes the builder and constructs a [`RefreshTokenGrant`](crate::types::RefreshTokenGrant).

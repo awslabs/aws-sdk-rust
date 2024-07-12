@@ -81,8 +81,8 @@ impl NielsenNonLinearWatermarkSettings {
 }
 
 /// A builder for [`NielsenNonLinearWatermarkSettings`](crate::types::NielsenNonLinearWatermarkSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NielsenNonLinearWatermarkSettingsBuilder {
     pub(crate) active_watermark_process: ::std::option::Option<crate::types::NielsenActiveWatermarkProcessType>,
     pub(crate) adi_filename: ::std::option::Option<::std::string::String>,

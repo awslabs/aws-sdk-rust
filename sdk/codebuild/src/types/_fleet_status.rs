@@ -81,8 +81,8 @@ impl FleetStatus {
 }
 
 /// A builder for [`FleetStatus`](crate::types::FleetStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::FleetStatusCode>,
     pub(crate) context: ::std::option::Option<crate::types::FleetContextCode>,

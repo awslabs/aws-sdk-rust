@@ -29,8 +29,8 @@ impl LineItemGroup {
 }
 
 /// A builder for [`LineItemGroup`](crate::types::LineItemGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineItemGroupBuilder {
     pub(crate) line_item_group_index: ::std::option::Option<i32>,
     pub(crate) line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFields>>,

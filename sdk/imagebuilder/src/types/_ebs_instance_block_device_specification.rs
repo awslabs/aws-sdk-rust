@@ -63,8 +63,8 @@ impl EbsInstanceBlockDeviceSpecification {
 }
 
 /// A builder for [`EbsInstanceBlockDeviceSpecification`](crate::types::EbsInstanceBlockDeviceSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsInstanceBlockDeviceSpecificationBuilder {
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,

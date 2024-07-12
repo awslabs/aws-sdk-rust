@@ -20,8 +20,8 @@ impl GetGroupConfigurationInput {
 }
 
 /// A builder for [`GetGroupConfigurationInput`](crate::operation::get_group_configuration::GetGroupConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGroupConfigurationInputBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
 }

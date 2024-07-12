@@ -18,8 +18,8 @@ impl DeleteDbClusterParameterGroupOutput {
 }
 
 /// A builder for [`DeleteDbClusterParameterGroupOutput`](crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbClusterParameterGroupOutputBuilder {
     _request_id: Option<String>,
 }

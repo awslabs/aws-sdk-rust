@@ -20,8 +20,8 @@ impl DeleteSuiteDefinitionInput {
 }
 
 /// A builder for [`DeleteSuiteDefinitionInput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSuiteDefinitionInputBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
 }

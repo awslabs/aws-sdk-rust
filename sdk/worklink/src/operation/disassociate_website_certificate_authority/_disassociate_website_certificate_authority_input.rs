@@ -26,8 +26,8 @@ impl DisassociateWebsiteCertificateAuthorityInput {
 }
 
 /// A builder for [`DisassociateWebsiteCertificateAuthorityInput`](crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWebsiteCertificateAuthorityInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) website_ca_id: ::std::option::Option<::std::string::String>,

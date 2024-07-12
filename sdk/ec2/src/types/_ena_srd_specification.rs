@@ -28,8 +28,8 @@ impl EnaSrdSpecification {
 }
 
 /// A builder for [`EnaSrdSpecification`](crate::types::EnaSrdSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnaSrdSpecificationBuilder {
     pub(crate) ena_srd_enabled: ::std::option::Option<bool>,
     pub(crate) ena_srd_udp_specification: ::std::option::Option<crate::types::EnaSrdUdpSpecification>,

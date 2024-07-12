@@ -38,8 +38,8 @@ impl CreateModelCardExportJobInput {
 }
 
 /// A builder for [`CreateModelCardExportJobInput`](crate::operation::create_model_card_export_job::CreateModelCardExportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateModelCardExportJobInputBuilder {
     pub(crate) model_card_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_card_version: ::std::option::Option<i32>,

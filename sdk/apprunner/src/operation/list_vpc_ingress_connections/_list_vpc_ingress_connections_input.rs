@@ -36,8 +36,8 @@ impl ListVpcIngressConnectionsInput {
 }
 
 /// A builder for [`ListVpcIngressConnectionsInput`](crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVpcIngressConnectionsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ListVpcIngressConnectionsFilter>,
     pub(crate) max_results: ::std::option::Option<i32>,

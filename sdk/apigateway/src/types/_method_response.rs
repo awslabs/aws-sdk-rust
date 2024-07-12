@@ -33,8 +33,8 @@ impl MethodResponse {
 }
 
 /// A builder for [`MethodResponse`](crate::types::MethodResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MethodResponseBuilder {
     pub(crate) status_code: ::std::option::Option<::std::string::String>,
     pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,

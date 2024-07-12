@@ -40,8 +40,8 @@ impl ListApiKeysOutput {
 }
 
 /// A builder for [`ListApiKeysOutput`](crate::operation::list_api_keys::ListApiKeysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApiKeysOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>>,

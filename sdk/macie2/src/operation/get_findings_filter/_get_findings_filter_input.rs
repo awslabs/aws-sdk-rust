@@ -20,8 +20,8 @@ impl GetFindingsFilterInput {
 }
 
 /// A builder for [`GetFindingsFilterInput`](crate::operation::get_findings_filter::GetFindingsFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingsFilterInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

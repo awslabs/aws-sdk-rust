@@ -26,8 +26,8 @@ impl GetGraphqlApiEnvironmentVariablesOutput {
 }
 
 /// A builder for [`GetGraphqlApiEnvironmentVariablesOutput`](crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGraphqlApiEnvironmentVariablesOutputBuilder {
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,

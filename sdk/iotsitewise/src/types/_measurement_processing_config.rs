@@ -21,8 +21,8 @@ impl MeasurementProcessingConfig {
 }
 
 /// A builder for [`MeasurementProcessingConfig`](crate::types::MeasurementProcessingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MeasurementProcessingConfigBuilder {
     pub(crate) forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,
 }

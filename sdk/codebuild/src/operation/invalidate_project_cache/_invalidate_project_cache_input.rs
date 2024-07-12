@@ -20,8 +20,8 @@ impl InvalidateProjectCacheInput {
 }
 
 /// A builder for [`InvalidateProjectCacheInput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidateProjectCacheInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
 }

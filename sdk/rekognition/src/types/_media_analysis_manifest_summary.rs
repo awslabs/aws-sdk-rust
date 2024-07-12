@@ -25,8 +25,8 @@ impl MediaAnalysisManifestSummary {
 }
 
 /// A builder for [`MediaAnalysisManifestSummary`](crate::types::MediaAnalysisManifestSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaAnalysisManifestSummaryBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }

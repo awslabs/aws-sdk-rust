@@ -26,8 +26,8 @@ impl SetLogDeliveryConfigurationOutput {
 }
 
 /// A builder for [`SetLogDeliveryConfigurationOutput`](crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetLogDeliveryConfigurationOutputBuilder {
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfigurationType>,
     _request_id: Option<String>,

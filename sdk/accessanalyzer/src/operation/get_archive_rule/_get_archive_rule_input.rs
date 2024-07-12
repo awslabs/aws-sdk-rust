@@ -27,8 +27,8 @@ impl GetArchiveRuleInput {
 }
 
 /// A builder for [`GetArchiveRuleInput`](crate::operation::get_archive_rule::GetArchiveRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetArchiveRuleInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,

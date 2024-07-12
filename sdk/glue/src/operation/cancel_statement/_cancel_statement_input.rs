@@ -32,8 +32,8 @@ impl CancelStatementInput {
 }
 
 /// A builder for [`CancelStatementInput`](crate::operation::cancel_statement::CancelStatementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelStatementInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<i32>,

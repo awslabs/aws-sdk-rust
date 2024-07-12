@@ -169,8 +169,8 @@ impl DescribeAssetBundleExportJobOutput {
 }
 
 /// A builder for [`DescribeAssetBundleExportJobOutput`](crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeAssetBundleExportJobOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::AssetBundleExportJobStatus>,
     pub(crate) download_url: ::std::option::Option<::std::string::String>,

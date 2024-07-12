@@ -27,8 +27,8 @@ impl Icd10CmTrait {
 }
 
 /// A builder for [`Icd10CmTrait`](crate::types::Icd10CmTrait).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Icd10CmTraitBuilder {
     pub(crate) name: ::std::option::Option<crate::types::Icd10CmTraitName>,
     pub(crate) score: ::std::option::Option<f32>,

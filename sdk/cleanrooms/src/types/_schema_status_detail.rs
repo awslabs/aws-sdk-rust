@@ -44,8 +44,8 @@ impl SchemaStatusDetail {
 }
 
 /// A builder for [`SchemaStatusDetail`](crate::types::SchemaStatusDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SchemaStatusDetailBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SchemaStatus>,
     pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::SchemaStatusReason>>,

@@ -33,8 +33,8 @@ impl DescribeWorkspaceConfigurationOutput {
 }
 
 /// A builder for [`DescribeWorkspaceConfigurationOutput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) grafana_version: ::std::option::Option<::std::string::String>,

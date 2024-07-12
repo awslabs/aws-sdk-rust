@@ -26,8 +26,8 @@ impl DescribeDevicePolicyConfigurationOutput {
 }
 
 /// A builder for [`DescribeDevicePolicyConfigurationOutput`](crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDevicePolicyConfigurationOutputBuilder {
     pub(crate) device_ca_certificate: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

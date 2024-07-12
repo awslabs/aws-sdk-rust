@@ -22,8 +22,8 @@ impl ApplicationMaintenanceConfigurationUpdate {
 }
 
 /// A builder for [`ApplicationMaintenanceConfigurationUpdate`](crate::types::ApplicationMaintenanceConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationMaintenanceConfigurationUpdateBuilder {
     pub(crate) application_maintenance_window_start_time_update: ::std::option::Option<::std::string::String>,
 }

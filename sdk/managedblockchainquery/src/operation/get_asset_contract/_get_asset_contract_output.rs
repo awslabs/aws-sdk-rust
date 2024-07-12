@@ -45,8 +45,8 @@ impl GetAssetContractOutput {
 }
 
 /// A builder for [`GetAssetContractOutput`](crate::operation::get_asset_contract::GetAssetContractOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssetContractOutputBuilder {
     pub(crate) contract_identifier: ::std::option::Option<crate::types::ContractIdentifier>,
     pub(crate) token_standard: ::std::option::Option<crate::types::QueryTokenStandard>,

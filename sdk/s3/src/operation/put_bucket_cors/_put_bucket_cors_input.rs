@@ -48,8 +48,8 @@ impl PutBucketCorsInput {
 }
 
 /// A builder for [`PutBucketCorsInput`](crate::operation::put_bucket_cors::PutBucketCorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketCorsInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) cors_configuration: ::std::option::Option<crate::types::CorsConfiguration>,

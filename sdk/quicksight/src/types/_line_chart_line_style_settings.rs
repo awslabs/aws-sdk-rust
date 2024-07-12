@@ -71,8 +71,8 @@ impl LineChartLineStyleSettings {
 }
 
 /// A builder for [`LineChartLineStyleSettings`](crate::types::LineChartLineStyleSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineChartLineStyleSettingsBuilder {
     pub(crate) line_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) line_interpolation: ::std::option::Option<crate::types::LineInterpolation>,

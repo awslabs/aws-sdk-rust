@@ -28,8 +28,8 @@ impl CreatePlayerSessionsOutput {
 }
 
 /// A builder for [`CreatePlayerSessionsOutput`](crate::operation::create_player_sessions::CreatePlayerSessionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePlayerSessionsOutputBuilder {
     pub(crate) player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::PlayerSession>>,
     _request_id: Option<String>,

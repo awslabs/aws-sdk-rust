@@ -43,8 +43,8 @@ impl ListChannelsAssociatedWithChannelFlowOutput {
 }
 
 /// A builder for [`ListChannelsAssociatedWithChannelFlowOutput`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListChannelsAssociatedWithChannelFlowOutputBuilder {
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelAssociatedWithFlowSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

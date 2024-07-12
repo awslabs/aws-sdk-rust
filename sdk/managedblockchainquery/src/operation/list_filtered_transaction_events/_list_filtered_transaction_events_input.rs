@@ -72,8 +72,8 @@ impl ListFilteredTransactionEventsInput {
 }
 
 /// A builder for [`ListFilteredTransactionEventsInput`](crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFilteredTransactionEventsInputBuilder {
     pub(crate) network: ::std::option::Option<::std::string::String>,
     pub(crate) address_identifier_filter: ::std::option::Option<crate::types::AddressIdentifierFilter>,

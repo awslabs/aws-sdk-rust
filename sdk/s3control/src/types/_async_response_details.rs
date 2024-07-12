@@ -27,8 +27,8 @@ impl AsyncResponseDetails {
 }
 
 /// A builder for [`AsyncResponseDetails`](crate::types::AsyncResponseDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AsyncResponseDetailsBuilder {
     pub(crate) multi_region_access_point_details: ::std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
     pub(crate) error_details: ::std::option::Option<crate::types::AsyncErrorDetails>,

@@ -38,8 +38,8 @@ impl CreateTemplateShareInput {
 }
 
 /// A builder for [`CreateTemplateShareInput`](crate::operation::create_template_share::CreateTemplateShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTemplateShareInputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with: ::std::option::Option<::std::string::String>,

@@ -48,8 +48,8 @@ impl ListAssetsInput {
 }
 
 /// A builder for [`ListAssetsInput`](crate::operation::list_assets::ListAssetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssetsInputBuilder {
     pub(crate) outpost_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) host_id_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

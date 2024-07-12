@@ -38,8 +38,8 @@ impl RecordLifecycleActionHeartbeatInput {
 }
 
 /// A builder for [`RecordLifecycleActionHeartbeatInput`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordLifecycleActionHeartbeatInputBuilder {
     pub(crate) lifecycle_hook_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,

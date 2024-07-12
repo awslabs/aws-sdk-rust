@@ -34,8 +34,8 @@ impl GetMlTaskRunsOutput {
 }
 
 /// A builder for [`GetMlTaskRunsOutput`](crate::operation::get_ml_task_runs::GetMlTaskRunsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMlTaskRunsOutputBuilder {
     pub(crate) task_runs: ::std::option::Option<::std::vec::Vec<crate::types::TaskRun>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl AuthorizeIpRulesInput {
 }
 
 /// A builder for [`AuthorizeIpRulesInput`](crate::operation::authorize_ip_rules::AuthorizeIpRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeIpRulesInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,

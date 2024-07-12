@@ -34,8 +34,8 @@ impl DescribePrincipalIdFormatOutput {
 }
 
 /// A builder for [`DescribePrincipalIdFormatOutput`](crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePrincipalIdFormatOutputBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalIdFormat>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

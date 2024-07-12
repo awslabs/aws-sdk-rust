@@ -165,8 +165,8 @@ impl GenerateDataSetInput {
 }
 
 /// A builder for [`GenerateDataSetInput`](crate::operation::generate_data_set::GenerateDataSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateDataSetInputBuilder {
     pub(crate) data_set_type: ::std::option::Option<crate::types::DataSetType>,
     pub(crate) data_set_publication_date: ::std::option::Option<::aws_smithy_types::DateTime>,

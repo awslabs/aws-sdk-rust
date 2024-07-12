@@ -32,8 +32,8 @@ impl ListPlacementsInput {
 }
 
 /// A builder for [`ListPlacementsInput`](crate::operation::list_placements::ListPlacementsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPlacementsInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

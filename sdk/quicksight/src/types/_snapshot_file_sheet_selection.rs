@@ -48,8 +48,8 @@ impl SnapshotFileSheetSelection {
 }
 
 /// A builder for [`SnapshotFileSheetSelection`](crate::types::SnapshotFileSheetSelection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotFileSheetSelectionBuilder {
     pub(crate) sheet_id: ::std::option::Option<::std::string::String>,
     pub(crate) selection_scope: ::std::option::Option<crate::types::SnapshotFileSheetSelectionScope>,

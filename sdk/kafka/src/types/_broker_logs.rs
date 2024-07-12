@@ -32,8 +32,8 @@ impl BrokerLogs {
 }
 
 /// A builder for [`BrokerLogs`](crate::types::BrokerLogs).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BrokerLogsBuilder {
     pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogs>,
     pub(crate) firehose: ::std::option::Option<crate::types::Firehose>,

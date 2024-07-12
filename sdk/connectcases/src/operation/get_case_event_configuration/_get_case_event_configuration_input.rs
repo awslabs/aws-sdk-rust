@@ -20,8 +20,8 @@ impl GetCaseEventConfigurationInput {
 }
 
 /// A builder for [`GetCaseEventConfigurationInput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCaseEventConfigurationInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
 }

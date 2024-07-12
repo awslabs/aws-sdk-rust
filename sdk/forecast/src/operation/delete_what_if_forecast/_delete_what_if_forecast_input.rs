@@ -20,8 +20,8 @@ impl DeleteWhatIfForecastInput {
 }
 
 /// A builder for [`DeleteWhatIfForecastInput`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWhatIfForecastInputBuilder {
     pub(crate) what_if_forecast_arn: ::std::option::Option<::std::string::String>,
 }

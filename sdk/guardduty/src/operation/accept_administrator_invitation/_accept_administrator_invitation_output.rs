@@ -18,8 +18,8 @@ impl AcceptAdministratorInvitationOutput {
 }
 
 /// A builder for [`AcceptAdministratorInvitationOutput`](crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptAdministratorInvitationOutputBuilder {
     _request_id: Option<String>,
 }

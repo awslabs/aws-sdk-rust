@@ -53,8 +53,8 @@ impl Ibm3624PinFromOffset {
 }
 
 /// A builder for [`Ibm3624PinFromOffset`](crate::types::Ibm3624PinFromOffset).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct Ibm3624PinFromOffsetBuilder {
     pub(crate) decimalization_table: ::std::option::Option<::std::string::String>,
     pub(crate) pin_validation_data_pad_character: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl QueryConditionItem {
 }
 
 /// A builder for [`QueryConditionItem`](crate::types::QueryConditionItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryConditionItemBuilder {
     pub(crate) field: ::std::option::Option<crate::types::QueryConditionFieldName>,
     pub(crate) comparator: ::std::option::Option<crate::types::QueryConditionComparisonOperator>,

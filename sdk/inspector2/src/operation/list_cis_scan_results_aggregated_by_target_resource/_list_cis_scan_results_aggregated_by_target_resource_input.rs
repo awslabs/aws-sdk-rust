@@ -52,8 +52,8 @@ impl ListCisScanResultsAggregatedByTargetResourceInput {
 }
 
 /// A builder for [`ListCisScanResultsAggregatedByTargetResourceInput`](crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCisScanResultsAggregatedByTargetResourceInputBuilder {
     pub(crate) scan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter_criteria: ::std::option::Option<crate::types::CisScanResultsAggregatedByTargetResourceFilterCriteria>,

@@ -26,8 +26,8 @@ impl DeleteTrafficMirrorFilterOutput {
 }
 
 /// A builder for [`DeleteTrafficMirrorFilterOutput`](crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrafficMirrorFilterOutputBuilder {
     pub(crate) traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

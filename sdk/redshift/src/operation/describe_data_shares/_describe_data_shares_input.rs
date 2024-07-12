@@ -32,8 +32,8 @@ impl DescribeDataSharesInput {
 }
 
 /// A builder for [`DescribeDataSharesInput`](crate::operation::describe_data_shares::DescribeDataSharesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataSharesInputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

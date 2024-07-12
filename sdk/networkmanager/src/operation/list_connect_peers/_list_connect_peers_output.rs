@@ -34,8 +34,8 @@ impl ListConnectPeersOutput {
 }
 
 /// A builder for [`ListConnectPeersOutput`](crate::operation::list_connect_peers::ListConnectPeersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConnectPeersOutputBuilder {
     pub(crate) connect_peers: ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

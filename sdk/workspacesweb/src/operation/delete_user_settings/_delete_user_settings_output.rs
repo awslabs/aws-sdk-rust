@@ -18,8 +18,8 @@ impl DeleteUserSettingsOutput {
 }
 
 /// A builder for [`DeleteUserSettingsOutput`](crate::operation::delete_user_settings::DeleteUserSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserSettingsOutputBuilder {
     _request_id: Option<String>,
 }

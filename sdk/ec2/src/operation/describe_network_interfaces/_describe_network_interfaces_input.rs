@@ -203,8 +203,8 @@ impl DescribeNetworkInterfacesInput {
 }
 
 /// A builder for [`DescribeNetworkInterfacesInput`](crate::operation::describe_network_interfaces::DescribeNetworkInterfacesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNetworkInterfacesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,

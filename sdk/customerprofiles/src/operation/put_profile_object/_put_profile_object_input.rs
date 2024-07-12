@@ -41,8 +41,8 @@ impl PutProfileObjectInput {
 }
 
 /// A builder for [`PutProfileObjectInput`](crate::operation::put_profile_object::PutProfileObjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutProfileObjectInputBuilder {
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) object: ::std::option::Option<::std::string::String>,

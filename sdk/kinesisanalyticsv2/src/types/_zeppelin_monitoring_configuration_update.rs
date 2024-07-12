@@ -21,8 +21,8 @@ impl ZeppelinMonitoringConfigurationUpdate {
 }
 
 /// A builder for [`ZeppelinMonitoringConfigurationUpdate`](crate::types::ZeppelinMonitoringConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ZeppelinMonitoringConfigurationUpdateBuilder {
     pub(crate) log_level_update: ::std::option::Option<crate::types::LogLevel>,
 }

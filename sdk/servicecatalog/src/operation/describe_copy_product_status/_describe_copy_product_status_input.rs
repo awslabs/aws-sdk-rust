@@ -38,8 +38,8 @@ impl DescribeCopyProductStatusInput {
 }
 
 /// A builder for [`DescribeCopyProductStatusInput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCopyProductStatusInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) copy_product_token: ::std::option::Option<::std::string::String>,

@@ -74,8 +74,8 @@ impl DescribeDeviceOutput {
 }
 
 /// A builder for [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeviceOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DeviceStatus>,
     pub(crate) model: ::std::option::Option<::std::string::String>,

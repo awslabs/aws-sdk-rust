@@ -50,8 +50,8 @@ impl S3ManifestOutputLocation {
 }
 
 /// A builder for [`S3ManifestOutputLocation`](crate::types::S3ManifestOutputLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ManifestOutputLocationBuilder {
     pub(crate) expected_manifest_bucket_owner: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

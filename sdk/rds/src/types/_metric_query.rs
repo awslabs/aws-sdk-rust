@@ -21,8 +21,8 @@ impl MetricQuery {
 }
 
 /// A builder for [`MetricQuery`](crate::types::MetricQuery).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricQueryBuilder {
     pub(crate) performance_insights_metric_query: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
 }

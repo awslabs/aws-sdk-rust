@@ -21,8 +21,8 @@ impl OnDemandThroughputOverride {
 }
 
 /// A builder for [`OnDemandThroughputOverride`](crate::types::OnDemandThroughputOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OnDemandThroughputOverrideBuilder {
     pub(crate) max_read_request_units: ::std::option::Option<i64>,
 }

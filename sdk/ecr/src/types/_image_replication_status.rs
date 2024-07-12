@@ -39,8 +39,8 @@ impl ImageReplicationStatus {
 }
 
 /// A builder for [`ImageReplicationStatus`](crate::types::ImageReplicationStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageReplicationStatusBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,

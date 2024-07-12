@@ -34,8 +34,8 @@ impl DescribeMaintenanceWindowsForTargetOutput {
 }
 
 /// A builder for [`DescribeMaintenanceWindowsForTargetOutput`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMaintenanceWindowsForTargetOutputBuilder {
     pub(crate) window_identities: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

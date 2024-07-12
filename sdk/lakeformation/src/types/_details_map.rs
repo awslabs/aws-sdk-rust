@@ -24,8 +24,8 @@ impl DetailsMap {
 }
 
 /// A builder for [`DetailsMap`](crate::types::DetailsMap).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetailsMapBuilder {
     pub(crate) resource_share: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

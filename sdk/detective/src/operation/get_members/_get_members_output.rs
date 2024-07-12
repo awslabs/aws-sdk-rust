@@ -38,8 +38,8 @@ impl GetMembersOutput {
 }
 
 /// A builder for [`GetMembersOutput`](crate::operation::get_members::GetMembersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMembersOutputBuilder {
     pub(crate) member_details: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
     pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,

@@ -21,8 +21,8 @@ impl CheckDnsAvailabilityInput {
 }
 
 /// A builder for [`CheckDnsAvailabilityInput`](crate::operation::check_dns_availability::CheckDnsAvailabilityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckDnsAvailabilityInputBuilder {
     pub(crate) cname_prefix: ::std::option::Option<::std::string::String>,
 }

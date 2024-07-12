@@ -26,8 +26,8 @@ impl AssociateUserToPermissionGroupOutput {
 }
 
 /// A builder for [`AssociateUserToPermissionGroupOutput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateUserToPermissionGroupOutputBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     _request_id: Option<String>,

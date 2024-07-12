@@ -40,8 +40,8 @@ impl UpdateLocationNfsInput {
 }
 
 /// A builder for [`UpdateLocationNfsInput`](crate::operation::update_location_nfs::UpdateLocationNfsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLocationNfsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,

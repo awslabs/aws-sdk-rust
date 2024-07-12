@@ -19,8 +19,8 @@ impl SetLoadBalancerListenerSslCertificateOutput {
 }
 
 /// A builder for [`SetLoadBalancerListenerSslCertificateOutput`](crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetLoadBalancerListenerSslCertificateOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl GetPolicyStoreInput {
 }
 
 /// A builder for [`GetPolicyStoreInput`](crate::operation::get_policy_store::GetPolicyStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPolicyStoreInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
 }

@@ -40,8 +40,8 @@ impl PutTelemetryRecordsInput {
 }
 
 /// A builder for [`PutTelemetryRecordsInput`](crate::operation::put_telemetry_records::PutTelemetryRecordsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutTelemetryRecordsInputBuilder {
     pub(crate) telemetry_records: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>>,
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,

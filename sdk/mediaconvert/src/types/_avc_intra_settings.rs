@@ -75,8 +75,8 @@ impl AvcIntraSettings {
 }
 
 /// A builder for [`AvcIntraSettings`](crate::types::AvcIntraSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AvcIntraSettingsBuilder {
     pub(crate) avc_intra_class: ::std::option::Option<crate::types::AvcIntraClass>,
     pub(crate) avc_intra_uhd_settings: ::std::option::Option<crate::types::AvcIntraUhdSettings>,

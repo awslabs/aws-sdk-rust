@@ -32,8 +32,8 @@ impl UpdatePublicKeyInput {
 }
 
 /// A builder for [`UpdatePublicKeyInput`](crate::operation::update_public_key::UpdatePublicKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePublicKeyInputBuilder {
     pub(crate) public_key_config: ::std::option::Option<crate::types::PublicKeyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

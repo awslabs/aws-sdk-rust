@@ -34,8 +34,8 @@ impl DescribeBudgetPerformanceHistoryOutput {
 }
 
 /// A builder for [`DescribeBudgetPerformanceHistoryOutput`](crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBudgetPerformanceHistoryOutputBuilder {
     pub(crate) budget_performance_history: ::std::option::Option<crate::types::BudgetPerformanceHistory>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

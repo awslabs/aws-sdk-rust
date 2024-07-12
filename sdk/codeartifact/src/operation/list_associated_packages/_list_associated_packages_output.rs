@@ -34,8 +34,8 @@ impl ListAssociatedPackagesOutput {
 }
 
 /// A builder for [`ListAssociatedPackagesOutput`](crate::operation::list_associated_packages::ListAssociatedPackagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociatedPackagesOutputBuilder {
     pub(crate) packages: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedPackage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

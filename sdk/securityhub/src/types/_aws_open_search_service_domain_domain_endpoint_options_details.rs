@@ -45,8 +45,8 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
     pub(crate) custom_endpoint_certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) custom_endpoint_enabled: ::std::option::Option<bool>,

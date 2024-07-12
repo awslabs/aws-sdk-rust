@@ -27,8 +27,8 @@ impl RequestSpotFleetInput {
 }
 
 /// A builder for [`RequestSpotFleetInput`](crate::operation::request_spot_fleet::RequestSpotFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestSpotFleetInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) spot_fleet_request_config: ::std::option::Option<crate::types::SpotFleetRequestConfigData>,

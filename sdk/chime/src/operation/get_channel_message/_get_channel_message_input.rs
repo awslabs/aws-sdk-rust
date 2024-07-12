@@ -32,8 +32,8 @@ impl GetChannelMessageInput {
 }
 
 /// A builder for [`GetChannelMessageInput`](crate::operation::get_channel_message::GetChannelMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChannelMessageInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,

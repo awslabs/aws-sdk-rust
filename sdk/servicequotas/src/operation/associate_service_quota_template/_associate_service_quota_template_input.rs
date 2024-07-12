@@ -11,8 +11,8 @@ impl AssociateServiceQuotaTemplateInput {
 }
 
 /// A builder for [`AssociateServiceQuotaTemplateInput`](crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateServiceQuotaTemplateInputBuilder {}
 impl AssociateServiceQuotaTemplateInputBuilder {
     /// Consumes the builder and constructs a [`AssociateServiceQuotaTemplateInput`](crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateInput).

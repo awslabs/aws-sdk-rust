@@ -20,8 +20,8 @@ impl DeleteAccessorInput {
 }
 
 /// A builder for [`DeleteAccessorInput`](crate::operation::delete_accessor::DeleteAccessorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessorInputBuilder {
     pub(crate) accessor_id: ::std::option::Option<::std::string::String>,
 }

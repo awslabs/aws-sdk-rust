@@ -45,8 +45,8 @@ impl QueryStatisticsForDescribeQuery {
 }
 
 /// A builder for [`QueryStatisticsForDescribeQuery`](crate::types::QueryStatisticsForDescribeQuery).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryStatisticsForDescribeQueryBuilder {
     pub(crate) events_matched: ::std::option::Option<i64>,
     pub(crate) events_scanned: ::std::option::Option<i64>,

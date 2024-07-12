@@ -35,8 +35,8 @@ impl ListSuppressedDestinationsOutput {
 }
 
 /// A builder for [`ListSuppressedDestinationsOutput`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSuppressedDestinationsOutputBuilder {
     pub(crate) suppressed_destination_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SuppressedDestinationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

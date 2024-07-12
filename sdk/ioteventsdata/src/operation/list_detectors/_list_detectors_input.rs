@@ -38,8 +38,8 @@ impl ListDetectorsInput {
 }
 
 /// A builder for [`ListDetectorsInput`](crate::operation::list_detectors::ListDetectorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDetectorsInputBuilder {
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) state_name: ::std::option::Option<::std::string::String>,

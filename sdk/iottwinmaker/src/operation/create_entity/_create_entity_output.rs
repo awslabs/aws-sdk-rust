@@ -46,8 +46,8 @@ impl CreateEntityOutput {
 }
 
 /// A builder for [`CreateEntityOutput`](crate::operation::create_entity::CreateEntityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEntityOutputBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

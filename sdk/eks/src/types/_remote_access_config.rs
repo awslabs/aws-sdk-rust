@@ -29,8 +29,8 @@ impl RemoteAccessConfig {
 }
 
 /// A builder for [`RemoteAccessConfig`](crate::types::RemoteAccessConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoteAccessConfigBuilder {
     pub(crate) ec2_ssh_key: ::std::option::Option<::std::string::String>,
     pub(crate) source_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

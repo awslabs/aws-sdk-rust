@@ -22,8 +22,8 @@ impl AmazonElasticsearchParameters {
 }
 
 /// A builder for [`AmazonElasticsearchParameters`](crate::types::AmazonElasticsearchParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmazonElasticsearchParametersBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }

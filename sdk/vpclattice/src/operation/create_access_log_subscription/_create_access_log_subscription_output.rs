@@ -55,8 +55,8 @@ impl CreateAccessLogSubscriptionOutput {
 }
 
 /// A builder for [`CreateAccessLogSubscriptionOutput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessLogSubscriptionOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -54,8 +54,8 @@ impl CreateWhatIfForecastInput {
 }
 
 /// A builder for [`CreateWhatIfForecastInput`](crate::operation::create_what_if_forecast::CreateWhatIfForecastInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWhatIfForecastInputBuilder {
     pub(crate) what_if_forecast_name: ::std::option::Option<::std::string::String>,
     pub(crate) what_if_analysis_arn: ::std::option::Option<::std::string::String>,

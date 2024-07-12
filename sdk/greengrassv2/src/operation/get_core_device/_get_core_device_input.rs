@@ -20,8 +20,8 @@ impl GetCoreDeviceInput {
 }
 
 /// A builder for [`GetCoreDeviceInput`](crate::operation::get_core_device::GetCoreDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCoreDeviceInputBuilder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl CreateAccessPreviewOutput {
 }
 
 /// A builder for [`CreateAccessPreviewOutput`](crate::operation::create_access_preview::CreateAccessPreviewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessPreviewOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

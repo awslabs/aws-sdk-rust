@@ -34,8 +34,8 @@ impl ListGraphqlApisOutput {
 }
 
 /// A builder for [`ListGraphqlApisOutput`](crate::operation::list_graphql_apis::ListGraphqlApisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGraphqlApisOutputBuilder {
     pub(crate) graphql_apis: ::std::option::Option<::std::vec::Vec<crate::types::GraphqlApi>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

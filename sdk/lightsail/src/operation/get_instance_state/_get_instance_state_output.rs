@@ -26,8 +26,8 @@ impl GetInstanceStateOutput {
 }
 
 /// A builder for [`GetInstanceStateOutput`](crate::operation::get_instance_state::GetInstanceStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstanceStateOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::InstanceState>,
     _request_id: Option<String>,

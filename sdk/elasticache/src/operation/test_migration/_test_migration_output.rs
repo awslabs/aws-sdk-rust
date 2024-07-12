@@ -26,8 +26,8 @@ impl TestMigrationOutput {
 }
 
 /// A builder for [`TestMigrationOutput`](crate::operation::test_migration::TestMigrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestMigrationOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,

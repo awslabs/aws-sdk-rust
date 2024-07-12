@@ -75,8 +75,8 @@ impl BatchGetFrameMetricDataOutput {
 }
 
 /// A builder for [`BatchGetFrameMetricDataOutput`](crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetFrameMetricDataOutputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,

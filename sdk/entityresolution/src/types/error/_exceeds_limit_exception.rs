@@ -59,8 +59,8 @@ impl ExceedsLimitException {
 }
 
 /// A builder for [`ExceedsLimitException`](crate::types::error::ExceedsLimitException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExceedsLimitExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) quota_name: ::std::option::Option<::std::string::String>,

@@ -51,8 +51,8 @@ impl ListAccessGrantsLocationsEntry {
 }
 
 /// A builder for [`ListAccessGrantsLocationsEntry`](crate::types::ListAccessGrantsLocationsEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessGrantsLocationsEntryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) access_grants_location_id: ::std::option::Option<::std::string::String>,

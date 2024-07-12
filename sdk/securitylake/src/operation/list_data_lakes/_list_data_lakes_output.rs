@@ -28,8 +28,8 @@ impl ListDataLakesOutput {
 }
 
 /// A builder for [`ListDataLakesOutput`](crate::operation::list_data_lakes::ListDataLakesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataLakesOutputBuilder {
     pub(crate) data_lakes: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeResource>>,
     _request_id: Option<String>,

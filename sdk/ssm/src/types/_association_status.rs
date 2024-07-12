@@ -40,8 +40,8 @@ impl AssociationStatus {
 }
 
 /// A builder for [`AssociationStatus`](crate::types::AssociationStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociationStatusBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<crate::types::AssociationStatusName>,

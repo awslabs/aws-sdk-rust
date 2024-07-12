@@ -20,8 +20,8 @@ impl DeleteBuildBatchInput {
 }
 
 /// A builder for [`DeleteBuildBatchInput`](crate::operation::delete_build_batch::DeleteBuildBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBuildBatchInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

@@ -21,8 +21,8 @@ impl DeleteEmailIdentityInput {
 }
 
 /// A builder for [`DeleteEmailIdentityInput`](crate::operation::delete_email_identity::DeleteEmailIdentityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEmailIdentityInputBuilder {
     pub(crate) email_identity: ::std::option::Option<::std::string::String>,
 }

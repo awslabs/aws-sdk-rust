@@ -32,8 +32,8 @@ impl UpdateRoleAliasOutput {
 }
 
 /// A builder for [`UpdateRoleAliasOutput`](crate::operation::update_role_alias::UpdateRoleAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoleAliasOutputBuilder {
     pub(crate) role_alias: ::std::option::Option<::std::string::String>,
     pub(crate) role_alias_arn: ::std::option::Option<::std::string::String>,

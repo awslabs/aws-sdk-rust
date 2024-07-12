@@ -28,8 +28,8 @@ impl BatchPutScheduledUpdateGroupActionInput {
 }
 
 /// A builder for [`BatchPutScheduledUpdateGroupActionInput`](crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutScheduledUpdateGroupActionInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_update_group_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupActionRequest>>,

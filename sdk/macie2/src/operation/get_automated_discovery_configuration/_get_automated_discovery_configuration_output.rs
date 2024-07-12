@@ -62,8 +62,8 @@ impl GetAutomatedDiscoveryConfigurationOutput {
 }
 
 /// A builder for [`GetAutomatedDiscoveryConfigurationOutput`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAutomatedDiscoveryConfigurationOutputBuilder {
     pub(crate) auto_enable_organization_members: ::std::option::Option<crate::types::AutoEnableMode>,
     pub(crate) classification_scope_id: ::std::option::Option<::std::string::String>,

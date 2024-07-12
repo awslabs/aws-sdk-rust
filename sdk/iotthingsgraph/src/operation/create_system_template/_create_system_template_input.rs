@@ -28,8 +28,8 @@ impl CreateSystemTemplateInput {
 }
 
 /// A builder for [`CreateSystemTemplateInput`](crate::operation::create_system_template::CreateSystemTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSystemTemplateInputBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,
     pub(crate) compatible_namespace_version: ::std::option::Option<i64>,

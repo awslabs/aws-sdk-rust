@@ -29,8 +29,8 @@ impl HostEntry {
 }
 
 /// A builder for [`HostEntry`](crate::types::HostEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HostEntryBuilder {
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,

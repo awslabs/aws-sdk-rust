@@ -35,8 +35,8 @@ impl ListMediaPipelineKinesisVideoStreamPoolsOutput {
 }
 
 /// A builder for [`ListMediaPipelineKinesisVideoStreamPoolsOutput`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMediaPipelineKinesisVideoStreamPoolsOutputBuilder {
     pub(crate) kinesis_video_stream_pools: ::std::option::Option<::std::vec::Vec<crate::types::KinesisVideoStreamPoolSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

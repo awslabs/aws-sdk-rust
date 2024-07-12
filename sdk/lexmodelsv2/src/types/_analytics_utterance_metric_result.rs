@@ -69,8 +69,8 @@ impl AnalyticsUtteranceMetricResult {
 }
 
 /// A builder for [`AnalyticsUtteranceMetricResult`](crate::types::AnalyticsUtteranceMetricResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsUtteranceMetricResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsUtteranceMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,

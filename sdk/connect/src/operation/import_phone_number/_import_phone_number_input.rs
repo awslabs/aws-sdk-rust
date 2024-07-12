@@ -44,8 +44,8 @@ impl ImportPhoneNumberInput {
 }
 
 /// A builder for [`ImportPhoneNumberInput`](crate::operation::import_phone_number::ImportPhoneNumberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportPhoneNumberInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_phone_number_arn: ::std::option::Option<::std::string::String>,

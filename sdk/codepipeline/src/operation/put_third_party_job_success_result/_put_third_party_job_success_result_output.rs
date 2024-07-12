@@ -18,8 +18,8 @@ impl PutThirdPartyJobSuccessResultOutput {
 }
 
 /// A builder for [`PutThirdPartyJobSuccessResultOutput`](crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutThirdPartyJobSuccessResultOutputBuilder {
     _request_id: Option<String>,
 }

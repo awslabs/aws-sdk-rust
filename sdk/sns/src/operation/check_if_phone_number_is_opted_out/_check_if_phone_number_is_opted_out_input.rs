@@ -28,8 +28,8 @@ impl CheckIfPhoneNumberIsOptedOutInput {
 }
 
 /// A builder for [`CheckIfPhoneNumberIsOptedOutInput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CheckIfPhoneNumberIsOptedOutInputBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
 }

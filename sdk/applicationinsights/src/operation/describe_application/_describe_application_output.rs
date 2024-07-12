@@ -26,8 +26,8 @@ impl DescribeApplicationOutput {
 }
 
 /// A builder for [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeApplicationOutputBuilder {
     pub(crate) application_info: ::std::option::Option<crate::types::ApplicationInfo>,
     _request_id: Option<String>,

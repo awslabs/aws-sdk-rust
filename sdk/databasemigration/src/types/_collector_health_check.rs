@@ -39,8 +39,8 @@ impl CollectorHealthCheck {
 }
 
 /// A builder for [`CollectorHealthCheck`](crate::types::CollectorHealthCheck).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CollectorHealthCheckBuilder {
     pub(crate) collector_status: ::std::option::Option<crate::types::CollectorStatus>,
     pub(crate) local_collector_s3_access: ::std::option::Option<bool>,

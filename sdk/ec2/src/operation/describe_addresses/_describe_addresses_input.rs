@@ -102,8 +102,8 @@ impl DescribeAddressesInput {
 }
 
 /// A builder for [`DescribeAddressesInput`](crate::operation::describe_addresses::DescribeAddressesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAddressesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) public_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

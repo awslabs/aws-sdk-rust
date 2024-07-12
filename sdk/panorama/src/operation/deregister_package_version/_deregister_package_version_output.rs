@@ -18,8 +18,8 @@ impl DeregisterPackageVersionOutput {
 }
 
 /// A builder for [`DeregisterPackageVersionOutput`](crate::operation::deregister_package_version::DeregisterPackageVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterPackageVersionOutputBuilder {
     _request_id: Option<String>,
 }

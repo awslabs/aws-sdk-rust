@@ -22,8 +22,8 @@ impl DeleteDataLakeOrganizationConfigurationInput {
 }
 
 /// A builder for [`DeleteDataLakeOrganizationConfigurationInput`](crate::operation::delete_data_lake_organization_configuration::DeleteDataLakeOrganizationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataLakeOrganizationConfigurationInputBuilder {
     pub(crate) auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
 }

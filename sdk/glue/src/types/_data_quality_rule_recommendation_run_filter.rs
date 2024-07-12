@@ -33,8 +33,8 @@ impl DataQualityRuleRecommendationRunFilter {
 }
 
 /// A builder for [`DataQualityRuleRecommendationRunFilter`](crate::types::DataQualityRuleRecommendationRunFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataQualityRuleRecommendationRunFilterBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) started_before: ::std::option::Option<::aws_smithy_types::DateTime>,

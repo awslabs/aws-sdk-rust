@@ -34,8 +34,8 @@ impl ListProxySessionsOutput {
 }
 
 /// A builder for [`ListProxySessionsOutput`](crate::operation::list_proxy_sessions::ListProxySessionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProxySessionsOutputBuilder {
     pub(crate) proxy_sessions: ::std::option::Option<::std::vec::Vec<crate::types::ProxySession>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

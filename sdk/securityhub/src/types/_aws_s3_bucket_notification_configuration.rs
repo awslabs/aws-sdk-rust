@@ -23,8 +23,8 @@ impl AwsS3BucketNotificationConfiguration {
 }
 
 /// A builder for [`AwsS3BucketNotificationConfiguration`](crate::types::AwsS3BucketNotificationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketNotificationConfigurationBuilder {
     pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>>,
 }

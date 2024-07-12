@@ -41,8 +41,8 @@ impl AutoScalingGroupProviderUpdate {
 }
 
 /// A builder for [`AutoScalingGroupProviderUpdate`](crate::types::AutoScalingGroupProviderUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingGroupProviderUpdateBuilder {
     pub(crate) managed_scaling: ::std::option::Option<crate::types::ManagedScaling>,
     pub(crate) managed_termination_protection: ::std::option::Option<crate::types::ManagedTerminationProtection>,

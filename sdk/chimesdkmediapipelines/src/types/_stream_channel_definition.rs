@@ -29,8 +29,8 @@ impl StreamChannelDefinition {
 }
 
 /// A builder for [`StreamChannelDefinition`](crate::types::StreamChannelDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamChannelDefinitionBuilder {
     pub(crate) number_of_channels: ::std::option::Option<i32>,
     pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,

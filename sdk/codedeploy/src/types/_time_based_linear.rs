@@ -27,8 +27,8 @@ impl TimeBasedLinear {
 }
 
 /// A builder for [`TimeBasedLinear`](crate::types::TimeBasedLinear).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeBasedLinearBuilder {
     pub(crate) linear_percentage: ::std::option::Option<i32>,
     pub(crate) linear_interval: ::std::option::Option<i32>,

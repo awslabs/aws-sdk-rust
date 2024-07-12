@@ -45,8 +45,8 @@ impl ThemeVersionSummary {
 }
 
 /// A builder for [`ThemeVersionSummary`](crate::types::ThemeVersionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThemeVersionSummaryBuilder {
     pub(crate) version_number: ::std::option::Option<i64>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

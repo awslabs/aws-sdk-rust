@@ -52,8 +52,8 @@ impl DescribeDataSetPermissionsOutput {
 }
 
 /// A builder for [`DescribeDataSetPermissionsOutput`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataSetPermissionsOutputBuilder {
     pub(crate) data_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

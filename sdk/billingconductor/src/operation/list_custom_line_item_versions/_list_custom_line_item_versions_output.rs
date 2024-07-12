@@ -34,8 +34,8 @@ impl ListCustomLineItemVersionsOutput {
 }
 
 /// A builder for [`ListCustomLineItemVersionsOutput`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomLineItemVersionsOutputBuilder {
     pub(crate) custom_line_item_versions: ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemVersionListElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

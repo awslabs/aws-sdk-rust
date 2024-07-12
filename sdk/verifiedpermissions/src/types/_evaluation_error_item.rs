@@ -30,8 +30,8 @@ impl EvaluationErrorItem {
 }
 
 /// A builder for [`EvaluationErrorItem`](crate::types::EvaluationErrorItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EvaluationErrorItemBuilder {
     pub(crate) error_description: ::std::option::Option<::std::string::String>,
 }

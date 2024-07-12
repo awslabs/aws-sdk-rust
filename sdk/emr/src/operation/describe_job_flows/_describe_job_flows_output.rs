@@ -29,8 +29,8 @@ impl DescribeJobFlowsOutput {
 }
 
 /// A builder for [`DescribeJobFlowsOutput`](crate::operation::describe_job_flows::DescribeJobFlowsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeJobFlowsOutputBuilder {
     pub(crate) job_flows: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>>,
     _request_id: Option<String>,

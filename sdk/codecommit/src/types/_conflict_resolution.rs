@@ -39,8 +39,8 @@ impl ConflictResolution {
 }
 
 /// A builder for [`ConflictResolution`](crate::types::ConflictResolution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConflictResolutionBuilder {
     pub(crate) replace_contents: ::std::option::Option<::std::vec::Vec<crate::types::ReplaceContentEntry>>,
     pub(crate) delete_files: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>>,

@@ -48,8 +48,8 @@ impl DescribeIpamScopesInput {
 }
 
 /// A builder for [`DescribeIpamScopesInput`](crate::operation::describe_ipam_scopes::DescribeIpamScopesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIpamScopesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

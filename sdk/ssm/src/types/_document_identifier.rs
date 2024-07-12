@@ -111,8 +111,8 @@ impl DocumentIdentifier {
 }
 
 /// A builder for [`DocumentIdentifier`](crate::types::DocumentIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentIdentifierBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,

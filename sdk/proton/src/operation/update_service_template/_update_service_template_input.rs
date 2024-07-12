@@ -41,8 +41,8 @@ impl UpdateServiceTemplateInput {
 }
 
 /// A builder for [`UpdateServiceTemplateInput`](crate::operation::update_service_template::UpdateServiceTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateServiceTemplateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl GetEffectivePermissionsForPathOutput {
 }
 
 /// A builder for [`GetEffectivePermissionsForPathOutput`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEffectivePermissionsForPathOutputBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

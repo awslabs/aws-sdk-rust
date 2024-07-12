@@ -26,8 +26,8 @@ impl AssociateBrowserSettingsInput {
 }
 
 /// A builder for [`AssociateBrowserSettingsInput`](crate::operation::associate_browser_settings::AssociateBrowserSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateBrowserSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,

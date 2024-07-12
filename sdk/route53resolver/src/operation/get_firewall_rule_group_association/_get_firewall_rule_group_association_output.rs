@@ -26,8 +26,8 @@ impl GetFirewallRuleGroupAssociationOutput {
 }
 
 /// A builder for [`GetFirewallRuleGroupAssociationOutput`](crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFirewallRuleGroupAssociationOutputBuilder {
     pub(crate) firewall_rule_group_association: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
     _request_id: Option<String>,

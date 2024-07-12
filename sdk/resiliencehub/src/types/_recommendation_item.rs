@@ -51,8 +51,8 @@ impl RecommendationItem {
 }
 
 /// A builder for [`RecommendationItem`](crate::types::RecommendationItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationItemBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_account_id: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl QnAKendraConfiguration {
 }
 
 /// A builder for [`QnAKendraConfiguration`](crate::types::QnAKendraConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QnAKendraConfigurationBuilder {
     pub(crate) kendra_index: ::std::option::Option<::std::string::String>,
     pub(crate) query_filter_string_enabled: ::std::option::Option<bool>,

@@ -29,8 +29,8 @@ impl GetArchiveSearchResultsOutput {
 }
 
 /// A builder for [`GetArchiveSearchResultsOutput`](crate::operation::get_archive_search_results::GetArchiveSearchResultsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetArchiveSearchResultsOutputBuilder {
     pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl ListDocumentVersionsOutput {
 }
 
 /// A builder for [`ListDocumentVersionsOutput`](crate::operation::list_document_versions::ListDocumentVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDocumentVersionsOutputBuilder {
     pub(crate) document_versions: ::std::option::Option<::std::vec::Vec<crate::types::DocumentVersionInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

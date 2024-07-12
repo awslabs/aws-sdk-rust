@@ -27,8 +27,8 @@ impl RevocationConfiguration {
 }
 
 /// A builder for [`RevocationConfiguration`](crate::types::RevocationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevocationConfigurationBuilder {
     pub(crate) crl_configuration: ::std::option::Option<crate::types::CrlConfiguration>,
     pub(crate) ocsp_configuration: ::std::option::Option<crate::types::OcspConfiguration>,

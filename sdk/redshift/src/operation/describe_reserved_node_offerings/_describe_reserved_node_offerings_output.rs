@@ -35,8 +35,8 @@ impl DescribeReservedNodeOfferingsOutput {
 }
 
 /// A builder for [`DescribeReservedNodeOfferingsOutput`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedNodeOfferingsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_node_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>>,

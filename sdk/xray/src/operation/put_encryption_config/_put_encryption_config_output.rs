@@ -26,8 +26,8 @@ impl PutEncryptionConfigOutput {
 }
 
 /// A builder for [`PutEncryptionConfigOutput`](crate::operation::put_encryption_config::PutEncryptionConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEncryptionConfigOutputBuilder {
     pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     _request_id: Option<String>,

@@ -57,8 +57,8 @@ impl CloudWatchLoggingConfiguration {
 }
 
 /// A builder for [`CloudWatchLoggingConfiguration`](crate::types::CloudWatchLoggingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchLoggingConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,

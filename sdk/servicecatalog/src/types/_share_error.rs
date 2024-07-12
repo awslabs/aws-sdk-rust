@@ -35,8 +35,8 @@ impl ShareError {
 }
 
 /// A builder for [`ShareError`](crate::types::ShareError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShareErrorBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

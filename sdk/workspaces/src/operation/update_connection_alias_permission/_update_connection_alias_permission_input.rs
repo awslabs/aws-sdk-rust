@@ -26,8 +26,8 @@ impl UpdateConnectionAliasPermissionInput {
 }
 
 /// A builder for [`UpdateConnectionAliasPermissionInput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConnectionAliasPermissionInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_alias_permission: ::std::option::Option<crate::types::ConnectionAliasPermission>,

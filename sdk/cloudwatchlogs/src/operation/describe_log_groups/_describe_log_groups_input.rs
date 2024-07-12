@@ -84,8 +84,8 @@ impl DescribeLogGroupsInput {
 }
 
 /// A builder for [`DescribeLogGroupsInput`](crate::operation::describe_log_groups::DescribeLogGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLogGroupsInputBuilder {
     pub(crate) account_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) log_group_name_prefix: ::std::option::Option<::std::string::String>,

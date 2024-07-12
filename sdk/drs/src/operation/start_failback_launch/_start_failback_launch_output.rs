@@ -26,8 +26,8 @@ impl StartFailbackLaunchOutput {
 }
 
 /// A builder for [`StartFailbackLaunchOutput`](crate::operation::start_failback_launch::StartFailbackLaunchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartFailbackLaunchOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,

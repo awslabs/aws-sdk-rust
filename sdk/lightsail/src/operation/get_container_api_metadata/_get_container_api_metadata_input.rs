@@ -11,8 +11,8 @@ impl GetContainerApiMetadataInput {
 }
 
 /// A builder for [`GetContainerApiMetadataInput`](crate::operation::get_container_api_metadata::GetContainerApiMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerApiMetadataInputBuilder {}
 impl GetContainerApiMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetContainerApiMetadataInput`](crate::operation::get_container_api_metadata::GetContainerApiMetadataInput).

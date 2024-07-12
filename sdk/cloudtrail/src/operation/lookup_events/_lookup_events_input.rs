@@ -53,8 +53,8 @@ impl LookupEventsInput {
 }
 
 /// A builder for [`LookupEventsInput`](crate::operation::lookup_events::LookupEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LookupEventsInputBuilder {
     pub(crate) lookup_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LookupAttribute>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

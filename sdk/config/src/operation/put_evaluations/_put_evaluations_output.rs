@@ -29,8 +29,8 @@ impl PutEvaluationsOutput {
 }
 
 /// A builder for [`PutEvaluationsOutput`](crate::operation::put_evaluations::PutEvaluationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEvaluationsOutputBuilder {
     pub(crate) failed_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     _request_id: Option<String>,

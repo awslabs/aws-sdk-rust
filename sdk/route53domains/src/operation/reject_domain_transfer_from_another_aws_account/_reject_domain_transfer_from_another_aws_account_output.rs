@@ -28,8 +28,8 @@ impl RejectDomainTransferFromAnotherAwsAccountOutput {
 }
 
 /// A builder for [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectDomainTransferFromAnotherAwsAccountOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

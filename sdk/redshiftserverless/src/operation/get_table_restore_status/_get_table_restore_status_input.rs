@@ -20,8 +20,8 @@ impl GetTableRestoreStatusInput {
 }
 
 /// A builder for [`GetTableRestoreStatusInput`](crate::operation::get_table_restore_status::GetTableRestoreStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTableRestoreStatusInputBuilder {
     pub(crate) table_restore_request_id: ::std::option::Option<::std::string::String>,
 }

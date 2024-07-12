@@ -28,8 +28,8 @@ impl HashAlgorithmOptions {
 }
 
 /// A builder for [`HashAlgorithmOptions`](crate::types::HashAlgorithmOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HashAlgorithmOptionsBuilder {
     pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::HashAlgorithm>>,
     pub(crate) default_value: ::std::option::Option<crate::types::HashAlgorithm>,

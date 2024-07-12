@@ -21,8 +21,8 @@ impl SuggestionValue {
 }
 
 /// A builder for [`SuggestionValue`](crate::types::SuggestionValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuggestionValueBuilder {
     pub(crate) text: ::std::option::Option<crate::types::SuggestionTextWithHighlights>,
 }

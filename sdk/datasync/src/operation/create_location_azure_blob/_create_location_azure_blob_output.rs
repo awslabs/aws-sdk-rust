@@ -26,8 +26,8 @@ impl CreateLocationAzureBlobOutput {
 }
 
 /// A builder for [`CreateLocationAzureBlobOutput`](crate::operation::create_location_azure_blob::CreateLocationAzureBlobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocationAzureBlobOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

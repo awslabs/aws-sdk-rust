@@ -27,8 +27,8 @@ impl AutomatedDiscoveryAccountUpdateError {
 }
 
 /// A builder for [`AutomatedDiscoveryAccountUpdateError`](crate::types::AutomatedDiscoveryAccountUpdateError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutomatedDiscoveryAccountUpdateErrorBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::AutomatedDiscoveryAccountUpdateErrorCode>,

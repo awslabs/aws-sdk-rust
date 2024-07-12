@@ -81,8 +81,8 @@ impl UpdateLocationSmbInput {
 }
 
 /// A builder for [`UpdateLocationSmbInput`](crate::operation::update_location_smb::UpdateLocationSmbInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateLocationSmbInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,

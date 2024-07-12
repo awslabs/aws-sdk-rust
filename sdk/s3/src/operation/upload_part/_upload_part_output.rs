@@ -135,8 +135,8 @@ impl UploadPartOutput {
 }
 
 /// A builder for [`UploadPartOutput`](crate::operation::upload_part::UploadPartOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UploadPartOutputBuilder {
     pub(crate) server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

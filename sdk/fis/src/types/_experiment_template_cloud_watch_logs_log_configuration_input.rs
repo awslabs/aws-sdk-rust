@@ -22,8 +22,8 @@ impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
 }
 
 /// A builder for [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder {
     pub(crate) log_group_arn: ::std::option::Option<::std::string::String>,
 }

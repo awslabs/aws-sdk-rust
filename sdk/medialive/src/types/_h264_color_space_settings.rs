@@ -33,8 +33,8 @@ impl H264ColorSpaceSettings {
 }
 
 /// A builder for [`H264ColorSpaceSettings`](crate::types::H264ColorSpaceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct H264ColorSpaceSettingsBuilder {
     pub(crate) color_space_passthrough_settings: ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
     pub(crate) rec601_settings: ::std::option::Option<crate::types::Rec601Settings>,

@@ -24,8 +24,8 @@ impl PutBucketReplicationOutput {
 }
 
 /// A builder for [`PutBucketReplicationOutput`](crate::operation::put_bucket_replication::PutBucketReplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketReplicationOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

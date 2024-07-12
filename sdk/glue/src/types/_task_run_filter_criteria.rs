@@ -39,8 +39,8 @@ impl TaskRunFilterCriteria {
 }
 
 /// A builder for [`TaskRunFilterCriteria`](crate::types::TaskRunFilterCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskRunFilterCriteriaBuilder {
     pub(crate) task_run_type: ::std::option::Option<crate::types::TaskType>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatusType>,

@@ -11,8 +11,8 @@ impl DisassociateServiceQuotaTemplateInput {
 }
 
 /// A builder for [`DisassociateServiceQuotaTemplateInput`](crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateServiceQuotaTemplateInputBuilder {}
 impl DisassociateServiceQuotaTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateServiceQuotaTemplateInput`](crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateInput).

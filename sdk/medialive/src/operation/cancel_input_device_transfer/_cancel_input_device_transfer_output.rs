@@ -19,8 +19,8 @@ impl CancelInputDeviceTransferOutput {
 }
 
 /// A builder for [`CancelInputDeviceTransferOutput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelInputDeviceTransferOutputBuilder {
     _request_id: Option<String>,
 }

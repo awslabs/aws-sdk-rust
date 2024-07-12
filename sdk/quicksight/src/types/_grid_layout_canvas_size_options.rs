@@ -21,8 +21,8 @@ impl GridLayoutCanvasSizeOptions {
 }
 
 /// A builder for [`GridLayoutCanvasSizeOptions`](crate::types::GridLayoutCanvasSizeOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GridLayoutCanvasSizeOptionsBuilder {
     pub(crate) screen_canvas_size_options: ::std::option::Option<crate::types::GridLayoutScreenCanvasSizeOptions>,
 }

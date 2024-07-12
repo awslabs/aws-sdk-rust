@@ -27,8 +27,8 @@ impl StepDetail {
 }
 
 /// A builder for [`StepDetail`](crate::types::StepDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepDetailBuilder {
     pub(crate) step_config: ::std::option::Option<crate::types::StepConfig>,
     pub(crate) execution_status_detail: ::std::option::Option<crate::types::StepExecutionStatusDetail>,

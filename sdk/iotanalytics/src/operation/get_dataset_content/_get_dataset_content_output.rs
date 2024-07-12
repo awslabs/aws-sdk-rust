@@ -40,8 +40,8 @@ impl GetDatasetContentOutput {
 }
 
 /// A builder for [`GetDatasetContentOutput`](crate::operation::get_dataset_content::GetDatasetContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDatasetContentOutputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetEntry>>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -45,8 +45,8 @@ impl CreateKeysAndCertificateOutput {
 }
 
 /// A builder for [`CreateKeysAndCertificateOutput`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKeysAndCertificateOutputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,

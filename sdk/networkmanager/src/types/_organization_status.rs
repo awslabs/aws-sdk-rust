@@ -41,8 +41,8 @@ impl OrganizationStatus {
 }
 
 /// A builder for [`OrganizationStatus`](crate::types::OrganizationStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationStatusBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) organization_aws_service_access_status: ::std::option::Option<::std::string::String>,

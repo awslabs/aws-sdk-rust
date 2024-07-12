@@ -18,8 +18,8 @@ impl DeleteReadinessCheckOutput {
 }
 
 /// A builder for [`DeleteReadinessCheckOutput`](crate::operation::delete_readiness_check::DeleteReadinessCheckOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReadinessCheckOutputBuilder {
     _request_id: Option<String>,
 }

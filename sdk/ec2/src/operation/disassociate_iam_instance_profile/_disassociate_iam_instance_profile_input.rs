@@ -20,8 +20,8 @@ impl DisassociateIamInstanceProfileInput {
 }
 
 /// A builder for [`DisassociateIamInstanceProfileInput`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateIamInstanceProfileInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
 }

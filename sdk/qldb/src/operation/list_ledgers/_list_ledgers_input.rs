@@ -26,8 +26,8 @@ impl ListLedgersInput {
 }
 
 /// A builder for [`ListLedgersInput`](crate::operation::list_ledgers::ListLedgersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLedgersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

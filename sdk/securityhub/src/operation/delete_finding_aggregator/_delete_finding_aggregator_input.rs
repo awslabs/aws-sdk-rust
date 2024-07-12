@@ -20,8 +20,8 @@ impl DeleteFindingAggregatorInput {
 }
 
 /// A builder for [`DeleteFindingAggregatorInput`](crate::operation::delete_finding_aggregator::DeleteFindingAggregatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFindingAggregatorInputBuilder {
     pub(crate) finding_aggregator_arn: ::std::option::Option<::std::string::String>,
 }

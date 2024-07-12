@@ -20,8 +20,8 @@ impl GetCallAnalyticsJobInput {
 }
 
 /// A builder for [`GetCallAnalyticsJobInput`](crate::operation::get_call_analytics_job::GetCallAnalyticsJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCallAnalyticsJobInputBuilder {
     pub(crate) call_analytics_job_name: ::std::option::Option<::std::string::String>,
 }

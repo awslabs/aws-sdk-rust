@@ -39,8 +39,8 @@ impl LogPattern {
 }
 
 /// A builder for [`LogPattern`](crate::types::LogPattern).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogPatternBuilder {
     pub(crate) pattern_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) pattern_name: ::std::option::Option<::std::string::String>,

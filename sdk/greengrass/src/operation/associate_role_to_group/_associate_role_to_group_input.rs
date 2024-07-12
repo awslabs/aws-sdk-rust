@@ -26,8 +26,8 @@ impl AssociateRoleToGroupInput {
 }
 
 /// A builder for [`AssociateRoleToGroupInput`](crate::operation::associate_role_to_group::AssociateRoleToGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateRoleToGroupInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

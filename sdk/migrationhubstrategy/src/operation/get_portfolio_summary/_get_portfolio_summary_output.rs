@@ -26,8 +26,8 @@ impl GetPortfolioSummaryOutput {
 }
 
 /// A builder for [`GetPortfolioSummaryOutput`](crate::operation::get_portfolio_summary::GetPortfolioSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPortfolioSummaryOutputBuilder {
     pub(crate) assessment_summary: ::std::option::Option<crate::types::AssessmentSummary>,
     _request_id: Option<String>,

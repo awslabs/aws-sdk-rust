@@ -29,8 +29,8 @@ impl FlowDefinitionOutputConfig {
 }
 
 /// A builder for [`FlowDefinitionOutputConfig`](crate::types::FlowDefinitionOutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlowDefinitionOutputConfigBuilder {
     pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

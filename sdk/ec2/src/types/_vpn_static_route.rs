@@ -33,8 +33,8 @@ impl VpnStaticRoute {
 }
 
 /// A builder for [`VpnStaticRoute`](crate::types::VpnStaticRoute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpnStaticRouteBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::VpnStaticRouteSource>,

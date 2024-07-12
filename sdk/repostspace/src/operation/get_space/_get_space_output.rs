@@ -178,8 +178,8 @@ impl GetSpaceOutput {
 }
 
 /// A builder for [`GetSpaceOutput`](crate::operation::get_space::GetSpaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetSpaceOutputBuilder {
     pub(crate) space_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

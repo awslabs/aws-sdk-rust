@@ -18,8 +18,8 @@ impl TagSamlProviderOutput {
 }
 
 /// A builder for [`TagSamlProviderOutput`](crate::operation::tag_saml_provider::TagSamlProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagSamlProviderOutputBuilder {
     _request_id: Option<String>,
 }

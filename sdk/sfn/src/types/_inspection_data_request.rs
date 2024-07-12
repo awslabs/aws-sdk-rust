@@ -45,8 +45,8 @@ impl InspectionDataRequest {
 }
 
 /// A builder for [`InspectionDataRequest`](crate::types::InspectionDataRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InspectionDataRequestBuilder {
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) method: ::std::option::Option<::std::string::String>,

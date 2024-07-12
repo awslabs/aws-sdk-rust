@@ -46,8 +46,8 @@ impl DeletePrivateGraphEndpointOutput {
 }
 
 /// A builder for [`DeletePrivateGraphEndpointOutput`](crate::operation::delete_private_graph_endpoint::DeletePrivateGraphEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePrivateGraphEndpointOutputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

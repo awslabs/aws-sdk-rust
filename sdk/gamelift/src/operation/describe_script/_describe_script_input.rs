@@ -20,8 +20,8 @@ impl DescribeScriptInput {
 }
 
 /// A builder for [`DescribeScriptInput`](crate::operation::describe_script::DescribeScriptInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScriptInputBuilder {
     pub(crate) script_id: ::std::option::Option<::std::string::String>,
 }

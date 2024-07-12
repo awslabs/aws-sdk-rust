@@ -129,8 +129,8 @@ impl CreateGovCloudAccountInput {
 }
 
 /// A builder for [`CreateGovCloudAccountInput`](crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateGovCloudAccountInputBuilder {
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) account_name: ::std::option::Option<::std::string::String>,

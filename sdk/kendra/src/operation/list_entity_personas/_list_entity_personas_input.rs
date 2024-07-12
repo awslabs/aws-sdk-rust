@@ -38,8 +38,8 @@ impl ListEntityPersonasInput {
 }
 
 /// A builder for [`ListEntityPersonasInput`](crate::operation::list_entity_personas::ListEntityPersonasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEntityPersonasInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,

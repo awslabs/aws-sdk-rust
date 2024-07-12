@@ -225,8 +225,8 @@ impl AllocatePrivateVirtualInterfaceOutput {
 }
 
 /// A builder for [`AllocatePrivateVirtualInterfaceOutput`](crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterfaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllocatePrivateVirtualInterfaceOutputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,

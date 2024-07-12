@@ -32,8 +32,8 @@ impl GetManagedRuleSetOutput {
 }
 
 /// A builder for [`GetManagedRuleSetOutput`](crate::operation::get_managed_rule_set::GetManagedRuleSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetManagedRuleSetOutputBuilder {
     pub(crate) managed_rule_set: ::std::option::Option<crate::types::ManagedRuleSet>,
     pub(crate) lock_token: ::std::option::Option<::std::string::String>,

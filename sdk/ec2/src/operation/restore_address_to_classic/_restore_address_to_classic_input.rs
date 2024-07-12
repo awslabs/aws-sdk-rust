@@ -26,8 +26,8 @@ impl RestoreAddressToClassicInput {
 }
 
 /// A builder for [`RestoreAddressToClassicInput`](crate::operation::restore_address_to_classic::RestoreAddressToClassicInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreAddressToClassicInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,

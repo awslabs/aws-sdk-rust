@@ -28,8 +28,8 @@ impl ContainerServiceDeploymentRequest {
 }
 
 /// A builder for [`ContainerServiceDeploymentRequest`](crate::types::ContainerServiceDeploymentRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerServiceDeploymentRequestBuilder {
     pub(crate) containers: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Container>>,
     pub(crate) public_endpoint: ::std::option::Option<crate::types::EndpointRequest>,

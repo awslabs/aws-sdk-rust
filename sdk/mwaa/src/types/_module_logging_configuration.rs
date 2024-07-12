@@ -33,8 +33,8 @@ impl ModuleLoggingConfiguration {
 }
 
 /// A builder for [`ModuleLoggingConfiguration`](crate::types::ModuleLoggingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModuleLoggingConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) log_level: ::std::option::Option<crate::types::LoggingLevel>,

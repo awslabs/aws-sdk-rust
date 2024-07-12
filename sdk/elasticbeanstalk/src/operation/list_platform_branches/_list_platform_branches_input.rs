@@ -102,8 +102,8 @@ impl ListPlatformBranchesInput {
 }
 
 /// A builder for [`ListPlatformBranchesInput`](crate::operation::list_platform_branches::ListPlatformBranchesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPlatformBranchesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
     pub(crate) max_records: ::std::option::Option<i32>,

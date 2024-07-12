@@ -22,8 +22,8 @@ impl DescribeContinuousBackupsInput {
 }
 
 /// A builder for [`DescribeContinuousBackupsInput`](crate::operation::describe_continuous_backups::DescribeContinuousBackupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContinuousBackupsInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
 }

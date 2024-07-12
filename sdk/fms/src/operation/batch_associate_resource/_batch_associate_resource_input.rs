@@ -28,8 +28,8 @@ impl BatchAssociateResourceInput {
 }
 
 /// A builder for [`BatchAssociateResourceInput`](crate::operation::batch_associate_resource::BatchAssociateResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAssociateResourceInputBuilder {
     pub(crate) resource_set_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

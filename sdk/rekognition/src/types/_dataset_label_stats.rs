@@ -27,8 +27,8 @@ impl DatasetLabelStats {
 }
 
 /// A builder for [`DatasetLabelStats`](crate::types::DatasetLabelStats).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetLabelStatsBuilder {
     pub(crate) entry_count: ::std::option::Option<i32>,
     pub(crate) bounding_box_count: ::std::option::Option<i32>,

@@ -54,8 +54,8 @@ impl StatefulRule {
 }
 
 /// A builder for [`StatefulRule`](crate::types::StatefulRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatefulRuleBuilder {
     pub(crate) action: ::std::option::Option<crate::types::StatefulAction>,
     pub(crate) header: ::std::option::Option<crate::types::Header>,

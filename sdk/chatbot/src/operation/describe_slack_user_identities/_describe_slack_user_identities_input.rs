@@ -32,8 +32,8 @@ impl DescribeSlackUserIdentitiesInput {
 }
 
 /// A builder for [`DescribeSlackUserIdentitiesInput`](crate::operation::describe_slack_user_identities::DescribeSlackUserIdentitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSlackUserIdentitiesInputBuilder {
     pub(crate) chat_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

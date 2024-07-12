@@ -28,8 +28,8 @@ impl DescribeAdjustmentTypesOutput {
 }
 
 /// A builder for [`DescribeAdjustmentTypesOutput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAdjustmentTypesOutputBuilder {
     pub(crate) adjustment_types: ::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>>,
     _request_id: Option<String>,

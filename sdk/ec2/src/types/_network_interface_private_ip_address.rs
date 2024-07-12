@@ -39,8 +39,8 @@ impl NetworkInterfacePrivateIpAddress {
 }
 
 /// A builder for [`NetworkInterfacePrivateIpAddress`](crate::types::NetworkInterfacePrivateIpAddress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkInterfacePrivateIpAddressBuilder {
     pub(crate) association: ::std::option::Option<crate::types::NetworkInterfaceAssociation>,
     pub(crate) primary: ::std::option::Option<bool>,

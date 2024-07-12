@@ -26,8 +26,8 @@ impl DeleteVerifiedAccessTrustProviderOutput {
 }
 
 /// A builder for [`DeleteVerifiedAccessTrustProviderOutput`](crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVerifiedAccessTrustProviderOutputBuilder {
     pub(crate) verified_access_trust_provider: ::std::option::Option<crate::types::VerifiedAccessTrustProvider>,
     _request_id: Option<String>,

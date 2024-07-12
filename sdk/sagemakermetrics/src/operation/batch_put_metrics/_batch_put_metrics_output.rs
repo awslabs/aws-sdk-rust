@@ -28,8 +28,8 @@ impl BatchPutMetricsOutput {
 }
 
 /// A builder for [`BatchPutMetricsOutput`](crate::operation::batch_put_metrics::BatchPutMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutMetricsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMetricsError>>,
     _request_id: Option<String>,

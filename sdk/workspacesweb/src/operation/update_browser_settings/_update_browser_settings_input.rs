@@ -43,8 +43,8 @@ impl UpdateBrowserSettingsInput {
 }
 
 /// A builder for [`UpdateBrowserSettingsInput`](crate::operation::update_browser_settings::UpdateBrowserSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateBrowserSettingsInputBuilder {
     pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) browser_policy: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl GetRemoteAccessSessionOutput {
 }
 
 /// A builder for [`GetRemoteAccessSessionOutput`](crate::operation::get_remote_access_session::GetRemoteAccessSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRemoteAccessSessionOutputBuilder {
     pub(crate) remote_access_session: ::std::option::Option<crate::types::RemoteAccessSession>,
     _request_id: Option<String>,

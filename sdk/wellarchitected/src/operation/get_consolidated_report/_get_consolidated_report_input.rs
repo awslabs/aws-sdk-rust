@@ -40,8 +40,8 @@ impl GetConsolidatedReportInput {
 }
 
 /// A builder for [`GetConsolidatedReportInput`](crate::operation::get_consolidated_report::GetConsolidatedReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConsolidatedReportInputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::ReportFormat>,
     pub(crate) include_shared_resources: ::std::option::Option<bool>,

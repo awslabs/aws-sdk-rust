@@ -21,8 +21,8 @@ impl VirtualNodeTcpConnectionPool {
 }
 
 /// A builder for [`VirtualNodeTcpConnectionPool`](crate::types::VirtualNodeTcpConnectionPool).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualNodeTcpConnectionPoolBuilder {
     pub(crate) max_connections: ::std::option::Option<i32>,
 }

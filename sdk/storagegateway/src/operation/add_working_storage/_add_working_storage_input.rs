@@ -33,8 +33,8 @@ impl AddWorkingStorageInput {
 }
 
 /// A builder for [`AddWorkingStorageInput`](crate::operation::add_working_storage::AddWorkingStorageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddWorkingStorageInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) disk_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -26,8 +26,8 @@ impl PurchaseOfferingOutput {
 }
 
 /// A builder for [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseOfferingOutputBuilder {
     pub(crate) reservation: ::std::option::Option<crate::types::Reservation>,
     _request_id: Option<String>,

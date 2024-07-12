@@ -33,8 +33,8 @@ impl ListSharesOutput {
 }
 
 /// A builder for [`ListSharesOutput`](crate::operation::list_shares::ListSharesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSharesOutputBuilder {
     pub(crate) shares: ::std::option::Option<::std::vec::Vec<crate::types::ShareDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

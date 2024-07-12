@@ -65,8 +65,8 @@ impl FeatureMetadata {
 }
 
 /// A builder for [`FeatureMetadata`](crate::types::FeatureMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FeatureMetadataBuilder {
     pub(crate) feature_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,

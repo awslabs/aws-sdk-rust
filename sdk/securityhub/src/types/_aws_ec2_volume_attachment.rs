@@ -63,8 +63,8 @@ impl AwsEc2VolumeAttachment {
 }
 
 /// A builder for [`AwsEc2VolumeAttachment`](crate::types::AwsEc2VolumeAttachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2VolumeAttachmentBuilder {
     pub(crate) attach_time: ::std::option::Option<::std::string::String>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,

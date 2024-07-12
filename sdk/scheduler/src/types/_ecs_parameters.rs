@@ -108,8 +108,8 @@ impl EcsParameters {
 }
 
 /// A builder for [`EcsParameters`](crate::types::EcsParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsParametersBuilder {
     pub(crate) task_definition_arn: ::std::option::Option<::std::string::String>,
     pub(crate) task_count: ::std::option::Option<i32>,

@@ -21,8 +21,8 @@ impl PromptFlowNodeConfiguration {
 }
 
 /// A builder for [`PromptFlowNodeConfiguration`](crate::types::PromptFlowNodeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromptFlowNodeConfigurationBuilder {
     pub(crate) source_configuration: ::std::option::Option<crate::types::PromptFlowNodeSourceConfiguration>,
 }

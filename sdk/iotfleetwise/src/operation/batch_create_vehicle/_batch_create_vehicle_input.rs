@@ -22,8 +22,8 @@ impl BatchCreateVehicleInput {
 }
 
 /// A builder for [`BatchCreateVehicleInput`](crate::operation::batch_create_vehicle::BatchCreateVehicleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateVehicleInputBuilder {
     pub(crate) vehicles: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>>,
 }

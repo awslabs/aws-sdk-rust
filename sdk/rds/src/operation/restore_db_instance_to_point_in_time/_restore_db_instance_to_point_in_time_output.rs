@@ -28,8 +28,8 @@ impl RestoreDbInstanceToPointInTimeOutput {
 }
 
 /// A builder for [`RestoreDbInstanceToPointInTimeOutput`](crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreDbInstanceToPointInTimeOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,

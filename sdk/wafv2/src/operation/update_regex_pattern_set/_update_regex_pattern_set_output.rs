@@ -26,8 +26,8 @@ impl UpdateRegexPatternSetOutput {
 }
 
 /// A builder for [`UpdateRegexPatternSetOutput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRegexPatternSetOutputBuilder {
     pub(crate) next_lock_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

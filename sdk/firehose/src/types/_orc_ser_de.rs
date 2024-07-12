@@ -81,8 +81,8 @@ impl OrcSerDe {
 }
 
 /// A builder for [`OrcSerDe`](crate::types::OrcSerDe).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrcSerDeBuilder {
     pub(crate) stripe_size_bytes: ::std::option::Option<i32>,
     pub(crate) block_size_bytes: ::std::option::Option<i32>,

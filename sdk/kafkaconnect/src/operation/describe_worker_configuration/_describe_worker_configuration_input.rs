@@ -20,8 +20,8 @@ impl DescribeWorkerConfigurationInput {
 }
 
 /// A builder for [`DescribeWorkerConfigurationInput`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkerConfigurationInputBuilder {
     pub(crate) worker_configuration_arn: ::std::option::Option<::std::string::String>,
 }

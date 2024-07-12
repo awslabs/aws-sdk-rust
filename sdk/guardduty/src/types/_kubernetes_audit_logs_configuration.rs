@@ -21,8 +21,8 @@ impl KubernetesAuditLogsConfiguration {
 }
 
 /// A builder for [`KubernetesAuditLogsConfiguration`](crate::types::KubernetesAuditLogsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KubernetesAuditLogsConfigurationBuilder {
     pub(crate) enable: ::std::option::Option<bool>,
 }

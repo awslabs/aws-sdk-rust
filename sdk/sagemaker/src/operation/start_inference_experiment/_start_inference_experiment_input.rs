@@ -20,8 +20,8 @@ impl StartInferenceExperimentInput {
 }
 
 /// A builder for [`StartInferenceExperimentInput`](crate::operation::start_inference_experiment::StartInferenceExperimentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartInferenceExperimentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

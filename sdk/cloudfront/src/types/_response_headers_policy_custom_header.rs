@@ -35,8 +35,8 @@ impl ResponseHeadersPolicyCustomHeader {
 }
 
 /// A builder for [`ResponseHeadersPolicyCustomHeader`](crate::types::ResponseHeadersPolicyCustomHeader).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyCustomHeaderBuilder {
     pub(crate) header: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

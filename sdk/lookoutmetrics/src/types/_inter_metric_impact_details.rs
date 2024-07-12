@@ -40,8 +40,8 @@ impl InterMetricImpactDetails {
 }
 
 /// A builder for [`InterMetricImpactDetails`](crate::types::InterMetricImpactDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InterMetricImpactDetailsBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,

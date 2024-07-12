@@ -33,8 +33,8 @@ impl ExtensionAssociationSummary {
 }
 
 /// A builder for [`ExtensionAssociationSummary`](crate::types::ExtensionAssociationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExtensionAssociationSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) extension_arn: ::std::option::Option<::std::string::String>,

@@ -283,8 +283,8 @@ impl CreateServerInput {
 }
 
 /// A builder for [`CreateServerInput`](crate::operation::create_server::CreateServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateServerInputBuilder {
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
     pub(crate) custom_domain: ::std::option::Option<::std::string::String>,

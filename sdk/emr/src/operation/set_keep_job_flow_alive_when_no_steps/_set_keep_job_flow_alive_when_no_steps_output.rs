@@ -18,8 +18,8 @@ impl SetKeepJobFlowAliveWhenNoStepsOutput {
 }
 
 /// A builder for [`SetKeepJobFlowAliveWhenNoStepsOutput`](crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetKeepJobFlowAliveWhenNoStepsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -34,8 +34,8 @@ impl DescribeAlarmHistoryOutput {
 }
 
 /// A builder for [`DescribeAlarmHistoryOutput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAlarmHistoryOutputBuilder {
     pub(crate) alarm_history_items: ::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

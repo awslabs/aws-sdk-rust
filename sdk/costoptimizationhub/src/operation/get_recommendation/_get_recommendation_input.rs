@@ -20,8 +20,8 @@ impl GetRecommendationInput {
 }
 
 /// A builder for [`GetRecommendationInput`](crate::operation::get_recommendation::GetRecommendationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecommendationInputBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
 }

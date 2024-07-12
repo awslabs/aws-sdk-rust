@@ -18,8 +18,8 @@ impl StartAccessLoggingOutput {
 }
 
 /// A builder for [`StartAccessLoggingOutput`](crate::operation::start_access_logging::StartAccessLoggingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAccessLoggingOutputBuilder {
     _request_id: Option<String>,
 }

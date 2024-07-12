@@ -52,8 +52,8 @@ impl CreateBuildOutput {
 }
 
 /// A builder for [`CreateBuildOutput`](crate::operation::create_build::CreateBuildOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateBuildOutputBuilder {
     pub(crate) build_value: ::std::option::Option<crate::types::Build>,
     pub(crate) upload_credentials: ::std::option::Option<crate::types::AwsCredentials>,

@@ -26,8 +26,8 @@ impl GetEnabledBaselineOutput {
 }
 
 /// A builder for [`GetEnabledBaselineOutput`](crate::operation::get_enabled_baseline::GetEnabledBaselineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnabledBaselineOutputBuilder {
     pub(crate) enabled_baseline_details: ::std::option::Option<crate::types::EnabledBaselineDetails>,
     _request_id: Option<String>,

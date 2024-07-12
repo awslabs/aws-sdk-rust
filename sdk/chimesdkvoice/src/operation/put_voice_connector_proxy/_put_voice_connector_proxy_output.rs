@@ -26,8 +26,8 @@ impl PutVoiceConnectorProxyOutput {
 }
 
 /// A builder for [`PutVoiceConnectorProxyOutput`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutVoiceConnectorProxyOutputBuilder {
     pub(crate) proxy: ::std::option::Option<crate::types::Proxy>,
     _request_id: Option<String>,

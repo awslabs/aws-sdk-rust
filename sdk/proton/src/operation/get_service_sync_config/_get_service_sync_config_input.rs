@@ -20,8 +20,8 @@ impl GetServiceSyncConfigInput {
 }
 
 /// A builder for [`GetServiceSyncConfigInput`](crate::operation::get_service_sync_config::GetServiceSyncConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceSyncConfigInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }

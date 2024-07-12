@@ -42,8 +42,8 @@ impl GetLogLevelsByResourceTypesOutput {
 }
 
 /// A builder for [`GetLogLevelsByResourceTypesOutput`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLogLevelsByResourceTypesOutputBuilder {
     pub(crate) default_log_level: ::std::option::Option<crate::types::LogLevel>,
     pub(crate) wireless_gateway_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>,

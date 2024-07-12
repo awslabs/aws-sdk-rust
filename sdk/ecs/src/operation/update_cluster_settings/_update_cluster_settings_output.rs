@@ -26,8 +26,8 @@ impl UpdateClusterSettingsOutput {
 }
 
 /// A builder for [`UpdateClusterSettingsOutput`](crate::operation::update_cluster_settings::UpdateClusterSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClusterSettingsOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

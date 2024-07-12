@@ -34,8 +34,8 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
 }
 
 /// A builder for [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder {
     pub(crate) customer_managed_policy_references: ::std::option::Option<::std::vec::Vec<crate::types::CustomerManagedPolicyReference>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

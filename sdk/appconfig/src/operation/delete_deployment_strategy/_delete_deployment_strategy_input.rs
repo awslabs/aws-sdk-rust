@@ -20,8 +20,8 @@ impl DeleteDeploymentStrategyInput {
 }
 
 /// A builder for [`DeleteDeploymentStrategyInput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeploymentStrategyInputBuilder {
     pub(crate) deployment_strategy_id: ::std::option::Option<::std::string::String>,
 }

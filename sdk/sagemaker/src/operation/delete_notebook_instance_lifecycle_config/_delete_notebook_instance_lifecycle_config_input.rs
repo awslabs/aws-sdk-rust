@@ -20,8 +20,8 @@ impl DeleteNotebookInstanceLifecycleConfigInput {
 }
 
 /// A builder for [`DeleteNotebookInstanceLifecycleConfigInput`](crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNotebookInstanceLifecycleConfigInputBuilder {
     pub(crate) notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }

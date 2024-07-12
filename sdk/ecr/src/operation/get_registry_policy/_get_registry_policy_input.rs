@@ -11,8 +11,8 @@ impl GetRegistryPolicyInput {
 }
 
 /// A builder for [`GetRegistryPolicyInput`](crate::operation::get_registry_policy::GetRegistryPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegistryPolicyInputBuilder {}
 impl GetRegistryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetRegistryPolicyInput`](crate::operation::get_registry_policy::GetRegistryPolicyInput).

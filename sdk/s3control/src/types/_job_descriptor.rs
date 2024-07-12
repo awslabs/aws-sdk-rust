@@ -131,8 +131,8 @@ impl JobDescriptor {
 }
 
 /// A builder for [`JobDescriptor`](crate::types::JobDescriptor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobDescriptorBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) confirmation_required: ::std::option::Option<bool>,

@@ -37,8 +37,8 @@ impl RelatedItem {
 }
 
 /// A builder for [`RelatedItem`](crate::types::RelatedItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelatedItemBuilder {
     pub(crate) identifier: ::std::option::Option<crate::types::ItemIdentifier>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl DescribeEntityAggregatesForOrganizationOutput {
 }
 
 /// A builder for [`DescribeEntityAggregatesForOrganizationOutput`](crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEntityAggregatesForOrganizationOutputBuilder {
     pub(crate) organization_entity_aggregates: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEntityAggregate>>,
     _request_id: Option<String>,

@@ -33,8 +33,8 @@ impl UpdateExperimentTemplateLogConfigurationInput {
 }
 
 /// A builder for [`UpdateExperimentTemplateLogConfigurationInput`](crate::types::UpdateExperimentTemplateLogConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateExperimentTemplateLogConfigurationInputBuilder {
     pub(crate) cloud_watch_logs_configuration: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
     pub(crate) s3_configuration: ::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput>,

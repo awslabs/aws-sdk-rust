@@ -37,8 +37,8 @@ impl ResetCacheParameterGroupInput {
 }
 
 /// A builder for [`ResetCacheParameterGroupInput`](crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetCacheParameterGroupInputBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) reset_all_parameters: ::std::option::Option<bool>,

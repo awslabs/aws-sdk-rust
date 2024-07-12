@@ -29,8 +29,8 @@ impl AssetTargetNameMap {
 }
 
 /// A builder for [`AssetTargetNameMap`](crate::types::AssetTargetNameMap).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetTargetNameMapBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_name: ::std::option::Option<::std::string::String>,

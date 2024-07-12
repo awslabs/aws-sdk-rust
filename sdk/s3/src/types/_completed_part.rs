@@ -65,8 +65,8 @@ impl CompletedPart {
 }
 
 /// A builder for [`CompletedPart`](crate::types::CompletedPart).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompletedPartBuilder {
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_crc32: ::std::option::Option<::std::string::String>,

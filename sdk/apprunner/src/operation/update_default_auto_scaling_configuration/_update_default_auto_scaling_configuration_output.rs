@@ -26,8 +26,8 @@ impl UpdateDefaultAutoScalingConfigurationOutput {
 }
 
 /// A builder for [`UpdateDefaultAutoScalingConfigurationOutput`](crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDefaultAutoScalingConfigurationOutputBuilder {
     pub(crate) auto_scaling_configuration: ::std::option::Option<crate::types::AutoScalingConfiguration>,
     _request_id: Option<String>,

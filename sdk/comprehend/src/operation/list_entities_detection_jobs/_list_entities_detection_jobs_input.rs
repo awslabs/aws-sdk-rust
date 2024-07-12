@@ -32,8 +32,8 @@ impl ListEntitiesDetectionJobsInput {
 }
 
 /// A builder for [`ListEntitiesDetectionJobsInput`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEntitiesDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EntitiesDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

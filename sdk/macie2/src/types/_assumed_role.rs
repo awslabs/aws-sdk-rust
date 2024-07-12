@@ -45,8 +45,8 @@ impl AssumedRole {
 }
 
 /// A builder for [`AssumedRole`](crate::types::AssumedRole).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssumedRoleBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

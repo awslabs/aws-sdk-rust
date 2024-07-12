@@ -18,8 +18,8 @@ impl DeleteDatasetContentOutput {
 }
 
 /// A builder for [`DeleteDatasetContentOutput`](crate::operation::delete_dataset_content::DeleteDatasetContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDatasetContentOutputBuilder {
     _request_id: Option<String>,
 }

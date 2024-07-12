@@ -27,8 +27,8 @@ impl EstimatedResourceSize {
 }
 
 /// A builder for [`EstimatedResourceSize`](crate::types::EstimatedResourceSize).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EstimatedResourceSizeBuilder {
     pub(crate) estimated_size_in_bytes: ::std::option::Option<f64>,
     pub(crate) estimated_on: ::std::option::Option<::aws_smithy_types::DateTime>,

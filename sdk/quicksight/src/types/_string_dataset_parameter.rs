@@ -41,8 +41,8 @@ impl StringDatasetParameter {
 }
 
 /// A builder for [`StringDatasetParameter`](crate::types::StringDatasetParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StringDatasetParameterBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetRestoreTestingSelectionOutput {
 }
 
 /// A builder for [`GetRestoreTestingSelectionOutput`](crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRestoreTestingSelectionOutputBuilder {
     pub(crate) restore_testing_selection: ::std::option::Option<crate::types::RestoreTestingSelectionForGet>,
     _request_id: Option<String>,

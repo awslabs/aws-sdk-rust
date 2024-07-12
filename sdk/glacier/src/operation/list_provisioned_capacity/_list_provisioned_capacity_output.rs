@@ -28,8 +28,8 @@ impl ListProvisionedCapacityOutput {
 }
 
 /// A builder for [`ListProvisionedCapacityOutput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProvisionedCapacityOutputBuilder {
     pub(crate) provisioned_capacity_list: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>>,
     _request_id: Option<String>,

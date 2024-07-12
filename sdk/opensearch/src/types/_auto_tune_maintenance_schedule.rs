@@ -36,8 +36,8 @@ impl AutoTuneMaintenanceSchedule {
 }
 
 /// A builder for [`AutoTuneMaintenanceSchedule`](crate::types::AutoTuneMaintenanceSchedule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoTuneMaintenanceScheduleBuilder {
     pub(crate) start_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) duration: ::std::option::Option<crate::types::Duration>,

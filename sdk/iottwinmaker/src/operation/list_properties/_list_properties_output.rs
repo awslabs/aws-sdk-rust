@@ -33,8 +33,8 @@ impl ListPropertiesOutput {
 }
 
 /// A builder for [`ListPropertiesOutput`](crate::operation::list_properties::ListPropertiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPropertiesOutputBuilder {
     pub(crate) property_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PropertySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

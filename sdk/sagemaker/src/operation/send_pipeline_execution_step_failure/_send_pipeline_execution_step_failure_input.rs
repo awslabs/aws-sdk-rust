@@ -32,8 +32,8 @@ impl SendPipelineExecutionStepFailureInput {
 }
 
 /// A builder for [`SendPipelineExecutionStepFailureInput`](crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendPipelineExecutionStepFailureInputBuilder {
     pub(crate) callback_token: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,

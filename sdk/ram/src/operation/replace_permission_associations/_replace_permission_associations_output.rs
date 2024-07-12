@@ -32,8 +32,8 @@ impl ReplacePermissionAssociationsOutput {
 }
 
 /// A builder for [`ReplacePermissionAssociationsOutput`](crate::operation::replace_permission_associations::ReplacePermissionAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplacePermissionAssociationsOutputBuilder {
     pub(crate) replace_permission_associations_work: ::std::option::Option<crate::types::ReplacePermissionAssociationsWork>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

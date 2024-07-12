@@ -341,8 +341,8 @@ impl Environment {
 }
 
 /// A builder for [`Environment`](crate::types::Environment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EnvironmentBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EnvironmentStatus>,

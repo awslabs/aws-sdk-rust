@@ -42,8 +42,8 @@ impl DataPathValue {
 }
 
 /// A builder for [`DataPathValue`](crate::types::DataPathValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DataPathValueBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) field_value: ::std::option::Option<::std::string::String>,

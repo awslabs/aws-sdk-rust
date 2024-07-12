@@ -11,8 +11,8 @@ impl GetPropertygraphStatisticsInput {
 }
 
 /// A builder for [`GetPropertygraphStatisticsInput`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPropertygraphStatisticsInputBuilder {}
 impl GetPropertygraphStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetPropertygraphStatisticsInput`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsInput).

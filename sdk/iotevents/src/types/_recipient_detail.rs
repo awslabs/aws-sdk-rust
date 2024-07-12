@@ -21,8 +21,8 @@ impl RecipientDetail {
 }
 
 /// A builder for [`RecipientDetail`](crate::types::RecipientDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecipientDetailBuilder {
     pub(crate) sso_identity: ::std::option::Option<crate::types::SsoIdentity>,
 }

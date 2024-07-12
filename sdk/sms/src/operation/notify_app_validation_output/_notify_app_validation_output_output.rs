@@ -18,8 +18,8 @@ impl NotifyAppValidationOutputOutput {
 }
 
 /// A builder for [`NotifyAppValidationOutputOutput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyAppValidationOutputOutputBuilder {
     _request_id: Option<String>,
 }

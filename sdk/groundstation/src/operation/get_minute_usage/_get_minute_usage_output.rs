@@ -51,8 +51,8 @@ impl GetMinuteUsageOutput {
 }
 
 /// A builder for [`GetMinuteUsageOutput`](crate::operation::get_minute_usage::GetMinuteUsageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMinuteUsageOutputBuilder {
     pub(crate) is_reserved_minutes_customer: ::std::option::Option<bool>,
     pub(crate) total_reserved_minute_allocation: ::std::option::Option<i32>,

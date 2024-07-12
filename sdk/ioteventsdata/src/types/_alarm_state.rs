@@ -67,8 +67,8 @@ impl AlarmState {
 }
 
 /// A builder for [`AlarmState`](crate::types::AlarmState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlarmStateBuilder {
     pub(crate) state_name: ::std::option::Option<crate::types::AlarmStateName>,
     pub(crate) rule_evaluation: ::std::option::Option<crate::types::RuleEvaluation>,

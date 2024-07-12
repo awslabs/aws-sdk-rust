@@ -64,8 +64,8 @@ impl ListProjectsInput {
 }
 
 /// A builder for [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProjectsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ProjectSortByType>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,

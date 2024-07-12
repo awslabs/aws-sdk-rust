@@ -39,8 +39,8 @@ impl JwtOptionsOutput {
 }
 
 /// A builder for [`JwtOptionsOutput`](crate::types::JwtOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JwtOptionsOutputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) subject_key: ::std::option::Option<::std::string::String>,

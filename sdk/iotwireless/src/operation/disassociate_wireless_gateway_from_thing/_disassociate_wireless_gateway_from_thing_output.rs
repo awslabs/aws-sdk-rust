@@ -18,8 +18,8 @@ impl DisassociateWirelessGatewayFromThingOutput {
 }
 
 /// A builder for [`DisassociateWirelessGatewayFromThingOutput`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWirelessGatewayFromThingOutputBuilder {
     _request_id: Option<String>,
 }

@@ -39,8 +39,8 @@ impl DvbSdtSettings {
 }
 
 /// A builder for [`DvbSdtSettings`](crate::types::DvbSdtSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DvbSdtSettingsBuilder {
     pub(crate) output_sdt: ::std::option::Option<crate::types::OutputSdt>,
     pub(crate) sdt_interval: ::std::option::Option<i32>,

@@ -60,8 +60,8 @@ impl BatchPutMessageInput {
 }
 
 /// A builder for [`BatchPutMessageInput`](crate::operation::batch_put_message::BatchPutMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutMessageInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,

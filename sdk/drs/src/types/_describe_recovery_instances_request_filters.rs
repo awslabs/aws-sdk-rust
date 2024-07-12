@@ -31,8 +31,8 @@ impl DescribeRecoveryInstancesRequestFilters {
 }
 
 /// A builder for [`DescribeRecoveryInstancesRequestFilters`](crate::types::DescribeRecoveryInstancesRequestFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRecoveryInstancesRequestFiltersBuilder {
     pub(crate) recovery_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

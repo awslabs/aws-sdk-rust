@@ -49,8 +49,8 @@ impl BatchPutGeofenceRequestEntry {
 }
 
 /// A builder for [`BatchPutGeofenceRequestEntry`](crate::types::BatchPutGeofenceRequestEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchPutGeofenceRequestEntryBuilder {
     pub(crate) geofence_id: ::std::option::Option<::std::string::String>,
     pub(crate) geometry: ::std::option::Option<crate::types::GeofenceGeometry>,

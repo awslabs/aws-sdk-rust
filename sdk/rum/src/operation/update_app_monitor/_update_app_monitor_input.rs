@@ -46,8 +46,8 @@ impl UpdateAppMonitorInput {
 }
 
 /// A builder for [`UpdateAppMonitorInput`](crate::operation::update_app_monitor::UpdateAppMonitorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAppMonitorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,

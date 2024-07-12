@@ -33,8 +33,8 @@ impl DataQualityEvaluationRunAdditionalRunOptions {
 }
 
 /// A builder for [`DataQualityEvaluationRunAdditionalRunOptions`](crate::types::DataQualityEvaluationRunAdditionalRunOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     pub(crate) cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     pub(crate) results_s3_prefix: ::std::option::Option<::std::string::String>,

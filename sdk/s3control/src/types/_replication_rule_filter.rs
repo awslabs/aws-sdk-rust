@@ -49,8 +49,8 @@ impl ReplicationRuleFilter {
 }
 
 /// A builder for [`ReplicationRuleFilter`](crate::types::ReplicationRuleFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationRuleFilterBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) tag: ::std::option::Option<crate::types::S3Tag>,

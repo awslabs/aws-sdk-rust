@@ -29,8 +29,8 @@ impl DocumentMetadata {
 }
 
 /// A builder for [`DocumentMetadata`](crate::types::DocumentMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentMetadataBuilder {
     pub(crate) pages: ::std::option::Option<i32>,
     pub(crate) extracted_characters: ::std::option::Option<::std::vec::Vec<crate::types::ExtractedCharactersListItem>>,

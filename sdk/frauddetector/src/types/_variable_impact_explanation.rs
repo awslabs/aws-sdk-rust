@@ -45,8 +45,8 @@ impl VariableImpactExplanation {
 }
 
 /// A builder for [`VariableImpactExplanation`](crate::types::VariableImpactExplanation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VariableImpactExplanationBuilder {
     pub(crate) event_variable_name: ::std::option::Option<::std::string::String>,
     pub(crate) relative_impact: ::std::option::Option<::std::string::String>,

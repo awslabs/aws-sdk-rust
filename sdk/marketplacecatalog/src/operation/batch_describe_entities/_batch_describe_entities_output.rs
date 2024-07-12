@@ -32,8 +32,8 @@ impl BatchDescribeEntitiesOutput {
 }
 
 /// A builder for [`BatchDescribeEntitiesOutput`](crate::operation::batch_describe_entities::BatchDescribeEntitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDescribeEntitiesOutputBuilder {
     pub(crate) entity_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EntityDetail>>,
     pub(crate) errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeErrorDetail>>,

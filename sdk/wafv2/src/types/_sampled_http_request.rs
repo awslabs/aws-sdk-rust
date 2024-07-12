@@ -105,8 +105,8 @@ impl SampledHttpRequest {
 }
 
 /// A builder for [`SampledHttpRequest`](crate::types::SampledHttpRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SampledHttpRequestBuilder {
     pub(crate) request: ::std::option::Option<crate::types::HttpRequest>,
     pub(crate) weight: ::std::option::Option<i64>,

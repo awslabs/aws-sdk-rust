@@ -33,8 +33,8 @@ impl ListRestoreTestingPlansOutput {
 }
 
 /// A builder for [`ListRestoreTestingPlansOutput`](crate::operation::list_restore_testing_plans::ListRestoreTestingPlansOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRestoreTestingPlansOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) restore_testing_plans: ::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingPlanForList>>,

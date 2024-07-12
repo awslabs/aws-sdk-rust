@@ -18,8 +18,8 @@ impl RemoveAllResourcePermissionsOutput {
 }
 
 /// A builder for [`RemoveAllResourcePermissionsOutput`](crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveAllResourcePermissionsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -29,8 +29,8 @@ impl TextResponseEvent {
 }
 
 /// A builder for [`TextResponseEvent`](crate::types::TextResponseEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextResponseEventBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl DetectModerationLabelsInput {
 }
 
 /// A builder for [`DetectModerationLabelsInput`](crate::operation::detect_moderation_labels::DetectModerationLabelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectModerationLabelsInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) min_confidence: ::std::option::Option<f32>,

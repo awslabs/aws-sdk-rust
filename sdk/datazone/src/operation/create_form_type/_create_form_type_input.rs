@@ -62,8 +62,8 @@ impl CreateFormTypeInput {
 }
 
 /// A builder for [`CreateFormTypeInput`](crate::operation::create_form_type::CreateFormTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateFormTypeInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

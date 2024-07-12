@@ -118,8 +118,8 @@ impl StartCallAnalyticsStreamTranscriptionOutput {
 }
 
 /// A builder for [`StartCallAnalyticsStreamTranscriptionOutput`](crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCallAnalyticsStreamTranscriptionOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::CallAnalyticsLanguageCode>,

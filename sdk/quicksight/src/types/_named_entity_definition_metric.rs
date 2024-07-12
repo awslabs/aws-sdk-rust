@@ -29,8 +29,8 @@ impl NamedEntityDefinitionMetric {
 }
 
 /// A builder for [`NamedEntityDefinitionMetric`](crate::types::NamedEntityDefinitionMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NamedEntityDefinitionMetricBuilder {
     pub(crate) aggregation: ::std::option::Option<crate::types::NamedEntityAggType>,
     pub(crate) aggregation_function_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

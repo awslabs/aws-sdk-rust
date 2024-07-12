@@ -27,8 +27,8 @@ impl CdmaLocalId {
 }
 
 /// A builder for [`CdmaLocalId`](crate::types::CdmaLocalId).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CdmaLocalIdBuilder {
     pub(crate) pn_offset: ::std::option::Option<i32>,
     pub(crate) cdma_channel: ::std::option::Option<i32>,

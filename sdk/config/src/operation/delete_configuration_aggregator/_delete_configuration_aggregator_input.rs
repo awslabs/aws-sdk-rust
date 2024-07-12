@@ -20,8 +20,8 @@ impl DeleteConfigurationAggregatorInput {
 }
 
 /// A builder for [`DeleteConfigurationAggregatorInput`](crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfigurationAggregatorInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
 }

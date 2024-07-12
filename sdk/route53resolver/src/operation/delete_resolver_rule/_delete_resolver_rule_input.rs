@@ -20,8 +20,8 @@ impl DeleteResolverRuleInput {
 }
 
 /// A builder for [`DeleteResolverRuleInput`](crate::operation::delete_resolver_rule::DeleteResolverRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResolverRuleInputBuilder {
     pub(crate) resolver_rule_id: ::std::option::Option<::std::string::String>,
 }

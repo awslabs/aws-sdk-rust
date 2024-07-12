@@ -246,8 +246,8 @@ impl RecordingGroup {
 }
 
 /// A builder for [`RecordingGroup`](crate::types::RecordingGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordingGroupBuilder {
     pub(crate) all_supported: ::std::option::Option<bool>,
     pub(crate) include_global_resource_types: ::std::option::Option<bool>,

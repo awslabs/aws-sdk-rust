@@ -26,8 +26,8 @@ impl StartLabelDetectionOutput {
 }
 
 /// A builder for [`StartLabelDetectionOutput`](crate::operation::start_label_detection::StartLabelDetectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartLabelDetectionOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

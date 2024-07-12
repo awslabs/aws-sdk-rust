@@ -59,8 +59,8 @@ impl PlayReadyDrm {
 }
 
 /// A builder for [`PlayReadyDrm`](crate::types::PlayReadyDrm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlayReadyDrmBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

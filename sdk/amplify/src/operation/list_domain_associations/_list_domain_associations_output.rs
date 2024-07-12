@@ -34,8 +34,8 @@ impl ListDomainAssociationsOutput {
 }
 
 /// A builder for [`ListDomainAssociationsOutput`](crate::operation::list_domain_associations::ListDomainAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDomainAssociationsOutputBuilder {
     pub(crate) domain_associations: ::std::option::Option<::std::vec::Vec<crate::types::DomainAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

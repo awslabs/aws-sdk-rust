@@ -21,8 +21,8 @@ impl ConditionStepMetadata {
 }
 
 /// A builder for [`ConditionStepMetadata`](crate::types::ConditionStepMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConditionStepMetadataBuilder {
     pub(crate) outcome: ::std::option::Option<crate::types::ConditionOutcome>,
 }

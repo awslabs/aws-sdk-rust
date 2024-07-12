@@ -34,8 +34,8 @@ impl DescribePortfolioSharesOutput {
 }
 
 /// A builder for [`DescribePortfolioSharesOutput`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePortfolioSharesOutputBuilder {
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_share_details: ::std::option::Option<::std::vec::Vec<crate::types::PortfolioShareDetail>>,

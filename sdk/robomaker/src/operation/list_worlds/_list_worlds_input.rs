@@ -34,8 +34,8 @@ impl ListWorldsInput {
 }
 
 /// A builder for [`ListWorldsInput`](crate::operation::list_worlds::ListWorldsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorldsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -58,8 +58,8 @@ impl CreateFhirDatastoreInput {
 }
 
 /// A builder for [`CreateFhirDatastoreInput`](crate::operation::create_fhir_datastore::CreateFhirDatastoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFhirDatastoreInputBuilder {
     pub(crate) datastore_name: ::std::option::Option<::std::string::String>,
     pub(crate) datastore_type_version: ::std::option::Option<crate::types::FhirVersion>,

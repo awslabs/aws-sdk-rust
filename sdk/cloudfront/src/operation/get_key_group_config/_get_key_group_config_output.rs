@@ -32,8 +32,8 @@ impl GetKeyGroupConfigOutput {
 }
 
 /// A builder for [`GetKeyGroupConfigOutput`](crate::operation::get_key_group_config::GetKeyGroupConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKeyGroupConfigOutputBuilder {
     pub(crate) key_group_config: ::std::option::Option<crate::types::KeyGroupConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl HsmClientCertificate {
 }
 
 /// A builder for [`HsmClientCertificate`](crate::types::HsmClientCertificate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HsmClientCertificateBuilder {
     pub(crate) hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_client_certificate_public_key: ::std::option::Option<::std::string::String>,

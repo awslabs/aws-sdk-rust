@@ -50,8 +50,8 @@ impl DescribeCustomerMetadataOutput {
 }
 
 /// A builder for [`DescribeCustomerMetadataOutput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomerMetadataOutputBuilder {
     pub(crate) agreements: ::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreement>>,
     pub(crate) nni_partner_type: ::std::option::Option<crate::types::NniPartnerType>,

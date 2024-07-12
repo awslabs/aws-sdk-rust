@@ -35,8 +35,8 @@ impl CanDbcDefinition {
 }
 
 /// A builder for [`CanDbcDefinition`](crate::types::CanDbcDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CanDbcDefinitionBuilder {
     pub(crate) network_interface: ::std::option::Option<::std::string::String>,
     pub(crate) can_dbc_files: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,

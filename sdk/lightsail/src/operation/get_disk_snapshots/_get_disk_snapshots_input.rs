@@ -22,8 +22,8 @@ impl GetDiskSnapshotsInput {
 }
 
 /// A builder for [`GetDiskSnapshotsInput`](crate::operation::get_disk_snapshots::GetDiskSnapshotsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDiskSnapshotsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }

@@ -46,8 +46,8 @@ impl SetResourceAccessForBucketInput {
 }
 
 /// A builder for [`SetResourceAccessForBucketInput`](crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetResourceAccessForBucketInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,

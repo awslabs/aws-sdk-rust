@@ -26,8 +26,8 @@ impl CreateAttributeGroupOutput {
 }
 
 /// A builder for [`CreateAttributeGroupOutput`](crate::operation::create_attribute_group::CreateAttributeGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAttributeGroupOutputBuilder {
     pub(crate) attribute_group: ::std::option::Option<crate::types::AttributeGroup>,
     _request_id: Option<String>,

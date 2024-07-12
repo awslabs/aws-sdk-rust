@@ -61,8 +61,8 @@ impl CreateSnapshotCopyGrantInput {
 }
 
 /// A builder for [`CreateSnapshotCopyGrantInput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSnapshotCopyGrantInputBuilder {
     pub(crate) snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

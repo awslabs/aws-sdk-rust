@@ -20,8 +20,8 @@ impl DescribeGatewayInput {
 }
 
 /// A builder for [`DescribeGatewayInput`](crate::operation::describe_gateway::DescribeGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGatewayInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
 }

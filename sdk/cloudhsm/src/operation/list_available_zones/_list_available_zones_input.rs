@@ -12,8 +12,8 @@ impl ListAvailableZonesInput {
 }
 
 /// A builder for [`ListAvailableZonesInput`](crate::operation::list_available_zones::ListAvailableZonesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableZonesInputBuilder {}
 impl ListAvailableZonesInputBuilder {
     /// Consumes the builder and constructs a [`ListAvailableZonesInput`](crate::operation::list_available_zones::ListAvailableZonesInput).

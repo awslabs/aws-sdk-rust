@@ -26,8 +26,8 @@ impl DeletePushTemplateOutput {
 }
 
 /// A builder for [`DeletePushTemplateOutput`](crate::operation::delete_push_template::DeletePushTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePushTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,

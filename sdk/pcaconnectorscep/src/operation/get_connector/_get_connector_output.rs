@@ -26,8 +26,8 @@ impl GetConnectorOutput {
 }
 
 /// A builder for [`GetConnectorOutput`](crate::operation::get_connector::GetConnectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectorOutputBuilder {
     pub(crate) connector: ::std::option::Option<crate::types::Connector>,
     _request_id: Option<String>,

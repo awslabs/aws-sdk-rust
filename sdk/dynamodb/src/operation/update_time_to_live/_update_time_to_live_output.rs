@@ -26,8 +26,8 @@ impl UpdateTimeToLiveOutput {
 }
 
 /// A builder for [`UpdateTimeToLiveOutput`](crate::operation::update_time_to_live::UpdateTimeToLiveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTimeToLiveOutputBuilder {
     pub(crate) time_to_live_specification: ::std::option::Option<crate::types::TimeToLiveSpecification>,
     _request_id: Option<String>,

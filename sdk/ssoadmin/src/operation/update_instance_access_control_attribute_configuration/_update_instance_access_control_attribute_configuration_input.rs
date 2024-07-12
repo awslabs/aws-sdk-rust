@@ -28,8 +28,8 @@ impl UpdateInstanceAccessControlAttributeConfigurationInput {
 }
 
 /// A builder for [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInstanceAccessControlAttributeConfigurationInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_access_control_attribute_configuration: ::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,

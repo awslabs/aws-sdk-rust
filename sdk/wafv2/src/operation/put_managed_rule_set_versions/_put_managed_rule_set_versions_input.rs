@@ -66,8 +66,8 @@ impl PutManagedRuleSetVersionsInput {
 }
 
 /// A builder for [`PutManagedRuleSetVersionsInput`](crate::operation::put_managed_rule_set_versions::PutManagedRuleSetVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutManagedRuleSetVersionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,

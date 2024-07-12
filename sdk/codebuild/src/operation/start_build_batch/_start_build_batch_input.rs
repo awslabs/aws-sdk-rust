@@ -306,8 +306,8 @@ impl StartBuildBatchInput {
 }
 
 /// A builder for [`StartBuildBatchInput`](crate::operation::start_build_batch::StartBuildBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartBuildBatchInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) secondary_sources_override: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,

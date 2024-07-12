@@ -38,8 +38,8 @@ impl RegisterSlackWorkspaceForOrganizationOutput {
 }
 
 /// A builder for [`RegisterSlackWorkspaceForOrganizationOutput`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterSlackWorkspaceForOrganizationOutputBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
     pub(crate) team_name: ::std::option::Option<::std::string::String>,

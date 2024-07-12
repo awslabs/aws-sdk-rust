@@ -48,8 +48,8 @@ impl DescribeServiceUpdatesInput {
 }
 
 /// A builder for [`DescribeServiceUpdatesInput`](crate::operation::describe_service_updates::DescribeServiceUpdatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServiceUpdatesInputBuilder {
     pub(crate) service_update_name: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

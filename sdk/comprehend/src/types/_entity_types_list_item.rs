@@ -24,8 +24,8 @@ impl EntityTypesListItem {
 }
 
 /// A builder for [`EntityTypesListItem`](crate::types::EntityTypesListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityTypesListItemBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }

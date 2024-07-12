@@ -34,8 +34,8 @@ impl ListCustomPluginsOutput {
 }
 
 /// A builder for [`ListCustomPluginsOutput`](crate::operation::list_custom_plugins::ListCustomPluginsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomPluginsOutputBuilder {
     pub(crate) custom_plugins: ::std::option::Option<::std::vec::Vec<crate::types::CustomPluginSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

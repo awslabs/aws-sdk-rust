@@ -21,8 +21,8 @@ impl StopDbInstanceAutomatedBackupsReplicationInput {
 }
 
 /// A builder for [`StopDbInstanceAutomatedBackupsReplicationInput`](crate::operation::stop_db_instance_automated_backups_replication::StopDbInstanceAutomatedBackupsReplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDbInstanceAutomatedBackupsReplicationInputBuilder {
     pub(crate) source_db_instance_arn: ::std::option::Option<::std::string::String>,
 }

@@ -68,8 +68,8 @@ impl CreateMlEndpointInput {
 }
 
 /// A builder for [`CreateMlEndpointInput`](crate::operation::create_ml_endpoint::CreateMlEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMlEndpointInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ml_model_training_job_id: ::std::option::Option<::std::string::String>,

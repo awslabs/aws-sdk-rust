@@ -39,8 +39,8 @@ impl ExportDestination {
 }
 
 /// A builder for [`ExportDestination`](crate::types::ExportDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportDestinationBuilder {
     pub(crate) data_format: ::std::option::Option<crate::types::DataFormat>,
     pub(crate) s3_url: ::std::option::Option<::std::string::String>,

@@ -30,8 +30,8 @@ impl ToolConfiguration {
 }
 
 /// A builder for [`ToolConfiguration`](crate::types::ToolConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ToolConfigurationBuilder {
     pub(crate) tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
     pub(crate) tool_choice: ::std::option::Option<crate::types::ToolChoice>,

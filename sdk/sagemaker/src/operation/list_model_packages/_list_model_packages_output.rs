@@ -34,8 +34,8 @@ impl ListModelPackagesOutput {
 }
 
 /// A builder for [`ListModelPackagesOutput`](crate::operation::list_model_packages::ListModelPackagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelPackagesOutputBuilder {
     pub(crate) model_package_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

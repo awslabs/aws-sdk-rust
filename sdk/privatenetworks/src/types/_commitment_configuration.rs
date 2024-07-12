@@ -50,8 +50,8 @@ impl CommitmentConfiguration {
 }
 
 /// A builder for [`CommitmentConfiguration`](crate::types::CommitmentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CommitmentConfigurationBuilder {
     pub(crate) commitment_length: ::std::option::Option<crate::types::CommitmentLength>,
     pub(crate) automatic_renewal: ::std::option::Option<bool>,

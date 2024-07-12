@@ -50,8 +50,8 @@ impl UpdateGroupInput {
 }
 
 /// A builder for [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGroupInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,

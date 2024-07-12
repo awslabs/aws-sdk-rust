@@ -32,8 +32,8 @@ impl ListConnectorsInput {
 }
 
 /// A builder for [`ListConnectorsInput`](crate::operation::list_connectors::ListConnectorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConnectorsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListConnectorsRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,

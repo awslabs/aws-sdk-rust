@@ -51,8 +51,8 @@ impl DoubleOptions {
 }
 
 /// A builder for [`DoubleOptions`](crate::types::DoubleOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DoubleOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<f64>,
     pub(crate) source_field: ::std::option::Option<::std::string::String>,

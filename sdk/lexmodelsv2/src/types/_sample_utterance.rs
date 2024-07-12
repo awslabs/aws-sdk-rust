@@ -22,8 +22,8 @@ impl SampleUtterance {
 }
 
 /// A builder for [`SampleUtterance`](crate::types::SampleUtterance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SampleUtteranceBuilder {
     pub(crate) utterance: ::std::option::Option<::std::string::String>,
 }

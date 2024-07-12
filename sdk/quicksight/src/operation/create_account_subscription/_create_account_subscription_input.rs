@@ -178,8 +178,8 @@ impl CreateAccountSubscriptionInput {
 }
 
 /// A builder for [`CreateAccountSubscriptionInput`](crate::operation::create_account_subscription::CreateAccountSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccountSubscriptionInputBuilder {
     pub(crate) edition: ::std::option::Option<crate::types::Edition>,
     pub(crate) authentication_method: ::std::option::Option<crate::types::AuthenticationMethodOption>,

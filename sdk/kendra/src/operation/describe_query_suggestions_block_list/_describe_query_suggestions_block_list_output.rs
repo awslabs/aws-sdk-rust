@@ -98,8 +98,8 @@ impl DescribeQuerySuggestionsBlockListOutput {
 }
 
 /// A builder for [`DescribeQuerySuggestionsBlockListOutput`](crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeQuerySuggestionsBlockListOutputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

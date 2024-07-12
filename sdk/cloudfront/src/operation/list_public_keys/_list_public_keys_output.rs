@@ -26,8 +26,8 @@ impl ListPublicKeysOutput {
 }
 
 /// A builder for [`ListPublicKeysOutput`](crate::operation::list_public_keys::ListPublicKeysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPublicKeysOutputBuilder {
     pub(crate) public_key_list: ::std::option::Option<crate::types::PublicKeyList>,
     _request_id: Option<String>,

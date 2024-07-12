@@ -28,8 +28,8 @@ impl SentimentResponse {
 }
 
 /// A builder for [`SentimentResponse`](crate::types::SentimentResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SentimentResponseBuilder {
     pub(crate) sentiment: ::std::option::Option<crate::types::SentimentType>,
     pub(crate) sentiment_score: ::std::option::Option<crate::types::SentimentScore>,

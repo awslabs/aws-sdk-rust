@@ -18,8 +18,8 @@ impl AssociateProductWithPortfolioOutput {
 }
 
 /// A builder for [`AssociateProductWithPortfolioOutput`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateProductWithPortfolioOutputBuilder {
     _request_id: Option<String>,
 }

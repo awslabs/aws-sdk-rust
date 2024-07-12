@@ -26,8 +26,8 @@ impl DescribeTrafficDistributionGroupOutput {
 }
 
 /// A builder for [`DescribeTrafficDistributionGroupOutput`](crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrafficDistributionGroupOutputBuilder {
     pub(crate) traffic_distribution_group: ::std::option::Option<crate::types::TrafficDistributionGroup>,
     _request_id: Option<String>,

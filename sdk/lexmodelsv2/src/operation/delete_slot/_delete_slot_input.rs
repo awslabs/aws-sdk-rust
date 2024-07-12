@@ -44,8 +44,8 @@ impl DeleteSlotInput {
 }
 
 /// A builder for [`DeleteSlotInput`](crate::operation::delete_slot::DeleteSlotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSlotInputBuilder {
     pub(crate) slot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,

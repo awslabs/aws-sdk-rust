@@ -21,8 +21,8 @@ impl RepositoryAuthConfig {
 }
 
 /// A builder for [`RepositoryAuthConfig`](crate::types::RepositoryAuthConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryAuthConfigBuilder {
     pub(crate) repository_credentials_provider_arn: ::std::option::Option<::std::string::String>,
 }

@@ -32,8 +32,8 @@ impl DeleteManagedEndpointOutput {
 }
 
 /// A builder for [`DeleteManagedEndpointOutput`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteManagedEndpointOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_cluster_id: ::std::option::Option<::std::string::String>,

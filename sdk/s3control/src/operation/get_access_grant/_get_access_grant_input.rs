@@ -26,8 +26,8 @@ impl GetAccessGrantInput {
 }
 
 /// A builder for [`GetAccessGrantInput`](crate::operation::get_access_grant::GetAccessGrantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessGrantInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_grant_id: ::std::option::Option<::std::string::String>,

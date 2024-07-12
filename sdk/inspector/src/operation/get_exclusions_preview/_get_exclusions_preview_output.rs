@@ -40,8 +40,8 @@ impl GetExclusionsPreviewOutput {
 }
 
 /// A builder for [`GetExclusionsPreviewOutput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExclusionsPreviewOutputBuilder {
     pub(crate) preview_status: ::std::option::Option<crate::types::PreviewStatus>,
     pub(crate) exclusion_previews: ::std::option::Option<::std::vec::Vec<crate::types::ExclusionPreview>>,

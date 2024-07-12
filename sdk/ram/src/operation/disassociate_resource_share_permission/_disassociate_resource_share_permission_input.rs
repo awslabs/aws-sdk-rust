@@ -36,8 +36,8 @@ impl DisassociateResourceSharePermissionInput {
 }
 
 /// A builder for [`DisassociateResourceSharePermissionInput`](crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateResourceSharePermissionInputBuilder {
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,

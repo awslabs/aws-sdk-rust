@@ -50,8 +50,8 @@ impl UpdateDetectorInput {
 }
 
 /// A builder for [`UpdateDetectorInput`](crate::operation::update_detector::UpdateDetectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDetectorInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable: ::std::option::Option<bool>,

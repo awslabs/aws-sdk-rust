@@ -28,8 +28,8 @@ impl BatchDisableStandardsOutput {
 }
 
 /// A builder for [`BatchDisableStandardsOutput`](crate::operation::batch_disable_standards::BatchDisableStandardsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisableStandardsOutputBuilder {
     pub(crate) standards_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
     _request_id: Option<String>,

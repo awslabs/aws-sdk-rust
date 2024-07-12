@@ -28,8 +28,8 @@ impl LoggingOptionsPayload {
 }
 
 /// A builder for [`LoggingOptionsPayload`](crate::types::LoggingOptionsPayload).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoggingOptionsPayloadBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,

@@ -35,8 +35,8 @@ impl ConfigurableUpfrontRateCardItem {
 }
 
 /// A builder for [`ConfigurableUpfrontRateCardItem`](crate::types::ConfigurableUpfrontRateCardItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurableUpfrontRateCardItemBuilder {
     pub(crate) selector: ::std::option::Option<crate::types::Selector>,
     pub(crate) constraints: ::std::option::Option<crate::types::Constraints>,

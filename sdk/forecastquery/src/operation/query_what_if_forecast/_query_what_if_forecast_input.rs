@@ -48,8 +48,8 @@ impl QueryWhatIfForecastInput {
 }
 
 /// A builder for [`QueryWhatIfForecastInput`](crate::operation::query_what_if_forecast::QueryWhatIfForecastInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryWhatIfForecastInputBuilder {
     pub(crate) what_if_forecast_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_date: ::std::option::Option<::std::string::String>,

@@ -55,8 +55,8 @@ impl UpdateContactInput {
 }
 
 /// A builder for [`UpdateContactInput`](crate::operation::update_contact::UpdateContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateContactInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,

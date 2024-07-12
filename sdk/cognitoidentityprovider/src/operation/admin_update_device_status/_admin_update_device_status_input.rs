@@ -49,8 +49,8 @@ impl AdminUpdateDeviceStatusInput {
 }
 
 /// A builder for [`AdminUpdateDeviceStatusInput`](crate::operation::admin_update_device_status::AdminUpdateDeviceStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminUpdateDeviceStatusInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,

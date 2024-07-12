@@ -56,8 +56,8 @@ impl DescribeFleetPortSettingsOutput {
 }
 
 /// A builder for [`DescribeFleetPortSettingsOutput`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetPortSettingsOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,

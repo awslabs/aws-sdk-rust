@@ -11,8 +11,8 @@ impl PingInput {
 }
 
 /// A builder for [`PingInput`](crate::operation::ping::PingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PingInputBuilder {}
 impl PingInputBuilder {
     /// Consumes the builder and constructs a [`PingInput`](crate::operation::ping::PingInput).

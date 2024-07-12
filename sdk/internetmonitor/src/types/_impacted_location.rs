@@ -112,8 +112,8 @@ impl ImpactedLocation {
 }
 
 /// A builder for [`ImpactedLocation`](crate::types::ImpactedLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImpactedLocationBuilder {
     pub(crate) as_name: ::std::option::Option<::std::string::String>,
     pub(crate) as_number: ::std::option::Option<i64>,

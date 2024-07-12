@@ -26,8 +26,8 @@ impl UpdateWebAclOutput {
 }
 
 /// A builder for [`UpdateWebAclOutput`](crate::operation::update_web_acl::UpdateWebAclOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWebAclOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

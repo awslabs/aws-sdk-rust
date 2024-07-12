@@ -109,8 +109,8 @@ impl Thumbnails {
 }
 
 /// A builder for [`Thumbnails`](crate::types::Thumbnails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThumbnailsBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) interval: ::std::option::Option<::std::string::String>,

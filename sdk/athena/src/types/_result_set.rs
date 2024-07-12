@@ -29,8 +29,8 @@ impl ResultSet {
 }
 
 /// A builder for [`ResultSet`](crate::types::ResultSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResultSetBuilder {
     pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
     pub(crate) result_set_metadata: ::std::option::Option<crate::types::ResultSetMetadata>,

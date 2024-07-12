@@ -26,8 +26,8 @@ impl DisassociateProtectConfigurationInput {
 }
 
 /// A builder for [`DisassociateProtectConfigurationInput`](crate::operation::disassociate_protect_configuration::DisassociateProtectConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateProtectConfigurationInputBuilder {
     pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,

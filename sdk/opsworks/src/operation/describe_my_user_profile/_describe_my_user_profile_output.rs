@@ -27,8 +27,8 @@ impl DescribeMyUserProfileOutput {
 }
 
 /// A builder for [`DescribeMyUserProfileOutput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMyUserProfileOutputBuilder {
     pub(crate) user_profile: ::std::option::Option<crate::types::SelfUserProfile>,
     _request_id: Option<String>,

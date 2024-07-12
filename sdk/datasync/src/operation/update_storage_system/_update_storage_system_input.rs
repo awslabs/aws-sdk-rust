@@ -52,8 +52,8 @@ impl UpdateStorageSystemInput {
 }
 
 /// A builder for [`UpdateStorageSystemInput`](crate::operation::update_storage_system::UpdateStorageSystemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStorageSystemInputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
     pub(crate) server_configuration: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,

@@ -33,8 +33,8 @@ impl BookingOptions {
 }
 
 /// A builder for [`BookingOptions`](crate::types::BookingOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BookingOptionsBuilder {
     pub(crate) auto_accept_requests: ::std::option::Option<bool>,
     pub(crate) auto_decline_recurring_requests: ::std::option::Option<bool>,

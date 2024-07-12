@@ -46,8 +46,8 @@ impl NetworkInterface {
 }
 
 /// A builder for [`NetworkInterface`](crate::types::NetworkInterface).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct NetworkInterfaceBuilder {
     pub(crate) ipv4_address: ::std::option::Option<::std::string::String>,
     pub(crate) mac_address: ::std::option::Option<::std::string::String>,

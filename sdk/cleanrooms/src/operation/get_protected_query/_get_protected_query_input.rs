@@ -26,8 +26,8 @@ impl GetProtectedQueryInput {
 }
 
 /// A builder for [`GetProtectedQueryInput`](crate::operation::get_protected_query::GetProtectedQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProtectedQueryInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) protected_query_identifier: ::std::option::Option<::std::string::String>,

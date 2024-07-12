@@ -27,8 +27,8 @@ impl ModifyVpcEndpointServicePayerResponsibilityOutput {
 }
 
 /// A builder for [`ModifyVpcEndpointServicePayerResponsibilityOutput`](crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpcEndpointServicePayerResponsibilityOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,

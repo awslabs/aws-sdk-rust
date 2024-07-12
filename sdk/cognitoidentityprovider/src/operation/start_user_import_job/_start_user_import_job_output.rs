@@ -27,8 +27,8 @@ impl StartUserImportJobOutput {
 }
 
 /// A builder for [`StartUserImportJobOutput`](crate::operation::start_user_import_job::StartUserImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartUserImportJobOutputBuilder {
     pub(crate) user_import_job: ::std::option::Option<crate::types::UserImportJobType>,
     _request_id: Option<String>,

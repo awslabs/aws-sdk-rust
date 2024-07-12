@@ -26,8 +26,8 @@ impl ModifyPrivateDnsNameOptionsOutput {
 }
 
 /// A builder for [`ModifyPrivateDnsNameOptionsOutput`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyPrivateDnsNameOptionsOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

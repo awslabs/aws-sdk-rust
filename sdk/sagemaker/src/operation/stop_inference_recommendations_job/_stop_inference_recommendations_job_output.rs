@@ -18,8 +18,8 @@ impl StopInferenceRecommendationsJobOutput {
 }
 
 /// A builder for [`StopInferenceRecommendationsJobOutput`](crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopInferenceRecommendationsJobOutputBuilder {
     _request_id: Option<String>,
 }

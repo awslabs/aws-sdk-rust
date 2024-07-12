@@ -38,8 +38,8 @@ impl DescribeWorkloadOutput {
 }
 
 /// A builder for [`DescribeWorkloadOutput`](crate::operation::describe_workload::DescribeWorkloadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkloadOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) workload_remarks: ::std::option::Option<::std::string::String>,

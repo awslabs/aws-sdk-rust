@@ -41,8 +41,8 @@ impl ExecuteScheduledQueryInput {
 }
 
 /// A builder for [`ExecuteScheduledQueryInput`](crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ExecuteScheduledQueryInputBuilder {
     pub(crate) scheduled_query_arn: ::std::option::Option<::std::string::String>,
     pub(crate) invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,

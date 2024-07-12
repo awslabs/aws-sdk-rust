@@ -33,8 +33,8 @@ impl AccountLimit {
 }
 
 /// A builder for [`AccountLimit`](crate::types::AccountLimit).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountLimitBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AccountLimitName>,
     pub(crate) used: ::std::option::Option<i64>,

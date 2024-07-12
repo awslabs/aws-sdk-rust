@@ -24,8 +24,8 @@ impl PutBucketLoggingOutput {
 }
 
 /// A builder for [`PutBucketLoggingOutput`](crate::operation::put_bucket_logging::PutBucketLoggingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketLoggingOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

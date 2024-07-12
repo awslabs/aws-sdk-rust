@@ -21,8 +21,8 @@ impl Scte35ReturnToNetworkScheduleActionSettings {
 }
 
 /// A builder for [`Scte35ReturnToNetworkScheduleActionSettings`](crate::types::Scte35ReturnToNetworkScheduleActionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte35ReturnToNetworkScheduleActionSettingsBuilder {
     pub(crate) splice_event_id: ::std::option::Option<i64>,
 }

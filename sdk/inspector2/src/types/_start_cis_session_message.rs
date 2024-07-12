@@ -22,8 +22,8 @@ impl StartCisSessionMessage {
 }
 
 /// A builder for [`StartCisSessionMessage`](crate::types::StartCisSessionMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCisSessionMessageBuilder {
     pub(crate) session_token: ::std::option::Option<::std::string::String>,
 }

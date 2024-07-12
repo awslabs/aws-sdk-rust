@@ -18,8 +18,8 @@ impl DeleteEventIntegrationOutput {
 }
 
 /// A builder for [`DeleteEventIntegrationOutput`](crate::operation::delete_event_integration::DeleteEventIntegrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventIntegrationOutputBuilder {
     _request_id: Option<String>,
 }

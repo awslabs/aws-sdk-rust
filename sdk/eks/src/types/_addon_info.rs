@@ -53,8 +53,8 @@ impl AddonInfo {
 }
 
 /// A builder for [`AddonInfo`](crate::types::AddonInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddonInfoBuilder {
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

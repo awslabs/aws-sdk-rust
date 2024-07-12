@@ -45,8 +45,8 @@ impl RunStatisticsForAssets {
 }
 
 /// A builder for [`RunStatisticsForAssets`](crate::types::RunStatisticsForAssets).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunStatisticsForAssetsBuilder {
     pub(crate) added: ::std::option::Option<i32>,
     pub(crate) updated: ::std::option::Option<i32>,

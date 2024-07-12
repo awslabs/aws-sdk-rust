@@ -34,8 +34,8 @@ impl ListViewVersionsOutput {
 }
 
 /// A builder for [`ListViewVersionsOutput`](crate::operation::list_view_versions::ListViewVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListViewVersionsOutputBuilder {
     pub(crate) view_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ViewVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

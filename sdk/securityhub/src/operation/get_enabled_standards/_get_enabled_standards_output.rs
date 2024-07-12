@@ -34,8 +34,8 @@ impl GetEnabledStandardsOutput {
 }
 
 /// A builder for [`GetEnabledStandardsOutput`](crate::operation::get_enabled_standards::GetEnabledStandardsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnabledStandardsOutputBuilder {
     pub(crate) standards_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

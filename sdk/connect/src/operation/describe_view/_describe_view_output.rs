@@ -26,8 +26,8 @@ impl DescribeViewOutput {
 }
 
 /// A builder for [`DescribeViewOutput`](crate::operation::describe_view::DescribeViewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeViewOutputBuilder {
     pub(crate) view: ::std::option::Option<crate::types::View>,
     _request_id: Option<String>,

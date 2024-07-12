@@ -49,8 +49,8 @@ impl AwsBackupBackupVaultNotificationsDetails {
 }
 
 /// A builder for [`AwsBackupBackupVaultNotificationsDetails`](crate::types::AwsBackupBackupVaultNotificationsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsBackupBackupVaultNotificationsDetailsBuilder {
     pub(crate) backup_vault_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,

@@ -11,8 +11,8 @@ impl DescribeAcceleratorTypesInput {
 }
 
 /// A builder for [`DescribeAcceleratorTypesInput`](crate::operation::describe_accelerator_types::DescribeAcceleratorTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAcceleratorTypesInputBuilder {}
 impl DescribeAcceleratorTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAcceleratorTypesInput`](crate::operation::describe_accelerator_types::DescribeAcceleratorTypesInput).

@@ -27,8 +27,8 @@ impl AggregateConformancePackComplianceCount {
 }
 
 /// A builder for [`AggregateConformancePackComplianceCount`](crate::types::AggregateConformancePackComplianceCount).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregateConformancePackComplianceCountBuilder {
     pub(crate) compliant_conformance_pack_count: ::std::option::Option<i32>,
     pub(crate) non_compliant_conformance_pack_count: ::std::option::Option<i32>,

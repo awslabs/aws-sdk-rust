@@ -23,8 +23,8 @@ impl LogAnomalyShowcase {
 }
 
 /// A builder for [`LogAnomalyShowcase`](crate::types::LogAnomalyShowcase).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogAnomalyShowcaseBuilder {
     pub(crate) log_anomaly_classes: ::std::option::Option<::std::vec::Vec<crate::types::LogAnomalyClass>>,
 }

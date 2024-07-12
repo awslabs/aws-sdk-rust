@@ -56,8 +56,8 @@ impl CountOpenWorkflowExecutionsInput {
 }
 
 /// A builder for [`CountOpenWorkflowExecutionsInput`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CountOpenWorkflowExecutionsInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) start_time_filter: ::std::option::Option<crate::types::ExecutionTimeFilter>,

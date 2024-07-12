@@ -100,8 +100,8 @@ impl InvokeInput {
 }
 
 /// A builder for [`InvokeInput`](crate::operation::invoke::InvokeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) invocation_type: ::std::option::Option<crate::types::InvocationType>,

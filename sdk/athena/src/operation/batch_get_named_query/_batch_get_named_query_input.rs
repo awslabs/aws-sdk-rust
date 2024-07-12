@@ -23,8 +23,8 @@ impl BatchGetNamedQueryInput {
 }
 
 /// A builder for [`BatchGetNamedQueryInput`](crate::operation::batch_get_named_query::BatchGetNamedQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetNamedQueryInputBuilder {
     pub(crate) named_query_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

@@ -40,8 +40,8 @@ impl DescribeObjectsOutput {
 }
 
 /// A builder for [`DescribeObjectsOutput`](crate::operation::describe_objects::DescribeObjectsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeObjectsOutputBuilder {
     pub(crate) pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

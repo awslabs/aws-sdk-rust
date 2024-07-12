@@ -64,8 +64,8 @@ impl DbProxyTarget {
 }
 
 /// A builder for [`DbProxyTarget`](crate::types::DbProxyTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbProxyTargetBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl EarthObservationJobErrorDetails {
 }
 
 /// A builder for [`EarthObservationJobErrorDetails`](crate::types::EarthObservationJobErrorDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EarthObservationJobErrorDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EarthObservationJobErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

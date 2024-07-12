@@ -20,8 +20,8 @@ impl DeleteContainerGroupDefinitionInput {
 }
 
 /// A builder for [`DeleteContainerGroupDefinitionInput`](crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContainerGroupDefinitionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

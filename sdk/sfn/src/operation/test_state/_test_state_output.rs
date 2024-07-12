@@ -69,8 +69,8 @@ impl TestStateOutput {
 }
 
 /// A builder for [`TestStateOutput`](crate::operation::test_state::TestStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TestStateOutputBuilder {
     pub(crate) output: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<::std::string::String>,

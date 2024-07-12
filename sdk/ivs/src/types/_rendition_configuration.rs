@@ -29,8 +29,8 @@ impl RenditionConfiguration {
 }
 
 /// A builder for [`RenditionConfiguration`](crate::types::RenditionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenditionConfigurationBuilder {
     pub(crate) rendition_selection: ::std::option::Option<crate::types::RenditionConfigurationRenditionSelection>,
     pub(crate) renditions: ::std::option::Option<::std::vec::Vec<crate::types::RenditionConfigurationRendition>>,

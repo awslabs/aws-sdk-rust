@@ -44,8 +44,8 @@ impl AssociateMemberToFarmInput {
 }
 
 /// A builder for [`AssociateMemberToFarmInput`](crate::operation::associate_member_to_farm::AssociateMemberToFarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMemberToFarmInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl NotifyAppValidationOutputInput {
 }
 
 /// A builder for [`NotifyAppValidationOutputInput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyAppValidationOutputInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) notification_context: ::std::option::Option<crate::types::NotificationContext>,

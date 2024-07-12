@@ -38,8 +38,8 @@ impl DescribeThemeAliasOutput {
 }
 
 /// A builder for [`DescribeThemeAliasOutput`](crate::operation::describe_theme_alias::DescribeThemeAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeThemeAliasOutputBuilder {
     pub(crate) theme_alias: ::std::option::Option<crate::types::ThemeAlias>,
     pub(crate) status: ::std::option::Option<i32>,

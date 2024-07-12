@@ -34,8 +34,8 @@ impl ListWorldsOutput {
 }
 
 /// A builder for [`ListWorldsOutput`](crate::operation::list_worlds::ListWorldsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorldsOutputBuilder {
     pub(crate) world_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorldSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

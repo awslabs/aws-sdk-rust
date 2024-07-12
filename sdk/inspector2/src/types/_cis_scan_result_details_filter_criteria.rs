@@ -55,8 +55,8 @@ impl CisScanResultDetailsFilterCriteria {
 }
 
 /// A builder for [`CisScanResultDetailsFilterCriteria`](crate::types::CisScanResultDetailsFilterCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisScanResultDetailsFilterCriteriaBuilder {
     pub(crate) finding_status_filters: ::std::option::Option<::std::vec::Vec<crate::types::CisFindingStatusFilter>>,
     pub(crate) check_id_filters: ::std::option::Option<::std::vec::Vec<crate::types::CisStringFilter>>,

@@ -37,8 +37,8 @@ impl CreateConnectionApiKeyAuthRequestParameters {
 }
 
 /// A builder for [`CreateConnectionApiKeyAuthRequestParameters`](crate::types::CreateConnectionApiKeyAuthRequestParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateConnectionApiKeyAuthRequestParametersBuilder {
     pub(crate) api_key_name: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_value: ::std::option::Option<::std::string::String>,

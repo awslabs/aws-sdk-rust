@@ -26,8 +26,8 @@ impl GetEncryptionKeyInput {
 }
 
 /// A builder for [`GetEncryptionKeyInput`](crate::operation::get_encryption_key::GetEncryptionKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEncryptionKeyInputBuilder {
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,

@@ -74,8 +74,8 @@ impl LaunchProfileInitializationActiveDirectory {
 }
 
 /// A builder for [`LaunchProfileInitializationActiveDirectory`](crate::types::LaunchProfileInitializationActiveDirectory).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LaunchProfileInitializationActiveDirectoryBuilder {
     pub(crate) computer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,

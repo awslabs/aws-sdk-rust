@@ -44,8 +44,8 @@ impl DeleteLensShareInput {
 }
 
 /// A builder for [`DeleteLensShareInput`](crate::operation::delete_lens_share::DeleteLensShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLensShareInputBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,

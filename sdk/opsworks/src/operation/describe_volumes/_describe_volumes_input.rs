@@ -40,8 +40,8 @@ impl DescribeVolumesInput {
 }
 
 /// A builder for [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVolumesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,

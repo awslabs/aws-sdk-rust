@@ -75,8 +75,8 @@ impl LogStream {
 }
 
 /// A builder for [`LogStream`](crate::types::LogStream).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogStreamBuilder {
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<i64>,

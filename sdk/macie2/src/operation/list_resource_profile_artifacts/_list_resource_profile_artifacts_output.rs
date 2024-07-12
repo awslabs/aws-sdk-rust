@@ -36,8 +36,8 @@ impl ListResourceProfileArtifactsOutput {
 }
 
 /// A builder for [`ListResourceProfileArtifactsOutput`](crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceProfileArtifactsOutputBuilder {
     pub(crate) artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProfileArtifact>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

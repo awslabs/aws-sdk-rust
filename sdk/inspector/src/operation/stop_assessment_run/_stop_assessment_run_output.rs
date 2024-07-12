@@ -18,8 +18,8 @@ impl StopAssessmentRunOutput {
 }
 
 /// A builder for [`StopAssessmentRunOutput`](crate::operation::stop_assessment_run::StopAssessmentRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopAssessmentRunOutputBuilder {
     _request_id: Option<String>,
 }

@@ -29,8 +29,8 @@ impl BatchDetectDominantLanguageInput {
 }
 
 /// A builder for [`BatchDetectDominantLanguageInput`](crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchDetectDominantLanguageInputBuilder {
     pub(crate) text_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

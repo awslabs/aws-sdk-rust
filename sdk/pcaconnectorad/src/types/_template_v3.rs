@@ -71,8 +71,8 @@ impl TemplateV3 {
 }
 
 /// A builder for [`TemplateV3`](crate::types::TemplateV3).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateV3Builder {
     pub(crate) certificate_validity: ::std::option::Option<crate::types::CertificateValidity>,
     pub(crate) superseded_templates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

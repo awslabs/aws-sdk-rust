@@ -70,8 +70,8 @@ impl ListUniqueProblemsOutput {
 }
 
 /// A builder for [`ListUniqueProblemsOutput`](crate::operation::list_unique_problems::ListUniqueProblemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUniqueProblemsOutputBuilder {
     pub(crate) unique_problems:
         ::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>>,

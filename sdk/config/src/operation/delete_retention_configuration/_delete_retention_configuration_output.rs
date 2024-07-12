@@ -18,8 +18,8 @@ impl DeleteRetentionConfigurationOutput {
 }
 
 /// A builder for [`DeleteRetentionConfigurationOutput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRetentionConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

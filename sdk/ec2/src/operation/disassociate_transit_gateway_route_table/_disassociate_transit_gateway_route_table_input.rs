@@ -32,8 +32,8 @@ impl DisassociateTransitGatewayRouteTableInput {
 }
 
 /// A builder for [`DisassociateTransitGatewayRouteTableInput`](crate::operation::disassociate_transit_gateway_route_table::DisassociateTransitGatewayRouteTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTransitGatewayRouteTableInputBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteLayerVersionOutput {
 }
 
 /// A builder for [`DeleteLayerVersionOutput`](crate::operation::delete_layer_version::DeleteLayerVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLayerVersionOutputBuilder {
     _request_id: Option<String>,
 }

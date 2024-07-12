@@ -77,8 +77,8 @@ impl TestStateInput {
 }
 
 /// A builder for [`TestStateInput`](crate::operation::test_state::TestStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TestStateInputBuilder {
     pub(crate) definition: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

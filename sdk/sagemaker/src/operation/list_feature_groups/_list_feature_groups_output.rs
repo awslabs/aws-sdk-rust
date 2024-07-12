@@ -34,8 +34,8 @@ impl ListFeatureGroupsOutput {
 }
 
 /// A builder for [`ListFeatureGroupsOutput`](crate::operation::list_feature_groups::ListFeatureGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFeatureGroupsOutputBuilder {
     pub(crate) feature_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FeatureGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

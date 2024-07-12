@@ -28,8 +28,8 @@ impl DetachInstancesFromLoadBalancerInput {
 }
 
 /// A builder for [`DetachInstancesFromLoadBalancerInput`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachInstancesFromLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -26,8 +26,8 @@ impl CreateSiteOutput {
 }
 
 /// A builder for [`CreateSiteOutput`](crate::operation::create_site::CreateSiteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSiteOutputBuilder {
     pub(crate) site: ::std::option::Option<crate::types::Site>,
     _request_id: Option<String>,

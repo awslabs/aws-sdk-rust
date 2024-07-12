@@ -45,8 +45,8 @@ impl HlsCdnSettings {
 }
 
 /// A builder for [`HlsCdnSettings`](crate::types::HlsCdnSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsCdnSettingsBuilder {
     pub(crate) hls_akamai_settings: ::std::option::Option<crate::types::HlsAkamaiSettings>,
     pub(crate) hls_basic_put_settings: ::std::option::Option<crate::types::HlsBasicPutSettings>,

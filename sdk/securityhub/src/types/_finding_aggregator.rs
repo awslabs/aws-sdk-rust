@@ -21,8 +21,8 @@ impl FindingAggregator {
 }
 
 /// A builder for [`FindingAggregator`](crate::types::FindingAggregator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingAggregatorBuilder {
     pub(crate) finding_aggregator_arn: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl UpdateMediaPipelineKinesisVideoStreamPoolInput {
 }
 
 /// A builder for [`UpdateMediaPipelineKinesisVideoStreamPoolInput`](crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMediaPipelineKinesisVideoStreamPoolInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) stream_configuration: ::std::option::Option<crate::types::KinesisVideoStreamConfigurationUpdate>,

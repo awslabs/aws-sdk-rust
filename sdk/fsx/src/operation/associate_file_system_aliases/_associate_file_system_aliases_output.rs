@@ -29,8 +29,8 @@ impl AssociateFileSystemAliasesOutput {
 }
 
 /// A builder for [`AssociateFileSystemAliasesOutput`](crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateFileSystemAliasesOutputBuilder {
     pub(crate) aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     _request_id: Option<String>,

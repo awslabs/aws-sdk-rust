@@ -33,8 +33,8 @@ impl CreateEventBridgeRuleTemplateGroupInput {
 }
 
 /// A builder for [`CreateEventBridgeRuleTemplateGroupInput`](crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEventBridgeRuleTemplateGroupInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

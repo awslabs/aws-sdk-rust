@@ -34,8 +34,8 @@ impl GetMapStyleDescriptorInput {
 }
 
 /// A builder for [`GetMapStyleDescriptorInput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetMapStyleDescriptorInputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

@@ -73,8 +73,8 @@ impl PredictiveScalingConfiguration {
 }
 
 /// A builder for [`PredictiveScalingConfiguration`](crate::types::PredictiveScalingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredictiveScalingConfigurationBuilder {
     pub(crate) metric_specifications: ::std::option::Option<::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>,
     pub(crate) mode: ::std::option::Option<crate::types::PredictiveScalingMode>,

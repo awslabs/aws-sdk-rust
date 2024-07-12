@@ -29,8 +29,8 @@ impl RealTimeAlertConfiguration {
 }
 
 /// A builder for [`RealTimeAlertConfiguration`](crate::types::RealTimeAlertConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RealTimeAlertConfigurationBuilder {
     pub(crate) disabled: ::std::option::Option<bool>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeAlertRule>>,

@@ -46,8 +46,8 @@ impl ListRuleGroupsInput {
 }
 
 /// A builder for [`ListRuleGroupsInput`](crate::operation::list_rule_groups::ListRuleGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRuleGroupsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

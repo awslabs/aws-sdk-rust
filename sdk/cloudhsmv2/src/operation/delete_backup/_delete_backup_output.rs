@@ -26,8 +26,8 @@ impl DeleteBackupOutput {
 }
 
 /// A builder for [`DeleteBackupOutput`](crate::operation::delete_backup::DeleteBackupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBackupOutputBuilder {
     pub(crate) backup: ::std::option::Option<crate::types::Backup>,
     _request_id: Option<String>,

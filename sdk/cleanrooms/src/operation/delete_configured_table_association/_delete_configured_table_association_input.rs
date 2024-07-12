@@ -26,8 +26,8 @@ impl DeleteConfiguredTableAssociationInput {
 }
 
 /// A builder for [`DeleteConfiguredTableAssociationInput`](crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfiguredTableAssociationInputBuilder {
     pub(crate) configured_table_association_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,

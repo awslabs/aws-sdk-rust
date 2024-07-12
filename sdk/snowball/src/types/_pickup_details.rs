@@ -70,8 +70,8 @@ impl PickupDetails {
 }
 
 /// A builder for [`PickupDetails`](crate::types::PickupDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PickupDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,

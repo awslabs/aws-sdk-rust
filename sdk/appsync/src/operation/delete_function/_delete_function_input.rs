@@ -26,8 +26,8 @@ impl DeleteFunctionInput {
 }
 
 /// A builder for [`DeleteFunctionInput`](crate::operation::delete_function::DeleteFunctionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFunctionInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_id: ::std::option::Option<::std::string::String>,

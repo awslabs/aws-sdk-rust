@@ -34,8 +34,8 @@ impl ListEndpointConfigsOutput {
 }
 
 /// A builder for [`ListEndpointConfigsOutput`](crate::operation::list_endpoint_configs::ListEndpointConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEndpointConfigsOutputBuilder {
     pub(crate) endpoint_configs: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfigSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

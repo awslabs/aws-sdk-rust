@@ -32,8 +32,8 @@ impl DeleteKxScalingGroupInput {
 }
 
 /// A builder for [`DeleteKxScalingGroupInput`](crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKxScalingGroupInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_group_name: ::std::option::Option<::std::string::String>,

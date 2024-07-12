@@ -35,8 +35,8 @@ impl AwsWafv2CustomResponseDetails {
 }
 
 /// A builder for [`AwsWafv2CustomResponseDetails`](crate::types::AwsWafv2CustomResponseDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafv2CustomResponseDetailsBuilder {
     pub(crate) custom_response_body_key: ::std::option::Option<::std::string::String>,
     pub(crate) response_code: ::std::option::Option<i32>,

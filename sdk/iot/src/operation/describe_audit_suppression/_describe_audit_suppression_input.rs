@@ -26,8 +26,8 @@ impl DescribeAuditSuppressionInput {
 }
 
 /// A builder for [`DescribeAuditSuppressionInput`](crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAuditSuppressionInputBuilder {
     pub(crate) check_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,

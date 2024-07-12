@@ -64,8 +64,8 @@ impl ListNotificationsInput {
 }
 
 /// A builder for [`ListNotificationsInput`](crate::operation::list_notifications::ListNotificationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNotificationsInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::NotificationType>,

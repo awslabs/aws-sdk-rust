@@ -21,8 +21,8 @@ impl CertificateAuthenticationRequest {
 }
 
 /// A builder for [`CertificateAuthenticationRequest`](crate::types::CertificateAuthenticationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CertificateAuthenticationRequestBuilder {
     pub(crate) client_root_certificate_chain_arn: ::std::option::Option<::std::string::String>,
 }

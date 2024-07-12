@@ -21,8 +21,8 @@ impl HistoryEventExecutionDataDetails {
 }
 
 /// A builder for [`HistoryEventExecutionDataDetails`](crate::types::HistoryEventExecutionDataDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HistoryEventExecutionDataDetailsBuilder {
     pub(crate) truncated: ::std::option::Option<bool>,
 }

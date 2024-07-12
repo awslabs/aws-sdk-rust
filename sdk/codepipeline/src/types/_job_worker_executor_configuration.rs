@@ -31,8 +31,8 @@ impl JobWorkerExecutorConfiguration {
 }
 
 /// A builder for [`JobWorkerExecutorConfiguration`](crate::types::JobWorkerExecutorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobWorkerExecutorConfigurationBuilder {
     pub(crate) polling_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) polling_service_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

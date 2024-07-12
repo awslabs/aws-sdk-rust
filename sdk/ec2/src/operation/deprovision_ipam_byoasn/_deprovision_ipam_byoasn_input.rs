@@ -32,8 +32,8 @@ impl DeprovisionIpamByoasnInput {
 }
 
 /// A builder for [`DeprovisionIpamByoasnInput`](crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprovisionIpamByoasnInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_id: ::std::option::Option<::std::string::String>,

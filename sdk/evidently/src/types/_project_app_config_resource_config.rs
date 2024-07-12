@@ -28,8 +28,8 @@ impl ProjectAppConfigResourceConfig {
 }
 
 /// A builder for [`ProjectAppConfigResourceConfig`](crate::types::ProjectAppConfigResourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectAppConfigResourceConfigBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,

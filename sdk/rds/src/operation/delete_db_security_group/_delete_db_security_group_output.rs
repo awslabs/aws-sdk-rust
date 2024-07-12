@@ -18,8 +18,8 @@ impl DeleteDbSecurityGroupOutput {
 }
 
 /// A builder for [`DeleteDbSecurityGroupOutput`](crate::operation::delete_db_security_group::DeleteDbSecurityGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbSecurityGroupOutputBuilder {
     _request_id: Option<String>,
 }

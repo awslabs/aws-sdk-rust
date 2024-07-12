@@ -49,8 +49,8 @@ impl Datum {
 }
 
 /// A builder for [`Datum`](crate::types::Datum).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatumBuilder {
     pub(crate) scalar_value: ::std::option::Option<::std::string::String>,
     pub(crate) time_series_value: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPoint>>,

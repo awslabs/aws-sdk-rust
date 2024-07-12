@@ -128,8 +128,8 @@ impl CreateKxVolumeOutput {
 }
 
 /// A builder for [`CreateKxVolumeOutput`](crate::operation::create_kx_volume::CreateKxVolumeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKxVolumeOutputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl AutoExportRevisionToS3RequestDetails {
 }
 
 /// A builder for [`AutoExportRevisionToS3RequestDetails`](crate::types::AutoExportRevisionToS3RequestDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoExportRevisionToS3RequestDetailsBuilder {
     pub(crate) encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     pub(crate) revision_destination: ::std::option::Option<crate::types::AutoExportRevisionDestinationEntry>,

@@ -71,8 +71,8 @@ impl AccessPreview {
 }
 
 /// A builder for [`AccessPreview`](crate::types::AccessPreview).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessPreviewBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,

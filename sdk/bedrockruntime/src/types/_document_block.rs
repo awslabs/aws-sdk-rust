@@ -62,8 +62,8 @@ impl DocumentBlock {
 }
 
 /// A builder for [`DocumentBlock`](crate::types::DocumentBlock).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentBlockBuilder {
     pub(crate) format: ::std::option::Option<crate::types::DocumentFormat>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

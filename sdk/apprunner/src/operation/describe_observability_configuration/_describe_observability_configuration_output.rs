@@ -26,8 +26,8 @@ impl DescribeObservabilityConfigurationOutput {
 }
 
 /// A builder for [`DescribeObservabilityConfigurationOutput`](crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeObservabilityConfigurationOutputBuilder {
     pub(crate) observability_configuration: ::std::option::Option<crate::types::ObservabilityConfiguration>,
     _request_id: Option<String>,

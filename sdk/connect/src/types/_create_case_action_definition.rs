@@ -29,8 +29,8 @@ impl CreateCaseActionDefinition {
 }
 
 /// A builder for [`CreateCaseActionDefinition`](crate::types::CreateCaseActionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCaseActionDefinitionBuilder {
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,

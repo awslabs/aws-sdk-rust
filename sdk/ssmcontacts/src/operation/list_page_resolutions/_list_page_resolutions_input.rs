@@ -26,8 +26,8 @@ impl ListPageResolutionsInput {
 }
 
 /// A builder for [`ListPageResolutionsInput`](crate::operation::list_page_resolutions::ListPageResolutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPageResolutionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_id: ::std::option::Option<::std::string::String>,

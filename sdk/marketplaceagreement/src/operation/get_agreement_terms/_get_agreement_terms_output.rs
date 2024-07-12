@@ -34,8 +34,8 @@ impl GetAgreementTermsOutput {
 }
 
 /// A builder for [`GetAgreementTermsOutput`](crate::operation::get_agreement_terms::GetAgreementTermsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAgreementTermsOutputBuilder {
     pub(crate) accepted_terms: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedTerm>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

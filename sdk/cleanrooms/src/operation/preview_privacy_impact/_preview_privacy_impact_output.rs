@@ -26,8 +26,8 @@ impl PreviewPrivacyImpactOutput {
 }
 
 /// A builder for [`PreviewPrivacyImpactOutput`](crate::operation::preview_privacy_impact::PreviewPrivacyImpactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PreviewPrivacyImpactOutputBuilder {
     pub(crate) privacy_impact: ::std::option::Option<crate::types::PrivacyImpact>,
     _request_id: Option<String>,

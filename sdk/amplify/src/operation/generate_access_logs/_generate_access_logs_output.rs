@@ -27,8 +27,8 @@ impl GenerateAccessLogsOutput {
 }
 
 /// A builder for [`GenerateAccessLogsOutput`](crate::operation::generate_access_logs::GenerateAccessLogsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateAccessLogsOutputBuilder {
     pub(crate) log_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -39,8 +39,8 @@ impl ServerStrategy {
 }
 
 /// A builder for [`ServerStrategy`](crate::types::ServerStrategy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerStrategyBuilder {
     pub(crate) recommendation: ::std::option::Option<crate::types::RecommendationSet>,
     pub(crate) status: ::std::option::Option<crate::types::StrategyRecommendation>,

@@ -18,8 +18,8 @@ impl DeleteStorageProfileOutput {
 }
 
 /// A builder for [`DeleteStorageProfileOutput`](crate::operation::delete_storage_profile::DeleteStorageProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStorageProfileOutputBuilder {
     _request_id: Option<String>,
 }

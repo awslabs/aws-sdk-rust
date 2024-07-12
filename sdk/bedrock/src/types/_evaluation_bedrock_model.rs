@@ -38,8 +38,8 @@ impl EvaluationBedrockModel {
 }
 
 /// A builder for [`EvaluationBedrockModel`](crate::types::EvaluationBedrockModel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EvaluationBedrockModelBuilder {
     pub(crate) model_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) inference_params: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl DescribeTestCasesInput {
 }
 
 /// A builder for [`DescribeTestCasesInput`](crate::operation::describe_test_cases::DescribeTestCasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTestCasesInputBuilder {
     pub(crate) report_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

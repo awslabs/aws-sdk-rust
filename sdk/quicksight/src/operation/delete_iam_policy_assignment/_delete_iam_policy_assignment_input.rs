@@ -32,8 +32,8 @@ impl DeleteIamPolicyAssignmentInput {
 }
 
 /// A builder for [`DeleteIamPolicyAssignmentInput`](crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIamPolicyAssignmentInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_name: ::std::option::Option<::std::string::String>,

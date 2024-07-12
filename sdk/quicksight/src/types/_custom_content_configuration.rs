@@ -39,8 +39,8 @@ impl CustomContentConfiguration {
 }
 
 /// A builder for [`CustomContentConfiguration`](crate::types::CustomContentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomContentConfigurationBuilder {
     pub(crate) content_url: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<crate::types::CustomContentType>,

@@ -21,8 +21,8 @@ impl MatchingResource {
 }
 
 /// A builder for [`MatchingResource`](crate::types::MatchingResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MatchingResourceBuilder {
     pub(crate) matching_bucket: ::std::option::Option<crate::types::MatchingBucket>,
 }

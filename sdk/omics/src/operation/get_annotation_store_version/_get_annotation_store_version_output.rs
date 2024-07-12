@@ -105,8 +105,8 @@ impl GetAnnotationStoreVersionOutput {
 }
 
 /// A builder for [`GetAnnotationStoreVersionOutput`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnnotationStoreVersionOutputBuilder {
     pub(crate) store_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

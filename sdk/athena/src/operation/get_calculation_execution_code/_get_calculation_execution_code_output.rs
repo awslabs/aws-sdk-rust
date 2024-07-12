@@ -26,8 +26,8 @@ impl GetCalculationExecutionCodeOutput {
 }
 
 /// A builder for [`GetCalculationExecutionCodeOutput`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCalculationExecutionCodeOutputBuilder {
     pub(crate) code_block: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

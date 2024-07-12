@@ -35,8 +35,8 @@ impl MskSourceConfiguration {
 }
 
 /// A builder for [`MskSourceConfiguration`](crate::types::MskSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MskSourceConfigurationBuilder {
     pub(crate) msk_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,

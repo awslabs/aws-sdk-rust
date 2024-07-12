@@ -44,8 +44,8 @@ impl ImportFirewallDomainsOutput {
 }
 
 /// A builder for [`ImportFirewallDomainsOutput`](crate::operation::import_firewall_domains::ImportFirewallDomainsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportFirewallDomainsOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

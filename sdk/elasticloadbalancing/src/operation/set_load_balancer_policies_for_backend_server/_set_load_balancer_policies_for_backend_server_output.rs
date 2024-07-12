@@ -20,8 +20,8 @@ impl SetLoadBalancerPoliciesForBackendServerOutput {
 }
 
 /// A builder for [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetLoadBalancerPoliciesForBackendServerOutputBuilder {
     _request_id: Option<String>,
 }

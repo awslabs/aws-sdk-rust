@@ -26,8 +26,8 @@ impl DescribeLiveSourceInput {
 }
 
 /// A builder for [`DescribeLiveSourceInput`](crate::operation::describe_live_source::DescribeLiveSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLiveSourceInputBuilder {
     pub(crate) live_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,

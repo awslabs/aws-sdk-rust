@@ -27,8 +27,8 @@ impl UpdatePolicy {
 }
 
 /// A builder for [`UpdatePolicy`](crate::types::UpdatePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePolicyBuilder {
     pub(crate) terminate_jobs_on_update: ::std::option::Option<bool>,
     pub(crate) job_execution_timeout_minutes: ::std::option::Option<i64>,

@@ -58,8 +58,8 @@ impl StartChildWorkflowExecutionFailedEventAttributes {
 }
 
 /// A builder for [`StartChildWorkflowExecutionFailedEventAttributes`](crate::types::StartChildWorkflowExecutionFailedEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartChildWorkflowExecutionFailedEventAttributesBuilder {
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     pub(crate) cause: ::std::option::Option<crate::types::StartChildWorkflowExecutionFailedCause>,

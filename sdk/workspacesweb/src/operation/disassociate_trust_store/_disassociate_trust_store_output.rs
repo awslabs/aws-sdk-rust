@@ -18,8 +18,8 @@ impl DisassociateTrustStoreOutput {
 }
 
 /// A builder for [`DisassociateTrustStoreOutput`](crate::operation::disassociate_trust_store::DisassociateTrustStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTrustStoreOutputBuilder {
     _request_id: Option<String>,
 }

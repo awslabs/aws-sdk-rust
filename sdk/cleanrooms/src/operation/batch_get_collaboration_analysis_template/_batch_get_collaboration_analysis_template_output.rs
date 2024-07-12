@@ -34,8 +34,8 @@ impl BatchGetCollaborationAnalysisTemplateOutput {
 }
 
 /// A builder for [`BatchGetCollaborationAnalysisTemplateOutput`](crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetCollaborationAnalysisTemplateOutputBuilder {
     pub(crate) collaboration_analysis_templates: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplate>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetCollaborationAnalysisTemplateError>>,

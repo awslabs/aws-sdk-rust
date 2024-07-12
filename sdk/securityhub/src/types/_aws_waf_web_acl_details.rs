@@ -41,8 +41,8 @@ impl AwsWafWebAclDetails {
 }
 
 /// A builder for [`AwsWafWebAclDetails`](crate::types::AwsWafWebAclDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafWebAclDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) default_action: ::std::option::Option<::std::string::String>,

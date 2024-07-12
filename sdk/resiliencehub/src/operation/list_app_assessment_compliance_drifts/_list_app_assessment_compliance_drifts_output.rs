@@ -33,8 +33,8 @@ impl ListAppAssessmentComplianceDriftsOutput {
 }
 
 /// A builder for [`ListAppAssessmentComplianceDriftsOutput`](crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppAssessmentComplianceDriftsOutputBuilder {
     pub(crate) compliance_drifts: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceDrift>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

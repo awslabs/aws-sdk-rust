@@ -45,8 +45,8 @@ impl CustomKeyStoreHasCmKsException {
 }
 
 /// A builder for [`CustomKeyStoreHasCmKsException`](crate::types::error::CustomKeyStoreHasCmKsException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomKeyStoreHasCmKsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

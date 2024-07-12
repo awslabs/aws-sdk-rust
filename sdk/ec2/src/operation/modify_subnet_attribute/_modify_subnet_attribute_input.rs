@@ -88,8 +88,8 @@ impl ModifySubnetAttributeInput {
 }
 
 /// A builder for [`ModifySubnetAttributeInput`](crate::operation::modify_subnet_attribute::ModifySubnetAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifySubnetAttributeInputBuilder {
     pub(crate) assign_ipv6_address_on_creation: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) map_public_ip_on_launch: ::std::option::Option<crate::types::AttributeBooleanValue>,

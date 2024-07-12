@@ -18,8 +18,8 @@ impl CancelStatementOutput {
 }
 
 /// A builder for [`CancelStatementOutput`](crate::operation::cancel_statement::CancelStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelStatementOutputBuilder {
     _request_id: Option<String>,
 }

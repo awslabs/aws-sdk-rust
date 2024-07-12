@@ -33,8 +33,8 @@ impl CanaryStatus {
 }
 
 /// A builder for [`CanaryStatus`](crate::types::CanaryStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CanaryStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::CanaryState>,
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,

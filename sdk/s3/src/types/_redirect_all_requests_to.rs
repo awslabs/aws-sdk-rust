@@ -28,8 +28,8 @@ impl RedirectAllRequestsTo {
 }
 
 /// A builder for [`RedirectAllRequestsTo`](crate::types::RedirectAllRequestsTo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedirectAllRequestsToBuilder {
     pub(crate) host_name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,

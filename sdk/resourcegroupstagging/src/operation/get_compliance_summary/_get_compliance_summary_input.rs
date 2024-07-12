@@ -86,8 +86,8 @@ impl GetComplianceSummaryInput {
 }
 
 /// A builder for [`GetComplianceSummaryInput`](crate::operation::get_compliance_summary::GetComplianceSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetComplianceSummaryInputBuilder {
     pub(crate) target_id_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) region_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

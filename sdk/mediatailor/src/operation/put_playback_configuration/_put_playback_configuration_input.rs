@@ -110,8 +110,8 @@ impl PutPlaybackConfigurationInput {
 }
 
 /// A builder for [`PutPlaybackConfigurationInput`](crate::operation::put_playback_configuration::PutPlaybackConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutPlaybackConfigurationInputBuilder {
     pub(crate) ad_decision_server_url: ::std::option::Option<::std::string::String>,
     pub(crate) avail_suppression: ::std::option::Option<crate::types::AvailSuppression>,

@@ -26,8 +26,8 @@ impl GetLatestAssessmentIdOutput {
 }
 
 /// A builder for [`GetLatestAssessmentIdOutput`](crate::operation::get_latest_assessment_id::GetLatestAssessmentIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLatestAssessmentIdOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

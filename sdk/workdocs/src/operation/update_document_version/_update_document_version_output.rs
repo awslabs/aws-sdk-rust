@@ -18,8 +18,8 @@ impl UpdateDocumentVersionOutput {
 }
 
 /// A builder for [`UpdateDocumentVersionOutput`](crate::operation::update_document_version::UpdateDocumentVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDocumentVersionOutputBuilder {
     _request_id: Option<String>,
 }

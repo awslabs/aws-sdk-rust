@@ -37,8 +37,8 @@ impl SetSecurityGroupsOutput {
 }
 
 /// A builder for [`SetSecurityGroupsOutput`](crate::operation::set_security_groups::SetSecurityGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetSecurityGroupsOutputBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) enforce_security_group_inbound_rules_on_private_link_traffic:

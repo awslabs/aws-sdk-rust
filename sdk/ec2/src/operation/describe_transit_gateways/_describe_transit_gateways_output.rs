@@ -34,8 +34,8 @@ impl DescribeTransitGatewaysOutput {
 }
 
 /// A builder for [`DescribeTransitGatewaysOutput`](crate::operation::describe_transit_gateways::DescribeTransitGatewaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransitGatewaysOutputBuilder {
     pub(crate) transit_gateways: ::std::option::Option<::std::vec::Vec<crate::types::TransitGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

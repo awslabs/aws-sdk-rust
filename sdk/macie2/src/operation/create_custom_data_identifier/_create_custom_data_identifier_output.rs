@@ -26,8 +26,8 @@ impl CreateCustomDataIdentifierOutput {
 }
 
 /// A builder for [`CreateCustomDataIdentifierOutput`](crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomDataIdentifierOutputBuilder {
     pub(crate) custom_data_identifier_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

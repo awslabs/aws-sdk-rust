@@ -27,8 +27,8 @@ impl ScheduledActionAssociation {
 }
 
 /// A builder for [`ScheduledActionAssociation`](crate::types::ScheduledActionAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduledActionAssociationBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,

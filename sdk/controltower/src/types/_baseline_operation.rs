@@ -51,8 +51,8 @@ impl BaselineOperation {
 }
 
 /// A builder for [`BaselineOperation`](crate::types::BaselineOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BaselineOperationBuilder {
     pub(crate) operation_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) operation_type: ::std::option::Option<crate::types::BaselineOperationType>,

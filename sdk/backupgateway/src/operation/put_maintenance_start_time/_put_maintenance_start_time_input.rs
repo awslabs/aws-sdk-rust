@@ -46,8 +46,8 @@ impl PutMaintenanceStartTimeInput {
 }
 
 /// A builder for [`PutMaintenanceStartTimeInput`](crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMaintenanceStartTimeInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hour_of_day: ::std::option::Option<i32>,

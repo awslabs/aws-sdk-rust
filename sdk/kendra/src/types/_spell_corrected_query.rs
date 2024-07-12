@@ -29,8 +29,8 @@ impl SpellCorrectedQuery {
 }
 
 /// A builder for [`SpellCorrectedQuery`](crate::types::SpellCorrectedQuery).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpellCorrectedQueryBuilder {
     pub(crate) suggested_query_text: ::std::option::Option<::std::string::String>,
     pub(crate) corrections: ::std::option::Option<::std::vec::Vec<crate::types::Correction>>,

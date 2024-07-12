@@ -26,8 +26,8 @@ impl DescribeMetricAttributionOutput {
 }
 
 /// A builder for [`DescribeMetricAttributionOutput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMetricAttributionOutputBuilder {
     pub(crate) metric_attribution: ::std::option::Option<crate::types::MetricAttribution>,
     _request_id: Option<String>,

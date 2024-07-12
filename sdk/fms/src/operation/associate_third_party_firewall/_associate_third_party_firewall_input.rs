@@ -20,8 +20,8 @@ impl AssociateThirdPartyFirewallInput {
 }
 
 /// A builder for [`AssociateThirdPartyFirewallInput`](crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateThirdPartyFirewallInputBuilder {
     pub(crate) third_party_firewall: ::std::option::Option<crate::types::ThirdPartyFirewall>,
 }

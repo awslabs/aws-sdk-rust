@@ -28,8 +28,8 @@ impl PutProjectEventsInput {
 }
 
 /// A builder for [`PutProjectEventsInput`](crate::operation::put_project_events::PutProjectEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutProjectEventsInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,

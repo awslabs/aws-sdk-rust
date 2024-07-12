@@ -41,8 +41,8 @@ impl KxDataviewConfiguration {
 }
 
 /// A builder for [`KxDataviewConfiguration`](crate::types::KxDataviewConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KxDataviewConfigurationBuilder {
     pub(crate) dataview_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataview_version_id: ::std::option::Option<::std::string::String>,

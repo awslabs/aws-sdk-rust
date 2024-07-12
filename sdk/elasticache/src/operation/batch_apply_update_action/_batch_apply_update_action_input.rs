@@ -36,8 +36,8 @@ impl BatchApplyUpdateActionInput {
 }
 
 /// A builder for [`BatchApplyUpdateActionInput`](crate::operation::batch_apply_update_action::BatchApplyUpdateActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchApplyUpdateActionInputBuilder {
     pub(crate) replication_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cache_cluster_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -37,8 +37,8 @@ impl ResourceDescription {
 }
 
 /// A builder for [`ResourceDescription`](crate::types::ResourceDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ResourceDescriptionBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) properties: ::std::option::Option<::std::string::String>,

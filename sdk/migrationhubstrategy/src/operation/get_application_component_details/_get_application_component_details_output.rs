@@ -48,8 +48,8 @@ impl GetApplicationComponentDetailsOutput {
 }
 
 /// A builder for [`GetApplicationComponentDetailsOutput`](crate::operation::get_application_component_details::GetApplicationComponentDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApplicationComponentDetailsOutputBuilder {
     pub(crate) application_component_detail: ::std::option::Option<crate::types::ApplicationComponentDetail>,
     pub(crate) associated_applications: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>,

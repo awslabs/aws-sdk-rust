@@ -27,8 +27,8 @@ impl AcceleratorCountRequest {
 }
 
 /// A builder for [`AcceleratorCountRequest`](crate::types::AcceleratorCountRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceleratorCountRequestBuilder {
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,

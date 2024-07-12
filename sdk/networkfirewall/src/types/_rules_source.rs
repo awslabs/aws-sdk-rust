@@ -47,8 +47,8 @@ impl RulesSource {
 }
 
 /// A builder for [`RulesSource`](crate::types::RulesSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RulesSourceBuilder {
     pub(crate) rules_string: ::std::option::Option<::std::string::String>,
     pub(crate) rules_source_list: ::std::option::Option<crate::types::RulesSourceList>,

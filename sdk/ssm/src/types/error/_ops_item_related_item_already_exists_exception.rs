@@ -59,8 +59,8 @@ impl OpsItemRelatedItemAlreadyExistsException {
 }
 
 /// A builder for [`OpsItemRelatedItemAlreadyExistsException`](crate::types::error::OpsItemRelatedItemAlreadyExistsException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpsItemRelatedItemAlreadyExistsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) resource_uri: ::std::option::Option<::std::string::String>,

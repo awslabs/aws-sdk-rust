@@ -26,8 +26,8 @@ impl GetBrowserSettingsOutput {
 }
 
 /// A builder for [`GetBrowserSettingsOutput`](crate::operation::get_browser_settings::GetBrowserSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBrowserSettingsOutputBuilder {
     pub(crate) browser_settings: ::std::option::Option<crate::types::BrowserSettings>,
     _request_id: Option<String>,

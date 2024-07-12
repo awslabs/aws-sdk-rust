@@ -26,8 +26,8 @@ impl GetConfiguredTableAnalysisRuleInput {
 }
 
 /// A builder for [`GetConfiguredTableAnalysisRuleInput`](crate::operation::get_configured_table_analysis_rule::GetConfiguredTableAnalysisRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfiguredTableAnalysisRuleInputBuilder {
     pub(crate) configured_table_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_rule_type: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,

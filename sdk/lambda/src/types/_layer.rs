@@ -39,8 +39,8 @@ impl Layer {
 }
 
 /// A builder for [`Layer`](crate::types::Layer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LayerBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) code_size: ::std::option::Option<i64>,

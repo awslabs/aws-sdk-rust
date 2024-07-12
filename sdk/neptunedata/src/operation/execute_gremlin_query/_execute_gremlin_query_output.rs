@@ -48,8 +48,8 @@ impl ExecuteGremlinQueryOutput {
 }
 
 /// A builder for [`ExecuteGremlinQueryOutput`](crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteGremlinQueryOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::GremlinQueryStatusAttributes>,

@@ -51,8 +51,8 @@ impl CategoryProperties {
 }
 
 /// A builder for [`CategoryProperties`](crate::types::CategoryProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CategoryPropertiesBuilder {
     pub(crate) category_name: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,

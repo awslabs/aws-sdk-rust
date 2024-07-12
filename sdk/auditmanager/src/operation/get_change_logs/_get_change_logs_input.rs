@@ -44,8 +44,8 @@ impl GetChangeLogsInput {
 }
 
 /// A builder for [`GetChangeLogsInput`](crate::operation::get_change_logs::GetChangeLogsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChangeLogsInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,

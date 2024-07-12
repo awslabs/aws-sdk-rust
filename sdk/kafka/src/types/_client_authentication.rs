@@ -33,8 +33,8 @@ impl ClientAuthentication {
 }
 
 /// A builder for [`ClientAuthentication`](crate::types::ClientAuthentication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientAuthenticationBuilder {
     pub(crate) sasl: ::std::option::Option<crate::types::Sasl>,
     pub(crate) tls: ::std::option::Option<crate::types::Tls>,

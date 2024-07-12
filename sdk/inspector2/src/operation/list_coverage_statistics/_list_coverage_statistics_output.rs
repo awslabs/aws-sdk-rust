@@ -40,8 +40,8 @@ impl ListCoverageStatisticsOutput {
 }
 
 /// A builder for [`ListCoverageStatisticsOutput`](crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCoverageStatisticsOutputBuilder {
     pub(crate) counts_by_group: ::std::option::Option<::std::vec::Vec<crate::types::Counts>>,
     pub(crate) total_counts: ::std::option::Option<i64>,

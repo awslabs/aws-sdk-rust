@@ -60,8 +60,8 @@ impl DescribeVerifiedAccessEndpointsInput {
 }
 
 /// A builder for [`DescribeVerifiedAccessEndpointsInput`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVerifiedAccessEndpointsInputBuilder {
     pub(crate) verified_access_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListArchiveRulesOutput {
 }
 
 /// A builder for [`ListArchiveRulesOutput`](crate::operation::list_archive_rules::ListArchiveRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListArchiveRulesOutputBuilder {
     pub(crate) archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

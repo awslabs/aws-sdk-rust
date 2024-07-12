@@ -26,8 +26,8 @@ impl EnableAddressTransferOutput {
 }
 
 /// A builder for [`EnableAddressTransferOutput`](crate::operation::enable_address_transfer::EnableAddressTransferOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableAddressTransferOutputBuilder {
     pub(crate) address_transfer: ::std::option::Option<crate::types::AddressTransfer>,
     _request_id: Option<String>,

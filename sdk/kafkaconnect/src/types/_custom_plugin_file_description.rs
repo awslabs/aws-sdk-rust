@@ -27,8 +27,8 @@ impl CustomPluginFileDescription {
 }
 
 /// A builder for [`CustomPluginFileDescription`](crate::types::CustomPluginFileDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomPluginFileDescriptionBuilder {
     pub(crate) file_md5: ::std::option::Option<::std::string::String>,
     pub(crate) file_size: ::std::option::Option<i64>,

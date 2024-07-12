@@ -34,8 +34,8 @@ impl GetQuerySuggestionsOutput {
 }
 
 /// A builder for [`GetQuerySuggestionsOutput`](crate::operation::get_query_suggestions::GetQuerySuggestionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQuerySuggestionsOutputBuilder {
     pub(crate) query_suggestions_id: ::std::option::Option<::std::string::String>,
     pub(crate) suggestions: ::std::option::Option<::std::vec::Vec<crate::types::Suggestion>>,

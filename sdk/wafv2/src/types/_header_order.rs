@@ -39,8 +39,8 @@ impl HeaderOrder {
 }
 
 /// A builder for [`HeaderOrder`](crate::types::HeaderOrder).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HeaderOrderBuilder {
     pub(crate) oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }

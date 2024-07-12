@@ -26,8 +26,8 @@ impl DeregisterIdentityProviderInput {
 }
 
 /// A builder for [`DeregisterIdentityProviderInput`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterIdentityProviderInputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     pub(crate) product: ::std::option::Option<::std::string::String>,

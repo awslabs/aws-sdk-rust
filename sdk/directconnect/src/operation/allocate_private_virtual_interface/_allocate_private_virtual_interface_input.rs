@@ -32,8 +32,8 @@ impl AllocatePrivateVirtualInterfaceInput {
 }
 
 /// A builder for [`AllocatePrivateVirtualInterfaceInput`](crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterfaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllocatePrivateVirtualInterfaceInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,

@@ -36,8 +36,8 @@ impl DeleteServiceInput {
 }
 
 /// A builder for [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceInputBuilder {
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) application_identifier: ::std::option::Option<::std::string::String>,

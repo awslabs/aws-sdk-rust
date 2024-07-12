@@ -18,8 +18,8 @@ impl DeleteSipRuleOutput {
 }
 
 /// A builder for [`DeleteSipRuleOutput`](crate::operation::delete_sip_rule::DeleteSipRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSipRuleOutputBuilder {
     _request_id: Option<String>,
 }

@@ -50,8 +50,8 @@ impl RemoveAllBackendsOutput {
 }
 
 /// A builder for [`RemoveAllBackendsOutput`](crate::operation::remove_all_backends::RemoveAllBackendsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveAllBackendsOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<::std::string::String>,

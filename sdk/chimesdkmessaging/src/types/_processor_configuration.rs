@@ -21,8 +21,8 @@ impl ProcessorConfiguration {
 }
 
 /// A builder for [`ProcessorConfiguration`](crate::types::ProcessorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessorConfigurationBuilder {
     pub(crate) lambda: ::std::option::Option<crate::types::LambdaConfiguration>,
 }

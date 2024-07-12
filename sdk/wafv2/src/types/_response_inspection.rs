@@ -44,8 +44,8 @@ impl ResponseInspection {
 }
 
 /// A builder for [`ResponseInspection`](crate::types::ResponseInspection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseInspectionBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::ResponseInspectionStatusCode>,
     pub(crate) header: ::std::option::Option<crate::types::ResponseInspectionHeader>,

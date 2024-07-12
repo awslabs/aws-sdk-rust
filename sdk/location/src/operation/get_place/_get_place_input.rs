@@ -56,8 +56,8 @@ impl GetPlaceInput {
 }
 
 /// A builder for [`GetPlaceInput`](crate::operation::get_place::GetPlaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetPlaceInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) place_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl UpdatePackageConfigurationInput {
 }
 
 /// A builder for [`UpdatePackageConfigurationInput`](crate::operation::update_package_configuration::UpdatePackageConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePackageConfigurationInputBuilder {
     pub(crate) version_update_by_jobs_config: ::std::option::Option<crate::types::VersionUpdateByJobsConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

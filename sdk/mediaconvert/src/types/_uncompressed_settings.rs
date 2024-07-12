@@ -69,8 +69,8 @@ impl UncompressedSettings {
 }
 
 /// A builder for [`UncompressedSettings`](crate::types::UncompressedSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UncompressedSettingsBuilder {
     pub(crate) fourcc: ::std::option::Option<crate::types::UncompressedFourcc>,
     pub(crate) framerate_control: ::std::option::Option<crate::types::UncompressedFramerateControl>,

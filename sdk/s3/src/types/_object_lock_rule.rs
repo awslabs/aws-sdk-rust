@@ -21,8 +21,8 @@ impl ObjectLockRule {
 }
 
 /// A builder for [`ObjectLockRule`](crate::types::ObjectLockRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectLockRuleBuilder {
     pub(crate) default_retention: ::std::option::Option<crate::types::DefaultRetention>,
 }

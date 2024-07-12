@@ -39,8 +39,8 @@ impl EntityRecognizerFilter {
 }
 
 /// A builder for [`EntityRecognizerFilter`](crate::types::EntityRecognizerFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityRecognizerFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ModelStatus>,
     pub(crate) recognizer_name: ::std::option::Option<::std::string::String>,

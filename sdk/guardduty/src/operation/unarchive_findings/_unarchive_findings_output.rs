@@ -18,8 +18,8 @@ impl UnarchiveFindingsOutput {
 }
 
 /// A builder for [`UnarchiveFindingsOutput`](crate::operation::unarchive_findings::UnarchiveFindingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnarchiveFindingsOutputBuilder {
     _request_id: Option<String>,
 }

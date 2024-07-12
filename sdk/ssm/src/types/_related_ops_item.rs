@@ -22,8 +22,8 @@ impl RelatedOpsItem {
 }
 
 /// A builder for [`RelatedOpsItem`](crate::types::RelatedOpsItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelatedOpsItemBuilder {
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
 }

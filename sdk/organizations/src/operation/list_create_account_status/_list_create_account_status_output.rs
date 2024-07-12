@@ -34,8 +34,8 @@ impl ListCreateAccountStatusOutput {
 }
 
 /// A builder for [`ListCreateAccountStatusOutput`](crate::operation::list_create_account_status::ListCreateAccountStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCreateAccountStatusOutputBuilder {
     pub(crate) create_account_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

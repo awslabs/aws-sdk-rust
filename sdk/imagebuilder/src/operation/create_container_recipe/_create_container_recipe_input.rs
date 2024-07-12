@@ -142,8 +142,8 @@ impl CreateContainerRecipeInput {
 }
 
 /// A builder for [`CreateContainerRecipeInput`](crate::operation::create_container_recipe::CreateContainerRecipeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContainerRecipeInputBuilder {
     pub(crate) container_type: ::std::option::Option<crate::types::ContainerType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

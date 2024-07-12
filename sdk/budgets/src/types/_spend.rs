@@ -43,8 +43,8 @@ impl Spend {
 }
 
 /// A builder for [`Spend`](crate::types::Spend).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpendBuilder {
     pub(crate) amount: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,

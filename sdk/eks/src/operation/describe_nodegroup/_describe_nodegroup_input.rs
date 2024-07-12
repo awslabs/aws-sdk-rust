@@ -26,8 +26,8 @@ impl DescribeNodegroupInput {
 }
 
 /// A builder for [`DescribeNodegroupInput`](crate::operation::describe_nodegroup::DescribeNodegroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNodegroupInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) nodegroup_name: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl ListMeetingTagsInput {
 }
 
 /// A builder for [`ListMeetingTagsInput`](crate::operation::list_meeting_tags::ListMeetingTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMeetingTagsInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
 }

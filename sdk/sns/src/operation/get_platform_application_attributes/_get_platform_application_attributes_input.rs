@@ -21,8 +21,8 @@ impl GetPlatformApplicationAttributesInput {
 }
 
 /// A builder for [`GetPlatformApplicationAttributesInput`](crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPlatformApplicationAttributesInputBuilder {
     pub(crate) platform_application_arn: ::std::option::Option<::std::string::String>,
 }

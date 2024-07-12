@@ -35,8 +35,8 @@ impl DescribeOptionGroupOptionsOutput {
 }
 
 /// A builder for [`DescribeOptionGroupOptionsOutput`](crate::operation::describe_option_group_options::DescribeOptionGroupOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOptionGroupOptionsOutputBuilder {
     pub(crate) option_group_options: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupOption>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

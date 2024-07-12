@@ -27,8 +27,8 @@ impl InstanceCountLimits {
 }
 
 /// A builder for [`InstanceCountLimits`](crate::types::InstanceCountLimits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceCountLimitsBuilder {
     pub(crate) minimum_instance_count: ::std::option::Option<i32>,
     pub(crate) maximum_instance_count: ::std::option::Option<i32>,

@@ -32,8 +32,8 @@ impl DeleteGrantInput {
 }
 
 /// A builder for [`DeleteGrantInput`](crate::operation::delete_grant::DeleteGrantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGrantInputBuilder {
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,

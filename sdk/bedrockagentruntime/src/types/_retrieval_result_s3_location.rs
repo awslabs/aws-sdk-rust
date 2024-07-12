@@ -30,8 +30,8 @@ impl RetrievalResultS3Location {
 }
 
 /// A builder for [`RetrievalResultS3Location`](crate::types::RetrievalResultS3Location).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetrievalResultS3LocationBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
 }

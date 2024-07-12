@@ -21,8 +21,8 @@ impl DeleteConfigRuleInput {
 }
 
 /// A builder for [`DeleteConfigRuleInput`](crate::operation::delete_config_rule::DeleteConfigRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfigRuleInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
 }

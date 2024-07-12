@@ -26,8 +26,8 @@ impl DisassociateQAppFromUserInput {
 }
 
 /// A builder for [`DisassociateQAppFromUserInput`](crate::operation::disassociate_q_app_from_user::DisassociateQAppFromUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateQAppFromUserInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,

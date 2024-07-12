@@ -56,8 +56,8 @@ impl Transition {
 }
 
 /// A builder for [`Transition`](crate::types::Transition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitionBuilder {
     pub(crate) duration_millis: ::std::option::Option<i64>,
     pub(crate) relative_position: ::std::option::Option<crate::types::RelativePosition>,

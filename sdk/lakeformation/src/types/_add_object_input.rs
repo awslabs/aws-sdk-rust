@@ -45,8 +45,8 @@ impl AddObjectInput {
 }
 
 /// A builder for [`AddObjectInput`](crate::types::AddObjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddObjectInputBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

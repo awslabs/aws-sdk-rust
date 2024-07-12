@@ -34,8 +34,8 @@ impl ListGameServersOutput {
 }
 
 /// A builder for [`ListGameServersOutput`](crate::operation::list_game_servers::ListGameServersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGameServersOutputBuilder {
     pub(crate) game_servers: ::std::option::Option<::std::vec::Vec<crate::types::GameServer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

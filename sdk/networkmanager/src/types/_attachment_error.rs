@@ -39,8 +39,8 @@ impl AttachmentError {
 }
 
 /// A builder for [`AttachmentError`](crate::types::AttachmentError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachmentErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::AttachmentErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

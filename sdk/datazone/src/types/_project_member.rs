@@ -27,8 +27,8 @@ impl ProjectMember {
 }
 
 /// A builder for [`ProjectMember`](crate::types::ProjectMember).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectMemberBuilder {
     pub(crate) member_details: ::std::option::Option<crate::types::MemberDetails>,
     pub(crate) designation: ::std::option::Option<crate::types::UserDesignation>,

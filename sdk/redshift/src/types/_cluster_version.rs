@@ -33,8 +33,8 @@ impl ClusterVersion {
 }
 
 /// A builder for [`ClusterVersion`](crate::types::ClusterVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterVersionBuilder {
     pub(crate) cluster_version: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_parameter_group_family: ::std::option::Option<::std::string::String>,

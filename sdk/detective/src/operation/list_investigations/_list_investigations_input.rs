@@ -46,8 +46,8 @@ impl ListInvestigationsInput {
 }
 
 /// A builder for [`ListInvestigationsInput`](crate::operation::list_investigations::ListInvestigationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInvestigationsInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -23,8 +23,8 @@ impl CascadingControlConfiguration {
 }
 
 /// A builder for [`CascadingControlConfiguration`](crate::types::CascadingControlConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CascadingControlConfigurationBuilder {
     pub(crate) source_controls: ::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>>,
 }

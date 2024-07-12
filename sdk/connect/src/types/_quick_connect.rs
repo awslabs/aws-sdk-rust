@@ -63,8 +63,8 @@ impl QuickConnect {
 }
 
 /// A builder for [`QuickConnect`](crate::types::QuickConnect).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QuickConnectBuilder {
     pub(crate) quick_connect_arn: ::std::option::Option<::std::string::String>,
     pub(crate) quick_connect_id: ::std::option::Option<::std::string::String>,

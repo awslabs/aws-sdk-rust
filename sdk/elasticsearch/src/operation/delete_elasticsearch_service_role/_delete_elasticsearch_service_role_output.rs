@@ -18,8 +18,8 @@ impl DeleteElasticsearchServiceRoleOutput {
 }
 
 /// A builder for [`DeleteElasticsearchServiceRoleOutput`](crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteElasticsearchServiceRoleOutputBuilder {
     _request_id: Option<String>,
 }

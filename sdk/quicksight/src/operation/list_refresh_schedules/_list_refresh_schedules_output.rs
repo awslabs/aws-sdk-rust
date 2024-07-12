@@ -40,8 +40,8 @@ impl ListRefreshSchedulesOutput {
 }
 
 /// A builder for [`ListRefreshSchedulesOutput`](crate::operation::list_refresh_schedules::ListRefreshSchedulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRefreshSchedulesOutputBuilder {
     pub(crate) refresh_schedules: ::std::option::Option<::std::vec::Vec<crate::types::RefreshSchedule>>,
     pub(crate) status: ::std::option::Option<i32>,

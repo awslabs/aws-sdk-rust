@@ -27,8 +27,8 @@ impl SubscriptionLimits {
 }
 
 /// A builder for [`SubscriptionLimits`](crate::types::SubscriptionLimits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubscriptionLimitsBuilder {
     pub(crate) protection_limits: ::std::option::Option<crate::types::ProtectionLimits>,
     pub(crate) protection_group_limits: ::std::option::Option<crate::types::ProtectionGroupLimits>,

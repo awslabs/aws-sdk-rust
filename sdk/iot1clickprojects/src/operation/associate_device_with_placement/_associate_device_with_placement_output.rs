@@ -18,8 +18,8 @@ impl AssociateDeviceWithPlacementOutput {
 }
 
 /// A builder for [`AssociateDeviceWithPlacementOutput`](crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDeviceWithPlacementOutputBuilder {
     _request_id: Option<String>,
 }

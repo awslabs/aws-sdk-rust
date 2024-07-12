@@ -45,8 +45,8 @@ impl ChangeLog {
 }
 
 /// A builder for [`ChangeLog`](crate::types::ChangeLog).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeLogBuilder {
     pub(crate) object_type: ::std::option::Option<crate::types::ObjectTypeEnum>,
     pub(crate) object_name: ::std::option::Option<::std::string::String>,

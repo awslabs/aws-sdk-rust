@@ -32,8 +32,8 @@ impl CreateFindingsReportInput {
 }
 
 /// A builder for [`CreateFindingsReportInput`](crate::operation::create_findings_report::CreateFindingsReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFindingsReportInputBuilder {
     pub(crate) filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     pub(crate) report_format: ::std::option::Option<crate::types::ReportFormat>,

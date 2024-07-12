@@ -32,8 +32,8 @@ impl EnableMacieInput {
 }
 
 /// A builder for [`EnableMacieInput`](crate::operation::enable_macie::EnableMacieInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableMacieInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,

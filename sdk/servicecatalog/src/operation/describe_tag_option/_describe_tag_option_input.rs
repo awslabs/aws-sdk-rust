@@ -20,8 +20,8 @@ impl DescribeTagOptionInput {
 }
 
 /// A builder for [`DescribeTagOptionInput`](crate::operation::describe_tag_option::DescribeTagOptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTagOptionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

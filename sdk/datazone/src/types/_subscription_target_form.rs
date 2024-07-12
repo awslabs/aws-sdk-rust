@@ -29,8 +29,8 @@ impl SubscriptionTargetForm {
 }
 
 /// A builder for [`SubscriptionTargetForm`](crate::types::SubscriptionTargetForm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubscriptionTargetFormBuilder {
     pub(crate) form_name: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,

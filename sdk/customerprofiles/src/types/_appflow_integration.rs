@@ -37,8 +37,8 @@ impl AppflowIntegration {
 }
 
 /// A builder for [`AppflowIntegration`](crate::types::AppflowIntegration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AppflowIntegrationBuilder {
     pub(crate) flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
     pub(crate) batches: ::std::option::Option<::std::vec::Vec<crate::types::Batch>>,

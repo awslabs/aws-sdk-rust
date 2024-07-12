@@ -27,8 +27,8 @@ impl IsMemberInGroupsOutput {
 }
 
 /// A builder for [`IsMemberInGroupsOutput`](crate::operation::is_member_in_groups::IsMemberInGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IsMemberInGroupsOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
     _request_id: Option<String>,

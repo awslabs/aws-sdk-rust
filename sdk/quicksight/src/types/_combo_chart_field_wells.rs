@@ -22,8 +22,8 @@ impl ComboChartFieldWells {
 }
 
 /// A builder for [`ComboChartFieldWells`](crate::types::ComboChartFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComboChartFieldWellsBuilder {
     pub(crate) combo_chart_aggregated_field_wells: ::std::option::Option<crate::types::ComboChartAggregatedFieldWells>,
 }

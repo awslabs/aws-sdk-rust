@@ -75,8 +75,8 @@ impl AuthorizerDescription {
 }
 
 /// A builder for [`AuthorizerDescription`](crate::types::AuthorizerDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizerDescriptionBuilder {
     pub(crate) authorizer_name: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_arn: ::std::option::Option<::std::string::String>,

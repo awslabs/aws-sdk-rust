@@ -22,8 +22,8 @@ impl KinesisFirehoseInput {
 }
 
 /// A builder for [`KinesisFirehoseInput`](crate::types::KinesisFirehoseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KinesisFirehoseInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

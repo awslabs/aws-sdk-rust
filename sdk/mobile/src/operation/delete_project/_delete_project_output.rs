@@ -37,8 +37,8 @@ impl DeleteProjectOutput {
 }
 
 /// A builder for [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProjectOutputBuilder {
     pub(crate) deleted_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) orphaned_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,

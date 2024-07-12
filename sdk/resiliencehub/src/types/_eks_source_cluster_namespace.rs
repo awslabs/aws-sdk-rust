@@ -29,8 +29,8 @@ impl EksSourceClusterNamespace {
 }
 
 /// A builder for [`EksSourceClusterNamespace`](crate::types::EksSourceClusterNamespace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksSourceClusterNamespaceBuilder {
     pub(crate) eks_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

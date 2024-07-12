@@ -21,8 +21,8 @@ impl ServerError {
 }
 
 /// A builder for [`ServerError`](crate::types::ServerError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerErrorBuilder {
     pub(crate) server_error_category: ::std::option::Option<crate::types::ServerErrorCategory>,
 }

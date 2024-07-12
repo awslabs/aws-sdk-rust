@@ -46,8 +46,8 @@ impl PutSchemaOutput {
 }
 
 /// A builder for [`PutSchemaOutput`](crate::operation::put_schema::PutSchemaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSchemaOutputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

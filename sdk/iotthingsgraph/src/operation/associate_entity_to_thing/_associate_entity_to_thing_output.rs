@@ -18,8 +18,8 @@ impl AssociateEntityToThingOutput {
 }
 
 /// A builder for [`AssociateEntityToThingOutput`](crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateEntityToThingOutputBuilder {
     _request_id: Option<String>,
 }

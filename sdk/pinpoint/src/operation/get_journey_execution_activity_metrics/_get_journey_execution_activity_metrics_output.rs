@@ -26,8 +26,8 @@ impl GetJourneyExecutionActivityMetricsOutput {
 }
 
 /// A builder for [`GetJourneyExecutionActivityMetricsOutput`](crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJourneyExecutionActivityMetricsOutputBuilder {
     pub(crate) journey_execution_activity_metrics_response: ::std::option::Option<crate::types::JourneyExecutionActivityMetricsResponse>,
     _request_id: Option<String>,

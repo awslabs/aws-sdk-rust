@@ -26,8 +26,8 @@ impl UpdateOrganizationConfigurationOutput {
 }
 
 /// A builder for [`UpdateOrganizationConfigurationOutput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOrganizationConfigurationOutputBuilder {
     pub(crate) auto_enable: ::std::option::Option<crate::types::AutoEnable>,
     _request_id: Option<String>,

@@ -80,8 +80,8 @@ impl GetInvestigationOutput {
 }
 
 /// A builder for [`GetInvestigationOutput`](crate::operation::get_investigation::GetInvestigationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInvestigationOutputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) investigation_id: ::std::option::Option<::std::string::String>,

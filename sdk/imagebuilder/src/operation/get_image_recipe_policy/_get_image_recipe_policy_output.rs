@@ -32,8 +32,8 @@ impl GetImageRecipePolicyOutput {
 }
 
 /// A builder for [`GetImageRecipePolicyOutput`](crate::operation::get_image_recipe_policy::GetImageRecipePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImageRecipePolicyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

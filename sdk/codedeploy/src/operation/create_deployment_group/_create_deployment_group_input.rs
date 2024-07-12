@@ -161,8 +161,8 @@ impl CreateDeploymentGroupInput {
 }
 
 /// A builder for [`CreateDeploymentGroupInput`](crate::operation::create_deployment_group::CreateDeploymentGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDeploymentGroupInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_group_name: ::std::option::Option<::std::string::String>,

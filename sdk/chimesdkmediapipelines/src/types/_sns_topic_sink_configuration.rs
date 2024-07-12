@@ -28,8 +28,8 @@ impl SnsTopicSinkConfiguration {
 }
 
 /// A builder for [`SnsTopicSinkConfiguration`](crate::types::SnsTopicSinkConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SnsTopicSinkConfigurationBuilder {
     pub(crate) insights_target: ::std::option::Option<::std::string::String>,
 }

@@ -87,8 +87,8 @@ impl Provisioned {
 }
 
 /// A builder for [`Provisioned`](crate::types::Provisioned).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionedBuilder {
     pub(crate) broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
     pub(crate) current_broker_software_info: ::std::option::Option<crate::types::BrokerSoftwareInfo>,

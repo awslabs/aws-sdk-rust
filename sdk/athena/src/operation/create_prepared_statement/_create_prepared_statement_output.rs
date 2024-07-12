@@ -18,8 +18,8 @@ impl CreatePreparedStatementOutput {
 }
 
 /// A builder for [`CreatePreparedStatementOutput`](crate::operation::create_prepared_statement::CreatePreparedStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePreparedStatementOutputBuilder {
     _request_id: Option<String>,
 }

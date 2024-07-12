@@ -38,8 +38,8 @@ impl UpdateThemeAliasInput {
 }
 
 /// A builder for [`UpdateThemeAliasInput`](crate::operation::update_theme_alias::UpdateThemeAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateThemeAliasInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,

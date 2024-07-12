@@ -27,8 +27,8 @@ impl GetReusableDelegationSetOutput {
 }
 
 /// A builder for [`GetReusableDelegationSetOutput`](crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReusableDelegationSetOutputBuilder {
     pub(crate) delegation_set: ::std::option::Option<crate::types::DelegationSet>,
     _request_id: Option<String>,

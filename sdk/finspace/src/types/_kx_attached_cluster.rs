@@ -69,8 +69,8 @@ impl KxAttachedCluster {
 }
 
 /// A builder for [`KxAttachedCluster`](crate::types::KxAttachedCluster).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KxAttachedClusterBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type: ::std::option::Option<crate::types::KxClusterType>,

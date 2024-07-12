@@ -26,8 +26,8 @@ impl DeletePlatformVersionOutput {
 }
 
 /// A builder for [`DeletePlatformVersionOutput`](crate::operation::delete_platform_version::DeletePlatformVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePlatformVersionOutputBuilder {
     pub(crate) platform_summary: ::std::option::Option<crate::types::PlatformSummary>,
     _request_id: Option<String>,

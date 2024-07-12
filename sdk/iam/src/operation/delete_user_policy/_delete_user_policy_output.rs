@@ -18,8 +18,8 @@ impl DeleteUserPolicyOutput {
 }
 
 /// A builder for [`DeleteUserPolicyOutput`](crate::operation::delete_user_policy::DeleteUserPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserPolicyOutputBuilder {
     _request_id: Option<String>,
 }

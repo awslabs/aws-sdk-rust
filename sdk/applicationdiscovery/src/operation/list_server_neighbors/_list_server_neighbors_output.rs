@@ -39,8 +39,8 @@ impl ListServerNeighborsOutput {
 }
 
 /// A builder for [`ListServerNeighborsOutput`](crate::operation::list_server_neighbors::ListServerNeighborsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServerNeighborsOutputBuilder {
     pub(crate) neighbors: ::std::option::Option<::std::vec::Vec<crate::types::NeighborConnectionDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

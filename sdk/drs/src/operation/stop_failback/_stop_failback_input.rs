@@ -20,8 +20,8 @@ impl StopFailbackInput {
 }
 
 /// A builder for [`StopFailbackInput`](crate::operation::stop_failback::StopFailbackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopFailbackInputBuilder {
     pub(crate) recovery_instance_id: ::std::option::Option<::std::string::String>,
 }

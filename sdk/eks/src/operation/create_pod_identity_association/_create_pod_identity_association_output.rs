@@ -28,8 +28,8 @@ impl CreatePodIdentityAssociationOutput {
 }
 
 /// A builder for [`CreatePodIdentityAssociationOutput`](crate::operation::create_pod_identity_association::CreatePodIdentityAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePodIdentityAssociationOutputBuilder {
     pub(crate) association: ::std::option::Option<crate::types::PodIdentityAssociation>,
     _request_id: Option<String>,

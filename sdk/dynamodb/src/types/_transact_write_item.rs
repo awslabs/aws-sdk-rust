@@ -39,8 +39,8 @@ impl TransactWriteItem {
 }
 
 /// A builder for [`TransactWriteItem`](crate::types::TransactWriteItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransactWriteItemBuilder {
     pub(crate) condition_check: ::std::option::Option<crate::types::ConditionCheck>,
     pub(crate) put: ::std::option::Option<crate::types::Put>,

@@ -62,8 +62,8 @@ impl GetEc2InstanceRecommendationsInput {
 }
 
 /// A builder for [`GetEc2InstanceRecommendationsInput`](crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEc2InstanceRecommendationsInputBuilder {
     pub(crate) instance_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

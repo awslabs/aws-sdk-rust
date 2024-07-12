@@ -20,8 +20,8 @@ impl GetDeleteEventsByEventTypeStatusInput {
 }
 
 /// A builder for [`GetDeleteEventsByEventTypeStatusInput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeleteEventsByEventTypeStatusInputBuilder {
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
 }

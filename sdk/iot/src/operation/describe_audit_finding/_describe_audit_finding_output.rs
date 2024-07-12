@@ -26,8 +26,8 @@ impl DescribeAuditFindingOutput {
 }
 
 /// A builder for [`DescribeAuditFindingOutput`](crate::operation::describe_audit_finding::DescribeAuditFindingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAuditFindingOutputBuilder {
     pub(crate) finding: ::std::option::Option<crate::types::AuditFinding>,
     _request_id: Option<String>,

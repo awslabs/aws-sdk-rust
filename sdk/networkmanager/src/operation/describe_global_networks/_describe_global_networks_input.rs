@@ -34,8 +34,8 @@ impl DescribeGlobalNetworksInput {
 }
 
 /// A builder for [`DescribeGlobalNetworksInput`](crate::operation::describe_global_networks::DescribeGlobalNetworksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGlobalNetworksInputBuilder {
     pub(crate) global_network_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,

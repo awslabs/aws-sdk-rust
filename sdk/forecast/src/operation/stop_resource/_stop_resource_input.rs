@@ -20,8 +20,8 @@ impl StopResourceInput {
 }
 
 /// A builder for [`StopResourceInput`](crate::operation::stop_resource::StopResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

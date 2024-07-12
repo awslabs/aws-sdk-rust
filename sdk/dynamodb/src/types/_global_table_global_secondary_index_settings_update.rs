@@ -34,8 +34,8 @@ impl GlobalTableGlobalSecondaryIndexSettingsUpdate {
 }
 
 /// A builder for [`GlobalTableGlobalSecondaryIndexSettingsUpdate`](crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlobalTableGlobalSecondaryIndexSettingsUpdateBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_write_capacity_units: ::std::option::Option<i64>,

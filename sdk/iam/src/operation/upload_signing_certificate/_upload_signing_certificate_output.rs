@@ -27,8 +27,8 @@ impl UploadSigningCertificateOutput {
 }
 
 /// A builder for [`UploadSigningCertificateOutput`](crate::operation::upload_signing_certificate::UploadSigningCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploadSigningCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<crate::types::SigningCertificate>,
     _request_id: Option<String>,

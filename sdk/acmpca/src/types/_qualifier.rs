@@ -22,8 +22,8 @@ impl Qualifier {
 }
 
 /// A builder for [`Qualifier`](crate::types::Qualifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QualifierBuilder {
     pub(crate) cps_uri: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl ProjectDataDelivery {
 }
 
 /// A builder for [`ProjectDataDelivery`](crate::types::ProjectDataDelivery).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectDataDeliveryBuilder {
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
     pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsDestination>,

@@ -34,8 +34,8 @@ impl ListLabelGroupsOutput {
 }
 
 /// A builder for [`ListLabelGroupsOutput`](crate::operation::list_label_groups::ListLabelGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLabelGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) label_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>>,

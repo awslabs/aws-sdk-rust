@@ -11,8 +11,8 @@ impl DownloadDefaultKeyPairInput {
 }
 
 /// A builder for [`DownloadDefaultKeyPairInput`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DownloadDefaultKeyPairInputBuilder {}
 impl DownloadDefaultKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`DownloadDefaultKeyPairInput`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairInput).

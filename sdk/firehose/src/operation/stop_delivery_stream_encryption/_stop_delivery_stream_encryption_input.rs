@@ -20,8 +20,8 @@ impl StopDeliveryStreamEncryptionInput {
 }
 
 /// A builder for [`StopDeliveryStreamEncryptionInput`](crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDeliveryStreamEncryptionInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
 }

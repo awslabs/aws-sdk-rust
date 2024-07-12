@@ -33,8 +33,8 @@ impl ListFlowVersionsOutput {
 }
 
 /// A builder for [`ListFlowVersionsOutput`](crate::operation::list_flow_versions::ListFlowVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFlowVersionsOutputBuilder {
     pub(crate) flow_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FlowVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

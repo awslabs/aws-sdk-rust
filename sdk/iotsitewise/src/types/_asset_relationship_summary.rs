@@ -37,8 +37,8 @@ impl AssetRelationshipSummary {
 }
 
 /// A builder for [`AssetRelationshipSummary`](crate::types::AssetRelationshipSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetRelationshipSummaryBuilder {
     pub(crate) hierarchy_info: ::std::option::Option<crate::types::AssetHierarchyInfo>,
     pub(crate) relationship_type: ::std::option::Option<crate::types::AssetRelationshipType>,

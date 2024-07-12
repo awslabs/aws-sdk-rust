@@ -21,8 +21,8 @@ impl WeeklySchedule {
 }
 
 /// A builder for [`WeeklySchedule`](crate::types::WeeklySchedule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WeeklyScheduleBuilder {
     pub(crate) day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
 }

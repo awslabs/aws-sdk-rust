@@ -18,8 +18,8 @@ impl DeleteEndpointGroupOutput {
 }
 
 /// A builder for [`DeleteEndpointGroupOutput`](crate::operation::delete_endpoint_group::DeleteEndpointGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEndpointGroupOutputBuilder {
     _request_id: Option<String>,
 }

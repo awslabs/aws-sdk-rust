@@ -32,8 +32,8 @@ impl PutAppInstanceRetentionSettingsOutput {
 }
 
 /// A builder for [`PutAppInstanceRetentionSettingsOutput`](crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAppInstanceRetentionSettingsOutputBuilder {
     pub(crate) app_instance_retention_settings: ::std::option::Option<crate::types::AppInstanceRetentionSettings>,
     pub(crate) initiate_deletion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

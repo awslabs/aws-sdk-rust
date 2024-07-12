@@ -37,8 +37,8 @@ impl BasicAuthCredentials {
 }
 
 /// A builder for [`BasicAuthCredentials`](crate::types::BasicAuthCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BasicAuthCredentialsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,

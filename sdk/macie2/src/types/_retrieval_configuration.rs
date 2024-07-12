@@ -35,8 +35,8 @@ impl RetrievalConfiguration {
 }
 
 /// A builder for [`RetrievalConfiguration`](crate::types::RetrievalConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetrievalConfigurationBuilder {
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
     pub(crate) retrieval_mode: ::std::option::Option<crate::types::RetrievalMode>,

@@ -76,8 +76,8 @@ impl DescribeSecurityGroupRulesInput {
 }
 
 /// A builder for [`DescribeSecurityGroupRulesInput`](crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSecurityGroupRulesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) security_group_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

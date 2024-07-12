@@ -27,8 +27,8 @@ impl BatchGetRepositoriesInput {
 }
 
 /// A builder for [`BatchGetRepositoriesInput`](crate::operation::batch_get_repositories::BatchGetRepositoriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetRepositoriesInputBuilder {
     pub(crate) repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

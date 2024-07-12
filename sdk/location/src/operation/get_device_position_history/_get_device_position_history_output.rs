@@ -33,8 +33,8 @@ impl GetDevicePositionHistoryOutput {
 }
 
 /// A builder for [`GetDevicePositionHistoryOutput`](crate::operation::get_device_position_history::GetDevicePositionHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDevicePositionHistoryOutputBuilder {
     pub(crate) device_positions: ::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

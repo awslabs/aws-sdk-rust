@@ -40,8 +40,8 @@ impl CreateAttendeeRequestItem {
 }
 
 /// A builder for [`CreateAttendeeRequestItem`](crate::types::CreateAttendeeRequestItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateAttendeeRequestItemBuilder {
     pub(crate) external_user_id: ::std::option::Option<::std::string::String>,
     pub(crate) capabilities: ::std::option::Option<crate::types::AttendeeCapabilities>,

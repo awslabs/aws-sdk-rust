@@ -26,8 +26,8 @@ impl UpdateFeaturedResultsSetOutput {
 }
 
 /// A builder for [`UpdateFeaturedResultsSetOutput`](crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFeaturedResultsSetOutputBuilder {
     pub(crate) featured_results_set: ::std::option::Option<crate::types::FeaturedResultsSet>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl UpdateViewMetadataOutput {
 }
 
 /// A builder for [`UpdateViewMetadataOutput`](crate::operation::update_view_metadata::UpdateViewMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateViewMetadataOutputBuilder {
     _request_id: Option<String>,
 }

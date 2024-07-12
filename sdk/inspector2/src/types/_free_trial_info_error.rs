@@ -35,8 +35,8 @@ impl FreeTrialInfoError {
 }
 
 /// A builder for [`FreeTrialInfoError`](crate::types::FreeTrialInfoError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FreeTrialInfoErrorBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<crate::types::FreeTrialInfoErrorCode>,

@@ -34,8 +34,8 @@ impl ListFlywheelsOutput {
 }
 
 /// A builder for [`ListFlywheelsOutput`](crate::operation::list_flywheels::ListFlywheelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFlywheelsOutputBuilder {
     pub(crate) flywheel_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

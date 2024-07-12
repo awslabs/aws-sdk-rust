@@ -41,8 +41,8 @@ impl PutPermissionInput {
 }
 
 /// A builder for [`PutPermissionInput`](crate::operation::put_permission::PutPermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutPermissionInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) action_group: ::std::option::Option<crate::types::ActionGroup>,

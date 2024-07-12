@@ -36,8 +36,8 @@ impl FlowCondition {
 }
 
 /// A builder for [`FlowCondition`](crate::types::FlowCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FlowConditionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,

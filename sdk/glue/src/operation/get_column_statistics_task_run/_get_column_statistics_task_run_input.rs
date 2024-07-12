@@ -20,8 +20,8 @@ impl GetColumnStatisticsTaskRunInput {
 }
 
 /// A builder for [`GetColumnStatisticsTaskRunInput`](crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetColumnStatisticsTaskRunInputBuilder {
     pub(crate) column_statistics_task_run_id: ::std::option::Option<::std::string::String>,
 }

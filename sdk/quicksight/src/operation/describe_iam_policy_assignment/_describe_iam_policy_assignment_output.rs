@@ -38,8 +38,8 @@ impl DescribeIamPolicyAssignmentOutput {
 }
 
 /// A builder for [`DescribeIamPolicyAssignmentOutput`](crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIamPolicyAssignmentOutputBuilder {
     pub(crate) iam_policy_assignment: ::std::option::Option<crate::types::IamPolicyAssignment>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

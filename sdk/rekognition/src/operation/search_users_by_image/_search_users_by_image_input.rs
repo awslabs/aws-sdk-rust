@@ -56,8 +56,8 @@ impl SearchUsersByImageInput {
 }
 
 /// A builder for [`SearchUsersByImageInput`](crate::operation::search_users_by_image::SearchUsersByImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchUsersByImageInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::Image>,

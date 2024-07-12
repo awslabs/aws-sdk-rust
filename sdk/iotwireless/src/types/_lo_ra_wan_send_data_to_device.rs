@@ -27,8 +27,8 @@ impl LoRaWanSendDataToDevice {
 }
 
 /// A builder for [`LoRaWanSendDataToDevice`](crate::types::LoRaWanSendDataToDevice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanSendDataToDeviceBuilder {
     pub(crate) f_port: ::std::option::Option<i32>,
     pub(crate) participating_gateways: ::std::option::Option<crate::types::ParticipatingGateways>,

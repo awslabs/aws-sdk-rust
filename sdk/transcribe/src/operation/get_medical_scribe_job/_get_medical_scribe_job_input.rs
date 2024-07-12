@@ -20,8 +20,8 @@ impl GetMedicalScribeJobInput {
 }
 
 /// A builder for [`GetMedicalScribeJobInput`](crate::operation::get_medical_scribe_job::GetMedicalScribeJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMedicalScribeJobInputBuilder {
     pub(crate) medical_scribe_job_name: ::std::option::Option<::std::string::String>,
 }

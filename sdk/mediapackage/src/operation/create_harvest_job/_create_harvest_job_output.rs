@@ -74,8 +74,8 @@ impl CreateHarvestJobOutput {
 }
 
 /// A builder for [`CreateHarvestJobOutput`](crate::operation::create_harvest_job::CreateHarvestJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHarvestJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,

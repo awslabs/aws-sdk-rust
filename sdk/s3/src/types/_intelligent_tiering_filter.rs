@@ -37,8 +37,8 @@ impl IntelligentTieringFilter {
 }
 
 /// A builder for [`IntelligentTieringFilter`](crate::types::IntelligentTieringFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntelligentTieringFilterBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) tag: ::std::option::Option<crate::types::Tag>,

@@ -26,8 +26,8 @@ impl GrantAccessInput {
 }
 
 /// A builder for [`GrantAccessInput`](crate::operation::grant_access::GrantAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrantAccessInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) valid_for_in_minutes: ::std::option::Option<i32>,

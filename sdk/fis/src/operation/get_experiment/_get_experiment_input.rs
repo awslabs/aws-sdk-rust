@@ -20,8 +20,8 @@ impl GetExperimentInput {
 }
 
 /// A builder for [`GetExperimentInput`](crate::operation::get_experiment::GetExperimentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExperimentInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

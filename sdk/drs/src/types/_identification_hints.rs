@@ -39,8 +39,8 @@ impl IdentificationHints {
 }
 
 /// A builder for [`IdentificationHints`](crate::types::IdentificationHints).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentificationHintsBuilder {
     pub(crate) fqdn: ::std::option::Option<::std::string::String>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,

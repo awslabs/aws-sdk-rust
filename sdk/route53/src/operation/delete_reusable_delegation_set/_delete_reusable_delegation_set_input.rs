@@ -21,8 +21,8 @@ impl DeleteReusableDelegationSetInput {
 }
 
 /// A builder for [`DeleteReusableDelegationSetInput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReusableDelegationSetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

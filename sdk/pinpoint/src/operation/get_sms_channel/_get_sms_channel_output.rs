@@ -26,8 +26,8 @@ impl GetSmsChannelOutput {
 }
 
 /// A builder for [`GetSmsChannelOutput`](crate::operation::get_sms_channel::GetSmsChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSmsChannelOutputBuilder {
     pub(crate) sms_channel_response: ::std::option::Option<crate::types::SmsChannelResponse>,
     _request_id: Option<String>,

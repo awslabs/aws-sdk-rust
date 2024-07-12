@@ -57,8 +57,8 @@ impl GetDomainMaintenanceStatusOutput {
 }
 
 /// A builder for [`GetDomainMaintenanceStatusOutput`](crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDomainMaintenanceStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::MaintenanceStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

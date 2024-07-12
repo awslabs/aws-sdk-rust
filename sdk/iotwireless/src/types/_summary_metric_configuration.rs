@@ -21,8 +21,8 @@ impl SummaryMetricConfiguration {
 }
 
 /// A builder for [`SummaryMetricConfiguration`](crate::types::SummaryMetricConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SummaryMetricConfigurationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SummaryMetricConfigurationStatus>,
 }

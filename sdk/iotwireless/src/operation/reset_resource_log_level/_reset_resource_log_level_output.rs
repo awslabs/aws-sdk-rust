@@ -18,8 +18,8 @@ impl ResetResourceLogLevelOutput {
 }
 
 /// A builder for [`ResetResourceLogLevelOutput`](crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetResourceLogLevelOutputBuilder {
     _request_id: Option<String>,
 }

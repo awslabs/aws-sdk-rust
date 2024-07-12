@@ -11,8 +11,8 @@ impl DescribeAdjustmentTypesInput {
 }
 
 /// A builder for [`DescribeAdjustmentTypesInput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAdjustmentTypesInputBuilder {}
 impl DescribeAdjustmentTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAdjustmentTypesInput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesInput).

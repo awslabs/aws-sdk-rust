@@ -36,8 +36,8 @@ impl RollingDateConfiguration {
 }
 
 /// A builder for [`RollingDateConfiguration`](crate::types::RollingDateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RollingDateConfigurationBuilder {
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,

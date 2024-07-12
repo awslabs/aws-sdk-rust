@@ -53,8 +53,8 @@ impl Entity {
 }
 
 /// A builder for [`Entity`](crate::types::Entity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityBuilder {
     pub(crate) start_time: ::std::option::Option<f64>,
     pub(crate) end_time: ::std::option::Option<f64>,

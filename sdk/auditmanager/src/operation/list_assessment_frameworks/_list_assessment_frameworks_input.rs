@@ -32,8 +32,8 @@ impl ListAssessmentFrameworksInput {
 }
 
 /// A builder for [`ListAssessmentFrameworksInput`](crate::operation::list_assessment_frameworks::ListAssessmentFrameworksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentFrameworksInputBuilder {
     pub(crate) framework_type: ::std::option::Option<crate::types::FrameworkType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

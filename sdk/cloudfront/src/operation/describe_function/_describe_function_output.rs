@@ -32,8 +32,8 @@ impl DescribeFunctionOutput {
 }
 
 /// A builder for [`DescribeFunctionOutput`](crate::operation::describe_function::DescribeFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFunctionOutputBuilder {
     pub(crate) function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

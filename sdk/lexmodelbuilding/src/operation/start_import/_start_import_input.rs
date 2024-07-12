@@ -62,8 +62,8 @@ impl StartImportInput {
 }
 
 /// A builder for [`StartImportInput`](crate::operation::start_import::StartImportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartImportInputBuilder {
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,

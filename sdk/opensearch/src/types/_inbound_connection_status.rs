@@ -63,8 +63,8 @@ impl InboundConnectionStatus {
 }
 
 /// A builder for [`InboundConnectionStatus`](crate::types::InboundConnectionStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InboundConnectionStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::InboundConnectionStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl UpdateInAppTemplateOutput {
 }
 
 /// A builder for [`UpdateInAppTemplateOutput`](crate::operation::update_in_app_template::UpdateInAppTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInAppTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,

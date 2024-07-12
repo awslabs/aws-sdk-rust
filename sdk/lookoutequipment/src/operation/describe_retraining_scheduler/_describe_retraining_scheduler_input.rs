@@ -20,8 +20,8 @@ impl DescribeRetrainingSchedulerInput {
 }
 
 /// A builder for [`DescribeRetrainingSchedulerInput`](crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRetrainingSchedulerInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
 }

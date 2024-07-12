@@ -84,8 +84,8 @@ impl GetResourceSharesInput {
 }
 
 /// A builder for [`GetResourceSharesInput`](crate::operation::get_resource_shares::GetResourceSharesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceSharesInputBuilder {
     pub(crate) resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_share_status: ::std::option::Option<crate::types::ResourceShareStatus>,

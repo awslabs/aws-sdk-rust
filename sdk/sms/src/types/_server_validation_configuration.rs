@@ -45,8 +45,8 @@ impl ServerValidationConfiguration {
 }
 
 /// A builder for [`ServerValidationConfiguration`](crate::types::ServerValidationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerValidationConfigurationBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
     pub(crate) validation_id: ::std::option::Option<::std::string::String>,

@@ -102,8 +102,8 @@ impl AdditionalInfoRequest {
 }
 
 /// A builder for [`AdditionalInfoRequest`](crate::types::AdditionalInfoRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdditionalInfoRequestBuilder {
     pub(crate) malaysia_additional_info: ::std::option::Option<crate::types::MalaysiaAdditionalInfo>,
     pub(crate) israel_additional_info: ::std::option::Option<crate::types::IsraelAdditionalInfo>,

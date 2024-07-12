@@ -28,8 +28,8 @@ impl ParameterSpace {
 }
 
 /// A builder for [`ParameterSpace`](crate::types::ParameterSpace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParameterSpaceBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::StepParameter>>,
     pub(crate) combination: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl ListPermissionSetsInput {
 }
 
 /// A builder for [`ListPermissionSetsInput`](crate::operation::list_permission_sets::ListPermissionSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPermissionSetsInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

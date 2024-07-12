@@ -81,8 +81,8 @@ impl WorkflowRun {
 }
 
 /// A builder for [`WorkflowRun`](crate::types::WorkflowRun).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowRunBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_run_id: ::std::option::Option<::std::string::String>,

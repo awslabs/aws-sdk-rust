@@ -39,8 +39,8 @@ impl DbClusterMember {
 }
 
 /// A builder for [`DbClusterMember`](crate::types::DbClusterMember).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbClusterMemberBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) is_cluster_writer: ::std::option::Option<bool>,

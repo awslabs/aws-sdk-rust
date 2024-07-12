@@ -21,8 +21,8 @@ impl ConvergenceDetected {
 }
 
 /// A builder for [`ConvergenceDetected`](crate::types::ConvergenceDetected).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConvergenceDetectedBuilder {
     pub(crate) complete_on_convergence: ::std::option::Option<crate::types::CompleteOnConvergence>,
 }

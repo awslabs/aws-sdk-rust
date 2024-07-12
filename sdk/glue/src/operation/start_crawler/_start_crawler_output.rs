@@ -18,8 +18,8 @@ impl StartCrawlerOutput {
 }
 
 /// A builder for [`StartCrawlerOutput`](crate::operation::start_crawler::StartCrawlerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCrawlerOutputBuilder {
     _request_id: Option<String>,
 }

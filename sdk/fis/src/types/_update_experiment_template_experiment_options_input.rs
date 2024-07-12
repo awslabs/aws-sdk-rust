@@ -21,8 +21,8 @@ impl UpdateExperimentTemplateExperimentOptionsInput {
 }
 
 /// A builder for [`UpdateExperimentTemplateExperimentOptionsInput`](crate::types::UpdateExperimentTemplateExperimentOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateExperimentTemplateExperimentOptionsInputBuilder {
     pub(crate) empty_target_resolution_mode: ::std::option::Option<crate::types::EmptyTargetResolutionMode>,
 }

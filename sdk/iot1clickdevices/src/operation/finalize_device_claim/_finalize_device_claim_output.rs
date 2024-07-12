@@ -26,8 +26,8 @@ impl FinalizeDeviceClaimOutput {
 }
 
 /// A builder for [`FinalizeDeviceClaimOutput`](crate::operation::finalize_device_claim::FinalizeDeviceClaimOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FinalizeDeviceClaimOutputBuilder {
     pub(crate) state: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

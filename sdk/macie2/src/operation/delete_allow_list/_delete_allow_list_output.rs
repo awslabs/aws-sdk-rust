@@ -18,8 +18,8 @@ impl DeleteAllowListOutput {
 }
 
 /// A builder for [`DeleteAllowListOutput`](crate::operation::delete_allow_list::DeleteAllowListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAllowListOutputBuilder {
     _request_id: Option<String>,
 }

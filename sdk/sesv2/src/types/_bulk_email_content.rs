@@ -21,8 +21,8 @@ impl BulkEmailContent {
 }
 
 /// A builder for [`BulkEmailContent`](crate::types::BulkEmailContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BulkEmailContentBuilder {
     pub(crate) template: ::std::option::Option<crate::types::Template>,
 }

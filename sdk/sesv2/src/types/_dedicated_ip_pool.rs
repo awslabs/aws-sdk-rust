@@ -40,8 +40,8 @@ impl DedicatedIpPool {
 }
 
 /// A builder for [`DedicatedIpPool`](crate::types::DedicatedIpPool).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DedicatedIpPoolBuilder {
     pub(crate) pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_mode: ::std::option::Option<crate::types::ScalingMode>,

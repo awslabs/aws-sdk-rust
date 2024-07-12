@@ -26,8 +26,8 @@ impl UpdateHitTypeOfHitInput {
 }
 
 /// A builder for [`UpdateHitTypeOfHitInput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateHitTypeOfHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) hit_type_id: ::std::option::Option<::std::string::String>,

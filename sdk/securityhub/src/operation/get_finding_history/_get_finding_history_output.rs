@@ -34,8 +34,8 @@ impl GetFindingHistoryOutput {
 }
 
 /// A builder for [`GetFindingHistoryOutput`](crate::operation::get_finding_history::GetFindingHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingHistoryOutputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::FindingHistoryRecord>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

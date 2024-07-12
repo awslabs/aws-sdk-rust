@@ -33,8 +33,8 @@ impl ApplicationSettingsResponse {
 }
 
 /// A builder for [`ApplicationSettingsResponse`](crate::types::ApplicationSettingsResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationSettingsResponseBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ApplicationSettingsStatusEnum>,
     pub(crate) settings_group: ::std::option::Option<::std::string::String>,

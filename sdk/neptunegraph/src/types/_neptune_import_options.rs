@@ -41,8 +41,8 @@ impl NeptuneImportOptions {
 }
 
 /// A builder for [`NeptuneImportOptions`](crate::types::NeptuneImportOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NeptuneImportOptionsBuilder {
     pub(crate) s3_export_path: ::std::option::Option<::std::string::String>,
     pub(crate) s3_export_kms_key_id: ::std::option::Option<::std::string::String>,

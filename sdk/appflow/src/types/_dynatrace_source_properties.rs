@@ -22,8 +22,8 @@ impl DynatraceSourceProperties {
 }
 
 /// A builder for [`DynatraceSourceProperties`](crate::types::DynatraceSourceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DynatraceSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }

@@ -12,8 +12,8 @@ impl Parquet {
 }
 
 /// A builder for [`Parquet`](crate::types::Parquet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParquetBuilder {}
 impl ParquetBuilder {
     /// Consumes the builder and constructs a [`Parquet`](crate::types::Parquet).

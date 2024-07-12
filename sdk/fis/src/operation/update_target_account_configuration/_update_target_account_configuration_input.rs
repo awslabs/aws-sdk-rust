@@ -38,8 +38,8 @@ impl UpdateTargetAccountConfigurationInput {
 }
 
 /// A builder for [`UpdateTargetAccountConfigurationInput`](crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTargetAccountConfigurationInputBuilder {
     pub(crate) experiment_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

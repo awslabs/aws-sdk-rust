@@ -26,8 +26,8 @@ impl AssociateSourceNetworkStackOutput {
 }
 
 /// A builder for [`AssociateSourceNetworkStackOutput`](crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateSourceNetworkStackOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,

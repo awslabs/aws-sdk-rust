@@ -136,8 +136,8 @@ impl CreateEventDataStoreInput {
 }
 
 /// A builder for [`CreateEventDataStoreInput`](crate::operation::create_event_data_store::CreateEventDataStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEventDataStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,

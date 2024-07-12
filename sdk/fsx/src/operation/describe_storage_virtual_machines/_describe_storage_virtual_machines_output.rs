@@ -34,8 +34,8 @@ impl DescribeStorageVirtualMachinesOutput {
 }
 
 /// A builder for [`DescribeStorageVirtualMachinesOutput`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStorageVirtualMachinesOutputBuilder {
     pub(crate) storage_virtual_machines: ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachine>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

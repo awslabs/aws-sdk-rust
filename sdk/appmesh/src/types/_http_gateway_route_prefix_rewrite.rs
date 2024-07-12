@@ -27,8 +27,8 @@ impl HttpGatewayRoutePrefixRewrite {
 }
 
 /// A builder for [`HttpGatewayRoutePrefixRewrite`](crate::types::HttpGatewayRoutePrefixRewrite).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpGatewayRoutePrefixRewriteBuilder {
     pub(crate) default_prefix: ::std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

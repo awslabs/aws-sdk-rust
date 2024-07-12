@@ -34,8 +34,8 @@ impl AdminListGroupsForUserOutput {
 }
 
 /// A builder for [`AdminListGroupsForUserOutput`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminListGroupsForUserOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

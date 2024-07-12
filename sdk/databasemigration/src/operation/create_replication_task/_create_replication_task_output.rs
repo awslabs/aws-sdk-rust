@@ -27,8 +27,8 @@ impl CreateReplicationTaskOutput {
 }
 
 /// A builder for [`CreateReplicationTaskOutput`](crate::operation::create_replication_task::CreateReplicationTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplicationTaskOutputBuilder {
     pub(crate) replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,

@@ -59,8 +59,8 @@ impl TrafficMirrorFilter {
 }
 
 /// A builder for [`TrafficMirrorFilter`](crate::types::TrafficMirrorFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrafficMirrorFilterBuilder {
     pub(crate) traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRule>>,

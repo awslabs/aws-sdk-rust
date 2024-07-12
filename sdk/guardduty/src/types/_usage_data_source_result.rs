@@ -27,8 +27,8 @@ impl UsageDataSourceResult {
 }
 
 /// A builder for [`UsageDataSourceResult`](crate::types::UsageDataSourceResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageDataSourceResultBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) total: ::std::option::Option<crate::types::Total>,

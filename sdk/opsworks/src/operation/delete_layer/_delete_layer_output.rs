@@ -18,8 +18,8 @@ impl DeleteLayerOutput {
 }
 
 /// A builder for [`DeleteLayerOutput`](crate::operation::delete_layer::DeleteLayerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLayerOutputBuilder {
     _request_id: Option<String>,
 }

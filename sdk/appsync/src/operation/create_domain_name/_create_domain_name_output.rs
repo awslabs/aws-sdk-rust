@@ -26,8 +26,8 @@ impl CreateDomainNameOutput {
 }
 
 /// A builder for [`CreateDomainNameOutput`](crate::operation::create_domain_name::CreateDomainNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDomainNameOutputBuilder {
     pub(crate) domain_name_config: ::std::option::Option<crate::types::DomainNameConfig>,
     _request_id: Option<String>,

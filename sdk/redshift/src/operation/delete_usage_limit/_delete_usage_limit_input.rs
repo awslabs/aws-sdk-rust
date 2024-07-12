@@ -20,8 +20,8 @@ impl DeleteUsageLimitInput {
 }
 
 /// A builder for [`DeleteUsageLimitInput`](crate::operation::delete_usage_limit::DeleteUsageLimitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUsageLimitInputBuilder {
     pub(crate) usage_limit_id: ::std::option::Option<::std::string::String>,
 }

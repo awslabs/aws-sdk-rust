@@ -26,8 +26,8 @@ impl CreateDataProviderOutput {
 }
 
 /// A builder for [`CreateDataProviderOutput`](crate::operation::create_data_provider::CreateDataProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataProviderOutputBuilder {
     pub(crate) data_provider: ::std::option::Option<crate::types::DataProvider>,
     _request_id: Option<String>,

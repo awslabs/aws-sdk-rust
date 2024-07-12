@@ -18,8 +18,8 @@ impl DetachManagedPolicyFromPermissionSetOutput {
 }
 
 /// A builder for [`DetachManagedPolicyFromPermissionSetOutput`](crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachManagedPolicyFromPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }

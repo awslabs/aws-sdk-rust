@@ -49,8 +49,8 @@ impl ReplicaSettingsUpdate {
 }
 
 /// A builder for [`ReplicaSettingsUpdate`](crate::types::ReplicaSettingsUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicaSettingsUpdateBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) replica_provisioned_read_capacity_units: ::std::option::Option<i64>,

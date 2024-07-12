@@ -50,8 +50,8 @@ impl CalculateRouteMatrixOutput {
 }
 
 /// A builder for [`CalculateRouteMatrixOutput`](crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CalculateRouteMatrixOutputBuilder {
     pub(crate) route_matrix: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::RouteMatrixEntry>>>,
     pub(crate) snapped_departure_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,

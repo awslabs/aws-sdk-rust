@@ -18,8 +18,8 @@ impl PutDestinationPolicyOutput {
 }
 
 /// A builder for [`PutDestinationPolicyOutput`](crate::operation::put_destination_policy::PutDestinationPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDestinationPolicyOutputBuilder {
     _request_id: Option<String>,
 }

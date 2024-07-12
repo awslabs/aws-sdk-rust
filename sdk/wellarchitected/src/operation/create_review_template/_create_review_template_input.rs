@@ -60,8 +60,8 @@ impl CreateReviewTemplateInput {
 }
 
 /// A builder for [`CreateReviewTemplateInput`](crate::operation::create_review_template::CreateReviewTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReviewTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

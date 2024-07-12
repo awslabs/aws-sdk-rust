@@ -58,8 +58,8 @@ impl InvokeEndpointWithResponseStreamOutput {
 }
 
 /// A builder for [`InvokeEndpointWithResponseStreamOutput`](crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeEndpointWithResponseStreamOutputBuilder {
     pub(crate) body:
         ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,

@@ -26,8 +26,8 @@ impl ListKeyGroupsOutput {
 }
 
 /// A builder for [`ListKeyGroupsOutput`](crate::operation::list_key_groups::ListKeyGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKeyGroupsOutputBuilder {
     pub(crate) key_group_list: ::std::option::Option<crate::types::KeyGroupList>,
     _request_id: Option<String>,

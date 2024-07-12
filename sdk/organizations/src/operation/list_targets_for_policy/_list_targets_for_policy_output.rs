@@ -34,8 +34,8 @@ impl ListTargetsForPolicyOutput {
 }
 
 /// A builder for [`ListTargetsForPolicyOutput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTargetsForPolicyOutputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTargetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

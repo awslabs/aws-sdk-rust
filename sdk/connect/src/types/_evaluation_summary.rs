@@ -74,8 +74,8 @@ impl EvaluationSummary {
 }
 
 /// A builder for [`EvaluationSummary`](crate::types::EvaluationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationSummaryBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_arn: ::std::option::Option<::std::string::String>,

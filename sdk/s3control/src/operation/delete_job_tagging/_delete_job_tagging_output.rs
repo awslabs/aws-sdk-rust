@@ -18,8 +18,8 @@ impl DeleteJobTaggingOutput {
 }
 
 /// A builder for [`DeleteJobTaggingOutput`](crate::operation::delete_job_tagging::DeleteJobTaggingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteJobTaggingOutputBuilder {
     _request_id: Option<String>,
 }

@@ -35,8 +35,8 @@ impl ListInstanceGroupsOutput {
 }
 
 /// A builder for [`ListInstanceGroupsOutput`](crate::operation::list_instance_groups::ListInstanceGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInstanceGroupsOutputBuilder {
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

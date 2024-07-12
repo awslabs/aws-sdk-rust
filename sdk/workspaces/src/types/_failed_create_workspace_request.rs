@@ -33,8 +33,8 @@ impl FailedCreateWorkspaceRequest {
 }
 
 /// A builder for [`FailedCreateWorkspaceRequest`](crate::types::FailedCreateWorkspaceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedCreateWorkspaceRequestBuilder {
     pub(crate) workspace_request: ::std::option::Option<crate::types::WorkspaceRequest>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

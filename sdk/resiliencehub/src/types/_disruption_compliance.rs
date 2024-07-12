@@ -75,8 +75,8 @@ impl DisruptionCompliance {
 }
 
 /// A builder for [`DisruptionCompliance`](crate::types::DisruptionCompliance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisruptionComplianceBuilder {
     pub(crate) achievable_rto_in_secs: ::std::option::Option<i32>,
     pub(crate) current_rto_in_secs: ::std::option::Option<i32>,

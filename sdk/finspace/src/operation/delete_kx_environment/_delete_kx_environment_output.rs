@@ -18,8 +18,8 @@ impl DeleteKxEnvironmentOutput {
 }
 
 /// A builder for [`DeleteKxEnvironmentOutput`](crate::operation::delete_kx_environment::DeleteKxEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKxEnvironmentOutputBuilder {
     _request_id: Option<String>,
 }

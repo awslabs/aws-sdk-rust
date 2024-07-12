@@ -20,8 +20,8 @@ impl ListMobileDeviceAccessRulesInput {
 }
 
 /// A builder for [`ListMobileDeviceAccessRulesInput`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMobileDeviceAccessRulesInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
 }

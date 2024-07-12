@@ -18,8 +18,8 @@ impl ModifyMountTargetSecurityGroupsOutput {
 }
 
 /// A builder for [`ModifyMountTargetSecurityGroupsOutput`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyMountTargetSecurityGroupsOutputBuilder {
     _request_id: Option<String>,
 }

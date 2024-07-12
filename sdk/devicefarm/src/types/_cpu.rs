@@ -33,8 +33,8 @@ impl Cpu {
 }
 
 /// A builder for [`Cpu`](crate::types::Cpu).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CpuBuilder {
     pub(crate) frequency: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<::std::string::String>,

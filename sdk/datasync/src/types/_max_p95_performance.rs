@@ -81,8 +81,8 @@ impl MaxP95Performance {
 }
 
 /// A builder for [`MaxP95Performance`](crate::types::MaxP95Performance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MaxP95PerformanceBuilder {
     pub(crate) iops_read: ::std::option::Option<f64>,
     pub(crate) iops_write: ::std::option::Option<f64>,

@@ -56,8 +56,8 @@ impl ListHealthEventsInput {
 }
 
 /// A builder for [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHealthEventsInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

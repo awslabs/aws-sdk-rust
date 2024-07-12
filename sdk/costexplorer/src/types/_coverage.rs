@@ -33,8 +33,8 @@ impl Coverage {
 }
 
 /// A builder for [`Coverage`](crate::types::Coverage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoverageBuilder {
     pub(crate) coverage_hours: ::std::option::Option<crate::types::CoverageHours>,
     pub(crate) coverage_normalized_units: ::std::option::Option<crate::types::CoverageNormalizedUnits>,

@@ -56,8 +56,8 @@ impl CreateDynamicThingGroupOutput {
 }
 
 /// A builder for [`CreateDynamicThingGroupOutput`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDynamicThingGroupOutputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_group_arn: ::std::option::Option<::std::string::String>,

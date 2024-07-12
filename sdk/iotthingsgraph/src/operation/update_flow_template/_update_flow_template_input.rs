@@ -38,8 +38,8 @@ impl UpdateFlowTemplateInput {
 }
 
 /// A builder for [`UpdateFlowTemplateInput`](crate::operation::update_flow_template::UpdateFlowTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFlowTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,

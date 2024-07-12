@@ -28,8 +28,8 @@ impl AxisLinearScale {
 }
 
 /// A builder for [`AxisLinearScale`](crate::types::AxisLinearScale).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AxisLinearScaleBuilder {
     pub(crate) step_count: ::std::option::Option<i32>,
     pub(crate) step_size: ::std::option::Option<f64>,

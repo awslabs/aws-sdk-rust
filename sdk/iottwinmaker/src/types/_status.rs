@@ -27,8 +27,8 @@ impl Status {
 }
 
 /// A builder for [`Status`](crate::types::Status).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::State>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetails>,

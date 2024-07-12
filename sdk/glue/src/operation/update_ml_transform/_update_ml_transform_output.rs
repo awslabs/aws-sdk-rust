@@ -26,8 +26,8 @@ impl UpdateMlTransformOutput {
 }
 
 /// A builder for [`UpdateMlTransformOutput`](crate::operation::update_ml_transform::UpdateMlTransformOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMlTransformOutputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

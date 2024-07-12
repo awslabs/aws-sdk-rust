@@ -106,8 +106,8 @@ impl GetWebExperienceOutput {
 }
 
 /// A builder for [`GetWebExperienceOutput`](crate::operation::get_web_experience::GetWebExperienceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWebExperienceOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) web_experience_id: ::std::option::Option<::std::string::String>,

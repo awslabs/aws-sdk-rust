@@ -69,8 +69,8 @@ impl CreateSnaplockConfiguration {
 }
 
 /// A builder for [`CreateSnaplockConfiguration`](crate::types::CreateSnaplockConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSnaplockConfigurationBuilder {
     pub(crate) audit_log_volume: ::std::option::Option<bool>,
     pub(crate) autocommit_period: ::std::option::Option<crate::types::AutocommitPeriod>,

@@ -45,8 +45,8 @@ impl AggregatedProfileTime {
 }
 
 /// A builder for [`AggregatedProfileTime`](crate::types::AggregatedProfileTime).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregatedProfileTimeBuilder {
     pub(crate) start: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) period: ::std::option::Option<crate::types::AggregationPeriod>,

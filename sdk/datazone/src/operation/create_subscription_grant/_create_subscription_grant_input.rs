@@ -52,8 +52,8 @@ impl CreateSubscriptionGrantInput {
 }
 
 /// A builder for [`CreateSubscriptionGrantInput`](crate::operation::create_subscription_grant::CreateSubscriptionGrantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSubscriptionGrantInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,

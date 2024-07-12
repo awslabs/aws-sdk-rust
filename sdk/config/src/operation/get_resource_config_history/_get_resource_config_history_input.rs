@@ -57,8 +57,8 @@ impl GetResourceConfigHistoryInput {
 }
 
 /// A builder for [`GetResourceConfigHistoryInput`](crate::operation::get_resource_config_history::GetResourceConfigHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceConfigHistoryInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

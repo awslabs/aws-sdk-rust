@@ -26,8 +26,8 @@ impl ExportKeyOutput {
 }
 
 /// A builder for [`ExportKeyOutput`](crate::operation::export_key::ExportKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportKeyOutputBuilder {
     pub(crate) wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
     _request_id: Option<String>,

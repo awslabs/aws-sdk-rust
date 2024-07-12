@@ -18,8 +18,8 @@ impl RemoveThingFromThingGroupOutput {
 }
 
 /// A builder for [`RemoveThingFromThingGroupOutput`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveThingFromThingGroupOutputBuilder {
     _request_id: Option<String>,
 }

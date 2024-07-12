@@ -39,8 +39,8 @@ impl EmbeddedSourceSettings {
 }
 
 /// A builder for [`EmbeddedSourceSettings`](crate::types::EmbeddedSourceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmbeddedSourceSettingsBuilder {
     pub(crate) convert608_to708: ::std::option::Option<crate::types::EmbeddedConvert608To708>,
     pub(crate) scte20_detection: ::std::option::Option<crate::types::EmbeddedScte20Detection>,

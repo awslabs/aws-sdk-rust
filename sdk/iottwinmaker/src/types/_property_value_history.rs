@@ -29,8 +29,8 @@ impl PropertyValueHistory {
 }
 
 /// A builder for [`PropertyValueHistory`](crate::types::PropertyValueHistory).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyValueHistoryBuilder {
     pub(crate) entity_property_reference: ::std::option::Option<crate::types::EntityPropertyReference>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValue>>,

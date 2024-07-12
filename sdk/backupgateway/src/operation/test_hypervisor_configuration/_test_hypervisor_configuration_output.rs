@@ -18,8 +18,8 @@ impl TestHypervisorConfigurationOutput {
 }
 
 /// A builder for [`TestHypervisorConfigurationOutput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestHypervisorConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

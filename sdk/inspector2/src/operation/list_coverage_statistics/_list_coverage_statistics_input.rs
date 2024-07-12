@@ -32,8 +32,8 @@ impl ListCoverageStatisticsInput {
 }
 
 /// A builder for [`ListCoverageStatisticsInput`](crate::operation::list_coverage_statistics::ListCoverageStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCoverageStatisticsInputBuilder {
     pub(crate) filter_criteria: ::std::option::Option<crate::types::CoverageFilterCriteria>,
     pub(crate) group_by: ::std::option::Option<crate::types::GroupKey>,

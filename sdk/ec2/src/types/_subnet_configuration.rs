@@ -37,8 +37,8 @@ impl SubnetConfiguration {
 }
 
 /// A builder for [`SubnetConfiguration`](crate::types::SubnetConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubnetConfigurationBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipv4: ::std::option::Option<::std::string::String>,

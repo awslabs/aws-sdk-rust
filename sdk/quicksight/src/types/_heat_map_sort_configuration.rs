@@ -43,8 +43,8 @@ impl HeatMapSortConfiguration {
 }
 
 /// A builder for [`HeatMapSortConfiguration`](crate::types::HeatMapSortConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HeatMapSortConfigurationBuilder {
     pub(crate) heat_map_row_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     pub(crate) heat_map_column_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,

@@ -57,8 +57,8 @@ impl CreateBackendAuthOAuthConfig {
 }
 
 /// A builder for [`CreateBackendAuthOAuthConfig`](crate::types::CreateBackendAuthOAuthConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBackendAuthOAuthConfigBuilder {
     pub(crate) domain_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) o_auth_grant_type: ::std::option::Option<crate::types::OAuthGrantType>,

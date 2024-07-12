@@ -34,8 +34,8 @@ impl DescribeDbRecommendationsOutput {
 }
 
 /// A builder for [`DescribeDbRecommendationsOutput`](crate::operation::describe_db_recommendations::DescribeDbRecommendationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbRecommendationsOutputBuilder {
     pub(crate) db_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::DbRecommendation>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

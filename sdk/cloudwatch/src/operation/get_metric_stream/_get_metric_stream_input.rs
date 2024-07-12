@@ -20,8 +20,8 @@ impl GetMetricStreamInput {
 }
 
 /// A builder for [`GetMetricStreamInput`](crate::operation::get_metric_stream::GetMetricStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricStreamInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

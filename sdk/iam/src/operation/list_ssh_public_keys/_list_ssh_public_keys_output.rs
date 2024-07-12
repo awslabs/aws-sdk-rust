@@ -41,8 +41,8 @@ impl ListSshPublicKeysOutput {
 }
 
 /// A builder for [`ListSshPublicKeysOutput`](crate::operation::list_ssh_public_keys::ListSshPublicKeysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSshPublicKeysOutputBuilder {
     pub(crate) ssh_public_keys: ::std::option::Option<::std::vec::Vec<crate::types::SshPublicKeyMetadata>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

@@ -18,8 +18,8 @@ impl CreateResourceDataSyncOutput {
 }
 
 /// A builder for [`CreateResourceDataSyncOutput`](crate::operation::create_resource_data_sync::CreateResourceDataSyncOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateResourceDataSyncOutputBuilder {
     _request_id: Option<String>,
 }

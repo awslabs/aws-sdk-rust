@@ -45,8 +45,8 @@ impl SessionKeyEmv2000 {
 }
 
 /// A builder for [`SessionKeyEmv2000`](crate::types::SessionKeyEmv2000).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SessionKeyEmv2000Builder {
     pub(crate) primary_account_number: ::std::option::Option<::std::string::String>,
     pub(crate) pan_sequence_number: ::std::option::Option<::std::string::String>,

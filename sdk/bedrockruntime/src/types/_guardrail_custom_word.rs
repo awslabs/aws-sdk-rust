@@ -28,8 +28,8 @@ impl GuardrailCustomWord {
 }
 
 /// A builder for [`GuardrailCustomWord`](crate::types::GuardrailCustomWord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailCustomWordBuilder {
     pub(crate) r#match: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailWordPolicyAction>,

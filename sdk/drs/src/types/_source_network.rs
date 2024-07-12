@@ -98,8 +98,8 @@ impl SourceNetwork {
 }
 
 /// A builder for [`SourceNetwork`](crate::types::SourceNetwork).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SourceNetworkBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_vpc_id: ::std::option::Option<::std::string::String>,

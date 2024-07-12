@@ -57,8 +57,8 @@ impl FilledMapConfiguration {
 }
 
 /// A builder for [`FilledMapConfiguration`](crate::types::FilledMapConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilledMapConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::FilledMapFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::FilledMapSortConfiguration>,

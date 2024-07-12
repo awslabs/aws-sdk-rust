@@ -119,8 +119,8 @@ impl DescribeInputDeviceOutput {
 }
 
 /// A builder for [`DescribeInputDeviceOutput`](crate::operation::describe_input_device::DescribeInputDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInputDeviceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) connection_state: ::std::option::Option<crate::types::InputDeviceConnectionState>,

@@ -26,8 +26,8 @@ impl DeleteQueryDefinitionOutput {
 }
 
 /// A builder for [`DeleteQueryDefinitionOutput`](crate::operation::delete_query_definition::DeleteQueryDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQueryDefinitionOutputBuilder {
     pub(crate) success: ::std::option::Option<bool>,
     _request_id: Option<String>,

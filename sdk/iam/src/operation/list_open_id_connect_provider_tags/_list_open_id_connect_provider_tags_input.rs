@@ -36,8 +36,8 @@ impl ListOpenIdConnectProviderTagsInput {
 }
 
 /// A builder for [`ListOpenIdConnectProviderTagsInput`](crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOpenIdConnectProviderTagsInputBuilder {
     pub(crate) open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl SlotTypeConfiguration {
 }
 
 /// A builder for [`SlotTypeConfiguration`](crate::types::SlotTypeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotTypeConfigurationBuilder {
     pub(crate) regex_configuration: ::std::option::Option<crate::types::SlotTypeRegexConfiguration>,
 }

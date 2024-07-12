@@ -64,8 +64,8 @@ impl CreateRouteCalculatorOutput {
 }
 
 /// A builder for [`CreateRouteCalculatorOutput`](crate::operation::create_route_calculator::CreateRouteCalculatorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRouteCalculatorOutputBuilder {
     pub(crate) calculator_name: ::std::option::Option<::std::string::String>,
     pub(crate) calculator_arn: ::std::option::Option<::std::string::String>,

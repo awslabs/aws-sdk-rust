@@ -32,8 +32,8 @@ impl CreateVpcPeeringConnectionInput {
 }
 
 /// A builder for [`CreateVpcPeeringConnectionInput`](crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpcPeeringConnectionInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_vpc_aws_account_id: ::std::option::Option<::std::string::String>,

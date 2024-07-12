@@ -36,8 +36,8 @@ impl DicomStudyDateAndTime {
 }
 
 /// A builder for [`DicomStudyDateAndTime`](crate::types::DicomStudyDateAndTime).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DicomStudyDateAndTimeBuilder {
     pub(crate) dicom_study_date: ::std::option::Option<::std::string::String>,
     pub(crate) dicom_study_time: ::std::option::Option<::std::string::String>,

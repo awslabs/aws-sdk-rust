@@ -31,8 +31,8 @@ impl MediaAnalysisResults {
 }
 
 /// A builder for [`MediaAnalysisResults`](crate::types::MediaAnalysisResults).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaAnalysisResultsBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
     pub(crate) model_versions: ::std::option::Option<crate::types::MediaAnalysisModelVersions>,

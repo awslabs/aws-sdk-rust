@@ -29,8 +29,8 @@ impl BrokerEngineType {
 }
 
 /// A builder for [`BrokerEngineType`](crate::types::BrokerEngineType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BrokerEngineTypeBuilder {
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
     pub(crate) engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>,

@@ -34,8 +34,8 @@ impl ListLongTermPricingOutput {
 }
 
 /// A builder for [`ListLongTermPricingOutput`](crate::operation::list_long_term_pricing::ListLongTermPricingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLongTermPricingOutputBuilder {
     pub(crate) long_term_pricing_entries: ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

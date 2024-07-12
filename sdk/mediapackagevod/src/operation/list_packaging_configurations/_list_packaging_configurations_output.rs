@@ -34,8 +34,8 @@ impl ListPackagingConfigurationsOutput {
 }
 
 /// A builder for [`ListPackagingConfigurationsOutput`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPackagingConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) packaging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PackagingConfiguration>>,

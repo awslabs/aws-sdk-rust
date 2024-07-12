@@ -21,8 +21,8 @@ impl CrossRegionCopyTarget {
 }
 
 /// A builder for [`CrossRegionCopyTarget`](crate::types::CrossRegionCopyTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrossRegionCopyTargetBuilder {
     pub(crate) target_region: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl AssociateTrafficDistributionGroupUserOutput {
 }
 
 /// A builder for [`AssociateTrafficDistributionGroupUserOutput`](crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTrafficDistributionGroupUserOutputBuilder {
     _request_id: Option<String>,
 }

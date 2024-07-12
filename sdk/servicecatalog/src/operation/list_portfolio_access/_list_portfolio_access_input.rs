@@ -56,8 +56,8 @@ impl ListPortfolioAccessInput {
 }
 
 /// A builder for [`ListPortfolioAccessInput`](crate::operation::list_portfolio_access::ListPortfolioAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPortfolioAccessInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,

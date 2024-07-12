@@ -83,8 +83,8 @@ impl GetImageSetOutput {
 }
 
 /// A builder for [`GetImageSetOutput`](crate::operation::get_image_set::GetImageSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImageSetOutputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_set_id: ::std::option::Option<::std::string::String>,

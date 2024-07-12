@@ -81,8 +81,8 @@ impl SavingsPlansPurchaseRecommendationSummary {
 }
 
 /// A builder for [`SavingsPlansPurchaseRecommendationSummary`](crate::types::SavingsPlansPurchaseRecommendationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlansPurchaseRecommendationSummaryBuilder {
     pub(crate) estimated_roi: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,

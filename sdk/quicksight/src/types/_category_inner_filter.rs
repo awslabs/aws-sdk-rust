@@ -35,8 +35,8 @@ impl CategoryInnerFilter {
 }
 
 /// A builder for [`CategoryInnerFilter`](crate::types::CategoryInnerFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CategoryInnerFilterBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) configuration: ::std::option::Option<crate::types::CategoryFilterConfiguration>,

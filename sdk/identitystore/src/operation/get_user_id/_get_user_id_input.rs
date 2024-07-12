@@ -26,8 +26,8 @@ impl GetUserIdInput {
 }
 
 /// A builder for [`GetUserIdInput`](crate::operation::get_user_id::GetUserIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUserIdInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) alternate_identifier: ::std::option::Option<crate::types::AlternateIdentifier>,

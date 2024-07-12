@@ -18,8 +18,8 @@ impl DisassociateWebsiteCertificateAuthorityOutput {
 }
 
 /// A builder for [`DisassociateWebsiteCertificateAuthorityOutput`](crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWebsiteCertificateAuthorityOutputBuilder {
     _request_id: Option<String>,
 }

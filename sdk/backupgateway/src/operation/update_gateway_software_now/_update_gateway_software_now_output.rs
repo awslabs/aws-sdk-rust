@@ -26,8 +26,8 @@ impl UpdateGatewaySoftwareNowOutput {
 }
 
 /// A builder for [`UpdateGatewaySoftwareNowOutput`](crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGatewaySoftwareNowOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

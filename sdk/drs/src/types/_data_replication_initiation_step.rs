@@ -27,8 +27,8 @@ impl DataReplicationInitiationStep {
 }
 
 /// A builder for [`DataReplicationInitiationStep`](crate::types::DataReplicationInitiationStep).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataReplicationInitiationStepBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DataReplicationInitiationStepName>,
     pub(crate) status: ::std::option::Option<crate::types::DataReplicationInitiationStepStatus>,

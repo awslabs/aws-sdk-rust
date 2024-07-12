@@ -20,8 +20,8 @@ impl DeleteAccountAuditConfigurationInput {
 }
 
 /// A builder for [`DeleteAccountAuditConfigurationInput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccountAuditConfigurationInputBuilder {
     pub(crate) delete_scheduled_audits: ::std::option::Option<bool>,
 }

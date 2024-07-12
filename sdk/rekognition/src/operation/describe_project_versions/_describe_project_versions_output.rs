@@ -34,8 +34,8 @@ impl DescribeProjectVersionsOutput {
 }
 
 /// A builder for [`DescribeProjectVersionsOutput`](crate::operation::describe_project_versions::DescribeProjectVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProjectVersionsOutputBuilder {
     pub(crate) project_version_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

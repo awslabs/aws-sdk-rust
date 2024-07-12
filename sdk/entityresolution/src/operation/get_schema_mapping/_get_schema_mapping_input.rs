@@ -20,8 +20,8 @@ impl GetSchemaMappingInput {
 }
 
 /// A builder for [`GetSchemaMappingInput`](crate::operation::get_schema_mapping::GetSchemaMappingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSchemaMappingInputBuilder {
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
 }

@@ -34,8 +34,8 @@ impl DescribeRootFoldersOutput {
 }
 
 /// A builder for [`DescribeRootFoldersOutput`](crate::operation::describe_root_folders::DescribeRootFoldersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRootFoldersOutputBuilder {
     pub(crate) folders: ::std::option::Option<::std::vec::Vec<crate::types::FolderMetadata>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

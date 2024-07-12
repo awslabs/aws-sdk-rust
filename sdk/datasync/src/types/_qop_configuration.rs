@@ -27,8 +27,8 @@ impl QopConfiguration {
 }
 
 /// A builder for [`QopConfiguration`](crate::types::QopConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QopConfigurationBuilder {
     pub(crate) rpc_protection: ::std::option::Option<crate::types::HdfsRpcProtection>,
     pub(crate) data_transfer_protection: ::std::option::Option<crate::types::HdfsDataTransferProtection>,

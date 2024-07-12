@@ -26,8 +26,8 @@ impl GetKxUserInput {
 }
 
 /// A builder for [`GetKxUserInput`](crate::operation::get_kx_user::GetKxUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKxUserInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,

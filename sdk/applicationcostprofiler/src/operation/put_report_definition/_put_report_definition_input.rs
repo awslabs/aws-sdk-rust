@@ -44,8 +44,8 @@ impl PutReportDefinitionInput {
 }
 
 /// A builder for [`PutReportDefinitionInput`](crate::operation::put_report_definition::PutReportDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutReportDefinitionInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     pub(crate) report_description: ::std::option::Option<::std::string::String>,

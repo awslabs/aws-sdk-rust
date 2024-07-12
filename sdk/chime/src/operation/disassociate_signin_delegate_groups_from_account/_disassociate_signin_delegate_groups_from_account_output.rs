@@ -19,8 +19,8 @@ impl DisassociateSigninDelegateGroupsFromAccountOutput {
 }
 
 /// A builder for [`DisassociateSigninDelegateGroupsFromAccountOutput`](crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateSigninDelegateGroupsFromAccountOutputBuilder {
     _request_id: Option<String>,
 }

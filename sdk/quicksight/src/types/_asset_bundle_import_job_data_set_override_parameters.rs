@@ -28,8 +28,8 @@ impl AssetBundleImportJobDataSetOverrideParameters {
 }
 
 /// A builder for [`AssetBundleImportJobDataSetOverrideParameters`](crate::types::AssetBundleImportJobDataSetOverrideParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleImportJobDataSetOverrideParametersBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

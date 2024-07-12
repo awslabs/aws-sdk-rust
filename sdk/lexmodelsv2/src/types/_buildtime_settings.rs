@@ -27,8 +27,8 @@ impl BuildtimeSettings {
 }
 
 /// A builder for [`BuildtimeSettings`](crate::types::BuildtimeSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuildtimeSettingsBuilder {
     pub(crate) descriptive_bot_builder: ::std::option::Option<crate::types::DescriptiveBotBuilderSpecification>,
     pub(crate) sample_utterance_generation: ::std::option::Option<crate::types::SampleUtteranceGenerationSpecification>,

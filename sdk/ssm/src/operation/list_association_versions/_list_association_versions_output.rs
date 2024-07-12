@@ -34,8 +34,8 @@ impl ListAssociationVersionsOutput {
 }
 
 /// A builder for [`ListAssociationVersionsOutput`](crate::operation::list_association_versions::ListAssociationVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociationVersionsOutputBuilder {
     pub(crate) association_versions: ::std::option::Option<::std::vec::Vec<crate::types::AssociationVersionInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

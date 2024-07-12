@@ -37,8 +37,8 @@ impl HibernationOptionsRequest {
 }
 
 /// A builder for [`HibernationOptionsRequest`](crate::types::HibernationOptionsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HibernationOptionsRequestBuilder {
     pub(crate) configured: ::std::option::Option<bool>,
 }

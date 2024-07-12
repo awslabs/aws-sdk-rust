@@ -29,8 +29,8 @@ impl DataLakeLifecycleConfiguration {
 }
 
 /// A builder for [`DataLakeLifecycleConfiguration`](crate::types::DataLakeLifecycleConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataLakeLifecycleConfigurationBuilder {
     pub(crate) expiration: ::std::option::Option<crate::types::DataLakeLifecycleExpiration>,
     pub(crate) transitions: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeLifecycleTransition>>,

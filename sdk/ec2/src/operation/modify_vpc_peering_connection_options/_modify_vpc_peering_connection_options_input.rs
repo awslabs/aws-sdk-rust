@@ -38,8 +38,8 @@ impl ModifyVpcPeeringConnectionOptionsInput {
 }
 
 /// A builder for [`ModifyVpcPeeringConnectionOptionsInput`](crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpcPeeringConnectionOptionsInputBuilder {
     pub(crate) accepter_peering_connection_options: ::std::option::Option<crate::types::PeeringConnectionOptionsRequest>,
     pub(crate) dry_run: ::std::option::Option<bool>,

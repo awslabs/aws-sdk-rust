@@ -27,8 +27,8 @@ impl TransitGatewayPolicyRuleMetaData {
 }
 
 /// A builder for [`TransitGatewayPolicyRuleMetaData`](crate::types::TransitGatewayPolicyRuleMetaData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayPolicyRuleMetaDataBuilder {
     pub(crate) meta_data_key: ::std::option::Option<::std::string::String>,
     pub(crate) meta_data_value: ::std::option::Option<::std::string::String>,

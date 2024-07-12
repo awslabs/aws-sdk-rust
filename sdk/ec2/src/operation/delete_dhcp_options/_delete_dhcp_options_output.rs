@@ -18,8 +18,8 @@ impl DeleteDhcpOptionsOutput {
 }
 
 /// A builder for [`DeleteDhcpOptionsOutput`](crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDhcpOptionsOutputBuilder {
     _request_id: Option<String>,
 }

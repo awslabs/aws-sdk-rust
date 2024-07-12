@@ -18,8 +18,8 @@ impl DisableTopicRuleOutput {
 }
 
 /// A builder for [`DisableTopicRuleOutput`](crate::operation::disable_topic_rule::DisableTopicRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableTopicRuleOutputBuilder {
     _request_id: Option<String>,
 }

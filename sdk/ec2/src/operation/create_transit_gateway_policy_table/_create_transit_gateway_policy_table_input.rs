@@ -34,8 +34,8 @@ impl CreateTransitGatewayPolicyTableInput {
 }
 
 /// A builder for [`CreateTransitGatewayPolicyTableInput`](crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitGatewayPolicyTableInputBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,

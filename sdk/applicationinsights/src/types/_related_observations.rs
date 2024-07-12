@@ -23,8 +23,8 @@ impl RelatedObservations {
 }
 
 /// A builder for [`RelatedObservations`](crate::types::RelatedObservations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelatedObservationsBuilder {
     pub(crate) observation_list: ::std::option::Option<::std::vec::Vec<crate::types::Observation>>,
 }

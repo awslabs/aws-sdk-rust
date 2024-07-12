@@ -27,8 +27,8 @@ impl CreateConfigurationSetEventDestinationInput {
 }
 
 /// A builder for [`CreateConfigurationSetEventDestinationInput`](crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConfigurationSetEventDestinationInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destination: ::std::option::Option<crate::types::EventDestination>,

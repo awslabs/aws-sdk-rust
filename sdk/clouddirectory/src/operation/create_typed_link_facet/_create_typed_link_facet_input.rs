@@ -26,8 +26,8 @@ impl CreateTypedLinkFacetInput {
 }
 
 /// A builder for [`CreateTypedLinkFacetInput`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTypedLinkFacetInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) facet: ::std::option::Option<crate::types::TypedLinkFacet>,

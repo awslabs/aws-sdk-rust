@@ -46,8 +46,8 @@ impl RegisterResourceInput {
 }
 
 /// A builder for [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) use_service_linked_role: ::std::option::Option<bool>,

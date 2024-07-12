@@ -20,8 +20,8 @@ impl AssociateDefaultViewInput {
 }
 
 /// A builder for [`AssociateDefaultViewInput`](crate::operation::associate_default_view::AssociateDefaultViewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDefaultViewInputBuilder {
     pub(crate) view_arn: ::std::option::Option<::std::string::String>,
 }

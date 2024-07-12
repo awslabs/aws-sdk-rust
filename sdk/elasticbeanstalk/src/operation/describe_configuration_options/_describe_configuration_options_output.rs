@@ -41,8 +41,8 @@ impl DescribeConfigurationOptionsOutput {
 }
 
 /// A builder for [`DescribeConfigurationOptionsOutput`](crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigurationOptionsOutputBuilder {
     pub(crate) solution_stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) platform_arn: ::std::option::Option<::std::string::String>,

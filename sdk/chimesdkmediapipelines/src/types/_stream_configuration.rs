@@ -34,8 +34,8 @@ impl StreamConfiguration {
 }
 
 /// A builder for [`StreamConfiguration`](crate::types::StreamConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamConfigurationBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) fragment_number: ::std::option::Option<::std::string::String>,

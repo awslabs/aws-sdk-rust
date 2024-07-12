@@ -18,8 +18,8 @@ impl UpdateDataCellsFilterOutput {
 }
 
 /// A builder for [`UpdateDataCellsFilterOutput`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDataCellsFilterOutputBuilder {
     _request_id: Option<String>,
 }

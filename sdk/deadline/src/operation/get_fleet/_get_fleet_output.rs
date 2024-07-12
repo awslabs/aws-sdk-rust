@@ -151,8 +151,8 @@ impl GetFleetOutput {
 }
 
 /// A builder for [`GetFleetOutput`](crate::operation::get_fleet::GetFleetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetFleetOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,

@@ -12,8 +12,8 @@ impl WorkflowRunSortCriteria {
 }
 
 /// A builder for [`WorkflowRunSortCriteria`](crate::types::WorkflowRunSortCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowRunSortCriteriaBuilder {}
 impl WorkflowRunSortCriteriaBuilder {
     /// Consumes the builder and constructs a [`WorkflowRunSortCriteria`](crate::types::WorkflowRunSortCriteria).

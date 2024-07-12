@@ -65,8 +65,8 @@ impl UsageStatistics {
 }
 
 /// A builder for [`UsageStatistics`](crate::types::UsageStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageStatisticsBuilder {
     pub(crate) sum_by_account: ::std::option::Option<::std::vec::Vec<crate::types::UsageAccountResult>>,
     pub(crate) top_accounts_by_feature: ::std::option::Option<::std::vec::Vec<crate::types::UsageTopAccountsResult>>,

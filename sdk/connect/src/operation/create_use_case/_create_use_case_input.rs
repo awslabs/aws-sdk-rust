@@ -38,8 +38,8 @@ impl CreateUseCaseInput {
 }
 
 /// A builder for [`CreateUseCaseInput`](crate::operation::create_use_case::CreateUseCaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUseCaseInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_association_id: ::std::option::Option<::std::string::String>,

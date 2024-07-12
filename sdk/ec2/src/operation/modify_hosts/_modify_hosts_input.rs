@@ -56,8 +56,8 @@ impl ModifyHostsInput {
 }
 
 /// A builder for [`ModifyHostsInput`](crate::operation::modify_hosts::ModifyHostsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyHostsInputBuilder {
     pub(crate) auto_placement: ::std::option::Option<crate::types::AutoPlacement>,
     pub(crate) host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -20,8 +20,8 @@ impl DeleteIpAccessSettingsInput {
 }
 
 /// A builder for [`DeleteIpAccessSettingsInput`](crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIpAccessSettingsInputBuilder {
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
 }

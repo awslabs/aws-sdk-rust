@@ -41,8 +41,8 @@ impl ListFileSharesOutput {
 }
 
 /// A builder for [`ListFileSharesOutput`](crate::operation::list_file_shares::ListFileSharesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFileSharesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

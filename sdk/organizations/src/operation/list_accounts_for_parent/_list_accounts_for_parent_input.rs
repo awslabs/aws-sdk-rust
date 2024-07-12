@@ -32,8 +32,8 @@ impl ListAccountsForParentInput {
 }
 
 /// A builder for [`ListAccountsForParentInput`](crate::operation::list_accounts_for_parent::ListAccountsForParentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountsForParentInputBuilder {
     pub(crate) parent_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

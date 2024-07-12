@@ -39,8 +39,8 @@ impl UpdateBridgeInput {
 }
 
 /// A builder for [`UpdateBridgeInput`](crate::operation::update_bridge::UpdateBridgeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBridgeInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) egress_gateway_bridge: ::std::option::Option<crate::types::UpdateEgressGatewayBridgeRequest>,

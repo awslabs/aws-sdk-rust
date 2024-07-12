@@ -26,8 +26,8 @@ impl DetectStackResourceDriftOutput {
 }
 
 /// A builder for [`DetectStackResourceDriftOutput`](crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectStackResourceDriftOutputBuilder {
     pub(crate) stack_resource_drift: ::std::option::Option<crate::types::StackResourceDrift>,
     _request_id: Option<String>,

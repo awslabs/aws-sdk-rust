@@ -27,8 +27,8 @@ impl LoadBalancerState {
 }
 
 /// A builder for [`LoadBalancerState`](crate::types::LoadBalancerState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoadBalancerStateBuilder {
     pub(crate) code: ::std::option::Option<crate::types::LoadBalancerStateEnum>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

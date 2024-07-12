@@ -21,8 +21,8 @@ impl NetworkFirewallStatefulRuleGroupOverride {
 }
 
 /// A builder for [`NetworkFirewallStatefulRuleGroupOverride`](crate::types::NetworkFirewallStatefulRuleGroupOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkFirewallStatefulRuleGroupOverrideBuilder {
     pub(crate) action: ::std::option::Option<crate::types::NetworkFirewallOverrideAction>,
 }

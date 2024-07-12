@@ -26,8 +26,8 @@ impl GetReadSetOutput {
 }
 
 /// A builder for [`GetReadSetOutput`](crate::operation::get_read_set::GetReadSetOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReadSetOutputBuilder {
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     _request_id: Option<String>,

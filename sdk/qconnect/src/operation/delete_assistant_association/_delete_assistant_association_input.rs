@@ -26,8 +26,8 @@ impl DeleteAssistantAssociationInput {
 }
 
 /// A builder for [`DeleteAssistantAssociationInput`](crate::operation::delete_assistant_association::DeleteAssistantAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssistantAssociationInputBuilder {
     pub(crate) assistant_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) assistant_id: ::std::option::Option<::std::string::String>,

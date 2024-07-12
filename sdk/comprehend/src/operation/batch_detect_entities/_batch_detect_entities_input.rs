@@ -36,8 +36,8 @@ impl BatchDetectEntitiesInput {
 }
 
 /// A builder for [`BatchDetectEntitiesInput`](crate::operation::batch_detect_entities::BatchDetectEntitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchDetectEntitiesInputBuilder {
     pub(crate) text_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

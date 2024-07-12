@@ -65,8 +65,8 @@ impl TransitGatewayMulticastDomain {
 }
 
 /// A builder for [`TransitGatewayMulticastDomain`](crate::types::TransitGatewayMulticastDomain).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayMulticastDomainBuilder {
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,

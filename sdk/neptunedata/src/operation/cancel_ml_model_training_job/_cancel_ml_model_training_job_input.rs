@@ -32,8 +32,8 @@ impl CancelMlModelTrainingJobInput {
 }
 
 /// A builder for [`CancelMlModelTrainingJobInput`](crate::operation::cancel_ml_model_training_job::CancelMlModelTrainingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelMlModelTrainingJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) neptune_iam_role_arn: ::std::option::Option<::std::string::String>,

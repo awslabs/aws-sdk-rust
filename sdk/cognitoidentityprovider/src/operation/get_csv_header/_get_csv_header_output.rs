@@ -35,8 +35,8 @@ impl GetCsvHeaderOutput {
 }
 
 /// A builder for [`GetCsvHeaderOutput`](crate::operation::get_csv_header::GetCsvHeaderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCsvHeaderOutputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) csv_header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

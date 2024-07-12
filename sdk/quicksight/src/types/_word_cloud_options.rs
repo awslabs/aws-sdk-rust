@@ -51,8 +51,8 @@ impl WordCloudOptions {
 }
 
 /// A builder for [`WordCloudOptions`](crate::types::WordCloudOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WordCloudOptionsBuilder {
     pub(crate) word_orientation: ::std::option::Option<crate::types::WordCloudWordOrientation>,
     pub(crate) word_scaling: ::std::option::Option<crate::types::WordCloudWordScaling>,

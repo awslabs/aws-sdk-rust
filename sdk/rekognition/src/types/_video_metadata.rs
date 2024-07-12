@@ -57,8 +57,8 @@ impl VideoMetadata {
 }
 
 /// A builder for [`VideoMetadata`](crate::types::VideoMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoMetadataBuilder {
     pub(crate) codec: ::std::option::Option<::std::string::String>,
     pub(crate) duration_millis: ::std::option::Option<i64>,

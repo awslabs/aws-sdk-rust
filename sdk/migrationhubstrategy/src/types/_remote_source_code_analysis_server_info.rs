@@ -21,8 +21,8 @@ impl RemoteSourceCodeAnalysisServerInfo {
 }
 
 /// A builder for [`RemoteSourceCodeAnalysisServerInfo`](crate::types::RemoteSourceCodeAnalysisServerInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoteSourceCodeAnalysisServerInfoBuilder {
     pub(crate) remote_source_code_analysis_server_configuration_timestamp: ::std::option::Option<::std::string::String>,
 }

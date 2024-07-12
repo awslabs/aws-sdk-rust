@@ -21,8 +21,8 @@ impl FsxProtocolNfs {
 }
 
 /// A builder for [`FsxProtocolNfs`](crate::types::FsxProtocolNfs).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FsxProtocolNfsBuilder {
     pub(crate) mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
 }

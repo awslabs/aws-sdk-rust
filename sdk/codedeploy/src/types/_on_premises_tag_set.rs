@@ -23,8 +23,8 @@ impl OnPremisesTagSet {
 }
 
 /// A builder for [`OnPremisesTagSet`](crate::types::OnPremisesTagSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OnPremisesTagSetBuilder {
     pub(crate) on_premises_tag_set_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagFilter>>>,
 }

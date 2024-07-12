@@ -27,8 +27,8 @@ impl SaaSProductSummary {
 }
 
 /// A builder for [`SaaSProductSummary`](crate::types::SaaSProductSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SaaSProductSummaryBuilder {
     pub(crate) product_title: ::std::option::Option<::std::string::String>,
     pub(crate) visibility: ::std::option::Option<crate::types::SaaSProductVisibilityString>,

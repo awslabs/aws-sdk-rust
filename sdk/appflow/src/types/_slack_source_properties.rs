@@ -22,8 +22,8 @@ impl SlackSourceProperties {
 }
 
 /// A builder for [`SlackSourceProperties`](crate::types::SlackSourceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlackSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }

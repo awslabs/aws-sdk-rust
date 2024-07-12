@@ -27,8 +27,8 @@ impl UpdateReadinessCheckInput {
 }
 
 /// A builder for [`UpdateReadinessCheckInput`](crate::operation::update_readiness_check::UpdateReadinessCheckInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateReadinessCheckInputBuilder {
     pub(crate) readiness_check_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_set_name: ::std::option::Option<::std::string::String>,

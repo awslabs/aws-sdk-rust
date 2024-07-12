@@ -18,8 +18,8 @@ impl DeleteCacheSecurityGroupOutput {
 }
 
 /// A builder for [`DeleteCacheSecurityGroupOutput`](crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCacheSecurityGroupOutputBuilder {
     _request_id: Option<String>,
 }

@@ -72,8 +72,8 @@ impl HandshakeResource {
 }
 
 /// A builder for [`HandshakeResource`](crate::types::HandshakeResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct HandshakeResourceBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::HandshakeResourceType>,

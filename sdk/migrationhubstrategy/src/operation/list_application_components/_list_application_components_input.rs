@@ -52,8 +52,8 @@ impl ListApplicationComponentsInput {
 }
 
 /// A builder for [`ListApplicationComponentsInput`](crate::operation::list_application_components::ListApplicationComponentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationComponentsInputBuilder {
     pub(crate) application_component_criteria: ::std::option::Option<crate::types::ApplicationComponentCriteria>,
     pub(crate) filter_value: ::std::option::Option<::std::string::String>,

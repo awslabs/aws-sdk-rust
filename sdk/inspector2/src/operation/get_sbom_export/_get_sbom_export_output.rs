@@ -62,8 +62,8 @@ impl GetSbomExportOutput {
 }
 
 /// A builder for [`GetSbomExportOutput`](crate::operation::get_sbom_export::GetSbomExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSbomExportOutputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::SbomReportFormat>,

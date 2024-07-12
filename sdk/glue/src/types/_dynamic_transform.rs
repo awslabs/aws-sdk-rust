@@ -72,8 +72,8 @@ impl DynamicTransform {
 }
 
 /// A builder for [`DynamicTransform`](crate::types::DynamicTransform).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DynamicTransformBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) transform_name: ::std::option::Option<::std::string::String>,

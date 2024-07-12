@@ -51,8 +51,8 @@ impl MetricSource {
 }
 
 /// A builder for [`MetricSource`](crate::types::MetricSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricSourceBuilder {
     pub(crate) s3_source_config: ::std::option::Option<crate::types::S3SourceConfig>,
     pub(crate) app_flow_config: ::std::option::Option<crate::types::AppFlowConfig>,

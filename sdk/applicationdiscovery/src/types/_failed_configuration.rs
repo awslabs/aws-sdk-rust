@@ -33,8 +33,8 @@ impl FailedConfiguration {
 }
 
 /// A builder for [`FailedConfiguration`](crate::types::FailedConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedConfigurationBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_status_code: ::std::option::Option<i32>,

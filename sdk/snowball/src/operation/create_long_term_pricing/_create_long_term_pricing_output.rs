@@ -26,8 +26,8 @@ impl CreateLongTermPricingOutput {
 }
 
 /// A builder for [`CreateLongTermPricingOutput`](crate::operation::create_long_term_pricing::CreateLongTermPricingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLongTermPricingOutputBuilder {
     pub(crate) long_term_pricing_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

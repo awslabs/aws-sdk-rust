@@ -20,8 +20,8 @@ impl DeleteSourceCredentialsInput {
 }
 
 /// A builder for [`DeleteSourceCredentialsInput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSourceCredentialsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

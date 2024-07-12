@@ -45,8 +45,8 @@ impl AddBridgeNetworkSourceRequest {
 }
 
 /// A builder for [`AddBridgeNetworkSourceRequest`](crate::types::AddBridgeNetworkSourceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddBridgeNetworkSourceRequestBuilder {
     pub(crate) multicast_ip: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

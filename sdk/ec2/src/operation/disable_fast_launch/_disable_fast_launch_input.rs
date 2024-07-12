@@ -32,8 +32,8 @@ impl DisableFastLaunchInput {
 }
 
 /// A builder for [`DisableFastLaunchInput`](crate::operation::disable_fast_launch::DisableFastLaunchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableFastLaunchInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl PutAggregationAuthorizationOutput {
 }
 
 /// A builder for [`PutAggregationAuthorizationOutput`](crate::operation::put_aggregation_authorization::PutAggregationAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAggregationAuthorizationOutputBuilder {
     pub(crate) aggregation_authorization: ::std::option::Option<crate::types::AggregationAuthorization>,
     _request_id: Option<String>,

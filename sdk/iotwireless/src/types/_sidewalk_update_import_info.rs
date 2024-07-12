@@ -21,8 +21,8 @@ impl SidewalkUpdateImportInfo {
 }
 
 /// A builder for [`SidewalkUpdateImportInfo`](crate::types::SidewalkUpdateImportInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SidewalkUpdateImportInfoBuilder {
     pub(crate) device_creation_file: ::std::option::Option<::std::string::String>,
 }

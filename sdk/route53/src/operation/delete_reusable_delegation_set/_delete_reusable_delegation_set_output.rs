@@ -19,8 +19,8 @@ impl DeleteReusableDelegationSetOutput {
 }
 
 /// A builder for [`DeleteReusableDelegationSetOutput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReusableDelegationSetOutputBuilder {
     _request_id: Option<String>,
 }

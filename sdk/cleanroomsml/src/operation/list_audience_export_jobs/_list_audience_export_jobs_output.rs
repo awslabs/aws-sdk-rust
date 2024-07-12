@@ -33,8 +33,8 @@ impl ListAudienceExportJobsOutput {
 }
 
 /// A builder for [`ListAudienceExportJobsOutput`](crate::operation::list_audience_export_jobs::ListAudienceExportJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAudienceExportJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) audience_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::AudienceExportJobSummary>>,

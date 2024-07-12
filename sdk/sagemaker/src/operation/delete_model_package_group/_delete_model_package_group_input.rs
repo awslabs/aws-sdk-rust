@@ -20,8 +20,8 @@ impl DeleteModelPackageGroupInput {
 }
 
 /// A builder for [`DeleteModelPackageGroupInput`](crate::operation::delete_model_package_group::DeleteModelPackageGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelPackageGroupInputBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
 }

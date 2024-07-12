@@ -26,8 +26,8 @@ impl DescribeClusterOperationOutput {
 }
 
 /// A builder for [`DescribeClusterOperationOutput`](crate::operation::describe_cluster_operation::DescribeClusterOperationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClusterOperationOutputBuilder {
     pub(crate) cluster_operation_info: ::std::option::Option<crate::types::ClusterOperationInfo>,
     _request_id: Option<String>,

@@ -48,8 +48,8 @@ impl TestCustomDataIdentifierInput {
 }
 
 /// A builder for [`TestCustomDataIdentifierInput`](crate::operation::test_custom_data_identifier::TestCustomDataIdentifierInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestCustomDataIdentifierInputBuilder {
     pub(crate) ignore_words: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

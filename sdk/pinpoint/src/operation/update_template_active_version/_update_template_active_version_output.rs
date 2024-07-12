@@ -26,8 +26,8 @@ impl UpdateTemplateActiveVersionOutput {
 }
 
 /// A builder for [`UpdateTemplateActiveVersionOutput`](crate::operation::update_template_active_version::UpdateTemplateActiveVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTemplateActiveVersionOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,

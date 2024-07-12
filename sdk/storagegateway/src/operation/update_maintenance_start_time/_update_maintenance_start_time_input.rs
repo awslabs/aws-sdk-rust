@@ -69,8 +69,8 @@ impl UpdateMaintenanceStartTimeInput {
 }
 
 /// A builder for [`UpdateMaintenanceStartTimeInput`](crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMaintenanceStartTimeInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hour_of_day: ::std::option::Option<i32>,

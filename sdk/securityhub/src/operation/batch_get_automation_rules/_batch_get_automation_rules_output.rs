@@ -36,8 +36,8 @@ impl BatchGetAutomationRulesOutput {
 }
 
 /// A builder for [`BatchGetAutomationRulesOutput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAutomationRulesOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>>,
     pub(crate) unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,

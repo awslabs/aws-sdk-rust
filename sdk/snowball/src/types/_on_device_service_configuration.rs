@@ -39,8 +39,8 @@ impl OnDeviceServiceConfiguration {
 }
 
 /// A builder for [`OnDeviceServiceConfiguration`](crate::types::OnDeviceServiceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OnDeviceServiceConfigurationBuilder {
     pub(crate) nfs_on_device_service: ::std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
     pub(crate) tgw_on_device_service: ::std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,

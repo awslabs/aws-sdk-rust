@@ -44,8 +44,8 @@ impl GetFunctionOutput {
 }
 
 /// A builder for [`GetFunctionOutput`](crate::operation::get_function::GetFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFunctionOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
     pub(crate) code: ::std::option::Option<crate::types::FunctionCodeLocation>,

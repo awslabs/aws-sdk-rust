@@ -27,8 +27,8 @@ impl InputConfigurationRequest {
 }
 
 /// A builder for [`InputConfigurationRequest`](crate::types::InputConfigurationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputConfigurationRequestBuilder {
     pub(crate) input_port: ::std::option::Option<i32>,
     pub(crate) interface: ::std::option::Option<crate::types::InterfaceRequest>,

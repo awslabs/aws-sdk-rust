@@ -26,8 +26,8 @@ impl GetEnvironmentBlueprintConfigurationInput {
 }
 
 /// A builder for [`GetEnvironmentBlueprintConfigurationInput`](crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnvironmentBlueprintConfigurationInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_blueprint_identifier: ::std::option::Option<::std::string::String>,

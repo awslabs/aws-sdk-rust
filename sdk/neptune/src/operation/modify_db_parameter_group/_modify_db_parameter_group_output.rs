@@ -26,8 +26,8 @@ impl ModifyDbParameterGroupOutput {
 }
 
 /// A builder for [`ModifyDbParameterGroupOutput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbParameterGroupOutputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

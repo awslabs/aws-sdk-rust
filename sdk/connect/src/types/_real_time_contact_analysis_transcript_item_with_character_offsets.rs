@@ -28,8 +28,8 @@ impl RealTimeContactAnalysisTranscriptItemWithCharacterOffsets {
 }
 
 /// A builder for [`RealTimeContactAnalysisTranscriptItemWithCharacterOffsets`](crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) character_offsets: ::std::option::Option<crate::types::RealTimeContactAnalysisCharacterInterval>,

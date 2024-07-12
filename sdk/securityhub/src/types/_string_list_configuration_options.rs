@@ -41,8 +41,8 @@ impl StringListConfigurationOptions {
 }
 
 /// A builder for [`StringListConfigurationOptions`](crate::types::StringListConfigurationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StringListConfigurationOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) re2_expression: ::std::option::Option<::std::string::String>,

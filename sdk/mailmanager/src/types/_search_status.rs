@@ -39,8 +39,8 @@ impl SearchStatus {
 }
 
 /// A builder for [`SearchStatus`](crate::types::SearchStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchStatusBuilder {
     pub(crate) submission_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

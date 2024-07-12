@@ -39,8 +39,8 @@ impl ListInstanceProfileTagsOutput {
 }
 
 /// A builder for [`ListInstanceProfileTagsOutput`](crate::operation::list_instance_profile_tags::ListInstanceProfileTagsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInstanceProfileTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

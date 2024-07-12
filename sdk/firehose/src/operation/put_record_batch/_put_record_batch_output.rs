@@ -39,8 +39,8 @@ impl PutRecordBatchOutput {
 }
 
 /// A builder for [`PutRecordBatchOutput`](crate::operation::put_record_batch::PutRecordBatchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRecordBatchOutputBuilder {
     pub(crate) failed_put_count: ::std::option::Option<i32>,
     pub(crate) encrypted: ::std::option::Option<bool>,

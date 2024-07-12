@@ -32,8 +32,8 @@ impl RegexPatternSetUpdate {
 }
 
 /// A builder for [`RegexPatternSetUpdate`](crate::types::RegexPatternSetUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegexPatternSetUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) regex_pattern_string: ::std::option::Option<::std::string::String>,

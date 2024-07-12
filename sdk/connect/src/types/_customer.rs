@@ -27,8 +27,8 @@ impl Customer {
 }
 
 /// A builder for [`Customer`](crate::types::Customer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomerBuilder {
     pub(crate) device_info: ::std::option::Option<crate::types::DeviceInfo>,
     pub(crate) capabilities: ::std::option::Option<crate::types::ParticipantCapabilities>,

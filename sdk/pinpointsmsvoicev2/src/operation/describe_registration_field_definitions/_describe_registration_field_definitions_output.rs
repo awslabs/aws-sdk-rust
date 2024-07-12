@@ -40,8 +40,8 @@ impl DescribeRegistrationFieldDefinitionsOutput {
 }
 
 /// A builder for [`DescribeRegistrationFieldDefinitionsOutput`](crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistrationFieldDefinitionsOutputBuilder {
     pub(crate) registration_type: ::std::option::Option<::std::string::String>,
     pub(crate) registration_field_definitions: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationFieldDefinition>>,

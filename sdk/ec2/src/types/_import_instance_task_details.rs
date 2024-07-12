@@ -41,8 +41,8 @@ impl ImportInstanceTaskDetails {
 }
 
 /// A builder for [`ImportInstanceTaskDetails`](crate::types::ImportInstanceTaskDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportInstanceTaskDetailsBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl CreateLogPatternOutput {
 }
 
 /// A builder for [`CreateLogPatternOutput`](crate::operation::create_log_pattern::CreateLogPatternOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLogPatternOutputBuilder {
     pub(crate) log_pattern: ::std::option::Option<crate::types::LogPattern>,
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl DeleteWorkerConfigurationOutput {
 }
 
 /// A builder for [`DeleteWorkerConfigurationOutput`](crate::operation::delete_worker_configuration::DeleteWorkerConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkerConfigurationOutputBuilder {
     pub(crate) worker_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) worker_configuration_state: ::std::option::Option<crate::types::WorkerConfigurationState>,

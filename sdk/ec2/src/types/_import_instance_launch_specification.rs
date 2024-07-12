@@ -102,8 +102,8 @@ impl ImportInstanceLaunchSpecification {
 }
 
 /// A builder for [`ImportInstanceLaunchSpecification`](crate::types::ImportInstanceLaunchSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ImportInstanceLaunchSpecificationBuilder {
     pub(crate) additional_info: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<crate::types::ArchitectureValues>,

@@ -27,8 +27,8 @@ impl DescribeDomainEndpointOptionsOutput {
 }
 
 /// A builder for [`DescribeDomainEndpointOptionsOutput`](crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainEndpointOptionsOutputBuilder {
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
     _request_id: Option<String>,

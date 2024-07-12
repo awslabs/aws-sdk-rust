@@ -18,8 +18,8 @@ impl DeleteCustomActionTypeOutput {
 }
 
 /// A builder for [`DeleteCustomActionTypeOutput`](crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomActionTypeOutputBuilder {
     _request_id: Option<String>,
 }

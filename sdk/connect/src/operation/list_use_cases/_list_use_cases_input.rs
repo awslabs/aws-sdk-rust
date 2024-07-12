@@ -39,8 +39,8 @@ impl ListUseCasesInput {
 }
 
 /// A builder for [`ListUseCasesInput`](crate::operation::list_use_cases::ListUseCasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUseCasesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_association_id: ::std::option::Option<::std::string::String>,

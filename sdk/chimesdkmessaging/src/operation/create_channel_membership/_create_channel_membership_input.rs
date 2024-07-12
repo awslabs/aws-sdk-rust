@@ -48,8 +48,8 @@ impl CreateChannelMembershipInput {
 }
 
 /// A builder for [`CreateChannelMembershipInput`](crate::operation::create_channel_membership::CreateChannelMembershipInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateChannelMembershipInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,

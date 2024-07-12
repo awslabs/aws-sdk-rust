@@ -57,8 +57,8 @@ impl VehicleStatus {
 }
 
 /// A builder for [`VehicleStatus`](crate::types::VehicleStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VehicleStatusBuilder {
     pub(crate) campaign_name: ::std::option::Option<::std::string::String>,
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,

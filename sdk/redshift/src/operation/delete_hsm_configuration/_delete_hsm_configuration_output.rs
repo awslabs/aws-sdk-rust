@@ -18,8 +18,8 @@ impl DeleteHsmConfigurationOutput {
 }
 
 /// A builder for [`DeleteHsmConfigurationOutput`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHsmConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

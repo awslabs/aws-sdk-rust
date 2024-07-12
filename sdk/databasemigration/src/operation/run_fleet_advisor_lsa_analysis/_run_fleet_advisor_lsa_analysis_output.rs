@@ -32,8 +32,8 @@ impl RunFleetAdvisorLsaAnalysisOutput {
 }
 
 /// A builder for [`RunFleetAdvisorLsaAnalysisOutput`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunFleetAdvisorLsaAnalysisOutputBuilder {
     pub(crate) lsa_analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

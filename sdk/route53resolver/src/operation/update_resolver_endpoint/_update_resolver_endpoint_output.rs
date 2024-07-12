@@ -26,8 +26,8 @@ impl UpdateResolverEndpointOutput {
 }
 
 /// A builder for [`UpdateResolverEndpointOutput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResolverEndpointOutputBuilder {
     pub(crate) resolver_endpoint: ::std::option::Option<crate::types::ResolverEndpoint>,
     _request_id: Option<String>,

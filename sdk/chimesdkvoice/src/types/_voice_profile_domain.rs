@@ -70,8 +70,8 @@ impl VoiceProfileDomain {
 }
 
 /// A builder for [`VoiceProfileDomain`](crate::types::VoiceProfileDomain).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct VoiceProfileDomainBuilder {
     pub(crate) voice_profile_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) voice_profile_domain_arn: ::std::option::Option<::std::string::String>,

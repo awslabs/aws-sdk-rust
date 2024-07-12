@@ -22,8 +22,8 @@ impl CreateWorkspacesInput {
 }
 
 /// A builder for [`CreateWorkspacesInput`](crate::operation::create_workspaces::CreateWorkspacesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkspacesInputBuilder {
     pub(crate) workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceRequest>>,
 }

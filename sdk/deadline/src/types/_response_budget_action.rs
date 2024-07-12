@@ -42,8 +42,8 @@ impl ResponseBudgetAction {
 }
 
 /// A builder for [`ResponseBudgetAction`](crate::types::ResponseBudgetAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ResponseBudgetActionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::BudgetActionType>,
     pub(crate) threshold_percentage: ::std::option::Option<f32>,

@@ -27,8 +27,8 @@ impl UpdateVpcEndpointOutput {
 }
 
 /// A builder for [`UpdateVpcEndpointOutput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVpcEndpointOutputBuilder {
     pub(crate) vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
     _request_id: Option<String>,

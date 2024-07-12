@@ -38,8 +38,8 @@ impl StartTransformerJobInput {
 }
 
 /// A builder for [`StartTransformerJobInput`](crate::operation::start_transformer_job::StartTransformerJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTransformerJobInputBuilder {
     pub(crate) input_file: ::std::option::Option<crate::types::S3Location>,
     pub(crate) output_location: ::std::option::Option<crate::types::S3Location>,

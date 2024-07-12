@@ -20,8 +20,8 @@ impl AssociateServiceRoleToAccountInput {
 }
 
 /// A builder for [`AssociateServiceRoleToAccountInput`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateServiceRoleToAccountInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }

@@ -29,8 +29,8 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {
 }
 
 /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsBuilder {
     pub(crate) instances_distribution:
         ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails>,

@@ -53,8 +53,8 @@ impl CsvFormatDescriptor {
 }
 
 /// A builder for [`CsvFormatDescriptor`](crate::types::CsvFormatDescriptor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CsvFormatDescriptorBuilder {
     pub(crate) file_compression: ::std::option::Option<crate::types::CsvFileCompression>,
     pub(crate) charset: ::std::option::Option<::std::string::String>,

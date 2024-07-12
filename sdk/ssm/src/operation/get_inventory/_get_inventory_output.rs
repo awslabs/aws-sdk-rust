@@ -34,8 +34,8 @@ impl GetInventoryOutput {
 }
 
 /// A builder for [`GetInventoryOutput`](crate::operation::get_inventory::GetInventoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInventoryOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::InventoryResultEntity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

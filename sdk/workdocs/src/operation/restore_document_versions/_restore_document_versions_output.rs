@@ -18,8 +18,8 @@ impl RestoreDocumentVersionsOutput {
 }
 
 /// A builder for [`RestoreDocumentVersionsOutput`](crate::operation::restore_document_versions::RestoreDocumentVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreDocumentVersionsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -34,8 +34,8 @@ impl ListTrafficDistributionGroupUsersOutput {
 }
 
 /// A builder for [`ListTrafficDistributionGroupUsersOutput`](crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrafficDistributionGroupUsersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_distribution_group_user_summary_list:

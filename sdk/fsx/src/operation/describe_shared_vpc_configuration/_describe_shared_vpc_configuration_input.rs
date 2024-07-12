@@ -11,8 +11,8 @@ impl DescribeSharedVpcConfigurationInput {
 }
 
 /// A builder for [`DescribeSharedVpcConfigurationInput`](crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSharedVpcConfigurationInputBuilder {}
 impl DescribeSharedVpcConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSharedVpcConfigurationInput`](crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationInput).

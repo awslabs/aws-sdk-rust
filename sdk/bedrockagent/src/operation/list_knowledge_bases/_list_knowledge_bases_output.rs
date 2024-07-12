@@ -33,8 +33,8 @@ impl ListKnowledgeBasesOutput {
 }
 
 /// A builder for [`ListKnowledgeBasesOutput`](crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKnowledgeBasesOutputBuilder {
     pub(crate) knowledge_base_summaries: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

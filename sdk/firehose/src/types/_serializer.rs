@@ -27,8 +27,8 @@ impl Serializer {
 }
 
 /// A builder for [`Serializer`](crate::types::Serializer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SerializerBuilder {
     pub(crate) parquet_ser_de: ::std::option::Option<crate::types::ParquetSerDe>,
     pub(crate) orc_ser_de: ::std::option::Option<crate::types::OrcSerDe>,

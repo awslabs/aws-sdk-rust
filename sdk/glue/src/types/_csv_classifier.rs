@@ -98,8 +98,8 @@ impl CsvClassifier {
 }
 
 /// A builder for [`CsvClassifier`](crate::types::CsvClassifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CsvClassifierBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -26,8 +26,8 @@ impl AttachCertificateToDistributionOutput {
 }
 
 /// A builder for [`AttachCertificateToDistributionOutput`](crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachCertificateToDistributionOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,

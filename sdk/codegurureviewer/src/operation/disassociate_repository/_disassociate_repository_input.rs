@@ -20,8 +20,8 @@ impl DisassociateRepositoryInput {
 }
 
 /// A builder for [`DisassociateRepositoryInput`](crate::operation::disassociate_repository::DisassociateRepositoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateRepositoryInputBuilder {
     pub(crate) association_arn: ::std::option::Option<::std::string::String>,
 }

@@ -45,8 +45,8 @@ impl RecoveryInstanceDataReplicationInfoReplicatedDisk {
 }
 
 /// A builder for [`RecoveryInstanceDataReplicationInfoReplicatedDisk`](crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecoveryInstanceDataReplicationInfoReplicatedDiskBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) total_storage_bytes: ::std::option::Option<i64>,

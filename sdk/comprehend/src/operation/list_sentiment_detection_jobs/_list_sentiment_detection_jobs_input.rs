@@ -32,8 +32,8 @@ impl ListSentimentDetectionJobsInput {
 }
 
 /// A builder for [`ListSentimentDetectionJobsInput`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSentimentDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::SentimentDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

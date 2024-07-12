@@ -27,8 +27,8 @@ impl FreeFormLayoutElementBackgroundStyle {
 }
 
 /// A builder for [`FreeFormLayoutElementBackgroundStyle`](crate::types::FreeFormLayoutElementBackgroundStyle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FreeFormLayoutElementBackgroundStyleBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) color: ::std::option::Option<::std::string::String>,

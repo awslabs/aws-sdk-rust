@@ -11,8 +11,8 @@ impl GetAssociationForServiceQuotaTemplateInput {
 }
 
 /// A builder for [`GetAssociationForServiceQuotaTemplateInput`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssociationForServiceQuotaTemplateInputBuilder {}
 impl GetAssociationForServiceQuotaTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetAssociationForServiceQuotaTemplateInput`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateInput).

@@ -20,8 +20,8 @@ impl DeleteCoreNetworkInput {
 }
 
 /// A builder for [`DeleteCoreNetworkInput`](crate::operation::delete_core_network::DeleteCoreNetworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCoreNetworkInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
 }

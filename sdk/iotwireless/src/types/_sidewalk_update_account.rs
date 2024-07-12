@@ -28,8 +28,8 @@ impl SidewalkUpdateAccount {
 }
 
 /// A builder for [`SidewalkUpdateAccount`](crate::types::SidewalkUpdateAccount).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SidewalkUpdateAccountBuilder {
     pub(crate) app_server_private_key: ::std::option::Option<::std::string::String>,
 }

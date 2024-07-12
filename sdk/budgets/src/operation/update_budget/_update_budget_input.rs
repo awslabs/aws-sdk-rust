@@ -27,8 +27,8 @@ impl UpdateBudgetInput {
 }
 
 /// A builder for [`UpdateBudgetInput`](crate::operation::update_budget::UpdateBudgetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBudgetInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_budget: ::std::option::Option<crate::types::Budget>,

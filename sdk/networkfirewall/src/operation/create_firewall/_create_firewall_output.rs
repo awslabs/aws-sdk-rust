@@ -32,8 +32,8 @@ impl CreateFirewallOutput {
 }
 
 /// A builder for [`CreateFirewallOutput`](crate::operation::create_firewall::CreateFirewallOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFirewallOutputBuilder {
     pub(crate) firewall: ::std::option::Option<crate::types::Firewall>,
     pub(crate) firewall_status: ::std::option::Option<crate::types::FirewallStatus>,

@@ -26,8 +26,8 @@ impl ModifyWorkspaceCreationPropertiesInput {
 }
 
 /// A builder for [`ModifyWorkspaceCreationPropertiesInput`](crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyWorkspaceCreationPropertiesInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_creation_properties: ::std::option::Option<crate::types::WorkspaceCreationProperties>,

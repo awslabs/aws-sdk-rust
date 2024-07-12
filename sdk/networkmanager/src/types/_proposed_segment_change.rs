@@ -35,8 +35,8 @@ impl ProposedSegmentChange {
 }
 
 /// A builder for [`ProposedSegmentChange`](crate::types::ProposedSegmentChange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProposedSegmentChangeBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) attachment_policy_rule_number: ::std::option::Option<i32>,

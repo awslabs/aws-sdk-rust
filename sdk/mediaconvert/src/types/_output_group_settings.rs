@@ -51,8 +51,8 @@ impl OutputGroupSettings {
 }
 
 /// A builder for [`OutputGroupSettings`](crate::types::OutputGroupSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputGroupSettingsBuilder {
     pub(crate) cmaf_group_settings: ::std::option::Option<crate::types::CmafGroupSettings>,
     pub(crate) dash_iso_group_settings: ::std::option::Option<crate::types::DashIsoGroupSettings>,

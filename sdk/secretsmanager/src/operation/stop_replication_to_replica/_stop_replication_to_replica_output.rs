@@ -26,8 +26,8 @@ impl StopReplicationToReplicaOutput {
 }
 
 /// A builder for [`StopReplicationToReplicaOutput`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopReplicationToReplicaOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

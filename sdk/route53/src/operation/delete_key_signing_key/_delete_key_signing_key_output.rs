@@ -26,8 +26,8 @@ impl DeleteKeySigningKeyOutput {
 }
 
 /// A builder for [`DeleteKeySigningKeyOutput`](crate::operation::delete_key_signing_key::DeleteKeySigningKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKeySigningKeyOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,

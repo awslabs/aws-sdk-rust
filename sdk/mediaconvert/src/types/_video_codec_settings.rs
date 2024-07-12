@@ -93,8 +93,8 @@ impl VideoCodecSettings {
 }
 
 /// A builder for [`VideoCodecSettings`](crate::types::VideoCodecSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoCodecSettingsBuilder {
     pub(crate) av1_settings: ::std::option::Option<crate::types::Av1Settings>,
     pub(crate) avc_intra_settings: ::std::option::Option<crate::types::AvcIntraSettings>,

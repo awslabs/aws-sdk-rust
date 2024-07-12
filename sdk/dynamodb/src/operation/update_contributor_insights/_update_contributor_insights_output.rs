@@ -38,8 +38,8 @@ impl UpdateContributorInsightsOutput {
 }
 
 /// A builder for [`UpdateContributorInsightsOutput`](crate::operation::update_contributor_insights::UpdateContributorInsightsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContributorInsightsOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,

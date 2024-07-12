@@ -39,8 +39,8 @@ impl ListCloudWatchAlarmTemplateGroupsInput {
 }
 
 /// A builder for [`ListCloudWatchAlarmTemplateGroupsInput`](crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCloudWatchAlarmTemplateGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

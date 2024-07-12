@@ -21,8 +21,8 @@ impl Detection {
 }
 
 /// A builder for [`Detection`](crate::types::Detection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectionBuilder {
     pub(crate) anomaly: ::std::option::Option<crate::types::Anomaly>,
 }

@@ -26,8 +26,8 @@ impl GetAccountLinkOutput {
 }
 
 /// A builder for [`GetAccountLinkOutput`](crate::operation::get_account_link::GetAccountLinkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountLinkOutputBuilder {
     pub(crate) account_link: ::std::option::Option<crate::types::AccountLink>,
     _request_id: Option<String>,

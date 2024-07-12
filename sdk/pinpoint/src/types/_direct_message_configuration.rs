@@ -69,8 +69,8 @@ impl DirectMessageConfiguration {
 }
 
 /// A builder for [`DirectMessageConfiguration`](crate::types::DirectMessageConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DirectMessageConfigurationBuilder {
     pub(crate) adm_message: ::std::option::Option<crate::types::AdmMessage>,
     pub(crate) apns_message: ::std::option::Option<crate::types::ApnsMessage>,

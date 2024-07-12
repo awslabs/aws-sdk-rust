@@ -27,8 +27,8 @@ impl CreateExclusionsPreviewOutput {
 }
 
 /// A builder for [`CreateExclusionsPreviewOutput`](crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateExclusionsPreviewOutputBuilder {
     pub(crate) preview_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

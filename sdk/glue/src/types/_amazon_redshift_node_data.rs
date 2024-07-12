@@ -177,8 +177,8 @@ impl AmazonRedshiftNodeData {
 }
 
 /// A builder for [`AmazonRedshiftNodeData`](crate::types::AmazonRedshiftNodeData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmazonRedshiftNodeDataBuilder {
     pub(crate) access_type: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<::std::string::String>,

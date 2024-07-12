@@ -27,8 +27,8 @@ impl CapacityReservationGroup {
 }
 
 /// A builder for [`CapacityReservationGroup`](crate::types::CapacityReservationGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacityReservationGroupBuilder {
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,

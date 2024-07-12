@@ -11,8 +11,8 @@ impl GetFindingsPublicationConfigurationInput {
 }
 
 /// A builder for [`GetFindingsPublicationConfigurationInput`](crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingsPublicationConfigurationInputBuilder {}
 impl GetFindingsPublicationConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetFindingsPublicationConfigurationInput`](crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfigurationInput).

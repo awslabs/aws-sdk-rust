@@ -21,8 +21,8 @@ impl StopArchiveExportInput {
 }
 
 /// A builder for [`StopArchiveExportInput`](crate::operation::stop_archive_export::StopArchiveExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopArchiveExportInputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
 }

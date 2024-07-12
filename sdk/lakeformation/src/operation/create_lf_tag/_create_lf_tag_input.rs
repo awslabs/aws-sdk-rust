@@ -34,8 +34,8 @@ impl CreateLfTagInput {
 }
 
 /// A builder for [`CreateLfTagInput`](crate::operation::create_lf_tag::CreateLfTagInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLfTagInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,

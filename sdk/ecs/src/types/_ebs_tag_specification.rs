@@ -35,8 +35,8 @@ impl EbsTagSpecification {
 }
 
 /// A builder for [`EbsTagSpecification`](crate::types::EbsTagSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsTagSpecificationBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::EbsResourceType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

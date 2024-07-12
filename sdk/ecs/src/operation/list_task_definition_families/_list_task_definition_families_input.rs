@@ -42,8 +42,8 @@ impl ListTaskDefinitionFamiliesInput {
 }
 
 /// A builder for [`ListTaskDefinitionFamiliesInput`](crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTaskDefinitionFamiliesInputBuilder {
     pub(crate) family_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskDefinitionFamilyStatus>,

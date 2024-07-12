@@ -44,8 +44,8 @@ impl DkimSigningAttributes {
 }
 
 /// A builder for [`DkimSigningAttributes`](crate::types::DkimSigningAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DkimSigningAttributesBuilder {
     pub(crate) domain_signing_selector: ::std::option::Option<::std::string::String>,
     pub(crate) domain_signing_private_key: ::std::option::Option<::std::string::String>,

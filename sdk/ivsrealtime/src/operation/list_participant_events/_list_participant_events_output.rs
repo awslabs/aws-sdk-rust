@@ -33,8 +33,8 @@ impl ListParticipantEventsOutput {
 }
 
 /// A builder for [`ListParticipantEventsOutput`](crate::operation::list_participant_events::ListParticipantEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListParticipantEventsOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

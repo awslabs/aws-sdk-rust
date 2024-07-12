@@ -116,8 +116,8 @@ impl GetBucketMetricDataInput {
 }
 
 /// A builder for [`GetBucketMetricDataInput`](crate::operation::get_bucket_metric_data::GetBucketMetricDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketMetricDataInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<crate::types::BucketMetricName>,

@@ -40,8 +40,8 @@ impl JobStepRestartMarker {
 }
 
 /// A builder for [`JobStepRestartMarker`](crate::types::JobStepRestartMarker).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobStepRestartMarkerBuilder {
     pub(crate) from_step: ::std::option::Option<::std::string::String>,
     pub(crate) from_proc_step: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl AttachStaticIpInput {
 }
 
 /// A builder for [`AttachStaticIpInput`](crate::operation::attach_static_ip::AttachStaticIpInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachStaticIpInputBuilder {
     pub(crate) static_ip_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,

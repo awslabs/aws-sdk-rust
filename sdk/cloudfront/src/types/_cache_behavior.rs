@@ -221,8 +221,8 @@ impl CacheBehavior {
 }
 
 /// A builder for [`CacheBehavior`](crate::types::CacheBehavior).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheBehaviorBuilder {
     pub(crate) path_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) target_origin_id: ::std::option::Option<::std::string::String>,

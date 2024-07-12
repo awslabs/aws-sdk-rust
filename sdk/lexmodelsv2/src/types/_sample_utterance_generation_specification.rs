@@ -27,8 +27,8 @@ impl SampleUtteranceGenerationSpecification {
 }
 
 /// A builder for [`SampleUtteranceGenerationSpecification`](crate::types::SampleUtteranceGenerationSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SampleUtteranceGenerationSpecificationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) bedrock_model_specification: ::std::option::Option<crate::types::BedrockModelSpecification>,

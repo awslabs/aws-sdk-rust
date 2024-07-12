@@ -40,8 +40,8 @@ impl CreatePresignedNotebookUrlOutput {
 }
 
 /// A builder for [`CreatePresignedNotebookUrlOutput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePresignedNotebookUrlOutputBuilder {
     pub(crate) notebook_url: ::std::option::Option<::std::string::String>,
     pub(crate) auth_token: ::std::option::Option<::std::string::String>,

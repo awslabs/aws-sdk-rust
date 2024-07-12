@@ -193,8 +193,8 @@ impl Server {
 }
 
 /// A builder for [`Server`](crate::types::Server).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerBuilder {
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
     pub(crate) backup_retention_count: ::std::option::Option<i32>,

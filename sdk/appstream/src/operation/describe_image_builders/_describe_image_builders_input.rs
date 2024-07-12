@@ -34,8 +34,8 @@ impl DescribeImageBuildersInput {
 }
 
 /// A builder for [`DescribeImageBuildersInput`](crate::operation::describe_image_builders::DescribeImageBuildersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageBuildersInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,

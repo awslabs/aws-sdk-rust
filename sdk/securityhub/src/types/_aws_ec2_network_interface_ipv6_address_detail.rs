@@ -21,8 +21,8 @@ impl AwsEc2NetworkInterfaceIpV6AddressDetail {
 }
 
 /// A builder for [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2NetworkInterfaceIpV6AddressDetailBuilder {
     pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
 }

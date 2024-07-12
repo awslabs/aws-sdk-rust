@@ -34,8 +34,8 @@ impl ListCustomEntityTypesOutput {
 }
 
 /// A builder for [`ListCustomEntityTypesOutput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomEntityTypesOutputBuilder {
     pub(crate) custom_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

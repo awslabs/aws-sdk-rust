@@ -32,8 +32,8 @@ impl ListKeyPhrasesDetectionJobsInput {
 }
 
 /// A builder for [`ListKeyPhrasesDetectionJobsInput`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKeyPhrasesDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::KeyPhrasesDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

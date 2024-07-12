@@ -29,8 +29,8 @@ impl StartTextDetectionFilters {
 }
 
 /// A builder for [`StartTextDetectionFilters`](crate::types::StartTextDetectionFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTextDetectionFiltersBuilder {
     pub(crate) word_filter: ::std::option::Option<crate::types::DetectionFilter>,
     pub(crate) regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,

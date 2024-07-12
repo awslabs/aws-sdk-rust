@@ -95,8 +95,8 @@ impl GetEventPredictionInput {
 }
 
 /// A builder for [`GetEventPredictionInput`](crate::operation::get_event_prediction::GetEventPredictionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetEventPredictionInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_version_id: ::std::option::Option<::std::string::String>,

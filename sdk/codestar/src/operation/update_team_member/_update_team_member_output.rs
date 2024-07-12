@@ -38,8 +38,8 @@ impl UpdateTeamMemberOutput {
 }
 
 /// A builder for [`UpdateTeamMemberOutput`](crate::operation::update_team_member::UpdateTeamMemberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTeamMemberOutputBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) project_role: ::std::option::Option<::std::string::String>,

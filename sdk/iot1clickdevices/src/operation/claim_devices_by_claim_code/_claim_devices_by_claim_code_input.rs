@@ -20,8 +20,8 @@ impl ClaimDevicesByClaimCodeInput {
 }
 
 /// A builder for [`ClaimDevicesByClaimCodeInput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClaimDevicesByClaimCodeInputBuilder {
     pub(crate) claim_code: ::std::option::Option<::std::string::String>,
 }

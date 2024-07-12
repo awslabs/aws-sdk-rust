@@ -18,8 +18,8 @@ impl DisassociateRouteTableOutput {
 }
 
 /// A builder for [`DisassociateRouteTableOutput`](crate::operation::disassociate_route_table::DisassociateRouteTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateRouteTableOutputBuilder {
     _request_id: Option<String>,
 }

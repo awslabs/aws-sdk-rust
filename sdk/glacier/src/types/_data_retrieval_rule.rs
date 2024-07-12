@@ -31,8 +31,8 @@ impl DataRetrievalRule {
 }
 
 /// A builder for [`DataRetrievalRule`](crate::types::DataRetrievalRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataRetrievalRuleBuilder {
     pub(crate) strategy: ::std::option::Option<::std::string::String>,
     pub(crate) bytes_per_hour: ::std::option::Option<i64>,

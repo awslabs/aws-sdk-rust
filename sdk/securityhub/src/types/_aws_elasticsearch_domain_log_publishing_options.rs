@@ -33,8 +33,8 @@ impl AwsElasticsearchDomainLogPublishingOptions {
 }
 
 /// A builder for [`AwsElasticsearchDomainLogPublishingOptions`](crate::types::AwsElasticsearchDomainLogPublishingOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsElasticsearchDomainLogPublishingOptionsBuilder {
     pub(crate) index_slow_logs: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
     pub(crate) search_slow_logs: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,

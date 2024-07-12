@@ -32,8 +32,8 @@ impl ListVersionsInput {
 }
 
 /// A builder for [`ListVersionsInput`](crate::operation::list_versions::ListVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVersionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

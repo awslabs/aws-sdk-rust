@@ -26,8 +26,8 @@ impl RegisterTargetWithMaintenanceWindowOutput {
 }
 
 /// A builder for [`RegisterTargetWithMaintenanceWindowOutput`](crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterTargetWithMaintenanceWindowOutputBuilder {
     pub(crate) window_target_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

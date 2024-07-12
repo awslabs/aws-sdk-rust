@@ -27,8 +27,8 @@ impl ImportLabelsTaskRunProperties {
 }
 
 /// A builder for [`ImportLabelsTaskRunProperties`](crate::types::ImportLabelsTaskRunProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportLabelsTaskRunPropertiesBuilder {
     pub(crate) input_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) replace: ::std::option::Option<bool>,

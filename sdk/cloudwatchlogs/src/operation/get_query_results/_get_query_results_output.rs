@@ -50,8 +50,8 @@ impl GetQueryResultsOutput {
 }
 
 /// A builder for [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQueryResultsOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>>,
     pub(crate) statistics: ::std::option::Option<crate::types::QueryStatistics>,

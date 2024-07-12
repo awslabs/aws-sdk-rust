@@ -43,8 +43,8 @@ impl LensReviewReport {
 }
 
 /// A builder for [`LensReviewReport`](crate::types::LensReviewReport).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LensReviewReportBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,

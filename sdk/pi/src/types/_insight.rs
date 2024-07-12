@@ -107,8 +107,8 @@ impl Insight {
 }
 
 /// A builder for [`Insight`](crate::types::Insight).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InsightBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
     pub(crate) insight_type: ::std::option::Option<::std::string::String>,

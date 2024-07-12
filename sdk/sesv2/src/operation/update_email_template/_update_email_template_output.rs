@@ -19,8 +19,8 @@ impl UpdateEmailTemplateOutput {
 }
 
 /// A builder for [`UpdateEmailTemplateOutput`](crate::operation::update_email_template::UpdateEmailTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEmailTemplateOutputBuilder {
     _request_id: Option<String>,
 }

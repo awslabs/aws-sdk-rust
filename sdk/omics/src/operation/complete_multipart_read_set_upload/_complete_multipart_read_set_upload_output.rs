@@ -27,8 +27,8 @@ impl CompleteMultipartReadSetUploadOutput {
 }
 
 /// A builder for [`CompleteMultipartReadSetUploadOutput`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompleteMultipartReadSetUploadOutputBuilder {
     pub(crate) read_set_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

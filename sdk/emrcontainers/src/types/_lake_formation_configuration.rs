@@ -33,8 +33,8 @@ impl LakeFormationConfiguration {
 }
 
 /// A builder for [`LakeFormationConfiguration`](crate::types::LakeFormationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LakeFormationConfigurationBuilder {
     pub(crate) authorized_session_tag_value: ::std::option::Option<::std::string::String>,
     pub(crate) secure_namespace_info: ::std::option::Option<crate::types::SecureNamespaceInfo>,

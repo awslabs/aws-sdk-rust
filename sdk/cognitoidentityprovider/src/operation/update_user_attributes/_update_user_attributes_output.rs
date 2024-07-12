@@ -29,8 +29,8 @@ impl UpdateUserAttributesOutput {
 }
 
 /// A builder for [`UpdateUserAttributesOutput`](crate::operation::update_user_attributes::UpdateUserAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserAttributesOutputBuilder {
     pub(crate) code_delivery_details_list: ::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>>,
     _request_id: Option<String>,

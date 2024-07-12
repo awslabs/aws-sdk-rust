@@ -55,8 +55,8 @@ impl ModelPackageModelCard {
 }
 
 /// A builder for [`ModelPackageModelCard`](crate::types::ModelPackageModelCard).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ModelPackageModelCardBuilder {
     pub(crate) model_card_content: ::std::option::Option<::std::string::String>,
     pub(crate) model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,

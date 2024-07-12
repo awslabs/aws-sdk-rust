@@ -22,8 +22,8 @@ impl FirehoseDestinationConfiguration {
 }
 
 /// A builder for [`FirehoseDestinationConfiguration`](crate::types::FirehoseDestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FirehoseDestinationConfigurationBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
 }

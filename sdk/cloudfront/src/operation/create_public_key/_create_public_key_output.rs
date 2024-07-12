@@ -38,8 +38,8 @@ impl CreatePublicKeyOutput {
 }
 
 /// A builder for [`CreatePublicKeyOutput`](crate::operation::create_public_key::CreatePublicKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePublicKeyOutputBuilder {
     pub(crate) public_key: ::std::option::Option<crate::types::PublicKey>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

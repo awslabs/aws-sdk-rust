@@ -26,8 +26,8 @@ impl TestFailoverOutput {
 }
 
 /// A builder for [`TestFailoverOutput`](crate::operation::test_failover::TestFailoverOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestFailoverOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,

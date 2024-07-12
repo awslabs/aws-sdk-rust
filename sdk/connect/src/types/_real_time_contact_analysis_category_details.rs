@@ -22,8 +22,8 @@ impl RealTimeContactAnalysisCategoryDetails {
 }
 
 /// A builder for [`RealTimeContactAnalysisCategoryDetails`](crate::types::RealTimeContactAnalysisCategoryDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RealTimeContactAnalysisCategoryDetailsBuilder {
     pub(crate) points_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisPointOfInterest>>,
 }

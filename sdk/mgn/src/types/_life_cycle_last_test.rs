@@ -33,8 +33,8 @@ impl LifeCycleLastTest {
 }
 
 /// A builder for [`LifeCycleLastTest`](crate::types::LifeCycleLastTest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifeCycleLastTestBuilder {
     pub(crate) initiated: ::std::option::Option<crate::types::LifeCycleLastTestInitiated>,
     pub(crate) reverted: ::std::option::Option<crate::types::LifeCycleLastTestReverted>,

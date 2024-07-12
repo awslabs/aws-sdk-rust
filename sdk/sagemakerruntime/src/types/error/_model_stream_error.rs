@@ -95,8 +95,8 @@ impl ModelStreamError {
 }
 
 /// A builder for [`ModelStreamError`](crate::types::error::ModelStreamError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelStreamErrorBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

@@ -12,8 +12,8 @@ impl BatchDeleteObjectResponse {
 }
 
 /// A builder for [`BatchDeleteObjectResponse`](crate::types::BatchDeleteObjectResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteObjectResponseBuilder {}
 impl BatchDeleteObjectResponseBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteObjectResponse`](crate::types::BatchDeleteObjectResponse).

@@ -20,8 +20,8 @@ impl DescribeReportPlanInput {
 }
 
 /// A builder for [`DescribeReportPlanInput`](crate::operation::describe_report_plan::DescribeReportPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReportPlanInputBuilder {
     pub(crate) report_plan_name: ::std::option::Option<::std::string::String>,
 }

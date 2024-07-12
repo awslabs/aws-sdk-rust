@@ -26,8 +26,8 @@ impl GetResourceDefinitionVersionInput {
 }
 
 /// A builder for [`GetResourceDefinitionVersionInput`](crate::operation::get_resource_definition_version::GetResourceDefinitionVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceDefinitionVersionInputBuilder {
     pub(crate) resource_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_definition_version_id: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl DescribeMultiplexInput {
 }
 
 /// A builder for [`DescribeMultiplexInput`](crate::operation::describe_multiplex::DescribeMultiplexInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMultiplexInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
 }

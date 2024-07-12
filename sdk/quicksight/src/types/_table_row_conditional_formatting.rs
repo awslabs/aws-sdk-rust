@@ -27,8 +27,8 @@ impl TableRowConditionalFormatting {
 }
 
 /// A builder for [`TableRowConditionalFormatting`](crate::types::TableRowConditionalFormatting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableRowConditionalFormattingBuilder {
     pub(crate) background_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     pub(crate) text_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,

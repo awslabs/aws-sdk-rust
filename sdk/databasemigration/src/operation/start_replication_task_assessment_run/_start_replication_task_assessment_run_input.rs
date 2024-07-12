@@ -97,8 +97,8 @@ impl StartReplicationTaskAssessmentRunInput {
 }
 
 /// A builder for [`StartReplicationTaskAssessmentRunInput`](crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReplicationTaskAssessmentRunInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,

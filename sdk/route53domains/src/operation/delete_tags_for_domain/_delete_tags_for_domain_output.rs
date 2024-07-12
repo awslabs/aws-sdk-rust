@@ -18,8 +18,8 @@ impl DeleteTagsForDomainOutput {
 }
 
 /// A builder for [`DeleteTagsForDomainOutput`](crate::operation::delete_tags_for_domain::DeleteTagsForDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTagsForDomainOutputBuilder {
     _request_id: Option<String>,
 }

@@ -63,8 +63,8 @@ impl UpdateLoginProfileInput {
 }
 
 /// A builder for [`UpdateLoginProfileInput`](crate::operation::update_login_profile::UpdateLoginProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateLoginProfileInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,

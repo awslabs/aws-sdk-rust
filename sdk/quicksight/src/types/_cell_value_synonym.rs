@@ -29,8 +29,8 @@ impl CellValueSynonym {
 }
 
 /// A builder for [`CellValueSynonym`](crate::types::CellValueSynonym).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CellValueSynonymBuilder {
     pub(crate) cell_value: ::std::option::Option<::std::string::String>,
     pub(crate) synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

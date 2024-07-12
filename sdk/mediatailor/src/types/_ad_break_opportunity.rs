@@ -21,8 +21,8 @@ impl AdBreakOpportunity {
 }
 
 /// A builder for [`AdBreakOpportunity`](crate::types::AdBreakOpportunity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdBreakOpportunityBuilder {
     pub(crate) offset_millis: ::std::option::Option<i64>,
 }

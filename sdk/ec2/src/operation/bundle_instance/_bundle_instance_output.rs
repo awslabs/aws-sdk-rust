@@ -27,8 +27,8 @@ impl BundleInstanceOutput {
 }
 
 /// A builder for [`BundleInstanceOutput`](crate::operation::bundle_instance::BundleInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BundleInstanceOutputBuilder {
     pub(crate) bundle_task: ::std::option::Option<crate::types::BundleTask>,
     _request_id: Option<String>,

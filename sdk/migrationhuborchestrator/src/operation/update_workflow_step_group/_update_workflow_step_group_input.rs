@@ -54,8 +54,8 @@ impl UpdateWorkflowStepGroupInput {
 }
 
 /// A builder for [`UpdateWorkflowStepGroupInput`](crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkflowStepGroupInputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

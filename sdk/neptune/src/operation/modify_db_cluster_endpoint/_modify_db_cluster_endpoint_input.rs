@@ -42,8 +42,8 @@ impl ModifyDbClusterEndpointInput {
 }
 
 /// A builder for [`ModifyDbClusterEndpointInput`](crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbClusterEndpointInputBuilder {
     pub(crate) db_cluster_endpoint_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_type: ::std::option::Option<::std::string::String>,

@@ -92,8 +92,8 @@ impl UserSettingsSummary {
 }
 
 /// A builder for [`UserSettingsSummary`](crate::types::UserSettingsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UserSettingsSummaryBuilder {
     pub(crate) user_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) copy_allowed: ::std::option::Option<crate::types::EnabledType>,

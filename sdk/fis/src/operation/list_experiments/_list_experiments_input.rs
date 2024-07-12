@@ -32,8 +32,8 @@ impl ListExperimentsInput {
 }
 
 /// A builder for [`ListExperimentsInput`](crate::operation::list_experiments::ListExperimentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExperimentsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

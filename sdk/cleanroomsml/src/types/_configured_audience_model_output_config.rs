@@ -28,8 +28,8 @@ impl ConfiguredAudienceModelOutputConfig {
 }
 
 /// A builder for [`ConfiguredAudienceModelOutputConfig`](crate::types::ConfiguredAudienceModelOutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfiguredAudienceModelOutputConfigBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::AudienceDestination>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

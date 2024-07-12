@@ -34,8 +34,8 @@ impl DetectKeyPhrasesInput {
 }
 
 /// A builder for [`DetectKeyPhrasesInput`](crate::operation::detect_key_phrases::DetectKeyPhrasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectKeyPhrasesInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

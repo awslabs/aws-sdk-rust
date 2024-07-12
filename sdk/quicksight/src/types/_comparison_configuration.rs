@@ -43,8 +43,8 @@ impl ComparisonConfiguration {
 }
 
 /// A builder for [`ComparisonConfiguration`](crate::types::ComparisonConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComparisonConfigurationBuilder {
     pub(crate) comparison_method: ::std::option::Option<crate::types::ComparisonMethod>,
     pub(crate) comparison_format: ::std::option::Option<crate::types::ComparisonFormatConfiguration>,

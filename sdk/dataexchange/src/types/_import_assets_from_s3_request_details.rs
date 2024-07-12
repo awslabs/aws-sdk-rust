@@ -36,8 +36,8 @@ impl ImportAssetsFromS3RequestDetails {
 }
 
 /// A builder for [`ImportAssetsFromS3RequestDetails`](crate::types::ImportAssetsFromS3RequestDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportAssetsFromS3RequestDetailsBuilder {
     pub(crate) asset_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

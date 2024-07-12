@@ -11,8 +11,8 @@ impl GetMacieSessionInput {
 }
 
 /// A builder for [`GetMacieSessionInput`](crate::operation::get_macie_session::GetMacieSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMacieSessionInputBuilder {}
 impl GetMacieSessionInputBuilder {
     /// Consumes the builder and constructs a [`GetMacieSessionInput`](crate::operation::get_macie_session::GetMacieSessionInput).

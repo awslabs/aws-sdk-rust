@@ -34,8 +34,8 @@ impl ListComponentsInput {
 }
 
 /// A builder for [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListComponentsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::ComponentVisibilityScope>,
     pub(crate) max_results: ::std::option::Option<i32>,

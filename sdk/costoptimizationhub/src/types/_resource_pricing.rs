@@ -39,8 +39,8 @@ impl ResourcePricing {
 }
 
 /// A builder for [`ResourcePricing`](crate::types::ResourcePricing).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourcePricingBuilder {
     pub(crate) estimated_cost_before_discounts: ::std::option::Option<f64>,
     pub(crate) estimated_net_unused_amortized_commitments: ::std::option::Option<f64>,

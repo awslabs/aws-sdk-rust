@@ -18,8 +18,8 @@ impl DeleteStudioLifecycleConfigOutput {
 }
 
 /// A builder for [`DeleteStudioLifecycleConfigOutput`](crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStudioLifecycleConfigOutputBuilder {
     _request_id: Option<String>,
 }

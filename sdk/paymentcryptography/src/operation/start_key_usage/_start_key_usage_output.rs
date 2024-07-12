@@ -26,8 +26,8 @@ impl StartKeyUsageOutput {
 }
 
 /// A builder for [`StartKeyUsageOutput`](crate::operation::start_key_usage::StartKeyUsageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartKeyUsageOutputBuilder {
     pub(crate) key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,

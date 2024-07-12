@@ -18,8 +18,8 @@ impl PutApplicationAccessScopeOutput {
 }
 
 /// A builder for [`PutApplicationAccessScopeOutput`](crate::operation::put_application_access_scope::PutApplicationAccessScopeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutApplicationAccessScopeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -39,8 +39,8 @@ impl CreateConnectionAuthRequestParameters {
 }
 
 /// A builder for [`CreateConnectionAuthRequestParameters`](crate::types::CreateConnectionAuthRequestParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectionAuthRequestParametersBuilder {
     pub(crate) basic_auth_parameters: ::std::option::Option<crate::types::CreateConnectionBasicAuthRequestParameters>,
     pub(crate) o_auth_parameters: ::std::option::Option<crate::types::CreateConnectionOAuthRequestParameters>,

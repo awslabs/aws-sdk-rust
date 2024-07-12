@@ -39,8 +39,8 @@ impl VolumeSpecification {
 }
 
 /// A builder for [`VolumeSpecification`](crate::types::VolumeSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VolumeSpecificationBuilder {
     pub(crate) volume_type: ::std::option::Option<::std::string::String>,
     pub(crate) iops: ::std::option::Option<i32>,

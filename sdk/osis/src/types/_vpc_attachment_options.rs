@@ -27,8 +27,8 @@ impl VpcAttachmentOptions {
 }
 
 /// A builder for [`VpcAttachmentOptions`](crate::types::VpcAttachmentOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcAttachmentOptionsBuilder {
     pub(crate) attach_to_vpc: ::std::option::Option<bool>,
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,

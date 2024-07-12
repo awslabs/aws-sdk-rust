@@ -77,8 +77,8 @@ impl AuthorizeEndpointAccessOutput {
 }
 
 /// A builder for [`AuthorizeEndpointAccessOutput`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeEndpointAccessOutputBuilder {
     pub(crate) grantor: ::std::option::Option<::std::string::String>,
     pub(crate) grantee: ::std::option::Option<::std::string::String>,

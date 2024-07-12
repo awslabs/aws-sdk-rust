@@ -33,8 +33,8 @@ impl AwsRdsDbSubnetGroupSubnet {
 }
 
 /// A builder for [`AwsRdsDbSubnetGroupSubnet`](crate::types::AwsRdsDbSubnetGroupSubnet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRdsDbSubnetGroupSubnetBuilder {
     pub(crate) subnet_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_availability_zone: ::std::option::Option<crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone>,

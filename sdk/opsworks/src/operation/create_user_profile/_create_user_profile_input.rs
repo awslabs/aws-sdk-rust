@@ -38,8 +38,8 @@ impl CreateUserProfileInput {
 }
 
 /// A builder for [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUserProfileInputBuilder {
     pub(crate) iam_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_username: ::std::option::Option<::std::string::String>,

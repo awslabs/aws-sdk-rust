@@ -26,8 +26,8 @@ impl AssociateConnectionAliasOutput {
 }
 
 /// A builder for [`AssociateConnectionAliasOutput`](crate::operation::associate_connection_alias::AssociateConnectionAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateConnectionAliasOutputBuilder {
     pub(crate) connection_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

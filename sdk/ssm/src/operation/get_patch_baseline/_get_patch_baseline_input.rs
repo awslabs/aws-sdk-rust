@@ -24,8 +24,8 @@ impl GetPatchBaselineInput {
 }
 
 /// A builder for [`GetPatchBaselineInput`](crate::operation::get_patch_baseline::GetPatchBaselineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPatchBaselineInputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
 }

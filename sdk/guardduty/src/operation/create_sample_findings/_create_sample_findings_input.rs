@@ -28,8 +28,8 @@ impl CreateSampleFindingsInput {
 }
 
 /// A builder for [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSampleFindingsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

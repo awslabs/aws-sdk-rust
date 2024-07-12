@@ -27,8 +27,8 @@ impl GetUsagePlanKeyInput {
 }
 
 /// A builder for [`GetUsagePlanKeyInput`](crate::operation::get_usage_plan_key::GetUsagePlanKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsagePlanKeyInputBuilder {
     pub(crate) usage_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,

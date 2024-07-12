@@ -26,8 +26,8 @@ impl UpdateApprovalRuleTemplateDescriptionOutput {
 }
 
 /// A builder for [`UpdateApprovalRuleTemplateDescriptionOutput`](crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApprovalRuleTemplateDescriptionOutputBuilder {
     pub(crate) approval_rule_template: ::std::option::Option<crate::types::ApprovalRuleTemplate>,
     _request_id: Option<String>,

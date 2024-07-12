@@ -137,8 +137,8 @@ impl ThingIndexingConfiguration {
 }
 
 /// A builder for [`ThingIndexingConfiguration`](crate::types::ThingIndexingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThingIndexingConfigurationBuilder {
     pub(crate) thing_indexing_mode: ::std::option::Option<crate::types::ThingIndexingMode>,
     pub(crate) thing_connectivity_indexing_mode: ::std::option::Option<crate::types::ThingConnectivityIndexingMode>,

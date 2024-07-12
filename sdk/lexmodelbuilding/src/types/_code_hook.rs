@@ -29,8 +29,8 @@ impl CodeHook {
 }
 
 /// A builder for [`CodeHook`](crate::types::CodeHook).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeHookBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) message_version: ::std::option::Option<::std::string::String>,

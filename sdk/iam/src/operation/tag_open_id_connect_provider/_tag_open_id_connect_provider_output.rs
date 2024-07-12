@@ -18,8 +18,8 @@ impl TagOpenIdConnectProviderOutput {
 }
 
 /// A builder for [`TagOpenIdConnectProviderOutput`](crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagOpenIdConnectProviderOutputBuilder {
     _request_id: Option<String>,
 }

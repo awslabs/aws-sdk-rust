@@ -87,8 +87,8 @@ impl GetFarmOutput {
 }
 
 /// A builder for [`GetFarmOutput`](crate::operation::get_farm::GetFarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetFarmOutputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

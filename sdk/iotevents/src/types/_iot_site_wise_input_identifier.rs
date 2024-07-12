@@ -21,8 +21,8 @@ impl IotSiteWiseInputIdentifier {
 }
 
 /// A builder for [`IotSiteWiseInputIdentifier`](crate::types::IotSiteWiseInputIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IotSiteWiseInputIdentifierBuilder {
     pub(crate) iot_site_wise_asset_model_property_identifier: ::std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier>,
 }

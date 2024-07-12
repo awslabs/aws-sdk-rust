@@ -38,8 +38,8 @@ impl AssociateRouteTableInput {
 }
 
 /// A builder for [`AssociateRouteTableInput`](crate::operation::associate_route_table::AssociateRouteTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateRouteTableInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ResourceChangeDetail {
 }
 
 /// A builder for [`ResourceChangeDetail`](crate::types::ResourceChangeDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceChangeDetailBuilder {
     pub(crate) target: ::std::option::Option<crate::types::ResourceTargetDefinition>,
     pub(crate) evaluation: ::std::option::Option<crate::types::EvaluationType>,

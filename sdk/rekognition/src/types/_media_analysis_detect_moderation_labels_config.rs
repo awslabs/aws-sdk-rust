@@ -27,8 +27,8 @@ impl MediaAnalysisDetectModerationLabelsConfig {
 }
 
 /// A builder for [`MediaAnalysisDetectModerationLabelsConfig`](crate::types::MediaAnalysisDetectModerationLabelsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaAnalysisDetectModerationLabelsConfigBuilder {
     pub(crate) min_confidence: ::std::option::Option<f32>,
     pub(crate) project_version: ::std::option::Option<::std::string::String>,

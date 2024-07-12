@@ -20,8 +20,8 @@ impl DeleteTestCaseInput {
 }
 
 /// A builder for [`DeleteTestCaseInput`](crate::operation::delete_test_case::DeleteTestCaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTestCaseInputBuilder {
     pub(crate) test_case_id: ::std::option::Option<::std::string::String>,
 }

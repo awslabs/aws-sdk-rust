@@ -26,8 +26,8 @@ impl TerminateRecoveryInstancesOutput {
 }
 
 /// A builder for [`TerminateRecoveryInstancesOutput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateRecoveryInstancesOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,

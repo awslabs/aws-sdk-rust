@@ -26,8 +26,8 @@ impl GetTopicRuleDestinationOutput {
 }
 
 /// A builder for [`GetTopicRuleDestinationOutput`](crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTopicRuleDestinationOutputBuilder {
     pub(crate) topic_rule_destination: ::std::option::Option<crate::types::TopicRuleDestination>,
     _request_id: Option<String>,

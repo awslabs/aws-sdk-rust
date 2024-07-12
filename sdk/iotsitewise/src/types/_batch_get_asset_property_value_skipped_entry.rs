@@ -34,8 +34,8 @@ impl BatchGetAssetPropertyValueSkippedEntry {
 }
 
 /// A builder for [`BatchGetAssetPropertyValueSkippedEntry`](crate::types::BatchGetAssetPropertyValueSkippedEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAssetPropertyValueSkippedEntryBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
     pub(crate) completion_status: ::std::option::Option<crate::types::BatchEntryCompletionStatus>,

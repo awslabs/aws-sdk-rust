@@ -185,8 +185,8 @@ impl S3CopyObjectOperation {
 }
 
 /// A builder for [`S3CopyObjectOperation`](crate::types::S3CopyObjectOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3CopyObjectOperationBuilder {
     pub(crate) target_resource: ::std::option::Option<::std::string::String>,
     pub(crate) canned_access_control_list: ::std::option::Option<crate::types::S3CannedAccessControlList>,

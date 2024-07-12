@@ -36,8 +36,8 @@ impl GetGeneratedPolicyInput {
 }
 
 /// A builder for [`GetGeneratedPolicyInput`](crate::operation::get_generated_policy::GetGeneratedPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGeneratedPolicyInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) include_resource_placeholders: ::std::option::Option<bool>,

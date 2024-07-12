@@ -18,8 +18,8 @@ impl UpdateLocationSmbOutput {
 }
 
 /// A builder for [`UpdateLocationSmbOutput`](crate::operation::update_location_smb::UpdateLocationSmbOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLocationSmbOutputBuilder {
     _request_id: Option<String>,
 }

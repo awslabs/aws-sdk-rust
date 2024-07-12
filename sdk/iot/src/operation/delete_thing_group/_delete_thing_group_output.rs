@@ -18,8 +18,8 @@ impl DeleteThingGroupOutput {
 }
 
 /// A builder for [`DeleteThingGroupOutput`](crate::operation::delete_thing_group::DeleteThingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteThingGroupOutputBuilder {
     _request_id: Option<String>,
 }

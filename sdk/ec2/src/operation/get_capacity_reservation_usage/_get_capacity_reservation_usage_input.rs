@@ -38,8 +38,8 @@ impl GetCapacityReservationUsageInput {
 }
 
 /// A builder for [`GetCapacityReservationUsageInput`](crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCapacityReservationUsageInputBuilder {
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

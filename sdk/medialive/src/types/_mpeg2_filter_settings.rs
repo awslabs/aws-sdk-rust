@@ -21,8 +21,8 @@ impl Mpeg2FilterSettings {
 }
 
 /// A builder for [`Mpeg2FilterSettings`](crate::types::Mpeg2FilterSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Mpeg2FilterSettingsBuilder {
     pub(crate) temporal_filter_settings: ::std::option::Option<crate::types::TemporalFilterSettings>,
 }

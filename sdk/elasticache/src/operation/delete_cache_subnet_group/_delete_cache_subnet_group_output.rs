@@ -18,8 +18,8 @@ impl DeleteCacheSubnetGroupOutput {
 }
 
 /// A builder for [`DeleteCacheSubnetGroupOutput`](crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCacheSubnetGroupOutputBuilder {
     _request_id: Option<String>,
 }

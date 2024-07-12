@@ -21,8 +21,8 @@ impl DeleteAppInstanceStreamingConfigurationsInput {
 }
 
 /// A builder for [`DeleteAppInstanceStreamingConfigurationsInput`](crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppInstanceStreamingConfigurationsInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
 }

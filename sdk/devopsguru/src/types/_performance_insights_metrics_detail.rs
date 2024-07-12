@@ -64,8 +64,8 @@ impl PerformanceInsightsMetricsDetail {
 }
 
 /// A builder for [`PerformanceInsightsMetricsDetail`](crate::types::PerformanceInsightsMetricsDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PerformanceInsightsMetricsDetailBuilder {
     pub(crate) metric_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,

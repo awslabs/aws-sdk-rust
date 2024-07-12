@@ -40,8 +40,8 @@ impl ListPipelinesOutput {
 }
 
 /// A builder for [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPipelinesOutputBuilder {
     pub(crate) pipeline_id_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

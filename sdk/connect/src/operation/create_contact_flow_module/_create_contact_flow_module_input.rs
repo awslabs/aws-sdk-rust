@@ -50,8 +50,8 @@ impl CreateContactFlowModuleInput {
 }
 
 /// A builder for [`CreateContactFlowModuleInput`](crate::operation::create_contact_flow_module::CreateContactFlowModuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContactFlowModuleInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -82,8 +82,8 @@ impl CreateImageInput {
 }
 
 /// A builder for [`CreateImageInput`](crate::operation::create_image::CreateImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateImageInputBuilder {
     pub(crate) image_recipe_arn: ::std::option::Option<::std::string::String>,
     pub(crate) container_recipe_arn: ::std::option::Option<::std::string::String>,

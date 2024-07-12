@@ -34,8 +34,8 @@ impl GetRecommendationsOutput {
 }
 
 /// A builder for [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecommendationsOutputBuilder {
     pub(crate) item_list: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,

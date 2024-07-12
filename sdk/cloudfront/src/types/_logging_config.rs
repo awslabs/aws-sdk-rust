@@ -41,8 +41,8 @@ impl LoggingConfig {
 }
 
 /// A builder for [`LoggingConfig`](crate::types::LoggingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoggingConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) include_cookies: ::std::option::Option<bool>,

@@ -28,8 +28,8 @@ impl ArchiveAction {
 }
 
 /// A builder for [`ArchiveAction`](crate::types::ArchiveAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArchiveActionBuilder {
     pub(crate) action_failure_policy: ::std::option::Option<crate::types::ActionFailurePolicy>,
     pub(crate) target_archive: ::std::option::Option<::std::string::String>,

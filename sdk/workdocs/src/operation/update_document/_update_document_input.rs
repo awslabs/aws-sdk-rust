@@ -55,8 +55,8 @@ impl UpdateDocumentInput {
 }
 
 /// A builder for [`UpdateDocumentInput`](crate::operation::update_document::UpdateDocumentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateDocumentInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) document_id: ::std::option::Option<::std::string::String>,

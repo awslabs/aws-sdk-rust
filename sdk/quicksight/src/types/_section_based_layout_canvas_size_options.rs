@@ -21,8 +21,8 @@ impl SectionBasedLayoutCanvasSizeOptions {
 }
 
 /// A builder for [`SectionBasedLayoutCanvasSizeOptions`](crate::types::SectionBasedLayoutCanvasSizeOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SectionBasedLayoutCanvasSizeOptionsBuilder {
     pub(crate) paper_canvas_size_options: ::std::option::Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions>,
 }

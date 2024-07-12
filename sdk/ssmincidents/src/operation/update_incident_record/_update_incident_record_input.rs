@@ -92,8 +92,8 @@ impl UpdateIncidentRecordInput {
 }
 
 /// A builder for [`UpdateIncidentRecordInput`](crate::operation::update_incident_record::UpdateIncidentRecordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIncidentRecordInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

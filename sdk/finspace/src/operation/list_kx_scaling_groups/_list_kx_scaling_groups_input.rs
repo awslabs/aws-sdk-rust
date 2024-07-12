@@ -32,8 +32,8 @@ impl ListKxScalingGroupsInput {
 }
 
 /// A builder for [`ListKxScalingGroupsInput`](crate::operation::list_kx_scaling_groups::ListKxScalingGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKxScalingGroupsInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -21,8 +21,8 @@ impl StartDeleteMonitorDeploymentInput {
 }
 
 /// A builder for [`StartDeleteMonitorDeploymentInput`](crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDeleteMonitorDeploymentInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

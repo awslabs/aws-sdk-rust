@@ -39,8 +39,8 @@ impl CreateCoreDefinitionInput {
 }
 
 /// A builder for [`CreateCoreDefinitionInput`](crate::operation::create_core_definition::CreateCoreDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCoreDefinitionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) initial_version: ::std::option::Option<crate::types::CoreDefinitionVersion>,

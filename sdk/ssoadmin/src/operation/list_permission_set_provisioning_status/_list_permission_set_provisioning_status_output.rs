@@ -34,8 +34,8 @@ impl ListPermissionSetProvisioningStatusOutput {
 }
 
 /// A builder for [`ListPermissionSetProvisioningStatusOutput`](crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPermissionSetProvisioningStatusOutputBuilder {
     pub(crate) permission_sets_provisioning_status: ::std::option::Option<::std::vec::Vec<crate::types::PermissionSetProvisioningStatusMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -112,8 +112,8 @@ impl ZonalShiftSummary {
 }
 
 /// A builder for [`ZonalShiftSummary`](crate::types::ZonalShiftSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ZonalShiftSummaryBuilder {
     pub(crate) zonal_shift_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,

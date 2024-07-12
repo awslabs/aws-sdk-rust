@@ -18,8 +18,8 @@ impl SendHeartbeatOutput {
 }
 
 /// A builder for [`SendHeartbeatOutput`](crate::operation::send_heartbeat::SendHeartbeatOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendHeartbeatOutputBuilder {
     _request_id: Option<String>,
 }

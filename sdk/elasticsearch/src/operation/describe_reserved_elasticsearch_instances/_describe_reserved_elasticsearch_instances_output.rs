@@ -35,8 +35,8 @@ impl DescribeReservedElasticsearchInstancesOutput {
 }
 
 /// A builder for [`DescribeReservedElasticsearchInstancesOutput`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedElasticsearchInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_elasticsearch_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstance>>,

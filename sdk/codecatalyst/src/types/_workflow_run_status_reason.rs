@@ -12,8 +12,8 @@ impl WorkflowRunStatusReason {
 }
 
 /// A builder for [`WorkflowRunStatusReason`](crate::types::WorkflowRunStatusReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowRunStatusReasonBuilder {}
 impl WorkflowRunStatusReasonBuilder {
     /// Consumes the builder and constructs a [`WorkflowRunStatusReason`](crate::types::WorkflowRunStatusReason).

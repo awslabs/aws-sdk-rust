@@ -28,8 +28,8 @@ impl BatchSuspendUserInput {
 }
 
 /// A builder for [`BatchSuspendUserInput`](crate::operation::batch_suspend_user::BatchSuspendUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchSuspendUserInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

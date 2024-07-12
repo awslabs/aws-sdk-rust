@@ -33,8 +33,8 @@ impl EbsVolumeConfiguration {
 }
 
 /// A builder for [`EbsVolumeConfiguration`](crate::types::EbsVolumeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsVolumeConfigurationBuilder {
     pub(crate) storage: ::std::option::Option<crate::types::StorageConfiguration>,
     pub(crate) performance: ::std::option::Option<crate::types::BlockStoragePerformanceConfiguration>,

@@ -42,8 +42,8 @@ impl ListProfilingGroupsOutput {
 }
 
 /// A builder for [`ListProfilingGroupsOutput`](crate::operation::list_profiling_groups::ListProfilingGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfilingGroupsOutputBuilder {
     pub(crate) profiling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) profiling_groups: ::std::option::Option<::std::vec::Vec<crate::types::ProfilingGroupDescription>>,

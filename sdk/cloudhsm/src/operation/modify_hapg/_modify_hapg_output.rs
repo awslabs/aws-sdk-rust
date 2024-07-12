@@ -26,8 +26,8 @@ impl ModifyHapgOutput {
 }
 
 /// A builder for [`ModifyHapgOutput`](crate::operation::modify_hapg::ModifyHapgOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyHapgOutputBuilder {
     pub(crate) hapg_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

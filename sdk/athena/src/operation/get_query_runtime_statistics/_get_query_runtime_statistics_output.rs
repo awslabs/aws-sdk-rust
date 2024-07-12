@@ -26,8 +26,8 @@ impl GetQueryRuntimeStatisticsOutput {
 }
 
 /// A builder for [`GetQueryRuntimeStatisticsOutput`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQueryRuntimeStatisticsOutputBuilder {
     pub(crate) query_runtime_statistics: ::std::option::Option<crate::types::QueryRuntimeStatistics>,
     _request_id: Option<String>,

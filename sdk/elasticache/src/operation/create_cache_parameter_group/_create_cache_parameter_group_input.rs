@@ -43,8 +43,8 @@ impl CreateCacheParameterGroupInput {
 }
 
 /// A builder for [`CreateCacheParameterGroupInput`](crate::operation::create_cache_parameter_group::CreateCacheParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCacheParameterGroupInputBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_parameter_group_family: ::std::option::Option<::std::string::String>,

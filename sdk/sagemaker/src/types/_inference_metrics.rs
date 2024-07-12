@@ -27,8 +27,8 @@ impl InferenceMetrics {
 }
 
 /// A builder for [`InferenceMetrics`](crate::types::InferenceMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceMetricsBuilder {
     pub(crate) max_invocations: ::std::option::Option<i32>,
     pub(crate) model_latency: ::std::option::Option<i32>,

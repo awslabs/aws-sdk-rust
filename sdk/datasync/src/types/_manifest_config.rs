@@ -39,8 +39,8 @@ impl ManifestConfig {
 }
 
 /// A builder for [`ManifestConfig`](crate::types::ManifestConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManifestConfigBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ManifestAction>,
     pub(crate) format: ::std::option::Option<crate::types::ManifestFormat>,

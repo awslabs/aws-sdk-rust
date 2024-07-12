@@ -44,8 +44,8 @@ impl RestoreSnapshotTierOutput {
 }
 
 /// A builder for [`RestoreSnapshotTierOutput`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreSnapshotTierOutputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) restore_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

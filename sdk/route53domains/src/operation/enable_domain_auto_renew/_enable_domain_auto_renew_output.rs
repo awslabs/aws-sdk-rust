@@ -18,8 +18,8 @@ impl EnableDomainAutoRenewOutput {
 }
 
 /// A builder for [`EnableDomainAutoRenewOutput`](crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableDomainAutoRenewOutputBuilder {
     _request_id: Option<String>,
 }

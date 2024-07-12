@@ -49,8 +49,8 @@ impl ListenerTls {
 }
 
 /// A builder for [`ListenerTls`](crate::types::ListenerTls).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListenerTlsBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::ListenerTlsMode>,
     pub(crate) certificate: ::std::option::Option<crate::types::ListenerTlsCertificate>,

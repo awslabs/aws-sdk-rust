@@ -26,8 +26,8 @@ impl CancelComponentDeploymentOutput {
 }
 
 /// A builder for [`CancelComponentDeploymentOutput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelComponentDeploymentOutputBuilder {
     pub(crate) component: ::std::option::Option<crate::types::Component>,
     _request_id: Option<String>,

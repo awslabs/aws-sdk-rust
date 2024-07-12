@@ -21,8 +21,8 @@ impl ColumnDescription {
 }
 
 /// A builder for [`ColumnDescription`](crate::types::ColumnDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnDescriptionBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

@@ -31,8 +31,8 @@ impl StatisticsConfiguration {
 }
 
 /// A builder for [`StatisticsConfiguration`](crate::types::StatisticsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatisticsConfigurationBuilder {
     pub(crate) included_statistics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::StatisticOverride>>,

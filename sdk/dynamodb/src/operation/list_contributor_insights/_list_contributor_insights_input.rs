@@ -32,8 +32,8 @@ impl ListContributorInsightsInput {
 }
 
 /// A builder for [`ListContributorInsightsInput`](crate::operation::list_contributor_insights::ListContributorInsightsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContributorInsightsInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

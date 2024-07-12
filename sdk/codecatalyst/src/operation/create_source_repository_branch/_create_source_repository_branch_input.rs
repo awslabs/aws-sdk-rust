@@ -44,8 +44,8 @@ impl CreateSourceRepositoryBranchInput {
 }
 
 /// A builder for [`CreateSourceRepositoryBranchInput`](crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSourceRepositoryBranchInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

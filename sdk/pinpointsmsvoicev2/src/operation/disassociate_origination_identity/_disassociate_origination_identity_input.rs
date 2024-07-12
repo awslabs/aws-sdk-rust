@@ -38,8 +38,8 @@ impl DisassociateOriginationIdentityInput {
 }
 
 /// A builder for [`DisassociateOriginationIdentityInput`](crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateOriginationIdentityInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl ImageScanFindingAggregation {
 }
 
 /// A builder for [`ImageScanFindingAggregation`](crate::types::ImageScanFindingAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageScanFindingAggregationBuilder {
     pub(crate) account_aggregation: ::std::option::Option<crate::types::AccountAggregation>,
     pub(crate) image_aggregation: ::std::option::Option<crate::types::ImageAggregation>,

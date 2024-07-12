@@ -21,8 +21,8 @@ impl AwsLambdaFunctionDeadLetterConfig {
 }
 
 /// A builder for [`AwsLambdaFunctionDeadLetterConfig`](crate::types::AwsLambdaFunctionDeadLetterConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsLambdaFunctionDeadLetterConfigBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
 }

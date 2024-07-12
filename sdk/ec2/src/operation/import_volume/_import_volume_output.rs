@@ -26,8 +26,8 @@ impl ImportVolumeOutput {
 }
 
 /// A builder for [`ImportVolumeOutput`](crate::operation::import_volume::ImportVolumeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportVolumeOutputBuilder {
     pub(crate) conversion_task: ::std::option::Option<crate::types::ConversionTask>,
     _request_id: Option<String>,

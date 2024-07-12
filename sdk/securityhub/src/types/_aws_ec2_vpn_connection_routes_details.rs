@@ -27,8 +27,8 @@ impl AwsEc2VpnConnectionRoutesDetails {
 }
 
 /// A builder for [`AwsEc2VpnConnectionRoutesDetails`](crate::types::AwsEc2VpnConnectionRoutesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2VpnConnectionRoutesDetailsBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,

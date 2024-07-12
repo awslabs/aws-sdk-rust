@@ -226,8 +226,8 @@ impl CreateWorldGenerationJobOutput {
 }
 
 /// A builder for [`CreateWorldGenerationJobOutput`](crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorldGenerationJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorldGenerationJobStatus>,

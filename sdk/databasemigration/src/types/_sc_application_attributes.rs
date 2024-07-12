@@ -27,8 +27,8 @@ impl ScApplicationAttributes {
 }
 
 /// A builder for [`ScApplicationAttributes`](crate::types::ScApplicationAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScApplicationAttributesBuilder {
     pub(crate) s3_bucket_path: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_role_arn: ::std::option::Option<::std::string::String>,

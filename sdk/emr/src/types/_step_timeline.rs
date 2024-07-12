@@ -33,8 +33,8 @@ impl StepTimeline {
 }
 
 /// A builder for [`StepTimeline`](crate::types::StepTimeline).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepTimelineBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,

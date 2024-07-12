@@ -20,8 +20,8 @@ impl DeleteMicrosoftTeamsConfiguredTeamInput {
 }
 
 /// A builder for [`DeleteMicrosoftTeamsConfiguredTeamInput`](crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMicrosoftTeamsConfiguredTeamInputBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
 }

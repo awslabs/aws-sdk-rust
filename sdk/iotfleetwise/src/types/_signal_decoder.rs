@@ -53,8 +53,8 @@ impl SignalDecoder {
 }
 
 /// A builder for [`SignalDecoder`](crate::types::SignalDecoder).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignalDecoderBuilder {
     pub(crate) fully_qualified_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::SignalDecoderType>,

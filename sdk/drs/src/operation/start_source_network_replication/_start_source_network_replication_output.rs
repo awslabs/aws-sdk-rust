@@ -26,8 +26,8 @@ impl StartSourceNetworkReplicationOutput {
 }
 
 /// A builder for [`StartSourceNetworkReplicationOutput`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSourceNetworkReplicationOutputBuilder {
     pub(crate) source_network: ::std::option::Option<crate::types::SourceNetwork>,
     _request_id: Option<String>,

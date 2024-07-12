@@ -27,8 +27,8 @@ impl CreatePlatformApplicationOutput {
 }
 
 /// A builder for [`CreatePlatformApplicationOutput`](crate::operation::create_platform_application::CreatePlatformApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePlatformApplicationOutputBuilder {
     pub(crate) platform_application_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

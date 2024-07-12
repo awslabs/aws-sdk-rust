@@ -37,8 +37,8 @@ impl InventoryAggregator {
 }
 
 /// A builder for [`InventoryAggregator`](crate::types::InventoryAggregator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InventoryAggregatorBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) aggregators: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,

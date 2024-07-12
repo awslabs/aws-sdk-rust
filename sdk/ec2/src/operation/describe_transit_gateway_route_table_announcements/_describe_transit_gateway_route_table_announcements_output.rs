@@ -36,8 +36,8 @@ impl DescribeTransitGatewayRouteTableAnnouncementsOutput {
 }
 
 /// A builder for [`DescribeTransitGatewayRouteTableAnnouncementsOutput`](crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder {
     pub(crate) transit_gateway_route_table_announcements: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAnnouncement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

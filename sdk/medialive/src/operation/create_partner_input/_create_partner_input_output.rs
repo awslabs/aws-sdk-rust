@@ -27,8 +27,8 @@ impl CreatePartnerInputOutput {
 }
 
 /// A builder for [`CreatePartnerInputOutput`](crate::operation::create_partner_input::CreatePartnerInputOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePartnerInputOutputBuilder {
     pub(crate) input: ::std::option::Option<crate::types::Input>,
     _request_id: Option<String>,

@@ -28,8 +28,8 @@ impl UpdateRulesOfIpGroupInput {
 }
 
 /// A builder for [`UpdateRulesOfIpGroupInput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRulesOfIpGroupInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,

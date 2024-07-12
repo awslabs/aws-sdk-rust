@@ -20,8 +20,8 @@ impl DescribeDatasetImportJobInput {
 }
 
 /// A builder for [`DescribeDatasetImportJobInput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDatasetImportJobInputBuilder {
     pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
 }

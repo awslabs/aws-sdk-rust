@@ -34,8 +34,8 @@ impl GetUiCustomizationInput {
 }
 
 /// A builder for [`GetUiCustomizationInput`](crate::operation::get_ui_customization::GetUiCustomizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetUiCustomizationInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,

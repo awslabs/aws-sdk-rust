@@ -18,8 +18,8 @@ impl SetVaultNotificationsOutput {
 }
 
 /// A builder for [`SetVaultNotificationsOutput`](crate::operation::set_vault_notifications::SetVaultNotificationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetVaultNotificationsOutputBuilder {
     _request_id: Option<String>,
 }

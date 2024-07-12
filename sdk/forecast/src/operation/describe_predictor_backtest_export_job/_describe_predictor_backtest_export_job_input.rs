@@ -20,8 +20,8 @@ impl DescribePredictorBacktestExportJobInput {
 }
 
 /// A builder for [`DescribePredictorBacktestExportJobInput`](crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePredictorBacktestExportJobInputBuilder {
     pub(crate) predictor_backtest_export_job_arn: ::std::option::Option<::std::string::String>,
 }

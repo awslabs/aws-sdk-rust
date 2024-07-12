@@ -22,8 +22,8 @@ impl SlackConnectorProfileProperties {
 }
 
 /// A builder for [`SlackConnectorProfileProperties`](crate::types::SlackConnectorProfileProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlackConnectorProfilePropertiesBuilder {
     pub(crate) instance_url: ::std::option::Option<::std::string::String>,
 }

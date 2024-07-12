@@ -42,8 +42,8 @@ impl IngestionSummary {
 }
 
 /// A builder for [`IngestionSummary`](crate::types::IngestionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngestionSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) app: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl TraceContent {
 }
 
 /// A builder for [`TraceContent`](crate::types::TraceContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TraceContentBuilder {
     pub(crate) wireless_device_frame_info: ::std::option::Option<crate::types::WirelessDeviceFrameInfo>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,

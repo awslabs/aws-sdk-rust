@@ -42,8 +42,8 @@ impl MutualTlsAuthentication {
 }
 
 /// A builder for [`MutualTlsAuthentication`](crate::types::MutualTlsAuthentication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MutualTlsAuthenticationBuilder {
     pub(crate) truststore_uri: ::std::option::Option<::std::string::String>,
     pub(crate) truststore_version: ::std::option::Option<::std::string::String>,

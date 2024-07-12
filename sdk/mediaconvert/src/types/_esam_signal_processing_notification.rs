@@ -21,8 +21,8 @@ impl EsamSignalProcessingNotification {
 }
 
 /// A builder for [`EsamSignalProcessingNotification`](crate::types::EsamSignalProcessingNotification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EsamSignalProcessingNotificationBuilder {
     pub(crate) scc_xml: ::std::option::Option<::std::string::String>,
 }

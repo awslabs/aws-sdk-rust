@@ -18,8 +18,8 @@ impl DeleteRoleAliasOutput {
 }
 
 /// A builder for [`DeleteRoleAliasOutput`](crate::operation::delete_role_alias::DeleteRoleAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRoleAliasOutputBuilder {
     _request_id: Option<String>,
 }

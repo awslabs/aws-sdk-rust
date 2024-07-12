@@ -34,8 +34,8 @@ impl ListResourceDataSyncOutput {
 }
 
 /// A builder for [`ListResourceDataSyncOutput`](crate::operation::list_resource_data_sync::ListResourceDataSyncOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceDataSyncOutputBuilder {
     pub(crate) resource_data_sync_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

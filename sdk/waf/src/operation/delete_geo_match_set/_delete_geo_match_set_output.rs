@@ -26,8 +26,8 @@ impl DeleteGeoMatchSetOutput {
 }
 
 /// A builder for [`DeleteGeoMatchSetOutput`](crate::operation::delete_geo_match_set::DeleteGeoMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGeoMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

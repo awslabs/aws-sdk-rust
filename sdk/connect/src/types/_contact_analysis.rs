@@ -21,8 +21,8 @@ impl ContactAnalysis {
 }
 
 /// A builder for [`ContactAnalysis`](crate::types::ContactAnalysis).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContactAnalysisBuilder {
     pub(crate) transcript: ::std::option::Option<crate::types::Transcript>,
 }

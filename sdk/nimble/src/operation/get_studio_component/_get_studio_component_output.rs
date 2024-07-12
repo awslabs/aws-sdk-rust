@@ -26,8 +26,8 @@ impl GetStudioComponentOutput {
 }
 
 /// A builder for [`GetStudioComponentOutput`](crate::operation::get_studio_component::GetStudioComponentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStudioComponentOutputBuilder {
     pub(crate) studio_component: ::std::option::Option<crate::types::StudioComponent>,
     _request_id: Option<String>,

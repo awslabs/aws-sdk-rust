@@ -27,8 +27,8 @@ impl UserMatch {
 }
 
 /// A builder for [`UserMatch`](crate::types::UserMatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserMatchBuilder {
     pub(crate) similarity: ::std::option::Option<f32>,
     pub(crate) user: ::std::option::Option<crate::types::MatchedUser>,

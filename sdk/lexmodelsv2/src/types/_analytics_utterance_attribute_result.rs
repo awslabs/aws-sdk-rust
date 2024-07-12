@@ -21,8 +21,8 @@ impl AnalyticsUtteranceAttributeResult {
 }
 
 /// A builder for [`AnalyticsUtteranceAttributeResult`](crate::types::AnalyticsUtteranceAttributeResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsUtteranceAttributeResultBuilder {
     pub(crate) last_used_intent: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl RestoreImageFromRecycleBinOutput {
 }
 
 /// A builder for [`RestoreImageFromRecycleBinOutput`](crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreImageFromRecycleBinOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

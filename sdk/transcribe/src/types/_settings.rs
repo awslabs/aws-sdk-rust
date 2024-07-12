@@ -95,8 +95,8 @@ impl Settings {
 }
 
 /// A builder for [`Settings`](crate::types::Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SettingsBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) show_speaker_labels: ::std::option::Option<bool>,

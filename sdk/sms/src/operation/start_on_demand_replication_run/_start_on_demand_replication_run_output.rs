@@ -26,8 +26,8 @@ impl StartOnDemandReplicationRunOutput {
 }
 
 /// A builder for [`StartOnDemandReplicationRunOutput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartOnDemandReplicationRunOutputBuilder {
     pub(crate) replication_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

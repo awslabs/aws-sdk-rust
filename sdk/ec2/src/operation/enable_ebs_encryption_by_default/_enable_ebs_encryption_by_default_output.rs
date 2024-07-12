@@ -26,8 +26,8 @@ impl EnableEbsEncryptionByDefaultOutput {
 }
 
 /// A builder for [`EnableEbsEncryptionByDefaultOutput`](crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableEbsEncryptionByDefaultOutputBuilder {
     pub(crate) ebs_encryption_by_default: ::std::option::Option<bool>,
     _request_id: Option<String>,

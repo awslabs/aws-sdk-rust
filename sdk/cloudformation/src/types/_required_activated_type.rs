@@ -44,8 +44,8 @@ impl RequiredActivatedType {
 }
 
 /// A builder for [`RequiredActivatedType`](crate::types::RequiredActivatedType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequiredActivatedTypeBuilder {
     pub(crate) type_name_alias: ::std::option::Option<::std::string::String>,
     pub(crate) original_type_name: ::std::option::Option<::std::string::String>,

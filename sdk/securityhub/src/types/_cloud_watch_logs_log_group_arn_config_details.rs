@@ -33,8 +33,8 @@ impl CloudWatchLogsLogGroupArnConfigDetails {
 }
 
 /// A builder for [`CloudWatchLogsLogGroupArnConfigDetails`](crate::types::CloudWatchLogsLogGroupArnConfigDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchLogsLogGroupArnConfigDetailsBuilder {
     pub(crate) cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,

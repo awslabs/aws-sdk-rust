@@ -71,8 +71,8 @@ impl OutboundConnectionStatus {
 }
 
 /// A builder for [`OutboundConnectionStatus`](crate::types::OutboundConnectionStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutboundConnectionStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::OutboundConnectionStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -67,8 +67,8 @@ impl ResourceMapping {
 }
 
 /// A builder for [`ResourceMapping`](crate::types::ResourceMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceMappingBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) logical_stack_name: ::std::option::Option<::std::string::String>,

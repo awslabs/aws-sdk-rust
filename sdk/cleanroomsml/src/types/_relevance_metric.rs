@@ -27,8 +27,8 @@ impl RelevanceMetric {
 }
 
 /// A builder for [`RelevanceMetric`](crate::types::RelevanceMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelevanceMetricBuilder {
     pub(crate) audience_size: ::std::option::Option<crate::types::AudienceSize>,
     pub(crate) score: ::std::option::Option<f64>,

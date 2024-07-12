@@ -28,8 +28,8 @@ impl AcceptInboundCrossClusterSearchConnectionOutput {
 }
 
 /// A builder for [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptInboundCrossClusterSearchConnectionOutputBuilder {
     pub(crate) cross_cluster_search_connection: ::std::option::Option<crate::types::InboundCrossClusterSearchConnection>,
     _request_id: Option<String>,

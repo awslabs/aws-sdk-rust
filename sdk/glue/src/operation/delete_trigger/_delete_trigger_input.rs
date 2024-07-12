@@ -20,8 +20,8 @@ impl DeleteTriggerInput {
 }
 
 /// A builder for [`DeleteTriggerInput`](crate::operation::delete_trigger::DeleteTriggerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTriggerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

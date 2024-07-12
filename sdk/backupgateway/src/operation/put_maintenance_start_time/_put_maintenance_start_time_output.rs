@@ -26,8 +26,8 @@ impl PutMaintenanceStartTimeOutput {
 }
 
 /// A builder for [`PutMaintenanceStartTimeOutput`](crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMaintenanceStartTimeOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl UpdateScalingParametersInput {
 }
 
 /// A builder for [`UpdateScalingParametersInput`](crate::operation::update_scaling_parameters::UpdateScalingParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateScalingParametersInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_parameters: ::std::option::Option<crate::types::ScalingParameters>,

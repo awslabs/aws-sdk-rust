@@ -18,8 +18,8 @@ impl DeleteVpcPeeringAuthorizationOutput {
 }
 
 /// A builder for [`DeleteVpcPeeringAuthorizationOutput`](crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpcPeeringAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }

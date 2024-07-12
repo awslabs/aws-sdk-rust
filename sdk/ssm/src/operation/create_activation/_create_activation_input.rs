@@ -90,8 +90,8 @@ impl CreateActivationInput {
 }
 
 /// A builder for [`CreateActivationInput`](crate::operation::create_activation::CreateActivationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateActivationInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) default_instance_name: ::std::option::Option<::std::string::String>,

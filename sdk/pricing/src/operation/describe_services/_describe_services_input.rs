@@ -40,8 +40,8 @@ impl DescribeServicesInput {
 }
 
 /// A builder for [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServicesInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) format_version: ::std::option::Option<::std::string::String>,

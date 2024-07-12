@@ -35,8 +35,8 @@ impl DescribeDbSnapshotsOutput {
 }
 
 /// A builder for [`DescribeDbSnapshotsOutput`](crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbSnapshotsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::DbSnapshot>>,

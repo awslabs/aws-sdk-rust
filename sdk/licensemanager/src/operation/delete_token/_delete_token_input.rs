@@ -20,8 +20,8 @@ impl DeleteTokenInput {
 }
 
 /// A builder for [`DeleteTokenInput`](crate::operation::delete_token::DeleteTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTokenInputBuilder {
     pub(crate) token_id: ::std::option::Option<::std::string::String>,
 }

@@ -41,8 +41,8 @@ impl Type {
 }
 
 /// A builder for [`Type`](crate::types::Type).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TypeBuilder {
     pub(crate) scalar_type: ::std::option::Option<crate::types::ScalarType>,
     pub(crate) array_column_info: ::std::option::Option<crate::types::ColumnInfo>,

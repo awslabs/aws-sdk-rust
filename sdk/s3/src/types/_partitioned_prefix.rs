@@ -23,8 +23,8 @@ impl PartitionedPrefix {
 }
 
 /// A builder for [`PartitionedPrefix`](crate::types::PartitionedPrefix).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PartitionedPrefixBuilder {
     pub(crate) partition_date_source: ::std::option::Option<crate::types::PartitionDateSource>,
 }

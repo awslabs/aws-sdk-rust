@@ -35,8 +35,8 @@ impl KnowledgeBaseLookupInput {
 }
 
 /// A builder for [`KnowledgeBaseLookupInput`](crate::types::KnowledgeBaseLookupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct KnowledgeBaseLookupInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,

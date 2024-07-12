@@ -21,8 +21,8 @@ impl Ec2ConfigurationState {
 }
 
 /// A builder for [`Ec2ConfigurationState`](crate::types::Ec2ConfigurationState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2ConfigurationStateBuilder {
     pub(crate) scan_mode_state: ::std::option::Option<crate::types::Ec2ScanModeState>,
 }

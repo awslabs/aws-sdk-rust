@@ -12,8 +12,8 @@ impl GetDefaultScraperConfigurationInput {
 }
 
 /// A builder for [`GetDefaultScraperConfigurationInput`](crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDefaultScraperConfigurationInputBuilder {}
 impl GetDefaultScraperConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetDefaultScraperConfigurationInput`](crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationInput).

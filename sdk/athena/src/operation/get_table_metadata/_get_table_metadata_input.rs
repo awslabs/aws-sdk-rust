@@ -38,8 +38,8 @@ impl GetTableMetadataInput {
 }
 
 /// A builder for [`GetTableMetadataInput`](crate::operation::get_table_metadata::GetTableMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTableMetadataInputBuilder {
     pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl ConfirmCustomerAgreementInput {
 }
 
 /// A builder for [`ConfirmCustomerAgreementInput`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfirmCustomerAgreementInputBuilder {
     pub(crate) agreement_name: ::std::option::Option<::std::string::String>,
 }

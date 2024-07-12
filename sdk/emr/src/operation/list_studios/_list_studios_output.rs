@@ -34,8 +34,8 @@ impl ListStudiosOutput {
 }
 
 /// A builder for [`ListStudiosOutput`](crate::operation::list_studios::ListStudiosOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStudiosOutputBuilder {
     pub(crate) studios: ::std::option::Option<::std::vec::Vec<crate::types::StudioSummary>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

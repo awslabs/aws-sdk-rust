@@ -20,8 +20,8 @@ impl AcceptAttachmentInput {
 }
 
 /// A builder for [`AcceptAttachmentInput`](crate::operation::accept_attachment::AcceptAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
 }

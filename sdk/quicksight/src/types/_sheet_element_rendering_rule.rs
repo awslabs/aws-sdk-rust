@@ -36,8 +36,8 @@ impl SheetElementRenderingRule {
 }
 
 /// A builder for [`SheetElementRenderingRule`](crate::types::SheetElementRenderingRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SheetElementRenderingRuleBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_overrides: ::std::option::Option<crate::types::SheetElementConfigurationOverrides>,

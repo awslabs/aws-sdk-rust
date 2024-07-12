@@ -34,8 +34,8 @@ impl ListCustomMetricsOutput {
 }
 
 /// A builder for [`ListCustomMetricsOutput`](crate::operation::list_custom_metrics::ListCustomMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomMetricsOutputBuilder {
     pub(crate) metric_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

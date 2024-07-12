@@ -26,8 +26,8 @@ impl ModifyDbProxyTargetGroupOutput {
 }
 
 /// A builder for [`ModifyDbProxyTargetGroupOutput`](crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbProxyTargetGroupOutputBuilder {
     pub(crate) db_proxy_target_group: ::std::option::Option<crate::types::DbProxyTargetGroup>,
     _request_id: Option<String>,

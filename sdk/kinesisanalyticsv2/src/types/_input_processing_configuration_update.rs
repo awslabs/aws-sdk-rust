@@ -21,8 +21,8 @@ impl InputProcessingConfigurationUpdate {
 }
 
 /// A builder for [`InputProcessingConfigurationUpdate`](crate::types::InputProcessingConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputProcessingConfigurationUpdateBuilder {
     pub(crate) input_lambda_processor_update: ::std::option::Option<crate::types::InputLambdaProcessorUpdate>,
 }

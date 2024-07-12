@@ -59,8 +59,8 @@ impl Cookies {
 }
 
 /// A builder for [`Cookies`](crate::types::Cookies).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CookiesBuilder {
     pub(crate) match_pattern: ::std::option::Option<crate::types::CookieMatchPattern>,
     pub(crate) match_scope: ::std::option::Option<crate::types::MapMatchScope>,

@@ -26,8 +26,8 @@ impl GetQueryLoggingConfigOutput {
 }
 
 /// A builder for [`GetQueryLoggingConfigOutput`](crate::operation::get_query_logging_config::GetQueryLoggingConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQueryLoggingConfigOutputBuilder {
     pub(crate) query_logging_config: ::std::option::Option<crate::types::QueryLoggingConfig>,
     _request_id: Option<String>,

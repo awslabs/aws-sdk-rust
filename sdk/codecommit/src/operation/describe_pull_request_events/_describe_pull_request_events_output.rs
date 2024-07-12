@@ -33,8 +33,8 @@ impl DescribePullRequestEventsOutput {
 }
 
 /// A builder for [`DescribePullRequestEventsOutput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePullRequestEventsOutputBuilder {
     pub(crate) pull_request_events: ::std::option::Option<::std::vec::Vec<crate::types::PullRequestEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteClusterPolicyInput {
 }
 
 /// A builder for [`DeleteClusterPolicyInput`](crate::operation::delete_cluster_policy::DeleteClusterPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClusterPolicyInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
 }

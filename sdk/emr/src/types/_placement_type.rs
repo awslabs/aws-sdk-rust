@@ -33,8 +33,8 @@ impl PlacementType {
 }
 
 /// A builder for [`PlacementType`](crate::types::PlacementType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlacementTypeBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

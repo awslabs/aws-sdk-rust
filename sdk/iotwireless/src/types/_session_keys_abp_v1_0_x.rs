@@ -27,8 +27,8 @@ impl SessionKeysAbpV10X {
 }
 
 /// A builder for [`SessionKeysAbpV10X`](crate::types::SessionKeysAbpV10X).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionKeysAbpV10XBuilder {
     pub(crate) nwk_s_key: ::std::option::Option<::std::string::String>,
     pub(crate) app_s_key: ::std::option::Option<::std::string::String>,

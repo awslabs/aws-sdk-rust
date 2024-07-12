@@ -42,8 +42,8 @@ impl FilterTextFieldControl {
 }
 
 /// A builder for [`FilterTextFieldControl`](crate::types::FilterTextFieldControl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterTextFieldControlBuilder {
     pub(crate) filter_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

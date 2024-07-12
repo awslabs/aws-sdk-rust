@@ -20,8 +20,8 @@ impl DescribePortfolioShareStatusInput {
 }
 
 /// A builder for [`DescribePortfolioShareStatusInput`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePortfolioShareStatusInputBuilder {
     pub(crate) portfolio_share_token: ::std::option::Option<::std::string::String>,
 }

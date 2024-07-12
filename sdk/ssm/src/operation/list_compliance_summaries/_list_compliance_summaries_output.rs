@@ -34,8 +34,8 @@ impl ListComplianceSummariesOutput {
 }
 
 /// A builder for [`ListComplianceSummariesOutput`](crate::operation::list_compliance_summaries::ListComplianceSummariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListComplianceSummariesOutputBuilder {
     pub(crate) compliance_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

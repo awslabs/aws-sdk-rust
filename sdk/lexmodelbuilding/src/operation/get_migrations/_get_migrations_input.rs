@@ -50,8 +50,8 @@ impl GetMigrationsInput {
 }
 
 /// A builder for [`GetMigrationsInput`](crate::operation::get_migrations::GetMigrationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMigrationsInputBuilder {
     pub(crate) sort_by_attribute: ::std::option::Option<crate::types::MigrationSortAttribute>,
     pub(crate) sort_by_order: ::std::option::Option<crate::types::SortOrder>,

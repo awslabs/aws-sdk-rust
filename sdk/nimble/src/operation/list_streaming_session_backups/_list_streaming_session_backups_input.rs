@@ -32,8 +32,8 @@ impl ListStreamingSessionBackupsInput {
 }
 
 /// A builder for [`ListStreamingSessionBackupsInput`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamingSessionBackupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) owned_by: ::std::option::Option<::std::string::String>,

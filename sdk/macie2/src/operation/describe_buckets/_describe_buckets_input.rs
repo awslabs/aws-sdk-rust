@@ -40,8 +40,8 @@ impl DescribeBucketsInput {
 }
 
 /// A builder for [`DescribeBucketsInput`](crate::operation::describe_buckets::DescribeBucketsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBucketsInputBuilder {
     pub(crate) criteria: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>,
     pub(crate) max_results: ::std::option::Option<i32>,

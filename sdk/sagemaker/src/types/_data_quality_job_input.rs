@@ -27,8 +27,8 @@ impl DataQualityJobInput {
 }
 
 /// A builder for [`DataQualityJobInput`](crate::types::DataQualityJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataQualityJobInputBuilder {
     pub(crate) endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
     pub(crate) batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,

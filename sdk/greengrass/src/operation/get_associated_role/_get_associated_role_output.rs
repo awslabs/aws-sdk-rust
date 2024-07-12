@@ -32,8 +32,8 @@ impl GetAssociatedRoleOutput {
 }
 
 /// A builder for [`GetAssociatedRoleOutput`](crate::operation::get_associated_role::GetAssociatedRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssociatedRoleOutputBuilder {
     pub(crate) associated_at: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

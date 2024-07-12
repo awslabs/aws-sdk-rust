@@ -34,8 +34,8 @@ impl EnableImageDeprecationInput {
 }
 
 /// A builder for [`EnableImageDeprecationInput`](crate::operation::enable_image_deprecation::EnableImageDeprecationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableImageDeprecationInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) deprecate_at: ::std::option::Option<::aws_smithy_types::DateTime>,

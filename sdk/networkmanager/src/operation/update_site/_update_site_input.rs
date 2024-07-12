@@ -66,8 +66,8 @@ impl UpdateSiteInput {
 }
 
 /// A builder for [`UpdateSiteInput`](crate::operation::update_site::UpdateSiteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateSiteInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) site_id: ::std::option::Option<::std::string::String>,

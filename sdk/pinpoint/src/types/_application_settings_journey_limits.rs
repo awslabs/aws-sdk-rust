@@ -33,8 +33,8 @@ impl ApplicationSettingsJourneyLimits {
 }
 
 /// A builder for [`ApplicationSettingsJourneyLimits`](crate::types::ApplicationSettingsJourneyLimits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationSettingsJourneyLimitsBuilder {
     pub(crate) daily_cap: ::std::option::Option<i32>,
     pub(crate) timeframe_cap: ::std::option::Option<crate::types::JourneyTimeframeCap>,

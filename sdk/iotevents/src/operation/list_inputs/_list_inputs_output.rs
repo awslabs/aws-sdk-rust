@@ -34,8 +34,8 @@ impl ListInputsOutput {
 }
 
 /// A builder for [`ListInputsOutput`](crate::operation::list_inputs::ListInputsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInputsOutputBuilder {
     pub(crate) input_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InputSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

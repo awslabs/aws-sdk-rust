@@ -18,8 +18,8 @@ impl ModifyReportDefinitionOutput {
 }
 
 /// A builder for [`ModifyReportDefinitionOutput`](crate::operation::modify_report_definition::ModifyReportDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyReportDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

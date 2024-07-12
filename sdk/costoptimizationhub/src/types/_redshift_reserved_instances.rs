@@ -27,8 +27,8 @@ impl RedshiftReservedInstances {
 }
 
 /// A builder for [`RedshiftReservedInstances`](crate::types::RedshiftReservedInstances).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedshiftReservedInstancesBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::RedshiftReservedInstancesConfiguration>,
     pub(crate) cost_calculation: ::std::option::Option<crate::types::ReservedInstancesCostCalculation>,

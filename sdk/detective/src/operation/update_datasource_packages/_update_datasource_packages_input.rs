@@ -28,8 +28,8 @@ impl UpdateDatasourcePackagesInput {
 }
 
 /// A builder for [`UpdateDatasourcePackagesInput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDatasourcePackagesInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) datasource_packages: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>,

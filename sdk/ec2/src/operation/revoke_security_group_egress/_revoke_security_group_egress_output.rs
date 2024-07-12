@@ -34,8 +34,8 @@ impl RevokeSecurityGroupEgressOutput {
 }
 
 /// A builder for [`RevokeSecurityGroupEgressOutput`](crate::operation::revoke_security_group_egress::RevokeSecurityGroupEgressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeSecurityGroupEgressOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     pub(crate) unknown_ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,

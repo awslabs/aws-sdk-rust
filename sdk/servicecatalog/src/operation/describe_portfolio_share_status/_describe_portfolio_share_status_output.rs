@@ -50,8 +50,8 @@ impl DescribePortfolioShareStatusOutput {
 }
 
 /// A builder for [`DescribePortfolioShareStatusOutput`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePortfolioShareStatusOutputBuilder {
     pub(crate) portfolio_share_token: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,

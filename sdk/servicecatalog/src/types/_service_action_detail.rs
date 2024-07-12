@@ -27,8 +27,8 @@ impl ServiceActionDetail {
 }
 
 /// A builder for [`ServiceActionDetail`](crate::types::ServiceActionDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceActionDetailBuilder {
     pub(crate) service_action_summary: ::std::option::Option<crate::types::ServiceActionSummary>,
     pub(crate) definition: ::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,

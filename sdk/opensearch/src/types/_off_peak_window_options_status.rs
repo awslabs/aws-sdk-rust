@@ -27,8 +27,8 @@ impl OffPeakWindowOptionsStatus {
 }
 
 /// A builder for [`OffPeakWindowOptionsStatus`](crate::types::OffPeakWindowOptionsStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OffPeakWindowOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

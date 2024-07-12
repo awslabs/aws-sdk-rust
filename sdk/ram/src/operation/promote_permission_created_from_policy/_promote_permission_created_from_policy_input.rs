@@ -36,8 +36,8 @@ impl PromotePermissionCreatedFromPolicyInput {
 }
 
 /// A builder for [`PromotePermissionCreatedFromPolicyInput`](crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromotePermissionCreatedFromPolicyInputBuilder {
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl DescribeDryRunProgressOutput {
 }
 
 /// A builder for [`DescribeDryRunProgressOutput`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDryRunProgressOutputBuilder {
     pub(crate) dry_run_progress_status: ::std::option::Option<crate::types::DryRunProgressStatus>,
     pub(crate) dry_run_config: ::std::option::Option<crate::types::DomainStatus>,

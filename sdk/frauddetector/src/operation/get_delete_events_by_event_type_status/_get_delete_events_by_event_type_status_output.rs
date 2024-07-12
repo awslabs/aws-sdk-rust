@@ -32,8 +32,8 @@ impl GetDeleteEventsByEventTypeStatusOutput {
 }
 
 /// A builder for [`GetDeleteEventsByEventTypeStatusOutput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeleteEventsByEventTypeStatusOutputBuilder {
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) events_deletion_status: ::std::option::Option<crate::types::AsyncJobStatus>,

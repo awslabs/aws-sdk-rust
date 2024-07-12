@@ -27,8 +27,8 @@ impl UserStorageMetadata {
 }
 
 /// A builder for [`UserStorageMetadata`](crate::types::UserStorageMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserStorageMetadataBuilder {
     pub(crate) storage_utilized_in_bytes: ::std::option::Option<i64>,
     pub(crate) storage_rule: ::std::option::Option<crate::types::StorageRuleType>,

@@ -26,8 +26,8 @@ impl DescribeConnectorOutput {
 }
 
 /// A builder for [`DescribeConnectorOutput`](crate::operation::describe_connector::DescribeConnectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectorOutputBuilder {
     pub(crate) connector: ::std::option::Option<crate::types::DescribedConnector>,
     _request_id: Option<String>,

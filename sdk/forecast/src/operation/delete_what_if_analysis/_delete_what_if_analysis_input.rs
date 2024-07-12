@@ -20,8 +20,8 @@ impl DeleteWhatIfAnalysisInput {
 }
 
 /// A builder for [`DeleteWhatIfAnalysisInput`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWhatIfAnalysisInputBuilder {
     pub(crate) what_if_analysis_arn: ::std::option::Option<::std::string::String>,
 }

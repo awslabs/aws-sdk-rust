@@ -39,8 +39,8 @@ impl LoadBalancerAddress {
 }
 
 /// A builder for [`LoadBalancerAddress`](crate::types::LoadBalancerAddress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoadBalancerAddressBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,

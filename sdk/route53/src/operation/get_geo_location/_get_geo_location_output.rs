@@ -27,8 +27,8 @@ impl GetGeoLocationOutput {
 }
 
 /// A builder for [`GetGeoLocationOutput`](crate::operation::get_geo_location::GetGeoLocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGeoLocationOutputBuilder {
     pub(crate) geo_location_details: ::std::option::Option<crate::types::GeoLocationDetails>,
     _request_id: Option<String>,

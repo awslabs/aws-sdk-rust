@@ -44,8 +44,8 @@ impl CreateProvisioningTemplateVersionOutput {
 }
 
 /// A builder for [`CreateProvisioningTemplateVersionOutput`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProvisioningTemplateVersionOutputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

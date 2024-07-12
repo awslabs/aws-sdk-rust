@@ -32,8 +32,8 @@ impl RotateTunnelAccessTokenInput {
 }
 
 /// A builder for [`RotateTunnelAccessTokenInput`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RotateTunnelAccessTokenInputBuilder {
     pub(crate) tunnel_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_mode: ::std::option::Option<crate::types::ClientMode>,

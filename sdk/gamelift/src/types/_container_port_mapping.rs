@@ -44,8 +44,8 @@ impl ContainerPortMapping {
 }
 
 /// A builder for [`ContainerPortMapping`](crate::types::ContainerPortMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ContainerPortMappingBuilder {
     pub(crate) container_port: ::std::option::Option<i32>,
     pub(crate) connection_port: ::std::option::Option<i32>,

@@ -27,8 +27,8 @@ impl EncryptionConfiguration {
 }
 
 /// A builder for [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionConfigurationBuilder {
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) cmk_arn: ::std::option::Option<::std::string::String>,

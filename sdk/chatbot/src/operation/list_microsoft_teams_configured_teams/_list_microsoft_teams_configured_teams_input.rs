@@ -26,8 +26,8 @@ impl ListMicrosoftTeamsConfiguredTeamsInput {
 }
 
 /// A builder for [`ListMicrosoftTeamsConfiguredTeamsInput`](crate::operation::list_microsoft_teams_configured_teams::ListMicrosoftTeamsConfiguredTeamsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMicrosoftTeamsConfiguredTeamsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

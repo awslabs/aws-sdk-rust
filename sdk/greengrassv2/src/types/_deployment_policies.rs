@@ -35,8 +35,8 @@ impl DeploymentPolicies {
 }
 
 /// A builder for [`DeploymentPolicies`](crate::types::DeploymentPolicies).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentPoliciesBuilder {
     pub(crate) failure_handling_policy: ::std::option::Option<crate::types::DeploymentFailureHandlingPolicy>,
     pub(crate) component_update_policy: ::std::option::Option<crate::types::DeploymentComponentUpdatePolicy>,

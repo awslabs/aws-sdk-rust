@@ -26,8 +26,8 @@ impl UpdateVpcAttachmentOutput {
 }
 
 /// A builder for [`UpdateVpcAttachmentOutput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVpcAttachmentOutputBuilder {
     pub(crate) vpc_attachment: ::std::option::Option<crate::types::VpcAttachment>,
     _request_id: Option<String>,

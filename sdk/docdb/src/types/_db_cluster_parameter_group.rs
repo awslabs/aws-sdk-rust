@@ -39,8 +39,8 @@ impl DbClusterParameterGroup {
 }
 
 /// A builder for [`DbClusterParameterGroup`](crate::types::DbClusterParameterGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbClusterParameterGroupBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,

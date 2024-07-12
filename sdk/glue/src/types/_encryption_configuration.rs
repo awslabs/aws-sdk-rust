@@ -35,8 +35,8 @@ impl EncryptionConfiguration {
 }
 
 /// A builder for [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionConfigurationBuilder {
     pub(crate) s3_encryption: ::std::option::Option<::std::vec::Vec<crate::types::S3Encryption>>,
     pub(crate) cloud_watch_encryption: ::std::option::Option<crate::types::CloudWatchEncryption>,

@@ -33,8 +33,8 @@ impl ListProfilesOutput {
 }
 
 /// A builder for [`ListProfilesOutput`](crate::operation::list_profiles::ListProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfilesOutputBuilder {
     pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::ProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

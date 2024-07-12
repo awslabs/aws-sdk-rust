@@ -20,8 +20,8 @@ impl DeleteImagePipelineInput {
 }
 
 /// A builder for [`DeleteImagePipelineInput`](crate::operation::delete_image_pipeline::DeleteImagePipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteImagePipelineInputBuilder {
     pub(crate) image_pipeline_arn: ::std::option::Option<::std::string::String>,
 }

@@ -34,8 +34,8 @@ impl ListTargetAccountConfigurationsOutput {
 }
 
 /// A builder for [`ListTargetAccountConfigurationsOutput`](crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTargetAccountConfigurationsOutputBuilder {
     pub(crate) target_account_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TargetAccountConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

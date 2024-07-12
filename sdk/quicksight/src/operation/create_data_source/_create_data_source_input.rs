@@ -105,8 +105,8 @@ impl CreateDataSourceInput {
 }
 
 /// A builder for [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateDataSourceInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,

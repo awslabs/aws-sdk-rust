@@ -64,8 +64,8 @@ impl DeletePolicyInput {
 }
 
 /// A builder for [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePolicyInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete_all_policy_resources: ::std::option::Option<bool>,

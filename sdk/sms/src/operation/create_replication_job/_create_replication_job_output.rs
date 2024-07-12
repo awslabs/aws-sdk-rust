@@ -26,8 +26,8 @@ impl CreateReplicationJobOutput {
 }
 
 /// A builder for [`CreateReplicationJobOutput`](crate::operation::create_replication_job::CreateReplicationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplicationJobOutputBuilder {
     pub(crate) replication_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

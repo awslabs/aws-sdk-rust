@@ -33,8 +33,8 @@ impl FindingActor {
 }
 
 /// A builder for [`FindingActor`](crate::types::FindingActor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingActorBuilder {
     pub(crate) domain_details: ::std::option::Option<crate::types::DomainDetails>,
     pub(crate) ip_address_details: ::std::option::Option<crate::types::IpAddressDetails>,

@@ -21,8 +21,8 @@ impl UpstreamRepositoryInfo {
 }
 
 /// A builder for [`UpstreamRepositoryInfo`](crate::types::UpstreamRepositoryInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpstreamRepositoryInfoBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
 }

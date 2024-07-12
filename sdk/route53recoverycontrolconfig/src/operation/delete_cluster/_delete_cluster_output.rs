@@ -18,8 +18,8 @@ impl DeleteClusterOutput {
 }
 
 /// A builder for [`DeleteClusterOutput`](crate::operation::delete_cluster::DeleteClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClusterOutputBuilder {
     _request_id: Option<String>,
 }

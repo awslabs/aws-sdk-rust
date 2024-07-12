@@ -26,8 +26,8 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
 }
 
 /// A builder for [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWirelessDeviceWithFuotaTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) wireless_device_id: ::std::option::Option<::std::string::String>,

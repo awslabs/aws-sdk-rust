@@ -38,8 +38,8 @@ impl CreatePartitionIndexInput {
 }
 
 /// A builder for [`CreatePartitionIndexInput`](crate::operation::create_partition_index::CreatePartitionIndexInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePartitionIndexInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

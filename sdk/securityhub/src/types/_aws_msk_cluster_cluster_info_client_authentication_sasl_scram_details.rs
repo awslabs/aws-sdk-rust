@@ -21,8 +21,8 @@ impl AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails {
 }
 
 /// A builder for [`AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails`](crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsMskClusterClusterInfoClientAuthenticationSaslScramDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

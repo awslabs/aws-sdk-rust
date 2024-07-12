@@ -40,8 +40,8 @@ impl AggregateComplianceByConfigRule {
 }
 
 /// A builder for [`AggregateComplianceByConfigRule`](crate::types::AggregateComplianceByConfigRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregateComplianceByConfigRuleBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) compliance: ::std::option::Option<crate::types::Compliance>,

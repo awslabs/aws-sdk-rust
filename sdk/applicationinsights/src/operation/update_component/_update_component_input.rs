@@ -40,8 +40,8 @@ impl UpdateComponentInput {
 }
 
 /// A builder for [`UpdateComponentInput`](crate::operation::update_component::UpdateComponentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateComponentInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,

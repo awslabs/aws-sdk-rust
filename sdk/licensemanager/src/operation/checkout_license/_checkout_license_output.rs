@@ -70,8 +70,8 @@ impl CheckoutLicenseOutput {
 }
 
 /// A builder for [`CheckoutLicenseOutput`](crate::operation::checkout_license::CheckoutLicenseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckoutLicenseOutputBuilder {
     pub(crate) checkout_type: ::std::option::Option<crate::types::CheckoutType>,
     pub(crate) license_consumption_token: ::std::option::Option<::std::string::String>,

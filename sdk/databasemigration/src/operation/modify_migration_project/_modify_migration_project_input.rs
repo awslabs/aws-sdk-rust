@@ -66,8 +66,8 @@ impl ModifyMigrationProjectInput {
 }
 
 /// A builder for [`ModifyMigrationProjectInput`](crate::operation::modify_migration_project::ModifyMigrationProjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyMigrationProjectInputBuilder {
     pub(crate) migration_project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) migration_project_name: ::std::option::Option<::std::string::String>,

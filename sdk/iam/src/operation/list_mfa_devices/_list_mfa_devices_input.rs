@@ -36,8 +36,8 @@ impl ListMfaDevicesInput {
 }
 
 /// A builder for [`ListMfaDevicesInput`](crate::operation::list_mfa_devices::ListMfaDevicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMfaDevicesInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

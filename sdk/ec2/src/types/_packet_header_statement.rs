@@ -71,8 +71,8 @@ impl PacketHeaderStatement {
 }
 
 /// A builder for [`PacketHeaderStatement`](crate::types::PacketHeaderStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PacketHeaderStatementBuilder {
     pub(crate) source_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) destination_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

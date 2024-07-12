@@ -21,8 +21,8 @@ impl StateChangeConfiguration {
 }
 
 /// A builder for [`StateChangeConfiguration`](crate::types::StateChangeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StateChangeConfigurationBuilder {
     pub(crate) trigger_type: ::std::option::Option<crate::types::TriggerType>,
 }

@@ -378,8 +378,8 @@ impl ModifyClusterInput {
 }
 
 /// A builder for [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ModifyClusterInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type: ::std::option::Option<::std::string::String>,

@@ -54,8 +54,8 @@ impl ThroughputLimitExceeded {
 }
 
 /// A builder for [`ThroughputLimitExceeded`](crate::types::error::ThroughputLimitExceeded).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThroughputLimitExceededBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

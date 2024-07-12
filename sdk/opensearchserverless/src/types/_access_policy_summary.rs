@@ -51,8 +51,8 @@ impl AccessPolicySummary {
 }
 
 /// A builder for [`AccessPolicySummary`](crate::types::AccessPolicySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessPolicySummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

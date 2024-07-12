@@ -33,8 +33,8 @@ impl CloudwatchLogsExportConfiguration {
 }
 
 /// A builder for [`CloudwatchLogsExportConfiguration`](crate::types::CloudwatchLogsExportConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudwatchLogsExportConfigurationBuilder {
     pub(crate) enable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) disable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

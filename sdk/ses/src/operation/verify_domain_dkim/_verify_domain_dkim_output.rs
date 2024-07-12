@@ -32,8 +32,8 @@ impl VerifyDomainDkimOutput {
 }
 
 /// A builder for [`VerifyDomainDkimOutput`](crate::operation::verify_domain_dkim::VerifyDomainDkimOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyDomainDkimOutputBuilder {
     pub(crate) dkim_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

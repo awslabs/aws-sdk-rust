@@ -27,8 +27,8 @@ impl EksOnDeviceServiceConfiguration {
 }
 
 /// A builder for [`EksOnDeviceServiceConfiguration`](crate::types::EksOnDeviceServiceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksOnDeviceServiceConfigurationBuilder {
     pub(crate) kubernetes_version: ::std::option::Option<::std::string::String>,
     pub(crate) eks_anywhere_version: ::std::option::Option<::std::string::String>,

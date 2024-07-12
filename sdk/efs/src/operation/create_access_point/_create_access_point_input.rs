@@ -48,8 +48,8 @@ impl CreateAccessPointInput {
 }
 
 /// A builder for [`CreateAccessPointInput`](crate::operation::create_access_point::CreateAccessPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessPointInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

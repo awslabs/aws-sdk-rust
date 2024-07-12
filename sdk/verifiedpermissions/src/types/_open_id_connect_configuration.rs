@@ -51,8 +51,8 @@ impl OpenIdConnectConfiguration {
 }
 
 /// A builder for [`OpenIdConnectConfiguration`](crate::types::OpenIdConnectConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct OpenIdConnectConfigurationBuilder {
     pub(crate) issuer: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id_prefix: ::std::option::Option<::std::string::String>,

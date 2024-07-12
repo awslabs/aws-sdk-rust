@@ -28,8 +28,8 @@ impl DescribeClientPropertiesOutput {
 }
 
 /// A builder for [`DescribeClientPropertiesOutput`](crate::operation::describe_client_properties::DescribeClientPropertiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClientPropertiesOutputBuilder {
     pub(crate) client_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ClientPropertiesResult>>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl CreateEnvironmentEc2Output {
 }
 
 /// A builder for [`CreateEnvironmentEc2Output`](crate::operation::create_environment_ec2::CreateEnvironmentEc2Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEnvironmentEc2OutputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl DebugSession {
 }
 
 /// A builder for [`DebugSession`](crate::types::DebugSession).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DebugSessionBuilder {
     pub(crate) session_enabled: ::std::option::Option<bool>,
     pub(crate) session_target: ::std::option::Option<::std::string::String>,

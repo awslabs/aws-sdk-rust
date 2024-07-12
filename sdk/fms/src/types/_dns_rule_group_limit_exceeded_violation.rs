@@ -33,8 +33,8 @@ impl DnsRuleGroupLimitExceededViolation {
 }
 
 /// A builder for [`DnsRuleGroupLimitExceededViolation`](crate::types::DnsRuleGroupLimitExceededViolation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DnsRuleGroupLimitExceededViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) violation_target_description: ::std::option::Option<::std::string::String>,

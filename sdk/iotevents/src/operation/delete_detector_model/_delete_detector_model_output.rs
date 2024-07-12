@@ -18,8 +18,8 @@ impl DeleteDetectorModelOutput {
 }
 
 /// A builder for [`DeleteDetectorModelOutput`](crate::operation::delete_detector_model::DeleteDetectorModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDetectorModelOutputBuilder {
     _request_id: Option<String>,
 }

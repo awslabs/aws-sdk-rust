@@ -35,8 +35,8 @@ impl LambdaFunctionTimedOutEventDetails {
 }
 
 /// A builder for [`LambdaFunctionTimedOutEventDetails`](crate::types::LambdaFunctionTimedOutEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LambdaFunctionTimedOutEventDetailsBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
     pub(crate) cause: ::std::option::Option<::std::string::String>,

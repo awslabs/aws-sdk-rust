@@ -33,8 +33,8 @@ impl CreateNetworkAclAction {
 }
 
 /// A builder for [`CreateNetworkAclAction`](crate::types::CreateNetworkAclAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkAclActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<crate::types::ActionTarget>,

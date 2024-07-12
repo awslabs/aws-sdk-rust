@@ -42,8 +42,8 @@ impl UpdateSecretVersionStageInput {
 }
 
 /// A builder for [`UpdateSecretVersionStageInput`](crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSecretVersionStageInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_stage: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl InvokeModelOutput {
 }
 
 /// A builder for [`InvokeModelOutput`](crate::operation::invoke_model::InvokeModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeModelOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl LayerVersionContentOutput {
 }
 
 /// A builder for [`LayerVersionContentOutput`](crate::types::LayerVersionContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LayerVersionContentOutputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) code_sha256: ::std::option::Option<::std::string::String>,

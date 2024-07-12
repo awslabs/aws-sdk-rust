@@ -35,8 +35,8 @@ impl Rationale {
 }
 
 /// A builder for [`Rationale`](crate::types::Rationale).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RationaleBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) text: ::std::option::Option<::std::string::String>,

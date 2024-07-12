@@ -103,8 +103,8 @@ impl HostReservation {
 }
 
 /// A builder for [`HostReservation`](crate::types::HostReservation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HostReservationBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,

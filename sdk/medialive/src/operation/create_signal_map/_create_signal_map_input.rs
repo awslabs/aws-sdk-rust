@@ -55,8 +55,8 @@ impl CreateSignalMapInput {
 }
 
 /// A builder for [`CreateSignalMapInput`](crate::operation::create_signal_map::CreateSignalMapInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSignalMapInputBuilder {
     pub(crate) cloud_watch_alarm_template_group_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

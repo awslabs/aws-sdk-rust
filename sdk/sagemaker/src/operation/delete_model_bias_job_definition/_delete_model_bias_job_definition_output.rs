@@ -18,8 +18,8 @@ impl DeleteModelBiasJobDefinitionOutput {
 }
 
 /// A builder for [`DeleteModelBiasJobDefinitionOutput`](crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelBiasJobDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

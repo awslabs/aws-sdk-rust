@@ -27,8 +27,8 @@ impl IoTJobExecutionsRolloutConfig {
 }
 
 /// A builder for [`IoTJobExecutionsRolloutConfig`](crate::types::IoTJobExecutionsRolloutConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IoTJobExecutionsRolloutConfigBuilder {
     pub(crate) exponential_rate: ::std::option::Option<crate::types::IoTJobExponentialRolloutRate>,
     pub(crate) maximum_per_minute: ::std::option::Option<i32>,

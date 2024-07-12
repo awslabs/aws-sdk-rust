@@ -22,8 +22,8 @@ impl OwnerFilter {
 }
 
 /// A builder for [`OwnerFilter`](crate::types::OwnerFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OwnerFilterBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
 }

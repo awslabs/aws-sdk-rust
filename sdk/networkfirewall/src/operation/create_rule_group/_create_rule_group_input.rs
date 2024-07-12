@@ -130,8 +130,8 @@ impl CreateRuleGroupInput {
 }
 
 /// A builder for [`CreateRuleGroupInput`](crate::operation::create_rule_group::CreateRuleGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRuleGroupInputBuilder {
     pub(crate) rule_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group: ::std::option::Option<crate::types::RuleGroup>,

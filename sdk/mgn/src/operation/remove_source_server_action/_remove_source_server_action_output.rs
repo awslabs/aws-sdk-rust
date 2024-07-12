@@ -18,8 +18,8 @@ impl RemoveSourceServerActionOutput {
 }
 
 /// A builder for [`RemoveSourceServerActionOutput`](crate::operation::remove_source_server_action::RemoveSourceServerActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveSourceServerActionOutputBuilder {
     _request_id: Option<String>,
 }

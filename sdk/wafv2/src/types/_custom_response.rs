@@ -40,8 +40,8 @@ impl CustomResponse {
 }
 
 /// A builder for [`CustomResponse`](crate::types::CustomResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomResponseBuilder {
     pub(crate) response_code: ::std::option::Option<i32>,
     pub(crate) custom_response_body_key: ::std::option::Option<::std::string::String>,

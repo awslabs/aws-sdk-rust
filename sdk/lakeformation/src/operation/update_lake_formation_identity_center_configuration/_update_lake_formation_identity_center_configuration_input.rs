@@ -48,8 +48,8 @@ impl UpdateLakeFormationIdentityCenterConfigurationInput {
 }
 
 /// A builder for [`UpdateLakeFormationIdentityCenterConfigurationInput`](crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLakeFormationIdentityCenterConfigurationInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) share_recipients: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,

@@ -33,8 +33,8 @@ impl ListStatementsOutput {
 }
 
 /// A builder for [`ListStatementsOutput`](crate::operation::list_statements::ListStatementsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStatementsOutputBuilder {
     pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::StatementData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

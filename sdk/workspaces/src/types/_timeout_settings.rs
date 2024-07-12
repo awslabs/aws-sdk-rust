@@ -33,8 +33,8 @@ impl TimeoutSettings {
 }
 
 /// A builder for [`TimeoutSettings`](crate::types::TimeoutSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeoutSettingsBuilder {
     pub(crate) disconnect_timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) idle_disconnect_timeout_in_seconds: ::std::option::Option<i32>,

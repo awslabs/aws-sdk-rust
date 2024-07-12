@@ -26,8 +26,8 @@ impl DeleteNetworkInsightsAnalysisOutput {
 }
 
 /// A builder for [`DeleteNetworkInsightsAnalysisOutput`](crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkInsightsAnalysisOutputBuilder {
     pub(crate) network_insights_analysis_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

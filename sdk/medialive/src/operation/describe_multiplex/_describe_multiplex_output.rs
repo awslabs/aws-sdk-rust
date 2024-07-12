@@ -85,8 +85,8 @@ impl DescribeMultiplexOutput {
 }
 
 /// A builder for [`DescribeMultiplexOutput`](crate::operation::describe_multiplex::DescribeMultiplexOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMultiplexOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

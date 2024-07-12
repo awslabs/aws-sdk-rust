@@ -44,8 +44,8 @@ impl ListChannelsInput {
 }
 
 /// A builder for [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListChannelsInputBuilder {
     pub(crate) filter_by_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_by_recording_configuration_arn: ::std::option::Option<::std::string::String>,

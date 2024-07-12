@@ -18,8 +18,8 @@ impl DeleteRotationOutput {
 }
 
 /// A builder for [`DeleteRotationOutput`](crate::operation::delete_rotation::DeleteRotationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRotationOutputBuilder {
     _request_id: Option<String>,
 }

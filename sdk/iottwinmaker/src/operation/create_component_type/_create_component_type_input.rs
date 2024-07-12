@@ -87,8 +87,8 @@ impl CreateComponentTypeInput {
 }
 
 /// A builder for [`CreateComponentTypeInput`](crate::operation::create_component_type::CreateComponentTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateComponentTypeInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_singleton: ::std::option::Option<bool>,

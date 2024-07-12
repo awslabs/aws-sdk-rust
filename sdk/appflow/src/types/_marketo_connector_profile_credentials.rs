@@ -51,8 +51,8 @@ impl MarketoConnectorProfileCredentials {
 }
 
 /// A builder for [`MarketoConnectorProfileCredentials`](crate::types::MarketoConnectorProfileCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MarketoConnectorProfileCredentialsBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,

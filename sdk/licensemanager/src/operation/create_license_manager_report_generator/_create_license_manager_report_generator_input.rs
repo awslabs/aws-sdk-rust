@@ -72,8 +72,8 @@ impl CreateLicenseManagerReportGeneratorInput {
 }
 
 /// A builder for [`CreateLicenseManagerReportGeneratorInput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLicenseManagerReportGeneratorInputBuilder {
     pub(crate) report_generator_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>,

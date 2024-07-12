@@ -35,8 +35,8 @@ impl DeleteClusterParameterGroupInput {
 }
 
 /// A builder for [`DeleteClusterParameterGroupInput`](crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClusterParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
 }

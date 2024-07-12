@@ -37,8 +37,8 @@ impl PipeTargetSqsQueueParameters {
 }
 
 /// A builder for [`PipeTargetSqsQueueParameters`](crate::types::PipeTargetSqsQueueParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PipeTargetSqsQueueParametersBuilder {
     pub(crate) message_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) message_deduplication_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ListDevelopmentSchemaArnsInput {
 }
 
 /// A builder for [`ListDevelopmentSchemaArnsInput`](crate::operation::list_development_schema_arns::ListDevelopmentSchemaArnsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevelopmentSchemaArnsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

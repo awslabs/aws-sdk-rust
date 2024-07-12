@@ -20,8 +20,8 @@ impl GetFindingAggregatorInput {
 }
 
 /// A builder for [`GetFindingAggregatorInput`](crate::operation::get_finding_aggregator::GetFindingAggregatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingAggregatorInputBuilder {
     pub(crate) finding_aggregator_arn: ::std::option::Option<::std::string::String>,
 }

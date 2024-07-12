@@ -40,8 +40,8 @@ impl GetDecryptedApiKeyInput {
 }
 
 /// A builder for [`GetDecryptedApiKeyInput`](crate::operation::get_decrypted_api_key::GetDecryptedApiKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDecryptedApiKeyInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) api_key: ::std::option::Option<::std::string::String>,

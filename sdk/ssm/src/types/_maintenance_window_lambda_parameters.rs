@@ -47,8 +47,8 @@ impl MaintenanceWindowLambdaParameters {
 }
 
 /// A builder for [`MaintenanceWindowLambdaParameters`](crate::types::MaintenanceWindowLambdaParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MaintenanceWindowLambdaParametersBuilder {
     pub(crate) client_context: ::std::option::Option<::std::string::String>,
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,

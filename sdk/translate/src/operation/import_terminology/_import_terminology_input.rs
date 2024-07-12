@@ -52,8 +52,8 @@ impl ImportTerminologyInput {
 }
 
 /// A builder for [`ImportTerminologyInput`](crate::operation::import_terminology::ImportTerminologyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportTerminologyInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) merge_strategy: ::std::option::Option<crate::types::MergeStrategy>,

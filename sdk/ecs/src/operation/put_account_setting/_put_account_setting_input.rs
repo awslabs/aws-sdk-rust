@@ -102,8 +102,8 @@ impl PutAccountSettingInput {
 }
 
 /// A builder for [`PutAccountSettingInput`](crate::operation::put_account_setting::PutAccountSettingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountSettingInputBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SettingName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

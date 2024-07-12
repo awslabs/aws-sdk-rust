@@ -23,8 +23,8 @@ impl TerminateJobFlowsInput {
 }
 
 /// A builder for [`TerminateJobFlowsInput`](crate::operation::terminate_job_flows::TerminateJobFlowsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateJobFlowsInputBuilder {
     pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

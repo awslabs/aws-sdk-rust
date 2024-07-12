@@ -20,8 +20,8 @@ impl StopQueryExecutionInput {
 }
 
 /// A builder for [`StopQueryExecutionInput`](crate::operation::stop_query_execution::StopQueryExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopQueryExecutionInputBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
 }

@@ -44,8 +44,8 @@ impl DisassociateNodeInput {
 }
 
 /// A builder for [`DisassociateNodeInput`](crate::operation::disassociate_node::DisassociateNodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateNodeInputBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_name: ::std::option::Option<::std::string::String>,

@@ -108,8 +108,8 @@ impl ByteMatchStatement {
 }
 
 /// A builder for [`ByteMatchStatement`](crate::types::ByteMatchStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ByteMatchStatementBuilder {
     pub(crate) search_string: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,

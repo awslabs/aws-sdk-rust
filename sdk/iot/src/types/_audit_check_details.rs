@@ -57,8 +57,8 @@ impl AuditCheckDetails {
 }
 
 /// A builder for [`AuditCheckDetails`](crate::types::AuditCheckDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuditCheckDetailsBuilder {
     pub(crate) check_run_status: ::std::option::Option<crate::types::AuditCheckRunStatus>,
     pub(crate) check_compliant: ::std::option::Option<bool>,

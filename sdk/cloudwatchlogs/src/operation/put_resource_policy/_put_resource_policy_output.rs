@@ -26,8 +26,8 @@ impl PutResourcePolicyOutput {
 }
 
 /// A builder for [`PutResourcePolicyOutput`](crate::operation::put_resource_policy::PutResourcePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutResourcePolicyOutputBuilder {
     pub(crate) resource_policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,

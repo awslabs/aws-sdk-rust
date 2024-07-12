@@ -51,8 +51,8 @@ impl LoadBalancerTargetGroupState {
 }
 
 /// A builder for [`LoadBalancerTargetGroupState`](crate::types::LoadBalancerTargetGroupState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoadBalancerTargetGroupStateBuilder {
     pub(crate) load_balancer_target_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl Bounce {
 }
 
 /// A builder for [`Bounce`](crate::types::Bounce).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BounceBuilder {
     pub(crate) bounce_type: ::std::option::Option<crate::types::BounceType>,
     pub(crate) bounce_sub_type: ::std::option::Option<::std::string::String>,

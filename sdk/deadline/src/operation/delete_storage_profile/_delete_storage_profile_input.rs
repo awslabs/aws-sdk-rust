@@ -26,8 +26,8 @@ impl DeleteStorageProfileInput {
 }
 
 /// A builder for [`DeleteStorageProfileInput`](crate::operation::delete_storage_profile::DeleteStorageProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStorageProfileInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,

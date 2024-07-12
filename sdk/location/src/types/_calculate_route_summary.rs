@@ -108,8 +108,8 @@ impl CalculateRouteSummary {
 }
 
 /// A builder for [`CalculateRouteSummary`](crate::types::CalculateRouteSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CalculateRouteSummaryBuilder {
     pub(crate) route_b_box: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) data_source: ::std::option::Option<::std::string::String>,

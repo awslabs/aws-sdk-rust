@@ -20,8 +20,8 @@ impl StopPipelineInput {
 }
 
 /// A builder for [`StopPipelineInput`](crate::operation::stop_pipeline::StopPipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopPipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
 }

@@ -22,8 +22,8 @@ impl GuardrailContentPolicyConfig {
 }
 
 /// A builder for [`GuardrailContentPolicyConfig`](crate::types::GuardrailContentPolicyConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailContentPolicyConfigBuilder {
     pub(crate) filters_config: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailContentFilterConfig>>,
 }

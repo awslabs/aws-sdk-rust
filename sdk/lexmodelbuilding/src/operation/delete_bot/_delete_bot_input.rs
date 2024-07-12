@@ -20,8 +20,8 @@ impl DeleteBotInput {
 }
 
 /// A builder for [`DeleteBotInput`](crate::operation::delete_bot::DeleteBotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBotInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

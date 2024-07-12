@@ -22,8 +22,8 @@ impl GetInstanceProfileInput {
 }
 
 /// A builder for [`GetInstanceProfileInput`](crate::operation::get_instance_profile::GetInstanceProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstanceProfileInputBuilder {
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
 }

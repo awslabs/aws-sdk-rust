@@ -42,8 +42,8 @@ impl BackfillError {
 }
 
 /// A builder for [`BackfillError`](crate::types::BackfillError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackfillErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::BackfillErrorCode>,
     pub(crate) partitions: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,

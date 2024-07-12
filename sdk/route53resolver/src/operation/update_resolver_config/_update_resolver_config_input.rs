@@ -36,8 +36,8 @@ impl UpdateResolverConfigInput {
 }
 
 /// A builder for [`UpdateResolverConfigInput`](crate::operation::update_resolver_config::UpdateResolverConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResolverConfigInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) autodefined_reverse_flag: ::std::option::Option<crate::types::AutodefinedReverseFlag>,

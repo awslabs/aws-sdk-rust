@@ -21,8 +21,8 @@ impl CalculationConfiguration {
 }
 
 /// A builder for [`CalculationConfiguration`](crate::types::CalculationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CalculationConfigurationBuilder {
     pub(crate) code_block: ::std::option::Option<::std::string::String>,
 }

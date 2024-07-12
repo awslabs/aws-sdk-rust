@@ -51,8 +51,8 @@ impl DataSourcesFreeTrial {
 }
 
 /// A builder for [`DataSourcesFreeTrial`](crate::types::DataSourcesFreeTrial).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSourcesFreeTrialBuilder {
     pub(crate) cloud_trail: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     pub(crate) dns_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,

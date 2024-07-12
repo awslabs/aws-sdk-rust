@@ -41,8 +41,8 @@ impl ApplicationTagResult {
 }
 
 /// A builder for [`ApplicationTagResult`](crate::types::ApplicationTagResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationTagResultBuilder {
     pub(crate) application_tag_status: ::std::option::Option<crate::types::ApplicationTagStatus>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

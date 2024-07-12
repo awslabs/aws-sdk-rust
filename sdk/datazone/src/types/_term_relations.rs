@@ -31,8 +31,8 @@ impl TermRelations {
 }
 
 /// A builder for [`TermRelations`](crate::types::TermRelations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TermRelationsBuilder {
     pub(crate) is_a: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) classifies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

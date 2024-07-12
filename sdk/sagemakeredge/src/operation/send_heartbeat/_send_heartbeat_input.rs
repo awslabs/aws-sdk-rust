@@ -54,8 +54,8 @@ impl SendHeartbeatInput {
 }
 
 /// A builder for [`SendHeartbeatInput`](crate::operation::send_heartbeat::SendHeartbeatInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendHeartbeatInputBuilder {
     pub(crate) agent_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>>,
     pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::Model>>,

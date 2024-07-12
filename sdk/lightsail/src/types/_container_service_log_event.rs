@@ -27,8 +27,8 @@ impl ContainerServiceLogEvent {
 }
 
 /// A builder for [`ContainerServiceLogEvent`](crate::types::ContainerServiceLogEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerServiceLogEventBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

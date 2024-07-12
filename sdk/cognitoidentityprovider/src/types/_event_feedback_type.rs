@@ -34,8 +34,8 @@ impl EventFeedbackType {
 }
 
 /// A builder for [`EventFeedbackType`](crate::types::EventFeedbackType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventFeedbackTypeBuilder {
     pub(crate) feedback_value: ::std::option::Option<crate::types::FeedbackValueType>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl ResourceQuotas {
 }
 
 /// A builder for [`ResourceQuotas`](crate::types::ResourceQuotas).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceQuotasBuilder {
     pub(crate) application_quota: ::std::option::Option<crate::types::ResourceQuota>,
     pub(crate) application_version_quota: ::std::option::Option<crate::types::ResourceQuota>,

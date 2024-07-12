@@ -21,8 +21,8 @@ impl ColumnGroup {
 }
 
 /// A builder for [`ColumnGroup`](crate::types::ColumnGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnGroupBuilder {
     pub(crate) geo_spatial_column_group: ::std::option::Option<crate::types::GeoSpatialColumnGroup>,
 }

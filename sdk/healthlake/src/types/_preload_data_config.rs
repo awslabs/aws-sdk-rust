@@ -21,8 +21,8 @@ impl PreloadDataConfig {
 }
 
 /// A builder for [`PreloadDataConfig`](crate::types::PreloadDataConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PreloadDataConfigBuilder {
     pub(crate) preload_data_type: ::std::option::Option<crate::types::PreloadDataType>,
 }

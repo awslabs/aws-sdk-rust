@@ -36,8 +36,8 @@ impl StartFailbackLaunchInput {
 }
 
 /// A builder for [`StartFailbackLaunchInput`](crate::operation::start_failback_launch::StartFailbackLaunchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartFailbackLaunchInputBuilder {
     pub(crate) recovery_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

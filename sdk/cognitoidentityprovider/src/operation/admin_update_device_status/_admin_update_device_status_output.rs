@@ -19,8 +19,8 @@ impl AdminUpdateDeviceStatusOutput {
 }
 
 /// A builder for [`AdminUpdateDeviceStatusOutput`](crate::operation::admin_update_device_status::AdminUpdateDeviceStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminUpdateDeviceStatusOutputBuilder {
     _request_id: Option<String>,
 }

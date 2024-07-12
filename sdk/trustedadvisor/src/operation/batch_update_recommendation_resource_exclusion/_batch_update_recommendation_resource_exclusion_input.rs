@@ -23,8 +23,8 @@ impl BatchUpdateRecommendationResourceExclusionInput {
 }
 
 /// A builder for [`BatchUpdateRecommendationResourceExclusionInput`](crate::operation::batch_update_recommendation_resource_exclusion::BatchUpdateRecommendationResourceExclusionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateRecommendationResourceExclusionInputBuilder {
     pub(crate) recommendation_resource_exclusions: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationResourceExclusion>>,
 }

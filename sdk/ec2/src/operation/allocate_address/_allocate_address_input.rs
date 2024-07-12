@@ -58,8 +58,8 @@ impl AllocateAddressInput {
 }
 
 /// A builder for [`AllocateAddressInput`](crate::operation::allocate_address::AllocateAddressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllocateAddressInputBuilder {
     pub(crate) domain: ::std::option::Option<crate::types::DomainType>,
     pub(crate) address: ::std::option::Option<::std::string::String>,

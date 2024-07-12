@@ -38,8 +38,8 @@ impl TargetTrackingMetric {
 }
 
 /// A builder for [`TargetTrackingMetric`](crate::types::TargetTrackingMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetTrackingMetricBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,

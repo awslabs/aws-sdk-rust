@@ -27,8 +27,8 @@ impl PutResolverRulePolicyOutput {
 }
 
 /// A builder for [`PutResolverRulePolicyOutput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutResolverRulePolicyOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,

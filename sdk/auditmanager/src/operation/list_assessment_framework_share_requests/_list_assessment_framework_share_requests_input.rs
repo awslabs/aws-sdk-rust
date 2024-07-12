@@ -32,8 +32,8 @@ impl ListAssessmentFrameworkShareRequestsInput {
 }
 
 /// A builder for [`ListAssessmentFrameworkShareRequestsInput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentFrameworkShareRequestsInputBuilder {
     pub(crate) request_type: ::std::option::Option<crate::types::ShareRequestType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

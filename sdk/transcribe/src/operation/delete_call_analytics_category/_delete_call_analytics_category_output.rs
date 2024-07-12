@@ -18,8 +18,8 @@ impl DeleteCallAnalyticsCategoryOutput {
 }
 
 /// A builder for [`DeleteCallAnalyticsCategoryOutput`](crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCallAnalyticsCategoryOutputBuilder {
     _request_id: Option<String>,
 }

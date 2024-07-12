@@ -18,8 +18,8 @@ impl DisassociateDrtLogBucketOutput {
 }
 
 /// A builder for [`DisassociateDrtLogBucketOutput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateDrtLogBucketOutputBuilder {
     _request_id: Option<String>,
 }

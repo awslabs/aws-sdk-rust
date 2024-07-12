@@ -28,8 +28,8 @@ impl ValueHolder {
 }
 
 /// A builder for [`ValueHolder`](crate::types::ValueHolder).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ValueHolderBuilder {
     pub(crate) ion_text: ::std::option::Option<::std::string::String>,
 }

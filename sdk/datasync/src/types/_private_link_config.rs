@@ -43,8 +43,8 @@ impl PrivateLinkConfig {
 }
 
 /// A builder for [`PrivateLinkConfig`](crate::types::PrivateLinkConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrivateLinkConfigBuilder {
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_link_endpoint: ::std::option::Option<::std::string::String>,

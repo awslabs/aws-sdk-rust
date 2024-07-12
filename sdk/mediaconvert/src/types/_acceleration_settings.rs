@@ -21,8 +21,8 @@ impl AccelerationSettings {
 }
 
 /// A builder for [`AccelerationSettings`](crate::types::AccelerationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccelerationSettingsBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::AccelerationMode>,
 }

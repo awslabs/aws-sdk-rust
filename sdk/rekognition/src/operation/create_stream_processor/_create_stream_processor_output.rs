@@ -26,8 +26,8 @@ impl CreateStreamProcessorOutput {
 }
 
 /// A builder for [`CreateStreamProcessorOutput`](crate::operation::create_stream_processor::CreateStreamProcessorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStreamProcessorOutputBuilder {
     pub(crate) stream_processor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

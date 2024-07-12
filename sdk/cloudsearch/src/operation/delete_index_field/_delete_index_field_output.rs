@@ -27,8 +27,8 @@ impl DeleteIndexFieldOutput {
 }
 
 /// A builder for [`DeleteIndexFieldOutput`](crate::operation::delete_index_field::DeleteIndexFieldOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIndexFieldOutputBuilder {
     pub(crate) index_field: ::std::option::Option<crate::types::IndexFieldStatus>,
     _request_id: Option<String>,

@@ -39,8 +39,8 @@ impl DataTransfer {
 }
 
 /// A builder for [`DataTransfer`](crate::types::DataTransfer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataTransferBuilder {
     pub(crate) bytes_transferred: ::std::option::Option<i64>,
     pub(crate) objects_transferred: ::std::option::Option<i64>,

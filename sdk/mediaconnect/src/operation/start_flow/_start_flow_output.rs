@@ -32,8 +32,8 @@ impl StartFlowOutput {
 }
 
 /// A builder for [`StartFlowOutput`](crate::operation::start_flow::StartFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartFlowOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,

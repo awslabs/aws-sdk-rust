@@ -21,8 +21,8 @@ impl JobConfiguration {
 }
 
 /// A builder for [`JobConfiguration`](crate::types::JobConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobConfigurationBuilder {
     pub(crate) file_format: ::std::option::Option<crate::types::FileFormat>,
 }

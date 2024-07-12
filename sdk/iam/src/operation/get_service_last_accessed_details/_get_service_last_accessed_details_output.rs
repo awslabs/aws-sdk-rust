@@ -71,8 +71,8 @@ impl GetServiceLastAccessedDetailsOutput {
 }
 
 /// A builder for [`GetServiceLastAccessedDetailsOutput`](crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceLastAccessedDetailsOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatusType>,
     pub(crate) job_type: ::std::option::Option<crate::types::AccessAdvisorUsageGranularityType>,

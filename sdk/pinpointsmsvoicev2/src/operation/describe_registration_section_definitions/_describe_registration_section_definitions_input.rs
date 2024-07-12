@@ -40,8 +40,8 @@ impl DescribeRegistrationSectionDefinitionsInput {
 }
 
 /// A builder for [`DescribeRegistrationSectionDefinitionsInput`](crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistrationSectionDefinitionsInputBuilder {
     pub(crate) registration_type: ::std::option::Option<::std::string::String>,
     pub(crate) section_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

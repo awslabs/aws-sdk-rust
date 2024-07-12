@@ -54,8 +54,8 @@ impl DescribeFleetHistoryOutput {
 }
 
 /// A builder for [`DescribeFleetHistoryOutput`](crate::operation::describe_fleet_history::DescribeFleetHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetHistoryOutputBuilder {
     pub(crate) history_records: ::std::option::Option<::std::vec::Vec<crate::types::HistoryRecordEntry>>,
     pub(crate) last_evaluated_time: ::std::option::Option<::aws_smithy_types::DateTime>,

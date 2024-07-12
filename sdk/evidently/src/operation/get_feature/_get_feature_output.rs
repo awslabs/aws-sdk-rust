@@ -26,8 +26,8 @@ impl GetFeatureOutput {
 }
 
 /// A builder for [`GetFeatureOutput`](crate::operation::get_feature::GetFeatureOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFeatureOutputBuilder {
     pub(crate) feature: ::std::option::Option<crate::types::Feature>,
     _request_id: Option<String>,

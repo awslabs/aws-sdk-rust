@@ -34,8 +34,8 @@ impl AzureBlobSasConfiguration {
 }
 
 /// A builder for [`AzureBlobSasConfiguration`](crate::types::AzureBlobSasConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AzureBlobSasConfigurationBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
 }

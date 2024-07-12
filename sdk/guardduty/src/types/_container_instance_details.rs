@@ -27,8 +27,8 @@ impl ContainerInstanceDetails {
 }
 
 /// A builder for [`ContainerInstanceDetails`](crate::types::ContainerInstanceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerInstanceDetailsBuilder {
     pub(crate) covered_container_instances: ::std::option::Option<i64>,
     pub(crate) compatible_container_instances: ::std::option::Option<i64>,

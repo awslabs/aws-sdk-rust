@@ -28,8 +28,8 @@ impl RdsInstanceSavingsOpportunityAfterDiscounts {
 }
 
 /// A builder for [`RdsInstanceSavingsOpportunityAfterDiscounts`](crate::types::RdsInstanceSavingsOpportunityAfterDiscounts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsInstanceSavingsOpportunityAfterDiscountsBuilder {
     pub(crate) savings_opportunity_percentage: ::std::option::Option<f64>,
     pub(crate) estimated_monthly_savings: ::std::option::Option<crate::types::RdsInstanceEstimatedMonthlySavings>,

@@ -26,8 +26,8 @@ impl StartMlEvaluationTaskRunOutput {
 }
 
 /// A builder for [`StartMlEvaluationTaskRunOutput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMlEvaluationTaskRunOutputBuilder {
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

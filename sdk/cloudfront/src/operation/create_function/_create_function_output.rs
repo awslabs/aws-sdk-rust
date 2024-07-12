@@ -38,8 +38,8 @@ impl CreateFunctionOutput {
 }
 
 /// A builder for [`CreateFunctionOutput`](crate::operation::create_function::CreateFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFunctionOutputBuilder {
     pub(crate) function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

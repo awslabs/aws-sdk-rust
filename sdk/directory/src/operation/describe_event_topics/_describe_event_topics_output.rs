@@ -29,8 +29,8 @@ impl DescribeEventTopicsOutput {
 }
 
 /// A builder for [`DescribeEventTopicsOutput`](crate::operation::describe_event_topics::DescribeEventTopicsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventTopicsOutputBuilder {
     pub(crate) event_topics: ::std::option::Option<::std::vec::Vec<crate::types::EventTopic>>,
     _request_id: Option<String>,

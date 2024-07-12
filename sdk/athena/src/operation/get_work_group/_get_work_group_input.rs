@@ -20,8 +20,8 @@ impl GetWorkGroupInput {
 }
 
 /// A builder for [`GetWorkGroupInput`](crate::operation::get_work_group::GetWorkGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorkGroupInputBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
 }

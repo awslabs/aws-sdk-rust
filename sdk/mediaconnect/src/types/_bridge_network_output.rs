@@ -51,8 +51,8 @@ impl BridgeNetworkOutput {
 }
 
 /// A builder for [`BridgeNetworkOutput`](crate::types::BridgeNetworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BridgeNetworkOutputBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

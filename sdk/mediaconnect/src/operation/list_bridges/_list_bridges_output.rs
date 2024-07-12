@@ -34,8 +34,8 @@ impl ListBridgesOutput {
 }
 
 /// A builder for [`ListBridgesOutput`](crate::operation::list_bridges::ListBridgesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBridgesOutputBuilder {
     pub(crate) bridges: ::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

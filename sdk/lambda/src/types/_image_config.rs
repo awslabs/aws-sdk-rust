@@ -37,8 +37,8 @@ impl ImageConfig {
 }
 
 /// A builder for [`ImageConfig`](crate::types::ImageConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageConfigBuilder {
     pub(crate) entry_point: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

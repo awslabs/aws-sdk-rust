@@ -21,8 +21,8 @@ impl FunctionDefaultConfig {
 }
 
 /// A builder for [`FunctionDefaultConfig`](crate::types::FunctionDefaultConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunctionDefaultConfigBuilder {
     pub(crate) execution: ::std::option::Option<crate::types::FunctionDefaultExecutionConfig>,
 }

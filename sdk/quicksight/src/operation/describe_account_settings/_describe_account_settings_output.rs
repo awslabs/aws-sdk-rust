@@ -40,8 +40,8 @@ impl DescribeAccountSettingsOutput {
 }
 
 /// A builder for [`DescribeAccountSettingsOutput`](crate::operation::describe_account_settings::DescribeAccountSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountSettingsOutputBuilder {
     pub(crate) account_settings: ::std::option::Option<crate::types::AccountSettings>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

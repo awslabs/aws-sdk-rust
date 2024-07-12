@@ -26,8 +26,8 @@ impl PutHypervisorPropertyMappingsOutput {
 }
 
 /// A builder for [`PutHypervisorPropertyMappingsOutput`](crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutHypervisorPropertyMappingsOutputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

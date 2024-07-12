@@ -27,8 +27,8 @@ impl PolicyAttributeDescription {
 }
 
 /// A builder for [`PolicyAttributeDescription`](crate::types::PolicyAttributeDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyAttributeDescriptionBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_value: ::std::option::Option<::std::string::String>,

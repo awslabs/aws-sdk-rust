@@ -26,8 +26,8 @@ impl DeleteTransitGatewayVpcAttachmentOutput {
 }
 
 /// A builder for [`DeleteTransitGatewayVpcAttachmentOutput`](crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTransitGatewayVpcAttachmentOutputBuilder {
     pub(crate) transit_gateway_vpc_attachment: ::std::option::Option<crate::types::TransitGatewayVpcAttachment>,
     _request_id: Option<String>,

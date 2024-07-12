@@ -26,8 +26,8 @@ impl DisassociateUserFromPermissionGroupOutput {
 }
 
 /// A builder for [`DisassociateUserFromPermissionGroupOutput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateUserFromPermissionGroupOutputBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     _request_id: Option<String>,

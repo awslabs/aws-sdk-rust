@@ -33,8 +33,8 @@ impl BatchListAttachedIndices {
 }
 
 /// A builder for [`BatchListAttachedIndices`](crate::types::BatchListAttachedIndices).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchListAttachedIndicesBuilder {
     pub(crate) target_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

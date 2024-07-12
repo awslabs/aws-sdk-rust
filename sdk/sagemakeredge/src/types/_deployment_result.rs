@@ -53,8 +53,8 @@ impl DeploymentResult {
 }
 
 /// A builder for [`DeploymentResult`](crate::types::DeploymentResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentResultBuilder {
     pub(crate) deployment_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_status: ::std::option::Option<::std::string::String>,

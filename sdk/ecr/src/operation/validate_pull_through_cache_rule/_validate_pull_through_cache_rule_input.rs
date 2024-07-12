@@ -26,8 +26,8 @@ impl ValidatePullThroughCacheRuleInput {
 }
 
 /// A builder for [`ValidatePullThroughCacheRuleInput`](crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidatePullThroughCacheRuleInputBuilder {
     pub(crate) ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,

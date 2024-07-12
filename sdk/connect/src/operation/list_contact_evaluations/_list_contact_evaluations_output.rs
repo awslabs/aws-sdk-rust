@@ -37,8 +37,8 @@ impl ListContactEvaluationsOutput {
 }
 
 /// A builder for [`ListContactEvaluationsOutput`](crate::operation::list_contact_evaluations::ListContactEvaluationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContactEvaluationsOutputBuilder {
     pub(crate) evaluation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

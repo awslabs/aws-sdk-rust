@@ -21,8 +21,8 @@ impl WorkspaceStatus {
 }
 
 /// A builder for [`WorkspaceStatus`](crate::types::WorkspaceStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkspaceStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::WorkspaceStatusCode>,
 }

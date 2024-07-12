@@ -18,8 +18,8 @@ impl DeleteSignalingChannelOutput {
 }
 
 /// A builder for [`DeleteSignalingChannelOutput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSignalingChannelOutputBuilder {
     _request_id: Option<String>,
 }

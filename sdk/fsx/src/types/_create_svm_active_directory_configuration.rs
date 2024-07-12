@@ -27,8 +27,8 @@ impl CreateSvmActiveDirectoryConfiguration {
 }
 
 /// A builder for [`CreateSvmActiveDirectoryConfiguration`](crate::types::CreateSvmActiveDirectoryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSvmActiveDirectoryConfigurationBuilder {
     pub(crate) net_bios_name: ::std::option::Option<::std::string::String>,
     pub(crate) self_managed_active_directory_configuration: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration>,

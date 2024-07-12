@@ -52,8 +52,8 @@ impl DescribeObjectOutput {
 }
 
 /// A builder for [`DescribeObjectOutput`](crate::operation::describe_object::DescribeObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeObjectOutputBuilder {
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

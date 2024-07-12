@@ -45,8 +45,8 @@ impl Configuration {
 }
 
 /// A builder for [`Configuration`](crate::types::Configuration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConfigurationBuilder {
     pub(crate) classification: ::std::option::Option<::std::string::String>,
     pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

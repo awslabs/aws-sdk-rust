@@ -170,8 +170,8 @@ impl CallAnalyticsJob {
 }
 
 /// A builder for [`CallAnalyticsJob`](crate::types::CallAnalyticsJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CallAnalyticsJobBuilder {
     pub(crate) call_analytics_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) call_analytics_job_status: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,

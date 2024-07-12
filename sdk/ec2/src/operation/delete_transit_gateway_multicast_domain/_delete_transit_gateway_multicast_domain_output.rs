@@ -26,8 +26,8 @@ impl DeleteTransitGatewayMulticastDomainOutput {
 }
 
 /// A builder for [`DeleteTransitGatewayMulticastDomainOutput`](crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTransitGatewayMulticastDomainOutputBuilder {
     pub(crate) transit_gateway_multicast_domain: ::std::option::Option<crate::types::TransitGatewayMulticastDomain>,
     _request_id: Option<String>,

@@ -21,8 +21,8 @@ impl MonitoringStatisticsResource {
 }
 
 /// A builder for [`MonitoringStatisticsResource`](crate::types::MonitoringStatisticsResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringStatisticsResourceBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
 }

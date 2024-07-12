@@ -28,8 +28,8 @@ impl GetServicesInScopeOutput {
 }
 
 /// A builder for [`GetServicesInScopeOutput`](crate::operation::get_services_in_scope::GetServicesInScopeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServicesInScopeOutputBuilder {
     pub(crate) service_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ServiceMetadata>>,
     _request_id: Option<String>,

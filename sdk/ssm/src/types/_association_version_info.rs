@@ -178,8 +178,8 @@ impl AssociationVersionInfo {
 }
 
 /// A builder for [`AssociationVersionInfo`](crate::types::AssociationVersionInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssociationVersionInfoBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_version: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl ListSegmentReferencesInput {
 }
 
 /// A builder for [`ListSegmentReferencesInput`](crate::operation::list_segment_references::ListSegmentReferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSegmentReferencesInputBuilder {
     pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

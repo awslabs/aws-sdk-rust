@@ -35,8 +35,8 @@ impl MediaInsightsConfiguration {
 }
 
 /// A builder for [`MediaInsightsConfiguration`](crate::types::MediaInsightsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MediaInsightsConfigurationBuilder {
     pub(crate) disabled: ::std::option::Option<bool>,
     pub(crate) configuration_arn: ::std::option::Option<::std::string::String>,

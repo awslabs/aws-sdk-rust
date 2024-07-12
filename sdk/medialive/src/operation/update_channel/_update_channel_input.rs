@@ -79,8 +79,8 @@ impl UpdateChannelInput {
 }
 
 /// A builder for [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateChannelInputBuilder {
     pub(crate) cdi_input_specification: ::std::option::Option<crate::types::CdiInputSpecification>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,

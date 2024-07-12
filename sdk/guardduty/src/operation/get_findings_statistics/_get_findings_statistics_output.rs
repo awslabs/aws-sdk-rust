@@ -26,8 +26,8 @@ impl GetFindingsStatisticsOutput {
 }
 
 /// A builder for [`GetFindingsStatisticsOutput`](crate::operation::get_findings_statistics::GetFindingsStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingsStatisticsOutputBuilder {
     pub(crate) finding_statistics: ::std::option::Option<crate::types::FindingStatistics>,
     _request_id: Option<String>,

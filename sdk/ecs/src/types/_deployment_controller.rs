@@ -63,8 +63,8 @@ impl DeploymentController {
 }
 
 /// A builder for [`DeploymentController`](crate::types::DeploymentController).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentControllerBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DeploymentControllerType>,
 }

@@ -38,8 +38,8 @@ impl SetDefaultSenderIdOutput {
 }
 
 /// A builder for [`SetDefaultSenderIdOutput`](crate::operation::set_default_sender_id::SetDefaultSenderIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetDefaultSenderIdOutputBuilder {
     pub(crate) configuration_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,

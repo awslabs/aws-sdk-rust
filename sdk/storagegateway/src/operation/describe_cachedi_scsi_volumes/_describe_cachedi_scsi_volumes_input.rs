@@ -22,8 +22,8 @@ impl DescribeCachediScsiVolumesInput {
 }
 
 /// A builder for [`DescribeCachediScsiVolumesInput`](crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCachediScsiVolumesInputBuilder {
     pub(crate) volume_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

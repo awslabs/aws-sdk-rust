@@ -63,8 +63,8 @@ impl InstanceHealthSummary {
 }
 
 /// A builder for [`InstanceHealthSummary`](crate::types::InstanceHealthSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceHealthSummaryBuilder {
     pub(crate) no_data: ::std::option::Option<i32>,
     pub(crate) unknown: ::std::option::Option<i32>,

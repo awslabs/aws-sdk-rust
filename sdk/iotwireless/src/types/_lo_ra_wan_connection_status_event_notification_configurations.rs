@@ -21,8 +21,8 @@ impl LoRaWanConnectionStatusEventNotificationConfigurations {
 }
 
 /// A builder for [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::types::LoRaWanConnectionStatusEventNotificationConfigurations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanConnectionStatusEventNotificationConfigurationsBuilder {
     pub(crate) gateway_eui_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }

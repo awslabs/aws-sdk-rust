@@ -30,8 +30,8 @@ impl ReplicationRule {
 }
 
 /// A builder for [`ReplicationRule`](crate::types::ReplicationRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationRuleBuilder {
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationDestination>>,
     pub(crate) repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>>,

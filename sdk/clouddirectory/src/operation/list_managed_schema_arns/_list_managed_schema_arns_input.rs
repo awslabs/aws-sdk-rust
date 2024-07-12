@@ -32,8 +32,8 @@ impl ListManagedSchemaArnsInput {
 }
 
 /// A builder for [`ListManagedSchemaArnsInput`](crate::operation::list_managed_schema_arns::ListManagedSchemaArnsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListManagedSchemaArnsInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

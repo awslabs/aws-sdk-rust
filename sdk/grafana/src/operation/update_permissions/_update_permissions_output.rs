@@ -27,8 +27,8 @@ impl UpdatePermissionsOutput {
 }
 
 /// A builder for [`UpdatePermissionsOutput`](crate::operation::update_permissions::UpdatePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePermissionsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateError>>,
     _request_id: Option<String>,

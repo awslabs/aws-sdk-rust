@@ -34,8 +34,8 @@ impl ListFeaturesOutput {
 }
 
 /// A builder for [`ListFeaturesOutput`](crate::operation::list_features::ListFeaturesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFeaturesOutputBuilder {
     pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::FeatureSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -63,8 +63,8 @@ impl AnalysisSecurityGroupRule {
 }
 
 /// A builder for [`AnalysisSecurityGroupRule`](crate::types::AnalysisSecurityGroupRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisSecurityGroupRuleBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) direction: ::std::option::Option<::std::string::String>,

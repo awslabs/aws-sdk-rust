@@ -49,8 +49,8 @@ impl DescribeChapCredentialsOutput {
 }
 
 /// A builder for [`DescribeChapCredentialsOutput`](crate::operation::describe_chap_credentials::DescribeChapCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChapCredentialsOutputBuilder {
     pub(crate) chap_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>>,
     _request_id: Option<String>,

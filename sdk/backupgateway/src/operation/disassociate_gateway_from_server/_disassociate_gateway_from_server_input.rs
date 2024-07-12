@@ -20,8 +20,8 @@ impl DisassociateGatewayFromServerInput {
 }
 
 /// A builder for [`DisassociateGatewayFromServerInput`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateGatewayFromServerInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }

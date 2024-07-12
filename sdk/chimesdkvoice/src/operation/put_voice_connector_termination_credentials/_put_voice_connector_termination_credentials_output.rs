@@ -19,8 +19,8 @@ impl PutVoiceConnectorTerminationCredentialsOutput {
 }
 
 /// A builder for [`PutVoiceConnectorTerminationCredentialsOutput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutVoiceConnectorTerminationCredentialsOutputBuilder {
     _request_id: Option<String>,
 }

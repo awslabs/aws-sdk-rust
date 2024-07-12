@@ -34,8 +34,8 @@ impl ListModelQualityJobDefinitionsOutput {
 }
 
 /// A builder for [`ListModelQualityJobDefinitionsOutput`](crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelQualityJobDefinitionsOutputBuilder {
     pub(crate) job_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

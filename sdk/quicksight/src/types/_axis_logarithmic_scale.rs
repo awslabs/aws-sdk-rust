@@ -21,8 +21,8 @@ impl AxisLogarithmicScale {
 }
 
 /// A builder for [`AxisLogarithmicScale`](crate::types::AxisLogarithmicScale).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AxisLogarithmicScaleBuilder {
     pub(crate) base: ::std::option::Option<f64>,
 }

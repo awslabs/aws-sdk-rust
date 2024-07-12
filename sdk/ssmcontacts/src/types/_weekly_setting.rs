@@ -27,8 +27,8 @@ impl WeeklySetting {
 }
 
 /// A builder for [`WeeklySetting`](crate::types::WeeklySetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WeeklySettingBuilder {
     pub(crate) day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
     pub(crate) hand_off_time: ::std::option::Option<crate::types::HandOffTime>,

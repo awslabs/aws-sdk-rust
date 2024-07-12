@@ -79,8 +79,8 @@ impl AwsIamInstanceProfile {
 }
 
 /// A builder for [`AwsIamInstanceProfile`](crate::types::AwsIamInstanceProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsIamInstanceProfileBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::std::string::String>,

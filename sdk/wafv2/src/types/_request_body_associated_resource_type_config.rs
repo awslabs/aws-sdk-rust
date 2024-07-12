@@ -28,8 +28,8 @@ impl RequestBodyAssociatedResourceTypeConfig {
 }
 
 /// A builder for [`RequestBodyAssociatedResourceTypeConfig`](crate::types::RequestBodyAssociatedResourceTypeConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestBodyAssociatedResourceTypeConfigBuilder {
     pub(crate) default_size_inspection_limit: ::std::option::Option<crate::types::SizeInspectionLimit>,
 }

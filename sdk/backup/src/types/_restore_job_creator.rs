@@ -21,8 +21,8 @@ impl RestoreJobCreator {
 }
 
 /// A builder for [`RestoreJobCreator`](crate::types::RestoreJobCreator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreJobCreatorBuilder {
     pub(crate) restore_testing_plan_arn: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl DescribeScraperOutput {
 }
 
 /// A builder for [`DescribeScraperOutput`](crate::operation::describe_scraper::DescribeScraperOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScraperOutputBuilder {
     pub(crate) scraper: ::std::option::Option<crate::types::ScraperDescription>,
     _request_id: Option<String>,

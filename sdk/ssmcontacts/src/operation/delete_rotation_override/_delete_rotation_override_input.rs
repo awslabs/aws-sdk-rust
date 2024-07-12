@@ -26,8 +26,8 @@ impl DeleteRotationOverrideInput {
 }
 
 /// A builder for [`DeleteRotationOverrideInput`](crate::operation::delete_rotation_override::DeleteRotationOverrideInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRotationOverrideInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
     pub(crate) rotation_override_id: ::std::option::Option<::std::string::String>,

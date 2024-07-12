@@ -26,8 +26,8 @@ impl CreateCustomRoutingAcceleratorOutput {
 }
 
 /// A builder for [`CreateCustomRoutingAcceleratorOutput`](crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomRoutingAcceleratorOutputBuilder {
     pub(crate) accelerator: ::std::option::Option<crate::types::CustomRoutingAccelerator>,
     _request_id: Option<String>,

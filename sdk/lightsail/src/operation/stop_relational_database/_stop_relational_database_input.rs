@@ -26,8 +26,8 @@ impl StopRelationalDatabaseInput {
 }
 
 /// A builder for [`StopRelationalDatabaseInput`](crate::operation::stop_relational_database::StopRelationalDatabaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopRelationalDatabaseInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) relational_database_snapshot_name: ::std::option::Option<::std::string::String>,

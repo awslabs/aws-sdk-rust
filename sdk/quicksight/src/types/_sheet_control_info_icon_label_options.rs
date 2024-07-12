@@ -27,8 +27,8 @@ impl SheetControlInfoIconLabelOptions {
 }
 
 /// A builder for [`SheetControlInfoIconLabelOptions`](crate::types::SheetControlInfoIconLabelOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SheetControlInfoIconLabelOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) info_icon_text: ::std::option::Option<::std::string::String>,

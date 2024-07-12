@@ -37,8 +37,8 @@ impl QuickResponseSearchExpression {
 }
 
 /// A builder for [`QuickResponseSearchExpression`](crate::types::QuickResponseSearchExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QuickResponseSearchExpressionBuilder {
     pub(crate) queries: ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseQueryField>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseFilterField>>,

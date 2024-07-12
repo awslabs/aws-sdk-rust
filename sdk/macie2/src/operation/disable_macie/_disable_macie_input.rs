@@ -11,8 +11,8 @@ impl DisableMacieInput {
 }
 
 /// A builder for [`DisableMacieInput`](crate::operation::disable_macie::DisableMacieInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableMacieInputBuilder {}
 impl DisableMacieInputBuilder {
     /// Consumes the builder and constructs a [`DisableMacieInput`](crate::operation::disable_macie::DisableMacieInput).

@@ -18,8 +18,8 @@ impl UpdateAccountAuditConfigurationOutput {
 }
 
 /// A builder for [`UpdateAccountAuditConfigurationOutput`](crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccountAuditConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

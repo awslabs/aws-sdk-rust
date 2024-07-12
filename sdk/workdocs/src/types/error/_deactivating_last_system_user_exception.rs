@@ -53,8 +53,8 @@ impl DeactivatingLastSystemUserException {
 }
 
 /// A builder for [`DeactivatingLastSystemUserException`](crate::types::error::DeactivatingLastSystemUserException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivatingLastSystemUserExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl ExportJournalToS3Output {
 }
 
 /// A builder for [`ExportJournalToS3Output`](crate::operation::export_journal_to_s3::ExportJournalToS3Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportJournalToS3OutputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

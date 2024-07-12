@@ -11,8 +11,8 @@ impl GetEc2DeepInspectionConfigurationInput {
 }
 
 /// A builder for [`GetEc2DeepInspectionConfigurationInput`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEc2DeepInspectionConfigurationInputBuilder {}
 impl GetEc2DeepInspectionConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetEc2DeepInspectionConfigurationInput`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationInput).

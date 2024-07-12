@@ -18,8 +18,8 @@ impl StartChannelOutput {
 }
 
 /// A builder for [`StartChannelOutput`](crate::operation::start_channel::StartChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartChannelOutputBuilder {
     _request_id: Option<String>,
 }

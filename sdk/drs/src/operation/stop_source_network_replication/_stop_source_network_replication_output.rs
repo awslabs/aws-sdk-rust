@@ -26,8 +26,8 @@ impl StopSourceNetworkReplicationOutput {
 }
 
 /// A builder for [`StopSourceNetworkReplicationOutput`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopSourceNetworkReplicationOutputBuilder {
     pub(crate) source_network: ::std::option::Option<crate::types::SourceNetwork>,
     _request_id: Option<String>,

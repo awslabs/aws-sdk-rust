@@ -26,8 +26,8 @@ impl DeleteShareOutput {
 }
 
 /// A builder for [`DeleteShareOutput`](crate::operation::delete_share::DeleteShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteShareOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ShareStatus>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl CreateSlackChannelConfigurationOutput {
 }
 
 /// A builder for [`CreateSlackChannelConfigurationOutput`](crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSlackChannelConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

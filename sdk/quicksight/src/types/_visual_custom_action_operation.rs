@@ -40,8 +40,8 @@ impl VisualCustomActionOperation {
 }
 
 /// A builder for [`VisualCustomActionOperation`](crate::types::VisualCustomActionOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VisualCustomActionOperationBuilder {
     pub(crate) filter_operation: ::std::option::Option<crate::types::CustomActionFilterOperation>,
     pub(crate) navigation_operation: ::std::option::Option<crate::types::CustomActionNavigationOperation>,

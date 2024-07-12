@@ -20,8 +20,8 @@ impl PutRegistryPolicyInput {
 }
 
 /// A builder for [`PutRegistryPolicyInput`](crate::operation::put_registry_policy::PutRegistryPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRegistryPolicyInputBuilder {
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,
 }

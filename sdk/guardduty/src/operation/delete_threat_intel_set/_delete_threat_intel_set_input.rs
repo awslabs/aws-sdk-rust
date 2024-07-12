@@ -26,8 +26,8 @@ impl DeleteThreatIntelSetInput {
 }
 
 /// A builder for [`DeleteThreatIntelSetInput`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteThreatIntelSetInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) threat_intel_set_id: ::std::option::Option<::std::string::String>,

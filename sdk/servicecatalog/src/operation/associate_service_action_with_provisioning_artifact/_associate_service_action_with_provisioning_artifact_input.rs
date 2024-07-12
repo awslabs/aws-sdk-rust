@@ -58,8 +58,8 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
 }
 
 /// A builder for [`AssociateServiceActionWithProvisioningArtifactInput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateServiceActionWithProvisioningArtifactInputBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl Clip {
 }
 
 /// A builder for [`Clip`](crate::types::Clip).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClipBuilder {
     pub(crate) time_span: ::std::option::Option<crate::types::TimeSpan>,
 }

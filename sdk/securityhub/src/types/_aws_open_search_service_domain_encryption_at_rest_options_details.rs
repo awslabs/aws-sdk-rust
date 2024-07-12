@@ -27,8 +27,8 @@ impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl AutoMlResolvedAttributes {
 }
 
 /// A builder for [`AutoMlResolvedAttributes`](crate::types::AutoMlResolvedAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoMlResolvedAttributesBuilder {
     pub(crate) auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
     pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,

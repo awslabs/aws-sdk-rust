@@ -23,8 +23,8 @@ impl GetBlacklistReportsInput {
 }
 
 /// A builder for [`GetBlacklistReportsInput`](crate::operation::get_blacklist_reports::GetBlacklistReportsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBlacklistReportsInputBuilder {
     pub(crate) blacklist_item_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

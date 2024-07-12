@@ -89,8 +89,8 @@ impl StartVectorEnrichmentJobOutput {
 }
 
 /// A builder for [`StartVectorEnrichmentJobOutput`](crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartVectorEnrichmentJobOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

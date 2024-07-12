@@ -18,8 +18,8 @@ impl DeleteConfiguredAudienceModelPolicyOutput {
 }
 
 /// A builder for [`DeleteConfiguredAudienceModelPolicyOutput`](crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfiguredAudienceModelPolicyOutputBuilder {
     _request_id: Option<String>,
 }

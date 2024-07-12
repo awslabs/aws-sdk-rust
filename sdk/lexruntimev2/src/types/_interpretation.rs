@@ -41,8 +41,8 @@ impl Interpretation {
 }
 
 /// A builder for [`Interpretation`](crate::types::Interpretation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InterpretationBuilder {
     pub(crate) nlu_confidence: ::std::option::Option<crate::types::ConfidenceScore>,
     pub(crate) sentiment_response: ::std::option::Option<crate::types::SentimentResponse>,

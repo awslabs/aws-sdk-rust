@@ -67,8 +67,8 @@ impl GlobalSecondaryIndex {
 }
 
 /// A builder for [`GlobalSecondaryIndex`](crate::types::GlobalSecondaryIndex).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlobalSecondaryIndexBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,

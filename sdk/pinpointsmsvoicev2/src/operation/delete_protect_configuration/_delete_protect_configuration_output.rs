@@ -52,8 +52,8 @@ impl DeleteProtectConfigurationOutput {
 }
 
 /// A builder for [`DeleteProtectConfigurationOutput`](crate::operation::delete_protect_configuration::DeleteProtectConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProtectConfigurationOutputBuilder {
     pub(crate) protect_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,

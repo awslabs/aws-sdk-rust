@@ -18,8 +18,8 @@ impl CreateDataLakeExceptionSubscriptionOutput {
 }
 
 /// A builder for [`CreateDataLakeExceptionSubscriptionOutput`](crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataLakeExceptionSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

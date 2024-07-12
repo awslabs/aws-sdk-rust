@@ -28,8 +28,8 @@ impl BatchUpdateUserOutput {
 }
 
 /// A builder for [`BatchUpdateUserOutput`](crate::operation::batch_update_user::BatchUpdateUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateUserOutputBuilder {
     pub(crate) user_errors: ::std::option::Option<::std::vec::Vec<crate::types::UserError>>,
     _request_id: Option<String>,

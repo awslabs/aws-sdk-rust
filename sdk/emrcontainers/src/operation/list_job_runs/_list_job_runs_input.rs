@@ -58,8 +58,8 @@ impl ListJobRunsInput {
 }
 
 /// A builder for [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJobRunsInputBuilder {
     pub(crate) virtual_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,

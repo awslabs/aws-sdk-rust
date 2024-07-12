@@ -27,8 +27,8 @@ impl CachePolicySummary {
 }
 
 /// A builder for [`CachePolicySummary`](crate::types::CachePolicySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CachePolicySummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CachePolicyType>,
     pub(crate) cache_policy: ::std::option::Option<crate::types::CachePolicy>,

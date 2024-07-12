@@ -38,8 +38,8 @@ impl ListThingsInThingGroupInput {
 }
 
 /// A builder for [`ListThingsInThingGroupInput`](crate::operation::list_things_in_thing_group::ListThingsInThingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListThingsInThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) recursive: ::std::option::Option<bool>,

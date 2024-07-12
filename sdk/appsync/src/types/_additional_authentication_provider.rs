@@ -39,8 +39,8 @@ impl AdditionalAuthenticationProvider {
 }
 
 /// A builder for [`AdditionalAuthenticationProvider`](crate::types::AdditionalAuthenticationProvider).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdditionalAuthenticationProviderBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) open_id_connect_config: ::std::option::Option<crate::types::OpenIdConnectConfig>,

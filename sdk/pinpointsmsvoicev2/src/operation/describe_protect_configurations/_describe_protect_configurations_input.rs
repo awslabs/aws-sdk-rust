@@ -42,8 +42,8 @@ impl DescribeProtectConfigurationsInput {
 }
 
 /// A builder for [`DescribeProtectConfigurationsInput`](crate::operation::describe_protect_configurations::DescribeProtectConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProtectConfigurationsInputBuilder {
     pub(crate) protect_configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ProtectConfigurationFilter>>,

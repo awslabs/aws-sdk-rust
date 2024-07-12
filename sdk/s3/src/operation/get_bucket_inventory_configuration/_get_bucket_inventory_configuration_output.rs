@@ -32,8 +32,8 @@ impl GetBucketInventoryConfigurationOutput {
 }
 
 /// A builder for [`GetBucketInventoryConfigurationOutput`](crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketInventoryConfigurationOutputBuilder {
     pub(crate) inventory_configuration: ::std::option::Option<crate::types::InventoryConfiguration>,
     _extended_request_id: Option<String>,

@@ -21,8 +21,8 @@ impl InsightImpactGraphEdge {
 }
 
 /// A builder for [`InsightImpactGraphEdge`](crate::types::InsightImpactGraphEdge).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsightImpactGraphEdgeBuilder {
     pub(crate) reference_id: ::std::option::Option<i32>,
 }

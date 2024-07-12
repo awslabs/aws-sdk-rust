@@ -27,8 +27,8 @@ impl GetApplicationRevisionInput {
 }
 
 /// A builder for [`GetApplicationRevisionInput`](crate::operation::get_application_revision::GetApplicationRevisionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApplicationRevisionInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<crate::types::RevisionLocation>,

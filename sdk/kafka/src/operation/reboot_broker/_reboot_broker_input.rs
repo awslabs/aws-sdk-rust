@@ -29,8 +29,8 @@ impl RebootBrokerInput {
 }
 
 /// A builder for [`RebootBrokerInput`](crate::operation::reboot_broker::RebootBrokerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootBrokerInputBuilder {
     pub(crate) broker_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,

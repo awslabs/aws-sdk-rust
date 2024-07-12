@@ -21,8 +21,8 @@ impl MinimumLabelType {
 }
 
 /// A builder for [`MinimumLabelType`](crate::types::MinimumLabelType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MinimumLabelTypeBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }

@@ -20,8 +20,8 @@ impl DescribeHostedConnectionsInput {
 }
 
 /// A builder for [`DescribeHostedConnectionsInput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHostedConnectionsInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
 }

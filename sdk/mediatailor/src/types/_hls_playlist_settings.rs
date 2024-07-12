@@ -29,8 +29,8 @@ impl HlsPlaylistSettings {
 }
 
 /// A builder for [`HlsPlaylistSettings`](crate::types::HlsPlaylistSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsPlaylistSettingsBuilder {
     pub(crate) manifest_window_seconds: ::std::option::Option<i32>,
     pub(crate) ad_markup_type: ::std::option::Option<::std::vec::Vec<crate::types::AdMarkupType>>,

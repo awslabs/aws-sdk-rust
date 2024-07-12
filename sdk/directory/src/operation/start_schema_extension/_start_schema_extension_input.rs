@@ -38,8 +38,8 @@ impl StartSchemaExtensionInput {
 }
 
 /// A builder for [`StartSchemaExtensionInput`](crate::operation::start_schema_extension::StartSchemaExtensionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSchemaExtensionInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) create_snapshot_before_schema_extension: ::std::option::Option<bool>,

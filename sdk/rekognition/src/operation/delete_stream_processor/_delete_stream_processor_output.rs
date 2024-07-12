@@ -18,8 +18,8 @@ impl DeleteStreamProcessorOutput {
 }
 
 /// A builder for [`DeleteStreamProcessorOutput`](crate::operation::delete_stream_processor::DeleteStreamProcessorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStreamProcessorOutputBuilder {
     _request_id: Option<String>,
 }

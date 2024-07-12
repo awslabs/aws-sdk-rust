@@ -28,8 +28,8 @@ impl CardStatus {
 }
 
 /// A builder for [`CardStatus`](crate::types::CardStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CardStatusBuilder {
     pub(crate) current_state: ::std::option::Option<crate::types::ExecutionStatus>,
     pub(crate) current_value: ::std::option::Option<::std::string::String>,

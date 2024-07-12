@@ -33,8 +33,8 @@ impl WaterfallChartGroupColorConfiguration {
 }
 
 /// A builder for [`WaterfallChartGroupColorConfiguration`](crate::types::WaterfallChartGroupColorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WaterfallChartGroupColorConfigurationBuilder {
     pub(crate) positive_bar_color: ::std::option::Option<::std::string::String>,
     pub(crate) negative_bar_color: ::std::option::Option<::std::string::String>,

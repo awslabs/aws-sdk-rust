@@ -26,8 +26,8 @@ impl ModifyManagedPrefixListOutput {
 }
 
 /// A builder for [`ModifyManagedPrefixListOutput`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyManagedPrefixListOutputBuilder {
     pub(crate) prefix_list: ::std::option::Option<crate::types::ManagedPrefixList>,
     _request_id: Option<String>,

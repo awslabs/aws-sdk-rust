@@ -20,8 +20,8 @@ impl DeleteHitInput {
 }
 
 /// A builder for [`DeleteHitInput`](crate::operation::delete_hit::DeleteHitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
 }

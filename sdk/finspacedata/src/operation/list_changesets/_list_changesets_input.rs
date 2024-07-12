@@ -33,8 +33,8 @@ impl ListChangesetsInput {
 }
 
 /// A builder for [`ListChangesetsInput`](crate::operation::list_changesets::ListChangesetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListChangesetsInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

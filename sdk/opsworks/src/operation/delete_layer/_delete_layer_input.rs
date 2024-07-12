@@ -20,8 +20,8 @@ impl DeleteLayerInput {
 }
 
 /// A builder for [`DeleteLayerInput`](crate::operation::delete_layer::DeleteLayerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLayerInputBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
 }

@@ -20,8 +20,8 @@ impl ValidateAssessmentReportIntegrityInput {
 }
 
 /// A builder for [`ValidateAssessmentReportIntegrityInput`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateAssessmentReportIntegrityInputBuilder {
     pub(crate) s3_relative_path: ::std::option::Option<::std::string::String>,
 }

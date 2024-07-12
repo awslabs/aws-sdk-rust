@@ -41,8 +41,8 @@ impl IntegerListConfigurationOptions {
 }
 
 /// A builder for [`IntegerListConfigurationOptions`](crate::types::IntegerListConfigurationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntegerListConfigurationOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) min: ::std::option::Option<i32>,

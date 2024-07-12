@@ -18,8 +18,8 @@ impl RemoveTrustStoreRevocationsOutput {
 }
 
 /// A builder for [`RemoveTrustStoreRevocationsOutput`](crate::operation::remove_trust_store_revocations::RemoveTrustStoreRevocationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveTrustStoreRevocationsOutputBuilder {
     _request_id: Option<String>,
 }

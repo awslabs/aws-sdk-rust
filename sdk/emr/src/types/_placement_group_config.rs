@@ -32,8 +32,8 @@ impl PlacementGroupConfig {
 }
 
 /// A builder for [`PlacementGroupConfig`](crate::types::PlacementGroupConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlacementGroupConfigBuilder {
     pub(crate) instance_role: ::std::option::Option<crate::types::InstanceRoleType>,
     pub(crate) placement_strategy: ::std::option::Option<crate::types::PlacementGroupStrategy>,

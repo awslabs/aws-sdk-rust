@@ -28,8 +28,8 @@ impl CreatePhoneNumberOrderInput {
 }
 
 /// A builder for [`CreatePhoneNumberOrderInput`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePhoneNumberOrderInputBuilder {
     pub(crate) product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     pub(crate) e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -20,8 +20,8 @@ impl DescribeImageInput {
 }
 
 /// A builder for [`DescribeImageInput`](crate::operation::describe_image::DescribeImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageInputBuilder {
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
 }

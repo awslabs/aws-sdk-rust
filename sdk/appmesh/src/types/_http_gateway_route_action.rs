@@ -27,8 +27,8 @@ impl HttpGatewayRouteAction {
 }
 
 /// A builder for [`HttpGatewayRouteAction`](crate::types::HttpGatewayRouteAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpGatewayRouteActionBuilder {
     pub(crate) target: ::std::option::Option<crate::types::GatewayRouteTarget>,
     pub(crate) rewrite: ::std::option::Option<crate::types::HttpGatewayRouteRewrite>,

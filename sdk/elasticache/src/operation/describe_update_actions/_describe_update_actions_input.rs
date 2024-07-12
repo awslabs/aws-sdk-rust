@@ -82,8 +82,8 @@ impl DescribeUpdateActionsInput {
 }
 
 /// A builder for [`DescribeUpdateActionsInput`](crate::operation::describe_update_actions::DescribeUpdateActionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUpdateActionsInputBuilder {
     pub(crate) service_update_name: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

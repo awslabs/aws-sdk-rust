@@ -34,8 +34,8 @@ impl ListStandardsControlAssociationsOutput {
 }
 
 /// A builder for [`ListStandardsControlAssociationsOutput`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStandardsControlAssociationsOutputBuilder {
     pub(crate) standards_control_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

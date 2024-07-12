@@ -21,8 +21,8 @@ impl VideoSelectorPid {
 }
 
 /// A builder for [`VideoSelectorPid`](crate::types::VideoSelectorPid).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoSelectorPidBuilder {
     pub(crate) pid: ::std::option::Option<i32>,
 }

@@ -27,8 +27,8 @@ impl TrustedAdvisorCostOptimizingSummary {
 }
 
 /// A builder for [`TrustedAdvisorCostOptimizingSummary`](crate::types::TrustedAdvisorCostOptimizingSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrustedAdvisorCostOptimizingSummaryBuilder {
     pub(crate) estimated_monthly_savings: ::std::option::Option<f64>,
     pub(crate) estimated_percent_monthly_savings: ::std::option::Option<f64>,

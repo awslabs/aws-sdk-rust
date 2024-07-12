@@ -29,8 +29,8 @@ impl LaunchActionsStatus {
 }
 
 /// A builder for [`LaunchActionsStatus`](crate::types::LaunchActionsStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchActionsStatusBuilder {
     pub(crate) ssm_agent_discovery_datetime: ::std::option::Option<::std::string::String>,
     pub(crate) runs: ::std::option::Option<::std::vec::Vec<crate::types::LaunchActionRun>>,

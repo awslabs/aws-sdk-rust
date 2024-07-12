@@ -18,8 +18,8 @@ impl PutScheduledActionOutput {
 }
 
 /// A builder for [`PutScheduledActionOutput`](crate::operation::put_scheduled_action::PutScheduledActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutScheduledActionOutputBuilder {
     _request_id: Option<String>,
 }

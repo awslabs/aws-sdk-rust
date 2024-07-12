@@ -44,8 +44,8 @@ impl GetLabelDetectionInput {
 }
 
 /// A builder for [`GetLabelDetectionInput`](crate::operation::get_label_detection::GetLabelDetectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLabelDetectionInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

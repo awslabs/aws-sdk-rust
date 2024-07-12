@@ -91,8 +91,8 @@ impl S3ObjectMetadata {
 }
 
 /// A builder for [`S3ObjectMetadata`](crate::types::S3ObjectMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ObjectMetadataBuilder {
     pub(crate) cache_control: ::std::option::Option<::std::string::String>,
     pub(crate) content_disposition: ::std::option::Option<::std::string::String>,

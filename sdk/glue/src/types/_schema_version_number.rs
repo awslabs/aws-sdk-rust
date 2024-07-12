@@ -27,8 +27,8 @@ impl SchemaVersionNumber {
 }
 
 /// A builder for [`SchemaVersionNumber`](crate::types::SchemaVersionNumber).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SchemaVersionNumberBuilder {
     pub(crate) latest_version: ::std::option::Option<bool>,
     pub(crate) version_number: ::std::option::Option<i64>,

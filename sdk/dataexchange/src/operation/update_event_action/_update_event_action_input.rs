@@ -26,8 +26,8 @@ impl UpdateEventActionInput {
 }
 
 /// A builder for [`UpdateEventActionInput`](crate::operation::update_event_action::UpdateEventActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventActionInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) event_action_id: ::std::option::Option<::std::string::String>,

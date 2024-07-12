@@ -43,8 +43,8 @@ impl GetPublicKeyCertificateOutput {
 }
 
 /// A builder for [`GetPublicKeyCertificateOutput`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetPublicKeyCertificateOutputBuilder {
     pub(crate) key_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) key_certificate_chain: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl RetrieveOutput {
 }
 
 /// A builder for [`RetrieveOutput`](crate::operation::retrieve::RetrieveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RetrieveOutputBuilder {
     pub(crate) retrieval_results: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseRetrievalResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl DescribeAccountAttributesOutput {
 }
 
 /// A builder for [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountAttributesOutputBuilder {
     pub(crate) account_quotas: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>,
     _request_id: Option<String>,

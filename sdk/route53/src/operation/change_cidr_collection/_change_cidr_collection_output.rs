@@ -27,8 +27,8 @@ impl ChangeCidrCollectionOutput {
 }
 
 /// A builder for [`ChangeCidrCollectionOutput`](crate::operation::change_cidr_collection::ChangeCidrCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeCidrCollectionOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

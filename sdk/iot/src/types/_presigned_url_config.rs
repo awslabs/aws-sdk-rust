@@ -31,8 +31,8 @@ impl PresignedUrlConfig {
 }
 
 /// A builder for [`PresignedUrlConfig`](crate::types::PresignedUrlConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PresignedUrlConfigBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) expires_in_sec: ::std::option::Option<i64>,

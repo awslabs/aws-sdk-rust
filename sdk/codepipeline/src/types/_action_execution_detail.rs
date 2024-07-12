@@ -81,8 +81,8 @@ impl ActionExecutionDetail {
 }
 
 /// A builder for [`ActionExecutionDetail`](crate::types::ActionExecutionDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionExecutionDetailBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_execution_id: ::std::option::Option<::std::string::String>,

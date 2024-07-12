@@ -104,8 +104,8 @@ impl GetSigningProfileOutput {
 }
 
 /// A builder for [`GetSigningProfileOutput`](crate::operation::get_signing_profile::GetSigningProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSigningProfileOutputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl BatchDisassociateProjectAssetsOutput {
 }
 
 /// A builder for [`BatchDisassociateProjectAssetsOutput`](crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisassociateProjectAssetsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>>,
     _request_id: Option<String>,

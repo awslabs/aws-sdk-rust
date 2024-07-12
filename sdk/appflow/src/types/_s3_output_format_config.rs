@@ -51,8 +51,8 @@ impl S3OutputFormatConfig {
 }
 
 /// A builder for [`S3OutputFormatConfig`](crate::types::S3OutputFormatConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3OutputFormatConfigBuilder {
     pub(crate) file_type: ::std::option::Option<crate::types::FileType>,
     pub(crate) prefix_config: ::std::option::Option<crate::types::PrefixConfig>,

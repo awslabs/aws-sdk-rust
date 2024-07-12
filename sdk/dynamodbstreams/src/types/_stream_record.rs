@@ -77,8 +77,8 @@ impl StreamRecord {
 }
 
 /// A builder for [`StreamRecord`](crate::types::StreamRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamRecordBuilder {
     pub(crate) approximate_creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,

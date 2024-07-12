@@ -27,8 +27,8 @@ impl EventBridgeConfiguration {
 }
 
 /// A builder for [`EventBridgeConfiguration`](crate::types::EventBridgeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventBridgeConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) included_data: ::std::option::Option<crate::types::EventIncludedData>,

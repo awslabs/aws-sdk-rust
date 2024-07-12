@@ -33,8 +33,8 @@ impl TextLogSetting {
 }
 
 /// A builder for [`TextLogSetting`](crate::types::TextLogSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextLogSettingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) destination: ::std::option::Option<crate::types::TextLogDestination>,

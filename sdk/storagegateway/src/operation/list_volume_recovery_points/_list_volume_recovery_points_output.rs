@@ -34,8 +34,8 @@ impl ListVolumeRecoveryPointsOutput {
 }
 
 /// A builder for [`ListVolumeRecoveryPointsOutput`](crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVolumeRecoveryPointsOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) volume_recovery_point_infos: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecoveryPointInfo>>,

@@ -26,8 +26,8 @@ impl AuthorizeClusterSecurityGroupIngressOutput {
 }
 
 /// A builder for [`AuthorizeClusterSecurityGroupIngressOutput`](crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeClusterSecurityGroupIngressOutputBuilder {
     pub(crate) cluster_security_group: ::std::option::Option<crate::types::ClusterSecurityGroup>,
     _request_id: Option<String>,

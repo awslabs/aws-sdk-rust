@@ -123,8 +123,8 @@ impl ReviewTemplateAnswer {
 }
 
 /// A builder for [`ReviewTemplateAnswer`](crate::types::ReviewTemplateAnswer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReviewTemplateAnswerBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) pillar_id: ::std::option::Option<::std::string::String>,

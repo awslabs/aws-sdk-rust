@@ -98,8 +98,8 @@ impl ImportSnapshotInput {
 }
 
 /// A builder for [`ImportSnapshotInput`](crate::operation::import_snapshot::ImportSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportSnapshotInputBuilder {
     pub(crate) client_data: ::std::option::Option<crate::types::ClientData>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

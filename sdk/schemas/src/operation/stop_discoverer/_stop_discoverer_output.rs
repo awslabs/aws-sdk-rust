@@ -32,8 +32,8 @@ impl StopDiscovererOutput {
 }
 
 /// A builder for [`StopDiscovererOutput`](crate::operation::stop_discoverer::StopDiscovererOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDiscovererOutputBuilder {
     pub(crate) discoverer_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::DiscovererState>,

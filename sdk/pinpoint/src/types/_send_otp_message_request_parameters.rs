@@ -81,8 +81,8 @@ impl SendOtpMessageRequestParameters {
 }
 
 /// A builder for [`SendOtpMessageRequestParameters`](crate::types::SendOtpMessageRequestParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendOtpMessageRequestParametersBuilder {
     pub(crate) allowed_attempts: ::std::option::Option<i32>,
     pub(crate) brand_name: ::std::option::Option<::std::string::String>,

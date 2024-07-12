@@ -20,8 +20,8 @@ impl DeleteSlackWorkspaceConfigurationInput {
 }
 
 /// A builder for [`DeleteSlackWorkspaceConfigurationInput`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSlackWorkspaceConfigurationInputBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
 }

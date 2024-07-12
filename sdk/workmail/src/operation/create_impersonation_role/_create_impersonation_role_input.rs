@@ -52,8 +52,8 @@ impl CreateImpersonationRoleInput {
 }
 
 /// A builder for [`CreateImpersonationRoleInput`](crate::operation::create_impersonation_role::CreateImpersonationRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateImpersonationRoleInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,

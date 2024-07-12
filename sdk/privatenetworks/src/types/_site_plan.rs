@@ -31,8 +31,8 @@ impl SitePlan {
 }
 
 /// A builder for [`SitePlan`](crate::types::SitePlan).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SitePlanBuilder {
     pub(crate) resource_definitions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkResourceDefinition>>,
     pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,

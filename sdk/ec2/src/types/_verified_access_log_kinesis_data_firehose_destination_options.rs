@@ -27,8 +27,8 @@ impl VerifiedAccessLogKinesisDataFirehoseDestinationOptions {
 }
 
 /// A builder for [`VerifiedAccessLogKinesisDataFirehoseDestinationOptions`](crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifiedAccessLogKinesisDataFirehoseDestinationOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) delivery_stream: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListReferenceImportJobsOutput {
 }
 
 /// A builder for [`ListReferenceImportJobsOutput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReferenceImportJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceJobItem>>,

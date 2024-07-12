@@ -58,8 +58,8 @@ impl DescribeLocationFsxWindowsOutput {
 }
 
 /// A builder for [`DescribeLocationFsxWindowsOutput`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationFsxWindowsOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,

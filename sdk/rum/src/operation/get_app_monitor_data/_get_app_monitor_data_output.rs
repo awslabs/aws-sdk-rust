@@ -34,8 +34,8 @@ impl GetAppMonitorDataOutput {
 }
 
 /// A builder for [`GetAppMonitorDataOutput`](crate::operation::get_app_monitor_data::GetAppMonitorDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppMonitorDataOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

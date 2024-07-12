@@ -24,8 +24,8 @@ impl DeprecateFlowTemplateInput {
 }
 
 /// A builder for [`DeprecateFlowTemplateInput`](crate::operation::deprecate_flow_template::DeprecateFlowTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprecateFlowTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

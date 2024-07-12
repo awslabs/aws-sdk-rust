@@ -31,8 +31,8 @@ impl SelectiveExecutionConfig {
 }
 
 /// A builder for [`SelectiveExecutionConfig`](crate::types::SelectiveExecutionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelectiveExecutionConfigBuilder {
     pub(crate) source_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) selected_steps: ::std::option::Option<::std::vec::Vec<crate::types::SelectedStep>>,

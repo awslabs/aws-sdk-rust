@@ -19,8 +19,8 @@ impl UpdateServiceSettingOutput {
 }
 
 /// A builder for [`UpdateServiceSettingOutput`](crate::operation::update_service_setting::UpdateServiceSettingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceSettingOutputBuilder {
     _request_id: Option<String>,
 }

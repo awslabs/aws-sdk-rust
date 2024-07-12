@@ -26,8 +26,8 @@ impl GetInstanceUefiDataInput {
 }
 
 /// A builder for [`GetInstanceUefiDataInput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstanceUefiDataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

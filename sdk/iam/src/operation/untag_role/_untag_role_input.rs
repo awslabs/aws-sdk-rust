@@ -30,8 +30,8 @@ impl UntagRoleInput {
 }
 
 /// A builder for [`UntagRoleInput`](crate::operation::untag_role::UntagRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagRoleInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

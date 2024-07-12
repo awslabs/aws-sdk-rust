@@ -135,8 +135,8 @@ impl StartUpdateSignalMapOutput {
 }
 
 /// A builder for [`StartUpdateSignalMapOutput`](crate::operation::start_update_signal_map::StartUpdateSignalMapOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartUpdateSignalMapOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_alarm_template_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

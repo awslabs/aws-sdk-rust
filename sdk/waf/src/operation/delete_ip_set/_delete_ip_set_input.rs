@@ -26,8 +26,8 @@ impl DeleteIpSetInput {
 }
 
 /// A builder for [`DeleteIpSetInput`](crate::operation::delete_ip_set::DeleteIpSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIpSetInputBuilder {
     pub(crate) ip_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

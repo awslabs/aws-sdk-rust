@@ -84,8 +84,8 @@ impl CreateDomainConfigurationInput {
 }
 
 /// A builder for [`CreateDomainConfigurationInput`](crate::operation::create_domain_configuration::CreateDomainConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDomainConfigurationInputBuilder {
     pub(crate) domain_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

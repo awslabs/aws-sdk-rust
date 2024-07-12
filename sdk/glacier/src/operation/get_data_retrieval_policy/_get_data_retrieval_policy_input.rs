@@ -26,8 +26,8 @@ impl GetDataRetrievalPolicyInput {
 }
 
 /// A builder for [`GetDataRetrievalPolicyInput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataRetrievalPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

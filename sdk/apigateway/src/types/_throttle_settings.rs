@@ -27,8 +27,8 @@ impl ThrottleSettings {
 }
 
 /// A builder for [`ThrottleSettings`](crate::types::ThrottleSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThrottleSettingsBuilder {
     pub(crate) burst_limit: ::std::option::Option<i32>,
     pub(crate) rate_limit: ::std::option::Option<f64>,

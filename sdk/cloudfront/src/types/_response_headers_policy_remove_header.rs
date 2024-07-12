@@ -22,8 +22,8 @@ impl ResponseHeadersPolicyRemoveHeader {
 }
 
 /// A builder for [`ResponseHeadersPolicyRemoveHeader`](crate::types::ResponseHeadersPolicyRemoveHeader).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyRemoveHeaderBuilder {
     pub(crate) header: ::std::option::Option<::std::string::String>,
 }

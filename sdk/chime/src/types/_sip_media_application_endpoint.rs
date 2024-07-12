@@ -28,8 +28,8 @@ impl SipMediaApplicationEndpoint {
 }
 
 /// A builder for [`SipMediaApplicationEndpoint`](crate::types::SipMediaApplicationEndpoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SipMediaApplicationEndpointBuilder {
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
 }

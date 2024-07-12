@@ -33,8 +33,8 @@ impl SearchQuickResponsesOutput {
 }
 
 /// A builder for [`SearchQuickResponsesOutput`](crate::operation::search_quick_responses::SearchQuickResponsesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchQuickResponsesOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseSearchResultData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

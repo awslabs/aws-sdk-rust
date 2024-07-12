@@ -26,8 +26,8 @@ impl UpdateBandwidthRateLimitScheduleOutput {
 }
 
 /// A builder for [`UpdateBandwidthRateLimitScheduleOutput`](crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBandwidthRateLimitScheduleOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

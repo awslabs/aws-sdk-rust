@@ -62,8 +62,8 @@ impl RejectPortfolioShareInput {
 }
 
 /// A builder for [`RejectPortfolioShareInput`](crate::operation::reject_portfolio_share::RejectPortfolioShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectPortfolioShareInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,

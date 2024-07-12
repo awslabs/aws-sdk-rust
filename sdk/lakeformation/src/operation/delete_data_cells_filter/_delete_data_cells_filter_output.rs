@@ -18,8 +18,8 @@ impl DeleteDataCellsFilterOutput {
 }
 
 /// A builder for [`DeleteDataCellsFilterOutput`](crate::operation::delete_data_cells_filter::DeleteDataCellsFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataCellsFilterOutputBuilder {
     _request_id: Option<String>,
 }

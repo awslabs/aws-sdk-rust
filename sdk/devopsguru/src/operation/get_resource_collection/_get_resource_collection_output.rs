@@ -32,8 +32,8 @@ impl GetResourceCollectionOutput {
 }
 
 /// A builder for [`GetResourceCollectionOutput`](crate::operation::get_resource_collection::GetResourceCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceCollectionOutputBuilder {
     pub(crate) resource_collection: ::std::option::Option<crate::types::ResourceCollectionFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

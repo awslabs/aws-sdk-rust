@@ -18,8 +18,8 @@ impl UnregisterConnectorOutput {
 }
 
 /// A builder for [`UnregisterConnectorOutput`](crate::operation::unregister_connector::UnregisterConnectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnregisterConnectorOutputBuilder {
     _request_id: Option<String>,
 }

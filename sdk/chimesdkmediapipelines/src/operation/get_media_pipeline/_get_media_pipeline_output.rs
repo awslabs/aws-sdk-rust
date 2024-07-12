@@ -26,8 +26,8 @@ impl GetMediaPipelineOutput {
 }
 
 /// A builder for [`GetMediaPipelineOutput`](crate::operation::get_media_pipeline::GetMediaPipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMediaPipelineOutputBuilder {
     pub(crate) media_pipeline: ::std::option::Option<crate::types::MediaPipeline>,
     _request_id: Option<String>,

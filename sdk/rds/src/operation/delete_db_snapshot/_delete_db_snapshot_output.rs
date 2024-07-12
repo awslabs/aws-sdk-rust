@@ -28,8 +28,8 @@ impl DeleteDbSnapshotOutput {
 }
 
 /// A builder for [`DeleteDbSnapshotOutput`](crate::operation::delete_db_snapshot::DeleteDbSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbSnapshotOutputBuilder {
     pub(crate) db_snapshot: ::std::option::Option<crate::types::DbSnapshot>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl GetRelationalDatabaseBlueprintsOutput {
 }
 
 /// A builder for [`GetRelationalDatabaseBlueprintsOutput`](crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseBlueprintsOutputBuilder {
     pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBlueprint>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

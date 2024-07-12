@@ -35,8 +35,8 @@ impl SyncState {
 }
 
 /// A builder for [`SyncState`](crate::types::SyncState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyncStateBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     pub(crate) config: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>>,

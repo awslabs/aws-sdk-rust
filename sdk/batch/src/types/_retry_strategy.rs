@@ -29,8 +29,8 @@ impl RetryStrategy {
 }
 
 /// A builder for [`RetryStrategy`](crate::types::RetryStrategy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetryStrategyBuilder {
     pub(crate) attempts: ::std::option::Option<i32>,
     pub(crate) evaluate_on_exit: ::std::option::Option<::std::vec::Vec<crate::types::EvaluateOnExit>>,

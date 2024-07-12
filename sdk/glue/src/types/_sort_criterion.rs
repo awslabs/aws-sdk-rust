@@ -27,8 +27,8 @@ impl SortCriterion {
 }
 
 /// A builder for [`SortCriterion`](crate::types::SortCriterion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SortCriterionBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort: ::std::option::Option<crate::types::Sort>,

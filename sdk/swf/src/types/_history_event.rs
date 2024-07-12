@@ -508,8 +508,8 @@ impl HistoryEvent {
 }
 
 /// A builder for [`HistoryEvent`](crate::types::HistoryEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HistoryEventBuilder {
     pub(crate) event_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) event_type: ::std::option::Option<crate::types::EventType>,

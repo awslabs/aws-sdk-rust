@@ -26,8 +26,8 @@ impl GetBlueprintOutput {
 }
 
 /// A builder for [`GetBlueprintOutput`](crate::operation::get_blueprint::GetBlueprintOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBlueprintOutputBuilder {
     pub(crate) blueprint: ::std::option::Option<crate::types::Blueprint>,
     _request_id: Option<String>,

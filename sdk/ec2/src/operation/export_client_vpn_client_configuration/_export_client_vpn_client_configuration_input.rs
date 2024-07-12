@@ -26,8 +26,8 @@ impl ExportClientVpnClientConfigurationInput {
 }
 
 /// A builder for [`ExportClientVpnClientConfigurationInput`](crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportClientVpnClientConfigurationInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

@@ -27,8 +27,8 @@ impl AudienceSize {
 }
 
 /// A builder for [`AudienceSize`](crate::types::AudienceSize).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudienceSizeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AudienceSizeType>,
     pub(crate) value: ::std::option::Option<i32>,

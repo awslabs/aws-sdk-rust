@@ -137,8 +137,8 @@ impl DomainConfig {
 }
 
 /// A builder for [`DomainConfig`](crate::types::DomainConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainConfigBuilder {
     pub(crate) engine_version: ::std::option::Option<crate::types::VersionStatus>,
     pub(crate) cluster_config: ::std::option::Option<crate::types::ClusterConfigStatus>,

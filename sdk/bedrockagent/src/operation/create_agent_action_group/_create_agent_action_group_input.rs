@@ -78,8 +78,8 @@ impl CreateAgentActionGroupInput {
 }
 
 /// A builder for [`CreateAgentActionGroupInput`](crate::operation::create_agent_action_group::CreateAgentActionGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAgentActionGroupInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,

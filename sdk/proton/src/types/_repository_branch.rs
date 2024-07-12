@@ -42,8 +42,8 @@ impl RepositoryBranch {
 }
 
 /// A builder for [`RepositoryBranch`](crate::types::RepositoryBranch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryBranchBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) provider: ::std::option::Option<crate::types::RepositoryProvider>,

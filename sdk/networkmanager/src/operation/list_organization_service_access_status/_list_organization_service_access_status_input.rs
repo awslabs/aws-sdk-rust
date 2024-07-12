@@ -26,8 +26,8 @@ impl ListOrganizationServiceAccessStatusInput {
 }
 
 /// A builder for [`ListOrganizationServiceAccessStatusInput`](crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOrganizationServiceAccessStatusInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl SearchFilter {
 }
 
 /// A builder for [`SearchFilter`](crate::types::SearchFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchFilterBuilder {
     pub(crate) filter_string: ::std::option::Option<::std::string::String>,
 }

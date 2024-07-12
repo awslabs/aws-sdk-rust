@@ -21,8 +21,8 @@ impl GetPipelineStateInput {
 }
 
 /// A builder for [`GetPipelineStateInput`](crate::operation::get_pipeline_state::GetPipelineStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPipelineStateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

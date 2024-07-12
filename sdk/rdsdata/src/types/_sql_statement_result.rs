@@ -29,8 +29,8 @@ impl SqlStatementResult {
 }
 
 /// A builder for [`SqlStatementResult`](crate::types::SqlStatementResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SqlStatementResultBuilder {
     pub(crate) result_frame: ::std::option::Option<crate::types::ResultFrame>,
     pub(crate) number_of_records_updated: ::std::option::Option<i64>,

@@ -33,8 +33,8 @@ impl ParameterRange {
 }
 
 /// A builder for [`ParameterRange`](crate::types::ParameterRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParameterRangeBuilder {
     pub(crate) integer_parameter_range_specification: ::std::option::Option<crate::types::IntegerParameterRangeSpecification>,
     pub(crate) continuous_parameter_range_specification: ::std::option::Option<crate::types::ContinuousParameterRangeSpecification>,

@@ -27,8 +27,8 @@ impl ApplicationComponentStatusSummary {
 }
 
 /// A builder for [`ApplicationComponentStatusSummary`](crate::types::ApplicationComponentStatusSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationComponentStatusSummaryBuilder {
     pub(crate) src_code_or_db_analysis_status: ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>,
     pub(crate) count: ::std::option::Option<i32>,

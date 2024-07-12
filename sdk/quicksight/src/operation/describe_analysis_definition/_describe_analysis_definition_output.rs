@@ -104,8 +104,8 @@ impl DescribeAnalysisDefinitionOutput {
 }
 
 /// A builder for [`DescribeAnalysisDefinitionOutput`](crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAnalysisDefinitionOutputBuilder {
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

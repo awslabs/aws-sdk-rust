@@ -27,8 +27,8 @@ impl AdvancedInputFilterSettings {
 }
 
 /// A builder for [`AdvancedInputFilterSettings`](crate::types::AdvancedInputFilterSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdvancedInputFilterSettingsBuilder {
     pub(crate) add_texture: ::std::option::Option<crate::types::AdvancedInputFilterAddTexture>,
     pub(crate) sharpening: ::std::option::Option<crate::types::AdvancedInputFilterSharpen>,

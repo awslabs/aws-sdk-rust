@@ -27,8 +27,8 @@ impl S3Parameters {
 }
 
 /// A builder for [`S3Parameters`](crate::types::S3Parameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ParametersBuilder {
     pub(crate) manifest_file_location: ::std::option::Option<crate::types::ManifestFileLocation>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

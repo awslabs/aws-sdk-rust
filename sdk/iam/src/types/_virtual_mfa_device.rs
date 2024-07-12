@@ -66,8 +66,8 @@ impl VirtualMfaDevice {
 }
 
 /// A builder for [`VirtualMfaDevice`](crate::types::VirtualMfaDevice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct VirtualMfaDeviceBuilder {
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) base32_string_seed: ::std::option::Option<::aws_smithy_types::Blob>,

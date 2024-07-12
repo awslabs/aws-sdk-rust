@@ -23,8 +23,8 @@ impl SnowflakeMetadata {
 }
 
 /// A builder for [`SnowflakeMetadata`](crate::types::SnowflakeMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnowflakeMetadataBuilder {
     pub(crate) supported_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

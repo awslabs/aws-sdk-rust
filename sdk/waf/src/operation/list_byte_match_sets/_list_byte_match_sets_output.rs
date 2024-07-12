@@ -34,8 +34,8 @@ impl ListByteMatchSetsOutput {
 }
 
 /// A builder for [`ListByteMatchSetsOutput`](crate::operation::list_byte_match_sets::ListByteMatchSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListByteMatchSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) byte_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchSetSummary>>,

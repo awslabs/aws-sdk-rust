@@ -24,8 +24,8 @@ impl StartReportCreationInput {
 }
 
 /// A builder for [`StartReportCreationInput`](crate::operation::start_report_creation::StartReportCreationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReportCreationInputBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
 }

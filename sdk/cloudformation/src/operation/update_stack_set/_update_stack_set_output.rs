@@ -26,8 +26,8 @@ impl UpdateStackSetOutput {
 }
 
 /// A builder for [`UpdateStackSetOutput`](crate::operation::update_stack_set::UpdateStackSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStackSetOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

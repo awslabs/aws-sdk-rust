@@ -26,8 +26,8 @@ impl DescribeValidDbInstanceModificationsOutput {
 }
 
 /// A builder for [`DescribeValidDbInstanceModificationsOutput`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeValidDbInstanceModificationsOutputBuilder {
     pub(crate) valid_db_instance_modifications_message: ::std::option::Option<crate::types::ValidDbInstanceModificationsMessage>,
     _request_id: Option<String>,

@@ -39,8 +39,8 @@ impl ListServicesForAutoScalingConfigurationInput {
 }
 
 /// A builder for [`ListServicesForAutoScalingConfigurationInput`](crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServicesForAutoScalingConfigurationInputBuilder {
     pub(crate) auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -18,8 +18,8 @@ impl UpdateRescoreExecutionPlanOutput {
 }
 
 /// A builder for [`UpdateRescoreExecutionPlanOutput`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRescoreExecutionPlanOutputBuilder {
     _request_id: Option<String>,
 }

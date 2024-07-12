@@ -33,8 +33,8 @@ impl QueryStatus {
 }
 
 /// A builder for [`QueryStatus`](crate::types::QueryStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryStatusBuilder {
     pub(crate) progress_percentage: ::std::option::Option<f64>,
     pub(crate) cumulative_bytes_scanned: ::std::option::Option<i64>,

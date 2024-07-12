@@ -56,8 +56,8 @@ impl GetFunctionDefinitionVersionOutput {
 }
 
 /// A builder for [`GetFunctionDefinitionVersionOutput`](crate::operation::get_function_definition_version::GetFunctionDefinitionVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFunctionDefinitionVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,

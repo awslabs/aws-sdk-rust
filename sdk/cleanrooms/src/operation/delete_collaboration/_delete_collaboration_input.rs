@@ -20,8 +20,8 @@ impl DeleteCollaborationInput {
 }
 
 /// A builder for [`DeleteCollaborationInput`](crate::operation::delete_collaboration::DeleteCollaborationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCollaborationInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl SnapshotJobResultErrorInfo {
 }
 
 /// A builder for [`SnapshotJobResultErrorInfo`](crate::types::SnapshotJobResultErrorInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotJobResultErrorInfoBuilder {
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) error_type: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DescribeFleetLocationCapacityOutput {
 }
 
 /// A builder for [`DescribeFleetLocationCapacityOutput`](crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetLocationCapacityOutputBuilder {
     pub(crate) fleet_capacity: ::std::option::Option<crate::types::FleetCapacity>,
     _request_id: Option<String>,

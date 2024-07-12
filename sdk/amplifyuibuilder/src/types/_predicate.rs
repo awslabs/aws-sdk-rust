@@ -55,8 +55,8 @@ impl Predicate {
 }
 
 /// A builder for [`Predicate`](crate::types::Predicate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredicateBuilder {
     pub(crate) or: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
     pub(crate) and: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,

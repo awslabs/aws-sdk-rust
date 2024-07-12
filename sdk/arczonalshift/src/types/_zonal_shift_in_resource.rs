@@ -97,8 +97,8 @@ impl ZonalShiftInResource {
 }
 
 /// A builder for [`ZonalShiftInResource`](crate::types::ZonalShiftInResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ZonalShiftInResourceBuilder {
     pub(crate) applied_status: ::std::option::Option<crate::types::AppliedStatus>,
     pub(crate) zonal_shift_id: ::std::option::Option<::std::string::String>,

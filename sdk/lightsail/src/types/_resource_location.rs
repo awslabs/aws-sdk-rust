@@ -27,8 +27,8 @@ impl ResourceLocation {
 }
 
 /// A builder for [`ResourceLocation`](crate::types::ResourceLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceLocationBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) region_name: ::std::option::Option<crate::types::RegionName>,

@@ -66,8 +66,8 @@ impl Filter {
 }
 
 /// A builder for [`Filter`](crate::types::Filter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterBuilder {
     pub(crate) category_filter: ::std::option::Option<crate::types::CategoryFilter>,
     pub(crate) numeric_range_filter: ::std::option::Option<crate::types::NumericRangeFilter>,

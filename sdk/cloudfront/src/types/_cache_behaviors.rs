@@ -29,8 +29,8 @@ impl CacheBehaviors {
 }
 
 /// A builder for [`CacheBehaviors`](crate::types::CacheBehaviors).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheBehaviorsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehavior>>,

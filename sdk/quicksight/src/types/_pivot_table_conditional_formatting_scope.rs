@@ -21,8 +21,8 @@ impl PivotTableConditionalFormattingScope {
 }
 
 /// A builder for [`PivotTableConditionalFormattingScope`](crate::types::PivotTableConditionalFormattingScope).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableConditionalFormattingScopeBuilder {
     pub(crate) role: ::std::option::Option<crate::types::PivotTableConditionalFormattingScopeRole>,
 }

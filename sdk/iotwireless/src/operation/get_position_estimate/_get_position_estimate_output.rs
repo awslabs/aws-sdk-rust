@@ -26,8 +26,8 @@ impl GetPositionEstimateOutput {
 }
 
 /// A builder for [`GetPositionEstimateOutput`](crate::operation::get_position_estimate::GetPositionEstimateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPositionEstimateOutputBuilder {
     pub(crate) geo_json_payload: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

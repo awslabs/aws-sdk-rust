@@ -32,8 +32,8 @@ impl CreateShareInput {
 }
 
 /// A builder for [`CreateShareInput`](crate::operation::create_share::CreateShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateShareInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal_subscriber: ::std::option::Option<::std::string::String>,

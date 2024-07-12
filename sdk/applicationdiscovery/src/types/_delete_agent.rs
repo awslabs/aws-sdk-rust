@@ -28,8 +28,8 @@ impl DeleteAgent {
 }
 
 /// A builder for [`DeleteAgent`](crate::types::DeleteAgent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAgentBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,

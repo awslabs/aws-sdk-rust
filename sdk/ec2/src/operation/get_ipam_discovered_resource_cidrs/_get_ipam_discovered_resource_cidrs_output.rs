@@ -34,8 +34,8 @@ impl GetIpamDiscoveredResourceCidrsOutput {
 }
 
 /// A builder for [`GetIpamDiscoveredResourceCidrsOutput`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIpamDiscoveredResourceCidrsOutputBuilder {
     pub(crate) ipam_discovered_resource_cidrs: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredResourceCidr>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

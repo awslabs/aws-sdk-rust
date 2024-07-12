@@ -27,8 +27,8 @@ impl DescribeIdentityPoolUsageOutput {
 }
 
 /// A builder for [`DescribeIdentityPoolUsageOutput`](crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIdentityPoolUsageOutputBuilder {
     pub(crate) identity_pool_usage: ::std::option::Option<crate::types::IdentityPoolUsage>,
     _request_id: Option<String>,

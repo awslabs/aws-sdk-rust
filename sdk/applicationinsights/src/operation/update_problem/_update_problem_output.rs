@@ -18,8 +18,8 @@ impl UpdateProblemOutput {
 }
 
 /// A builder for [`UpdateProblemOutput`](crate::operation::update_problem::UpdateProblemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProblemOutputBuilder {
     _request_id: Option<String>,
 }

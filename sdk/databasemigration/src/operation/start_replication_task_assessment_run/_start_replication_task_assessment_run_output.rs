@@ -27,8 +27,8 @@ impl StartReplicationTaskAssessmentRunOutput {
 }
 
 /// A builder for [`StartReplicationTaskAssessmentRunOutput`](crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReplicationTaskAssessmentRunOutputBuilder {
     pub(crate) replication_task_assessment_run: ::std::option::Option<crate::types::ReplicationTaskAssessmentRun>,
     _request_id: Option<String>,

@@ -36,8 +36,8 @@ impl DescribeEventDetailsOutput {
 }
 
 /// A builder for [`DescribeEventDetailsOutput`](crate::operation::describe_event_details::DescribeEventDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventDetailsOutputBuilder {
     pub(crate) successful_set: ::std::option::Option<::std::vec::Vec<crate::types::EventDetails>>,
     pub(crate) failed_set: ::std::option::Option<::std::vec::Vec<crate::types::EventDetailsErrorItem>>,

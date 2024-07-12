@@ -53,8 +53,8 @@ impl SourceBackupUnavailable {
 }
 
 /// A builder for [`SourceBackupUnavailable`](crate::types::error::SourceBackupUnavailable).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceBackupUnavailableBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,

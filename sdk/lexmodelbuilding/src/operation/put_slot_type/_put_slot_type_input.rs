@@ -94,8 +94,8 @@ impl PutSlotTypeInput {
 }
 
 /// A builder for [`PutSlotTypeInput`](crate::operation::put_slot_type::PutSlotTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSlotTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

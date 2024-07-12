@@ -28,8 +28,8 @@ impl Attachments {
 }
 
 /// A builder for [`Attachments`](crate::types::Attachments).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachmentsBuilder {
     pub(crate) manifests: ::std::option::Option<::std::vec::Vec<crate::types::ManifestProperties>>,
     pub(crate) file_system: ::std::option::Option<crate::types::JobAttachmentsFileSystem>,

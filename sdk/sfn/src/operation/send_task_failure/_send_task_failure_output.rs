@@ -18,8 +18,8 @@ impl SendTaskFailureOutput {
 }
 
 /// A builder for [`SendTaskFailureOutput`](crate::operation::send_task_failure::SendTaskFailureOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendTaskFailureOutputBuilder {
     _request_id: Option<String>,
 }

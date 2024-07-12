@@ -42,8 +42,8 @@ impl ListOrganizationInsightsOutput {
 }
 
 /// A builder for [`ListOrganizationInsightsOutput`](crate::operation::list_organization_insights::ListOrganizationInsightsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOrganizationInsightsOutputBuilder {
     pub(crate) proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveOrganizationInsightSummary>>,
     pub(crate) reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveOrganizationInsightSummary>>,

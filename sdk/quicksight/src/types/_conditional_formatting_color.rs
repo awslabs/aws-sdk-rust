@@ -27,8 +27,8 @@ impl ConditionalFormattingColor {
 }
 
 /// A builder for [`ConditionalFormattingColor`](crate::types::ConditionalFormattingColor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConditionalFormattingColorBuilder {
     pub(crate) solid: ::std::option::Option<crate::types::ConditionalFormattingSolidColor>,
     pub(crate) gradient: ::std::option::Option<crate::types::ConditionalFormattingGradientColor>,

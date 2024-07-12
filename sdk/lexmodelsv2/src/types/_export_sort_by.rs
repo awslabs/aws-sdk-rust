@@ -27,8 +27,8 @@ impl ExportSortBy {
 }
 
 /// A builder for [`ExportSortBy`](crate::types::ExportSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::ExportSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,

@@ -35,8 +35,8 @@ impl IntentLevelSlotResolutionTestResultItem {
 }
 
 /// A builder for [`IntentLevelSlotResolutionTestResultItem`](crate::types::IntentLevelSlotResolutionTestResultItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntentLevelSlotResolutionTestResultItemBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) multi_turn_conversation: ::std::option::Option<bool>,

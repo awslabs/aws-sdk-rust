@@ -21,8 +21,8 @@ impl AmazonManagedKafkaEventSourceConfig {
 }
 
 /// A builder for [`AmazonManagedKafkaEventSourceConfig`](crate::types::AmazonManagedKafkaEventSourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmazonManagedKafkaEventSourceConfigBuilder {
     pub(crate) consumer_group_id: ::std::option::Option<::std::string::String>,
 }

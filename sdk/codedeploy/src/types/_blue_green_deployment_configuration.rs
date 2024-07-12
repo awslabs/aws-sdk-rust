@@ -33,8 +33,8 @@ impl BlueGreenDeploymentConfiguration {
 }
 
 /// A builder for [`BlueGreenDeploymentConfiguration`](crate::types::BlueGreenDeploymentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlueGreenDeploymentConfigurationBuilder {
     pub(crate) terminate_blue_instances_on_deployment_success: ::std::option::Option<crate::types::BlueInstanceTerminationOption>,
     pub(crate) deployment_ready_option: ::std::option::Option<crate::types::DeploymentReadyOption>,

@@ -33,8 +33,8 @@ impl EthernetStatus {
 }
 
 /// A builder for [`EthernetStatus`](crate::types::EthernetStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EthernetStatusBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) connection_status: ::std::option::Option<crate::types::NetworkConnectionStatus>,

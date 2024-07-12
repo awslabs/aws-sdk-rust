@@ -21,8 +21,8 @@ impl AwsEc2InstanceNetworkInterfacesDetails {
 }
 
 /// A builder for [`AwsEc2InstanceNetworkInterfacesDetails`](crate::types::AwsEc2InstanceNetworkInterfacesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2InstanceNetworkInterfacesDetailsBuilder {
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
 }

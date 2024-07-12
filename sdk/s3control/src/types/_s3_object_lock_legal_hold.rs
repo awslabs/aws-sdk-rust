@@ -21,8 +21,8 @@ impl S3ObjectLockLegalHold {
 }
 
 /// A builder for [`S3ObjectLockLegalHold`](crate::types::S3ObjectLockLegalHold).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ObjectLockLegalHoldBuilder {
     pub(crate) status: ::std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>,
 }

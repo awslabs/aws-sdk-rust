@@ -34,8 +34,8 @@ impl DescribeImportTasksOutput {
 }
 
 /// A builder for [`DescribeImportTasksOutput`](crate::operation::describe_import_tasks::DescribeImportTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImportTasksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::ImportTask>>,

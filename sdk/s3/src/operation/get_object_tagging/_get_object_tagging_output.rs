@@ -39,8 +39,8 @@ impl GetObjectTaggingOutput {
 }
 
 /// A builder for [`GetObjectTaggingOutput`](crate::operation::get_object_tagging::GetObjectTaggingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectTaggingOutputBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_set: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

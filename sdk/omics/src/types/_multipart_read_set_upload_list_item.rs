@@ -87,8 +87,8 @@ impl MultipartReadSetUploadListItem {
 }
 
 /// A builder for [`MultipartReadSetUploadListItem`](crate::types::MultipartReadSetUploadListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultipartReadSetUploadListItemBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,

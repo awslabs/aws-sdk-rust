@@ -39,8 +39,8 @@ impl StrategyOption {
 }
 
 /// A builder for [`StrategyOption`](crate::types::StrategyOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StrategyOptionBuilder {
     pub(crate) strategy: ::std::option::Option<crate::types::Strategy>,
     pub(crate) tool_name: ::std::option::Option<crate::types::TransformationToolName>,

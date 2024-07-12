@@ -34,8 +34,8 @@ impl ListFrameworksOutput {
 }
 
 /// A builder for [`ListFrameworksOutput`](crate::operation::list_frameworks::ListFrameworksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFrameworksOutputBuilder {
     pub(crate) frameworks: ::std::option::Option<::std::vec::Vec<crate::types::Framework>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

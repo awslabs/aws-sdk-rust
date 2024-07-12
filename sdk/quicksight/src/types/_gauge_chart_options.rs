@@ -45,8 +45,8 @@ impl GaugeChartOptions {
 }
 
 /// A builder for [`GaugeChartOptions`](crate::types::GaugeChartOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GaugeChartOptionsBuilder {
     pub(crate) primary_value_display_type: ::std::option::Option<crate::types::PrimaryValueDisplayType>,
     pub(crate) comparison: ::std::option::Option<crate::types::ComparisonConfiguration>,

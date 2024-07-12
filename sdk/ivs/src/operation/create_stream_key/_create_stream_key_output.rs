@@ -26,8 +26,8 @@ impl CreateStreamKeyOutput {
 }
 
 /// A builder for [`CreateStreamKeyOutput`](crate::operation::create_stream_key::CreateStreamKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStreamKeyOutputBuilder {
     pub(crate) stream_key: ::std::option::Option<crate::types::StreamKey>,
     _request_id: Option<String>,

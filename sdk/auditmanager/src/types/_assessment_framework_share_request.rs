@@ -126,8 +126,8 @@ impl AssessmentFrameworkShareRequest {
 }
 
 /// A builder for [`AssessmentFrameworkShareRequest`](crate::types::AssessmentFrameworkShareRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssessmentFrameworkShareRequestBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) framework_id: ::std::option::Option<::std::string::String>,

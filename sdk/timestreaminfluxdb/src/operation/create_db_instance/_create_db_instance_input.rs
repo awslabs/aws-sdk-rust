@@ -147,8 +147,8 @@ impl CreateDbInstanceInput {
 }
 
 /// A builder for [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateDbInstanceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,

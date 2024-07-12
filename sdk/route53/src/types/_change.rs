@@ -47,8 +47,8 @@ impl Change {
 }
 
 /// A builder for [`Change`](crate::types::Change).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) resource_record_set: ::std::option::Option<crate::types::ResourceRecordSet>,

@@ -34,8 +34,8 @@ impl ListVariantStoresOutput {
 }
 
 /// A builder for [`ListVariantStoresOutput`](crate::operation::list_variant_stores::ListVariantStoresOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVariantStoresOutputBuilder {
     pub(crate) variant_stores: ::std::option::Option<::std::vec::Vec<crate::types::VariantStoreItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

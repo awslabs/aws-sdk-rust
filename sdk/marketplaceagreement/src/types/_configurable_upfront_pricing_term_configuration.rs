@@ -29,8 +29,8 @@ impl ConfigurableUpfrontPricingTermConfiguration {
 }
 
 /// A builder for [`ConfigurableUpfrontPricingTermConfiguration`](crate::types::ConfigurableUpfrontPricingTermConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurableUpfrontPricingTermConfigurationBuilder {
     pub(crate) selector_value: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,

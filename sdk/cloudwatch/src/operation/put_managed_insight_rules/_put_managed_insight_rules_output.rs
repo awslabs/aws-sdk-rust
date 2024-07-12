@@ -28,8 +28,8 @@ impl PutManagedInsightRulesOutput {
 }
 
 /// A builder for [`PutManagedInsightRulesOutput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutManagedInsightRulesOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
     _request_id: Option<String>,

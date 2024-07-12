@@ -21,8 +21,8 @@ impl BufferOptions {
 }
 
 /// A builder for [`BufferOptions`](crate::types::BufferOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BufferOptionsBuilder {
     pub(crate) persistent_buffer_enabled: ::std::option::Option<bool>,
 }

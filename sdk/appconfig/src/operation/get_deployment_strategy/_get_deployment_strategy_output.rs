@@ -68,8 +68,8 @@ impl GetDeploymentStrategyOutput {
 }
 
 /// A builder for [`GetDeploymentStrategyOutput`](crate::operation::get_deployment_strategy::GetDeploymentStrategyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeploymentStrategyOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

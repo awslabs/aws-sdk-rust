@@ -18,8 +18,8 @@ impl SetTimeBasedAutoScalingOutput {
 }
 
 /// A builder for [`SetTimeBasedAutoScalingOutput`](crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetTimeBasedAutoScalingOutputBuilder {
     _request_id: Option<String>,
 }

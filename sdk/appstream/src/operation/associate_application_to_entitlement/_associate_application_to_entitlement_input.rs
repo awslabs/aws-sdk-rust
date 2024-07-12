@@ -32,8 +32,8 @@ impl AssociateApplicationToEntitlementInput {
 }
 
 /// A builder for [`AssociateApplicationToEntitlementInput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateApplicationToEntitlementInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) entitlement_name: ::std::option::Option<::std::string::String>,

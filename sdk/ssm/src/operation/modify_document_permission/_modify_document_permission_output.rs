@@ -18,8 +18,8 @@ impl ModifyDocumentPermissionOutput {
 }
 
 /// A builder for [`ModifyDocumentPermissionOutput`](crate::operation::modify_document_permission::ModifyDocumentPermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDocumentPermissionOutputBuilder {
     _request_id: Option<String>,
 }

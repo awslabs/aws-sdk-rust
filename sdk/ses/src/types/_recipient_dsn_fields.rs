@@ -65,8 +65,8 @@ impl RecipientDsnFields {
 }
 
 /// A builder for [`RecipientDsnFields`](crate::types::RecipientDsnFields).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecipientDsnFieldsBuilder {
     pub(crate) final_recipient: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::DsnAction>,

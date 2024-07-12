@@ -45,8 +45,8 @@ impl InlineDocumentEnrichmentConfiguration {
 }
 
 /// A builder for [`InlineDocumentEnrichmentConfiguration`](crate::types::InlineDocumentEnrichmentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InlineDocumentEnrichmentConfigurationBuilder {
     pub(crate) condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     pub(crate) target: ::std::option::Option<crate::types::DocumentAttributeTarget>,

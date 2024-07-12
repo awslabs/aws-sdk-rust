@@ -162,8 +162,8 @@ impl AdminCreateUserInput {
 }
 
 /// A builder for [`AdminCreateUserInput`](crate::operation::admin_create_user::AdminCreateUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminCreateUserInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,

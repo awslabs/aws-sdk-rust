@@ -85,8 +85,8 @@ impl DeploymentConfiguration {
 }
 
 /// A builder for [`DeploymentConfiguration`](crate::types::DeploymentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentConfigurationBuilder {
     pub(crate) deployment_circuit_breaker: ::std::option::Option<crate::types::DeploymentCircuitBreaker>,
     pub(crate) maximum_percent: ::std::option::Option<i32>,

@@ -59,8 +59,8 @@ impl UnsupportedLanguagePairException {
 }
 
 /// A builder for [`UnsupportedLanguagePairException`](crate::types::error::UnsupportedLanguagePairException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnsupportedLanguagePairExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) source_language_code: ::std::option::Option<::std::string::String>,

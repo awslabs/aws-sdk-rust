@@ -28,8 +28,8 @@ impl LicenseServiceConfiguration {
 }
 
 /// A builder for [`LicenseServiceConfiguration`](crate::types::LicenseServiceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LicenseServiceConfigurationBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
 }

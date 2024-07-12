@@ -20,8 +20,8 @@ impl DeleteMaintenanceWindowInput {
 }
 
 /// A builder for [`DeleteMaintenanceWindowInput`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMaintenanceWindowInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
 }

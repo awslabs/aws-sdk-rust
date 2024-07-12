@@ -27,8 +27,8 @@ impl S3Retention {
 }
 
 /// A builder for [`S3Retention`](crate::types::S3Retention).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3RetentionBuilder {
     pub(crate) retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) mode: ::std::option::Option<crate::types::S3ObjectLockRetentionMode>,

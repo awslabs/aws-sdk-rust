@@ -69,8 +69,8 @@ impl PostDialogCodeHookInvocationSpecification {
 }
 
 /// A builder for [`PostDialogCodeHookInvocationSpecification`](crate::types::PostDialogCodeHookInvocationSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostDialogCodeHookInvocationSpecificationBuilder {
     pub(crate) success_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) success_next_step: ::std::option::Option<crate::types::DialogState>,

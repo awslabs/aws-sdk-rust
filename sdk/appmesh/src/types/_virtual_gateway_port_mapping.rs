@@ -27,8 +27,8 @@ impl VirtualGatewayPortMapping {
 }
 
 /// A builder for [`VirtualGatewayPortMapping`](crate::types::VirtualGatewayPortMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualGatewayPortMappingBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<crate::types::VirtualGatewayPortProtocol>,

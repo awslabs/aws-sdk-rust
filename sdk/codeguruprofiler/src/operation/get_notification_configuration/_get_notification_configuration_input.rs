@@ -21,8 +21,8 @@ impl GetNotificationConfigurationInput {
 }
 
 /// A builder for [`GetNotificationConfigurationInput`](crate::operation::get_notification_configuration::GetNotificationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNotificationConfigurationInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl RestoreDomainAccessInput {
 }
 
 /// A builder for [`RestoreDomainAccessInput`](crate::operation::restore_domain_access::RestoreDomainAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreDomainAccessInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

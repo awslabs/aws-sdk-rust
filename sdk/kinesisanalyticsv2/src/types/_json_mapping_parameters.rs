@@ -22,8 +22,8 @@ impl JsonMappingParameters {
 }
 
 /// A builder for [`JsonMappingParameters`](crate::types::JsonMappingParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JsonMappingParametersBuilder {
     pub(crate) record_row_path: ::std::option::Option<::std::string::String>,
 }

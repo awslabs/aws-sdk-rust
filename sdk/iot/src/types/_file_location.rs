@@ -27,8 +27,8 @@ impl FileLocation {
 }
 
 /// A builder for [`FileLocation`](crate::types::FileLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileLocationBuilder {
     pub(crate) stream: ::std::option::Option<crate::types::Stream>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,

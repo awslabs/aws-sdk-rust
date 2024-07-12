@@ -21,8 +21,8 @@ impl TriggerProperties {
 }
 
 /// A builder for [`TriggerProperties`](crate::types::TriggerProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TriggerPropertiesBuilder {
     pub(crate) scheduled: ::std::option::Option<crate::types::ScheduledTriggerProperties>,
 }

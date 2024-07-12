@@ -34,8 +34,8 @@ impl SubmitMultiRegionAccessPointRoutesInput {
 }
 
 /// A builder for [`SubmitMultiRegionAccessPointRoutesInput`](crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubmitMultiRegionAccessPointRoutesInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) mrap: ::std::option::Option<::std::string::String>,

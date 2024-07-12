@@ -20,8 +20,8 @@ impl GetApplicationSettingsInput {
 }
 
 /// A builder for [`GetApplicationSettingsInput`](crate::operation::get_application_settings::GetApplicationSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApplicationSettingsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }

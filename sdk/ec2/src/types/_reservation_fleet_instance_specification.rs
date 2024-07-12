@@ -57,8 +57,8 @@ impl ReservationFleetInstanceSpecification {
 }
 
 /// A builder for [`ReservationFleetInstanceSpecification`](crate::types::ReservationFleetInstanceSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservationFleetInstanceSpecificationBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) instance_platform: ::std::option::Option<crate::types::CapacityReservationInstancePlatform>,

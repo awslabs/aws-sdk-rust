@@ -27,8 +27,8 @@ impl ValueHolder {
 }
 
 /// A builder for [`ValueHolder`](crate::types::ValueHolder).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValueHolderBuilder {
     pub(crate) ion_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) ion_text: ::std::option::Option<::std::string::String>,

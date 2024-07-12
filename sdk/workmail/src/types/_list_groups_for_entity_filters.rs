@@ -21,8 +21,8 @@ impl ListGroupsForEntityFilters {
 }
 
 /// A builder for [`ListGroupsForEntityFilters`](crate::types::ListGroupsForEntityFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupsForEntityFiltersBuilder {
     pub(crate) group_name_prefix: ::std::option::Option<::std::string::String>,
 }

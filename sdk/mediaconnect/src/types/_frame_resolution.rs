@@ -27,8 +27,8 @@ impl FrameResolution {
 }
 
 /// A builder for [`FrameResolution`](crate::types::FrameResolution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FrameResolutionBuilder {
     pub(crate) frame_height: ::std::option::Option<i32>,
     pub(crate) frame_width: ::std::option::Option<i32>,

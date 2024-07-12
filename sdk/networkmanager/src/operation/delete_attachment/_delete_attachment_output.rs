@@ -26,8 +26,8 @@ impl DeleteAttachmentOutput {
 }
 
 /// A builder for [`DeleteAttachmentOutput`](crate::operation::delete_attachment::DeleteAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAttachmentOutputBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,

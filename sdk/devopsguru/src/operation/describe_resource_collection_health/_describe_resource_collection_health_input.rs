@@ -26,8 +26,8 @@ impl DescribeResourceCollectionHealthInput {
 }
 
 /// A builder for [`DescribeResourceCollectionHealthInput`](crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealthInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResourceCollectionHealthInputBuilder {
     pub(crate) resource_collection_type: ::std::option::Option<crate::types::ResourceCollectionType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -102,8 +102,8 @@ impl CreateSlackChannelConfigurationInput {
 }
 
 /// A builder for [`CreateSlackChannelConfigurationInput`](crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSlackChannelConfigurationInputBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,

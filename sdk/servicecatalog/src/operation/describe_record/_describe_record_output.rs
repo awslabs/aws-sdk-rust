@@ -40,8 +40,8 @@ impl DescribeRecordOutput {
 }
 
 /// A builder for [`DescribeRecordOutput`](crate::operation::describe_record::DescribeRecordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRecordOutputBuilder {
     pub(crate) record_detail: ::std::option::Option<crate::types::RecordDetail>,
     pub(crate) record_outputs: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>,

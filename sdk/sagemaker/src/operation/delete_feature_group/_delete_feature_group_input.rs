@@ -20,8 +20,8 @@ impl DeleteFeatureGroupInput {
 }
 
 /// A builder for [`DeleteFeatureGroupInput`](crate::operation::delete_feature_group::DeleteFeatureGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFeatureGroupInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
 }

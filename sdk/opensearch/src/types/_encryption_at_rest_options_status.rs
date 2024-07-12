@@ -27,8 +27,8 @@ impl EncryptionAtRestOptionsStatus {
 }
 
 /// A builder for [`EncryptionAtRestOptionsStatus`](crate::types::EncryptionAtRestOptionsStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionAtRestOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

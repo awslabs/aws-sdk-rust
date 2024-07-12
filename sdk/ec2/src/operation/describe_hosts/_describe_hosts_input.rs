@@ -76,8 +76,8 @@ impl DescribeHostsInput {
 }
 
 /// A builder for [`DescribeHostsInput`](crate::operation::describe_hosts::DescribeHostsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHostsInputBuilder {
     pub(crate) filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

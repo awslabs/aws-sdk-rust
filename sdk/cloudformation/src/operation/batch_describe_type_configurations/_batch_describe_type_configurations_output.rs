@@ -44,8 +44,8 @@ impl BatchDescribeTypeConfigurationsOutput {
 }
 
 /// A builder for [`BatchDescribeTypeConfigurationsOutput`](crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDescribeTypeConfigurationsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDescribeTypeConfigurationsError>>,
     pub(crate) unprocessed_type_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,

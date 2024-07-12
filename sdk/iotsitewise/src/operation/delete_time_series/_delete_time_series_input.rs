@@ -38,8 +38,8 @@ impl DeleteTimeSeriesInput {
 }
 
 /// A builder for [`DeleteTimeSeriesInput`](crate::operation::delete_time_series::DeleteTimeSeriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTimeSeriesInputBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,

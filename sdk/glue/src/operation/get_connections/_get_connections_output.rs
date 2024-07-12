@@ -34,8 +34,8 @@ impl GetConnectionsOutput {
 }
 
 /// A builder for [`GetConnectionsOutput`](crate::operation::get_connections::GetConnectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectionsOutputBuilder {
     pub(crate) connection_list: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

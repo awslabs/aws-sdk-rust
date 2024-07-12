@@ -69,8 +69,8 @@ impl ConfiguredTableAssociationSummary {
 }
 
 /// A builder for [`ConfiguredTableAssociationSummary`](crate::types::ConfiguredTableAssociationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfiguredTableAssociationSummaryBuilder {
     pub(crate) configured_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) membership_id: ::std::option::Option<::std::string::String>,

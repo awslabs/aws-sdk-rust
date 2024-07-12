@@ -12,8 +12,8 @@ impl ColorSpacePassthroughSettings {
 }
 
 /// A builder for [`ColorSpacePassthroughSettings`](crate::types::ColorSpacePassthroughSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColorSpacePassthroughSettingsBuilder {}
 impl ColorSpacePassthroughSettingsBuilder {
     /// Consumes the builder and constructs a [`ColorSpacePassthroughSettings`](crate::types::ColorSpacePassthroughSettings).

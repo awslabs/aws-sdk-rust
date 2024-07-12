@@ -38,8 +38,8 @@ impl CreateKeyGroupOutput {
 }
 
 /// A builder for [`CreateKeyGroupOutput`](crate::operation::create_key_group::CreateKeyGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKeyGroupOutputBuilder {
     pub(crate) key_group: ::std::option::Option<crate::types::KeyGroup>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

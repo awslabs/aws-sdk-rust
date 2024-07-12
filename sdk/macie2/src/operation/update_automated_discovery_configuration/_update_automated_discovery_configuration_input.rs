@@ -30,8 +30,8 @@ impl UpdateAutomatedDiscoveryConfigurationInput {
 }
 
 /// A builder for [`UpdateAutomatedDiscoveryConfigurationInput`](crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAutomatedDiscoveryConfigurationInputBuilder {
     pub(crate) auto_enable_organization_members: ::std::option::Option<crate::types::AutoEnableMode>,
     pub(crate) status: ::std::option::Option<crate::types::AutomatedDiscoveryStatus>,

@@ -27,8 +27,8 @@ impl EfsAuthorizationConfig {
 }
 
 /// A builder for [`EfsAuthorizationConfig`](crate::types::EfsAuthorizationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EfsAuthorizationConfigBuilder {
     pub(crate) access_point_id: ::std::option::Option<::std::string::String>,
     pub(crate) iam: ::std::option::Option<crate::types::EfsAuthorizationConfigIam>,

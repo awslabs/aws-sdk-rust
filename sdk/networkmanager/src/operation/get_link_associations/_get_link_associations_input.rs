@@ -44,8 +44,8 @@ impl GetLinkAssociationsInput {
 }
 
 /// A builder for [`GetLinkAssociationsInput`](crate::operation::get_link_associations::GetLinkAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLinkAssociationsInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,

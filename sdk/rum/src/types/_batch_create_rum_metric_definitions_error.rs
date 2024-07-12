@@ -35,8 +35,8 @@ impl BatchCreateRumMetricDefinitionsError {
 }
 
 /// A builder for [`BatchCreateRumMetricDefinitionsError`](crate::types::BatchCreateRumMetricDefinitionsError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateRumMetricDefinitionsErrorBuilder {
     pub(crate) metric_definition: ::std::option::Option<crate::types::MetricDefinitionRequest>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

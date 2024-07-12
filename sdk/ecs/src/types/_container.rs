@@ -125,8 +125,8 @@ impl Container {
 }
 
 /// A builder for [`Container`](crate::types::Container).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerBuilder {
     pub(crate) container_arn: ::std::option::Option<::std::string::String>,
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,

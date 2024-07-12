@@ -26,8 +26,8 @@ impl GetResolverEndpointOutput {
 }
 
 /// A builder for [`GetResolverEndpointOutput`](crate::operation::get_resolver_endpoint::GetResolverEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResolverEndpointOutputBuilder {
     pub(crate) resolver_endpoint: ::std::option::Option<crate::types::ResolverEndpoint>,
     _request_id: Option<String>,

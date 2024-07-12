@@ -200,8 +200,8 @@ impl DefaultCacheBehavior {
 }
 
 /// A builder for [`DefaultCacheBehavior`](crate::types::DefaultCacheBehavior).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultCacheBehaviorBuilder {
     pub(crate) target_origin_id: ::std::option::Option<::std::string::String>,
     pub(crate) trusted_signers: ::std::option::Option<crate::types::TrustedSigners>,

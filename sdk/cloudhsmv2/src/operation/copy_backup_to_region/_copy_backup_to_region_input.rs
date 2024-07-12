@@ -34,8 +34,8 @@ impl CopyBackupToRegionInput {
 }
 
 /// A builder for [`CopyBackupToRegionInput`](crate::operation::copy_backup_to_region::CopyBackupToRegionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyBackupToRegionInputBuilder {
     pub(crate) destination_region: ::std::option::Option<::std::string::String>,
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,

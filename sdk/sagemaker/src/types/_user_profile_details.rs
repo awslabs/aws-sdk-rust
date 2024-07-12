@@ -45,8 +45,8 @@ impl UserProfileDetails {
 }
 
 /// A builder for [`UserProfileDetails`](crate::types::UserProfileDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserProfileDetailsBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl DeleteProfileShareInput {
 }
 
 /// A builder for [`DeleteProfileShareInput`](crate::operation::delete_profile_share::DeleteProfileShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProfileShareInputBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,

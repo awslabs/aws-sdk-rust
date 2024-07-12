@@ -20,8 +20,8 @@ impl DescribeListenerInput {
 }
 
 /// A builder for [`DescribeListenerInput`](crate::operation::describe_listener::DescribeListenerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
 }

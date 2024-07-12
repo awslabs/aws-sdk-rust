@@ -36,8 +36,8 @@ impl GetColumnStatisticsForTableOutput {
 }
 
 /// A builder for [`GetColumnStatisticsForTableOutput`](crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetColumnStatisticsForTableOutputBuilder {
     pub(crate) column_statistics_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ColumnError>>,

@@ -22,8 +22,8 @@ impl DescribeClientPropertiesInput {
 }
 
 /// A builder for [`DescribeClientPropertiesInput`](crate::operation::describe_client_properties::DescribeClientPropertiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClientPropertiesInputBuilder {
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

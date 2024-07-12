@@ -52,8 +52,8 @@ impl ListPhoneNumbersInput {
 }
 
 /// A builder for [`ListPhoneNumbersInput`](crate::operation::list_phone_numbers::ListPhoneNumbersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPhoneNumbersInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,

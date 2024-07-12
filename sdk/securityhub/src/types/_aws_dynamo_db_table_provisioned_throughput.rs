@@ -97,8 +97,8 @@ impl AwsDynamoDbTableProvisionedThroughput {
 }
 
 /// A builder for [`AwsDynamoDbTableProvisionedThroughput`](crate::types::AwsDynamoDbTableProvisionedThroughput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDynamoDbTableProvisionedThroughputBuilder {
     pub(crate) last_decrease_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) last_increase_date_time: ::std::option::Option<::std::string::String>,

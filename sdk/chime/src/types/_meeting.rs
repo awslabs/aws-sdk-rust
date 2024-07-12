@@ -49,8 +49,8 @@ impl Meeting {
 }
 
 /// A builder for [`Meeting`](crate::types::Meeting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MeetingBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) external_meeting_id: ::std::option::Option<::std::string::String>,

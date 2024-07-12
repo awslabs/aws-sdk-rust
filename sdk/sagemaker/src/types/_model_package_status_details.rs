@@ -31,8 +31,8 @@ impl ModelPackageStatusDetails {
 }
 
 /// A builder for [`ModelPackageStatusDetails`](crate::types::ModelPackageStatusDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelPackageStatusDetailsBuilder {
     pub(crate) validation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
     pub(crate) image_scan_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,

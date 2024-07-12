@@ -39,8 +39,8 @@ impl FormCta {
 }
 
 /// A builder for [`FormCta`](crate::types::FormCta).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FormCtaBuilder {
     pub(crate) position: ::std::option::Option<crate::types::FormButtonsPosition>,
     pub(crate) clear: ::std::option::Option<crate::types::FormButton>,

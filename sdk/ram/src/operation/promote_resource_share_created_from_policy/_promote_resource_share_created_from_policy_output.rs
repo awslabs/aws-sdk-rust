@@ -26,8 +26,8 @@ impl PromoteResourceShareCreatedFromPolicyOutput {
 }
 
 /// A builder for [`PromoteResourceShareCreatedFromPolicyOutput`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromoteResourceShareCreatedFromPolicyOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,

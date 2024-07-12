@@ -27,8 +27,8 @@ impl FargateProfileSelector {
 }
 
 /// A builder for [`FargateProfileSelector`](crate::types::FargateProfileSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FargateProfileSelectorBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

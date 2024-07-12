@@ -26,8 +26,8 @@ impl UpdateApplicationResourceLifecycleInput {
 }
 
 /// A builder for [`UpdateApplicationResourceLifecycleInput`](crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApplicationResourceLifecycleInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_lifecycle_config: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,

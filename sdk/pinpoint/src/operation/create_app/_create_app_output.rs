@@ -26,8 +26,8 @@ impl CreateAppOutput {
 }
 
 /// A builder for [`CreateAppOutput`](crate::operation::create_app::CreateAppOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAppOutputBuilder {
     pub(crate) application_response: ::std::option::Option<crate::types::ApplicationResponse>,
     _request_id: Option<String>,

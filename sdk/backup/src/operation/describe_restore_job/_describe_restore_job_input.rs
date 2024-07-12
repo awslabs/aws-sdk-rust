@@ -20,8 +20,8 @@ impl DescribeRestoreJobInput {
 }
 
 /// A builder for [`DescribeRestoreJobInput`](crate::operation::describe_restore_job::DescribeRestoreJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRestoreJobInputBuilder {
     pub(crate) restore_job_id: ::std::option::Option<::std::string::String>,
 }

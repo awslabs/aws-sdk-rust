@@ -174,8 +174,8 @@ impl CreateAutoPredictorInput {
 }
 
 /// A builder for [`CreateAutoPredictorInput`](crate::operation::create_auto_predictor::CreateAutoPredictorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAutoPredictorInputBuilder {
     pub(crate) predictor_name: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_horizon: ::std::option::Option<i32>,

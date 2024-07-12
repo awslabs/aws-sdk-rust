@@ -26,8 +26,8 @@ impl StartMisconfiguredStateRecoveryOutput {
 }
 
 /// A builder for [`StartMisconfiguredStateRecoveryOutput`](crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMisconfiguredStateRecoveryOutputBuilder {
     pub(crate) file_system: ::std::option::Option<crate::types::FileSystem>,
     _request_id: Option<String>,

@@ -52,8 +52,8 @@ impl DescribeMaintenanceWindowExecutionsInput {
 }
 
 /// A builder for [`DescribeMaintenanceWindowExecutionsInput`](crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMaintenanceWindowExecutionsInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,

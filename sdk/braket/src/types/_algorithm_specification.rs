@@ -27,8 +27,8 @@ impl AlgorithmSpecification {
 }
 
 /// A builder for [`AlgorithmSpecification`](crate::types::AlgorithmSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlgorithmSpecificationBuilder {
     pub(crate) script_mode_config: ::std::option::Option<crate::types::ScriptModeConfig>,
     pub(crate) container_image: ::std::option::Option<crate::types::ContainerImage>,

@@ -118,8 +118,8 @@ impl UpdateStackInstancesInput {
 }
 
 /// A builder for [`UpdateStackInstancesInput`](crate::operation::update_stack_instances::UpdateStackInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStackInstancesInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

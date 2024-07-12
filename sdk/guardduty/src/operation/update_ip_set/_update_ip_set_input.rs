@@ -44,8 +44,8 @@ impl UpdateIpSetInput {
 }
 
 /// A builder for [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIpSetInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_set_id: ::std::option::Option<::std::string::String>,

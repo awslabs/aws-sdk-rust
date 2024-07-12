@@ -21,8 +21,8 @@ impl Ipv6CidrBlock {
 }
 
 /// A builder for [`Ipv6CidrBlock`](crate::types::Ipv6CidrBlock).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ipv6CidrBlockBuilder {
     pub(crate) ipv6_cidr_block: ::std::option::Option<::std::string::String>,
 }

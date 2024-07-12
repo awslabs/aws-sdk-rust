@@ -79,8 +79,8 @@ impl CodeConfigurationValues {
 }
 
 /// A builder for [`CodeConfigurationValues`](crate::types::CodeConfigurationValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CodeConfigurationValuesBuilder {
     pub(crate) runtime: ::std::option::Option<crate::types::Runtime>,
     pub(crate) build_command: ::std::option::Option<::std::string::String>,

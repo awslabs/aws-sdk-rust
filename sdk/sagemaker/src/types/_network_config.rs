@@ -33,8 +33,8 @@ impl NetworkConfig {
 }
 
 /// A builder for [`NetworkConfig`](crate::types::NetworkConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkConfigBuilder {
     pub(crate) enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     pub(crate) enable_network_isolation: ::std::option::Option<bool>,

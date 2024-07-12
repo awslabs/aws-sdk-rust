@@ -46,8 +46,8 @@ impl CreateMedicalVocabularyInput {
 }
 
 /// A builder for [`CreateMedicalVocabularyInput`](crate::operation::create_medical_vocabulary::CreateMedicalVocabularyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMedicalVocabularyInputBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

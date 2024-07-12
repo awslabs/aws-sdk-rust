@@ -24,8 +24,8 @@ impl ModelSettings {
 }
 
 /// A builder for [`ModelSettings`](crate::types::ModelSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelSettingsBuilder {
     pub(crate) language_model_name: ::std::option::Option<::std::string::String>,
 }

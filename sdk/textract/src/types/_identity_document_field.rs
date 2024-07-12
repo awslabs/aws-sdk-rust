@@ -27,8 +27,8 @@ impl IdentityDocumentField {
 }
 
 /// A builder for [`IdentityDocumentField`](crate::types::IdentityDocumentField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityDocumentFieldBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AnalyzeIdDetections>,
     pub(crate) value_detection: ::std::option::Option<crate::types::AnalyzeIdDetections>,

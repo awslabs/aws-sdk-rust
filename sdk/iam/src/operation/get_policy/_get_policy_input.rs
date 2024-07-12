@@ -22,8 +22,8 @@ impl GetPolicyInput {
 }
 
 /// A builder for [`GetPolicyInput`](crate::operation::get_policy::GetPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPolicyInputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
 }

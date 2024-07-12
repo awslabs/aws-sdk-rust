@@ -39,8 +39,8 @@ impl Cell {
 }
 
 /// A builder for [`Cell`](crate::types::Cell).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CellBuilder {
     pub(crate) cell_reference: ::std::option::Option<::std::string::String>,
     pub(crate) column: ::std::option::Option<i64>,

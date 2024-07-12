@@ -54,8 +54,8 @@ impl ModifyRedshiftIdcApplicationInput {
 }
 
 /// A builder for [`ModifyRedshiftIdcApplicationInput`](crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyRedshiftIdcApplicationInputBuilder {
     pub(crate) redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) identity_namespace: ::std::option::Option<::std::string::String>,

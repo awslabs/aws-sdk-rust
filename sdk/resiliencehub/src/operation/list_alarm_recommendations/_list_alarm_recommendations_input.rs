@@ -32,8 +32,8 @@ impl ListAlarmRecommendationsInput {
 }
 
 /// A builder for [`ListAlarmRecommendationsInput`](crate::operation::list_alarm_recommendations::ListAlarmRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAlarmRecommendationsInputBuilder {
     pub(crate) assessment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

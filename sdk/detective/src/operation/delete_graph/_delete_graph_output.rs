@@ -18,8 +18,8 @@ impl DeleteGraphOutput {
 }
 
 /// A builder for [`DeleteGraphOutput`](crate::operation::delete_graph::DeleteGraphOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGraphOutputBuilder {
     _request_id: Option<String>,
 }

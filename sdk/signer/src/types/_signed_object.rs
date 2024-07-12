@@ -21,8 +21,8 @@ impl SignedObject {
 }
 
 /// A builder for [`SignedObject`](crate::types::SignedObject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignedObjectBuilder {
     pub(crate) s3: ::std::option::Option<crate::types::S3SignedObject>,
 }

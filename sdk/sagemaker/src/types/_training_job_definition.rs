@@ -73,8 +73,8 @@ impl TrainingJobDefinition {
 }
 
 /// A builder for [`TrainingJobDefinition`](crate::types::TrainingJobDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingJobDefinitionBuilder {
     pub(crate) training_input_mode: ::std::option::Option<crate::types::TrainingInputMode>,
     pub(crate) hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

@@ -20,8 +20,8 @@ impl InferRxNormInput {
 }
 
 /// A builder for [`InferRxNormInput`](crate::operation::infer_rx_norm::InferRxNormInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferRxNormInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

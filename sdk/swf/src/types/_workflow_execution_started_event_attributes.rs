@@ -111,8 +111,8 @@ impl WorkflowExecutionStartedEventAttributes {
 }
 
 /// A builder for [`WorkflowExecutionStartedEventAttributes`](crate::types::WorkflowExecutionStartedEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowExecutionStartedEventAttributesBuilder {
     pub(crate) input: ::std::option::Option<::std::string::String>,
     pub(crate) execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,

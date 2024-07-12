@@ -35,8 +35,8 @@ impl GetUsagePlansOutput {
 }
 
 /// A builder for [`GetUsagePlansOutput`](crate::operation::get_usage_plans::GetUsagePlansOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsagePlansOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::UsagePlan>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,

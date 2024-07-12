@@ -27,8 +27,8 @@ impl GuardrailContextualGroundingFilter {
 }
 
 /// A builder for [`GuardrailContextualGroundingFilter`](crate::types::GuardrailContextualGroundingFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailContextualGroundingFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailContextualGroundingFilterType>,
     pub(crate) threshold: ::std::option::Option<f64>,

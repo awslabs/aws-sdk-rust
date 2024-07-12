@@ -34,8 +34,8 @@ impl ListFacetAttributesOutput {
 }
 
 /// A builder for [`ListFacetAttributesOutput`](crate::operation::list_facet_attributes::ListFacetAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFacetAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

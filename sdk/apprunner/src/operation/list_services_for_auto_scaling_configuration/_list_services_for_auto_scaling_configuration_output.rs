@@ -34,8 +34,8 @@ impl ListServicesForAutoScalingConfigurationOutput {
 }
 
 /// A builder for [`ListServicesForAutoScalingConfigurationOutput`](crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServicesForAutoScalingConfigurationOutputBuilder {
     pub(crate) service_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

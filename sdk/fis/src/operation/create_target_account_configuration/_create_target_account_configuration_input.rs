@@ -44,8 +44,8 @@ impl CreateTargetAccountConfigurationInput {
 }
 
 /// A builder for [`CreateTargetAccountConfigurationInput`](crate::operation::create_target_account_configuration::CreateTargetAccountConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTargetAccountConfigurationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) experiment_template_id: ::std::option::Option<::std::string::String>,

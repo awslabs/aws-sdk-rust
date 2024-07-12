@@ -176,8 +176,8 @@ impl UpdateEventSourceMappingInput {
 }
 
 /// A builder for [`UpdateEventSourceMappingInput`](crate::operation::update_event_source_mapping::UpdateEventSourceMappingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventSourceMappingInputBuilder {
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,

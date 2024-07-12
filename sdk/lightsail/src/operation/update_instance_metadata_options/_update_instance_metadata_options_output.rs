@@ -26,8 +26,8 @@ impl UpdateInstanceMetadataOptionsOutput {
 }
 
 /// A builder for [`UpdateInstanceMetadataOptionsOutput`](crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInstanceMetadataOptionsOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,

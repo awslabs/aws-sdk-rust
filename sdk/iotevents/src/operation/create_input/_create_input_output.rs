@@ -26,8 +26,8 @@ impl CreateInputOutput {
 }
 
 /// A builder for [`CreateInputOutput`](crate::operation::create_input::CreateInputOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInputOutputBuilder {
     pub(crate) input_configuration: ::std::option::Option<crate::types::InputConfiguration>,
     _request_id: Option<String>,

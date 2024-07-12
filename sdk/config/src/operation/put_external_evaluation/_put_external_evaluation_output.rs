@@ -18,8 +18,8 @@ impl PutExternalEvaluationOutput {
 }
 
 /// A builder for [`PutExternalEvaluationOutput`](crate::operation::put_external_evaluation::PutExternalEvaluationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutExternalEvaluationOutputBuilder {
     _request_id: Option<String>,
 }

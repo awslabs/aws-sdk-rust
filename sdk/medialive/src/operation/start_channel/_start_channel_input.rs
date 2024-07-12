@@ -21,8 +21,8 @@ impl StartChannelInput {
 }
 
 /// A builder for [`StartChannelInput`](crate::operation::start_channel::StartChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartChannelInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
 }

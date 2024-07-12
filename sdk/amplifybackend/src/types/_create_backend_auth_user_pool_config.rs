@@ -65,8 +65,8 @@ impl CreateBackendAuthUserPoolConfig {
 }
 
 /// A builder for [`CreateBackendAuthUserPoolConfig`](crate::types::CreateBackendAuthUserPoolConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBackendAuthUserPoolConfigBuilder {
     pub(crate) forgot_password: ::std::option::Option<crate::types::CreateBackendAuthForgotPasswordConfig>,
     pub(crate) mfa: ::std::option::Option<crate::types::CreateBackendAuthMfaConfig>,

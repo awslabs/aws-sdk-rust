@@ -26,8 +26,8 @@ impl DeleteFlowAliasInput {
 }
 
 /// A builder for [`DeleteFlowAliasInput`](crate::operation::delete_flow_alias::DeleteFlowAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFlowAliasInputBuilder {
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) alias_identifier: ::std::option::Option<::std::string::String>,

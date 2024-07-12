@@ -95,8 +95,8 @@ impl DataSourceRunActivity {
 }
 
 /// A builder for [`DataSourceRunActivity`](crate::types::DataSourceRunActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DataSourceRunActivityBuilder {
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_run_id: ::std::option::Option<::std::string::String>,

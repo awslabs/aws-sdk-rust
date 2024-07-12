@@ -20,8 +20,8 @@ impl DeleteAppBlockInput {
 }
 
 /// A builder for [`DeleteAppBlockInput`](crate::operation::delete_app_block::DeleteAppBlockInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppBlockInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

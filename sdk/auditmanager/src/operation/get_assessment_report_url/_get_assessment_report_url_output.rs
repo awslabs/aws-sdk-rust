@@ -26,8 +26,8 @@ impl GetAssessmentReportUrlOutput {
 }
 
 /// A builder for [`GetAssessmentReportUrlOutput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssessmentReportUrlOutputBuilder {
     pub(crate) pre_signed_url: ::std::option::Option<crate::types::Url>,
     _request_id: Option<String>,

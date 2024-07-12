@@ -26,8 +26,8 @@ impl ResetFpgaImageAttributeOutput {
 }
 
 /// A builder for [`ResetFpgaImageAttributeOutput`](crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetFpgaImageAttributeOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

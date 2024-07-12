@@ -61,8 +61,8 @@ impl MediaLiveConnectorPipeline {
 }
 
 /// A builder for [`MediaLiveConnectorPipeline`](crate::types::MediaLiveConnectorPipeline).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaLiveConnectorPipelineBuilder {
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>,
     pub(crate) sinks: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>,

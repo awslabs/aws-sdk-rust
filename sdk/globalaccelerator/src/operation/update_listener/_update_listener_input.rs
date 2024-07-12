@@ -46,8 +46,8 @@ impl UpdateListenerInput {
 }
 
 /// A builder for [`UpdateListenerInput`](crate::operation::update_listener::UpdateListenerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,

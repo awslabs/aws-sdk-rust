@@ -46,8 +46,8 @@ impl AwsGroundStationAgentEndpoint {
 }
 
 /// A builder for [`AwsGroundStationAgentEndpoint`](crate::types::AwsGroundStationAgentEndpoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsGroundStationAgentEndpointBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) egress_address: ::std::option::Option<crate::types::ConnectionDetails>,

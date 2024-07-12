@@ -36,8 +36,8 @@ impl CheckNoPublicAccessInput {
 }
 
 /// A builder for [`CheckNoPublicAccessInput`](crate::operation::check_no_public_access::CheckNoPublicAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CheckNoPublicAccessInputBuilder {
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::AccessCheckResourceType>,

@@ -39,8 +39,8 @@ impl AutoshiftInResource {
 }
 
 /// A builder for [`AutoshiftInResource`](crate::types::AutoshiftInResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoshiftInResourceBuilder {
     pub(crate) applied_status: ::std::option::Option<crate::types::AutoshiftAppliedStatus>,
     pub(crate) away_from: ::std::option::Option<::std::string::String>,

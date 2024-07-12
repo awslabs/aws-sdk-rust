@@ -65,8 +65,8 @@ impl LegendOptions {
 }
 
 /// A builder for [`LegendOptions`](crate::types::LegendOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LegendOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) title: ::std::option::Option<crate::types::LabelOptions>,

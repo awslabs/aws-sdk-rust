@@ -33,8 +33,8 @@ impl GroundStationData {
 }
 
 /// A builder for [`GroundStationData`](crate::types::GroundStationData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GroundStationDataBuilder {
     pub(crate) ground_station_id: ::std::option::Option<::std::string::String>,
     pub(crate) ground_station_name: ::std::option::Option<::std::string::String>,

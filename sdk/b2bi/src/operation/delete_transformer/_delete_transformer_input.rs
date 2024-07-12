@@ -20,8 +20,8 @@ impl DeleteTransformerInput {
 }
 
 /// A builder for [`DeleteTransformerInput`](crate::operation::delete_transformer::DeleteTransformerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTransformerInputBuilder {
     pub(crate) transformer_id: ::std::option::Option<::std::string::String>,
 }

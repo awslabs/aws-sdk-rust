@@ -32,8 +32,8 @@ impl UpdatePullRequestApprovalStateInput {
 }
 
 /// A builder for [`UpdatePullRequestApprovalStateInput`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePullRequestApprovalStateInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl DetectProfileObjectTypeOutput {
 }
 
 /// A builder for [`DetectProfileObjectTypeOutput`](crate::operation::detect_profile_object_type::DetectProfileObjectTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectProfileObjectTypeOutputBuilder {
     pub(crate) detected_profile_object_types: ::std::option::Option<::std::vec::Vec<crate::types::DetectedProfileObjectType>>,
     _request_id: Option<String>,

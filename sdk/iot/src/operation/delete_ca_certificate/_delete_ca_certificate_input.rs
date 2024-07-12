@@ -21,8 +21,8 @@ impl DeleteCaCertificateInput {
 }
 
 /// A builder for [`DeleteCaCertificateInput`](crate::operation::delete_ca_certificate::DeleteCaCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCaCertificateInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
 }

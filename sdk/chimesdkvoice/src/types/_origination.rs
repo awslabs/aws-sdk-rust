@@ -31,8 +31,8 @@ impl Origination {
 }
 
 /// A builder for [`Origination`](crate::types::Origination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginationBuilder {
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::OriginationRoute>>,
     pub(crate) disabled: ::std::option::Option<bool>,

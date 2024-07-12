@@ -33,8 +33,8 @@ impl DeleteAgentOutput {
 }
 
 /// A builder for [`DeleteAgentOutput`](crate::operation::delete_agent::DeleteAgentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAgentOutputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_status: ::std::option::Option<crate::types::AgentStatus>,

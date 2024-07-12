@@ -44,8 +44,8 @@ impl ListExtensionAssociationsInput {
 }
 
 /// A builder for [`ListExtensionAssociationsInput`](crate::operation::list_extension_associations::ListExtensionAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExtensionAssociationsInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) extension_identifier: ::std::option::Option<::std::string::String>,

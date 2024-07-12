@@ -42,8 +42,8 @@ impl CreateComponentVersionInput {
 }
 
 /// A builder for [`CreateComponentVersionInput`](crate::operation::create_component_version::CreateComponentVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateComponentVersionInputBuilder {
     pub(crate) inline_recipe: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) lambda_function: ::std::option::Option<crate::types::LambdaFunctionRecipeSource>,

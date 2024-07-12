@@ -26,8 +26,8 @@ impl DescribeNodeAssociationStatusInput {
 }
 
 /// A builder for [`DescribeNodeAssociationStatusInput`](crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNodeAssociationStatusInputBuilder {
     pub(crate) node_association_status_token: ::std::option::Option<::std::string::String>,
     pub(crate) server_name: ::std::option::Option<::std::string::String>,

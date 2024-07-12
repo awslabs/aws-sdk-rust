@@ -27,8 +27,8 @@ impl Result {
 }
 
 /// A builder for [`Result`](crate::types::Result).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResultBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) processing_result: ::std::option::Option<::std::string::String>,

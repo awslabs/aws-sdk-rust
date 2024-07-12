@@ -30,8 +30,8 @@ impl PutDeliverabilityDashboardOptionInput {
 }
 
 /// A builder for [`PutDeliverabilityDashboardOptionInput`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDeliverabilityDashboardOptionInputBuilder {
     pub(crate) dashboard_enabled: ::std::option::Option<bool>,
     pub(crate) subscribed_domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>,

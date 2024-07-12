@@ -34,8 +34,8 @@ impl ListThirdPartyFirewallFirewallPoliciesOutput {
 }
 
 /// A builder for [`ListThirdPartyFirewallFirewallPoliciesOutput`](crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListThirdPartyFirewallFirewallPoliciesOutputBuilder {
     pub(crate) third_party_firewall_firewall_policies: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyFirewallFirewallPolicy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

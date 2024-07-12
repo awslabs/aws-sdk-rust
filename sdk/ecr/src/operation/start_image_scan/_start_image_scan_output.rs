@@ -44,8 +44,8 @@ impl StartImageScanOutput {
 }
 
 /// A builder for [`StartImageScanOutput`](crate::operation::start_image_scan::StartImageScanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartImageScanOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

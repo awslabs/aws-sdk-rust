@@ -36,8 +36,8 @@ impl DescribeWorkspaceSnapshotsOutput {
 }
 
 /// A builder for [`DescribeWorkspaceSnapshotsOutput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceSnapshotsOutputBuilder {
     pub(crate) rebuild_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
     pub(crate) restore_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,

@@ -27,8 +27,8 @@ impl IdentityVerificationAttributes {
 }
 
 /// A builder for [`IdentityVerificationAttributes`](crate::types::IdentityVerificationAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityVerificationAttributesBuilder {
     pub(crate) verification_status: ::std::option::Option<crate::types::VerificationStatus>,
     pub(crate) verification_token: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteAlgorithmInput {
 }
 
 /// A builder for [`DeleteAlgorithmInput`](crate::operation::delete_algorithm::DeleteAlgorithmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAlgorithmInputBuilder {
     pub(crate) algorithm_name: ::std::option::Option<::std::string::String>,
 }

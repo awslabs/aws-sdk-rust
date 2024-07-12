@@ -46,8 +46,8 @@ impl CreateVolumeFromBackupInput {
 }
 
 /// A builder for [`CreateVolumeFromBackupInput`](crate::operation::create_volume_from_backup::CreateVolumeFromBackupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVolumeFromBackupInputBuilder {
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

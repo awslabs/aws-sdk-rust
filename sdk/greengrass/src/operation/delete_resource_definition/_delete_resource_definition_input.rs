@@ -20,8 +20,8 @@ impl DeleteResourceDefinitionInput {
 }
 
 /// A builder for [`DeleteResourceDefinitionInput`](crate::operation::delete_resource_definition::DeleteResourceDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResourceDefinitionInputBuilder {
     pub(crate) resource_definition_id: ::std::option::Option<::std::string::String>,
 }

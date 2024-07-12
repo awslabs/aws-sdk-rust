@@ -27,8 +27,8 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetailsBuilder {
     pub(crate) primary: ::std::option::Option<bool>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,

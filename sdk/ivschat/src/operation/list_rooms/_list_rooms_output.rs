@@ -33,8 +33,8 @@ impl ListRoomsOutput {
 }
 
 /// A builder for [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRoomsOutputBuilder {
     pub(crate) rooms: ::std::option::Option<::std::vec::Vec<crate::types::RoomSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

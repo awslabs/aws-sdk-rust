@@ -28,8 +28,8 @@ impl ModifyInstanceCapacityReservationAttributesOutput {
 }
 
 /// A builder for [`ModifyInstanceCapacityReservationAttributesOutput`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstanceCapacityReservationAttributesOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

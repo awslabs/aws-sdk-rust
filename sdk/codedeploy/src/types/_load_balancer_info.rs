@@ -56,8 +56,8 @@ impl LoadBalancerInfo {
 }
 
 /// A builder for [`LoadBalancerInfo`](crate::types::LoadBalancerInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoadBalancerInfoBuilder {
     pub(crate) elb_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ElbInfo>>,
     pub(crate) target_group_info_list: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>>,

@@ -55,8 +55,8 @@ impl EventSelector {
 }
 
 /// A builder for [`EventSelector`](crate::types::EventSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventSelectorBuilder {
     pub(crate) read_write_type: ::std::option::Option<crate::types::ReadWriteType>,
     pub(crate) include_management_events: ::std::option::Option<bool>,

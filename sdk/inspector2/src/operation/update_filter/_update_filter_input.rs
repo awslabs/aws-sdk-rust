@@ -50,8 +50,8 @@ impl UpdateFilterInput {
 }
 
 /// A builder for [`UpdateFilterInput`](crate::operation::update_filter::UpdateFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFilterInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::FilterAction>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

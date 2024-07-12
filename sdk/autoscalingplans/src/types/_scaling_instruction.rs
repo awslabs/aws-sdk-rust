@@ -205,8 +205,8 @@ impl ScalingInstruction {
 }
 
 /// A builder for [`ScalingInstruction`](crate::types::ScalingInstruction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScalingInstructionBuilder {
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

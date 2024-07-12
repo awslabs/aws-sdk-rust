@@ -26,8 +26,8 @@ impl GetClusterSessionCredentialsInput {
 }
 
 /// A builder for [`GetClusterSessionCredentialsInput`](crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClusterSessionCredentialsInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,

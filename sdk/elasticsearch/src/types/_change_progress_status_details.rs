@@ -81,8 +81,8 @@ impl ChangeProgressStatusDetails {
 }
 
 /// A builder for [`ChangeProgressStatusDetails`](crate::types::ChangeProgressStatusDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeProgressStatusDetailsBuilder {
     pub(crate) change_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

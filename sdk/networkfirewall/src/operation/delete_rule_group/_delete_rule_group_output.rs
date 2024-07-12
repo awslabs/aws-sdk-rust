@@ -26,8 +26,8 @@ impl DeleteRuleGroupOutput {
 }
 
 /// A builder for [`DeleteRuleGroupOutput`](crate::operation::delete_rule_group::DeleteRuleGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRuleGroupOutputBuilder {
     pub(crate) rule_group_response: ::std::option::Option<crate::types::RuleGroupResponse>,
     _request_id: Option<String>,

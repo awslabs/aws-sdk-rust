@@ -45,8 +45,8 @@ impl MovSettings {
 }
 
 /// A builder for [`MovSettings`](crate::types::MovSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MovSettingsBuilder {
     pub(crate) clap_atom: ::std::option::Option<crate::types::MovClapAtom>,
     pub(crate) cslg_atom: ::std::option::Option<crate::types::MovCslgAtom>,

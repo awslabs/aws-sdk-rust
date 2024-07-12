@@ -18,8 +18,8 @@ impl PutRestoreValidationResultOutput {
 }
 
 /// A builder for [`PutRestoreValidationResultOutput`](crate::operation::put_restore_validation_result::PutRestoreValidationResultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRestoreValidationResultOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl GetAccessKeyInfoOutput {
 }
 
 /// A builder for [`GetAccessKeyInfoOutput`](crate::operation::get_access_key_info::GetAccessKeyInfoOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessKeyInfoOutputBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

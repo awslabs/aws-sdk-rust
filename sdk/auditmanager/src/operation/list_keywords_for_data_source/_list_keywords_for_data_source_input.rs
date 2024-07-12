@@ -32,8 +32,8 @@ impl ListKeywordsForDataSourceInput {
 }
 
 /// A builder for [`ListKeywordsForDataSourceInput`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKeywordsForDataSourceInputBuilder {
     pub(crate) source: ::std::option::Option<crate::types::DataSourceType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

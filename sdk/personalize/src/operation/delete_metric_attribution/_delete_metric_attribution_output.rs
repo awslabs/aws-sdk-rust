@@ -18,8 +18,8 @@ impl DeleteMetricAttributionOutput {
 }
 
 /// A builder for [`DeleteMetricAttributionOutput`](crate::operation::delete_metric_attribution::DeleteMetricAttributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMetricAttributionOutputBuilder {
     _request_id: Option<String>,
 }

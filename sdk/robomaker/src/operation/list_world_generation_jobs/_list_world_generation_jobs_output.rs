@@ -33,8 +33,8 @@ impl ListWorldGenerationJobsOutput {
 }
 
 /// A builder for [`ListWorldGenerationJobsOutput`](crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorldGenerationJobsOutputBuilder {
     pub(crate) world_generation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorldGenerationJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

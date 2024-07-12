@@ -86,8 +86,8 @@ impl CreateNetworkProfileInput {
 }
 
 /// A builder for [`CreateNetworkProfileInput`](crate::operation::create_network_profile::CreateNetworkProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkProfileInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

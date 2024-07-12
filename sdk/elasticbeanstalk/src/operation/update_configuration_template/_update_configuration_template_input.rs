@@ -55,8 +55,8 @@ impl UpdateConfigurationTemplateInput {
 }
 
 /// A builder for [`UpdateConfigurationTemplateInput`](crate::operation::update_configuration_template::UpdateConfigurationTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfigurationTemplateInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl AddThingToBillingGroupOutput {
 }
 
 /// A builder for [`AddThingToBillingGroupOutput`](crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddThingToBillingGroupOutputBuilder {
     _request_id: Option<String>,
 }

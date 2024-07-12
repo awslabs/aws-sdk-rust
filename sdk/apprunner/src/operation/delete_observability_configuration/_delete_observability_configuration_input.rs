@@ -22,8 +22,8 @@ impl DeleteObservabilityConfigurationInput {
 }
 
 /// A builder for [`DeleteObservabilityConfigurationInput`](crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteObservabilityConfigurationInputBuilder {
     pub(crate) observability_configuration_arn: ::std::option::Option<::std::string::String>,
 }

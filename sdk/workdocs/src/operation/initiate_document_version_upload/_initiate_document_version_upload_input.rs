@@ -76,8 +76,8 @@ impl InitiateDocumentVersionUploadInput {
 }
 
 /// A builder for [`InitiateDocumentVersionUploadInput`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InitiateDocumentVersionUploadInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

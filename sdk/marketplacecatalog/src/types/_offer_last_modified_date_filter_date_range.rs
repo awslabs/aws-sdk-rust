@@ -27,8 +27,8 @@ impl OfferLastModifiedDateFilterDateRange {
 }
 
 /// A builder for [`OfferLastModifiedDateFilterDateRange`](crate::types::OfferLastModifiedDateFilterDateRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OfferLastModifiedDateFilterDateRangeBuilder {
     pub(crate) after_value: ::std::option::Option<::std::string::String>,
     pub(crate) before_value: ::std::option::Option<::std::string::String>,

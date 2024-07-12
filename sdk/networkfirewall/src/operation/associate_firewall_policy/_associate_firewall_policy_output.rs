@@ -48,8 +48,8 @@ impl AssociateFirewallPolicyOutput {
 }
 
 /// A builder for [`AssociateFirewallPolicyOutput`](crate::operation::associate_firewall_policy::AssociateFirewallPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateFirewallPolicyOutputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,

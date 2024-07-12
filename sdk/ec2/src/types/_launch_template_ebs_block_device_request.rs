@@ -111,8 +111,8 @@ impl LaunchTemplateEbsBlockDeviceRequest {
 }
 
 /// A builder for [`LaunchTemplateEbsBlockDeviceRequest`](crate::types::LaunchTemplateEbsBlockDeviceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateEbsBlockDeviceRequestBuilder {
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,

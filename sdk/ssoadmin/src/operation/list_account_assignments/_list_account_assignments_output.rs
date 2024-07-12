@@ -34,8 +34,8 @@ impl ListAccountAssignmentsOutput {
 }
 
 /// A builder for [`ListAccountAssignmentsOutput`](crate::operation::list_account_assignments::ListAccountAssignmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountAssignmentsOutputBuilder {
     pub(crate) account_assignments: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

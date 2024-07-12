@@ -43,8 +43,8 @@ impl CreatePlayerSessionsInput {
 }
 
 /// A builder for [`CreatePlayerSessionsInput`](crate::operation::create_player_sessions::CreatePlayerSessionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreatePlayerSessionsInputBuilder {
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

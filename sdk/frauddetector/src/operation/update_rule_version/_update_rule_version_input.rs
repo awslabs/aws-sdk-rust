@@ -66,8 +66,8 @@ impl UpdateRuleVersionInput {
 }
 
 /// A builder for [`UpdateRuleVersionInput`](crate::operation::update_rule_version::UpdateRuleVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateRuleVersionInputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::Rule>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

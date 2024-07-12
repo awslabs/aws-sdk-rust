@@ -34,8 +34,8 @@ impl ListAssessmentsOutput {
 }
 
 /// A builder for [`ListAssessmentsOutput`](crate::operation::list_assessments::ListAssessmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentsOutputBuilder {
     pub(crate) assessment_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentMetadataItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

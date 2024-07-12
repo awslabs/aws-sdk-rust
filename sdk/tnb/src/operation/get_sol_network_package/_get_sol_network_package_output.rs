@@ -112,8 +112,8 @@ impl GetSolNetworkPackageOutput {
 }
 
 /// A builder for [`GetSolNetworkPackageOutput`](crate::operation::get_sol_network_package::GetSolNetworkPackageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetSolNetworkPackageOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

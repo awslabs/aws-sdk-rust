@@ -56,8 +56,8 @@ impl ValidatePolicyInput {
 }
 
 /// A builder for [`ValidatePolicyInput`](crate::operation::validate_policy::ValidatePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidatePolicyInputBuilder {
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,
     pub(crate) max_results: ::std::option::Option<i32>,

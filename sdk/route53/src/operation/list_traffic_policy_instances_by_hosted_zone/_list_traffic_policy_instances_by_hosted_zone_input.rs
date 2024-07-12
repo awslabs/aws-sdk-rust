@@ -43,8 +43,8 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
 }
 
 /// A builder for [`ListTrafficPolicyInstancesByHostedZoneInput`](crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrafficPolicyInstancesByHostedZoneInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_instance_name_marker: ::std::option::Option<::std::string::String>,

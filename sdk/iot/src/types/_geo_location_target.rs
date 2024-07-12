@@ -27,8 +27,8 @@ impl GeoLocationTarget {
 }
 
 /// A builder for [`GeoLocationTarget`](crate::types::GeoLocationTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeoLocationTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) order: ::std::option::Option<crate::types::TargetFieldOrder>,

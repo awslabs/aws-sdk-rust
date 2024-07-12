@@ -20,8 +20,8 @@ impl GetContactReachabilityStatusInput {
 }
 
 /// A builder for [`GetContactReachabilityStatusInput`](crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContactReachabilityStatusInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

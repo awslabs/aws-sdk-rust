@@ -27,8 +27,8 @@ impl DescribeUserPoolOutput {
 }
 
 /// A builder for [`DescribeUserPoolOutput`](crate::operation::describe_user_pool::DescribeUserPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUserPoolOutputBuilder {
     pub(crate) user_pool: ::std::option::Option<crate::types::UserPoolType>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl GetProtectedQueryOutput {
 }
 
 /// A builder for [`GetProtectedQueryOutput`](crate::operation::get_protected_query::GetProtectedQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProtectedQueryOutputBuilder {
     pub(crate) protected_query: ::std::option::Option<crate::types::ProtectedQuery>,
     _request_id: Option<String>,

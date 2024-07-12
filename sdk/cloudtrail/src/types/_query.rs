@@ -33,8 +33,8 @@ impl Query {
 }
 
 /// A builder for [`Query`](crate::types::Query).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_status: ::std::option::Option<crate::types::QueryStatus>,

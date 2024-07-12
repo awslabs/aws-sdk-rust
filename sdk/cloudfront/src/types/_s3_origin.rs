@@ -37,8 +37,8 @@ impl S3Origin {
 }
 
 /// A builder for [`S3Origin`](crate::types::S3Origin).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3OriginBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) origin_access_identity: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteLogAnomalyDetectorInput {
 }
 
 /// A builder for [`DeleteLogAnomalyDetectorInput`](crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLogAnomalyDetectorInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
 }

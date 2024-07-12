@@ -51,8 +51,8 @@ impl OriginRequestPolicyHeadersConfig {
 }
 
 /// A builder for [`OriginRequestPolicyHeadersConfig`](crate::types::OriginRequestPolicyHeadersConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginRequestPolicyHeadersConfigBuilder {
     pub(crate) header_behavior: ::std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior>,
     pub(crate) headers: ::std::option::Option<crate::types::Headers>,

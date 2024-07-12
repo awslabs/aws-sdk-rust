@@ -34,8 +34,8 @@ impl SegmentOverride {
 }
 
 /// A builder for [`SegmentOverride`](crate::types::SegmentOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SegmentOverrideBuilder {
     pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_order: ::std::option::Option<i64>,

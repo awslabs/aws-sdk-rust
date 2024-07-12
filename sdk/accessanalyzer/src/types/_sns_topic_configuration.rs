@@ -21,8 +21,8 @@ impl SnsTopicConfiguration {
 }
 
 /// A builder for [`SnsTopicConfiguration`](crate::types::SnsTopicConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnsTopicConfigurationBuilder {
     pub(crate) topic_policy: ::std::option::Option<::std::string::String>,
 }

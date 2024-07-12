@@ -28,8 +28,8 @@ impl BatchResetAlarmOutput {
 }
 
 /// A builder for [`BatchResetAlarmOutput`](crate::operation::batch_reset_alarm::BatchResetAlarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchResetAlarmOutputBuilder {
     pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchAlarmActionErrorEntry>>,
     _request_id: Option<String>,

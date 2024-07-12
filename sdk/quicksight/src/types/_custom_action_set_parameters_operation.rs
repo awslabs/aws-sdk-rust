@@ -22,8 +22,8 @@ impl CustomActionSetParametersOperation {
 }
 
 /// A builder for [`CustomActionSetParametersOperation`](crate::types::CustomActionSetParametersOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomActionSetParametersOperationBuilder {
     pub(crate) parameter_value_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
 }

@@ -62,8 +62,8 @@ impl ListChangedBlocksInput {
 }
 
 /// A builder for [`ListChangedBlocksInput`](crate::operation::list_changed_blocks::ListChangedBlocksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListChangedBlocksInputBuilder {
     pub(crate) first_snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) second_snapshot_id: ::std::option::Option<::std::string::String>,

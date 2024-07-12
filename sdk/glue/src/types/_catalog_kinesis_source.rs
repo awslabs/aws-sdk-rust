@@ -60,8 +60,8 @@ impl CatalogKinesisSource {
 }
 
 /// A builder for [`CatalogKinesisSource`](crate::types::CatalogKinesisSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CatalogKinesisSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) window_size: ::std::option::Option<i32>,

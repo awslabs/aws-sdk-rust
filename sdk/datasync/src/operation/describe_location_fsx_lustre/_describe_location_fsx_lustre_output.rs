@@ -46,8 +46,8 @@ impl DescribeLocationFsxLustreOutput {
 }
 
 /// A builder for [`DescribeLocationFsxLustreOutput`](crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationFsxLustreOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,

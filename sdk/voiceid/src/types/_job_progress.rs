@@ -21,8 +21,8 @@ impl JobProgress {
 }
 
 /// A builder for [`JobProgress`](crate::types::JobProgress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobProgressBuilder {
     pub(crate) percent_complete: ::std::option::Option<i32>,
 }

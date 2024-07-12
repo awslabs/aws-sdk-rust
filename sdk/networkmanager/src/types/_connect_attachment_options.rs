@@ -21,8 +21,8 @@ impl ConnectAttachmentOptions {
 }
 
 /// A builder for [`ConnectAttachmentOptions`](crate::types::ConnectAttachmentOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectAttachmentOptionsBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::TunnelProtocol>,
 }

@@ -48,8 +48,8 @@ impl GetEc2DeepInspectionConfigurationOutput {
 }
 
 /// A builder for [`GetEc2DeepInspectionConfigurationOutput`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEc2DeepInspectionConfigurationOutputBuilder {
     pub(crate) package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) org_package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

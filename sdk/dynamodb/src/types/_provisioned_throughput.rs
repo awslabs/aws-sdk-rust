@@ -32,8 +32,8 @@ impl ProvisionedThroughput {
 }
 
 /// A builder for [`ProvisionedThroughput`](crate::types::ProvisionedThroughput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionedThroughputBuilder {
     pub(crate) read_capacity_units: ::std::option::Option<i64>,
     pub(crate) write_capacity_units: ::std::option::Option<i64>,

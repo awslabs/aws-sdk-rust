@@ -83,8 +83,8 @@ impl DescribeHapgOutput {
 }
 
 /// A builder for [`DescribeHapgOutput`](crate::operation::describe_hapg::DescribeHapgOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHapgOutputBuilder {
     pub(crate) hapg_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hapg_serial: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl OfflineStoreStatus {
 }
 
 /// A builder for [`OfflineStoreStatus`](crate::types::OfflineStoreStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OfflineStoreStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::OfflineStoreStatusValue>,
     pub(crate) blocked_reason: ::std::option::Option<::std::string::String>,

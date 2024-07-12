@@ -28,8 +28,8 @@ impl ObjectLambdaTransformationConfiguration {
 }
 
 /// A builder for [`ObjectLambdaTransformationConfiguration`](crate::types::ObjectLambdaTransformationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectLambdaTransformationConfigurationBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>>,
     pub(crate) content_transformation: ::std::option::Option<crate::types::ObjectLambdaContentTransformation>,

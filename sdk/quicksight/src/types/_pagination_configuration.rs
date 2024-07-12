@@ -27,8 +27,8 @@ impl PaginationConfiguration {
 }
 
 /// A builder for [`PaginationConfiguration`](crate::types::PaginationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PaginationConfigurationBuilder {
     pub(crate) page_size: ::std::option::Option<i64>,
     pub(crate) page_number: ::std::option::Option<i64>,

@@ -36,8 +36,8 @@ impl ListClosedWorkflowExecutionsOutput {
 }
 
 /// A builder for [`ListClosedWorkflowExecutionsOutput`](crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListClosedWorkflowExecutionsOutputBuilder {
     pub(crate) execution_infos: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

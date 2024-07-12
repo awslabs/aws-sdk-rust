@@ -33,8 +33,8 @@ impl CloneBackendInput {
 }
 
 /// A builder for [`CloneBackendInput`](crate::operation::clone_backend::CloneBackendInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloneBackendInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl UpdateDomainEndpointOptionsInput {
 }
 
 /// A builder for [`UpdateDomainEndpointOptionsInput`](crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDomainEndpointOptionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,

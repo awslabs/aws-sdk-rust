@@ -37,8 +37,8 @@ impl StartLambdaFunctionFailedEventAttributes {
 }
 
 /// A builder for [`StartLambdaFunctionFailedEventAttributes`](crate::types::StartLambdaFunctionFailedEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartLambdaFunctionFailedEventAttributesBuilder {
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,
     pub(crate) cause: ::std::option::Option<crate::types::StartLambdaFunctionFailedCause>,

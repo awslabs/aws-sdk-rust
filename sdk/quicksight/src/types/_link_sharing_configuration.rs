@@ -23,8 +23,8 @@ impl LinkSharingConfiguration {
 }
 
 /// A builder for [`LinkSharingConfiguration`](crate::types::LinkSharingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LinkSharingConfigurationBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }

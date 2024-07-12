@@ -27,8 +27,8 @@ impl EnableDelegatedAdminAccountOutput {
 }
 
 /// A builder for [`EnableDelegatedAdminAccountOutput`](crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableDelegatedAdminAccountOutputBuilder {
     pub(crate) delegated_admin_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

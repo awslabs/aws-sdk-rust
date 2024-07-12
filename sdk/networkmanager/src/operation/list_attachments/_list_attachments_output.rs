@@ -34,8 +34,8 @@ impl ListAttachmentsOutput {
 }
 
 /// A builder for [`ListAttachmentsOutput`](crate::operation::list_attachments::ListAttachmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAttachmentsOutputBuilder {
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

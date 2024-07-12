@@ -27,8 +27,8 @@ impl IdentityCenterConfiguration {
 }
 
 /// A builder for [`IdentityCenterConfiguration`](crate::types::IdentityCenterConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityCenterConfigurationBuilder {
     pub(crate) enable_identity_center: ::std::option::Option<bool>,
     pub(crate) identity_center_instance_arn: ::std::option::Option<::std::string::String>,

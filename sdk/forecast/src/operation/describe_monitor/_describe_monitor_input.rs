@@ -20,8 +20,8 @@ impl DescribeMonitorInput {
 }
 
 /// A builder for [`DescribeMonitorInput`](crate::operation::describe_monitor::DescribeMonitorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMonitorInputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
 }

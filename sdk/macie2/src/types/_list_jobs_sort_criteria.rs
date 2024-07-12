@@ -27,8 +27,8 @@ impl ListJobsSortCriteria {
 }
 
 /// A builder for [`ListJobsSortCriteria`](crate::types::ListJobsSortCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJobsSortCriteriaBuilder {
     pub(crate) attribute_name: ::std::option::Option<crate::types::ListJobsSortAttributeName>,
     pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,

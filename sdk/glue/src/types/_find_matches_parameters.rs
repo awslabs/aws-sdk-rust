@@ -49,8 +49,8 @@ impl FindMatchesParameters {
 }
 
 /// A builder for [`FindMatchesParameters`](crate::types::FindMatchesParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindMatchesParametersBuilder {
     pub(crate) primary_key_column_name: ::std::option::Option<::std::string::String>,
     pub(crate) precision_recall_tradeoff: ::std::option::Option<f64>,

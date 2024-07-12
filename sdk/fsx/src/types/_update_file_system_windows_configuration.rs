@@ -59,8 +59,8 @@ impl UpdateFileSystemWindowsConfiguration {
 }
 
 /// A builder for [`UpdateFileSystemWindowsConfiguration`](crate::types::UpdateFileSystemWindowsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFileSystemWindowsConfigurationBuilder {
     pub(crate) weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     pub(crate) daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,

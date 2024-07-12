@@ -27,8 +27,8 @@ impl DeleteExpressionOutput {
 }
 
 /// A builder for [`DeleteExpressionOutput`](crate::operation::delete_expression::DeleteExpressionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteExpressionOutputBuilder {
     pub(crate) expression: ::std::option::Option<crate::types::ExpressionStatus>,
     _request_id: Option<String>,

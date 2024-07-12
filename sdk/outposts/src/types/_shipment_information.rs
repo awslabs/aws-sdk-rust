@@ -27,8 +27,8 @@ impl ShipmentInformation {
 }
 
 /// A builder for [`ShipmentInformation`](crate::types::ShipmentInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShipmentInformationBuilder {
     pub(crate) shipment_tracking_number: ::std::option::Option<::std::string::String>,
     pub(crate) shipment_carrier: ::std::option::Option<crate::types::ShipmentCarrier>,

@@ -42,8 +42,8 @@ impl ListBotsInput {
 }
 
 /// A builder for [`ListBotsInput`](crate::operation::list_bots::ListBotsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBotsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::BotSortBy>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::BotFilter>>,

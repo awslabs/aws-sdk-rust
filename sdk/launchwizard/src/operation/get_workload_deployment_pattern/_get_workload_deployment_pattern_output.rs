@@ -26,8 +26,8 @@ impl GetWorkloadDeploymentPatternOutput {
 }
 
 /// A builder for [`GetWorkloadDeploymentPatternOutput`](crate::operation::get_workload_deployment_pattern::GetWorkloadDeploymentPatternOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorkloadDeploymentPatternOutputBuilder {
     pub(crate) workload_deployment_pattern: ::std::option::Option<crate::types::WorkloadDeploymentPatternData>,
     _request_id: Option<String>,

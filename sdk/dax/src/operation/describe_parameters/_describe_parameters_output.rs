@@ -34,8 +34,8 @@ impl DescribeParametersOutput {
 }
 
 /// A builder for [`DescribeParametersOutput`](crate::operation::describe_parameters::DescribeParametersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeParametersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,

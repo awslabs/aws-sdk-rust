@@ -39,8 +39,8 @@ impl CalculationResult {
 }
 
 /// A builder for [`CalculationResult`](crate::types::CalculationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CalculationResultBuilder {
     pub(crate) std_out_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) std_error_s3_uri: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DescribeApplicationVersionOutput {
 }
 
 /// A builder for [`DescribeApplicationVersionOutput`](crate::operation::describe_application_version::DescribeApplicationVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeApplicationVersionOutputBuilder {
     pub(crate) application_version_detail: ::std::option::Option<crate::types::ApplicationDetail>,
     _request_id: Option<String>,

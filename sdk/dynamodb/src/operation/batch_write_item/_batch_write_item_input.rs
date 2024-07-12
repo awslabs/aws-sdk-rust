@@ -83,8 +83,8 @@ impl BatchWriteItemInput {
 }
 
 /// A builder for [`BatchWriteItemInput`](crate::operation::batch_write_item::BatchWriteItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchWriteItemInputBuilder {
     pub(crate) request_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::WriteRequest>>>,
     pub(crate) return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,

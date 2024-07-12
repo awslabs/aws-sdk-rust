@@ -77,8 +77,8 @@ impl LongTermPricingListEntry {
 }
 
 /// A builder for [`LongTermPricingListEntry`](crate::types::LongTermPricingListEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LongTermPricingListEntryBuilder {
     pub(crate) long_term_pricing_id: ::std::option::Option<::std::string::String>,
     pub(crate) long_term_pricing_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,

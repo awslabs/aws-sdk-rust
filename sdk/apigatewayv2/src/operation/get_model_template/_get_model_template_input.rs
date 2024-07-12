@@ -26,8 +26,8 @@ impl GetModelTemplateInput {
 }
 
 /// A builder for [`GetModelTemplateInput`](crate::operation::get_model_template::GetModelTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetModelTemplateInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_id: ::std::option::Option<::std::string::String>,

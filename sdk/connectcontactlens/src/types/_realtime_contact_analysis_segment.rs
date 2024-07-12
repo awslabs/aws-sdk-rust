@@ -27,8 +27,8 @@ impl RealtimeContactAnalysisSegment {
 }
 
 /// A builder for [`RealtimeContactAnalysisSegment`](crate::types::RealtimeContactAnalysisSegment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RealtimeContactAnalysisSegmentBuilder {
     pub(crate) transcript: ::std::option::Option<crate::types::Transcript>,
     pub(crate) categories: ::std::option::Option<crate::types::Categories>,

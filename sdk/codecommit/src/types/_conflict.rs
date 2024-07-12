@@ -29,8 +29,8 @@ impl Conflict {
 }
 
 /// A builder for [`Conflict`](crate::types::Conflict).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConflictBuilder {
     pub(crate) conflict_metadata: ::std::option::Option<crate::types::ConflictMetadata>,
     pub(crate) merge_hunks: ::std::option::Option<::std::vec::Vec<crate::types::MergeHunk>>,

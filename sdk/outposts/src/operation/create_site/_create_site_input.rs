@@ -56,8 +56,8 @@ impl CreateSiteInput {
 }
 
 /// A builder for [`CreateSiteInput`](crate::operation::create_site::CreateSiteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSiteInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -36,8 +36,8 @@ impl DescribeEventDetailsForOrganizationOutput {
 }
 
 /// A builder for [`DescribeEventDetailsForOrganizationOutput`](crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventDetailsForOrganizationOutputBuilder {
     pub(crate) successful_set: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEventDetails>>,
     pub(crate) failed_set: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEventDetailsErrorItem>>,

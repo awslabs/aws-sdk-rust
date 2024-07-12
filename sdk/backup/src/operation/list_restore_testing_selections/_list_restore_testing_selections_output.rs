@@ -33,8 +33,8 @@ impl ListRestoreTestingSelectionsOutput {
 }
 
 /// A builder for [`ListRestoreTestingSelectionsOutput`](crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRestoreTestingSelectionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) restore_testing_selections: ::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingSelectionForList>>,

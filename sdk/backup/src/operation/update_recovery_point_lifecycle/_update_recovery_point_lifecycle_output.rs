@@ -48,8 +48,8 @@ impl UpdateRecoveryPointLifecycleOutput {
 }
 
 /// A builder for [`UpdateRecoveryPointLifecycleOutput`](crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRecoveryPointLifecycleOutputBuilder {
     pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,

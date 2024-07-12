@@ -34,8 +34,8 @@ impl ListModelManifestNodesInput {
 }
 
 /// A builder for [`ListModelManifestNodesInput`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelManifestNodesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

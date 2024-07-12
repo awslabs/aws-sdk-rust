@@ -48,8 +48,8 @@ impl DescribeVerifiedAccessInstancesInput {
 }
 
 /// A builder for [`DescribeVerifiedAccessInstancesInput`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVerifiedAccessInstancesInputBuilder {
     pub(crate) verified_access_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,

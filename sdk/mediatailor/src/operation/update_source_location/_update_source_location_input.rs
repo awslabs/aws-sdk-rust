@@ -46,8 +46,8 @@ impl UpdateSourceLocationInput {
 }
 
 /// A builder for [`UpdateSourceLocationInput`](crate::operation::update_source_location::UpdateSourceLocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSourceLocationInputBuilder {
     pub(crate) access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     pub(crate) default_segment_delivery_configuration: ::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>,

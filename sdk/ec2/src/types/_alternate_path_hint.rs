@@ -27,8 +27,8 @@ impl AlternatePathHint {
 }
 
 /// A builder for [`AlternatePathHint`](crate::types::AlternatePathHint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlternatePathHintBuilder {
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_arn: ::std::option::Option<::std::string::String>,

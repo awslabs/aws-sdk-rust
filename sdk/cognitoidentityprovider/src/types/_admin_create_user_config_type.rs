@@ -39,8 +39,8 @@ impl AdminCreateUserConfigType {
 }
 
 /// A builder for [`AdminCreateUserConfigType`](crate::types::AdminCreateUserConfigType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminCreateUserConfigTypeBuilder {
     pub(crate) allow_admin_create_user_only: ::std::option::Option<bool>,
     pub(crate) unused_account_validity_days: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl ModifyVpcEndpointOutput {
 }
 
 /// A builder for [`ModifyVpcEndpointOutput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpcEndpointOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

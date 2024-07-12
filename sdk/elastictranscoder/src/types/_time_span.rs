@@ -29,8 +29,8 @@ impl TimeSpan {
 }
 
 /// A builder for [`TimeSpan`](crate::types::TimeSpan).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeSpanBuilder {
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<::std::string::String>,

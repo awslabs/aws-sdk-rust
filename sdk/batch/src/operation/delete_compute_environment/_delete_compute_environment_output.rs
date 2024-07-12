@@ -18,8 +18,8 @@ impl DeleteComputeEnvironmentOutput {
 }
 
 /// A builder for [`DeleteComputeEnvironmentOutput`](crate::operation::delete_compute_environment::DeleteComputeEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteComputeEnvironmentOutputBuilder {
     _request_id: Option<String>,
 }

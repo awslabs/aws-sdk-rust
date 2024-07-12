@@ -20,8 +20,8 @@ impl UpdateMetricConfigurationInput {
 }
 
 /// A builder for [`UpdateMetricConfigurationInput`](crate::operation::update_metric_configuration::UpdateMetricConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMetricConfigurationInputBuilder {
     pub(crate) summary_metric: ::std::option::Option<crate::types::SummaryMetricConfiguration>,
 }

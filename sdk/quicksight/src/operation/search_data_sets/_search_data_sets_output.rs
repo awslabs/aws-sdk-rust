@@ -46,8 +46,8 @@ impl SearchDataSetsOutput {
 }
 
 /// A builder for [`SearchDataSetsOutput`](crate::operation::search_data_sets::SearchDataSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchDataSetsOutputBuilder {
     pub(crate) data_set_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

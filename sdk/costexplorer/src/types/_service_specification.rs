@@ -21,8 +21,8 @@ impl ServiceSpecification {
 }
 
 /// A builder for [`ServiceSpecification`](crate::types::ServiceSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceSpecificationBuilder {
     pub(crate) ec2_specification: ::std::option::Option<crate::types::Ec2Specification>,
 }

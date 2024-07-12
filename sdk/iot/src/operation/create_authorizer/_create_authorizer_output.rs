@@ -32,8 +32,8 @@ impl CreateAuthorizerOutput {
 }
 
 /// A builder for [`CreateAuthorizerOutput`](crate::operation::create_authorizer::CreateAuthorizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAuthorizerOutputBuilder {
     pub(crate) authorizer_name: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_arn: ::std::option::Option<::std::string::String>,

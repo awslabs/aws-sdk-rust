@@ -28,8 +28,8 @@ impl DescribePlacementGroupsOutput {
 }
 
 /// A builder for [`DescribePlacementGroupsOutput`](crate::operation::describe_placement_groups::DescribePlacementGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePlacementGroupsOutputBuilder {
     pub(crate) placement_groups: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroup>>,
     _request_id: Option<String>,

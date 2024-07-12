@@ -44,8 +44,8 @@ impl CreateRefreshScheduleOutput {
 }
 
 /// A builder for [`CreateRefreshScheduleOutput`](crate::operation::create_refresh_schedule::CreateRefreshScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRefreshScheduleOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

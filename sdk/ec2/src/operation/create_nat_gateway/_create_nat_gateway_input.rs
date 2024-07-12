@@ -82,8 +82,8 @@ impl CreateNatGatewayInput {
 }
 
 /// A builder for [`CreateNatGatewayInput`](crate::operation::create_nat_gateway::CreateNatGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNatGatewayInputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

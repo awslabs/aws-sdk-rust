@@ -84,8 +84,8 @@ impl ListObjectVersionsInput {
 }
 
 /// A builder for [`ListObjectVersionsInput`](crate::operation::list_object_versions::ListObjectVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListObjectVersionsInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,

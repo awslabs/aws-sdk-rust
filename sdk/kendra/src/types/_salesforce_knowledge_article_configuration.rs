@@ -39,8 +39,8 @@ impl SalesforceKnowledgeArticleConfiguration {
 }
 
 /// A builder for [`SalesforceKnowledgeArticleConfiguration`](crate::types::SalesforceKnowledgeArticleConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SalesforceKnowledgeArticleConfigurationBuilder {
     pub(crate) included_states: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>>,
     pub(crate) standard_knowledge_article_type_configuration:

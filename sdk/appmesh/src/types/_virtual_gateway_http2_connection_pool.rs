@@ -21,8 +21,8 @@ impl VirtualGatewayHttp2ConnectionPool {
 }
 
 /// A builder for [`VirtualGatewayHttp2ConnectionPool`](crate::types::VirtualGatewayHttp2ConnectionPool).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualGatewayHttp2ConnectionPoolBuilder {
     pub(crate) max_requests: ::std::option::Option<i32>,
 }

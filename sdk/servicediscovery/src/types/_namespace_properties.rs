@@ -27,8 +27,8 @@ impl NamespaceProperties {
 }
 
 /// A builder for [`NamespaceProperties`](crate::types::NamespaceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NamespacePropertiesBuilder {
     pub(crate) dns_properties: ::std::option::Option<crate::types::DnsProperties>,
     pub(crate) http_properties: ::std::option::Option<crate::types::HttpProperties>,

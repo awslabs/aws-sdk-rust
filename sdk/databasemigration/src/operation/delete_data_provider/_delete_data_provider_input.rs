@@ -20,8 +20,8 @@ impl DeleteDataProviderInput {
 }
 
 /// A builder for [`DeleteDataProviderInput`](crate::operation::delete_data_provider::DeleteDataProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataProviderInputBuilder {
     pub(crate) data_provider_identifier: ::std::option::Option<::std::string::String>,
 }

@@ -45,8 +45,8 @@ impl WebExperience {
 }
 
 /// A builder for [`WebExperience`](crate::types::WebExperience).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WebExperienceBuilder {
     pub(crate) web_experience_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,

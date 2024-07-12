@@ -46,8 +46,8 @@ impl ListResolverQueryLogConfigsOutput {
 }
 
 /// A builder for [`ListResolverQueryLogConfigsOutput`](crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResolverQueryLogConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) total_count: ::std::option::Option<i32>,

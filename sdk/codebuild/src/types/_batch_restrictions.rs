@@ -29,8 +29,8 @@ impl BatchRestrictions {
 }
 
 /// A builder for [`BatchRestrictions`](crate::types::BatchRestrictions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchRestrictionsBuilder {
     pub(crate) maximum_builds_allowed: ::std::option::Option<i32>,
     pub(crate) compute_types_allowed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

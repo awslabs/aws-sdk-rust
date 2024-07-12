@@ -20,8 +20,8 @@ impl GetUploadStatusInput {
 }
 
 /// A builder for [`GetUploadStatusInput`](crate::operation::get_upload_status::GetUploadStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUploadStatusInputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
 }

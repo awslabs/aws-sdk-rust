@@ -46,8 +46,8 @@ impl CreateIdentitySourceOutput {
 }
 
 /// A builder for [`CreateIdentitySourceOutput`](crate::operation::create_identity_source::CreateIdentitySourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIdentitySourceOutputBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) identity_source_id: ::std::option::Option<::std::string::String>,

@@ -84,8 +84,8 @@ impl Bot {
 }
 
 /// A builder for [`Bot`](crate::types::Bot).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BotBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

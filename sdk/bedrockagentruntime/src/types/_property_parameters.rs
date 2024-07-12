@@ -23,8 +23,8 @@ impl PropertyParameters {
 }
 
 /// A builder for [`PropertyParameters`](crate::types::PropertyParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyParametersBuilder {
     pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }

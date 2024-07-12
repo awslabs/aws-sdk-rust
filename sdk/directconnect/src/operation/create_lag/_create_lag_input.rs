@@ -76,8 +76,8 @@ impl CreateLagInput {
 }
 
 /// A builder for [`CreateLagInput`](crate::operation::create_lag::CreateLagInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLagInputBuilder {
     pub(crate) number_of_connections: ::std::option::Option<i32>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

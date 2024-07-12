@@ -56,8 +56,8 @@ impl PutGroupPolicyInput {
 }
 
 /// A builder for [`PutGroupPolicyInput`](crate::operation::put_group_policy::PutGroupPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutGroupPolicyInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,

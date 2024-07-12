@@ -26,8 +26,8 @@ impl PutOptedOutNumberInput {
 }
 
 /// A builder for [`PutOptedOutNumberInput`](crate::operation::put_opted_out_number::PutOptedOutNumberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutOptedOutNumberInputBuilder {
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) opted_out_number: ::std::option::Option<::std::string::String>,

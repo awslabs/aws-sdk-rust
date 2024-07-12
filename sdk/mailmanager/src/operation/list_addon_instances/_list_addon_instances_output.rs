@@ -34,8 +34,8 @@ impl ListAddonInstancesOutput {
 }
 
 /// A builder for [`ListAddonInstancesOutput`](crate::operation::list_addon_instances::ListAddonInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAddonInstancesOutputBuilder {
     pub(crate) addon_instances: ::std::option::Option<::std::vec::Vec<crate::types::AddonInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

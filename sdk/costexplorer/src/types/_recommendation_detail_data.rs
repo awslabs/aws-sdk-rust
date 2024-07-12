@@ -191,8 +191,8 @@ impl RecommendationDetailData {
 }
 
 /// A builder for [`RecommendationDetailData`](crate::types::RecommendationDetailData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationDetailDataBuilder {
     pub(crate) account_scope: ::std::option::Option<crate::types::AccountScope>,
     pub(crate) lookback_period_in_days: ::std::option::Option<crate::types::LookbackPeriodInDays>,

@@ -29,8 +29,8 @@ impl AddJobFlowStepsOutput {
 }
 
 /// A builder for [`AddJobFlowStepsOutput`](crate::operation::add_job_flow_steps::AddJobFlowStepsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddJobFlowStepsOutputBuilder {
     pub(crate) step_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl ReloadTablesInput {
 }
 
 /// A builder for [`ReloadTablesInput`](crate::operation::reload_tables::ReloadTablesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReloadTablesInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tables_to_reload: ::std::option::Option<::std::vec::Vec<crate::types::TableToReload>>,

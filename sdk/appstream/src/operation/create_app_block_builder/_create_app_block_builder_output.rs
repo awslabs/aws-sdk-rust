@@ -26,8 +26,8 @@ impl CreateAppBlockBuilderOutput {
 }
 
 /// A builder for [`CreateAppBlockBuilderOutput`](crate::operation::create_app_block_builder::CreateAppBlockBuilderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAppBlockBuilderOutputBuilder {
     pub(crate) app_block_builder: ::std::option::Option<crate::types::AppBlockBuilder>,
     _request_id: Option<String>,

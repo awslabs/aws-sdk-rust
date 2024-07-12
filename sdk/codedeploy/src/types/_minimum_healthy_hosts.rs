@@ -47,8 +47,8 @@ impl MinimumHealthyHosts {
 }
 
 /// A builder for [`MinimumHealthyHosts`](crate::types::MinimumHealthyHosts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MinimumHealthyHostsBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::MinimumHealthyHostsType>,
     pub(crate) value: ::std::option::Option<i32>,

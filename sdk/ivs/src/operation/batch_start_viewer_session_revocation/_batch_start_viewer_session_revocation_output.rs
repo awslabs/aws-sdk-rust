@@ -28,8 +28,8 @@ impl BatchStartViewerSessionRevocationOutput {
 }
 
 /// A builder for [`BatchStartViewerSessionRevocationOutput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStartViewerSessionRevocationOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationError>>,
     _request_id: Option<String>,

@@ -56,8 +56,8 @@ impl StartNetworkInsightsAnalysisInput {
 }
 
 /// A builder for [`StartNetworkInsightsAnalysisInput`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartNetworkInsightsAnalysisInputBuilder {
     pub(crate) network_insights_path_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -34,8 +34,8 @@ impl CreateGlobalReplicationGroupInput {
 }
 
 /// A builder for [`CreateGlobalReplicationGroupInput`](crate::operation::create_global_replication_group::CreateGlobalReplicationGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGlobalReplicationGroupInputBuilder {
     pub(crate) global_replication_group_id_suffix: ::std::option::Option<::std::string::String>,
     pub(crate) global_replication_group_description: ::std::option::Option<::std::string::String>,

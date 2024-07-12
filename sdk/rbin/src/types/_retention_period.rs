@@ -27,8 +27,8 @@ impl RetentionPeriod {
 }
 
 /// A builder for [`RetentionPeriod`](crate::types::RetentionPeriod).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetentionPeriodBuilder {
     pub(crate) retention_period_value: ::std::option::Option<i32>,
     pub(crate) retention_period_unit: ::std::option::Option<crate::types::RetentionPeriodUnit>,

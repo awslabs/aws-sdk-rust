@@ -29,8 +29,8 @@ impl ColumnGroupSchema {
 }
 
 /// A builder for [`ColumnGroupSchema`](crate::types::ColumnGroupSchema).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnGroupSchemaBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) column_group_column_schema_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupColumnSchema>>,

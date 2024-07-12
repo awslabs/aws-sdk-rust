@@ -33,8 +33,8 @@ impl PromoteReadReplicaDbClusterInput {
 }
 
 /// A builder for [`PromoteReadReplicaDbClusterInput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromoteReadReplicaDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }

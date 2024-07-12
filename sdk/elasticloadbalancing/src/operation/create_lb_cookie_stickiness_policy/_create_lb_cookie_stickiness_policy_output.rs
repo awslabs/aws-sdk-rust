@@ -19,8 +19,8 @@ impl CreateLbCookieStickinessPolicyOutput {
 }
 
 /// A builder for [`CreateLbCookieStickinessPolicyOutput`](crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLbCookieStickinessPolicyOutputBuilder {
     _request_id: Option<String>,
 }

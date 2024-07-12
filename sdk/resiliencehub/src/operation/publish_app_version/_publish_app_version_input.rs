@@ -26,8 +26,8 @@ impl PublishAppVersionInput {
 }
 
 /// A builder for [`PublishAppVersionInput`](crate::operation::publish_app_version::PublishAppVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublishAppVersionInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,

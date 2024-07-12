@@ -26,8 +26,8 @@ impl UpdateEndpointsBatchOutput {
 }
 
 /// A builder for [`UpdateEndpointsBatchOutput`](crate::operation::update_endpoints_batch::UpdateEndpointsBatchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEndpointsBatchOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,

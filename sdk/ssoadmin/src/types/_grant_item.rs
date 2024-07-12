@@ -27,8 +27,8 @@ impl GrantItem {
 }
 
 /// A builder for [`GrantItem`](crate::types::GrantItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrantItemBuilder {
     pub(crate) grant_type: ::std::option::Option<crate::types::GrantType>,
     pub(crate) grant: ::std::option::Option<crate::types::Grant>,

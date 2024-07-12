@@ -26,8 +26,8 @@ impl GetLayoutInput {
 }
 
 /// A builder for [`GetLayoutInput`](crate::operation::get_layout::GetLayoutInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLayoutInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) layout_id: ::std::option::Option<::std::string::String>,

@@ -54,8 +54,8 @@ impl CreateReportPlanInput {
 }
 
 /// A builder for [`CreateReportPlanInput`](crate::operation::create_report_plan::CreateReportPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReportPlanInputBuilder {
     pub(crate) report_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) report_plan_description: ::std::option::Option<::std::string::String>,

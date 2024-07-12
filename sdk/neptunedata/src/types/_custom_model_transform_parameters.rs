@@ -28,8 +28,8 @@ impl CustomModelTransformParameters {
 }
 
 /// A builder for [`CustomModelTransformParameters`](crate::types::CustomModelTransformParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomModelTransformParametersBuilder {
     pub(crate) source_s3_directory_path: ::std::option::Option<::std::string::String>,
     pub(crate) transform_entry_point_script: ::std::option::Option<::std::string::String>,

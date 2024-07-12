@@ -26,8 +26,8 @@ impl DeleteParametersInput {
 }
 
 /// A builder for [`DeleteParametersInput`](crate::operation::delete_parameters::DeleteParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteParametersInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

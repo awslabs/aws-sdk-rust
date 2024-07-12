@@ -34,8 +34,8 @@ impl ListLifecycleExecutionsOutput {
 }
 
 /// A builder for [`ListLifecycleExecutionsOutput`](crate::operation::list_lifecycle_executions::ListLifecycleExecutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLifecycleExecutionsOutputBuilder {
     pub(crate) lifecycle_executions: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleExecution>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

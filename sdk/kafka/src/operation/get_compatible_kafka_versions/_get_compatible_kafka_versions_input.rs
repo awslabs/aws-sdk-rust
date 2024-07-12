@@ -20,8 +20,8 @@ impl GetCompatibleKafkaVersionsInput {
 }
 
 /// A builder for [`GetCompatibleKafkaVersionsInput`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCompatibleKafkaVersionsInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
 }

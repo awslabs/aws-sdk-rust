@@ -47,8 +47,8 @@ impl GetStatementResultOutput {
 }
 
 /// A builder for [`GetStatementResultOutput`](crate::operation::get_statement_result::GetStatementResultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStatementResultOutputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
     pub(crate) column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,

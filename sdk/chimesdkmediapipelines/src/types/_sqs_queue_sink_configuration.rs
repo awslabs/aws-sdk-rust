@@ -28,8 +28,8 @@ impl SqsQueueSinkConfiguration {
 }
 
 /// A builder for [`SqsQueueSinkConfiguration`](crate::types::SqsQueueSinkConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SqsQueueSinkConfigurationBuilder {
     pub(crate) insights_target: ::std::option::Option<::std::string::String>,
 }

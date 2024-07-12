@@ -27,8 +27,8 @@ impl PivotTablePaginatedReportOptions {
 }
 
 /// A builder for [`PivotTablePaginatedReportOptions`](crate::types::PivotTablePaginatedReportOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTablePaginatedReportOptionsBuilder {
     pub(crate) vertical_overflow_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) overflow_column_header_visibility: ::std::option::Option<crate::types::Visibility>,

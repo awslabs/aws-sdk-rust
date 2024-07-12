@@ -27,8 +27,8 @@ impl GetOpenIdTokenInput {
 }
 
 /// A builder for [`GetOpenIdTokenInput`](crate::operation::get_open_id_token::GetOpenIdTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOpenIdTokenInputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

@@ -26,8 +26,8 @@ impl UpdateRuleVersionOutput {
 }
 
 /// A builder for [`UpdateRuleVersionOutput`](crate::operation::update_rule_version::UpdateRuleVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRuleVersionOutputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::Rule>,
     _request_id: Option<String>,

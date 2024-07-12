@@ -34,8 +34,8 @@ impl ListApplicationDpuSizesOutput {
 }
 
 /// A builder for [`ListApplicationDpuSizesOutput`](crate::operation::list_application_dpu_sizes::ListApplicationDpuSizesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationDpuSizesOutputBuilder {
     pub(crate) application_dpu_sizes: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDpuSizes>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

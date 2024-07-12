@@ -51,8 +51,8 @@ impl CreateLocationNfsInput {
 }
 
 /// A builder for [`CreateLocationNfsInput`](crate::operation::create_location_nfs::CreateLocationNfsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocationNfsInputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) server_hostname: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetEvidenceFolderOutput {
 }
 
 /// A builder for [`GetEvidenceFolderOutput`](crate::operation::get_evidence_folder::GetEvidenceFolderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEvidenceFolderOutputBuilder {
     pub(crate) evidence_folder: ::std::option::Option<crate::types::AssessmentEvidenceFolder>,
     _request_id: Option<String>,

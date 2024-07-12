@@ -21,8 +21,8 @@ impl GetClientCertificateInput {
 }
 
 /// A builder for [`GetClientCertificateInput`](crate::operation::get_client_certificate::GetClientCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClientCertificateInputBuilder {
     pub(crate) client_certificate_id: ::std::option::Option<::std::string::String>,
 }

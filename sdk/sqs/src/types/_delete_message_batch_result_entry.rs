@@ -22,8 +22,8 @@ impl DeleteMessageBatchResultEntry {
 }
 
 /// A builder for [`DeleteMessageBatchResultEntry`](crate::types::DeleteMessageBatchResultEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMessageBatchResultEntryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl PurchaseReservedNodesOfferingOutput {
 }
 
 /// A builder for [`PurchaseReservedNodesOfferingOutput`](crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseReservedNodesOfferingOutputBuilder {
     pub(crate) reserved_node: ::std::option::Option<crate::types::ReservedNode>,
     _request_id: Option<String>,

@@ -51,8 +51,8 @@ impl ReviewResultDetail {
 }
 
 /// A builder for [`ReviewResultDetail`](crate::types::ReviewResultDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReviewResultDetailBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) subject_id: ::std::option::Option<::std::string::String>,

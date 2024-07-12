@@ -44,8 +44,8 @@ impl GetSubscriptionOutput {
 }
 
 /// A builder for [`GetSubscriptionOutput`](crate::operation::get_subscription::GetSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSubscriptionOutputBuilder {
     pub(crate) subscription_type: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_name: ::std::option::Option<::std::string::String>,

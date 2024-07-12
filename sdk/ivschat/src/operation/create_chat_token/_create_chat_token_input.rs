@@ -57,8 +57,8 @@ impl CreateChatTokenInput {
 }
 
 /// A builder for [`CreateChatTokenInput`](crate::operation::create_chat_token::CreateChatTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateChatTokenInputBuilder {
     pub(crate) room_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

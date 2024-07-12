@@ -62,8 +62,8 @@ impl UpdatePoolInput {
 }
 
 /// A builder for [`UpdatePoolInput`](crate::operation::update_pool::UpdatePoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePoolInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) two_way_enabled: ::std::option::Option<bool>,

@@ -27,8 +27,8 @@ impl CategoryWithFindingNum {
 }
 
 /// A builder for [`CategoryWithFindingNum`](crate::types::CategoryWithFindingNum).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CategoryWithFindingNumBuilder {
     pub(crate) category_name: ::std::option::Option<::std::string::String>,
     pub(crate) finding_number: ::std::option::Option<i32>,

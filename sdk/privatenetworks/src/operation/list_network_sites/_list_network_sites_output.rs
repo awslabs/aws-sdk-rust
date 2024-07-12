@@ -34,8 +34,8 @@ impl ListNetworkSitesOutput {
 }
 
 /// A builder for [`ListNetworkSitesOutput`](crate::operation::list_network_sites::ListNetworkSitesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNetworkSitesOutputBuilder {
     pub(crate) network_sites: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSite>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

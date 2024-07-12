@@ -18,8 +18,8 @@ impl RestartAppServerOutput {
 }
 
 /// A builder for [`RestartAppServerOutput`](crate::operation::restart_app_server::RestartAppServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestartAppServerOutputBuilder {
     _request_id: Option<String>,
 }

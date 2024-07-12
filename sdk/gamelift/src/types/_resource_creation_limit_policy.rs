@@ -30,8 +30,8 @@ impl ResourceCreationLimitPolicy {
 }
 
 /// A builder for [`ResourceCreationLimitPolicy`](crate::types::ResourceCreationLimitPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceCreationLimitPolicyBuilder {
     pub(crate) new_game_sessions_per_creator: ::std::option::Option<i32>,
     pub(crate) policy_period_in_minutes: ::std::option::Option<i32>,

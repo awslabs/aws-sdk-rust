@@ -29,8 +29,8 @@ impl ReshardingConfiguration {
 }
 
 /// A builder for [`ReshardingConfiguration`](crate::types::ReshardingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReshardingConfigurationBuilder {
     pub(crate) node_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

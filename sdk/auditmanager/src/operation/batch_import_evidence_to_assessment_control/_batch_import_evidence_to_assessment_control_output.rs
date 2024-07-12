@@ -28,8 +28,8 @@ impl BatchImportEvidenceToAssessmentControlOutput {
 }
 
 /// A builder for [`BatchImportEvidenceToAssessmentControlOutput`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchImportEvidenceToAssessmentControlOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchImportEvidenceToAssessmentControlError>>,
     _request_id: Option<String>,

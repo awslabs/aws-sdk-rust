@@ -33,8 +33,8 @@ impl CompositedVideoArtifactsConfiguration {
 }
 
 /// A builder for [`CompositedVideoArtifactsConfiguration`](crate::types::CompositedVideoArtifactsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompositedVideoArtifactsConfigurationBuilder {
     pub(crate) layout: ::std::option::Option<crate::types::LayoutOption>,
     pub(crate) resolution: ::std::option::Option<crate::types::ResolutionOption>,

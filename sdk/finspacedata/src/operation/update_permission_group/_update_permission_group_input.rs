@@ -93,8 +93,8 @@ impl UpdatePermissionGroupInput {
 }
 
 /// A builder for [`UpdatePermissionGroupInput`](crate::operation::update_permission_group::UpdatePermissionGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdatePermissionGroupInputBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

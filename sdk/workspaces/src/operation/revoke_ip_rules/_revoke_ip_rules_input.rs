@@ -28,8 +28,8 @@ impl RevokeIpRulesInput {
 }
 
 /// A builder for [`RevokeIpRulesInput`](crate::operation::revoke_ip_rules::RevokeIpRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeIpRulesInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

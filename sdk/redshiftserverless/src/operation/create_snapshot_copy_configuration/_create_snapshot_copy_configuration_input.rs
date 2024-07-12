@@ -38,8 +38,8 @@ impl CreateSnapshotCopyConfigurationInput {
 }
 
 /// A builder for [`CreateSnapshotCopyConfigurationInput`](crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSnapshotCopyConfigurationInputBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_region: ::std::option::Option<::std::string::String>,

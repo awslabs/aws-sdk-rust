@@ -21,8 +21,8 @@ impl StartReplicationTaskAssessmentInput {
 }
 
 /// A builder for [`StartReplicationTaskAssessmentInput`](crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReplicationTaskAssessmentInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
 }

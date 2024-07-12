@@ -32,8 +32,8 @@ impl GetSegmentVersionInput {
 }
 
 /// A builder for [`GetSegmentVersionInput`](crate::operation::get_segment_version::GetSegmentVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSegmentVersionInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) segment_id: ::std::option::Option<::std::string::String>,

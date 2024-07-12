@@ -33,8 +33,8 @@ impl NielsenWatermarksSettings {
 }
 
 /// A builder for [`NielsenWatermarksSettings`](crate::types::NielsenWatermarksSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NielsenWatermarksSettingsBuilder {
     pub(crate) nielsen_cbet_settings: ::std::option::Option<crate::types::NielsenCbet>,
     pub(crate) nielsen_distribution_type: ::std::option::Option<crate::types::NielsenWatermarksDistributionTypes>,

@@ -34,8 +34,8 @@ impl ListTemplateActionsOutput {
 }
 
 /// A builder for [`ListTemplateActionsOutput`](crate::operation::list_template_actions::ListTemplateActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateActionsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::TemplateActionDocument>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

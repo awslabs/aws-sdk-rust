@@ -27,8 +27,8 @@ impl FunctionRunAsConfig {
 }
 
 /// A builder for [`FunctionRunAsConfig`](crate::types::FunctionRunAsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunctionRunAsConfigBuilder {
     pub(crate) gid: ::std::option::Option<i32>,
     pub(crate) uid: ::std::option::Option<i32>,

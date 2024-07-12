@@ -64,8 +64,8 @@ impl EnvironmentMember {
 }
 
 /// A builder for [`EnvironmentMember`](crate::types::EnvironmentMember).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnvironmentMemberBuilder {
     pub(crate) permissions: ::std::option::Option<crate::types::Permissions>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

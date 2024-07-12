@@ -21,8 +21,8 @@ impl ResourceTagsSearchCriteria {
 }
 
 /// A builder for [`ResourceTagsSearchCriteria`](crate::types::ResourceTagsSearchCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceTagsSearchCriteriaBuilder {
     pub(crate) tag_search_condition: ::std::option::Option<crate::types::TagSearchCondition>,
 }

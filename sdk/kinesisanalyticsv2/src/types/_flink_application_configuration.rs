@@ -33,8 +33,8 @@ impl FlinkApplicationConfiguration {
 }
 
 /// A builder for [`FlinkApplicationConfiguration`](crate::types::FlinkApplicationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlinkApplicationConfigurationBuilder {
     pub(crate) checkpoint_configuration: ::std::option::Option<crate::types::CheckpointConfiguration>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,

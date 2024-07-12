@@ -186,8 +186,8 @@ impl GetReservationUtilizationInput {
 }
 
 /// A builder for [`GetReservationUtilizationInput`](crate::operation::get_reservation_utilization::GetReservationUtilizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReservationUtilizationInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,

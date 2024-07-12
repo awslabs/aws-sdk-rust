@@ -57,8 +57,8 @@ impl RdsRequirements {
 }
 
 /// A builder for [`RdsRequirements`](crate::types::RdsRequirements).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsRequirementsBuilder {
     pub(crate) engine_edition: ::std::option::Option<::std::string::String>,
     pub(crate) instance_vcpu: ::std::option::Option<f64>,

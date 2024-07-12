@@ -26,8 +26,8 @@ impl DescribeAuthenticationProfileOutput {
 }
 
 /// A builder for [`DescribeAuthenticationProfileOutput`](crate::operation::describe_authentication_profile::DescribeAuthenticationProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAuthenticationProfileOutputBuilder {
     pub(crate) authentication_profile: ::std::option::Option<crate::types::AuthenticationProfile>,
     _request_id: Option<String>,

@@ -32,8 +32,8 @@ impl UpdatePartnerStatusOutput {
 }
 
 /// A builder for [`UpdatePartnerStatusOutput`](crate::operation::update_partner_status::UpdatePartnerStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePartnerStatusOutputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) partner_name: ::std::option::Option<::std::string::String>,

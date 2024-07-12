@@ -34,8 +34,8 @@ impl ListProvisionedConcurrencyConfigsOutput {
 }
 
 /// A builder for [`ListProvisionedConcurrencyConfigsOutput`](crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProvisionedConcurrencyConfigsOutputBuilder {
     pub(crate) provisioned_concurrency_configs: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedConcurrencyConfigListItem>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

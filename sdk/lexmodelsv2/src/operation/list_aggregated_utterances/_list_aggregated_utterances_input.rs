@@ -70,8 +70,8 @@ impl ListAggregatedUtterancesInput {
 }
 
 /// A builder for [`ListAggregatedUtterancesInput`](crate::operation::list_aggregated_utterances::ListAggregatedUtterancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAggregatedUtterancesInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,

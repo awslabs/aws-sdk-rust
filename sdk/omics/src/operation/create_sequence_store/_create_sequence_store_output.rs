@@ -70,8 +70,8 @@ impl CreateSequenceStoreOutput {
 }
 
 /// A builder for [`CreateSequenceStoreOutput`](crate::operation::create_sequence_store::CreateSequenceStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSequenceStoreOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

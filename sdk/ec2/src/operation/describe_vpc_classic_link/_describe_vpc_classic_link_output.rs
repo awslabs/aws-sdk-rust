@@ -28,8 +28,8 @@ impl DescribeVpcClassicLinkOutput {
 }
 
 /// A builder for [`DescribeVpcClassicLinkOutput`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcClassicLinkOutputBuilder {
     pub(crate) vpcs: ::std::option::Option<::std::vec::Vec<crate::types::VpcClassicLink>>,
     _request_id: Option<String>,

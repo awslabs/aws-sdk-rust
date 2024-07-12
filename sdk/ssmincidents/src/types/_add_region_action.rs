@@ -28,8 +28,8 @@ impl AddRegionAction {
 }
 
 /// A builder for [`AddRegionAction`](crate::types::AddRegionAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddRegionActionBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) sse_kms_key_id: ::std::option::Option<::std::string::String>,

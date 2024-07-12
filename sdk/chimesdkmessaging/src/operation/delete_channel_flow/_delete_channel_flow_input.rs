@@ -20,8 +20,8 @@ impl DeleteChannelFlowInput {
 }
 
 /// A builder for [`DeleteChannelFlowInput`](crate::operation::delete_channel_flow::DeleteChannelFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChannelFlowInputBuilder {
     pub(crate) channel_flow_arn: ::std::option::Option<::std::string::String>,
 }

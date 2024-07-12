@@ -33,8 +33,8 @@ impl DecreaseStreamRetentionPeriodInput {
 }
 
 /// A builder for [`DecreaseStreamRetentionPeriodInput`](crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecreaseStreamRetentionPeriodInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period_hours: ::std::option::Option<i32>,

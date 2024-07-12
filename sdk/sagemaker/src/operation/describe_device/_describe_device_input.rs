@@ -32,8 +32,8 @@ impl DescribeDeviceInput {
 }
 
 /// A builder for [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeviceInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) device_name: ::std::option::Option<::std::string::String>,

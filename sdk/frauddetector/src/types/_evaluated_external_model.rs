@@ -49,8 +49,8 @@ impl EvaluatedExternalModel {
 }
 
 /// A builder for [`EvaluatedExternalModel`](crate::types::EvaluatedExternalModel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EvaluatedExternalModelBuilder {
     pub(crate) model_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) use_event_variables: ::std::option::Option<bool>,

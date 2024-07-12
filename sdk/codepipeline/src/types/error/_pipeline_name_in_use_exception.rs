@@ -45,8 +45,8 @@ impl PipelineNameInUseException {
 }
 
 /// A builder for [`PipelineNameInUseException`](crate::types::error::PipelineNameInUseException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineNameInUseExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

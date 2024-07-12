@@ -27,8 +27,8 @@ impl AntipatternSeveritySummary {
 }
 
 /// A builder for [`AntipatternSeveritySummary`](crate::types::AntipatternSeveritySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AntipatternSeveritySummaryBuilder {
     pub(crate) severity: ::std::option::Option<crate::types::Severity>,
     pub(crate) count: ::std::option::Option<i32>,

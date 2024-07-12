@@ -28,8 +28,8 @@ impl LaunchTemplateEnaSrdSpecification {
 }
 
 /// A builder for [`LaunchTemplateEnaSrdSpecification`](crate::types::LaunchTemplateEnaSrdSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateEnaSrdSpecificationBuilder {
     pub(crate) ena_srd_enabled: ::std::option::Option<bool>,
     pub(crate) ena_srd_udp_specification: ::std::option::Option<crate::types::LaunchTemplateEnaSrdUdpSpecification>,

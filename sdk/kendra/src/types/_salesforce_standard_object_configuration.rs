@@ -42,8 +42,8 @@ impl SalesforceStandardObjectConfiguration {
 }
 
 /// A builder for [`SalesforceStandardObjectConfiguration`](crate::types::SalesforceStandardObjectConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SalesforceStandardObjectConfigurationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SalesforceStandardObjectName>,
     pub(crate) document_data_field_name: ::std::option::Option<::std::string::String>,

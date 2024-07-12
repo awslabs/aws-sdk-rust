@@ -45,8 +45,8 @@ impl WorkflowExecutionOpenCounts {
 }
 
 /// A builder for [`WorkflowExecutionOpenCounts`](crate::types::WorkflowExecutionOpenCounts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowExecutionOpenCountsBuilder {
     pub(crate) open_activity_tasks: ::std::option::Option<i32>,
     pub(crate) open_decision_tasks: ::std::option::Option<i32>,

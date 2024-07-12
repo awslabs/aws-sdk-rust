@@ -18,8 +18,8 @@ impl UpdateThingGroupsForThingOutput {
 }
 
 /// A builder for [`UpdateThingGroupsForThingOutput`](crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateThingGroupsForThingOutputBuilder {
     _request_id: Option<String>,
 }

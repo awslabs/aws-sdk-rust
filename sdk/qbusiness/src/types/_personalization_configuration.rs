@@ -21,8 +21,8 @@ impl PersonalizationConfiguration {
 }
 
 /// A builder for [`PersonalizationConfiguration`](crate::types::PersonalizationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PersonalizationConfigurationBuilder {
     pub(crate) personalization_control_mode: ::std::option::Option<crate::types::PersonalizationControlMode>,
 }

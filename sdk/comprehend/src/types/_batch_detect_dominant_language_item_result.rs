@@ -29,8 +29,8 @@ impl BatchDetectDominantLanguageItemResult {
 }
 
 /// A builder for [`BatchDetectDominantLanguageItemResult`](crate::types::BatchDetectDominantLanguageItemResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDetectDominantLanguageItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
     pub(crate) languages: ::std::option::Option<::std::vec::Vec<crate::types::DominantLanguage>>,

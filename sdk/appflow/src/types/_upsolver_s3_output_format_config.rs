@@ -33,8 +33,8 @@ impl UpsolverS3OutputFormatConfig {
 }
 
 /// A builder for [`UpsolverS3OutputFormatConfig`](crate::types::UpsolverS3OutputFormatConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpsolverS3OutputFormatConfigBuilder {
     pub(crate) file_type: ::std::option::Option<crate::types::FileType>,
     pub(crate) prefix_config: ::std::option::Option<crate::types::PrefixConfig>,

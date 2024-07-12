@@ -18,8 +18,8 @@ impl UnsubscribeFromEventOutput {
 }
 
 /// A builder for [`UnsubscribeFromEventOutput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnsubscribeFromEventOutputBuilder {
     _request_id: Option<String>,
 }

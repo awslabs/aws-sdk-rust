@@ -34,8 +34,8 @@ impl EvaluationDatasetMetricConfig {
 }
 
 /// A builder for [`EvaluationDatasetMetricConfig`](crate::types::EvaluationDatasetMetricConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationDatasetMetricConfigBuilder {
     pub(crate) task_type: ::std::option::Option<crate::types::EvaluationTaskType>,
     pub(crate) dataset: ::std::option::Option<crate::types::EvaluationDataset>,

@@ -21,8 +21,8 @@ impl ResumeClusterMessage {
 }
 
 /// A builder for [`ResumeClusterMessage`](crate::types::ResumeClusterMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResumeClusterMessageBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }

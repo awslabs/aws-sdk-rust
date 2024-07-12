@@ -26,8 +26,8 @@ impl DeleteVirtualRouterOutput {
 }
 
 /// A builder for [`DeleteVirtualRouterOutput`](crate::operation::delete_virtual_router::DeleteVirtualRouterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVirtualRouterOutputBuilder {
     pub(crate) virtual_router: ::std::option::Option<crate::types::VirtualRouterData>,
     _request_id: Option<String>,

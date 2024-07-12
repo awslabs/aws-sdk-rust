@@ -50,8 +50,8 @@ impl GetCommentsForPullRequestInput {
 }
 
 /// A builder for [`GetCommentsForPullRequestInput`](crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCommentsForPullRequestInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

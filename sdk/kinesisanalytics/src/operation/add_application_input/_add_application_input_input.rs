@@ -33,8 +33,8 @@ impl AddApplicationInputInput {
 }
 
 /// A builder for [`AddApplicationInputInput`](crate::operation::add_application_input::AddApplicationInputInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddApplicationInputInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,

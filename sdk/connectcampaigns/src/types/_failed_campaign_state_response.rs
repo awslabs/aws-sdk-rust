@@ -27,8 +27,8 @@ impl FailedCampaignStateResponse {
 }
 
 /// A builder for [`FailedCampaignStateResponse`](crate::types::FailedCampaignStateResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedCampaignStateResponseBuilder {
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<crate::types::GetCampaignStateBatchFailureCode>,

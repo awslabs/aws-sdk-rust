@@ -22,8 +22,8 @@ impl GetAccessKeyLastUsedInput {
 }
 
 /// A builder for [`GetAccessKeyLastUsedInput`](crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessKeyLastUsedInputBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
 }

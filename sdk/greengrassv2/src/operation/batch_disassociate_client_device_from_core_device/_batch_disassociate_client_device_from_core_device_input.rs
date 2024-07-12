@@ -29,8 +29,8 @@ impl BatchDisassociateClientDeviceFromCoreDeviceInput {
 }
 
 /// A builder for [`BatchDisassociateClientDeviceFromCoreDeviceInput`](crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisassociateClientDeviceFromCoreDeviceInputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::DisassociateClientDeviceFromCoreDeviceEntry>>,
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,

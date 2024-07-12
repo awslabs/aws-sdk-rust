@@ -20,8 +20,8 @@ impl DeleteFhirDatastoreInput {
 }
 
 /// A builder for [`DeleteFhirDatastoreInput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFhirDatastoreInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
 }

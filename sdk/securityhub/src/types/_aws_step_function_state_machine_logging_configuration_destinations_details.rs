@@ -24,8 +24,8 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails {
 }
 
 /// A builder for [`AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails`](crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetailsBuilder {
     pub(crate) cloud_watch_logs_log_group:
         ::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails>,

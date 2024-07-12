@@ -28,8 +28,8 @@ impl DeleteAllowListInput {
 }
 
 /// A builder for [`DeleteAllowListInput`](crate::operation::delete_allow_list::DeleteAllowListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAllowListInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ignore_job_checks: ::std::option::Option<::std::string::String>,

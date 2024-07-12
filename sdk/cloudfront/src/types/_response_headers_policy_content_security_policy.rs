@@ -29,8 +29,8 @@ impl ResponseHeadersPolicyContentSecurityPolicy {
 }
 
 /// A builder for [`ResponseHeadersPolicyContentSecurityPolicy`](crate::types::ResponseHeadersPolicyContentSecurityPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyContentSecurityPolicyBuilder {
     pub(crate) r#override: ::std::option::Option<bool>,
     pub(crate) content_security_policy: ::std::option::Option<::std::string::String>,

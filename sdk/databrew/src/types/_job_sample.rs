@@ -41,8 +41,8 @@ impl JobSample {
 }
 
 /// A builder for [`JobSample`](crate::types::JobSample).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobSampleBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::SampleMode>,
     pub(crate) size: ::std::option::Option<i64>,

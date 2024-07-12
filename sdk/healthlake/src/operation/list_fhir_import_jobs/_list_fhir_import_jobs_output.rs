@@ -33,8 +33,8 @@ impl ListFhirImportJobsOutput {
 }
 
 /// A builder for [`ListFhirImportJobsOutput`](crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFhirImportJobsOutputBuilder {
     pub(crate) import_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

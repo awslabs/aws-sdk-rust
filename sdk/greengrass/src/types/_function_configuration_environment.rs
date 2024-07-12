@@ -41,8 +41,8 @@ impl FunctionConfigurationEnvironment {
 }
 
 /// A builder for [`FunctionConfigurationEnvironment`](crate::types::FunctionConfigurationEnvironment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunctionConfigurationEnvironmentBuilder {
     pub(crate) access_sysfs: ::std::option::Option<bool>,
     pub(crate) execution: ::std::option::Option<crate::types::FunctionExecutionConfig>,

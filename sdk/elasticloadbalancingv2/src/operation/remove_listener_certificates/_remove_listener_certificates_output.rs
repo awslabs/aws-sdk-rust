@@ -18,8 +18,8 @@ impl RemoveListenerCertificatesOutput {
 }
 
 /// A builder for [`RemoveListenerCertificatesOutput`](crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveListenerCertificatesOutputBuilder {
     _request_id: Option<String>,
 }

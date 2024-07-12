@@ -27,8 +27,8 @@ impl DataReplicationError {
 }
 
 /// A builder for [`DataReplicationError`](crate::types::DataReplicationError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataReplicationErrorBuilder {
     pub(crate) error: ::std::option::Option<crate::types::DataReplicationErrorString>,
     pub(crate) raw_error: ::std::option::Option<::std::string::String>,

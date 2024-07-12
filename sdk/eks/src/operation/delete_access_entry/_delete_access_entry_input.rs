@@ -26,8 +26,8 @@ impl DeleteAccessEntryInput {
 }
 
 /// A builder for [`DeleteAccessEntryInput`](crate::operation::delete_access_entry::DeleteAccessEntryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessEntryInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,

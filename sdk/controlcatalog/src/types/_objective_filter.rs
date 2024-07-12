@@ -25,8 +25,8 @@ impl ObjectiveFilter {
 }
 
 /// A builder for [`ObjectiveFilter`](crate::types::ObjectiveFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectiveFilterBuilder {
     pub(crate) domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainResourceFilter>>,
 }

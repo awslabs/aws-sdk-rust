@@ -22,8 +22,8 @@ impl S3MonitoringConfiguration {
 }
 
 /// A builder for [`S3MonitoringConfiguration`](crate::types::S3MonitoringConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3MonitoringConfigurationBuilder {
     pub(crate) log_uri: ::std::option::Option<::std::string::String>,
 }

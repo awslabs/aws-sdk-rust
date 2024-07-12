@@ -34,8 +34,8 @@ impl DescribeAccountAttributesOutput {
 }
 
 /// A builder for [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountAttributesOutputBuilder {
     pub(crate) account_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

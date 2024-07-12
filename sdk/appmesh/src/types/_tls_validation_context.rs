@@ -27,8 +27,8 @@ impl TlsValidationContext {
 }
 
 /// A builder for [`TlsValidationContext`](crate::types::TlsValidationContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TlsValidationContextBuilder {
     pub(crate) trust: ::std::option::Option<crate::types::TlsValidationContextTrust>,
     pub(crate) subject_alternative_names: ::std::option::Option<crate::types::SubjectAlternativeNames>,

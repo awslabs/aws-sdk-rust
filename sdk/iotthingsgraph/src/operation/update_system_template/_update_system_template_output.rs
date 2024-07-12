@@ -26,8 +26,8 @@ impl UpdateSystemTemplateOutput {
 }
 
 /// A builder for [`UpdateSystemTemplateOutput`](crate::operation::update_system_template::UpdateSystemTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSystemTemplateOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SystemTemplateSummary>,
     _request_id: Option<String>,

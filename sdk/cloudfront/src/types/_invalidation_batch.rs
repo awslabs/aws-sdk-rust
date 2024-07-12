@@ -32,8 +32,8 @@ impl InvalidationBatch {
 }
 
 /// A builder for [`InvalidationBatch`](crate::types::InvalidationBatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidationBatchBuilder {
     pub(crate) paths: ::std::option::Option<crate::types::Paths>,
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,

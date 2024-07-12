@@ -27,8 +27,8 @@ impl SearchResourcesBucketCriteria {
 }
 
 /// A builder for [`SearchResourcesBucketCriteria`](crate::types::SearchResourcesBucketCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchResourcesBucketCriteriaBuilder {
     pub(crate) excludes: ::std::option::Option<crate::types::SearchResourcesCriteriaBlock>,
     pub(crate) includes: ::std::option::Option<crate::types::SearchResourcesCriteriaBlock>,

@@ -110,8 +110,8 @@ impl RegisterWorkflowTypeInput {
 }
 
 /// A builder for [`RegisterWorkflowTypeInput`](crate::operation::register_workflow_type::RegisterWorkflowTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterWorkflowTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

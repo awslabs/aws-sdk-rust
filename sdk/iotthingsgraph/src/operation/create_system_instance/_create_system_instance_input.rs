@@ -58,8 +58,8 @@ impl CreateSystemInstanceInput {
 }
 
 /// A builder for [`CreateSystemInstanceInput`](crate::operation::create_system_instance::CreateSystemInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSystemInstanceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,

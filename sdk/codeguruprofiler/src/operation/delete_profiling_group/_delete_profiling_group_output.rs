@@ -19,8 +19,8 @@ impl DeleteProfilingGroupOutput {
 }
 
 /// A builder for [`DeleteProfilingGroupOutput`](crate::operation::delete_profiling_group::DeleteProfilingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProfilingGroupOutputBuilder {
     _request_id: Option<String>,
 }

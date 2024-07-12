@@ -18,8 +18,8 @@ impl DeleteImageVersionOutput {
 }
 
 /// A builder for [`DeleteImageVersionOutput`](crate::operation::delete_image_version::DeleteImageVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteImageVersionOutputBuilder {
     _request_id: Option<String>,
 }

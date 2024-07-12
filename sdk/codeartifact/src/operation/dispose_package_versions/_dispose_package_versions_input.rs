@@ -110,8 +110,8 @@ impl DisposePackageVersionsInput {
 }
 
 /// A builder for [`DisposePackageVersionsInput`](crate::operation::dispose_package_versions::DisposePackageVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisposePackageVersionsInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

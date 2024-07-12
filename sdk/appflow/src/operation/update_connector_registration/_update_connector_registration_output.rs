@@ -26,8 +26,8 @@ impl UpdateConnectorRegistrationOutput {
 }
 
 /// A builder for [`UpdateConnectorRegistrationOutput`](crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConnectorRegistrationOutputBuilder {
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -139,8 +139,8 @@ impl Interconnect {
 }
 
 /// A builder for [`Interconnect`](crate::types::Interconnect).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InterconnectBuilder {
     pub(crate) interconnect_id: ::std::option::Option<::std::string::String>,
     pub(crate) interconnect_name: ::std::option::Option<::std::string::String>,

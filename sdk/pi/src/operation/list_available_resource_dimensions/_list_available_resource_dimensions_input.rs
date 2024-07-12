@@ -56,8 +56,8 @@ impl ListAvailableResourceDimensionsInput {
 }
 
 /// A builder for [`ListAvailableResourceDimensionsInput`](crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableResourceDimensionsInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl GetMigrationsOutput {
 }
 
 /// A builder for [`GetMigrationsOutput`](crate::operation::get_migrations::GetMigrationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMigrationsOutputBuilder {
     pub(crate) migration_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MigrationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

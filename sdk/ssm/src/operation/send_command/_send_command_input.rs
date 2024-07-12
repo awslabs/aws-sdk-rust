@@ -178,8 +178,8 @@ impl SendCommandInput {
 }
 
 /// A builder for [`SendCommandInput`](crate::operation::send_command::SendCommandInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SendCommandInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,

@@ -27,8 +27,8 @@ impl CreateScheduleOutput {
 }
 
 /// A builder for [`CreateScheduleOutput`](crate::operation::create_schedule::CreateScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateScheduleOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

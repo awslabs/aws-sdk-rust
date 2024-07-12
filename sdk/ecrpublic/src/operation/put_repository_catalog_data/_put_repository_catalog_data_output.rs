@@ -26,8 +26,8 @@ impl PutRepositoryCatalogDataOutput {
 }
 
 /// A builder for [`PutRepositoryCatalogDataOutput`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRepositoryCatalogDataOutputBuilder {
     pub(crate) catalog_data: ::std::option::Option<crate::types::RepositoryCatalogData>,
     _request_id: Option<String>,

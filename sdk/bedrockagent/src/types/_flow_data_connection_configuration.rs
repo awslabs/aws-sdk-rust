@@ -29,8 +29,8 @@ impl FlowDataConnectionConfiguration {
 }
 
 /// A builder for [`FlowDataConnectionConfiguration`](crate::types::FlowDataConnectionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlowDataConnectionConfigurationBuilder {
     pub(crate) source_output: ::std::option::Option<::std::string::String>,
     pub(crate) target_input: ::std::option::Option<::std::string::String>,

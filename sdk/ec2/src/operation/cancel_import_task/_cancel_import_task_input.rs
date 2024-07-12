@@ -32,8 +32,8 @@ impl CancelImportTaskInput {
 }
 
 /// A builder for [`CancelImportTaskInput`](crate::operation::cancel_import_task::CancelImportTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelImportTaskInputBuilder {
     pub(crate) cancel_reason: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

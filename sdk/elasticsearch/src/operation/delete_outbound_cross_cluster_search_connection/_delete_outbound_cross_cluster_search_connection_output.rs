@@ -29,8 +29,8 @@ impl DeleteOutboundCrossClusterSearchConnectionOutput {
 }
 
 /// A builder for [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::operation::delete_outbound_cross_cluster_search_connection::DeleteOutboundCrossClusterSearchConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOutboundCrossClusterSearchConnectionOutputBuilder {
     pub(crate) cross_cluster_search_connection: ::std::option::Option<crate::types::OutboundCrossClusterSearchConnection>,
     _request_id: Option<String>,

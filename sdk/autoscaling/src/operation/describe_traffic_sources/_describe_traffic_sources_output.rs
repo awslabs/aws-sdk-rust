@@ -34,8 +34,8 @@ impl DescribeTrafficSourcesOutput {
 }
 
 /// A builder for [`DescribeTrafficSourcesOutput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrafficSourcesOutputBuilder {
     pub(crate) traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl DescribeConnectionsOnInterconnectOutput {
 }
 
 /// A builder for [`DescribeConnectionsOnInterconnectOutput`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectionsOnInterconnectOutputBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     _request_id: Option<String>,

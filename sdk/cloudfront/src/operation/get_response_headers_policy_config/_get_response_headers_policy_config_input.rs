@@ -22,8 +22,8 @@ impl GetResponseHeadersPolicyConfigInput {
 }
 
 /// A builder for [`GetResponseHeadersPolicyConfigInput`](crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResponseHeadersPolicyConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

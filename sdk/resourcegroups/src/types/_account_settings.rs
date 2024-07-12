@@ -33,8 +33,8 @@ impl AccountSettings {
 }
 
 /// A builder for [`AccountSettings`](crate::types::AccountSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountSettingsBuilder {
     pub(crate) group_lifecycle_events_desired_status: ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
     pub(crate) group_lifecycle_events_status: ::std::option::Option<crate::types::GroupLifecycleEventsStatus>,

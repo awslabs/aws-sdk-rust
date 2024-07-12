@@ -20,8 +20,8 @@ impl DeleteLicenseManagerReportGeneratorInput {
 }
 
 /// A builder for [`DeleteLicenseManagerReportGeneratorInput`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLicenseManagerReportGeneratorInputBuilder {
     pub(crate) license_manager_report_generator_arn: ::std::option::Option<::std::string::String>,
 }

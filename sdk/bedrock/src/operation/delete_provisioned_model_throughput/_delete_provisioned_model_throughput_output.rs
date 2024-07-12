@@ -18,8 +18,8 @@ impl DeleteProvisionedModelThroughputOutput {
 }
 
 /// A builder for [`DeleteProvisionedModelThroughputOutput`](crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProvisionedModelThroughputOutputBuilder {
     _request_id: Option<String>,
 }

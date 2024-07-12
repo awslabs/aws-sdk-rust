@@ -18,8 +18,8 @@ impl UpdateRoutingProfileConcurrencyOutput {
 }
 
 /// A builder for [`UpdateRoutingProfileConcurrencyOutput`](crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoutingProfileConcurrencyOutputBuilder {
     _request_id: Option<String>,
 }

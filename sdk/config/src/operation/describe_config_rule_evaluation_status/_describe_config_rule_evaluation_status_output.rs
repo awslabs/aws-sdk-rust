@@ -35,8 +35,8 @@ impl DescribeConfigRuleEvaluationStatusOutput {
 }
 
 /// A builder for [`DescribeConfigRuleEvaluationStatusOutput`](crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigRuleEvaluationStatusOutputBuilder {
     pub(crate) config_rules_evaluation_status: ::std::option::Option<::std::vec::Vec<crate::types::ConfigRuleEvaluationStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

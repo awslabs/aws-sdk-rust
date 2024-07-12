@@ -38,8 +38,8 @@ impl ListProxySessionsInput {
 }
 
 /// A builder for [`ListProxySessionsInput`](crate::operation::list_proxy_sessions::ListProxySessionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProxySessionsInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ProxySessionStatus>,

@@ -20,8 +20,8 @@ impl DeleteVoiceProfileInput {
 }
 
 /// A builder for [`DeleteVoiceProfileInput`](crate::operation::delete_voice_profile::DeleteVoiceProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVoiceProfileInputBuilder {
     pub(crate) voice_profile_id: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl ModifySnapshotAttributeOutput {
 }
 
 /// A builder for [`ModifySnapshotAttributeOutput`](crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifySnapshotAttributeOutputBuilder {
     _request_id: Option<String>,
 }

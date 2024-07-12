@@ -32,8 +32,8 @@ impl DeleteAppInputSourceOutput {
 }
 
 /// A builder for [`DeleteAppInputSourceOutput`](crate::operation::delete_app_input_source::DeleteAppInputSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppInputSourceOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_input_source: ::std::option::Option<crate::types::AppInputSource>,

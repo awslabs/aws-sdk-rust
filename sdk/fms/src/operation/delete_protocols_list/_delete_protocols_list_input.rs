@@ -20,8 +20,8 @@ impl DeleteProtocolsListInput {
 }
 
 /// A builder for [`DeleteProtocolsListInput`](crate::operation::delete_protocols_list::DeleteProtocolsListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProtocolsListInputBuilder {
     pub(crate) list_id: ::std::option::Option<::std::string::String>,
 }

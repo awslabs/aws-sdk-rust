@@ -83,8 +83,8 @@ impl FsxConfiguration {
 }
 
 /// A builder for [`FsxConfiguration`](crate::types::FsxConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FsxConfigurationBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_type: ::std::option::Option<crate::types::FsxFileSystemType>,

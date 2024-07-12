@@ -39,8 +39,8 @@ impl DatasetParameter {
 }
 
 /// A builder for [`DatasetParameter`](crate::types::DatasetParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetParameterBuilder {
     pub(crate) string_dataset_parameter: ::std::option::Option<crate::types::StringDatasetParameter>,
     pub(crate) decimal_dataset_parameter: ::std::option::Option<crate::types::DecimalDatasetParameter>,

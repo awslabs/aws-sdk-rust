@@ -33,8 +33,8 @@ impl ListContactChannelsOutput {
 }
 
 /// A builder for [`ListContactChannelsOutput`](crate::operation::list_contact_channels::ListContactChannelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContactChannelsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) contact_channels: ::std::option::Option<::std::vec::Vec<crate::types::ContactChannel>>,

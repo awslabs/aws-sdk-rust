@@ -79,8 +79,8 @@ impl BacktrackDbClusterInput {
 }
 
 /// A builder for [`BacktrackDbClusterInput`](crate::operation::backtrack_db_cluster::BacktrackDbClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BacktrackDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) backtrack_to: ::std::option::Option<::aws_smithy_types::DateTime>,

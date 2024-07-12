@@ -26,8 +26,8 @@ impl PhoneNumberValidateOutput {
 }
 
 /// A builder for [`PhoneNumberValidateOutput`](crate::operation::phone_number_validate::PhoneNumberValidateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PhoneNumberValidateOutputBuilder {
     pub(crate) number_validate_response: ::std::option::Option<crate::types::NumberValidateResponse>,
     _request_id: Option<String>,

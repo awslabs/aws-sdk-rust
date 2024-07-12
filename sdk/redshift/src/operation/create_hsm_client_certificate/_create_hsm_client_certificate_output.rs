@@ -26,8 +26,8 @@ impl CreateHsmClientCertificateOutput {
 }
 
 /// A builder for [`CreateHsmClientCertificateOutput`](crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHsmClientCertificateOutputBuilder {
     pub(crate) hsm_client_certificate: ::std::option::Option<crate::types::HsmClientCertificate>,
     _request_id: Option<String>,

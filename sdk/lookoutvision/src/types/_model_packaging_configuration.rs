@@ -21,8 +21,8 @@ impl ModelPackagingConfiguration {
 }
 
 /// A builder for [`ModelPackagingConfiguration`](crate::types::ModelPackagingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelPackagingConfigurationBuilder {
     pub(crate) greengrass: ::std::option::Option<crate::types::GreengrassConfiguration>,
 }

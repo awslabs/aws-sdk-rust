@@ -20,8 +20,8 @@ impl GetRateBasedRuleInput {
 }
 
 /// A builder for [`GetRateBasedRuleInput`](crate::operation::get_rate_based_rule::GetRateBasedRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRateBasedRuleInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
 }

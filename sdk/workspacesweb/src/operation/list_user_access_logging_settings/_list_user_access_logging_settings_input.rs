@@ -26,8 +26,8 @@ impl ListUserAccessLoggingSettingsInput {
 }
 
 /// A builder for [`ListUserAccessLoggingSettingsInput`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUserAccessLoggingSettingsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

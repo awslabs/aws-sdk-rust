@@ -26,8 +26,8 @@ impl SyncResourceInput {
 }
 
 /// A builder for [`SyncResourceInput`](crate::operation::sync_resource::SyncResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyncResourceInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,

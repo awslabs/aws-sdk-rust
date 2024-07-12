@@ -21,8 +21,8 @@ impl ContentBlockStopEvent {
 }
 
 /// A builder for [`ContentBlockStopEvent`](crate::types::ContentBlockStopEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentBlockStopEventBuilder {
     pub(crate) content_block_index: ::std::option::Option<i32>,
 }

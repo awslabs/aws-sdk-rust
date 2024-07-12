@@ -64,8 +64,8 @@ impl GetReportDefinitionOutput {
 }
 
 /// A builder for [`GetReportDefinitionOutput`](crate::operation::get_report_definition::GetReportDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReportDefinitionOutputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     pub(crate) report_description: ::std::option::Option<::std::string::String>,

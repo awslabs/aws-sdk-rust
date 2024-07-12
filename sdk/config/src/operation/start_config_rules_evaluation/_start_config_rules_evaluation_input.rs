@@ -23,8 +23,8 @@ impl StartConfigRulesEvaluationInput {
 }
 
 /// A builder for [`StartConfigRulesEvaluationInput`](crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartConfigRulesEvaluationInputBuilder {
     pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

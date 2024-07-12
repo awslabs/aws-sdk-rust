@@ -32,8 +32,8 @@ impl ListNamedShadowsForThingInput {
 }
 
 /// A builder for [`ListNamedShadowsForThingInput`](crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNamedShadowsForThingInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

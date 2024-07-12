@@ -62,8 +62,8 @@ impl CreateContactMethodInput {
 }
 
 /// A builder for [`CreateContactMethodInput`](crate::operation::create_contact_method::CreateContactMethodInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContactMethodInputBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::ContactProtocol>,
     pub(crate) contact_endpoint: ::std::option::Option<::std::string::String>,

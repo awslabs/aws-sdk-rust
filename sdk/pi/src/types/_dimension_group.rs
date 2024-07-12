@@ -294,8 +294,8 @@ impl DimensionGroup {
 }
 
 /// A builder for [`DimensionGroup`](crate::types::DimensionGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DimensionGroupBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

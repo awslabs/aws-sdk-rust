@@ -39,8 +39,8 @@ impl PersonasSummary {
 }
 
 /// A builder for [`PersonasSummary`](crate::types::PersonasSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PersonasSummaryBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) persona: ::std::option::Option<crate::types::Persona>,

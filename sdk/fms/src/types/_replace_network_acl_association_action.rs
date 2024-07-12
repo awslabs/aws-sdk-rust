@@ -39,8 +39,8 @@ impl ReplaceNetworkAclAssociationAction {
 }
 
 /// A builder for [`ReplaceNetworkAclAssociationAction`](crate::types::ReplaceNetworkAclAssociationAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplaceNetworkAclAssociationActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<crate::types::ActionTarget>,

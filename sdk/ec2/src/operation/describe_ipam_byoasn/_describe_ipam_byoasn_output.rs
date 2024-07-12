@@ -34,8 +34,8 @@ impl DescribeIpamByoasnOutput {
 }
 
 /// A builder for [`DescribeIpamByoasnOutput`](crate::operation::describe_ipam_byoasn::DescribeIpamByoasnOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIpamByoasnOutputBuilder {
     pub(crate) byoasns: ::std::option::Option<::std::vec::Vec<crate::types::Byoasn>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

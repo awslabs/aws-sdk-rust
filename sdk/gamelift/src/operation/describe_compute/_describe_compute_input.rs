@@ -26,8 +26,8 @@ impl DescribeComputeInput {
 }
 
 /// A builder for [`DescribeComputeInput`](crate::operation::describe_compute::DescribeComputeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeComputeInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,

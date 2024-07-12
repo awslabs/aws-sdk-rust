@@ -29,8 +29,8 @@ impl ListServiceInstancesFilter {
 }
 
 /// A builder for [`ListServiceInstancesFilter`](crate::types::ListServiceInstancesFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceInstancesFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::ListServiceInstancesFilterBy>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

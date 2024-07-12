@@ -128,8 +128,8 @@ impl ContentData {
 }
 
 /// A builder for [`ContentData`](crate::types::ContentData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ContentDataBuilder {
     pub(crate) content_arn: ::std::option::Option<::std::string::String>,
     pub(crate) content_id: ::std::option::Option<::std::string::String>,

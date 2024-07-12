@@ -40,8 +40,8 @@ impl DescribeRuleGroupMetadataInput {
 }
 
 /// A builder for [`DescribeRuleGroupMetadataInput`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRuleGroupMetadataInputBuilder {
     pub(crate) rule_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,

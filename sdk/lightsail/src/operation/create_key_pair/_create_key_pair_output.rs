@@ -44,8 +44,8 @@ impl CreateKeyPairOutput {
 }
 
 /// A builder for [`CreateKeyPairOutput`](crate::operation::create_key_pair::CreateKeyPairOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKeyPairOutputBuilder {
     pub(crate) key_pair: ::std::option::Option<crate::types::KeyPair>,
     pub(crate) public_key_base64: ::std::option::Option<::std::string::String>,

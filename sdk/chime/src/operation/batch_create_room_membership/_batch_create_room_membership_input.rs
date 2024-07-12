@@ -34,8 +34,8 @@ impl BatchCreateRoomMembershipInput {
 }
 
 /// A builder for [`BatchCreateRoomMembershipInput`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateRoomMembershipInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_id: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl MonitorDataSource {
 }
 
 /// A builder for [`MonitorDataSource`](crate::types::MonitorDataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitorDataSourceBuilder {
     pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_arn: ::std::option::Option<::std::string::String>,

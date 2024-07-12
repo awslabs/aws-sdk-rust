@@ -86,8 +86,8 @@ impl GetUnfilteredTableMetadataOutput {
 }
 
 /// A builder for [`GetUnfilteredTableMetadataOutput`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUnfilteredTableMetadataOutputBuilder {
     pub(crate) table: ::std::option::Option<crate::types::Table>,
     pub(crate) authorized_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

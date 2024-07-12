@@ -53,8 +53,8 @@ impl DescribeConfigurationSetOutput {
 }
 
 /// A builder for [`DescribeConfigurationSetOutput`](crate::operation::describe_configuration_set::DescribeConfigurationSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigurationSetOutputBuilder {
     pub(crate) configuration_set: ::std::option::Option<crate::types::ConfigurationSet>,
     pub(crate) event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,

@@ -105,8 +105,8 @@ impl JobSettings {
 }
 
 /// A builder for [`JobSettings`](crate::types::JobSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobSettingsBuilder {
     pub(crate) ad_avail_offset: ::std::option::Option<i32>,
     pub(crate) avail_blanking: ::std::option::Option<crate::types::AvailBlanking>,

@@ -39,8 +39,8 @@ impl DqResultsPublishingOptions {
 }
 
 /// A builder for [`DqResultsPublishingOptions`](crate::types::DqResultsPublishingOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DqResultsPublishingOptionsBuilder {
     pub(crate) evaluation_context: ::std::option::Option<::std::string::String>,
     pub(crate) results_s3_prefix: ::std::option::Option<::std::string::String>,

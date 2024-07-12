@@ -95,8 +95,8 @@ impl EcsTaskDetails {
 }
 
 /// A builder for [`EcsTaskDetails`](crate::types::EcsTaskDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsTaskDetailsBuilder {
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::TaskContainerDetails>>,
     pub(crate) container_instance_arn: ::std::option::Option<::std::string::String>,

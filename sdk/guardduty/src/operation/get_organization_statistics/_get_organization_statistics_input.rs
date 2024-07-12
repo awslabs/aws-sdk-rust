@@ -11,8 +11,8 @@ impl GetOrganizationStatisticsInput {
 }
 
 /// A builder for [`GetOrganizationStatisticsInput`](crate::operation::get_organization_statistics::GetOrganizationStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOrganizationStatisticsInputBuilder {}
 impl GetOrganizationStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetOrganizationStatisticsInput`](crate::operation::get_organization_statistics::GetOrganizationStatisticsInput).

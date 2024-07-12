@@ -38,8 +38,8 @@ impl UpdateFailbackReplicationConfigurationInput {
 }
 
 /// A builder for [`UpdateFailbackReplicationConfigurationInput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFailbackReplicationConfigurationInputBuilder {
     pub(crate) recovery_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

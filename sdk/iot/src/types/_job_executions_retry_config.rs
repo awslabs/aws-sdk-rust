@@ -22,8 +22,8 @@ impl JobExecutionsRetryConfig {
 }
 
 /// A builder for [`JobExecutionsRetryConfig`](crate::types::JobExecutionsRetryConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobExecutionsRetryConfigBuilder {
     pub(crate) criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::RetryCriteria>>,
 }

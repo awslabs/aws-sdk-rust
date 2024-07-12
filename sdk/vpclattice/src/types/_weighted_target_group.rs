@@ -28,8 +28,8 @@ impl WeightedTargetGroup {
 }
 
 /// A builder for [`WeightedTargetGroup`](crate::types::WeightedTargetGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WeightedTargetGroupBuilder {
     pub(crate) target_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) weight: ::std::option::Option<i32>,

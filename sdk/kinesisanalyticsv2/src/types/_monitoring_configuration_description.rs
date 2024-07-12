@@ -33,8 +33,8 @@ impl MonitoringConfigurationDescription {
 }
 
 /// A builder for [`MonitoringConfigurationDescription`](crate::types::MonitoringConfigurationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringConfigurationDescriptionBuilder {
     pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
     pub(crate) metrics_level: ::std::option::Option<crate::types::MetricsLevel>,

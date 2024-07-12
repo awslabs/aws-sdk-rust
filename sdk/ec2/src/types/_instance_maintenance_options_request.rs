@@ -21,8 +21,8 @@ impl InstanceMaintenanceOptionsRequest {
 }
 
 /// A builder for [`InstanceMaintenanceOptionsRequest`](crate::types::InstanceMaintenanceOptionsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceMaintenanceOptionsRequestBuilder {
     pub(crate) auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
 }

@@ -45,8 +45,8 @@ impl OperatingSystemNotCompatibleException {
 }
 
 /// A builder for [`OperatingSystemNotCompatibleException`](crate::types::error::OperatingSystemNotCompatibleException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OperatingSystemNotCompatibleExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

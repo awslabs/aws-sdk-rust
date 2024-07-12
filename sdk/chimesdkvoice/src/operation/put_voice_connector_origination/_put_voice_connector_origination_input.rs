@@ -26,8 +26,8 @@ impl PutVoiceConnectorOriginationInput {
 }
 
 /// A builder for [`PutVoiceConnectorOriginationInput`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutVoiceConnectorOriginationInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) origination: ::std::option::Option<crate::types::Origination>,

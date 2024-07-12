@@ -26,8 +26,8 @@ impl StopStreamingSessionOutput {
 }
 
 /// A builder for [`StopStreamingSessionOutput`](crate::operation::stop_streaming_session::StopStreamingSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopStreamingSessionOutputBuilder {
     pub(crate) session: ::std::option::Option<crate::types::StreamingSession>,
     _request_id: Option<String>,

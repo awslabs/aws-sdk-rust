@@ -30,8 +30,8 @@ impl ExperimentTemplateTargetInputFilter {
 }
 
 /// A builder for [`ExperimentTemplateTargetInputFilter`](crate::types::ExperimentTemplateTargetInputFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperimentTemplateTargetInputFilterBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

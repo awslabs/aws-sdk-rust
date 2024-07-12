@@ -11,8 +11,8 @@ impl GetSendStatisticsInput {
 }
 
 /// A builder for [`GetSendStatisticsInput`](crate::operation::get_send_statistics::GetSendStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSendStatisticsInputBuilder {}
 impl GetSendStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetSendStatisticsInput`](crate::operation::get_send_statistics::GetSendStatisticsInput).

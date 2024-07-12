@@ -43,8 +43,8 @@ impl PutPipelineDefinitionOutput {
 }
 
 /// A builder for [`PutPipelineDefinitionOutput`](crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutPipelineDefinitionOutputBuilder {
     pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     pub(crate) validation_warnings: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,

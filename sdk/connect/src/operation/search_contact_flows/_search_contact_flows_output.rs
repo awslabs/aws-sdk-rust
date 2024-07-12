@@ -40,8 +40,8 @@ impl SearchContactFlowsOutput {
 }
 
 /// A builder for [`SearchContactFlowsOutput`](crate::operation::search_contact_flows::SearchContactFlowsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchContactFlowsOutputBuilder {
     pub(crate) contact_flows: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlow>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

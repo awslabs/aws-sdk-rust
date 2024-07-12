@@ -40,8 +40,8 @@ impl UpdateDirectoryConfigInput {
 }
 
 /// A builder for [`UpdateDirectoryConfigInput`](crate::operation::update_directory_config::UpdateDirectoryConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDirectoryConfigInputBuilder {
     pub(crate) directory_name: ::std::option::Option<::std::string::String>,
     pub(crate) organizational_unit_distinguished_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

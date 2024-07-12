@@ -34,8 +34,8 @@ impl DeleteRealtimeEndpointOutput {
 }
 
 /// A builder for [`DeleteRealtimeEndpointOutput`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRealtimeEndpointOutputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) realtime_endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,

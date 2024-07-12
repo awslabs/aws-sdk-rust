@@ -44,8 +44,8 @@ impl GitConfiguration {
 }
 
 /// A builder for [`GitConfiguration`](crate::types::GitConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GitConfigurationBuilder {
     pub(crate) source_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) push: ::std::option::Option<::std::vec::Vec<crate::types::GitPushFilter>>,

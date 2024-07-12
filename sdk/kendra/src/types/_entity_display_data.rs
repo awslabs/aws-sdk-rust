@@ -56,8 +56,8 @@ impl EntityDisplayData {
 }
 
 /// A builder for [`EntityDisplayData`](crate::types::EntityDisplayData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EntityDisplayDataBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl GetIdentityPoliciesOutput {
 }
 
 /// A builder for [`GetIdentityPoliciesOutput`](crate::operation::get_identity_policies::GetIdentityPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityPoliciesOutputBuilder {
     pub(crate) policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,

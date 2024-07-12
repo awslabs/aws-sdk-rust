@@ -53,8 +53,8 @@ impl DestinationFieldProperties {
 }
 
 /// A builder for [`DestinationFieldProperties`](crate::types::DestinationFieldProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationFieldPropertiesBuilder {
     pub(crate) is_creatable: ::std::option::Option<bool>,
     pub(crate) is_nullable: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl RestoreTableFromRecoveryPointOutput {
 }
 
 /// A builder for [`RestoreTableFromRecoveryPointOutput`](crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreTableFromRecoveryPointOutputBuilder {
     pub(crate) table_restore_status: ::std::option::Option<crate::types::TableRestoreStatus>,
     _request_id: Option<String>,

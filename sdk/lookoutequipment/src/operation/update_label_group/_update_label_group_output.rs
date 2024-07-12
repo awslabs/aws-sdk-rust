@@ -18,8 +18,8 @@ impl UpdateLabelGroupOutput {
 }
 
 /// A builder for [`UpdateLabelGroupOutput`](crate::operation::update_label_group::UpdateLabelGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLabelGroupOutputBuilder {
     _request_id: Option<String>,
 }

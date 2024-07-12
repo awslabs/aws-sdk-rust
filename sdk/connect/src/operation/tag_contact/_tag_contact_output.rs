@@ -18,8 +18,8 @@ impl TagContactOutput {
 }
 
 /// A builder for [`TagContactOutput`](crate::operation::tag_contact::TagContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagContactOutputBuilder {
     _request_id: Option<String>,
 }

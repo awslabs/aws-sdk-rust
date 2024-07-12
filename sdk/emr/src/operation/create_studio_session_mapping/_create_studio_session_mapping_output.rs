@@ -18,8 +18,8 @@ impl CreateStudioSessionMappingOutput {
 }
 
 /// A builder for [`CreateStudioSessionMappingOutput`](crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStudioSessionMappingOutputBuilder {
     _request_id: Option<String>,
 }

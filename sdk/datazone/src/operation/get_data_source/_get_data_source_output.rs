@@ -188,8 +188,8 @@ impl GetDataSourceOutput {
 }
 
 /// A builder for [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetDataSourceOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,

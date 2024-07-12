@@ -19,8 +19,8 @@ impl PutAccountSuppressionAttributesOutput {
 }
 
 /// A builder for [`PutAccountSuppressionAttributesOutput`](crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccountSuppressionAttributesOutputBuilder {
     _request_id: Option<String>,
 }

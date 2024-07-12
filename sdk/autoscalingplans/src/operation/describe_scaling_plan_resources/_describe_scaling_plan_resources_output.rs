@@ -34,8 +34,8 @@ impl DescribeScalingPlanResourcesOutput {
 }
 
 /// A builder for [`DescribeScalingPlanResourcesOutput`](crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScalingPlanResourcesOutputBuilder {
     pub(crate) scaling_plan_resources: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlanResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

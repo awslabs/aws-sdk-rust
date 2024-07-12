@@ -34,8 +34,8 @@ impl ListMitigationActionsOutput {
 }
 
 /// A builder for [`ListMitigationActionsOutput`](crate::operation::list_mitigation_actions::ListMitigationActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMitigationActionsOutputBuilder {
     pub(crate) action_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::MitigationActionIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

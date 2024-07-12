@@ -20,8 +20,8 @@ impl DescribeIdentityProviderConfigurationInput {
 }
 
 /// A builder for [`DescribeIdentityProviderConfigurationInput`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIdentityProviderConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
 }

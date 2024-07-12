@@ -20,8 +20,8 @@ impl GetContactChannelInput {
 }
 
 /// A builder for [`GetContactChannelInput`](crate::operation::get_contact_channel::GetContactChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContactChannelInputBuilder {
     pub(crate) contact_channel_id: ::std::option::Option<::std::string::String>,
 }

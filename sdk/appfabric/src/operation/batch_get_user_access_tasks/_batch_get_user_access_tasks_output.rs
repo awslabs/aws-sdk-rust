@@ -28,8 +28,8 @@ impl BatchGetUserAccessTasksOutput {
 }
 
 /// A builder for [`BatchGetUserAccessTasksOutput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetUserAccessTasksOutputBuilder {
     pub(crate) user_access_results_list: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>>,
     _request_id: Option<String>,

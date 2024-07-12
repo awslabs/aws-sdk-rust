@@ -57,8 +57,8 @@ impl GetBucketNotificationConfigurationOutput {
 }
 
 /// A builder for [`GetBucketNotificationConfigurationOutput`](crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketNotificationConfigurationOutputBuilder {
     pub(crate) topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     pub(crate) queue_configurations: ::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>>,

@@ -21,8 +21,8 @@ impl MessageStartEvent {
 }
 
 /// A builder for [`MessageStartEvent`](crate::types::MessageStartEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageStartEventBuilder {
     pub(crate) role: ::std::option::Option<crate::types::ConversationRole>,
 }

@@ -106,8 +106,8 @@ impl CreateAlgorithmInput {
 }
 
 /// A builder for [`CreateAlgorithmInput`](crate::operation::create_algorithm::CreateAlgorithmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAlgorithmInputBuilder {
     pub(crate) algorithm_name: ::std::option::Option<::std::string::String>,
     pub(crate) algorithm_description: ::std::option::Option<::std::string::String>,

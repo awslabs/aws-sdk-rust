@@ -26,8 +26,8 @@ impl GetCollaborationAnalysisTemplateOutput {
 }
 
 /// A builder for [`GetCollaborationAnalysisTemplateOutput`](crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCollaborationAnalysisTemplateOutputBuilder {
     pub(crate) collaboration_analysis_template: ::std::option::Option<crate::types::CollaborationAnalysisTemplate>,
     _request_id: Option<String>,

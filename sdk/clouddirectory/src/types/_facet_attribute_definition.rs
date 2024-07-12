@@ -39,8 +39,8 @@ impl FacetAttributeDefinition {
 }
 
 /// A builder for [`FacetAttributeDefinition`](crate::types::FacetAttributeDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FacetAttributeDefinitionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FacetAttributeType>,
     pub(crate) default_value: ::std::option::Option<crate::types::TypedAttributeValue>,

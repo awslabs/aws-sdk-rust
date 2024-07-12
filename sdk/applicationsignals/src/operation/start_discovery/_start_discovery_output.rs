@@ -18,8 +18,8 @@ impl StartDiscoveryOutput {
 }
 
 /// A builder for [`StartDiscoveryOutput`](crate::operation::start_discovery::StartDiscoveryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDiscoveryOutputBuilder {
     _request_id: Option<String>,
 }

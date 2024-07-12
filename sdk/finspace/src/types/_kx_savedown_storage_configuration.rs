@@ -41,8 +41,8 @@ impl KxSavedownStorageConfiguration {
 }
 
 /// A builder for [`KxSavedownStorageConfiguration`](crate::types::KxSavedownStorageConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KxSavedownStorageConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::KxSavedownStorageType>,
     pub(crate) size: ::std::option::Option<i32>,

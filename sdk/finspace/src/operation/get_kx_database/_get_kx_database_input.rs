@@ -26,8 +26,8 @@ impl GetKxDatabaseInput {
 }
 
 /// A builder for [`GetKxDatabaseInput`](crate::operation::get_kx_database::GetKxDatabaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKxDatabaseInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

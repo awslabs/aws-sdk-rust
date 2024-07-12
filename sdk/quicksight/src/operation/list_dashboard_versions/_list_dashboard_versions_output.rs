@@ -46,8 +46,8 @@ impl ListDashboardVersionsOutput {
 }
 
 /// A builder for [`ListDashboardVersionsOutput`](crate::operation::list_dashboard_versions::ListDashboardVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDashboardVersionsOutputBuilder {
     pub(crate) dashboard_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::DashboardVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

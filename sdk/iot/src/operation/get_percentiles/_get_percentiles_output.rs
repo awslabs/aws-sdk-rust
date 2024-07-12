@@ -28,8 +28,8 @@ impl GetPercentilesOutput {
 }
 
 /// A builder for [`GetPercentilesOutput`](crate::operation::get_percentiles::GetPercentilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPercentilesOutputBuilder {
     pub(crate) percentiles: ::std::option::Option<::std::vec::Vec<crate::types::PercentPair>>,
     _request_id: Option<String>,

@@ -39,8 +39,8 @@ impl ImageConfig {
 }
 
 /// A builder for [`ImageConfig`](crate::types::ImageConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageConfigBuilder {
     pub(crate) repository_access_mode: ::std::option::Option<crate::types::RepositoryAccessMode>,
     pub(crate) repository_auth_config: ::std::option::Option<crate::types::RepositoryAuthConfig>,

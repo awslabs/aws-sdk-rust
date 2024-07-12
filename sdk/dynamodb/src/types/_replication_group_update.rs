@@ -43,8 +43,8 @@ impl ReplicationGroupUpdate {
 }
 
 /// A builder for [`ReplicationGroupUpdate`](crate::types::ReplicationGroupUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationGroupUpdateBuilder {
     pub(crate) create: ::std::option::Option<crate::types::CreateReplicationGroupMemberAction>,
     pub(crate) update: ::std::option::Option<crate::types::UpdateReplicationGroupMemberAction>,

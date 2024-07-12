@@ -43,8 +43,8 @@ impl IcebergTarget {
 }
 
 /// A builder for [`IcebergTarget`](crate::types::IcebergTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IcebergTargetBuilder {
     pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,

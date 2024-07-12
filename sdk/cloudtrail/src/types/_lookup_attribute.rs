@@ -30,8 +30,8 @@ impl LookupAttribute {
 }
 
 /// A builder for [`LookupAttribute`](crate::types::LookupAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LookupAttributeBuilder {
     pub(crate) attribute_key: ::std::option::Option<crate::types::LookupAttributeKey>,
     pub(crate) attribute_value: ::std::option::Option<::std::string::String>,

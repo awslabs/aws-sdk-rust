@@ -26,8 +26,8 @@ impl UpdateClusterSoftwareOutput {
 }
 
 /// A builder for [`UpdateClusterSoftwareOutput`](crate::operation::update_cluster_software::UpdateClusterSoftwareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClusterSoftwareOutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

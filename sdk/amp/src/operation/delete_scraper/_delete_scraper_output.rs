@@ -34,8 +34,8 @@ impl DeleteScraperOutput {
 }
 
 /// A builder for [`DeleteScraperOutput`](crate::operation::delete_scraper::DeleteScraperOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteScraperOutputBuilder {
     pub(crate) scraper_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ScraperStatus>,

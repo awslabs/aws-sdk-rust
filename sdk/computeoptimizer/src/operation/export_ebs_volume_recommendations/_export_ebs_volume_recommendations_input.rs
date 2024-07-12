@@ -76,8 +76,8 @@ impl ExportEbsVolumeRecommendationsInput {
 }
 
 /// A builder for [`ExportEbsVolumeRecommendationsInput`](crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportEbsVolumeRecommendationsInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::EbsFilter>>,

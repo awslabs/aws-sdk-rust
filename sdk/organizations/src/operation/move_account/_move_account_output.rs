@@ -18,8 +18,8 @@ impl MoveAccountOutput {
 }
 
 /// A builder for [`MoveAccountOutput`](crate::operation::move_account::MoveAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MoveAccountOutputBuilder {
     _request_id: Option<String>,
 }

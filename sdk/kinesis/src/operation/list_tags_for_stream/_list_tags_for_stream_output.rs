@@ -34,8 +34,8 @@ impl ListTagsForStreamOutput {
 }
 
 /// A builder for [`ListTagsForStreamOutput`](crate::operation::list_tags_for_stream::ListTagsForStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTagsForStreamOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) has_more_tags: ::std::option::Option<bool>,

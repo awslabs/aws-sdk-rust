@@ -29,8 +29,8 @@ impl LexFlowNodeConfiguration {
 }
 
 /// A builder for [`LexFlowNodeConfiguration`](crate::types::LexFlowNodeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LexFlowNodeConfigurationBuilder {
     pub(crate) bot_alias_arn: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,

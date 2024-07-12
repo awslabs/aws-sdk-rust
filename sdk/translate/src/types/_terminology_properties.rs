@@ -129,8 +129,8 @@ impl TerminologyProperties {
 }
 
 /// A builder for [`TerminologyProperties`](crate::types::TerminologyProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminologyPropertiesBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

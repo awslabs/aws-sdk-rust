@@ -28,8 +28,8 @@ impl NotifyWorkersOutput {
 }
 
 /// A builder for [`NotifyWorkersOutput`](crate::operation::notify_workers::NotifyWorkersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyWorkersOutputBuilder {
     pub(crate) notify_workers_failure_statuses: ::std::option::Option<::std::vec::Vec<crate::types::NotifyWorkersFailureStatus>>,
     _request_id: Option<String>,

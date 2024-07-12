@@ -38,8 +38,8 @@ impl ListDistributionsByRealtimeLogConfigInput {
 }
 
 /// A builder for [`ListDistributionsByRealtimeLogConfigInput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsByRealtimeLogConfigInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,

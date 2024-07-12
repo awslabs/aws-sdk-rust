@@ -69,8 +69,8 @@ impl PackagingConfiguration {
 }
 
 /// A builder for [`PackagingConfiguration`](crate::types::PackagingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackagingConfigurationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) cmaf_package: ::std::option::Option<crate::types::CmafPackage>,

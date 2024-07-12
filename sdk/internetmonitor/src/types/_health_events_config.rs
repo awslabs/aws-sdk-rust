@@ -44,8 +44,8 @@ impl HealthEventsConfig {
 }
 
 /// A builder for [`HealthEventsConfig`](crate::types::HealthEventsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HealthEventsConfigBuilder {
     pub(crate) availability_score_threshold: ::std::option::Option<f64>,
     pub(crate) performance_score_threshold: ::std::option::Option<f64>,

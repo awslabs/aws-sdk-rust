@@ -79,8 +79,8 @@ impl Site {
 }
 
 /// A builder for [`Site`](crate::types::Site).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SiteBuilder {
     pub(crate) site_id: ::std::option::Option<::std::string::String>,
     pub(crate) site_arn: ::std::option::Option<::std::string::String>,

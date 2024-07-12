@@ -39,8 +39,8 @@ impl LinkAssociation {
 }
 
 /// A builder for [`LinkAssociation`](crate::types::LinkAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LinkAssociationBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,

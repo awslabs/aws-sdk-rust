@@ -40,8 +40,8 @@ impl ListMedicalTranscriptionJobsOutput {
 }
 
 /// A builder for [`ListMedicalTranscriptionJobsOutput`](crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMedicalTranscriptionJobsOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TranscriptionJobStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

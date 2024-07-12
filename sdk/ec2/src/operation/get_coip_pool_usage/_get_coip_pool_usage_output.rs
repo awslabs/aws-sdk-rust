@@ -46,8 +46,8 @@ impl GetCoipPoolUsageOutput {
 }
 
 /// A builder for [`GetCoipPoolUsageOutput`](crate::operation::get_coip_pool_usage::GetCoipPoolUsageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCoipPoolUsageOutputBuilder {
     pub(crate) coip_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) coip_address_usages: ::std::option::Option<::std::vec::Vec<crate::types::CoipAddressUsage>>,

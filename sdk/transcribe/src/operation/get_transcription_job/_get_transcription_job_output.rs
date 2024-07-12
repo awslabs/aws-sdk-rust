@@ -26,8 +26,8 @@ impl GetTranscriptionJobOutput {
 }
 
 /// A builder for [`GetTranscriptionJobOutput`](crate::operation::get_transcription_job::GetTranscriptionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTranscriptionJobOutputBuilder {
     pub(crate) transcription_job: ::std::option::Option<crate::types::TranscriptionJob>,
     _request_id: Option<String>,

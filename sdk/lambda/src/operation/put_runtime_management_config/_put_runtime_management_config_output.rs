@@ -39,8 +39,8 @@ impl PutRuntimeManagementConfigOutput {
 }
 
 /// A builder for [`PutRuntimeManagementConfigOutput`](crate::operation::put_runtime_management_config::PutRuntimeManagementConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRuntimeManagementConfigOutputBuilder {
     pub(crate) update_runtime_on: ::std::option::Option<crate::types::UpdateRuntimeOn>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,

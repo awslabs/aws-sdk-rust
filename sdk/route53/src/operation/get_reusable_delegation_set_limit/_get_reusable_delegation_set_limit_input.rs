@@ -27,8 +27,8 @@ impl GetReusableDelegationSetLimitInput {
 }
 
 /// A builder for [`GetReusableDelegationSetLimitInput`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReusableDelegationSetLimitInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>,
     pub(crate) delegation_set_id: ::std::option::Option<::std::string::String>,

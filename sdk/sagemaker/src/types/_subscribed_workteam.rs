@@ -45,8 +45,8 @@ impl SubscribedWorkteam {
 }
 
 /// A builder for [`SubscribedWorkteam`](crate::types::SubscribedWorkteam).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubscribedWorkteamBuilder {
     pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marketplace_title: ::std::option::Option<::std::string::String>,

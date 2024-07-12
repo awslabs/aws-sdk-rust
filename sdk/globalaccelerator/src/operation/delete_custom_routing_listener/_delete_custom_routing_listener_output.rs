@@ -18,8 +18,8 @@ impl DeleteCustomRoutingListenerOutput {
 }
 
 /// A builder for [`DeleteCustomRoutingListenerOutput`](crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomRoutingListenerOutputBuilder {
     _request_id: Option<String>,
 }

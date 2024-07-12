@@ -27,8 +27,8 @@ impl MinimumEngineVersionPerAllowedValue {
 }
 
 /// A builder for [`MinimumEngineVersionPerAllowedValue`](crate::types::MinimumEngineVersionPerAllowedValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MinimumEngineVersionPerAllowedValueBuilder {
     pub(crate) allowed_value: ::std::option::Option<::std::string::String>,
     pub(crate) minimum_engine_version: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl GetReplicationRunsOutput {
 }
 
 /// A builder for [`GetReplicationRunsOutput`](crate::operation::get_replication_runs::GetReplicationRunsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReplicationRunsOutputBuilder {
     pub(crate) replication_job: ::std::option::Option<crate::types::ReplicationJob>,
     pub(crate) replication_run_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>>,

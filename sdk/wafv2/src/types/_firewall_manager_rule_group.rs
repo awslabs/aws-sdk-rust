@@ -52,8 +52,8 @@ impl FirewallManagerRuleGroup {
 }
 
 /// A builder for [`FirewallManagerRuleGroup`](crate::types::FirewallManagerRuleGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FirewallManagerRuleGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,

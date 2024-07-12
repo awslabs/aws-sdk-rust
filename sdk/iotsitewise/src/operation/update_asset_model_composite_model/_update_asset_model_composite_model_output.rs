@@ -33,8 +33,8 @@ impl UpdateAssetModelCompositeModelOutput {
 }
 
 /// A builder for [`UpdateAssetModelCompositeModelOutput`](crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAssetModelCompositeModelOutputBuilder {
     pub(crate) asset_model_composite_model_path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>>,
     pub(crate) asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,

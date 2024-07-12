@@ -76,8 +76,8 @@ impl ExportLambdaFunctionRecommendationsInput {
 }
 
 /// A builder for [`ExportLambdaFunctionRecommendationsInput`](crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportLambdaFunctionRecommendationsInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>,

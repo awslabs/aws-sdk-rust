@@ -18,8 +18,8 @@ impl DeleteGameSessionQueueOutput {
 }
 
 /// A builder for [`DeleteGameSessionQueueOutput`](crate::operation::delete_game_session_queue::DeleteGameSessionQueueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGameSessionQueueOutputBuilder {
     _request_id: Option<String>,
 }

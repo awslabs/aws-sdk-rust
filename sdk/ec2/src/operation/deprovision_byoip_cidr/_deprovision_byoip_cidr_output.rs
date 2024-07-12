@@ -26,8 +26,8 @@ impl DeprovisionByoipCidrOutput {
 }
 
 /// A builder for [`DeprovisionByoipCidrOutput`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprovisionByoipCidrOutputBuilder {
     pub(crate) byoip_cidr: ::std::option::Option<crate::types::ByoipCidr>,
     _request_id: Option<String>,

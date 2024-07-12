@@ -18,8 +18,8 @@ impl UpdateFuotaTaskOutput {
 }
 
 /// A builder for [`UpdateFuotaTaskOutput`](crate::operation::update_fuota_task::UpdateFuotaTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFuotaTaskOutputBuilder {
     _request_id: Option<String>,
 }

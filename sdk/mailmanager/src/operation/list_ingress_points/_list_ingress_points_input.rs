@@ -26,8 +26,8 @@ impl ListIngressPointsInput {
 }
 
 /// A builder for [`ListIngressPointsInput`](crate::operation::list_ingress_points::ListIngressPointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIngressPointsInputBuilder {
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

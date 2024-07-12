@@ -26,8 +26,8 @@ impl DescribeAccountAssignmentCreationStatusInput {
 }
 
 /// A builder for [`DescribeAccountAssignmentCreationStatusInput`](crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountAssignmentCreationStatusInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_assignment_creation_request_id: ::std::option::Option<::std::string::String>,

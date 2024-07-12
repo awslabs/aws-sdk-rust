@@ -62,8 +62,8 @@ impl TerminateProvisionedProductInput {
 }
 
 /// A builder for [`TerminateProvisionedProductInput`](crate::operation::terminate_provisioned_product::TerminateProvisionedProductInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateProvisionedProductInputBuilder {
     pub(crate) provisioned_product_name: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,

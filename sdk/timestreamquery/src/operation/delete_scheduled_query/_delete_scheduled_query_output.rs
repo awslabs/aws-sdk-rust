@@ -18,8 +18,8 @@ impl DeleteScheduledQueryOutput {
 }
 
 /// A builder for [`DeleteScheduledQueryOutput`](crate::operation::delete_scheduled_query::DeleteScheduledQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteScheduledQueryOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl RestoreClusterFromSnapshotOutput {
 }
 
 /// A builder for [`RestoreClusterFromSnapshotOutput`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreClusterFromSnapshotOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

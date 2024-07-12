@@ -27,8 +27,8 @@ impl StartFileTransferOutput {
 }
 
 /// A builder for [`StartFileTransferOutput`](crate::operation::start_file_transfer::StartFileTransferOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartFileTransferOutputBuilder {
     pub(crate) transfer_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

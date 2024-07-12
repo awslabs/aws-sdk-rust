@@ -35,8 +35,8 @@ impl ChildShard {
 }
 
 /// A builder for [`ChildShard`](crate::types::ChildShard).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChildShardBuilder {
     pub(crate) shard_id: ::std::option::Option<::std::string::String>,
     pub(crate) parent_shards: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

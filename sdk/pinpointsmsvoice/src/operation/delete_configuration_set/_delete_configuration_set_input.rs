@@ -20,8 +20,8 @@ impl DeleteConfigurationSetInput {
 }
 
 /// A builder for [`DeleteConfigurationSetInput`](crate::operation::delete_configuration_set::DeleteConfigurationSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfigurationSetInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }

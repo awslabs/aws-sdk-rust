@@ -44,8 +44,8 @@ impl ListProfileSharesInput {
 }
 
 /// A builder for [`ListProfileSharesInput`](crate::operation::list_profile_shares::ListProfileSharesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfileSharesInputBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with_prefix: ::std::option::Option<::std::string::String>,

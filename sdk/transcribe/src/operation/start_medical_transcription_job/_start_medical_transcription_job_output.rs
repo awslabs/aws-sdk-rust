@@ -26,8 +26,8 @@ impl StartMedicalTranscriptionJobOutput {
 }
 
 /// A builder for [`StartMedicalTranscriptionJobOutput`](crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMedicalTranscriptionJobOutputBuilder {
     pub(crate) medical_transcription_job: ::std::option::Option<crate::types::MedicalTranscriptionJob>,
     _request_id: Option<String>,

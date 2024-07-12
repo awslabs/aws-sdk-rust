@@ -21,8 +21,8 @@ impl UpdateCustomLineItemPercentageChargeDetails {
 }
 
 /// A builder for [`UpdateCustomLineItemPercentageChargeDetails`](crate::types::UpdateCustomLineItemPercentageChargeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCustomLineItemPercentageChargeDetailsBuilder {
     pub(crate) percentage_value: ::std::option::Option<f64>,
 }

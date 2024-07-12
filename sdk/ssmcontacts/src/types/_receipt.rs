@@ -39,8 +39,8 @@ impl Receipt {
 }
 
 /// A builder for [`Receipt`](crate::types::Receipt).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReceiptBuilder {
     pub(crate) contact_channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) receipt_type: ::std::option::Option<crate::types::ReceiptType>,

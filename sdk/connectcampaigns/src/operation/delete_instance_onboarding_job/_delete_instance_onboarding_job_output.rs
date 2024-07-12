@@ -18,8 +18,8 @@ impl DeleteInstanceOnboardingJobOutput {
 }
 
 /// A builder for [`DeleteInstanceOnboardingJobOutput`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInstanceOnboardingJobOutputBuilder {
     _request_id: Option<String>,
 }

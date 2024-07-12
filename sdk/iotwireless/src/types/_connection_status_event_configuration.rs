@@ -27,8 +27,8 @@ impl ConnectionStatusEventConfiguration {
 }
 
 /// A builder for [`ConnectionStatusEventConfiguration`](crate::types::ConnectionStatusEventConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionStatusEventConfigurationBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanConnectionStatusEventNotificationConfigurations>,
     pub(crate) wireless_gateway_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,

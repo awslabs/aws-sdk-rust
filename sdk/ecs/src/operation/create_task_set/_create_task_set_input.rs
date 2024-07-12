@@ -146,8 +146,8 @@ impl CreateTaskSetInput {
 }
 
 /// A builder for [`CreateTaskSetInput`](crate::operation::create_task_set::CreateTaskSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTaskSetInputBuilder {
     pub(crate) service: ::std::option::Option<::std::string::String>,
     pub(crate) cluster: ::std::option::Option<::std::string::String>,

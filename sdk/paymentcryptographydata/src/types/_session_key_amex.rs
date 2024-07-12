@@ -37,8 +37,8 @@ impl SessionKeyAmex {
 }
 
 /// A builder for [`SessionKeyAmex`](crate::types::SessionKeyAmex).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SessionKeyAmexBuilder {
     pub(crate) primary_account_number: ::std::option::Option<::std::string::String>,
     pub(crate) pan_sequence_number: ::std::option::Option<::std::string::String>,

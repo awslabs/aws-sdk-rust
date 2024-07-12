@@ -26,8 +26,8 @@ impl GetCatalogItemOutput {
 }
 
 /// A builder for [`GetCatalogItemOutput`](crate::operation::get_catalog_item::GetCatalogItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCatalogItemOutputBuilder {
     pub(crate) catalog_item: ::std::option::Option<crate::types::CatalogItem>,
     _request_id: Option<String>,

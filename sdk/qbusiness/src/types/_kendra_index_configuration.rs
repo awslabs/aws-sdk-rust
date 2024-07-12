@@ -22,8 +22,8 @@ impl KendraIndexConfiguration {
 }
 
 /// A builder for [`KendraIndexConfiguration`](crate::types::KendraIndexConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KendraIndexConfigurationBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
 }

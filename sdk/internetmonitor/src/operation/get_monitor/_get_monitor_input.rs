@@ -26,8 +26,8 @@ impl GetMonitorInput {
 }
 
 /// A builder for [`GetMonitorInput`](crate::operation::get_monitor::GetMonitorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMonitorInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) linked_account_id: ::std::option::Option<::std::string::String>,

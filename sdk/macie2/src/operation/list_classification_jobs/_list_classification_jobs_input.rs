@@ -38,8 +38,8 @@ impl ListClassificationJobsInput {
 }
 
 /// A builder for [`ListClassificationJobsInput`](crate::operation::list_classification_jobs::ListClassificationJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListClassificationJobsInputBuilder {
     pub(crate) filter_criteria: ::std::option::Option<crate::types::ListJobsFilterCriteria>,
     pub(crate) max_results: ::std::option::Option<i32>,

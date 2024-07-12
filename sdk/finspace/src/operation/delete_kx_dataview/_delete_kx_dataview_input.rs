@@ -38,8 +38,8 @@ impl DeleteKxDataviewInput {
 }
 
 /// A builder for [`DeleteKxDataviewInput`](crate::operation::delete_kx_dataview::DeleteKxDataviewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKxDataviewInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

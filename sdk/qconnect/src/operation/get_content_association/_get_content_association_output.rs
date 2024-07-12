@@ -26,8 +26,8 @@ impl GetContentAssociationOutput {
 }
 
 /// A builder for [`GetContentAssociationOutput`](crate::operation::get_content_association::GetContentAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContentAssociationOutputBuilder {
     pub(crate) content_association: ::std::option::Option<crate::types::ContentAssociationData>,
     _request_id: Option<String>,

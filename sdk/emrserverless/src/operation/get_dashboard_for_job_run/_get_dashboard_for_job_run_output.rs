@@ -26,8 +26,8 @@ impl GetDashboardForJobRunOutput {
 }
 
 /// A builder for [`GetDashboardForJobRunOutput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDashboardForJobRunOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl ReportTaskRunnerHeartbeatOutput {
 }
 
 /// A builder for [`ReportTaskRunnerHeartbeatOutput`](crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportTaskRunnerHeartbeatOutputBuilder {
     pub(crate) terminate: ::std::option::Option<bool>,
     _request_id: Option<String>,

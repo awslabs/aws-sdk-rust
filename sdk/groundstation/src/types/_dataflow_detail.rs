@@ -33,8 +33,8 @@ impl DataflowDetail {
 }
 
 /// A builder for [`DataflowDetail`](crate::types::DataflowDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataflowDetailBuilder {
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,

@@ -28,8 +28,8 @@ impl RestoreDbClusterToPointInTimeOutput {
 }
 
 /// A builder for [`RestoreDbClusterToPointInTimeOutput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreDbClusterToPointInTimeOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,

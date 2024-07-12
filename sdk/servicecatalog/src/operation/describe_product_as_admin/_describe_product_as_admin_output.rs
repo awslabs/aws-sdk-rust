@@ -58,8 +58,8 @@ impl DescribeProductAsAdminOutput {
 }
 
 /// A builder for [`DescribeProductAsAdminOutput`](crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProductAsAdminOutputBuilder {
     pub(crate) product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
     pub(crate) provisioning_artifact_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>>,

@@ -124,8 +124,8 @@ impl ExecutionListItem {
 }
 
 /// A builder for [`ExecutionListItem`](crate::types::ExecutionListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutionListItemBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,

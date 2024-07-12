@@ -27,8 +27,8 @@ impl LexBotConfig {
 }
 
 /// A builder for [`LexBotConfig`](crate::types::LexBotConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LexBotConfigBuilder {
     pub(crate) lex_bot: ::std::option::Option<crate::types::LexBot>,
     pub(crate) lex_v2_bot: ::std::option::Option<crate::types::LexV2Bot>,

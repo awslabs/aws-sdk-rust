@@ -33,8 +33,8 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploads {
 }
 
 /// A builder for [`BucketCountPolicyAllowsUnencryptedObjectUploads`](crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketCountPolicyAllowsUnencryptedObjectUploadsBuilder {
     pub(crate) allows_unencrypted_object_uploads: ::std::option::Option<i64>,
     pub(crate) denies_unencrypted_object_uploads: ::std::option::Option<i64>,

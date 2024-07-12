@@ -49,8 +49,8 @@ impl AttackProperty {
 }
 
 /// A builder for [`AttackProperty`](crate::types::AttackProperty).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttackPropertyBuilder {
     pub(crate) attack_layer: ::std::option::Option<crate::types::AttackLayer>,
     pub(crate) attack_property_identifier: ::std::option::Option<crate::types::AttackPropertyIdentifier>,

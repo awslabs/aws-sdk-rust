@@ -33,8 +33,8 @@ impl EvaluationMetric {
 }
 
 /// A builder for [`EvaluationMetric`](crate::types::EvaluationMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationMetricBuilder {
     pub(crate) f1_score: ::std::option::Option<f32>,
     pub(crate) precision: ::std::option::Option<f32>,

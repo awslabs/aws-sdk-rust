@@ -18,8 +18,8 @@ impl PutRecommendationPreferencesOutput {
 }
 
 /// A builder for [`PutRecommendationPreferencesOutput`](crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRecommendationPreferencesOutputBuilder {
     _request_id: Option<String>,
 }

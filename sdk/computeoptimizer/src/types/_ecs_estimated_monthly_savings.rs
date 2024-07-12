@@ -27,8 +27,8 @@ impl EcsEstimatedMonthlySavings {
 }
 
 /// A builder for [`EcsEstimatedMonthlySavings`](crate::types::EcsEstimatedMonthlySavings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsEstimatedMonthlySavingsBuilder {
     pub(crate) currency: ::std::option::Option<crate::types::Currency>,
     pub(crate) value: ::std::option::Option<f64>,

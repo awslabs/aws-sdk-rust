@@ -27,8 +27,8 @@ impl DisassociateAssessmentReportEvidenceFolderInput {
 }
 
 /// A builder for [`DisassociateAssessmentReportEvidenceFolderInput`](crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateAssessmentReportEvidenceFolderInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) evidence_folder_id: ::std::option::Option<::std::string::String>,

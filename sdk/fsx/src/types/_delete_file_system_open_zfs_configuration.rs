@@ -37,8 +37,8 @@ impl DeleteFileSystemOpenZfsConfiguration {
 }
 
 /// A builder for [`DeleteFileSystemOpenZfsConfiguration`](crate::types::DeleteFileSystemOpenZfsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFileSystemOpenZfsConfigurationBuilder {
     pub(crate) skip_final_backup: ::std::option::Option<bool>,
     pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

@@ -31,8 +31,8 @@ impl ImageTestsConfiguration {
 }
 
 /// A builder for [`ImageTestsConfiguration`](crate::types::ImageTestsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageTestsConfigurationBuilder {
     pub(crate) image_tests_enabled: ::std::option::Option<bool>,
     pub(crate) timeout_minutes: ::std::option::Option<i32>,

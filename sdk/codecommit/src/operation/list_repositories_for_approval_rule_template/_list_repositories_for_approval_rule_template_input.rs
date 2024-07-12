@@ -33,8 +33,8 @@ impl ListRepositoriesForApprovalRuleTemplateInput {
 }
 
 /// A builder for [`ListRepositoriesForApprovalRuleTemplateInput`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRepositoriesForApprovalRuleTemplateInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

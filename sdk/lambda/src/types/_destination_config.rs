@@ -27,8 +27,8 @@ impl DestinationConfig {
 }
 
 /// A builder for [`DestinationConfig`](crate::types::DestinationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationConfigBuilder {
     pub(crate) on_success: ::std::option::Option<crate::types::OnSuccess>,
     pub(crate) on_failure: ::std::option::Option<crate::types::OnFailure>,

@@ -27,8 +27,8 @@ impl ManagedPersistenceMonitoringConfiguration {
 }
 
 /// A builder for [`ManagedPersistenceMonitoringConfiguration`](crate::types::ManagedPersistenceMonitoringConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManagedPersistenceMonitoringConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,

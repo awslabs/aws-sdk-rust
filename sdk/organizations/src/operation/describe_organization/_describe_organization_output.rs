@@ -30,8 +30,8 @@ impl DescribeOrganizationOutput {
 }
 
 /// A builder for [`DescribeOrganizationOutput`](crate::operation::describe_organization::DescribeOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationOutputBuilder {
     pub(crate) organization: ::std::option::Option<crate::types::Organization>,
     _request_id: Option<String>,

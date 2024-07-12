@@ -21,8 +21,8 @@ impl PipelineExecutionFilter {
 }
 
 /// A builder for [`PipelineExecutionFilter`](crate::types::PipelineExecutionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineExecutionFilterBuilder {
     pub(crate) succeeded_in_stage: ::std::option::Option<crate::types::SucceededInStageFilter>,
 }

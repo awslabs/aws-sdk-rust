@@ -18,8 +18,8 @@ impl AssociateEnvironmentRoleOutput {
 }
 
 /// A builder for [`AssociateEnvironmentRoleOutput`](crate::operation::associate_environment_role::AssociateEnvironmentRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateEnvironmentRoleOutputBuilder {
     _request_id: Option<String>,
 }

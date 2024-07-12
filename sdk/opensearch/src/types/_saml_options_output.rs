@@ -45,8 +45,8 @@ impl SamlOptionsOutput {
 }
 
 /// A builder for [`SamlOptionsOutput`](crate::types::SamlOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SamlOptionsOutputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) idp: ::std::option::Option<crate::types::SamlIdp>,

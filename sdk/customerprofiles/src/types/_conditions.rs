@@ -42,8 +42,8 @@ impl Conditions {
 }
 
 /// A builder for [`Conditions`](crate::types::Conditions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConditionsBuilder {
     pub(crate) range: ::std::option::Option<crate::types::Range>,
     pub(crate) object_count: ::std::option::Option<i32>,

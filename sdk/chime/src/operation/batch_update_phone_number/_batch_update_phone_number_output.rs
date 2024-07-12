@@ -28,8 +28,8 @@ impl BatchUpdatePhoneNumberOutput {
 }
 
 /// A builder for [`BatchUpdatePhoneNumberOutput`](crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdatePhoneNumberOutputBuilder {
     pub(crate) phone_number_errors: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>>,
     _request_id: Option<String>,

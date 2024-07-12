@@ -115,8 +115,8 @@ impl ControlMappingSource {
 }
 
 /// A builder for [`ControlMappingSource`](crate::types::ControlMappingSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ControlMappingSourceBuilder {
     pub(crate) source_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_name: ::std::option::Option<::std::string::String>,

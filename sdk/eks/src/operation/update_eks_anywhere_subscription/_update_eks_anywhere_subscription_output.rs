@@ -26,8 +26,8 @@ impl UpdateEksAnywhereSubscriptionOutput {
 }
 
 /// A builder for [`UpdateEksAnywhereSubscriptionOutput`](crate::operation::update_eks_anywhere_subscription::UpdateEksAnywhereSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEksAnywhereSubscriptionOutputBuilder {
     pub(crate) subscription: ::std::option::Option<crate::types::EksAnywhereSubscription>,
     _request_id: Option<String>,

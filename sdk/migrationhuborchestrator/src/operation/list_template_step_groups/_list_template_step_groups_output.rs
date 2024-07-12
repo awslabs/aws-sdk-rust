@@ -33,8 +33,8 @@ impl ListTemplateStepGroupsOutput {
 }
 
 /// A builder for [`ListTemplateStepGroupsOutput`](crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateStepGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) template_step_group_summary: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepGroupSummary>>,

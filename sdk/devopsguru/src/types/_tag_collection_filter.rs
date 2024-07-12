@@ -35,8 +35,8 @@ impl TagCollectionFilter {
 }
 
 /// A builder for [`TagCollectionFilter`](crate::types::TagCollectionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagCollectionFilterBuilder {
     pub(crate) app_boundary_key: ::std::option::Option<::std::string::String>,
     pub(crate) tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

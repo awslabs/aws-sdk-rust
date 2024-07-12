@@ -74,8 +74,8 @@ impl StartQueryInput {
 }
 
 /// A builder for [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartQueryInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

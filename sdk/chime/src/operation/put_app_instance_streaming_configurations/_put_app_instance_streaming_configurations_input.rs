@@ -28,8 +28,8 @@ impl PutAppInstanceStreamingConfigurationsInput {
 }
 
 /// A builder for [`PutAppInstanceStreamingConfigurationsInput`](crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAppInstanceStreamingConfigurationsInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_instance_streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>,

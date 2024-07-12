@@ -21,8 +21,8 @@ impl ExternalMetricsPreference {
 }
 
 /// A builder for [`ExternalMetricsPreference`](crate::types::ExternalMetricsPreference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExternalMetricsPreferenceBuilder {
     pub(crate) source: ::std::option::Option<crate::types::ExternalMetricsSource>,
 }

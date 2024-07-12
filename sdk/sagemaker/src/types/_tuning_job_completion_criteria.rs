@@ -33,8 +33,8 @@ impl TuningJobCompletionCriteria {
 }
 
 /// A builder for [`TuningJobCompletionCriteria`](crate::types::TuningJobCompletionCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TuningJobCompletionCriteriaBuilder {
     pub(crate) target_objective_metric_value: ::std::option::Option<f32>,
     pub(crate) best_objective_not_improving: ::std::option::Option<crate::types::BestObjectiveNotImproving>,

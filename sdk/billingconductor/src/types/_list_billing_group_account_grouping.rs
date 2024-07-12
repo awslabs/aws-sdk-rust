@@ -21,8 +21,8 @@ impl ListBillingGroupAccountGrouping {
 }
 
 /// A builder for [`ListBillingGroupAccountGrouping`](crate::types::ListBillingGroupAccountGrouping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBillingGroupAccountGroupingBuilder {
     pub(crate) auto_associate: ::std::option::Option<bool>,
 }

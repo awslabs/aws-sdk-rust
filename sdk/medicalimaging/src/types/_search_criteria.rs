@@ -37,8 +37,8 @@ impl SearchCriteria {
 }
 
 /// A builder for [`SearchCriteria`](crate::types::SearchCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchCriteriaBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
     pub(crate) sort: ::std::option::Option<crate::types::Sort>,

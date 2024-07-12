@@ -72,8 +72,8 @@ impl TranslateTextInput {
 }
 
 /// A builder for [`TranslateTextInput`](crate::operation::translate_text::TranslateTextInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranslateTextInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) terminology_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -21,8 +21,8 @@ impl BooleanConfigurationOptions {
 }
 
 /// A builder for [`BooleanConfigurationOptions`](crate::types::BooleanConfigurationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BooleanConfigurationOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<bool>,
 }

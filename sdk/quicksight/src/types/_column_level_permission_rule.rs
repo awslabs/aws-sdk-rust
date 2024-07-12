@@ -31,8 +31,8 @@ impl ColumnLevelPermissionRule {
 }
 
 /// A builder for [`ColumnLevelPermissionRule`](crate::types::ColumnLevelPermissionRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnLevelPermissionRuleBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

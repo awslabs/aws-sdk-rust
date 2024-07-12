@@ -43,8 +43,8 @@ impl ProcessorInfo {
 }
 
 /// A builder for [`ProcessorInfo`](crate::types::ProcessorInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessorInfoBuilder {
     pub(crate) supported_architectures: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
     pub(crate) sustained_clock_speed_in_ghz: ::std::option::Option<f64>,

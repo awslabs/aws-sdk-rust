@@ -26,8 +26,8 @@ impl CreateImpersonationRoleOutput {
 }
 
 /// A builder for [`CreateImpersonationRoleOutput`](crate::operation::create_impersonation_role::CreateImpersonationRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateImpersonationRoleOutputBuilder {
     pub(crate) impersonation_role_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

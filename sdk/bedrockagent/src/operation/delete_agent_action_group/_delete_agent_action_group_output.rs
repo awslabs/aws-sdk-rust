@@ -18,8 +18,8 @@ impl DeleteAgentActionGroupOutput {
 }
 
 /// A builder for [`DeleteAgentActionGroupOutput`](crate::operation::delete_agent_action_group::DeleteAgentActionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAgentActionGroupOutputBuilder {
     _request_id: Option<String>,
 }

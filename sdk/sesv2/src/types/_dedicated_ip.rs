@@ -53,8 +53,8 @@ impl DedicatedIp {
 }
 
 /// A builder for [`DedicatedIp`](crate::types::DedicatedIp).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DedicatedIpBuilder {
     pub(crate) ip: ::std::option::Option<::std::string::String>,
     pub(crate) warmup_status: ::std::option::Option<crate::types::WarmupStatus>,

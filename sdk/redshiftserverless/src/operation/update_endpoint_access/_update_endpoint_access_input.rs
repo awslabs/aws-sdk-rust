@@ -28,8 +28,8 @@ impl UpdateEndpointAccessInput {
 }
 
 /// A builder for [`UpdateEndpointAccessInput`](crate::operation::update_endpoint_access::UpdateEndpointAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEndpointAccessInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

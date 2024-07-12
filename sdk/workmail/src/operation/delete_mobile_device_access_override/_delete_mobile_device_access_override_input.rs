@@ -48,8 +48,8 @@ impl DeleteMobileDeviceAccessOverrideInput {
 }
 
 /// A builder for [`DeleteMobileDeviceAccessOverrideInput`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMobileDeviceAccessOverrideInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

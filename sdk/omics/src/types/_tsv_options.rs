@@ -21,8 +21,8 @@ impl TsvOptions {
 }
 
 /// A builder for [`TsvOptions`](crate::types::TsvOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TsvOptionsBuilder {
     pub(crate) read_options: ::std::option::Option<crate::types::ReadOptions>,
 }

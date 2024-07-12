@@ -20,8 +20,8 @@ impl DeleteTrustAnchorInput {
 }
 
 /// A builder for [`DeleteTrustAnchorInput`](crate::operation::delete_trust_anchor::DeleteTrustAnchorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrustAnchorInputBuilder {
     pub(crate) trust_anchor_id: ::std::option::Option<::std::string::String>,
 }

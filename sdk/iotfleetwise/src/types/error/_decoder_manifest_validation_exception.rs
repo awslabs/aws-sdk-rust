@@ -63,8 +63,8 @@ impl DecoderManifestValidationException {
 }
 
 /// A builder for [`DecoderManifestValidationException`](crate::types::error::DecoderManifestValidationException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecoderManifestValidationExceptionBuilder {
     pub(crate) invalid_signals: ::std::option::Option<::std::vec::Vec<crate::types::InvalidSignalDecoder>>,
     pub(crate) invalid_network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InvalidNetworkInterface>>,

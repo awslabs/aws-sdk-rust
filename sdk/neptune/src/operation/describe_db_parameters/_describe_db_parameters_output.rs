@@ -34,8 +34,8 @@ impl DescribeDbParametersOutput {
 }
 
 /// A builder for [`DescribeDbParametersOutput`](crate::operation::describe_db_parameters::DescribeDbParametersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbParametersOutputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

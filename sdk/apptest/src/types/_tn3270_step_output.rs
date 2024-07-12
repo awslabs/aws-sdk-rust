@@ -42,8 +42,8 @@ impl Tn3270StepOutput {
 }
 
 /// A builder for [`Tn3270StepOutput`](crate::types::Tn3270StepOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Tn3270StepOutputBuilder {
     pub(crate) data_set_export_location: ::std::option::Option<::std::string::String>,
     pub(crate) dms_output_location: ::std::option::Option<::std::string::String>,

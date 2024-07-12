@@ -26,8 +26,8 @@ impl GetCampaignsOutput {
 }
 
 /// A builder for [`GetCampaignsOutput`](crate::operation::get_campaigns::GetCampaignsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCampaignsOutputBuilder {
     pub(crate) campaigns_response: ::std::option::Option<crate::types::CampaignsResponse>,
     _request_id: Option<String>,

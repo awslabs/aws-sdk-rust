@@ -38,8 +38,8 @@ impl GetV2LoggingOptionsOutput {
 }
 
 /// A builder for [`GetV2LoggingOptionsOutput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetV2LoggingOptionsOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_log_level: ::std::option::Option<crate::types::LogLevel>,

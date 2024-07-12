@@ -68,8 +68,8 @@ impl SwitchoverDetail {
 }
 
 /// A builder for [`SwitchoverDetail`](crate::types::SwitchoverDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SwitchoverDetailBuilder {
     pub(crate) source_member: ::std::option::Option<::std::string::String>,
     pub(crate) target_member: ::std::option::Option<::std::string::String>,

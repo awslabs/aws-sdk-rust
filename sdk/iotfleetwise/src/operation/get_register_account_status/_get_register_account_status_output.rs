@@ -73,8 +73,8 @@ impl GetRegisterAccountStatusOutput {
 }
 
 /// A builder for [`GetRegisterAccountStatusOutput`](crate::operation::get_register_account_status::GetRegisterAccountStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegisterAccountStatusOutputBuilder {
     pub(crate) customer_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_status: ::std::option::Option<crate::types::RegistrationStatus>,

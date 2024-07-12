@@ -18,8 +18,8 @@ impl DeleteModelQualityJobDefinitionOutput {
 }
 
 /// A builder for [`DeleteModelQualityJobDefinitionOutput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelQualityJobDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

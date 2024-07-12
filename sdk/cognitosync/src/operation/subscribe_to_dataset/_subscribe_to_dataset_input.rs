@@ -39,8 +39,8 @@ impl SubscribeToDatasetInput {
 }
 
 /// A builder for [`SubscribeToDatasetInput`](crate::operation::subscribe_to_dataset::SubscribeToDatasetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubscribeToDatasetInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,

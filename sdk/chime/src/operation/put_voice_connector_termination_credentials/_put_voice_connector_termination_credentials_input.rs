@@ -28,8 +28,8 @@ impl PutVoiceConnectorTerminationCredentialsInput {
 }
 
 /// A builder for [`PutVoiceConnectorTerminationCredentialsInput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutVoiceConnectorTerminationCredentialsInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) credentials: ::std::option::Option<::std::vec::Vec<crate::types::Credential>>,

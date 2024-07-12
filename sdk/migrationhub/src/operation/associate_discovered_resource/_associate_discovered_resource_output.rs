@@ -18,8 +18,8 @@ impl AssociateDiscoveredResourceOutput {
 }
 
 /// A builder for [`AssociateDiscoveredResourceOutput`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDiscoveredResourceOutputBuilder {
     _request_id: Option<String>,
 }

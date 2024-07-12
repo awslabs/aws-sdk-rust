@@ -28,8 +28,8 @@ impl TestRenderEmailTemplateOutput {
 }
 
 /// A builder for [`TestRenderEmailTemplateOutput`](crate::operation::test_render_email_template::TestRenderEmailTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestRenderEmailTemplateOutputBuilder {
     pub(crate) rendered_template: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

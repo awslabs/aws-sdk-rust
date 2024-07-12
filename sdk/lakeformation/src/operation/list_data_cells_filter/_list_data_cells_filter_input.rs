@@ -32,8 +32,8 @@ impl ListDataCellsFilterInput {
 }
 
 /// A builder for [`ListDataCellsFilterInput`](crate::operation::list_data_cells_filter::ListDataCellsFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataCellsFilterInputBuilder {
     pub(crate) table: ::std::option::Option<crate::types::TableResource>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

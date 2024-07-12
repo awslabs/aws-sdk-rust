@@ -116,8 +116,8 @@ impl DescribeFpgaImagesInput {
 }
 
 /// A builder for [`DescribeFpgaImagesInput`](crate::operation::describe_fpga_images::DescribeFpgaImagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFpgaImagesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) fpga_image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -48,8 +48,8 @@ impl HeaderObject {
 }
 
 /// A builder for [`HeaderObject`](crate::types::HeaderObject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HeaderObjectBuilder {
     pub(crate) option: ::std::option::Option<crate::types::ForwardValues>,
     pub(crate) headers_allow_list: ::std::option::Option<::std::vec::Vec<crate::types::HeaderEnum>>,

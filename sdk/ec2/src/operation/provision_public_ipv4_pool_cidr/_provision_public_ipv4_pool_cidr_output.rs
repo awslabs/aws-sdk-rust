@@ -32,8 +32,8 @@ impl ProvisionPublicIpv4PoolCidrOutput {
 }
 
 /// A builder for [`ProvisionPublicIpv4PoolCidrOutput`](crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionPublicIpv4PoolCidrOutputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) pool_address_range: ::std::option::Option<crate::types::PublicIpv4PoolRange>,

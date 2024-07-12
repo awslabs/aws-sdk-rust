@@ -76,8 +76,8 @@ impl BatchDescribeMergeConflictsInput {
 }
 
 /// A builder for [`BatchDescribeMergeConflictsInput`](crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDescribeMergeConflictsInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_commit_specifier: ::std::option::Option<::std::string::String>,

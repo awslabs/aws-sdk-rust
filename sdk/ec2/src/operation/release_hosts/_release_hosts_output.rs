@@ -36,8 +36,8 @@ impl ReleaseHostsOutput {
 }
 
 /// A builder for [`ReleaseHostsOutput`](crate::operation::release_hosts::ReleaseHostsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleaseHostsOutputBuilder {
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,

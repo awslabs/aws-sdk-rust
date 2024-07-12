@@ -51,8 +51,8 @@ impl ExecutionResult {
 }
 
 /// A builder for [`ExecutionResult`](crate::types::ExecutionResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutionResultBuilder {
     pub(crate) error_info: ::std::option::Option<crate::types::ErrorInfo>,
     pub(crate) bytes_processed: ::std::option::Option<i64>,

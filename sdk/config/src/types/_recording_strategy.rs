@@ -97,8 +97,8 @@ impl RecordingStrategy {
 }
 
 /// A builder for [`RecordingStrategy`](crate::types::RecordingStrategy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordingStrategyBuilder {
     pub(crate) use_only: ::std::option::Option<crate::types::RecordingStrategyType>,
 }

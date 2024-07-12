@@ -33,8 +33,8 @@ impl ListPageResolutionsOutput {
 }
 
 /// A builder for [`ListPageResolutionsOutput`](crate::operation::list_page_resolutions::ListPageResolutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPageResolutionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_resolutions: ::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>>,

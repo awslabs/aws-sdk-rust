@@ -19,8 +19,8 @@ impl AcceptInvitationOutput {
 }
 
 /// A builder for [`AcceptInvitationOutput`](crate::operation::accept_invitation::AcceptInvitationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptInvitationOutputBuilder {
     _request_id: Option<String>,
 }

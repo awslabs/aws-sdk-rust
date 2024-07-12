@@ -68,8 +68,8 @@ impl ListFeatureGroupsInput {
 }
 
 /// A builder for [`ListFeatureGroupsInput`](crate::operation::list_feature_groups::ListFeatureGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFeatureGroupsInputBuilder {
     pub(crate) name_contains: ::std::option::Option<::std::string::String>,
     pub(crate) feature_group_status_equals: ::std::option::Option<crate::types::FeatureGroupStatus>,

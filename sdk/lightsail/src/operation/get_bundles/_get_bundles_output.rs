@@ -38,8 +38,8 @@ impl GetBundlesOutput {
 }
 
 /// A builder for [`GetBundlesOutput`](crate::operation::get_bundles::GetBundlesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBundlesOutputBuilder {
     pub(crate) bundles: ::std::option::Option<::std::vec::Vec<crate::types::Bundle>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

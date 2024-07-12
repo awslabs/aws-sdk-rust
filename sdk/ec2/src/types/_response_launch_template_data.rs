@@ -286,8 +286,8 @@ impl ResponseLaunchTemplateData {
 }
 
 /// A builder for [`ResponseLaunchTemplateData`](crate::types::ResponseLaunchTemplateData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ResponseLaunchTemplateDataBuilder {
     pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,

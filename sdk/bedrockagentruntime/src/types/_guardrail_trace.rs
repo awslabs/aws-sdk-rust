@@ -53,8 +53,8 @@ impl GuardrailTrace {
 }
 
 /// A builder for [`GuardrailTrace`](crate::types::GuardrailTrace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GuardrailTraceBuilder {
     pub(crate) action: ::std::option::Option<crate::types::GuardrailAction>,
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,

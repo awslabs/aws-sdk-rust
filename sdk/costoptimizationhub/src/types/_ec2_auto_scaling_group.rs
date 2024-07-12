@@ -27,8 +27,8 @@ impl Ec2AutoScalingGroup {
 }
 
 /// A builder for [`Ec2AutoScalingGroup`](crate::types::Ec2AutoScalingGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2AutoScalingGroupBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::Ec2AutoScalingGroupConfiguration>,
     pub(crate) cost_calculation: ::std::option::Option<crate::types::ResourceCostCalculation>,

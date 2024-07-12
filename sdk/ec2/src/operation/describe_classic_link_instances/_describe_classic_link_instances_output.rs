@@ -34,8 +34,8 @@ impl DescribeClassicLinkInstancesOutput {
 }
 
 /// A builder for [`DescribeClassicLinkInstancesOutput`](crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClassicLinkInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

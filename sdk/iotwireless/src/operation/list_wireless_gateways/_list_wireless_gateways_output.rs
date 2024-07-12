@@ -34,8 +34,8 @@ impl ListWirelessGatewaysOutput {
 }
 
 /// A builder for [`ListWirelessGatewaysOutput`](crate::operation::list_wireless_gateways::ListWirelessGatewaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWirelessGatewaysOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) wireless_gateway_list: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayStatistics>>,

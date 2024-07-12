@@ -21,8 +21,8 @@ impl BackendApiConflictResolution {
 }
 
 /// A builder for [`BackendApiConflictResolution`](crate::types::BackendApiConflictResolution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackendApiConflictResolutionBuilder {
     pub(crate) resolution_strategy: ::std::option::Option<crate::types::ResolutionStrategy>,
 }

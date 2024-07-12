@@ -27,8 +27,8 @@ impl GaugeChartColorConfiguration {
 }
 
 /// A builder for [`GaugeChartColorConfiguration`](crate::types::GaugeChartColorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GaugeChartColorConfigurationBuilder {
     pub(crate) foreground_color: ::std::option::Option<::std::string::String>,
     pub(crate) background_color: ::std::option::Option<::std::string::String>,

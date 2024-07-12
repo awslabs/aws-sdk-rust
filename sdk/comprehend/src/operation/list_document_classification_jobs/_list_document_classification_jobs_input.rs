@@ -32,8 +32,8 @@ impl ListDocumentClassificationJobsInput {
 }
 
 /// A builder for [`ListDocumentClassificationJobsInput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDocumentClassificationJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::DocumentClassificationJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DescribeEndpointGroupOutput {
 }
 
 /// A builder for [`DescribeEndpointGroupOutput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEndpointGroupOutputBuilder {
     pub(crate) endpoint_group: ::std::option::Option<crate::types::EndpointGroup>,
     _request_id: Option<String>,

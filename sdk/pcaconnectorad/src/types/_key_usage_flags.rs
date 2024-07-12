@@ -45,8 +45,8 @@ impl KeyUsageFlags {
 }
 
 /// A builder for [`KeyUsageFlags`](crate::types::KeyUsageFlags).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeyUsageFlagsBuilder {
     pub(crate) digital_signature: ::std::option::Option<bool>,
     pub(crate) non_repudiation: ::std::option::Option<bool>,

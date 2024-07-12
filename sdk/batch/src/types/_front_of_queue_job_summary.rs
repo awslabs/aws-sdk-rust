@@ -27,8 +27,8 @@ impl FrontOfQueueJobSummary {
 }
 
 /// A builder for [`FrontOfQueueJobSummary`](crate::types::FrontOfQueueJobSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FrontOfQueueJobSummaryBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) earliest_time_at_position: ::std::option::Option<i64>,

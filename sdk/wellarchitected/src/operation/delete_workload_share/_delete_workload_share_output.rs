@@ -18,8 +18,8 @@ impl DeleteWorkloadShareOutput {
 }
 
 /// A builder for [`DeleteWorkloadShareOutput`](crate::operation::delete_workload_share::DeleteWorkloadShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkloadShareOutputBuilder {
     _request_id: Option<String>,
 }

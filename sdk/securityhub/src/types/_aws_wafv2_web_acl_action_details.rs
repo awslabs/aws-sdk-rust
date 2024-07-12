@@ -27,8 +27,8 @@ impl AwsWafv2WebAclActionDetails {
 }
 
 /// A builder for [`AwsWafv2WebAclActionDetails`](crate::types::AwsWafv2WebAclActionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafv2WebAclActionDetailsBuilder {
     pub(crate) allow: ::std::option::Option<crate::types::AwsWafv2ActionAllowDetails>,
     pub(crate) block: ::std::option::Option<crate::types::AwsWafv2ActionBlockDetails>,

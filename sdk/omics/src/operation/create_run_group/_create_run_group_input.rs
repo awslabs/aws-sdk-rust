@@ -56,8 +56,8 @@ impl CreateRunGroupInput {
 }
 
 /// A builder for [`CreateRunGroupInput`](crate::operation::create_run_group::CreateRunGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRunGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) max_cpus: ::std::option::Option<i32>,

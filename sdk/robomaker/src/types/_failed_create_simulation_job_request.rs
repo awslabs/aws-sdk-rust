@@ -39,8 +39,8 @@ impl FailedCreateSimulationJobRequest {
 }
 
 /// A builder for [`FailedCreateSimulationJobRequest`](crate::types::FailedCreateSimulationJobRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedCreateSimulationJobRequestBuilder {
     pub(crate) request: ::std::option::Option<crate::types::SimulationJobRequest>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl GetCustomerGatewayAssociationsOutput {
 }
 
 /// A builder for [`GetCustomerGatewayAssociationsOutput`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCustomerGatewayAssociationsOutputBuilder {
     pub(crate) customer_gateway_associations: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGatewayAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -43,8 +43,8 @@ impl ListAppInstancesOutput {
 }
 
 /// A builder for [`ListAppInstancesOutput`](crate::operation::list_app_instances::ListAppInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListAppInstancesOutputBuilder {
     pub(crate) app_instances: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

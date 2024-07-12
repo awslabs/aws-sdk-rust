@@ -44,8 +44,8 @@ impl StartWebRtcContactOutput {
 }
 
 /// A builder for [`StartWebRtcContactOutput`](crate::operation::start_web_rtc_contact::StartWebRtcContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartWebRtcContactOutputBuilder {
     pub(crate) connection_data: ::std::option::Option<crate::types::ConnectionData>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,

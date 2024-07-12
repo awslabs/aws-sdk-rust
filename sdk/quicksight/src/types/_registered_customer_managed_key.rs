@@ -33,8 +33,8 @@ impl RegisteredCustomerManagedKey {
 }
 
 /// A builder for [`RegisteredCustomerManagedKey`](crate::types::RegisteredCustomerManagedKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisteredCustomerManagedKeyBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_key: ::std::option::Option<bool>,

@@ -28,8 +28,8 @@ impl DetectToxicContentOutput {
 }
 
 /// A builder for [`DetectToxicContentOutput`](crate::operation::detect_toxic_content::DetectToxicContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectToxicContentOutputBuilder {
     pub(crate) result_list: ::std::option::Option<::std::vec::Vec<crate::types::ToxicLabels>>,
     _request_id: Option<String>,

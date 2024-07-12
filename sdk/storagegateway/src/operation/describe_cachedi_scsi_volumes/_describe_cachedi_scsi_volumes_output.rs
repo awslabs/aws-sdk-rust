@@ -29,8 +29,8 @@ impl DescribeCachediScsiVolumesOutput {
 }
 
 /// A builder for [`DescribeCachediScsiVolumesOutput`](crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCachediScsiVolumesOutputBuilder {
     pub(crate) cachedi_scsi_volumes: ::std::option::Option<::std::vec::Vec<crate::types::CachediScsiVolume>>,
     _request_id: Option<String>,

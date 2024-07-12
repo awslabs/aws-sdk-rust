@@ -53,8 +53,8 @@ impl RepositoryExternalConnectionInfo {
 }
 
 /// A builder for [`RepositoryExternalConnectionInfo`](crate::types::RepositoryExternalConnectionInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryExternalConnectionInfoBuilder {
     pub(crate) external_connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) package_format: ::std::option::Option<crate::types::PackageFormat>,

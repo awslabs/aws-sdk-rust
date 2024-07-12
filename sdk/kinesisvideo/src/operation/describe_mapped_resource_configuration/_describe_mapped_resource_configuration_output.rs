@@ -34,8 +34,8 @@ impl DescribeMappedResourceConfigurationOutput {
 }
 
 /// A builder for [`DescribeMappedResourceConfigurationOutput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMappedResourceConfigurationOutputBuilder {
     pub(crate) mapped_resource_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::MappedResourceConfigurationListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

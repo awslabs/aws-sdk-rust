@@ -28,8 +28,8 @@ impl DescribeResourceServerInput {
 }
 
 /// A builder for [`DescribeResourceServerInput`](crate::operation::describe_resource_server::DescribeResourceServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResourceServerInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

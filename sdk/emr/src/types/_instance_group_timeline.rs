@@ -33,8 +33,8 @@ impl InstanceGroupTimeline {
 }
 
 /// A builder for [`InstanceGroupTimeline`](crate::types::InstanceGroupTimeline).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceGroupTimelineBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ready_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,

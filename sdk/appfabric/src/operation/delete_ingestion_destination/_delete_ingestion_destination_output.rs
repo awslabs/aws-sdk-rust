@@ -18,8 +18,8 @@ impl DeleteIngestionDestinationOutput {
 }
 
 /// A builder for [`DeleteIngestionDestinationOutput`](crate::operation::delete_ingestion_destination::DeleteIngestionDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIngestionDestinationOutputBuilder {
     _request_id: Option<String>,
 }

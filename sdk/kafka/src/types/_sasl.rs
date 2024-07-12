@@ -27,8 +27,8 @@ impl Sasl {
 }
 
 /// A builder for [`Sasl`](crate::types::Sasl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SaslBuilder {
     pub(crate) scram: ::std::option::Option<crate::types::Scram>,
     pub(crate) iam: ::std::option::Option<crate::types::Iam>,

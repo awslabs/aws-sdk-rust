@@ -20,8 +20,8 @@ impl AssociateServiceActionWithProvisioningArtifactOutput {
 }
 
 /// A builder for [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateServiceActionWithProvisioningArtifactOutputBuilder {
     _request_id: Option<String>,
 }

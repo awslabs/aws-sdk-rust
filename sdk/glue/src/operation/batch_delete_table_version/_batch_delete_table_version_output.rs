@@ -28,8 +28,8 @@ impl BatchDeleteTableVersionOutput {
 }
 
 /// A builder for [`BatchDeleteTableVersionOutput`](crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteTableVersionOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>>,
     _request_id: Option<String>,

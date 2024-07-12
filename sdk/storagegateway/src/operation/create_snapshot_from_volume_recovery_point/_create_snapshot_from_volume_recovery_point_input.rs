@@ -38,8 +38,8 @@ impl CreateSnapshotFromVolumeRecoveryPointInput {
 }
 
 /// A builder for [`CreateSnapshotFromVolumeRecoveryPointInput`](crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSnapshotFromVolumeRecoveryPointInputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_description: ::std::option::Option<::std::string::String>,

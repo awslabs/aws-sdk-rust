@@ -21,8 +21,8 @@ impl EcrConfigurationState {
 }
 
 /// A builder for [`EcrConfigurationState`](crate::types::EcrConfigurationState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcrConfigurationStateBuilder {
     pub(crate) rescan_duration_state: ::std::option::Option<crate::types::EcrRescanDurationState>,
 }

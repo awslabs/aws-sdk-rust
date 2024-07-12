@@ -21,8 +21,8 @@ impl GetAnalyzerInput {
 }
 
 /// A builder for [`GetAnalyzerInput`](crate::operation::get_analyzer::GetAnalyzerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnalyzerInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
 }

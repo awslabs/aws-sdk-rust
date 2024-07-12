@@ -51,8 +51,8 @@ impl AttachNetworkInterfaceInput {
 }
 
 /// A builder for [`AttachNetworkInterfaceInput`](crate::operation::attach_network_interface::AttachNetworkInterfaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachNetworkInterfaceInputBuilder {
     pub(crate) device_index: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,

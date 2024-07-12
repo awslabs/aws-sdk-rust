@@ -351,8 +351,8 @@ impl CreateUserPoolClientInput {
 }
 
 /// A builder for [`CreateUserPoolClientInput`](crate::operation::create_user_pool_client::CreateUserPoolClientInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUserPoolClientInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_name: ::std::option::Option<::std::string::String>,

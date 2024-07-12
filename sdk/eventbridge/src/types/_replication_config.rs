@@ -21,8 +21,8 @@ impl ReplicationConfig {
 }
 
 /// A builder for [`ReplicationConfig`](crate::types::ReplicationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationConfigBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ReplicationState>,
 }

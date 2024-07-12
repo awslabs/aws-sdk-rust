@@ -22,8 +22,8 @@ impl DeleteModelPackageInput {
 }
 
 /// A builder for [`DeleteModelPackageInput`](crate::operation::delete_model_package::DeleteModelPackageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelPackageInputBuilder {
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
 }

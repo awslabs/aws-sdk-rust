@@ -38,8 +38,8 @@ impl DisableKeyInput {
 }
 
 /// A builder for [`DisableKeyInput`](crate::operation::disable_key::DisableKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableKeyInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }

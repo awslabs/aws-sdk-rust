@@ -18,8 +18,8 @@ impl UpdateInstanceAttributeOutput {
 }
 
 /// A builder for [`UpdateInstanceAttributeOutput`](crate::operation::update_instance_attribute::UpdateInstanceAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInstanceAttributeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,8 +28,8 @@ impl BatchPutMetricsInput {
 }
 
 /// A builder for [`BatchPutMetricsInput`](crate::operation::batch_put_metrics::BatchPutMetricsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutMetricsInputBuilder {
     pub(crate) trial_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::RawMetricData>>,

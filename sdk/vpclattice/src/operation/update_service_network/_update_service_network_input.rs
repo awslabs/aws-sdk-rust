@@ -38,8 +38,8 @@ impl UpdateServiceNetworkInput {
 }
 
 /// A builder for [`UpdateServiceNetworkInput`](crate::operation::update_service_network::UpdateServiceNetworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceNetworkInputBuilder {
     pub(crate) service_network_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,

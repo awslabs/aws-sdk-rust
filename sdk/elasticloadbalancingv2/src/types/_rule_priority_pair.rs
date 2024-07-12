@@ -27,8 +27,8 @@ impl RulePriorityPair {
 }
 
 /// A builder for [`RulePriorityPair`](crate::types::RulePriorityPair).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RulePriorityPairBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,

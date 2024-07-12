@@ -41,8 +41,8 @@ impl UserSetting {
 }
 
 /// A builder for [`UserSetting`](crate::types::UserSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserSettingBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) permission: ::std::option::Option<crate::types::Permission>,

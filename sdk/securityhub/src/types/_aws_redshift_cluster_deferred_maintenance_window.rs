@@ -85,8 +85,8 @@ impl AwsRedshiftClusterDeferredMaintenanceWindow {
 }
 
 /// A builder for [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::types::AwsRedshiftClusterDeferredMaintenanceWindow).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRedshiftClusterDeferredMaintenanceWindowBuilder {
     pub(crate) defer_maintenance_end_time: ::std::option::Option<::std::string::String>,
     pub(crate) defer_maintenance_identifier: ::std::option::Option<::std::string::String>,

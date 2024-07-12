@@ -36,8 +36,8 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
 }
 
 /// A builder for [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceQuotaIncreaseRequestsInTemplateOutputBuilder {
     pub(crate) service_quota_increase_request_in_template_list:
         ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuotaIncreaseRequestInTemplate>>,

@@ -21,8 +21,8 @@ impl EnableKinesisStreamingConfiguration {
 }
 
 /// A builder for [`EnableKinesisStreamingConfiguration`](crate::types::EnableKinesisStreamingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableKinesisStreamingConfigurationBuilder {
     pub(crate) approximate_creation_date_time_precision: ::std::option::Option<crate::types::ApproximateCreationDateTimePrecision>,
 }

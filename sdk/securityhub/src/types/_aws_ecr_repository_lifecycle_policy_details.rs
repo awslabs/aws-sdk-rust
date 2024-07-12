@@ -27,8 +27,8 @@ impl AwsEcrRepositoryLifecyclePolicyDetails {
 }
 
 /// A builder for [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::types::AwsEcrRepositoryLifecyclePolicyDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcrRepositoryLifecyclePolicyDetailsBuilder {
     pub(crate) lifecycle_policy_text: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,

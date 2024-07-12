@@ -34,8 +34,8 @@ impl DeleteFlowAliasOutput {
 }
 
 /// A builder for [`DeleteFlowAliasOutput`](crate::operation::delete_flow_alias::DeleteFlowAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFlowAliasOutputBuilder {
     pub(crate) flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

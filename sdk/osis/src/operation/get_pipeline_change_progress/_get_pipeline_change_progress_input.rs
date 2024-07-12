@@ -20,8 +20,8 @@ impl GetPipelineChangeProgressInput {
 }
 
 /// A builder for [`GetPipelineChangeProgressInput`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPipelineChangeProgressInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
 }

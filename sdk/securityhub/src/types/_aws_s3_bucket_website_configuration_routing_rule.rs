@@ -27,8 +27,8 @@ impl AwsS3BucketWebsiteConfigurationRoutingRule {
 }
 
 /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::types::AwsS3BucketWebsiteConfigurationRoutingRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketWebsiteConfigurationRoutingRuleBuilder {
     pub(crate) condition: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition>,
     pub(crate) redirect: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>,

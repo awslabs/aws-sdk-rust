@@ -30,8 +30,8 @@ impl StatelessRulesAndCustomActions {
 }
 
 /// A builder for [`StatelessRulesAndCustomActions`](crate::types::StatelessRulesAndCustomActions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatelessRulesAndCustomActionsBuilder {
     pub(crate) stateless_rules: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>>,
     pub(crate) custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>,

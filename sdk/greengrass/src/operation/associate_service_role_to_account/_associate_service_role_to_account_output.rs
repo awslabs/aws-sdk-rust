@@ -26,8 +26,8 @@ impl AssociateServiceRoleToAccountOutput {
 }
 
 /// A builder for [`AssociateServiceRoleToAccountOutput`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateServiceRoleToAccountOutputBuilder {
     pub(crate) associated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl UpdatePullRequestStatusInput {
 }
 
 /// A builder for [`UpdatePullRequestStatusInput`](crate::operation::update_pull_request_status::UpdatePullRequestStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePullRequestStatusInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) pull_request_status: ::std::option::Option<crate::types::PullRequestStatusEnum>,

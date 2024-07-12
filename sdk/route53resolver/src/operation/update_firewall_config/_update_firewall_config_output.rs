@@ -26,8 +26,8 @@ impl UpdateFirewallConfigOutput {
 }
 
 /// A builder for [`UpdateFirewallConfigOutput`](crate::operation::update_firewall_config::UpdateFirewallConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFirewallConfigOutputBuilder {
     pub(crate) firewall_config: ::std::option::Option<crate::types::FirewallConfig>,
     _request_id: Option<String>,

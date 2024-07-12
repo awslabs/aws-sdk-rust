@@ -33,8 +33,8 @@ impl SearchRelatedItemsOutput {
 }
 
 /// A builder for [`SearchRelatedItemsOutput`](crate::operation::search_related_items::SearchRelatedItemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchRelatedItemsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) related_items: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>>,

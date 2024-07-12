@@ -62,8 +62,8 @@ impl ListSharedProjectsInput {
 }
 
 /// A builder for [`ListSharedProjectsInput`](crate::operation::list_shared_projects::ListSharedProjectsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSharedProjectsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::SharedResourceSortByType>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,

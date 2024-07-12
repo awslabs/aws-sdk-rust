@@ -29,8 +29,8 @@ impl ListDeliverabilityTestReportsInput {
 }
 
 /// A builder for [`ListDeliverabilityTestReportsInput`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeliverabilityTestReportsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,

@@ -91,8 +91,8 @@ impl DescribeVpnGatewaysInput {
 }
 
 /// A builder for [`DescribeVpnGatewaysInput`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpnGatewaysInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) vpn_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -48,8 +48,8 @@ impl UpdateFunctionInput {
 }
 
 /// A builder for [`UpdateFunctionInput`](crate::operation::update_function::UpdateFunctionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateFunctionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,

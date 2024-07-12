@@ -38,8 +38,8 @@ impl GetRelationalDatabaseSnapshotsOutput {
 }
 
 /// A builder for [`GetRelationalDatabaseSnapshotsOutput`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseSnapshotsOutputBuilder {
     pub(crate) relational_database_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseSnapshot>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

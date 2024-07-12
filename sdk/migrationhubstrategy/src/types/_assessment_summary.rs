@@ -95,8 +95,8 @@ impl AssessmentSummary {
 }
 
 /// A builder for [`AssessmentSummary`](crate::types::AssessmentSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssessmentSummaryBuilder {
     pub(crate) list_server_strategy_summary: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
     pub(crate) list_application_component_strategy_summary: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,

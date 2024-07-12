@@ -26,8 +26,8 @@ impl GetAccountAliasOutput {
 }
 
 /// A builder for [`GetAccountAliasOutput`](crate::operation::get_account_alias::GetAccountAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountAliasOutputBuilder {
     pub(crate) account_alias: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

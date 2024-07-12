@@ -18,8 +18,8 @@ impl DeleteLaunchProfileMemberOutput {
 }
 
 /// A builder for [`DeleteLaunchProfileMemberOutput`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLaunchProfileMemberOutputBuilder {
     _request_id: Option<String>,
 }

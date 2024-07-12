@@ -73,8 +73,8 @@ impl SourceLocation {
 }
 
 /// A builder for [`SourceLocation`](crate::types::SourceLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceLocationBuilder {
     pub(crate) access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

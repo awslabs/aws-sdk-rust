@@ -32,8 +32,8 @@ impl CreatePermissionVersionOutput {
 }
 
 /// A builder for [`CreatePermissionVersionOutput`](crate::operation::create_permission_version::CreatePermissionVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePermissionVersionOutputBuilder {
     pub(crate) permission: ::std::option::Option<crate::types::ResourceSharePermissionDetail>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

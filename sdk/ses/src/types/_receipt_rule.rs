@@ -74,8 +74,8 @@ impl ReceiptRule {
 }
 
 /// A builder for [`ReceiptRule`](crate::types::ReceiptRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReceiptRuleBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

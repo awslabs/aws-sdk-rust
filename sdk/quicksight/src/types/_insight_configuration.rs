@@ -35,8 +35,8 @@ impl InsightConfiguration {
 }
 
 /// A builder for [`InsightConfiguration`](crate::types::InsightConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsightConfigurationBuilder {
     pub(crate) computations: ::std::option::Option<::std::vec::Vec<crate::types::Computation>>,
     pub(crate) custom_narrative: ::std::option::Option<crate::types::CustomNarrativeOptions>,

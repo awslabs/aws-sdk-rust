@@ -27,8 +27,8 @@ impl UserDefined {
 }
 
 /// A builder for [`UserDefined`](crate::types::UserDefined).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserDefinedBuilder {
     pub(crate) value: ::std::option::Option<f32>,
     pub(crate) unit: ::std::option::Option<crate::types::Unit>,

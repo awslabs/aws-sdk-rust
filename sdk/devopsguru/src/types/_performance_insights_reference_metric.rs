@@ -21,8 +21,8 @@ impl PerformanceInsightsReferenceMetric {
 }
 
 /// A builder for [`PerformanceInsightsReferenceMetric`](crate::types::PerformanceInsightsReferenceMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PerformanceInsightsReferenceMetricBuilder {
     pub(crate) metric_query: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
 }

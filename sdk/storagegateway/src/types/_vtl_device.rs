@@ -45,8 +45,8 @@ impl VtlDevice {
 }
 
 /// A builder for [`VtlDevice`](crate::types::VtlDevice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VtlDeviceBuilder {
     pub(crate) vtl_device_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vtl_device_type: ::std::option::Option<::std::string::String>,

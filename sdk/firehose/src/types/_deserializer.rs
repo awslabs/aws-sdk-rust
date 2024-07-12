@@ -27,8 +27,8 @@ impl Deserializer {
 }
 
 /// A builder for [`Deserializer`](crate::types::Deserializer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeserializerBuilder {
     pub(crate) open_x_json_ser_de: ::std::option::Option<crate::types::OpenXJsonSerDe>,
     pub(crate) hive_json_ser_de: ::std::option::Option<crate::types::HiveJsonSerDe>,

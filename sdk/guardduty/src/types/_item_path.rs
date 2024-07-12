@@ -27,8 +27,8 @@ impl ItemPath {
 }
 
 /// A builder for [`ItemPath`](crate::types::ItemPath).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ItemPathBuilder {
     pub(crate) nested_item_path: ::std::option::Option<::std::string::String>,
     pub(crate) hash: ::std::option::Option<::std::string::String>,

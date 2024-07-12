@@ -86,8 +86,8 @@ impl DescribeArchiveOutput {
 }
 
 /// A builder for [`DescribeArchiveOutput`](crate::operation::describe_archive::DescribeArchiveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeArchiveOutputBuilder {
     pub(crate) archive_arn: ::std::option::Option<::std::string::String>,
     pub(crate) archive_name: ::std::option::Option<::std::string::String>,

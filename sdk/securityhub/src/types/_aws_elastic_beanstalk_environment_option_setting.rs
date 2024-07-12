@@ -39,8 +39,8 @@ impl AwsElasticBeanstalkEnvironmentOptionSetting {
 }
 
 /// A builder for [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::types::AwsElasticBeanstalkEnvironmentOptionSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsElasticBeanstalkEnvironmentOptionSettingBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) option_name: ::std::option::Option<::std::string::String>,

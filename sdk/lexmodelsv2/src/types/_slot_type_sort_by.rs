@@ -27,8 +27,8 @@ impl SlotTypeSortBy {
 }
 
 /// A builder for [`SlotTypeSortBy`](crate::types::SlotTypeSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotTypeSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::SlotTypeSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,

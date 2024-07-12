@@ -18,8 +18,8 @@ impl ModifyClusterSnapshotScheduleOutput {
 }
 
 /// A builder for [`ModifyClusterSnapshotScheduleOutput`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyClusterSnapshotScheduleOutputBuilder {
     _request_id: Option<String>,
 }

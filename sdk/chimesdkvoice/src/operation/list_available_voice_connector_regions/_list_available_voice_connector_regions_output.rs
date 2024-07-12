@@ -28,8 +28,8 @@ impl ListAvailableVoiceConnectorRegionsOutput {
 }
 
 /// A builder for [`ListAvailableVoiceConnectorRegionsOutput`](crate::operation::list_available_voice_connector_regions::ListAvailableVoiceConnectorRegionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableVoiceConnectorRegionsOutputBuilder {
     pub(crate) voice_connector_regions: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
     _request_id: Option<String>,

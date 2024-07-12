@@ -34,8 +34,8 @@ impl GetEvidenceFoldersByAssessmentOutput {
 }
 
 /// A builder for [`GetEvidenceFoldersByAssessmentOutput`](crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEvidenceFoldersByAssessmentOutputBuilder {
     pub(crate) evidence_folders: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

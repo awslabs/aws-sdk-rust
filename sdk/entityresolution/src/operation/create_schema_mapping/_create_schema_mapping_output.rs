@@ -48,8 +48,8 @@ impl CreateSchemaMappingOutput {
 }
 
 /// A builder for [`CreateSchemaMappingOutput`](crate::operation::create_schema_mapping::CreateSchemaMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSchemaMappingOutputBuilder {
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,

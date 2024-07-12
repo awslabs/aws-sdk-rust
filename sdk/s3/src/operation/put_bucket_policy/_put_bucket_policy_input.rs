@@ -98,8 +98,8 @@ impl PutBucketPolicyInput {
 }
 
 /// A builder for [`PutBucketPolicyInput`](crate::operation::put_bucket_policy::PutBucketPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketPolicyInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) content_md5: ::std::option::Option<::std::string::String>,

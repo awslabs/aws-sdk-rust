@@ -18,8 +18,8 @@ impl DeleteAssetOutput {
 }
 
 /// A builder for [`DeleteAssetOutput`](crate::operation::delete_asset::DeleteAssetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssetOutputBuilder {
     _request_id: Option<String>,
 }

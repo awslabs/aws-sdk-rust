@@ -19,8 +19,8 @@ impl DeleteAppInstanceStreamingConfigurationsOutput {
 }
 
 /// A builder for [`DeleteAppInstanceStreamingConfigurationsOutput`](crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppInstanceStreamingConfigurationsOutputBuilder {
     _request_id: Option<String>,
 }

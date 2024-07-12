@@ -26,8 +26,8 @@ impl DeleteLakeFormationOptInInput {
 }
 
 /// A builder for [`DeleteLakeFormationOptInInput`](crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLakeFormationOptInInputBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,

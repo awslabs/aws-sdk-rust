@@ -20,8 +20,8 @@ impl DeleteEncoderConfigurationInput {
 }
 
 /// A builder for [`DeleteEncoderConfigurationInput`](crate::operation::delete_encoder_configuration::DeleteEncoderConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEncoderConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

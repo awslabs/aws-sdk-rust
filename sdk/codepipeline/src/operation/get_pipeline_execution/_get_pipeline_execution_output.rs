@@ -27,8 +27,8 @@ impl GetPipelineExecutionOutput {
 }
 
 /// A builder for [`GetPipelineExecutionOutput`](crate::operation::get_pipeline_execution::GetPipelineExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPipelineExecutionOutputBuilder {
     pub(crate) pipeline_execution: ::std::option::Option<crate::types::PipelineExecution>,
     _request_id: Option<String>,

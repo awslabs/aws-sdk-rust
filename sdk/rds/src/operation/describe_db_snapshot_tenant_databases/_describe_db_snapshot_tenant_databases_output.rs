@@ -34,8 +34,8 @@ impl DescribeDbSnapshotTenantDatabasesOutput {
 }
 
 /// A builder for [`DescribeDbSnapshotTenantDatabasesOutput`](crate::operation::describe_db_snapshot_tenant_databases::DescribeDbSnapshotTenantDatabasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbSnapshotTenantDatabasesOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_snapshot_tenant_databases: ::std::option::Option<::std::vec::Vec<crate::types::DbSnapshotTenantDatabase>>,

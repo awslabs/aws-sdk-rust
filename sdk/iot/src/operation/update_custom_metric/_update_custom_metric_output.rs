@@ -60,8 +60,8 @@ impl UpdateCustomMetricOutput {
 }
 
 /// A builder for [`UpdateCustomMetricOutput`](crate::operation::update_custom_metric::UpdateCustomMetricOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCustomMetricOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_arn: ::std::option::Option<::std::string::String>,

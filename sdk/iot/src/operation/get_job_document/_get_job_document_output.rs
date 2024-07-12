@@ -26,8 +26,8 @@ impl GetJobDocumentOutput {
 }
 
 /// A builder for [`GetJobDocumentOutput`](crate::operation::get_job_document::GetJobDocumentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJobDocumentOutputBuilder {
     pub(crate) document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

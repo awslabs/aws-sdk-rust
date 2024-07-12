@@ -26,8 +26,8 @@ impl StartConfigurationPolicyAssociationInput {
 }
 
 /// A builder for [`StartConfigurationPolicyAssociationInput`](crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartConfigurationPolicyAssociationInputBuilder {
     pub(crate) configuration_policy_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<crate::types::Target>,

@@ -20,8 +20,8 @@ impl GetInstancePortStatesInput {
 }
 
 /// A builder for [`GetInstancePortStatesInput`](crate::operation::get_instance_port_states::GetInstancePortStatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstancePortStatesInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
 }

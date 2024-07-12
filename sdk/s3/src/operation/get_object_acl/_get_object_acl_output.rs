@@ -50,8 +50,8 @@ impl GetObjectAclOutput {
 }
 
 /// A builder for [`GetObjectAclOutput`](crate::operation::get_object_acl::GetObjectAclOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectAclOutputBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
     pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,

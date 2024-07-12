@@ -20,8 +20,8 @@ impl GetPlaybackRestrictionPolicyInput {
 }
 
 /// A builder for [`GetPlaybackRestrictionPolicyInput`](crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPlaybackRestrictionPolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

@@ -112,8 +112,8 @@ impl FirewallPolicy {
 }
 
 /// A builder for [`FirewallPolicy`](crate::types::FirewallPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FirewallPolicyBuilder {
     pub(crate) stateless_rule_group_references: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRuleGroupReference>>,
     pub(crate) stateless_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

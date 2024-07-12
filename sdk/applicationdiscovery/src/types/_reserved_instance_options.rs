@@ -33,8 +33,8 @@ impl ReservedInstanceOptions {
 }
 
 /// A builder for [`ReservedInstanceOptions`](crate::types::ReservedInstanceOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservedInstanceOptionsBuilder {
     pub(crate) purchasing_option: ::std::option::Option<crate::types::PurchasingOption>,
     pub(crate) offering_class: ::std::option::Option<crate::types::OfferingClass>,

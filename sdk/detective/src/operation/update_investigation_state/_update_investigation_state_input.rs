@@ -32,8 +32,8 @@ impl UpdateInvestigationStateInput {
 }
 
 /// A builder for [`UpdateInvestigationStateInput`](crate::operation::update_investigation_state::UpdateInvestigationStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInvestigationStateInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) investigation_id: ::std::option::Option<::std::string::String>,

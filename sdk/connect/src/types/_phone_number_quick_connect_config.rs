@@ -22,8 +22,8 @@ impl PhoneNumberQuickConnectConfig {
 }
 
 /// A builder for [`PhoneNumberQuickConnectConfig`](crate::types::PhoneNumberQuickConnectConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PhoneNumberQuickConnectConfigBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
 }

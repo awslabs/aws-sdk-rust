@@ -23,8 +23,8 @@ impl AgentsCriteria {
 }
 
 /// A builder for [`AgentsCriteria`](crate::types::AgentsCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentsCriteriaBuilder {
     pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

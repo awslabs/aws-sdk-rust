@@ -50,8 +50,8 @@ impl GetWebAclForResourceInput {
 }
 
 /// A builder for [`GetWebAclForResourceInput`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWebAclForResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

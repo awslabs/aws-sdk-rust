@@ -34,8 +34,8 @@ impl ListApplicationAssignmentsForPrincipalOutput {
 }
 
 /// A builder for [`ListApplicationAssignmentsForPrincipalOutput`](crate::operation::list_application_assignments_for_principal::ListApplicationAssignmentsForPrincipalOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationAssignmentsForPrincipalOutputBuilder {
     pub(crate) application_assignments: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAssignmentForPrincipal>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

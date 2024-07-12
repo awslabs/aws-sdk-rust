@@ -26,8 +26,8 @@ impl RestorePhoneNumberOutput {
 }
 
 /// A builder for [`RestorePhoneNumberOutput`](crate::operation::restore_phone_number::RestorePhoneNumberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestorePhoneNumberOutputBuilder {
     pub(crate) phone_number: ::std::option::Option<crate::types::PhoneNumber>,
     _request_id: Option<String>,

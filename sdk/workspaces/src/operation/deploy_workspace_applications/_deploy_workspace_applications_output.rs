@@ -26,8 +26,8 @@ impl DeployWorkspaceApplicationsOutput {
 }
 
 /// A builder for [`DeployWorkspaceApplicationsOutput`](crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeployWorkspaceApplicationsOutputBuilder {
     pub(crate) deployment: ::std::option::Option<crate::types::WorkSpaceApplicationDeployment>,
     _request_id: Option<String>,

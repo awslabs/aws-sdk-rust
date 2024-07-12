@@ -43,8 +43,8 @@ impl AccessLevelFilter {
 }
 
 /// A builder for [`AccessLevelFilter`](crate::types::AccessLevelFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessLevelFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::AccessLevelFilterKey>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

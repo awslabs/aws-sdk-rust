@@ -26,8 +26,8 @@ impl ResolveAppVersionResourcesInput {
 }
 
 /// A builder for [`ResolveAppVersionResourcesInput`](crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolveAppVersionResourcesInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,

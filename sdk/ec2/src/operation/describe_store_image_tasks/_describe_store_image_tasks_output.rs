@@ -34,8 +34,8 @@ impl DescribeStoreImageTasksOutput {
 }
 
 /// A builder for [`DescribeStoreImageTasksOutput`](crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStoreImageTasksOutputBuilder {
     pub(crate) store_image_task_results: ::std::option::Option<::std::vec::Vec<crate::types::StoreImageTaskResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl CustomerManagedS3Storage {
 }
 
 /// A builder for [`CustomerManagedS3Storage`](crate::types::CustomerManagedS3Storage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomerManagedS3StorageBuilder {
     pub(crate) s3_resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

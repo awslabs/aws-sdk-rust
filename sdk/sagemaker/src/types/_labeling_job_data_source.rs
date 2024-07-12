@@ -30,8 +30,8 @@ impl LabelingJobDataSource {
 }
 
 /// A builder for [`LabelingJobDataSource`](crate::types::LabelingJobDataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelingJobDataSourceBuilder {
     pub(crate) s3_data_source: ::std::option::Option<crate::types::LabelingJobS3DataSource>,
     pub(crate) sns_data_source: ::std::option::Option<crate::types::LabelingJobSnsDataSource>,

@@ -11,8 +11,8 @@ impl DescribeCustomerMetadataInput {
 }
 
 /// A builder for [`DescribeCustomerMetadataInput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomerMetadataInputBuilder {}
 impl DescribeCustomerMetadataInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCustomerMetadataInput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataInput).

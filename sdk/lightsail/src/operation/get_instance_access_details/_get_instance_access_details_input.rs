@@ -26,8 +26,8 @@ impl GetInstanceAccessDetailsInput {
 }
 
 /// A builder for [`GetInstanceAccessDetailsInput`](crate::operation::get_instance_access_details::GetInstanceAccessDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInstanceAccessDetailsInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::InstanceAccessProtocol>,

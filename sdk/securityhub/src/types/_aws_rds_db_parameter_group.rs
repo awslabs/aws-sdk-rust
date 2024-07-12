@@ -27,8 +27,8 @@ impl AwsRdsDbParameterGroup {
 }
 
 /// A builder for [`AwsRdsDbParameterGroup`](crate::types::AwsRdsDbParameterGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRdsDbParameterGroupBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,

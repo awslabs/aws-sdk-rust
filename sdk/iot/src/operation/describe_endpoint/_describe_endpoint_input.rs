@@ -55,8 +55,8 @@ impl DescribeEndpointInput {
 }
 
 /// A builder for [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEndpointInputBuilder {
     pub(crate) endpoint_type: ::std::option::Option<::std::string::String>,
 }

@@ -37,8 +37,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsBuilder {
     pub(crate) container_path: ::std::option::Option<::std::string::String>,
     pub(crate) mount_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

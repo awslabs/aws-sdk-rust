@@ -36,8 +36,8 @@ impl MediaCapturePipelineSourceConfiguration {
 }
 
 /// A builder for [`MediaCapturePipelineSourceConfiguration`](crate::types::MediaCapturePipelineSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MediaCapturePipelineSourceConfigurationBuilder {
     pub(crate) media_pipeline_arn: ::std::option::Option<::std::string::String>,
     pub(crate) chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration>,

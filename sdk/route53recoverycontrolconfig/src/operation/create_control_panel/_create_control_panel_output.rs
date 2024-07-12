@@ -26,8 +26,8 @@ impl CreateControlPanelOutput {
 }
 
 /// A builder for [`CreateControlPanelOutput`](crate::operation::create_control_panel::CreateControlPanelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateControlPanelOutputBuilder {
     pub(crate) control_panel: ::std::option::Option<crate::types::ControlPanel>,
     _request_id: Option<String>,

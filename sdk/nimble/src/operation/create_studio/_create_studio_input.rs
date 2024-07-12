@@ -69,8 +69,8 @@ impl CreateStudioInput {
 }
 
 /// A builder for [`CreateStudioInput`](crate::operation::create_studio::CreateStudioInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateStudioInputBuilder {
     pub(crate) admin_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

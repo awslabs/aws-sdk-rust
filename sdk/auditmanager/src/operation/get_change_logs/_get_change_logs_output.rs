@@ -34,8 +34,8 @@ impl GetChangeLogsOutput {
 }
 
 /// A builder for [`GetChangeLogsOutput`](crate::operation::get_change_logs::GetChangeLogsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChangeLogsOutputBuilder {
     pub(crate) change_logs: ::std::option::Option<::std::vec::Vec<crate::types::ChangeLog>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

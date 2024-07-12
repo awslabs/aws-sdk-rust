@@ -18,8 +18,8 @@ impl DeleteRestApiOutput {
 }
 
 /// A builder for [`DeleteRestApiOutput`](crate::operation::delete_rest_api::DeleteRestApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRestApiOutputBuilder {
     _request_id: Option<String>,
 }

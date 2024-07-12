@@ -48,8 +48,8 @@ impl Message {
 }
 
 /// A builder for [`Message`](crate::types::Message).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageBuilder {
     pub(crate) role: ::std::option::Option<crate::types::ConversationRole>,
     pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::ContentBlock>>,

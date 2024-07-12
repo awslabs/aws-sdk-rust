@@ -26,8 +26,8 @@ impl DescribeAccessEntryOutput {
 }
 
 /// A builder for [`DescribeAccessEntryOutput`](crate::operation::describe_access_entry::DescribeAccessEntryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccessEntryOutputBuilder {
     pub(crate) access_entry: ::std::option::Option<crate::types::AccessEntry>,
     _request_id: Option<String>,

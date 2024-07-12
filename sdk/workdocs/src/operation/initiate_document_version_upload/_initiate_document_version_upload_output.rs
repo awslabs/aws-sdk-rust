@@ -32,8 +32,8 @@ impl InitiateDocumentVersionUploadOutput {
 }
 
 /// A builder for [`InitiateDocumentVersionUploadOutput`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InitiateDocumentVersionUploadOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) upload_metadata: ::std::option::Option<crate::types::UploadMetadata>,

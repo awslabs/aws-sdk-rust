@@ -34,8 +34,8 @@ impl ListKxClustersOutput {
 }
 
 /// A builder for [`ListKxClustersOutput`](crate::operation::list_kx_clusters::ListKxClustersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKxClustersOutputBuilder {
     pub(crate) kx_cluster_summaries: ::std::option::Option<::std::vec::Vec<crate::types::KxCluster>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

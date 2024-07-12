@@ -18,8 +18,8 @@ impl DeleteSuiteDefinitionOutput {
 }
 
 /// A builder for [`DeleteSuiteDefinitionOutput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSuiteDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

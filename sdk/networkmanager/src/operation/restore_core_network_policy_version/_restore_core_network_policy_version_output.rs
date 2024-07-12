@@ -26,8 +26,8 @@ impl RestoreCoreNetworkPolicyVersionOutput {
 }
 
 /// A builder for [`RestoreCoreNetworkPolicyVersionOutput`](crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreCoreNetworkPolicyVersionOutputBuilder {
     pub(crate) core_network_policy: ::std::option::Option<crate::types::CoreNetworkPolicy>,
     _request_id: Option<String>,

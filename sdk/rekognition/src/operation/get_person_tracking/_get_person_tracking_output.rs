@@ -70,8 +70,8 @@ impl GetPersonTrackingOutput {
 }
 
 /// A builder for [`GetPersonTrackingOutput`](crate::operation::get_person_tracking::GetPersonTrackingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPersonTrackingOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

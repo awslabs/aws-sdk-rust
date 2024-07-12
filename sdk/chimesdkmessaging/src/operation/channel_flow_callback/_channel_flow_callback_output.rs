@@ -32,8 +32,8 @@ impl ChannelFlowCallbackOutput {
 }
 
 /// A builder for [`ChannelFlowCallbackOutput`](crate::operation::channel_flow_callback::ChannelFlowCallbackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelFlowCallbackOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) callback_id: ::std::option::Option<::std::string::String>,

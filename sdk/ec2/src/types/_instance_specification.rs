@@ -37,8 +37,8 @@ impl InstanceSpecification {
 }
 
 /// A builder for [`InstanceSpecification`](crate::types::InstanceSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceSpecificationBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) exclude_boot_volume: ::std::option::Option<bool>,

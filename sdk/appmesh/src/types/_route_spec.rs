@@ -45,8 +45,8 @@ impl RouteSpec {
 }
 
 /// A builder for [`RouteSpec`](crate::types::RouteSpec).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RouteSpecBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) http_route: ::std::option::Option<crate::types::HttpRoute>,

@@ -90,8 +90,8 @@ impl CreateDataCatalogInput {
 }
 
 /// A builder for [`CreateDataCatalogInput`](crate::operation::create_data_catalog::CreateDataCatalogInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DataCatalogType>,

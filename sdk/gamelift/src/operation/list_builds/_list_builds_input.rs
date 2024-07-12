@@ -50,8 +50,8 @@ impl ListBuildsInput {
 }
 
 /// A builder for [`ListBuildsInput`](crate::operation::list_builds::ListBuildsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBuildsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BuildStatus>,
     pub(crate) limit: ::std::option::Option<i32>,

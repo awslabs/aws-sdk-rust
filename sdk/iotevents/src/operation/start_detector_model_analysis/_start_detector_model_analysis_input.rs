@@ -20,8 +20,8 @@ impl StartDetectorModelAnalysisInput {
 }
 
 /// A builder for [`StartDetectorModelAnalysisInput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDetectorModelAnalysisInputBuilder {
     pub(crate) detector_model_definition: ::std::option::Option<crate::types::DetectorModelDefinition>,
 }

@@ -27,8 +27,8 @@ impl LaunchExecution {
 }
 
 /// A builder for [`LaunchExecution`](crate::types::LaunchExecution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchExecutionBuilder {
     pub(crate) started_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_time: ::std::option::Option<::aws_smithy_types::DateTime>,

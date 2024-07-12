@@ -34,8 +34,8 @@ impl FailoverGlobalReplicationGroupOutput {
 }
 
 /// A builder for [`FailoverGlobalReplicationGroupOutput`](crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailoverGlobalReplicationGroupOutputBuilder {
     pub(crate) global_replication_group: ::std::option::Option<crate::types::GlobalReplicationGroup>,
     _request_id: Option<String>,

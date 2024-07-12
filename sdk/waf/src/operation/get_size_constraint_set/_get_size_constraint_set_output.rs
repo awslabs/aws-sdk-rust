@@ -42,8 +42,8 @@ impl GetSizeConstraintSetOutput {
 }
 
 /// A builder for [`GetSizeConstraintSetOutput`](crate::operation::get_size_constraint_set::GetSizeConstraintSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSizeConstraintSetOutputBuilder {
     pub(crate) size_constraint_set: ::std::option::Option<crate::types::SizeConstraintSet>,
     _request_id: Option<String>,

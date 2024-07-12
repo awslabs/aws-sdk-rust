@@ -74,8 +74,8 @@ impl CreatePackagingConfigurationOutput {
 }
 
 /// A builder for [`CreatePackagingConfigurationOutput`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePackagingConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) cmaf_package: ::std::option::Option<crate::types::CmafPackage>,

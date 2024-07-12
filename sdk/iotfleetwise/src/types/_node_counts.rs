@@ -57,8 +57,8 @@ impl NodeCounts {
 }
 
 /// A builder for [`NodeCounts`](crate::types::NodeCounts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeCountsBuilder {
     pub(crate) total_nodes: ::std::option::Option<i32>,
     pub(crate) total_branches: ::std::option::Option<i32>,

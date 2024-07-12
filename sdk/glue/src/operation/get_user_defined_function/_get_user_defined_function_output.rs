@@ -26,8 +26,8 @@ impl GetUserDefinedFunctionOutput {
 }
 
 /// A builder for [`GetUserDefinedFunctionOutput`](crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUserDefinedFunctionOutputBuilder {
     pub(crate) user_defined_function: ::std::option::Option<crate::types::UserDefinedFunction>,
     _request_id: Option<String>,

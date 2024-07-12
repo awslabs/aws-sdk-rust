@@ -68,8 +68,8 @@ impl GetGeneratedTemplateOutput {
 }
 
 /// A builder for [`GetGeneratedTemplateOutput`](crate::operation::get_generated_template::GetGeneratedTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGeneratedTemplateOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::GeneratedTemplateStatus>,
     pub(crate) template_body: ::std::option::Option<::std::string::String>,

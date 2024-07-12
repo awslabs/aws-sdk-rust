@@ -72,8 +72,8 @@ impl ConnectDirectoryInput {
 }
 
 /// A builder for [`ConnectDirectoryInput`](crate::operation::connect_directory::ConnectDirectoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConnectDirectoryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) short_name: ::std::option::Option<::std::string::String>,

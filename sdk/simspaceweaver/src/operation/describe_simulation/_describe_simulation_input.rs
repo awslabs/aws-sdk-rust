@@ -20,8 +20,8 @@ impl DescribeSimulationInput {
 }
 
 /// A builder for [`DescribeSimulationInput`](crate::operation::describe_simulation::DescribeSimulationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSimulationInputBuilder {
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
 }

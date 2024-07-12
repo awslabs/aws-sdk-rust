@@ -110,8 +110,8 @@ impl BatchWriteItemOutput {
 }
 
 /// A builder for [`BatchWriteItemOutput`](crate::operation::batch_write_item::BatchWriteItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchWriteItemOutputBuilder {
     pub(crate) unprocessed_items:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::WriteRequest>>>,

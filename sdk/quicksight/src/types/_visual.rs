@@ -198,8 +198,8 @@ impl Visual {
 }
 
 /// A builder for [`Visual`](crate::types::Visual).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VisualBuilder {
     pub(crate) table_visual: ::std::option::Option<crate::types::TableVisual>,
     pub(crate) pivot_table_visual: ::std::option::Option<crate::types::PivotTableVisual>,

@@ -18,8 +18,8 @@ impl DeleteTableOutput {
 }
 
 /// A builder for [`DeleteTableOutput`](crate::operation::delete_table::DeleteTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTableOutputBuilder {
     _request_id: Option<String>,
 }

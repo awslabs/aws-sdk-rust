@@ -30,8 +30,8 @@ impl UpdateJobShipmentStateInput {
 }
 
 /// A builder for [`UpdateJobShipmentStateInput`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateJobShipmentStateInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) shipment_state: ::std::option::Option<crate::types::ShipmentState>,

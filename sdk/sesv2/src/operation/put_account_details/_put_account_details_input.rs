@@ -69,8 +69,8 @@ impl PutAccountDetailsInput {
 }
 
 /// A builder for [`PutAccountDetailsInput`](crate::operation::put_account_details::PutAccountDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutAccountDetailsInputBuilder {
     pub(crate) mail_type: ::std::option::Option<crate::types::MailType>,
     pub(crate) website_url: ::std::option::Option<::std::string::String>,

@@ -130,8 +130,8 @@ impl DescribeAlarmModelOutput {
 }
 
 /// A builder for [`DescribeAlarmModelOutput`](crate::operation::describe_alarm_model::DescribeAlarmModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAlarmModelOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) alarm_model_arn: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl AppUnitError {
 }
 
 /// A builder for [`AppUnitError`](crate::types::AppUnitError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppUnitErrorBuilder {
     pub(crate) app_unit_error_category: ::std::option::Option<crate::types::AppUnitErrorCategory>,
 }

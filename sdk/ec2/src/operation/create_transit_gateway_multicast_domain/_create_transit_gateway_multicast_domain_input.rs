@@ -40,8 +40,8 @@ impl CreateTransitGatewayMulticastDomainInput {
 }
 
 /// A builder for [`CreateTransitGatewayMulticastDomainInput`](crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitGatewayMulticastDomainInputBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<crate::types::CreateTransitGatewayMulticastDomainRequestOptions>,

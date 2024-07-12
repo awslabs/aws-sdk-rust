@@ -51,8 +51,8 @@ impl BounceAction {
 }
 
 /// A builder for [`BounceAction`](crate::types::BounceAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BounceActionBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) smtp_reply_code: ::std::option::Option<::std::string::String>,

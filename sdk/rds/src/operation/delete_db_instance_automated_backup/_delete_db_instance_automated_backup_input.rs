@@ -29,8 +29,8 @@ impl DeleteDbInstanceAutomatedBackupInput {
 }
 
 /// A builder for [`DeleteDbInstanceAutomatedBackupInput`](crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbInstanceAutomatedBackupInputBuilder {
     pub(crate) dbi_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,

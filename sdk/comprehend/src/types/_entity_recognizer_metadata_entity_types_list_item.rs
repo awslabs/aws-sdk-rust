@@ -33,8 +33,8 @@ impl EntityRecognizerMetadataEntityTypesListItem {
 }
 
 /// A builder for [`EntityRecognizerMetadataEntityTypesListItem`](crate::types::EntityRecognizerMetadataEntityTypesListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityRecognizerMetadataEntityTypesListItemBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_metrics: ::std::option::Option<crate::types::EntityTypesEvaluationMetrics>,

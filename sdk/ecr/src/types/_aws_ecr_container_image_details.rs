@@ -65,8 +65,8 @@ impl AwsEcrContainerImageDetails {
 }
 
 /// A builder for [`AwsEcrContainerImageDetails`](crate::types::AwsEcrContainerImageDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcrContainerImageDetailsBuilder {
     pub(crate) architecture: ::std::option::Option<::std::string::String>,
     pub(crate) author: ::std::option::Option<::std::string::String>,

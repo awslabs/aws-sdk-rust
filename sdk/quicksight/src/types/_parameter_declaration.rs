@@ -41,8 +41,8 @@ impl ParameterDeclaration {
 }
 
 /// A builder for [`ParameterDeclaration`](crate::types::ParameterDeclaration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParameterDeclarationBuilder {
     pub(crate) string_parameter_declaration: ::std::option::Option<crate::types::StringParameterDeclaration>,
     pub(crate) decimal_parameter_declaration: ::std::option::Option<crate::types::DecimalParameterDeclaration>,

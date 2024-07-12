@@ -20,8 +20,8 @@ impl GetAccessLogSubscriptionInput {
 }
 
 /// A builder for [`GetAccessLogSubscriptionInput`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessLogSubscriptionInputBuilder {
     pub(crate) access_log_subscription_identifier: ::std::option::Option<::std::string::String>,
 }

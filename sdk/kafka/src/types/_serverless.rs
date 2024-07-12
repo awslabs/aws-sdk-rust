@@ -29,8 +29,8 @@ impl Serverless {
 }
 
 /// A builder for [`Serverless`](crate::types::Serverless).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerlessBuilder {
     pub(crate) vpc_configs: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfig>>,
     pub(crate) client_authentication: ::std::option::Option<crate::types::ServerlessClientAuthentication>,

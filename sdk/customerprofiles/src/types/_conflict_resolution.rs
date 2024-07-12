@@ -39,8 +39,8 @@ impl ConflictResolution {
 }
 
 /// A builder for [`ConflictResolution`](crate::types::ConflictResolution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConflictResolutionBuilder {
     pub(crate) conflict_resolving_model: ::std::option::Option<crate::types::ConflictResolvingModel>,
     pub(crate) source_name: ::std::option::Option<::std::string::String>,

@@ -61,8 +61,8 @@ impl VpnGateway {
 }
 
 /// A builder for [`VpnGateway`](crate::types::VpnGateway).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpnGatewayBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::VpnState>,

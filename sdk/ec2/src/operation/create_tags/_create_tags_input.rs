@@ -38,8 +38,8 @@ impl CreateTagsInput {
 }
 
 /// A builder for [`CreateTagsInput`](crate::operation::create_tags::CreateTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTagsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

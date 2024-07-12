@@ -11,8 +11,8 @@ impl GetComplianceSummaryByConfigRuleInput {
 }
 
 /// A builder for [`GetComplianceSummaryByConfigRuleInput`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetComplianceSummaryByConfigRuleInputBuilder {}
 impl GetComplianceSummaryByConfigRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetComplianceSummaryByConfigRuleInput`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput).

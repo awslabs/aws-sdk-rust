@@ -33,8 +33,8 @@ impl ListConfiguredTablesOutput {
 }
 
 /// A builder for [`ListConfiguredTablesOutput`](crate::operation::list_configured_tables::ListConfiguredTablesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfiguredTablesOutputBuilder {
     pub(crate) configured_table_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

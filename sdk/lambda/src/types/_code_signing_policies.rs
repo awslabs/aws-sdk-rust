@@ -23,8 +23,8 @@ impl CodeSigningPolicies {
 }
 
 /// A builder for [`CodeSigningPolicies`](crate::types::CodeSigningPolicies).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeSigningPoliciesBuilder {
     pub(crate) untrusted_artifact_on_deployment: ::std::option::Option<crate::types::CodeSigningPolicy>,
 }

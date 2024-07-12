@@ -18,8 +18,8 @@ impl DeleteRumMetricsDestinationOutput {
 }
 
 /// A builder for [`DeleteRumMetricsDestinationOutput`](crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRumMetricsDestinationOutputBuilder {
     _request_id: Option<String>,
 }

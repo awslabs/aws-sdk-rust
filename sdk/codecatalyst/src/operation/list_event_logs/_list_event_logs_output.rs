@@ -33,8 +33,8 @@ impl ListEventLogsOutput {
 }
 
 /// A builder for [`ListEventLogsOutput`](crate::operation::list_event_logs::ListEventLogsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventLogsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EventLogEntry>>,

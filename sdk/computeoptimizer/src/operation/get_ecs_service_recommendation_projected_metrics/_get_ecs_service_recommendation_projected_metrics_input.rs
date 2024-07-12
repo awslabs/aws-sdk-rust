@@ -50,8 +50,8 @@ impl GetEcsServiceRecommendationProjectedMetricsInput {
 }
 
 /// A builder for [`GetEcsServiceRecommendationProjectedMetricsInput`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEcsServiceRecommendationProjectedMetricsInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stat: ::std::option::Option<crate::types::MetricStatistic>,

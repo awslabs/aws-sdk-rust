@@ -26,8 +26,8 @@ impl GetProposalOutput {
 }
 
 /// A builder for [`GetProposalOutput`](crate::operation::get_proposal::GetProposalOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProposalOutputBuilder {
     pub(crate) proposal: ::std::option::Option<crate::types::Proposal>,
     _request_id: Option<String>,

@@ -66,8 +66,8 @@ impl CollapseConfiguration {
 }
 
 /// A builder for [`CollapseConfiguration`](crate::types::CollapseConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CollapseConfigurationBuilder {
     pub(crate) document_attribute_key: ::std::option::Option<::std::string::String>,
     pub(crate) sorting_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>>,

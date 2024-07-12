@@ -51,8 +51,8 @@ impl DiskImageDescription {
 }
 
 /// A builder for [`DiskImageDescription`](crate::types::DiskImageDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DiskImageDescriptionBuilder {
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::DiskImageFormat>,

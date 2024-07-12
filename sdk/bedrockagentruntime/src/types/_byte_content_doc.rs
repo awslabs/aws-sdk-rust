@@ -44,8 +44,8 @@ impl ByteContentDoc {
 }
 
 /// A builder for [`ByteContentDoc`](crate::types::ByteContentDoc).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ByteContentDocBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

@@ -37,8 +37,8 @@ impl TableFieldOptions {
 }
 
 /// A builder for [`TableFieldOptions`](crate::types::TableFieldOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableFieldOptionsBuilder {
     pub(crate) selected_field_options: ::std::option::Option<::std::vec::Vec<crate::types::TableFieldOption>>,
     pub(crate) order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -33,8 +33,8 @@ impl EventRiskType {
 }
 
 /// A builder for [`EventRiskType`](crate::types::EventRiskType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventRiskTypeBuilder {
     pub(crate) risk_decision: ::std::option::Option<crate::types::RiskDecisionType>,
     pub(crate) risk_level: ::std::option::Option<crate::types::RiskLevelType>,

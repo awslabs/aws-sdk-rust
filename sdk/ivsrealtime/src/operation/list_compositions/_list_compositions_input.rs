@@ -38,8 +38,8 @@ impl ListCompositionsInput {
 }
 
 /// A builder for [`ListCompositionsInput`](crate::operation::list_compositions::ListCompositionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCompositionsInputBuilder {
     pub(crate) filter_by_stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter_by_encoder_configuration_arn: ::std::option::Option<::std::string::String>,

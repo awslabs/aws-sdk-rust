@@ -39,8 +39,8 @@ impl UpdateDocumentationVersionOutput {
 }
 
 /// A builder for [`UpdateDocumentationVersionOutput`](crate::operation::update_documentation_version::UpdateDocumentationVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDocumentationVersionOutputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,

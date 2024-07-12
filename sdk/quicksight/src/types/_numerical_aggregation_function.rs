@@ -75,8 +75,8 @@ impl NumericalAggregationFunction {
 }
 
 /// A builder for [`NumericalAggregationFunction`](crate::types::NumericalAggregationFunction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NumericalAggregationFunctionBuilder {
     pub(crate) simple_numerical_aggregation: ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
     pub(crate) percentile_aggregation: ::std::option::Option<crate::types::PercentileAggregation>,

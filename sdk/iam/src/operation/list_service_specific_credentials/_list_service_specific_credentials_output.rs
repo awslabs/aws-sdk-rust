@@ -28,8 +28,8 @@ impl ListServiceSpecificCredentialsOutput {
 }
 
 /// A builder for [`ListServiceSpecificCredentialsOutput`](crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceSpecificCredentialsOutputBuilder {
     pub(crate) service_specific_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>>,
     _request_id: Option<String>,

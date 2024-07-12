@@ -93,8 +93,8 @@ impl AutoBranchCreationConfig {
 }
 
 /// A builder for [`AutoBranchCreationConfig`](crate::types::AutoBranchCreationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AutoBranchCreationConfigBuilder {
     pub(crate) stage: ::std::option::Option<crate::types::Stage>,
     pub(crate) framework: ::std::option::Option<::std::string::String>,

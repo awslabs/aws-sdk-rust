@@ -19,8 +19,8 @@ impl ExecuteChangeSetOutput {
 }
 
 /// A builder for [`ExecuteChangeSetOutput`](crate::operation::execute_change_set::ExecuteChangeSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteChangeSetOutputBuilder {
     _request_id: Option<String>,
 }

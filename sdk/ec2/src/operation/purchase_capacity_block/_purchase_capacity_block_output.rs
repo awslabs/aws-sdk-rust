@@ -26,8 +26,8 @@ impl PurchaseCapacityBlockOutput {
 }
 
 /// A builder for [`PurchaseCapacityBlockOutput`](crate::operation::purchase_capacity_block::PurchaseCapacityBlockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseCapacityBlockOutputBuilder {
     pub(crate) capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
     _request_id: Option<String>,

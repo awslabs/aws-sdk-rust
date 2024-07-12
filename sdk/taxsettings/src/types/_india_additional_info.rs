@@ -21,8 +21,8 @@ impl IndiaAdditionalInfo {
 }
 
 /// A builder for [`IndiaAdditionalInfo`](crate::types::IndiaAdditionalInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IndiaAdditionalInfoBuilder {
     pub(crate) pan: ::std::option::Option<::std::string::String>,
 }

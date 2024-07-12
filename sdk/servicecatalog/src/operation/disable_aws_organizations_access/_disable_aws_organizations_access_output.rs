@@ -18,8 +18,8 @@ impl DisableAwsOrganizationsAccessOutput {
 }
 
 /// A builder for [`DisableAwsOrganizationsAccessOutput`](crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableAwsOrganizationsAccessOutputBuilder {
     _request_id: Option<String>,
 }

@@ -94,8 +94,8 @@ impl CreateCertificateAuthorityInput {
 }
 
 /// A builder for [`CreateCertificateAuthorityInput`](crate::operation::create_certificate_authority::CreateCertificateAuthorityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCertificateAuthorityInputBuilder {
     pub(crate) certificate_authority_configuration: ::std::option::Option<crate::types::CertificateAuthorityConfiguration>,
     pub(crate) revocation_configuration: ::std::option::Option<crate::types::RevocationConfiguration>,

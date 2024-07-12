@@ -31,8 +31,8 @@ impl FleetLaunchTemplateConfigRequest {
 }
 
 /// A builder for [`FleetLaunchTemplateConfigRequest`](crate::types::FleetLaunchTemplateConfigRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetLaunchTemplateConfigRequestBuilder {
     pub(crate) launch_template_specification: ::std::option::Option<crate::types::FleetLaunchTemplateSpecificationRequest>,
     pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateOverridesRequest>>,

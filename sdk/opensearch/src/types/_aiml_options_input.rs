@@ -21,8 +21,8 @@ impl AimlOptionsInput {
 }
 
 /// A builder for [`AimlOptionsInput`](crate::types::AimlOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AimlOptionsInputBuilder {
     pub(crate) natural_language_query_generation_options: ::std::option::Option<crate::types::NaturalLanguageQueryGenerationOptionsInput>,
 }

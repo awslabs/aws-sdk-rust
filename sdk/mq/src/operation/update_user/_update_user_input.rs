@@ -53,8 +53,8 @@ impl UpdateUserInput {
 }
 
 /// A builder for [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserInputBuilder {
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
     pub(crate) console_access: ::std::option::Option<bool>,

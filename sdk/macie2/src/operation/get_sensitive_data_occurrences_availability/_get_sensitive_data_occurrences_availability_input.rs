@@ -20,8 +20,8 @@ impl GetSensitiveDataOccurrencesAvailabilityInput {
 }
 
 /// A builder for [`GetSensitiveDataOccurrencesAvailabilityInput`](crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSensitiveDataOccurrencesAvailabilityInputBuilder {
     pub(crate) finding_id: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl GetControlOperationOutput {
 }
 
 /// A builder for [`GetControlOperationOutput`](crate::operation::get_control_operation::GetControlOperationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetControlOperationOutputBuilder {
     pub(crate) control_operation: ::std::option::Option<crate::types::ControlOperation>,
     _request_id: Option<String>,

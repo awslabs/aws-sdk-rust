@@ -20,8 +20,8 @@ impl GetRunGroupInput {
 }
 
 /// A builder for [`GetRunGroupInput`](crate::operation::get_run_group::GetRunGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRunGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

@@ -35,8 +35,8 @@ impl SimpleRule {
 }
 
 /// A builder for [`SimpleRule`](crate::types::SimpleRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimpleRuleBuilder {
     pub(crate) input_property: ::std::option::Option<::std::string::String>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,

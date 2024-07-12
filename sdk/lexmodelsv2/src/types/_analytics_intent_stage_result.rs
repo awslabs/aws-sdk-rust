@@ -39,8 +39,8 @@ impl AnalyticsIntentStageResult {
 }
 
 /// A builder for [`AnalyticsIntentStageResult`](crate::types::AnalyticsIntentStageResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsIntentStageResultBuilder {
     pub(crate) bin_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>>,
     pub(crate) group_by_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupByKey>>,

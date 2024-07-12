@@ -21,8 +21,8 @@ impl AwsGuardDutyDetectorDataSourcesKubernetesDetails {
 }
 
 /// A builder for [`AwsGuardDutyDetectorDataSourcesKubernetesDetails`](crate::types::AwsGuardDutyDetectorDataSourcesKubernetesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsGuardDutyDetectorDataSourcesKubernetesDetailsBuilder {
     pub(crate) audit_logs: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails>,
 }

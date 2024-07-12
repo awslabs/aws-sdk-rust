@@ -26,8 +26,8 @@ impl DeregisterContainerInstanceOutput {
 }
 
 /// A builder for [`DeregisterContainerInstanceOutput`](crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterContainerInstanceOutputBuilder {
     pub(crate) container_instance: ::std::option::Option<crate::types::ContainerInstance>,
     _request_id: Option<String>,

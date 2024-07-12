@@ -34,8 +34,8 @@ impl DescribeDeploymentsInput {
 }
 
 /// A builder for [`DescribeDeploymentsInput`](crate::operation::describe_deployments::DescribeDeploymentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeploymentsInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,

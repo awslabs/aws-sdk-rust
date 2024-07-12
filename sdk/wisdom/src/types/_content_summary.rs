@@ -89,8 +89,8 @@ impl ContentSummary {
 }
 
 /// A builder for [`ContentSummary`](crate::types::ContentSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentSummaryBuilder {
     pub(crate) content_arn: ::std::option::Option<::std::string::String>,
     pub(crate) content_id: ::std::option::Option<::std::string::String>,

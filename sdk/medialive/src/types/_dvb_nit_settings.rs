@@ -33,8 +33,8 @@ impl DvbNitSettings {
 }
 
 /// A builder for [`DvbNitSettings`](crate::types::DvbNitSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DvbNitSettingsBuilder {
     pub(crate) network_id: ::std::option::Option<i32>,
     pub(crate) network_name: ::std::option::Option<::std::string::String>,

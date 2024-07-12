@@ -33,8 +33,8 @@ impl GitPushFilter {
 }
 
 /// A builder for [`GitPushFilter`](crate::types::GitPushFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GitPushFilterBuilder {
     pub(crate) tags: ::std::option::Option<crate::types::GitTagFilterCriteria>,
     pub(crate) branches: ::std::option::Option<crate::types::GitBranchFilterCriteria>,

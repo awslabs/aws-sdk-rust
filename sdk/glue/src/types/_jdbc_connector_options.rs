@@ -69,8 +69,8 @@ impl JdbcConnectorOptions {
 }
 
 /// A builder for [`JdbcConnectorOptions`](crate::types::JdbcConnectorOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JdbcConnectorOptionsBuilder {
     pub(crate) filter_predicate: ::std::option::Option<::std::string::String>,
     pub(crate) partition_column: ::std::option::Option<::std::string::String>,

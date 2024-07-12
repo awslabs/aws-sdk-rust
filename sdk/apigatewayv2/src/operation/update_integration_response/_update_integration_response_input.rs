@@ -89,8 +89,8 @@ impl UpdateIntegrationResponseInput {
 }
 
 /// A builder for [`UpdateIntegrationResponseInput`](crate::operation::update_integration_response::UpdateIntegrationResponseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIntegrationResponseInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_handling_strategy: ::std::option::Option<crate::types::ContentHandlingStrategy>,

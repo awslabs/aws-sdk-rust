@@ -63,8 +63,8 @@ impl DomainDescriptionType {
 }
 
 /// A builder for [`DomainDescriptionType`](crate::types::DomainDescriptionType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainDescriptionTypeBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl Transition {
 }
 
 /// A builder for [`Transition`](crate::types::Transition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitionBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) days: ::std::option::Option<i32>,

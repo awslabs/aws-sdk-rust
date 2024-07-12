@@ -26,8 +26,8 @@ impl RegisterTaskWithMaintenanceWindowOutput {
 }
 
 /// A builder for [`RegisterTaskWithMaintenanceWindowOutput`](crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterTaskWithMaintenanceWindowOutputBuilder {
     pub(crate) window_task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

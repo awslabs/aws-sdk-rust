@@ -51,8 +51,8 @@ impl ReservationPlan {
 }
 
 /// A builder for [`ReservationPlan`](crate::types::ReservationPlan).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservationPlanBuilder {
     pub(crate) commitment: ::std::option::Option<crate::types::Commitment>,
     pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,

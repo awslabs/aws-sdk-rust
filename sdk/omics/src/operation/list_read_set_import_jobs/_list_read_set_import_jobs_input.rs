@@ -38,8 +38,8 @@ impl ListReadSetImportJobsInput {
 }
 
 /// A builder for [`ListReadSetImportJobsInput`](crate::operation::list_read_set_import_jobs::ListReadSetImportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReadSetImportJobsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

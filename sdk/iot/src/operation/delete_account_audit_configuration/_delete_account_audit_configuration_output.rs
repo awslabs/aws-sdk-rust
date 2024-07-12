@@ -18,8 +18,8 @@ impl DeleteAccountAuditConfigurationOutput {
 }
 
 /// A builder for [`DeleteAccountAuditConfigurationOutput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccountAuditConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -61,8 +61,8 @@ impl SearchResourcesSimpleCriterion {
 }
 
 /// A builder for [`SearchResourcesSimpleCriterion`](crate::types::SearchResourcesSimpleCriterion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchResourcesSimpleCriterionBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::SearchResourcesComparator>,
     pub(crate) key: ::std::option::Option<crate::types::SearchResourcesSimpleCriterionKey>,

@@ -26,8 +26,8 @@ impl CreateClusterSnapshotOutput {
 }
 
 /// A builder for [`CreateClusterSnapshotOutput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateClusterSnapshotOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::ClusterSnapshot>,
     _request_id: Option<String>,

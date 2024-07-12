@@ -74,8 +74,8 @@ impl ServiceConnectConfiguration {
 }
 
 /// A builder for [`ServiceConnectConfiguration`](crate::types::ServiceConnectConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceConnectConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

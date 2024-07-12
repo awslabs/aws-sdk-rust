@@ -18,8 +18,8 @@ impl PutEmailMonitoringConfigurationOutput {
 }
 
 /// A builder for [`PutEmailMonitoringConfigurationOutput`](crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEmailMonitoringConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

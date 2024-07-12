@@ -62,8 +62,8 @@ impl ListMetricValuesInput {
 }
 
 /// A builder for [`ListMetricValuesInput`](crate::operation::list_metric_values::ListMetricValuesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMetricValuesInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,

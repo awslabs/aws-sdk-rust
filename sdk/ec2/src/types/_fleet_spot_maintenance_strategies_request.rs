@@ -21,8 +21,8 @@ impl FleetSpotMaintenanceStrategiesRequest {
 }
 
 /// A builder for [`FleetSpotMaintenanceStrategiesRequest`](crate::types::FleetSpotMaintenanceStrategiesRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetSpotMaintenanceStrategiesRequestBuilder {
     pub(crate) capacity_rebalance: ::std::option::Option<crate::types::FleetSpotCapacityRebalanceRequest>,
 }

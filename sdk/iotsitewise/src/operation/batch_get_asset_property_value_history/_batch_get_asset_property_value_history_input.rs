@@ -46,8 +46,8 @@ impl BatchGetAssetPropertyValueHistoryInput {
 }
 
 /// A builder for [`BatchGetAssetPropertyValueHistoryInput`](crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAssetPropertyValueHistoryInputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

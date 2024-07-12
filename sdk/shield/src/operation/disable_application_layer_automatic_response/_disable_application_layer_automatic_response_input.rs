@@ -21,8 +21,8 @@ impl DisableApplicationLayerAutomaticResponseInput {
 }
 
 /// A builder for [`DisableApplicationLayerAutomaticResponseInput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableApplicationLayerAutomaticResponseInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

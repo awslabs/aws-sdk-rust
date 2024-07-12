@@ -65,8 +65,8 @@ impl MissingParameterValueException {
 }
 
 /// A builder for [`MissingParameterValueException`](crate::types::error::MissingParameterValueException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MissingParameterValueExceptionBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

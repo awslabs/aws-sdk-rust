@@ -32,8 +32,8 @@ impl ListAccessLogSubscriptionsInput {
 }
 
 /// A builder for [`ListAccessLogSubscriptionsInput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessLogSubscriptionsInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

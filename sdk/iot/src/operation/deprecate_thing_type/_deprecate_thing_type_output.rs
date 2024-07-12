@@ -19,8 +19,8 @@ impl DeprecateThingTypeOutput {
 }
 
 /// A builder for [`DeprecateThingTypeOutput`](crate::operation::deprecate_thing_type::DeprecateThingTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprecateThingTypeOutputBuilder {
     _request_id: Option<String>,
 }

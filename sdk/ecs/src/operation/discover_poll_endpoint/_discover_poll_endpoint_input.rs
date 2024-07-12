@@ -26,8 +26,8 @@ impl DiscoverPollEndpointInput {
 }
 
 /// A builder for [`DiscoverPollEndpointInput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiscoverPollEndpointInputBuilder {
     pub(crate) container_instance: ::std::option::Option<::std::string::String>,
     pub(crate) cluster: ::std::option::Option<::std::string::String>,

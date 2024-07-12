@@ -26,8 +26,8 @@ impl GetPushTemplateOutput {
 }
 
 /// A builder for [`GetPushTemplateOutput`](crate::operation::get_push_template::GetPushTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPushTemplateOutputBuilder {
     pub(crate) push_notification_template_response: ::std::option::Option<crate::types::PushNotificationTemplateResponse>,
     _request_id: Option<String>,

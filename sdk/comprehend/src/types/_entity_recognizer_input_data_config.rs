@@ -78,8 +78,8 @@ impl EntityRecognizerInputDataConfig {
 }
 
 /// A builder for [`EntityRecognizerInputDataConfig`](crate::types::EntityRecognizerInputDataConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityRecognizerInputDataConfigBuilder {
     pub(crate) data_format: ::std::option::Option<crate::types::EntityRecognizerDataFormat>,
     pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityTypesListItem>>,

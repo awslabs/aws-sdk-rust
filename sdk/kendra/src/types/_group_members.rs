@@ -39,8 +39,8 @@ impl GroupMembers {
 }
 
 /// A builder for [`GroupMembers`](crate::types::GroupMembers).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GroupMembersBuilder {
     pub(crate) member_groups: ::std::option::Option<::std::vec::Vec<crate::types::MemberGroup>>,
     pub(crate) member_users: ::std::option::Option<::std::vec::Vec<crate::types::MemberUser>>,

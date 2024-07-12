@@ -18,8 +18,8 @@ impl RemoveTagsFromCertificateOutput {
 }
 
 /// A builder for [`RemoveTagsFromCertificateOutput`](crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveTagsFromCertificateOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,8 +28,8 @@ impl SetKeepJobFlowAliveWhenNoStepsInput {
 }
 
 /// A builder for [`SetKeepJobFlowAliveWhenNoStepsInput`](crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetKeepJobFlowAliveWhenNoStepsInputBuilder {
     pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) keep_job_flow_alive_when_no_steps: ::std::option::Option<bool>,

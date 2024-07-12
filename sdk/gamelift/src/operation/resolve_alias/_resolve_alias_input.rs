@@ -20,8 +20,8 @@ impl ResolveAliasInput {
 }
 
 /// A builder for [`ResolveAliasInput`](crate::operation::resolve_alias::ResolveAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolveAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
 }

@@ -33,8 +33,8 @@ impl Function {
 }
 
 /// A builder for [`Function`](crate::types::Function).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunctionBuilder {
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) function_configuration: ::std::option::Option<crate::types::FunctionConfiguration>,

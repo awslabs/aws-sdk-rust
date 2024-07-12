@@ -28,8 +28,8 @@ impl ResolveComponentCandidatesInput {
 }
 
 /// A builder for [`ResolveComponentCandidatesInput`](crate::operation::resolve_component_candidates::ResolveComponentCandidatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolveComponentCandidatesInputBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::ComponentPlatform>,
     pub(crate) component_candidates: ::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>>,

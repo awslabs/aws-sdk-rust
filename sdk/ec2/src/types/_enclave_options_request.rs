@@ -21,8 +21,8 @@ impl EnclaveOptionsRequest {
 }
 
 /// A builder for [`EnclaveOptionsRequest`](crate::types::EnclaveOptionsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnclaveOptionsRequestBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

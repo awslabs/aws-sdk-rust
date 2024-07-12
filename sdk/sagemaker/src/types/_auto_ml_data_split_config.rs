@@ -22,8 +22,8 @@ impl AutoMlDataSplitConfig {
 }
 
 /// A builder for [`AutoMlDataSplitConfig`](crate::types::AutoMlDataSplitConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoMlDataSplitConfigBuilder {
     pub(crate) validation_fraction: ::std::option::Option<f32>,
 }

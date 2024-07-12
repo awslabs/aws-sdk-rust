@@ -26,8 +26,8 @@ impl UpdateReportGroupOutput {
 }
 
 /// A builder for [`UpdateReportGroupOutput`](crate::operation::update_report_group::UpdateReportGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateReportGroupOutputBuilder {
     pub(crate) report_group: ::std::option::Option<crate::types::ReportGroup>,
     _request_id: Option<String>,

@@ -44,8 +44,8 @@ impl UpdateFileSystemProtectionInput {
 }
 
 /// A builder for [`UpdateFileSystemProtectionInput`](crate::operation::update_file_system_protection::UpdateFileSystemProtectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFileSystemProtectionInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) replication_overwrite_protection: ::std::option::Option<crate::types::ReplicationOverwriteProtection>,

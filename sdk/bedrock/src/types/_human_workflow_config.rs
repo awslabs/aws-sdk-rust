@@ -36,8 +36,8 @@ impl HumanWorkflowConfig {
 }
 
 /// A builder for [`HumanWorkflowConfig`](crate::types::HumanWorkflowConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct HumanWorkflowConfigBuilder {
     pub(crate) flow_definition_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instructions: ::std::option::Option<::std::string::String>,

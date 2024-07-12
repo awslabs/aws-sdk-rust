@@ -45,8 +45,8 @@ impl ApplyEnvironmentManagedActionOutput {
 }
 
 /// A builder for [`ApplyEnvironmentManagedActionOutput`](crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplyEnvironmentManagedActionOutputBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_description: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl DocumentAttributeTarget {
 }
 
 /// A builder for [`DocumentAttributeTarget`](crate::types::DocumentAttributeTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentAttributeTargetBuilder {
     pub(crate) target_document_attribute_key: ::std::option::Option<::std::string::String>,
     pub(crate) target_document_attribute_value_deletion: ::std::option::Option<bool>,

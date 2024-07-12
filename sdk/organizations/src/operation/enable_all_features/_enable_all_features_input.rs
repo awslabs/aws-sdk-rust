@@ -11,8 +11,8 @@ impl EnableAllFeaturesInput {
 }
 
 /// A builder for [`EnableAllFeaturesInput`](crate::operation::enable_all_features::EnableAllFeaturesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableAllFeaturesInputBuilder {}
 impl EnableAllFeaturesInputBuilder {
     /// Consumes the builder and constructs a [`EnableAllFeaturesInput`](crate::operation::enable_all_features::EnableAllFeaturesInput).

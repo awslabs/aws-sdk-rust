@@ -34,8 +34,8 @@ impl ListVirtualInterfaceTestHistoryOutput {
 }
 
 /// A builder for [`ListVirtualInterfaceTestHistoryOutput`](crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVirtualInterfaceTestHistoryOutputBuilder {
     pub(crate) virtual_interface_test_history: ::std::option::Option<::std::vec::Vec<crate::types::VirtualInterfaceTestHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteTestConfigurationInput {
 }
 
 /// A builder for [`DeleteTestConfigurationInput`](crate::operation::delete_test_configuration::DeleteTestConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTestConfigurationInputBuilder {
     pub(crate) test_configuration_id: ::std::option::Option<::std::string::String>,
 }

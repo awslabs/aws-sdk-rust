@@ -37,8 +37,8 @@ impl MediaResource {
 }
 
 /// A builder for [`MediaResource`](crate::types::MediaResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaResourceBuilder {
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::MediaResourceNeighbor>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

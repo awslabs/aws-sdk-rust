@@ -22,8 +22,8 @@ impl Primary {
 }
 
 /// A builder for [`Primary`](crate::types::Primary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrimaryBuilder {
     pub(crate) health_check: ::std::option::Option<::std::string::String>,
 }

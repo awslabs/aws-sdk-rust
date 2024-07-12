@@ -74,8 +74,8 @@ impl DescribeDeviceJobOutput {
 }
 
 /// A builder for [`DescribeDeviceJobOutput`](crate::operation::describe_device_job::DescribeDeviceJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeviceJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,

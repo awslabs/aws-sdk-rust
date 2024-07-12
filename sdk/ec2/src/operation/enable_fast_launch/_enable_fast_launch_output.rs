@@ -74,8 +74,8 @@ impl EnableFastLaunchOutput {
 }
 
 /// A builder for [`EnableFastLaunchOutput`](crate::operation::enable_fast_launch::EnableFastLaunchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableFastLaunchOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::FastLaunchResourceType>,

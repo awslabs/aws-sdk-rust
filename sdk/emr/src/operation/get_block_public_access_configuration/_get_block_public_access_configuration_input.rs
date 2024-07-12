@@ -11,8 +11,8 @@ impl GetBlockPublicAccessConfigurationInput {
 }
 
 /// A builder for [`GetBlockPublicAccessConfigurationInput`](crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBlockPublicAccessConfigurationInputBuilder {}
 impl GetBlockPublicAccessConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetBlockPublicAccessConfigurationInput`](crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationInput).

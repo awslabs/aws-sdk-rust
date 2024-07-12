@@ -34,8 +34,8 @@ impl ListProvisionedModelThroughputsOutput {
 }
 
 /// A builder for [`ListProvisionedModelThroughputsOutput`](crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProvisionedModelThroughputsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedModelSummary>>,

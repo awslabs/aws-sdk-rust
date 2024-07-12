@@ -18,8 +18,8 @@ impl DeleteEventActionOutput {
 }
 
 /// A builder for [`DeleteEventActionOutput`](crate::operation::delete_event_action::DeleteEventActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventActionOutputBuilder {
     _request_id: Option<String>,
 }

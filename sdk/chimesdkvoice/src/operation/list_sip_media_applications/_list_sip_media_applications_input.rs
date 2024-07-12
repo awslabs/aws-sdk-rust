@@ -26,8 +26,8 @@ impl ListSipMediaApplicationsInput {
 }
 
 /// A builder for [`ListSipMediaApplicationsInput`](crate::operation::list_sip_media_applications::ListSipMediaApplicationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSipMediaApplicationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

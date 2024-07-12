@@ -34,8 +34,8 @@ impl ListSecurityControlDefinitionsOutput {
 }
 
 /// A builder for [`ListSecurityControlDefinitionsOutput`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSecurityControlDefinitionsOutputBuilder {
     pub(crate) security_control_definitions: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

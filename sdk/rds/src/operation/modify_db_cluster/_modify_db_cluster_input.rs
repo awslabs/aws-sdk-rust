@@ -739,8 +739,8 @@ impl ModifyDbClusterInput {
 }
 
 /// A builder for [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) new_db_cluster_identifier: ::std::option::Option<::std::string::String>,

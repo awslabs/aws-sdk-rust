@@ -34,8 +34,8 @@ impl ListInferenceComponentsOutput {
 }
 
 /// A builder for [`ListInferenceComponentsOutput`](crate::operation::list_inference_components::ListInferenceComponentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInferenceComponentsOutputBuilder {
     pub(crate) inference_components: ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl RenderUiTemplateOutput {
 }
 
 /// A builder for [`RenderUiTemplateOutput`](crate::operation::render_ui_template::RenderUiTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenderUiTemplateOutputBuilder {
     pub(crate) rendered_content: ::std::option::Option<::std::string::String>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::RenderingError>>,

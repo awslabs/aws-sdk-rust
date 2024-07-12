@@ -26,8 +26,8 @@ impl DeletePodIdentityAssociationInput {
 }
 
 /// A builder for [`DeletePodIdentityAssociationInput`](crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePodIdentityAssociationInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,

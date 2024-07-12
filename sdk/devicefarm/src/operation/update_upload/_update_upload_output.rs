@@ -26,8 +26,8 @@ impl UpdateUploadOutput {
 }
 
 /// A builder for [`UpdateUploadOutput`](crate::operation::update_upload::UpdateUploadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUploadOutputBuilder {
     pub(crate) upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,

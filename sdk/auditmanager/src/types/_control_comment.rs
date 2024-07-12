@@ -42,8 +42,8 @@ impl ControlComment {
 }
 
 /// A builder for [`ControlComment`](crate::types::ControlComment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ControlCommentBuilder {
     pub(crate) author_name: ::std::option::Option<::std::string::String>,
     pub(crate) comment_body: ::std::option::Option<::std::string::String>,

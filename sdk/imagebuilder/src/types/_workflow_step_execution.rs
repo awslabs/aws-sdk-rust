@@ -57,8 +57,8 @@ impl WorkflowStepExecution {
 }
 
 /// A builder for [`WorkflowStepExecution`](crate::types::WorkflowStepExecution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowStepExecutionBuilder {
     pub(crate) step_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_build_version_arn: ::std::option::Option<::std::string::String>,

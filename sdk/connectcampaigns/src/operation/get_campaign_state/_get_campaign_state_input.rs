@@ -21,8 +21,8 @@ impl GetCampaignStateInput {
 }
 
 /// A builder for [`GetCampaignStateInput`](crate::operation::get_campaign_state::GetCampaignStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCampaignStateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

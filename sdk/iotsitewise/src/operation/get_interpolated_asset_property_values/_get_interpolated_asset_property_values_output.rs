@@ -33,8 +33,8 @@ impl GetInterpolatedAssetPropertyValuesOutput {
 }
 
 /// A builder for [`GetInterpolatedAssetPropertyValuesOutput`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInterpolatedAssetPropertyValuesOutputBuilder {
     pub(crate) interpolated_asset_property_values: ::std::option::Option<::std::vec::Vec<crate::types::InterpolatedAssetPropertyValue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

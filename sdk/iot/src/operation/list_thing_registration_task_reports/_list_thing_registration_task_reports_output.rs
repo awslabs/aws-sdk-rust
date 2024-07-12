@@ -40,8 +40,8 @@ impl ListThingRegistrationTaskReportsOutput {
 }
 
 /// A builder for [`ListThingRegistrationTaskReportsOutput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListThingRegistrationTaskReportsOutputBuilder {
     pub(crate) resource_links: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) report_type: ::std::option::Option<crate::types::ReportType>,

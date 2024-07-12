@@ -80,8 +80,8 @@ impl ExportEc2InstanceRecommendationsInput {
 }
 
 /// A builder for [`ExportEc2InstanceRecommendationsInput`](crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportEc2InstanceRecommendationsInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

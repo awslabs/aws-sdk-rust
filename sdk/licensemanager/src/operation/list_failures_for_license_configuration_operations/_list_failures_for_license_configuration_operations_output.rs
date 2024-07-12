@@ -36,8 +36,8 @@ impl ListFailuresForLicenseConfigurationOperationsOutput {
 }
 
 /// A builder for [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFailuresForLicenseConfigurationOperationsOutputBuilder {
     pub(crate) license_operation_failure_list: ::std::option::Option<::std::vec::Vec<crate::types::LicenseOperationFailure>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

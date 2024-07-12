@@ -45,8 +45,8 @@ impl MemorySessionSummary {
 }
 
 /// A builder for [`MemorySessionSummary`](crate::types::MemorySessionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MemorySessionSummaryBuilder {
     pub(crate) memory_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,

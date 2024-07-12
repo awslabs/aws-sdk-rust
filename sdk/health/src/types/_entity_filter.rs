@@ -66,8 +66,8 @@ impl EntityFilter {
 }
 
 /// A builder for [`EntityFilter`](crate::types::EntityFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityFilterBuilder {
     pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) entity_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

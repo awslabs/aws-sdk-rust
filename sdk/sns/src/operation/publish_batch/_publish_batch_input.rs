@@ -28,8 +28,8 @@ impl PublishBatchInput {
 }
 
 /// A builder for [`PublishBatchInput`](crate::operation::publish_batch::PublishBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublishBatchInputBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) publish_batch_request_entries: ::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>>,

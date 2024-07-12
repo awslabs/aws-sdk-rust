@@ -20,8 +20,8 @@ impl StartWorkspacesPoolInput {
 }
 
 /// A builder for [`StartWorkspacesPoolInput`](crate::operation::start_workspaces_pool::StartWorkspacesPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartWorkspacesPoolInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
 }

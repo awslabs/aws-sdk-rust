@@ -26,8 +26,8 @@ impl DeleteCacheClusterOutput {
 }
 
 /// A builder for [`DeleteCacheClusterOutput`](crate::operation::delete_cache_cluster::DeleteCacheClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCacheClusterOutputBuilder {
     pub(crate) cache_cluster: ::std::option::Option<crate::types::CacheCluster>,
     _request_id: Option<String>,

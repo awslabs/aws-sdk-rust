@@ -46,8 +46,8 @@ impl ListDevEnvironmentsInput {
 }
 
 /// A builder for [`ListDevEnvironmentsInput`](crate::operation::list_dev_environments::ListDevEnvironmentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevEnvironmentsInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

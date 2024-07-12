@@ -33,8 +33,8 @@ impl CreateBillOfMaterialsImportJobInput {
 }
 
 /// A builder for [`CreateBillOfMaterialsImportJobInput`](crate::operation::create_bill_of_materials_import_job::CreateBillOfMaterialsImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBillOfMaterialsImportJobInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,

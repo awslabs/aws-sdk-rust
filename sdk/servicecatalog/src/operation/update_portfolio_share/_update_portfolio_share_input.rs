@@ -62,8 +62,8 @@ impl UpdatePortfolioShareInput {
 }
 
 /// A builder for [`UpdatePortfolioShareInput`](crate::operation::update_portfolio_share::UpdatePortfolioShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePortfolioShareInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,

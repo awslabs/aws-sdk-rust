@@ -32,8 +32,8 @@ impl ListAvailableManagementCidrRangesInput {
 }
 
 /// A builder for [`ListAvailableManagementCidrRangesInput`](crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableManagementCidrRangesInputBuilder {
     pub(crate) management_cidr_range_constraint: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

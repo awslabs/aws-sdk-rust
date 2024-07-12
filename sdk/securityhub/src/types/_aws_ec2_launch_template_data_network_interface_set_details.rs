@@ -140,8 +140,8 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     pub(crate) associate_carrier_ip_address: ::std::option::Option<bool>,
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,

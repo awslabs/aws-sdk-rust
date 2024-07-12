@@ -26,8 +26,8 @@ impl DescribeSecurityPolicyOutput {
 }
 
 /// A builder for [`DescribeSecurityPolicyOutput`](crate::operation::describe_security_policy::DescribeSecurityPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSecurityPolicyOutputBuilder {
     pub(crate) security_policy: ::std::option::Option<crate::types::DescribedSecurityPolicy>,
     _request_id: Option<String>,

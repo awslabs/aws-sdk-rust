@@ -20,8 +20,8 @@ impl CreateGuiSessionAccessDetailsInput {
 }
 
 /// A builder for [`CreateGuiSessionAccessDetailsInput`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGuiSessionAccessDetailsInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
 }

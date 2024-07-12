@@ -20,8 +20,8 @@ impl GetFindingsReportStatusInput {
 }
 
 /// A builder for [`GetFindingsReportStatusInput`](crate::operation::get_findings_report_status::GetFindingsReportStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingsReportStatusInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
 }

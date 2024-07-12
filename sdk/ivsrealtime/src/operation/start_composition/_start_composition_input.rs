@@ -46,8 +46,8 @@ impl StartCompositionInput {
 }
 
 /// A builder for [`StartCompositionInput`](crate::operation::start_composition::StartCompositionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCompositionInputBuilder {
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,

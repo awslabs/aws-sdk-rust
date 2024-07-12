@@ -27,8 +27,8 @@ impl GetAccountSendingEnabledOutput {
 }
 
 /// A builder for [`GetAccountSendingEnabledOutput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountSendingEnabledOutputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,

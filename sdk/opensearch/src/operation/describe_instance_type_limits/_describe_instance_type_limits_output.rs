@@ -27,8 +27,8 @@ impl DescribeInstanceTypeLimitsOutput {
 }
 
 /// A builder for [`DescribeInstanceTypeLimitsOutput`](crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceTypeLimitsOutputBuilder {
     pub(crate) limits_by_role: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Limits>>,
     _request_id: Option<String>,

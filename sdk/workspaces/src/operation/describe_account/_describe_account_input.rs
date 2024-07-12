@@ -11,8 +11,8 @@ impl DescribeAccountInput {
 }
 
 /// A builder for [`DescribeAccountInput`](crate::operation::describe_account::DescribeAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountInputBuilder {}
 impl DescribeAccountInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccountInput`](crate::operation::describe_account::DescribeAccountInput).

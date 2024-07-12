@@ -44,8 +44,8 @@ impl UpdateDatasetInput {
 }
 
 /// A builder for [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDatasetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::InputFormat>,

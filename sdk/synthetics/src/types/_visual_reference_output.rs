@@ -30,8 +30,8 @@ impl VisualReferenceOutput {
 }
 
 /// A builder for [`VisualReferenceOutput`](crate::types::VisualReferenceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VisualReferenceOutputBuilder {
     pub(crate) base_screenshots: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     pub(crate) base_canary_run_id: ::std::option::Option<::std::string::String>,

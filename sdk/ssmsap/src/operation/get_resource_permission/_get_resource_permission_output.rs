@@ -26,8 +26,8 @@ impl GetResourcePermissionOutput {
 }
 
 /// A builder for [`GetResourcePermissionOutput`](crate::operation::get_resource_permission::GetResourcePermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourcePermissionOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

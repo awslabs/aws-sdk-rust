@@ -11,8 +11,8 @@ impl StartSavingsPlansPurchaseRecommendationGenerationInput {
 }
 
 /// A builder for [`StartSavingsPlansPurchaseRecommendationGenerationInput`](crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSavingsPlansPurchaseRecommendationGenerationInputBuilder {}
 impl StartSavingsPlansPurchaseRecommendationGenerationInputBuilder {
     /// Consumes the builder and constructs a [`StartSavingsPlansPurchaseRecommendationGenerationInput`](crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationInput).

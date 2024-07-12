@@ -18,8 +18,8 @@ impl PutBackupVaultAccessPolicyOutput {
 }
 
 /// A builder for [`PutBackupVaultAccessPolicyOutput`](crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBackupVaultAccessPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl DeleteSimulationApplicationInput {
 }
 
 /// A builder for [`DeleteSimulationApplicationInput`](crate::operation::delete_simulation_application::DeleteSimulationApplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSimulationApplicationInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<::std::string::String>,

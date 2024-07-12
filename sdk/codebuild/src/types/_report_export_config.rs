@@ -39,8 +39,8 @@ impl ReportExportConfig {
 }
 
 /// A builder for [`ReportExportConfig`](crate::types::ReportExportConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportExportConfigBuilder {
     pub(crate) export_config_type: ::std::option::Option<crate::types::ReportExportConfigType>,
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3ReportExportConfig>,

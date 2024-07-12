@@ -39,8 +39,8 @@ impl SqlApplicationConfigurationDescription {
 }
 
 /// A builder for [`SqlApplicationConfigurationDescription`](crate::types::SqlApplicationConfigurationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SqlApplicationConfigurationDescriptionBuilder {
     pub(crate) input_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
     pub(crate) output_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::OutputDescription>>,

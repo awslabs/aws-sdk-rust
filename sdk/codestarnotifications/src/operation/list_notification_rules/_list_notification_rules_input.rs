@@ -38,8 +38,8 @@ impl ListNotificationRulesInput {
 }
 
 /// A builder for [`ListNotificationRulesInput`](crate::operation::list_notification_rules::ListNotificationRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNotificationRulesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

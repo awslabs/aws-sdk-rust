@@ -18,8 +18,8 @@ impl RestoreCertificateAuthorityOutput {
 }
 
 /// A builder for [`RestoreCertificateAuthorityOutput`](crate::operation::restore_certificate_authority::RestoreCertificateAuthorityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreCertificateAuthorityOutputBuilder {
     _request_id: Option<String>,
 }

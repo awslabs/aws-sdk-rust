@@ -45,8 +45,8 @@ impl FastLaunchConfiguration {
 }
 
 /// A builder for [`FastLaunchConfiguration`](crate::types::FastLaunchConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FastLaunchConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) snapshot_configuration: ::std::option::Option<crate::types::FastLaunchSnapshotConfiguration>,

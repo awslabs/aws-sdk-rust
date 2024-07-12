@@ -26,8 +26,8 @@ impl DescribeLabelInput {
 }
 
 /// A builder for [`DescribeLabelInput`](crate::operation::describe_label::DescribeLabelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLabelInputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_id: ::std::option::Option<::std::string::String>,

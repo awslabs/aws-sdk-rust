@@ -27,8 +27,8 @@ impl AwsEc2NetworkInterfacePrivateIpAddressDetail {
 }
 
 /// A builder for [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2NetworkInterfacePrivateIpAddressDetailBuilder {
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,

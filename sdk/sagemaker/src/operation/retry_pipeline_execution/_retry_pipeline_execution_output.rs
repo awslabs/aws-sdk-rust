@@ -26,8 +26,8 @@ impl RetryPipelineExecutionOutput {
 }
 
 /// A builder for [`RetryPipelineExecutionOutput`](crate::operation::retry_pipeline_execution::RetryPipelineExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetryPipelineExecutionOutputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

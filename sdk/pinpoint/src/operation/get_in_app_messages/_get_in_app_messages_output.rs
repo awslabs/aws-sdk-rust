@@ -26,8 +26,8 @@ impl GetInAppMessagesOutput {
 }
 
 /// A builder for [`GetInAppMessagesOutput`](crate::operation::get_in_app_messages::GetInAppMessagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInAppMessagesOutputBuilder {
     pub(crate) in_app_messages_response: ::std::option::Option<crate::types::InAppMessagesResponse>,
     _request_id: Option<String>,

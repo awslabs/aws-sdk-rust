@@ -20,8 +20,8 @@ impl GetEnabledBaselineInput {
 }
 
 /// A builder for [`GetEnabledBaselineInput`](crate::operation::get_enabled_baseline::GetEnabledBaselineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnabledBaselineInputBuilder {
     pub(crate) enabled_baseline_identifier: ::std::option::Option<::std::string::String>,
 }

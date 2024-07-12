@@ -27,8 +27,8 @@ impl ArchiveContainerSettings {
 }
 
 /// A builder for [`ArchiveContainerSettings`](crate::types::ArchiveContainerSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArchiveContainerSettingsBuilder {
     pub(crate) m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
     pub(crate) raw_settings: ::std::option::Option<crate::types::RawSettings>,

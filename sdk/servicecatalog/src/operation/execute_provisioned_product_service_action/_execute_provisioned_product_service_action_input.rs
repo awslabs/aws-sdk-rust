@@ -56,8 +56,8 @@ impl ExecuteProvisionedProductServiceActionInput {
 }
 
 /// A builder for [`ExecuteProvisionedProductServiceActionInput`](crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteProvisionedProductServiceActionInputBuilder {
     pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_action_id: ::std::option::Option<::std::string::String>,

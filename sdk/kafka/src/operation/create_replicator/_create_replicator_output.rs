@@ -38,8 +38,8 @@ impl CreateReplicatorOutput {
 }
 
 /// A builder for [`CreateReplicatorOutput`](crate::operation::create_replicator::CreateReplicatorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplicatorOutputBuilder {
     pub(crate) replicator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replicator_name: ::std::option::Option<::std::string::String>,

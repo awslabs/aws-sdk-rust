@@ -27,8 +27,8 @@ impl AutoTuneOptionsStatus {
 }
 
 /// A builder for [`AutoTuneOptionsStatus`](crate::types::AutoTuneOptionsStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoTuneOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::AutoTuneOptions>,
     pub(crate) status: ::std::option::Option<crate::types::AutoTuneStatus>,

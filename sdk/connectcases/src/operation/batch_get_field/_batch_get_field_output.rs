@@ -34,8 +34,8 @@ impl BatchGetFieldOutput {
 }
 
 /// A builder for [`BatchGetFieldOutput`](crate::operation::batch_get_field::BatchGetFieldOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetFieldOutputBuilder {
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::GetFieldResponse>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::FieldError>>,

@@ -40,8 +40,8 @@ impl ProtectiveEquipmentSummary {
 }
 
 /// A builder for [`ProtectiveEquipmentSummary`](crate::types::ProtectiveEquipmentSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectiveEquipmentSummaryBuilder {
     pub(crate) persons_with_required_equipment: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) persons_without_required_equipment: ::std::option::Option<::std::vec::Vec<i32>>,

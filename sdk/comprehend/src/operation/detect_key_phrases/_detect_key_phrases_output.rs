@@ -36,8 +36,8 @@ impl DetectKeyPhrasesOutput {
 }
 
 /// A builder for [`DetectKeyPhrasesOutput`](crate::operation::detect_key_phrases::DetectKeyPhrasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectKeyPhrasesOutputBuilder {
     pub(crate) key_phrases: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>,
     _request_id: Option<String>,

@@ -28,8 +28,8 @@ impl DisableTransitGatewayRouteTablePropagationOutput {
 }
 
 /// A builder for [`DisableTransitGatewayRouteTablePropagationOutput`](crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableTransitGatewayRouteTablePropagationOutputBuilder {
     pub(crate) propagation: ::std::option::Option<crate::types::TransitGatewayPropagation>,
     _request_id: Option<String>,

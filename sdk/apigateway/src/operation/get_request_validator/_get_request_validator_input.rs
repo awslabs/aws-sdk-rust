@@ -27,8 +27,8 @@ impl GetRequestValidatorInput {
 }
 
 /// A builder for [`GetRequestValidatorInput`](crate::operation::get_request_validator::GetRequestValidatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRequestValidatorInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_validator_id: ::std::option::Option<::std::string::String>,

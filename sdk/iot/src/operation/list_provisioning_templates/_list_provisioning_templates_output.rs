@@ -34,8 +34,8 @@ impl ListProvisioningTemplatesOutput {
 }
 
 /// A builder for [`ListProvisioningTemplatesOutput`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProvisioningTemplatesOutputBuilder {
     pub(crate) templates: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

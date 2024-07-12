@@ -36,8 +36,8 @@ impl DescribeInstanceProfilesInput {
 }
 
 /// A builder for [`DescribeInstanceProfilesInput`](crate::operation::describe_instance_profiles::DescribeInstanceProfilesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceProfilesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,

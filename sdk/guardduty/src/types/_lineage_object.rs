@@ -69,8 +69,8 @@ impl LineageObject {
 }
 
 /// A builder for [`LineageObject`](crate::types::LineageObject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineageObjectBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) namespace_pid: ::std::option::Option<i32>,

@@ -34,8 +34,8 @@ impl ListCatalogItemsOutput {
 }
 
 /// A builder for [`ListCatalogItemsOutput`](crate::operation::list_catalog_items::ListCatalogItemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCatalogItemsOutputBuilder {
     pub(crate) catalog_items: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

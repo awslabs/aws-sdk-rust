@@ -34,8 +34,8 @@ impl ListResolversByFunctionOutput {
 }
 
 /// A builder for [`ListResolversByFunctionOutput`](crate::operation::list_resolvers_by_function::ListResolversByFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResolversByFunctionOutputBuilder {
     pub(crate) resolvers: ::std::option::Option<::std::vec::Vec<crate::types::Resolver>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

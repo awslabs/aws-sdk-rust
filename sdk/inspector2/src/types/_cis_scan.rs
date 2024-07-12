@@ -77,8 +77,8 @@ impl CisScan {
 }
 
 /// A builder for [`CisScan`](crate::types::CisScan).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisScanBuilder {
     pub(crate) scan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) scan_configuration_arn: ::std::option::Option<::std::string::String>,

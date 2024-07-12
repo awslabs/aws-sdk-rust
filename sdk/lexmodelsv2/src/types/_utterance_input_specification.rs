@@ -27,8 +27,8 @@ impl UtteranceInputSpecification {
 }
 
 /// A builder for [`UtteranceInputSpecification`](crate::types::UtteranceInputSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UtteranceInputSpecificationBuilder {
     pub(crate) text_input: ::std::option::Option<::std::string::String>,
     pub(crate) audio_input: ::std::option::Option<crate::types::UtteranceAudioInputSpecification>,

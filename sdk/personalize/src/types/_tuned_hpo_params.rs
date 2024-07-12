@@ -21,8 +21,8 @@ impl TunedHpoParams {
 }
 
 /// A builder for [`TunedHpoParams`](crate::types::TunedHpoParams).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TunedHpoParamsBuilder {
     pub(crate) algorithm_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }

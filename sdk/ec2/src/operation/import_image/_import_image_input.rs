@@ -158,8 +158,8 @@ impl ImportImageInput {
 }
 
 /// A builder for [`ImportImageInput`](crate::operation::import_image::ImportImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportImageInputBuilder {
     pub(crate) architecture: ::std::option::Option<::std::string::String>,
     pub(crate) client_data: ::std::option::Option<crate::types::ClientData>,

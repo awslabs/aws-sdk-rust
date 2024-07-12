@@ -26,8 +26,8 @@ impl CreateBackupInput {
 }
 
 /// A builder for [`CreateBackupInput`](crate::operation::create_backup::CreateBackupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBackupInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) backup_name: ::std::option::Option<::std::string::String>,

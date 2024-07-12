@@ -233,8 +233,8 @@ impl CreateFileSystemInput {
 }
 
 /// A builder for [`CreateFileSystemInput`](crate::operation::create_file_system::CreateFileSystemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFileSystemInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_type: ::std::option::Option<crate::types::FileSystemType>,

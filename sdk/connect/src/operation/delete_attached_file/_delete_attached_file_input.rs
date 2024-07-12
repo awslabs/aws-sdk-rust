@@ -37,8 +37,8 @@ impl DeleteAttachedFileInput {
 }
 
 /// A builder for [`DeleteAttachedFileInput`](crate::operation::delete_attached_file::DeleteAttachedFileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAttachedFileInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_id: ::std::option::Option<::std::string::String>,

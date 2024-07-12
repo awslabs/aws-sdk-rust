@@ -30,8 +30,8 @@ impl DisableInput {
 }
 
 /// A builder for [`DisableInput`](crate::operation::disable::DisableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>>,

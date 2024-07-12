@@ -26,8 +26,8 @@ impl CreateCustomRoutingEndpointGroupOutput {
 }
 
 /// A builder for [`CreateCustomRoutingEndpointGroupOutput`](crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomRoutingEndpointGroupOutputBuilder {
     pub(crate) endpoint_group: ::std::option::Option<crate::types::CustomRoutingEndpointGroup>,
     _request_id: Option<String>,

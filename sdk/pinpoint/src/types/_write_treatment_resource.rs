@@ -57,8 +57,8 @@ impl WriteTreatmentResource {
 }
 
 /// A builder for [`WriteTreatmentResource`](crate::types::WriteTreatmentResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WriteTreatmentResourceBuilder {
     pub(crate) custom_delivery_configuration: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
     pub(crate) message_configuration: ::std::option::Option<crate::types::MessageConfiguration>,

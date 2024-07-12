@@ -22,8 +22,8 @@ impl TcpRouteAction {
 }
 
 /// A builder for [`TcpRouteAction`](crate::types::TcpRouteAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TcpRouteActionBuilder {
     pub(crate) weighted_targets: ::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>>,
 }

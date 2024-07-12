@@ -36,8 +36,8 @@ impl BatchCheckLayerAvailabilityOutput {
 }
 
 /// A builder for [`BatchCheckLayerAvailabilityOutput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCheckLayerAvailabilityOutputBuilder {
     pub(crate) layers: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>>,

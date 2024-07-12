@@ -38,8 +38,8 @@ impl AssociateClientVpnTargetNetworkInput {
 }
 
 /// A builder for [`AssociateClientVpnTargetNetworkInput`](crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateClientVpnTargetNetworkInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,

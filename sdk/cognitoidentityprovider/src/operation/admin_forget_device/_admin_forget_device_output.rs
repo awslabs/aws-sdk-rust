@@ -18,8 +18,8 @@ impl AdminForgetDeviceOutput {
 }
 
 /// A builder for [`AdminForgetDeviceOutput`](crate::operation::admin_forget_device::AdminForgetDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminForgetDeviceOutputBuilder {
     _request_id: Option<String>,
 }

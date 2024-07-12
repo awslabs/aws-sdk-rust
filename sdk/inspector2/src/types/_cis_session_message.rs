@@ -34,8 +34,8 @@ impl CisSessionMessage {
 }
 
 /// A builder for [`CisSessionMessage`](crate::types::CisSessionMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisSessionMessageBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CisRuleStatus>,

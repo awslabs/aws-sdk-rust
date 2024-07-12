@@ -20,8 +20,8 @@ impl StopEntitiesDetectionV2JobInput {
 }
 
 /// A builder for [`StopEntitiesDetectionV2JobInput`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopEntitiesDetectionV2JobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

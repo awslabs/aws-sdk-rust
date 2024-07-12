@@ -26,8 +26,8 @@ impl StartOrganizationServiceAccessUpdateOutput {
 }
 
 /// A builder for [`StartOrganizationServiceAccessUpdateOutput`](crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartOrganizationServiceAccessUpdateOutputBuilder {
     pub(crate) organization_status: ::std::option::Option<crate::types::OrganizationStatus>,
     _request_id: Option<String>,

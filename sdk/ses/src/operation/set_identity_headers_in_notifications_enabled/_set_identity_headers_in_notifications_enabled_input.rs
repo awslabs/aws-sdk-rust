@@ -36,8 +36,8 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
 }
 
 /// A builder for [`SetIdentityHeadersInNotificationsEnabledInput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetIdentityHeadersInNotificationsEnabledInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) notification_type: ::std::option::Option<crate::types::NotificationType>,

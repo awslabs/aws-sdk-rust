@@ -28,8 +28,8 @@ impl MemoryConfiguration {
 }
 
 /// A builder for [`MemoryConfiguration`](crate::types::MemoryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MemoryConfigurationBuilder {
     pub(crate) enabled_memory_types: ::std::option::Option<::std::vec::Vec<crate::types::MemoryType>>,
     pub(crate) storage_days: ::std::option::Option<i32>,

@@ -34,8 +34,8 @@ impl DescribeActivationsOutput {
 }
 
 /// A builder for [`DescribeActivationsOutput`](crate::operation::describe_activations::DescribeActivationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeActivationsOutputBuilder {
     pub(crate) activation_list: ::std::option::Option<::std::vec::Vec<crate::types::Activation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeIpGroupsOutput {
 }
 
 /// A builder for [`DescribeIpGroupsOutput`](crate::operation::describe_ip_groups::DescribeIpGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIpGroupsOutputBuilder {
     pub(crate) result: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

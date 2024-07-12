@@ -26,8 +26,8 @@ impl RegisterCertificateWithoutCaInput {
 }
 
 /// A builder for [`RegisterCertificateWithoutCaInput`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterCertificateWithoutCaInputBuilder {
     pub(crate) certificate_pem: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CertificateStatus>,

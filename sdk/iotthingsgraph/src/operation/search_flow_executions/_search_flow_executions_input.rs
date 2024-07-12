@@ -50,8 +50,8 @@ impl SearchFlowExecutionsInput {
 }
 
 /// A builder for [`SearchFlowExecutionsInput`](crate::operation::search_flow_executions::SearchFlowExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchFlowExecutionsInputBuilder {
     pub(crate) system_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) flow_execution_id: ::std::option::Option<::std::string::String>,

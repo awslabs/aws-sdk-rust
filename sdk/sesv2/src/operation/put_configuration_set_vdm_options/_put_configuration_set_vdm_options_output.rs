@@ -19,8 +19,8 @@ impl PutConfigurationSetVdmOptionsOutput {
 }
 
 /// A builder for [`PutConfigurationSetVdmOptionsOutput`](crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigurationSetVdmOptionsOutputBuilder {
     _request_id: Option<String>,
 }

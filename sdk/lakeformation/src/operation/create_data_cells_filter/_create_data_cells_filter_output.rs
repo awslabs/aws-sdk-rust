@@ -18,8 +18,8 @@ impl CreateDataCellsFilterOutput {
 }
 
 /// A builder for [`CreateDataCellsFilterOutput`](crate::operation::create_data_cells_filter::CreateDataCellsFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataCellsFilterOutputBuilder {
     _request_id: Option<String>,
 }

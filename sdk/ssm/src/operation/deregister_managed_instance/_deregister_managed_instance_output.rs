@@ -18,8 +18,8 @@ impl DeregisterManagedInstanceOutput {
 }
 
 /// A builder for [`DeregisterManagedInstanceOutput`](crate::operation::deregister_managed_instance::DeregisterManagedInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterManagedInstanceOutputBuilder {
     _request_id: Option<String>,
 }

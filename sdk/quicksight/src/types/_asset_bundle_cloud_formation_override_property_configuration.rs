@@ -77,8 +77,8 @@ impl AssetBundleCloudFormationOverridePropertyConfiguration {
 }
 
 /// A builder for [`AssetBundleCloudFormationOverridePropertyConfiguration`](crate::types::AssetBundleCloudFormationOverridePropertyConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     pub(crate) resource_id_override_configuration: ::std::option::Option<crate::types::AssetBundleExportJobResourceIdOverrideConfiguration>,
     pub(crate) vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobVpcConnectionOverrideProperties>>,

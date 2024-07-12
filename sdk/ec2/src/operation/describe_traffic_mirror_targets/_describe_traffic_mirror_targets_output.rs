@@ -34,8 +34,8 @@ impl DescribeTrafficMirrorTargetsOutput {
 }
 
 /// A builder for [`DescribeTrafficMirrorTargetsOutput`](crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrafficMirrorTargetsOutputBuilder {
     pub(crate) traffic_mirror_targets: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

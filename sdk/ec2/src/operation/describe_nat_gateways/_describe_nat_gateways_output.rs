@@ -34,8 +34,8 @@ impl DescribeNatGatewaysOutput {
 }
 
 /// A builder for [`DescribeNatGatewaysOutput`](crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNatGatewaysOutputBuilder {
     pub(crate) nat_gateways: ::std::option::Option<::std::vec::Vec<crate::types::NatGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

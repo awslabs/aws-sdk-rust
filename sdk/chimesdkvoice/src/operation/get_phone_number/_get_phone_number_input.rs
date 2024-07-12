@@ -27,8 +27,8 @@ impl GetPhoneNumberInput {
 }
 
 /// A builder for [`GetPhoneNumberInput`](crate::operation::get_phone_number::GetPhoneNumberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetPhoneNumberInputBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
 }

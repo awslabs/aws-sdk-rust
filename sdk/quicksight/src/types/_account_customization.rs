@@ -27,8 +27,8 @@ impl AccountCustomization {
 }
 
 /// A builder for [`AccountCustomization`](crate::types::AccountCustomization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountCustomizationBuilder {
     pub(crate) default_theme: ::std::option::Option<::std::string::String>,
     pub(crate) default_email_customization_template: ::std::option::Option<::std::string::String>,

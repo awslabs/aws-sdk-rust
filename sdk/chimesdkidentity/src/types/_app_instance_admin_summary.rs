@@ -21,8 +21,8 @@ impl AppInstanceAdminSummary {
 }
 
 /// A builder for [`AppInstanceAdminSummary`](crate::types::AppInstanceAdminSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppInstanceAdminSummaryBuilder {
     pub(crate) admin: ::std::option::Option<crate::types::Identity>,
 }

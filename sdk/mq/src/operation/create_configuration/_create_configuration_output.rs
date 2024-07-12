@@ -56,8 +56,8 @@ impl CreateConfigurationOutput {
 }
 
 /// A builder for [`CreateConfigurationOutput`](crate::operation::create_configuration::CreateConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,

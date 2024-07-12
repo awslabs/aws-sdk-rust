@@ -81,8 +81,8 @@ impl GetIdentitySourceOutput {
 }
 
 /// A builder for [`GetIdentitySourceOutput`](crate::operation::get_identity_source::GetIdentitySourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetIdentitySourceOutputBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) details: ::std::option::Option<crate::types::IdentitySourceDetails>,

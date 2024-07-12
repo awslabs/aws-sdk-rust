@@ -34,8 +34,8 @@ impl PutProjectEventsOutput {
 }
 
 /// A builder for [`PutProjectEventsOutput`](crate::operation::put_project_events::PutProjectEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutProjectEventsOutputBuilder {
     pub(crate) failed_event_count: ::std::option::Option<i32>,
     pub(crate) event_results: ::std::option::Option<::std::vec::Vec<crate::types::PutProjectEventsResultEntry>>,

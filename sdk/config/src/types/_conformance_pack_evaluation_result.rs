@@ -45,8 +45,8 @@ impl ConformancePackEvaluationResult {
 }
 
 /// A builder for [`ConformancePackEvaluationResult`](crate::types::ConformancePackEvaluationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConformancePackEvaluationResultBuilder {
     pub(crate) compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
     pub(crate) evaluation_result_identifier: ::std::option::Option<crate::types::EvaluationResultIdentifier>,

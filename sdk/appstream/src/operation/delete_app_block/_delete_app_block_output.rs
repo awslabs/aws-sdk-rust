@@ -18,8 +18,8 @@ impl DeleteAppBlockOutput {
 }
 
 /// A builder for [`DeleteAppBlockOutput`](crate::operation::delete_app_block::DeleteAppBlockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppBlockOutputBuilder {
     _request_id: Option<String>,
 }

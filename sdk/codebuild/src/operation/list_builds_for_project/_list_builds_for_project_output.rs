@@ -34,8 +34,8 @@ impl ListBuildsForProjectOutput {
 }
 
 /// A builder for [`ListBuildsForProjectOutput`](crate::operation::list_builds_for_project::ListBuildsForProjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBuildsForProjectOutputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

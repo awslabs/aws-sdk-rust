@@ -34,8 +34,8 @@ impl CreateFieldOutput {
 }
 
 /// A builder for [`CreateFieldOutput`](crate::operation::create_field::CreateFieldOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFieldOutputBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) field_arn: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl StartSessionResult {
 }
 
 /// A builder for [`StartSessionResult`](crate::types::StartSessionResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSessionResultBuilder {
     pub(crate) session_token: ::std::option::Option<::std::string::String>,
     pub(crate) timing_information: ::std::option::Option<crate::types::TimingInformation>,

@@ -57,8 +57,8 @@ impl IntegrationResponse {
 }
 
 /// A builder for [`IntegrationResponse`](crate::types::IntegrationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntegrationResponseBuilder {
     pub(crate) content_handling_strategy: ::std::option::Option<crate::types::ContentHandlingStrategy>,
     pub(crate) integration_response_id: ::std::option::Option<::std::string::String>,

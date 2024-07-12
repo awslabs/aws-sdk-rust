@@ -56,8 +56,8 @@ impl DetectStackSetDriftInput {
 }
 
 /// A builder for [`DetectStackSetDriftInput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectStackSetDriftInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) operation_preferences: ::std::option::Option<crate::types::StackSetOperationPreferences>,

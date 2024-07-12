@@ -58,8 +58,8 @@ impl GetInsightSelectorsInput {
 }
 
 /// A builder for [`GetInsightSelectorsInput`](crate::operation::get_insight_selectors::GetInsightSelectorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInsightSelectorsInputBuilder {
     pub(crate) trail_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,

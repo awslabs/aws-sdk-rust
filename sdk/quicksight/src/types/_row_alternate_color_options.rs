@@ -35,8 +35,8 @@ impl RowAlternateColorOptions {
 }
 
 /// A builder for [`RowAlternateColorOptions`](crate::types::RowAlternateColorOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RowAlternateColorOptionsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::WidgetStatus>,
     pub(crate) row_alternate_colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

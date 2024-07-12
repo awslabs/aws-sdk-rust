@@ -21,8 +21,8 @@ impl CsvOutputOptions {
 }
 
 /// A builder for [`CsvOutputOptions`](crate::types::CsvOutputOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CsvOutputOptionsBuilder {
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
 }

@@ -66,8 +66,8 @@ impl CreateTokenOutput {
 }
 
 /// A builder for [`CreateTokenOutput`](crate::operation::create_token::CreateTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateTokenOutputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) token_type: ::std::option::Option<::std::string::String>,

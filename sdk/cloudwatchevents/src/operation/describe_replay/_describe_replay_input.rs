@@ -20,8 +20,8 @@ impl DescribeReplayInput {
 }
 
 /// A builder for [`DescribeReplayInput`](crate::operation::describe_replay::DescribeReplayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReplayInputBuilder {
     pub(crate) replay_name: ::std::option::Option<::std::string::String>,
 }

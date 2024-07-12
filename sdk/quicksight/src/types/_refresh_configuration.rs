@@ -21,8 +21,8 @@ impl RefreshConfiguration {
 }
 
 /// A builder for [`RefreshConfiguration`](crate::types::RefreshConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RefreshConfigurationBuilder {
     pub(crate) incremental_refresh: ::std::option::Option<crate::types::IncrementalRefresh>,
 }

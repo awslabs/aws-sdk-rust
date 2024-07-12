@@ -63,8 +63,8 @@ impl IndicatorDetail {
 }
 
 /// A builder for [`IndicatorDetail`](crate::types::IndicatorDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IndicatorDetailBuilder {
     pub(crate) ttps_observed_detail: ::std::option::Option<crate::types::TtPsObservedDetail>,
     pub(crate) impossible_travel_detail: ::std::option::Option<crate::types::ImpossibleTravelDetail>,

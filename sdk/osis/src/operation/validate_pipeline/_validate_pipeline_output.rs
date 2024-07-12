@@ -34,8 +34,8 @@ impl ValidatePipelineOutput {
 }
 
 /// A builder for [`ValidatePipelineOutput`](crate::operation::validate_pipeline::ValidatePipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidatePipelineOutputBuilder {
     pub(crate) is_valid: ::std::option::Option<bool>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,

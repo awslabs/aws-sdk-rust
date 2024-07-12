@@ -26,8 +26,8 @@ impl CheckInLicenseInput {
 }
 
 /// A builder for [`CheckInLicenseInput`](crate::operation::check_in_license::CheckInLicenseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckInLicenseInputBuilder {
     pub(crate) license_consumption_token: ::std::option::Option<::std::string::String>,
     pub(crate) beneficiary: ::std::option::Option<::std::string::String>,

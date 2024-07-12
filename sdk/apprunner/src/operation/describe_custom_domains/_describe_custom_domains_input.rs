@@ -36,8 +36,8 @@ impl DescribeCustomDomainsInput {
 }
 
 /// A builder for [`DescribeCustomDomainsInput`](crate::operation::describe_custom_domains::DescribeCustomDomainsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomDomainsInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

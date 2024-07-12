@@ -20,8 +20,8 @@ impl DeleteDiscovererInput {
 }
 
 /// A builder for [`DeleteDiscovererInput`](crate::operation::delete_discoverer::DeleteDiscovererInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDiscovererInputBuilder {
     pub(crate) discoverer_id: ::std::option::Option<::std::string::String>,
 }

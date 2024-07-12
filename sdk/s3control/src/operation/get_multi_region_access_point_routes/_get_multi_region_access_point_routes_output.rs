@@ -34,8 +34,8 @@ impl GetMultiRegionAccessPointRoutesOutput {
 }
 
 /// A builder for [`GetMultiRegionAccessPointRoutesOutput`](crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMultiRegionAccessPointRoutesOutputBuilder {
     pub(crate) mrap: ::std::option::Option<::std::string::String>,
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>,

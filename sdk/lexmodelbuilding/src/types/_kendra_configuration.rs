@@ -37,8 +37,8 @@ impl KendraConfiguration {
 }
 
 /// A builder for [`KendraConfiguration`](crate::types::KendraConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KendraConfigurationBuilder {
     pub(crate) kendra_index: ::std::option::Option<::std::string::String>,
     pub(crate) query_filter_string: ::std::option::Option<::std::string::String>,

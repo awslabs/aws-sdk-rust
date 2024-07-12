@@ -20,8 +20,8 @@ impl GetSigningPlatformInput {
 }
 
 /// A builder for [`GetSigningPlatformInput`](crate::operation::get_signing_platform::GetSigningPlatformInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSigningPlatformInputBuilder {
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,
 }

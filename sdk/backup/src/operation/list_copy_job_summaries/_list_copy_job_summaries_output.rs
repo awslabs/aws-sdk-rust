@@ -56,8 +56,8 @@ impl ListCopyJobSummariesOutput {
 }
 
 /// A builder for [`ListCopyJobSummariesOutput`](crate::operation::list_copy_job_summaries::ListCopyJobSummariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCopyJobSummariesOutputBuilder {
     pub(crate) copy_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CopyJobSummary>>,
     pub(crate) aggregation_period: ::std::option::Option<::std::string::String>,

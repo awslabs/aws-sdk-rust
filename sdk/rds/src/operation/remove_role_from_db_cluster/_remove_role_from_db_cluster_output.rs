@@ -18,8 +18,8 @@ impl RemoveRoleFromDbClusterOutput {
 }
 
 /// A builder for [`RemoveRoleFromDbClusterOutput`](crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveRoleFromDbClusterOutputBuilder {
     _request_id: Option<String>,
 }

@@ -32,8 +32,8 @@ impl ListDeviceDefinitionVersionsInput {
 }
 
 /// A builder for [`ListDeviceDefinitionVersionsInput`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeviceDefinitionVersionsInputBuilder {
     pub(crate) device_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,

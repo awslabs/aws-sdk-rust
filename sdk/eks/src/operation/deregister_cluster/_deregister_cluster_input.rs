@@ -20,8 +20,8 @@ impl DeregisterClusterInput {
 }
 
 /// A builder for [`DeregisterClusterInput`](crate::operation::deregister_cluster::DeregisterClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterClusterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

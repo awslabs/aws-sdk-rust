@@ -27,8 +27,8 @@ impl GetArchiveMessageOutput {
 }
 
 /// A builder for [`GetArchiveMessageOutput`](crate::operation::get_archive_message::GetArchiveMessageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetArchiveMessageOutputBuilder {
     pub(crate) message_download_link: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

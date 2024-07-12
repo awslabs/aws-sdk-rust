@@ -33,8 +33,8 @@ impl ProductionVariantRoutingConfig {
 }
 
 /// A builder for [`ProductionVariantRoutingConfig`](crate::types::ProductionVariantRoutingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProductionVariantRoutingConfigBuilder {
     pub(crate) routing_strategy: ::std::option::Option<crate::types::RoutingStrategy>,
 }

@@ -22,8 +22,8 @@ impl ImageFrameInformation {
 }
 
 /// A builder for [`ImageFrameInformation`](crate::types::ImageFrameInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageFrameInformationBuilder {
     pub(crate) image_frame_id: ::std::option::Option<::std::string::String>,
 }

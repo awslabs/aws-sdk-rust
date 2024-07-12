@@ -33,8 +33,8 @@ impl RecoveryInstanceDisk {
 }
 
 /// A builder for [`RecoveryInstanceDisk`](crate::types::RecoveryInstanceDisk).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecoveryInstanceDiskBuilder {
     pub(crate) internal_device_name: ::std::option::Option<::std::string::String>,
     pub(crate) bytes: ::std::option::Option<i64>,

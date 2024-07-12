@@ -96,8 +96,8 @@ impl CreateVpcInput {
 }
 
 /// A builder for [`CreateVpcInput`](crate::operation::create_vpc::CreateVpcInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpcInputBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) amazon_provided_ipv6_cidr_block: ::std::option::Option<bool>,

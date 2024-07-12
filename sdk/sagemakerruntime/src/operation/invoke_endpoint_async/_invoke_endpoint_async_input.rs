@@ -80,8 +80,8 @@ impl InvokeEndpointAsyncInput {
 }
 
 /// A builder for [`InvokeEndpointAsyncInput`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeEndpointAsyncInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

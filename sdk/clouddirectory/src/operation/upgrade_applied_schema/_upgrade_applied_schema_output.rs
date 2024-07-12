@@ -32,8 +32,8 @@ impl UpgradeAppliedSchemaOutput {
 }
 
 /// A builder for [`UpgradeAppliedSchemaOutput`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpgradeAppliedSchemaOutputBuilder {
     pub(crate) upgraded_schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,

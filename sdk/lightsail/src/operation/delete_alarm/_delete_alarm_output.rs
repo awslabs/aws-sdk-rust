@@ -28,8 +28,8 @@ impl DeleteAlarmOutput {
 }
 
 /// A builder for [`DeleteAlarmOutput`](crate::operation::delete_alarm::DeleteAlarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAlarmOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

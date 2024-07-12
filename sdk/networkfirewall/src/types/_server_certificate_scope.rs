@@ -59,8 +59,8 @@ impl ServerCertificateScope {
 }
 
 /// A builder for [`ServerCertificateScope`](crate::types::ServerCertificateScope).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerCertificateScopeBuilder {
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,

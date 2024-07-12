@@ -39,8 +39,8 @@ impl ResourceCatalog {
 }
 
 /// A builder for [`ResourceCatalog`](crate::types::ResourceCatalog).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceCatalogBuilder {
     pub(crate) resource_catalog_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_catalog_name: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl KafkaClusterDescription {
 }
 
 /// A builder for [`KafkaClusterDescription`](crate::types::KafkaClusterDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KafkaClusterDescriptionBuilder {
     pub(crate) amazon_msk_cluster: ::std::option::Option<crate::types::AmazonMskCluster>,
     pub(crate) kafka_cluster_alias: ::std::option::Option<::std::string::String>,

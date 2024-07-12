@@ -29,8 +29,8 @@ impl ListEmailIdentitiesInput {
 }
 
 /// A builder for [`ListEmailIdentitiesInput`](crate::operation::list_email_identities::ListEmailIdentitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEmailIdentitiesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,

@@ -61,8 +61,8 @@ impl SourceDetail {
 }
 
 /// A builder for [`SourceDetail`](crate::types::SourceDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceDetailBuilder {
     pub(crate) event_source: ::std::option::Option<crate::types::EventSource>,
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,

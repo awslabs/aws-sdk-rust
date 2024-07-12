@@ -28,8 +28,8 @@ impl DeclineInvitationsOutput {
 }
 
 /// A builder for [`DeclineInvitationsOutput`](crate::operation::decline_invitations::DeclineInvitationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeclineInvitationsOutputBuilder {
     pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,

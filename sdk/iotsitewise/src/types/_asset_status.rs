@@ -27,8 +27,8 @@ impl AssetStatus {
 }
 
 /// A builder for [`AssetStatus`](crate::types::AssetStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::AssetState>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetails>,

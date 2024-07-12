@@ -131,8 +131,8 @@ impl SetSourceRequest {
 }
 
 /// A builder for [`SetSourceRequest`](crate::types::SetSourceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetSourceRequestBuilder {
     pub(crate) decryption: ::std::option::Option<crate::types::Encryption>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

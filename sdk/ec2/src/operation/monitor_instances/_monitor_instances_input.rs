@@ -28,8 +28,8 @@ impl MonitorInstancesInput {
 }
 
 /// A builder for [`MonitorInstancesInput`](crate::operation::monitor_instances::MonitorInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitorInstancesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,

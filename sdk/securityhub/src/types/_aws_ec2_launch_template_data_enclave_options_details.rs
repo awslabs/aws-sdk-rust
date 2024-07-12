@@ -21,8 +21,8 @@ impl AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataEnclaveOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataEnclaveOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataEnclaveOptionsDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

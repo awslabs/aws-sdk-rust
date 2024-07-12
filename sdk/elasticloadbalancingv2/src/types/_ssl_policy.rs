@@ -45,8 +45,8 @@ impl SslPolicy {
 }
 
 /// A builder for [`SslPolicy`](crate::types::SslPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SslPolicyBuilder {
     pub(crate) ssl_protocols: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ciphers: ::std::option::Option<::std::vec::Vec<crate::types::Cipher>>,

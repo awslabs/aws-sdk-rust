@@ -33,8 +33,8 @@ impl OtaaV11 {
 }
 
 /// A builder for [`OtaaV11`](crate::types::OtaaV11).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OtaaV11Builder {
     pub(crate) app_key: ::std::option::Option<::std::string::String>,
     pub(crate) nwk_key: ::std::option::Option<::std::string::String>,

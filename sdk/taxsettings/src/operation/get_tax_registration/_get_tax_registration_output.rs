@@ -34,8 +34,8 @@ impl GetTaxRegistrationOutput {
 }
 
 /// A builder for [`GetTaxRegistrationOutput`](crate::operation::get_tax_registration::GetTaxRegistrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetTaxRegistrationOutputBuilder {
     pub(crate) tax_registration: ::std::option::Option<crate::types::TaxRegistration>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl UpdatePrimaryRegionOutput {
 }
 
 /// A builder for [`UpdatePrimaryRegionOutput`](crate::operation::update_primary_region::UpdatePrimaryRegionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePrimaryRegionOutputBuilder {
     _request_id: Option<String>,
 }

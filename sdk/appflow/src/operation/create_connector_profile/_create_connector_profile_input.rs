@@ -60,8 +60,8 @@ impl CreateConnectorProfileInput {
 }
 
 /// A builder for [`CreateConnectorProfileInput`](crate::operation::create_connector_profile::CreateConnectorProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectorProfileInputBuilder {
     pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_arn: ::std::option::Option<::std::string::String>,

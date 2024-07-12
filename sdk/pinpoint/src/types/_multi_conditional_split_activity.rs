@@ -37,8 +37,8 @@ impl MultiConditionalSplitActivity {
 }
 
 /// A builder for [`MultiConditionalSplitActivity`](crate::types::MultiConditionalSplitActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiConditionalSplitActivityBuilder {
     pub(crate) branches: ::std::option::Option<::std::vec::Vec<crate::types::MultiConditionalBranch>>,
     pub(crate) default_activity: ::std::option::Option<::std::string::String>,

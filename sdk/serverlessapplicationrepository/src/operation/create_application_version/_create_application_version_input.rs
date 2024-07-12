@@ -52,8 +52,8 @@ impl CreateApplicationVersionInput {
 }
 
 /// A builder for [`CreateApplicationVersionInput`](crate::operation::create_application_version::CreateApplicationVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateApplicationVersionInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) semantic_version: ::std::option::Option<::std::string::String>,

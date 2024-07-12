@@ -20,8 +20,8 @@ impl DescribeStorageSystemInput {
 }
 
 /// A builder for [`DescribeStorageSystemInput`](crate::operation::describe_storage_system::DescribeStorageSystemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStorageSystemInputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
 }

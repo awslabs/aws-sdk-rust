@@ -39,8 +39,8 @@ impl EnabledControlFilter {
 }
 
 /// A builder for [`EnabledControlFilter`](crate::types::EnabledControlFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnabledControlFilterBuilder {
     pub(crate) control_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::EnablementStatus>>,

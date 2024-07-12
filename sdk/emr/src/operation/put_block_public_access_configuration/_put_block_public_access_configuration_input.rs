@@ -24,8 +24,8 @@ impl PutBlockPublicAccessConfigurationInput {
 }
 
 /// A builder for [`PutBlockPublicAccessConfigurationInput`](crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBlockPublicAccessConfigurationInputBuilder {
     pub(crate) block_public_access_configuration: ::std::option::Option<crate::types::BlockPublicAccessConfiguration>,
 }

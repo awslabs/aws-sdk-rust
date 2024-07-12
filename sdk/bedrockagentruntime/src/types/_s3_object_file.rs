@@ -22,8 +22,8 @@ impl S3ObjectFile {
 }
 
 /// A builder for [`S3ObjectFile`](crate::types::S3ObjectFile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ObjectFileBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
 }

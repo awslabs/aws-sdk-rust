@@ -54,8 +54,8 @@ impl DescribeVerifiedAccessGroupsInput {
 }
 
 /// A builder for [`DescribeVerifiedAccessGroupsInput`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVerifiedAccessGroupsInputBuilder {
     pub(crate) verified_access_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,

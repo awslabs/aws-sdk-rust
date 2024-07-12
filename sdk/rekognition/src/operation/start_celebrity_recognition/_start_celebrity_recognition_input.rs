@@ -38,8 +38,8 @@ impl StartCelebrityRecognitionInput {
 }
 
 /// A builder for [`StartCelebrityRecognitionInput`](crate::operation::start_celebrity_recognition::StartCelebrityRecognitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCelebrityRecognitionInputBuilder {
     pub(crate) video: ::std::option::Option<crate::types::Video>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

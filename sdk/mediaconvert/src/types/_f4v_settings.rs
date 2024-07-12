@@ -21,8 +21,8 @@ impl F4vSettings {
 }
 
 /// A builder for [`F4vSettings`](crate::types::F4vSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct F4vSettingsBuilder {
     pub(crate) moov_placement: ::std::option::Option<crate::types::F4vMoovPlacement>,
 }

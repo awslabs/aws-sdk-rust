@@ -36,8 +36,8 @@ impl BatchUpdateRuleOutput {
 }
 
 /// A builder for [`BatchUpdateRuleOutput`](crate::operation::batch_update_rule::BatchUpdateRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateRuleOutputBuilder {
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateSuccess>>,
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateFailure>>,

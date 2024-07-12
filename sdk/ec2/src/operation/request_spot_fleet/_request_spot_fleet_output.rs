@@ -27,8 +27,8 @@ impl RequestSpotFleetOutput {
 }
 
 /// A builder for [`RequestSpotFleetOutput`](crate::operation::request_spot_fleet::RequestSpotFleetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestSpotFleetOutputBuilder {
     pub(crate) spot_fleet_request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl FrameworkControl {
 }
 
 /// A builder for [`FrameworkControl`](crate::types::FrameworkControl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FrameworkControlBuilder {
     pub(crate) control_name: ::std::option::Option<::std::string::String>,
     pub(crate) control_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,

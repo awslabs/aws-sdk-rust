@@ -20,8 +20,8 @@ impl RegisterDefaultPatchBaselineInput {
 }
 
 /// A builder for [`RegisterDefaultPatchBaselineInput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterDefaultPatchBaselineInputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
 }

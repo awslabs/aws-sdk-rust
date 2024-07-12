@@ -19,8 +19,8 @@ impl DisableApplicationLayerAutomaticResponseOutput {
 }
 
 /// A builder for [`DisableApplicationLayerAutomaticResponseOutput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableApplicationLayerAutomaticResponseOutputBuilder {
     _request_id: Option<String>,
 }

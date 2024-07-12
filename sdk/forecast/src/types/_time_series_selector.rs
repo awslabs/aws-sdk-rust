@@ -30,8 +30,8 @@ impl TimeSeriesSelector {
 }
 
 /// A builder for [`TimeSeriesSelector`](crate::types::TimeSeriesSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeSeriesSelectorBuilder {
     pub(crate) time_series_identifiers: ::std::option::Option<crate::types::TimeSeriesIdentifiers>,
 }

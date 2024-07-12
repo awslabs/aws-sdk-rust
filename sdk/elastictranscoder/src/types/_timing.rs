@@ -33,8 +33,8 @@ impl Timing {
 }
 
 /// A builder for [`Timing`](crate::types::Timing).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimingBuilder {
     pub(crate) submit_time_millis: ::std::option::Option<i64>,
     pub(crate) start_time_millis: ::std::option::Option<i64>,

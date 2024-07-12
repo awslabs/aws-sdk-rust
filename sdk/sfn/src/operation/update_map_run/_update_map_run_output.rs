@@ -18,8 +18,8 @@ impl UpdateMapRunOutput {
 }
 
 /// A builder for [`UpdateMapRunOutput`](crate::operation::update_map_run::UpdateMapRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMapRunOutputBuilder {
     _request_id: Option<String>,
 }

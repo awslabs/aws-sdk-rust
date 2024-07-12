@@ -21,8 +21,8 @@ impl BillingGroupMetadata {
 }
 
 /// A builder for [`BillingGroupMetadata`](crate::types::BillingGroupMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BillingGroupMetadataBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }

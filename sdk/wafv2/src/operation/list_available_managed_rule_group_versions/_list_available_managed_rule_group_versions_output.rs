@@ -40,8 +40,8 @@ impl ListAvailableManagedRuleGroupVersionsOutput {
 }
 
 /// A builder for [`ListAvailableManagedRuleGroupVersionsOutput`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableManagedRuleGroupVersionsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupVersion>>,

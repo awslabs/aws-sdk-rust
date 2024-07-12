@@ -27,8 +27,8 @@ impl GetDataViewInput {
 }
 
 /// A builder for [`GetDataViewInput`](crate::operation::get_data_view::GetDataViewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataViewInputBuilder {
     pub(crate) data_view_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,

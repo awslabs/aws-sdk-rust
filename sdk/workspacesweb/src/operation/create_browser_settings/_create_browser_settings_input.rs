@@ -59,8 +59,8 @@ impl CreateBrowserSettingsInput {
 }
 
 /// A builder for [`CreateBrowserSettingsInput`](crate::operation::create_browser_settings::CreateBrowserSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateBrowserSettingsInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) customer_managed_key: ::std::option::Option<::std::string::String>,

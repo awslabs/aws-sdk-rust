@@ -20,8 +20,8 @@ impl DeletePolicyStoreInput {
 }
 
 /// A builder for [`DeletePolicyStoreInput`](crate::operation::delete_policy_store::DeletePolicyStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePolicyStoreInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
 }

@@ -32,8 +32,8 @@ impl AdvancedOptionsStatus {
 }
 
 /// A builder for [`AdvancedOptionsStatus`](crate::types::AdvancedOptionsStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdvancedOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

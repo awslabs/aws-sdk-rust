@@ -80,8 +80,8 @@ impl PublishLayerVersionOutput {
 }
 
 /// A builder for [`PublishLayerVersionOutput`](crate::operation::publish_layer_version::PublishLayerVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublishLayerVersionOutputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::LayerVersionContentOutput>,
     pub(crate) layer_arn: ::std::option::Option<::std::string::String>,

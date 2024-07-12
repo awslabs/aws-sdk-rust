@@ -28,8 +28,8 @@ impl UpdateColumnStatisticsForTableOutput {
 }
 
 /// A builder for [`UpdateColumnStatisticsForTableOutput`](crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateColumnStatisticsForTableOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>>,
     _request_id: Option<String>,

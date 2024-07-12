@@ -34,8 +34,8 @@ impl DescribeAccountLimitsOutput {
 }
 
 /// A builder for [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountLimitsOutputBuilder {
     pub(crate) limits: ::std::option::Option<::std::vec::Vec<crate::types::Limit>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl CreateBackendConfigInput {
 }
 
 /// A builder for [`CreateBackendConfigInput`](crate::operation::create_backend_config::CreateBackendConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBackendConfigInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_manager_app_id: ::std::option::Option<::std::string::String>,

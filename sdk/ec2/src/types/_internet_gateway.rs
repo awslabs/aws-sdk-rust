@@ -43,8 +43,8 @@ impl InternetGateway {
 }
 
 /// A builder for [`InternetGateway`](crate::types::InternetGateway).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InternetGatewayBuilder {
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
     pub(crate) internet_gateway_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl AnomalyDetection {
 }
 
 /// A builder for [`AnomalyDetection`](crate::types::AnomalyDetection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnomalyDetectionBuilder {
     pub(crate) result: ::std::option::Option<crate::types::AnomalyResultEnum>,
     pub(crate) mitigation_in_effect: ::std::option::Option<crate::types::MitigationInEffectEnum>,

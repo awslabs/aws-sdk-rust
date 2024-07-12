@@ -21,8 +21,8 @@ impl LateDataRuleConfiguration {
 }
 
 /// A builder for [`LateDataRuleConfiguration`](crate::types::LateDataRuleConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LateDataRuleConfigurationBuilder {
     pub(crate) delta_time_session_window_configuration: ::std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration>,
 }

@@ -72,8 +72,8 @@ impl UpdateUserAttributesInput {
 }
 
 /// A builder for [`UpdateUserAttributesInput`](crate::operation::update_user_attributes::UpdateUserAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateUserAttributesInputBuilder {
     pub(crate) user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,

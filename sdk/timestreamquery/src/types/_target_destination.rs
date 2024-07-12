@@ -21,8 +21,8 @@ impl TargetDestination {
 }
 
 /// A builder for [`TargetDestination`](crate::types::TargetDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetDestinationBuilder {
     pub(crate) timestream_destination: ::std::option::Option<crate::types::TimestreamDestination>,
 }

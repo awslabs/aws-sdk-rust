@@ -46,8 +46,8 @@ impl UpdateDashboardLinksOutput {
 }
 
 /// A builder for [`UpdateDashboardLinksOutput`](crate::operation::update_dashboard_links::UpdateDashboardLinksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDashboardLinksOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,

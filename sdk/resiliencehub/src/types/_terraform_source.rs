@@ -22,8 +22,8 @@ impl TerraformSource {
 }
 
 /// A builder for [`TerraformSource`](crate::types::TerraformSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerraformSourceBuilder {
     pub(crate) s3_state_file_url: ::std::option::Option<::std::string::String>,
 }

@@ -64,8 +64,8 @@ impl DescribeAlarmHistoryInput {
 }
 
 /// A builder for [`DescribeAlarmHistoryInput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAlarmHistoryInputBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_types: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,

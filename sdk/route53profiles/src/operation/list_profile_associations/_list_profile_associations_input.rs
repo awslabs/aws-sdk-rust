@@ -42,8 +42,8 @@ impl ListProfileAssociationsInput {
 }
 
 /// A builder for [`ListProfileAssociationsInput`](crate::operation::list_profile_associations::ListProfileAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfileAssociationsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,

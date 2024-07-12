@@ -41,8 +41,8 @@ impl GetBlockOutput {
 }
 
 /// A builder for [`GetBlockOutput`](crate::operation::get_block::GetBlockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetBlockOutputBuilder {
     pub(crate) block: ::std::option::Option<crate::types::ValueHolder>,
     pub(crate) proof: ::std::option::Option<crate::types::ValueHolder>,

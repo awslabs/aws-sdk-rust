@@ -35,8 +35,8 @@ impl ModelDeployConfig {
 }
 
 /// A builder for [`ModelDeployConfig`](crate::types::ModelDeployConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelDeployConfigBuilder {
     pub(crate) auto_generate_endpoint_name: ::std::option::Option<bool>,
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,

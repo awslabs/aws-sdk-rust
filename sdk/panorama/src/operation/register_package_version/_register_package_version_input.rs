@@ -44,8 +44,8 @@ impl RegisterPackageVersionInput {
 }
 
 /// A builder for [`RegisterPackageVersionInput`](crate::operation::register_package_version::RegisterPackageVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterPackageVersionInputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) package_id: ::std::option::Option<::std::string::String>,

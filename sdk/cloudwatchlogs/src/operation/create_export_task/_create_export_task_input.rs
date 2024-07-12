@@ -58,8 +58,8 @@ impl CreateExportTaskInput {
 }
 
 /// A builder for [`CreateExportTaskInput`](crate::operation::create_export_task::CreateExportTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateExportTaskInputBuilder {
     pub(crate) task_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,

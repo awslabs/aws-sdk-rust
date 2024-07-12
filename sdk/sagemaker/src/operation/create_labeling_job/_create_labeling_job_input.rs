@@ -174,8 +174,8 @@ impl CreateLabelingJobInput {
 }
 
 /// A builder for [`CreateLabelingJobInput`](crate::operation::create_labeling_job::CreateLabelingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLabelingJobInputBuilder {
     pub(crate) labeling_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_attribute_name: ::std::option::Option<::std::string::String>,

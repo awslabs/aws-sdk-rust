@@ -20,8 +20,8 @@ impl GetCustomModelInput {
 }
 
 /// A builder for [`GetCustomModelInput`](crate::operation::get_custom_model::GetCustomModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCustomModelInputBuilder {
     pub(crate) model_identifier: ::std::option::Option<::std::string::String>,
 }

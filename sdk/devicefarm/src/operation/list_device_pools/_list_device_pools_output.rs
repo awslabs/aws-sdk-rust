@@ -35,8 +35,8 @@ impl ListDevicePoolsOutput {
 }
 
 /// A builder for [`ListDevicePoolsOutput`](crate::operation::list_device_pools::ListDevicePoolsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevicePoolsOutputBuilder {
     pub(crate) device_pools: ::std::option::Option<::std::vec::Vec<crate::types::DevicePool>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

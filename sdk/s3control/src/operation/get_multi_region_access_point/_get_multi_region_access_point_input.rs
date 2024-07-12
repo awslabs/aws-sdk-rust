@@ -26,8 +26,8 @@ impl GetMultiRegionAccessPointInput {
 }
 
 /// A builder for [`GetMultiRegionAccessPointInput`](crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMultiRegionAccessPointInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

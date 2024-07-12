@@ -53,8 +53,8 @@ impl CallAnalyticsEntity {
 }
 
 /// A builder for [`CallAnalyticsEntity`](crate::types::CallAnalyticsEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CallAnalyticsEntityBuilder {
     pub(crate) begin_offset_millis: ::std::option::Option<i64>,
     pub(crate) end_offset_millis: ::std::option::Option<i64>,

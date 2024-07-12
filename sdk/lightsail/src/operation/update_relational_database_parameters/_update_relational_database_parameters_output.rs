@@ -28,8 +28,8 @@ impl UpdateRelationalDatabaseParametersOutput {
 }
 
 /// A builder for [`UpdateRelationalDatabaseParametersOutput`](crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRelationalDatabaseParametersOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

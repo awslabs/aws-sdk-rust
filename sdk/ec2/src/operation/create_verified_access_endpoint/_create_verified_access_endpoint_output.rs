@@ -26,8 +26,8 @@ impl CreateVerifiedAccessEndpointOutput {
 }
 
 /// A builder for [`CreateVerifiedAccessEndpointOutput`](crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVerifiedAccessEndpointOutputBuilder {
     pub(crate) verified_access_endpoint: ::std::option::Option<crate::types::VerifiedAccessEndpoint>,
     _request_id: Option<String>,

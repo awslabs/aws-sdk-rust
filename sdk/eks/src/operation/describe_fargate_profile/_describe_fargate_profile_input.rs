@@ -26,8 +26,8 @@ impl DescribeFargateProfileInput {
 }
 
 /// A builder for [`DescribeFargateProfileInput`](crate::operation::describe_fargate_profile::DescribeFargateProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFargateProfileInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) fargate_profile_name: ::std::option::Option<::std::string::String>,

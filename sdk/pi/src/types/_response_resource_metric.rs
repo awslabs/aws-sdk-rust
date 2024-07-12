@@ -33,8 +33,8 @@ impl ResponseResourceMetric {
 }
 
 /// A builder for [`ResponseResourceMetric`](crate::types::ResponseResourceMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseResourceMetricBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -47,8 +47,8 @@ impl TrustedCertificatePublicKey {
 }
 
 /// A builder for [`TrustedCertificatePublicKey`](crate::types::TrustedCertificatePublicKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TrustedCertificatePublicKeyBuilder {
     pub(crate) key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     pub(crate) public_key_certificate: ::std::option::Option<::std::string::String>,

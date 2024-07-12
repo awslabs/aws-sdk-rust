@@ -20,8 +20,8 @@ impl StopDominantLanguageDetectionJobInput {
 }
 
 /// A builder for [`StopDominantLanguageDetectionJobInput`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDominantLanguageDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

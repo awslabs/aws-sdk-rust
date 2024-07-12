@@ -20,8 +20,8 @@ impl DeleteGraphqlApiInput {
 }
 
 /// A builder for [`DeleteGraphqlApiInput`](crate::operation::delete_graphql_api::DeleteGraphqlApiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGraphqlApiInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }

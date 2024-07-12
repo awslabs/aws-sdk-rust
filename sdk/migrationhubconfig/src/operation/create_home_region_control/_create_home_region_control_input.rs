@@ -32,8 +32,8 @@ impl CreateHomeRegionControlInput {
 }
 
 /// A builder for [`CreateHomeRegionControlInput`](crate::operation::create_home_region_control::CreateHomeRegionControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHomeRegionControlInputBuilder {
     pub(crate) home_region: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<crate::types::Target>,

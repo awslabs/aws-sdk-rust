@@ -75,8 +75,8 @@ impl ResourceDataSyncItem {
 }
 
 /// A builder for [`ResourceDataSyncItem`](crate::types::ResourceDataSyncItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceDataSyncItemBuilder {
     pub(crate) sync_name: ::std::option::Option<::std::string::String>,
     pub(crate) sync_type: ::std::option::Option<::std::string::String>,

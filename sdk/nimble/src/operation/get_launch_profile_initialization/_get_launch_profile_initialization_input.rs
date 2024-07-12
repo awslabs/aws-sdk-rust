@@ -46,8 +46,8 @@ impl GetLaunchProfileInitializationInput {
 }
 
 /// A builder for [`GetLaunchProfileInitializationInput`](crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLaunchProfileInitializationInputBuilder {
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_profile_protocol_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

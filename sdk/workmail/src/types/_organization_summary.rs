@@ -45,8 +45,8 @@ impl OrganizationSummary {
 }
 
 /// A builder for [`OrganizationSummary`](crate::types::OrganizationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationSummaryBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,

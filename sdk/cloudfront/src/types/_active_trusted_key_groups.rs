@@ -35,8 +35,8 @@ impl ActiveTrustedKeyGroups {
 }
 
 /// A builder for [`ActiveTrustedKeyGroups`](crate::types::ActiveTrustedKeyGroups).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActiveTrustedKeyGroupsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,

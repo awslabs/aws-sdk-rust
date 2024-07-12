@@ -32,8 +32,8 @@ impl GetImagePipelineOutput {
 }
 
 /// A builder for [`GetImagePipelineOutput`](crate::operation::get_image_pipeline::GetImagePipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImagePipelineOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_pipeline: ::std::option::Option<crate::types::ImagePipeline>,

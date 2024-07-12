@@ -21,8 +21,8 @@ impl CoverageCost {
 }
 
 /// A builder for [`CoverageCost`](crate::types::CoverageCost).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoverageCostBuilder {
     pub(crate) on_demand_cost: ::std::option::Option<::std::string::String>,
 }

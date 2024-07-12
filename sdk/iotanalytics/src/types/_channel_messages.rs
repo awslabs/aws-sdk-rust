@@ -27,8 +27,8 @@ impl ChannelMessages {
 }
 
 /// A builder for [`ChannelMessages`](crate::types::ChannelMessages).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelMessagesBuilder {
     pub(crate) s3_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

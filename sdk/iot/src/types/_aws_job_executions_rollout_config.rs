@@ -27,8 +27,8 @@ impl AwsJobExecutionsRolloutConfig {
 }
 
 /// A builder for [`AwsJobExecutionsRolloutConfig`](crate::types::AwsJobExecutionsRolloutConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsJobExecutionsRolloutConfigBuilder {
     pub(crate) maximum_per_minute: ::std::option::Option<i32>,
     pub(crate) exponential_rate: ::std::option::Option<crate::types::AwsJobExponentialRolloutRate>,

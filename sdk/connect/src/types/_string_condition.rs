@@ -35,8 +35,8 @@ impl StringCondition {
 }
 
 /// A builder for [`StringCondition`](crate::types::StringCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StringConditionBuilder {
     pub(crate) field_name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

@@ -43,8 +43,8 @@ impl DecisionTaskScheduledEventAttributes {
 }
 
 /// A builder for [`DecisionTaskScheduledEventAttributes`](crate::types::DecisionTaskScheduledEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecisionTaskScheduledEventAttributesBuilder {
     pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,
     pub(crate) task_priority: ::std::option::Option<::std::string::String>,

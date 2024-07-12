@@ -18,8 +18,8 @@ impl RemoveApplicationInstanceOutput {
 }
 
 /// A builder for [`RemoveApplicationInstanceOutput`](crate::operation::remove_application_instance::RemoveApplicationInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveApplicationInstanceOutputBuilder {
     _request_id: Option<String>,
 }

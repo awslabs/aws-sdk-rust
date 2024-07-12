@@ -33,8 +33,8 @@ impl LaunchTemplateCpuOptionsRequest {
 }
 
 /// A builder for [`LaunchTemplateCpuOptionsRequest`](crate::types::LaunchTemplateCpuOptionsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateCpuOptionsRequestBuilder {
     pub(crate) core_count: ::std::option::Option<i32>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,

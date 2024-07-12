@@ -32,8 +32,8 @@ impl UpdateBillingGroupInput {
 }
 
 /// A builder for [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBillingGroupInputBuilder {
     pub(crate) billing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_properties: ::std::option::Option<crate::types::BillingGroupProperties>,

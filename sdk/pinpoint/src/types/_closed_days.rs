@@ -55,8 +55,8 @@ impl ClosedDays {
 }
 
 /// A builder for [`ClosedDays`](crate::types::ClosedDays).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClosedDaysBuilder {
     pub(crate) email: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,
     pub(crate) sms: ::std::option::Option<::std::vec::Vec<crate::types::ClosedDaysRule>>,

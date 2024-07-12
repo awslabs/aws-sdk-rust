@@ -34,8 +34,8 @@ impl GetConnectivityInfoOutput {
 }
 
 /// A builder for [`GetConnectivityInfoOutput`](crate::operation::get_connectivity_info::GetConnectivityInfoOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectivityInfoOutputBuilder {
     pub(crate) connectivity_info: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

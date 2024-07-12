@@ -50,8 +50,8 @@ impl GetUsageStatisticsInput {
 }
 
 /// A builder for [`GetUsageStatisticsInput`](crate::operation::get_usage_statistics::GetUsageStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsageStatisticsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) usage_statistic_type: ::std::option::Option<crate::types::UsageStatisticType>,

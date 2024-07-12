@@ -34,8 +34,8 @@ impl ListHlsManifestConfiguration {
 }
 
 /// A builder for [`ListHlsManifestConfiguration`](crate::types::ListHlsManifestConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHlsManifestConfigurationBuilder {
     pub(crate) manifest_name: ::std::option::Option<::std::string::String>,
     pub(crate) child_manifest_name: ::std::option::Option<::std::string::String>,

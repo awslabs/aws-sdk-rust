@@ -19,8 +19,8 @@ impl AdminResetUserPasswordOutput {
 }
 
 /// A builder for [`AdminResetUserPasswordOutput`](crate::operation::admin_reset_user_password::AdminResetUserPasswordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminResetUserPasswordOutputBuilder {
     _request_id: Option<String>,
 }

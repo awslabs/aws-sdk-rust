@@ -82,8 +82,8 @@ impl CreateTrafficMirrorSessionInput {
 }
 
 /// A builder for [`CreateTrafficMirrorSessionInput`](crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTrafficMirrorSessionInputBuilder {
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_mirror_target_id: ::std::option::Option<::std::string::String>,

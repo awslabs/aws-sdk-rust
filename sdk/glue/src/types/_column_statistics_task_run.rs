@@ -125,8 +125,8 @@ impl ColumnStatisticsTaskRun {
 }
 
 /// A builder for [`ColumnStatisticsTaskRun`](crate::types::ColumnStatisticsTaskRun).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnStatisticsTaskRunBuilder {
     pub(crate) customer_id: ::std::option::Option<::std::string::String>,
     pub(crate) column_statistics_task_run_id: ::std::option::Option<::std::string::String>,

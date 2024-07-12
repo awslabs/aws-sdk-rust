@@ -31,8 +31,8 @@ impl ActionExecutionFilter {
 }
 
 /// A builder for [`ActionExecutionFilter`](crate::types::ActionExecutionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionExecutionFilterBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) latest_in_pipeline_execution: ::std::option::Option<crate::types::LatestInPipelineExecutionFilter>,

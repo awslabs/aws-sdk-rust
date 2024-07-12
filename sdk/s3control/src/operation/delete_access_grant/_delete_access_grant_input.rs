@@ -26,8 +26,8 @@ impl DeleteAccessGrantInput {
 }
 
 /// A builder for [`DeleteAccessGrantInput`](crate::operation::delete_access_grant::DeleteAccessGrantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessGrantInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_grant_id: ::std::option::Option<::std::string::String>,

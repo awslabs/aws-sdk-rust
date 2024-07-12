@@ -26,8 +26,8 @@ impl GetParticipantOutput {
 }
 
 /// A builder for [`GetParticipantOutput`](crate::operation::get_participant::GetParticipantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetParticipantOutputBuilder {
     pub(crate) participant: ::std::option::Option<crate::types::Participant>,
     _request_id: Option<String>,

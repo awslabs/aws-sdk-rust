@@ -40,8 +40,8 @@ impl DeletePartitionInput {
 }
 
 /// A builder for [`DeletePartitionInput`](crate::operation::delete_partition::DeletePartitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePartitionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

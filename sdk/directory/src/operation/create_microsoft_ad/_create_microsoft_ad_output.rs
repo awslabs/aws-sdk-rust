@@ -27,8 +27,8 @@ impl CreateMicrosoftAdOutput {
 }
 
 /// A builder for [`CreateMicrosoftAdOutput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMicrosoftAdOutputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

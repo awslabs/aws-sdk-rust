@@ -226,8 +226,8 @@ impl DescribePredictorOutput {
 }
 
 /// A builder for [`DescribePredictorOutput`](crate::operation::describe_predictor::DescribePredictorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePredictorOutputBuilder {
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) predictor_name: ::std::option::Option<::std::string::String>,

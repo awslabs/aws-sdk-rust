@@ -32,8 +32,8 @@ impl GetUsageStatisticsOutput {
 }
 
 /// A builder for [`GetUsageStatisticsOutput`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsageStatisticsOutputBuilder {
     pub(crate) usage_statistics: ::std::option::Option<crate::types::UsageStatistics>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -169,8 +169,8 @@ impl UpdateRelationalDatabaseInput {
 }
 
 /// A builder for [`UpdateRelationalDatabaseInput`](crate::operation::update_relational_database::UpdateRelationalDatabaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateRelationalDatabaseInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,

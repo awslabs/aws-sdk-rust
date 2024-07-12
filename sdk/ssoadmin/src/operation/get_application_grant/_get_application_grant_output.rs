@@ -26,8 +26,8 @@ impl GetApplicationGrantOutput {
 }
 
 /// A builder for [`GetApplicationGrantOutput`](crate::operation::get_application_grant::GetApplicationGrantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApplicationGrantOutputBuilder {
     pub(crate) grant: ::std::option::Option<crate::types::Grant>,
     _request_id: Option<String>,

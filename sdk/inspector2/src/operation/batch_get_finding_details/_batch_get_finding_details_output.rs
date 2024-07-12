@@ -36,8 +36,8 @@ impl BatchGetFindingDetailsOutput {
 }
 
 /// A builder for [`BatchGetFindingDetailsOutput`](crate::operation::batch_get_finding_details::BatchGetFindingDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetFindingDetailsOutputBuilder {
     pub(crate) finding_details: ::std::option::Option<::std::vec::Vec<crate::types::FindingDetail>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::FindingDetailsError>>,

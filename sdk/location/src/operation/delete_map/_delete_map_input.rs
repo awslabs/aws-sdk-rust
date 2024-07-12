@@ -20,8 +20,8 @@ impl DeleteMapInput {
 }
 
 /// A builder for [`DeleteMapInput`](crate::operation::delete_map::DeleteMapInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMapInputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
 }

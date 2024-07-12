@@ -18,8 +18,8 @@ impl DisassociateIpGroupsOutput {
 }
 
 /// A builder for [`DisassociateIpGroupsOutput`](crate::operation::disassociate_ip_groups::DisassociateIpGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateIpGroupsOutputBuilder {
     _request_id: Option<String>,
 }

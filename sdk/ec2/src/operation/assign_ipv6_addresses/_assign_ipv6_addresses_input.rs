@@ -48,8 +48,8 @@ impl AssignIpv6AddressesInput {
 }
 
 /// A builder for [`AssignIpv6AddressesInput`](crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssignIpv6AddressesInputBuilder {
     pub(crate) ipv6_address_count: ::std::option::Option<i32>,
     pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

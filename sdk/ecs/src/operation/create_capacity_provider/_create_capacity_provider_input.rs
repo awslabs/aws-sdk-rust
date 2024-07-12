@@ -68,8 +68,8 @@ impl CreateCapacityProviderInput {
 }
 
 /// A builder for [`CreateCapacityProviderInput`](crate::operation::create_capacity_provider::CreateCapacityProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCapacityProviderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_provider: ::std::option::Option<crate::types::AutoScalingGroupProvider>,

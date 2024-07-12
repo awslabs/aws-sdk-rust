@@ -27,8 +27,8 @@ impl ServerSummary {
 }
 
 /// A builder for [`ServerSummary`](crate::types::ServerSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerSummaryBuilder {
     pub(crate) server_os_type: ::std::option::Option<crate::types::ServerOsType>,
     pub(crate) count: ::std::option::Option<i32>,

@@ -27,8 +27,8 @@ impl DetectedJsonFormatDescriptor {
 }
 
 /// A builder for [`DetectedJsonFormatDescriptor`](crate::types::DetectedJsonFormatDescriptor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectedJsonFormatDescriptorBuilder {
     pub(crate) file_compression: ::std::option::Option<crate::types::DetectedField>,
     pub(crate) charset: ::std::option::Option<crate::types::DetectedField>,

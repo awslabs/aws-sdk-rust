@@ -34,8 +34,8 @@ impl DescribeEventAggregatesOutput {
 }
 
 /// A builder for [`DescribeEventAggregatesOutput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventAggregatesOutputBuilder {
     pub(crate) event_aggregates: ::std::option::Option<::std::vec::Vec<crate::types::EventAggregate>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

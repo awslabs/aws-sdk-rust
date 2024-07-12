@@ -160,8 +160,8 @@ impl CreateCustomLogSourceInput {
 }
 
 /// A builder for [`CreateCustomLogSourceInput`](crate::operation::create_custom_log_source::CreateCustomLogSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomLogSourceInputBuilder {
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,

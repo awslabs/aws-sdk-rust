@@ -29,8 +29,8 @@ impl CustomLineItemPercentageChargeDetails {
 }
 
 /// A builder for [`CustomLineItemPercentageChargeDetails`](crate::types::CustomLineItemPercentageChargeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomLineItemPercentageChargeDetailsBuilder {
     pub(crate) percentage_value: ::std::option::Option<f64>,
     pub(crate) associated_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

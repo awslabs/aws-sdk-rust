@@ -26,8 +26,8 @@ impl GetResolverConfigOutput {
 }
 
 /// A builder for [`GetResolverConfigOutput`](crate::operation::get_resolver_config::GetResolverConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResolverConfigOutputBuilder {
     pub(crate) resolver_config: ::std::option::Option<crate::types::ResolverConfig>,
     _request_id: Option<String>,

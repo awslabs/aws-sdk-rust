@@ -34,8 +34,8 @@ impl ListWirelessGatewayTaskDefinitionsOutput {
 }
 
 /// A builder for [`ListWirelessGatewayTaskDefinitionsOutput`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWirelessGatewayTaskDefinitionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) task_definitions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>>,

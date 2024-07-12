@@ -47,8 +47,8 @@ impl UserSearchCriteria {
 }
 
 /// A builder for [`UserSearchCriteria`](crate::types::UserSearchCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserSearchCriteriaBuilder {
     pub(crate) or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::UserSearchCriteria>>,
     pub(crate) and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::UserSearchCriteria>>,

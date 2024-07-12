@@ -26,8 +26,8 @@ impl StartTaskContactOutput {
 }
 
 /// A builder for [`StartTaskContactOutput`](crate::operation::start_task_contact::StartTaskContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTaskContactOutputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

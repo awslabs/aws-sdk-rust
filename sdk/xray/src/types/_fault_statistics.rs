@@ -27,8 +27,8 @@ impl FaultStatistics {
 }
 
 /// A builder for [`FaultStatistics`](crate::types::FaultStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FaultStatisticsBuilder {
     pub(crate) other_count: ::std::option::Option<i64>,
     pub(crate) total_count: ::std::option::Option<i64>,

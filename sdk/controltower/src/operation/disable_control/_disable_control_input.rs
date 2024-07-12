@@ -26,8 +26,8 @@ impl DisableControlInput {
 }
 
 /// A builder for [`DisableControlInput`](crate::operation::disable_control::DisableControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableControlInputBuilder {
     pub(crate) control_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_identifier: ::std::option::Option<::std::string::String>,

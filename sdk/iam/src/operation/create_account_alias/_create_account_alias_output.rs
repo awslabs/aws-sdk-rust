@@ -18,8 +18,8 @@ impl CreateAccountAliasOutput {
 }
 
 /// A builder for [`CreateAccountAliasOutput`](crate::operation::create_account_alias::CreateAccountAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccountAliasOutputBuilder {
     _request_id: Option<String>,
 }

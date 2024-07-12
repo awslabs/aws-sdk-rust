@@ -20,8 +20,8 @@ impl GetApnsChannelInput {
 }
 
 /// A builder for [`GetApnsChannelInput`](crate::operation::get_apns_channel::GetApnsChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApnsChannelInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
 }

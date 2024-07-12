@@ -28,8 +28,8 @@ impl DescribeFindingsInput {
 }
 
 /// A builder for [`DescribeFindingsInput`](crate::operation::describe_findings::DescribeFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFindingsInputBuilder {
     pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,

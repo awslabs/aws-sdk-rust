@@ -48,8 +48,8 @@ impl UpdateWatchlistInput {
 }
 
 /// A builder for [`UpdateWatchlistInput`](crate::operation::update_watchlist::UpdateWatchlistInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateWatchlistInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) watchlist_id: ::std::option::Option<::std::string::String>,

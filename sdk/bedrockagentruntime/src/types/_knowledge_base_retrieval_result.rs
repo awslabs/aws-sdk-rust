@@ -54,8 +54,8 @@ impl KnowledgeBaseRetrievalResult {
 }
 
 /// A builder for [`KnowledgeBaseRetrievalResult`](crate::types::KnowledgeBaseRetrievalResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct KnowledgeBaseRetrievalResultBuilder {
     pub(crate) content: ::std::option::Option<crate::types::RetrievalResultContent>,
     pub(crate) location: ::std::option::Option<crate::types::RetrievalResultLocation>,

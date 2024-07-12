@@ -34,8 +34,8 @@ impl ListScramSecretsOutput {
 }
 
 /// A builder for [`ListScramSecretsOutput`](crate::operation::list_scram_secrets::ListScramSecretsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListScramSecretsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

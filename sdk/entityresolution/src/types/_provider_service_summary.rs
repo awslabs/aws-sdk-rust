@@ -49,8 +49,8 @@ impl ProviderServiceSummary {
 }
 
 /// A builder for [`ProviderServiceSummary`](crate::types::ProviderServiceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProviderServiceSummaryBuilder {
     pub(crate) provider_service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,

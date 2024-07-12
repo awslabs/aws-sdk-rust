@@ -34,8 +34,8 @@ impl DescribeFleetEventsOutput {
 }
 
 /// A builder for [`DescribeFleetEventsOutput`](crate::operation::describe_fleet_events::DescribeFleetEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetEventsOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

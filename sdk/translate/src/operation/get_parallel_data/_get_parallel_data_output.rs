@@ -52,8 +52,8 @@ impl GetParallelDataOutput {
 }
 
 /// A builder for [`GetParallelDataOutput`](crate::operation::get_parallel_data::GetParallelDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetParallelDataOutputBuilder {
     pub(crate) parallel_data_properties: ::std::option::Option<crate::types::ParallelDataProperties>,
     pub(crate) data_location: ::std::option::Option<crate::types::ParallelDataDataLocation>,

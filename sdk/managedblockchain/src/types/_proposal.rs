@@ -126,8 +126,8 @@ impl Proposal {
 }
 
 /// A builder for [`Proposal`](crate::types::Proposal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProposalBuilder {
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_id: ::std::option::Option<::std::string::String>,

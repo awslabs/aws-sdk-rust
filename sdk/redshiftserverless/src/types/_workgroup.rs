@@ -149,8 +149,8 @@ impl Workgroup {
 }
 
 /// A builder for [`Workgroup`](crate::types::Workgroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkgroupBuilder {
     pub(crate) workgroup_id: ::std::option::Option<::std::string::String>,
     pub(crate) workgroup_arn: ::std::option::Option<::std::string::String>,

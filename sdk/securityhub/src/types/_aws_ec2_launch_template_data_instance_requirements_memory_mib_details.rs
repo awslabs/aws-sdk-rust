@@ -27,8 +27,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetailsBuilder {
     pub(crate) max: ::std::option::Option<i32>,
     pub(crate) min: ::std::option::Option<i32>,

@@ -18,8 +18,8 @@ impl RespondDecisionTaskCompletedOutput {
 }
 
 /// A builder for [`RespondDecisionTaskCompletedOutput`](crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RespondDecisionTaskCompletedOutputBuilder {
     _request_id: Option<String>,
 }

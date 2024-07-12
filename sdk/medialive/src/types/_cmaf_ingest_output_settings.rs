@@ -21,8 +21,8 @@ impl CmafIngestOutputSettings {
 }
 
 /// A builder for [`CmafIngestOutputSettings`](crate::types::CmafIngestOutputSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CmafIngestOutputSettingsBuilder {
     pub(crate) name_modifier: ::std::option::Option<::std::string::String>,
 }

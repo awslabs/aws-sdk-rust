@@ -26,8 +26,8 @@ impl GetVerifiedAccessEndpointPolicyInput {
 }
 
 /// A builder for [`GetVerifiedAccessEndpointPolicyInput`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVerifiedAccessEndpointPolicyInputBuilder {
     pub(crate) verified_access_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

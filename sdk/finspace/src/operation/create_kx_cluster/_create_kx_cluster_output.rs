@@ -244,8 +244,8 @@ impl CreateKxClusterOutput {
 }
 
 /// A builder for [`CreateKxClusterOutput`](crate::operation::create_kx_cluster::CreateKxClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKxClusterOutputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::KxClusterStatus>,

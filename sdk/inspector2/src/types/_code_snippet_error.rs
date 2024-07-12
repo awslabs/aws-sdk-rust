@@ -35,8 +35,8 @@ impl CodeSnippetError {
 }
 
 /// A builder for [`CodeSnippetError`](crate::types::CodeSnippetError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeSnippetErrorBuilder {
     pub(crate) finding_arn: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::CodeSnippetErrorCode>,

@@ -50,8 +50,8 @@ impl DeletePullThroughCacheRuleOutput {
 }
 
 /// A builder for [`DeletePullThroughCacheRuleOutput`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePullThroughCacheRuleOutputBuilder {
     pub(crate) ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) upstream_registry_url: ::std::option::Option<::std::string::String>,

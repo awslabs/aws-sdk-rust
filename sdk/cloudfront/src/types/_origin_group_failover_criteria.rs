@@ -21,8 +21,8 @@ impl OriginGroupFailoverCriteria {
 }
 
 /// A builder for [`OriginGroupFailoverCriteria`](crate::types::OriginGroupFailoverCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginGroupFailoverCriteriaBuilder {
     pub(crate) status_codes: ::std::option::Option<crate::types::StatusCodes>,
 }

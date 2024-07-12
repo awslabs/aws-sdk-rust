@@ -27,8 +27,8 @@ impl BotAliasLocaleSettings {
 }
 
 /// A builder for [`BotAliasLocaleSettings`](crate::types::BotAliasLocaleSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BotAliasLocaleSettingsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) code_hook_specification: ::std::option::Option<crate::types::CodeHookSpecification>,

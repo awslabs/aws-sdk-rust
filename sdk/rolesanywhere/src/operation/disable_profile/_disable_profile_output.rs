@@ -26,8 +26,8 @@ impl DisableProfileOutput {
 }
 
 /// A builder for [`DisableProfileOutput`](crate::operation::disable_profile::DisableProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableProfileOutputBuilder {
     pub(crate) profile: ::std::option::Option<crate::types::ProfileDetail>,
     _request_id: Option<String>,

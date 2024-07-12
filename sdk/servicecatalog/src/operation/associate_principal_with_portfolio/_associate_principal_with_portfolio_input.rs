@@ -100,8 +100,8 @@ impl AssociatePrincipalWithPortfolioInput {
 }
 
 /// A builder for [`AssociatePrincipalWithPortfolioInput`](crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociatePrincipalWithPortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,

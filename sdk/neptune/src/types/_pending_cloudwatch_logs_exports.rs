@@ -32,8 +32,8 @@ impl PendingCloudwatchLogsExports {
 }
 
 /// A builder for [`PendingCloudwatchLogsExports`](crate::types::PendingCloudwatchLogsExports).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PendingCloudwatchLogsExportsBuilder {
     pub(crate) log_types_to_enable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) log_types_to_disable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

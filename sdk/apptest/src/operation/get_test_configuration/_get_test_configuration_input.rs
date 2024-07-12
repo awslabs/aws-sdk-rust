@@ -26,8 +26,8 @@ impl GetTestConfigurationInput {
 }
 
 /// A builder for [`GetTestConfigurationInput`](crate::operation::get_test_configuration::GetTestConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTestConfigurationInputBuilder {
     pub(crate) test_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_configuration_version: ::std::option::Option<i32>,

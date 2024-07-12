@@ -26,8 +26,8 @@ impl DescribeCostCategoryDefinitionOutput {
 }
 
 /// A builder for [`DescribeCostCategoryDefinitionOutput`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCostCategoryDefinitionOutputBuilder {
     pub(crate) cost_category: ::std::option::Option<crate::types::CostCategory>,
     _request_id: Option<String>,

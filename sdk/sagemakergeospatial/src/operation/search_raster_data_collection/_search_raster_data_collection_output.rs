@@ -50,8 +50,8 @@ impl SearchRasterDataCollectionOutput {
 }
 
 /// A builder for [`SearchRasterDataCollectionOutput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchRasterDataCollectionOutputBuilder {
     pub(crate) approximate_result_count: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

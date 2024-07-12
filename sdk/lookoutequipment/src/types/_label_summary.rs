@@ -71,8 +71,8 @@ impl LabelSummary {
 }
 
 /// A builder for [`LabelSummary`](crate::types::LabelSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelSummaryBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_id: ::std::option::Option<::std::string::String>,

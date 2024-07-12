@@ -26,8 +26,8 @@ impl GetLaunchProfileInput {
 }
 
 /// A builder for [`GetLaunchProfileInput`](crate::operation::get_launch_profile::GetLaunchProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLaunchProfileInputBuilder {
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,

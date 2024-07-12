@@ -33,8 +33,8 @@ impl DynamicDefaultValue {
 }
 
 /// A builder for [`DynamicDefaultValue`](crate::types::DynamicDefaultValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DynamicDefaultValueBuilder {
     pub(crate) user_name_column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) group_name_column: ::std::option::Option<crate::types::ColumnIdentifier>,

@@ -31,8 +31,8 @@ impl StatelessRule {
 }
 
 /// A builder for [`StatelessRule`](crate::types::StatelessRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatelessRuleBuilder {
     pub(crate) rule_definition: ::std::option::Option<crate::types::RuleDefinition>,
     pub(crate) priority: ::std::option::Option<i32>,

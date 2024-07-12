@@ -34,8 +34,8 @@ impl TemplateLinkedPolicyDefinitionDetail {
 }
 
 /// A builder for [`TemplateLinkedPolicyDefinitionDetail`](crate::types::TemplateLinkedPolicyDefinitionDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateLinkedPolicyDefinitionDetailBuilder {
     pub(crate) policy_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<crate::types::EntityIdentifier>,

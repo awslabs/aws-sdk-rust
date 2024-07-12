@@ -21,8 +21,8 @@ impl GetRepositoryTriggersInput {
 }
 
 /// A builder for [`GetRepositoryTriggersInput`](crate::operation::get_repository_triggers::GetRepositoryTriggersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositoryTriggersInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
 }

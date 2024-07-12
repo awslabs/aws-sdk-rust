@@ -26,8 +26,8 @@ impl CreateObjectOutput {
 }
 
 /// A builder for [`CreateObjectOutput`](crate::operation::create_object::CreateObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateObjectOutputBuilder {
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -48,8 +48,8 @@ impl DescribeDatasetImportJobOutput {
 }
 
 /// A builder for [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDatasetImportJobOutputBuilder {
     pub(crate) dataset_import_job: ::std::option::Option<crate::types::DatasetImportJob>,
     _request_id: Option<String>,

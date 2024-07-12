@@ -50,8 +50,8 @@ impl DeleteKeywordOutput {
 }
 
 /// A builder for [`DeleteKeywordOutput`](crate::operation::delete_keyword::DeleteKeywordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKeywordOutputBuilder {
     pub(crate) origination_identity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,

@@ -12,8 +12,8 @@ impl TokenExchangeGrant {
 }
 
 /// A builder for [`TokenExchangeGrant`](crate::types::TokenExchangeGrant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TokenExchangeGrantBuilder {}
 impl TokenExchangeGrantBuilder {
     /// Consumes the builder and constructs a [`TokenExchangeGrant`](crate::types::TokenExchangeGrant).

@@ -26,8 +26,8 @@ impl GetUserEndpointsOutput {
 }
 
 /// A builder for [`GetUserEndpointsOutput`](crate::operation::get_user_endpoints::GetUserEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUserEndpointsOutputBuilder {
     pub(crate) endpoints_response: ::std::option::Option<crate::types::EndpointsResponse>,
     _request_id: Option<String>,

@@ -28,8 +28,8 @@ impl AddListenerCertificatesOutput {
 }
 
 /// A builder for [`AddListenerCertificatesOutput`](crate::operation::add_listener_certificates::AddListenerCertificatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddListenerCertificatesOutputBuilder {
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     _request_id: Option<String>,

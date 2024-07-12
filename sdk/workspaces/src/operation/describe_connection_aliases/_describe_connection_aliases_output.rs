@@ -34,8 +34,8 @@ impl DescribeConnectionAliasesOutput {
 }
 
 /// A builder for [`DescribeConnectionAliasesOutput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectionAliasesOutputBuilder {
     pub(crate) connection_aliases: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAlias>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

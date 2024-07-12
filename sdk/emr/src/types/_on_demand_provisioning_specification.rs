@@ -29,8 +29,8 @@ impl OnDemandProvisioningSpecification {
 }
 
 /// A builder for [`OnDemandProvisioningSpecification`](crate::types::OnDemandProvisioningSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OnDemandProvisioningSpecificationBuilder {
     pub(crate) allocation_strategy: ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>,
     pub(crate) capacity_reservation_options: ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>,

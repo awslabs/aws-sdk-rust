@@ -21,8 +21,8 @@ impl GatewayRouteHostnameRewrite {
 }
 
 /// A builder for [`GatewayRouteHostnameRewrite`](crate::types::GatewayRouteHostnameRewrite).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GatewayRouteHostnameRewriteBuilder {
     pub(crate) default_target_hostname: ::std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
 }

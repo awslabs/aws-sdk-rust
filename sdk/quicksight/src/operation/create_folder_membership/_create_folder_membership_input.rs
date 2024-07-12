@@ -38,8 +38,8 @@ impl CreateFolderMembershipInput {
 }
 
 /// A builder for [`CreateFolderMembershipInput`](crate::operation::create_folder_membership::CreateFolderMembershipInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFolderMembershipInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,

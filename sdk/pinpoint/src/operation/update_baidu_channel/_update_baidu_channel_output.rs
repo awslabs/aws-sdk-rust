@@ -26,8 +26,8 @@ impl UpdateBaiduChannelOutput {
 }
 
 /// A builder for [`UpdateBaiduChannelOutput`](crate::operation::update_baidu_channel::UpdateBaiduChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBaiduChannelOutputBuilder {
     pub(crate) baidu_channel_response: ::std::option::Option<crate::types::BaiduChannelResponse>,
     _request_id: Option<String>,

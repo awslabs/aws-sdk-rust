@@ -55,8 +55,8 @@ impl UpdateStudioInput {
 }
 
 /// A builder for [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateStudioInputBuilder {
     pub(crate) admin_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

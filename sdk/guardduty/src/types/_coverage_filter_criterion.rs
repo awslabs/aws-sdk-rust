@@ -31,8 +31,8 @@ impl CoverageFilterCriterion {
 }
 
 /// A builder for [`CoverageFilterCriterion`](crate::types::CoverageFilterCriterion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoverageFilterCriterionBuilder {
     pub(crate) criterion_key: ::std::option::Option<crate::types::CoverageFilterCriterionKey>,
     pub(crate) filter_condition: ::std::option::Option<crate::types::CoverageFilterCondition>,

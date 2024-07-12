@@ -41,8 +41,8 @@ impl SseDescription {
 }
 
 /// A builder for [`SseDescription`](crate::types::SseDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SseDescriptionBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SseStatus>,
 }

@@ -56,8 +56,8 @@ impl CreateServiceNetworkServiceAssociationOutput {
 }
 
 /// A builder for [`CreateServiceNetworkServiceAssociationOutput`](crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServiceNetworkServiceAssociationOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>,

@@ -44,8 +44,8 @@ impl EvaluateFeatureOutput {
 }
 
 /// A builder for [`EvaluateFeatureOutput`](crate::operation::evaluate_feature::EvaluateFeatureOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluateFeatureOutputBuilder {
     pub(crate) variation: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::VariableValue>,

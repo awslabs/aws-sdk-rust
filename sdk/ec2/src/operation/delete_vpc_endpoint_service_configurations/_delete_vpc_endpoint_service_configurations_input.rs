@@ -28,8 +28,8 @@ impl DeleteVpcEndpointServiceConfigurationsInput {
 }
 
 /// A builder for [`DeleteVpcEndpointServiceConfigurationsInput`](crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpcEndpointServiceConfigurationsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

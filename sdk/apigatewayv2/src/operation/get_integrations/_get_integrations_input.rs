@@ -32,8 +32,8 @@ impl GetIntegrationsInput {
 }
 
 /// A builder for [`GetIntegrationsInput`](crate::operation::get_integrations::GetIntegrationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIntegrationsInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,

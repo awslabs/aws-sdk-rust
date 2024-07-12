@@ -29,8 +29,8 @@ impl RelationshipsListItem {
 }
 
 /// A builder for [`RelationshipsListItem`](crate::types::RelationshipsListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelationshipsListItemBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::RelationshipType>,

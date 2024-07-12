@@ -45,8 +45,8 @@ impl MemoryDbInstanceDetails {
 }
 
 /// A builder for [`MemoryDbInstanceDetails`](crate::types::MemoryDbInstanceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MemoryDbInstanceDetailsBuilder {
     pub(crate) family: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,

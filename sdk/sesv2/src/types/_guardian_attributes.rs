@@ -33,8 +33,8 @@ impl GuardianAttributes {
 }
 
 /// A builder for [`GuardianAttributes`](crate::types::GuardianAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardianAttributesBuilder {
     pub(crate) optimized_shared_delivery: ::std::option::Option<crate::types::FeatureStatus>,
 }

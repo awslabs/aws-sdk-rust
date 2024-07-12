@@ -20,8 +20,8 @@ impl GetSpaceInput {
 }
 
 /// A builder for [`GetSpaceInput`](crate::operation::get_space::GetSpaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSpaceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

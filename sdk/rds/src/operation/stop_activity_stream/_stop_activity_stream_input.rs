@@ -26,8 +26,8 @@ impl StopActivityStreamInput {
 }
 
 /// A builder for [`StopActivityStreamInput`](crate::operation::stop_activity_stream::StopActivityStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopActivityStreamInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,

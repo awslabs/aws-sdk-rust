@@ -27,8 +27,8 @@ impl SoftwareTokenMfaSettingsType {
 }
 
 /// A builder for [`SoftwareTokenMfaSettingsType`](crate::types::SoftwareTokenMfaSettingsType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SoftwareTokenMfaSettingsTypeBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) preferred_mfa: ::std::option::Option<bool>,

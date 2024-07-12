@@ -28,8 +28,8 @@ impl GetLifecyclePoliciesOutput {
 }
 
 /// A builder for [`GetLifecyclePoliciesOutput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLifecyclePoliciesOutputBuilder {
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicySummary>>,
     _request_id: Option<String>,

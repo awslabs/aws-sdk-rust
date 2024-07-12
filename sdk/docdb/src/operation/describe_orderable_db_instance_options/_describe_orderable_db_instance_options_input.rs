@@ -69,8 +69,8 @@ impl DescribeOrderableDbInstanceOptionsInput {
 }
 
 /// A builder for [`DescribeOrderableDbInstanceOptionsInput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrderableDbInstanceOptionsInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,

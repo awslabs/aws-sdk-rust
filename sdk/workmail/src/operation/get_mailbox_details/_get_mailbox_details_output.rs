@@ -32,8 +32,8 @@ impl GetMailboxDetailsOutput {
 }
 
 /// A builder for [`GetMailboxDetailsOutput`](crate::operation::get_mailbox_details::GetMailboxDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMailboxDetailsOutputBuilder {
     pub(crate) mailbox_quota: ::std::option::Option<i32>,
     pub(crate) mailbox_size: ::std::option::Option<f64>,

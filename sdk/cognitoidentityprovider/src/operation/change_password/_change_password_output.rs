@@ -19,8 +19,8 @@ impl ChangePasswordOutput {
 }
 
 /// A builder for [`ChangePasswordOutput`](crate::operation::change_password::ChangePasswordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangePasswordOutputBuilder {
     _request_id: Option<String>,
 }

@@ -29,8 +29,8 @@ impl AddonPodIdentityConfiguration {
 }
 
 /// A builder for [`AddonPodIdentityConfiguration`](crate::types::AddonPodIdentityConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddonPodIdentityConfigurationBuilder {
     pub(crate) service_account: ::std::option::Option<::std::string::String>,
     pub(crate) recommended_managed_policies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

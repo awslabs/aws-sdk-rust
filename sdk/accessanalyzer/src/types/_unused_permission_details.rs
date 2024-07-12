@@ -36,8 +36,8 @@ impl UnusedPermissionDetails {
 }
 
 /// A builder for [`UnusedPermissionDetails`](crate::types::UnusedPermissionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnusedPermissionDetailsBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::UnusedAction>>,
     pub(crate) service_namespace: ::std::option::Option<::std::string::String>,

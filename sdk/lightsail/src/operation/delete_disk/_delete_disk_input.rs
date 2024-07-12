@@ -26,8 +26,8 @@ impl DeleteDiskInput {
 }
 
 /// A builder for [`DeleteDiskInput`](crate::operation::delete_disk::DeleteDiskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDiskInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
     pub(crate) force_delete_add_ons: ::std::option::Option<bool>,

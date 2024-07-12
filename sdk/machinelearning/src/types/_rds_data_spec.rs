@@ -161,8 +161,8 @@ impl RdsDataSpec {
 }
 
 /// A builder for [`RdsDataSpec`](crate::types::RdsDataSpec).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsDataSpecBuilder {
     pub(crate) database_information: ::std::option::Option<crate::types::RdsDatabase>,
     pub(crate) select_sql_query: ::std::option::Option<::std::string::String>,

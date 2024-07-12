@@ -26,8 +26,8 @@ impl ExecuteProvisionedProductPlanOutput {
 }
 
 /// A builder for [`ExecuteProvisionedProductPlanOutput`](crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteProvisionedProductPlanOutputBuilder {
     pub(crate) record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,

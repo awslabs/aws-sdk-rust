@@ -26,8 +26,8 @@ impl ListLoaderJobsInput {
 }
 
 /// A builder for [`ListLoaderJobsInput`](crate::operation::list_loader_jobs::ListLoaderJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLoaderJobsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) include_queued_loads: ::std::option::Option<bool>,

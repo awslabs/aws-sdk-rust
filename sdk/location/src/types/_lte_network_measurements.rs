@@ -45,8 +45,8 @@ impl LteNetworkMeasurements {
 }
 
 /// A builder for [`LteNetworkMeasurements`](crate::types::LteNetworkMeasurements).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LteNetworkMeasurementsBuilder {
     pub(crate) earfcn: ::std::option::Option<i32>,
     pub(crate) cell_id: ::std::option::Option<i32>,

@@ -36,8 +36,8 @@ impl SingleMeasureMapping {
 }
 
 /// A builder for [`SingleMeasureMapping`](crate::types::SingleMeasureMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SingleMeasureMappingBuilder {
     pub(crate) measure_value: ::std::option::Option<::std::string::String>,
     pub(crate) measure_value_type: ::std::option::Option<crate::types::MeasureValueType>,

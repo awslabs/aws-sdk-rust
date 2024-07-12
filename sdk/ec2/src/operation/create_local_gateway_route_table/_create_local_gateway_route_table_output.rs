@@ -26,8 +26,8 @@ impl CreateLocalGatewayRouteTableOutput {
 }
 
 /// A builder for [`CreateLocalGatewayRouteTableOutput`](crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocalGatewayRouteTableOutputBuilder {
     pub(crate) local_gateway_route_table: ::std::option::Option<crate::types::LocalGatewayRouteTable>,
     _request_id: Option<String>,

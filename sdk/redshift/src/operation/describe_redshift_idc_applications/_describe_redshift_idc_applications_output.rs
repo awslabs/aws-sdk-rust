@@ -34,8 +34,8 @@ impl DescribeRedshiftIdcApplicationsOutput {
 }
 
 /// A builder for [`DescribeRedshiftIdcApplicationsOutput`](crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRedshiftIdcApplicationsOutputBuilder {
     pub(crate) redshift_idc_applications: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftIdcApplication>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

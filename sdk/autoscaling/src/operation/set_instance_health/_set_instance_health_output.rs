@@ -18,8 +18,8 @@ impl SetInstanceHealthOutput {
 }
 
 /// A builder for [`SetInstanceHealthOutput`](crate::operation::set_instance_health::SetInstanceHealthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetInstanceHealthOutputBuilder {
     _request_id: Option<String>,
 }

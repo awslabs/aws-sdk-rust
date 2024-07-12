@@ -45,8 +45,8 @@ impl LoRaWanServiceProfile {
 }
 
 /// A builder for [`LoRaWanServiceProfile`](crate::types::LoRaWanServiceProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanServiceProfileBuilder {
     pub(crate) add_gw_metadata: ::std::option::Option<bool>,
     pub(crate) dr_min: ::std::option::Option<i32>,

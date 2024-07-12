@@ -42,8 +42,8 @@ impl UpdateDeviceStatusInput {
 }
 
 /// A builder for [`UpdateDeviceStatusInput`](crate::operation::update_device_status::UpdateDeviceStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateDeviceStatusInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) device_key: ::std::option::Option<::std::string::String>,

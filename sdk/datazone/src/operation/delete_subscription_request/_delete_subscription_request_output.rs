@@ -18,8 +18,8 @@ impl DeleteSubscriptionRequestOutput {
 }
 
 /// A builder for [`DeleteSubscriptionRequestOutput`](crate::operation::delete_subscription_request::DeleteSubscriptionRequestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSubscriptionRequestOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl InviteAccountToOrganizationOutput {
 }
 
 /// A builder for [`InviteAccountToOrganizationOutput`](crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InviteAccountToOrganizationOutputBuilder {
     pub(crate) handshake: ::std::option::Option<crate::types::Handshake>,
     _request_id: Option<String>,

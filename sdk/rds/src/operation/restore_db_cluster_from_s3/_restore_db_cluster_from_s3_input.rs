@@ -474,8 +474,8 @@ impl RestoreDbClusterFromS3Input {
 }
 
 /// A builder for [`RestoreDbClusterFromS3Input`](crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreDbClusterFromS3InputBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,

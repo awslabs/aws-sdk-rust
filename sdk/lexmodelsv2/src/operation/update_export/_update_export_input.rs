@@ -34,8 +34,8 @@ impl UpdateExportInput {
 }
 
 /// A builder for [`UpdateExportInput`](crate::operation::update_export::UpdateExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateExportInputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_password: ::std::option::Option<::std::string::String>,

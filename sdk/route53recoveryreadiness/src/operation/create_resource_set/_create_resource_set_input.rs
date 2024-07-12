@@ -42,8 +42,8 @@ impl CreateResourceSetInput {
 }
 
 /// A builder for [`CreateResourceSetInput`](crate::operation::create_resource_set::CreateResourceSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateResourceSetInputBuilder {
     pub(crate) resource_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_set_type: ::std::option::Option<::std::string::String>,

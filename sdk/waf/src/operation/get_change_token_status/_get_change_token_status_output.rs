@@ -26,8 +26,8 @@ impl GetChangeTokenStatusOutput {
 }
 
 /// A builder for [`GetChangeTokenStatusOutput`](crate::operation::get_change_token_status::GetChangeTokenStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChangeTokenStatusOutputBuilder {
     pub(crate) change_token_status: ::std::option::Option<crate::types::ChangeTokenStatus>,
     _request_id: Option<String>,

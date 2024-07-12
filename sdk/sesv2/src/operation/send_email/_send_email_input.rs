@@ -89,8 +89,8 @@ impl SendEmailInput {
 }
 
 /// A builder for [`SendEmailInput`](crate::operation::send_email::SendEmailInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendEmailInputBuilder {
     pub(crate) from_email_address: ::std::option::Option<::std::string::String>,
     pub(crate) from_email_address_identity_arn: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteSipMediaApplicationInput {
 }
 
 /// A builder for [`DeleteSipMediaApplicationInput`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSipMediaApplicationInputBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
 }

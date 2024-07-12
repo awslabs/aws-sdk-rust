@@ -61,8 +61,8 @@ impl CloudComponentStatus {
 }
 
 /// A builder for [`CloudComponentStatus`](crate::types::CloudComponentStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudComponentStatusBuilder {
     pub(crate) component_state: ::std::option::Option<crate::types::CloudComponentState>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

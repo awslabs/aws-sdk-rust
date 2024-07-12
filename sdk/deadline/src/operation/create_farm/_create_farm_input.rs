@@ -55,8 +55,8 @@ impl CreateFarmInput {
 }
 
 /// A builder for [`CreateFarmInput`](crate::operation::create_farm::CreateFarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateFarmInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

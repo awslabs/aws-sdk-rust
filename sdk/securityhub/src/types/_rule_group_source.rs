@@ -41,8 +41,8 @@ impl RuleGroupSource {
 }
 
 /// A builder for [`RuleGroupSource`](crate::types::RuleGroupSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupSourceBuilder {
     pub(crate) rules_source_list: ::std::option::Option<crate::types::RuleGroupSourceListDetails>,
     pub(crate) rules_string: ::std::option::Option<::std::string::String>,

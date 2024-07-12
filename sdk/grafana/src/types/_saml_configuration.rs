@@ -47,8 +47,8 @@ impl SamlConfiguration {
 }
 
 /// A builder for [`SamlConfiguration`](crate::types::SamlConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SamlConfigurationBuilder {
     pub(crate) idp_metadata: ::std::option::Option<crate::types::IdpMetadata>,
     pub(crate) assertion_attributes: ::std::option::Option<crate::types::AssertionAttributes>,

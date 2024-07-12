@@ -36,8 +36,8 @@ impl GetBucketsInput {
 }
 
 /// A builder for [`GetBucketsInput`](crate::operation::get_buckets::GetBucketsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketsInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,

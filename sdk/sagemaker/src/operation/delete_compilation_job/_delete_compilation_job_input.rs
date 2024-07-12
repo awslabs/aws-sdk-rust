@@ -20,8 +20,8 @@ impl DeleteCompilationJobInput {
 }
 
 /// A builder for [`DeleteCompilationJobInput`](crate::operation::delete_compilation_job::DeleteCompilationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCompilationJobInputBuilder {
     pub(crate) compilation_job_name: ::std::option::Option<::std::string::String>,
 }

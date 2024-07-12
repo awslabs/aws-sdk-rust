@@ -34,8 +34,8 @@ impl ListIdNamespacesOutput {
 }
 
 /// A builder for [`ListIdNamespacesOutput`](crate::operation::list_id_namespaces::ListIdNamespacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIdNamespacesOutputBuilder {
     pub(crate) id_namespace_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IdNamespaceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

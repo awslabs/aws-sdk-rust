@@ -27,8 +27,8 @@ impl EcrConfiguration {
 }
 
 /// A builder for [`EcrConfiguration`](crate::types::EcrConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcrConfigurationBuilder {
     pub(crate) rescan_duration: ::std::option::Option<crate::types::EcrRescanDuration>,
     pub(crate) pull_date_rescan_duration: ::std::option::Option<crate::types::EcrPullDateRescanDuration>,

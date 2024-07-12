@@ -27,8 +27,8 @@ impl AddWorkingStorageOutput {
 }
 
 /// A builder for [`AddWorkingStorageOutput`](crate::operation::add_working_storage::AddWorkingStorageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddWorkingStorageOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

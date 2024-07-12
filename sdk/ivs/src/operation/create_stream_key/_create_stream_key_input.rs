@@ -26,8 +26,8 @@ impl CreateStreamKeyInput {
 }
 
 /// A builder for [`CreateStreamKeyInput`](crate::operation::create_stream_key::CreateStreamKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStreamKeyInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

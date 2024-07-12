@@ -27,8 +27,8 @@ impl GetWorkUnitResultsOutput {
 }
 
 /// A builder for [`GetWorkUnitResultsOutput`](crate::operation::get_work_unit_results::GetWorkUnitResultsOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorkUnitResultsOutputBuilder {
     pub(crate) result_stream: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl CreateCoipPoolOutput {
 }
 
 /// A builder for [`CreateCoipPoolOutput`](crate::operation::create_coip_pool::CreateCoipPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCoipPoolOutputBuilder {
     pub(crate) coip_pool: ::std::option::Option<crate::types::CoipPool>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl DescribeAvailabilityMonitorTestInput {
 }
 
 /// A builder for [`DescribeAvailabilityMonitorTestInput`](crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAvailabilityMonitorTestInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }

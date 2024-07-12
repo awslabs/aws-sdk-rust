@@ -41,8 +41,8 @@ impl PineconeConfiguration {
 }
 
 /// A builder for [`PineconeConfiguration`](crate::types::PineconeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PineconeConfigurationBuilder {
     pub(crate) connection_string: ::std::option::Option<::std::string::String>,
     pub(crate) credentials_secret_arn: ::std::option::Option<::std::string::String>,

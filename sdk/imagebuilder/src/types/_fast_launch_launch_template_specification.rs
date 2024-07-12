@@ -35,8 +35,8 @@ impl FastLaunchLaunchTemplateSpecification {
 }
 
 /// A builder for [`FastLaunchLaunchTemplateSpecification`](crate::types::FastLaunchLaunchTemplateSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FastLaunchLaunchTemplateSpecificationBuilder {
     pub(crate) launch_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_template_name: ::std::option::Option<::std::string::String>,

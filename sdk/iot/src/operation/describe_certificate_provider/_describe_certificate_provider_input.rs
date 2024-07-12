@@ -20,8 +20,8 @@ impl DescribeCertificateProviderInput {
 }
 
 /// A builder for [`DescribeCertificateProviderInput`](crate::operation::describe_certificate_provider::DescribeCertificateProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCertificateProviderInputBuilder {
     pub(crate) certificate_provider_name: ::std::option::Option<::std::string::String>,
 }

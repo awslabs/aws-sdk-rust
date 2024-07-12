@@ -27,8 +27,8 @@ impl DefaultInteractiveLayoutConfiguration {
 }
 
 /// A builder for [`DefaultInteractiveLayoutConfiguration`](crate::types::DefaultInteractiveLayoutConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultInteractiveLayoutConfigurationBuilder {
     pub(crate) grid: ::std::option::Option<crate::types::DefaultGridLayoutConfiguration>,
     pub(crate) free_form: ::std::option::Option<crate::types::DefaultFreeFormLayoutConfiguration>,

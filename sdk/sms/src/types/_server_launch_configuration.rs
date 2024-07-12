@@ -87,8 +87,8 @@ impl ServerLaunchConfiguration {
 }
 
 /// A builder for [`ServerLaunchConfiguration`](crate::types::ServerLaunchConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerLaunchConfigurationBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
     pub(crate) logical_id: ::std::option::Option<::std::string::String>,

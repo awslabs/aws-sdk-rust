@@ -138,8 +138,8 @@ impl CreateGlobalClusterInput {
 }
 
 /// A builder for [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGlobalClusterInputBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_db_cluster_identifier: ::std::option::Option<::std::string::String>,

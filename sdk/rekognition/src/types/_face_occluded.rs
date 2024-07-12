@@ -28,8 +28,8 @@ impl FaceOccluded {
 }
 
 /// A builder for [`FaceOccluded`](crate::types::FaceOccluded).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FaceOccludedBuilder {
     pub(crate) value: ::std::option::Option<bool>,
     pub(crate) confidence: ::std::option::Option<f32>,

@@ -46,8 +46,8 @@ impl ListControlsInput {
 }
 
 /// A builder for [`ListControlsInput`](crate::operation::list_controls::ListControlsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListControlsInputBuilder {
     pub(crate) control_type: ::std::option::Option<crate::types::ControlType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

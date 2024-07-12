@@ -50,8 +50,8 @@ impl UpdateEnvironmentActionInput {
 }
 
 /// A builder for [`UpdateEnvironmentActionInput`](crate::operation::update_environment_action::UpdateEnvironmentActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEnvironmentActionInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,

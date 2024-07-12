@@ -21,8 +21,8 @@ impl GetSatelliteInput {
 }
 
 /// A builder for [`GetSatelliteInput`](crate::operation::get_satellite::GetSatelliteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSatelliteInputBuilder {
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,
 }

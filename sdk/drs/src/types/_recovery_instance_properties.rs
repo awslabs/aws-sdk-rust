@@ -63,8 +63,8 @@ impl RecoveryInstanceProperties {
 }
 
 /// A builder for [`RecoveryInstanceProperties`](crate::types::RecoveryInstanceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecoveryInstancePropertiesBuilder {
     pub(crate) last_updated_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) identification_hints: ::std::option::Option<crate::types::IdentificationHints>,

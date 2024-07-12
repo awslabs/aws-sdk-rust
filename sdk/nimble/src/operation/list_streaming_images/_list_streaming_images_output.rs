@@ -34,8 +34,8 @@ impl ListStreamingImagesOutput {
 }
 
 /// A builder for [`ListStreamingImagesOutput`](crate::operation::list_streaming_images::ListStreamingImagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamingImagesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_images: ::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>>,

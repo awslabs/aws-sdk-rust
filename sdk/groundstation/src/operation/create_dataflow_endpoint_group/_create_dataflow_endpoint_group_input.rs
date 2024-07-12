@@ -41,8 +41,8 @@ impl CreateDataflowEndpointGroupInput {
 }
 
 /// A builder for [`CreateDataflowEndpointGroupInput`](crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataflowEndpointGroupInputBuilder {
     pub(crate) endpoint_details: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

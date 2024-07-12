@@ -48,8 +48,8 @@ impl DescribeOptedOutNumbersInput {
 }
 
 /// A builder for [`DescribeOptedOutNumbersInput`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOptedOutNumbersInputBuilder {
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) opted_out_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

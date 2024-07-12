@@ -55,8 +55,8 @@ impl TopicReplication {
 }
 
 /// A builder for [`TopicReplication`](crate::types::TopicReplication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TopicReplicationBuilder {
     pub(crate) copy_access_control_lists_for_topics: ::std::option::Option<bool>,
     pub(crate) copy_topic_configurations: ::std::option::Option<bool>,

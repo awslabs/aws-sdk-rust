@@ -69,8 +69,8 @@ impl TreatmentResource {
 }
 
 /// A builder for [`TreatmentResource`](crate::types::TreatmentResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TreatmentResourceBuilder {
     pub(crate) custom_delivery_configuration: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

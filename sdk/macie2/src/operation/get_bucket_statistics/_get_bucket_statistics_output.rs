@@ -112,8 +112,8 @@ impl GetBucketStatisticsOutput {
 }
 
 /// A builder for [`GetBucketStatisticsOutput`](crate::operation::get_bucket_statistics::GetBucketStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketStatisticsOutputBuilder {
     pub(crate) bucket_count: ::std::option::Option<i64>,
     pub(crate) bucket_count_by_effective_permission: ::std::option::Option<crate::types::BucketCountByEffectivePermission>,

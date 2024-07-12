@@ -38,8 +38,8 @@ impl ListFlowAssociationsInput {
 }
 
 /// A builder for [`ListFlowAssociationsInput`](crate::operation::list_flow_associations::ListFlowAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFlowAssociationsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ListFlowAssociationResourceType>,

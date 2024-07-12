@@ -60,8 +60,8 @@ impl Headers {
 }
 
 /// A builder for [`Headers`](crate::types::Headers).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HeadersBuilder {
     pub(crate) match_pattern: ::std::option::Option<crate::types::HeaderMatchPattern>,
     pub(crate) match_scope: ::std::option::Option<crate::types::MapMatchScope>,

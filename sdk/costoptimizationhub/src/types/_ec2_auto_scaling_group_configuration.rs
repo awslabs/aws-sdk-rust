@@ -21,8 +21,8 @@ impl Ec2AutoScalingGroupConfiguration {
 }
 
 /// A builder for [`Ec2AutoScalingGroupConfiguration`](crate::types::Ec2AutoScalingGroupConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2AutoScalingGroupConfigurationBuilder {
     pub(crate) instance: ::std::option::Option<crate::types::InstanceConfiguration>,
 }

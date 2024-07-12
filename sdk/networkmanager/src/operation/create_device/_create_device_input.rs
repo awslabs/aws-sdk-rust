@@ -100,8 +100,8 @@ impl CreateDeviceInput {
 }
 
 /// A builder for [`CreateDeviceInput`](crate::operation::create_device::CreateDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateDeviceInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_location: ::std::option::Option<crate::types::AwsLocation>,

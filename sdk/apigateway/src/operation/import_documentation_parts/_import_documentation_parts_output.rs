@@ -37,8 +37,8 @@ impl ImportDocumentationPartsOutput {
 }
 
 /// A builder for [`ImportDocumentationPartsOutput`](crate::operation::import_documentation_parts::ImportDocumentationPartsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportDocumentationPartsOutputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -29,8 +29,8 @@ impl FileFormatConfiguration {
 }
 
 /// A builder for [`FileFormatConfiguration`](crate::types::FileFormatConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileFormatConfigurationBuilder {
     pub(crate) json_configuration: ::std::option::Option<crate::types::JsonConfiguration>,
     pub(crate) parquet_configuration: ::std::option::Option<crate::types::ParquetConfiguration>,

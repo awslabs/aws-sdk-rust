@@ -81,8 +81,8 @@ impl Activity {
 }
 
 /// A builder for [`Activity`](crate::types::Activity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivityBuilder {
     pub(crate) custom: ::std::option::Option<crate::types::CustomMessageActivity>,
     pub(crate) conditional_split: ::std::option::Option<crate::types::ConditionalSplitActivity>,

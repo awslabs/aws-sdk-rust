@@ -39,8 +39,8 @@ impl PropertyType {
 }
 
 /// A builder for [`PropertyType`](crate::types::PropertyType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyTypeBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::Attribute>,
     pub(crate) measurement: ::std::option::Option<crate::types::Measurement>,

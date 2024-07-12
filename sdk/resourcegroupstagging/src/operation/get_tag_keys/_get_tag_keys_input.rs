@@ -20,8 +20,8 @@ impl GetTagKeysInput {
 }
 
 /// A builder for [`GetTagKeysInput`](crate::operation::get_tag_keys::GetTagKeysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTagKeysInputBuilder {
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
 }

@@ -31,8 +31,8 @@ impl UsageTopAccountsResult {
 }
 
 /// A builder for [`UsageTopAccountsResult`](crate::types::UsageTopAccountsResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageTopAccountsResultBuilder {
     pub(crate) feature: ::std::option::Option<crate::types::UsageFeature>,
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::UsageTopAccountResult>>,

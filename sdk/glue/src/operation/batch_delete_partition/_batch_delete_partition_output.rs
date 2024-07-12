@@ -28,8 +28,8 @@ impl BatchDeletePartitionOutput {
 }
 
 /// A builder for [`BatchDeletePartitionOutput`](crate::operation::batch_delete_partition::BatchDeletePartitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeletePartitionOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::PartitionError>>,
     _request_id: Option<String>,

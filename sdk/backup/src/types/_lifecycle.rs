@@ -35,8 +35,8 @@ impl Lifecycle {
 }
 
 /// A builder for [`Lifecycle`](crate::types::Lifecycle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecycleBuilder {
     pub(crate) move_to_cold_storage_after_days: ::std::option::Option<i64>,
     pub(crate) delete_after_days: ::std::option::Option<i64>,

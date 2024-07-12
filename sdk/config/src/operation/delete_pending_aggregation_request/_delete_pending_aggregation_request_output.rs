@@ -18,8 +18,8 @@ impl DeletePendingAggregationRequestOutput {
 }
 
 /// A builder for [`DeletePendingAggregationRequestOutput`](crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePendingAggregationRequestOutputBuilder {
     _request_id: Option<String>,
 }

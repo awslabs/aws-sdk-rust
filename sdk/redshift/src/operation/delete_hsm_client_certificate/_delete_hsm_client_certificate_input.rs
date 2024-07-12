@@ -21,8 +21,8 @@ impl DeleteHsmClientCertificateInput {
 }
 
 /// A builder for [`DeleteHsmClientCertificateInput`](crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHsmClientCertificateInputBuilder {
     pub(crate) hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
 }

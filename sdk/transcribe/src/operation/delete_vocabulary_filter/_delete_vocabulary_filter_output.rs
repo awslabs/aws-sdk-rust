@@ -18,8 +18,8 @@ impl DeleteVocabularyFilterOutput {
 }
 
 /// A builder for [`DeleteVocabularyFilterOutput`](crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVocabularyFilterOutputBuilder {
     _request_id: Option<String>,
 }

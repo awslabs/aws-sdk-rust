@@ -26,8 +26,8 @@ impl AssumeQueueRoleForUserInput {
 }
 
 /// A builder for [`AssumeQueueRoleForUserInput`](crate::operation::assume_queue_role_for_user::AssumeQueueRoleForUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssumeQueueRoleForUserInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

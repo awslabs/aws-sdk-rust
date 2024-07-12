@@ -28,8 +28,8 @@ impl BatchDeletePhoneNumberOutput {
 }
 
 /// A builder for [`BatchDeletePhoneNumberOutput`](crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeletePhoneNumberOutputBuilder {
     pub(crate) phone_number_errors: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>>,
     _request_id: Option<String>,

@@ -78,8 +78,8 @@ impl UpdateQuerySuggestionsConfigInput {
 }
 
 /// A builder for [`UpdateQuerySuggestionsConfigInput`](crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateQuerySuggestionsConfigInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::Mode>,

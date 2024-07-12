@@ -35,8 +35,8 @@ impl DescribeIpamResourceDiscoveryAssociationsOutput {
 }
 
 /// A builder for [`DescribeIpamResourceDiscoveryAssociationsOutput`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIpamResourceDiscoveryAssociationsOutputBuilder {
     pub(crate) ipam_resource_discovery_associations: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceDiscoveryAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

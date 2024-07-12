@@ -143,8 +143,8 @@ impl M3u8Settings {
 }
 
 /// A builder for [`M3u8Settings`](crate::types::M3u8Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct M3u8SettingsBuilder {
     pub(crate) audio_duration: ::std::option::Option<crate::types::M3u8AudioDuration>,
     pub(crate) audio_frames_per_pes: ::std::option::Option<i32>,

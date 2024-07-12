@@ -21,8 +21,8 @@ impl ReadSetS3Access {
 }
 
 /// A builder for [`ReadSetS3Access`](crate::types::ReadSetS3Access).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReadSetS3AccessBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
 }

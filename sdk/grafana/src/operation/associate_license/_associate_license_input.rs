@@ -36,8 +36,8 @@ impl AssociateLicenseInput {
 }
 
 /// A builder for [`AssociateLicenseInput`](crate::operation::associate_license::AssociateLicenseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateLicenseInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) license_type: ::std::option::Option<crate::types::LicenseType>,

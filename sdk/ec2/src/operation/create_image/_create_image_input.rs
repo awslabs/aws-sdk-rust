@@ -110,8 +110,8 @@ impl CreateImageInput {
 }
 
 /// A builder for [`CreateImageInput`](crate::operation::create_image::CreateImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateImageInputBuilder {
     pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

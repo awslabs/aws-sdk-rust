@@ -43,8 +43,8 @@ impl InboundCrossClusterSearchConnectionStatus {
 }
 
 /// A builder for [`InboundCrossClusterSearchConnectionStatus`](crate::types::InboundCrossClusterSearchConnectionStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InboundCrossClusterSearchConnectionStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::InboundCrossClusterSearchConnectionStatusCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl UpdateRegistryOutput {
 }
 
 /// A builder for [`UpdateRegistryOutput`](crate::operation::update_registry::UpdateRegistryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRegistryOutputBuilder {
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
     pub(crate) registry_arn: ::std::option::Option<::std::string::String>,

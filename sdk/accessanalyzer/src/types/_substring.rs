@@ -27,8 +27,8 @@ impl Substring {
 }
 
 /// A builder for [`Substring`](crate::types::Substring).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubstringBuilder {
     pub(crate) start: ::std::option::Option<i32>,
     pub(crate) length: ::std::option::Option<i32>,

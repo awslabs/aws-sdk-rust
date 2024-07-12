@@ -26,8 +26,8 @@ impl CreateContainerServiceRegistryLoginOutput {
 }
 
 /// A builder for [`CreateContainerServiceRegistryLoginOutput`](crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContainerServiceRegistryLoginOutputBuilder {
     pub(crate) registry_login: ::std::option::Option<crate::types::ContainerServiceRegistryLogin>,
     _request_id: Option<String>,

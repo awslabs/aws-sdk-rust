@@ -38,8 +38,8 @@ impl ListServiceNetworkServiceAssociationsInput {
 }
 
 /// A builder for [`ListServiceNetworkServiceAssociationsInput`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceNetworkServiceAssociationsInputBuilder {
     pub(crate) service_network_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) service_identifier: ::std::option::Option<::std::string::String>,

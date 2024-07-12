@@ -120,8 +120,8 @@ impl ListPackageVersionsInput {
 }
 
 /// A builder for [`ListPackageVersionsInput`](crate::operation::list_package_versions::ListPackageVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPackageVersionsInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

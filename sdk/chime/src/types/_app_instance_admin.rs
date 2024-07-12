@@ -33,8 +33,8 @@ impl AppInstanceAdmin {
 }
 
 /// A builder for [`AppInstanceAdmin`](crate::types::AppInstanceAdmin).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppInstanceAdminBuilder {
     pub(crate) admin: ::std::option::Option<crate::types::Identity>,
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,

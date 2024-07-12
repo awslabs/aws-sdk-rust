@@ -35,8 +35,8 @@ impl DetectMitigationActionsTaskTarget {
 }
 
 /// A builder for [`DetectMitigationActionsTaskTarget`](crate::types::DetectMitigationActionsTaskTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectMitigationActionsTaskTargetBuilder {
     pub(crate) violation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,

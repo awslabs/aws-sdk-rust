@@ -18,8 +18,8 @@ impl AssociateApplicationsOutput {
 }
 
 /// A builder for [`AssociateApplicationsOutput`](crate::operation::associate_applications::AssociateApplicationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateApplicationsOutputBuilder {
     _request_id: Option<String>,
 }

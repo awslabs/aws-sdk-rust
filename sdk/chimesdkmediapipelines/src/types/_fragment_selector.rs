@@ -39,8 +39,8 @@ impl FragmentSelector {
 }
 
 /// A builder for [`FragmentSelector`](crate::types::FragmentSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FragmentSelectorBuilder {
     pub(crate) fragment_selector_type: ::std::option::Option<crate::types::FragmentSelectorType>,
     pub(crate) timestamp_range: ::std::option::Option<crate::types::TimestampRange>,

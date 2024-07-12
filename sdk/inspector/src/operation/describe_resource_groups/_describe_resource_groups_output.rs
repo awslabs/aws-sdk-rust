@@ -33,8 +33,8 @@ impl DescribeResourceGroupsOutput {
 }
 
 /// A builder for [`DescribeResourceGroupsOutput`](crate::operation::describe_resource_groups::DescribeResourceGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResourceGroupsOutputBuilder {
     pub(crate) resource_groups: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroup>>,
     pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,

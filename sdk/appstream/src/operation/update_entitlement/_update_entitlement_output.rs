@@ -26,8 +26,8 @@ impl UpdateEntitlementOutput {
 }
 
 /// A builder for [`UpdateEntitlementOutput`](crate::operation::update_entitlement::UpdateEntitlementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEntitlementOutputBuilder {
     pub(crate) entitlement: ::std::option::Option<crate::types::Entitlement>,
     _request_id: Option<String>,

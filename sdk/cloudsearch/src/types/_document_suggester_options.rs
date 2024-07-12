@@ -34,8 +34,8 @@ impl DocumentSuggesterOptions {
 }
 
 /// A builder for [`DocumentSuggesterOptions`](crate::types::DocumentSuggesterOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentSuggesterOptionsBuilder {
     pub(crate) source_field: ::std::option::Option<::std::string::String>,
     pub(crate) fuzzy_matching: ::std::option::Option<crate::types::SuggesterFuzzyMatching>,

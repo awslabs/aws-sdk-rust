@@ -80,8 +80,8 @@ impl TemplateVersionDefinition {
 }
 
 /// A builder for [`TemplateVersionDefinition`](crate::types::TemplateVersionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateVersionDefinitionBuilder {
     pub(crate) data_set_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
     pub(crate) sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,

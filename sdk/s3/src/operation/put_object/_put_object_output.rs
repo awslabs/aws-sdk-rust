@@ -174,8 +174,8 @@ impl PutObjectOutput {
 }
 
 /// A builder for [`PutObjectOutput`](crate::operation::put_object::PutObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutObjectOutputBuilder {
     pub(crate) expiration: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

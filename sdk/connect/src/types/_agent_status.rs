@@ -75,8 +75,8 @@ impl AgentStatus {
 }
 
 /// A builder for [`AgentStatus`](crate::types::AgentStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentStatusBuilder {
     pub(crate) agent_status_arn: ::std::option::Option<::std::string::String>,
     pub(crate) agent_status_id: ::std::option::Option<::std::string::String>,

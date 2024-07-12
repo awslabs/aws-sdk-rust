@@ -35,8 +35,8 @@ impl DescribeFleetAdvisorSchemaObjectSummaryOutput {
 }
 
 /// A builder for [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetAdvisorSchemaObjectSummaryOutputBuilder {
     pub(crate) fleet_advisor_schema_objects: ::std::option::Option<::std::vec::Vec<crate::types::FleetAdvisorSchemaObjectResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl CreateAdapterVersionOutput {
 }
 
 /// A builder for [`CreateAdapterVersionOutput`](crate::operation::create_adapter_version::CreateAdapterVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAdapterVersionOutputBuilder {
     pub(crate) adapter_id: ::std::option::Option<::std::string::String>,
     pub(crate) adapter_version: ::std::option::Option<::std::string::String>,

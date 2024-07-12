@@ -34,8 +34,8 @@ impl GuardrailManagedWord {
 }
 
 /// A builder for [`GuardrailManagedWord`](crate::types::GuardrailManagedWord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailManagedWordBuilder {
     pub(crate) r#match: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailManagedWordType>,

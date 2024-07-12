@@ -48,8 +48,8 @@ impl StopDevEnvironmentSessionOutput {
 }
 
 /// A builder for [`StopDevEnvironmentSessionOutput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDevEnvironmentSessionOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

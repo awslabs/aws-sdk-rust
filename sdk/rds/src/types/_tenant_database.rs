@@ -95,8 +95,8 @@ impl TenantDatabase {
 }
 
 /// A builder for [`TenantDatabase`](crate::types::TenantDatabase).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TenantDatabaseBuilder {
     pub(crate) tenant_database_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,

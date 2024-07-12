@@ -33,8 +33,8 @@ impl InputConfiguration {
 }
 
 /// A builder for [`InputConfiguration`](crate::types::InputConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputConfigurationBuilder {
     pub(crate) input_ip: ::std::option::Option<::std::string::String>,
     pub(crate) input_port: ::std::option::Option<i32>,

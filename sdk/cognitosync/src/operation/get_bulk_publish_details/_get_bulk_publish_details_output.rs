@@ -59,8 +59,8 @@ impl GetBulkPublishDetailsOutput {
 }
 
 /// A builder for [`GetBulkPublishDetailsOutput`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBulkPublishDetailsOutputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) bulk_publish_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

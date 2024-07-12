@@ -45,8 +45,8 @@ impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
 }
 
 /// A builder for [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::types::ThirdPartyFirewallMissingExpectedRouteTableViolation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThirdPartyFirewallMissingExpectedRouteTableViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<::std::string::String>,

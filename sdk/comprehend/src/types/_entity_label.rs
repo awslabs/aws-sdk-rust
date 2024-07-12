@@ -27,8 +27,8 @@ impl EntityLabel {
 }
 
 /// A builder for [`EntityLabel`](crate::types::EntityLabel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityLabelBuilder {
     pub(crate) name: ::std::option::Option<crate::types::PiiEntityType>,
     pub(crate) score: ::std::option::Option<f32>,

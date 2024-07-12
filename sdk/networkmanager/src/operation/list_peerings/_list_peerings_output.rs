@@ -34,8 +34,8 @@ impl ListPeeringsOutput {
 }
 
 /// A builder for [`ListPeeringsOutput`](crate::operation::list_peerings::ListPeeringsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPeeringsOutputBuilder {
     pub(crate) peerings: ::std::option::Option<::std::vec::Vec<crate::types::Peering>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -104,8 +104,8 @@ impl CreateExplainabilityInput {
 }
 
 /// A builder for [`CreateExplainabilityInput`](crate::operation::create_explainability::CreateExplainabilityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateExplainabilityInputBuilder {
     pub(crate) explainability_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

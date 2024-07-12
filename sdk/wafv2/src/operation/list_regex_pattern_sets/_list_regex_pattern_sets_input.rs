@@ -46,8 +46,8 @@ impl ListRegexPatternSetsInput {
 }
 
 /// A builder for [`ListRegexPatternSetsInput`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRegexPatternSetsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

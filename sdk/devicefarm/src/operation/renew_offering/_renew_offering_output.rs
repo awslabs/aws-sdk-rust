@@ -27,8 +27,8 @@ impl RenewOfferingOutput {
 }
 
 /// A builder for [`RenewOfferingOutput`](crate::operation::renew_offering::RenewOfferingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenewOfferingOutputBuilder {
     pub(crate) offering_transaction: ::std::option::Option<crate::types::OfferingTransaction>,
     _request_id: Option<String>,

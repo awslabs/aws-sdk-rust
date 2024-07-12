@@ -225,8 +225,8 @@ impl UpdateVirtualInterfaceAttributesOutput {
 }
 
 /// A builder for [`UpdateVirtualInterfaceAttributesOutput`](crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVirtualInterfaceAttributesOutputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,

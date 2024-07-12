@@ -20,8 +20,8 @@ impl DescribeAcceleratorAttributesInput {
 }
 
 /// A builder for [`DescribeAcceleratorAttributesInput`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAcceleratorAttributesInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
 }

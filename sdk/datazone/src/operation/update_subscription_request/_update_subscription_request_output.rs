@@ -117,8 +117,8 @@ impl UpdateSubscriptionRequestOutput {
 }
 
 /// A builder for [`UpdateSubscriptionRequestOutput`](crate::operation::update_subscription_request::UpdateSubscriptionRequestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateSubscriptionRequestOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,

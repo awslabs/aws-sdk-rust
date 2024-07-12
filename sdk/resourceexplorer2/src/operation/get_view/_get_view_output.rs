@@ -41,8 +41,8 @@ impl GetViewOutput {
 }
 
 /// A builder for [`GetViewOutput`](crate::operation::get_view::GetViewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetViewOutputBuilder {
     pub(crate) view: ::std::option::Option<crate::types::View>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

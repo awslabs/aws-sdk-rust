@@ -18,8 +18,8 @@ impl CancelSolNetworkOperationOutput {
 }
 
 /// A builder for [`CancelSolNetworkOperationOutput`](crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSolNetworkOperationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -135,8 +135,8 @@ impl DescribeResizeOutput {
 }
 
 /// A builder for [`DescribeResizeOutput`](crate::operation::describe_resize::DescribeResizeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResizeOutputBuilder {
     pub(crate) target_node_type: ::std::option::Option<::std::string::String>,
     pub(crate) target_number_of_nodes: ::std::option::Option<i32>,

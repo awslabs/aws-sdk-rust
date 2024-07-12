@@ -62,8 +62,8 @@ impl MetricTransformation {
 }
 
 /// A builder for [`MetricTransformation`](crate::types::MetricTransformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricTransformationBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_namespace: ::std::option::Option<::std::string::String>,

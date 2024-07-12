@@ -63,8 +63,8 @@ impl ResourceComplianceSummaryItem {
 }
 
 /// A builder for [`ResourceComplianceSummaryItem`](crate::types::ResourceComplianceSummaryItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceComplianceSummaryItemBuilder {
     pub(crate) compliance_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,

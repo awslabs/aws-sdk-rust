@@ -84,8 +84,8 @@ impl DescribeEphemerisOutput {
 }
 
 /// A builder for [`DescribeEphemerisOutput`](crate::operation::describe_ephemeris::DescribeEphemerisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEphemerisOutputBuilder {
     pub(crate) ephemeris_id: ::std::option::Option<::std::string::String>,
     pub(crate) satellite_id: ::std::option::Option<::std::string::String>,

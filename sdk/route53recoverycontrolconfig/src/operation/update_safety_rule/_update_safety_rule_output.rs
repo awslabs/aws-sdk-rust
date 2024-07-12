@@ -32,8 +32,8 @@ impl UpdateSafetyRuleOutput {
 }
 
 /// A builder for [`UpdateSafetyRuleOutput`](crate::operation::update_safety_rule::UpdateSafetyRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSafetyRuleOutputBuilder {
     pub(crate) assertion_rule: ::std::option::Option<crate::types::AssertionRule>,
     pub(crate) gating_rule: ::std::option::Option<crate::types::GatingRule>,

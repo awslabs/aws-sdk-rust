@@ -38,8 +38,8 @@ impl UpdateAssetInput {
 }
 
 /// A builder for [`UpdateAssetInput`](crate::operation::update_asset::UpdateAssetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAssetInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl LambdaCodeHook {
 }
 
 /// A builder for [`LambdaCodeHook`](crate::types::LambdaCodeHook).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaCodeHookBuilder {
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
     pub(crate) code_hook_interface_version: ::std::option::Option<::std::string::String>,

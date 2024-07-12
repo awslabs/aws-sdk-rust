@@ -27,8 +27,8 @@ impl ScrollBarOptions {
 }
 
 /// A builder for [`ScrollBarOptions`](crate::types::ScrollBarOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScrollBarOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) visible_range: ::std::option::Option<crate::types::VisibleRangeOptions>,

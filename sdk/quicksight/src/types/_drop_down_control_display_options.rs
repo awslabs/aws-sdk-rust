@@ -33,8 +33,8 @@ impl DropDownControlDisplayOptions {
 }
 
 /// A builder for [`DropDownControlDisplayOptions`](crate::types::DropDownControlDisplayOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DropDownControlDisplayOptionsBuilder {
     pub(crate) select_all_options: ::std::option::Option<crate::types::ListControlSelectAllOptions>,
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,

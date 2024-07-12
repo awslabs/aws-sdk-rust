@@ -31,8 +31,8 @@ impl BrokerCountUpdateInfo {
 }
 
 /// A builder for [`BrokerCountUpdateInfo`](crate::types::BrokerCountUpdateInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BrokerCountUpdateInfoBuilder {
     pub(crate) created_broker_ids: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) deleted_broker_ids: ::std::option::Option<::std::vec::Vec<f64>>,

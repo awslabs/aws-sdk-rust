@@ -27,8 +27,8 @@ impl WorkspaceSettings {
 }
 
 /// A builder for [`WorkspaceSettings`](crate::types::WorkspaceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkspaceSettingsBuilder {
     pub(crate) s3_artifact_path: ::std::option::Option<::std::string::String>,
     pub(crate) s3_kms_key_id: ::std::option::Option<::std::string::String>,

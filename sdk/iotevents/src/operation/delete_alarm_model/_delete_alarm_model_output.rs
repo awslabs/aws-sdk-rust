@@ -18,8 +18,8 @@ impl DeleteAlarmModelOutput {
 }
 
 /// A builder for [`DeleteAlarmModelOutput`](crate::operation::delete_alarm_model::DeleteAlarmModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAlarmModelOutputBuilder {
     _request_id: Option<String>,
 }

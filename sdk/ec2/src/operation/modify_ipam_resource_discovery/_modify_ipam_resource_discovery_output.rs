@@ -26,8 +26,8 @@ impl ModifyIpamResourceDiscoveryOutput {
 }
 
 /// A builder for [`ModifyIpamResourceDiscoveryOutput`](crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyIpamResourceDiscoveryOutputBuilder {
     pub(crate) ipam_resource_discovery: ::std::option::Option<crate::types::IpamResourceDiscovery>,
     _request_id: Option<String>,

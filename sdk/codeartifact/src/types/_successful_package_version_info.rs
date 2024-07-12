@@ -27,8 +27,8 @@ impl SuccessfulPackageVersionInfo {
 }
 
 /// A builder for [`SuccessfulPackageVersionInfo`](crate::types::SuccessfulPackageVersionInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuccessfulPackageVersionInfoBuilder {
     pub(crate) revision: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::PackageVersionStatus>,

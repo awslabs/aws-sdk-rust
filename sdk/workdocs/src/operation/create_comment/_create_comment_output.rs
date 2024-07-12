@@ -26,8 +26,8 @@ impl CreateCommentOutput {
 }
 
 /// A builder for [`CreateCommentOutput`](crate::operation::create_comment::CreateCommentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCommentOutputBuilder {
     pub(crate) comment: ::std::option::Option<crate::types::Comment>,
     _request_id: Option<String>,

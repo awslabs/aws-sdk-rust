@@ -36,8 +36,8 @@ impl CanaryScheduleInput {
 }
 
 /// A builder for [`CanaryScheduleInput`](crate::types::CanaryScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CanaryScheduleInputBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) duration_in_seconds: ::std::option::Option<i64>,

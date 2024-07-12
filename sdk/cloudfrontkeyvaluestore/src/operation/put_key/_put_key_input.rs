@@ -49,8 +49,8 @@ impl PutKeyInput {
 }
 
 /// A builder for [`PutKeyInput`](crate::operation::put_key::PutKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutKeyInputBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

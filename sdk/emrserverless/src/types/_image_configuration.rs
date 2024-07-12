@@ -28,8 +28,8 @@ impl ImageConfiguration {
 }
 
 /// A builder for [`ImageConfiguration`](crate::types::ImageConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageConfigurationBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) resolved_image_digest: ::std::option::Option<::std::string::String>,

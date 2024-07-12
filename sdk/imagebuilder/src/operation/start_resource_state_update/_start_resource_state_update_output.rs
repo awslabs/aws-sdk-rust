@@ -32,8 +32,8 @@ impl StartResourceStateUpdateOutput {
 }
 
 /// A builder for [`StartResourceStateUpdateOutput`](crate::operation::start_resource_state_update::StartResourceStateUpdateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartResourceStateUpdateOutputBuilder {
     pub(crate) lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

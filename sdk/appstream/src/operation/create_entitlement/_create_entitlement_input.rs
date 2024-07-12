@@ -46,8 +46,8 @@ impl CreateEntitlementInput {
 }
 
 /// A builder for [`CreateEntitlementInput`](crate::operation::create_entitlement::CreateEntitlementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEntitlementInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,

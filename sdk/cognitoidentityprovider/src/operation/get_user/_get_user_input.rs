@@ -28,8 +28,8 @@ impl GetUserInput {
 }
 
 /// A builder for [`GetUserInput`](crate::operation::get_user::GetUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetUserInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
 }

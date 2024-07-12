@@ -33,8 +33,8 @@ impl SidewalkSendDataToDevice {
 }
 
 /// A builder for [`SidewalkSendDataToDevice`](crate::types::SidewalkSendDataToDevice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SidewalkSendDataToDeviceBuilder {
     pub(crate) seq: ::std::option::Option<i32>,
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,

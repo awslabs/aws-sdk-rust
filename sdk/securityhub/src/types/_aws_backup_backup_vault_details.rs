@@ -45,8 +45,8 @@ impl AwsBackupBackupVaultDetails {
 }
 
 /// A builder for [`AwsBackupBackupVaultDetails`](crate::types::AwsBackupBackupVaultDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsBackupBackupVaultDetailsBuilder {
     pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,

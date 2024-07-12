@@ -79,8 +79,8 @@ impl TrainingSpecification {
 }
 
 /// A builder for [`TrainingSpecification`](crate::types::TrainingSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingSpecificationBuilder {
     pub(crate) training_image: ::std::option::Option<::std::string::String>,
     pub(crate) training_image_digest: ::std::option::Option<::std::string::String>,

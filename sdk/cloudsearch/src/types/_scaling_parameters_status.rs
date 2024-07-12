@@ -27,8 +27,8 @@ impl ScalingParametersStatus {
 }
 
 /// A builder for [`ScalingParametersStatus`](crate::types::ScalingParametersStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScalingParametersStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::ScalingParameters>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

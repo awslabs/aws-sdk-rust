@@ -39,8 +39,8 @@ impl AcceleratorAttributes {
 }
 
 /// A builder for [`AcceleratorAttributes`](crate::types::AcceleratorAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceleratorAttributesBuilder {
     pub(crate) flow_logs_enabled: ::std::option::Option<bool>,
     pub(crate) flow_logs_s3_bucket: ::std::option::Option<::std::string::String>,

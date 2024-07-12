@@ -12,8 +12,8 @@ impl GetHealthCheckCountInput {
 }
 
 /// A builder for [`GetHealthCheckCountInput`](crate::operation::get_health_check_count::GetHealthCheckCountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHealthCheckCountInputBuilder {}
 impl GetHealthCheckCountInputBuilder {
     /// Consumes the builder and constructs a [`GetHealthCheckCountInput`](crate::operation::get_health_check_count::GetHealthCheckCountInput).

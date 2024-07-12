@@ -18,8 +18,8 @@ impl UpdateIntegrationOutput {
 }
 
 /// A builder for [`UpdateIntegrationOutput`](crate::operation::update_integration::UpdateIntegrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIntegrationOutputBuilder {
     _request_id: Option<String>,
 }

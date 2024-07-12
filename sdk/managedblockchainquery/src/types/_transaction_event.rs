@@ -128,8 +128,8 @@ impl TransactionEvent {
 }
 
 /// A builder for [`TransactionEvent`](crate::types::TransactionEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransactionEventBuilder {
     pub(crate) network: ::std::option::Option<crate::types::QueryNetwork>,
     pub(crate) transaction_hash: ::std::option::Option<::std::string::String>,

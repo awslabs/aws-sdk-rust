@@ -34,8 +34,8 @@ impl DescribeCapacityBlockOfferingsOutput {
 }
 
 /// A builder for [`DescribeCapacityBlockOfferingsOutput`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCapacityBlockOfferingsOutputBuilder {
     pub(crate) capacity_block_offerings: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockOffering>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

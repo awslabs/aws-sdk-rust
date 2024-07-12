@@ -26,8 +26,8 @@ impl GetEnvironmentAccountConnectionOutput {
 }
 
 /// A builder for [`GetEnvironmentAccountConnectionOutput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnvironmentAccountConnectionOutputBuilder {
     pub(crate) environment_account_connection: ::std::option::Option<crate::types::EnvironmentAccountConnection>,
     _request_id: Option<String>,

@@ -33,8 +33,8 @@ impl S3Grantee {
 }
 
 /// A builder for [`S3Grantee`](crate::types::S3Grantee).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3GranteeBuilder {
     pub(crate) type_identifier: ::std::option::Option<crate::types::S3GranteeTypeIdentifier>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

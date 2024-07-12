@@ -103,8 +103,8 @@ impl DomainDeliverabilityCampaign {
 }
 
 /// A builder for [`DomainDeliverabilityCampaign`](crate::types::DomainDeliverabilityCampaign).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainDeliverabilityCampaignBuilder {
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_url: ::std::option::Option<::std::string::String>,

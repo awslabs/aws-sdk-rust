@@ -42,8 +42,8 @@ impl DescribeRegistrationTypeDefinitionsInput {
 }
 
 /// A builder for [`DescribeRegistrationTypeDefinitionsInput`](crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistrationTypeDefinitionsInputBuilder {
     pub(crate) registration_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationTypeFilter>>,

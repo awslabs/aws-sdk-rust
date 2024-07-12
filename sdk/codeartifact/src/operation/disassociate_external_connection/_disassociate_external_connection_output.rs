@@ -26,8 +26,8 @@ impl DisassociateExternalConnectionOutput {
 }
 
 /// A builder for [`DisassociateExternalConnectionOutput`](crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateExternalConnectionOutputBuilder {
     pub(crate) repository: ::std::option::Option<crate::types::RepositoryDescription>,
     _request_id: Option<String>,

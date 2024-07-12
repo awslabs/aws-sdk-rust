@@ -148,8 +148,8 @@ impl DescribeProcessingJobOutput {
 }
 
 /// A builder for [`DescribeProcessingJobOutput`](crate::operation::describe_processing_job::DescribeProcessingJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProcessingJobOutputBuilder {
     pub(crate) processing_inputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>,
     pub(crate) processing_output_config: ::std::option::Option<crate::types::ProcessingOutputConfig>,

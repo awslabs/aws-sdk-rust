@@ -20,8 +20,8 @@ impl GetEndpointAccessInput {
 }
 
 /// A builder for [`GetEndpointAccessInput`](crate::operation::get_endpoint_access::GetEndpointAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEndpointAccessInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
 }

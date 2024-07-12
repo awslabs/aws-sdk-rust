@@ -65,8 +65,8 @@ impl CreateDeploymentConfigInput {
 }
 
 /// A builder for [`CreateDeploymentConfigInput`](crate::operation::create_deployment_config::CreateDeploymentConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDeploymentConfigInputBuilder {
     pub(crate) deployment_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) minimum_healthy_hosts: ::std::option::Option<crate::types::MinimumHealthyHosts>,

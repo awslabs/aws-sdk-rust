@@ -27,8 +27,8 @@ impl CreateResourceGroupOutput {
 }
 
 /// A builder for [`CreateResourceGroupOutput`](crate::operation::create_resource_group::CreateResourceGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateResourceGroupOutputBuilder {
     pub(crate) resource_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

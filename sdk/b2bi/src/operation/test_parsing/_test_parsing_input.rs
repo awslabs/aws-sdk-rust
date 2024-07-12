@@ -32,8 +32,8 @@ impl TestParsingInput {
 }
 
 /// A builder for [`TestParsingInput`](crate::operation::test_parsing::TestParsingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestParsingInputBuilder {
     pub(crate) input_file: ::std::option::Option<crate::types::S3Location>,
     pub(crate) file_format: ::std::option::Option<crate::types::FileFormat>,

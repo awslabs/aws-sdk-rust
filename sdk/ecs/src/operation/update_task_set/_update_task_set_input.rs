@@ -38,8 +38,8 @@ impl UpdateTaskSetInput {
 }
 
 /// A builder for [`UpdateTaskSetInput`](crate::operation::update_task_set::UpdateTaskSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTaskSetInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<::std::string::String>,

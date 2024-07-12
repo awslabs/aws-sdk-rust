@@ -40,8 +40,8 @@ impl DeleteUserInput {
 }
 
 /// A builder for [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

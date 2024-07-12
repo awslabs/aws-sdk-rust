@@ -18,8 +18,8 @@ impl DeleteParameterOutput {
 }
 
 /// A builder for [`DeleteParameterOutput`](crate::operation::delete_parameter::DeleteParameterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteParameterOutputBuilder {
     _request_id: Option<String>,
 }

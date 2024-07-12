@@ -48,8 +48,8 @@ impl DeleteInAppTemplateInput {
 }
 
 /// A builder for [`DeleteInAppTemplateInput`](crate::operation::delete_in_app_template::DeleteInAppTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInAppTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

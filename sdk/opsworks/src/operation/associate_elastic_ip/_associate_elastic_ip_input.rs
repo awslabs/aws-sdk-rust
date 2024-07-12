@@ -26,8 +26,8 @@ impl AssociateElasticIpInput {
 }
 
 /// A builder for [`AssociateElasticIpInput`](crate::operation::associate_elastic_ip::AssociateElasticIpInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateElasticIpInputBuilder {
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

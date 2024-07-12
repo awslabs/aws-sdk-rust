@@ -52,8 +52,8 @@ impl DescribeThemePermissionsOutput {
 }
 
 /// A builder for [`DescribeThemePermissionsOutput`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeThemePermissionsOutputBuilder {
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,

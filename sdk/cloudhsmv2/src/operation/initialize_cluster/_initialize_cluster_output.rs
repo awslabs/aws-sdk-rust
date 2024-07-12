@@ -32,8 +32,8 @@ impl InitializeClusterOutput {
 }
 
 /// A builder for [`InitializeClusterOutput`](crate::operation::initialize_cluster::InitializeClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InitializeClusterOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ClusterState>,
     pub(crate) state_message: ::std::option::Option<::std::string::String>,

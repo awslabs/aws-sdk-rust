@@ -206,8 +206,8 @@ impl CreateVolumeInput {
 }
 
 /// A builder for [`CreateVolumeInput`](crate::operation::create_volume::CreateVolumeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVolumeInputBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted: ::std::option::Option<bool>,

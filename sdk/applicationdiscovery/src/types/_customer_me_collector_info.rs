@@ -57,8 +57,8 @@ impl CustomerMeCollectorInfo {
 }
 
 /// A builder for [`CustomerMeCollectorInfo`](crate::types::CustomerMeCollectorInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomerMeCollectorInfoBuilder {
     pub(crate) active_me_collectors: ::std::option::Option<i32>,
     pub(crate) healthy_me_collectors: ::std::option::Option<i32>,

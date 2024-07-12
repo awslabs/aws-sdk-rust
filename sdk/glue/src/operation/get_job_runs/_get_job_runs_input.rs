@@ -32,8 +32,8 @@ impl GetJobRunsInput {
 }
 
 /// A builder for [`GetJobRunsInput`](crate::operation::get_job_runs::GetJobRunsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJobRunsInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

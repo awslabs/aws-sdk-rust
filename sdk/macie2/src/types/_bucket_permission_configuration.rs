@@ -27,8 +27,8 @@ impl BucketPermissionConfiguration {
 }
 
 /// A builder for [`BucketPermissionConfiguration`](crate::types::BucketPermissionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketPermissionConfigurationBuilder {
     pub(crate) account_level_permissions: ::std::option::Option<crate::types::AccountLevelPermissions>,
     pub(crate) bucket_level_permissions: ::std::option::Option<crate::types::BucketLevelPermissions>,

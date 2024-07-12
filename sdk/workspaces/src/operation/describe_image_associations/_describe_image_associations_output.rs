@@ -28,8 +28,8 @@ impl DescribeImageAssociationsOutput {
 }
 
 /// A builder for [`DescribeImageAssociationsOutput`](crate::operation::describe_image_associations::DescribeImageAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageAssociationsOutputBuilder {
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::ImageResourceAssociation>>,
     _request_id: Option<String>,

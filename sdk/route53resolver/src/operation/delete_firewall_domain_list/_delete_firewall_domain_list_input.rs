@@ -20,8 +20,8 @@ impl DeleteFirewallDomainListInput {
 }
 
 /// A builder for [`DeleteFirewallDomainListInput`](crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFirewallDomainListInputBuilder {
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
 }

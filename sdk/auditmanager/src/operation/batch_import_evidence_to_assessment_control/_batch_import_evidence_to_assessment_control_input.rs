@@ -40,8 +40,8 @@ impl BatchImportEvidenceToAssessmentControlInput {
 }
 
 /// A builder for [`BatchImportEvidenceToAssessmentControlInput`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchImportEvidenceToAssessmentControlInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,

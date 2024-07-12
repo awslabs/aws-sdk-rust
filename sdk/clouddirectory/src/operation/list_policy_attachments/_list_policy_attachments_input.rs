@@ -44,8 +44,8 @@ impl ListPolicyAttachmentsInput {
 }
 
 /// A builder for [`ListPolicyAttachmentsInput`](crate::operation::list_policy_attachments::ListPolicyAttachmentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPolicyAttachmentsInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_reference: ::std::option::Option<crate::types::ObjectReference>,

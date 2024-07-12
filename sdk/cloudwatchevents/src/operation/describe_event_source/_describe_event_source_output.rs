@@ -56,8 +56,8 @@ impl DescribeEventSourceOutput {
 }
 
 /// A builder for [`DescribeEventSourceOutput`](crate::operation::describe_event_source::DescribeEventSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventSourceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,

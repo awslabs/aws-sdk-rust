@@ -27,8 +27,8 @@ impl Endpoint {
 }
 
 /// A builder for [`Endpoint`](crate::types::Endpoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EndpointType>,
     pub(crate) address: ::std::option::Option<::std::string::String>,

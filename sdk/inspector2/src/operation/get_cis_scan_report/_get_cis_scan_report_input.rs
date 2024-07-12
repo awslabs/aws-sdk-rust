@@ -34,8 +34,8 @@ impl GetCisScanReportInput {
 }
 
 /// A builder for [`GetCisScanReportInput`](crate::operation::get_cis_scan_report::GetCisScanReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCisScanReportInputBuilder {
     pub(crate) scan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

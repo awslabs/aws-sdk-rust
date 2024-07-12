@@ -26,8 +26,8 @@ impl OutputArtifact {
 }
 
 /// A builder for [`OutputArtifact`](crate::types::OutputArtifact).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputArtifactBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

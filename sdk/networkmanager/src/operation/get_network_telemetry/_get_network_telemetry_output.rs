@@ -34,8 +34,8 @@ impl GetNetworkTelemetryOutput {
 }
 
 /// A builder for [`GetNetworkTelemetryOutput`](crate::operation::get_network_telemetry::GetNetworkTelemetryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkTelemetryOutputBuilder {
     pub(crate) network_telemetry: ::std::option::Option<::std::vec::Vec<crate::types::NetworkTelemetry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl ListCustomLineItemsInput {
 }
 
 /// A builder for [`ListCustomLineItemsInput`](crate::operation::list_custom_line_items::ListCustomLineItemsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomLineItemsInputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl GetSessionInput {
 }
 
 /// A builder for [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSessionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) request_origin: ::std::option::Option<::std::string::String>,

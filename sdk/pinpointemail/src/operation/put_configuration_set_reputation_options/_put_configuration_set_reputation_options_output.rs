@@ -19,8 +19,8 @@ impl PutConfigurationSetReputationOptionsOutput {
 }
 
 /// A builder for [`PutConfigurationSetReputationOptionsOutput`](crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigurationSetReputationOptionsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,8 +18,8 @@ impl PutRumMetricsDestinationOutput {
 }
 
 /// A builder for [`PutRumMetricsDestinationOutput`](crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRumMetricsDestinationOutputBuilder {
     _request_id: Option<String>,
 }

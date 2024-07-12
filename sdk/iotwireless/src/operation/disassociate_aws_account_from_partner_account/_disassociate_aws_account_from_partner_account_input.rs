@@ -27,8 +27,8 @@ impl DisassociateAwsAccountFromPartnerAccountInput {
 }
 
 /// A builder for [`DisassociateAwsAccountFromPartnerAccountInput`](crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateAwsAccountFromPartnerAccountInputBuilder {
     pub(crate) partner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) partner_type: ::std::option::Option<crate::types::PartnerType>,

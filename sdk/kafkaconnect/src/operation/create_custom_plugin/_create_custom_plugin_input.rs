@@ -44,8 +44,8 @@ impl CreateCustomPluginInput {
 }
 
 /// A builder for [`CreateCustomPluginInput`](crate::operation::create_custom_plugin::CreateCustomPluginInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomPluginInputBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::CustomPluginContentType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

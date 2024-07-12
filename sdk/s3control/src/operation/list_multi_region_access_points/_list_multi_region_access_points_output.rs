@@ -34,8 +34,8 @@ impl ListMultiRegionAccessPointsOutput {
 }
 
 /// A builder for [`ListMultiRegionAccessPointsOutput`](crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMultiRegionAccessPointsOutputBuilder {
     pub(crate) access_points: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointReport>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl AdHocFilteringOption {
 }
 
 /// A builder for [`AdHocFilteringOption`](crate::types::AdHocFilteringOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdHocFilteringOptionBuilder {
     pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }

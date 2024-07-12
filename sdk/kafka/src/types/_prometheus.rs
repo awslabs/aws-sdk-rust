@@ -27,8 +27,8 @@ impl Prometheus {
 }
 
 /// A builder for [`Prometheus`](crate::types::Prometheus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrometheusBuilder {
     pub(crate) jmx_exporter: ::std::option::Option<crate::types::JmxExporter>,
     pub(crate) node_exporter: ::std::option::Option<crate::types::NodeExporter>,

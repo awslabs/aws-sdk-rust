@@ -34,8 +34,8 @@ impl DescribeWorkspaceBundlesOutput {
 }
 
 /// A builder for [`DescribeWorkspaceBundlesOutput`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceBundlesOutputBuilder {
     pub(crate) bundles: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceBundle>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

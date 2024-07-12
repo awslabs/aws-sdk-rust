@@ -18,8 +18,8 @@ impl PutBlockPublicAccessConfigurationOutput {
 }
 
 /// A builder for [`PutBlockPublicAccessConfigurationOutput`](crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBlockPublicAccessConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

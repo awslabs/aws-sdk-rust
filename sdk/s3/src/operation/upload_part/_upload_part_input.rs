@@ -172,8 +172,8 @@ impl UploadPartInput {
 }
 
 /// A builder for [`UploadPartInput`](crate::operation::upload_part::UploadPartInput).
-#[non_exhaustive]
 #[derive(::std::default::Default)]
+#[non_exhaustive]
 pub struct UploadPartInputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

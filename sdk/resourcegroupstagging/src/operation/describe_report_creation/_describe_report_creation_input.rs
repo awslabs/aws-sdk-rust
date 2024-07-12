@@ -11,8 +11,8 @@ impl DescribeReportCreationInput {
 }
 
 /// A builder for [`DescribeReportCreationInput`](crate::operation::describe_report_creation::DescribeReportCreationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReportCreationInputBuilder {}
 impl DescribeReportCreationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReportCreationInput`](crate::operation::describe_report_creation::DescribeReportCreationInput).

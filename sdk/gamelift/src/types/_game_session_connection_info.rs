@@ -86,8 +86,8 @@ impl GameSessionConnectionInfo {
 }
 
 /// A builder for [`GameSessionConnectionInfo`](crate::types::GameSessionConnectionInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GameSessionConnectionInfoBuilder {
     pub(crate) game_session_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,

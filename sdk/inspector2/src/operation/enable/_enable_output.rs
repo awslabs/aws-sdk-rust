@@ -35,8 +35,8 @@ impl EnableOutput {
 }
 
 /// A builder for [`EnableOutput`](crate::operation::enable::EnableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableOutputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
     pub(crate) failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>,

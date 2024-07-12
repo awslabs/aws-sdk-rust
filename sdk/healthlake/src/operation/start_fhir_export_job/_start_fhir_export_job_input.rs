@@ -44,8 +44,8 @@ impl StartFhirExportJobInput {
 }
 
 /// A builder for [`StartFhirExportJobInput`](crate::operation::start_fhir_export_job::StartFhirExportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartFhirExportJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,

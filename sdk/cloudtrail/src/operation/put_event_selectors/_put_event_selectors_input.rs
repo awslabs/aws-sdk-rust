@@ -64,8 +64,8 @@ impl PutEventSelectorsInput {
 }
 
 /// A builder for [`PutEventSelectorsInput`](crate::operation::put_event_selectors::PutEventSelectorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEventSelectorsInputBuilder {
     pub(crate) trail_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>,

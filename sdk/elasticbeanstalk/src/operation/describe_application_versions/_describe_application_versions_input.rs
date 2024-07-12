@@ -45,8 +45,8 @@ impl DescribeApplicationVersionsInput {
 }
 
 /// A builder for [`DescribeApplicationVersionsInput`](crate::operation::describe_application_versions::DescribeApplicationVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeApplicationVersionsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

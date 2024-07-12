@@ -20,8 +20,8 @@ impl DeleteDatasetImportJobInput {
 }
 
 /// A builder for [`DeleteDatasetImportJobInput`](crate::operation::delete_dataset_import_job::DeleteDatasetImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDatasetImportJobInputBuilder {
     pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
 }

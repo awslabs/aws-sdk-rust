@@ -28,8 +28,8 @@ impl SocketAddress {
 }
 
 /// A builder for [`SocketAddress`](crate::types::SocketAddress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SocketAddressBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

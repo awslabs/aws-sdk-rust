@@ -18,8 +18,8 @@ impl StopProcessingJobOutput {
 }
 
 /// A builder for [`StopProcessingJobOutput`](crate::operation::stop_processing_job::StopProcessingJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopProcessingJobOutputBuilder {
     _request_id: Option<String>,
 }

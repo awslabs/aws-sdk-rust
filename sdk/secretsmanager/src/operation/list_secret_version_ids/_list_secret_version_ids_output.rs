@@ -46,8 +46,8 @@ impl ListSecretVersionIdsOutput {
 }
 
 /// A builder for [`ListSecretVersionIdsOutput`](crate::operation::list_secret_version_ids::ListSecretVersionIdsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSecretVersionIdsOutputBuilder {
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::SecretVersionsListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

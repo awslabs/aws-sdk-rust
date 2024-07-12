@@ -27,8 +27,8 @@ impl RecommendationSource {
 }
 
 /// A builder for [`RecommendationSource`](crate::types::RecommendationSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationSourceBuilder {
     pub(crate) recommendation_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_source_type: ::std::option::Option<crate::types::RecommendationSourceType>,

@@ -20,8 +20,8 @@ impl DescribeArtifactInput {
 }
 
 /// A builder for [`DescribeArtifactInput`](crate::operation::describe_artifact::DescribeArtifactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeArtifactInputBuilder {
     pub(crate) artifact_arn: ::std::option::Option<::std::string::String>,
 }

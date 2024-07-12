@@ -27,8 +27,8 @@ impl CreateTrainingDatasetOutput {
 }
 
 /// A builder for [`CreateTrainingDatasetOutput`](crate::operation::create_training_dataset::CreateTrainingDatasetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTrainingDatasetOutputBuilder {
     pub(crate) training_dataset_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

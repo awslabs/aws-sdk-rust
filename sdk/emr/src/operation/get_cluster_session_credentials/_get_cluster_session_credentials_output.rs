@@ -32,8 +32,8 @@ impl GetClusterSessionCredentialsOutput {
 }
 
 /// A builder for [`GetClusterSessionCredentialsOutput`](crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClusterSessionCredentialsOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,

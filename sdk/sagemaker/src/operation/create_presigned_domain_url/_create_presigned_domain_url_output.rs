@@ -26,8 +26,8 @@ impl CreatePresignedDomainUrlOutput {
 }
 
 /// A builder for [`CreatePresignedDomainUrlOutput`](crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePresignedDomainUrlOutputBuilder {
     pub(crate) authorized_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

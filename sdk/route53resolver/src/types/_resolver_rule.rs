@@ -107,8 +107,8 @@ impl ResolverRule {
 }
 
 /// A builder for [`ResolverRule`](crate::types::ResolverRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolverRuleBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,

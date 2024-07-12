@@ -27,8 +27,8 @@ impl ReplicationRunStageDetails {
 }
 
 /// A builder for [`ReplicationRunStageDetails`](crate::types::ReplicationRunStageDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationRunStageDetailsBuilder {
     pub(crate) stage: ::std::option::Option<::std::string::String>,
     pub(crate) stage_progress: ::std::option::Option<::std::string::String>,

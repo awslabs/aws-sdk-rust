@@ -100,8 +100,8 @@ impl CreateOtaUpdateInput {
 }
 
 /// A builder for [`CreateOtaUpdateInput`](crate::operation::create_ota_update::CreateOtaUpdateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOtaUpdateInputBuilder {
     pub(crate) ota_update_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

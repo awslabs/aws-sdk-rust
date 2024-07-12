@@ -93,8 +93,8 @@ impl CreateLocationSmbInput {
 }
 
 /// A builder for [`CreateLocationSmbInput`](crate::operation::create_location_smb::CreateLocationSmbInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateLocationSmbInputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) server_hostname: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl AutomatedEncodingSettings {
 }
 
 /// A builder for [`AutomatedEncodingSettings`](crate::types::AutomatedEncodingSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutomatedEncodingSettingsBuilder {
     pub(crate) abr_settings: ::std::option::Option<crate::types::AutomatedAbrSettings>,
 }

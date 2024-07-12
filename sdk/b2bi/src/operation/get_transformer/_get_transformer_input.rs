@@ -20,8 +20,8 @@ impl GetTransformerInput {
 }
 
 /// A builder for [`GetTransformerInput`](crate::operation::get_transformer::GetTransformerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransformerInputBuilder {
     pub(crate) transformer_id: ::std::option::Option<::std::string::String>,
 }

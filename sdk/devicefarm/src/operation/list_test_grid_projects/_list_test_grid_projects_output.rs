@@ -34,8 +34,8 @@ impl ListTestGridProjectsOutput {
 }
 
 /// A builder for [`ListTestGridProjectsOutput`](crate::operation::list_test_grid_projects::ListTestGridProjectsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestGridProjectsOutputBuilder {
     pub(crate) test_grid_projects: ::std::option::Option<::std::vec::Vec<crate::types::TestGridProject>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -84,8 +84,8 @@ impl ImportHubContentInput {
 }
 
 /// A builder for [`ImportHubContentInput`](crate::operation::import_hub_content::ImportHubContentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportHubContentInputBuilder {
     pub(crate) hub_content_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_version: ::std::option::Option<::std::string::String>,

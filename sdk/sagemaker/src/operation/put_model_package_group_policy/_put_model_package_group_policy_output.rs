@@ -26,8 +26,8 @@ impl PutModelPackageGroupPolicyOutput {
 }
 
 /// A builder for [`PutModelPackageGroupPolicyOutput`](crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutModelPackageGroupPolicyOutputBuilder {
     pub(crate) model_package_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

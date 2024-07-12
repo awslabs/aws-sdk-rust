@@ -309,8 +309,8 @@ impl CreateServerInput {
 }
 
 /// A builder for [`CreateServerInput`](crate::operation::create_server::CreateServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateServerInputBuilder {
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<crate::types::Domain>,

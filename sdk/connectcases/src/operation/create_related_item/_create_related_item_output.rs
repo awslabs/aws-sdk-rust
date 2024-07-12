@@ -34,8 +34,8 @@ impl CreateRelatedItemOutput {
 }
 
 /// A builder for [`CreateRelatedItemOutput`](crate::operation::create_related_item::CreateRelatedItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRelatedItemOutputBuilder {
     pub(crate) related_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) related_item_arn: ::std::option::Option<::std::string::String>,

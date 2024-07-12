@@ -45,8 +45,8 @@ impl DataRepositoryTaskStatus {
 }
 
 /// A builder for [`DataRepositoryTaskStatus`](crate::types::DataRepositoryTaskStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataRepositoryTaskStatusBuilder {
     pub(crate) total_count: ::std::option::Option<i64>,
     pub(crate) succeeded_count: ::std::option::Option<i64>,

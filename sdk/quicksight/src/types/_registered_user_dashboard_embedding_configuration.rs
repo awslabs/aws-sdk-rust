@@ -30,8 +30,8 @@ impl RegisteredUserDashboardEmbeddingConfiguration {
 }
 
 /// A builder for [`RegisteredUserDashboardEmbeddingConfiguration`](crate::types::RegisteredUserDashboardEmbeddingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisteredUserDashboardEmbeddingConfigurationBuilder {
     pub(crate) initial_dashboard_id: ::std::option::Option<::std::string::String>,
     pub(crate) feature_configurations: ::std::option::Option<crate::types::RegisteredUserDashboardFeatureConfigurations>,

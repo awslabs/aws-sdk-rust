@@ -53,8 +53,8 @@ impl ExpenseField {
 }
 
 /// A builder for [`ExpenseField`](crate::types::ExpenseField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExpenseFieldBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ExpenseType>,
     pub(crate) label_detection: ::std::option::Option<crate::types::ExpenseDetection>,

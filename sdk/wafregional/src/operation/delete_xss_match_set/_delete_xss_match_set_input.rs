@@ -27,8 +27,8 @@ impl DeleteXssMatchSetInput {
 }
 
 /// A builder for [`DeleteXssMatchSetInput`](crate::operation::delete_xss_match_set::DeleteXssMatchSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteXssMatchSetInputBuilder {
     pub(crate) xss_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

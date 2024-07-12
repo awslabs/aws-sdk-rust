@@ -47,8 +47,8 @@ impl BatchListOutgoingTypedLinks {
 }
 
 /// A builder for [`BatchListOutgoingTypedLinks`](crate::types::BatchListOutgoingTypedLinks).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchListOutgoingTypedLinksBuilder {
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) filter_attribute_ranges: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,

@@ -20,8 +20,8 @@ impl DeleteFlowDefinitionInput {
 }
 
 /// A builder for [`DeleteFlowDefinitionInput`](crate::operation::delete_flow_definition::DeleteFlowDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFlowDefinitionInputBuilder {
     pub(crate) flow_definition_name: ::std::option::Option<::std::string::String>,
 }

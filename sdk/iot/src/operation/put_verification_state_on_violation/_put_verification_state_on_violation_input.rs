@@ -32,8 +32,8 @@ impl PutVerificationStateOnViolationInput {
 }
 
 /// A builder for [`PutVerificationStateOnViolationInput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutVerificationStateOnViolationInputBuilder {
     pub(crate) violation_id: ::std::option::Option<::std::string::String>,
     pub(crate) verification_state: ::std::option::Option<crate::types::VerificationState>,

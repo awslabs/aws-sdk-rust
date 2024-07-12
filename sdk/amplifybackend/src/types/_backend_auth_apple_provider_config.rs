@@ -49,8 +49,8 @@ impl BackendAuthAppleProviderConfig {
 }
 
 /// A builder for [`BackendAuthAppleProviderConfig`](crate::types::BackendAuthAppleProviderConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BackendAuthAppleProviderConfigBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,

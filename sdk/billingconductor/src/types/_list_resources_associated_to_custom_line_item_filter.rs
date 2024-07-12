@@ -21,8 +21,8 @@ impl ListResourcesAssociatedToCustomLineItemFilter {
 }
 
 /// A builder for [`ListResourcesAssociatedToCustomLineItemFilter`](crate::types::ListResourcesAssociatedToCustomLineItemFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourcesAssociatedToCustomLineItemFilterBuilder {
     pub(crate) relationship: ::std::option::Option<crate::types::CustomLineItemRelationship>,
 }

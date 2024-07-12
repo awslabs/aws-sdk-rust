@@ -27,8 +27,8 @@ impl CreateBackendEnvironmentOutput {
 }
 
 /// A builder for [`CreateBackendEnvironmentOutput`](crate::operation::create_backend_environment::CreateBackendEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBackendEnvironmentOutputBuilder {
     pub(crate) backend_environment: ::std::option::Option<crate::types::BackendEnvironment>,
     _request_id: Option<String>,

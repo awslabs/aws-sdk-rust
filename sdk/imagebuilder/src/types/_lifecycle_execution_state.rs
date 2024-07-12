@@ -27,8 +27,8 @@ impl LifecycleExecutionState {
 }
 
 /// A builder for [`LifecycleExecutionState`](crate::types::LifecycleExecutionState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecycleExecutionStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LifecycleExecutionStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

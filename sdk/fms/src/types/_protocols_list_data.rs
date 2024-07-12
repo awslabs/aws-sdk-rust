@@ -61,8 +61,8 @@ impl ProtocolsListData {
 }
 
 /// A builder for [`ProtocolsListData`](crate::types::ProtocolsListData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtocolsListDataBuilder {
     pub(crate) list_id: ::std::option::Option<::std::string::String>,
     pub(crate) list_name: ::std::option::Option<::std::string::String>,

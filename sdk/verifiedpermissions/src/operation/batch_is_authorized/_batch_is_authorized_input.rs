@@ -38,8 +38,8 @@ impl BatchIsAuthorizedInput {
 }
 
 /// A builder for [`BatchIsAuthorizedInput`](crate::operation::batch_is_authorized::BatchIsAuthorizedInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchIsAuthorizedInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) entities: ::std::option::Option<crate::types::EntitiesDefinition>,

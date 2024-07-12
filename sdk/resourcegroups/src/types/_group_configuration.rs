@@ -43,8 +43,8 @@ impl GroupConfiguration {
 }
 
 /// A builder for [`GroupConfiguration`](crate::types::GroupConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GroupConfigurationBuilder {
     pub(crate) configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
     pub(crate) proposed_configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,

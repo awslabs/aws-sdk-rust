@@ -66,8 +66,8 @@ impl UpdateIamPolicyAssignmentInput {
 }
 
 /// A builder for [`UpdateIamPolicyAssignmentInput`](crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIamPolicyAssignmentInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_name: ::std::option::Option<::std::string::String>,

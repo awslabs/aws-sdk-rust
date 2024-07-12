@@ -51,8 +51,8 @@ impl PostAgentProfileInput {
 }
 
 /// A builder for [`PostAgentProfileInput`](crate::operation::post_agent_profile::PostAgentProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostAgentProfileInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) agent_profile: ::std::option::Option<::aws_smithy_types::Blob>,

@@ -34,8 +34,8 @@ impl DescribeAutomationExecutionsOutput {
 }
 
 /// A builder for [`DescribeAutomationExecutionsOutput`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAutomationExecutionsOutputBuilder {
     pub(crate) automation_execution_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

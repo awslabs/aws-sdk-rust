@@ -34,8 +34,8 @@ impl ListKxUsersOutput {
 }
 
 /// A builder for [`ListKxUsersOutput`](crate::operation::list_kx_users::ListKxUsersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKxUsersOutputBuilder {
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::KxUser>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

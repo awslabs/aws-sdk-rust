@@ -11,8 +11,8 @@ impl Attributes {
 }
 
 /// A builder for [`Attributes`](crate::types::Attributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributesBuilder {}
 impl AttributesBuilder {
     /// Consumes the builder and constructs a [`Attributes`](crate::types::Attributes).

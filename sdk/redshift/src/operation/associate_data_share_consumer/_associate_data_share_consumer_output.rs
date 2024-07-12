@@ -52,8 +52,8 @@ impl AssociateDataShareConsumerOutput {
 }
 
 /// A builder for [`AssociateDataShareConsumerOutput`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDataShareConsumerOutputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) producer_arn: ::std::option::Option<::std::string::String>,

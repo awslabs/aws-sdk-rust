@@ -26,8 +26,8 @@ impl DescribeCustomRoutingListenerOutput {
 }
 
 /// A builder for [`DescribeCustomRoutingListenerOutput`](crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomRoutingListenerOutputBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::CustomRoutingListener>,
     _request_id: Option<String>,

@@ -36,8 +36,8 @@ impl GetDataflowGraphOutput {
 }
 
 /// A builder for [`GetDataflowGraphOutput`](crate::operation::get_dataflow_graph::GetDataflowGraphOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataflowGraphOutputBuilder {
     pub(crate) dag_nodes: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>>,
     pub(crate) dag_edges: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenEdge>>,

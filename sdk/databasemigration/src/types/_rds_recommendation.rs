@@ -27,8 +27,8 @@ impl RdsRecommendation {
 }
 
 /// A builder for [`RdsRecommendation`](crate::types::RdsRecommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsRecommendationBuilder {
     pub(crate) requirements_to_target: ::std::option::Option<crate::types::RdsRequirements>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::RdsConfiguration>,

@@ -40,8 +40,8 @@ impl DescribeCustomKeyStoresOutput {
 }
 
 /// A builder for [`DescribeCustomKeyStoresOutput`](crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomKeyStoresOutputBuilder {
     pub(crate) custom_key_stores: ::std::option::Option<::std::vec::Vec<crate::types::CustomKeyStoresListEntry>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

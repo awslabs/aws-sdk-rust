@@ -77,8 +77,8 @@ impl AwsEc2SecurityGroupIpPermission {
 }
 
 /// A builder for [`AwsEc2SecurityGroupIpPermission`](crate::types::AwsEc2SecurityGroupIpPermission).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2SecurityGroupIpPermissionBuilder {
     pub(crate) ip_protocol: ::std::option::Option<::std::string::String>,
     pub(crate) from_port: ::std::option::Option<i32>,

@@ -42,8 +42,8 @@ impl DescribeEventTypesInput {
 }
 
 /// A builder for [`DescribeEventTypesInput`](crate::operation::describe_event_types::DescribeEventTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventTypesInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EventTypeFilter>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,

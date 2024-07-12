@@ -20,8 +20,8 @@ impl GetRegisteredSubscriptionProviderInput {
 }
 
 /// A builder for [`GetRegisteredSubscriptionProviderInput`](crate::operation::get_registered_subscription_provider::GetRegisteredSubscriptionProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegisteredSubscriptionProviderInputBuilder {
     pub(crate) subscription_provider_arn: ::std::option::Option<::std::string::String>,
 }

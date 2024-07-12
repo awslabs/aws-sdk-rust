@@ -18,8 +18,8 @@ impl UpdateLocationNfsOutput {
 }
 
 /// A builder for [`UpdateLocationNfsOutput`](crate::operation::update_location_nfs::UpdateLocationNfsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLocationNfsOutputBuilder {
     _request_id: Option<String>,
 }

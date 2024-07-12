@@ -26,8 +26,8 @@ impl AssociateDelegationSignerToDomainOutput {
 }
 
 /// A builder for [`AssociateDelegationSignerToDomainOutput`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDelegationSignerToDomainOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

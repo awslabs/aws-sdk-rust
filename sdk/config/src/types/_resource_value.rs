@@ -21,8 +21,8 @@ impl ResourceValue {
 }
 
 /// A builder for [`ResourceValue`](crate::types::ResourceValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceValueBuilder {
     pub(crate) value: ::std::option::Option<crate::types::ResourceValueType>,
 }

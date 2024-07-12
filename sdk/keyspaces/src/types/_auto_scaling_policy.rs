@@ -21,8 +21,8 @@ impl AutoScalingPolicy {
 }
 
 /// A builder for [`AutoScalingPolicy`](crate::types::AutoScalingPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingPolicyBuilder {
     pub(crate) target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
 }

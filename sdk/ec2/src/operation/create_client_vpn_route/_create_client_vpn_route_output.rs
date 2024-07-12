@@ -26,8 +26,8 @@ impl CreateClientVpnRouteOutput {
 }
 
 /// A builder for [`CreateClientVpnRouteOutput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateClientVpnRouteOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnRouteStatus>,
     _request_id: Option<String>,

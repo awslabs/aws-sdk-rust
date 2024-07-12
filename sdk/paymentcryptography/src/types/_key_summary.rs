@@ -53,8 +53,8 @@ impl KeySummary {
 }
 
 /// A builder for [`KeySummary`](crate::types::KeySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeySummaryBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_state: ::std::option::Option<crate::types::KeyState>,

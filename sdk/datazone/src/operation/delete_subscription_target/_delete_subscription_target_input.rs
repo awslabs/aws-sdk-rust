@@ -32,8 +32,8 @@ impl DeleteSubscriptionTargetInput {
 }
 
 /// A builder for [`DeleteSubscriptionTargetInput`](crate::operation::delete_subscription_target::DeleteSubscriptionTargetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSubscriptionTargetInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,

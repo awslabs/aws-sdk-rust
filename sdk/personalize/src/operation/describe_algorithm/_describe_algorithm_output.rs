@@ -26,8 +26,8 @@ impl DescribeAlgorithmOutput {
 }
 
 /// A builder for [`DescribeAlgorithmOutput`](crate::operation::describe_algorithm::DescribeAlgorithmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAlgorithmOutputBuilder {
     pub(crate) algorithm: ::std::option::Option<crate::types::Algorithm>,
     _request_id: Option<String>,

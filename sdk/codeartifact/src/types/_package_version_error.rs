@@ -55,8 +55,8 @@ impl PackageVersionError {
 }
 
 /// A builder for [`PackageVersionError`](crate::types::PackageVersionError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackageVersionErrorBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::PackageVersionErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

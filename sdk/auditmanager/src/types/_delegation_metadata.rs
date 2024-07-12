@@ -70,8 +70,8 @@ impl DelegationMetadata {
 }
 
 /// A builder for [`DelegationMetadata`](crate::types::DelegationMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DelegationMetadataBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_name: ::std::option::Option<::std::string::String>,

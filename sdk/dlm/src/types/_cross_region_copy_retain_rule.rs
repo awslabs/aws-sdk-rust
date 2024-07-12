@@ -27,8 +27,8 @@ impl CrossRegionCopyRetainRule {
 }
 
 /// A builder for [`CrossRegionCopyRetainRule`](crate::types::CrossRegionCopyRetainRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrossRegionCopyRetainRuleBuilder {
     pub(crate) interval: ::std::option::Option<i32>,
     pub(crate) interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,

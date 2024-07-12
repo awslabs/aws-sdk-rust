@@ -39,8 +39,8 @@ impl GetBackendStorageResourceConfig {
 }
 
 /// A builder for [`GetBackendStorageResourceConfig`](crate::types::GetBackendStorageResourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBackendStorageResourceConfigBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) imported: ::std::option::Option<bool>,

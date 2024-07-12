@@ -39,8 +39,8 @@ impl DeleteDbClusterParameterGroupInput {
 }
 
 /// A builder for [`DeleteDbClusterParameterGroupInput`](crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbClusterParameterGroupInputBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
 }

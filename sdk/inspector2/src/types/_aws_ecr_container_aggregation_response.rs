@@ -60,8 +60,8 @@ impl AwsEcrContainerAggregationResponse {
 }
 
 /// A builder for [`AwsEcrContainerAggregationResponse`](crate::types::AwsEcrContainerAggregationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcrContainerAggregationResponseBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_sha: ::std::option::Option<::std::string::String>,

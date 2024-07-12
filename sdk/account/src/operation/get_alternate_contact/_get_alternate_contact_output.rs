@@ -26,8 +26,8 @@ impl GetAlternateContactOutput {
 }
 
 /// A builder for [`GetAlternateContactOutput`](crate::operation::get_alternate_contact::GetAlternateContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAlternateContactOutputBuilder {
     pub(crate) alternate_contact: ::std::option::Option<crate::types::AlternateContact>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl DescribeIdentityIdFormatInput {
 }
 
 /// A builder for [`DescribeIdentityIdFormatInput`](crate::operation::describe_identity_id_format::DescribeIdentityIdFormatInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIdentityIdFormatInputBuilder {
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,

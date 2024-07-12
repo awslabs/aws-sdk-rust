@@ -20,8 +20,8 @@ impl DeleteRetrainingSchedulerInput {
 }
 
 /// A builder for [`DeleteRetrainingSchedulerInput`](crate::operation::delete_retraining_scheduler::DeleteRetrainingSchedulerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRetrainingSchedulerInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl StopNotebookInstanceOutput {
 }
 
 /// A builder for [`StopNotebookInstanceOutput`](crate::operation::stop_notebook_instance::StopNotebookInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopNotebookInstanceOutputBuilder {
     _request_id: Option<String>,
 }

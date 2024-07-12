@@ -42,8 +42,8 @@ impl GuardrailTopic {
 }
 
 /// A builder for [`GuardrailTopic`](crate::types::GuardrailTopic).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GuardrailTopicBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailTopicType>,

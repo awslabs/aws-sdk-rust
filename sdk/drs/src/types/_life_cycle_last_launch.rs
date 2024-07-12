@@ -27,8 +27,8 @@ impl LifeCycleLastLaunch {
 }
 
 /// A builder for [`LifeCycleLastLaunch`](crate::types::LifeCycleLastLaunch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifeCycleLastLaunchBuilder {
     pub(crate) initiated: ::std::option::Option<crate::types::LifeCycleLastLaunchInitiated>,
     pub(crate) status: ::std::option::Option<crate::types::LaunchStatus>,

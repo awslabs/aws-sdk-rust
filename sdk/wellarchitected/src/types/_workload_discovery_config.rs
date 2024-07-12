@@ -31,8 +31,8 @@ impl WorkloadDiscoveryConfig {
 }
 
 /// A builder for [`WorkloadDiscoveryConfig`](crate::types::WorkloadDiscoveryConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkloadDiscoveryConfigBuilder {
     pub(crate) trusted_advisor_integration_status: ::std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
     pub(crate) workload_resource_definition: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionType>>,

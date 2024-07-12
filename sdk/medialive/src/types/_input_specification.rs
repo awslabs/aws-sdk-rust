@@ -33,8 +33,8 @@ impl InputSpecification {
 }
 
 /// A builder for [`InputSpecification`](crate::types::InputSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputSpecificationBuilder {
     pub(crate) codec: ::std::option::Option<crate::types::InputCodec>,
     pub(crate) maximum_bitrate: ::std::option::Option<crate::types::InputMaximumBitrate>,

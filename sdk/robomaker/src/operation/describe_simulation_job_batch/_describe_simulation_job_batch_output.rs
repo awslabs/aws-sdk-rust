@@ -212,8 +212,8 @@ impl DescribeSimulationJobBatchOutput {
 }
 
 /// A builder for [`DescribeSimulationJobBatchOutput`](crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSimulationJobBatchOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::SimulationJobBatchStatus>,

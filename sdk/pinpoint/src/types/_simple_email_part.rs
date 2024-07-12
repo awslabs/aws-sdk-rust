@@ -27,8 +27,8 @@ impl SimpleEmailPart {
 }
 
 /// A builder for [`SimpleEmailPart`](crate::types::SimpleEmailPart).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimpleEmailPartBuilder {
     pub(crate) charset: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl RuleGroupsNamespaceStatus {
 }
 
 /// A builder for [`RuleGroupsNamespaceStatus`](crate::types::RuleGroupsNamespaceStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupsNamespaceStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::RuleGroupsNamespaceStatusCode>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,

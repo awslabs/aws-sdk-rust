@@ -26,8 +26,8 @@ impl CancelMessageMoveTaskOutput {
 }
 
 /// A builder for [`CancelMessageMoveTaskOutput`](crate::operation::cancel_message_move_task::CancelMessageMoveTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelMessageMoveTaskOutputBuilder {
     pub(crate) approximate_number_of_messages_moved: ::std::option::Option<i64>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl DisassociateVpcCidrBlockOutput {
 }
 
 /// A builder for [`DisassociateVpcCidrBlockOutput`](crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateVpcCidrBlockOutputBuilder {
     pub(crate) ipv6_cidr_block_association: ::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation>,
     pub(crate) cidr_block_association: ::std::option::Option<crate::types::VpcCidrBlockAssociation>,

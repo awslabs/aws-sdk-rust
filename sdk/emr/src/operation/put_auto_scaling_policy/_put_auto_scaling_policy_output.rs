@@ -44,8 +44,8 @@ impl PutAutoScalingPolicyOutput {
 }
 
 /// A builder for [`PutAutoScalingPolicyOutput`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAutoScalingPolicyOutputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_group_id: ::std::option::Option<::std::string::String>,

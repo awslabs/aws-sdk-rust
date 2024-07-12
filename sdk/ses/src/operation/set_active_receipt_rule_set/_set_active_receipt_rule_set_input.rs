@@ -21,8 +21,8 @@ impl SetActiveReceiptRuleSetInput {
 }
 
 /// A builder for [`SetActiveReceiptRuleSetInput`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetActiveReceiptRuleSetInputBuilder {
     pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
 }

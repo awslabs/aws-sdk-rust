@@ -29,8 +29,8 @@ impl SystemInstanceFilter {
 }
 
 /// A builder for [`SystemInstanceFilter`](crate::types::SystemInstanceFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SystemInstanceFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SystemInstanceFilterName>,
     pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

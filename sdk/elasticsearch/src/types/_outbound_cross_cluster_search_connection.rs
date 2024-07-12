@@ -45,8 +45,8 @@ impl OutboundCrossClusterSearchConnection {
 }
 
 /// A builder for [`OutboundCrossClusterSearchConnection`](crate::types::OutboundCrossClusterSearchConnection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutboundCrossClusterSearchConnectionBuilder {
     pub(crate) source_domain_info: ::std::option::Option<crate::types::DomainInformation>,
     pub(crate) destination_domain_info: ::std::option::Option<crate::types::DomainInformation>,

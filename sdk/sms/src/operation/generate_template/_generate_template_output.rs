@@ -26,8 +26,8 @@ impl GenerateTemplateOutput {
 }
 
 /// A builder for [`GenerateTemplateOutput`](crate::operation::generate_template::GenerateTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateTemplateOutputBuilder {
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
     _request_id: Option<String>,

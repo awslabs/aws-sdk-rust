@@ -21,8 +21,8 @@ impl EdgeDeploymentConfig {
 }
 
 /// A builder for [`EdgeDeploymentConfig`](crate::types::EdgeDeploymentConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EdgeDeploymentConfigBuilder {
     pub(crate) failure_handling_policy: ::std::option::Option<crate::types::FailureHandlingPolicy>,
 }

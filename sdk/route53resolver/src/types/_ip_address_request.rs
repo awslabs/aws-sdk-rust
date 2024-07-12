@@ -34,8 +34,8 @@ impl IpAddressRequest {
 }
 
 /// A builder for [`IpAddressRequest`](crate::types::IpAddressRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpAddressRequestBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip: ::std::option::Option<::std::string::String>,

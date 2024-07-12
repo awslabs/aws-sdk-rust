@@ -80,8 +80,8 @@ impl MergeBranchesBySquashInput {
 }
 
 /// A builder for [`MergeBranchesBySquashInput`](crate::operation::merge_branches_by_squash::MergeBranchesBySquashInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MergeBranchesBySquashInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_commit_specifier: ::std::option::Option<::std::string::String>,

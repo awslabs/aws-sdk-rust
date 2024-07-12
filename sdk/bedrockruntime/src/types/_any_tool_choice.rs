@@ -12,8 +12,8 @@ impl AnyToolChoice {
 }
 
 /// A builder for [`AnyToolChoice`](crate::types::AnyToolChoice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnyToolChoiceBuilder {}
 impl AnyToolChoiceBuilder {
     /// Consumes the builder and constructs a [`AnyToolChoice`](crate::types::AnyToolChoice).

@@ -27,8 +27,8 @@ impl AnalyticsBinKey {
 }
 
 /// A builder for [`AnalyticsBinKey`](crate::types::AnalyticsBinKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsBinKeyBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsBinByName>,
     pub(crate) value: ::std::option::Option<i64>,

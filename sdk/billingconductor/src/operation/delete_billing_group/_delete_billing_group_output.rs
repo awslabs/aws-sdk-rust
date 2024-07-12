@@ -26,8 +26,8 @@ impl DeleteBillingGroupOutput {
 }
 
 /// A builder for [`DeleteBillingGroupOutput`](crate::operation::delete_billing_group::DeleteBillingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBillingGroupOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

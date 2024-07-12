@@ -18,8 +18,8 @@ impl DeleteDevEndpointOutput {
 }
 
 /// A builder for [`DeleteDevEndpointOutput`](crate::operation::delete_dev_endpoint::DeleteDevEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDevEndpointOutputBuilder {
     _request_id: Option<String>,
 }

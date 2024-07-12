@@ -26,8 +26,8 @@ impl MoveAddressToVpcInput {
 }
 
 /// A builder for [`MoveAddressToVpcInput`](crate::operation::move_address_to_vpc::MoveAddressToVpcInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MoveAddressToVpcInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,

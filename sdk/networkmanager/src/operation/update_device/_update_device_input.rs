@@ -98,8 +98,8 @@ impl UpdateDeviceInput {
 }
 
 /// A builder for [`UpdateDeviceInput`](crate::operation::update_device::UpdateDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateDeviceInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,

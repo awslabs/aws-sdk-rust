@@ -115,8 +115,8 @@ impl DescribeImageAttributeOutput {
 }
 
 /// A builder for [`DescribeImageAttributeOutput`](crate::operation::describe_image_attribute::DescribeImageAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageAttributeOutputBuilder {
     pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,

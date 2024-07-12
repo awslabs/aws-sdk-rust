@@ -32,8 +32,8 @@ impl ListDominantLanguageDetectionJobsInput {
 }
 
 /// A builder for [`ListDominantLanguageDetectionJobsInput`](crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDominantLanguageDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::DominantLanguageDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

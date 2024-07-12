@@ -18,8 +18,8 @@ impl DeleteSlackUserIdentityOutput {
 }
 
 /// A builder for [`DeleteSlackUserIdentityOutput`](crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSlackUserIdentityOutputBuilder {
     _request_id: Option<String>,
 }

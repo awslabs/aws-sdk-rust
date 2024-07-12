@@ -35,8 +35,8 @@ impl ThreatIntelligenceDetail {
 }
 
 /// A builder for [`ThreatIntelligenceDetail`](crate::types::ThreatIntelligenceDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThreatIntelligenceDetailBuilder {
     pub(crate) threat_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) threat_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

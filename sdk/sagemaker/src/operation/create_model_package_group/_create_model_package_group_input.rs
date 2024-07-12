@@ -34,8 +34,8 @@ impl CreateModelPackageGroupInput {
 }
 
 /// A builder for [`CreateModelPackageGroupInput`](crate::operation::create_model_package_group::CreateModelPackageGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateModelPackageGroupInputBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_description: ::std::option::Option<::std::string::String>,

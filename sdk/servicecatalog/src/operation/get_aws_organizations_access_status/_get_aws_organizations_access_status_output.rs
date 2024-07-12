@@ -26,8 +26,8 @@ impl GetAwsOrganizationsAccessStatusOutput {
 }
 
 /// A builder for [`GetAwsOrganizationsAccessStatusOutput`](crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAwsOrganizationsAccessStatusOutputBuilder {
     pub(crate) access_status: ::std::option::Option<crate::types::AccessStatus>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl ListTaskTemplatesOutput {
 }
 
 /// A builder for [`ListTaskTemplatesOutput`](crate::operation::list_task_templates::ListTaskTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTaskTemplatesOutputBuilder {
     pub(crate) task_templates: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -47,8 +47,8 @@ impl OriginRequestPolicyCookiesConfig {
 }
 
 /// A builder for [`OriginRequestPolicyCookiesConfig`](crate::types::OriginRequestPolicyCookiesConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginRequestPolicyCookiesConfigBuilder {
     pub(crate) cookie_behavior: ::std::option::Option<crate::types::OriginRequestPolicyCookieBehavior>,
     pub(crate) cookies: ::std::option::Option<crate::types::CookieNames>,

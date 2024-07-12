@@ -126,8 +126,8 @@ impl StartMedicalStreamTranscriptionInput {
 }
 
 /// A builder for [`StartMedicalStreamTranscriptionInput`](crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionInput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMedicalStreamTranscriptionInputBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) media_sample_rate_hertz: ::std::option::Option<i32>,

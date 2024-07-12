@@ -39,8 +39,8 @@ impl ActionIdentifier {
 }
 
 /// A builder for [`ActionIdentifier`](crate::types::ActionIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ActionIdentifierBuilder {
     pub(crate) action_type: ::std::option::Option<::std::string::String>,
     pub(crate) action_id: ::std::option::Option<::std::string::String>,

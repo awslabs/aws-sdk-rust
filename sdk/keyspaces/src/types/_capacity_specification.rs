@@ -57,8 +57,8 @@ impl CapacitySpecification {
 }
 
 /// A builder for [`CapacitySpecification`](crate::types::CapacitySpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacitySpecificationBuilder {
     pub(crate) throughput_mode: ::std::option::Option<crate::types::ThroughputMode>,
     pub(crate) read_capacity_units: ::std::option::Option<i64>,

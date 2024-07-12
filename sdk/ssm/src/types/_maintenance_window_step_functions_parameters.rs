@@ -40,8 +40,8 @@ impl MaintenanceWindowStepFunctionsParameters {
 }
 
 /// A builder for [`MaintenanceWindowStepFunctionsParameters`](crate::types::MaintenanceWindowStepFunctionsParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MaintenanceWindowStepFunctionsParametersBuilder {
     pub(crate) input: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

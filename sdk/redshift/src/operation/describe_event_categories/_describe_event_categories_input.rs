@@ -23,8 +23,8 @@ impl DescribeEventCategoriesInput {
 }
 
 /// A builder for [`DescribeEventCategoriesInput`](crate::operation::describe_event_categories::DescribeEventCategoriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventCategoriesInputBuilder {
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
 }

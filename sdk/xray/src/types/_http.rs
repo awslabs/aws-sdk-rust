@@ -45,8 +45,8 @@ impl Http {
 }
 
 /// A builder for [`Http`](crate::types::Http).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpBuilder {
     pub(crate) http_url: ::std::option::Option<::std::string::String>,
     pub(crate) http_status: ::std::option::Option<i32>,

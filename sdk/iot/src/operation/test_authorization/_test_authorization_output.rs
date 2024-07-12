@@ -28,8 +28,8 @@ impl TestAuthorizationOutput {
 }
 
 /// A builder for [`TestAuthorizationOutput`](crate::operation::test_authorization::TestAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestAuthorizationOutputBuilder {
     pub(crate) auth_results: ::std::option::Option<::std::vec::Vec<crate::types::AuthResult>>,
     _request_id: Option<String>,

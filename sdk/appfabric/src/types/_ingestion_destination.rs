@@ -81,8 +81,8 @@ impl IngestionDestination {
 }
 
 /// A builder for [`IngestionDestination`](crate::types::IngestionDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngestionDestinationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_arn: ::std::option::Option<::std::string::String>,

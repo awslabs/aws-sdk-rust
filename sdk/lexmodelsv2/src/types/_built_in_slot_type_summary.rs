@@ -27,8 +27,8 @@ impl BuiltInSlotTypeSummary {
 }
 
 /// A builder for [`BuiltInSlotTypeSummary`](crate::types::BuiltInSlotTypeSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuiltInSlotTypeSummaryBuilder {
     pub(crate) slot_type_signature: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

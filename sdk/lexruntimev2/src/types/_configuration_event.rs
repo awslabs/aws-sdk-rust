@@ -110,8 +110,8 @@ impl ConfigurationEvent {
 }
 
 /// A builder for [`ConfigurationEvent`](crate::types::ConfigurationEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurationEventBuilder {
     pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) response_content_type: ::std::option::Option<::std::string::String>,

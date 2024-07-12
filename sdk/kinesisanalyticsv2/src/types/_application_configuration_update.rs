@@ -67,8 +67,8 @@ impl ApplicationConfigurationUpdate {
 }
 
 /// A builder for [`ApplicationConfigurationUpdate`](crate::types::ApplicationConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationConfigurationUpdateBuilder {
     pub(crate) sql_application_configuration_update: ::std::option::Option<crate::types::SqlApplicationConfigurationUpdate>,
     pub(crate) application_code_configuration_update: ::std::option::Option<crate::types::ApplicationCodeConfigurationUpdate>,

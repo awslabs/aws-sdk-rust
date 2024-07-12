@@ -40,8 +40,8 @@ impl ModifyVpcEndpointConnectionNotificationInput {
 }
 
 /// A builder for [`ModifyVpcEndpointConnectionNotificationInput`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpcEndpointConnectionNotificationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) connection_notification_id: ::std::option::Option<::std::string::String>,

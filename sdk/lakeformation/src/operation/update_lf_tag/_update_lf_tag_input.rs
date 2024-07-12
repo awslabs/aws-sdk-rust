@@ -42,8 +42,8 @@ impl UpdateLfTagInput {
 }
 
 /// A builder for [`UpdateLfTagInput`](crate::operation::update_lf_tag::UpdateLfTagInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLfTagInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,

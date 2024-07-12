@@ -21,8 +21,8 @@ impl AnalyticsExportDestination {
 }
 
 /// A builder for [`AnalyticsExportDestination`](crate::types::AnalyticsExportDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsExportDestinationBuilder {
     pub(crate) s3_bucket_destination: ::std::option::Option<crate::types::AnalyticsS3BucketDestination>,
 }

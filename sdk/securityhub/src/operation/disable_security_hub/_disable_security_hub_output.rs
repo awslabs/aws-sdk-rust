@@ -18,8 +18,8 @@ impl DisableSecurityHubOutput {
 }
 
 /// A builder for [`DisableSecurityHubOutput`](crate::operation::disable_security_hub::DisableSecurityHubOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableSecurityHubOutputBuilder {
     _request_id: Option<String>,
 }

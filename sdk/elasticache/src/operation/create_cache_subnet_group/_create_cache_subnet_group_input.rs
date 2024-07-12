@@ -47,8 +47,8 @@ impl CreateCacheSubnetGroupInput {
 }
 
 /// A builder for [`CreateCacheSubnetGroupInput`](crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCacheSubnetGroupInputBuilder {
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_subnet_group_description: ::std::option::Option<::std::string::String>,

@@ -44,8 +44,8 @@ impl CreateClusterV2Output {
 }
 
 /// A builder for [`CreateClusterV2Output`](crate::operation::create_cluster_v2::CreateClusterV2Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateClusterV2OutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,

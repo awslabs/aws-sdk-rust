@@ -34,8 +34,8 @@ impl ListTemplateStepsOutput {
 }
 
 /// A builder for [`ListTemplateStepsOutput`](crate::operation::list_template_steps::ListTemplateStepsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateStepsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) template_step_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>>,

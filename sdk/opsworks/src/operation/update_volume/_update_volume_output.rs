@@ -18,8 +18,8 @@ impl UpdateVolumeOutput {
 }
 
 /// A builder for [`UpdateVolumeOutput`](crate::operation::update_volume::UpdateVolumeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVolumeOutputBuilder {
     _request_id: Option<String>,
 }

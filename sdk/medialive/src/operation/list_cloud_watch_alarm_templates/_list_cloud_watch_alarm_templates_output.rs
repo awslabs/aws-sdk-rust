@@ -35,8 +35,8 @@ impl ListCloudWatchAlarmTemplatesOutput {
 }
 
 /// A builder for [`ListCloudWatchAlarmTemplatesOutput`](crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCloudWatchAlarmTemplatesOutputBuilder {
     pub(crate) cloud_watch_alarm_templates: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchAlarmTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

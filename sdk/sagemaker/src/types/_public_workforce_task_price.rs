@@ -223,8 +223,8 @@ impl PublicWorkforceTaskPrice {
 }
 
 /// A builder for [`PublicWorkforceTaskPrice`](crate::types::PublicWorkforceTaskPrice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublicWorkforceTaskPriceBuilder {
     pub(crate) amount_in_usd: ::std::option::Option<crate::types::Usd>,
 }

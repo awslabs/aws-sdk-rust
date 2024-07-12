@@ -28,8 +28,8 @@ impl VariationConfig {
 }
 
 /// A builder for [`VariationConfig`](crate::types::VariationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VariationConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::VariableValue>,

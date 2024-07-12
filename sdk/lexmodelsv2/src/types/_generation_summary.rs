@@ -39,8 +39,8 @@ impl GenerationSummary {
 }
 
 /// A builder for [`GenerationSummary`](crate::types::GenerationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerationSummaryBuilder {
     pub(crate) generation_id: ::std::option::Option<::std::string::String>,
     pub(crate) generation_status: ::std::option::Option<crate::types::GenerationStatus>,

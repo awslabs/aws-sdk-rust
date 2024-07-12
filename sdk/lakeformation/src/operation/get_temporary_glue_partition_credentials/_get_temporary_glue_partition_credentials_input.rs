@@ -54,8 +54,8 @@ impl GetTemporaryGluePartitionCredentialsInput {
 }
 
 /// A builder for [`GetTemporaryGluePartitionCredentialsInput`](crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTemporaryGluePartitionCredentialsInputBuilder {
     pub(crate) table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) partition: ::std::option::Option<crate::types::PartitionValueList>,

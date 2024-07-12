@@ -20,8 +20,8 @@ impl PauseServiceInput {
 }
 
 /// A builder for [`PauseServiceInput`](crate::operation::pause_service::PauseServiceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PauseServiceInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
 }

@@ -25,8 +25,8 @@ impl DeleteCacheSecurityGroupInput {
 }
 
 /// A builder for [`DeleteCacheSecurityGroupInput`](crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCacheSecurityGroupInputBuilder {
     pub(crate) cache_security_group_name: ::std::option::Option<::std::string::String>,
 }

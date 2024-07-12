@@ -45,8 +45,8 @@ impl ImportVolumeTaskDetails {
 }
 
 /// A builder for [`ImportVolumeTaskDetails`](crate::types::ImportVolumeTaskDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportVolumeTaskDetailsBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) bytes_converted: ::std::option::Option<i64>,

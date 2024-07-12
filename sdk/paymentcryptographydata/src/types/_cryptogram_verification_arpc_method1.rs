@@ -22,8 +22,8 @@ impl CryptogramVerificationArpcMethod1 {
 }
 
 /// A builder for [`CryptogramVerificationArpcMethod1`](crate::types::CryptogramVerificationArpcMethod1).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CryptogramVerificationArpcMethod1Builder {
     pub(crate) auth_response_code: ::std::option::Option<::std::string::String>,
 }

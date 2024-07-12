@@ -21,8 +21,8 @@ impl PauseClusterMessage {
 }
 
 /// A builder for [`PauseClusterMessage`](crate::types::PauseClusterMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PauseClusterMessageBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }

@@ -44,8 +44,8 @@ impl ExportCertificateInput {
 }
 
 /// A builder for [`ExportCertificateInput`](crate::operation::export_certificate::ExportCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ExportCertificateInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) passphrase: ::std::option::Option<::aws_smithy_types::Blob>,

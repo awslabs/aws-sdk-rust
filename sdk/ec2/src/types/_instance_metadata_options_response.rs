@@ -73,8 +73,8 @@ impl InstanceMetadataOptionsResponse {
 }
 
 /// A builder for [`InstanceMetadataOptionsResponse`](crate::types::InstanceMetadataOptionsResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceMetadataOptionsResponseBuilder {
     pub(crate) state: ::std::option::Option<crate::types::InstanceMetadataOptionsState>,
     pub(crate) http_tokens: ::std::option::Option<crate::types::HttpTokensState>,

@@ -26,8 +26,8 @@ impl AssociateOpsItemRelatedItemOutput {
 }
 
 /// A builder for [`AssociateOpsItemRelatedItemOutput`](crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateOpsItemRelatedItemOutputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

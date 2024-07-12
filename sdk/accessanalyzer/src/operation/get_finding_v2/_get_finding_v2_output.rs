@@ -95,8 +95,8 @@ impl GetFindingV2Output {
 }
 
 /// A builder for [`GetFindingV2Output`](crate::operation::get_finding_v2::GetFindingV2Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingV2OutputBuilder {
     pub(crate) analyzed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,

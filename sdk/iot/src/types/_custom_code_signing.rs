@@ -39,8 +39,8 @@ impl CustomCodeSigning {
 }
 
 /// A builder for [`CustomCodeSigning`](crate::types::CustomCodeSigning).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomCodeSigningBuilder {
     pub(crate) signature: ::std::option::Option<crate::types::CodeSigningSignature>,
     pub(crate) certificate_chain: ::std::option::Option<crate::types::CodeSigningCertificateChain>,

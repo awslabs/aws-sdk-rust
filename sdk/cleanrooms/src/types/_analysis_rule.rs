@@ -53,8 +53,8 @@ impl AnalysisRule {
 }
 
 /// A builder for [`AnalysisRule`](crate::types::AnalysisRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisRuleBuilder {
     pub(crate) collaboration_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::AnalysisRuleType>,

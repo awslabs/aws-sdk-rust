@@ -27,8 +27,8 @@ impl ApprovalStateChangedEventMetadata {
 }
 
 /// A builder for [`ApprovalStateChangedEventMetadata`](crate::types::ApprovalStateChangedEventMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApprovalStateChangedEventMetadataBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) approval_status: ::std::option::Option<crate::types::ApprovalState>,

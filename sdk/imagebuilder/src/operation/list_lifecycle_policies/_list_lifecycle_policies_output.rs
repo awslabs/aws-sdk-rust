@@ -34,8 +34,8 @@ impl ListLifecyclePoliciesOutput {
 }
 
 /// A builder for [`ListLifecyclePoliciesOutput`](crate::operation::list_lifecycle_policies::ListLifecyclePoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLifecyclePoliciesOutputBuilder {
     pub(crate) lifecycle_policy_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

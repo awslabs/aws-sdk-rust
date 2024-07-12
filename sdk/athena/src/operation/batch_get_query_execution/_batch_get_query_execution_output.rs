@@ -36,8 +36,8 @@ impl BatchGetQueryExecutionOutput {
 }
 
 /// A builder for [`BatchGetQueryExecutionOutput`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetQueryExecutionOutputBuilder {
     pub(crate) query_executions: ::std::option::Option<::std::vec::Vec<crate::types::QueryExecution>>,
     pub(crate) unprocessed_query_execution_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedQueryExecutionId>>,

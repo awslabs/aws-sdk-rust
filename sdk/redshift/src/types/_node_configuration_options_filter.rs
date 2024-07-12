@@ -35,8 +35,8 @@ impl NodeConfigurationOptionsFilter {
 }
 
 /// A builder for [`NodeConfigurationOptionsFilter`](crate::types::NodeConfigurationOptionsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeConfigurationOptionsFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::NodeConfigurationOptionsFilterName>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorType>,

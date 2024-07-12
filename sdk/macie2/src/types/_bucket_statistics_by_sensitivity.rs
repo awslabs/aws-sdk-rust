@@ -39,8 +39,8 @@ impl BucketStatisticsBySensitivity {
 }
 
 /// A builder for [`BucketStatisticsBySensitivity`](crate::types::BucketStatisticsBySensitivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketStatisticsBySensitivityBuilder {
     pub(crate) classification_error: ::std::option::Option<crate::types::SensitivityAggregations>,
     pub(crate) not_classified: ::std::option::Option<crate::types::SensitivityAggregations>,

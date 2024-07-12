@@ -45,8 +45,8 @@ impl ConnectorConfigResponse {
 }
 
 /// A builder for [`ConnectorConfigResponse`](crate::types::ConnectorConfigResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorConfigResponseBuilder {
     pub(crate) activation_id: ::std::option::Option<::std::string::String>,
     pub(crate) activation_code: ::std::option::Option<::std::string::String>,

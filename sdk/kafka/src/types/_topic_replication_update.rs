@@ -49,8 +49,8 @@ impl TopicReplicationUpdate {
 }
 
 /// A builder for [`TopicReplicationUpdate`](crate::types::TopicReplicationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TopicReplicationUpdateBuilder {
     pub(crate) copy_access_control_lists_for_topics: ::std::option::Option<bool>,
     pub(crate) copy_topic_configurations: ::std::option::Option<bool>,

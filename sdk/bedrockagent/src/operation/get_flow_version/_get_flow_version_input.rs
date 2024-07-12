@@ -26,8 +26,8 @@ impl GetFlowVersionInput {
 }
 
 /// A builder for [`GetFlowVersionInput`](crate::operation::get_flow_version::GetFlowVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFlowVersionInputBuilder {
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) flow_version: ::std::option::Option<::std::string::String>,

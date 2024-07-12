@@ -48,8 +48,8 @@ impl StartProtectedQueryInput {
 }
 
 /// A builder for [`StartProtectedQueryInput`](crate::operation::start_protected_query::StartProtectedQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartProtectedQueryInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ProtectedQueryType>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,

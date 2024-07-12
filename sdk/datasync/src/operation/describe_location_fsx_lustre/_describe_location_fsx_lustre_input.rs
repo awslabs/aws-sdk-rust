@@ -20,8 +20,8 @@ impl DescribeLocationFsxLustreInput {
 }
 
 /// A builder for [`DescribeLocationFsxLustreInput`](crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationFsxLustreInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }

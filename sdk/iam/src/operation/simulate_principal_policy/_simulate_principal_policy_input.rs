@@ -208,8 +208,8 @@ impl SimulatePrincipalPolicyInput {
 }
 
 /// A builder for [`SimulatePrincipalPolicyInput`](crate::operation::simulate_principal_policy::SimulatePrincipalPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimulatePrincipalPolicyInputBuilder {
     pub(crate) policy_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_input_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

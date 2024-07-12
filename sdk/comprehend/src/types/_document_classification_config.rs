@@ -29,8 +29,8 @@ impl DocumentClassificationConfig {
 }
 
 /// A builder for [`DocumentClassificationConfig`](crate::types::DocumentClassificationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentClassificationConfigBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::DocumentClassifierMode>,
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

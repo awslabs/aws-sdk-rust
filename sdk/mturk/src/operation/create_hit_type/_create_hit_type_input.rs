@@ -58,8 +58,8 @@ impl CreateHitTypeInput {
 }
 
 /// A builder for [`CreateHitTypeInput`](crate::operation::create_hit_type::CreateHitTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHitTypeInputBuilder {
     pub(crate) auto_approval_delay_in_seconds: ::std::option::Option<i64>,
     pub(crate) assignment_duration_in_seconds: ::std::option::Option<i64>,

@@ -26,8 +26,8 @@ impl StartNetworkInsightsAnalysisOutput {
 }
 
 /// A builder for [`StartNetworkInsightsAnalysisOutput`](crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartNetworkInsightsAnalysisOutputBuilder {
     pub(crate) network_insights_analysis: ::std::option::Option<crate::types::NetworkInsightsAnalysis>,
     _request_id: Option<String>,

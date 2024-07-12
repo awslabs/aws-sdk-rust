@@ -57,8 +57,8 @@ impl SimpleCriterionForJob {
 }
 
 /// A builder for [`SimpleCriterionForJob`](crate::types::SimpleCriterionForJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimpleCriterionForJobBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
     pub(crate) key: ::std::option::Option<crate::types::SimpleCriterionKeyForJob>,

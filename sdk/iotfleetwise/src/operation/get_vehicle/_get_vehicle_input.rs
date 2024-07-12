@@ -20,8 +20,8 @@ impl GetVehicleInput {
 }
 
 /// A builder for [`GetVehicleInput`](crate::operation::get_vehicle::GetVehicleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVehicleInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
 }

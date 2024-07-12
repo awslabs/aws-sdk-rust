@@ -27,8 +27,8 @@ impl AudioSpecification {
 }
 
 /// A builder for [`AudioSpecification`](crate::types::AudioSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioSpecificationBuilder {
     pub(crate) max_length_ms: ::std::option::Option<i32>,
     pub(crate) end_timeout_ms: ::std::option::Option<i32>,

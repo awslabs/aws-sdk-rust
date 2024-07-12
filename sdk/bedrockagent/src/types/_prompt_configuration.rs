@@ -83,8 +83,8 @@ impl PromptConfiguration {
 }
 
 /// A builder for [`PromptConfiguration`](crate::types::PromptConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PromptConfigurationBuilder {
     pub(crate) prompt_type: ::std::option::Option<crate::types::PromptType>,
     pub(crate) prompt_creation_mode: ::std::option::Option<crate::types::CreationMode>,

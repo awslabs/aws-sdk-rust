@@ -33,8 +33,8 @@ impl PlaybackInterruptionEvent {
 }
 
 /// A builder for [`PlaybackInterruptionEvent`](crate::types::PlaybackInterruptionEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlaybackInterruptionEventBuilder {
     pub(crate) event_reason: ::std::option::Option<crate::types::PlaybackInterruptionReason>,
     pub(crate) caused_by_event_id: ::std::option::Option<::std::string::String>,

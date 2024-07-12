@@ -33,8 +33,8 @@ impl EvaluationResultIdentifier {
 }
 
 /// A builder for [`EvaluationResultIdentifier`](crate::types::EvaluationResultIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationResultIdentifierBuilder {
     pub(crate) evaluation_result_qualifier: ::std::option::Option<crate::types::EvaluationResultQualifier>,
     pub(crate) ordering_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

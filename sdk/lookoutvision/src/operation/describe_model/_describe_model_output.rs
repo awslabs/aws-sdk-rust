@@ -26,8 +26,8 @@ impl DescribeModelOutput {
 }
 
 /// A builder for [`DescribeModelOutput`](crate::operation::describe_model::DescribeModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeModelOutputBuilder {
     pub(crate) model_description: ::std::option::Option<crate::types::ModelDescription>,
     _request_id: Option<String>,

@@ -28,8 +28,8 @@ impl UpdateRelationalDatabaseParametersInput {
 }
 
 /// A builder for [`UpdateRelationalDatabaseParametersInput`](crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRelationalDatabaseParametersInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseParameter>>,

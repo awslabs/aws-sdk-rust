@@ -38,8 +38,8 @@ impl DeleteInventoryOutput {
 }
 
 /// A builder for [`DeleteInventoryOutput`](crate::operation::delete_inventory::DeleteInventoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInventoryOutputBuilder {
     pub(crate) deletion_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,

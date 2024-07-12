@@ -50,8 +50,8 @@ impl StartDataQualityRuleRecommendationRunInput {
 }
 
 /// A builder for [`StartDataQualityRuleRecommendationRunInput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDataQualityRuleRecommendationRunInputBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) role: ::std::option::Option<::std::string::String>,

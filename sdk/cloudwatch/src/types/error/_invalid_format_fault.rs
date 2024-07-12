@@ -45,8 +45,8 @@ impl InvalidFormatFault {
 }
 
 /// A builder for [`InvalidFormatFault`](crate::types::error::InvalidFormatFault).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidFormatFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

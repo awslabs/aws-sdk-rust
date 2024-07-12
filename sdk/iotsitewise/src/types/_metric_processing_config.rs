@@ -21,8 +21,8 @@ impl MetricProcessingConfig {
 }
 
 /// A builder for [`MetricProcessingConfig`](crate::types::MetricProcessingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricProcessingConfigBuilder {
     pub(crate) compute_location: ::std::option::Option<crate::types::ComputeLocation>,
 }

@@ -20,8 +20,8 @@ impl DescribeFleetMetadataInput {
 }
 
 /// A builder for [`DescribeFleetMetadataInput`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetMetadataInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
 }

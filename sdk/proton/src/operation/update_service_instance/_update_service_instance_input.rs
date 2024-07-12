@@ -113,8 +113,8 @@ impl UpdateServiceInstanceInput {
 }
 
 /// A builder for [`UpdateServiceInstanceInput`](crate::operation::update_service_instance::UpdateServiceInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateServiceInstanceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,

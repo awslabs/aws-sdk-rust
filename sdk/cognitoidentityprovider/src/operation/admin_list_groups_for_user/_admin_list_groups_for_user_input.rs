@@ -48,8 +48,8 @@ impl AdminListGroupsForUserInput {
 }
 
 /// A builder for [`AdminListGroupsForUserInput`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminListGroupsForUserInputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl GetSolFunctionPackageDescriptorOutput {
 }
 
 /// A builder for [`GetSolFunctionPackageDescriptorOutput`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSolFunctionPackageDescriptorOutputBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::DescriptorContentType>,
     pub(crate) vnfd: ::std::option::Option<::aws_smithy_types::Blob>,

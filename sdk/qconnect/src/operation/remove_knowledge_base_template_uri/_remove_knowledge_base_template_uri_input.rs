@@ -20,8 +20,8 @@ impl RemoveKnowledgeBaseTemplateUriInput {
 }
 
 /// A builder for [`RemoveKnowledgeBaseTemplateUriInput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveKnowledgeBaseTemplateUriInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
 }

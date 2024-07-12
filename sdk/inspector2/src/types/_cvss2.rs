@@ -27,8 +27,8 @@ impl Cvss2 {
 }
 
 /// A builder for [`Cvss2`](crate::types::Cvss2).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Cvss2Builder {
     pub(crate) base_score: ::std::option::Option<f64>,
     pub(crate) scoring_vector: ::std::option::Option<::std::string::String>,

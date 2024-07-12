@@ -26,8 +26,8 @@ impl GetAnomalyGroupOutput {
 }
 
 /// A builder for [`GetAnomalyGroupOutput`](crate::operation::get_anomaly_group::GetAnomalyGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnomalyGroupOutputBuilder {
     pub(crate) anomaly_group: ::std::option::Option<crate::types::AnomalyGroup>,
     _request_id: Option<String>,

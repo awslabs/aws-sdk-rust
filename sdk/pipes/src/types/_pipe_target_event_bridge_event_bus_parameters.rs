@@ -58,8 +58,8 @@ impl PipeTargetEventBridgeEventBusParameters {
 }
 
 /// A builder for [`PipeTargetEventBridgeEventBusParameters`](crate::types::PipeTargetEventBridgeEventBusParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PipeTargetEventBridgeEventBusParametersBuilder {
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) detail_type: ::std::option::Option<::std::string::String>,

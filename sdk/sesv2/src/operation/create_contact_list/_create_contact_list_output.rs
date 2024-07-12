@@ -18,8 +18,8 @@ impl CreateContactListOutput {
 }
 
 /// A builder for [`CreateContactListOutput`](crate::operation::create_contact_list::CreateContactListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContactListOutputBuilder {
     _request_id: Option<String>,
 }

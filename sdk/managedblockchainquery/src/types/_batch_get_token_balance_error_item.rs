@@ -57,8 +57,8 @@ impl BatchGetTokenBalanceErrorItem {
 }
 
 /// A builder for [`BatchGetTokenBalanceErrorItem`](crate::types::BatchGetTokenBalanceErrorItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetTokenBalanceErrorItemBuilder {
     pub(crate) token_identifier: ::std::option::Option<crate::types::TokenIdentifier>,
     pub(crate) owner_identifier: ::std::option::Option<crate::types::OwnerIdentifier>,

@@ -20,8 +20,8 @@ impl GetNamedQueryInput {
 }
 
 /// A builder for [`GetNamedQueryInput`](crate::operation::get_named_query::GetNamedQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNamedQueryInputBuilder {
     pub(crate) named_query_id: ::std::option::Option<::std::string::String>,
 }

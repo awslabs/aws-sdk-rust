@@ -61,8 +61,8 @@ impl IntentResultEvent {
 }
 
 /// A builder for [`IntentResultEvent`](crate::types::IntentResultEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntentResultEventBuilder {
     pub(crate) input_mode: ::std::option::Option<crate::types::InputMode>,
     pub(crate) interpretations: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,

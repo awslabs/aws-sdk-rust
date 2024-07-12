@@ -57,8 +57,8 @@ impl FmtpRequest {
 }
 
 /// A builder for [`FmtpRequest`](crate::types::FmtpRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FmtpRequestBuilder {
     pub(crate) channel_order: ::std::option::Option<::std::string::String>,
     pub(crate) colorimetry: ::std::option::Option<crate::types::Colorimetry>,

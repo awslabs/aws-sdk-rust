@@ -62,8 +62,8 @@ impl ListAuditFindingsInput {
 }
 
 /// A builder for [`ListAuditFindingsInput`](crate::operation::list_audit_findings::ListAuditFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAuditFindingsInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) check_name: ::std::option::Option<::std::string::String>,

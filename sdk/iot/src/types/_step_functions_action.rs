@@ -35,8 +35,8 @@ impl StepFunctionsAction {
 }
 
 /// A builder for [`StepFunctionsAction`](crate::types::StepFunctionsAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepFunctionsActionBuilder {
     pub(crate) execution_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) state_machine_name: ::std::option::Option<::std::string::String>,

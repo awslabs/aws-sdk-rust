@@ -28,8 +28,8 @@ impl CreateDbSnapshotOutput {
 }
 
 /// A builder for [`CreateDbSnapshotOutput`](crate::operation::create_db_snapshot::CreateDbSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDbSnapshotOutputBuilder {
     pub(crate) db_snapshot: ::std::option::Option<crate::types::DbSnapshot>,
     _request_id: Option<String>,

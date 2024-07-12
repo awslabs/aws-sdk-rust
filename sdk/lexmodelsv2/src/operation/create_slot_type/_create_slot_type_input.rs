@@ -92,8 +92,8 @@ impl CreateSlotTypeInput {
 }
 
 /// A builder for [`CreateSlotTypeInput`](crate::operation::create_slot_type::CreateSlotTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSlotTypeInputBuilder {
     pub(crate) slot_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -71,8 +71,8 @@ impl UpdateStateMachineInput {
 }
 
 /// A builder for [`UpdateStateMachineInput`](crate::operation::update_state_machine::UpdateStateMachineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateStateMachineInputBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<::std::string::String>,

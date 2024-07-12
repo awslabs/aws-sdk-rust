@@ -33,8 +33,8 @@ impl ListNodeFromTemplateJobsOutput {
 }
 
 /// A builder for [`ListNodeFromTemplateJobsOutput`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNodeFromTemplateJobsOutputBuilder {
     pub(crate) node_from_template_jobs: ::std::option::Option<::std::vec::Vec<crate::types::NodeFromTemplateJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -48,8 +48,8 @@ impl GetProtectConfigurationCountryRuleSetOutput {
 }
 
 /// A builder for [`GetProtectConfigurationCountryRuleSetOutput`](crate::operation::get_protect_configuration_country_rule_set::GetProtectConfigurationCountryRuleSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProtectConfigurationCountryRuleSetOutputBuilder {
     pub(crate) protect_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,

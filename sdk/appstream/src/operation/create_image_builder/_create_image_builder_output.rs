@@ -26,8 +26,8 @@ impl CreateImageBuilderOutput {
 }
 
 /// A builder for [`CreateImageBuilderOutput`](crate::operation::create_image_builder::CreateImageBuilderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateImageBuilderOutputBuilder {
     pub(crate) image_builder: ::std::option::Option<crate::types::ImageBuilder>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl UpdateServiceIntegrationInput {
 }
 
 /// A builder for [`UpdateServiceIntegrationInput`](crate::operation::update_service_integration::UpdateServiceIntegrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceIntegrationInputBuilder {
     pub(crate) service_integration: ::std::option::Option<crate::types::UpdateServiceIntegrationConfig>,
 }

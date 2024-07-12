@@ -18,8 +18,8 @@ impl DeleteServiceSpecificCredentialOutput {
 }
 
 /// A builder for [`DeleteServiceSpecificCredentialOutput`](crate::operation::delete_service_specific_credential::DeleteServiceSpecificCredentialOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceSpecificCredentialOutputBuilder {
     _request_id: Option<String>,
 }

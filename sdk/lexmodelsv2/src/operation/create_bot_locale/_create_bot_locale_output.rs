@@ -86,8 +86,8 @@ impl CreateBotLocaleOutput {
 }
 
 /// A builder for [`CreateBotLocaleOutput`](crate::operation::create_bot_locale::CreateBotLocaleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBotLocaleOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,

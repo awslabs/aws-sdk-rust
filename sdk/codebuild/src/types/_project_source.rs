@@ -205,8 +205,8 @@ impl ProjectSource {
 }
 
 /// A builder for [`ProjectSource`](crate::types::ProjectSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

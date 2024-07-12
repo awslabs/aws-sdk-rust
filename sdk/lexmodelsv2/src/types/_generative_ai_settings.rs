@@ -27,8 +27,8 @@ impl GenerativeAiSettings {
 }
 
 /// A builder for [`GenerativeAiSettings`](crate::types::GenerativeAiSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerativeAiSettingsBuilder {
     pub(crate) runtime_settings: ::std::option::Option<crate::types::RuntimeSettings>,
     pub(crate) buildtime_settings: ::std::option::Option<crate::types::BuildtimeSettings>,

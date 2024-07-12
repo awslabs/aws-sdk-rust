@@ -22,8 +22,8 @@ impl DescribeLakeFormationIdentityCenterConfigurationInput {
 }
 
 /// A builder for [`DescribeLakeFormationIdentityCenterConfigurationInput`](crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLakeFormationIdentityCenterConfigurationInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }

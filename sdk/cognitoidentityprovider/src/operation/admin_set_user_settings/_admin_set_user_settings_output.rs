@@ -19,8 +19,8 @@ impl AdminSetUserSettingsOutput {
 }
 
 /// A builder for [`AdminSetUserSettingsOutput`](crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminSetUserSettingsOutputBuilder {
     _request_id: Option<String>,
 }

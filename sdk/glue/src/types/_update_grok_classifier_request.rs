@@ -40,8 +40,8 @@ impl UpdateGrokClassifierRequest {
 }
 
 /// A builder for [`UpdateGrokClassifierRequest`](crate::types::UpdateGrokClassifierRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGrokClassifierRequestBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) classification: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DescribeFlywheelIterationInput {
 }
 
 /// A builder for [`DescribeFlywheelIterationInput`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFlywheelIterationInputBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flywheel_iteration_id: ::std::option::Option<::std::string::String>,

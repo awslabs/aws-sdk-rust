@@ -27,8 +27,8 @@ impl SingleSignOn {
 }
 
 /// A builder for [`SingleSignOn`](crate::types::SingleSignOn).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SingleSignOnBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AuthType>,
     pub(crate) user_assignment: ::std::option::Option<crate::types::UserAssignment>,

@@ -27,8 +27,8 @@ impl EstimateTemplateCostOutput {
 }
 
 /// A builder for [`EstimateTemplateCostOutput`](crate::operation::estimate_template_cost::EstimateTemplateCostOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EstimateTemplateCostOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

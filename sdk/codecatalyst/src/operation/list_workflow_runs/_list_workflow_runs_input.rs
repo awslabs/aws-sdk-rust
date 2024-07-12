@@ -52,8 +52,8 @@ impl ListWorkflowRunsInput {
 }
 
 /// A builder for [`ListWorkflowRunsInput`](crate::operation::list_workflow_runs::ListWorkflowRunsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkflowRunsInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,

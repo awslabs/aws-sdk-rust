@@ -27,8 +27,8 @@ impl GetRegistrationCodeOutput {
 }
 
 /// A builder for [`GetRegistrationCodeOutput`](crate::operation::get_registration_code::GetRegistrationCodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegistrationCodeOutputBuilder {
     pub(crate) registration_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

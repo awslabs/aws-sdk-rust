@@ -26,8 +26,8 @@ impl GetSecurityPolicyInput {
 }
 
 /// A builder for [`GetSecurityPolicyInput`](crate::operation::get_security_policy::GetSecurityPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSecurityPolicyInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

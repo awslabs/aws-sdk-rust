@@ -27,8 +27,8 @@ impl RuleGroupSourceStatelessRulesDetails {
 }
 
 /// A builder for [`RuleGroupSourceStatelessRulesDetails`](crate::types::RuleGroupSourceStatelessRulesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupSourceStatelessRulesDetailsBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) rule_definition: ::std::option::Option<crate::types::RuleGroupSourceStatelessRuleDefinition>,

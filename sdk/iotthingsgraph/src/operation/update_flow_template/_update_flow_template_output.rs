@@ -26,8 +26,8 @@ impl UpdateFlowTemplateOutput {
 }
 
 /// A builder for [`UpdateFlowTemplateOutput`](crate::operation::update_flow_template::UpdateFlowTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFlowTemplateOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::FlowTemplateSummary>,
     _request_id: Option<String>,

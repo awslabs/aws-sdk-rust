@@ -80,8 +80,8 @@ impl ListInferenceExperimentsInput {
 }
 
 /// A builder for [`ListInferenceExperimentsInput`](crate::operation::list_inference_experiments::ListInferenceExperimentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInferenceExperimentsInputBuilder {
     pub(crate) name_contains: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::InferenceExperimentType>,

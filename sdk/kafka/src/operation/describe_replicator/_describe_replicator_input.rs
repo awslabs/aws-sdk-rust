@@ -20,8 +20,8 @@ impl DescribeReplicatorInput {
 }
 
 /// A builder for [`DescribeReplicatorInput`](crate::operation::describe_replicator::DescribeReplicatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReplicatorInputBuilder {
     pub(crate) replicator_arn: ::std::option::Option<::std::string::String>,
 }

@@ -44,8 +44,8 @@ impl DisassociateProductFromPortfolioInput {
 }
 
 /// A builder for [`DisassociateProductFromPortfolioInput`](crate::operation::disassociate_product_from_portfolio::DisassociateProductFromPortfolioInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateProductFromPortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,

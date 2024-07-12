@@ -30,8 +30,8 @@ impl PutMetricDataInput {
 }
 
 /// A builder for [`PutMetricDataInput`](crate::operation::put_metric_data::PutMetricDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMetricDataInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,

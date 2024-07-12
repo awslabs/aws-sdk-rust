@@ -21,8 +21,8 @@ impl StopReplicationTaskInput {
 }
 
 /// A builder for [`StopReplicationTaskInput`](crate::operation::stop_replication_task::StopReplicationTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopReplicationTaskInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
 }

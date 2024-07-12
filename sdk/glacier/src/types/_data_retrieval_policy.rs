@@ -23,8 +23,8 @@ impl DataRetrievalPolicy {
 }
 
 /// A builder for [`DataRetrievalPolicy`](crate::types::DataRetrievalPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataRetrievalPolicyBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::DataRetrievalRule>>,
 }

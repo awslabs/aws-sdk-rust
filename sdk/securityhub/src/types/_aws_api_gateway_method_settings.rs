@@ -99,8 +99,8 @@ impl AwsApiGatewayMethodSettings {
 }
 
 /// A builder for [`AwsApiGatewayMethodSettings`](crate::types::AwsApiGatewayMethodSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsApiGatewayMethodSettingsBuilder {
     pub(crate) metrics_enabled: ::std::option::Option<bool>,
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,

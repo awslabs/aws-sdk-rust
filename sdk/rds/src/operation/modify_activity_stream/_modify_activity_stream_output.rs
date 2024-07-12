@@ -56,8 +56,8 @@ impl ModifyActivityStreamOutput {
 }
 
 /// A builder for [`ModifyActivityStreamOutput`](crate::operation::modify_activity_stream::ModifyActivityStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyActivityStreamOutputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) kinesis_stream_name: ::std::option::Option<::std::string::String>,

@@ -48,8 +48,8 @@ impl UpdatePlaybackRestrictionPolicyInput {
 }
 
 /// A builder for [`UpdatePlaybackRestrictionPolicyInput`](crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePlaybackRestrictionPolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -54,8 +54,8 @@ impl DescribeIamInstanceProfileAssociationsInput {
 }
 
 /// A builder for [`DescribeIamInstanceProfileAssociationsInput`](crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIamInstanceProfileAssociationsInputBuilder {
     pub(crate) association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

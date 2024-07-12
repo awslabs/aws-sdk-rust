@@ -53,8 +53,8 @@ impl InvalidZipFileException {
 }
 
 /// A builder for [`InvalidZipFileException`](crate::types::error::InvalidZipFileException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidZipFileExceptionBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

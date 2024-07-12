@@ -44,8 +44,8 @@ impl DescribePublisherOutput {
 }
 
 /// A builder for [`DescribePublisherOutput`](crate::operation::describe_publisher::DescribePublisherOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePublisherOutputBuilder {
     pub(crate) publisher_id: ::std::option::Option<::std::string::String>,
     pub(crate) publisher_status: ::std::option::Option<crate::types::PublisherStatus>,

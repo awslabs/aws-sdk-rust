@@ -32,8 +32,8 @@ impl AssociateClientVpnTargetNetworkOutput {
 }
 
 /// A builder for [`AssociateClientVpnTargetNetworkOutput`](crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateClientVpnTargetNetworkOutputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AssociationStatus>,

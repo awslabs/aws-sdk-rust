@@ -39,8 +39,8 @@ impl AwsRdsDbSecurityGroupEc2SecurityGroup {
 }
 
 /// A builder for [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRdsDbSecurityGroupEc2SecurityGroupBuilder {
     pub(crate) ec2_security_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_security_group_name: ::std::option::Option<::std::string::String>,

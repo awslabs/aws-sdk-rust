@@ -26,8 +26,8 @@ impl UpdateWorkerOutput {
 }
 
 /// A builder for [`UpdateWorkerOutput`](crate::operation::update_worker::UpdateWorkerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkerOutputBuilder {
     pub(crate) log: ::std::option::Option<crate::types::LogConfiguration>,
     _request_id: Option<String>,

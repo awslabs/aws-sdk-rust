@@ -27,8 +27,8 @@ impl BridgeOutput {
 }
 
 /// A builder for [`BridgeOutput`](crate::types::BridgeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BridgeOutputBuilder {
     pub(crate) flow_output: ::std::option::Option<crate::types::BridgeFlowOutput>,
     pub(crate) network_output: ::std::option::Option<crate::types::BridgeNetworkOutput>,

@@ -20,8 +20,8 @@ impl GetTriggerInput {
 }
 
 /// A builder for [`GetTriggerInput`](crate::operation::get_trigger::GetTriggerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTriggerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl DescribeAccountAssignmentDeletionStatusInput {
 }
 
 /// A builder for [`DescribeAccountAssignmentDeletionStatusInput`](crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountAssignmentDeletionStatusInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_assignment_deletion_request_id: ::std::option::Option<::std::string::String>,

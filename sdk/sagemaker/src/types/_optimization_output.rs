@@ -21,8 +21,8 @@ impl OptimizationOutput {
 }
 
 /// A builder for [`OptimizationOutput`](crate::types::OptimizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OptimizationOutputBuilder {
     pub(crate) recommended_inference_image: ::std::option::Option<::std::string::String>,
 }

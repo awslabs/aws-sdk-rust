@@ -45,8 +45,8 @@ impl ModelInputConfiguration {
 }
 
 /// A builder for [`ModelInputConfiguration`](crate::types::ModelInputConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelInputConfigurationBuilder {
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::ModelInputDataFormat>,

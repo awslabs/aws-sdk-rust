@@ -27,8 +27,8 @@ impl ComponentState {
 }
 
 /// A builder for [`ComponentState`](crate::types::ComponentState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComponentStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ComponentStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

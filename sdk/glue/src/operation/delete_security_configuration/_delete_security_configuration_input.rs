@@ -20,8 +20,8 @@ impl DeleteSecurityConfigurationInput {
 }
 
 /// A builder for [`DeleteSecurityConfigurationInput`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSecurityConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

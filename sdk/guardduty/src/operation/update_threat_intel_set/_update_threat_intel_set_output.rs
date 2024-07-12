@@ -18,8 +18,8 @@ impl UpdateThreatIntelSetOutput {
 }
 
 /// A builder for [`UpdateThreatIntelSetOutput`](crate::operation::update_threat_intel_set::UpdateThreatIntelSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateThreatIntelSetOutputBuilder {
     _request_id: Option<String>,
 }

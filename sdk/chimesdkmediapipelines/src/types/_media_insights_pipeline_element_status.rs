@@ -27,8 +27,8 @@ impl MediaInsightsPipelineElementStatus {
 }
 
 /// A builder for [`MediaInsightsPipelineElementStatus`](crate::types::MediaInsightsPipelineElementStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaInsightsPipelineElementStatusBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>,
     pub(crate) status: ::std::option::Option<crate::types::MediaPipelineElementStatus>,

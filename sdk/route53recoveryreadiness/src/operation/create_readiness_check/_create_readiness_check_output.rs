@@ -44,8 +44,8 @@ impl CreateReadinessCheckOutput {
 }
 
 /// A builder for [`CreateReadinessCheckOutput`](crate::operation::create_readiness_check::CreateReadinessCheckOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReadinessCheckOutputBuilder {
     pub(crate) readiness_check_arn: ::std::option::Option<::std::string::String>,
     pub(crate) readiness_check_name: ::std::option::Option<::std::string::String>,

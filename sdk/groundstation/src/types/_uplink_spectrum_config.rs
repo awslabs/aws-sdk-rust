@@ -27,8 +27,8 @@ impl UplinkSpectrumConfig {
 }
 
 /// A builder for [`UplinkSpectrumConfig`](crate::types::UplinkSpectrumConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UplinkSpectrumConfigBuilder {
     pub(crate) center_frequency: ::std::option::Option<crate::types::Frequency>,
     pub(crate) polarization: ::std::option::Option<crate::types::Polarization>,

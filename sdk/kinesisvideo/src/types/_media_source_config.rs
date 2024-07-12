@@ -40,8 +40,8 @@ impl MediaSourceConfig {
 }
 
 /// A builder for [`MediaSourceConfig`](crate::types::MediaSourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MediaSourceConfigBuilder {
     pub(crate) media_uri_secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) media_uri_type: ::std::option::Option<crate::types::MediaUriType>,

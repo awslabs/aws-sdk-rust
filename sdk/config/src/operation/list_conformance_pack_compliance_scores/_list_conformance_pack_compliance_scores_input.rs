@@ -50,8 +50,8 @@ impl ListConformancePackComplianceScoresInput {
 }
 
 /// A builder for [`ListConformancePackComplianceScoresInput`](crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConformancePackComplianceScoresInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ConformancePackComplianceScoresFilters>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

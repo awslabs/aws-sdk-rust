@@ -18,8 +18,8 @@ impl DeleteUsageLimitOutput {
 }
 
 /// A builder for [`DeleteUsageLimitOutput`](crate::operation::delete_usage_limit::DeleteUsageLimitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUsageLimitOutputBuilder {
     _request_id: Option<String>,
 }

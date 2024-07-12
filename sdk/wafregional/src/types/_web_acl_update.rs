@@ -31,8 +31,8 @@ impl WebAclUpdate {
 }
 
 /// A builder for [`WebAclUpdate`](crate::types::WebAclUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WebAclUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) activated_rule: ::std::option::Option<crate::types::ActivatedRule>,

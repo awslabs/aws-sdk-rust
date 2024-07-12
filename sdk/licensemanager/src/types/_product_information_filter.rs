@@ -37,8 +37,8 @@ impl ProductInformationFilter {
 }
 
 /// A builder for [`ProductInformationFilter`](crate::types::ProductInformationFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProductInformationFilterBuilder {
     pub(crate) product_information_filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) product_information_filter_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

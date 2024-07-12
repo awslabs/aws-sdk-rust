@@ -34,8 +34,8 @@ impl UpdateReplicationSetInput {
 }
 
 /// A builder for [`UpdateReplicationSetInput`](crate::operation::update_replication_set::UpdateReplicationSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateReplicationSetInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>>,

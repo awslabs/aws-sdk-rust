@@ -32,8 +32,8 @@ impl GetBucketLocationOutput {
 }
 
 /// A builder for [`GetBucketLocationOutput`](crate::operation::get_bucket_location::GetBucketLocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketLocationOutputBuilder {
     pub(crate) location_constraint: ::std::option::Option<crate::types::BucketLocationConstraint>,
     _extended_request_id: Option<String>,

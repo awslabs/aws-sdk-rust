@@ -27,8 +27,8 @@ impl RouteAnalysisEndpointOptionsSpecification {
 }
 
 /// A builder for [`RouteAnalysisEndpointOptionsSpecification`](crate::types::RouteAnalysisEndpointOptionsSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RouteAnalysisEndpointOptionsSpecificationBuilder {
     pub(crate) transit_gateway_attachment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,

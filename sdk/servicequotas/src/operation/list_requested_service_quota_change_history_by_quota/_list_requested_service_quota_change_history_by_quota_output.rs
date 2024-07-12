@@ -36,8 +36,8 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
 }
 
 /// A builder for [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRequestedServiceQuotaChangeHistoryByQuotaOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) requested_quotas: ::std::option::Option<::std::vec::Vec<crate::types::RequestedServiceQuotaChange>>,

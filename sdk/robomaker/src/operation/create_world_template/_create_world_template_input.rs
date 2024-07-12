@@ -44,8 +44,8 @@ impl CreateWorldTemplateInput {
 }
 
 /// A builder for [`CreateWorldTemplateInput`](crate::operation::create_world_template::CreateWorldTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorldTemplateInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

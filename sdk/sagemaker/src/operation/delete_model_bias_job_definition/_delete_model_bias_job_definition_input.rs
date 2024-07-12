@@ -20,8 +20,8 @@ impl DeleteModelBiasJobDefinitionInput {
 }
 
 /// A builder for [`DeleteModelBiasJobDefinitionInput`](crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelBiasJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
 }

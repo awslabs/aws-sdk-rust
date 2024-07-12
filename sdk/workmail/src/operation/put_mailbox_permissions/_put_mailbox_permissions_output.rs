@@ -18,8 +18,8 @@ impl PutMailboxPermissionsOutput {
 }
 
 /// A builder for [`PutMailboxPermissionsOutput`](crate::operation::put_mailbox_permissions::PutMailboxPermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMailboxPermissionsOutputBuilder {
     _request_id: Option<String>,
 }

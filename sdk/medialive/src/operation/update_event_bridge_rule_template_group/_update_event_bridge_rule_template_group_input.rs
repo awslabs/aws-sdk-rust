@@ -27,8 +27,8 @@ impl UpdateEventBridgeRuleTemplateGroupInput {
 }
 
 /// A builder for [`UpdateEventBridgeRuleTemplateGroupInput`](crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventBridgeRuleTemplateGroupInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

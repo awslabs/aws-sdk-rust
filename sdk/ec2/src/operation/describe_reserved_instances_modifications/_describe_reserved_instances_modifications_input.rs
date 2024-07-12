@@ -89,8 +89,8 @@ impl DescribeReservedInstancesModificationsInput {
 }
 
 /// A builder for [`DescribeReservedInstancesModificationsInput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedInstancesModificationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) reserved_instances_modification_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

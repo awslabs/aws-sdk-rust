@@ -36,8 +36,8 @@ impl ListGraphSnapshotsInput {
 }
 
 /// A builder for [`ListGraphSnapshotsInput`](crate::operation::list_graph_snapshots::ListGraphSnapshotsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGraphSnapshotsInputBuilder {
     pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

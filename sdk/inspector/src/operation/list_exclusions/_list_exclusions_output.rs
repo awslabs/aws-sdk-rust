@@ -33,8 +33,8 @@ impl ListExclusionsOutput {
 }
 
 /// A builder for [`ListExclusionsOutput`](crate::operation::list_exclusions::ListExclusionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExclusionsOutputBuilder {
     pub(crate) exclusion_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

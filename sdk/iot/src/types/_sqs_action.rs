@@ -35,8 +35,8 @@ impl SqsAction {
 }
 
 /// A builder for [`SqsAction`](crate::types::SqsAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SqsActionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,

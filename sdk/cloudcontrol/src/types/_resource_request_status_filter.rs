@@ -59,8 +59,8 @@ impl ResourceRequestStatusFilter {
 }
 
 /// A builder for [`ResourceRequestStatusFilter`](crate::types::ResourceRequestStatusFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceRequestStatusFilterBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     pub(crate) operation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,

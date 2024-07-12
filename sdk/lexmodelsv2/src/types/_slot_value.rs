@@ -21,8 +21,8 @@ impl SlotValue {
 }
 
 /// A builder for [`SlotValue`](crate::types::SlotValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotValueBuilder {
     pub(crate) interpreted_value: ::std::option::Option<::std::string::String>,
 }

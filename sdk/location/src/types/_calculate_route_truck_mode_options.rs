@@ -47,8 +47,8 @@ impl CalculateRouteTruckModeOptions {
 }
 
 /// A builder for [`CalculateRouteTruckModeOptions`](crate::types::CalculateRouteTruckModeOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CalculateRouteTruckModeOptionsBuilder {
     pub(crate) avoid_ferries: ::std::option::Option<bool>,
     pub(crate) avoid_tolls: ::std::option::Option<bool>,

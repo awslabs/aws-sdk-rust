@@ -26,8 +26,8 @@ impl GetReplicationSetOutput {
 }
 
 /// A builder for [`GetReplicationSetOutput`](crate::operation::get_replication_set::GetReplicationSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReplicationSetOutputBuilder {
     pub(crate) replication_set: ::std::option::Option<crate::types::ReplicationSet>,
     _request_id: Option<String>,

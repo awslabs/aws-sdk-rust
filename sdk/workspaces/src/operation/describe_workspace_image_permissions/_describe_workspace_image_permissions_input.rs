@@ -32,8 +32,8 @@ impl DescribeWorkspaceImagePermissionsInput {
 }
 
 /// A builder for [`DescribeWorkspaceImagePermissionsInput`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceImagePermissionsInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl DataSourceToIndexFieldMapping {
 }
 
 /// A builder for [`DataSourceToIndexFieldMapping`](crate::types::DataSourceToIndexFieldMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSourceToIndexFieldMappingBuilder {
     pub(crate) data_source_field_name: ::std::option::Option<::std::string::String>,
     pub(crate) date_field_format: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl S3SetObjectRetentionOperation {
 }
 
 /// A builder for [`S3SetObjectRetentionOperation`](crate::types::S3SetObjectRetentionOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3SetObjectRetentionOperationBuilder {
     pub(crate) bypass_governance_retention: ::std::option::Option<bool>,
     pub(crate) retention: ::std::option::Option<crate::types::S3Retention>,

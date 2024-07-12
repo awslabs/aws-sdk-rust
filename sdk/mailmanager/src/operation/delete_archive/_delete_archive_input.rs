@@ -21,8 +21,8 @@ impl DeleteArchiveInput {
 }
 
 /// A builder for [`DeleteArchiveInput`](crate::operation::delete_archive::DeleteArchiveInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteArchiveInputBuilder {
     pub(crate) archive_id: ::std::option::Option<::std::string::String>,
 }

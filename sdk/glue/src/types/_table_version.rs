@@ -27,8 +27,8 @@ impl TableVersion {
 }
 
 /// A builder for [`TableVersion`](crate::types::TableVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableVersionBuilder {
     pub(crate) table: ::std::option::Option<crate::types::Table>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,

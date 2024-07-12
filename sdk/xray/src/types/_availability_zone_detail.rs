@@ -21,8 +21,8 @@ impl AvailabilityZoneDetail {
 }
 
 /// A builder for [`AvailabilityZoneDetail`](crate::types::AvailabilityZoneDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AvailabilityZoneDetailBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

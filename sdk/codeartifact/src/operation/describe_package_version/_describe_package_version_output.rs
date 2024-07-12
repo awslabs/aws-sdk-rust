@@ -26,8 +26,8 @@ impl DescribePackageVersionOutput {
 }
 
 /// A builder for [`DescribePackageVersionOutput`](crate::operation::describe_package_version::DescribePackageVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePackageVersionOutputBuilder {
     pub(crate) package_version: ::std::option::Option<crate::types::PackageVersionDescription>,
     _request_id: Option<String>,

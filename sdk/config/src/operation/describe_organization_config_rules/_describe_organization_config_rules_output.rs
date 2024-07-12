@@ -34,8 +34,8 @@ impl DescribeOrganizationConfigRulesOutput {
 }
 
 /// A builder for [`DescribeOrganizationConfigRulesOutput`](crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationConfigRulesOutputBuilder {
     pub(crate) organization_config_rules: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConfigRule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

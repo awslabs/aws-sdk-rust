@@ -18,8 +18,8 @@ impl PutApplicationGrantOutput {
 }
 
 /// A builder for [`PutApplicationGrantOutput`](crate::operation::put_application_grant::PutApplicationGrantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutApplicationGrantOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl DisassociateResolverRuleOutput {
 }
 
 /// A builder for [`DisassociateResolverRuleOutput`](crate::operation::disassociate_resolver_rule::DisassociateResolverRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateResolverRuleOutputBuilder {
     pub(crate) resolver_rule_association: ::std::option::Option<crate::types::ResolverRuleAssociation>,
     _request_id: Option<String>,

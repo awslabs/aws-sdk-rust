@@ -66,8 +66,8 @@ impl CreateMlflowTrackingServerInput {
 }
 
 /// A builder for [`CreateMlflowTrackingServerInput`](crate::operation::create_mlflow_tracking_server::CreateMlflowTrackingServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMlflowTrackingServerInputBuilder {
     pub(crate) tracking_server_name: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_store_uri: ::std::option::Option<::std::string::String>,

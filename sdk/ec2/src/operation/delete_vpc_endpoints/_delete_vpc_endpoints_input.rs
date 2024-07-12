@@ -28,8 +28,8 @@ impl DeleteVpcEndpointsInput {
 }
 
 /// A builder for [`DeleteVpcEndpointsInput`](crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpcEndpointsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -33,8 +33,8 @@ impl AuthenticationConfigurationInput {
 }
 
 /// A builder for [`AuthenticationConfigurationInput`](crate::types::AuthenticationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthenticationConfigurationInputBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,

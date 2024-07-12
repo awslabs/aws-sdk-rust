@@ -89,8 +89,8 @@ impl CreateLocationS3Input {
 }
 
 /// A builder for [`CreateLocationS3Input`](crate::operation::create_location_s3::CreateLocationS3Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocationS3InputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_arn: ::std::option::Option<::std::string::String>,

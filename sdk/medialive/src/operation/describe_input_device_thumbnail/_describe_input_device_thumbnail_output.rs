@@ -51,8 +51,8 @@ impl DescribeInputDeviceThumbnailOutput {
 }
 
 /// A builder for [`DescribeInputDeviceThumbnailOutput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInputDeviceThumbnailOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) content_type: ::std::option::Option<crate::types::ContentType>,

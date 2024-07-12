@@ -35,8 +35,8 @@ impl GitPullRequestFilter {
 }
 
 /// A builder for [`GitPullRequestFilter`](crate::types::GitPullRequestFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GitPullRequestFilterBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestEventType>>,
     pub(crate) branches: ::std::option::Option<crate::types::GitBranchFilterCriteria>,

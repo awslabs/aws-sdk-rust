@@ -159,8 +159,8 @@ impl GetRouteOutput {
 }
 
 /// A builder for [`GetRouteOutput`](crate::operation::get_route::GetRouteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetRouteOutputBuilder {
     pub(crate) route_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl PutConfigurationRecorderInput {
 }
 
 /// A builder for [`PutConfigurationRecorderInput`](crate::operation::put_configuration_recorder::PutConfigurationRecorderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigurationRecorderInputBuilder {
     pub(crate) configuration_recorder: ::std::option::Option<crate::types::ConfigurationRecorder>,
 }

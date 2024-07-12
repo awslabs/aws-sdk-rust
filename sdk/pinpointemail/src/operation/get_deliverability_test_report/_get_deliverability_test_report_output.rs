@@ -54,8 +54,8 @@ impl GetDeliverabilityTestReportOutput {
 }
 
 /// A builder for [`GetDeliverabilityTestReportOutput`](crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeliverabilityTestReportOutputBuilder {
     pub(crate) deliverability_test_report: ::std::option::Option<crate::types::DeliverabilityTestReport>,
     pub(crate) overall_placement: ::std::option::Option<crate::types::PlacementStatistics>,

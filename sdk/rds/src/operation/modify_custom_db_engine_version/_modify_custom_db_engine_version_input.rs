@@ -88,8 +88,8 @@ impl ModifyCustomDbEngineVersionInput {
 }
 
 /// A builder for [`ModifyCustomDbEngineVersionInput`](crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyCustomDbEngineVersionInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,

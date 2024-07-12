@@ -93,8 +93,8 @@ impl UpdateCloudWatchAlarmTemplateInput {
 }
 
 /// A builder for [`UpdateCloudWatchAlarmTemplateInput`](crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCloudWatchAlarmTemplateInputBuilder {
     pub(crate) comparison_operator: ::std::option::Option<crate::types::CloudWatchAlarmTemplateComparisonOperator>,
     pub(crate) datapoints_to_alarm: ::std::option::Option<i32>,

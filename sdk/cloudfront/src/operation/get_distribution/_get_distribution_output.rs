@@ -33,8 +33,8 @@ impl GetDistributionOutput {
 }
 
 /// A builder for [`GetDistributionOutput`](crate::operation::get_distribution::GetDistributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDistributionOutputBuilder {
     pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

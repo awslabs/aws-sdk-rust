@@ -26,8 +26,8 @@ impl ListJobTemplatesInput {
 }
 
 /// A builder for [`ListJobTemplatesInput`](crate::operation::list_job_templates::ListJobTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJobTemplatesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

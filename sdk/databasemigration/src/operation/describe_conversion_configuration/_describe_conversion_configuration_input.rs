@@ -20,8 +20,8 @@ impl DescribeConversionConfigurationInput {
 }
 
 /// A builder for [`DescribeConversionConfigurationInput`](crate::operation::describe_conversion_configuration::DescribeConversionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConversionConfigurationInputBuilder {
     pub(crate) migration_project_identifier: ::std::option::Option<::std::string::String>,
 }

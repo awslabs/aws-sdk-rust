@@ -34,8 +34,8 @@ impl ListClassificationScopesOutput {
 }
 
 /// A builder for [`ListClassificationScopesOutput`](crate::operation::list_classification_scopes::ListClassificationScopesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListClassificationScopesOutputBuilder {
     pub(crate) classification_scopes: ::std::option::Option<::std::vec::Vec<crate::types::ClassificationScopeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

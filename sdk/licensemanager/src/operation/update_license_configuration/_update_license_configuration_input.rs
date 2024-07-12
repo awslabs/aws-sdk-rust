@@ -72,8 +72,8 @@ impl UpdateLicenseConfigurationInput {
 }
 
 /// A builder for [`UpdateLicenseConfigurationInput`](crate::operation::update_license_configuration::UpdateLicenseConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLicenseConfigurationInputBuilder {
     pub(crate) license_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) license_configuration_status: ::std::option::Option<crate::types::LicenseConfigurationStatus>,

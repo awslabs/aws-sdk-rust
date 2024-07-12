@@ -26,8 +26,8 @@ impl UpdateConfiguredTableAssociationOutput {
 }
 
 /// A builder for [`UpdateConfiguredTableAssociationOutput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfiguredTableAssociationOutputBuilder {
     pub(crate) configured_table_association: ::std::option::Option<crate::types::ConfiguredTableAssociation>,
     _request_id: Option<String>,

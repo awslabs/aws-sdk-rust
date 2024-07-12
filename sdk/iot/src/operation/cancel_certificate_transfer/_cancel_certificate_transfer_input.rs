@@ -21,8 +21,8 @@ impl CancelCertificateTransferInput {
 }
 
 /// A builder for [`CancelCertificateTransferInput`](crate::operation::cancel_certificate_transfer::CancelCertificateTransferInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelCertificateTransferInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
 }

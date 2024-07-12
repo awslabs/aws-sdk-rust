@@ -22,8 +22,8 @@ impl TlsValidationContextAcmTrust {
 }
 
 /// A builder for [`TlsValidationContextAcmTrust`](crate::types::TlsValidationContextAcmTrust).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TlsValidationContextAcmTrustBuilder {
     pub(crate) certificate_authority_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

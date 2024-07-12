@@ -27,8 +27,8 @@ impl DefineAnalysisSchemeInput {
 }
 
 /// A builder for [`DefineAnalysisSchemeInput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefineAnalysisSchemeInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_scheme: ::std::option::Option<crate::types::AnalysisScheme>,

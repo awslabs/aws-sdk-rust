@@ -39,8 +39,8 @@ impl GetReservationCoverageOutput {
 }
 
 /// A builder for [`GetReservationCoverageOutput`](crate::operation::get_reservation_coverage::GetReservationCoverageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReservationCoverageOutputBuilder {
     pub(crate) coverages_by_time: ::std::option::Option<::std::vec::Vec<crate::types::CoverageByTime>>,
     pub(crate) total: ::std::option::Option<crate::types::Coverage>,

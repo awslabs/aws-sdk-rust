@@ -63,8 +63,8 @@ impl AppInstanceBot {
 }
 
 /// A builder for [`AppInstanceBot`](crate::types::AppInstanceBot).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AppInstanceBotBuilder {
     pub(crate) app_instance_bot_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

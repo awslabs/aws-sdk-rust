@@ -33,8 +33,8 @@ impl CodeContentUpdate {
 }
 
 /// A builder for [`CodeContentUpdate`](crate::types::CodeContentUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeContentUpdateBuilder {
     pub(crate) text_content_update: ::std::option::Option<::std::string::String>,
     pub(crate) zip_file_content_update: ::std::option::Option<::aws_smithy_types::Blob>,

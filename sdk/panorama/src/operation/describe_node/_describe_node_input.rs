@@ -26,8 +26,8 @@ impl DescribeNodeInput {
 }
 
 /// A builder for [`DescribeNodeInput`](crate::operation::describe_node::DescribeNodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNodeInputBuilder {
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteImageRecipeInput {
 }
 
 /// A builder for [`DeleteImageRecipeInput`](crate::operation::delete_image_recipe::DeleteImageRecipeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteImageRecipeInputBuilder {
     pub(crate) image_recipe_arn: ::std::option::Option<::std::string::String>,
 }

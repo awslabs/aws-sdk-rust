@@ -21,8 +21,8 @@ impl HighAvailabilityConfig {
 }
 
 /// A builder for [`HighAvailabilityConfig`](crate::types::HighAvailabilityConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HighAvailabilityConfigBuilder {
     pub(crate) desired_capacity: ::std::option::Option<i32>,
 }

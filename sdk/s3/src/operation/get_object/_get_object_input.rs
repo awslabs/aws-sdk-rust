@@ -297,8 +297,8 @@ impl GetObjectInput {
 }
 
 /// A builder for [`GetObjectInput`](crate::operation::get_object::GetObjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetObjectInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,

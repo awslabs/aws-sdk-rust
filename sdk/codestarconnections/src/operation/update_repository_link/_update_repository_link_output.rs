@@ -26,8 +26,8 @@ impl UpdateRepositoryLinkOutput {
 }
 
 /// A builder for [`UpdateRepositoryLinkOutput`](crate::operation::update_repository_link::UpdateRepositoryLinkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRepositoryLinkOutputBuilder {
     pub(crate) repository_link_info: ::std::option::Option<crate::types::RepositoryLinkInfo>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl ModifyOptionGroupOutput {
 }
 
 /// A builder for [`ModifyOptionGroupOutput`](crate::operation::modify_option_group::ModifyOptionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyOptionGroupOutputBuilder {
     pub(crate) option_group: ::std::option::Option<crate::types::OptionGroup>,
     _request_id: Option<String>,

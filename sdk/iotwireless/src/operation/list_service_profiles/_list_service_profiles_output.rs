@@ -34,8 +34,8 @@ impl ListServiceProfilesOutput {
 }
 
 /// A builder for [`ListServiceProfilesOutput`](crate::operation::list_service_profiles::ListServiceProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceProfilesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) service_profile_list: ::std::option::Option<::std::vec::Vec<crate::types::ServiceProfile>>,

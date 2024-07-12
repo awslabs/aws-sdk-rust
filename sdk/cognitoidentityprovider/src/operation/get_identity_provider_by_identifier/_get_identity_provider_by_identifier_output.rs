@@ -26,8 +26,8 @@ impl GetIdentityProviderByIdentifierOutput {
 }
 
 /// A builder for [`GetIdentityProviderByIdentifierOutput`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityProviderByIdentifierOutputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProviderType>,
     _request_id: Option<String>,

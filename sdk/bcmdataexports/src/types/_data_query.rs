@@ -34,8 +34,8 @@ impl DataQuery {
 }
 
 /// A builder for [`DataQuery`](crate::types::DataQuery).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataQueryBuilder {
     pub(crate) query_statement: ::std::option::Option<::std::string::String>,
     pub(crate) table_configurations: ::std::option::Option<

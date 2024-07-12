@@ -26,8 +26,8 @@ impl DeleteRevisionInput {
 }
 
 /// A builder for [`DeleteRevisionInput`](crate::operation::delete_revision::DeleteRevisionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRevisionInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,

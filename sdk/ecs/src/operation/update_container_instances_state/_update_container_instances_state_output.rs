@@ -36,8 +36,8 @@ impl UpdateContainerInstancesStateOutput {
 }
 
 /// A builder for [`UpdateContainerInstancesStateOutput`](crate::operation::update_container_instances_state::UpdateContainerInstancesStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContainerInstancesStateOutputBuilder {
     pub(crate) container_instances: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,

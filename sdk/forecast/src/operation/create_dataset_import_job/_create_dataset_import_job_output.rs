@@ -26,8 +26,8 @@ impl CreateDatasetImportJobOutput {
 }
 
 /// A builder for [`CreateDatasetImportJobOutput`](crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDatasetImportJobOutputBuilder {
     pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

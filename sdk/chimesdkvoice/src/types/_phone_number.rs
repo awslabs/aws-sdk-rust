@@ -128,8 +128,8 @@ impl PhoneNumber {
 }
 
 /// A builder for [`PhoneNumber`](crate::types::PhoneNumber).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PhoneNumberBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) e164_phone_number: ::std::option::Option<::std::string::String>,

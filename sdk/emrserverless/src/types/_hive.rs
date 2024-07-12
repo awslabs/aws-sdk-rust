@@ -43,8 +43,8 @@ impl Hive {
 }
 
 /// A builder for [`Hive`](crate::types::Hive).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct HiveBuilder {
     pub(crate) query: ::std::option::Option<::std::string::String>,
     pub(crate) init_query_file: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl Step {
 }
 
 /// A builder for [`Step`](crate::types::Step).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepBuilder {
     pub(crate) expiry: ::std::option::Option<crate::types::Expiry>,
     pub(crate) expression: ::std::option::Option<crate::types::Expression>,

@@ -18,8 +18,8 @@ impl SendCisSessionHealthOutput {
 }
 
 /// A builder for [`SendCisSessionHealthOutput`](crate::operation::send_cis_session_health::SendCisSessionHealthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendCisSessionHealthOutputBuilder {
     _request_id: Option<String>,
 }

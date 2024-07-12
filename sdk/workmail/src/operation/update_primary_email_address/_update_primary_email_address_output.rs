@@ -18,8 +18,8 @@ impl UpdatePrimaryEmailAddressOutput {
 }
 
 /// A builder for [`UpdatePrimaryEmailAddressOutput`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePrimaryEmailAddressOutputBuilder {
     _request_id: Option<String>,
 }

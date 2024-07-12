@@ -48,8 +48,8 @@ impl Task {
 }
 
 /// A builder for [`Task`](crate::types::Task).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskBuilder {
     pub(crate) connector_operator: ::std::option::Option<crate::types::ConnectorOperator>,
     pub(crate) destination_field: ::std::option::Option<::std::string::String>,

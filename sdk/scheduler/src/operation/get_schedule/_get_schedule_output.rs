@@ -134,8 +134,8 @@ impl GetScheduleOutput {
 }
 
 /// A builder for [`GetScheduleOutput`](crate::operation::get_schedule::GetScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetScheduleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,

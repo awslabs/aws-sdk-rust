@@ -21,8 +21,8 @@ impl StreamProcessorSettingsForUpdate {
 }
 
 /// A builder for [`StreamProcessorSettingsForUpdate`](crate::types::StreamProcessorSettingsForUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamProcessorSettingsForUpdateBuilder {
     pub(crate) connected_home_for_update: ::std::option::Option<crate::types::ConnectedHomeSettingsForUpdate>,
 }

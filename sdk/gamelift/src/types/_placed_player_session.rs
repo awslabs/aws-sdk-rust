@@ -35,8 +35,8 @@ impl PlacedPlayerSession {
 }
 
 /// A builder for [`PlacedPlayerSession`](crate::types::PlacedPlayerSession).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PlacedPlayerSessionBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_session_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl RestoreDbClusterFromS3Output {
 }
 
 /// A builder for [`RestoreDbClusterFromS3Output`](crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreDbClusterFromS3OutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,

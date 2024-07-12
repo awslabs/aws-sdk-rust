@@ -48,8 +48,8 @@ impl S3CatalogSource {
 }
 
 /// A builder for [`S3CatalogSource`](crate::types::S3CatalogSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3CatalogSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,

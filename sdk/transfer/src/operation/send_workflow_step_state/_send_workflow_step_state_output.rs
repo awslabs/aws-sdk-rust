@@ -18,8 +18,8 @@ impl SendWorkflowStepStateOutput {
 }
 
 /// A builder for [`SendWorkflowStepStateOutput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendWorkflowStepStateOutputBuilder {
     _request_id: Option<String>,
 }

@@ -29,8 +29,8 @@ impl SuggestionTextWithHighlights {
 }
 
 /// A builder for [`SuggestionTextWithHighlights`](crate::types::SuggestionTextWithHighlights).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuggestionTextWithHighlightsBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) highlights: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>>,

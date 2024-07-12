@@ -33,8 +33,8 @@ impl TaxDocumentMetadata {
 }
 
 /// A builder for [`TaxDocumentMetadata`](crate::types::TaxDocumentMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaxDocumentMetadataBuilder {
     pub(crate) tax_document_access_token: ::std::option::Option<::std::string::String>,
     pub(crate) tax_document_name: ::std::option::Option<::std::string::String>,

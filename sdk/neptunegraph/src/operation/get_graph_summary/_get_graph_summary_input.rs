@@ -26,8 +26,8 @@ impl GetGraphSummaryInput {
 }
 
 /// A builder for [`GetGraphSummaryInput`](crate::operation::get_graph_summary::GetGraphSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGraphSummaryInputBuilder {
     pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::GraphSummaryMode>,

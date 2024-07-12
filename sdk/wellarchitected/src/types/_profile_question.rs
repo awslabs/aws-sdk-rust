@@ -61,8 +61,8 @@ impl ProfileQuestion {
 }
 
 /// A builder for [`ProfileQuestion`](crate::types::ProfileQuestion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProfileQuestionBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) question_title: ::std::option::Option<::std::string::String>,

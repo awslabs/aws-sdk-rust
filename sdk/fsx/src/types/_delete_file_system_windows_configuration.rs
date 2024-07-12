@@ -29,8 +29,8 @@ impl DeleteFileSystemWindowsConfiguration {
 }
 
 /// A builder for [`DeleteFileSystemWindowsConfiguration`](crate::types::DeleteFileSystemWindowsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFileSystemWindowsConfigurationBuilder {
     pub(crate) skip_final_backup: ::std::option::Option<bool>,
     pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

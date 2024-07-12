@@ -21,8 +21,8 @@ impl DefaultSpaceStorageSettings {
 }
 
 /// A builder for [`DefaultSpaceStorageSettings`](crate::types::DefaultSpaceStorageSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultSpaceStorageSettingsBuilder {
     pub(crate) default_ebs_storage_settings: ::std::option::Option<crate::types::DefaultEbsStorageSettings>,
 }

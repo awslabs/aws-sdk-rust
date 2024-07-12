@@ -35,8 +35,8 @@ impl ListDedicatedIpPoolsOutput {
 }
 
 /// A builder for [`ListDedicatedIpPoolsOutput`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDedicatedIpPoolsOutputBuilder {
     pub(crate) dedicated_ip_pools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

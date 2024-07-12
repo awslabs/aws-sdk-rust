@@ -34,8 +34,8 @@ impl ListDominantLanguageDetectionJobsOutput {
 }
 
 /// A builder for [`ListDominantLanguageDetectionJobsOutput`](crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDominantLanguageDetectionJobsOutputBuilder {
     pub(crate) dominant_language_detection_job_properties_list:
         ::std::option::Option<::std::vec::Vec<crate::types::DominantLanguageDetectionJobProperties>>,

@@ -33,8 +33,8 @@ impl ColumnSort {
 }
 
 /// A builder for [`ColumnSort`](crate::types::ColumnSort).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnSortBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) direction: ::std::option::Option<crate::types::SortDirection>,

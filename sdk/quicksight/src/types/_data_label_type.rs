@@ -46,8 +46,8 @@ impl DataLabelType {
 }
 
 /// A builder for [`DataLabelType`](crate::types::DataLabelType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataLabelTypeBuilder {
     pub(crate) field_label_type: ::std::option::Option<crate::types::FieldLabelType>,
     pub(crate) data_path_label_type: ::std::option::Option<crate::types::DataPathLabelType>,

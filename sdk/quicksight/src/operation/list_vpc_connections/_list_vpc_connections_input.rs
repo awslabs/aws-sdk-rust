@@ -32,8 +32,8 @@ impl ListVpcConnectionsInput {
 }
 
 /// A builder for [`ListVpcConnectionsInput`](crate::operation::list_vpc_connections::ListVpcConnectionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVpcConnectionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeScalingActivitiesOutput {
 }
 
 /// A builder for [`DescribeScalingActivitiesOutput`](crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScalingActivitiesOutputBuilder {
     pub(crate) activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

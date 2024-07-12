@@ -28,8 +28,8 @@ impl VersionUpdateByJobsConfig {
 }
 
 /// A builder for [`VersionUpdateByJobsConfig`](crate::types::VersionUpdateByJobsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VersionUpdateByJobsConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl DeleteViewVersionInput {
 }
 
 /// A builder for [`DeleteViewVersionInput`](crate::operation::delete_view_version::DeleteViewVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteViewVersionInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) view_id: ::std::option::Option<::std::string::String>,

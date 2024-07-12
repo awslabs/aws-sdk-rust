@@ -33,8 +33,8 @@ impl ListAppInputSourcesOutput {
 }
 
 /// A builder for [`ListAppInputSourcesOutput`](crate::operation::list_app_input_sources::ListAppInputSourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppInputSourcesOutputBuilder {
     pub(crate) app_input_sources: ::std::option::Option<::std::vec::Vec<crate::types::AppInputSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

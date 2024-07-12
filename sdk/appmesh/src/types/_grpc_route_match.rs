@@ -41,8 +41,8 @@ impl GrpcRouteMatch {
 }
 
 /// A builder for [`GrpcRouteMatch`](crate::types::GrpcRouteMatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrpcRouteMatchBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) method_name: ::std::option::Option<::std::string::String>,

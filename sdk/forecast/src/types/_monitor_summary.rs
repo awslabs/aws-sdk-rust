@@ -95,8 +95,8 @@ impl MonitorSummary {
 }
 
 /// A builder for [`MonitorSummary`](crate::types::MonitorSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitorSummaryBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl DeleteInstanceEventWindowInput {
 }
 
 /// A builder for [`DeleteInstanceEventWindowInput`](crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInstanceEventWindowInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) force_delete: ::std::option::Option<bool>,

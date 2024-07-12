@@ -45,8 +45,8 @@ impl EulaAcceptance {
 }
 
 /// A builder for [`EulaAcceptance`](crate::types::EulaAcceptance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EulaAcceptanceBuilder {
     pub(crate) accepted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) accepted_by: ::std::option::Option<::std::string::String>,

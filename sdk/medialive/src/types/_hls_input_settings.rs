@@ -45,8 +45,8 @@ impl HlsInputSettings {
 }
 
 /// A builder for [`HlsInputSettings`](crate::types::HlsInputSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsInputSettingsBuilder {
     pub(crate) bandwidth: ::std::option::Option<i32>,
     pub(crate) buffer_segments: ::std::option::Option<i32>,

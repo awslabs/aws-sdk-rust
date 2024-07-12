@@ -20,8 +20,8 @@ impl DeleteNetworkAnalyzerConfigurationInput {
 }
 
 /// A builder for [`DeleteNetworkAnalyzerConfigurationInput`](crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkAnalyzerConfigurationInputBuilder {
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
 }

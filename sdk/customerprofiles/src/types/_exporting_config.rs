@@ -23,8 +23,8 @@ impl ExportingConfig {
 }
 
 /// A builder for [`ExportingConfig`](crate::types::ExportingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportingConfigBuilder {
     pub(crate) s3_exporting: ::std::option::Option<crate::types::S3ExportingConfig>,
 }

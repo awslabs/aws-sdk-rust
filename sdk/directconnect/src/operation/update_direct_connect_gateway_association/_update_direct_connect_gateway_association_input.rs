@@ -36,8 +36,8 @@ impl UpdateDirectConnectGatewayAssociationInput {
 }
 
 /// A builder for [`UpdateDirectConnectGatewayAssociationInput`](crate::operation::update_direct_connect_gateway_association::UpdateDirectConnectGatewayAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDirectConnectGatewayAssociationInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) add_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,

@@ -40,8 +40,8 @@ impl BatchUpdateVehicleOutput {
 }
 
 /// A builder for [`BatchUpdateVehicleOutput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateVehicleOutputBuilder {
     pub(crate) vehicles: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>>,

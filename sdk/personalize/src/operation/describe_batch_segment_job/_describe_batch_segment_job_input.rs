@@ -20,8 +20,8 @@ impl DescribeBatchSegmentJobInput {
 }
 
 /// A builder for [`DescribeBatchSegmentJobInput`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBatchSegmentJobInputBuilder {
     pub(crate) batch_segment_job_arn: ::std::option::Option<::std::string::String>,
 }

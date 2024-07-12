@@ -169,8 +169,8 @@ impl StudioComponent {
 }
 
 /// A builder for [`StudioComponent`](crate::types::StudioComponent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StudioComponentBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::StudioComponentConfiguration>,

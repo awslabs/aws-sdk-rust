@@ -56,8 +56,8 @@ impl ModifyGlobalReplicationGroupInput {
 }
 
 /// A builder for [`ModifyGlobalReplicationGroupInput`](crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyGlobalReplicationGroupInputBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl ListSpacesInput {
 }
 
 /// A builder for [`ListSpacesInput`](crate::operation::list_spaces::ListSpacesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSpacesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

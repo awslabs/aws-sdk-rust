@@ -29,8 +29,8 @@ impl RandomSplitEntry {
 }
 
 /// A builder for [`RandomSplitEntry`](crate::types::RandomSplitEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RandomSplitEntryBuilder {
     pub(crate) next_activity: ::std::option::Option<::std::string::String>,
     pub(crate) percentage: ::std::option::Option<i32>,

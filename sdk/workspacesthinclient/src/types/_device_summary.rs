@@ -126,8 +126,8 @@ impl DeviceSummary {
 }
 
 /// A builder for [`DeviceSummary`](crate::types::DeviceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DeviceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListInputRoutingsOutput {
 }
 
 /// A builder for [`ListInputRoutingsOutput`](crate::operation::list_input_routings::ListInputRoutingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInputRoutingsOutputBuilder {
     pub(crate) routed_resources: ::std::option::Option<::std::vec::Vec<crate::types::RoutedResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

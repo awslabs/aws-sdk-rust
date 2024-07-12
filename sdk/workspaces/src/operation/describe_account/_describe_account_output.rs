@@ -40,8 +40,8 @@ impl DescribeAccountOutput {
 }
 
 /// A builder for [`DescribeAccountOutput`](crate::operation::describe_account::DescribeAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountOutputBuilder {
     pub(crate) dedicated_tenancy_support: ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
     pub(crate) dedicated_tenancy_management_cidr_range: ::std::option::Option<::std::string::String>,

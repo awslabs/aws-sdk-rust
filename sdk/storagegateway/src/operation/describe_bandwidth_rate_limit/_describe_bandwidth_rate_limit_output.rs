@@ -39,8 +39,8 @@ impl DescribeBandwidthRateLimitOutput {
 }
 
 /// A builder for [`DescribeBandwidthRateLimitOutput`](crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBandwidthRateLimitOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) average_upload_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,

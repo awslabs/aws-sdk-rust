@@ -21,8 +21,8 @@ impl UpdateSubscriptionsToEventBridgeInput {
 }
 
 /// A builder for [`UpdateSubscriptionsToEventBridgeInput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSubscriptionsToEventBridgeInputBuilder {
     pub(crate) force_move: ::std::option::Option<bool>,
 }

@@ -26,8 +26,8 @@ impl UpdateMatchmakingConfigurationOutput {
 }
 
 /// A builder for [`UpdateMatchmakingConfigurationOutput`](crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMatchmakingConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::MatchmakingConfiguration>,
     _request_id: Option<String>,

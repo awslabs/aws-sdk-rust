@@ -18,8 +18,8 @@ impl ExecuteCoreNetworkChangeSetOutput {
 }
 
 /// A builder for [`ExecuteCoreNetworkChangeSetOutput`](crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteCoreNetworkChangeSetOutputBuilder {
     _request_id: Option<String>,
 }

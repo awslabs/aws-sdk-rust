@@ -29,8 +29,8 @@ impl NetworkEthereumAttributes {
 }
 
 /// A builder for [`NetworkEthereumAttributes`](crate::types::NetworkEthereumAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkEthereumAttributesBuilder {
     pub(crate) chain_id: ::std::option::Option<::std::string::String>,
 }

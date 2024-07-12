@@ -73,8 +73,8 @@ impl ParticipantToken {
 }
 
 /// A builder for [`ParticipantToken`](crate::types::ParticipantToken).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ParticipantTokenBuilder {
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,

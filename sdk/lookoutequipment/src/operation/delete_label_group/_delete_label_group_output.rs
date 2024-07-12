@@ -18,8 +18,8 @@ impl DeleteLabelGroupOutput {
 }
 
 /// A builder for [`DeleteLabelGroupOutput`](crate::operation::delete_label_group::DeleteLabelGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLabelGroupOutputBuilder {
     _request_id: Option<String>,
 }

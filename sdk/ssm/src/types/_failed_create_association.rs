@@ -33,8 +33,8 @@ impl FailedCreateAssociation {
 }
 
 /// A builder for [`FailedCreateAssociation`](crate::types::FailedCreateAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedCreateAssociationBuilder {
     pub(crate) entry: ::std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

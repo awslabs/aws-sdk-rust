@@ -19,8 +19,8 @@ impl RevokeVpcEndpointAccessOutput {
 }
 
 /// A builder for [`RevokeVpcEndpointAccessOutput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeVpcEndpointAccessOutputBuilder {
     _request_id: Option<String>,
 }

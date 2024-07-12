@@ -32,8 +32,8 @@ impl DescribeImageVersionInput {
 }
 
 /// A builder for [`DescribeImageVersionInput`](crate::operation::describe_image_version::DescribeImageVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageVersionInputBuilder {
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,

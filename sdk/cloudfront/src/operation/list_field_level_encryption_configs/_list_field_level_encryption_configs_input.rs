@@ -26,8 +26,8 @@ impl ListFieldLevelEncryptionConfigsInput {
 }
 
 /// A builder for [`ListFieldLevelEncryptionConfigsInput`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFieldLevelEncryptionConfigsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,

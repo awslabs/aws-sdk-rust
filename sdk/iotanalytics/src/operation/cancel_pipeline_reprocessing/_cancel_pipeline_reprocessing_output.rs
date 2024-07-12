@@ -18,8 +18,8 @@ impl CancelPipelineReprocessingOutput {
 }
 
 /// A builder for [`CancelPipelineReprocessingOutput`](crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelPipelineReprocessingOutputBuilder {
     _request_id: Option<String>,
 }

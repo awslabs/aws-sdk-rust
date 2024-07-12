@@ -83,8 +83,8 @@ impl CopyDbClusterParameterGroupInput {
 }
 
 /// A builder for [`CopyDbClusterParameterGroupInput`](crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyDbClusterParameterGroupInputBuilder {
     pub(crate) source_db_cluster_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_cluster_parameter_group_identifier: ::std::option::Option<::std::string::String>,

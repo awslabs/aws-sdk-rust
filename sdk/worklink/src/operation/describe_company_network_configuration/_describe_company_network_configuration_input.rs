@@ -20,8 +20,8 @@ impl DescribeCompanyNetworkConfigurationInput {
 }
 
 /// A builder for [`DescribeCompanyNetworkConfigurationInput`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCompanyNetworkConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
 }

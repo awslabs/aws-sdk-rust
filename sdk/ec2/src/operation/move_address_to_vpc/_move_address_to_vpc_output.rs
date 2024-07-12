@@ -32,8 +32,8 @@ impl MoveAddressToVpcOutput {
 }
 
 /// A builder for [`MoveAddressToVpcOutput`](crate::operation::move_address_to_vpc::MoveAddressToVpcOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MoveAddressToVpcOutputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,

@@ -26,8 +26,8 @@ impl GetConfiguredTableAssociationInput {
 }
 
 /// A builder for [`GetConfiguredTableAssociationInput`](crate::operation::get_configured_table_association::GetConfiguredTableAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfiguredTableAssociationInputBuilder {
     pub(crate) configured_table_association_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,

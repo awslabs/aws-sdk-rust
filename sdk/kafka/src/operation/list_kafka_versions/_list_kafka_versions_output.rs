@@ -34,8 +34,8 @@ impl ListKafkaVersionsOutput {
 }
 
 /// A builder for [`ListKafkaVersionsOutput`](crate::operation::list_kafka_versions::ListKafkaVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKafkaVersionsOutputBuilder {
     pub(crate) kafka_versions: ::std::option::Option<::std::vec::Vec<crate::types::KafkaVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

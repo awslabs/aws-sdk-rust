@@ -21,8 +21,8 @@ impl CrossChannelBehavior {
 }
 
 /// A builder for [`CrossChannelBehavior`](crate::types::CrossChannelBehavior).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrossChannelBehaviorBuilder {
     pub(crate) behavior_type: ::std::option::Option<crate::types::BehaviorType>,
 }

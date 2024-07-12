@@ -30,8 +30,8 @@ impl CustomEmailLambdaVersionConfigType {
 }
 
 /// A builder for [`CustomEmailLambdaVersionConfigType`](crate::types::CustomEmailLambdaVersionConfigType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomEmailLambdaVersionConfigTypeBuilder {
     pub(crate) lambda_version: ::std::option::Option<crate::types::CustomEmailSenderLambdaVersionType>,
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,

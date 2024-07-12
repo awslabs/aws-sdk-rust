@@ -20,8 +20,8 @@ impl GetApprovalRuleTemplateInput {
 }
 
 /// A builder for [`GetApprovalRuleTemplateInput`](crate::operation::get_approval_rule_template::GetApprovalRuleTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApprovalRuleTemplateInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
 }

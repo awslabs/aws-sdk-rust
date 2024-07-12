@@ -38,8 +38,8 @@ impl RequestServiceQuotaIncreaseInput {
 }
 
 /// A builder for [`RequestServiceQuotaIncreaseInput`](crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestServiceQuotaIncreaseInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) quota_code: ::std::option::Option<::std::string::String>,

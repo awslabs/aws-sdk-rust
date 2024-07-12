@@ -63,8 +63,8 @@ impl InvokeEndpointOutput {
 }
 
 /// A builder for [`InvokeEndpointOutput`](crate::operation::invoke_endpoint::InvokeEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeEndpointOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

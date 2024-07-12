@@ -84,8 +84,8 @@ impl StudioComponentSummary {
 }
 
 /// A builder for [`StudioComponentSummary`](crate::types::StudioComponentSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StudioComponentSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,

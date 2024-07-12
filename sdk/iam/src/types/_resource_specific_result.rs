@@ -59,8 +59,8 @@ impl ResourceSpecificResult {
 }
 
 /// A builder for [`ResourceSpecificResult`](crate::types::ResourceSpecificResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceSpecificResultBuilder {
     pub(crate) eval_resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) eval_resource_decision: ::std::option::Option<crate::types::PolicyEvaluationDecisionType>,

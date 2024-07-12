@@ -40,8 +40,8 @@ impl UpdateAgentStatusInput {
 }
 
 /// A builder for [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAgentStatusInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,

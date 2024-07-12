@@ -46,8 +46,8 @@ impl UpdateScriptInput {
 }
 
 /// A builder for [`UpdateScriptInput`](crate::operation::update_script::UpdateScriptInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateScriptInputBuilder {
     pub(crate) script_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DescribeFunctionInput {
 }
 
 /// A builder for [`DescribeFunctionInput`](crate::operation::describe_function::DescribeFunctionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFunctionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) stage: ::std::option::Option<crate::types::FunctionStage>,

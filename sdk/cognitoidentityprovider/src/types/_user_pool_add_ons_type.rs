@@ -22,8 +22,8 @@ impl UserPoolAddOnsType {
 }
 
 /// A builder for [`UserPoolAddOnsType`](crate::types::UserPoolAddOnsType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserPoolAddOnsTypeBuilder {
     pub(crate) advanced_security_mode: ::std::option::Option<crate::types::AdvancedSecurityModeType>,
 }

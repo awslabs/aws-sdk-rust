@@ -62,8 +62,8 @@ impl CreateLoggerDefinitionOutput {
 }
 
 /// A builder for [`CreateLoggerDefinitionOutput`](crate::operation::create_logger_definition::CreateLoggerDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLoggerDefinitionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,

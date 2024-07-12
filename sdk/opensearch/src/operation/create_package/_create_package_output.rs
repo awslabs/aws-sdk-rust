@@ -27,8 +27,8 @@ impl CreatePackageOutput {
 }
 
 /// A builder for [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePackageOutputBuilder {
     pub(crate) package_details: ::std::option::Option<crate::types::PackageDetails>,
     _request_id: Option<String>,

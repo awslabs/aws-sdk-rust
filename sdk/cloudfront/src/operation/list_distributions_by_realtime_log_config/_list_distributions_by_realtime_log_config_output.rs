@@ -26,8 +26,8 @@ impl ListDistributionsByRealtimeLogConfigOutput {
 }
 
 /// A builder for [`ListDistributionsByRealtimeLogConfigOutput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsByRealtimeLogConfigOutputBuilder {
     pub(crate) distribution_list: ::std::option::Option<crate::types::DistributionList>,
     _request_id: Option<String>,

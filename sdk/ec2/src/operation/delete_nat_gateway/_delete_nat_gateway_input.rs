@@ -26,8 +26,8 @@ impl DeleteNatGatewayInput {
 }
 
 /// A builder for [`DeleteNatGatewayInput`](crate::operation::delete_nat_gateway::DeleteNatGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNatGatewayInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,

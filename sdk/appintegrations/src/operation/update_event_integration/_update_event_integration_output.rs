@@ -18,8 +18,8 @@ impl UpdateEventIntegrationOutput {
 }
 
 /// A builder for [`UpdateEventIntegrationOutput`](crate::operation::update_event_integration::UpdateEventIntegrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventIntegrationOutputBuilder {
     _request_id: Option<String>,
 }

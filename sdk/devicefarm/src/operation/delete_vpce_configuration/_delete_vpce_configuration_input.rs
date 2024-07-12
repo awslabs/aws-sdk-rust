@@ -20,8 +20,8 @@ impl DeleteVpceConfigurationInput {
 }
 
 /// A builder for [`DeleteVpceConfigurationInput`](crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpceConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

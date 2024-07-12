@@ -39,8 +39,8 @@ impl ChoiceAnswer {
 }
 
 /// A builder for [`ChoiceAnswer`](crate::types::ChoiceAnswer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChoiceAnswerBuilder {
     pub(crate) choice_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ChoiceStatus>,

@@ -41,8 +41,8 @@ impl Facet {
 }
 
 /// A builder for [`Facet`](crate::types::Facet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FacetBuilder {
     pub(crate) document_attribute_key: ::std::option::Option<::std::string::String>,
     pub(crate) facets: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,

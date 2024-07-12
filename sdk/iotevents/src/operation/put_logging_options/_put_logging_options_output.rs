@@ -18,8 +18,8 @@ impl PutLoggingOptionsOutput {
 }
 
 /// A builder for [`PutLoggingOptionsOutput`](crate::operation::put_logging_options::PutLoggingOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutLoggingOptionsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -43,8 +43,8 @@ impl CustomRoutingEndpointGroup {
 }
 
 /// A builder for [`CustomRoutingEndpointGroup`](crate::types::CustomRoutingEndpointGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomRoutingEndpointGroupBuilder {
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_group_region: ::std::option::Option<::std::string::String>,

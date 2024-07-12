@@ -72,8 +72,8 @@ impl GetFunctionEventInvokeConfigOutput {
 }
 
 /// A builder for [`GetFunctionEventInvokeConfigOutput`](crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFunctionEventInvokeConfigOutputBuilder {
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,

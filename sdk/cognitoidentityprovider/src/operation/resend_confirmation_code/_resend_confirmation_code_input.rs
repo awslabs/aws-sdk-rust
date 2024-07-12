@@ -87,8 +87,8 @@ impl ResendConfirmationCodeInput {
 }
 
 /// A builder for [`ResendConfirmationCodeInput`](crate::operation::resend_confirmation_code::ResendConfirmationCodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ResendConfirmationCodeInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_hash: ::std::option::Option<::std::string::String>,

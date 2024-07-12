@@ -28,8 +28,8 @@ impl BatchGetPreparedStatementInput {
 }
 
 /// A builder for [`BatchGetPreparedStatementInput`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetPreparedStatementInputBuilder {
     pub(crate) prepared_statement_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) work_group: ::std::option::Option<::std::string::String>,

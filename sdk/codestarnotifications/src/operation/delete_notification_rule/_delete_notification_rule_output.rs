@@ -26,8 +26,8 @@ impl DeleteNotificationRuleOutput {
 }
 
 /// A builder for [`DeleteNotificationRuleOutput`](crate::operation::delete_notification_rule::DeleteNotificationRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNotificationRuleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

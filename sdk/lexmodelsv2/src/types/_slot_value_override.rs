@@ -35,8 +35,8 @@ impl SlotValueOverride {
 }
 
 /// A builder for [`SlotValueOverride`](crate::types::SlotValueOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotValueOverrideBuilder {
     pub(crate) shape: ::std::option::Option<crate::types::SlotShape>,
     pub(crate) value: ::std::option::Option<crate::types::SlotValue>,

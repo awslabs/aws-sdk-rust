@@ -59,8 +59,8 @@ impl NetworkAclEntrySet {
 }
 
 /// A builder for [`NetworkAclEntrySet`](crate::types::NetworkAclEntrySet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkAclEntrySetBuilder {
     pub(crate) first_entries: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
     pub(crate) force_remediate_for_first_entries: ::std::option::Option<bool>,

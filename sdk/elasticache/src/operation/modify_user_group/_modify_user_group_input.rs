@@ -36,8 +36,8 @@ impl ModifyUserGroupInput {
 }
 
 /// A builder for [`ModifyUserGroupInput`](crate::operation::modify_user_group::ModifyUserGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyUserGroupInputBuilder {
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

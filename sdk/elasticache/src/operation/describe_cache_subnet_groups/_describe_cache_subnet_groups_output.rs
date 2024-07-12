@@ -35,8 +35,8 @@ impl DescribeCacheSubnetGroupsOutput {
 }
 
 /// A builder for [`DescribeCacheSubnetGroupsOutput`](crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCacheSubnetGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cache_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheSubnetGroup>>,

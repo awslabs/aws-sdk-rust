@@ -44,8 +44,8 @@ impl CreateProvisioningClaimOutput {
 }
 
 /// A builder for [`CreateProvisioningClaimOutput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProvisioningClaimOutputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_pem: ::std::option::Option<::std::string::String>,

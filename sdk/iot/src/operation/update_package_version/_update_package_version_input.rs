@@ -66,8 +66,8 @@ impl UpdatePackageVersionInput {
 }
 
 /// A builder for [`UpdatePackageVersionInput`](crate::operation::update_package_version::UpdatePackageVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdatePackageVersionInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,

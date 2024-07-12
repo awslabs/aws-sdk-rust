@@ -32,8 +32,8 @@ impl UpdateKeyValueStoreOutput {
 }
 
 /// A builder for [`UpdateKeyValueStoreOutput`](crate::operation::update_key_value_store::UpdateKeyValueStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKeyValueStoreOutputBuilder {
     pub(crate) key_value_store: ::std::option::Option<crate::types::KeyValueStore>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

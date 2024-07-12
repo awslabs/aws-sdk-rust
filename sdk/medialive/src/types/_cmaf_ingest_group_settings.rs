@@ -51,8 +51,8 @@ impl CmafIngestGroupSettings {
 }
 
 /// A builder for [`CmafIngestGroupSettings`](crate::types::CmafIngestGroupSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CmafIngestGroupSettingsBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::OutputLocationRef>,
     pub(crate) nielsen_id3_behavior: ::std::option::Option<crate::types::CmafNielsenId3Behavior>,

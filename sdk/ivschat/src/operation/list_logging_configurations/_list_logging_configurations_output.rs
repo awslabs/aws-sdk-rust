@@ -33,8 +33,8 @@ impl ListLoggingConfigurationsOutput {
 }
 
 /// A builder for [`ListLoggingConfigurationsOutput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLoggingConfigurationsOutputBuilder {
     pub(crate) logging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ListBatchJobRestartPointsInput {
 }
 
 /// A builder for [`ListBatchJobRestartPointsInput`](crate::operation::list_batch_job_restart_points::ListBatchJobRestartPointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBatchJobRestartPointsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,

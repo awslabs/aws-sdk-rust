@@ -39,8 +39,8 @@ impl DatasetFilter {
 }
 
 /// A builder for [`DatasetFilter`](crate::types::DatasetFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DatasetStatus>,
     pub(crate) dataset_type: ::std::option::Option<crate::types::DatasetType>,

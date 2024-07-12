@@ -26,8 +26,8 @@ impl DescribeEngineDefaultClusterParametersOutput {
 }
 
 /// A builder for [`DescribeEngineDefaultClusterParametersOutput`](crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEngineDefaultClusterParametersOutputBuilder {
     pub(crate) engine_defaults: ::std::option::Option<crate::types::EngineDefaults>,
     _request_id: Option<String>,

@@ -35,8 +35,8 @@ impl ParameterGroupStatus {
 }
 
 /// A builder for [`ParameterGroupStatus`](crate::types::ParameterGroupStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParameterGroupStatusBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,

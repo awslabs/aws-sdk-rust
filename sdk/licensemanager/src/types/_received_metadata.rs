@@ -35,8 +35,8 @@ impl ReceivedMetadata {
 }
 
 /// A builder for [`ReceivedMetadata`](crate::types::ReceivedMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReceivedMetadataBuilder {
     pub(crate) received_status: ::std::option::Option<crate::types::ReceivedStatus>,
     pub(crate) received_status_reason: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ListSubscribedRuleGroupsInput {
 }
 
 /// A builder for [`ListSubscribedRuleGroupsInput`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSubscribedRuleGroupsInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

@@ -19,8 +19,8 @@ impl DeleteApiCacheOutput {
 }
 
 /// A builder for [`DeleteApiCacheOutput`](crate::operation::delete_api_cache::DeleteApiCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApiCacheOutputBuilder {
     _request_id: Option<String>,
 }

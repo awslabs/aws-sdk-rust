@@ -30,8 +30,8 @@ impl ResponseHeadersPolicyFrameOptions {
 }
 
 /// A builder for [`ResponseHeadersPolicyFrameOptions`](crate::types::ResponseHeadersPolicyFrameOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyFrameOptionsBuilder {
     pub(crate) r#override: ::std::option::Option<bool>,
     pub(crate) frame_option: ::std::option::Option<crate::types::FrameOptionsList>,

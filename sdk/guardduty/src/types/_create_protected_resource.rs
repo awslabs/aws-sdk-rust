@@ -21,8 +21,8 @@ impl CreateProtectedResource {
 }
 
 /// A builder for [`CreateProtectedResource`](crate::types::CreateProtectedResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProtectedResourceBuilder {
     pub(crate) s3_bucket: ::std::option::Option<crate::types::CreateS3BucketResource>,
 }

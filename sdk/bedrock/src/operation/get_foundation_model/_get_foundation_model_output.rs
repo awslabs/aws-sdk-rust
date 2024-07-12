@@ -26,8 +26,8 @@ impl GetFoundationModelOutput {
 }
 
 /// A builder for [`GetFoundationModelOutput`](crate::operation::get_foundation_model::GetFoundationModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFoundationModelOutputBuilder {
     pub(crate) model_details: ::std::option::Option<crate::types::FoundationModelDetails>,
     _request_id: Option<String>,

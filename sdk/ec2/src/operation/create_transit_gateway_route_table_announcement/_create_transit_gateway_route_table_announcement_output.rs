@@ -28,8 +28,8 @@ impl CreateTransitGatewayRouteTableAnnouncementOutput {
 }
 
 /// A builder for [`CreateTransitGatewayRouteTableAnnouncementOutput`](crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitGatewayRouteTableAnnouncementOutputBuilder {
     pub(crate) transit_gateway_route_table_announcement: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement>,
     _request_id: Option<String>,

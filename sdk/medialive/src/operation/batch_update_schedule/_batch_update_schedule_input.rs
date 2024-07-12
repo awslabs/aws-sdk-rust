@@ -33,8 +33,8 @@ impl BatchUpdateScheduleInput {
 }
 
 /// A builder for [`BatchUpdateScheduleInput`](crate::operation::batch_update_schedule::BatchUpdateScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateScheduleInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) creates: ::std::option::Option<crate::types::BatchScheduleActionCreateRequest>,

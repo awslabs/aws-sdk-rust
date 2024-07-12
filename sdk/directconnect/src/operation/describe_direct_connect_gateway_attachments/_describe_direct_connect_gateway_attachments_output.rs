@@ -35,8 +35,8 @@ impl DescribeDirectConnectGatewayAttachmentsOutput {
 }
 
 /// A builder for [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDirectConnectGatewayAttachmentsOutputBuilder {
     pub(crate) direct_connect_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAttachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ObjectTypeField {
 }
 
 /// A builder for [`ObjectTypeField`](crate::types::ObjectTypeField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectTypeFieldBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::string::String>,

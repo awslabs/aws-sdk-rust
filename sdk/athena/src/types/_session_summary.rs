@@ -45,8 +45,8 @@ impl SessionSummary {
 }
 
 /// A builder for [`SessionSummary`](crate::types::SessionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionSummaryBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListProfileSharesOutput {
 }
 
 /// A builder for [`ListProfileSharesOutput`](crate::operation::list_profile_shares::ListProfileSharesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfileSharesOutputBuilder {
     pub(crate) profile_share_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProfileShareSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

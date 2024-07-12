@@ -45,8 +45,8 @@ impl ChildWorkflowExecutionCompletedEventAttributes {
 }
 
 /// A builder for [`ChildWorkflowExecutionCompletedEventAttributes`](crate::types::ChildWorkflowExecutionCompletedEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChildWorkflowExecutionCompletedEventAttributesBuilder {
     pub(crate) workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,

@@ -18,8 +18,8 @@ impl AddFacetToObjectOutput {
 }
 
 /// A builder for [`AddFacetToObjectOutput`](crate::operation::add_facet_to_object::AddFacetToObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddFacetToObjectOutputBuilder {
     _request_id: Option<String>,
 }

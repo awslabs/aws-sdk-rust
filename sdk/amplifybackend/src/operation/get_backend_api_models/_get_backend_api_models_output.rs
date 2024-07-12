@@ -38,8 +38,8 @@ impl GetBackendApiModelsOutput {
 }
 
 /// A builder for [`GetBackendApiModelsOutput`](crate::operation::get_backend_api_models::GetBackendApiModelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBackendApiModelsOutputBuilder {
     pub(crate) models: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,

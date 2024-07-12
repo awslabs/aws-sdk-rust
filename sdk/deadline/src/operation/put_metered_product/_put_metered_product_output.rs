@@ -18,8 +18,8 @@ impl PutMeteredProductOutput {
 }
 
 /// A builder for [`PutMeteredProductOutput`](crate::operation::put_metered_product::PutMeteredProductOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutMeteredProductOutputBuilder {
     _request_id: Option<String>,
 }

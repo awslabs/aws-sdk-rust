@@ -28,8 +28,8 @@ impl Stage {
 }
 
 /// A builder for [`Stage`](crate::types::Stage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StageBuilder {
     pub(crate) duration_in_minutes: ::std::option::Option<i32>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,

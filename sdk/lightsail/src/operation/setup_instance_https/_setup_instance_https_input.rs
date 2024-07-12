@@ -50,8 +50,8 @@ impl SetupInstanceHttpsInput {
 }
 
 /// A builder for [`SetupInstanceHttpsInput`](crate::operation::setup_instance_https::SetupInstanceHttpsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SetupInstanceHttpsInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,

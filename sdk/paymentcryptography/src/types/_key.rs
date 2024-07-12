@@ -97,8 +97,8 @@ impl Key {
 }
 
 /// A builder for [`Key`](crate::types::Key).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeyBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_attributes: ::std::option::Option<crate::types::KeyAttributes>,

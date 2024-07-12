@@ -33,8 +33,8 @@ impl AudioResponseEvent {
 }
 
 /// A builder for [`AudioResponseEvent`](crate::types::AudioResponseEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioResponseEventBuilder {
     pub(crate) audio_chunk: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

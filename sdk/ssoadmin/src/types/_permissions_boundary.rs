@@ -29,8 +29,8 @@ impl PermissionsBoundary {
 }
 
 /// A builder for [`PermissionsBoundary`](crate::types::PermissionsBoundary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PermissionsBoundaryBuilder {
     pub(crate) customer_managed_policy_reference: ::std::option::Option<crate::types::CustomerManagedPolicyReference>,
     pub(crate) managed_policy_arn: ::std::option::Option<::std::string::String>,

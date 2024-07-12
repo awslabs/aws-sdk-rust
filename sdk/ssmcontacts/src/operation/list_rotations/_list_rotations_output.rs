@@ -33,8 +33,8 @@ impl ListRotationsOutput {
 }
 
 /// A builder for [`ListRotationsOutput`](crate::operation::list_rotations::ListRotationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRotationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) rotations: ::std::option::Option<::std::vec::Vec<crate::types::Rotation>>,

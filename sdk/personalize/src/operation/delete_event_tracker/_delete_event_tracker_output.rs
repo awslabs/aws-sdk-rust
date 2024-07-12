@@ -18,8 +18,8 @@ impl DeleteEventTrackerOutput {
 }
 
 /// A builder for [`DeleteEventTrackerOutput`](crate::operation::delete_event_tracker::DeleteEventTrackerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventTrackerOutputBuilder {
     _request_id: Option<String>,
 }

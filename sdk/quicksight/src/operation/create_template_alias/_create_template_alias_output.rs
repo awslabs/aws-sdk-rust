@@ -38,8 +38,8 @@ impl CreateTemplateAliasOutput {
 }
 
 /// A builder for [`CreateTemplateAliasOutput`](crate::operation::create_template_alias::CreateTemplateAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTemplateAliasOutputBuilder {
     pub(crate) template_alias: ::std::option::Option<crate::types::TemplateAlias>,
     pub(crate) status: ::std::option::Option<i32>,

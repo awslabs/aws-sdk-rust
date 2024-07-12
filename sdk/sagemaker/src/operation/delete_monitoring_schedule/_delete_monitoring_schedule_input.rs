@@ -20,8 +20,8 @@ impl DeleteMonitoringScheduleInput {
 }
 
 /// A builder for [`DeleteMonitoringScheduleInput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMonitoringScheduleInputBuilder {
     pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
 }

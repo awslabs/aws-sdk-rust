@@ -70,8 +70,8 @@ impl DescribeUserProfileOutput {
 }
 
 /// A builder for [`DescribeUserProfileOutput`](crate::operation::describe_user_profile::DescribeUserProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeUserProfileOutputBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

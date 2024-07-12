@@ -76,8 +76,8 @@ impl UpdateBotRecommendationOutput {
 }
 
 /// A builder for [`UpdateBotRecommendationOutput`](crate::operation::update_bot_recommendation::UpdateBotRecommendationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBotRecommendationOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,

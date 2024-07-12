@@ -20,8 +20,8 @@ impl GetPortalInput {
 }
 
 /// A builder for [`GetPortalInput`](crate::operation::get_portal::GetPortalInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPortalInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }

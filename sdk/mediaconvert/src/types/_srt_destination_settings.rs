@@ -21,8 +21,8 @@ impl SrtDestinationSettings {
 }
 
 /// A builder for [`SrtDestinationSettings`](crate::types::SrtDestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SrtDestinationSettingsBuilder {
     pub(crate) style_passthrough: ::std::option::Option<crate::types::SrtStylePassthrough>,
 }

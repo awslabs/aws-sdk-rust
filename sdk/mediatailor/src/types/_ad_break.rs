@@ -57,8 +57,8 @@ impl AdBreak {
 }
 
 /// A builder for [`AdBreak`](crate::types::AdBreak).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdBreakBuilder {
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) offset_millis: ::std::option::Option<i64>,

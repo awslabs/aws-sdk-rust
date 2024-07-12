@@ -27,8 +27,8 @@ impl StopRemoteAccessSessionOutput {
 }
 
 /// A builder for [`StopRemoteAccessSessionOutput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopRemoteAccessSessionOutputBuilder {
     pub(crate) remote_access_session: ::std::option::Option<crate::types::RemoteAccessSession>,
     _request_id: Option<String>,

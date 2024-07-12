@@ -18,8 +18,8 @@ impl DisassociateAnalyticsDataSetOutput {
 }
 
 /// A builder for [`DisassociateAnalyticsDataSetOutput`](crate::operation::disassociate_analytics_data_set::DisassociateAnalyticsDataSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateAnalyticsDataSetOutputBuilder {
     _request_id: Option<String>,
 }

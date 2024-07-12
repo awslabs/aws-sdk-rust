@@ -24,8 +24,8 @@ impl PutBucketInventoryConfigurationOutput {
 }
 
 /// A builder for [`PutBucketInventoryConfigurationOutput`](crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketInventoryConfigurationOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

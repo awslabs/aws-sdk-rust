@@ -18,8 +18,8 @@ impl DeleteMountTargetOutput {
 }
 
 /// A builder for [`DeleteMountTargetOutput`](crate::operation::delete_mount_target::DeleteMountTargetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMountTargetOutputBuilder {
     _request_id: Option<String>,
 }

@@ -35,8 +35,8 @@ impl DescribeFileSystemsInput {
 }
 
 /// A builder for [`DescribeFileSystemsInput`](crate::operation::describe_file_systems::DescribeFileSystemsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFileSystemsInputBuilder {
     pub(crate) file_system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -53,8 +53,8 @@ impl Listener {
 }
 
 /// A builder for [`Listener`](crate::types::Listener).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListenerBuilder {
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) load_balancer_port: ::std::option::Option<i32>,

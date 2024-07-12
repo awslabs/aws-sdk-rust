@@ -166,8 +166,8 @@ impl CreateInstancesFromSnapshotInput {
 }
 
 /// A builder for [`CreateInstancesFromSnapshotInput`](crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInstancesFromSnapshotInputBuilder {
     pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) attached_disk_mapping:

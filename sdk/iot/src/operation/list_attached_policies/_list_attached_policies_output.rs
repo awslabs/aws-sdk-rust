@@ -34,8 +34,8 @@ impl ListAttachedPoliciesOutput {
 }
 
 /// A builder for [`ListAttachedPoliciesOutput`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAttachedPoliciesOutputBuilder {
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

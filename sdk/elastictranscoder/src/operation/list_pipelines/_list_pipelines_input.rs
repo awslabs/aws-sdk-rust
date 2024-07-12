@@ -27,8 +27,8 @@ impl ListPipelinesInput {
 }
 
 /// A builder for [`ListPipelinesInput`](crate::operation::list_pipelines::ListPipelinesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPipelinesInputBuilder {
     pub(crate) ascending: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeFleetAdvisorDatabasesOutput {
 }
 
 /// A builder for [`DescribeFleetAdvisorDatabasesOutput`](crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetAdvisorDatabasesOutputBuilder {
     pub(crate) databases: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

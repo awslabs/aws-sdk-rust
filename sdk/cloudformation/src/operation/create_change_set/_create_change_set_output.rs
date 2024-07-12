@@ -33,8 +33,8 @@ impl CreateChangeSetOutput {
 }
 
 /// A builder for [`CreateChangeSetOutput`](crate::operation::create_change_set::CreateChangeSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateChangeSetOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,

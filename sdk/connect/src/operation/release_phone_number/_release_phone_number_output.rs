@@ -18,8 +18,8 @@ impl ReleasePhoneNumberOutput {
 }
 
 /// A builder for [`ReleasePhoneNumberOutput`](crate::operation::release_phone_number::ReleasePhoneNumberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleasePhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }

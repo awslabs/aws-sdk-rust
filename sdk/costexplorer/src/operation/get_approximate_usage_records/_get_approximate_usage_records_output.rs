@@ -38,8 +38,8 @@ impl GetApproximateUsageRecordsOutput {
 }
 
 /// A builder for [`GetApproximateUsageRecordsOutput`](crate::operation::get_approximate_usage_records::GetApproximateUsageRecordsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApproximateUsageRecordsOutputBuilder {
     pub(crate) services: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
     pub(crate) total_records: ::std::option::Option<i64>,

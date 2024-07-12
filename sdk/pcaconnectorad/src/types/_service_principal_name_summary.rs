@@ -51,8 +51,8 @@ impl ServicePrincipalNameSummary {
 }
 
 /// A builder for [`ServicePrincipalNameSummary`](crate::types::ServicePrincipalNameSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServicePrincipalNameSummaryBuilder {
     pub(crate) directory_registration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,

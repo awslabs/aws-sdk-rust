@@ -88,8 +88,8 @@ impl TaxRegistration {
 }
 
 /// A builder for [`TaxRegistration`](crate::types::TaxRegistration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TaxRegistrationBuilder {
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,
     pub(crate) registration_type: ::std::option::Option<crate::types::TaxRegistrationType>,

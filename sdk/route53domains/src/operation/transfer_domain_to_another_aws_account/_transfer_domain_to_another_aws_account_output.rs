@@ -42,8 +42,8 @@ impl TransferDomainToAnotherAwsAccountOutput {
 }
 
 /// A builder for [`TransferDomainToAnotherAwsAccountOutput`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TransferDomainToAnotherAwsAccountOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,

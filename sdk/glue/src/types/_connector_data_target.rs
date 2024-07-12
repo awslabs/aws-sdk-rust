@@ -75,8 +75,8 @@ impl ConnectorDataTarget {
 }
 
 /// A builder for [`ConnectorDataTarget`](crate::types::ConnectorDataTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorDataTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) connection_type: ::std::option::Option<::std::string::String>,

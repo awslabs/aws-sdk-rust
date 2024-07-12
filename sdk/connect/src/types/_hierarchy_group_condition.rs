@@ -27,8 +27,8 @@ impl HierarchyGroupCondition {
 }
 
 /// A builder for [`HierarchyGroupCondition`](crate::types::HierarchyGroupCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HierarchyGroupConditionBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_group_match_type: ::std::option::Option<crate::types::HierarchyGroupMatchType>,

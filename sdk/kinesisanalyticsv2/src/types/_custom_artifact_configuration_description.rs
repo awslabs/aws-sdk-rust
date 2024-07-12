@@ -33,8 +33,8 @@ impl CustomArtifactConfigurationDescription {
 }
 
 /// A builder for [`CustomArtifactConfigurationDescription`](crate::types::CustomArtifactConfigurationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomArtifactConfigurationDescriptionBuilder {
     pub(crate) artifact_type: ::std::option::Option<crate::types::ArtifactType>,
     pub(crate) s3_content_location_description: ::std::option::Option<crate::types::S3ContentLocation>,

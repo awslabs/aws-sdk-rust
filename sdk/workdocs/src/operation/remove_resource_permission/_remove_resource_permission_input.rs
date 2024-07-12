@@ -48,8 +48,8 @@ impl RemoveResourcePermissionInput {
 }
 
 /// A builder for [`RemoveResourcePermissionInput`](crate::operation::remove_resource_permission::RemoveResourcePermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RemoveResourcePermissionInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

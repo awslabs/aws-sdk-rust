@@ -36,8 +36,8 @@ impl CreateDataLakeInput {
 }
 
 /// A builder for [`CreateDataLakeInput`](crate::operation::create_data_lake::CreateDataLakeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataLakeInputBuilder {
     pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeConfiguration>>,
     pub(crate) meta_store_manager_role_arn: ::std::option::Option<::std::string::String>,

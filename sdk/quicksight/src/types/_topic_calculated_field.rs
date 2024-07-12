@@ -150,8 +150,8 @@ impl TopicCalculatedField {
 }
 
 /// A builder for [`TopicCalculatedField`](crate::types::TopicCalculatedField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TopicCalculatedFieldBuilder {
     pub(crate) calculated_field_name: ::std::option::Option<::std::string::String>,
     pub(crate) calculated_field_description: ::std::option::Option<::std::string::String>,

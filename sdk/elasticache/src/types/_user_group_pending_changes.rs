@@ -31,8 +31,8 @@ impl UserGroupPendingChanges {
 }
 
 /// A builder for [`UserGroupPendingChanges`](crate::types::UserGroupPendingChanges).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserGroupPendingChangesBuilder {
     pub(crate) user_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

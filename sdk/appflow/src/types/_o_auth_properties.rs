@@ -36,8 +36,8 @@ impl OAuthProperties {
 }
 
 /// A builder for [`OAuthProperties`](crate::types::OAuthProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OAuthPropertiesBuilder {
     pub(crate) token_url: ::std::option::Option<::std::string::String>,
     pub(crate) auth_code_url: ::std::option::Option<::std::string::String>,

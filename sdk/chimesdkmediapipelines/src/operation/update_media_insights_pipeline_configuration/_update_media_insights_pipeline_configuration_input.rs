@@ -51,8 +51,8 @@ impl UpdateMediaInsightsPipelineConfigurationInput {
 }
 
 /// A builder for [`UpdateMediaInsightsPipelineConfigurationInput`](crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateMediaInsightsPipelineConfigurationInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_access_role_arn: ::std::option::Option<::std::string::String>,

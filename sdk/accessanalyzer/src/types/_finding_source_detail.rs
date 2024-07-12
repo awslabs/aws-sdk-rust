@@ -27,8 +27,8 @@ impl FindingSourceDetail {
 }
 
 /// A builder for [`FindingSourceDetail`](crate::types::FindingSourceDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingSourceDetailBuilder {
     pub(crate) access_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) access_point_account: ::std::option::Option<::std::string::String>,

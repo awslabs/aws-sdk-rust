@@ -44,8 +44,8 @@ impl ListWorkforcesInput {
 }
 
 /// A builder for [`ListWorkforcesInput`](crate::operation::list_workforces::ListWorkforcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkforcesInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ListWorkforcesSortByOptions>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

@@ -122,8 +122,8 @@ impl AddIpRoutesInput {
 }
 
 /// A builder for [`AddIpRoutesInput`](crate::operation::add_ip_routes::AddIpRoutesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddIpRoutesInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_routes: ::std::option::Option<::std::vec::Vec<crate::types::IpRoute>>,

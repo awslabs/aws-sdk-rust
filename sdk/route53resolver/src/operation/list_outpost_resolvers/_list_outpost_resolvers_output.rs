@@ -34,8 +34,8 @@ impl ListOutpostResolversOutput {
 }
 
 /// A builder for [`ListOutpostResolversOutput`](crate::operation::list_outpost_resolvers::ListOutpostResolversOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOutpostResolversOutputBuilder {
     pub(crate) outpost_resolvers: ::std::option::Option<::std::vec::Vec<crate::types::OutpostResolver>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

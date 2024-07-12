@@ -32,8 +32,8 @@ impl UpdateRepositoryLinkInput {
 }
 
 /// A builder for [`UpdateRepositoryLinkInput`](crate::operation::update_repository_link::UpdateRepositoryLinkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRepositoryLinkInputBuilder {
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,

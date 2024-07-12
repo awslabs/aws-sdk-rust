@@ -75,8 +75,8 @@ impl DomainNameConfiguration {
 }
 
 /// A builder for [`DomainNameConfiguration`](crate::types::DomainNameConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainNameConfigurationBuilder {
     pub(crate) api_gateway_domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,

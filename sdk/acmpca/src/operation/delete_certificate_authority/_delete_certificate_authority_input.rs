@@ -28,8 +28,8 @@ impl DeleteCertificateAuthorityInput {
 }
 
 /// A builder for [`DeleteCertificateAuthorityInput`](crate::operation::delete_certificate_authority::DeleteCertificateAuthorityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCertificateAuthorityInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permanent_deletion_time_in_days: ::std::option::Option<i32>,

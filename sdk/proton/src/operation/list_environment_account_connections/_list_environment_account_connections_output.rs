@@ -33,8 +33,8 @@ impl ListEnvironmentAccountConnectionsOutput {
 }
 
 /// A builder for [`ListEnvironmentAccountConnectionsOutput`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentAccountConnectionsOutputBuilder {
     pub(crate) environment_account_connections: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl EntityConfiguration {
 }
 
 /// A builder for [`EntityConfiguration`](crate::types::EntityConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityConfigurationBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_type: ::std::option::Option<crate::types::EntityType>,

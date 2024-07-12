@@ -32,8 +32,8 @@ impl AttachInstancesToLoadBalancerInput {
 }
 
 /// A builder for [`AttachInstancesToLoadBalancerInput`](crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachInstancesToLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

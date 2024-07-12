@@ -79,8 +79,8 @@ impl AwsOpenSearchServiceDomainClusterConfigDetails {
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::types::AwsOpenSearchServiceDomainClusterConfigDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsOpenSearchServiceDomainClusterConfigDetailsBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) warm_enabled: ::std::option::Option<bool>,

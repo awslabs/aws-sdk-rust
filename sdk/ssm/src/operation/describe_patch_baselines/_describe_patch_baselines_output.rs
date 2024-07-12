@@ -34,8 +34,8 @@ impl DescribePatchBaselinesOutput {
 }
 
 /// A builder for [`DescribePatchBaselinesOutput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePatchBaselinesOutputBuilder {
     pub(crate) baseline_identities: ::std::option::Option<::std::vec::Vec<crate::types::PatchBaselineIdentity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

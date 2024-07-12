@@ -21,8 +21,8 @@ impl AdministrativeActionFailureDetails {
 }
 
 /// A builder for [`AdministrativeActionFailureDetails`](crate::types::AdministrativeActionFailureDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdministrativeActionFailureDetailsBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }

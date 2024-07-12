@@ -65,8 +65,8 @@ impl CreateLocationEfsInput {
 }
 
 /// A builder for [`CreateLocationEfsInput`](crate::operation::create_location_efs::CreateLocationEfsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocationEfsInputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) efs_filesystem_arn: ::std::option::Option<::std::string::String>,

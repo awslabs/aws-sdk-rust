@@ -68,8 +68,8 @@ impl ListJobsInput {
 }
 
 /// A builder for [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJobsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
     pub(crate) target_selection: ::std::option::Option<crate::types::TargetSelection>,

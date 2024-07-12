@@ -38,8 +38,8 @@ impl UpdateCertificateInput {
 }
 
 /// A builder for [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCertificateInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) active_date: ::std::option::Option<::aws_smithy_types::DateTime>,

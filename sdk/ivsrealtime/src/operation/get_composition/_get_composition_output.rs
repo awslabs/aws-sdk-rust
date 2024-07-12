@@ -26,8 +26,8 @@ impl GetCompositionOutput {
 }
 
 /// A builder for [`GetCompositionOutput`](crate::operation::get_composition::GetCompositionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCompositionOutputBuilder {
     pub(crate) composition: ::std::option::Option<crate::types::Composition>,
     _request_id: Option<String>,

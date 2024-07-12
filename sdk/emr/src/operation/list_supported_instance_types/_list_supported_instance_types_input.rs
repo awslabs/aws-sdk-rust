@@ -26,8 +26,8 @@ impl ListSupportedInstanceTypesInput {
 }
 
 /// A builder for [`ListSupportedInstanceTypesInput`](crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSupportedInstanceTypesInputBuilder {
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

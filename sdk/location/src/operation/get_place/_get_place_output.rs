@@ -26,8 +26,8 @@ impl GetPlaceOutput {
 }
 
 /// A builder for [`GetPlaceOutput`](crate::operation::get_place::GetPlaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPlaceOutputBuilder {
     pub(crate) place: ::std::option::Option<crate::types::Place>,
     _request_id: Option<String>,

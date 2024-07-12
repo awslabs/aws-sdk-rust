@@ -28,8 +28,8 @@ impl UpdateColumnStatisticsForPartitionOutput {
 }
 
 /// A builder for [`UpdateColumnStatisticsForPartitionOutput`](crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateColumnStatisticsForPartitionOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>>,
     _request_id: Option<String>,

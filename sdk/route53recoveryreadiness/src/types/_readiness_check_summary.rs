@@ -27,8 +27,8 @@ impl ReadinessCheckSummary {
 }
 
 /// A builder for [`ReadinessCheckSummary`](crate::types::ReadinessCheckSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReadinessCheckSummaryBuilder {
     pub(crate) readiness: ::std::option::Option<crate::types::Readiness>,
     pub(crate) readiness_check_name: ::std::option::Option<::std::string::String>,

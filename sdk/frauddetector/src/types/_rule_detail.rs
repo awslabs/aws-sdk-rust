@@ -93,8 +93,8 @@ impl RuleDetail {
 }
 
 /// A builder for [`RuleDetail`](crate::types::RuleDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RuleDetailBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

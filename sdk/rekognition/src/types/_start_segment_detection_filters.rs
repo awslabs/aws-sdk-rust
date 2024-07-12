@@ -27,8 +27,8 @@ impl StartSegmentDetectionFilters {
 }
 
 /// A builder for [`StartSegmentDetectionFilters`](crate::types::StartSegmentDetectionFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSegmentDetectionFiltersBuilder {
     pub(crate) technical_cue_filter: ::std::option::Option<crate::types::StartTechnicalCueDetectionFilter>,
     pub(crate) shot_filter: ::std::option::Option<crate::types::StartShotDetectionFilter>,

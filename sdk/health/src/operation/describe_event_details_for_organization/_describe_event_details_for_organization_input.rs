@@ -28,8 +28,8 @@ impl DescribeEventDetailsForOrganizationInput {
 }
 
 /// A builder for [`DescribeEventDetailsForOrganizationInput`](crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventDetailsForOrganizationInputBuilder {
     pub(crate) organization_event_detail_filters: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl UnusedAction {
 }
 
 /// A builder for [`UnusedAction`](crate::types::UnusedAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnusedActionBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) last_accessed: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -28,8 +28,8 @@ impl DescribeScalingProcessTypesOutput {
 }
 
 /// A builder for [`DescribeScalingProcessTypesOutput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScalingProcessTypesOutputBuilder {
     pub(crate) processes: ::std::option::Option<::std::vec::Vec<crate::types::ProcessType>>,
     _request_id: Option<String>,

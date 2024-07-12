@@ -29,8 +29,8 @@ impl StackConfigInput {
 }
 
 /// A builder for [`StackConfigInput`](crate::types::StackConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StackConfigInputBuilder {
     pub(crate) output_resolution: ::std::option::Option<crate::types::OutputResolutionStackInput>,
     pub(crate) target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

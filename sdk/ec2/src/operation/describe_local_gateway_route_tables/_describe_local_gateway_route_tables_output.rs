@@ -34,8 +34,8 @@ impl DescribeLocalGatewayRouteTablesOutput {
 }
 
 /// A builder for [`DescribeLocalGatewayRouteTablesOutput`](crate::operation::describe_local_gateway_route_tables::DescribeLocalGatewayRouteTablesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocalGatewayRouteTablesOutputBuilder {
     pub(crate) local_gateway_route_tables: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayRouteTable>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

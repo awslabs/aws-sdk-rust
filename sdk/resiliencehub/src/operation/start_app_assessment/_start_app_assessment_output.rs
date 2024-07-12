@@ -26,8 +26,8 @@ impl StartAppAssessmentOutput {
 }
 
 /// A builder for [`StartAppAssessmentOutput`](crate::operation::start_app_assessment::StartAppAssessmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAppAssessmentOutputBuilder {
     pub(crate) assessment: ::std::option::Option<crate::types::AppAssessment>,
     _request_id: Option<String>,

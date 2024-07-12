@@ -40,8 +40,8 @@ impl ListTemplateSharesOutput {
 }
 
 /// A builder for [`ListTemplateSharesOutput`](crate::operation::list_template_shares::ListTemplateSharesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateSharesOutputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) template_share_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TemplateShareSummary>>,

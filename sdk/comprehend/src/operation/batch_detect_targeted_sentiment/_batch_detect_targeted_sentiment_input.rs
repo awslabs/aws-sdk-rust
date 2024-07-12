@@ -36,8 +36,8 @@ impl BatchDetectTargetedSentimentInput {
 }
 
 /// A builder for [`BatchDetectTargetedSentimentInput`](crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchDetectTargetedSentimentInputBuilder {
     pub(crate) text_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

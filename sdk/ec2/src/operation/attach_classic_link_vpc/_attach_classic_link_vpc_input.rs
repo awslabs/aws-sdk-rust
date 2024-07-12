@@ -40,8 +40,8 @@ impl AttachClassicLinkVpcInput {
 }
 
 /// A builder for [`AttachClassicLinkVpcInput`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachClassicLinkVpcInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

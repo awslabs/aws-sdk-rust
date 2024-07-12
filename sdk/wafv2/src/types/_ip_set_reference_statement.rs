@@ -33,8 +33,8 @@ impl IpSetReferenceStatement {
 }
 
 /// A builder for [`IpSetReferenceStatement`](crate::types::IpSetReferenceStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpSetReferenceStatementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_set_forwarded_ip_config: ::std::option::Option<crate::types::IpSetForwardedIpConfig>,

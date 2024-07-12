@@ -27,8 +27,8 @@ impl BatchDeleteFeaturedResultsSetOutput {
 }
 
 /// A builder for [`BatchDeleteFeaturedResultsSetOutput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteFeaturedResultsSetOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>,
     _request_id: Option<String>,

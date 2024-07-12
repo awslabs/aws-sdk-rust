@@ -74,8 +74,8 @@ impl CreateGameSessionQueueInput {
 }
 
 /// A builder for [`CreateGameSessionQueueInput`](crate::operation::create_game_session_queue::CreateGameSessionQueueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGameSessionQueueInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,

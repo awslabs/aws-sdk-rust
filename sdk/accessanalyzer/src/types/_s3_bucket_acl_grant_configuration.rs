@@ -27,8 +27,8 @@ impl S3BucketAclGrantConfiguration {
 }
 
 /// A builder for [`S3BucketAclGrantConfiguration`](crate::types::S3BucketAclGrantConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3BucketAclGrantConfigurationBuilder {
     pub(crate) permission: ::std::option::Option<crate::types::AclPermission>,
     pub(crate) grantee: ::std::option::Option<crate::types::AclGrantee>,

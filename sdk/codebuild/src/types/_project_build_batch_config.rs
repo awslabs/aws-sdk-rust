@@ -73,8 +73,8 @@ impl ProjectBuildBatchConfig {
 }
 
 /// A builder for [`ProjectBuildBatchConfig`](crate::types::ProjectBuildBatchConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectBuildBatchConfigBuilder {
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) combine_artifacts: ::std::option::Option<bool>,

@@ -50,8 +50,8 @@ impl ModifyVerifiedAccessGroupPolicyInput {
 }
 
 /// A builder for [`ModifyVerifiedAccessGroupPolicyInput`](crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVerifiedAccessGroupPolicyInputBuilder {
     pub(crate) verified_access_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_enabled: ::std::option::Option<bool>,

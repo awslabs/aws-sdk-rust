@@ -62,8 +62,8 @@ impl ServiceNowServiceCatalogConfiguration {
 }
 
 /// A builder for [`ServiceNowServiceCatalogConfiguration`](crate::types::ServiceNowServiceCatalogConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceNowServiceCatalogConfigurationBuilder {
     pub(crate) crawl_attachments: ::std::option::Option<bool>,
     pub(crate) include_attachment_file_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

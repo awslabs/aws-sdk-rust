@@ -76,8 +76,8 @@ impl CreateNetworkSiteInput {
 }
 
 /// A builder for [`CreateNetworkSiteInput`](crate::operation::create_network_site::CreateNetworkSiteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateNetworkSiteInputBuilder {
     pub(crate) network_site_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

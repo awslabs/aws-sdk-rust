@@ -23,8 +23,8 @@ impl InAppMessagesResponse {
 }
 
 /// A builder for [`InAppMessagesResponse`](crate::types::InAppMessagesResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InAppMessagesResponseBuilder {
     pub(crate) in_app_message_campaigns: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageCampaign>>,
 }

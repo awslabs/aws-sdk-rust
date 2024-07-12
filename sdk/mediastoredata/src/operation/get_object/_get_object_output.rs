@@ -70,8 +70,8 @@ impl GetObjectOutput {
 }
 
 /// A builder for [`GetObjectOutput`](crate::operation::get_object::GetObjectOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) cache_control: ::std::option::Option<::std::string::String>,

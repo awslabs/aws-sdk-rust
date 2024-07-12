@@ -27,8 +27,8 @@ impl PointOfInterest {
 }
 
 /// A builder for [`PointOfInterest`](crate::types::PointOfInterest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PointOfInterestBuilder {
     pub(crate) begin_offset_millis: ::std::option::Option<i32>,
     pub(crate) end_offset_millis: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl CreateHsmConfigurationOutput {
 }
 
 /// A builder for [`CreateHsmConfigurationOutput`](crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHsmConfigurationOutputBuilder {
     pub(crate) hsm_configuration: ::std::option::Option<crate::types::HsmConfiguration>,
     _request_id: Option<String>,

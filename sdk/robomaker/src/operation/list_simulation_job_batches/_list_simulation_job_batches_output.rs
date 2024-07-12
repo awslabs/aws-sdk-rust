@@ -34,8 +34,8 @@ impl ListSimulationJobBatchesOutput {
 }
 
 /// A builder for [`ListSimulationJobBatchesOutput`](crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSimulationJobBatchesOutputBuilder {
     pub(crate) simulation_job_batch_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobBatchSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteResponsePlanInput {
 }
 
 /// A builder for [`DeleteResponsePlanInput`](crate::operation::delete_response_plan::DeleteResponsePlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResponsePlanInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

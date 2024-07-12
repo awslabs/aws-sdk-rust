@@ -18,8 +18,8 @@ impl EnableVgwRoutePropagationOutput {
 }
 
 /// A builder for [`EnableVgwRoutePropagationOutput`](crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableVgwRoutePropagationOutputBuilder {
     _request_id: Option<String>,
 }

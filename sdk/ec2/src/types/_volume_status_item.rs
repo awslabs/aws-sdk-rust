@@ -63,8 +63,8 @@ impl VolumeStatusItem {
 }
 
 /// A builder for [`VolumeStatusItem`](crate::types::VolumeStatusItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VolumeStatusItemBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAction>>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,

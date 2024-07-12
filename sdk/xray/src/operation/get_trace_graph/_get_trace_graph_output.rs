@@ -34,8 +34,8 @@ impl GetTraceGraphOutput {
 }
 
 /// A builder for [`GetTraceGraphOutput`](crate::operation::get_trace_graph::GetTraceGraphOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTraceGraphOutputBuilder {
     pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

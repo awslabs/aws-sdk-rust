@@ -35,8 +35,8 @@ impl ActivitySucceededEventDetails {
 }
 
 /// A builder for [`ActivitySucceededEventDetails`](crate::types::ActivitySucceededEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ActivitySucceededEventDetailsBuilder {
     pub(crate) output: ::std::option::Option<::std::string::String>,
     pub(crate) output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,

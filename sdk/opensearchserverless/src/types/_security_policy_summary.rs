@@ -51,8 +51,8 @@ impl SecurityPolicySummary {
 }
 
 /// A builder for [`SecurityPolicySummary`](crate::types::SecurityPolicySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityPolicySummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

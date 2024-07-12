@@ -29,8 +29,8 @@ impl RecommendationJobPayloadConfig {
 }
 
 /// A builder for [`RecommendationJobPayloadConfig`](crate::types::RecommendationJobPayloadConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationJobPayloadConfigBuilder {
     pub(crate) sample_payload_url: ::std::option::Option<::std::string::String>,
     pub(crate) supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

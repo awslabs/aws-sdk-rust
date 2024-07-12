@@ -38,8 +38,8 @@ impl DeleteTargetGroupOutput {
 }
 
 /// A builder for [`DeleteTargetGroupOutput`](crate::operation::delete_target_group::DeleteTargetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTargetGroupOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

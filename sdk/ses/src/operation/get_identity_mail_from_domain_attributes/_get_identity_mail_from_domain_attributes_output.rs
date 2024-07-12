@@ -27,8 +27,8 @@ impl GetIdentityMailFromDomainAttributesOutput {
 }
 
 /// A builder for [`GetIdentityMailFromDomainAttributesOutput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityMailFromDomainAttributesOutputBuilder {
     pub(crate) mail_from_domain_attributes:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityMailFromDomainAttributes>>,

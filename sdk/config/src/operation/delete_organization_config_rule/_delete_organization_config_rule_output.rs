@@ -18,8 +18,8 @@ impl DeleteOrganizationConfigRuleOutput {
 }
 
 /// A builder for [`DeleteOrganizationConfigRuleOutput`](crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOrganizationConfigRuleOutputBuilder {
     _request_id: Option<String>,
 }

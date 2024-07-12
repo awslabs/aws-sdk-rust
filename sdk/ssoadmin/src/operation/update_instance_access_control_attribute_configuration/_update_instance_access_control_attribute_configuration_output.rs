@@ -18,8 +18,8 @@ impl UpdateInstanceAccessControlAttributeConfigurationOutput {
 }
 
 /// A builder for [`UpdateInstanceAccessControlAttributeConfigurationOutput`](crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInstanceAccessControlAttributeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

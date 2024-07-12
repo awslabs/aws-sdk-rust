@@ -18,8 +18,8 @@ impl DeleteApplicationSnapshotOutput {
 }
 
 /// A builder for [`DeleteApplicationSnapshotOutput`](crate::operation::delete_application_snapshot::DeleteApplicationSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationSnapshotOutputBuilder {
     _request_id: Option<String>,
 }

@@ -49,8 +49,8 @@ impl AttachVolumeInput {
 }
 
 /// A builder for [`AttachVolumeInput`](crate::operation::attach_volume::AttachVolumeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachVolumeInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_name: ::std::option::Option<::std::string::String>,

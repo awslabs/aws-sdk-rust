@@ -46,8 +46,8 @@ impl CreateParticipantTokenInput {
 }
 
 /// A builder for [`CreateParticipantTokenInput`](crate::operation::create_participant_token::CreateParticipantTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateParticipantTokenInputBuilder {
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<i32>,

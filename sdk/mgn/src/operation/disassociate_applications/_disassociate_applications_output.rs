@@ -18,8 +18,8 @@ impl DisassociateApplicationsOutput {
 }
 
 /// A builder for [`DisassociateApplicationsOutput`](crate::operation::disassociate_applications::DisassociateApplicationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateApplicationsOutputBuilder {
     _request_id: Option<String>,
 }

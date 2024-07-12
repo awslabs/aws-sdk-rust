@@ -22,8 +22,8 @@ impl SignInConfig {
 }
 
 /// A builder for [`SignInConfig`](crate::types::SignInConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignInConfigBuilder {
     pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::SignInDistribution>>,
 }

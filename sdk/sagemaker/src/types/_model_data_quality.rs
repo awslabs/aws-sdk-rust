@@ -27,8 +27,8 @@ impl ModelDataQuality {
 }
 
 /// A builder for [`ModelDataQuality`](crate::types::ModelDataQuality).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelDataQualityBuilder {
     pub(crate) statistics: ::std::option::Option<crate::types::MetricsSource>,
     pub(crate) constraints: ::std::option::Option<crate::types::MetricsSource>,

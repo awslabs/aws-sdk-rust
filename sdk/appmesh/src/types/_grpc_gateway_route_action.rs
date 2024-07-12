@@ -27,8 +27,8 @@ impl GrpcGatewayRouteAction {
 }
 
 /// A builder for [`GrpcGatewayRouteAction`](crate::types::GrpcGatewayRouteAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrpcGatewayRouteActionBuilder {
     pub(crate) target: ::std::option::Option<crate::types::GatewayRouteTarget>,
     pub(crate) rewrite: ::std::option::Option<crate::types::GrpcGatewayRouteRewrite>,

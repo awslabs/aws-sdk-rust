@@ -59,8 +59,8 @@ impl ImageTooLargeException {
 }
 
 /// A builder for [`ImageTooLargeException`](crate::types::error::ImageTooLargeException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageTooLargeExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

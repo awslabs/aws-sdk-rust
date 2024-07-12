@@ -20,8 +20,8 @@ impl GetServiceNetworkInput {
 }
 
 /// A builder for [`GetServiceNetworkInput`](crate::operation::get_service_network::GetServiceNetworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceNetworkInputBuilder {
     pub(crate) service_network_identifier: ::std::option::Option<::std::string::String>,
 }

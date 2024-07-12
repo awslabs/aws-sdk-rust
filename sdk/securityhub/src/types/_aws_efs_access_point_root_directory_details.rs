@@ -27,8 +27,8 @@ impl AwsEfsAccessPointRootDirectoryDetails {
 }
 
 /// A builder for [`AwsEfsAccessPointRootDirectoryDetails`](crate::types::AwsEfsAccessPointRootDirectoryDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEfsAccessPointRootDirectoryDetailsBuilder {
     pub(crate) creation_info: ::std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
     pub(crate) path: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl ListLaunchProfileMembersInput {
 }
 
 /// A builder for [`ListLaunchProfileMembersInput`](crate::operation::list_launch_profile_members::ListLaunchProfileMembersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLaunchProfileMembersInputBuilder {
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

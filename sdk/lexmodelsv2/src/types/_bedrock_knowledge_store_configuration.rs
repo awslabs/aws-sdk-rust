@@ -22,8 +22,8 @@ impl BedrockKnowledgeStoreConfiguration {
 }
 
 /// A builder for [`BedrockKnowledgeStoreConfiguration`](crate::types::BedrockKnowledgeStoreConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BedrockKnowledgeStoreConfigurationBuilder {
     pub(crate) bedrock_knowledge_base_arn: ::std::option::Option<::std::string::String>,
 }

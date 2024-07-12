@@ -39,8 +39,8 @@ impl SourceNetworkData {
 }
 
 /// A builder for [`SourceNetworkData`](crate::types::SourceNetworkData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceNetworkDataBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_vpc: ::std::option::Option<::std::string::String>,

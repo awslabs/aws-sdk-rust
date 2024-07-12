@@ -34,8 +34,8 @@ impl ListDecoderManifestNetworkInterfacesOutput {
 }
 
 /// A builder for [`ListDecoderManifestNetworkInterfacesOutput`](crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDecoderManifestNetworkInterfacesOutputBuilder {
     pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

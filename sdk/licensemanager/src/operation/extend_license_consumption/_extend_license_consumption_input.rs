@@ -26,8 +26,8 @@ impl ExtendLicenseConsumptionInput {
 }
 
 /// A builder for [`ExtendLicenseConsumptionInput`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExtendLicenseConsumptionInputBuilder {
     pub(crate) license_consumption_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

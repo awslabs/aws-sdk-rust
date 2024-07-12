@@ -32,8 +32,8 @@ impl SourceCodeVersion {
 }
 
 /// A builder for [`SourceCodeVersion`](crate::types::SourceCodeVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceCodeVersionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceCodeVersionType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

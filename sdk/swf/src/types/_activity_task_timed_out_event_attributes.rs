@@ -39,8 +39,8 @@ impl ActivityTaskTimedOutEventAttributes {
 }
 
 /// A builder for [`ActivityTaskTimedOutEventAttributes`](crate::types::ActivityTaskTimedOutEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivityTaskTimedOutEventAttributesBuilder {
     pub(crate) timeout_type: ::std::option::Option<crate::types::ActivityTaskTimeoutType>,
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,

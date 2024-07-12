@@ -48,8 +48,8 @@ impl UpdateFirewallPolicyChangeProtectionOutput {
 }
 
 /// A builder for [`UpdateFirewallPolicyChangeProtectionOutput`](crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFirewallPolicyChangeProtectionOutputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,

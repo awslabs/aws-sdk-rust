@@ -26,8 +26,8 @@ impl GetScheduleInput {
 }
 
 /// A builder for [`GetScheduleInput`](crate::operation::get_schedule::GetScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetScheduleInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,

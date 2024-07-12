@@ -32,8 +32,8 @@ impl StartAttachmentUploadOutput {
 }
 
 /// A builder for [`StartAttachmentUploadOutput`](crate::operation::start_attachment_upload::StartAttachmentUploadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAttachmentUploadOutputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_metadata: ::std::option::Option<crate::types::UploadMetadata>,

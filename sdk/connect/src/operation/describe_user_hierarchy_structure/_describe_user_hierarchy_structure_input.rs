@@ -20,8 +20,8 @@ impl DescribeUserHierarchyStructureInput {
 }
 
 /// A builder for [`DescribeUserHierarchyStructureInput`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUserHierarchyStructureInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }

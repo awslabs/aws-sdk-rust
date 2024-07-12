@@ -44,8 +44,8 @@ impl FormEntryOutput {
 }
 
 /// A builder for [`FormEntryOutput`](crate::types::FormEntryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FormEntryOutputBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) type_revision: ::std::option::Option<::std::string::String>,

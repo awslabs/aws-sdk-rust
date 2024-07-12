@@ -14,8 +14,8 @@ impl QueryString {
 }
 
 /// A builder for [`QueryString`](crate::types::QueryString).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryStringBuilder {}
 impl QueryStringBuilder {
     /// Consumes the builder and constructs a [`QueryString`](crate::types::QueryString).

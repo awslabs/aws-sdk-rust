@@ -33,8 +33,8 @@ impl ListDefaultVocabulariesOutput {
 }
 
 /// A builder for [`ListDefaultVocabulariesOutput`](crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDefaultVocabulariesOutputBuilder {
     pub(crate) default_vocabulary_list: ::std::option::Option<::std::vec::Vec<crate::types::DefaultVocabulary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

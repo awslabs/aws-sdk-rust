@@ -20,8 +20,8 @@ impl DeleteTrustedTokenIssuerInput {
 }
 
 /// A builder for [`DeleteTrustedTokenIssuerInput`](crate::operation::delete_trusted_token_issuer::DeleteTrustedTokenIssuerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrustedTokenIssuerInputBuilder {
     pub(crate) trusted_token_issuer_arn: ::std::option::Option<::std::string::String>,
 }

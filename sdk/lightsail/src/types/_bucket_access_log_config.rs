@@ -44,8 +44,8 @@ impl BucketAccessLogConfig {
 }
 
 /// A builder for [`BucketAccessLogConfig`](crate::types::BucketAccessLogConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketAccessLogConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,

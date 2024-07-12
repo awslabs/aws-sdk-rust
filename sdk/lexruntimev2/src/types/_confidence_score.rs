@@ -21,8 +21,8 @@ impl ConfidenceScore {
 }
 
 /// A builder for [`ConfidenceScore`](crate::types::ConfidenceScore).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfidenceScoreBuilder {
     pub(crate) score: ::std::option::Option<f64>,
 }

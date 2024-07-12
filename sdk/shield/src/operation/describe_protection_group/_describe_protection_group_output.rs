@@ -26,8 +26,8 @@ impl DescribeProtectionGroupOutput {
 }
 
 /// A builder for [`DescribeProtectionGroupOutput`](crate::operation::describe_protection_group::DescribeProtectionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProtectionGroupOutputBuilder {
     pub(crate) protection_group: ::std::option::Option<crate::types::ProtectionGroup>,
     _request_id: Option<String>,

@@ -139,8 +139,8 @@ impl HyperParameterTrainingJobDefinition {
 }
 
 /// A builder for [`HyperParameterTrainingJobDefinition`](crate::types::HyperParameterTrainingJobDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HyperParameterTrainingJobDefinitionBuilder {
     pub(crate) definition_name: ::std::option::Option<::std::string::String>,
     pub(crate) tuning_objective: ::std::option::Option<crate::types::HyperParameterTuningJobObjective>,

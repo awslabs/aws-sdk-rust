@@ -26,8 +26,8 @@ impl UpdateGlobalNetworkOutput {
 }
 
 /// A builder for [`UpdateGlobalNetworkOutput`](crate::operation::update_global_network::UpdateGlobalNetworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGlobalNetworkOutputBuilder {
     pub(crate) global_network: ::std::option::Option<crate::types::GlobalNetwork>,
     _request_id: Option<String>,

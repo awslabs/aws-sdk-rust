@@ -27,8 +27,8 @@ impl EnableRadiusInput {
 }
 
 /// A builder for [`EnableRadiusInput`](crate::operation::enable_radius::EnableRadiusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableRadiusInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) radius_settings: ::std::option::Option<crate::types::RadiusSettings>,

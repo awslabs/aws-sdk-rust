@@ -20,8 +20,8 @@ impl DescribeInboundDmarcSettingsInput {
 }
 
 /// A builder for [`DescribeInboundDmarcSettingsInput`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInboundDmarcSettingsInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
 }

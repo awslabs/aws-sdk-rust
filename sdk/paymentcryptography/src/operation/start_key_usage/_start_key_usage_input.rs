@@ -20,8 +20,8 @@ impl StartKeyUsageInput {
 }
 
 /// A builder for [`StartKeyUsageInput`](crate::operation::start_key_usage::StartKeyUsageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartKeyUsageInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
 }

@@ -81,8 +81,8 @@ impl AnalyticsSessionMetricResult {
 }
 
 /// A builder for [`AnalyticsSessionMetricResult`](crate::types::AnalyticsSessionMetricResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsSessionMetricResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsSessionMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,

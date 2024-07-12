@@ -33,8 +33,8 @@ impl ParameterInlinePolicy {
 }
 
 /// A builder for [`ParameterInlinePolicy`](crate::types::ParameterInlinePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParameterInlinePolicyBuilder {
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,
     pub(crate) policy_type: ::std::option::Option<::std::string::String>,

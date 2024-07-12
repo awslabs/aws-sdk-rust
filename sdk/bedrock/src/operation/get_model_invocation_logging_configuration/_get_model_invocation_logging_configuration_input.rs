@@ -11,8 +11,8 @@ impl GetModelInvocationLoggingConfigurationInput {
 }
 
 /// A builder for [`GetModelInvocationLoggingConfigurationInput`](crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetModelInvocationLoggingConfigurationInputBuilder {}
 impl GetModelInvocationLoggingConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetModelInvocationLoggingConfigurationInput`](crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationInput).

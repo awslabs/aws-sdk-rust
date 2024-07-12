@@ -33,8 +33,8 @@ impl LogicalTableSource {
 }
 
 /// A builder for [`LogicalTableSource`](crate::types::LogicalTableSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogicalTableSourceBuilder {
     pub(crate) join_instruction: ::std::option::Option<crate::types::JoinInstruction>,
     pub(crate) physical_table_id: ::std::option::Option<::std::string::String>,

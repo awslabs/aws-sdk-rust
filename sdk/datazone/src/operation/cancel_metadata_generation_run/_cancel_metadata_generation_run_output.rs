@@ -18,8 +18,8 @@ impl CancelMetadataGenerationRunOutput {
 }
 
 /// A builder for [`CancelMetadataGenerationRunOutput`](crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelMetadataGenerationRunOutputBuilder {
     _request_id: Option<String>,
 }

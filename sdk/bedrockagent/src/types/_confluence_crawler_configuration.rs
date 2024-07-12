@@ -21,8 +21,8 @@ impl ConfluenceCrawlerConfiguration {
 }
 
 /// A builder for [`ConfluenceCrawlerConfiguration`](crate::types::ConfluenceCrawlerConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfluenceCrawlerConfigurationBuilder {
     pub(crate) filter_configuration: ::std::option::Option<crate::types::CrawlFilterConfiguration>,
 }

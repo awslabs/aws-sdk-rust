@@ -47,8 +47,8 @@ impl RemediationExecutionStatus {
 }
 
 /// A builder for [`RemediationExecutionStatus`](crate::types::RemediationExecutionStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemediationExecutionStatusBuilder {
     pub(crate) resource_key: ::std::option::Option<crate::types::ResourceKey>,
     pub(crate) state: ::std::option::Option<crate::types::RemediationExecutionState>,

@@ -34,8 +34,8 @@ impl ListGeoMatchSetsOutput {
 }
 
 /// A builder for [`ListGeoMatchSetsOutput`](crate::operation::list_geo_match_sets::ListGeoMatchSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGeoMatchSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) geo_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetSummary>>,

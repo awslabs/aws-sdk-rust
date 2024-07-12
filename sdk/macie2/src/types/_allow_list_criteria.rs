@@ -27,8 +27,8 @@ impl AllowListCriteria {
 }
 
 /// A builder for [`AllowListCriteria`](crate::types::AllowListCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllowListCriteriaBuilder {
     pub(crate) regex: ::std::option::Option<::std::string::String>,
     pub(crate) s3_words_list: ::std::option::Option<crate::types::S3WordsList>,

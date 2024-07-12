@@ -26,8 +26,8 @@ impl ListStorageConfigurationsInput {
 }
 
 /// A builder for [`ListStorageConfigurationsInput`](crate::operation::list_storage_configurations::ListStorageConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStorageConfigurationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

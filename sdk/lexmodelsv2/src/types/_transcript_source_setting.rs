@@ -21,8 +21,8 @@ impl TranscriptSourceSetting {
 }
 
 /// A builder for [`TranscriptSourceSetting`](crate::types::TranscriptSourceSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranscriptSourceSettingBuilder {
     pub(crate) s3_bucket_transcript_source: ::std::option::Option<crate::types::S3BucketTranscriptSource>,
 }

@@ -18,8 +18,8 @@ impl DeleteAppBundleOutput {
 }
 
 /// A builder for [`DeleteAppBundleOutput`](crate::operation::delete_app_bundle::DeleteAppBundleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppBundleOutputBuilder {
     _request_id: Option<String>,
 }

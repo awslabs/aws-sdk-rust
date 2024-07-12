@@ -39,8 +39,8 @@ impl AmiProductFilters {
 }
 
 /// A builder for [`AmiProductFilters`](crate::types::AmiProductFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmiProductFiltersBuilder {
     pub(crate) entity_id: ::std::option::Option<crate::types::AmiProductEntityIdFilter>,
     pub(crate) last_modified_date: ::std::option::Option<crate::types::AmiProductLastModifiedDateFilter>,

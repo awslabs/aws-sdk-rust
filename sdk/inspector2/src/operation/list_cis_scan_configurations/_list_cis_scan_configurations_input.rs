@@ -44,8 +44,8 @@ impl ListCisScanConfigurationsInput {
 }
 
 /// A builder for [`ListCisScanConfigurationsInput`](crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCisScanConfigurationsInputBuilder {
     pub(crate) filter_criteria: ::std::option::Option<crate::types::ListCisScanConfigurationsFilterCriteria>,
     pub(crate) sort_by: ::std::option::Option<crate::types::CisScanConfigurationsSortBy>,

@@ -21,8 +21,8 @@ impl AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails {
 }
 
 /// A builder for [`AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails`](crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetailsBuilder {
     pub(crate) data_volume_kms_key_id: ::std::option::Option<::std::string::String>,
 }

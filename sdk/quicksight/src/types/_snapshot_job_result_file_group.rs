@@ -31,8 +31,8 @@ impl SnapshotJobResultFileGroup {
 }
 
 /// A builder for [`SnapshotJobResultFileGroup`](crate::types::SnapshotJobResultFileGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotJobResultFileGroupBuilder {
     pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>,
     pub(crate) s3_results: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>>,

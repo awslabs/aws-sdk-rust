@@ -18,8 +18,8 @@ impl CancelConversionTaskOutput {
 }
 
 /// A builder for [`CancelConversionTaskOutput`](crate::operation::cancel_conversion_task::CancelConversionTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelConversionTaskOutputBuilder {
     _request_id: Option<String>,
 }

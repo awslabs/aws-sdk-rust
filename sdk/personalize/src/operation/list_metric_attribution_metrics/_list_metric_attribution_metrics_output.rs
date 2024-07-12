@@ -34,8 +34,8 @@ impl ListMetricAttributionMetricsOutput {
 }
 
 /// A builder for [`ListMetricAttributionMetricsOutput`](crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMetricAttributionMetricsOutputBuilder {
     pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

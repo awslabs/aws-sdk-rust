@@ -57,8 +57,8 @@ impl ClusterOperationV2Summary {
 }
 
 /// A builder for [`ClusterOperationV2Summary`](crate::types::ClusterOperationV2Summary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterOperationV2SummaryBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type: ::std::option::Option<crate::types::ClusterType>,

@@ -27,8 +27,8 @@ impl DetectDominantLanguageInput {
 }
 
 /// A builder for [`DetectDominantLanguageInput`](crate::operation::detect_dominant_language::DetectDominantLanguageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectDominantLanguageInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

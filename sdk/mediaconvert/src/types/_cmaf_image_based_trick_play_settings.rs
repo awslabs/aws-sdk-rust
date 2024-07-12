@@ -51,8 +51,8 @@ impl CmafImageBasedTrickPlaySettings {
 }
 
 /// A builder for [`CmafImageBasedTrickPlaySettings`](crate::types::CmafImageBasedTrickPlaySettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CmafImageBasedTrickPlaySettingsBuilder {
     pub(crate) interval_cadence: ::std::option::Option<crate::types::CmafIntervalCadence>,
     pub(crate) thumbnail_height: ::std::option::Option<i32>,

@@ -27,8 +27,8 @@ impl VdmOptions {
 }
 
 /// A builder for [`VdmOptions`](crate::types::VdmOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VdmOptionsBuilder {
     pub(crate) dashboard_options: ::std::option::Option<crate::types::DashboardOptions>,
     pub(crate) guardian_options: ::std::option::Option<crate::types::GuardianOptions>,

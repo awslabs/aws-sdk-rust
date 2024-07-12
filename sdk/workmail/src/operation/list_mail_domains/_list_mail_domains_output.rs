@@ -34,8 +34,8 @@ impl ListMailDomainsOutput {
 }
 
 /// A builder for [`ListMailDomainsOutput`](crate::operation::list_mail_domains::ListMailDomainsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMailDomainsOutputBuilder {
     pub(crate) mail_domains: ::std::option::Option<::std::vec::Vec<crate::types::MailDomainSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

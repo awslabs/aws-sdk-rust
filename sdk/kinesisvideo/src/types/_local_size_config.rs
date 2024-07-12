@@ -27,8 +27,8 @@ impl LocalSizeConfig {
 }
 
 /// A builder for [`LocalSizeConfig`](crate::types::LocalSizeConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LocalSizeConfigBuilder {
     pub(crate) max_local_media_size_in_mb: ::std::option::Option<i32>,
     pub(crate) strategy_on_full_size: ::std::option::Option<crate::types::StrategyOnFullSize>,

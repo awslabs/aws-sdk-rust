@@ -18,8 +18,8 @@ impl SendCisSessionTelemetryOutput {
 }
 
 /// A builder for [`SendCisSessionTelemetryOutput`](crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendCisSessionTelemetryOutputBuilder {
     _request_id: Option<String>,
 }

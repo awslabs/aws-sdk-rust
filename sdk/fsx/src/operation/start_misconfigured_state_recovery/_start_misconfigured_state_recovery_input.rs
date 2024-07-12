@@ -26,8 +26,8 @@ impl StartMisconfiguredStateRecoveryInput {
 }
 
 /// A builder for [`StartMisconfiguredStateRecoveryInput`](crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMisconfiguredStateRecoveryInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,

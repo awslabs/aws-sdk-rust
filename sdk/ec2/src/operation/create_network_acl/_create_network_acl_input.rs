@@ -40,8 +40,8 @@ impl CreateNetworkAclInput {
 }
 
 /// A builder for [`CreateNetworkAclInput`](crate::operation::create_network_acl::CreateNetworkAclInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkAclInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

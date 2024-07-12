@@ -21,8 +21,8 @@ impl AwsEcsTaskDefinitionVolumesHostDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::types::AwsEcsTaskDefinitionVolumesHostDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionVolumesHostDetailsBuilder {
     pub(crate) source_path: ::std::option::Option<::std::string::String>,
 }

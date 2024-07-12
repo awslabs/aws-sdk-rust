@@ -60,8 +60,8 @@ impl DescribeCoipPoolsInput {
 }
 
 /// A builder for [`DescribeCoipPoolsInput`](crate::operation::describe_coip_pools::DescribeCoipPoolsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCoipPoolsInputBuilder {
     pub(crate) pool_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

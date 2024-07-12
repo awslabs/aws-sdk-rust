@@ -26,8 +26,8 @@ impl ListServiceTemplatesInput {
 }
 
 /// A builder for [`ListServiceTemplatesInput`](crate::operation::list_service_templates::ListServiceTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceTemplatesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

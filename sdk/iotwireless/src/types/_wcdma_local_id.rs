@@ -27,8 +27,8 @@ impl WcdmaLocalId {
 }
 
 /// A builder for [`WcdmaLocalId`](crate::types::WcdmaLocalId).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WcdmaLocalIdBuilder {
     pub(crate) uarfcndl: ::std::option::Option<i32>,
     pub(crate) psc: ::std::option::Option<i32>,

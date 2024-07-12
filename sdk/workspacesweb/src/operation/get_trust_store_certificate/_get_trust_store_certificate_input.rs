@@ -26,8 +26,8 @@ impl GetTrustStoreCertificateInput {
 }
 
 /// A builder for [`GetTrustStoreCertificateInput`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTrustStoreCertificateInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) thumbprint: ::std::option::Option<::std::string::String>,

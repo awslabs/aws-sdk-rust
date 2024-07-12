@@ -18,8 +18,8 @@ impl AssociateElasticIpOutput {
 }
 
 /// A builder for [`AssociateElasticIpOutput`](crate::operation::associate_elastic_ip::AssociateElasticIpOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateElasticIpOutputBuilder {
     _request_id: Option<String>,
 }

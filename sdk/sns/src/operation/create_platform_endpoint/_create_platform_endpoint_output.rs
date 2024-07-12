@@ -27,8 +27,8 @@ impl CreatePlatformEndpointOutput {
 }
 
 /// A builder for [`CreatePlatformEndpointOutput`](crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePlatformEndpointOutputBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

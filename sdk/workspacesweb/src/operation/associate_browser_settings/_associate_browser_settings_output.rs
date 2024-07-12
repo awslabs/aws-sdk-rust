@@ -34,8 +34,8 @@ impl AssociateBrowserSettingsOutput {
 }
 
 /// A builder for [`AssociateBrowserSettingsOutput`](crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateBrowserSettingsOutputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,

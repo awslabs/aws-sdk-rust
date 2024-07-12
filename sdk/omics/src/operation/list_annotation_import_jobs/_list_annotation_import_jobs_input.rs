@@ -40,8 +40,8 @@ impl ListAnnotationImportJobsInput {
 }
 
 /// A builder for [`ListAnnotationImportJobsInput`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnnotationImportJobsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -130,8 +130,8 @@ impl ConstraintViolationException {
 }
 
 /// A builder for [`ConstraintViolationException`](crate::types::error::ConstraintViolationException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConstraintViolationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::ConstraintViolationExceptionReason>,

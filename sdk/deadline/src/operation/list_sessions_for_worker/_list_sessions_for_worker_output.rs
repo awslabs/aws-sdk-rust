@@ -33,8 +33,8 @@ impl ListSessionsForWorkerOutput {
 }
 
 /// A builder for [`ListSessionsForWorkerOutput`](crate::operation::list_sessions_for_worker::ListSessionsForWorkerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSessionsForWorkerOutputBuilder {
     pub(crate) sessions: ::std::option::Option<::std::vec::Vec<crate::types::WorkerSessionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

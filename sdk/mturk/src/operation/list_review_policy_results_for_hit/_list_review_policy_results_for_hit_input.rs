@@ -52,8 +52,8 @@ impl ListReviewPolicyResultsForHitInput {
 }
 
 /// A builder for [`ListReviewPolicyResultsForHitInput`](crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReviewPolicyResultsForHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_levels: ::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>>,

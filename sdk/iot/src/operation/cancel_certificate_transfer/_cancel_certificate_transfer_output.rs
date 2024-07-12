@@ -18,8 +18,8 @@ impl CancelCertificateTransferOutput {
 }
 
 /// A builder for [`CancelCertificateTransferOutput`](crate::operation::cancel_certificate_transfer::CancelCertificateTransferOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelCertificateTransferOutputBuilder {
     _request_id: Option<String>,
 }

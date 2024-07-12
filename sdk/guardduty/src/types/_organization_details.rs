@@ -27,8 +27,8 @@ impl OrganizationDetails {
 }
 
 /// A builder for [`OrganizationDetails`](crate::types::OrganizationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationDetailsBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) organization_statistics: ::std::option::Option<crate::types::OrganizationStatistics>,

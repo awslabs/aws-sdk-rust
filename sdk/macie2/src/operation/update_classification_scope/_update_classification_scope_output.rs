@@ -18,8 +18,8 @@ impl UpdateClassificationScopeOutput {
 }
 
 /// A builder for [`UpdateClassificationScopeOutput`](crate::operation::update_classification_scope::UpdateClassificationScopeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClassificationScopeOutputBuilder {
     _request_id: Option<String>,
 }

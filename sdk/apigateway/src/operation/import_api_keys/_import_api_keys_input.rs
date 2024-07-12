@@ -33,8 +33,8 @@ impl ImportApiKeysInput {
 }
 
 /// A builder for [`ImportApiKeysInput`](crate::operation::import_api_keys::ImportApiKeysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportApiKeysInputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) format: ::std::option::Option<crate::types::ApiKeysFormat>,

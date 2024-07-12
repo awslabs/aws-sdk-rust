@@ -26,8 +26,8 @@ impl ReturnSavingsPlanInput {
 }
 
 /// A builder for [`ReturnSavingsPlanInput`](crate::operation::return_savings_plan::ReturnSavingsPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReturnSavingsPlanInputBuilder {
     pub(crate) savings_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

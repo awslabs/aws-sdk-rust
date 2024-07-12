@@ -32,8 +32,8 @@ impl CancelOpenCypherQueryOutput {
 }
 
 /// A builder for [`CancelOpenCypherQueryOutput`](crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelOpenCypherQueryOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<bool>,

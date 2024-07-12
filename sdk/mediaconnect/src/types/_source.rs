@@ -107,8 +107,8 @@ impl Source {
 }
 
 /// A builder for [`Source`](crate::types::Source).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceBuilder {
     pub(crate) data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     pub(crate) decryption: ::std::option::Option<crate::types::Encryption>,

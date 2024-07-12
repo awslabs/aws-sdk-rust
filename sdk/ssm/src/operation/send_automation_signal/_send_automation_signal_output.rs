@@ -18,8 +18,8 @@ impl SendAutomationSignalOutput {
 }
 
 /// A builder for [`SendAutomationSignalOutput`](crate::operation::send_automation_signal::SendAutomationSignalOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendAutomationSignalOutputBuilder {
     _request_id: Option<String>,
 }

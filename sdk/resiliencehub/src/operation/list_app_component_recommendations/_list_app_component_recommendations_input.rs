@@ -32,8 +32,8 @@ impl ListAppComponentRecommendationsInput {
 }
 
 /// A builder for [`ListAppComponentRecommendationsInput`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppComponentRecommendationsInputBuilder {
     pub(crate) assessment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl ParentStepDetails {
 }
 
 /// A builder for [`ParentStepDetails`](crate::types::ParentStepDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParentStepDetailsBuilder {
     pub(crate) step_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_name: ::std::option::Option<::std::string::String>,

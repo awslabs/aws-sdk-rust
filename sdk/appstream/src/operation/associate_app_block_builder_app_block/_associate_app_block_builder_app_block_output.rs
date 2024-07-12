@@ -26,8 +26,8 @@ impl AssociateAppBlockBuilderAppBlockOutput {
 }
 
 /// A builder for [`AssociateAppBlockBuilderAppBlockOutput`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAppBlockBuilderAppBlockOutputBuilder {
     pub(crate) app_block_builder_app_block_association: ::std::option::Option<crate::types::AppBlockBuilderAppBlockAssociation>,
     _request_id: Option<String>,

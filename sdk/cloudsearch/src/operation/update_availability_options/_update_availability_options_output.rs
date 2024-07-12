@@ -27,8 +27,8 @@ impl UpdateAvailabilityOptionsOutput {
 }
 
 /// A builder for [`UpdateAvailabilityOptionsOutput`](crate::operation::update_availability_options::UpdateAvailabilityOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAvailabilityOptionsOutputBuilder {
     pub(crate) availability_options: ::std::option::Option<crate::types::AvailabilityOptionsStatus>,
     _request_id: Option<String>,

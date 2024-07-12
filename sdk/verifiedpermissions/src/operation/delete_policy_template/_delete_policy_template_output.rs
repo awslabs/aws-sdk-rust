@@ -18,8 +18,8 @@ impl DeletePolicyTemplateOutput {
 }
 
 /// A builder for [`DeletePolicyTemplateOutput`](crate::operation::delete_policy_template::DeletePolicyTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePolicyTemplateOutputBuilder {
     _request_id: Option<String>,
 }

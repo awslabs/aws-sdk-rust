@@ -18,8 +18,8 @@ impl DeleteCustomKeyStoreOutput {
 }
 
 /// A builder for [`DeleteCustomKeyStoreOutput`](crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomKeyStoreOutputBuilder {
     _request_id: Option<String>,
 }

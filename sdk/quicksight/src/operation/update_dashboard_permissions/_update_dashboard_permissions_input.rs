@@ -58,8 +58,8 @@ impl UpdateDashboardPermissionsInput {
 }
 
 /// A builder for [`UpdateDashboardPermissionsInput`](crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDashboardPermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl AdvancedSecurityOptionsInput {
 }
 
 /// A builder for [`AdvancedSecurityOptionsInput`](crate::types::AdvancedSecurityOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdvancedSecurityOptionsInputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) internal_user_database_enabled: ::std::option::Option<bool>,

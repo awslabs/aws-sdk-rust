@@ -68,8 +68,8 @@ impl ListInsightsMetricDataOutput {
 }
 
 /// A builder for [`ListInsightsMetricDataOutput`](crate::operation::list_insights_metric_data::ListInsightsMetricDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInsightsMetricDataOutputBuilder {
     pub(crate) event_source: ::std::option::Option<::std::string::String>,
     pub(crate) event_name: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl CreateS3BucketResource {
 }
 
 /// A builder for [`CreateS3BucketResource`](crate::types::CreateS3BucketResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateS3BucketResourceBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) object_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

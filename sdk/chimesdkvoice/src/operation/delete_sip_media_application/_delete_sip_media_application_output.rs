@@ -18,8 +18,8 @@ impl DeleteSipMediaApplicationOutput {
 }
 
 /// A builder for [`DeleteSipMediaApplicationOutput`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSipMediaApplicationOutputBuilder {
     _request_id: Option<String>,
 }

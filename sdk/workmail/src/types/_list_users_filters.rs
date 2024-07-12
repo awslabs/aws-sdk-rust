@@ -49,8 +49,8 @@ impl ListUsersFilters {
 }
 
 /// A builder for [`ListUsersFilters`](crate::types::ListUsersFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListUsersFiltersBuilder {
     pub(crate) username_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) display_name_prefix: ::std::option::Option<::std::string::String>,

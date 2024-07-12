@@ -22,8 +22,8 @@ impl DeleteInvitationsInput {
 }
 
 /// A builder for [`DeleteInvitationsInput`](crate::operation::delete_invitations::DeleteInvitationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInvitationsInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

@@ -33,8 +33,8 @@ impl UpgradeElasticsearchDomainInput {
 }
 
 /// A builder for [`UpgradeElasticsearchDomainInput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpgradeElasticsearchDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_version: ::std::option::Option<::std::string::String>,

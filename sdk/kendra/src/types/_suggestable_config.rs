@@ -27,8 +27,8 @@ impl SuggestableConfig {
 }
 
 /// A builder for [`SuggestableConfig`](crate::types::SuggestableConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuggestableConfigBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) suggestable: ::std::option::Option<bool>,

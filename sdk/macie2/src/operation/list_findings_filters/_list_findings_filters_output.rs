@@ -34,8 +34,8 @@ impl ListFindingsFiltersOutput {
 }
 
 /// A builder for [`ListFindingsFiltersOutput`](crate::operation::list_findings_filters::ListFindingsFiltersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFindingsFiltersOutputBuilder {
     pub(crate) findings_filter_list_items: ::std::option::Option<::std::vec::Vec<crate::types::FindingsFilterListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

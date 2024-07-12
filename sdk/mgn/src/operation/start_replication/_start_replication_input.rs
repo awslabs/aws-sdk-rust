@@ -26,8 +26,8 @@ impl StartReplicationInput {
 }
 
 /// A builder for [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReplicationInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

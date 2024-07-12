@@ -26,8 +26,8 @@ impl ListImportFileTaskInput {
 }
 
 /// A builder for [`ListImportFileTaskInput`](crate::operation::list_import_file_task::ListImportFileTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImportFileTaskInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

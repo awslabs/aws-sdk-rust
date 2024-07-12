@@ -52,8 +52,8 @@ impl ListBotRecommendationsOutput {
 }
 
 /// A builder for [`ListBotRecommendationsOutput`](crate::operation::list_bot_recommendations::ListBotRecommendationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBotRecommendationsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,

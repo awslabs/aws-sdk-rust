@@ -27,8 +27,8 @@ impl ImagePermissions {
 }
 
 /// A builder for [`ImagePermissions`](crate::types::ImagePermissions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImagePermissionsBuilder {
     pub(crate) allow_fleet: ::std::option::Option<bool>,
     pub(crate) allow_image_builder: ::std::option::Option<bool>,

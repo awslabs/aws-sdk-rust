@@ -44,8 +44,8 @@ impl CreateCoreDefinitionVersionOutput {
 }
 
 /// A builder for [`CreateCoreDefinitionVersionOutput`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCoreDefinitionVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,

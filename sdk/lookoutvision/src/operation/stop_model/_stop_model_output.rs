@@ -26,8 +26,8 @@ impl StopModelOutput {
 }
 
 /// A builder for [`StopModelOutput`](crate::operation::stop_model::StopModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopModelOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ModelHostingStatus>,
     _request_id: Option<String>,

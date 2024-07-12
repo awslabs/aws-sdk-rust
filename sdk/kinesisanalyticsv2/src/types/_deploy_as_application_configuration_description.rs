@@ -21,8 +21,8 @@ impl DeployAsApplicationConfigurationDescription {
 }
 
 /// A builder for [`DeployAsApplicationConfigurationDescription`](crate::types::DeployAsApplicationConfigurationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeployAsApplicationConfigurationDescriptionBuilder {
     pub(crate) s3_content_location_description: ::std::option::Option<crate::types::S3ContentBaseLocationDescription>,
 }

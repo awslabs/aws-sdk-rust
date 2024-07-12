@@ -21,8 +21,8 @@ impl AudioConcatenationConfiguration {
 }
 
 /// A builder for [`AudioConcatenationConfiguration`](crate::types::AudioConcatenationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioConcatenationConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::AudioArtifactsConcatenationState>,
 }

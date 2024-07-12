@@ -11,8 +11,8 @@ impl DisassociateFromAdministratorAccountInput {
 }
 
 /// A builder for [`DisassociateFromAdministratorAccountInput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateFromAdministratorAccountInputBuilder {}
 impl DisassociateFromAdministratorAccountInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFromAdministratorAccountInput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput).

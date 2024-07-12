@@ -21,8 +21,8 @@ impl SapoDataPaginationConfig {
 }
 
 /// A builder for [`SapoDataPaginationConfig`](crate::types::SapoDataPaginationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SapoDataPaginationConfigBuilder {
     pub(crate) max_page_size: ::std::option::Option<i32>,
 }

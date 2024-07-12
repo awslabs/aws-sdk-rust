@@ -21,8 +21,8 @@ impl ShutdownGatewayInput {
 }
 
 /// A builder for [`ShutdownGatewayInput`](crate::operation::shutdown_gateway::ShutdownGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShutdownGatewayInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }

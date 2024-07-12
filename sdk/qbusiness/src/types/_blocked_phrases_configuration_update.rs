@@ -37,8 +37,8 @@ impl BlockedPhrasesConfigurationUpdate {
 }
 
 /// A builder for [`BlockedPhrasesConfigurationUpdate`](crate::types::BlockedPhrasesConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlockedPhrasesConfigurationUpdateBuilder {
     pub(crate) blocked_phrases_to_create_or_update: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) blocked_phrases_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

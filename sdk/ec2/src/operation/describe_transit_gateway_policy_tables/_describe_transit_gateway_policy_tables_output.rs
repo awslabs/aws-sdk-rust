@@ -34,8 +34,8 @@ impl DescribeTransitGatewayPolicyTablesOutput {
 }
 
 /// A builder for [`DescribeTransitGatewayPolicyTablesOutput`](crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransitGatewayPolicyTablesOutputBuilder {
     pub(crate) transit_gateway_policy_tables: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTable>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

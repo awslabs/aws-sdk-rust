@@ -34,8 +34,8 @@ impl BatchGetSchemaAnalysisRuleOutput {
 }
 
 /// A builder for [`BatchGetSchemaAnalysisRuleOutput`](crate::operation::batch_get_schema_analysis_rule::BatchGetSchemaAnalysisRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetSchemaAnalysisRuleOutputBuilder {
     pub(crate) analysis_rules: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRule>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaAnalysisRuleError>>,

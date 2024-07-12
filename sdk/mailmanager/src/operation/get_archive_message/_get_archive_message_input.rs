@@ -21,8 +21,8 @@ impl GetArchiveMessageInput {
 }
 
 /// A builder for [`GetArchiveMessageInput`](crate::operation::get_archive_message::GetArchiveMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetArchiveMessageInputBuilder {
     pub(crate) archived_message_id: ::std::option::Option<::std::string::String>,
 }

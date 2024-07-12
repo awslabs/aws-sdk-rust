@@ -47,8 +47,8 @@ impl BatchDeleteInput {
 }
 
 /// A builder for [`BatchDeleteInput`](crate::operation::batch_delete::BatchDeleteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteInputBuilder {
     pub(crate) channel_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) input_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

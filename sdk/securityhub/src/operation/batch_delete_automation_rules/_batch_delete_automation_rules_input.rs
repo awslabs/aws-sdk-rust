@@ -22,8 +22,8 @@ impl BatchDeleteAutomationRulesInput {
 }
 
 /// A builder for [`BatchDeleteAutomationRulesInput`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteAutomationRulesInputBuilder {
     pub(crate) automation_rules_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

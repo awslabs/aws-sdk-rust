@@ -85,8 +85,8 @@ impl DateFilter {
 }
 
 /// A builder for [`DateFilter`](crate::types::DateFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DateFilterBuilder {
     pub(crate) start: ::std::option::Option<::std::string::String>,
     pub(crate) end: ::std::option::Option<::std::string::String>,

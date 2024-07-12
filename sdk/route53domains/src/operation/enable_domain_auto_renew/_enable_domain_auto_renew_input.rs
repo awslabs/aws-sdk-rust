@@ -20,8 +20,8 @@ impl EnableDomainAutoRenewInput {
 }
 
 /// A builder for [`EnableDomainAutoRenewInput`](crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableDomainAutoRenewInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

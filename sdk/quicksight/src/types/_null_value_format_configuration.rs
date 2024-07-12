@@ -29,8 +29,8 @@ impl NullValueFormatConfiguration {
 }
 
 /// A builder for [`NullValueFormatConfiguration`](crate::types::NullValueFormatConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct NullValueFormatConfigurationBuilder {
     pub(crate) null_string: ::std::option::Option<::std::string::String>,
 }

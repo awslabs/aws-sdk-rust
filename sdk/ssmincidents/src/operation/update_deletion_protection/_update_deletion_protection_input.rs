@@ -32,8 +32,8 @@ impl UpdateDeletionProtectionInput {
 }
 
 /// A builder for [`UpdateDeletionProtectionInput`](crate::operation::update_deletion_protection::UpdateDeletionProtectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeletionProtectionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protected: ::std::option::Option<bool>,

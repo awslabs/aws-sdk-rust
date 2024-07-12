@@ -88,8 +88,8 @@ impl MediaAnalysisJobDescription {
 }
 
 /// A builder for [`MediaAnalysisJobDescription`](crate::types::MediaAnalysisJobDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaAnalysisJobDescriptionBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,

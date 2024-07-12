@@ -94,8 +94,8 @@ impl CreateAddonInput {
 }
 
 /// A builder for [`CreateAddonInput`](crate::operation::create_addon::CreateAddonInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAddonInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,

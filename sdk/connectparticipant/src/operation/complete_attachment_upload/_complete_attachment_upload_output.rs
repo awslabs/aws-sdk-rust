@@ -18,8 +18,8 @@ impl CompleteAttachmentUploadOutput {
 }
 
 /// A builder for [`CompleteAttachmentUploadOutput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompleteAttachmentUploadOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl DeletePackageGroupOutput {
 }
 
 /// A builder for [`DeletePackageGroupOutput`](crate::operation::delete_package_group::DeletePackageGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePackageGroupOutputBuilder {
     pub(crate) package_group: ::std::option::Option<crate::types::PackageGroupDescription>,
     _request_id: Option<String>,

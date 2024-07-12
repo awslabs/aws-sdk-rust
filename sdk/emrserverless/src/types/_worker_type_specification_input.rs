@@ -21,8 +21,8 @@ impl WorkerTypeSpecificationInput {
 }
 
 /// A builder for [`WorkerTypeSpecificationInput`](crate::types::WorkerTypeSpecificationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkerTypeSpecificationInputBuilder {
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfigurationInput>,
 }

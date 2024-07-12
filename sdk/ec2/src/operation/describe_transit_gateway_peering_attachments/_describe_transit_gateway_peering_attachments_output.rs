@@ -35,8 +35,8 @@ impl DescribeTransitGatewayPeeringAttachmentsOutput {
 }
 
 /// A builder for [`DescribeTransitGatewayPeeringAttachmentsOutput`](crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransitGatewayPeeringAttachmentsOutputBuilder {
     pub(crate) transit_gateway_peering_attachments: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPeeringAttachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

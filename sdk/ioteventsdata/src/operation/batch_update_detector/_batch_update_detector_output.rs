@@ -28,8 +28,8 @@ impl BatchUpdateDetectorOutput {
 }
 
 /// A builder for [`BatchUpdateDetectorOutput`](crate::operation::batch_update_detector::BatchUpdateDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateDetectorOutputBuilder {
     pub(crate) batch_update_detector_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDetectorErrorEntry>>,
     _request_id: Option<String>,

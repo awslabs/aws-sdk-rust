@@ -33,8 +33,8 @@ impl ListedEntitlement {
 }
 
 /// A builder for [`ListedEntitlement`](crate::types::ListedEntitlement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListedEntitlementBuilder {
     pub(crate) data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     pub(crate) entitlement_arn: ::std::option::Option<::std::string::String>,

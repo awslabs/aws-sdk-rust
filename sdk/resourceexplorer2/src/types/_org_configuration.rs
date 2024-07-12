@@ -27,8 +27,8 @@ impl OrgConfiguration {
 }
 
 /// A builder for [`OrgConfiguration`](crate::types::OrgConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrgConfigurationBuilder {
     pub(crate) aws_service_access_status: ::std::option::Option<crate::types::AwsServiceAccessStatus>,
     pub(crate) service_linked_role: ::std::option::Option<::std::string::String>,

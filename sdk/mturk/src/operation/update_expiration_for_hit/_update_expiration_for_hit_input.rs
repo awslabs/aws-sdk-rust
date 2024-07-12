@@ -26,8 +26,8 @@ impl UpdateExpirationForHitInput {
 }
 
 /// A builder for [`UpdateExpirationForHitInput`](crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateExpirationForHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
     pub(crate) expire_at: ::std::option::Option<::aws_smithy_types::DateTime>,

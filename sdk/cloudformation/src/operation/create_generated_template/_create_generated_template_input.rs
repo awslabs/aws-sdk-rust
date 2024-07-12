@@ -42,8 +42,8 @@ impl CreateGeneratedTemplateInput {
 }
 
 /// A builder for [`CreateGeneratedTemplateInput`](crate::operation::create_generated_template::CreateGeneratedTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGeneratedTemplateInputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDefinition>>,
     pub(crate) generated_template_name: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListLogSourcesOutput {
 }
 
 /// A builder for [`ListLogSourcesOutput`](crate::operation::list_log_sources::ListLogSourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLogSourcesOutputBuilder {
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

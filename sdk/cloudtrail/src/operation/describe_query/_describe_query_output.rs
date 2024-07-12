@@ -62,8 +62,8 @@ impl DescribeQueryOutput {
 }
 
 /// A builder for [`DescribeQueryOutput`](crate::operation::describe_query::DescribeQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeQueryOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,

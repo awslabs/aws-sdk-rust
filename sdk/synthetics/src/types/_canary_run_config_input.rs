@@ -51,8 +51,8 @@ impl CanaryRunConfigInput {
 }
 
 /// A builder for [`CanaryRunConfigInput`](crate::types::CanaryRunConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CanaryRunConfigInputBuilder {
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) memory_in_mb: ::std::option::Option<i32>,

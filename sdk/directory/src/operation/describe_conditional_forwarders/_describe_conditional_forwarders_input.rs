@@ -29,8 +29,8 @@ impl DescribeConditionalForwardersInput {
 }
 
 /// A builder for [`DescribeConditionalForwardersInput`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConditionalForwardersInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) remote_domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

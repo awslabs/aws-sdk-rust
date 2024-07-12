@@ -19,8 +19,8 @@ impl DeleteChangeSetOutput {
 }
 
 /// A builder for [`DeleteChangeSetOutput`](crate::operation::delete_change_set::DeleteChangeSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChangeSetOutputBuilder {
     _request_id: Option<String>,
 }

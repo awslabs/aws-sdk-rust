@@ -22,8 +22,8 @@ impl AppliedCreatorModeConfiguration {
 }
 
 /// A builder for [`AppliedCreatorModeConfiguration`](crate::types::AppliedCreatorModeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppliedCreatorModeConfigurationBuilder {
     pub(crate) creator_mode_control: ::std::option::Option<crate::types::CreatorModeControl>,
 }

@@ -75,8 +75,8 @@ impl DescribeEnvironmentsInput {
 }
 
 /// A builder for [`DescribeEnvironmentsInput`](crate::operation::describe_environments::DescribeEnvironmentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEnvironmentsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_label: ::std::option::Option<::std::string::String>,

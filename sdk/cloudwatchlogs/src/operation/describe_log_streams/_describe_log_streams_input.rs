@@ -70,8 +70,8 @@ impl DescribeLogStreamsInput {
 }
 
 /// A builder for [`DescribeLogStreamsInput`](crate::operation::describe_log_streams::DescribeLogStreamsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLogStreamsInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_identifier: ::std::option::Option<::std::string::String>,

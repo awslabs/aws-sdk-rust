@@ -41,8 +41,8 @@ impl InstanceStorageInfo {
 }
 
 /// A builder for [`InstanceStorageInfo`](crate::types::InstanceStorageInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceStorageInfoBuilder {
     pub(crate) total_size_in_gb: ::std::option::Option<i64>,
     pub(crate) disks: ::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>>,

@@ -26,8 +26,8 @@ impl DescribeInstanceOutput {
 }
 
 /// A builder for [`DescribeInstanceOutput`](crate::operation::describe_instance::DescribeInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceOutputBuilder {
     pub(crate) instance: ::std::option::Option<crate::types::Instance>,
     _request_id: Option<String>,

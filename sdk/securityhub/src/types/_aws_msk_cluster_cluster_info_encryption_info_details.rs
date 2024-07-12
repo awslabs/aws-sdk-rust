@@ -27,8 +27,8 @@ impl AwsMskClusterClusterInfoEncryptionInfoDetails {
 }
 
 /// A builder for [`AwsMskClusterClusterInfoEncryptionInfoDetails`](crate::types::AwsMskClusterClusterInfoEncryptionInfoDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsMskClusterClusterInfoEncryptionInfoDetailsBuilder {
     pub(crate) encryption_in_transit: ::std::option::Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails>,
     pub(crate) encryption_at_rest: ::std::option::Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails>,

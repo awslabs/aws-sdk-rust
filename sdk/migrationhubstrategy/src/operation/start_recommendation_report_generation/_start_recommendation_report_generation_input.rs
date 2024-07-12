@@ -28,8 +28,8 @@ impl StartRecommendationReportGenerationInput {
 }
 
 /// A builder for [`StartRecommendationReportGenerationInput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartRecommendationReportGenerationInputBuilder {
     pub(crate) output_format: ::std::option::Option<crate::types::OutputFormat>,
     pub(crate) group_id_filter: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,

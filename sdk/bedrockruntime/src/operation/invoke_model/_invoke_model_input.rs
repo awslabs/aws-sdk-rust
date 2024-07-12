@@ -105,8 +105,8 @@ impl InvokeModelInput {
 }
 
 /// A builder for [`InvokeModelInput`](crate::operation::invoke_model::InvokeModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeModelInputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

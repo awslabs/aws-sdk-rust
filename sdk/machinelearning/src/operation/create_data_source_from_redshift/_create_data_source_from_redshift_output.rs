@@ -28,8 +28,8 @@ impl CreateDataSourceFromRedshiftOutput {
 }
 
 /// A builder for [`CreateDataSourceFromRedshiftOutput`](crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataSourceFromRedshiftOutputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -32,8 +32,8 @@ impl PutContactInformationInput {
 }
 
 /// A builder for [`PutContactInformationInput`](crate::operation::put_contact_information::PutContactInformationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutContactInformationInputBuilder {
     pub(crate) contact_information: ::std::option::Option<crate::types::ContactInformation>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

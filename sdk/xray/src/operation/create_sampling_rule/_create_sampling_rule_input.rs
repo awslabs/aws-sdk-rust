@@ -58,8 +58,8 @@ impl CreateSamplingRuleInput {
 }
 
 /// A builder for [`CreateSamplingRuleInput`](crate::operation::create_sampling_rule::CreateSamplingRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSamplingRuleInputBuilder {
     pub(crate) sampling_rule: ::std::option::Option<crate::types::SamplingRule>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

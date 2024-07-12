@@ -28,8 +28,8 @@ impl ActivityTaskCancelRequestedEventAttributes {
 }
 
 /// A builder for [`ActivityTaskCancelRequestedEventAttributes`](crate::types::ActivityTaskCancelRequestedEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivityTaskCancelRequestedEventAttributesBuilder {
     pub(crate) decision_task_completed_event_id: ::std::option::Option<i64>,
     pub(crate) activity_id: ::std::option::Option<::std::string::String>,

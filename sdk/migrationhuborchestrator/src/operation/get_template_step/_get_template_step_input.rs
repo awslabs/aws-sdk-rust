@@ -32,8 +32,8 @@ impl GetTemplateStepInput {
 }
 
 /// A builder for [`GetTemplateStepInput`](crate::operation::get_template_step::GetTemplateStepInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTemplateStepInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,

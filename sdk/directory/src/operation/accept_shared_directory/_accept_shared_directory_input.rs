@@ -20,8 +20,8 @@ impl AcceptSharedDirectoryInput {
 }
 
 /// A builder for [`AcceptSharedDirectoryInput`](crate::operation::accept_shared_directory::AcceptSharedDirectoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptSharedDirectoryInputBuilder {
     pub(crate) shared_directory_id: ::std::option::Option<::std::string::String>,
 }

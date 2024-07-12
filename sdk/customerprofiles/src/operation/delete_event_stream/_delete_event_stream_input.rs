@@ -26,8 +26,8 @@ impl DeleteEventStreamInput {
 }
 
 /// A builder for [`DeleteEventStreamInput`](crate::operation::delete_event_stream::DeleteEventStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventStreamInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_stream_name: ::std::option::Option<::std::string::String>,

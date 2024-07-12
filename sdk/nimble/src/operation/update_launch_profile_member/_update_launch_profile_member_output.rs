@@ -26,8 +26,8 @@ impl UpdateLaunchProfileMemberOutput {
 }
 
 /// A builder for [`UpdateLaunchProfileMemberOutput`](crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLaunchProfileMemberOutputBuilder {
     pub(crate) member: ::std::option::Option<crate::types::LaunchProfileMembership>,
     _request_id: Option<String>,

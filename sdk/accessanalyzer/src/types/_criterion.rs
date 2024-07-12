@@ -45,8 +45,8 @@ impl Criterion {
 }
 
 /// A builder for [`Criterion`](crate::types::Criterion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CriterionBuilder {
     pub(crate) eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

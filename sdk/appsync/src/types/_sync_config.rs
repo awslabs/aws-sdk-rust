@@ -62,8 +62,8 @@ impl SyncConfig {
 }
 
 /// A builder for [`SyncConfig`](crate::types::SyncConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyncConfigBuilder {
     pub(crate) conflict_handler: ::std::option::Option<crate::types::ConflictHandlerType>,
     pub(crate) conflict_detection: ::std::option::Option<crate::types::ConflictDetectionType>,

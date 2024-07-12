@@ -26,8 +26,8 @@ impl UpdateServerConfigInput {
 }
 
 /// A builder for [`UpdateServerConfigInput`](crate::operation::update_server_config::UpdateServerConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServerConfigInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) strategy_option: ::std::option::Option<crate::types::StrategyOption>,

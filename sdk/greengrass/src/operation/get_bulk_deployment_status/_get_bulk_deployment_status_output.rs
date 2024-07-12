@@ -58,8 +58,8 @@ impl GetBulkDeploymentStatusOutput {
 }
 
 /// A builder for [`GetBulkDeploymentStatusOutput`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBulkDeploymentStatusOutputBuilder {
     pub(crate) bulk_deployment_metrics: ::std::option::Option<crate::types::BulkDeploymentMetrics>,
     pub(crate) bulk_deployment_status: ::std::option::Option<crate::types::BulkDeploymentStatus>,

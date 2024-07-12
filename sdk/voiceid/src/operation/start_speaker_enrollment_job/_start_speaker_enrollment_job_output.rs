@@ -26,8 +26,8 @@ impl StartSpeakerEnrollmentJobOutput {
 }
 
 /// A builder for [`StartSpeakerEnrollmentJobOutput`](crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSpeakerEnrollmentJobOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::SpeakerEnrollmentJob>,
     _request_id: Option<String>,

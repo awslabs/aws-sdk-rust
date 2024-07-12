@@ -38,8 +38,8 @@ impl LaunchTemplateSpecification {
 }
 
 /// A builder for [`LaunchTemplateSpecification`](crate::types::LaunchTemplateSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateSpecificationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

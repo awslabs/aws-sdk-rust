@@ -73,8 +73,8 @@ impl LifecycleEvent {
 }
 
 /// A builder for [`LifecycleEvent`](crate::types::LifecycleEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecycleEventBuilder {
     pub(crate) lifecycle_event_name: ::std::option::Option<::std::string::String>,
     pub(crate) diagnostics: ::std::option::Option<crate::types::Diagnostics>,

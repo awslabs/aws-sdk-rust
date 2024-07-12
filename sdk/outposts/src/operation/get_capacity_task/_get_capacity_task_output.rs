@@ -100,8 +100,8 @@ impl GetCapacityTaskOutput {
 }
 
 /// A builder for [`GetCapacityTaskOutput`](crate::operation::get_capacity_task::GetCapacityTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCapacityTaskOutputBuilder {
     pub(crate) capacity_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,

@@ -133,8 +133,8 @@ impl DicomTags {
 }
 
 /// A builder for [`DicomTags`](crate::types::DicomTags).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DicomTagsBuilder {
     pub(crate) dicom_patient_id: ::std::option::Option<::std::string::String>,
     pub(crate) dicom_patient_name: ::std::option::Option<::std::string::String>,

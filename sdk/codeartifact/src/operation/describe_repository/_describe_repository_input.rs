@@ -32,8 +32,8 @@ impl DescribeRepositoryInput {
 }
 
 /// A builder for [`DescribeRepositoryInput`](crate::operation::describe_repository::DescribeRepositoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRepositoryInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

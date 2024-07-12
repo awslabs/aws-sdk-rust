@@ -21,8 +21,8 @@ impl MultipleOperatingModes {
 }
 
 /// A builder for [`MultipleOperatingModes`](crate::types::MultipleOperatingModes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultipleOperatingModesBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
 }

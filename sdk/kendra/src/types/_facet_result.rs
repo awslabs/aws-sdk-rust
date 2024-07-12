@@ -35,8 +35,8 @@ impl FacetResult {
 }
 
 /// A builder for [`FacetResult`](crate::types::FacetResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FacetResultBuilder {
     pub(crate) document_attribute_key: ::std::option::Option<::std::string::String>,
     pub(crate) document_attribute_value_type: ::std::option::Option<crate::types::DocumentAttributeValueType>,

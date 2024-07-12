@@ -34,8 +34,8 @@ impl ListConstraintsForPortfolioOutput {
 }
 
 /// A builder for [`ListConstraintsForPortfolioOutput`](crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConstraintsForPortfolioOutputBuilder {
     pub(crate) constraint_details: ::std::option::Option<::std::vec::Vec<crate::types::ConstraintDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

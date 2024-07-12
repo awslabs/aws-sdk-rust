@@ -90,8 +90,8 @@ impl CreateIdNamespaceOutput {
 }
 
 /// A builder for [`CreateIdNamespaceOutput`](crate::operation::create_id_namespace::CreateIdNamespaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIdNamespaceOutputBuilder {
     pub(crate) id_namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) id_namespace_arn: ::std::option::Option<::std::string::String>,

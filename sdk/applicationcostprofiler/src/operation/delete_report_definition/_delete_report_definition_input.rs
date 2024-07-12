@@ -20,8 +20,8 @@ impl DeleteReportDefinitionInput {
 }
 
 /// A builder for [`DeleteReportDefinitionInput`](crate::operation::delete_report_definition::DeleteReportDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReportDefinitionInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
 }

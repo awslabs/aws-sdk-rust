@@ -37,8 +37,8 @@ impl DeploymentParameterInput {
 }
 
 /// A builder for [`DeploymentParameterInput`](crate::types::DeploymentParameterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DeploymentParameterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) secret_string: ::std::option::Option<::std::string::String>,

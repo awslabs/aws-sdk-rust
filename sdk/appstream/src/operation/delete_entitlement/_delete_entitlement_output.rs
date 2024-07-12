@@ -18,8 +18,8 @@ impl DeleteEntitlementOutput {
 }
 
 /// A builder for [`DeleteEntitlementOutput`](crate::operation::delete_entitlement::DeleteEntitlementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEntitlementOutputBuilder {
     _request_id: Option<String>,
 }

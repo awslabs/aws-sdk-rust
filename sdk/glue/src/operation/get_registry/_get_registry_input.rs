@@ -20,8 +20,8 @@ impl GetRegistryInput {
 }
 
 /// A builder for [`GetRegistryInput`](crate::operation::get_registry::GetRegistryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegistryInputBuilder {
     pub(crate) registry_id: ::std::option::Option<crate::types::RegistryId>,
 }

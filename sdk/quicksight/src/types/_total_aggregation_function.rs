@@ -21,8 +21,8 @@ impl TotalAggregationFunction {
 }
 
 /// A builder for [`TotalAggregationFunction`](crate::types::TotalAggregationFunction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TotalAggregationFunctionBuilder {
     pub(crate) simple_total_aggregation_function: ::std::option::Option<crate::types::SimpleTotalAggregationFunction>,
 }

@@ -105,8 +105,8 @@ impl AwsEc2VpnConnectionDetails {
 }
 
 /// A builder for [`AwsEc2VpnConnectionDetails`](crate::types::AwsEc2VpnConnectionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2VpnConnectionDetailsBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl ReleaseAddressInput {
 }
 
 /// A builder for [`ReleaseAddressInput`](crate::operation::release_address::ReleaseAddressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleaseAddressInputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) public_ip: ::std::option::Option<::std::string::String>,

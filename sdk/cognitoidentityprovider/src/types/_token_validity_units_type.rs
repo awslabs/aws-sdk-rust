@@ -33,8 +33,8 @@ impl TokenValidityUnitsType {
 }
 
 /// A builder for [`TokenValidityUnitsType`](crate::types::TokenValidityUnitsType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TokenValidityUnitsTypeBuilder {
     pub(crate) access_token: ::std::option::Option<crate::types::TimeUnitsType>,
     pub(crate) id_token: ::std::option::Option<crate::types::TimeUnitsType>,

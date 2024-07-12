@@ -33,8 +33,8 @@ impl AwsWafRegionalRulePredicateListDetails {
 }
 
 /// A builder for [`AwsWafRegionalRulePredicateListDetails`](crate::types::AwsWafRegionalRulePredicateListDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafRegionalRulePredicateListDetailsBuilder {
     pub(crate) data_id: ::std::option::Option<::std::string::String>,
     pub(crate) negated: ::std::option::Option<bool>,

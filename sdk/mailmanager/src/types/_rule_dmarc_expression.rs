@@ -28,8 +28,8 @@ impl RuleDmarcExpression {
 }
 
 /// A builder for [`RuleDmarcExpression`](crate::types::RuleDmarcExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleDmarcExpressionBuilder {
     pub(crate) operator: ::std::option::Option<crate::types::RuleDmarcOperator>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::RuleDmarcPolicy>>,

@@ -29,8 +29,8 @@ impl RollbackConfiguration {
 }
 
 /// A builder for [`RollbackConfiguration`](crate::types::RollbackConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RollbackConfigurationBuilder {
     pub(crate) monitoring_time_in_minutes: ::std::option::Option<i32>,
     pub(crate) rollback_triggers: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,

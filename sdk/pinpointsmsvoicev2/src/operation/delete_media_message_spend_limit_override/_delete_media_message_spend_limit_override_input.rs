@@ -11,8 +11,8 @@ impl DeleteMediaMessageSpendLimitOverrideInput {
 }
 
 /// A builder for [`DeleteMediaMessageSpendLimitOverrideInput`](crate::operation::delete_media_message_spend_limit_override::DeleteMediaMessageSpendLimitOverrideInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMediaMessageSpendLimitOverrideInputBuilder {}
 impl DeleteMediaMessageSpendLimitOverrideInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMediaMessageSpendLimitOverrideInput`](crate::operation::delete_media_message_spend_limit_override::DeleteMediaMessageSpendLimitOverrideInput).

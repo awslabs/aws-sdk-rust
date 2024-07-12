@@ -39,8 +39,8 @@ impl SavingsPlansCoverageData {
 }
 
 /// A builder for [`SavingsPlansCoverageData`](crate::types::SavingsPlansCoverageData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlansCoverageDataBuilder {
     pub(crate) spend_covered_by_savings_plans: ::std::option::Option<::std::string::String>,
     pub(crate) on_demand_cost: ::std::option::Option<::std::string::String>,

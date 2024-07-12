@@ -33,8 +33,8 @@ impl PrivateConnectionProvisioningState {
 }
 
 /// A builder for [`PrivateConnectionProvisioningState`](crate::types::PrivateConnectionProvisioningState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrivateConnectionProvisioningStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PrivateConnectionProvisioningStatus>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,

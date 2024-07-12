@@ -47,8 +47,8 @@ impl ZookeeperNodeInfo {
 }
 
 /// A builder for [`ZookeeperNodeInfo`](crate::types::ZookeeperNodeInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ZookeeperNodeInfoBuilder {
     pub(crate) attached_eni_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_vpc_ip_address: ::std::option::Option<::std::string::String>,

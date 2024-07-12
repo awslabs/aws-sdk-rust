@@ -45,8 +45,8 @@ impl SparkSubmitJobDriver {
 }
 
 /// A builder for [`SparkSubmitJobDriver`](crate::types::SparkSubmitJobDriver).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SparkSubmitJobDriverBuilder {
     pub(crate) entry_point: ::std::option::Option<::std::string::String>,
     pub(crate) entry_point_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

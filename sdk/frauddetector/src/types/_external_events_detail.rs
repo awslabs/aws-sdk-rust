@@ -29,8 +29,8 @@ impl ExternalEventsDetail {
 }
 
 /// A builder for [`ExternalEventsDetail`](crate::types::ExternalEventsDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExternalEventsDetailBuilder {
     pub(crate) data_location: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,

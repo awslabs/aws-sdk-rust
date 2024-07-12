@@ -34,8 +34,8 @@ impl SearchGroupProfilesOutput {
 }
 
 /// A builder for [`SearchGroupProfilesOutput`](crate::operation::search_group_profiles::SearchGroupProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchGroupProfilesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::GroupProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

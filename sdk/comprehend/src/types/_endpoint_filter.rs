@@ -39,8 +39,8 @@ impl EndpointFilter {
 }
 
 /// A builder for [`EndpointFilter`](crate::types::EndpointFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointFilterBuilder {
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EndpointStatus>,

@@ -33,8 +33,8 @@ impl ArchiveGroupSettings {
 }
 
 /// A builder for [`ArchiveGroupSettings`](crate::types::ArchiveGroupSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArchiveGroupSettingsBuilder {
     pub(crate) archive_cdn_settings: ::std::option::Option<crate::types::ArchiveCdnSettings>,
     pub(crate) destination: ::std::option::Option<crate::types::OutputLocationRef>,

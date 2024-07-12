@@ -76,8 +76,8 @@ impl CreateModelBiasJobDefinitionInput {
 }
 
 /// A builder for [`CreateModelBiasJobDefinitionInput`](crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateModelBiasJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_bias_baseline_config: ::std::option::Option<crate::types::ModelBiasBaselineConfig>,

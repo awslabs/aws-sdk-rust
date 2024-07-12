@@ -35,8 +35,8 @@ impl GetRequestValidatorsOutput {
 }
 
 /// A builder for [`GetRequestValidatorsOutput`](crate::operation::get_request_validators::GetRequestValidatorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRequestValidatorsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RequestValidator>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,

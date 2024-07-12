@@ -22,8 +22,8 @@ impl EnableInsightRulesInput {
 }
 
 /// A builder for [`EnableInsightRulesInput`](crate::operation::enable_insight_rules::EnableInsightRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableInsightRulesInputBuilder {
     pub(crate) rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

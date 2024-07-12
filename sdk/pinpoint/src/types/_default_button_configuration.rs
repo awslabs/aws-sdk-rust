@@ -51,8 +51,8 @@ impl DefaultButtonConfiguration {
 }
 
 /// A builder for [`DefaultButtonConfiguration`](crate::types::DefaultButtonConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultButtonConfigurationBuilder {
     pub(crate) background_color: ::std::option::Option<::std::string::String>,
     pub(crate) border_radius: ::std::option::Option<i32>,

@@ -46,8 +46,8 @@ impl UpdateProvisionedModelThroughputInput {
 }
 
 /// A builder for [`UpdateProvisionedModelThroughputInput`](crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProvisionedModelThroughputInputBuilder {
     pub(crate) provisioned_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) desired_provisioned_model_name: ::std::option::Option<::std::string::String>,

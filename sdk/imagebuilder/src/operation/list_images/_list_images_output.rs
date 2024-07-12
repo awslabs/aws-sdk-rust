@@ -68,8 +68,8 @@ impl ListImagesOutput {
 }
 
 /// A builder for [`ListImagesOutput`](crate::operation::list_images::ListImagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImagesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_version_list: ::std::option::Option<::std::vec::Vec<crate::types::ImageVersion>>,

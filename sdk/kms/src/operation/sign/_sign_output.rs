@@ -52,8 +52,8 @@ impl SignOutput {
 }
 
 /// A builder for [`SignOutput`](crate::operation::sign::SignOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignOutputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) signature: ::std::option::Option<::aws_smithy_types::Blob>,

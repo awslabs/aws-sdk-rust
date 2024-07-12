@@ -26,8 +26,8 @@ impl CheckCapacityOutput {
 }
 
 /// A builder for [`CheckCapacityOutput`](crate::operation::check_capacity::CheckCapacityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckCapacityOutputBuilder {
     pub(crate) capacity: ::std::option::Option<i64>,
     _request_id: Option<String>,

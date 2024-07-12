@@ -26,8 +26,8 @@ impl CreateJobTemplateOutput {
 }
 
 /// A builder for [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateJobTemplateOutputBuilder {
     pub(crate) job_template: ::std::option::Option<crate::types::JobTemplate>,
     _request_id: Option<String>,

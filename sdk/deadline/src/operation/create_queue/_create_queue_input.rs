@@ -101,8 +101,8 @@ impl CreateQueueInput {
 }
 
 /// A builder for [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateQueueInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,

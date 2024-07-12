@@ -18,8 +18,8 @@ impl RemoveLayerVersionPermissionOutput {
 }
 
 /// A builder for [`RemoveLayerVersionPermissionOutput`](crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveLayerVersionPermissionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,8 +18,8 @@ impl DeletePredefinedAttributeOutput {
 }
 
 /// A builder for [`DeletePredefinedAttributeOutput`](crate::operation::delete_predefined_attribute::DeletePredefinedAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePredefinedAttributeOutputBuilder {
     _request_id: Option<String>,
 }

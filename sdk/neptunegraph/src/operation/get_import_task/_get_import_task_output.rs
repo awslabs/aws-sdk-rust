@@ -127,8 +127,8 @@ impl GetImportTaskOutput {
 }
 
 /// A builder for [`GetImportTaskOutput`](crate::operation::get_import_task::GetImportTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImportTaskOutputBuilder {
     pub(crate) graph_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,

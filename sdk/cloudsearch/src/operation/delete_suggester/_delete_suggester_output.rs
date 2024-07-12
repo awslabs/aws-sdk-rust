@@ -27,8 +27,8 @@ impl DeleteSuggesterOutput {
 }
 
 /// A builder for [`DeleteSuggesterOutput`](crate::operation::delete_suggester::DeleteSuggesterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSuggesterOutputBuilder {
     pub(crate) suggester: ::std::option::Option<crate::types::SuggesterStatus>,
     _request_id: Option<String>,

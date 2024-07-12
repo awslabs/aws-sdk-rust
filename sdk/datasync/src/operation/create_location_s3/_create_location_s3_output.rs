@@ -27,8 +27,8 @@ impl CreateLocationS3Output {
 }
 
 /// A builder for [`CreateLocationS3Output`](crate::operation::create_location_s3::CreateLocationS3Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocationS3OutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

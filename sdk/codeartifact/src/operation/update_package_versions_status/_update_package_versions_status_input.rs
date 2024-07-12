@@ -96,8 +96,8 @@ impl UpdatePackageVersionsStatusInput {
 }
 
 /// A builder for [`UpdatePackageVersionsStatusInput`](crate::operation::update_package_versions_status::UpdatePackageVersionsStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePackageVersionsStatusInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

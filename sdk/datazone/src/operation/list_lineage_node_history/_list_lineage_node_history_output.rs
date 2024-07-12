@@ -34,8 +34,8 @@ impl ListLineageNodeHistoryOutput {
 }
 
 /// A builder for [`ListLineageNodeHistoryOutput`](crate::operation::list_lineage_node_history::ListLineageNodeHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLineageNodeHistoryOutputBuilder {
     pub(crate) nodes: ::std::option::Option<::std::vec::Vec<crate::types::LineageNodeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

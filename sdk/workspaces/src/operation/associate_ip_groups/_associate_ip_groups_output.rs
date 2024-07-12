@@ -18,8 +18,8 @@ impl AssociateIpGroupsOutput {
 }
 
 /// A builder for [`AssociateIpGroupsOutput`](crate::operation::associate_ip_groups::AssociateIpGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateIpGroupsOutputBuilder {
     _request_id: Option<String>,
 }

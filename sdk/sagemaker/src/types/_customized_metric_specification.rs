@@ -33,8 +33,8 @@ impl CustomizedMetricSpecification {
 }
 
 /// A builder for [`CustomizedMetricSpecification`](crate::types::CustomizedMetricSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomizedMetricSpecificationBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl PathToObjectIdentifiers {
 }
 
 /// A builder for [`PathToObjectIdentifiers`](crate::types::PathToObjectIdentifiers).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PathToObjectIdentifiersBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) object_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -22,8 +22,8 @@ impl AgentFlowNodeConfiguration {
 }
 
 /// A builder for [`AgentFlowNodeConfiguration`](crate::types::AgentFlowNodeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentFlowNodeConfigurationBuilder {
     pub(crate) agent_alias_arn: ::std::option::Option<::std::string::String>,
 }

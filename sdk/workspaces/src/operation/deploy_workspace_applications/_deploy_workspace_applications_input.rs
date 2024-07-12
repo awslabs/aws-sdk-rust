@@ -26,8 +26,8 @@ impl DeployWorkspaceApplicationsInput {
 }
 
 /// A builder for [`DeployWorkspaceApplicationsInput`](crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeployWorkspaceApplicationsInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,

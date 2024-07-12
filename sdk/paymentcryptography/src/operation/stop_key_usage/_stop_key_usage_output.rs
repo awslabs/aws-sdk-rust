@@ -26,8 +26,8 @@ impl StopKeyUsageOutput {
 }
 
 /// A builder for [`StopKeyUsageOutput`](crate::operation::stop_key_usage::StopKeyUsageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopKeyUsageOutputBuilder {
     pub(crate) key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,

@@ -49,8 +49,8 @@ impl ClarifyShapConfig {
 }
 
 /// A builder for [`ClarifyShapConfig`](crate::types::ClarifyShapConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClarifyShapConfigBuilder {
     pub(crate) shap_baseline_config: ::std::option::Option<crate::types::ClarifyShapBaselineConfig>,
     pub(crate) number_of_samples: ::std::option::Option<i32>,

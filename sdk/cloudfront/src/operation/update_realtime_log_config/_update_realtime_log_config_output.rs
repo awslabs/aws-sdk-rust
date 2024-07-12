@@ -26,8 +26,8 @@ impl UpdateRealtimeLogConfigOutput {
 }
 
 /// A builder for [`UpdateRealtimeLogConfigOutput`](crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRealtimeLogConfigOutputBuilder {
     pub(crate) realtime_log_config: ::std::option::Option<crate::types::RealtimeLogConfig>,
     _request_id: Option<String>,

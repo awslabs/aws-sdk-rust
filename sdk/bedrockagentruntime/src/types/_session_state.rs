@@ -61,8 +61,8 @@ impl SessionState {
 }
 
 /// A builder for [`SessionState`](crate::types::SessionState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionStateBuilder {
     pub(crate) session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) prompt_session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

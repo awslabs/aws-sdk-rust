@@ -79,8 +79,8 @@ impl TextGenerationJobConfig {
 }
 
 /// A builder for [`TextGenerationJobConfig`](crate::types::TextGenerationJobConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextGenerationJobConfigBuilder {
     pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     pub(crate) base_model_name: ::std::option::Option<::std::string::String>,

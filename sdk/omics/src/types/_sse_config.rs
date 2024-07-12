@@ -27,8 +27,8 @@ impl SseConfig {
 }
 
 /// A builder for [`SseConfig`](crate::types::SseConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SseConfigBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,

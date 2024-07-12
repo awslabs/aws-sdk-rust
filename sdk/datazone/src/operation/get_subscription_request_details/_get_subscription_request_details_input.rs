@@ -26,8 +26,8 @@ impl GetSubscriptionRequestDetailsInput {
 }
 
 /// A builder for [`GetSubscriptionRequestDetailsInput`](crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSubscriptionRequestDetailsInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

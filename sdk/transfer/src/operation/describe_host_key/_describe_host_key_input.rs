@@ -26,8 +26,8 @@ impl DescribeHostKeyInput {
 }
 
 /// A builder for [`DescribeHostKeyInput`](crate::operation::describe_host_key::DescribeHostKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHostKeyInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) host_key_id: ::std::option::Option<::std::string::String>,

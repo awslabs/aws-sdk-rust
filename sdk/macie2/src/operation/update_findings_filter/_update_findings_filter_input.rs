@@ -60,8 +60,8 @@ impl UpdateFindingsFilterInput {
 }
 
 /// A builder for [`UpdateFindingsFilterInput`](crate::operation::update_findings_filter::UpdateFindingsFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFindingsFilterInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::FindingsFilterAction>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

@@ -54,8 +54,8 @@ impl ListHostedZonesOutput {
 }
 
 /// A builder for [`ListHostedZonesOutput`](crate::operation::list_hosted_zones::ListHostedZonesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHostedZonesOutputBuilder {
     pub(crate) hosted_zones: ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

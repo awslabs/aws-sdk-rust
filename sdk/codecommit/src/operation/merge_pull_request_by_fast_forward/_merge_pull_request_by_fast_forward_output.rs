@@ -26,8 +26,8 @@ impl MergePullRequestByFastForwardOutput {
 }
 
 /// A builder for [`MergePullRequestByFastForwardOutput`](crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MergePullRequestByFastForwardOutputBuilder {
     pub(crate) pull_request: ::std::option::Option<crate::types::PullRequest>,
     _request_id: Option<String>,

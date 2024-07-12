@@ -39,8 +39,8 @@ impl ListCaCertificatesInput {
 }
 
 /// A builder for [`ListCaCertificatesInput`](crate::operation::list_ca_certificates::ListCaCertificatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCaCertificatesInputBuilder {
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetRuleGroupInput {
 }
 
 /// A builder for [`GetRuleGroupInput`](crate::operation::get_rule_group::GetRuleGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRuleGroupInputBuilder {
     pub(crate) rule_group_id: ::std::option::Option<::std::string::String>,
 }

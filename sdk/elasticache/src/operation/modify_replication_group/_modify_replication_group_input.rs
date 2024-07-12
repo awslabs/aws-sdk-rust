@@ -305,8 +305,8 @@ impl ModifyReplicationGroupInput {
 }
 
 /// A builder for [`ModifyReplicationGroupInput`](crate::operation::modify_replication_group::ModifyReplicationGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyReplicationGroupInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group_description: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl SecureNamespaceInfo {
 }
 
 /// A builder for [`SecureNamespaceInfo`](crate::types::SecureNamespaceInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecureNamespaceInfoBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteUserAccessLoggingSettingsInput {
 }
 
 /// A builder for [`DeleteUserAccessLoggingSettingsInput`](crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserAccessLoggingSettingsInputBuilder {
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
 }

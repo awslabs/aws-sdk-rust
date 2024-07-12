@@ -18,8 +18,8 @@ impl DeleteHyperParameterTuningJobOutput {
 }
 
 /// A builder for [`DeleteHyperParameterTuningJobOutput`](crate::operation::delete_hyper_parameter_tuning_job::DeleteHyperParameterTuningJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHyperParameterTuningJobOutputBuilder {
     _request_id: Option<String>,
 }

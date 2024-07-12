@@ -49,8 +49,8 @@ impl QPluginCardInput {
 }
 
 /// A builder for [`QPluginCardInput`](crate::types::QPluginCardInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QPluginCardInputBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

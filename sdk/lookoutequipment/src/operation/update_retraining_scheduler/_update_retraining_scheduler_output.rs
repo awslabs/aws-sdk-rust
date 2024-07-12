@@ -18,8 +18,8 @@ impl UpdateRetrainingSchedulerOutput {
 }
 
 /// A builder for [`UpdateRetrainingSchedulerOutput`](crate::operation::update_retraining_scheduler::UpdateRetrainingSchedulerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRetrainingSchedulerOutputBuilder {
     _request_id: Option<String>,
 }

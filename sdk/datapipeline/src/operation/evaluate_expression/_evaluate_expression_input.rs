@@ -33,8 +33,8 @@ impl EvaluateExpressionInput {
 }
 
 /// A builder for [`EvaluateExpressionInput`](crate::operation::evaluate_expression::EvaluateExpressionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluateExpressionInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_id: ::std::option::Option<::std::string::String>,

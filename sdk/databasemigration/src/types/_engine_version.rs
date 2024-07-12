@@ -65,8 +65,8 @@ impl EngineVersion {
 }
 
 /// A builder for [`EngineVersion`](crate::types::EngineVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EngineVersionBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<::std::string::String>,

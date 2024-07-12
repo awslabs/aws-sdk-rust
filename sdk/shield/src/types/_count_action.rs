@@ -14,8 +14,8 @@ impl CountAction {
 }
 
 /// A builder for [`CountAction`](crate::types::CountAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CountActionBuilder {}
 impl CountActionBuilder {
     /// Consumes the builder and constructs a [`CountAction`](crate::types::CountAction).

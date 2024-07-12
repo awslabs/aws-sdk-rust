@@ -27,8 +27,8 @@ impl UpdateProfilingGroupInput {
 }
 
 /// A builder for [`UpdateProfilingGroupInput`](crate::operation::update_profiling_group::UpdateProfilingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProfilingGroupInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) agent_orchestration_config: ::std::option::Option<crate::types::AgentOrchestrationConfig>,

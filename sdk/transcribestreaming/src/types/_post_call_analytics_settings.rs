@@ -100,8 +100,8 @@ impl PostCallAnalyticsSettings {
 }
 
 /// A builder for [`PostCallAnalyticsSettings`](crate::types::PostCallAnalyticsSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostCallAnalyticsSettingsBuilder {
     pub(crate) output_location: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,

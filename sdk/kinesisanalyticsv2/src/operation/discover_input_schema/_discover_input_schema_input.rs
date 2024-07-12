@@ -44,8 +44,8 @@ impl DiscoverInputSchemaInput {
 }
 
 /// A builder for [`DiscoverInputSchemaInput`](crate::operation::discover_input_schema::DiscoverInputSchemaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiscoverInputSchemaInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) service_execution_role: ::std::option::Option<::std::string::String>,

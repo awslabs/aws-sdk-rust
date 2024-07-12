@@ -18,8 +18,8 @@ impl DeleteAssessmentFrameworkShareOutput {
 }
 
 /// A builder for [`DeleteAssessmentFrameworkShareOutput`](crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssessmentFrameworkShareOutputBuilder {
     _request_id: Option<String>,
 }

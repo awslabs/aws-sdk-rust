@@ -18,8 +18,8 @@ impl AddRoleToInstanceProfileOutput {
 }
 
 /// A builder for [`AddRoleToInstanceProfileOutput`](crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddRoleToInstanceProfileOutputBuilder {
     _request_id: Option<String>,
 }

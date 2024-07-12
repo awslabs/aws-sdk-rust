@@ -36,8 +36,8 @@ impl CryptogramVerificationArpcMethod2 {
 }
 
 /// A builder for [`CryptogramVerificationArpcMethod2`](crate::types::CryptogramVerificationArpcMethod2).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CryptogramVerificationArpcMethod2Builder {
     pub(crate) card_status_update: ::std::option::Option<::std::string::String>,
     pub(crate) proprietary_authentication_data: ::std::option::Option<::std::string::String>,

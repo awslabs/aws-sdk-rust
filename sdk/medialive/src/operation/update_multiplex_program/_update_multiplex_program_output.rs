@@ -27,8 +27,8 @@ impl UpdateMultiplexProgramOutput {
 }
 
 /// A builder for [`UpdateMultiplexProgramOutput`](crate::operation::update_multiplex_program::UpdateMultiplexProgramOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMultiplexProgramOutputBuilder {
     pub(crate) multiplex_program: ::std::option::Option<crate::types::MultiplexProgram>,
     _request_id: Option<String>,

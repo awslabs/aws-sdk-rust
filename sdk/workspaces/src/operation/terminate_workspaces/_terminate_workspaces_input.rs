@@ -22,8 +22,8 @@ impl TerminateWorkspacesInput {
 }
 
 /// A builder for [`TerminateWorkspacesInput`](crate::operation::terminate_workspaces::TerminateWorkspacesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateWorkspacesInputBuilder {
     pub(crate) terminate_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>,
 }

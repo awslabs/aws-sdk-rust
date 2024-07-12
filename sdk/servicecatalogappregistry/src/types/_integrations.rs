@@ -27,8 +27,8 @@ impl Integrations {
 }
 
 /// A builder for [`Integrations`](crate::types::Integrations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntegrationsBuilder {
     pub(crate) resource_group: ::std::option::Option<crate::types::ResourceGroup>,
     pub(crate) application_tag_resource_group: ::std::option::Option<crate::types::ResourceGroup>,

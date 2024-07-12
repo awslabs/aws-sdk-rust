@@ -38,8 +38,8 @@ impl GetCampaignVersionsInput {
 }
 
 /// A builder for [`GetCampaignVersionsInput`](crate::operation::get_campaign_versions::GetCampaignVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCampaignVersionsInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,

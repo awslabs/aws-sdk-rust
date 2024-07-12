@@ -22,8 +22,8 @@ impl MarketoSourceProperties {
 }
 
 /// A builder for [`MarketoSourceProperties`](crate::types::MarketoSourceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MarketoSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }

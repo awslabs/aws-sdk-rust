@@ -26,8 +26,8 @@ impl ExecuteGremlinExplainQueryOutput {
 }
 
 /// A builder for [`ExecuteGremlinExplainQueryOutput`](crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteGremlinExplainQueryOutputBuilder {
     pub(crate) output: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

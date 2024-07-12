@@ -59,8 +59,8 @@ impl ScatterPlotUnaggregatedFieldWells {
 }
 
 /// A builder for [`ScatterPlotUnaggregatedFieldWells`](crate::types::ScatterPlotUnaggregatedFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScatterPlotUnaggregatedFieldWellsBuilder {
     pub(crate) x_axis: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     pub(crate) y_axis: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,

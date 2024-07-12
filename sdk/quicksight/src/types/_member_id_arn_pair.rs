@@ -27,8 +27,8 @@ impl MemberIdArnPair {
 }
 
 /// A builder for [`MemberIdArnPair`](crate::types::MemberIdArnPair).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MemberIdArnPairBuilder {
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,

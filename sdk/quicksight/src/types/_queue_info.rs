@@ -29,8 +29,8 @@ impl QueueInfo {
 }
 
 /// A builder for [`QueueInfo`](crate::types::QueueInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueueInfoBuilder {
     pub(crate) waiting_on_ingestion: ::std::option::Option<::std::string::String>,
     pub(crate) queued_ingestion: ::std::option::Option<::std::string::String>,

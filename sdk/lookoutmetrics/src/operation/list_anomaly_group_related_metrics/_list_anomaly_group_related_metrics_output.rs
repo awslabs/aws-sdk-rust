@@ -34,8 +34,8 @@ impl ListAnomalyGroupRelatedMetricsOutput {
 }
 
 /// A builder for [`ListAnomalyGroupRelatedMetricsOutput`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnomalyGroupRelatedMetricsOutputBuilder {
     pub(crate) inter_metric_impact_list: ::std::option::Option<::std::vec::Vec<crate::types::InterMetricImpactDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

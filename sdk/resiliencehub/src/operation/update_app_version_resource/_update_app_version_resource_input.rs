@@ -82,8 +82,8 @@ impl UpdateAppVersionResourceInput {
 }
 
 /// A builder for [`UpdateAppVersionResourceInput`](crate::operation::update_app_version_resource::UpdateAppVersionResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAppVersionResourceInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,

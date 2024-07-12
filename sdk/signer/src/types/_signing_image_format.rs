@@ -28,8 +28,8 @@ impl SigningImageFormat {
 }
 
 /// A builder for [`SigningImageFormat`](crate::types::SigningImageFormat).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SigningImageFormatBuilder {
     pub(crate) supported_formats: ::std::option::Option<::std::vec::Vec<crate::types::ImageFormat>>,
     pub(crate) default_format: ::std::option::Option<crate::types::ImageFormat>,

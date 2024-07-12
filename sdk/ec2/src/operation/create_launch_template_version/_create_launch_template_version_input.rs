@@ -74,8 +74,8 @@ impl CreateLaunchTemplateVersionInput {
 }
 
 /// A builder for [`CreateLaunchTemplateVersionInput`](crate::operation::create_launch_template_version::CreateLaunchTemplateVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLaunchTemplateVersionInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

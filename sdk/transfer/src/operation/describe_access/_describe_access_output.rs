@@ -33,8 +33,8 @@ impl DescribeAccessOutput {
 }
 
 /// A builder for [`DescribeAccessOutput`](crate::operation::describe_access::DescribeAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccessOutputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) access: ::std::option::Option<crate::types::DescribedAccess>,

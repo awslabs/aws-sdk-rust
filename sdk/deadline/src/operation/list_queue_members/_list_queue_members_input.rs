@@ -38,8 +38,8 @@ impl ListQueueMembersInput {
 }
 
 /// A builder for [`ListQueueMembersInput`](crate::operation::list_queue_members::ListQueueMembersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListQueueMembersInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

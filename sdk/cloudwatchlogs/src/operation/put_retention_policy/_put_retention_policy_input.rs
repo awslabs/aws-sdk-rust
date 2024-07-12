@@ -28,8 +28,8 @@ impl PutRetentionPolicyInput {
 }
 
 /// A builder for [`PutRetentionPolicyInput`](crate::operation::put_retention_policy::PutRetentionPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRetentionPolicyInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) retention_in_days: ::std::option::Option<i32>,

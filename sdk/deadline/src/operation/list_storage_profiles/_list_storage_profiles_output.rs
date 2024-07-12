@@ -33,8 +33,8 @@ impl ListStorageProfilesOutput {
 }
 
 /// A builder for [`ListStorageProfilesOutput`](crate::operation::list_storage_profiles::ListStorageProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStorageProfilesOutputBuilder {
     pub(crate) storage_profiles: ::std::option::Option<::std::vec::Vec<crate::types::StorageProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

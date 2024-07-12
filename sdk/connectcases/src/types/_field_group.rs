@@ -28,8 +28,8 @@ impl FieldGroup {
 }
 
 /// A builder for [`FieldGroup`](crate::types::FieldGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FieldGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldItem>>,

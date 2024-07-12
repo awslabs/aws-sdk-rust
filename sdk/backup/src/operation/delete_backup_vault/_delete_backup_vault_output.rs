@@ -18,8 +18,8 @@ impl DeleteBackupVaultOutput {
 }
 
 /// A builder for [`DeleteBackupVaultOutput`](crate::operation::delete_backup_vault::DeleteBackupVaultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBackupVaultOutputBuilder {
     _request_id: Option<String>,
 }

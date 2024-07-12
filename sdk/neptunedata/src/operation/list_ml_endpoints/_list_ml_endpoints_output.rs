@@ -28,8 +28,8 @@ impl ListMlEndpointsOutput {
 }
 
 /// A builder for [`ListMlEndpointsOutput`](crate::operation::list_ml_endpoints::ListMlEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMlEndpointsOutputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

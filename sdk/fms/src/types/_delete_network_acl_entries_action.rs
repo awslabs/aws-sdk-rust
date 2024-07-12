@@ -41,8 +41,8 @@ impl DeleteNetworkAclEntriesAction {
 }
 
 /// A builder for [`DeleteNetworkAclEntriesAction`](crate::types::DeleteNetworkAclEntriesAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkAclEntriesActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) network_acl_id: ::std::option::Option<crate::types::ActionTarget>,

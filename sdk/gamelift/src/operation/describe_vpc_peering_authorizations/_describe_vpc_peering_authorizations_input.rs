@@ -11,8 +11,8 @@ impl DescribeVpcPeeringAuthorizationsInput {
 }
 
 /// A builder for [`DescribeVpcPeeringAuthorizationsInput`](crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcPeeringAuthorizationsInputBuilder {}
 impl DescribeVpcPeeringAuthorizationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpcPeeringAuthorizationsInput`](crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsInput).

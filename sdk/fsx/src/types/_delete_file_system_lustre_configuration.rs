@@ -33,8 +33,8 @@ impl DeleteFileSystemLustreConfiguration {
 }
 
 /// A builder for [`DeleteFileSystemLustreConfiguration`](crate::types::DeleteFileSystemLustreConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFileSystemLustreConfigurationBuilder {
     pub(crate) skip_final_backup: ::std::option::Option<bool>,
     pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

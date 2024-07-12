@@ -81,8 +81,8 @@ impl AwsEcsClusterDetails {
 }
 
 /// A builder for [`AwsEcsClusterDetails`](crate::types::AwsEcsClusterDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsClusterDetailsBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) active_services_count: ::std::option::Option<i32>,

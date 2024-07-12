@@ -26,8 +26,8 @@ impl GetAccountStatusOutput {
 }
 
 /// A builder for [`GetAccountStatusOutput`](crate::operation::get_account_status::GetAccountStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AccountStatus>,
     _request_id: Option<String>,

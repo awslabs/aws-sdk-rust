@@ -30,8 +30,8 @@ impl GetBucketLocationInput {
 }
 
 /// A builder for [`GetBucketLocationInput`](crate::operation::get_bucket_location::GetBucketLocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketLocationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,

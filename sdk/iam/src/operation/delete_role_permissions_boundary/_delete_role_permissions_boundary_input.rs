@@ -20,8 +20,8 @@ impl DeleteRolePermissionsBoundaryInput {
 }
 
 /// A builder for [`DeleteRolePermissionsBoundaryInput`](crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRolePermissionsBoundaryInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
 }

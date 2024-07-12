@@ -35,8 +35,8 @@ impl DashboardError {
 }
 
 /// A builder for [`DashboardError`](crate::types::DashboardError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashboardErrorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DashboardErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

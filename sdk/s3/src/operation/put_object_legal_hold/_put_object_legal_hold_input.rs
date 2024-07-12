@@ -72,8 +72,8 @@ impl PutObjectLegalHoldInput {
 }
 
 /// A builder for [`PutObjectLegalHoldInput`](crate::operation::put_object_legal_hold::PutObjectLegalHoldInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutObjectLegalHoldInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

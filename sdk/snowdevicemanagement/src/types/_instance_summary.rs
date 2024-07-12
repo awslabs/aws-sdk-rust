@@ -27,8 +27,8 @@ impl InstanceSummary {
 }
 
 /// A builder for [`InstanceSummary`](crate::types::InstanceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceSummaryBuilder {
     pub(crate) instance: ::std::option::Option<crate::types::Instance>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,

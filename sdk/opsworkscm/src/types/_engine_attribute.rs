@@ -35,8 +35,8 @@ impl EngineAttribute {
 }
 
 /// A builder for [`EngineAttribute`](crate::types::EngineAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EngineAttributeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

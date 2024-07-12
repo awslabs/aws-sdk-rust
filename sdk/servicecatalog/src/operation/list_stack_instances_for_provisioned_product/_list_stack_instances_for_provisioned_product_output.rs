@@ -35,8 +35,8 @@ impl ListStackInstancesForProvisionedProductOutput {
 }
 
 /// A builder for [`ListStackInstancesForProvisionedProductOutput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStackInstancesForProvisionedProductOutputBuilder {
     pub(crate) stack_instances: ::std::option::Option<::std::vec::Vec<crate::types::StackInstance>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

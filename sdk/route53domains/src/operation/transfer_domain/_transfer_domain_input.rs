@@ -173,8 +173,8 @@ impl TransferDomainInput {
 }
 
 /// A builder for [`TransferDomainInput`](crate::operation::transfer_domain::TransferDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TransferDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) idn_lang_code: ::std::option::Option<::std::string::String>,

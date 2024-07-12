@@ -38,8 +38,8 @@ impl StartPersonTrackingInput {
 }
 
 /// A builder for [`StartPersonTrackingInput`](crate::operation::start_person_tracking::StartPersonTrackingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartPersonTrackingInputBuilder {
     pub(crate) video: ::std::option::Option<crate::types::Video>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

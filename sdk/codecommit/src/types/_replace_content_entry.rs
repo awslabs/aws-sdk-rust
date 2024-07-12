@@ -40,8 +40,8 @@ impl ReplaceContentEntry {
 }
 
 /// A builder for [`ReplaceContentEntry`](crate::types::ReplaceContentEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplaceContentEntryBuilder {
     pub(crate) file_path: ::std::option::Option<::std::string::String>,
     pub(crate) replacement_type: ::std::option::Option<crate::types::ReplacementTypeEnum>,

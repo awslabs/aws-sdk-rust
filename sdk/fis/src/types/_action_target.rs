@@ -21,8 +21,8 @@ impl ActionTarget {
 }
 
 /// A builder for [`ActionTarget`](crate::types::ActionTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionTargetBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
 }

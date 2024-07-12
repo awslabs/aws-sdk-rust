@@ -26,8 +26,8 @@ impl ListAgentsInput {
 }
 
 /// A builder for [`ListAgentsInput`](crate::operation::list_agents::ListAgentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAgentsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

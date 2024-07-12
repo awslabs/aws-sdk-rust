@@ -27,8 +27,8 @@ impl PutConfigurationSetVdmOptionsInput {
 }
 
 /// A builder for [`PutConfigurationSetVdmOptionsInput`](crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigurationSetVdmOptionsInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) vdm_options: ::std::option::Option<crate::types::VdmOptions>,

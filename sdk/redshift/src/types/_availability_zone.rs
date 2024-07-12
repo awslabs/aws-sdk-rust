@@ -29,8 +29,8 @@ impl AvailabilityZone {
 }
 
 /// A builder for [`AvailabilityZone`](crate::types::AvailabilityZone).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AvailabilityZoneBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) supported_platforms: ::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>>,

@@ -27,8 +27,8 @@ impl OperationFailureDetails {
 }
 
 /// A builder for [`OperationFailureDetails`](crate::types::OperationFailureDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OperationFailureDetailsBuilder {
     pub(crate) rollback_operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_info: ::std::option::Option<crate::types::ErrorInfo>,

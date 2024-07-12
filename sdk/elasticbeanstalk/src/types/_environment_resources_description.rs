@@ -21,8 +21,8 @@ impl EnvironmentResourcesDescription {
 }
 
 /// A builder for [`EnvironmentResourcesDescription`](crate::types::EnvironmentResourcesDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnvironmentResourcesDescriptionBuilder {
     pub(crate) load_balancer: ::std::option::Option<crate::types::LoadBalancerDescription>,
 }

@@ -66,8 +66,8 @@ impl UpdateFirewallPolicyInput {
 }
 
 /// A builder for [`UpdateFirewallPolicyInput`](crate::operation::update_firewall_policy::UpdateFirewallPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFirewallPolicyInputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,

@@ -52,8 +52,8 @@ impl GetObjectTaggingInput {
 }
 
 /// A builder for [`GetObjectTaggingInput`](crate::operation::get_object_tagging::GetObjectTaggingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectTaggingInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

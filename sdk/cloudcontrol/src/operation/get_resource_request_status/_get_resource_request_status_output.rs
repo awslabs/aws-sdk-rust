@@ -26,8 +26,8 @@ impl GetResourceRequestStatusOutput {
 }
 
 /// A builder for [`GetResourceRequestStatusOutput`](crate::operation::get_resource_request_status::GetResourceRequestStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceRequestStatusOutputBuilder {
     pub(crate) progress_event: ::std::option::Option<crate::types::ProgressEvent>,
     _request_id: Option<String>,

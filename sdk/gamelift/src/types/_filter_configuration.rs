@@ -23,8 +23,8 @@ impl FilterConfiguration {
 }
 
 /// A builder for [`FilterConfiguration`](crate::types::FilterConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterConfigurationBuilder {
     pub(crate) allowed_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

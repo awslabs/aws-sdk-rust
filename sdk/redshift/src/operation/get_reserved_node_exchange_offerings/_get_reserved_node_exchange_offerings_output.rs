@@ -34,8 +34,8 @@ impl GetReservedNodeExchangeOfferingsOutput {
 }
 
 /// A builder for [`GetReservedNodeExchangeOfferingsOutput`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReservedNodeExchangeOfferingsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_node_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>>,

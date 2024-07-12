@@ -27,8 +27,8 @@ impl FileLocation {
 }
 
 /// A builder for [`FileLocation`](crate::types::FileLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileLocationBuilder {
     pub(crate) s3_file_location: ::std::option::Option<crate::types::S3FileLocation>,
     pub(crate) efs_file_location: ::std::option::Option<crate::types::EfsFileLocation>,

@@ -26,8 +26,8 @@ impl ImportAsProvisionedProductOutput {
 }
 
 /// A builder for [`ImportAsProvisionedProductOutput`](crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportAsProvisionedProductOutputBuilder {
     pub(crate) record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,

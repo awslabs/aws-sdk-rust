@@ -32,8 +32,8 @@ impl InvokeDeviceMethodInput {
 }
 
 /// A builder for [`InvokeDeviceMethodInput`](crate::operation::invoke_device_method::InvokeDeviceMethodInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvokeDeviceMethodInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) device_method: ::std::option::Option<crate::types::DeviceMethod>,

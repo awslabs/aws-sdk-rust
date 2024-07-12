@@ -33,8 +33,8 @@ impl ExperimentTemplateLogConfiguration {
 }
 
 /// A builder for [`ExperimentTemplateLogConfiguration`](crate::types::ExperimentTemplateLogConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperimentTemplateLogConfigurationBuilder {
     pub(crate) cloud_watch_logs_configuration: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfiguration>,
     pub(crate) s3_configuration: ::std::option::Option<crate::types::ExperimentTemplateS3LogConfiguration>,

@@ -46,8 +46,8 @@ impl SearchGroupsOutput {
 }
 
 /// A builder for [`SearchGroupsOutput`](crate::operation::search_groups::SearchGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchGroupsOutputBuilder {
     pub(crate) group_list: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

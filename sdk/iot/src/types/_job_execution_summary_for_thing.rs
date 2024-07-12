@@ -27,8 +27,8 @@ impl JobExecutionSummaryForThing {
 }
 
 /// A builder for [`JobExecutionSummaryForThing`](crate::types::JobExecutionSummaryForThing).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobExecutionSummaryForThingBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_execution_summary: ::std::option::Option<crate::types::JobExecutionSummary>,

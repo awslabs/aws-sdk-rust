@@ -47,8 +47,8 @@ impl GetAccountOutput {
 }
 
 /// A builder for [`GetAccountOutput`](crate::operation::get_account::GetAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountOutputBuilder {
     pub(crate) cloudwatch_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) throttle_settings: ::std::option::Option<crate::types::ThrottleSettings>,

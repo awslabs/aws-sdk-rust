@@ -27,8 +27,8 @@ impl VirtualNodeHttpConnectionPool {
 }
 
 /// A builder for [`VirtualNodeHttpConnectionPool`](crate::types::VirtualNodeHttpConnectionPool).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualNodeHttpConnectionPoolBuilder {
     pub(crate) max_connections: ::std::option::Option<i32>,
     pub(crate) max_pending_requests: ::std::option::Option<i32>,

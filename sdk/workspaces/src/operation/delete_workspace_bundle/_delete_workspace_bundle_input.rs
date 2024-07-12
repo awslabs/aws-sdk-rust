@@ -20,8 +20,8 @@ impl DeleteWorkspaceBundleInput {
 }
 
 /// A builder for [`DeleteWorkspaceBundleInput`](crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkspaceBundleInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
 }

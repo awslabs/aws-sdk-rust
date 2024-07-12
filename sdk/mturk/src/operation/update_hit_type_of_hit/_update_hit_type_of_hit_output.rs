@@ -18,8 +18,8 @@ impl UpdateHitTypeOfHitOutput {
 }
 
 /// A builder for [`UpdateHitTypeOfHitOutput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateHitTypeOfHitOutputBuilder {
     _request_id: Option<String>,
 }

@@ -27,8 +27,8 @@ impl CreateVaultOutput {
 }
 
 /// A builder for [`CreateVaultOutput`](crate::operation::create_vault::CreateVaultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVaultOutputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

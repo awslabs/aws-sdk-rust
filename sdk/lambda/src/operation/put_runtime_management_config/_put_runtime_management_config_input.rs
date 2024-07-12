@@ -78,8 +78,8 @@ impl PutRuntimeManagementConfigInput {
 }
 
 /// A builder for [`PutRuntimeManagementConfigInput`](crate::operation::put_runtime_management_config::PutRuntimeManagementConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRuntimeManagementConfigInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,

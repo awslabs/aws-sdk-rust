@@ -18,8 +18,8 @@ impl ClearQuerySuggestionsOutput {
 }
 
 /// A builder for [`ClearQuerySuggestionsOutput`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClearQuerySuggestionsOutputBuilder {
     _request_id: Option<String>,
 }

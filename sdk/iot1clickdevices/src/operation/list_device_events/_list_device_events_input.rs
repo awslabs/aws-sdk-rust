@@ -44,8 +44,8 @@ impl ListDeviceEventsInput {
 }
 
 /// A builder for [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeviceEventsInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) from_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,

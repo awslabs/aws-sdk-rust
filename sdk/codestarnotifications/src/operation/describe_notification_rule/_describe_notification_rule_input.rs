@@ -20,8 +20,8 @@ impl DescribeNotificationRuleInput {
 }
 
 /// A builder for [`DescribeNotificationRuleInput`](crate::operation::describe_notification_rule::DescribeNotificationRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNotificationRuleInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

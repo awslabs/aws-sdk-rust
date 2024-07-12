@@ -27,8 +27,8 @@ impl ApplicationCodeConfiguration {
 }
 
 /// A builder for [`ApplicationCodeConfiguration`](crate::types::ApplicationCodeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationCodeConfigurationBuilder {
     pub(crate) code_content: ::std::option::Option<crate::types::CodeContent>,
     pub(crate) code_content_type: ::std::option::Option<crate::types::CodeContentType>,

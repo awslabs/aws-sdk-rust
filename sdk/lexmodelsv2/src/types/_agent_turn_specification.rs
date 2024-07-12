@@ -22,8 +22,8 @@ impl AgentTurnSpecification {
 }
 
 /// A builder for [`AgentTurnSpecification`](crate::types::AgentTurnSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentTurnSpecificationBuilder {
     pub(crate) agent_prompt: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl DeactivateEventSourceOutput {
 }
 
 /// A builder for [`DeactivateEventSourceOutput`](crate::operation::deactivate_event_source::DeactivateEventSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivateEventSourceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl DeleteAclInput {
 }
 
 /// A builder for [`DeleteAclInput`](crate::operation::delete_acl::DeleteAclInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAclInputBuilder {
     pub(crate) acl_name: ::std::option::Option<::std::string::String>,
 }

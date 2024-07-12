@@ -38,8 +38,8 @@ impl GetGlobalSettingsOutput {
 }
 
 /// A builder for [`GetGlobalSettingsOutput`](crate::operation::get_global_settings::GetGlobalSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGlobalSettingsOutputBuilder {
     pub(crate) organization_sharing_status: ::std::option::Option<crate::types::OrganizationSharingStatus>,
     pub(crate) discovery_integration_status: ::std::option::Option<crate::types::DiscoveryIntegrationStatus>,

@@ -39,8 +39,8 @@ impl DialogCodeHookInvocationSetting {
 }
 
 /// A builder for [`DialogCodeHookInvocationSetting`](crate::types::DialogCodeHookInvocationSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DialogCodeHookInvocationSettingBuilder {
     pub(crate) enable_code_hook_invocation: ::std::option::Option<bool>,
     pub(crate) active: ::std::option::Option<bool>,

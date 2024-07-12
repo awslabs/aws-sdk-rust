@@ -158,8 +158,8 @@ impl AgentVersion {
 }
 
 /// A builder for [`AgentVersion`](crate::types::AgentVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AgentVersionBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DisassociateSecurityKeyInput {
 }
 
 /// A builder for [`DisassociateSecurityKeyInput`](crate::operation::disassociate_security_key::DisassociateSecurityKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateSecurityKeyInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,

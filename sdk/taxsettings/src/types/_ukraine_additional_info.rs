@@ -21,8 +21,8 @@ impl UkraineAdditionalInfo {
 }
 
 /// A builder for [`UkraineAdditionalInfo`](crate::types::UkraineAdditionalInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UkraineAdditionalInfoBuilder {
     pub(crate) ukraine_trn_type: ::std::option::Option<crate::types::UkraineTrnType>,
 }

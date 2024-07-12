@@ -57,8 +57,8 @@ impl GridViewConfiguration {
 }
 
 /// A builder for [`GridViewConfiguration`](crate::types::GridViewConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GridViewConfigurationBuilder {
     pub(crate) content_share_layout: ::std::option::Option<crate::types::ContentShareLayoutOption>,
     pub(crate) presenter_only_configuration: ::std::option::Option<crate::types::PresenterOnlyConfiguration>,

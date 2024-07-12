@@ -44,8 +44,8 @@ impl ListAnomalyGroupTimeSeriesInput {
 }
 
 /// A builder for [`ListAnomalyGroupTimeSeriesInput`](crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnomalyGroupTimeSeriesInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,

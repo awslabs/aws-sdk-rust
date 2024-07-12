@@ -18,8 +18,8 @@ impl UpdateProvisionedModelThroughputOutput {
 }
 
 /// A builder for [`UpdateProvisionedModelThroughputOutput`](crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProvisionedModelThroughputOutputBuilder {
     _request_id: Option<String>,
 }

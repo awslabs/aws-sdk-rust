@@ -21,8 +21,8 @@ impl ServiceConnectTlsCertificateAuthority {
 }
 
 /// A builder for [`ServiceConnectTlsCertificateAuthority`](crate::types::ServiceConnectTlsCertificateAuthority).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceConnectTlsCertificateAuthorityBuilder {
     pub(crate) aws_pca_authority_arn: ::std::option::Option<::std::string::String>,
 }

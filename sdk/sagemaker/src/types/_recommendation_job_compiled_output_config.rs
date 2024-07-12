@@ -21,8 +21,8 @@ impl RecommendationJobCompiledOutputConfig {
 }
 
 /// A builder for [`RecommendationJobCompiledOutputConfig`](crate::types::RecommendationJobCompiledOutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationJobCompiledOutputConfigBuilder {
     pub(crate) s3_output_uri: ::std::option::Option<::std::string::String>,
 }

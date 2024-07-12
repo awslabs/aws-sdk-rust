@@ -28,8 +28,8 @@ impl OriginAccessControl {
 }
 
 /// A builder for [`OriginAccessControl`](crate::types::OriginAccessControl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginAccessControlBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,

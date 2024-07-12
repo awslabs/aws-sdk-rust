@@ -39,8 +39,8 @@ impl RawMetricData {
 }
 
 /// A builder for [`RawMetricData`](crate::types::RawMetricData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RawMetricDataBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

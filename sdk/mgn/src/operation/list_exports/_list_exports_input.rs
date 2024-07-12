@@ -33,8 +33,8 @@ impl ListExportsInput {
 }
 
 /// A builder for [`ListExportsInput`](crate::operation::list_exports::ListExportsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExportsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListExportsRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,

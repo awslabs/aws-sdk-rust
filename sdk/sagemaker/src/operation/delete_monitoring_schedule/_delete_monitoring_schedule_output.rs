@@ -18,8 +18,8 @@ impl DeleteMonitoringScheduleOutput {
 }
 
 /// A builder for [`DeleteMonitoringScheduleOutput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMonitoringScheduleOutputBuilder {
     _request_id: Option<String>,
 }

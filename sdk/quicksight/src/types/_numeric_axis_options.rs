@@ -27,8 +27,8 @@ impl NumericAxisOptions {
 }
 
 /// A builder for [`NumericAxisOptions`](crate::types::NumericAxisOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NumericAxisOptionsBuilder {
     pub(crate) scale: ::std::option::Option<crate::types::AxisScale>,
     pub(crate) range: ::std::option::Option<crate::types::AxisDisplayRange>,

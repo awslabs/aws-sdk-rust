@@ -98,8 +98,8 @@ impl GetDataQualityRuleRecommendationRunOutput {
 }
 
 /// A builder for [`GetDataQualityRuleRecommendationRunOutput`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataQualityRuleRecommendationRunOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,

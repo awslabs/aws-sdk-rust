@@ -21,8 +21,8 @@ impl FlushApiCacheInput {
 }
 
 /// A builder for [`FlushApiCacheInput`](crate::operation::flush_api_cache::FlushApiCacheInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlushApiCacheInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }

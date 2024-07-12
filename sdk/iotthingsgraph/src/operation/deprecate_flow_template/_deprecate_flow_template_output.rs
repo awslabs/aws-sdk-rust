@@ -18,8 +18,8 @@ impl DeprecateFlowTemplateOutput {
 }
 
 /// A builder for [`DeprecateFlowTemplateOutput`](crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprecateFlowTemplateOutputBuilder {
     _request_id: Option<String>,
 }

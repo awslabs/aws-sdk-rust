@@ -61,8 +61,8 @@ impl LabelingJobAlgorithmsConfig {
 }
 
 /// A builder for [`LabelingJobAlgorithmsConfig`](crate::types::LabelingJobAlgorithmsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelingJobAlgorithmsConfigBuilder {
     pub(crate) labeling_job_algorithm_specification_arn: ::std::option::Option<::std::string::String>,
     pub(crate) initial_active_learning_model_arn: ::std::option::Option<::std::string::String>,

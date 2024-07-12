@@ -51,8 +51,8 @@ impl EngineTranscribeMedicalSettings {
 }
 
 /// A builder for [`EngineTranscribeMedicalSettings`](crate::types::EngineTranscribeMedicalSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EngineTranscribeMedicalSettingsBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::TranscribeMedicalLanguageCode>,
     pub(crate) specialty: ::std::option::Option<crate::types::TranscribeMedicalSpecialty>,

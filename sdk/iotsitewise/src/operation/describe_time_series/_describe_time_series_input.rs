@@ -32,8 +32,8 @@ impl DescribeTimeSeriesInput {
 }
 
 /// A builder for [`DescribeTimeSeriesInput`](crate::operation::describe_time_series::DescribeTimeSeriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTimeSeriesInputBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,

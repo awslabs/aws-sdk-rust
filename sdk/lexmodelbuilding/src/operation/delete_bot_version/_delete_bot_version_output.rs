@@ -18,8 +18,8 @@ impl DeleteBotVersionOutput {
 }
 
 /// A builder for [`DeleteBotVersionOutput`](crate::operation::delete_bot_version::DeleteBotVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBotVersionOutputBuilder {
     _request_id: Option<String>,
 }

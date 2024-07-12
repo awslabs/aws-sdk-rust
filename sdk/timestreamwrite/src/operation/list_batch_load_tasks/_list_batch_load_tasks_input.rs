@@ -32,8 +32,8 @@ impl ListBatchLoadTasksInput {
 }
 
 /// A builder for [`ListBatchLoadTasksInput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBatchLoadTasksInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

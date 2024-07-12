@@ -11,8 +11,8 @@ impl DeleteNamespaceInput {
 }
 
 /// A builder for [`DeleteNamespaceInput`](crate::operation::delete_namespace::DeleteNamespaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNamespaceInputBuilder {}
 impl DeleteNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNamespaceInput`](crate::operation::delete_namespace::DeleteNamespaceInput).

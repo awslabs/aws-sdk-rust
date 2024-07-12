@@ -1315,8 +1315,8 @@ impl HumanTaskConfig {
 }
 
 /// A builder for [`HumanTaskConfig`](crate::types::HumanTaskConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HumanTaskConfigBuilder {
     pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ui_config: ::std::option::Option<crate::types::UiConfig>,

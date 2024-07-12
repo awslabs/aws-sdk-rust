@@ -35,8 +35,8 @@ impl OutpostConfigResponse {
 }
 
 /// A builder for [`OutpostConfigResponse`](crate::types::OutpostConfigResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutpostConfigResponseBuilder {
     pub(crate) outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) control_plane_instance_type: ::std::option::Option<::std::string::String>,

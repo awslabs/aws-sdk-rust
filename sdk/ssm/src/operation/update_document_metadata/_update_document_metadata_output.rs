@@ -18,8 +18,8 @@ impl UpdateDocumentMetadataOutput {
 }
 
 /// A builder for [`UpdateDocumentMetadataOutput`](crate::operation::update_document_metadata::UpdateDocumentMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDocumentMetadataOutputBuilder {
     _request_id: Option<String>,
 }

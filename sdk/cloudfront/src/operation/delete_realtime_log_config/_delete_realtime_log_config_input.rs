@@ -26,8 +26,8 @@ impl DeleteRealtimeLogConfigInput {
 }
 
 /// A builder for [`DeleteRealtimeLogConfigInput`](crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRealtimeLogConfigInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

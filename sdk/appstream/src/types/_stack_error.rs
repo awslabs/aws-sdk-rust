@@ -27,8 +27,8 @@ impl StackError {
 }
 
 /// A builder for [`StackError`](crate::types::StackError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StackErrorBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::StackErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

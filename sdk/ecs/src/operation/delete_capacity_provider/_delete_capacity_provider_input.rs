@@ -20,8 +20,8 @@ impl DeleteCapacityProviderInput {
 }
 
 /// A builder for [`DeleteCapacityProviderInput`](crate::operation::delete_capacity_provider::DeleteCapacityProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCapacityProviderInputBuilder {
     pub(crate) capacity_provider: ::std::option::Option<::std::string::String>,
 }

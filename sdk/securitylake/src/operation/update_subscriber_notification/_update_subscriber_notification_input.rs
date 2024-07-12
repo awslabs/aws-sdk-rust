@@ -26,8 +26,8 @@ impl UpdateSubscriberNotificationInput {
 }
 
 /// A builder for [`UpdateSubscriberNotificationInput`](crate::operation::update_subscriber_notification::UpdateSubscriberNotificationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSubscriberNotificationInputBuilder {
     pub(crate) subscriber_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::NotificationConfiguration>,

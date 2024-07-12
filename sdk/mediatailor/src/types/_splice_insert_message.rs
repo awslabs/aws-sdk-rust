@@ -39,8 +39,8 @@ impl SpliceInsertMessage {
 }
 
 /// A builder for [`SpliceInsertMessage`](crate::types::SpliceInsertMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpliceInsertMessageBuilder {
     pub(crate) avail_num: ::std::option::Option<i32>,
     pub(crate) avails_expected: ::std::option::Option<i32>,

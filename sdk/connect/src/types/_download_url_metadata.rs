@@ -27,8 +27,8 @@ impl DownloadUrlMetadata {
 }
 
 /// A builder for [`DownloadUrlMetadata`](crate::types::DownloadUrlMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DownloadUrlMetadataBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) url_expiry: ::std::option::Option<::std::string::String>,

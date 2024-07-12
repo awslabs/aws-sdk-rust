@@ -53,8 +53,8 @@ impl CreateEventBridgeRuleTemplateInput {
 }
 
 /// A builder for [`CreateEventBridgeRuleTemplateInput`](crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEventBridgeRuleTemplateInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) event_targets: ::std::option::Option<::std::vec::Vec<crate::types::EventBridgeRuleTemplateTarget>>,

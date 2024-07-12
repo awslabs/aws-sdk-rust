@@ -36,8 +36,8 @@ impl BatchGetDocumentStatusOutput {
 }
 
 /// A builder for [`BatchGetDocumentStatusOutput`](crate::operation::batch_get_document_status::BatchGetDocumentStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetDocumentStatusOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetDocumentStatusResponseError>>,
     pub(crate) document_status_list: ::std::option::Option<::std::vec::Vec<crate::types::Status>>,

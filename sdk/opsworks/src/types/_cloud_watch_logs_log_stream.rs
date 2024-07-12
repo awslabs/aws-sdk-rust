@@ -85,8 +85,8 @@ impl CloudWatchLogsLogStream {
 }
 
 /// A builder for [`CloudWatchLogsLogStream`](crate::types::CloudWatchLogsLogStream).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchLogsLogStreamBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) datetime_format: ::std::option::Option<::std::string::String>,

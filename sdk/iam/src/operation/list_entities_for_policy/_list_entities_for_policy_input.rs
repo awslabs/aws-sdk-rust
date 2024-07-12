@@ -62,8 +62,8 @@ impl ListEntitiesForPolicyInput {
 }
 
 /// A builder for [`ListEntitiesForPolicyInput`](crate::operation::list_entities_for_policy::ListEntitiesForPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEntitiesForPolicyInputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) entity_filter: ::std::option::Option<crate::types::EntityType>,

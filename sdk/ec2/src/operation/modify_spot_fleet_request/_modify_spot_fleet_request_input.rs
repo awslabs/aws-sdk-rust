@@ -55,8 +55,8 @@ impl ModifySpotFleetRequestInput {
 }
 
 /// A builder for [`ModifySpotFleetRequestInput`](crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifySpotFleetRequestInputBuilder {
     pub(crate) excess_capacity_termination_policy: ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
     pub(crate) launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,

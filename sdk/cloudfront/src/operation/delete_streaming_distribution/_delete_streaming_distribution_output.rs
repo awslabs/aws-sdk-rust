@@ -18,8 +18,8 @@ impl DeleteStreamingDistributionOutput {
 }
 
 /// A builder for [`DeleteStreamingDistributionOutput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStreamingDistributionOutputBuilder {
     _request_id: Option<String>,
 }

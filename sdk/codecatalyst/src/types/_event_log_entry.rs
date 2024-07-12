@@ -110,8 +110,8 @@ impl EventLogEntry {
 }
 
 /// A builder for [`EventLogEntry`](crate::types::EventLogEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventLogEntryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) event_name: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl UpdatePublishingDestinationOutput {
 }
 
 /// A builder for [`UpdatePublishingDestinationOutput`](crate::operation::update_publishing_destination::UpdatePublishingDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePublishingDestinationOutputBuilder {
     _request_id: Option<String>,
 }

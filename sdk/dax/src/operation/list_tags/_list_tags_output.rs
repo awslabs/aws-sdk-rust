@@ -34,8 +34,8 @@ impl ListTagsOutput {
 }
 
 /// A builder for [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

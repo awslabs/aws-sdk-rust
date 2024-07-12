@@ -35,8 +35,8 @@ impl PutAlertManagerDefinitionInput {
 }
 
 /// A builder for [`PutAlertManagerDefinitionInput`](crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAlertManagerDefinitionInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,

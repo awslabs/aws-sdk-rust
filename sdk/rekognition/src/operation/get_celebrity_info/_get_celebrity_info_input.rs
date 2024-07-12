@@ -20,8 +20,8 @@ impl GetCelebrityInfoInput {
 }
 
 /// A builder for [`GetCelebrityInfoInput`](crate::operation::get_celebrity_info::GetCelebrityInfoInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCelebrityInfoInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

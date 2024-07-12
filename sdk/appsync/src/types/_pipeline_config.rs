@@ -23,8 +23,8 @@ impl PipelineConfig {
 }
 
 /// A builder for [`PipelineConfig`](crate::types::PipelineConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineConfigBuilder {
     pub(crate) functions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

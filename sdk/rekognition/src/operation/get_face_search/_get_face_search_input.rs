@@ -38,8 +38,8 @@ impl GetFaceSearchInput {
 }
 
 /// A builder for [`GetFaceSearchInput`](crate::operation::get_face_search::GetFaceSearchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFaceSearchInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

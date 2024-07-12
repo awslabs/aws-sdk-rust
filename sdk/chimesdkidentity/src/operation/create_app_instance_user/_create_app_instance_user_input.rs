@@ -71,8 +71,8 @@ impl CreateAppInstanceUserInput {
 }
 
 /// A builder for [`CreateAppInstanceUserInput`](crate::operation::create_app_instance_user::CreateAppInstanceUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateAppInstanceUserInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_instance_user_id: ::std::option::Option<::std::string::String>,

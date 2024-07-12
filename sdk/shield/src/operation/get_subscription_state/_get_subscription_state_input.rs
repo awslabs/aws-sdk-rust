@@ -11,8 +11,8 @@ impl GetSubscriptionStateInput {
 }
 
 /// A builder for [`GetSubscriptionStateInput`](crate::operation::get_subscription_state::GetSubscriptionStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSubscriptionStateInputBuilder {}
 impl GetSubscriptionStateInputBuilder {
     /// Consumes the builder and constructs a [`GetSubscriptionStateInput`](crate::operation::get_subscription_state::GetSubscriptionStateInput).

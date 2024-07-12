@@ -21,8 +21,8 @@ impl SpainAdditionalInfo {
 }
 
 /// A builder for [`SpainAdditionalInfo`](crate::types::SpainAdditionalInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpainAdditionalInfoBuilder {
     pub(crate) registration_type: ::std::option::Option<crate::types::RegistrationType>,
 }

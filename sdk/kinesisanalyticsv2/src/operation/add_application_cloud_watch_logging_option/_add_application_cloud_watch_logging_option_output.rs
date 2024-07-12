@@ -46,8 +46,8 @@ impl AddApplicationCloudWatchLoggingOptionOutput {
 }
 
 /// A builder for [`AddApplicationCloudWatchLoggingOptionOutput`](crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddApplicationCloudWatchLoggingOptionOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,

@@ -41,8 +41,8 @@ impl BillingModeSummary {
 }
 
 /// A builder for [`BillingModeSummary`](crate::types::BillingModeSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BillingModeSummaryBuilder {
     pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
     pub(crate) last_update_to_pay_per_request_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,

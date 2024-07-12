@@ -44,8 +44,8 @@ impl CreateRealtimeLogConfigInput {
 }
 
 /// A builder for [`CreateRealtimeLogConfigInput`](crate::operation::create_realtime_log_config::CreateRealtimeLogConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRealtimeLogConfigInputBuilder {
     pub(crate) end_points: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

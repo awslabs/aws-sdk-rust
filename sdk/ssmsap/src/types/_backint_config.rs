@@ -27,8 +27,8 @@ impl BackintConfig {
 }
 
 /// A builder for [`BackintConfig`](crate::types::BackintConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackintConfigBuilder {
     pub(crate) backint_mode: ::std::option::Option<crate::types::BackintMode>,
     pub(crate) ensure_no_backup_in_process: ::std::option::Option<bool>,

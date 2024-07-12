@@ -121,8 +121,8 @@ impl Attachment {
 }
 
 /// A builder for [`Attachment`](crate::types::Attachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachmentBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_arn: ::std::option::Option<::std::string::String>,

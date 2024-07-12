@@ -39,8 +39,8 @@ impl PivotTableTotalOptions {
 }
 
 /// A builder for [`PivotTableTotalOptions`](crate::types::PivotTableTotalOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableTotalOptionsBuilder {
     pub(crate) row_subtotal_options: ::std::option::Option<crate::types::SubtotalOptions>,
     pub(crate) column_subtotal_options: ::std::option::Option<crate::types::SubtotalOptions>,

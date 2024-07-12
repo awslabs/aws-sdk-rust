@@ -111,8 +111,8 @@ impl PropertygraphSummary {
 }
 
 /// A builder for [`PropertygraphSummary`](crate::types::PropertygraphSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertygraphSummaryBuilder {
     pub(crate) num_nodes: ::std::option::Option<i64>,
     pub(crate) num_edges: ::std::option::Option<i64>,

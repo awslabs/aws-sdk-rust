@@ -26,8 +26,8 @@ impl DisassociateTeamMemberInput {
 }
 
 /// A builder for [`DisassociateTeamMemberInput`](crate::operation::disassociate_team_member::DisassociateTeamMemberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTeamMemberInputBuilder {
     pub(crate) project_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,

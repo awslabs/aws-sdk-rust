@@ -29,8 +29,8 @@ impl ResponseTimeRootCause {
 }
 
 /// A builder for [`ResponseTimeRootCause`](crate::types::ResponseTimeRootCause).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseTimeRootCauseBuilder {
     pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
     pub(crate) client_impacting: ::std::option::Option<bool>,

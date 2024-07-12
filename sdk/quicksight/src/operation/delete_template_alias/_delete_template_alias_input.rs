@@ -32,8 +32,8 @@ impl DeleteTemplateAliasInput {
 }
 
 /// A builder for [`DeleteTemplateAliasInput`](crate::operation::delete_template_alias::DeleteTemplateAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTemplateAliasInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,

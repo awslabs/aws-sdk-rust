@@ -33,8 +33,8 @@ impl OwnershipControlsRule {
 }
 
 /// A builder for [`OwnershipControlsRule`](crate::types::OwnershipControlsRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OwnershipControlsRuleBuilder {
     pub(crate) object_ownership: ::std::option::Option<crate::types::ObjectOwnership>,
 }

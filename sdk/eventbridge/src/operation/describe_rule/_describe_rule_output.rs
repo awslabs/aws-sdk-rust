@@ -80,8 +80,8 @@ impl DescribeRuleOutput {
 }
 
 /// A builder for [`DescribeRuleOutput`](crate::operation::describe_rule::DescribeRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRuleOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl NumericFormatConfiguration {
 }
 
 /// A builder for [`NumericFormatConfiguration`](crate::types::NumericFormatConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NumericFormatConfigurationBuilder {
     pub(crate) number_display_format_configuration: ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
     pub(crate) currency_display_format_configuration: ::std::option::Option<crate::types::CurrencyDisplayFormatConfiguration>,

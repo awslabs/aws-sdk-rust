@@ -34,8 +34,8 @@ impl DescribeCarrierGatewaysOutput {
 }
 
 /// A builder for [`DescribeCarrierGatewaysOutput`](crate::operation::describe_carrier_gateways::DescribeCarrierGatewaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCarrierGatewaysOutputBuilder {
     pub(crate) carrier_gateways: ::std::option::Option<::std::vec::Vec<crate::types::CarrierGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

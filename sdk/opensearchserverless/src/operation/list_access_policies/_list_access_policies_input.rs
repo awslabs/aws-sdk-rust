@@ -40,8 +40,8 @@ impl ListAccessPoliciesInput {
 }
 
 /// A builder for [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessPoliciesInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     pub(crate) resource: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

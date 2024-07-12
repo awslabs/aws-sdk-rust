@@ -28,8 +28,8 @@ impl UpdateEnabledControlInput {
 }
 
 /// A builder for [`UpdateEnabledControlInput`](crate::operation::update_enabled_control::UpdateEnabledControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEnabledControlInputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>,
     pub(crate) enabled_control_identifier: ::std::option::Option<::std::string::String>,

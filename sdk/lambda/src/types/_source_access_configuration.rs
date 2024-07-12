@@ -67,8 +67,8 @@ impl SourceAccessConfiguration {
 }
 
 /// A builder for [`SourceAccessConfiguration`](crate::types::SourceAccessConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceAccessConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SourceAccessType>,
     pub(crate) uri: ::std::option::Option<::std::string::String>,

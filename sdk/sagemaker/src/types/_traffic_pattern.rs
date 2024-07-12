@@ -35,8 +35,8 @@ impl TrafficPattern {
 }
 
 /// A builder for [`TrafficPattern`](crate::types::TrafficPattern).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrafficPatternBuilder {
     pub(crate) traffic_type: ::std::option::Option<crate::types::TrafficType>,
     pub(crate) phases: ::std::option::Option<::std::vec::Vec<crate::types::Phase>>,

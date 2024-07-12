@@ -26,8 +26,8 @@ impl StartChangeRequestExecutionOutput {
 }
 
 /// A builder for [`StartChangeRequestExecutionOutput`](crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartChangeRequestExecutionOutputBuilder {
     pub(crate) automation_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

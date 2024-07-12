@@ -27,8 +27,8 @@ impl UserIdentity {
 }
 
 /// A builder for [`UserIdentity`](crate::types::UserIdentity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserIdentityBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::UserIdentityType>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,

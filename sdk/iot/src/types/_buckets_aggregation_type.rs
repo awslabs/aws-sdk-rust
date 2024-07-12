@@ -21,8 +21,8 @@ impl BucketsAggregationType {
 }
 
 /// A builder for [`BucketsAggregationType`](crate::types::BucketsAggregationType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketsAggregationTypeBuilder {
     pub(crate) terms_aggregation: ::std::option::Option<crate::types::TermsAggregation>,
 }

@@ -34,8 +34,8 @@ impl BatchAttachObject {
 }
 
 /// A builder for [`BatchAttachObject`](crate::types::BatchAttachObject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAttachObjectBuilder {
     pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) child_reference: ::std::option::Option<crate::types::ObjectReference>,

@@ -37,8 +37,8 @@ impl EndpointState {
 }
 
 /// A builder for [`EndpointState`](crate::types::EndpointState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EndpointStatus>,
     pub(crate) status_reason: ::std::option::Option<crate::types::EndpointStatusReason>,

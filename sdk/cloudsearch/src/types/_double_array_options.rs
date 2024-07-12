@@ -45,8 +45,8 @@ impl DoubleArrayOptions {
 }
 
 /// A builder for [`DoubleArrayOptions`](crate::types::DoubleArrayOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DoubleArrayOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<f64>,
     pub(crate) source_fields: ::std::option::Option<::std::string::String>,

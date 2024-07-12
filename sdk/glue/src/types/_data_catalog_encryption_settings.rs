@@ -27,8 +27,8 @@ impl DataCatalogEncryptionSettings {
 }
 
 /// A builder for [`DataCatalogEncryptionSettings`](crate::types::DataCatalogEncryptionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataCatalogEncryptionSettingsBuilder {
     pub(crate) encryption_at_rest: ::std::option::Option<crate::types::EncryptionAtRest>,
     pub(crate) connection_password_encryption: ::std::option::Option<crate::types::ConnectionPasswordEncryption>,

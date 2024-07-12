@@ -40,8 +40,8 @@ impl ListFacesOutput {
 }
 
 /// A builder for [`ListFacesOutput`](crate::operation::list_faces::ListFacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFacesOutputBuilder {
     pub(crate) faces: ::std::option::Option<::std::vec::Vec<crate::types::Face>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl DescribeScalingParametersInput {
 }
 
 /// A builder for [`DescribeScalingParametersInput`](crate::operation::describe_scaling_parameters::DescribeScalingParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScalingParametersInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }

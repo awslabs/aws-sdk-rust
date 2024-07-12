@@ -68,8 +68,8 @@ impl ListStackSetOperationResultsInput {
 }
 
 /// A builder for [`ListStackSetOperationResultsInput`](crate::operation::list_stack_set_operation_results::ListStackSetOperationResultsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStackSetOperationResultsInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,

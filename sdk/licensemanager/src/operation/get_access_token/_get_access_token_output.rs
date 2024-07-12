@@ -26,8 +26,8 @@ impl GetAccessTokenOutput {
 }
 
 /// A builder for [`GetAccessTokenOutput`](crate::operation::get_access_token::GetAccessTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessTokenOutputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

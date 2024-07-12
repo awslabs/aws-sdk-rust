@@ -54,8 +54,8 @@ impl RouteData {
 }
 
 /// A builder for [`RouteData`](crate::types::RouteData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RouteDataBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_router_name: ::std::option::Option<::std::string::String>,

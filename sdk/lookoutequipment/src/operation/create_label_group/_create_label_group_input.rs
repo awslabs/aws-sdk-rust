@@ -48,8 +48,8 @@ impl CreateLabelGroupInput {
 }
 
 /// A builder for [`CreateLabelGroupInput`](crate::operation::create_label_group::CreateLabelGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLabelGroupInputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) fault_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -42,8 +42,8 @@ impl ApiKeySummary {
 }
 
 /// A builder for [`ApiKeySummary`](crate::types::ApiKeySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApiKeySummaryBuilder {
     pub(crate) token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) api_key: ::std::option::Option<::std::string::String>,

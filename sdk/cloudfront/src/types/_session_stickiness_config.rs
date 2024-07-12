@@ -31,8 +31,8 @@ impl SessionStickinessConfig {
 }
 
 /// A builder for [`SessionStickinessConfig`](crate::types::SessionStickinessConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionStickinessConfigBuilder {
     pub(crate) idle_ttl: ::std::option::Option<i32>,
     pub(crate) maximum_ttl: ::std::option::Option<i32>,

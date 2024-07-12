@@ -23,8 +23,8 @@ impl SlackMetadata {
 }
 
 /// A builder for [`SlackMetadata`](crate::types::SlackMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlackMetadataBuilder {
     pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

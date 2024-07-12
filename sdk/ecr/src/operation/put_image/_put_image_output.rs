@@ -26,8 +26,8 @@ impl PutImageOutput {
 }
 
 /// A builder for [`PutImageOutput`](crate::operation::put_image::PutImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutImageOutputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     _request_id: Option<String>,

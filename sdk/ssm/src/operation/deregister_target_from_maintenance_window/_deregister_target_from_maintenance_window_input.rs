@@ -32,8 +32,8 @@ impl DeregisterTargetFromMaintenanceWindowInput {
 }
 
 /// A builder for [`DeregisterTargetFromMaintenanceWindowInput`](crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterTargetFromMaintenanceWindowInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) window_target_id: ::std::option::Option<::std::string::String>,

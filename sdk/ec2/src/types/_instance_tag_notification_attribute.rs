@@ -29,8 +29,8 @@ impl InstanceTagNotificationAttribute {
 }
 
 /// A builder for [`InstanceTagNotificationAttribute`](crate::types::InstanceTagNotificationAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceTagNotificationAttributeBuilder {
     pub(crate) instance_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include_all_tags_of_instance: ::std::option::Option<bool>,

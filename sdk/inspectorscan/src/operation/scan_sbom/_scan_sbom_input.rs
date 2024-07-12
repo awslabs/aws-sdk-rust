@@ -26,8 +26,8 @@ impl ScanSbomInput {
 }
 
 /// A builder for [`ScanSbomInput`](crate::operation::scan_sbom::ScanSbomInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanSbomInputBuilder {
     pub(crate) sbom: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) output_format: ::std::option::Option<crate::types::OutputFormat>,

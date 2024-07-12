@@ -34,8 +34,8 @@ impl ListAttributeGroupsOutput {
 }
 
 /// A builder for [`ListAttributeGroupsOutput`](crate::operation::list_attribute_groups::ListAttributeGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAttributeGroupsOutputBuilder {
     pub(crate) attribute_groups: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

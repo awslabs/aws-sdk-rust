@@ -51,8 +51,8 @@ impl AccountJiraConfigurationOutput {
 }
 
 /// A builder for [`AccountJiraConfigurationOutput`](crate::types::AccountJiraConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountJiraConfigurationOutputBuilder {
     pub(crate) integration_status: ::std::option::Option<crate::types::IntegrationStatus>,
     pub(crate) issue_management_status: ::std::option::Option<crate::types::AccountJiraIssueManagementStatus>,

@@ -34,8 +34,8 @@ impl ListImagesInRecycleBinOutput {
 }
 
 /// A builder for [`ListImagesInRecycleBinOutput`](crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImagesInRecycleBinOutputBuilder {
     pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::ImageRecycleBinInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

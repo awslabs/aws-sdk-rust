@@ -20,8 +20,8 @@ impl GetHypervisorPropertyMappingsInput {
 }
 
 /// A builder for [`GetHypervisorPropertyMappingsInput`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHypervisorPropertyMappingsInputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
 }

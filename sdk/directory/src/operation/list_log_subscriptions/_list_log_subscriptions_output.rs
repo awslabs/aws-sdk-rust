@@ -34,8 +34,8 @@ impl ListLogSubscriptionsOutput {
 }
 
 /// A builder for [`ListLogSubscriptionsOutput`](crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLogSubscriptionsOutputBuilder {
     pub(crate) log_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

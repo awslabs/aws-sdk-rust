@@ -56,8 +56,8 @@ impl ModifyVerifiedAccessEndpointInput {
 }
 
 /// A builder for [`ModifyVerifiedAccessEndpointInput`](crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVerifiedAccessEndpointInputBuilder {
     pub(crate) verified_access_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) verified_access_group_id: ::std::option::Option<::std::string::String>,

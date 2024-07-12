@@ -20,8 +20,8 @@ impl RemoveApplicationInstanceInput {
 }
 
 /// A builder for [`RemoveApplicationInstanceInput`](crate::operation::remove_application_instance::RemoveApplicationInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveApplicationInstanceInputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
 }

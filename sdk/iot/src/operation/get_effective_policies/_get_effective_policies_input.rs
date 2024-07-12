@@ -32,8 +32,8 @@ impl GetEffectivePoliciesInput {
 }
 
 /// A builder for [`GetEffectivePoliciesInput`](crate::operation::get_effective_policies::GetEffectivePoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEffectivePoliciesInputBuilder {
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) cognito_identity_pool_id: ::std::option::Option<::std::string::String>,

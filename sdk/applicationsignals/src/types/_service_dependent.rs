@@ -64,8 +64,8 @@ impl ServiceDependent {
 }
 
 /// A builder for [`ServiceDependent`](crate::types::ServiceDependent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceDependentBuilder {
     pub(crate) operation_name: ::std::option::Option<::std::string::String>,
     pub(crate) dependent_key_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

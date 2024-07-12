@@ -27,8 +27,8 @@ impl StartContactStreamingOutput {
 }
 
 /// A builder for [`StartContactStreamingOutput`](crate::operation::start_contact_streaming::StartContactStreamingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartContactStreamingOutputBuilder {
     pub(crate) streaming_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

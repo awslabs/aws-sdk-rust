@@ -52,8 +52,8 @@ impl GetTaskProtectionOutput {
 }
 
 /// A builder for [`GetTaskProtectionOutput`](crate::operation::get_task_protection::GetTaskProtectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTaskProtectionOutputBuilder {
     pub(crate) protected_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,

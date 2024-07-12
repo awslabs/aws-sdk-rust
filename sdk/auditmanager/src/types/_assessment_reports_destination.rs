@@ -35,8 +35,8 @@ impl AssessmentReportsDestination {
 }
 
 /// A builder for [`AssessmentReportsDestination`](crate::types::AssessmentReportsDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssessmentReportsDestinationBuilder {
     pub(crate) destination_type: ::std::option::Option<crate::types::AssessmentReportDestinationType>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,

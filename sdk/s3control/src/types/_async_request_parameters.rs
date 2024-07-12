@@ -33,8 +33,8 @@ impl AsyncRequestParameters {
 }
 
 /// A builder for [`AsyncRequestParameters`](crate::types::AsyncRequestParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AsyncRequestParametersBuilder {
     pub(crate) create_multi_region_access_point_request: ::std::option::Option<crate::types::CreateMultiRegionAccessPointInput>,
     pub(crate) delete_multi_region_access_point_request: ::std::option::Option<crate::types::DeleteMultiRegionAccessPointInput>,

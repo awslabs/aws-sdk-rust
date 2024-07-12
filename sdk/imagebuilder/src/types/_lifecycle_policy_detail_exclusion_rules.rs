@@ -27,8 +27,8 @@ impl LifecyclePolicyDetailExclusionRules {
 }
 
 /// A builder for [`LifecyclePolicyDetailExclusionRules`](crate::types::LifecyclePolicyDetailExclusionRules).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecyclePolicyDetailExclusionRulesBuilder {
     pub(crate) tag_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) amis: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>,

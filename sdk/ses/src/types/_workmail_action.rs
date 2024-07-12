@@ -49,8 +49,8 @@ impl WorkmailAction {
 }
 
 /// A builder for [`WorkmailAction`](crate::types::WorkmailAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkmailActionBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) organization_arn: ::std::option::Option<::std::string::String>,

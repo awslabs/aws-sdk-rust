@@ -70,8 +70,8 @@ impl UpdateJobTemplateInput {
 }
 
 /// A builder for [`UpdateJobTemplateInput`](crate::operation::update_job_template::UpdateJobTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateJobTemplateInputBuilder {
     pub(crate) acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     pub(crate) category: ::std::option::Option<::std::string::String>,

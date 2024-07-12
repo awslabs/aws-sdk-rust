@@ -21,8 +21,8 @@ impl GitSubmodulesConfig {
 }
 
 /// A builder for [`GitSubmodulesConfig`](crate::types::GitSubmodulesConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GitSubmodulesConfigBuilder {
     pub(crate) fetch_submodules: ::std::option::Option<bool>,
 }

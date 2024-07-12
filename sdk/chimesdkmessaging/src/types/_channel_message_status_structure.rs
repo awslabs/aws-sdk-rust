@@ -27,8 +27,8 @@ impl ChannelMessageStatusStructure {
 }
 
 /// A builder for [`ChannelMessageStatusStructure`](crate::types::ChannelMessageStatusStructure).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelMessageStatusStructureBuilder {
     pub(crate) value: ::std::option::Option<crate::types::ChannelMessageStatus>,
     pub(crate) detail: ::std::option::Option<::std::string::String>,

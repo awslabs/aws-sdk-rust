@@ -20,8 +20,8 @@ impl DescribeSafetyRuleInput {
 }
 
 /// A builder for [`DescribeSafetyRuleInput`](crate::operation::describe_safety_rule::DescribeSafetyRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSafetyRuleInputBuilder {
     pub(crate) safety_rule_arn: ::std::option::Option<::std::string::String>,
 }

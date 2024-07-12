@@ -96,8 +96,8 @@ impl UpdateProgramOutput {
 }
 
 /// A builder for [`UpdateProgramOutput`](crate::operation::update_program::UpdateProgramOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProgramOutputBuilder {
     pub(crate) ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

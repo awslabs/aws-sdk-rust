@@ -36,8 +36,8 @@ impl StartFleetActionsOutput {
 }
 
 /// A builder for [`StartFleetActionsOutput`](crate::operation::start_fleet_actions::StartFleetActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartFleetActionsOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,

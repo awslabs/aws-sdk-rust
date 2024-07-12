@@ -26,8 +26,8 @@ impl CreateLakeFormationOptInInput {
 }
 
 /// A builder for [`CreateLakeFormationOptInInput`](crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLakeFormationOptInInputBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,

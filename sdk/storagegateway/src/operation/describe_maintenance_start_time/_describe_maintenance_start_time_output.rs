@@ -83,8 +83,8 @@ impl DescribeMaintenanceStartTimeOutput {
 }
 
 /// A builder for [`DescribeMaintenanceStartTimeOutput`](crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMaintenanceStartTimeOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hour_of_day: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl PutProfileObjectOutput {
 }
 
 /// A builder for [`PutProfileObjectOutput`](crate::operation::put_profile_object::PutProfileObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutProfileObjectOutputBuilder {
     pub(crate) profile_object_unique_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl DeregisterWebhookWithThirdPartyOutput {
 }
 
 /// A builder for [`DeregisterWebhookWithThirdPartyOutput`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterWebhookWithThirdPartyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl DescribeAliasInput {
 }
 
 /// A builder for [`DescribeAliasInput`](crate::operation::describe_alias::DescribeAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
 }

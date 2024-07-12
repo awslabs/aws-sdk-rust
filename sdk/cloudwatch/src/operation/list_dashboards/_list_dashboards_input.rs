@@ -26,8 +26,8 @@ impl ListDashboardsInput {
 }
 
 /// A builder for [`ListDashboardsInput`](crate::operation::list_dashboards::ListDashboardsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDashboardsInputBuilder {
     pub(crate) dashboard_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

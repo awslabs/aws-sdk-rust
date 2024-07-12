@@ -26,8 +26,8 @@ impl GetAppsOutput {
 }
 
 /// A builder for [`GetAppsOutput`](crate::operation::get_apps::GetAppsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppsOutputBuilder {
     pub(crate) applications_response: ::std::option::Option<crate::types::ApplicationsResponse>,
     _request_id: Option<String>,

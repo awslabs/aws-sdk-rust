@@ -63,8 +63,8 @@ impl HttpRetryPolicy {
 }
 
 /// A builder for [`HttpRetryPolicy`](crate::types::HttpRetryPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpRetryPolicyBuilder {
     pub(crate) per_retry_timeout: ::std::option::Option<crate::types::Duration>,
     pub(crate) max_retries: ::std::option::Option<i64>,

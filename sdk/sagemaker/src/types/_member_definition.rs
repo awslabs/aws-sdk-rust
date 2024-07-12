@@ -27,8 +27,8 @@ impl MemberDefinition {
 }
 
 /// A builder for [`MemberDefinition`](crate::types::MemberDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MemberDefinitionBuilder {
     pub(crate) cognito_member_definition: ::std::option::Option<crate::types::CognitoMemberDefinition>,
     pub(crate) oidc_member_definition: ::std::option::Option<crate::types::OidcMemberDefinition>,

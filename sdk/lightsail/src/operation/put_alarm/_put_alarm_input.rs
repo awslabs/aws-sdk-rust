@@ -180,8 +180,8 @@ impl PutAlarmInput {
 }
 
 /// A builder for [`PutAlarmInput`](crate::operation::put_alarm::PutAlarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAlarmInputBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<crate::types::MetricName>,

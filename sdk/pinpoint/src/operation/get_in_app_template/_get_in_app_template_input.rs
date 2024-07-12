@@ -48,8 +48,8 @@ impl GetInAppTemplateInput {
 }
 
 /// A builder for [`GetInAppTemplateInput`](crate::operation::get_in_app_template::GetInAppTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInAppTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

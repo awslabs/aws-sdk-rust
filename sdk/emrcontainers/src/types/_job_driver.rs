@@ -27,8 +27,8 @@ impl JobDriver {
 }
 
 /// A builder for [`JobDriver`](crate::types::JobDriver).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobDriverBuilder {
     pub(crate) spark_submit_job_driver: ::std::option::Option<crate::types::SparkSubmitJobDriver>,
     pub(crate) spark_sql_job_driver: ::std::option::Option<crate::types::SparkSqlJobDriver>,

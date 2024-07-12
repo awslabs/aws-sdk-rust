@@ -203,8 +203,8 @@ impl AwsDynamoDbTableDetails {
 }
 
 /// A builder for [`AwsDynamoDbTableDetails`](crate::types::AwsDynamoDbTableDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDynamoDbTableDetailsBuilder {
     pub(crate) attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableAttributeDefinition>>,
     pub(crate) billing_mode_summary: ::std::option::Option<crate::types::AwsDynamoDbTableBillingModeSummary>,

@@ -69,8 +69,8 @@ impl Diagnostics {
 }
 
 /// A builder for [`Diagnostics`](crate::types::Diagnostics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiagnosticsBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::LifecycleErrorCode>,
     pub(crate) script_name: ::std::option::Option<::std::string::String>,

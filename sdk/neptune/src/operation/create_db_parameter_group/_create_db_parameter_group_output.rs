@@ -28,8 +28,8 @@ impl CreateDbParameterGroupOutput {
 }
 
 /// A builder for [`CreateDbParameterGroupOutput`](crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDbParameterGroupOutputBuilder {
     pub(crate) db_parameter_group: ::std::option::Option<crate::types::DbParameterGroup>,
     _request_id: Option<String>,

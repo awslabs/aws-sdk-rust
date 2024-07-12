@@ -18,8 +18,8 @@ impl RemoveRoleFromDbInstanceOutput {
 }
 
 /// A builder for [`RemoveRoleFromDbInstanceOutput`](crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveRoleFromDbInstanceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -62,8 +62,8 @@ impl InvokeOutput {
 }
 
 /// A builder for [`InvokeOutput`](crate::operation::invoke::InvokeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeOutputBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     pub(crate) function_error: ::std::option::Option<::std::string::String>,

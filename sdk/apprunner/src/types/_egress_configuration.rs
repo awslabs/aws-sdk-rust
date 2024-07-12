@@ -31,8 +31,8 @@ impl EgressConfiguration {
 }
 
 /// A builder for [`EgressConfiguration`](crate::types::EgressConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EgressConfigurationBuilder {
     pub(crate) egress_type: ::std::option::Option<crate::types::EgressType>,
     pub(crate) vpc_connector_arn: ::std::option::Option<::std::string::String>,

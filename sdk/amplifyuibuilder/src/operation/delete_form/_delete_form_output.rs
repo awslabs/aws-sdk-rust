@@ -18,8 +18,8 @@ impl DeleteFormOutput {
 }
 
 /// A builder for [`DeleteFormOutput`](crate::operation::delete_form::DeleteFormOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFormOutputBuilder {
     _request_id: Option<String>,
 }

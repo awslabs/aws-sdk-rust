@@ -40,8 +40,8 @@ impl DeletePracticeRunConfigurationOutput {
 }
 
 /// A builder for [`DeletePracticeRunConfigurationOutput`](crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePracticeRunConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

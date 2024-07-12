@@ -20,8 +20,8 @@ impl DeleteAccessLogSubscriptionInput {
 }
 
 /// A builder for [`DeleteAccessLogSubscriptionInput`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessLogSubscriptionInputBuilder {
     pub(crate) access_log_subscription_identifier: ::std::option::Option<::std::string::String>,
 }

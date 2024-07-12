@@ -50,8 +50,8 @@ impl ListPeeringsInput {
 }
 
 /// A builder for [`ListPeeringsInput`](crate::operation::list_peerings::ListPeeringsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPeeringsInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) peering_type: ::std::option::Option<crate::types::PeeringType>,

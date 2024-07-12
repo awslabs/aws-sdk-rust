@@ -94,8 +94,8 @@ impl DescribedUser {
 }
 
 /// A builder for [`DescribedUser`](crate::types::DescribedUser).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribedUserBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) home_directory: ::std::option::Option<::std::string::String>,

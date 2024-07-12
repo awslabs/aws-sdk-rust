@@ -26,8 +26,8 @@ impl ActivateContactChannelInput {
 }
 
 /// A builder for [`ActivateContactChannelInput`](crate::operation::activate_contact_channel::ActivateContactChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivateContactChannelInputBuilder {
     pub(crate) contact_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) activation_code: ::std::option::Option<::std::string::String>,

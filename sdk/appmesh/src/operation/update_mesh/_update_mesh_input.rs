@@ -32,8 +32,8 @@ impl UpdateMeshInput {
 }
 
 /// A builder for [`UpdateMeshInput`](crate::operation::update_mesh::UpdateMeshInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMeshInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) spec: ::std::option::Option<crate::types::MeshSpec>,

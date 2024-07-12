@@ -52,8 +52,8 @@ impl GetBucketWebsiteOutput {
 }
 
 /// A builder for [`GetBucketWebsiteOutput`](crate::operation::get_bucket_website::GetBucketWebsiteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketWebsiteOutputBuilder {
     pub(crate) redirect_all_requests_to: ::std::option::Option<crate::types::RedirectAllRequestsTo>,
     pub(crate) index_document: ::std::option::Option<crate::types::IndexDocument>,

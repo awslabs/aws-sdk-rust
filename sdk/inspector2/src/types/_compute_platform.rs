@@ -33,8 +33,8 @@ impl ComputePlatform {
 }
 
 /// A builder for [`ComputePlatform`](crate::types::ComputePlatform).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComputePlatformBuilder {
     pub(crate) vendor: ::std::option::Option<::std::string::String>,
     pub(crate) product: ::std::option::Option<::std::string::String>,

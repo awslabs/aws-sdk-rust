@@ -46,8 +46,8 @@ impl ApplyGuardrailOutput {
 }
 
 /// A builder for [`ApplyGuardrailOutput`](crate::operation::apply_guardrail::ApplyGuardrailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplyGuardrailOutputBuilder {
     pub(crate) usage: ::std::option::Option<crate::types::GuardrailUsage>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailAction>,

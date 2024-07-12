@@ -27,8 +27,8 @@ impl InferenceComponentRuntimeConfigSummary {
 }
 
 /// A builder for [`InferenceComponentRuntimeConfigSummary`](crate::types::InferenceComponentRuntimeConfigSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceComponentRuntimeConfigSummaryBuilder {
     pub(crate) desired_copy_count: ::std::option::Option<i32>,
     pub(crate) current_copy_count: ::std::option::Option<i32>,

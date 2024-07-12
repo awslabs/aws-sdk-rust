@@ -52,8 +52,8 @@ impl RelativeAggregationDuration {
 }
 
 /// A builder for [`RelativeAggregationDuration`](crate::types::RelativeAggregationDuration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelativeAggregationDurationBuilder {
     pub(crate) time_dimension: ::std::option::Option<crate::types::TimeDimension>,
     pub(crate) time_value: ::std::option::Option<i32>,

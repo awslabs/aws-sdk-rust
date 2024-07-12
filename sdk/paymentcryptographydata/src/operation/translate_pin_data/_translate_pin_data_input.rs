@@ -85,8 +85,8 @@ impl TranslatePinDataInput {
 }
 
 /// A builder for [`TranslatePinDataInput`](crate::operation::translate_pin_data::TranslatePinDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TranslatePinDataInputBuilder {
     pub(crate) incoming_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) outgoing_key_identifier: ::std::option::Option<::std::string::String>,

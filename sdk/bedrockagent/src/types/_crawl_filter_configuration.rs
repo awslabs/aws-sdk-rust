@@ -27,8 +27,8 @@ impl CrawlFilterConfiguration {
 }
 
 /// A builder for [`CrawlFilterConfiguration`](crate::types::CrawlFilterConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrawlFilterConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CrawlFilterConfigurationType>,
     pub(crate) pattern_object_filter: ::std::option::Option<crate::types::PatternObjectFilterConfiguration>,

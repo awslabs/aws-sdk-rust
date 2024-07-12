@@ -33,8 +33,8 @@ impl AwsCodeBuildProjectLogsConfigS3LogsDetails {
 }
 
 /// A builder for [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCodeBuildProjectLogsConfigS3LogsDetailsBuilder {
     pub(crate) encryption_disabled: ::std::option::Option<bool>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

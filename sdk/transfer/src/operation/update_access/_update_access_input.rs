@@ -100,8 +100,8 @@ impl UpdateAccessInput {
 }
 
 /// A builder for [`UpdateAccessInput`](crate::operation::update_access::UpdateAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccessInputBuilder {
     pub(crate) home_directory: ::std::option::Option<::std::string::String>,
     pub(crate) home_directory_type: ::std::option::Option<crate::types::HomeDirectoryType>,

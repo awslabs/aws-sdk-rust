@@ -21,8 +21,8 @@ impl SavingsPlansCostCalculation {
 }
 
 /// A builder for [`SavingsPlansCostCalculation`](crate::types::SavingsPlansCostCalculation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlansCostCalculationBuilder {
     pub(crate) pricing: ::std::option::Option<crate::types::SavingsPlansPricing>,
 }

@@ -76,8 +76,8 @@ impl CreateCommentInput {
 }
 
 /// A builder for [`CreateCommentInput`](crate::operation::create_comment::CreateCommentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateCommentInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) document_id: ::std::option::Option<::std::string::String>,

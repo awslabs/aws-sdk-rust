@@ -45,8 +45,8 @@ impl BonusPayment {
 }
 
 /// A builder for [`BonusPayment`](crate::types::BonusPayment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BonusPaymentBuilder {
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,
     pub(crate) bonus_amount: ::std::option::Option<::std::string::String>,

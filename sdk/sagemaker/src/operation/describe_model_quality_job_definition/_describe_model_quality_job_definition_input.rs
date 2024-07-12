@@ -20,8 +20,8 @@ impl DescribeModelQualityJobDefinitionInput {
 }
 
 /// A builder for [`DescribeModelQualityJobDefinitionInput`](crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeModelQualityJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
 }

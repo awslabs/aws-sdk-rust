@@ -26,8 +26,8 @@ impl CancelInstanceRefreshOutput {
 }
 
 /// A builder for [`CancelInstanceRefreshOutput`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelInstanceRefreshOutputBuilder {
     pub(crate) instance_refresh_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

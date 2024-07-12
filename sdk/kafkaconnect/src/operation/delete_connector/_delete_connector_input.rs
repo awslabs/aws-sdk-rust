@@ -26,8 +26,8 @@ impl DeleteConnectorInput {
 }
 
 /// A builder for [`DeleteConnectorInput`](crate::operation::delete_connector::DeleteConnectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConnectorInputBuilder {
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,

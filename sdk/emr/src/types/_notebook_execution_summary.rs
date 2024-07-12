@@ -107,8 +107,8 @@ impl NotebookExecutionSummary {
 }
 
 /// A builder for [`NotebookExecutionSummary`](crate::types::NotebookExecutionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotebookExecutionSummaryBuilder {
     pub(crate) notebook_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) editor_id: ::std::option::Option<::std::string::String>,

@@ -57,8 +57,8 @@ impl CampaignDateRangeKpiResponse {
 }
 
 /// A builder for [`CampaignDateRangeKpiResponse`](crate::types::CampaignDateRangeKpiResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CampaignDateRangeKpiResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,

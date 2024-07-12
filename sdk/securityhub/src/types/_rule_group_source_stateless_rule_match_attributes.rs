@@ -63,8 +63,8 @@ impl RuleGroupSourceStatelessRuleMatchAttributes {
 }
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::types::RuleGroupSourceStatelessRuleMatchAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesBuilder {
     pub(crate) destination_ports: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>>,
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations>>,

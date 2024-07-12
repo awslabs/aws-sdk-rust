@@ -27,8 +27,8 @@ impl AddDataSourceOutput {
 }
 
 /// A builder for [`AddDataSourceOutput`](crate::operation::add_data_source::AddDataSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddDataSourceOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

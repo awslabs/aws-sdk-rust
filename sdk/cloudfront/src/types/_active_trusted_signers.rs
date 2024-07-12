@@ -35,8 +35,8 @@ impl ActiveTrustedSigners {
 }
 
 /// A builder for [`ActiveTrustedSigners`](crate::types::ActiveTrustedSigners).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActiveTrustedSignersBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,

@@ -11,8 +11,8 @@ impl CreateStorageLocationInput {
 }
 
 /// A builder for [`CreateStorageLocationInput`](crate::operation::create_storage_location::CreateStorageLocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStorageLocationInputBuilder {}
 impl CreateStorageLocationInputBuilder {
     /// Consumes the builder and constructs a [`CreateStorageLocationInput`](crate::operation::create_storage_location::CreateStorageLocationInput).

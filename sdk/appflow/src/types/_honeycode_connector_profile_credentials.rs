@@ -42,8 +42,8 @@ impl HoneycodeConnectorProfileCredentials {
 }
 
 /// A builder for [`HoneycodeConnectorProfileCredentials`](crate::types::HoneycodeConnectorProfileCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct HoneycodeConnectorProfileCredentialsBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) refresh_token: ::std::option::Option<::std::string::String>,

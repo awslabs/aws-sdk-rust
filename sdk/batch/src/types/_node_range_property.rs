@@ -53,8 +53,8 @@ impl NodeRangeProperty {
 }
 
 /// A builder for [`NodeRangeProperty`](crate::types::NodeRangeProperty).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeRangePropertyBuilder {
     pub(crate) target_nodes: ::std::option::Option<::std::string::String>,
     pub(crate) container: ::std::option::Option<crate::types::ContainerProperties>,

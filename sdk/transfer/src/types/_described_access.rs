@@ -77,8 +77,8 @@ impl DescribedAccess {
 }
 
 /// A builder for [`DescribedAccess`](crate::types::DescribedAccess).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribedAccessBuilder {
     pub(crate) home_directory: ::std::option::Option<::std::string::String>,
     pub(crate) home_directory_mappings: ::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>>,

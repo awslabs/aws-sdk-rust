@@ -267,8 +267,8 @@ impl H264Settings {
 }
 
 /// A builder for [`H264Settings`](crate::types::H264Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct H264SettingsBuilder {
     pub(crate) adaptive_quantization: ::std::option::Option<crate::types::H264AdaptiveQuantization>,
     pub(crate) afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,

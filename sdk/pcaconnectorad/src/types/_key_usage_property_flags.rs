@@ -33,8 +33,8 @@ impl KeyUsagePropertyFlags {
 }
 
 /// A builder for [`KeyUsagePropertyFlags`](crate::types::KeyUsagePropertyFlags).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeyUsagePropertyFlagsBuilder {
     pub(crate) decrypt: ::std::option::Option<bool>,
     pub(crate) key_agreement: ::std::option::Option<bool>,

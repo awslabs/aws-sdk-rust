@@ -43,8 +43,8 @@ impl Promotion {
 }
 
 /// A builder for [`Promotion`](crate::types::Promotion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromotionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) percent_promoted_items: ::std::option::Option<i32>,

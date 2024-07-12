@@ -34,8 +34,8 @@ impl ListUserAccessLoggingSettingsOutput {
 }
 
 /// A builder for [`ListUserAccessLoggingSettingsOutput`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUserAccessLoggingSettingsOutputBuilder {
     pub(crate) user_access_logging_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

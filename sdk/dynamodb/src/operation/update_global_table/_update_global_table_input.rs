@@ -28,8 +28,8 @@ impl UpdateGlobalTableInput {
 }
 
 /// A builder for [`UpdateGlobalTableInput`](crate::operation::update_global_table::UpdateGlobalTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGlobalTableInputBuilder {
     pub(crate) global_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) replica_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>>,

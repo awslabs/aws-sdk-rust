@@ -59,8 +59,8 @@ impl IpamDiscoveryFailureReason {
 }
 
 /// A builder for [`IpamDiscoveryFailureReason`](crate::types::IpamDiscoveryFailureReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpamDiscoveryFailureReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::IpamDiscoveryFailureCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl NetworkFirewallMissingExpectedRoutesViolation {
 }
 
 /// A builder for [`NetworkFirewallMissingExpectedRoutesViolation`](crate::types::NetworkFirewallMissingExpectedRoutesViolation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkFirewallMissingExpectedRoutesViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) expected_routes: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>>,

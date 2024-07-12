@@ -27,8 +27,8 @@ impl UpdatePipelineNotificationsOutput {
 }
 
 /// A builder for [`UpdatePipelineNotificationsOutput`](crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePipelineNotificationsOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     _request_id: Option<String>,

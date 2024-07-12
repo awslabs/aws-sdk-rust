@@ -26,8 +26,8 @@ impl GetColumnStatisticsTaskRunOutput {
 }
 
 /// A builder for [`GetColumnStatisticsTaskRunOutput`](crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetColumnStatisticsTaskRunOutputBuilder {
     pub(crate) column_statistics_task_run: ::std::option::Option<crate::types::ColumnStatisticsTaskRun>,
     _request_id: Option<String>,

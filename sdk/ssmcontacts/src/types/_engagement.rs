@@ -54,8 +54,8 @@ impl Engagement {
 }
 
 /// A builder for [`Engagement`](crate::types::Engagement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EngagementBuilder {
     pub(crate) engagement_arn: ::std::option::Option<::std::string::String>,
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,

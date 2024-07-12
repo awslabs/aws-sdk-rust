@@ -23,8 +23,8 @@ impl KpiConditionalFormatting {
 }
 
 /// A builder for [`KpiConditionalFormatting`](crate::types::KpiConditionalFormatting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KpiConditionalFormattingBuilder {
     pub(crate) conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::KpiConditionalFormattingOption>>,
 }

@@ -31,8 +31,8 @@ impl CompleteWorkflowExecutionFailedEventAttributes {
 }
 
 /// A builder for [`CompleteWorkflowExecutionFailedEventAttributes`](crate::types::CompleteWorkflowExecutionFailedEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompleteWorkflowExecutionFailedEventAttributesBuilder {
     pub(crate) cause: ::std::option::Option<crate::types::CompleteWorkflowExecutionFailedCause>,
     pub(crate) decision_task_completed_event_id: ::std::option::Option<i64>,

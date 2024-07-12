@@ -20,8 +20,8 @@ impl DeleteCustomRoutingListenerInput {
 }
 
 /// A builder for [`DeleteCustomRoutingListenerInput`](crate::operation::delete_custom_routing_listener::DeleteCustomRoutingListenerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomRoutingListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl DeleteRotationOverrideOutput {
 }
 
 /// A builder for [`DeleteRotationOverrideOutput`](crate::operation::delete_rotation_override::DeleteRotationOverrideOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRotationOverrideOutputBuilder {
     _request_id: Option<String>,
 }

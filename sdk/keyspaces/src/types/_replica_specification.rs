@@ -43,8 +43,8 @@ impl ReplicaSpecification {
 }
 
 /// A builder for [`ReplicaSpecification`](crate::types::ReplicaSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicaSpecificationBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) read_capacity_units: ::std::option::Option<i64>,

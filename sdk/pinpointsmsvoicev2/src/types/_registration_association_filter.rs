@@ -28,8 +28,8 @@ impl RegistrationAssociationFilter {
 }
 
 /// A builder for [`RegistrationAssociationFilter`](crate::types::RegistrationAssociationFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegistrationAssociationFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::RegistrationAssociationFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

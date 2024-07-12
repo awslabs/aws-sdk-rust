@@ -34,8 +34,8 @@ impl GetUsageTotalsOutput {
 }
 
 /// A builder for [`GetUsageTotalsOutput`](crate::operation::get_usage_totals::GetUsageTotalsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUsageTotalsOutputBuilder {
     pub(crate) time_range: ::std::option::Option<crate::types::TimeRange>,
     pub(crate) usage_totals: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>,

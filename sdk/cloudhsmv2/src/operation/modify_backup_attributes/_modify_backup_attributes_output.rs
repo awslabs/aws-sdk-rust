@@ -26,8 +26,8 @@ impl ModifyBackupAttributesOutput {
 }
 
 /// A builder for [`ModifyBackupAttributesOutput`](crate::operation::modify_backup_attributes::ModifyBackupAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyBackupAttributesOutputBuilder {
     pub(crate) backup: ::std::option::Option<crate::types::Backup>,
     _request_id: Option<String>,

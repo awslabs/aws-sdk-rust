@@ -26,8 +26,8 @@ impl UpdateBatchPredictionInput {
 }
 
 /// A builder for [`UpdateBatchPredictionInput`](crate::operation::update_batch_prediction::UpdateBatchPredictionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBatchPredictionInputBuilder {
     pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
     pub(crate) batch_prediction_name: ::std::option::Option<::std::string::String>,

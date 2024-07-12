@@ -26,8 +26,8 @@ impl SendAlexaOfferToMasterOutput {
 }
 
 /// A builder for [`SendAlexaOfferToMasterOutput`](crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendAlexaOfferToMasterOutputBuilder {
     pub(crate) answer: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

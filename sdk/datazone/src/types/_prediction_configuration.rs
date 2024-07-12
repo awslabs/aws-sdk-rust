@@ -21,8 +21,8 @@ impl PredictionConfiguration {
 }
 
 /// A builder for [`PredictionConfiguration`](crate::types::PredictionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredictionConfigurationBuilder {
     pub(crate) business_name_generation: ::std::option::Option<crate::types::BusinessNameGenerationConfiguration>,
 }

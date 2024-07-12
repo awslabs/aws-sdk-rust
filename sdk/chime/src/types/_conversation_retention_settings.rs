@@ -21,8 +21,8 @@ impl ConversationRetentionSettings {
 }
 
 /// A builder for [`ConversationRetentionSettings`](crate::types::ConversationRetentionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConversationRetentionSettingsBuilder {
     pub(crate) retention_days: ::std::option::Option<i32>,
 }

@@ -23,8 +23,8 @@ impl DescribeDeploymentJobInput {
 }
 
 /// A builder for [`DescribeDeploymentJobInput`](crate::operation::describe_deployment_job::DescribeDeploymentJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeploymentJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }

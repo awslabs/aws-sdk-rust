@@ -32,8 +32,8 @@ impl CreatePresignedMlflowTrackingServerUrlInput {
 }
 
 /// A builder for [`CreatePresignedMlflowTrackingServerUrlInput`](crate::operation::create_presigned_mlflow_tracking_server_url::CreatePresignedMlflowTrackingServerUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePresignedMlflowTrackingServerUrlInputBuilder {
     pub(crate) tracking_server_name: ::std::option::Option<::std::string::String>,
     pub(crate) expires_in_seconds: ::std::option::Option<i32>,

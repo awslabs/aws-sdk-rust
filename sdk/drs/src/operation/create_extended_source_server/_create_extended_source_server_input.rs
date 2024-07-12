@@ -34,8 +34,8 @@ impl CreateExtendedSourceServerInput {
 }
 
 /// A builder for [`CreateExtendedSourceServerInput`](crate::operation::create_extended_source_server::CreateExtendedSourceServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateExtendedSourceServerInputBuilder {
     pub(crate) source_server_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

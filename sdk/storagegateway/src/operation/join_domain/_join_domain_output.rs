@@ -65,8 +65,8 @@ impl JoinDomainOutput {
 }
 
 /// A builder for [`JoinDomainOutput`](crate::operation::join_domain::JoinDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JoinDomainOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) active_directory_status: ::std::option::Option<crate::types::ActiveDirectoryStatus>,

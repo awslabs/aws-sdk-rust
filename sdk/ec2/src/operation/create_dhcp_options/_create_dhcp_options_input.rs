@@ -36,8 +36,8 @@ impl CreateDhcpOptionsInput {
 }
 
 /// A builder for [`CreateDhcpOptionsInput`](crate::operation::create_dhcp_options::CreateDhcpOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDhcpOptionsInputBuilder {
     pub(crate) dhcp_configurations: ::std::option::Option<::std::vec::Vec<crate::types::NewDhcpConfiguration>>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,

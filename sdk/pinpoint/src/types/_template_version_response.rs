@@ -57,8 +57,8 @@ impl TemplateVersionResponse {
 }
 
 /// A builder for [`TemplateVersionResponse`](crate::types::TemplateVersionResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateVersionResponseBuilder {
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
     pub(crate) default_substitutions: ::std::option::Option<::std::string::String>,

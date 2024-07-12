@@ -63,8 +63,8 @@ impl ResponseItem {
 }
 
 /// A builder for [`ResponseItem`](crate::types::ResponseItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ResponseItemBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResponseItemType>,
     pub(crate) web_url: ::std::option::Option<::std::string::String>,

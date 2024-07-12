@@ -34,8 +34,8 @@ impl IntentFilter {
 }
 
 /// A builder for [`IntentFilter`](crate::types::IntentFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntentFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::IntentFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

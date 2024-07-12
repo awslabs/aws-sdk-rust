@@ -71,8 +71,8 @@ impl DescribeLocationObjectStorageOutput {
 }
 
 /// A builder for [`DescribeLocationObjectStorageOutput`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationObjectStorageOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl GetDomainStatisticsReportOutput {
 }
 
 /// A builder for [`GetDomainStatisticsReportOutput`](crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDomainStatisticsReportOutputBuilder {
     pub(crate) overall_volume: ::std::option::Option<crate::types::OverallVolume>,
     pub(crate) daily_volumes: ::std::option::Option<::std::vec::Vec<crate::types::DailyVolume>>,

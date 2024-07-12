@@ -26,8 +26,8 @@ impl ListPhoneNumberOrdersInput {
 }
 
 /// A builder for [`ListPhoneNumberOrdersInput`](crate::operation::list_phone_number_orders::ListPhoneNumberOrdersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPhoneNumberOrdersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

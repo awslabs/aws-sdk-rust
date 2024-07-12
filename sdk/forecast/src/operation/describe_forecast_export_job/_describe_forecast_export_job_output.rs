@@ -122,8 +122,8 @@ impl DescribeForecastExportJobOutput {
 }
 
 /// A builder for [`DescribeForecastExportJobOutput`](crate::operation::describe_forecast_export_job::DescribeForecastExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeForecastExportJobOutputBuilder {
     pub(crate) forecast_export_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_export_job_name: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetDataQualityRulesetInput {
 }
 
 /// A builder for [`GetDataQualityRulesetInput`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataQualityRulesetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

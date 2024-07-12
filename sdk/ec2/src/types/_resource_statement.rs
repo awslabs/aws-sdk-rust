@@ -31,8 +31,8 @@ impl ResourceStatement {
 }
 
 /// A builder for [`ResourceStatement`](crate::types::ResourceStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceStatementBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -33,8 +33,8 @@ impl UnprocessedAutomationRule {
 }
 
 /// A builder for [`UnprocessedAutomationRule`](crate::types::UnprocessedAutomationRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnprocessedAutomationRuleBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<i32>,

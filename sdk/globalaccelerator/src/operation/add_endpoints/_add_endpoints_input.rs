@@ -28,8 +28,8 @@ impl AddEndpointsInput {
 }
 
 /// A builder for [`AddEndpointsInput`](crate::operation::add_endpoints::AddEndpointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddEndpointsInputBuilder {
     pub(crate) endpoint_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,

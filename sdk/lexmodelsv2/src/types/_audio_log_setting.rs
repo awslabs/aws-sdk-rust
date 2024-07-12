@@ -33,8 +33,8 @@ impl AudioLogSetting {
 }
 
 /// A builder for [`AudioLogSetting`](crate::types::AudioLogSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioLogSettingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) destination: ::std::option::Option<crate::types::AudioLogDestination>,

@@ -26,8 +26,8 @@ impl ModifyTenantDatabaseOutput {
 }
 
 /// A builder for [`ModifyTenantDatabaseOutput`](crate::operation::modify_tenant_database::ModifyTenantDatabaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTenantDatabaseOutputBuilder {
     pub(crate) tenant_database: ::std::option::Option<crate::types::TenantDatabase>,
     _request_id: Option<String>,

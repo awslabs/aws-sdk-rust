@@ -21,8 +21,8 @@ impl S3ClassificationScope {
 }
 
 /// A builder for [`S3ClassificationScope`](crate::types::S3ClassificationScope).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ClassificationScopeBuilder {
     pub(crate) excludes: ::std::option::Option<crate::types::S3ClassificationScopeExclusion>,
 }

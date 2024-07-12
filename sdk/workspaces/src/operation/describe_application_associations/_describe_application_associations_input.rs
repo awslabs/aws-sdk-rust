@@ -40,8 +40,8 @@ impl DescribeApplicationAssociationsInput {
 }
 
 /// A builder for [`DescribeApplicationAssociationsInput`](crate::operation::describe_application_associations::DescribeApplicationAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeApplicationAssociationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

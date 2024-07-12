@@ -11,8 +11,8 @@ impl GetCallerIdentityInput {
 }
 
 /// A builder for [`GetCallerIdentityInput`](crate::operation::get_caller_identity::GetCallerIdentityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCallerIdentityInputBuilder {}
 impl GetCallerIdentityInputBuilder {
     /// Consumes the builder and constructs a [`GetCallerIdentityInput`](crate::operation::get_caller_identity::GetCallerIdentityInput).

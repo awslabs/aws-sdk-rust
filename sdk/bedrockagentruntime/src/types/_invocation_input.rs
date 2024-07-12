@@ -56,8 +56,8 @@ impl InvocationInput {
 }
 
 /// A builder for [`InvocationInput`](crate::types::InvocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvocationInputBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) invocation_type: ::std::option::Option<crate::types::InvocationType>,

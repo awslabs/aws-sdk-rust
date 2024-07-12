@@ -28,8 +28,8 @@ impl FormDataTypeConfig {
 }
 
 /// A builder for [`FormDataTypeConfig`](crate::types::FormDataTypeConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FormDataTypeConfigBuilder {
     pub(crate) data_source_type: ::std::option::Option<crate::types::FormDataSourceType>,
     pub(crate) data_type_name: ::std::option::Option<::std::string::String>,

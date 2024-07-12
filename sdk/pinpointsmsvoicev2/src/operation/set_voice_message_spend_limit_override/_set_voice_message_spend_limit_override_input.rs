@@ -20,8 +20,8 @@ impl SetVoiceMessageSpendLimitOverrideInput {
 }
 
 /// A builder for [`SetVoiceMessageSpendLimitOverrideInput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetVoiceMessageSpendLimitOverrideInputBuilder {
     pub(crate) monthly_limit: ::std::option::Option<i64>,
 }

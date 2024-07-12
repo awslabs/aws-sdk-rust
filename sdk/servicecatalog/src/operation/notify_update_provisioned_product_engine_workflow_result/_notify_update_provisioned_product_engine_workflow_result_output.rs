@@ -18,8 +18,8 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultOutput {
 }
 
 /// A builder for [`NotifyUpdateProvisionedProductEngineWorkflowResultOutput`](crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyUpdateProvisionedProductEngineWorkflowResultOutputBuilder {
     _request_id: Option<String>,
 }

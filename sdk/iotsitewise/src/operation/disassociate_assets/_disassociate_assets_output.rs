@@ -18,8 +18,8 @@ impl DisassociateAssetsOutput {
 }
 
 /// A builder for [`DisassociateAssetsOutput`](crate::operation::disassociate_assets::DisassociateAssetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateAssetsOutputBuilder {
     _request_id: Option<String>,
 }

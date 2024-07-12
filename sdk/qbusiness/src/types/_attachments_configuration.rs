@@ -21,8 +21,8 @@ impl AttachmentsConfiguration {
 }
 
 /// A builder for [`AttachmentsConfiguration`](crate::types::AttachmentsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachmentsConfigurationBuilder {
     pub(crate) attachments_control_mode: ::std::option::Option<crate::types::AttachmentsControlMode>,
 }

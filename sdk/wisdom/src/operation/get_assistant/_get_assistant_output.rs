@@ -26,8 +26,8 @@ impl GetAssistantOutput {
 }
 
 /// A builder for [`GetAssistantOutput`](crate::operation::get_assistant::GetAssistantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssistantOutputBuilder {
     pub(crate) assistant: ::std::option::Option<crate::types::AssistantData>,
     _request_id: Option<String>,

@@ -52,8 +52,8 @@ impl ListPredictorBacktestExportJobsInput {
 }
 
 /// A builder for [`ListPredictorBacktestExportJobsInput`](crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPredictorBacktestExportJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

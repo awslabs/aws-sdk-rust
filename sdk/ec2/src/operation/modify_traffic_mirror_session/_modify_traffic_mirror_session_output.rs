@@ -26,8 +26,8 @@ impl ModifyTrafficMirrorSessionOutput {
 }
 
 /// A builder for [`ModifyTrafficMirrorSessionOutput`](crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTrafficMirrorSessionOutputBuilder {
     pub(crate) traffic_mirror_session: ::std::option::Option<crate::types::TrafficMirrorSession>,
     _request_id: Option<String>,

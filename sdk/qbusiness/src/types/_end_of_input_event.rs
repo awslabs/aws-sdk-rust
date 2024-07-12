@@ -12,8 +12,8 @@ impl EndOfInputEvent {
 }
 
 /// A builder for [`EndOfInputEvent`](crate::types::EndOfInputEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndOfInputEventBuilder {}
 impl EndOfInputEventBuilder {
     /// Consumes the builder and constructs a [`EndOfInputEvent`](crate::types::EndOfInputEvent).

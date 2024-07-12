@@ -21,8 +21,8 @@ impl LambdaEffectiveRecommendationPreferences {
 }
 
 /// A builder for [`LambdaEffectiveRecommendationPreferences`](crate::types::LambdaEffectiveRecommendationPreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaEffectiveRecommendationPreferencesBuilder {
     pub(crate) savings_estimation_mode: ::std::option::Option<crate::types::LambdaSavingsEstimationMode>,
 }

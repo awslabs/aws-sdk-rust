@@ -45,8 +45,8 @@ impl CloudWatchLogsConfig {
 }
 
 /// A builder for [`CloudWatchLogsConfig`](crate::types::CloudWatchLogsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchLogsConfigBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LogsConfigStatusType>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,

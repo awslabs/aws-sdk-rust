@@ -32,8 +32,8 @@ impl UpdateJobQueueOutput {
 }
 
 /// A builder for [`UpdateJobQueueOutput`](crate::operation::update_job_queue::UpdateJobQueueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateJobQueueOutputBuilder {
     pub(crate) job_queue_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_queue_arn: ::std::option::Option<::std::string::String>,

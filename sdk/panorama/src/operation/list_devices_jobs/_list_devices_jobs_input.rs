@@ -32,8 +32,8 @@ impl ListDevicesJobsInput {
 }
 
 /// A builder for [`ListDevicesJobsInput`](crate::operation::list_devices_jobs::ListDevicesJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevicesJobsInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

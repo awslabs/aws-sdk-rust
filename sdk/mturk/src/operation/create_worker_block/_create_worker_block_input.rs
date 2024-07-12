@@ -26,8 +26,8 @@ impl CreateWorkerBlockInput {
 }
 
 /// A builder for [`CreateWorkerBlockInput`](crate::operation::create_worker_block::CreateWorkerBlockInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkerBlockInputBuilder {
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

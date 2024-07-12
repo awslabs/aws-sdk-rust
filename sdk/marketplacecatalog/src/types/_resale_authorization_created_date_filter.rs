@@ -29,8 +29,8 @@ impl ResaleAuthorizationCreatedDateFilter {
 }
 
 /// A builder for [`ResaleAuthorizationCreatedDateFilter`](crate::types::ResaleAuthorizationCreatedDateFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResaleAuthorizationCreatedDateFilterBuilder {
     pub(crate) date_range: ::std::option::Option<crate::types::ResaleAuthorizationCreatedDateFilterDateRange>,
     pub(crate) value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -26,8 +26,8 @@ impl DisableIpamOrganizationAdminAccountInput {
 }
 
 /// A builder for [`DisableIpamOrganizationAdminAccountInput`](crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableIpamOrganizationAdminAccountInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) delegated_admin_account_id: ::std::option::Option<::std::string::String>,

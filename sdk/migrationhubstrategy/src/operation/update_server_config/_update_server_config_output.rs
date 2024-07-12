@@ -18,8 +18,8 @@ impl UpdateServerConfigOutput {
 }
 
 /// A builder for [`UpdateServerConfigOutput`](crate::operation::update_server_config::UpdateServerConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServerConfigOutputBuilder {
     _request_id: Option<String>,
 }

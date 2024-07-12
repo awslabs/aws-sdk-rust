@@ -29,8 +29,8 @@ impl AddFlowOutputsInput {
 }
 
 /// A builder for [`AddFlowOutputsInput`](crate::operation::add_flow_outputs::AddFlowOutputsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddFlowOutputsInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>,

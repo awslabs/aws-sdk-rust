@@ -50,8 +50,8 @@ impl EnableFastLaunchInput {
 }
 
 /// A builder for [`EnableFastLaunchInput`](crate::operation::enable_fast_launch::EnableFastLaunchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableFastLaunchInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,

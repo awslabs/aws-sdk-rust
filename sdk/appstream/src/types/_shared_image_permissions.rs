@@ -27,8 +27,8 @@ impl SharedImagePermissions {
 }
 
 /// A builder for [`SharedImagePermissions`](crate::types::SharedImagePermissions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SharedImagePermissionsBuilder {
     pub(crate) shared_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_permissions: ::std::option::Option<crate::types::ImagePermissions>,

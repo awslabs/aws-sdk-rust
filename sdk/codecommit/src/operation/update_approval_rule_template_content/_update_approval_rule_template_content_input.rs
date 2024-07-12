@@ -32,8 +32,8 @@ impl UpdateApprovalRuleTemplateContentInput {
 }
 
 /// A builder for [`UpdateApprovalRuleTemplateContentInput`](crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApprovalRuleTemplateContentInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_rule_content: ::std::option::Option<::std::string::String>,

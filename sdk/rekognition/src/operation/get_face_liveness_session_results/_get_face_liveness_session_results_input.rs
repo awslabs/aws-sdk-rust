@@ -20,8 +20,8 @@ impl GetFaceLivenessSessionResultsInput {
 }
 
 /// A builder for [`GetFaceLivenessSessionResultsInput`](crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFaceLivenessSessionResultsInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }

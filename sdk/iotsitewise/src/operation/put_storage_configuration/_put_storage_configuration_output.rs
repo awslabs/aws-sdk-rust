@@ -92,8 +92,8 @@ impl PutStorageConfigurationOutput {
 }
 
 /// A builder for [`PutStorageConfigurationOutput`](crate::operation::put_storage_configuration::PutStorageConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutStorageConfigurationOutputBuilder {
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
     pub(crate) multi_layer_storage: ::std::option::Option<crate::types::MultiLayerStorage>,

@@ -34,8 +34,8 @@ impl CreateGraphSnapshotInput {
 }
 
 /// A builder for [`CreateGraphSnapshotInput`](crate::operation::create_graph_snapshot::CreateGraphSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGraphSnapshotInputBuilder {
     pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl MaintenanceCreateSettings {
 }
 
 /// A builder for [`MaintenanceCreateSettings`](crate::types::MaintenanceCreateSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MaintenanceCreateSettingsBuilder {
     pub(crate) maintenance_day: ::std::option::Option<crate::types::MaintenanceDay>,
     pub(crate) maintenance_start_time: ::std::option::Option<::std::string::String>,

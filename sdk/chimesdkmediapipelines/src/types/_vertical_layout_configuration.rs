@@ -39,8 +39,8 @@ impl VerticalLayoutConfiguration {
 }
 
 /// A builder for [`VerticalLayoutConfiguration`](crate::types::VerticalLayoutConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerticalLayoutConfigurationBuilder {
     pub(crate) tile_order: ::std::option::Option<crate::types::TileOrder>,
     pub(crate) tile_position: ::std::option::Option<crate::types::VerticalTilePosition>,

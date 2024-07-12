@@ -27,8 +27,8 @@ impl GetSshPublicKeyOutput {
 }
 
 /// A builder for [`GetSshPublicKeyOutput`](crate::operation::get_ssh_public_key::GetSshPublicKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSshPublicKeyOutputBuilder {
     pub(crate) ssh_public_key: ::std::option::Option<crate::types::SshPublicKey>,
     _request_id: Option<String>,

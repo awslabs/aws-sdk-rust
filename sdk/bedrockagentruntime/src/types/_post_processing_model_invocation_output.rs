@@ -35,8 +35,8 @@ impl PostProcessingModelInvocationOutput {
 }
 
 /// A builder for [`PostProcessingModelInvocationOutput`](crate::types::PostProcessingModelInvocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PostProcessingModelInvocationOutputBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) parsed_response: ::std::option::Option<crate::types::PostProcessingParsedResponse>,

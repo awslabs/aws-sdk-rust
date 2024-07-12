@@ -34,8 +34,8 @@ impl DescribeConformancePackStatusOutput {
 }
 
 /// A builder for [`DescribeConformancePackStatusOutput`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConformancePackStatusOutputBuilder {
     pub(crate) conformance_pack_status_details: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackStatusDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

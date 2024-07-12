@@ -32,8 +32,8 @@ impl ListTemplateGroupAccessControlEntriesInput {
 }
 
 /// A builder for [`ListTemplateGroupAccessControlEntriesInput`](crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateGroupAccessControlEntriesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

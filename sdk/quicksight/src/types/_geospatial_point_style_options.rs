@@ -33,8 +33,8 @@ impl GeospatialPointStyleOptions {
 }
 
 /// A builder for [`GeospatialPointStyleOptions`](crate::types::GeospatialPointStyleOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeospatialPointStyleOptionsBuilder {
     pub(crate) selected_point_style: ::std::option::Option<crate::types::GeospatialSelectedPointStyle>,
     pub(crate) cluster_marker_configuration: ::std::option::Option<crate::types::ClusterMarkerConfiguration>,

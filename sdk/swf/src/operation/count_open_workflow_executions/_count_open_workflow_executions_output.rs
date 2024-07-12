@@ -33,8 +33,8 @@ impl CountOpenWorkflowExecutionsOutput {
 }
 
 /// A builder for [`CountOpenWorkflowExecutionsOutput`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CountOpenWorkflowExecutionsOutputBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) truncated: ::std::option::Option<bool>,

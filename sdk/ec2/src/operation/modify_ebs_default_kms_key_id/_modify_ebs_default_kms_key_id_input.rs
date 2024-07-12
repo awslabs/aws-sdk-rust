@@ -52,8 +52,8 @@ impl ModifyEbsDefaultKmsKeyIdInput {
 }
 
 /// A builder for [`ModifyEbsDefaultKmsKeyIdInput`](crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyEbsDefaultKmsKeyIdInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

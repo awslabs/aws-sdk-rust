@@ -39,8 +39,8 @@ impl GetVpnConnectionDeviceSampleConfigurationInput {
 }
 
 /// A builder for [`GetVpnConnectionDeviceSampleConfigurationInput`](crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVpnConnectionDeviceSampleConfigurationInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_connection_device_type_id: ::std::option::Option<::std::string::String>,

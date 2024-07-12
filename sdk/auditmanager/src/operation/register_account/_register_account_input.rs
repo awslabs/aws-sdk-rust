@@ -26,8 +26,8 @@ impl RegisterAccountInput {
 }
 
 /// A builder for [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterAccountInputBuilder {
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) delegated_admin_account: ::std::option::Option<::std::string::String>,

@@ -47,8 +47,8 @@ impl TransportStreamProgram {
 }
 
 /// A builder for [`TransportStreamProgram`](crate::types::TransportStreamProgram).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransportStreamProgramBuilder {
     pub(crate) pcr_pid: ::std::option::Option<i32>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,

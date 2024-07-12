@@ -22,8 +22,8 @@ impl MonitorConfig {
 }
 
 /// A builder for [`MonitorConfig`](crate::types::MonitorConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitorConfigBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
 }

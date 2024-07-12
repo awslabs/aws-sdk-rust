@@ -21,8 +21,8 @@ impl DeleteConfigurationSetTrackingOptionsInput {
 }
 
 /// A builder for [`DeleteConfigurationSetTrackingOptionsInput`](crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfigurationSetTrackingOptionsInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }

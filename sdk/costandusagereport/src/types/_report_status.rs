@@ -27,8 +27,8 @@ impl ReportStatus {
 }
 
 /// A builder for [`ReportStatus`](crate::types::ReportStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportStatusBuilder {
     pub(crate) last_delivery: ::std::option::Option<::std::string::String>,
     pub(crate) last_status: ::std::option::Option<crate::types::LastStatus>,

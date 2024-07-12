@@ -19,8 +19,8 @@ impl UpdateOrgEc2DeepInspectionConfigurationOutput {
 }
 
 /// A builder for [`UpdateOrgEc2DeepInspectionConfigurationOutput`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOrgEc2DeepInspectionConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

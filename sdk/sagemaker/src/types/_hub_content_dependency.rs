@@ -27,8 +27,8 @@ impl HubContentDependency {
 }
 
 /// A builder for [`HubContentDependency`](crate::types::HubContentDependency).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HubContentDependencyBuilder {
     pub(crate) dependency_origin_path: ::std::option::Option<::std::string::String>,
     pub(crate) dependency_copy_path: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl VisibilityConfig {
 }
 
 /// A builder for [`VisibilityConfig`](crate::types::VisibilityConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VisibilityConfigBuilder {
     pub(crate) sampled_requests_enabled: ::std::option::Option<bool>,
     pub(crate) cloud_watch_metrics_enabled: ::std::option::Option<bool>,

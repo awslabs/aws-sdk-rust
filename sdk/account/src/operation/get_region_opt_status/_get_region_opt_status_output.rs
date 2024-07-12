@@ -32,8 +32,8 @@ impl GetRegionOptStatusOutput {
 }
 
 /// A builder for [`GetRegionOptStatusOutput`](crate::operation::get_region_opt_status::GetRegionOptStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegionOptStatusOutputBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) region_opt_status: ::std::option::Option<crate::types::RegionOptStatus>,

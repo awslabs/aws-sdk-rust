@@ -50,8 +50,8 @@ impl DeletePortfolioShareInput {
 }
 
 /// A builder for [`DeletePortfolioShareInput`](crate::operation::delete_portfolio_share::DeletePortfolioShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePortfolioShareInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,

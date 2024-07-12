@@ -42,8 +42,8 @@ impl ListGroupsInput {
 }
 
 /// A builder for [`ListGroupsInput`](crate::operation::list_groups::ListGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupsInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

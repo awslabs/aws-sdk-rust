@@ -33,8 +33,8 @@ impl VpcInfoPeeringOptionsDetails {
 }
 
 /// A builder for [`VpcInfoPeeringOptionsDetails`](crate::types::VpcInfoPeeringOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcInfoPeeringOptionsDetailsBuilder {
     pub(crate) allow_dns_resolution_from_remote_vpc: ::std::option::Option<bool>,
     pub(crate) allow_egress_from_local_classic_link_to_remote_vpc: ::std::option::Option<bool>,

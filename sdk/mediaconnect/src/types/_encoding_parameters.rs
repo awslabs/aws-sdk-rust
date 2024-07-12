@@ -27,8 +27,8 @@ impl EncodingParameters {
 }
 
 /// A builder for [`EncodingParameters`](crate::types::EncodingParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncodingParametersBuilder {
     pub(crate) compression_factor: ::std::option::Option<f64>,
     pub(crate) encoder_profile: ::std::option::Option<crate::types::EncoderProfile>,

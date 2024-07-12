@@ -23,8 +23,8 @@ impl AccountRecoverySettingType {
 }
 
 /// A builder for [`AccountRecoverySettingType`](crate::types::AccountRecoverySettingType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountRecoverySettingTypeBuilder {
     pub(crate) recovery_mechanisms: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryOptionType>>,
 }

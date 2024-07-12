@@ -52,8 +52,8 @@ impl ListBucketInventoryConfigurationsOutput {
 }
 
 /// A builder for [`ListBucketInventoryConfigurationsOutput`](crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBucketInventoryConfigurationsOutputBuilder {
     pub(crate) continuation_token: ::std::option::Option<::std::string::String>,
     pub(crate) inventory_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::InventoryConfiguration>>,

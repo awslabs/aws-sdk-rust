@@ -38,8 +38,8 @@ impl GetBuiltinIntentsInput {
 }
 
 /// A builder for [`GetBuiltinIntentsInput`](crate::operation::get_builtin_intents::GetBuiltinIntentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBuiltinIntentsInputBuilder {
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,
     pub(crate) signature_contains: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ListFieldLevelEncryptionConfigsOutput {
 }
 
 /// A builder for [`ListFieldLevelEncryptionConfigsOutput`](crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFieldLevelEncryptionConfigsOutputBuilder {
     pub(crate) field_level_encryption_list: ::std::option::Option<crate::types::FieldLevelEncryptionList>,
     _request_id: Option<String>,

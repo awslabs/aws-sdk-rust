@@ -33,8 +33,8 @@ impl MessageBody {
 }
 
 /// A builder for [`MessageBody`](crate::types::MessageBody).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageBodyBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) html: ::std::option::Option<::std::string::String>,

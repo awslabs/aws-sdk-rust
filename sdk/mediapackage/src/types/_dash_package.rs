@@ -115,8 +115,8 @@ impl DashPackage {
 }
 
 /// A builder for [`DashPackage`](crate::types::DashPackage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashPackageBuilder {
     pub(crate) ad_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,
     pub(crate) ads_on_delivery_restrictions: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,

@@ -57,8 +57,8 @@ impl BrokerInstanceOption {
 }
 
 /// A builder for [`BrokerInstanceOption`](crate::types::BrokerInstanceOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BrokerInstanceOptionBuilder {
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,

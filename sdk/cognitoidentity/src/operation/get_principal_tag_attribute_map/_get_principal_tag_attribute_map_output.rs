@@ -44,8 +44,8 @@ impl GetPrincipalTagAttributeMapOutput {
 }
 
 /// A builder for [`GetPrincipalTagAttributeMapOutput`](crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPrincipalTagAttributeMapOutputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_name: ::std::option::Option<::std::string::String>,

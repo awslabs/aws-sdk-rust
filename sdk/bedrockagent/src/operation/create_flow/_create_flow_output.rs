@@ -91,8 +91,8 @@ impl CreateFlowOutput {
 }
 
 /// A builder for [`CreateFlowOutput`](crate::operation::create_flow::CreateFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFlowOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

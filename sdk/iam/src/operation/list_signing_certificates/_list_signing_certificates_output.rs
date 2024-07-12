@@ -40,8 +40,8 @@ impl ListSigningCertificatesOutput {
 }
 
 /// A builder for [`ListSigningCertificatesOutput`](crate::operation::list_signing_certificates::ListSigningCertificatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSigningCertificatesOutputBuilder {
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::SigningCertificate>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

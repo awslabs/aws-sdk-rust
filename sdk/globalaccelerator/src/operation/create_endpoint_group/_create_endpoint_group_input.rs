@@ -90,8 +90,8 @@ impl CreateEndpointGroupInput {
 }
 
 /// A builder for [`CreateEndpointGroupInput`](crate::operation::create_endpoint_group::CreateEndpointGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEndpointGroupInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_group_region: ::std::option::Option<::std::string::String>,

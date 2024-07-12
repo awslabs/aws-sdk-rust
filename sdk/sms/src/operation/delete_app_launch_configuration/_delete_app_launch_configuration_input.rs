@@ -20,8 +20,8 @@ impl DeleteAppLaunchConfigurationInput {
 }
 
 /// A builder for [`DeleteAppLaunchConfigurationInput`](crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppLaunchConfigurationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }

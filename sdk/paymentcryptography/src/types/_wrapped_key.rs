@@ -60,8 +60,8 @@ impl WrappedKey {
 }
 
 /// A builder for [`WrappedKey`](crate::types::WrappedKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct WrappedKeyBuilder {
     pub(crate) wrapping_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) wrapped_key_material_format: ::std::option::Option<crate::types::WrappedKeyMaterialFormat>,

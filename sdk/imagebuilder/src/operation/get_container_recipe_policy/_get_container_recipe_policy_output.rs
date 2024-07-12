@@ -32,8 +32,8 @@ impl GetContainerRecipePolicyOutput {
 }
 
 /// A builder for [`GetContainerRecipePolicyOutput`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerRecipePolicyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

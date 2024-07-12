@@ -123,8 +123,8 @@ impl GetDevicePoolCompatibilityInput {
 }
 
 /// A builder for [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDevicePoolCompatibilityInputBuilder {
     pub(crate) device_pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,

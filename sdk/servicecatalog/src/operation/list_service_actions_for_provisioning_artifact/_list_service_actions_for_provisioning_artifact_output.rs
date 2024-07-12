@@ -35,8 +35,8 @@ impl ListServiceActionsForProvisioningArtifactOutput {
 }
 
 /// A builder for [`ListServiceActionsForProvisioningArtifactOutput`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceActionsForProvisioningArtifactOutputBuilder {
     pub(crate) service_action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

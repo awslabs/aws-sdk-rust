@@ -26,8 +26,8 @@ impl AllocateIpamPoolCidrOutput {
 }
 
 /// A builder for [`AllocateIpamPoolCidrOutput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllocateIpamPoolCidrOutputBuilder {
     pub(crate) ipam_pool_allocation: ::std::option::Option<crate::types::IpamPoolAllocation>,
     _request_id: Option<String>,

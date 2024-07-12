@@ -65,8 +65,8 @@ impl Transcript {
 }
 
 /// A builder for [`Transcript`](crate::types::Transcript).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranscriptBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,

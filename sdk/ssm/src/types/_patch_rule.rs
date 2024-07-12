@@ -47,8 +47,8 @@ impl PatchRule {
 }
 
 /// A builder for [`PatchRule`](crate::types::PatchRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PatchRuleBuilder {
     pub(crate) patch_filter_group: ::std::option::Option<crate::types::PatchFilterGroup>,
     pub(crate) compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,

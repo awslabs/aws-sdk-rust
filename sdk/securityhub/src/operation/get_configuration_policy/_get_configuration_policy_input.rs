@@ -20,8 +20,8 @@ impl GetConfigurationPolicyInput {
 }
 
 /// A builder for [`GetConfigurationPolicyInput`](crate::operation::get_configuration_policy::GetConfigurationPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfigurationPolicyInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

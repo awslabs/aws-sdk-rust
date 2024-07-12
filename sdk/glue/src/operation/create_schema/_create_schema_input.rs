@@ -96,8 +96,8 @@ impl CreateSchemaInput {
 }
 
 /// A builder for [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSchemaInputBuilder {
     pub(crate) registry_id: ::std::option::Option<crate::types::RegistryId>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,

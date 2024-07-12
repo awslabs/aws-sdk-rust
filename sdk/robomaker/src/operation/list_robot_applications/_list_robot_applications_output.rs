@@ -34,8 +34,8 @@ impl ListRobotApplicationsOutput {
 }
 
 /// A builder for [`ListRobotApplicationsOutput`](crate::operation::list_robot_applications::ListRobotApplicationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRobotApplicationsOutputBuilder {
     pub(crate) robot_application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

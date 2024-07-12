@@ -42,8 +42,8 @@ impl CancelDomainConfigChangeOutput {
 }
 
 /// A builder for [`CancelDomainConfigChangeOutput`](crate::operation::cancel_domain_config_change::CancelDomainConfigChangeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelDomainConfigChangeOutputBuilder {
     pub(crate) cancelled_change_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cancelled_change_properties: ::std::option::Option<::std::vec::Vec<crate::types::CancelledChangeProperty>>,

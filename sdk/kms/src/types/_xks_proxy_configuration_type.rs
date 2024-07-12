@@ -60,8 +60,8 @@ impl XksProxyConfigurationType {
 }
 
 /// A builder for [`XksProxyConfigurationType`](crate::types::XksProxyConfigurationType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct XksProxyConfigurationTypeBuilder {
     pub(crate) connectivity: ::std::option::Option<crate::types::XksProxyConnectivityType>,
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,

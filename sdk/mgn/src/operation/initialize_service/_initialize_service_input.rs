@@ -11,8 +11,8 @@ impl InitializeServiceInput {
 }
 
 /// A builder for [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InitializeServiceInputBuilder {}
 impl InitializeServiceInputBuilder {
     /// Consumes the builder and constructs a [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).

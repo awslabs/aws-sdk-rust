@@ -22,8 +22,8 @@ impl EstablishedMultiRegionAccessPointPolicy {
 }
 
 /// A builder for [`EstablishedMultiRegionAccessPointPolicy`](crate::types::EstablishedMultiRegionAccessPointPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EstablishedMultiRegionAccessPointPolicyBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }

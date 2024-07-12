@@ -38,8 +38,8 @@ impl UpdateAppImageConfigInput {
 }
 
 /// A builder for [`UpdateAppImageConfigInput`](crate::operation::update_app_image_config::UpdateAppImageConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAppImageConfigInputBuilder {
     pub(crate) app_image_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,

@@ -27,8 +27,8 @@ impl SimulationAppPortMapping {
 }
 
 /// A builder for [`SimulationAppPortMapping`](crate::types::SimulationAppPortMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimulationAppPortMappingBuilder {
     pub(crate) declared: ::std::option::Option<i32>,
     pub(crate) actual: ::std::option::Option<i32>,

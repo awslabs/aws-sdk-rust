@@ -21,8 +21,8 @@ impl LineChartFieldWells {
 }
 
 /// A builder for [`LineChartFieldWells`](crate::types::LineChartFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineChartFieldWellsBuilder {
     pub(crate) line_chart_aggregated_field_wells: ::std::option::Option<crate::types::LineChartAggregatedFieldWells>,
 }

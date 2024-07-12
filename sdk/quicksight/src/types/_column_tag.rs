@@ -27,8 +27,8 @@ impl ColumnTag {
 }
 
 /// A builder for [`ColumnTag`](crate::types::ColumnTag).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnTagBuilder {
     pub(crate) column_geographic_role: ::std::option::Option<crate::types::GeoSpatialDataRole>,
     pub(crate) column_description: ::std::option::Option<crate::types::ColumnDescription>,

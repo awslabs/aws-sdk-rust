@@ -33,8 +33,8 @@ impl UpdateMonitorOutput {
 }
 
 /// A builder for [`UpdateMonitorOutput`](crate::operation::update_monitor::UpdateMonitorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMonitorOutputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::MonitorConfigState>,

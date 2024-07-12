@@ -21,8 +21,8 @@ impl RadarChartSeriesSettings {
 }
 
 /// A builder for [`RadarChartSeriesSettings`](crate::types::RadarChartSeriesSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RadarChartSeriesSettingsBuilder {
     pub(crate) area_style_settings: ::std::option::Option<crate::types::RadarChartAreaStyleSettings>,
 }

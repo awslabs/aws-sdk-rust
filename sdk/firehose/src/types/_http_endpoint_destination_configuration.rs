@@ -75,8 +75,8 @@ impl HttpEndpointDestinationConfiguration {
 }
 
 /// A builder for [`HttpEndpointDestinationConfiguration`](crate::types::HttpEndpointDestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpEndpointDestinationConfigurationBuilder {
     pub(crate) endpoint_configuration: ::std::option::Option<crate::types::HttpEndpointConfiguration>,
     pub(crate) buffering_hints: ::std::option::Option<crate::types::HttpEndpointBufferingHints>,

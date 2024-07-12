@@ -79,8 +79,8 @@ impl LaunchTemplateInstanceMetadataOptions {
 }
 
 /// A builder for [`LaunchTemplateInstanceMetadataOptions`](crate::types::LaunchTemplateInstanceMetadataOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateInstanceMetadataOptionsBuilder {
     pub(crate) state: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptionsState>,
     pub(crate) http_tokens: ::std::option::Option<crate::types::LaunchTemplateHttpTokensState>,

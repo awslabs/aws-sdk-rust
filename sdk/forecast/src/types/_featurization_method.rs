@@ -76,8 +76,8 @@ impl FeaturizationMethod {
 }
 
 /// A builder for [`FeaturizationMethod`](crate::types::FeaturizationMethod).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FeaturizationMethodBuilder {
     pub(crate) featurization_method_name: ::std::option::Option<crate::types::FeaturizationMethodName>,
     pub(crate) featurization_method_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

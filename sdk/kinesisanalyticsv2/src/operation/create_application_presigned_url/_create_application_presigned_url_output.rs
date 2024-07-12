@@ -26,8 +26,8 @@ impl CreateApplicationPresignedUrlOutput {
 }
 
 /// A builder for [`CreateApplicationPresignedUrlOutput`](crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateApplicationPresignedUrlOutputBuilder {
     pub(crate) authorized_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

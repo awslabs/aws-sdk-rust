@@ -39,8 +39,8 @@ impl GameSessionDetail {
 }
 
 /// A builder for [`GameSessionDetail`](crate::types::GameSessionDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GameSessionDetailBuilder {
     pub(crate) game_session: ::std::option::Option<crate::types::GameSession>,
     pub(crate) protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,

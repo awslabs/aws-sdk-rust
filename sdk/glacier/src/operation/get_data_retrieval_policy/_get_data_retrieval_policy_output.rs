@@ -27,8 +27,8 @@ impl GetDataRetrievalPolicyOutput {
 }
 
 /// A builder for [`GetDataRetrievalPolicyOutput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataRetrievalPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::DataRetrievalPolicy>,
     _request_id: Option<String>,

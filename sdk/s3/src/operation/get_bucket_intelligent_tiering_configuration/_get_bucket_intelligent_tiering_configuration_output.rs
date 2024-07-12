@@ -33,8 +33,8 @@ impl GetBucketIntelligentTieringConfigurationOutput {
 }
 
 /// A builder for [`GetBucketIntelligentTieringConfigurationOutput`](crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketIntelligentTieringConfigurationOutputBuilder {
     pub(crate) intelligent_tiering_configuration: ::std::option::Option<crate::types::IntelligentTieringConfiguration>,
     _extended_request_id: Option<String>,

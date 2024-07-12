@@ -93,8 +93,8 @@ impl StackSetOperationSummary {
 }
 
 /// A builder for [`StackSetOperationSummary`](crate::types::StackSetOperationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StackSetOperationSummaryBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::StackSetOperationAction>,

@@ -20,8 +20,8 @@ impl GetVocabularyFilterInput {
 }
 
 /// A builder for [`GetVocabularyFilterInput`](crate::operation::get_vocabulary_filter::GetVocabularyFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVocabularyFilterInputBuilder {
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
 }

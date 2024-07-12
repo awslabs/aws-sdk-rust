@@ -37,8 +37,8 @@ impl EvidenceInsights {
 }
 
 /// A builder for [`EvidenceInsights`](crate::types::EvidenceInsights).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvidenceInsightsBuilder {
     pub(crate) noncompliant_evidence_count: ::std::option::Option<i32>,
     pub(crate) compliant_evidence_count: ::std::option::Option<i32>,

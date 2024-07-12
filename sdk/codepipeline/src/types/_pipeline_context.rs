@@ -47,8 +47,8 @@ impl PipelineContext {
 }
 
 /// A builder for [`PipelineContext`](crate::types::PipelineContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineContextBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage: ::std::option::Option<crate::types::StageContext>,

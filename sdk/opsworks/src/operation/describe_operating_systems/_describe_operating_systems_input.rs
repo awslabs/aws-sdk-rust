@@ -11,8 +11,8 @@ impl DescribeOperatingSystemsInput {
 }
 
 /// A builder for [`DescribeOperatingSystemsInput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOperatingSystemsInputBuilder {}
 impl DescribeOperatingSystemsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOperatingSystemsInput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsInput).

@@ -21,8 +21,8 @@ impl DescribeLocationNfsInput {
 }
 
 /// A builder for [`DescribeLocationNfsInput`](crate::operation::describe_location_nfs::DescribeLocationNfsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationNfsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }

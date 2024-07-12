@@ -20,8 +20,8 @@ impl EnableProfileInput {
 }
 
 /// A builder for [`EnableProfileInput`](crate::operation::enable_profile::EnableProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableProfileInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
 }

@@ -161,8 +161,8 @@ impl DescribeReservedInstancesOfferingsInput {
 }
 
 /// A builder for [`DescribeReservedInstancesOfferingsInput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedInstancesOfferingsInputBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

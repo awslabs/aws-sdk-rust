@@ -20,8 +20,8 @@ impl StopGameSessionPlacementInput {
 }
 
 /// A builder for [`StopGameSessionPlacementInput`](crate::operation::stop_game_session_placement::StopGameSessionPlacementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopGameSessionPlacementInputBuilder {
     pub(crate) placement_id: ::std::option::Option<::std::string::String>,
 }

@@ -34,8 +34,8 @@ impl DeleteRecipeVersionOutput {
 }
 
 /// A builder for [`DeleteRecipeVersionOutput`](crate::operation::delete_recipe_version::DeleteRecipeVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecipeVersionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_version: ::std::option::Option<::std::string::String>,

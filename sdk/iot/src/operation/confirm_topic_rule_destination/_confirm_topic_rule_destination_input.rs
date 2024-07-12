@@ -20,8 +20,8 @@ impl ConfirmTopicRuleDestinationInput {
 }
 
 /// A builder for [`ConfirmTopicRuleDestinationInput`](crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfirmTopicRuleDestinationInputBuilder {
     pub(crate) confirmation_token: ::std::option::Option<::std::string::String>,
 }

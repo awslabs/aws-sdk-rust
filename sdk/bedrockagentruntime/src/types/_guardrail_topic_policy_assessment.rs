@@ -30,8 +30,8 @@ impl GuardrailTopicPolicyAssessment {
 }
 
 /// A builder for [`GuardrailTopicPolicyAssessment`](crate::types::GuardrailTopicPolicyAssessment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GuardrailTopicPolicyAssessmentBuilder {
     pub(crate) topics: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailTopic>>,
 }

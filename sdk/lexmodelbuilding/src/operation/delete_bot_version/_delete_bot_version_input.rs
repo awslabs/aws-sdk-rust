@@ -26,8 +26,8 @@ impl DeleteBotVersionInput {
 }
 
 /// A builder for [`DeleteBotVersionInput`](crate::operation::delete_bot_version::DeleteBotVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBotVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

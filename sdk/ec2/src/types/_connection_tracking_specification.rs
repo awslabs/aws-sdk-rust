@@ -33,8 +33,8 @@ impl ConnectionTrackingSpecification {
 }
 
 /// A builder for [`ConnectionTrackingSpecification`](crate::types::ConnectionTrackingSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionTrackingSpecificationBuilder {
     pub(crate) tcp_established_timeout: ::std::option::Option<i32>,
     pub(crate) udp_timeout: ::std::option::Option<i32>,

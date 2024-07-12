@@ -26,8 +26,8 @@ impl UpdateObjectAttributesOutput {
 }
 
 /// A builder for [`UpdateObjectAttributesOutput`](crate::operation::update_object_attributes::UpdateObjectAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateObjectAttributesOutputBuilder {
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

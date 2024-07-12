@@ -34,8 +34,8 @@ impl GetCommentsForComparedCommitOutput {
 }
 
 /// A builder for [`GetCommentsForComparedCommitOutput`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCommentsForComparedCommitOutputBuilder {
     pub(crate) comments_for_compared_commit_data: ::std::option::Option<::std::vec::Vec<crate::types::CommentsForComparedCommit>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

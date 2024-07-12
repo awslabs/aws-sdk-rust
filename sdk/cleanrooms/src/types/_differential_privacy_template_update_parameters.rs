@@ -27,8 +27,8 @@ impl DifferentialPrivacyTemplateUpdateParameters {
 }
 
 /// A builder for [`DifferentialPrivacyTemplateUpdateParameters`](crate::types::DifferentialPrivacyTemplateUpdateParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DifferentialPrivacyTemplateUpdateParametersBuilder {
     pub(crate) epsilon: ::std::option::Option<i32>,
     pub(crate) users_noise_per_query: ::std::option::Option<i32>,

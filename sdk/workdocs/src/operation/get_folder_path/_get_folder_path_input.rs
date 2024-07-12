@@ -55,8 +55,8 @@ impl GetFolderPathInput {
 }
 
 /// A builder for [`GetFolderPathInput`](crate::operation::get_folder_path::GetFolderPathInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetFolderPathInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,

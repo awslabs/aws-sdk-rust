@@ -27,8 +27,8 @@ impl Denied {
 }
 
 /// A builder for [`Denied`](crate::types::Denied).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeniedBuilder {
     pub(crate) implicit_deny: ::std::option::Option<crate::types::ImplicitDeny>,
     pub(crate) explicit_deny: ::std::option::Option<crate::types::ExplicitDeny>,

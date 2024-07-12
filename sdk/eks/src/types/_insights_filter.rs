@@ -39,8 +39,8 @@ impl InsightsFilter {
 }
 
 /// A builder for [`InsightsFilter`](crate::types::InsightsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsightsFilterBuilder {
     pub(crate) categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
     pub(crate) kubernetes_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

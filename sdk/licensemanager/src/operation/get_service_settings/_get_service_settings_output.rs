@@ -50,8 +50,8 @@ impl GetServiceSettingsOutput {
 }
 
 /// A builder for [`GetServiceSettingsOutput`](crate::operation::get_service_settings::GetServiceSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceSettingsOutputBuilder {
     pub(crate) s3_bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,

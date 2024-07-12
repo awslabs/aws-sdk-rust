@@ -41,8 +41,8 @@ impl AccountAssignment {
 }
 
 /// A builder for [`AccountAssignment`](crate::types::AccountAssignment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountAssignmentBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,

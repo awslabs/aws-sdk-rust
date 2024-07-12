@@ -27,8 +27,8 @@ impl ScheduledInstancesPrivateIpAddressConfig {
 }
 
 /// A builder for [`ScheduledInstancesPrivateIpAddressConfig`](crate::types::ScheduledInstancesPrivateIpAddressConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduledInstancesPrivateIpAddressConfigBuilder {
     pub(crate) primary: ::std::option::Option<bool>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,

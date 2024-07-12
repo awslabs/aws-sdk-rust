@@ -18,8 +18,8 @@ impl DeleteColumnStatisticsForPartitionOutput {
 }
 
 /// A builder for [`DeleteColumnStatisticsForPartitionOutput`](crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteColumnStatisticsForPartitionOutputBuilder {
     _request_id: Option<String>,
 }

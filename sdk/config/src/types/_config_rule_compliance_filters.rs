@@ -41,8 +41,8 @@ impl ConfigRuleComplianceFilters {
 }
 
 /// A builder for [`ConfigRuleComplianceFilters`](crate::types::ConfigRuleComplianceFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigRuleComplianceFiltersBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) compliance_type: ::std::option::Option<crate::types::ComplianceType>,

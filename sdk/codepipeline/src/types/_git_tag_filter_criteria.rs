@@ -31,8 +31,8 @@ impl GitTagFilterCriteria {
 }
 
 /// A builder for [`GitTagFilterCriteria`](crate::types::GitTagFilterCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GitTagFilterCriteriaBuilder {
     pub(crate) includes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) excludes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

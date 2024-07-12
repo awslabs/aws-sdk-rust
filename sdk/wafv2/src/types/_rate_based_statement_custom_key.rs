@@ -81,8 +81,8 @@ impl RateBasedStatementCustomKey {
 }
 
 /// A builder for [`RateBasedStatementCustomKey`](crate::types::RateBasedStatementCustomKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RateBasedStatementCustomKeyBuilder {
     pub(crate) header: ::std::option::Option<crate::types::RateLimitHeader>,
     pub(crate) cookie: ::std::option::Option<crate::types::RateLimitCookie>,

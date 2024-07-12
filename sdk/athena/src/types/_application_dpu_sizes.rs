@@ -29,8 +29,8 @@ impl ApplicationDpuSizes {
 }
 
 /// A builder for [`ApplicationDpuSizes`](crate::types::ApplicationDpuSizes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationDpuSizesBuilder {
     pub(crate) application_runtime_id: ::std::option::Option<::std::string::String>,
     pub(crate) supported_dpu_sizes: ::std::option::Option<::std::vec::Vec<i32>>,

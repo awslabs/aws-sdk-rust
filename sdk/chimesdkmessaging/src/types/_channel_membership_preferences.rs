@@ -21,8 +21,8 @@ impl ChannelMembershipPreferences {
 }
 
 /// A builder for [`ChannelMembershipPreferences`](crate::types::ChannelMembershipPreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelMembershipPreferencesBuilder {
     pub(crate) push_notifications: ::std::option::Option<crate::types::PushNotificationPreferences>,
 }

@@ -33,8 +33,8 @@ impl FinalHyperParameterTuningJobObjectiveMetric {
 }
 
 /// A builder for [`FinalHyperParameterTuningJobObjectiveMetric`](crate::types::FinalHyperParameterTuningJobObjectiveMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FinalHyperParameterTuningJobObjectiveMetricBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,

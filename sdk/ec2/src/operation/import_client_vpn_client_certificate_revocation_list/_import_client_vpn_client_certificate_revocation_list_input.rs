@@ -34,8 +34,8 @@ impl ImportClientVpnClientCertificateRevocationListInput {
 }
 
 /// A builder for [`ImportClientVpnClientCertificateRevocationListInput`](crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportClientVpnClientCertificateRevocationListInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_revocation_list: ::std::option::Option<::std::string::String>,

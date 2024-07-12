@@ -21,8 +21,8 @@ impl StartInputDeviceMaintenanceWindowInput {
 }
 
 /// A builder for [`StartInputDeviceMaintenanceWindowInput`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartInputDeviceMaintenanceWindowInputBuilder {
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
 }

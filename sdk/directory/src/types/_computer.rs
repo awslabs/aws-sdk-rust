@@ -35,8 +35,8 @@ impl Computer {
 }
 
 /// A builder for [`Computer`](crate::types::Computer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComputerBuilder {
     pub(crate) computer_id: ::std::option::Option<::std::string::String>,
     pub(crate) computer_name: ::std::option::Option<::std::string::String>,

@@ -65,8 +65,8 @@ impl OptionGroupOptionSetting {
 }
 
 /// A builder for [`OptionGroupOptionSetting`](crate::types::OptionGroupOptionSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OptionGroupOptionSettingBuilder {
     pub(crate) setting_name: ::std::option::Option<::std::string::String>,
     pub(crate) setting_description: ::std::option::Option<::std::string::String>,

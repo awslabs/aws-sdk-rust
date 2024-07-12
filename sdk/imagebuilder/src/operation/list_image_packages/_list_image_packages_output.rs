@@ -40,8 +40,8 @@ impl ListImagePackagesOutput {
 }
 
 /// A builder for [`ListImagePackagesOutput`](crate::operation::list_image_packages::ListImagePackagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImagePackagesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_package_list: ::std::option::Option<::std::vec::Vec<crate::types::ImagePackage>>,

@@ -39,8 +39,8 @@ impl LoadBasedAutoScalingConfiguration {
 }
 
 /// A builder for [`LoadBasedAutoScalingConfiguration`](crate::types::LoadBasedAutoScalingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoadBasedAutoScalingConfigurationBuilder {
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable: ::std::option::Option<bool>,

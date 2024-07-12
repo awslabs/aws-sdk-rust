@@ -34,8 +34,8 @@ impl ListSigningPlatformsOutput {
 }
 
 /// A builder for [`ListSigningPlatformsOutput`](crate::operation::list_signing_platforms::ListSigningPlatformsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSigningPlatformsOutputBuilder {
     pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

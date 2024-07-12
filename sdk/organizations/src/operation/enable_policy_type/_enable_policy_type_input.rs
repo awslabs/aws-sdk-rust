@@ -48,8 +48,8 @@ impl EnablePolicyTypeInput {
 }
 
 /// A builder for [`EnablePolicyTypeInput`](crate::operation::enable_policy_type::EnablePolicyTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnablePolicyTypeInputBuilder {
     pub(crate) root_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,

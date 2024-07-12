@@ -20,8 +20,8 @@ impl DescribeAuditFindingInput {
 }
 
 /// A builder for [`DescribeAuditFindingInput`](crate::operation::describe_audit_finding::DescribeAuditFindingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAuditFindingInputBuilder {
     pub(crate) finding_id: ::std::option::Option<::std::string::String>,
 }

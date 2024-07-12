@@ -18,8 +18,8 @@ impl DeleteBatchPredictionJobOutput {
 }
 
 /// A builder for [`DeleteBatchPredictionJobOutput`](crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBatchPredictionJobOutputBuilder {
     _request_id: Option<String>,
 }

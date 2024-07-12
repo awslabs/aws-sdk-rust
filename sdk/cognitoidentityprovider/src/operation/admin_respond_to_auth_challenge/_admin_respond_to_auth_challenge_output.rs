@@ -56,8 +56,8 @@ impl AdminRespondToAuthChallengeOutput {
 }
 
 /// A builder for [`AdminRespondToAuthChallengeOutput`](crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminRespondToAuthChallengeOutputBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     pub(crate) session: ::std::option::Option<::std::string::String>,

@@ -102,8 +102,8 @@ impl StartMedicalStreamTranscriptionOutput {
 }
 
 /// A builder for [`StartMedicalStreamTranscriptionOutput`](crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMedicalStreamTranscriptionOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

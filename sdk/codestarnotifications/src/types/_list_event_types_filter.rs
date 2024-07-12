@@ -28,8 +28,8 @@ impl ListEventTypesFilter {
 }
 
 /// A builder for [`ListEventTypesFilter`](crate::types::ListEventTypesFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventTypesFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ListEventTypesFilterName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

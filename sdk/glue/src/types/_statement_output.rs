@@ -53,8 +53,8 @@ impl StatementOutput {
 }
 
 /// A builder for [`StatementOutput`](crate::types::StatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatementOutputBuilder {
     pub(crate) data: ::std::option::Option<crate::types::StatementOutputData>,
     pub(crate) execution_count: ::std::option::Option<i32>,

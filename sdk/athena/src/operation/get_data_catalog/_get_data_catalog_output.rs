@@ -26,8 +26,8 @@ impl GetDataCatalogOutput {
 }
 
 /// A builder for [`GetDataCatalogOutput`](crate::operation::get_data_catalog::GetDataCatalogOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataCatalogOutputBuilder {
     pub(crate) data_catalog: ::std::option::Option<crate::types::DataCatalog>,
     _request_id: Option<String>,

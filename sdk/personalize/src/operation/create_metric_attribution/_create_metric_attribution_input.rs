@@ -40,8 +40,8 @@ impl CreateMetricAttributionInput {
 }
 
 /// A builder for [`CreateMetricAttributionInput`](crate::operation::create_metric_attribution::CreateMetricAttributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMetricAttributionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,

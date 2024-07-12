@@ -33,8 +33,8 @@ impl ModelVersionEvaluation {
 }
 
 /// A builder for [`ModelVersionEvaluation`](crate::types::ModelVersionEvaluation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelVersionEvaluationBuilder {
     pub(crate) output_variable_name: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_score: ::std::option::Option<::std::string::String>,

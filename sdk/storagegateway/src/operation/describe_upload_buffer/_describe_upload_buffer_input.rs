@@ -20,8 +20,8 @@ impl DescribeUploadBufferInput {
 }
 
 /// A builder for [`DescribeUploadBufferInput`](crate::operation::describe_upload_buffer::DescribeUploadBufferInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUploadBufferInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }

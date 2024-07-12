@@ -52,8 +52,8 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInput {
 }
 
 /// A builder for [`NotifyUpdateProvisionedProductEngineWorkflowResultInput`](crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
     pub(crate) workflow_token: ::std::option::Option<::std::string::String>,
     pub(crate) record_id: ::std::option::Option<::std::string::String>,

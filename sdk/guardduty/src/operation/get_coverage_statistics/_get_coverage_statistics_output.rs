@@ -26,8 +26,8 @@ impl GetCoverageStatisticsOutput {
 }
 
 /// A builder for [`GetCoverageStatisticsOutput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCoverageStatisticsOutputBuilder {
     pub(crate) coverage_statistics: ::std::option::Option<crate::types::CoverageStatistics>,
     _request_id: Option<String>,

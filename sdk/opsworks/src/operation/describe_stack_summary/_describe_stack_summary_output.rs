@@ -27,8 +27,8 @@ impl DescribeStackSummaryOutput {
 }
 
 /// A builder for [`DescribeStackSummaryOutput`](crate::operation::describe_stack_summary::DescribeStackSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackSummaryOutputBuilder {
     pub(crate) stack_summary: ::std::option::Option<crate::types::StackSummary>,
     _request_id: Option<String>,

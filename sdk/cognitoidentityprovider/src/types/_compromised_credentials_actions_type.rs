@@ -21,8 +21,8 @@ impl CompromisedCredentialsActionsType {
 }
 
 /// A builder for [`CompromisedCredentialsActionsType`](crate::types::CompromisedCredentialsActionsType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompromisedCredentialsActionsTypeBuilder {
     pub(crate) event_action: ::std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
 }

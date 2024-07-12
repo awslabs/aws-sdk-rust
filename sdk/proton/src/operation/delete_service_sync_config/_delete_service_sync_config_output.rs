@@ -26,8 +26,8 @@ impl DeleteServiceSyncConfigOutput {
 }
 
 /// A builder for [`DeleteServiceSyncConfigOutput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceSyncConfigOutputBuilder {
     pub(crate) service_sync_config: ::std::option::Option<crate::types::ServiceSyncConfig>,
     _request_id: Option<String>,

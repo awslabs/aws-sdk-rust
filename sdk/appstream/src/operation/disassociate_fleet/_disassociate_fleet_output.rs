@@ -18,8 +18,8 @@ impl DisassociateFleetOutput {
 }
 
 /// A builder for [`DisassociateFleetOutput`](crate::operation::disassociate_fleet::DisassociateFleetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateFleetOutputBuilder {
     _request_id: Option<String>,
 }

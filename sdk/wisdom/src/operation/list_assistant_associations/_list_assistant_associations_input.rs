@@ -32,8 +32,8 @@ impl ListAssistantAssociationsInput {
 }
 
 /// A builder for [`ListAssistantAssociationsInput`](crate::operation::list_assistant_associations::ListAssistantAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssistantAssociationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

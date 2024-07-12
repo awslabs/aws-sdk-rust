@@ -38,8 +38,8 @@ impl DescribeSubscriptionFiltersInput {
 }
 
 /// A builder for [`DescribeSubscriptionFiltersInput`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSubscriptionFiltersInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_name_prefix: ::std::option::Option<::std::string::String>,

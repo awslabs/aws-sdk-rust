@@ -39,8 +39,8 @@ impl ProductionBranch {
 }
 
 /// A builder for [`ProductionBranch`](crate::types::ProductionBranch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProductionBranchBuilder {
     pub(crate) last_deploy_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

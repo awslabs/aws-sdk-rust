@@ -35,8 +35,8 @@ impl UploadDocumentsInput {
 }
 
 /// A builder for [`UploadDocumentsInput`](crate::operation::upload_documents::UploadDocumentsInput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploadDocumentsInputBuilder {
     pub(crate) documents: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) content_type: ::std::option::Option<crate::types::ContentType>,

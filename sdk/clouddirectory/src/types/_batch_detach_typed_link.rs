@@ -21,8 +21,8 @@ impl BatchDetachTypedLink {
 }
 
 /// A builder for [`BatchDetachTypedLink`](crate::types::BatchDetachTypedLink).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDetachTypedLinkBuilder {
     pub(crate) typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
 }

@@ -51,8 +51,8 @@ impl SegmentDemographics {
 }
 
 /// A builder for [`SegmentDemographics`](crate::types::SegmentDemographics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SegmentDemographicsBuilder {
     pub(crate) app_version: ::std::option::Option<crate::types::SetDimension>,
     pub(crate) channel: ::std::option::Option<crate::types::SetDimension>,

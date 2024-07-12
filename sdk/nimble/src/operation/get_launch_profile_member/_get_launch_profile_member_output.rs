@@ -26,8 +26,8 @@ impl GetLaunchProfileMemberOutput {
 }
 
 /// A builder for [`GetLaunchProfileMemberOutput`](crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLaunchProfileMemberOutputBuilder {
     pub(crate) member: ::std::option::Option<crate::types::LaunchProfileMembership>,
     _request_id: Option<String>,

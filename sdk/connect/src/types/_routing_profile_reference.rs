@@ -27,8 +27,8 @@ impl RoutingProfileReference {
 }
 
 /// A builder for [`RoutingProfileReference`](crate::types::RoutingProfileReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RoutingProfileReferenceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

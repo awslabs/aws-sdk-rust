@@ -32,8 +32,8 @@ impl DeleteHostedConfigurationVersionInput {
 }
 
 /// A builder for [`DeleteHostedConfigurationVersionInput`](crate::operation::delete_hosted_configuration_version::DeleteHostedConfigurationVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHostedConfigurationVersionInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,

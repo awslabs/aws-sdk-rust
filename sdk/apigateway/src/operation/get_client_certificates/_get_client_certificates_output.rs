@@ -35,8 +35,8 @@ impl GetClientCertificatesOutput {
 }
 
 /// A builder for [`GetClientCertificatesOutput`](crate::operation::get_client_certificates::GetClientCertificatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClientCertificatesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ClientCertificate>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,

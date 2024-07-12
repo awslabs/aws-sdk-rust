@@ -32,8 +32,8 @@ impl GetAssetTypeInput {
 }
 
 /// A builder for [`GetAssetTypeInput`](crate::operation::get_asset_type::GetAssetTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssetTypeInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

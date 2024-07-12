@@ -26,8 +26,8 @@ impl ListCodeSigningConfigsInput {
 }
 
 /// A builder for [`ListCodeSigningConfigsInput`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCodeSigningConfigsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,

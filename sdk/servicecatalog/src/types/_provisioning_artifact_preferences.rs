@@ -36,8 +36,8 @@ impl ProvisioningArtifactPreferences {
 }
 
 /// A builder for [`ProvisioningArtifactPreferences`](crate::types::ProvisioningArtifactPreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisioningArtifactPreferencesBuilder {
     pub(crate) stack_set_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) stack_set_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

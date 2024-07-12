@@ -32,8 +32,8 @@ impl CreateAppBlockBuilderStreamingUrlOutput {
 }
 
 /// A builder for [`CreateAppBlockBuilderStreamingUrlOutput`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAppBlockBuilderStreamingUrlOutputBuilder {
     pub(crate) streaming_url: ::std::option::Option<::std::string::String>,
     pub(crate) expires: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -27,8 +27,8 @@ impl UpdateUserPoolClientOutput {
 }
 
 /// A builder for [`UpdateUserPoolClientOutput`](crate::operation::update_user_pool_client::UpdateUserPoolClientOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserPoolClientOutputBuilder {
     pub(crate) user_pool_client: ::std::option::Option<crate::types::UserPoolClientType>,
     _request_id: Option<String>,

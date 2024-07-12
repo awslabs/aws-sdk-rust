@@ -32,8 +32,8 @@ impl GetOriginAccessControlConfigOutput {
 }
 
 /// A builder for [`GetOriginAccessControlConfigOutput`](crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOriginAccessControlConfigOutputBuilder {
     pub(crate) origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

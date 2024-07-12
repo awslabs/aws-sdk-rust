@@ -33,8 +33,8 @@ impl DescribeRegistrationAttachmentsOutput {
 }
 
 /// A builder for [`DescribeRegistrationAttachmentsOutput`](crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistrationAttachmentsOutputBuilder {
     pub(crate) registration_attachments: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentsInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

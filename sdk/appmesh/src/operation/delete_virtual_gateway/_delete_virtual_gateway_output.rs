@@ -26,8 +26,8 @@ impl DeleteVirtualGatewayOutput {
 }
 
 /// A builder for [`DeleteVirtualGatewayOutput`](crate::operation::delete_virtual_gateway::DeleteVirtualGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVirtualGatewayOutputBuilder {
     pub(crate) virtual_gateway: ::std::option::Option<crate::types::VirtualGatewayData>,
     _request_id: Option<String>,

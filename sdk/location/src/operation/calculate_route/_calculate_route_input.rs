@@ -220,8 +220,8 @@ impl CalculateRouteInput {
 }
 
 /// A builder for [`CalculateRouteInput`](crate::operation::calculate_route::CalculateRouteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CalculateRouteInputBuilder {
     pub(crate) calculator_name: ::std::option::Option<::std::string::String>,
     pub(crate) departure_position: ::std::option::Option<::std::vec::Vec<f64>>,

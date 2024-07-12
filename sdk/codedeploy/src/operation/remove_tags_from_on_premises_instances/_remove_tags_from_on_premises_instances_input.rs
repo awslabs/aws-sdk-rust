@@ -31,8 +31,8 @@ impl RemoveTagsFromOnPremisesInstancesInput {
 }
 
 /// A builder for [`RemoveTagsFromOnPremisesInstancesInput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveTagsFromOnPremisesInstancesInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

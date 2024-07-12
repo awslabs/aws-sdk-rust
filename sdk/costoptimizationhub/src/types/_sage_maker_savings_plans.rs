@@ -27,8 +27,8 @@ impl SageMakerSavingsPlans {
 }
 
 /// A builder for [`SageMakerSavingsPlans`](crate::types::SageMakerSavingsPlans).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SageMakerSavingsPlansBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::SageMakerSavingsPlansConfiguration>,
     pub(crate) cost_calculation: ::std::option::Option<crate::types::SavingsPlansCostCalculation>,

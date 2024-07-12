@@ -21,8 +21,8 @@ impl ActiveSpeakerOnlyConfiguration {
 }
 
 /// A builder for [`ActiveSpeakerOnlyConfiguration`](crate::types::ActiveSpeakerOnlyConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActiveSpeakerOnlyConfigurationBuilder {
     pub(crate) active_speaker_position: ::std::option::Option<crate::types::ActiveSpeakerPosition>,
 }

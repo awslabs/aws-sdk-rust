@@ -77,8 +77,8 @@ impl WorkspaceCreationProperties {
 }
 
 /// A builder for [`WorkspaceCreationProperties`](crate::types::WorkspaceCreationProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkspaceCreationPropertiesBuilder {
     pub(crate) enable_work_docs: ::std::option::Option<bool>,
     pub(crate) enable_internet_access: ::std::option::Option<bool>,

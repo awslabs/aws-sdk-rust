@@ -32,8 +32,8 @@ impl ListAssociationVersionsInput {
 }
 
 /// A builder for [`ListAssociationVersionsInput`](crate::operation::list_association_versions::ListAssociationVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociationVersionsInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

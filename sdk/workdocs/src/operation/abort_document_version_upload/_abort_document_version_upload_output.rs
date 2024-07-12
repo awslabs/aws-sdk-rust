@@ -18,8 +18,8 @@ impl AbortDocumentVersionUploadOutput {
 }
 
 /// A builder for [`AbortDocumentVersionUploadOutput`](crate::operation::abort_document_version_upload::AbortDocumentVersionUploadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AbortDocumentVersionUploadOutputBuilder {
     _request_id: Option<String>,
 }

@@ -52,8 +52,8 @@ impl Scope {
 }
 
 /// A builder for [`Scope`](crate::types::Scope).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ScopeBuilder {
     pub(crate) aws_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>>,
     pub(crate) aws_services: ::std::option::Option<::std::vec::Vec<crate::types::AwsService>>,

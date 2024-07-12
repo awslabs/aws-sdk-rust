@@ -34,8 +34,8 @@ impl ListAccountAssociationsOutput {
 }
 
 /// A builder for [`ListAccountAssociationsOutput`](crate::operation::list_account_associations::ListAccountAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountAssociationsOutputBuilder {
     pub(crate) linked_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssociationsListElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

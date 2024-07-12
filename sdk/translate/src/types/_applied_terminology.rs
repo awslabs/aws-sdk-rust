@@ -29,8 +29,8 @@ impl AppliedTerminology {
 }
 
 /// A builder for [`AppliedTerminology`](crate::types::AppliedTerminology).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppliedTerminologyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) terms: ::std::option::Option<::std::vec::Vec<crate::types::Term>>,

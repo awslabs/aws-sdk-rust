@@ -22,8 +22,8 @@ impl CloudFormationProperties {
 }
 
 /// A builder for [`CloudFormationProperties`](crate::types::CloudFormationProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudFormationPropertiesBuilder {
     pub(crate) template_url: ::std::option::Option<::std::string::String>,
 }

@@ -21,8 +21,8 @@ impl WaterfallChartOptions {
 }
 
 /// A builder for [`WaterfallChartOptions`](crate::types::WaterfallChartOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WaterfallChartOptionsBuilder {
     pub(crate) total_bar_label: ::std::option::Option<::std::string::String>,
 }

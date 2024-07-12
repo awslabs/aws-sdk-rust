@@ -407,8 +407,8 @@ impl TableDescription {
 }
 
 /// A builder for [`TableDescription`](crate::types::TableDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableDescriptionBuilder {
     pub(crate) attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,

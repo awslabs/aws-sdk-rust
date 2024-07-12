@@ -32,8 +32,8 @@ impl RebootReplicationInstanceInput {
 }
 
 /// A builder for [`RebootReplicationInstanceInput`](crate::operation::reboot_replication_instance::RebootReplicationInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootReplicationInstanceInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) force_failover: ::std::option::Option<bool>,

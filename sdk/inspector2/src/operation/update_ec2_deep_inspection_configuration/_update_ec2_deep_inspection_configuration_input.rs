@@ -28,8 +28,8 @@ impl UpdateEc2DeepInspectionConfigurationInput {
 }
 
 /// A builder for [`UpdateEc2DeepInspectionConfigurationInput`](crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEc2DeepInspectionConfigurationInputBuilder {
     pub(crate) activate_deep_inspection: ::std::option::Option<bool>,
     pub(crate) package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

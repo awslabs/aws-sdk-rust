@@ -26,8 +26,8 @@ impl DescribeVirtualClusterOutput {
 }
 
 /// A builder for [`DescribeVirtualClusterOutput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVirtualClusterOutputBuilder {
     pub(crate) virtual_cluster: ::std::option::Option<crate::types::VirtualCluster>,
     _request_id: Option<String>,

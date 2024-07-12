@@ -119,8 +119,8 @@ impl CreateLocationObjectStorageInput {
 }
 
 /// A builder for [`CreateLocationObjectStorageInput`](crate::operation::create_location_object_storage::CreateLocationObjectStorageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateLocationObjectStorageInputBuilder {
     pub(crate) server_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) server_port: ::std::option::Option<i32>,

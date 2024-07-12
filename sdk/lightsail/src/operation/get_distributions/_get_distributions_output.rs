@@ -38,8 +38,8 @@ impl GetDistributionsOutput {
 }
 
 /// A builder for [`GetDistributionsOutput`](crate::operation::get_distributions::GetDistributionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDistributionsOutputBuilder {
     pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::LightsailDistribution>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

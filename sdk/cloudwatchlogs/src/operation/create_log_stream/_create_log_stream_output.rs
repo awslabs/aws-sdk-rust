@@ -18,8 +18,8 @@ impl CreateLogStreamOutput {
 }
 
 /// A builder for [`CreateLogStreamOutput`](crate::operation::create_log_stream::CreateLogStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLogStreamOutputBuilder {
     _request_id: Option<String>,
 }

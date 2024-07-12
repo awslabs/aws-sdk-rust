@@ -34,8 +34,8 @@ impl AppflowIntegrationWorkflowAttributes {
 }
 
 /// A builder for [`AppflowIntegrationWorkflowAttributes`](crate::types::AppflowIntegrationWorkflowAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppflowIntegrationWorkflowAttributesBuilder {
     pub(crate) source_connector_type: ::std::option::Option<crate::types::SourceConnectorType>,
     pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,

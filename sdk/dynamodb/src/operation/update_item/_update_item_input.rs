@@ -307,8 +307,8 @@ impl UpdateItemInput {
 }
 
 /// A builder for [`UpdateItemInput`](crate::operation::update_item::UpdateItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateItemInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,

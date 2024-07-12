@@ -53,8 +53,8 @@ impl DynamicCardVerificationCode {
 }
 
 /// A builder for [`DynamicCardVerificationCode`](crate::types::DynamicCardVerificationCode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DynamicCardVerificationCodeBuilder {
     pub(crate) unpredictable_number: ::std::option::Option<::std::string::String>,
     pub(crate) pan_sequence_number: ::std::option::Option<::std::string::String>,

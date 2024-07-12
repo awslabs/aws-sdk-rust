@@ -21,8 +21,8 @@ impl DescribeConfigRulesFilters {
 }
 
 /// A builder for [`DescribeConfigRulesFilters`](crate::types::DescribeConfigRulesFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigRulesFiltersBuilder {
     pub(crate) evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
 }

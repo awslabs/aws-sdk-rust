@@ -44,8 +44,8 @@ impl ListSchedulesInput {
 }
 
 /// A builder for [`ListSchedulesInput`](crate::operation::list_schedules::ListSchedulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSchedulesInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,

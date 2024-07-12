@@ -20,8 +20,8 @@ impl DeleteIdNamespaceInput {
 }
 
 /// A builder for [`DeleteIdNamespaceInput`](crate::operation::delete_id_namespace::DeleteIdNamespaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIdNamespaceInputBuilder {
     pub(crate) id_namespace_name: ::std::option::Option<::std::string::String>,
 }

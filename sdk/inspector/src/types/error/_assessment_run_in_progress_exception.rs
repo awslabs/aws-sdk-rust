@@ -64,8 +64,8 @@ impl AssessmentRunInProgressException {
 }
 
 /// A builder for [`AssessmentRunInProgressException`](crate::types::error::AssessmentRunInProgressException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssessmentRunInProgressExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -38,8 +38,8 @@ impl DescribeRouteInput {
 }
 
 /// A builder for [`DescribeRouteInput`](crate::operation::describe_route::DescribeRouteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRouteInputBuilder {
     pub(crate) route_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,

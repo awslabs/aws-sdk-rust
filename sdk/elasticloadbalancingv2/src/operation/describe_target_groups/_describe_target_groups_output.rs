@@ -34,8 +34,8 @@ impl DescribeTargetGroupsOutput {
 }
 
 /// A builder for [`DescribeTargetGroupsOutput`](crate::operation::describe_target_groups::DescribeTargetGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTargetGroupsOutputBuilder {
     pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

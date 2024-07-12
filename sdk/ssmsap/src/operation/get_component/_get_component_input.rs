@@ -26,8 +26,8 @@ impl GetComponentInput {
 }
 
 /// A builder for [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetComponentInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_id: ::std::option::Option<::std::string::String>,

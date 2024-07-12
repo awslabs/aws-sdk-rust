@@ -40,8 +40,8 @@ impl CreateWorkspaceServiceAccountTokenOutput {
 }
 
 /// A builder for [`CreateWorkspaceServiceAccountTokenOutput`](crate::operation::create_workspace_service_account_token::CreateWorkspaceServiceAccountTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkspaceServiceAccountTokenOutputBuilder {
     pub(crate) service_account_token: ::std::option::Option<crate::types::ServiceAccountTokenSummaryWithKey>,
     pub(crate) service_account_id: ::std::option::Option<::std::string::String>,

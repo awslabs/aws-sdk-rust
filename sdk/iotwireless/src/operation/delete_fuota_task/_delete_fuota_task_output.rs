@@ -18,8 +18,8 @@ impl DeleteFuotaTaskOutput {
 }
 
 /// A builder for [`DeleteFuotaTaskOutput`](crate::operation::delete_fuota_task::DeleteFuotaTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFuotaTaskOutputBuilder {
     _request_id: Option<String>,
 }

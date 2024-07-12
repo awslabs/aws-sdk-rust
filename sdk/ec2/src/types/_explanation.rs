@@ -359,8 +359,8 @@ impl Explanation {
 }
 
 /// A builder for [`Explanation`](crate::types::Explanation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExplanationBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) acl_rule: ::std::option::Option<crate::types::AnalysisAclRule>,

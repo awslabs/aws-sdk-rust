@@ -33,8 +33,8 @@ impl ListRecipeVersionsOutput {
 }
 
 /// A builder for [`ListRecipeVersionsOutput`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecipeVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) recipes: ::std::option::Option<::std::vec::Vec<crate::types::Recipe>>,

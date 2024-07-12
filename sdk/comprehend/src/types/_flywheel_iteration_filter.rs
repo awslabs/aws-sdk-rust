@@ -27,8 +27,8 @@ impl FlywheelIterationFilter {
 }
 
 /// A builder for [`FlywheelIterationFilter`](crate::types::FlywheelIterationFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlywheelIterationFilterBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -40,8 +40,8 @@ impl M2ManagedApplication {
 }
 
 /// A builder for [`M2ManagedApplication`](crate::types::M2ManagedApplication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct M2ManagedApplicationBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) runtime: ::std::option::Option<crate::types::M2ManagedRuntime>,

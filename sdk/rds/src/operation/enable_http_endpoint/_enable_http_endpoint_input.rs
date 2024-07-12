@@ -20,8 +20,8 @@ impl EnableHttpEndpointInput {
 }
 
 /// A builder for [`EnableHttpEndpointInput`](crate::operation::enable_http_endpoint::EnableHttpEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableHttpEndpointInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

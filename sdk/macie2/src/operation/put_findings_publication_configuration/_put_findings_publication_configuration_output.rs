@@ -18,8 +18,8 @@ impl PutFindingsPublicationConfigurationOutput {
 }
 
 /// A builder for [`PutFindingsPublicationConfigurationOutput`](crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutFindingsPublicationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

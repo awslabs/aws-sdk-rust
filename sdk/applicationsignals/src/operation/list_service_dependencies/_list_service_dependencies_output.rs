@@ -45,8 +45,8 @@ impl ListServiceDependenciesOutput {
 }
 
 /// A builder for [`ListServiceDependenciesOutput`](crate::operation::list_service_dependencies::ListServiceDependenciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceDependenciesOutputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,

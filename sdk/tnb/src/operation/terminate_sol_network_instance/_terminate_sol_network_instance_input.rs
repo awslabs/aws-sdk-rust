@@ -34,8 +34,8 @@ impl TerminateSolNetworkInstanceInput {
 }
 
 /// A builder for [`TerminateSolNetworkInstanceInput`](crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TerminateSolNetworkInstanceInputBuilder {
     pub(crate) ns_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

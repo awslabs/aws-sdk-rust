@@ -20,8 +20,8 @@ impl ImportApplicationUsageInput {
 }
 
 /// A builder for [`ImportApplicationUsageInput`](crate::operation::import_application_usage::ImportApplicationUsageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportApplicationUsageInputBuilder {
     pub(crate) source_s3_location: ::std::option::Option<crate::types::SourceS3Location>,
 }

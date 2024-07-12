@@ -44,8 +44,8 @@ impl FileSystemLocation {
 }
 
 /// A builder for [`FileSystemLocation`](crate::types::FileSystemLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FileSystemLocationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,

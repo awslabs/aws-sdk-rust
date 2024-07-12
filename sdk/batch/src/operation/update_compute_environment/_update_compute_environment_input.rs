@@ -71,8 +71,8 @@ impl UpdateComputeEnvironmentInput {
 }
 
 /// A builder for [`UpdateComputeEnvironmentInput`](crate::operation::update_compute_environment::UpdateComputeEnvironmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateComputeEnvironmentInputBuilder {
     pub(crate) compute_environment: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CeState>,

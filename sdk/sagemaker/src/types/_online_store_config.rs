@@ -54,8 +54,8 @@ impl OnlineStoreConfig {
 }
 
 /// A builder for [`OnlineStoreConfig`](crate::types::OnlineStoreConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OnlineStoreConfigBuilder {
     pub(crate) security_config: ::std::option::Option<crate::types::OnlineStoreSecurityConfig>,
     pub(crate) enable_online_store: ::std::option::Option<bool>,

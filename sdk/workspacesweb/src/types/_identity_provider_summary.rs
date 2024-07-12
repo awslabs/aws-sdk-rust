@@ -43,8 +43,8 @@ impl IdentityProviderSummary {
 }
 
 /// A builder for [`IdentityProviderSummary`](crate::types::IdentityProviderSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct IdentityProviderSummaryBuilder {
     pub(crate) identity_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_name: ::std::option::Option<::std::string::String>,

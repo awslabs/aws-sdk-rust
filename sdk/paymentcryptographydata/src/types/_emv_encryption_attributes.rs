@@ -66,8 +66,8 @@ impl EmvEncryptionAttributes {
 }
 
 /// A builder for [`EmvEncryptionAttributes`](crate::types::EmvEncryptionAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EmvEncryptionAttributesBuilder {
     pub(crate) major_key_derivation_mode: ::std::option::Option<crate::types::EmvMajorKeyDerivationMode>,
     pub(crate) primary_account_number: ::std::option::Option<::std::string::String>,

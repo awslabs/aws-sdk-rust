@@ -12,8 +12,8 @@ impl DeleteCloudFormationStepOutput {
 }
 
 /// A builder for [`DeleteCloudFormationStepOutput`](crate::types::DeleteCloudFormationStepOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCloudFormationStepOutputBuilder {}
 impl DeleteCloudFormationStepOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteCloudFormationStepOutput`](crate::types::DeleteCloudFormationStepOutput).

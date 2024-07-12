@@ -20,8 +20,8 @@ impl GetLogDeliveryConfigurationInput {
 }
 
 /// A builder for [`GetLogDeliveryConfigurationInput`](crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLogDeliveryConfigurationInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
 }

@@ -31,8 +31,8 @@ impl Processor {
 }
 
 /// A builder for [`Processor`](crate::types::Processor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ProcessorType>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>>,

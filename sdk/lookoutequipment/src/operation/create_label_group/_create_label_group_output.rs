@@ -32,8 +32,8 @@ impl CreateLabelGroupOutput {
 }
 
 /// A builder for [`CreateLabelGroupOutput`](crate::operation::create_label_group::CreateLabelGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLabelGroupOutputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_group_arn: ::std::option::Option<::std::string::String>,

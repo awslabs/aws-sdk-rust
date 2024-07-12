@@ -18,8 +18,8 @@ impl AttachGroupPolicyOutput {
 }
 
 /// A builder for [`AttachGroupPolicyOutput`](crate::operation::attach_group_policy::AttachGroupPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachGroupPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl StartMaintenanceOutput {
 }
 
 /// A builder for [`StartMaintenanceOutput`](crate::operation::start_maintenance::StartMaintenanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMaintenanceOutputBuilder {
     pub(crate) server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,

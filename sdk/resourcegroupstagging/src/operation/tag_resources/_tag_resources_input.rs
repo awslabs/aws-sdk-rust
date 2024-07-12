@@ -30,8 +30,8 @@ impl TagResourcesInput {
 }
 
 /// A builder for [`TagResourcesInput`](crate::operation::tag_resources::TagResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagResourcesInputBuilder {
     pub(crate) resource_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

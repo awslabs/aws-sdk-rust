@@ -27,8 +27,8 @@ impl ExperienceEndpoint {
 }
 
 /// A builder for [`ExperienceEndpoint`](crate::types::ExperienceEndpoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperienceEndpointBuilder {
     pub(crate) endpoint_type: ::std::option::Option<crate::types::EndpointType>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,

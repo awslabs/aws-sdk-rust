@@ -41,8 +41,8 @@ impl UserAccessTaskItem {
 }
 
 /// A builder for [`UserAccessTaskItem`](crate::types::UserAccessTaskItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserAccessTaskItemBuilder {
     pub(crate) app: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,

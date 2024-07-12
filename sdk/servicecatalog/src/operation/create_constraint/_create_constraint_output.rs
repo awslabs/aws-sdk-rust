@@ -38,8 +38,8 @@ impl CreateConstraintOutput {
 }
 
 /// A builder for [`CreateConstraintOutput`](crate::operation::create_constraint::CreateConstraintOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConstraintOutputBuilder {
     pub(crate) constraint_detail: ::std::option::Option<crate::types::ConstraintDetail>,
     pub(crate) constraint_parameters: ::std::option::Option<::std::string::String>,

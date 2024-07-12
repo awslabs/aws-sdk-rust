@@ -28,8 +28,8 @@ impl InvokeFlowOutput {
 }
 
 /// A builder for [`InvokeFlowOutput`](crate::operation::invoke_flow::InvokeFlowOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvokeFlowOutputBuilder {
     pub(crate) response_stream:
         ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::FlowResponseStream, crate::types::error::FlowResponseStreamError>>,

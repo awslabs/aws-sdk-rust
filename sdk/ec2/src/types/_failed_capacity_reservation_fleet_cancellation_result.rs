@@ -27,8 +27,8 @@ impl FailedCapacityReservationFleetCancellationResult {
 }
 
 /// A builder for [`FailedCapacityReservationFleetCancellationResult`](crate::types::FailedCapacityReservationFleetCancellationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedCapacityReservationFleetCancellationResultBuilder {
     pub(crate) capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) cancel_capacity_reservation_fleet_error: ::std::option::Option<crate::types::CancelCapacityReservationFleetError>,

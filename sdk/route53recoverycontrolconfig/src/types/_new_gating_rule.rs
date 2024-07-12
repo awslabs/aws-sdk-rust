@@ -57,8 +57,8 @@ impl NewGatingRule {
 }
 
 /// A builder for [`NewGatingRule`](crate::types::NewGatingRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NewGatingRuleBuilder {
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gating_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

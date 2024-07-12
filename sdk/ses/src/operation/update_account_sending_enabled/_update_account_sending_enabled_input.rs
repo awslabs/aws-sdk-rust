@@ -21,8 +21,8 @@ impl UpdateAccountSendingEnabledInput {
 }
 
 /// A builder for [`UpdateAccountSendingEnabledInput`](crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccountSendingEnabledInputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

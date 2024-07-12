@@ -62,8 +62,8 @@ impl UpdateGlossaryInput {
 }
 
 /// A builder for [`UpdateGlossaryInput`](crate::operation::update_glossary::UpdateGlossaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateGlossaryInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

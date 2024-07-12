@@ -34,8 +34,8 @@ impl ListPreviewRotationShiftsOutput {
 }
 
 /// A builder for [`ListPreviewRotationShiftsOutput`](crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPreviewRotationShiftsOutputBuilder {
     pub(crate) rotation_shifts: ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

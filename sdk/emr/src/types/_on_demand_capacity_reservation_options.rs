@@ -49,8 +49,8 @@ impl OnDemandCapacityReservationOptions {
 }
 
 /// A builder for [`OnDemandCapacityReservationOptions`](crate::types::OnDemandCapacityReservationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OnDemandCapacityReservationOptionsBuilder {
     pub(crate) usage_strategy: ::std::option::Option<crate::types::OnDemandCapacityReservationUsageStrategy>,
     pub(crate) capacity_reservation_preference: ::std::option::Option<crate::types::OnDemandCapacityReservationPreference>,

@@ -28,8 +28,8 @@ impl BatchSuspendUserOutput {
 }
 
 /// A builder for [`BatchSuspendUserOutput`](crate::operation::batch_suspend_user::BatchSuspendUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchSuspendUserOutputBuilder {
     pub(crate) user_errors: ::std::option::Option<::std::vec::Vec<crate::types::UserError>>,
     _request_id: Option<String>,

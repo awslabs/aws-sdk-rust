@@ -45,8 +45,8 @@ impl PeeringError {
 }
 
 /// A builder for [`PeeringError`](crate::types::PeeringError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PeeringErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::PeeringErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

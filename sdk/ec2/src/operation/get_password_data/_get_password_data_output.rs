@@ -48,8 +48,8 @@ impl GetPasswordDataOutput {
 }
 
 /// A builder for [`GetPasswordDataOutput`](crate::operation::get_password_data::GetPasswordDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetPasswordDataOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) password_data: ::std::option::Option<::std::string::String>,

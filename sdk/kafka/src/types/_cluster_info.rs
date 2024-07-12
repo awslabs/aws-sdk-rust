@@ -135,8 +135,8 @@ impl ClusterInfo {
 }
 
 /// A builder for [`ClusterInfo`](crate::types::ClusterInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterInfoBuilder {
     pub(crate) active_operation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,

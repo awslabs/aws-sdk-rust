@@ -112,8 +112,8 @@ impl Recipe {
 }
 
 /// A builder for [`Recipe`](crate::types::Recipe).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecipeBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -77,8 +77,8 @@ impl TransitGatewayRequestOptions {
 }
 
 /// A builder for [`TransitGatewayRequestOptions`](crate::types::TransitGatewayRequestOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayRequestOptionsBuilder {
     pub(crate) amazon_side_asn: ::std::option::Option<i64>,
     pub(crate) auto_accept_shared_attachments: ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>,

@@ -36,8 +36,8 @@ impl GetTransactionInput {
 }
 
 /// A builder for [`GetTransactionInput`](crate::operation::get_transaction::GetTransactionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransactionInputBuilder {
     pub(crate) transaction_hash: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,

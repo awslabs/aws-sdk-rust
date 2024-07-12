@@ -48,8 +48,8 @@ impl AwsManagedRulesAtpRuleSet {
 }
 
 /// A builder for [`AwsManagedRulesAtpRuleSet`](crate::types::AwsManagedRulesAtpRuleSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsManagedRulesAtpRuleSetBuilder {
     pub(crate) login_path: ::std::option::Option<::std::string::String>,
     pub(crate) request_inspection: ::std::option::Option<crate::types::RequestInspection>,

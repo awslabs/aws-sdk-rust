@@ -20,8 +20,8 @@ impl DescribeGlobalTableInput {
 }
 
 /// A builder for [`DescribeGlobalTableInput`](crate::operation::describe_global_table::DescribeGlobalTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGlobalTableInputBuilder {
     pub(crate) global_table_name: ::std::option::Option<::std::string::String>,
 }

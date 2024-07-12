@@ -23,8 +23,8 @@ impl SensitivityInspectionTemplateExcludes {
 }
 
 /// A builder for [`SensitivityInspectionTemplateExcludes`](crate::types::SensitivityInspectionTemplateExcludes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SensitivityInspectionTemplateExcludesBuilder {
     pub(crate) managed_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

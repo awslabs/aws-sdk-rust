@@ -18,8 +18,8 @@ impl DetachLoadBalancersOutput {
 }
 
 /// A builder for [`DetachLoadBalancersOutput`](crate::operation::detach_load_balancers::DetachLoadBalancersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachLoadBalancersOutputBuilder {
     _request_id: Option<String>,
 }

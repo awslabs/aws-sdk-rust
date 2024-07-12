@@ -20,8 +20,8 @@ impl GetRotationInput {
 }
 
 /// A builder for [`GetRotationInput`](crate::operation::get_rotation::GetRotationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRotationInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
 }

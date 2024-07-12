@@ -35,8 +35,8 @@ impl BatchDisassociateAssessmentReportEvidenceInput {
 }
 
 /// A builder for [`BatchDisassociateAssessmentReportEvidenceInput`](crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisassociateAssessmentReportEvidenceInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) evidence_folder_id: ::std::option::Option<::std::string::String>,

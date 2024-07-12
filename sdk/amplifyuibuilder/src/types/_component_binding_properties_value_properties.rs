@@ -65,8 +65,8 @@ impl ComponentBindingPropertiesValueProperties {
 }
 
 /// A builder for [`ComponentBindingPropertiesValueProperties`](crate::types::ComponentBindingPropertiesValueProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComponentBindingPropertiesValuePropertiesBuilder {
     pub(crate) model: ::std::option::Option<::std::string::String>,
     pub(crate) field: ::std::option::Option<::std::string::String>,

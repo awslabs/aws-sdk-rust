@@ -36,8 +36,8 @@ impl BatchGetResourceConfigOutput {
 }
 
 /// A builder for [`BatchGetResourceConfigOutput`](crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetResourceConfigOutputBuilder {
     pub(crate) base_configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
     pub(crate) unprocessed_resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,

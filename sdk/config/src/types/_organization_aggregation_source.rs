@@ -36,8 +36,8 @@ impl OrganizationAggregationSource {
 }
 
 /// A builder for [`OrganizationAggregationSource`](crate::types::OrganizationAggregationSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationAggregationSourceBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

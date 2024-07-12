@@ -20,8 +20,8 @@ impl DescribeProvisioningTemplateInput {
 }
 
 /// A builder for [`DescribeProvisioningTemplateInput`](crate::operation::describe_provisioning_template::DescribeProvisioningTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProvisioningTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
 }

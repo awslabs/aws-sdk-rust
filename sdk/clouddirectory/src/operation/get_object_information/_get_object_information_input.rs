@@ -32,8 +32,8 @@ impl GetObjectInformationInput {
 }
 
 /// A builder for [`GetObjectInformationInput`](crate::operation::get_object_information::GetObjectInformationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectInformationInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,

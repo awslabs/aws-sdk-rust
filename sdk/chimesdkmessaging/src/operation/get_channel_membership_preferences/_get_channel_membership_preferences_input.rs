@@ -32,8 +32,8 @@ impl GetChannelMembershipPreferencesInput {
 }
 
 /// A builder for [`GetChannelMembershipPreferencesInput`](crate::operation::get_channel_membership_preferences::GetChannelMembershipPreferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChannelMembershipPreferencesInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl CreateSamlProviderInput {
 }
 
 /// A builder for [`CreateSamlProviderInput`](crate::operation::create_saml_provider::CreateSamlProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSamlProviderInputBuilder {
     pub(crate) saml_metadata_document: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

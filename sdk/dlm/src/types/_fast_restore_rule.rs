@@ -41,8 +41,8 @@ impl FastRestoreRule {
 }
 
 /// A builder for [`FastRestoreRule`](crate::types::FastRestoreRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FastRestoreRuleBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) interval: ::std::option::Option<i32>,

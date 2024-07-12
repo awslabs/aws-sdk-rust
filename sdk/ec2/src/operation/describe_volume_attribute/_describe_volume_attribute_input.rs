@@ -32,8 +32,8 @@ impl DescribeVolumeAttributeInput {
 }
 
 /// A builder for [`DescribeVolumeAttributeInput`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVolumeAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::VolumeAttributeName>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,

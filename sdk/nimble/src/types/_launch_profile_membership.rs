@@ -54,8 +54,8 @@ impl LaunchProfileMembership {
 }
 
 /// A builder for [`LaunchProfileMembership`](crate::types::LaunchProfileMembership).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchProfileMembershipBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) persona: ::std::option::Option<crate::types::LaunchProfilePersona>,

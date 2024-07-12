@@ -27,8 +27,8 @@ impl SchemaChangePolicy {
 }
 
 /// A builder for [`SchemaChangePolicy`](crate::types::SchemaChangePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SchemaChangePolicyBuilder {
     pub(crate) update_behavior: ::std::option::Option<crate::types::UpdateBehavior>,
     pub(crate) delete_behavior: ::std::option::Option<crate::types::DeleteBehavior>,

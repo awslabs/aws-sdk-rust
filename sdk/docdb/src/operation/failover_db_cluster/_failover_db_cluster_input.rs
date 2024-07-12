@@ -39,8 +39,8 @@ impl FailoverDbClusterInput {
 }
 
 /// A builder for [`FailoverDbClusterInput`](crate::operation::failover_db_cluster::FailoverDbClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailoverDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_instance_identifier: ::std::option::Option<::std::string::String>,

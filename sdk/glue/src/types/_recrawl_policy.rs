@@ -27,8 +27,8 @@ impl RecrawlPolicy {
 }
 
 /// A builder for [`RecrawlPolicy`](crate::types::RecrawlPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecrawlPolicyBuilder {
     pub(crate) recrawl_behavior: ::std::option::Option<crate::types::RecrawlBehavior>,
 }

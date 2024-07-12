@@ -28,8 +28,8 @@ impl ListIntentPathsOutput {
 }
 
 /// A builder for [`ListIntentPathsOutput`](crate::operation::list_intent_paths::ListIntentPathsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIntentPathsOutputBuilder {
     pub(crate) node_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentNodeSummary>>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl DeviceSecretVerifierConfigType {
 }
 
 /// A builder for [`DeviceSecretVerifierConfigType`](crate::types::DeviceSecretVerifierConfigType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceSecretVerifierConfigTypeBuilder {
     pub(crate) password_verifier: ::std::option::Option<::std::string::String>,
     pub(crate) salt: ::std::option::Option<::std::string::String>,

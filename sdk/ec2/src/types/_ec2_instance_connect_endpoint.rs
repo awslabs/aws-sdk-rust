@@ -125,8 +125,8 @@ impl Ec2InstanceConnectEndpoint {
 }
 
 /// A builder for [`Ec2InstanceConnectEndpoint`](crate::types::Ec2InstanceConnectEndpoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2InstanceConnectEndpointBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_connect_endpoint_id: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DescribeMapInput {
 }
 
 /// A builder for [`DescribeMapInput`](crate::operation::describe_map::DescribeMapInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMapInputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl GetAccessPointPolicyForObjectLambdaOutput {
 }
 
 /// A builder for [`GetAccessPointPolicyForObjectLambdaOutput`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessPointPolicyForObjectLambdaOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

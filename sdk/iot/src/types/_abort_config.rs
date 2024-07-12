@@ -22,8 +22,8 @@ impl AbortConfig {
 }
 
 /// A builder for [`AbortConfig`](crate::types::AbortConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AbortConfigBuilder {
     pub(crate) criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::AbortCriteria>>,
 }

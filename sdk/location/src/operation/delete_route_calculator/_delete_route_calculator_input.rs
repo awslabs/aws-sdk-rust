@@ -20,8 +20,8 @@ impl DeleteRouteCalculatorInput {
 }
 
 /// A builder for [`DeleteRouteCalculatorInput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRouteCalculatorInputBuilder {
     pub(crate) calculator_name: ::std::option::Option<::std::string::String>,
 }

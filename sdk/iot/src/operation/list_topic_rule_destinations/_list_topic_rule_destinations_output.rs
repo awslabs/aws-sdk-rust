@@ -34,8 +34,8 @@ impl ListTopicRuleDestinationsOutput {
 }
 
 /// A builder for [`ListTopicRuleDestinationsOutput`](crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTopicRuleDestinationsOutputBuilder {
     pub(crate) destination_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleDestinationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -62,8 +62,8 @@ impl ListArtifactsInput {
 }
 
 /// A builder for [`ListArtifactsInput`](crate::operation::list_artifacts::ListArtifactsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListArtifactsInputBuilder {
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_type: ::std::option::Option<::std::string::String>,

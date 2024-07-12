@@ -99,8 +99,8 @@ impl ReportDefinition {
 }
 
 /// A builder for [`ReportDefinition`](crate::types::ReportDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportDefinitionBuilder {
     pub(crate) report_name: ::std::option::Option<::std::string::String>,
     pub(crate) time_unit: ::std::option::Option<crate::types::TimeUnit>,

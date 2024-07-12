@@ -75,8 +75,8 @@ impl ConflictMetadata {
 }
 
 /// A builder for [`ConflictMetadata`](crate::types::ConflictMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConflictMetadataBuilder {
     pub(crate) file_path: ::std::option::Option<::std::string::String>,
     pub(crate) file_sizes: ::std::option::Option<crate::types::FileSizes>,

@@ -29,8 +29,8 @@ impl PostLaunchActionsStatus {
 }
 
 /// A builder for [`PostLaunchActionsStatus`](crate::types::PostLaunchActionsStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostLaunchActionsStatusBuilder {
     pub(crate) ssm_agent_discovery_datetime: ::std::option::Option<::std::string::String>,
     pub(crate) post_launch_actions_launch_status_list: ::std::option::Option<::std::vec::Vec<crate::types::JobPostLaunchActionsLaunchStatus>>,

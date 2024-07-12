@@ -34,8 +34,8 @@ impl ListDataIntegrationAssociationsOutput {
 }
 
 /// A builder for [`ListDataIntegrationAssociationsOutput`](crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataIntegrationAssociationsOutputBuilder {
     pub(crate) data_integration_associations: ::std::option::Option<::std::vec::Vec<crate::types::DataIntegrationAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

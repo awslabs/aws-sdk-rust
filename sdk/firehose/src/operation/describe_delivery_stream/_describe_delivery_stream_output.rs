@@ -26,8 +26,8 @@ impl DescribeDeliveryStreamOutput {
 }
 
 /// A builder for [`DescribeDeliveryStreamOutput`](crate::operation::describe_delivery_stream::DescribeDeliveryStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeliveryStreamOutputBuilder {
     pub(crate) delivery_stream_description: ::std::option::Option<crate::types::DeliveryStreamDescription>,
     _request_id: Option<String>,

@@ -51,8 +51,8 @@ impl DiscoverInputSchemaOutput {
 }
 
 /// A builder for [`DiscoverInputSchemaOutput`](crate::operation::discover_input_schema::DiscoverInputSchemaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiscoverInputSchemaOutputBuilder {
     pub(crate) input_schema: ::std::option::Option<crate::types::SourceSchema>,
     pub(crate) parsed_input_records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,

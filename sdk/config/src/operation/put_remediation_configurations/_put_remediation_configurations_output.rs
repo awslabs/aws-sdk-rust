@@ -28,8 +28,8 @@ impl PutRemediationConfigurationsOutput {
 }
 
 /// A builder for [`PutRemediationConfigurationsOutput`](crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRemediationConfigurationsOutputBuilder {
     pub(crate) failed_batches: ::std::option::Option<::std::vec::Vec<crate::types::FailedRemediationBatch>>,
     _request_id: Option<String>,

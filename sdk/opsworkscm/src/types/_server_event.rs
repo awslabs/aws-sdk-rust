@@ -39,8 +39,8 @@ impl ServerEvent {
 }
 
 /// A builder for [`ServerEvent`](crate::types::ServerEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerEventBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) server_name: ::std::option::Option<::std::string::String>,

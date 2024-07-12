@@ -35,8 +35,8 @@ impl MetricBasedObservation {
 }
 
 /// A builder for [`MetricBasedObservation`](crate::types::MetricBasedObservation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricBasedObservationBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_values: ::std::option::Option<crate::types::DataQualityMetricValues>,

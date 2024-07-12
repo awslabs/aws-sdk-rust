@@ -41,8 +41,8 @@ impl LambdaFunctionMetadata {
 }
 
 /// A builder for [`LambdaFunctionMetadata`](crate::types::LambdaFunctionMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaFunctionMetadataBuilder {
     pub(crate) function_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

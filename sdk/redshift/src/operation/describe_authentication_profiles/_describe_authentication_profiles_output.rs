@@ -28,8 +28,8 @@ impl DescribeAuthenticationProfilesOutput {
 }
 
 /// A builder for [`DescribeAuthenticationProfilesOutput`](crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAuthenticationProfilesOutputBuilder {
     pub(crate) authentication_profiles: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfile>>,
     _request_id: Option<String>,

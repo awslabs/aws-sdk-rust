@@ -27,8 +27,8 @@ impl GetSignedBluinsightsUrlOutput {
 }
 
 /// A builder for [`GetSignedBluinsightsUrlOutput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSignedBluinsightsUrlOutputBuilder {
     pub(crate) signed_bi_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

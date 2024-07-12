@@ -34,8 +34,8 @@ impl GetVpnConnectionDeviceTypesOutput {
 }
 
 /// A builder for [`GetVpnConnectionDeviceTypesOutput`](crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVpnConnectionDeviceTypesOutputBuilder {
     pub(crate) vpn_connection_device_types: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnectionDeviceType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DeleteGatewayRouteOutput {
 }
 
 /// A builder for [`DeleteGatewayRouteOutput`](crate::operation::delete_gateway_route::DeleteGatewayRouteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGatewayRouteOutputBuilder {
     pub(crate) gateway_route: ::std::option::Option<crate::types::GatewayRouteData>,
     _request_id: Option<String>,

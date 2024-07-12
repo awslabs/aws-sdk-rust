@@ -127,8 +127,8 @@ impl ProgressEvent {
 }
 
 /// A builder for [`ProgressEvent`](crate::types::ProgressEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ProgressEventBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

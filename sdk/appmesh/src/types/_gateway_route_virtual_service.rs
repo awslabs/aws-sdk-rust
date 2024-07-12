@@ -22,8 +22,8 @@ impl GatewayRouteVirtualService {
 }
 
 /// A builder for [`GatewayRouteVirtualService`](crate::types::GatewayRouteVirtualService).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GatewayRouteVirtualServiceBuilder {
     pub(crate) virtual_service_name: ::std::option::Option<::std::string::String>,
 }

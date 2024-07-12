@@ -34,8 +34,8 @@ impl DescribeIpamScopesOutput {
 }
 
 /// A builder for [`DescribeIpamScopesOutput`](crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIpamScopesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_scopes: ::std::option::Option<::std::vec::Vec<crate::types::IpamScope>>,

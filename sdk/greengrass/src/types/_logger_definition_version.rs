@@ -23,8 +23,8 @@ impl LoggerDefinitionVersion {
 }
 
 /// A builder for [`LoggerDefinitionVersion`](crate::types::LoggerDefinitionVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoggerDefinitionVersionBuilder {
     pub(crate) loggers: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>,
 }

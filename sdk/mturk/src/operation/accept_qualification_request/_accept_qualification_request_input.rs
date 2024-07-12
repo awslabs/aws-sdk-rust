@@ -26,8 +26,8 @@ impl AcceptQualificationRequestInput {
 }
 
 /// A builder for [`AcceptQualificationRequestInput`](crate::operation::accept_qualification_request::AcceptQualificationRequestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptQualificationRequestInputBuilder {
     pub(crate) qualification_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) integer_value: ::std::option::Option<i32>,

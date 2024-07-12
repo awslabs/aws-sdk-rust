@@ -70,8 +70,8 @@ impl DescribeTrustedAdvisorChecksInput {
 }
 
 /// A builder for [`DescribeTrustedAdvisorChecksInput`](crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrustedAdvisorChecksInputBuilder {
     pub(crate) language: ::std::option::Option<::std::string::String>,
 }

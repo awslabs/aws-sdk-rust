@@ -27,8 +27,8 @@ impl ChannelStorageSummary {
 }
 
 /// A builder for [`ChannelStorageSummary`](crate::types::ChannelStorageSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelStorageSummaryBuilder {
     pub(crate) service_managed_s3: ::std::option::Option<crate::types::ServiceManagedChannelS3StorageSummary>,
     pub(crate) customer_managed_s3: ::std::option::Option<crate::types::CustomerManagedChannelS3StorageSummary>,

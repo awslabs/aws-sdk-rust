@@ -18,8 +18,8 @@ impl DeleteMicrosoftTeamsUserIdentityOutput {
 }
 
 /// A builder for [`DeleteMicrosoftTeamsUserIdentityOutput`](crate::operation::delete_microsoft_teams_user_identity::DeleteMicrosoftTeamsUserIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMicrosoftTeamsUserIdentityOutputBuilder {
     _request_id: Option<String>,
 }

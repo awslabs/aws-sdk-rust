@@ -28,8 +28,8 @@ impl ImportDecoderManifestInput {
 }
 
 /// A builder for [`ImportDecoderManifestInput`](crate::operation::import_decoder_manifest::ImportDecoderManifestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportDecoderManifestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) network_file_definitions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>,

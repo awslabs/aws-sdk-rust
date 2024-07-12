@@ -18,8 +18,8 @@ impl UpdateMediaStorageConfigurationOutput {
 }
 
 /// A builder for [`UpdateMediaStorageConfigurationOutput`](crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMediaStorageConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

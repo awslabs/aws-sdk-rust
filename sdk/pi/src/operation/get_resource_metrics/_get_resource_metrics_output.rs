@@ -52,8 +52,8 @@ impl GetResourceMetricsOutput {
 }
 
 /// A builder for [`GetResourceMetricsOutput`](crate::operation::get_resource_metrics::GetResourceMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceMetricsOutputBuilder {
     pub(crate) aligned_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) aligned_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,

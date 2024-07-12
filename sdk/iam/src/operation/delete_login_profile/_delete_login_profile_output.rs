@@ -18,8 +18,8 @@ impl DeleteLoginProfileOutput {
 }
 
 /// A builder for [`DeleteLoginProfileOutput`](crate::operation::delete_login_profile::DeleteLoginProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLoginProfileOutputBuilder {
     _request_id: Option<String>,
 }

@@ -12,8 +12,8 @@ impl GetLoggingOptionsInput {
 }
 
 /// A builder for [`GetLoggingOptionsInput`](crate::operation::get_logging_options::GetLoggingOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoggingOptionsInputBuilder {}
 impl GetLoggingOptionsInputBuilder {
     /// Consumes the builder and constructs a [`GetLoggingOptionsInput`](crate::operation::get_logging_options::GetLoggingOptionsInput).

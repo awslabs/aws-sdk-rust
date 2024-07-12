@@ -65,8 +65,8 @@ impl UsageRecordResult {
 }
 
 /// A builder for [`UsageRecordResult`](crate::types::UsageRecordResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageRecordResultBuilder {
     pub(crate) usage_record: ::std::option::Option<crate::types::UsageRecord>,
     pub(crate) metering_record_id: ::std::option::Option<::std::string::String>,

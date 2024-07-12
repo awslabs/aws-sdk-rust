@@ -33,8 +33,8 @@ impl ListDevicePositionsOutput {
 }
 
 /// A builder for [`ListDevicePositionsOutput`](crate::operation::list_device_positions::ListDevicePositionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevicePositionsOutputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

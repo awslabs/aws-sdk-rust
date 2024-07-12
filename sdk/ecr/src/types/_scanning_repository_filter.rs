@@ -28,8 +28,8 @@ impl ScanningRepositoryFilter {
 }
 
 /// A builder for [`ScanningRepositoryFilter`](crate::types::ScanningRepositoryFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanningRepositoryFilterBuilder {
     pub(crate) filter: ::std::option::Option<::std::string::String>,
     pub(crate) filter_type: ::std::option::Option<crate::types::ScanningRepositoryFilterType>,

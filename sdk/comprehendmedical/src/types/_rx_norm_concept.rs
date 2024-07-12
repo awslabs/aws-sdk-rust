@@ -33,8 +33,8 @@ impl RxNormConcept {
 }
 
 /// A builder for [`RxNormConcept`](crate::types::RxNormConcept).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RxNormConceptBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

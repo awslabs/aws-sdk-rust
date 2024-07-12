@@ -214,8 +214,8 @@ impl CreateIdentityProviderInput {
 }
 
 /// A builder for [`CreateIdentityProviderInput`](crate::operation::create_identity_provider::CreateIdentityProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateIdentityProviderInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_name: ::std::option::Option<::std::string::String>,

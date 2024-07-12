@@ -28,8 +28,8 @@ impl GetDomainSuggestionsOutput {
 }
 
 /// A builder for [`GetDomainSuggestionsOutput`](crate::operation::get_domain_suggestions::GetDomainSuggestionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDomainSuggestionsOutputBuilder {
     pub(crate) suggestions_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>>,
     _request_id: Option<String>,

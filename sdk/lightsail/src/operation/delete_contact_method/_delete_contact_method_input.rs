@@ -24,8 +24,8 @@ impl DeleteContactMethodInput {
 }
 
 /// A builder for [`DeleteContactMethodInput`](crate::operation::delete_contact_method::DeleteContactMethodInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContactMethodInputBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::ContactProtocol>,
 }

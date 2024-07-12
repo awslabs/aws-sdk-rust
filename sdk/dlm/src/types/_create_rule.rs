@@ -68,8 +68,8 @@ impl CreateRule {
 }
 
 /// A builder for [`CreateRule`](crate::types::CreateRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRuleBuilder {
     pub(crate) location: ::std::option::Option<crate::types::LocationValues>,
     pub(crate) interval: ::std::option::Option<i32>,

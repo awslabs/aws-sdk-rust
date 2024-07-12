@@ -46,8 +46,8 @@ impl DescribePatchGroupsOutput {
 }
 
 /// A builder for [`DescribePatchGroupsOutput`](crate::operation::describe_patch_groups::DescribePatchGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePatchGroupsOutputBuilder {
     pub(crate) mappings: ::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -52,8 +52,8 @@ impl DescribeActionOutput {
 }
 
 /// A builder for [`DescribeActionOutput`](crate::operation::describe_action::DescribeActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeActionOutputBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_resource: ::std::option::Option<crate::types::TargetResource>,

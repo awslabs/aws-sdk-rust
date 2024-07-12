@@ -33,8 +33,8 @@ impl ListTagsForDeliveryStreamOutput {
 }
 
 /// A builder for [`ListTagsForDeliveryStreamOutput`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTagsForDeliveryStreamOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) has_more_tags: ::std::option::Option<bool>,

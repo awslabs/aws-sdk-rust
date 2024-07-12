@@ -43,8 +43,8 @@ impl SearchProductsOutput {
 }
 
 /// A builder for [`SearchProductsOutput`](crate::operation::search_products::SearchProductsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchProductsOutputBuilder {
     pub(crate) product_view_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProductViewSummary>>,
     pub(crate) product_view_aggregations:

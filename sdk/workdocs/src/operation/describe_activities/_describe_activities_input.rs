@@ -90,8 +90,8 @@ impl DescribeActivitiesInput {
 }
 
 /// A builder for [`DescribeActivitiesInput`](crate::operation::describe_activities::DescribeActivitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeActivitiesInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

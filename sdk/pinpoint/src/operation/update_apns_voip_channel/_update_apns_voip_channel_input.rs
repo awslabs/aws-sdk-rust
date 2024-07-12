@@ -26,8 +26,8 @@ impl UpdateApnsVoipChannelInput {
 }
 
 /// A builder for [`UpdateApnsVoipChannelInput`](crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApnsVoipChannelInputBuilder {
     pub(crate) apns_voip_channel_request: ::std::option::Option<crate::types::ApnsVoipChannelRequest>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,

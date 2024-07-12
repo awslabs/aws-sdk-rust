@@ -29,8 +29,8 @@ impl ApplySecurityGroupsToLoadBalancerOutput {
 }
 
 /// A builder for [`ApplySecurityGroupsToLoadBalancerOutput`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplySecurityGroupsToLoadBalancerOutputBuilder {
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

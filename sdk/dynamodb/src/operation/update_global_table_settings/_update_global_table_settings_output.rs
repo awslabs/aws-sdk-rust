@@ -34,8 +34,8 @@ impl UpdateGlobalTableSettingsOutput {
 }
 
 /// A builder for [`UpdateGlobalTableSettingsOutput`](crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGlobalTableSettingsOutputBuilder {
     pub(crate) global_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) replica_settings: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsDescription>>,

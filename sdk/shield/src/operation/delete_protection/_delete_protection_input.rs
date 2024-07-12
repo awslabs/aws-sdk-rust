@@ -20,8 +20,8 @@ impl DeleteProtectionInput {
 }
 
 /// A builder for [`DeleteProtectionInput`](crate::operation::delete_protection::DeleteProtectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProtectionInputBuilder {
     pub(crate) protection_id: ::std::option::Option<::std::string::String>,
 }

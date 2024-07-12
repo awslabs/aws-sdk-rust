@@ -166,8 +166,8 @@ impl DescribeSubnetsInput {
 }
 
 /// A builder for [`DescribeSubnetsInput`](crate::operation::describe_subnets::DescribeSubnetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSubnetsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

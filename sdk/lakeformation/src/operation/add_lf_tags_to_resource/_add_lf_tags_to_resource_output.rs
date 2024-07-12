@@ -28,8 +28,8 @@ impl AddLfTagsToResourceOutput {
 }
 
 /// A builder for [`AddLfTagsToResourceOutput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddLfTagsToResourceOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>,
     _request_id: Option<String>,

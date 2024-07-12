@@ -26,8 +26,8 @@ impl GetAccountPreferencesOutput {
 }
 
 /// A builder for [`GetAccountPreferencesOutput`](crate::operation::get_account_preferences::GetAccountPreferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountPreferencesOutputBuilder {
     pub(crate) account_preferences: ::std::option::Option<crate::types::AccountPreferences>,
     _request_id: Option<String>,

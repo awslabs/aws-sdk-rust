@@ -20,8 +20,8 @@ impl DescribeEntitiesDetectionV2JobInput {
 }
 
 /// A builder for [`DescribeEntitiesDetectionV2JobInput`](crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEntitiesDetectionV2JobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

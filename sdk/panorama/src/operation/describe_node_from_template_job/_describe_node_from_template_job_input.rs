@@ -20,8 +20,8 @@ impl DescribeNodeFromTemplateJobInput {
 }
 
 /// A builder for [`DescribeNodeFromTemplateJobInput`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNodeFromTemplateJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

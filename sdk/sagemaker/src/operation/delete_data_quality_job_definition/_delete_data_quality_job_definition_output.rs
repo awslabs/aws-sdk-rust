@@ -18,8 +18,8 @@ impl DeleteDataQualityJobDefinitionOutput {
 }
 
 /// A builder for [`DeleteDataQualityJobDefinitionOutput`](crate::operation::delete_data_quality_job_definition::DeleteDataQualityJobDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataQualityJobDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl DeleteNetworkSiteOutput {
 }
 
 /// A builder for [`DeleteNetworkSiteOutput`](crate::operation::delete_network_site::DeleteNetworkSiteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkSiteOutputBuilder {
     pub(crate) network_site: ::std::option::Option<crate::types::NetworkSite>,
     _request_id: Option<String>,

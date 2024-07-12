@@ -57,8 +57,8 @@ impl InterruptionFilter {
 }
 
 /// A builder for [`InterruptionFilter`](crate::types::InterruptionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InterruptionFilterBuilder {
     pub(crate) threshold: ::std::option::Option<i64>,
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,

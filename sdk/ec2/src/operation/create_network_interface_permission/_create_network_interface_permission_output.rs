@@ -27,8 +27,8 @@ impl CreateNetworkInterfacePermissionOutput {
 }
 
 /// A builder for [`CreateNetworkInterfacePermissionOutput`](crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkInterfacePermissionOutputBuilder {
     pub(crate) interface_permission: ::std::option::Option<crate::types::NetworkInterfacePermission>,
     _request_id: Option<String>,

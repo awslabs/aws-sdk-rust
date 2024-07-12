@@ -27,8 +27,8 @@ impl GetSuppressedDestinationOutput {
 }
 
 /// A builder for [`GetSuppressedDestinationOutput`](crate::operation::get_suppressed_destination::GetSuppressedDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSuppressedDestinationOutputBuilder {
     pub(crate) suppressed_destination: ::std::option::Option<crate::types::SuppressedDestination>,
     _request_id: Option<String>,

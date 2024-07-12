@@ -18,8 +18,8 @@ impl UpdateAssumeRolePolicyOutput {
 }
 
 /// A builder for [`UpdateAssumeRolePolicyOutput`](crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAssumeRolePolicyOutputBuilder {
     _request_id: Option<String>,
 }

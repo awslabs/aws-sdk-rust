@@ -27,8 +27,8 @@ impl FailedItemDetails {
 }
 
 /// A builder for [`FailedItemDetails`](crate::types::FailedItemDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedItemDetailsBuilder {
     pub(crate) failure_code: ::std::option::Option<crate::types::FailedItemErrorCode>,
     pub(crate) retryable: ::std::option::Option<bool>,

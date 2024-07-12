@@ -75,8 +75,8 @@ impl QualityCheckStepMetadata {
 }
 
 /// A builder for [`QualityCheckStepMetadata`](crate::types::QualityCheckStepMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QualityCheckStepMetadataBuilder {
     pub(crate) check_type: ::std::option::Option<::std::string::String>,
     pub(crate) baseline_used_for_drift_check_statistics: ::std::option::Option<::std::string::String>,

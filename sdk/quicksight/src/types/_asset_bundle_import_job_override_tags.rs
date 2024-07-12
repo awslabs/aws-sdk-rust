@@ -63,8 +63,8 @@ impl AssetBundleImportJobOverrideTags {
 }
 
 /// A builder for [`AssetBundleImportJobOverrideTags`](crate::types::AssetBundleImportJobOverrideTags).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleImportJobOverrideTagsBuilder {
     pub(crate) vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobVpcConnectionOverrideTags>>,
     pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideTags>>,

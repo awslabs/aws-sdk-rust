@@ -80,8 +80,8 @@ impl ExportTransitGatewayRoutesInput {
 }
 
 /// A builder for [`ExportTransitGatewayRoutesInput`](crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportTransitGatewayRoutesInputBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

@@ -27,8 +27,8 @@ impl InvalidNetworkInterface {
 }
 
 /// A builder for [`InvalidNetworkInterface`](crate::types::InvalidNetworkInterface).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidNetworkInterfaceBuilder {
     pub(crate) interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::NetworkInterfaceFailureReason>,

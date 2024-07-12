@@ -164,8 +164,8 @@ impl DescribeTransformJobOutput {
 }
 
 /// A builder for [`DescribeTransformJobOutput`](crate::operation::describe_transform_job::DescribeTransformJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransformJobOutputBuilder {
     pub(crate) transform_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) transform_job_arn: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl ListTagsForResourceOutput {
 }
 
 /// A builder for [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTagsForResourceOutputBuilder {
     pub(crate) tags: ::std::option::Option<crate::types::Tags>,
     _request_id: Option<String>,

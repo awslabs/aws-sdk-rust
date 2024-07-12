@@ -43,8 +43,8 @@ impl ListChannelFlowsOutput {
 }
 
 /// A builder for [`ListChannelFlowsOutput`](crate::operation::list_channel_flows::ListChannelFlowsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListChannelFlowsOutputBuilder {
     pub(crate) channel_flows: ::std::option::Option<::std::vec::Vec<crate::types::ChannelFlowSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

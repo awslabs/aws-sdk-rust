@@ -34,8 +34,8 @@ impl ListRescoreExecutionPlansOutput {
 }
 
 /// A builder for [`ListRescoreExecutionPlansOutput`](crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRescoreExecutionPlansOutputBuilder {
     pub(crate) summary_items: ::std::option::Option<::std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

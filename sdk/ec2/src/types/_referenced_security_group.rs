@@ -45,8 +45,8 @@ impl ReferencedSecurityGroup {
 }
 
 /// A builder for [`ReferencedSecurityGroup`](crate::types::ReferencedSecurityGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferencedSecurityGroupBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) peering_status: ::std::option::Option<::std::string::String>,

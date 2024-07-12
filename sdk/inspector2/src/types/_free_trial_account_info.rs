@@ -29,8 +29,8 @@ impl FreeTrialAccountInfo {
 }
 
 /// A builder for [`FreeTrialAccountInfo`](crate::types::FreeTrialAccountInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FreeTrialAccountInfoBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) free_trial_info: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialInfo>>,

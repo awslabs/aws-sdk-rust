@@ -27,8 +27,8 @@ impl StartInstanceOnboardingJobInput {
 }
 
 /// A builder for [`StartInstanceOnboardingJobInput`](crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartInstanceOnboardingJobInputBuilder {
     pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,

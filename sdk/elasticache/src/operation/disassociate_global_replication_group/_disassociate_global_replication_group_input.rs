@@ -32,8 +32,8 @@ impl DisassociateGlobalReplicationGroupInput {
 }
 
 /// A builder for [`DisassociateGlobalReplicationGroupInput`](crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateGlobalReplicationGroupInputBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,

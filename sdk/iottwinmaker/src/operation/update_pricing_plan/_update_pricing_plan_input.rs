@@ -28,8 +28,8 @@ impl UpdatePricingPlanInput {
 }
 
 /// A builder for [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePricingPlanInputBuilder {
     pub(crate) pricing_mode: ::std::option::Option<crate::types::PricingMode>,
     pub(crate) bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

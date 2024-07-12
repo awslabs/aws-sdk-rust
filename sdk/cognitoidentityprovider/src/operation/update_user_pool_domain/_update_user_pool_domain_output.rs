@@ -27,8 +27,8 @@ impl UpdateUserPoolDomainOutput {
 }
 
 /// A builder for [`UpdateUserPoolDomainOutput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserPoolDomainOutputBuilder {
     pub(crate) cloud_front_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

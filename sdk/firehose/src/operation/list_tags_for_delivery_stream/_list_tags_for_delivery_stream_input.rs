@@ -32,8 +32,8 @@ impl ListTagsForDeliveryStreamInput {
 }
 
 /// A builder for [`ListTagsForDeliveryStreamInput`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTagsForDeliveryStreamInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) exclusive_start_tag_key: ::std::option::Option<::std::string::String>,

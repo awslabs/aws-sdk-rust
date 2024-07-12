@@ -149,8 +149,8 @@ impl DescribeStateMachineOutput {
 }
 
 /// A builder for [`DescribeStateMachineOutput`](crate::operation::describe_state_machine::DescribeStateMachineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeStateMachineOutputBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

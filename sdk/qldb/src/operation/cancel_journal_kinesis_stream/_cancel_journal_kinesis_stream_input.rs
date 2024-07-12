@@ -26,8 +26,8 @@ impl CancelJournalKinesisStreamInput {
 }
 
 /// A builder for [`CancelJournalKinesisStreamInput`](crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelJournalKinesisStreamInputBuilder {
     pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,

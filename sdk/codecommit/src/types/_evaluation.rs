@@ -43,8 +43,8 @@ impl Evaluation {
 }
 
 /// A builder for [`Evaluation`](crate::types::Evaluation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationBuilder {
     pub(crate) approved: ::std::option::Option<bool>,
     pub(crate) overridden: ::std::option::Option<bool>,

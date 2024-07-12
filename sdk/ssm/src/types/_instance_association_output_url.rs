@@ -21,8 +21,8 @@ impl InstanceAssociationOutputUrl {
 }
 
 /// A builder for [`InstanceAssociationOutputUrl`](crate::types::InstanceAssociationOutputUrl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceAssociationOutputUrlBuilder {
     pub(crate) s3_output_url: ::std::option::Option<crate::types::S3OutputUrl>,
 }

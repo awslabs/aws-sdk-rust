@@ -45,8 +45,8 @@ impl ModifyOptionGroupInput {
 }
 
 /// A builder for [`ModifyOptionGroupInput`](crate::operation::modify_option_group::ModifyOptionGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyOptionGroupInputBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) options_to_include: ::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>>,

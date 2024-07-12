@@ -21,8 +21,8 @@ impl AwsWafv2ActionBlockDetails {
 }
 
 /// A builder for [`AwsWafv2ActionBlockDetails`](crate::types::AwsWafv2ActionBlockDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafv2ActionBlockDetailsBuilder {
     pub(crate) custom_response: ::std::option::Option<crate::types::AwsWafv2CustomResponseDetails>,
 }

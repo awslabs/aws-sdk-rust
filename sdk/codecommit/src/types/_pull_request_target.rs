@@ -57,8 +57,8 @@ impl PullRequestTarget {
 }
 
 /// A builder for [`PullRequestTarget`](crate::types::PullRequestTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PullRequestTargetBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_reference: ::std::option::Option<::std::string::String>,

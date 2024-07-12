@@ -111,8 +111,8 @@ impl S3LogsConfig {
 }
 
 /// A builder for [`S3LogsConfig`](crate::types::S3LogsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3LogsConfigBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LogsConfigStatusType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

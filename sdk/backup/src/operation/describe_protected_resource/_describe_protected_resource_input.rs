@@ -20,8 +20,8 @@ impl DescribeProtectedResourceInput {
 }
 
 /// A builder for [`DescribeProtectedResourceInput`](crate::operation::describe_protected_resource::DescribeProtectedResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProtectedResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }

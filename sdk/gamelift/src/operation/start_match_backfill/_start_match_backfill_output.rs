@@ -26,8 +26,8 @@ impl StartMatchBackfillOutput {
 }
 
 /// A builder for [`StartMatchBackfillOutput`](crate::operation::start_match_backfill::StartMatchBackfillOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMatchBackfillOutputBuilder {
     pub(crate) matchmaking_ticket: ::std::option::Option<crate::types::MatchmakingTicket>,
     _request_id: Option<String>,

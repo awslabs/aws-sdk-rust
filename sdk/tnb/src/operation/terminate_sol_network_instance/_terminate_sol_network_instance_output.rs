@@ -41,8 +41,8 @@ impl TerminateSolNetworkInstanceOutput {
 }
 
 /// A builder for [`TerminateSolNetworkInstanceOutput`](crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TerminateSolNetworkInstanceOutputBuilder {
     pub(crate) ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

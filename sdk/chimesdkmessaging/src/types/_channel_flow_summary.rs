@@ -44,8 +44,8 @@ impl ChannelFlowSummary {
 }
 
 /// A builder for [`ChannelFlowSummary`](crate::types::ChannelFlowSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ChannelFlowSummaryBuilder {
     pub(crate) channel_flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

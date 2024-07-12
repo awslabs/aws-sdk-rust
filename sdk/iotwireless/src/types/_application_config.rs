@@ -33,8 +33,8 @@ impl ApplicationConfig {
 }
 
 /// A builder for [`ApplicationConfig`](crate::types::ApplicationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationConfigBuilder {
     pub(crate) f_port: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<crate::types::ApplicationConfigType>,

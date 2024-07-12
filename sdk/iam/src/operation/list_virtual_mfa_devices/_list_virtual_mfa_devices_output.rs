@@ -40,8 +40,8 @@ impl ListVirtualMfaDevicesOutput {
 }
 
 /// A builder for [`ListVirtualMfaDevicesOutput`](crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVirtualMfaDevicesOutputBuilder {
     pub(crate) virtual_mfa_devices: ::std::option::Option<::std::vec::Vec<crate::types::VirtualMfaDevice>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl CreateDataDeletionJobOutput {
 }
 
 /// A builder for [`CreateDataDeletionJobOutput`](crate::operation::create_data_deletion_job::CreateDataDeletionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataDeletionJobOutputBuilder {
     pub(crate) data_deletion_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

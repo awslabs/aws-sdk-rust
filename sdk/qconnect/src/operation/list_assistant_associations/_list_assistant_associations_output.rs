@@ -33,8 +33,8 @@ impl ListAssistantAssociationsOutput {
 }
 
 /// A builder for [`ListAssistantAssociationsOutput`](crate::operation::list_assistant_associations::ListAssistantAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssistantAssociationsOutputBuilder {
     pub(crate) assistant_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssistantAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

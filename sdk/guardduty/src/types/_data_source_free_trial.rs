@@ -21,8 +21,8 @@ impl DataSourceFreeTrial {
 }
 
 /// A builder for [`DataSourceFreeTrial`](crate::types::DataSourceFreeTrial).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSourceFreeTrialBuilder {
     pub(crate) free_trial_days_remaining: ::std::option::Option<i32>,
 }

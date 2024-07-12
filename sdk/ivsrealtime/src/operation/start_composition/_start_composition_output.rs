@@ -26,8 +26,8 @@ impl StartCompositionOutput {
 }
 
 /// A builder for [`StartCompositionOutput`](crate::operation::start_composition::StartCompositionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCompositionOutputBuilder {
     pub(crate) composition: ::std::option::Option<crate::types::Composition>,
     _request_id: Option<String>,

@@ -52,8 +52,8 @@ impl RestoreVolumeFromSnapshotInput {
 }
 
 /// A builder for [`RestoreVolumeFromSnapshotInput`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreVolumeFromSnapshotInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,

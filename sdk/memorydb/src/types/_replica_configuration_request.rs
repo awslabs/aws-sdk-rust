@@ -21,8 +21,8 @@ impl ReplicaConfigurationRequest {
 }
 
 /// A builder for [`ReplicaConfigurationRequest`](crate::types::ReplicaConfigurationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicaConfigurationRequestBuilder {
     pub(crate) replica_count: ::std::option::Option<i32>,
 }

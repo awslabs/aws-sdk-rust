@@ -20,8 +20,8 @@ impl DeleteInferenceComponentInput {
 }
 
 /// A builder for [`DeleteInferenceComponentInput`](crate::operation::delete_inference_component::DeleteInferenceComponentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInferenceComponentInputBuilder {
     pub(crate) inference_component_name: ::std::option::Option<::std::string::String>,
 }

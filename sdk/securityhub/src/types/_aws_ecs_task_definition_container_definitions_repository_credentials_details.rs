@@ -21,8 +21,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetailsBuilder {
     pub(crate) credentials_parameter: ::std::option::Option<::std::string::String>,
 }

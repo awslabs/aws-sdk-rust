@@ -34,8 +34,8 @@ impl ListRepositoriesInDomainOutput {
 }
 
 /// A builder for [`ListRepositoriesInDomainOutput`](crate::operation::list_repositories_in_domain::ListRepositoriesInDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRepositoriesInDomainOutputBuilder {
     pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

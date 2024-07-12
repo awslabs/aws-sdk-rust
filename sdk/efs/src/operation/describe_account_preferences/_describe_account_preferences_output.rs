@@ -32,8 +32,8 @@ impl DescribeAccountPreferencesOutput {
 }
 
 /// A builder for [`DescribeAccountPreferencesOutput`](crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountPreferencesOutputBuilder {
     pub(crate) resource_id_preference: ::std::option::Option<crate::types::ResourceIdPreference>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

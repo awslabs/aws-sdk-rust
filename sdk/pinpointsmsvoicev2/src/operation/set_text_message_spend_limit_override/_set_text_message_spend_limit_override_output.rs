@@ -26,8 +26,8 @@ impl SetTextMessageSpendLimitOverrideOutput {
 }
 
 /// A builder for [`SetTextMessageSpendLimitOverrideOutput`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetTextMessageSpendLimitOverrideOutputBuilder {
     pub(crate) monthly_limit: ::std::option::Option<i64>,
     _request_id: Option<String>,

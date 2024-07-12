@@ -41,8 +41,8 @@ impl UnsuccessfulFaceAssociation {
 }
 
 /// A builder for [`UnsuccessfulFaceAssociation`](crate::types::UnsuccessfulFaceAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnsuccessfulFaceAssociationBuilder {
     pub(crate) face_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

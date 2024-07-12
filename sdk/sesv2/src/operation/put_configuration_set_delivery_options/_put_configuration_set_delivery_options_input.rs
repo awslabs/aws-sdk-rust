@@ -33,8 +33,8 @@ impl PutConfigurationSetDeliveryOptionsInput {
 }
 
 /// A builder for [`PutConfigurationSetDeliveryOptionsInput`](crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigurationSetDeliveryOptionsInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) tls_policy: ::std::option::Option<crate::types::TlsPolicy>,

@@ -77,8 +77,8 @@ impl UpgradeStepItem {
 }
 
 /// A builder for [`UpgradeStepItem`](crate::types::UpgradeStepItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpgradeStepItemBuilder {
     pub(crate) upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
     pub(crate) upgrade_step_status: ::std::option::Option<crate::types::UpgradeStatus>,

@@ -26,8 +26,8 @@ impl AttachElasticLoadBalancerInput {
 }
 
 /// A builder for [`AttachElasticLoadBalancerInput`](crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachElasticLoadBalancerInputBuilder {
     pub(crate) elastic_load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,

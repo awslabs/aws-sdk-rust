@@ -89,8 +89,8 @@ impl CreateStorageVirtualMachineInput {
 }
 
 /// A builder for [`CreateStorageVirtualMachineInput`](crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateStorageVirtualMachineInputBuilder {
     pub(crate) active_directory_configuration: ::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

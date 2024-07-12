@@ -91,8 +91,8 @@ impl AwsDynamoDbTableGlobalSecondaryIndex {
 }
 
 /// A builder for [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::types::AwsDynamoDbTableGlobalSecondaryIndex).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     pub(crate) backfilling: ::std::option::Option<bool>,
     pub(crate) index_arn: ::std::option::Option<::std::string::String>,

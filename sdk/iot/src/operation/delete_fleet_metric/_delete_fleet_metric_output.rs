@@ -18,8 +18,8 @@ impl DeleteFleetMetricOutput {
 }
 
 /// A builder for [`DeleteFleetMetricOutput`](crate::operation::delete_fleet_metric::DeleteFleetMetricOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFleetMetricOutputBuilder {
     _request_id: Option<String>,
 }

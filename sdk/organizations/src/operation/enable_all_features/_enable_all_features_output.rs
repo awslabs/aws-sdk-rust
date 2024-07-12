@@ -26,8 +26,8 @@ impl EnableAllFeaturesOutput {
 }
 
 /// A builder for [`EnableAllFeaturesOutput`](crate::operation::enable_all_features::EnableAllFeaturesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableAllFeaturesOutputBuilder {
     pub(crate) handshake: ::std::option::Option<crate::types::Handshake>,
     _request_id: Option<String>,

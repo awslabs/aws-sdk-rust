@@ -36,8 +36,8 @@ impl GetSampleDataOutput {
 }
 
 /// A builder for [`GetSampleDataOutput`](crate::operation::get_sample_data::GetSampleDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSampleDataOutputBuilder {
     pub(crate) header_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sample_rows: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,

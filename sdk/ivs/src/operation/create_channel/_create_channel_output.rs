@@ -32,8 +32,8 @@ impl CreateChannelOutput {
 }
 
 /// A builder for [`CreateChannelOutput`](crate::operation::create_channel::CreateChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateChannelOutputBuilder {
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,
     pub(crate) stream_key: ::std::option::Option<crate::types::StreamKey>,

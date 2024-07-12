@@ -18,8 +18,8 @@ impl DeleteModelCardOutput {
 }
 
 /// A builder for [`DeleteModelCardOutput`](crate::operation::delete_model_card::DeleteModelCardOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelCardOutputBuilder {
     _request_id: Option<String>,
 }

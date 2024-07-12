@@ -11,8 +11,8 @@ impl ResetAllResourceLogLevelsInput {
 }
 
 /// A builder for [`ResetAllResourceLogLevelsInput`](crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetAllResourceLogLevelsInputBuilder {}
 impl ResetAllResourceLogLevelsInputBuilder {
     /// Consumes the builder and constructs a [`ResetAllResourceLogLevelsInput`](crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput).

@@ -27,8 +27,8 @@ impl DeleteTrustInput {
 }
 
 /// A builder for [`DeleteTrustInput`](crate::operation::delete_trust::DeleteTrustInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrustInputBuilder {
     pub(crate) trust_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete_associated_conditional_forwarder: ::std::option::Option<bool>,

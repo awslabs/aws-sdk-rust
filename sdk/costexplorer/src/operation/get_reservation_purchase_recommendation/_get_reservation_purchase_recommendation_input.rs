@@ -178,8 +178,8 @@ impl GetReservationPurchaseRecommendationInput {
 }
 
 /// A builder for [`GetReservationPurchaseRecommendationInput`](crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReservationPurchaseRecommendationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<::std::string::String>,

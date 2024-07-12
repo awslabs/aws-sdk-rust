@@ -27,8 +27,8 @@ impl WriteRequest {
 }
 
 /// A builder for [`WriteRequest`](crate::types::WriteRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WriteRequestBuilder {
     pub(crate) put_request: ::std::option::Option<crate::types::PutRequest>,
     pub(crate) delete_request: ::std::option::Option<crate::types::DeleteRequest>,

@@ -20,8 +20,8 @@ impl ListGremlinQueriesInput {
 }
 
 /// A builder for [`ListGremlinQueriesInput`](crate::operation::list_gremlin_queries::ListGremlinQueriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGremlinQueriesInputBuilder {
     pub(crate) include_waiting: ::std::option::Option<bool>,
 }

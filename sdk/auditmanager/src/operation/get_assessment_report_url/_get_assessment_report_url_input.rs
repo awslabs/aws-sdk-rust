@@ -26,8 +26,8 @@ impl GetAssessmentReportUrlInput {
 }
 
 /// A builder for [`GetAssessmentReportUrlInput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssessmentReportUrlInputBuilder {
     pub(crate) assessment_report_id: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,

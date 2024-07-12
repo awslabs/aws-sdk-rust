@@ -57,8 +57,8 @@ impl StepConfig {
 }
 
 /// A builder for [`StepConfig`](crate::types::StepConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) action_on_failure: ::std::option::Option<crate::types::ActionOnFailure>,

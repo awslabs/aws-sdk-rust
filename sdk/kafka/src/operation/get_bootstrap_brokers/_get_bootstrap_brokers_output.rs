@@ -80,8 +80,8 @@ impl GetBootstrapBrokersOutput {
 }
 
 /// A builder for [`GetBootstrapBrokersOutput`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBootstrapBrokersOutputBuilder {
     pub(crate) bootstrap_broker_string: ::std::option::Option<::std::string::String>,
     pub(crate) bootstrap_broker_string_tls: ::std::option::Option<::std::string::String>,

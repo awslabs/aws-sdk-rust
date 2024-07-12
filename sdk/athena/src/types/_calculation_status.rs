@@ -55,8 +55,8 @@ impl CalculationStatus {
 }
 
 /// A builder for [`CalculationStatus`](crate::types::CalculationStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CalculationStatusBuilder {
     pub(crate) submission_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,

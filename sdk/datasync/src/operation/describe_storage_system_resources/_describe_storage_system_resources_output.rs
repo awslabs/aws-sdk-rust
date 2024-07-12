@@ -34,8 +34,8 @@ impl DescribeStorageSystemResourcesOutput {
 }
 
 /// A builder for [`DescribeStorageSystemResourcesOutput`](crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStorageSystemResourcesOutputBuilder {
     pub(crate) resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

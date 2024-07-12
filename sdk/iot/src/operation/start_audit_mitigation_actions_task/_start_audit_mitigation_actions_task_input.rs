@@ -41,8 +41,8 @@ impl StartAuditMitigationActionsTaskInput {
 }
 
 /// A builder for [`StartAuditMitigationActionsTaskInput`](crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAuditMitigationActionsTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<crate::types::AuditMitigationActionsTaskTarget>,

@@ -11,8 +11,8 @@ impl DescribeAccountAuditConfigurationInput {
 }
 
 /// A builder for [`DescribeAccountAuditConfigurationInput`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountAuditConfigurationInputBuilder {}
 impl DescribeAccountAuditConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccountAuditConfigurationInput`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationInput).

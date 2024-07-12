@@ -36,8 +36,8 @@ impl UpdateLogLevelsByResourceTypesInput {
 }
 
 /// A builder for [`UpdateLogLevelsByResourceTypesInput`](crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLogLevelsByResourceTypesInputBuilder {
     pub(crate) default_log_level: ::std::option::Option<crate::types::LogLevel>,
     pub(crate) wireless_device_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>,

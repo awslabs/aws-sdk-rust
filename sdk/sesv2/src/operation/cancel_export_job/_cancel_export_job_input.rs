@@ -21,8 +21,8 @@ impl CancelExportJobInput {
 }
 
 /// A builder for [`CancelExportJobInput`](crate::operation::cancel_export_job::CancelExportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelExportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

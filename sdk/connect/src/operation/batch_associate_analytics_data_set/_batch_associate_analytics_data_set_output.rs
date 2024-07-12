@@ -36,8 +36,8 @@ impl BatchAssociateAnalyticsDataSetOutput {
 }
 
 /// A builder for [`BatchAssociateAnalyticsDataSetOutput`](crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAssociateAnalyticsDataSetOutputBuilder {
     pub(crate) created: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsDataAssociationResult>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorResult>>,

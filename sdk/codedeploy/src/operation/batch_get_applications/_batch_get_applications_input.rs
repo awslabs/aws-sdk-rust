@@ -23,8 +23,8 @@ impl BatchGetApplicationsInput {
 }
 
 /// A builder for [`BatchGetApplicationsInput`](crate::operation::batch_get_applications::BatchGetApplicationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetApplicationsInputBuilder {
     pub(crate) application_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

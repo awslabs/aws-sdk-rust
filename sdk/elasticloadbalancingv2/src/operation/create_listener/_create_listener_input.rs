@@ -104,8 +104,8 @@ impl CreateListenerInput {
 }
 
 /// A builder for [`CreateListenerInput`](crate::operation::create_listener::CreateListenerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateListenerInputBuilder {
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::ProtocolEnum>,

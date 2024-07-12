@@ -48,8 +48,8 @@ impl GetStorageProfileForQueueOutput {
 }
 
 /// A builder for [`GetStorageProfileForQueueOutput`](crate::operation::get_storage_profile_for_queue::GetStorageProfileForQueueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStorageProfileForQueueOutputBuilder {
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

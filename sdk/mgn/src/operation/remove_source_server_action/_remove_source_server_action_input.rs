@@ -32,8 +32,8 @@ impl RemoveSourceServerActionInput {
 }
 
 /// A builder for [`RemoveSourceServerActionInput`](crate::operation::remove_source_server_action::RemoveSourceServerActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveSourceServerActionInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_id: ::std::option::Option<::std::string::String>,

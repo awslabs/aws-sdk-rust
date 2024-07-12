@@ -40,8 +40,8 @@ impl Get {
 }
 
 /// A builder for [`Get`](crate::types::Get).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBuilder {
     pub(crate) key: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,

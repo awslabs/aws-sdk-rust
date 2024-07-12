@@ -51,8 +51,8 @@ impl MappingEntry {
 }
 
 /// A builder for [`MappingEntry`](crate::types::MappingEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MappingEntryBuilder {
     pub(crate) source_table: ::std::option::Option<::std::string::String>,
     pub(crate) source_path: ::std::option::Option<::std::string::String>,

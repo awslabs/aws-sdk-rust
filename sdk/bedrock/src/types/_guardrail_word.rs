@@ -22,8 +22,8 @@ impl GuardrailWord {
 }
 
 /// A builder for [`GuardrailWord`](crate::types::GuardrailWord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailWordBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

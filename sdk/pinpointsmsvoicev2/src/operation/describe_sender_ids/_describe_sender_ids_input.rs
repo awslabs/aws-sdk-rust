@@ -42,8 +42,8 @@ impl DescribeSenderIdsInput {
 }
 
 /// A builder for [`DescribeSenderIdsInput`](crate::operation::describe_sender_ids::DescribeSenderIdsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSenderIdsInputBuilder {
     pub(crate) sender_ids: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdFilter>>,

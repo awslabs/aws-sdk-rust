@@ -39,8 +39,8 @@ impl ProcessingOutput {
 }
 
 /// A builder for [`ProcessingOutput`](crate::types::ProcessingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessingOutputBuilder {
     pub(crate) output_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_output: ::std::option::Option<crate::types::ProcessingS3Output>,

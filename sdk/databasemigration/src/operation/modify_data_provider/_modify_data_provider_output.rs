@@ -26,8 +26,8 @@ impl ModifyDataProviderOutput {
 }
 
 /// A builder for [`ModifyDataProviderOutput`](crate::operation::modify_data_provider::ModifyDataProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDataProviderOutputBuilder {
     pub(crate) data_provider: ::std::option::Option<crate::types::DataProvider>,
     _request_id: Option<String>,

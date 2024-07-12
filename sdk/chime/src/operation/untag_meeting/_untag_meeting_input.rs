@@ -28,8 +28,8 @@ impl UntagMeetingInput {
 }
 
 /// A builder for [`UntagMeetingInput`](crate::operation::untag_meeting::UntagMeetingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagMeetingInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

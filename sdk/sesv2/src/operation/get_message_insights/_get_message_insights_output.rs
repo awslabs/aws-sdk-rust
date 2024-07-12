@@ -67,8 +67,8 @@ impl GetMessageInsightsOutput {
 }
 
 /// A builder for [`GetMessageInsightsOutput`](crate::operation::get_message_insights::GetMessageInsightsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetMessageInsightsOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) from_email_address: ::std::option::Option<::std::string::String>,

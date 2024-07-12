@@ -34,8 +34,8 @@ impl ListTrainingJobsOutput {
 }
 
 /// A builder for [`ListTrainingJobsOutput`](crate::operation::list_training_jobs::ListTrainingJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrainingJobsOutputBuilder {
     pub(crate) training_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrainingJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

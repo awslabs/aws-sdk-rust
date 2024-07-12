@@ -77,8 +77,8 @@ impl LteObj {
 }
 
 /// A builder for [`LteObj`](crate::types::LteObj).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LteObjBuilder {
     pub(crate) mcc: ::std::option::Option<i32>,
     pub(crate) mnc: ::std::option::Option<i32>,

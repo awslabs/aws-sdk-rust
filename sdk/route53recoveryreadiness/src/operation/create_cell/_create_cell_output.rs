@@ -54,8 +54,8 @@ impl CreateCellOutput {
 }
 
 /// A builder for [`CreateCellOutput`](crate::operation::create_cell::CreateCellOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCellOutputBuilder {
     pub(crate) cell_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cell_name: ::std::option::Option<::std::string::String>,

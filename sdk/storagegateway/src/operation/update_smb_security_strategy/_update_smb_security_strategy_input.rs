@@ -34,8 +34,8 @@ impl UpdateSmbSecurityStrategyInput {
 }
 
 /// A builder for [`UpdateSmbSecurityStrategyInput`](crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSmbSecurityStrategyInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) smb_security_strategy: ::std::option::Option<crate::types::SmbSecurityStrategy>,

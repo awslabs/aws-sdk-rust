@@ -26,8 +26,8 @@ impl GetParameterOutput {
 }
 
 /// A builder for [`GetParameterOutput`](crate::operation::get_parameter::GetParameterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetParameterOutputBuilder {
     pub(crate) parameter: ::std::option::Option<crate::types::Parameter>,
     _request_id: Option<String>,

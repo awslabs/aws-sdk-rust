@@ -11,8 +11,8 @@ impl GetAccountBalanceInput {
 }
 
 /// A builder for [`GetAccountBalanceInput`](crate::operation::get_account_balance::GetAccountBalanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountBalanceInputBuilder {}
 impl GetAccountBalanceInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountBalanceInput`](crate::operation::get_account_balance::GetAccountBalanceInput).

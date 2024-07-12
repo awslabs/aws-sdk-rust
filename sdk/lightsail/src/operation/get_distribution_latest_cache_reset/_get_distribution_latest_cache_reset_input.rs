@@ -24,8 +24,8 @@ impl GetDistributionLatestCacheResetInput {
 }
 
 /// A builder for [`GetDistributionLatestCacheResetInput`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDistributionLatestCacheResetInputBuilder {
     pub(crate) distribution_name: ::std::option::Option<::std::string::String>,
 }

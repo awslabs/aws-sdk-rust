@@ -18,8 +18,8 @@ impl SendTaskSuccessOutput {
 }
 
 /// A builder for [`SendTaskSuccessOutput`](crate::operation::send_task_success::SendTaskSuccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendTaskSuccessOutputBuilder {
     _request_id: Option<String>,
 }

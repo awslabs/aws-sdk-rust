@@ -48,8 +48,8 @@ impl GetMobileDeviceAccessOverrideInput {
 }
 
 /// A builder for [`GetMobileDeviceAccessOverrideInput`](crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMobileDeviceAccessOverrideInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

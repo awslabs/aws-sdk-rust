@@ -32,8 +32,8 @@ impl GetWirelessGatewayCertificateOutput {
 }
 
 /// A builder for [`GetWirelessGatewayCertificateOutput`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWirelessGatewayCertificateOutputBuilder {
     pub(crate) iot_certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) lo_ra_wan_network_server_certificate_id: ::std::option::Option<::std::string::String>,

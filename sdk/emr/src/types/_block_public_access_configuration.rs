@@ -51,8 +51,8 @@ impl BlockPublicAccessConfiguration {
 }
 
 /// A builder for [`BlockPublicAccessConfiguration`](crate::types::BlockPublicAccessConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlockPublicAccessConfigurationBuilder {
     pub(crate) block_public_security_group_rules: ::std::option::Option<bool>,
     pub(crate) permitted_public_security_group_rule_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,

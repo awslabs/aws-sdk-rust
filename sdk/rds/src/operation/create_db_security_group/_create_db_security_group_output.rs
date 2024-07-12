@@ -28,8 +28,8 @@ impl CreateDbSecurityGroupOutput {
 }
 
 /// A builder for [`CreateDbSecurityGroupOutput`](crate::operation::create_db_security_group::CreateDbSecurityGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDbSecurityGroupOutputBuilder {
     pub(crate) db_security_group: ::std::option::Option<crate::types::DbSecurityGroup>,
     _request_id: Option<String>,

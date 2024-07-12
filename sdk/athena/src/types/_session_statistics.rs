@@ -21,8 +21,8 @@ impl SessionStatistics {
 }
 
 /// A builder for [`SessionStatistics`](crate::types::SessionStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionStatisticsBuilder {
     pub(crate) dpu_execution_in_millis: ::std::option::Option<i64>,
 }

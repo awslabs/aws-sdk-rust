@@ -32,8 +32,8 @@ impl ListImportsInput {
 }
 
 /// A builder for [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImportsInputBuilder {
     pub(crate) table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,

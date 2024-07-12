@@ -182,8 +182,8 @@ impl CreateKxClusterInput {
 }
 
 /// A builder for [`CreateKxClusterInput`](crate::operation::create_kx_cluster::CreateKxClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKxClusterInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,

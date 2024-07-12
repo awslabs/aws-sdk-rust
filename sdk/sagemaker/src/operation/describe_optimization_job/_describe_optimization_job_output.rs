@@ -132,8 +132,8 @@ impl DescribeOptimizationJobOutput {
 }
 
 /// A builder for [`DescribeOptimizationJobOutput`](crate::operation::describe_optimization_job::DescribeOptimizationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOptimizationJobOutputBuilder {
     pub(crate) optimization_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) optimization_job_status: ::std::option::Option<crate::types::OptimizationJobStatus>,

@@ -53,8 +53,8 @@ impl TranslatePinDataOutput {
 }
 
 /// A builder for [`TranslatePinDataOutput`](crate::operation::translate_pin_data::TranslatePinDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TranslatePinDataOutputBuilder {
     pub(crate) pin_block: ::std::option::Option<::std::string::String>,
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,

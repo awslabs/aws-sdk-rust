@@ -33,8 +33,8 @@ impl ModifyLoadBalancerAttributesOutput {
 }
 
 /// A builder for [`ModifyLoadBalancerAttributesOutput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyLoadBalancerAttributesOutputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) load_balancer_attributes: ::std::option::Option<crate::types::LoadBalancerAttributes>,

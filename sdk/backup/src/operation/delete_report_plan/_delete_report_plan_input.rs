@@ -20,8 +20,8 @@ impl DeleteReportPlanInput {
 }
 
 /// A builder for [`DeleteReportPlanInput`](crate::operation::delete_report_plan::DeleteReportPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReportPlanInputBuilder {
     pub(crate) report_plan_name: ::std::option::Option<::std::string::String>,
 }

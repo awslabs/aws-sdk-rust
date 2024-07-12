@@ -46,8 +46,8 @@ impl ListServerNeighborsInput {
 }
 
 /// A builder for [`ListServerNeighborsInput`](crate::operation::list_server_neighbors::ListServerNeighborsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServerNeighborsInputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) port_information_needed: ::std::option::Option<bool>,

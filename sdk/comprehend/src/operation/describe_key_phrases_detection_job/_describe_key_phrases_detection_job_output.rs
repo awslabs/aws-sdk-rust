@@ -26,8 +26,8 @@ impl DescribeKeyPhrasesDetectionJobOutput {
 }
 
 /// A builder for [`DescribeKeyPhrasesDetectionJobOutput`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeKeyPhrasesDetectionJobOutputBuilder {
     pub(crate) key_phrases_detection_job_properties: ::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties>,
     _request_id: Option<String>,

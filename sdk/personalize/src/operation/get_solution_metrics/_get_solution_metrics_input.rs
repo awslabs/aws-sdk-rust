@@ -20,8 +20,8 @@ impl GetSolutionMetricsInput {
 }
 
 /// A builder for [`GetSolutionMetricsInput`](crate::operation::get_solution_metrics::GetSolutionMetricsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSolutionMetricsInputBuilder {
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
 }

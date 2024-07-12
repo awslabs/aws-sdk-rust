@@ -86,8 +86,8 @@ impl DescribeContextOutput {
 }
 
 /// A builder for [`DescribeContextOutput`](crate::operation::describe_context::DescribeContextOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContextOutputBuilder {
     pub(crate) context_name: ::std::option::Option<::std::string::String>,
     pub(crate) context_arn: ::std::option::Option<::std::string::String>,

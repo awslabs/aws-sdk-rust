@@ -40,8 +40,8 @@ impl ListAnomalyGroupSummariesOutput {
 }
 
 /// A builder for [`ListAnomalyGroupSummariesOutput`](crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnomalyGroupSummariesOutputBuilder {
     pub(crate) anomaly_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>>,
     pub(crate) anomaly_group_statistics: ::std::option::Option<crate::types::AnomalyGroupStatistics>,

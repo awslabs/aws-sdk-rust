@@ -21,8 +21,8 @@ impl DestinationConfigurations {
 }
 
 /// A builder for [`DestinationConfigurations`](crate::types::DestinationConfigurations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationConfigurationsBuilder {
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }

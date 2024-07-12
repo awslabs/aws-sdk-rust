@@ -74,8 +74,8 @@ impl CreateDeploymentStrategyInput {
 }
 
 /// A builder for [`CreateDeploymentStrategyInput`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDeploymentStrategyInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

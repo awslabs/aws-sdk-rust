@@ -46,8 +46,8 @@ impl PutFunctionConcurrencyInput {
 }
 
 /// A builder for [`PutFunctionConcurrencyInput`](crate::operation::put_function_concurrency::PutFunctionConcurrencyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutFunctionConcurrencyInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_concurrent_executions: ::std::option::Option<i32>,

@@ -111,8 +111,8 @@ impl CreateRemoteAccessSessionInput {
 }
 
 /// A builder for [`CreateRemoteAccessSessionInput`](crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRemoteAccessSessionInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,

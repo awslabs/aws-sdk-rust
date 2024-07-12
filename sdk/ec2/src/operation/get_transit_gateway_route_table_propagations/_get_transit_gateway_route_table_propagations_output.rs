@@ -35,8 +35,8 @@ impl GetTransitGatewayRouteTablePropagationsOutput {
 }
 
 /// A builder for [`GetTransitGatewayRouteTablePropagationsOutput`](crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayRouteTablePropagationsOutputBuilder {
     pub(crate) transit_gateway_route_table_propagations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTablePropagation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl SuspendGameServerGroupInput {
 }
 
 /// A builder for [`SuspendGameServerGroupInput`](crate::operation::suspend_game_server_group::SuspendGameServerGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuspendGameServerGroupInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) suspend_actions: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,

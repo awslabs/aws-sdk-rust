@@ -48,8 +48,8 @@ impl CreateNetworkInput {
 }
 
 /// A builder for [`CreateNetworkInput`](crate::operation::create_network::CreateNetworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateNetworkInputBuilder {
     pub(crate) network_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

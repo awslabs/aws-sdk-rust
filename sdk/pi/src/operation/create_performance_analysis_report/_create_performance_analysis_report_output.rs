@@ -26,8 +26,8 @@ impl CreatePerformanceAnalysisReportOutput {
 }
 
 /// A builder for [`CreatePerformanceAnalysisReportOutput`](crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePerformanceAnalysisReportOutputBuilder {
     pub(crate) analysis_report_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

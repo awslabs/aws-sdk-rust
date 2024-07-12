@@ -71,8 +71,8 @@ impl AdditionalDetail {
 }
 
 /// A builder for [`AdditionalDetail`](crate::types::AdditionalDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdditionalDetailBuilder {
     pub(crate) additional_detail_type: ::std::option::Option<::std::string::String>,
     pub(crate) component: ::std::option::Option<crate::types::AnalysisComponent>,

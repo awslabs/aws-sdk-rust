@@ -50,8 +50,8 @@ impl ListChannelBansOutput {
 }
 
 /// A builder for [`ListChannelBansOutput`](crate::operation::list_channel_bans::ListChannelBansOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListChannelBansOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

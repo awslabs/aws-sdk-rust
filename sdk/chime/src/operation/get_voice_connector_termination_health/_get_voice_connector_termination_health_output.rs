@@ -26,8 +26,8 @@ impl GetVoiceConnectorTerminationHealthOutput {
 }
 
 /// A builder for [`GetVoiceConnectorTerminationHealthOutput`](crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVoiceConnectorTerminationHealthOutputBuilder {
     pub(crate) termination_health: ::std::option::Option<crate::types::TerminationHealth>,
     _request_id: Option<String>,

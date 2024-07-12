@@ -49,8 +49,8 @@ impl LustreLogConfiguration {
 }
 
 /// A builder for [`LustreLogConfiguration`](crate::types::LustreLogConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LustreLogConfigurationBuilder {
     pub(crate) level: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteCrawlerInput {
 }
 
 /// A builder for [`DeleteCrawlerInput`](crate::operation::delete_crawler::DeleteCrawlerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCrawlerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

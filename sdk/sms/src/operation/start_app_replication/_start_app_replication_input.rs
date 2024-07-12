@@ -20,8 +20,8 @@ impl StartAppReplicationInput {
 }
 
 /// A builder for [`StartAppReplicationInput`](crate::operation::start_app_replication::StartAppReplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAppReplicationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }

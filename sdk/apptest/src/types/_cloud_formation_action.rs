@@ -28,8 +28,8 @@ impl CloudFormationAction {
 }
 
 /// A builder for [`CloudFormationAction`](crate::types::CloudFormationAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudFormationActionBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) action_type: ::std::option::Option<crate::types::CloudFormationActionType>,

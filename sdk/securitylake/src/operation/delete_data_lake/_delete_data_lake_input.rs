@@ -22,8 +22,8 @@ impl DeleteDataLakeInput {
 }
 
 /// A builder for [`DeleteDataLakeInput`](crate::operation::delete_data_lake::DeleteDataLakeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataLakeInputBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

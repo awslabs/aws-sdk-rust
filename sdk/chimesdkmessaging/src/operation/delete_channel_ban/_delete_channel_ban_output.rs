@@ -18,8 +18,8 @@ impl DeleteChannelBanOutput {
 }
 
 /// A builder for [`DeleteChannelBanOutput`](crate::operation::delete_channel_ban::DeleteChannelBanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChannelBanOutputBuilder {
     _request_id: Option<String>,
 }

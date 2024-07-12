@@ -40,8 +40,8 @@ impl DetectDocumentTextOutput {
 }
 
 /// A builder for [`DetectDocumentTextOutput`](crate::operation::detect_document_text::DetectDocumentTextOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectDocumentTextOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,

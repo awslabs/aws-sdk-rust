@@ -28,8 +28,8 @@ impl BatchGrantPermissionsOutput {
 }
 
 /// A builder for [`BatchGrantPermissionsOutput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGrantPermissionsOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl CreateCustomVerificationEmailTemplateOutput {
 }
 
 /// A builder for [`CreateCustomVerificationEmailTemplateOutput`](crate::operation::create_custom_verification_email_template::CreateCustomVerificationEmailTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomVerificationEmailTemplateOutputBuilder {
     _request_id: Option<String>,
 }

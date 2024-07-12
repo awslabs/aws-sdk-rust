@@ -26,8 +26,8 @@ impl AssociateProtectConfigurationInput {
 }
 
 /// A builder for [`AssociateProtectConfigurationInput`](crate::operation::associate_protect_configuration::AssociateProtectConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateProtectConfigurationInputBuilder {
     pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,

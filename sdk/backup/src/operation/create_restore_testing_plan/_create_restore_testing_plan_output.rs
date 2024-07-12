@@ -42,8 +42,8 @@ impl CreateRestoreTestingPlanOutput {
 }
 
 /// A builder for [`CreateRestoreTestingPlanOutput`](crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRestoreTestingPlanOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) restore_testing_plan_arn: ::std::option::Option<::std::string::String>,

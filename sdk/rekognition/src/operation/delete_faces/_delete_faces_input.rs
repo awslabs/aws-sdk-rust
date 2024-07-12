@@ -28,8 +28,8 @@ impl DeleteFacesInput {
 }
 
 /// A builder for [`DeleteFacesInput`](crate::operation::delete_faces::DeleteFacesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFacesInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -26,8 +26,8 @@ impl StartPersonTrackingOutput {
 }
 
 /// A builder for [`StartPersonTrackingOutput`](crate::operation::start_person_tracking::StartPersonTrackingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartPersonTrackingOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -648,8 +648,8 @@ impl CreateMultipartUploadInput {
 }
 
 /// A builder for [`CreateMultipartUploadInput`](crate::operation::create_multipart_upload::CreateMultipartUploadInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateMultipartUploadInputBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::ObjectCannedAcl>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

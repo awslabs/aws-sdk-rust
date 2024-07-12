@@ -187,8 +187,8 @@ impl Integration {
 }
 
 /// A builder for [`Integration`](crate::types::Integration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntegrationBuilder {
     pub(crate) api_gateway_managed: ::std::option::Option<bool>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,

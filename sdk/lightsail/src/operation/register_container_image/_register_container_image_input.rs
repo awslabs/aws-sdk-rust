@@ -52,8 +52,8 @@ impl RegisterContainerImageInput {
 }
 
 /// A builder for [`RegisterContainerImageInput`](crate::operation::register_container_image::RegisterContainerImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterContainerImageInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,

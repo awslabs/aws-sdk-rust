@@ -59,8 +59,8 @@ impl GetMergeConflictsOutput {
 }
 
 /// A builder for [`GetMergeConflictsOutput`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMergeConflictsOutputBuilder {
     pub(crate) mergeable: ::std::option::Option<bool>,
     pub(crate) destination_commit_id: ::std::option::Option<::std::string::String>,

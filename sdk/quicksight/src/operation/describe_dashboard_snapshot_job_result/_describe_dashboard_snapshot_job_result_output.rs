@@ -68,8 +68,8 @@ impl DescribeDashboardSnapshotJobResultOutput {
 }
 
 /// A builder for [`DescribeDashboardSnapshotJobResultOutput`](crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDashboardSnapshotJobResultOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::SnapshotJobStatus>,

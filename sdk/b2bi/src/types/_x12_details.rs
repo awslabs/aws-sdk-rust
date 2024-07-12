@@ -29,8 +29,8 @@ impl X12Details {
 }
 
 /// A builder for [`X12Details`](crate::types::X12Details).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct X12DetailsBuilder {
     pub(crate) transaction_set: ::std::option::Option<crate::types::X12TransactionSet>,
     pub(crate) version: ::std::option::Option<crate::types::X12Version>,

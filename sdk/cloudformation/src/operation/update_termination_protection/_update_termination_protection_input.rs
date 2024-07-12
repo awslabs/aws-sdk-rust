@@ -26,8 +26,8 @@ impl UpdateTerminationProtectionInput {
 }
 
 /// A builder for [`UpdateTerminationProtectionInput`](crate::operation::update_termination_protection::UpdateTerminationProtectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTerminationProtectionInputBuilder {
     pub(crate) enable_termination_protection: ::std::option::Option<bool>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,

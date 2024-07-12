@@ -36,8 +36,8 @@ impl MetricAttribute {
 }
 
 /// A builder for [`MetricAttribute`](crate::types::MetricAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricAttributeBuilder {
     pub(crate) event_type: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,

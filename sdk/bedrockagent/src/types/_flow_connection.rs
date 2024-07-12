@@ -48,8 +48,8 @@ impl FlowConnection {
 }
 
 /// A builder for [`FlowConnection`](crate::types::FlowConnection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlowConnectionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FlowConnectionType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

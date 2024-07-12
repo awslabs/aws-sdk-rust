@@ -20,8 +20,8 @@ impl DeleteSiteInput {
 }
 
 /// A builder for [`DeleteSiteInput`](crate::operation::delete_site::DeleteSiteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSiteInputBuilder {
     pub(crate) site_id: ::std::option::Option<::std::string::String>,
 }

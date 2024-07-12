@@ -45,8 +45,8 @@ impl AwsEc2VpcPeeringConnectionDetails {
 }
 
 /// A builder for [`AwsEc2VpcPeeringConnectionDetails`](crate::types::AwsEc2VpcPeeringConnectionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2VpcPeeringConnectionDetailsBuilder {
     pub(crate) accepter_vpc_info: ::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
     pub(crate) expiration_time: ::std::option::Option<::std::string::String>,

@@ -44,8 +44,8 @@ impl DescribeCommunicationsInput {
 }
 
 /// A builder for [`DescribeCommunicationsInput`](crate::operation::describe_communications::DescribeCommunicationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCommunicationsInputBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     pub(crate) before_time: ::std::option::Option<::std::string::String>,

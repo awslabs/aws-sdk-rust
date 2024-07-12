@@ -29,8 +29,8 @@ impl HoldoutActivity {
 }
 
 /// A builder for [`HoldoutActivity`](crate::types::HoldoutActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HoldoutActivityBuilder {
     pub(crate) next_activity: ::std::option::Option<::std::string::String>,
     pub(crate) percentage: ::std::option::Option<i32>,

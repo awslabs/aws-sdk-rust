@@ -20,8 +20,8 @@ impl DescribeChannelFlowInput {
 }
 
 /// A builder for [`DescribeChannelFlowInput`](crate::operation::describe_channel_flow::DescribeChannelFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChannelFlowInputBuilder {
     pub(crate) channel_flow_arn: ::std::option::Option<::std::string::String>,
 }

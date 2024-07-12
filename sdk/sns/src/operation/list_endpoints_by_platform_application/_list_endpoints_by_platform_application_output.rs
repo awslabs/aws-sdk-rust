@@ -35,8 +35,8 @@ impl ListEndpointsByPlatformApplicationOutput {
 }
 
 /// A builder for [`ListEndpointsByPlatformApplicationOutput`](crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEndpointsByPlatformApplicationOutputBuilder {
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

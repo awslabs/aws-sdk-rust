@@ -20,8 +20,8 @@ impl GetSiteToSiteVpnAttachmentInput {
 }
 
 /// A builder for [`GetSiteToSiteVpnAttachmentInput`](crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSiteToSiteVpnAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
 }

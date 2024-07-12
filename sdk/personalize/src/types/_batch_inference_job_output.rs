@@ -21,8 +21,8 @@ impl BatchInferenceJobOutput {
 }
 
 /// A builder for [`BatchInferenceJobOutput`](crate::types::BatchInferenceJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchInferenceJobOutputBuilder {
     pub(crate) s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
 }

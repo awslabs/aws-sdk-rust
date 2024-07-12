@@ -27,8 +27,8 @@ impl NetworkFrameworkAttributes {
 }
 
 /// A builder for [`NetworkFrameworkAttributes`](crate::types::NetworkFrameworkAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkFrameworkAttributesBuilder {
     pub(crate) fabric: ::std::option::Option<crate::types::NetworkFabricAttributes>,
     pub(crate) ethereum: ::std::option::Option<crate::types::NetworkEthereumAttributes>,

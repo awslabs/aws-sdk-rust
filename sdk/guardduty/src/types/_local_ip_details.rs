@@ -35,8 +35,8 @@ impl LocalIpDetails {
 }
 
 /// A builder for [`LocalIpDetails`](crate::types::LocalIpDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LocalIpDetailsBuilder {
     pub(crate) ip_address_v4: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_v6: ::std::option::Option<::std::string::String>,

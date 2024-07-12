@@ -35,8 +35,8 @@ impl SslConfiguration {
 }
 
 /// A builder for [`SslConfiguration`](crate::types::SslConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SslConfigurationBuilder {
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
     pub(crate) private_key: ::std::option::Option<::std::string::String>,

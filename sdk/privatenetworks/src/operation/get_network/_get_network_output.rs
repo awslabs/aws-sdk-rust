@@ -41,8 +41,8 @@ impl GetNetworkOutput {
 }
 
 /// A builder for [`GetNetworkOutput`](crate::operation::get_network::GetNetworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetNetworkOutputBuilder {
     pub(crate) network: ::std::option::Option<crate::types::Network>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

@@ -40,8 +40,8 @@ impl AssociateProfileInput {
 }
 
 /// A builder for [`AssociateProfileInput`](crate::operation::associate_profile::AssociateProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateProfileInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

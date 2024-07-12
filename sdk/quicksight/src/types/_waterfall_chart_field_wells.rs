@@ -21,8 +21,8 @@ impl WaterfallChartFieldWells {
 }
 
 /// A builder for [`WaterfallChartFieldWells`](crate::types::WaterfallChartFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WaterfallChartFieldWellsBuilder {
     pub(crate) waterfall_chart_aggregated_field_wells: ::std::option::Option<crate::types::WaterfallChartAggregatedFieldWells>,
 }

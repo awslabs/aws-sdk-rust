@@ -27,8 +27,8 @@ impl AccountDetails {
 }
 
 /// A builder for [`AccountDetails`](crate::types::AccountDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountDetailsBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) email: ::std::option::Option<::std::string::String>,

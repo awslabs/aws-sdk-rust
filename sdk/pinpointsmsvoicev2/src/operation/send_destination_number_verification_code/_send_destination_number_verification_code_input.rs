@@ -59,8 +59,8 @@ impl SendDestinationNumberVerificationCodeInput {
 }
 
 /// A builder for [`SendDestinationNumberVerificationCodeInput`](crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendDestinationNumberVerificationCodeInputBuilder {
     pub(crate) verified_destination_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) verification_channel: ::std::option::Option<crate::types::VerificationChannel>,

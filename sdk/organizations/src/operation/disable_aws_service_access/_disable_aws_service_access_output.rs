@@ -18,8 +18,8 @@ impl DisableAwsServiceAccessOutput {
 }
 
 /// A builder for [`DisableAwsServiceAccessOutput`](crate::operation::disable_aws_service_access::DisableAwsServiceAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableAwsServiceAccessOutputBuilder {
     _request_id: Option<String>,
 }

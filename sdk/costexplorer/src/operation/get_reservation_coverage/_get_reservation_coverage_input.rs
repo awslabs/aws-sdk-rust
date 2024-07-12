@@ -227,8 +227,8 @@ impl GetReservationCoverageInput {
 }
 
 /// A builder for [`GetReservationCoverageInput`](crate::operation::get_reservation_coverage::GetReservationCoverageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReservationCoverageInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,

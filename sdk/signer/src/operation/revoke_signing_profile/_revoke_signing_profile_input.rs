@@ -38,8 +38,8 @@ impl RevokeSigningProfileInput {
 }
 
 /// A builder for [`RevokeSigningProfileInput`](crate::operation::revoke_signing_profile::RevokeSigningProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeSigningProfileInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version: ::std::option::Option<::std::string::String>,

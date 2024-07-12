@@ -18,8 +18,8 @@ impl DeleteHoursOfOperationOutput {
 }
 
 /// A builder for [`DeleteHoursOfOperationOutput`](crate::operation::delete_hours_of_operation::DeleteHoursOfOperationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHoursOfOperationOutputBuilder {
     _request_id: Option<String>,
 }

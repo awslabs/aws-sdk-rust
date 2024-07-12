@@ -32,8 +32,8 @@ impl StartImportLabelsTaskRunInput {
 }
 
 /// A builder for [`StartImportLabelsTaskRunInput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartImportLabelsTaskRunInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_s3_path: ::std::option::Option<::std::string::String>,

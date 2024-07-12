@@ -63,8 +63,8 @@ impl AwsStepFunctionStateMachineDetails {
 }
 
 /// A builder for [`AwsStepFunctionStateMachineDetails`](crate::types::AwsStepFunctionStateMachineDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsStepFunctionStateMachineDetailsBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) logging_configuration: ::std::option::Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>,

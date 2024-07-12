@@ -44,8 +44,8 @@ impl ModifyPrivateDnsNameOptionsInput {
 }
 
 /// A builder for [`ModifyPrivateDnsNameOptionsInput`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyPrivateDnsNameOptionsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

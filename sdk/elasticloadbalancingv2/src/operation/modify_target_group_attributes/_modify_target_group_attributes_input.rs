@@ -28,8 +28,8 @@ impl ModifyTargetGroupAttributesInput {
 }
 
 /// A builder for [`ModifyTargetGroupAttributesInput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTargetGroupAttributesInputBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,

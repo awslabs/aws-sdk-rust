@@ -63,8 +63,8 @@ impl DeploymentEvent {
 }
 
 /// A builder for [`DeploymentEvent`](crate::types::DeploymentEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentEventBuilder {
     pub(crate) event_type: ::std::option::Option<crate::types::DeploymentEventType>,
     pub(crate) triggered_by: ::std::option::Option<crate::types::TriggeredBy>,

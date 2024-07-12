@@ -20,8 +20,8 @@ impl DisableDirectoryInput {
 }
 
 /// A builder for [`DisableDirectoryInput`](crate::operation::disable_directory::DisableDirectoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableDirectoryInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl CreateVirtualRouterOutput {
 }
 
 /// A builder for [`CreateVirtualRouterOutput`](crate::operation::create_virtual_router::CreateVirtualRouterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVirtualRouterOutputBuilder {
     pub(crate) virtual_router: ::std::option::Option<crate::types::VirtualRouterData>,
     _request_id: Option<String>,

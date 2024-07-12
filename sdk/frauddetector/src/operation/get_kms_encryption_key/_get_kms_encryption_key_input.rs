@@ -11,8 +11,8 @@ impl GetKmsEncryptionKeyInput {
 }
 
 /// A builder for [`GetKmsEncryptionKeyInput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKmsEncryptionKeyInputBuilder {}
 impl GetKmsEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetKmsEncryptionKeyInput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput).

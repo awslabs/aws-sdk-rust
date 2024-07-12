@@ -91,8 +91,8 @@ impl ConnectionPoolConfiguration {
 }
 
 /// A builder for [`ConnectionPoolConfiguration`](crate::types::ConnectionPoolConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionPoolConfigurationBuilder {
     pub(crate) max_connections_percent: ::std::option::Option<i32>,
     pub(crate) max_idle_connections_percent: ::std::option::Option<i32>,

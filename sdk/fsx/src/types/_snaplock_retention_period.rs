@@ -33,8 +33,8 @@ impl SnaplockRetentionPeriod {
 }
 
 /// A builder for [`SnaplockRetentionPeriod`](crate::types::SnaplockRetentionPeriod).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnaplockRetentionPeriodBuilder {
     pub(crate) default_retention: ::std::option::Option<crate::types::RetentionPeriod>,
     pub(crate) minimum_retention: ::std::option::Option<crate::types::RetentionPeriod>,

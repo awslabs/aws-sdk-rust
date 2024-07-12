@@ -54,8 +54,8 @@ impl StartChangeSetInput {
 }
 
 /// A builder for [`StartChangeSetInput`](crate::operation::start_change_set::StartChangeSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartChangeSetInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) change_set: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,

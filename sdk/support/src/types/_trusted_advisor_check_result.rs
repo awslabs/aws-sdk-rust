@@ -55,8 +55,8 @@ impl TrustedAdvisorCheckResult {
 }
 
 /// A builder for [`TrustedAdvisorCheckResult`](crate::types::TrustedAdvisorCheckResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrustedAdvisorCheckResultBuilder {
     pub(crate) check_id: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::std::string::String>,

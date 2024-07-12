@@ -32,8 +32,8 @@ impl DescribeVpcAttributeInput {
 }
 
 /// A builder for [`DescribeVpcAttributeInput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::VpcAttributeName>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

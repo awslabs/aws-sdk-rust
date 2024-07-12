@@ -29,8 +29,8 @@ impl AwsCloudFrontDistributionOriginSslProtocols {
 }
 
 /// A builder for [`AwsCloudFrontDistributionOriginSslProtocols`](crate::types::AwsCloudFrontDistributionOriginSslProtocols).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudFrontDistributionOriginSslProtocolsBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) quantity: ::std::option::Option<i32>,

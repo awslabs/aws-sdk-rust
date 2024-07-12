@@ -27,8 +27,8 @@ impl RegisterImageOutput {
 }
 
 /// A builder for [`RegisterImageOutput`](crate::operation::register_image::RegisterImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterImageOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -28,8 +28,8 @@ impl BatchAssociateProjectAssetsOutput {
 }
 
 /// A builder for [`BatchAssociateProjectAssetsOutput`](crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAssociateProjectAssetsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>>,
     _request_id: Option<String>,

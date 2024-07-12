@@ -27,8 +27,8 @@ impl ChannelDefinition {
 }
 
 /// A builder for [`ChannelDefinition`](crate::types::ChannelDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelDefinitionBuilder {
     pub(crate) channel_id: ::std::option::Option<i32>,
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,

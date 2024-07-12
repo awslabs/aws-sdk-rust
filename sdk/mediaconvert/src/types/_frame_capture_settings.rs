@@ -39,8 +39,8 @@ impl FrameCaptureSettings {
 }
 
 /// A builder for [`FrameCaptureSettings`](crate::types::FrameCaptureSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FrameCaptureSettingsBuilder {
     pub(crate) framerate_denominator: ::std::option::Option<i32>,
     pub(crate) framerate_numerator: ::std::option::Option<i32>,

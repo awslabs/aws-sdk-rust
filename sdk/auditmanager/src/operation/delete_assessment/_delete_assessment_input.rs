@@ -20,8 +20,8 @@ impl DeleteAssessmentInput {
 }
 
 /// A builder for [`DeleteAssessmentInput`](crate::operation::delete_assessment::DeleteAssessmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssessmentInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
 }

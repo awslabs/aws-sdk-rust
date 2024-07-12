@@ -29,8 +29,8 @@ impl CategoricalParameter {
 }
 
 /// A builder for [`CategoricalParameter`](crate::types::CategoricalParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CategoricalParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

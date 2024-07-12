@@ -34,8 +34,8 @@ impl GetDetectorsOutput {
 }
 
 /// A builder for [`GetDetectorsOutput`](crate::operation::get_detectors::GetDetectorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDetectorsOutputBuilder {
     pub(crate) detectors: ::std::option::Option<::std::vec::Vec<crate::types::Detector>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

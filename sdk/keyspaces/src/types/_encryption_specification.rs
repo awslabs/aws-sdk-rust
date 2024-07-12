@@ -51,8 +51,8 @@ impl EncryptionSpecification {
 }
 
 /// A builder for [`EncryptionSpecification`](crate::types::EncryptionSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionSpecificationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ExportLicenseRecommendationsOutput {
 }
 
 /// A builder for [`ExportLicenseRecommendationsOutput`](crate::operation::export_license_recommendations::ExportLicenseRecommendationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportLicenseRecommendationsOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,

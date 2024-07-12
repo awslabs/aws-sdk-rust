@@ -27,8 +27,8 @@ impl UpdateProgramScheduleConfiguration {
 }
 
 /// A builder for [`UpdateProgramScheduleConfiguration`](crate::types::UpdateProgramScheduleConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProgramScheduleConfigurationBuilder {
     pub(crate) transition: ::std::option::Option<crate::types::UpdateProgramTransition>,
     pub(crate) clip_range: ::std::option::Option<crate::types::ClipRange>,

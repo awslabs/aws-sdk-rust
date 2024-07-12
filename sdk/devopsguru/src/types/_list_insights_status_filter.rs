@@ -33,8 +33,8 @@ impl ListInsightsStatusFilter {
 }
 
 /// A builder for [`ListInsightsStatusFilter`](crate::types::ListInsightsStatusFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInsightsStatusFilterBuilder {
     pub(crate) ongoing: ::std::option::Option<crate::types::ListInsightsOngoingStatusFilter>,
     pub(crate) closed: ::std::option::Option<crate::types::ListInsightsClosedStatusFilter>,

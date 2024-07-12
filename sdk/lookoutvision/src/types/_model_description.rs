@@ -99,8 +99,8 @@ impl ModelDescription {
 }
 
 /// A builder for [`ModelDescription`](crate::types::ModelDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelDescriptionBuilder {
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,

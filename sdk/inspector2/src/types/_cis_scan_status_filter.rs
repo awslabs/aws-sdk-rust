@@ -27,8 +27,8 @@ impl CisScanStatusFilter {
 }
 
 /// A builder for [`CisScanStatusFilter`](crate::types::CisScanStatusFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisScanStatusFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::CisScanStatusComparison>,
     pub(crate) value: ::std::option::Option<crate::types::CisScanStatus>,

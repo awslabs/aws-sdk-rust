@@ -45,8 +45,8 @@ impl UpdateBackendAuthUserPoolConfig {
 }
 
 /// A builder for [`UpdateBackendAuthUserPoolConfig`](crate::types::UpdateBackendAuthUserPoolConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBackendAuthUserPoolConfigBuilder {
     pub(crate) forgot_password: ::std::option::Option<crate::types::UpdateBackendAuthForgotPasswordConfig>,
     pub(crate) mfa: ::std::option::Option<crate::types::UpdateBackendAuthMfaConfig>,

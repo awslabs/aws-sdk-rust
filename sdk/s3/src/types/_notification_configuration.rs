@@ -45,8 +45,8 @@ impl NotificationConfiguration {
 }
 
 /// A builder for [`NotificationConfiguration`](crate::types::NotificationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotificationConfigurationBuilder {
     pub(crate) topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     pub(crate) queue_configurations: ::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>>,

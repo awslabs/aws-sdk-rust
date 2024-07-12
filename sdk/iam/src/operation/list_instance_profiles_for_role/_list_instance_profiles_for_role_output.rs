@@ -40,8 +40,8 @@ impl ListInstanceProfilesForRoleOutput {
 }
 
 /// A builder for [`ListInstanceProfilesForRoleOutput`](crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInstanceProfilesForRoleOutputBuilder {
     pub(crate) instance_profiles: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

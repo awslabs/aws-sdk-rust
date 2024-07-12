@@ -39,8 +39,8 @@ impl DescribeTrustStoreRevocation {
 }
 
 /// A builder for [`DescribeTrustStoreRevocation`](crate::types::DescribeTrustStoreRevocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrustStoreRevocationBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) revocation_id: ::std::option::Option<i64>,

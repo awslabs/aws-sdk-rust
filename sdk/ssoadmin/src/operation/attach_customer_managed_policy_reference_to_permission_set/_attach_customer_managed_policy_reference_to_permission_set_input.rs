@@ -32,8 +32,8 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
 }
 
 /// A builder for [`AttachCustomerManagedPolicyReferenceToPermissionSetInput`](crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,

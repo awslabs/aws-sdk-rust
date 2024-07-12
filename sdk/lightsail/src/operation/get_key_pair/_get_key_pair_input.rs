@@ -20,8 +20,8 @@ impl GetKeyPairInput {
 }
 
 /// A builder for [`GetKeyPairInput`](crate::operation::get_key_pair::GetKeyPairInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKeyPairInputBuilder {
     pub(crate) key_pair_name: ::std::option::Option<::std::string::String>,
 }

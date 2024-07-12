@@ -34,8 +34,8 @@ impl ListUserAssociationsOutput {
 }
 
 /// A builder for [`ListUserAssociationsOutput`](crate::operation::list_user_associations::ListUserAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUserAssociationsOutputBuilder {
     pub(crate) instance_user_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InstanceUserSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

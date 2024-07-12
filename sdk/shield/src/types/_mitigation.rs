@@ -21,8 +21,8 @@ impl Mitigation {
 }
 
 /// A builder for [`Mitigation`](crate::types::Mitigation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MitigationBuilder {
     pub(crate) mitigation_name: ::std::option::Option<::std::string::String>,
 }

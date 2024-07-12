@@ -35,8 +35,8 @@ impl ListWorkloadsOutput {
 }
 
 /// A builder for [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkloadsOutputBuilder {
     pub(crate) workload_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

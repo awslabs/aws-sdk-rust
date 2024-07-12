@@ -45,8 +45,8 @@ impl RemixSettings {
 }
 
 /// A builder for [`RemixSettings`](crate::types::RemixSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemixSettingsBuilder {
     pub(crate) audio_description_audio_channel: ::std::option::Option<i32>,
     pub(crate) audio_description_data_channel: ::std::option::Option<i32>,

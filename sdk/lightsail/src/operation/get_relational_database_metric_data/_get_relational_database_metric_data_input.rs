@@ -172,8 +172,8 @@ impl GetRelationalDatabaseMetricDataInput {
 }
 
 /// A builder for [`GetRelationalDatabaseMetricDataInput`](crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseMetricDataInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<crate::types::RelationalDatabaseMetricName>,

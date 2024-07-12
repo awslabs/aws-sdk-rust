@@ -32,8 +32,8 @@ impl CreateWebAclOutput {
 }
 
 /// A builder for [`CreateWebAclOutput`](crate::operation::create_web_acl::CreateWebAclOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWebAclOutputBuilder {
     pub(crate) web_acl: ::std::option::Option<crate::types::WebAcl>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

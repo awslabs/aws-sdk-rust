@@ -29,8 +29,8 @@ impl ShadowModeConfig {
 }
 
 /// A builder for [`ShadowModeConfig`](crate::types::ShadowModeConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShadowModeConfigBuilder {
     pub(crate) source_model_variant_name: ::std::option::Option<::std::string::String>,
     pub(crate) shadow_model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ShadowModelVariantConfig>>,

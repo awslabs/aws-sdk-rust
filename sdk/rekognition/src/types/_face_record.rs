@@ -27,8 +27,8 @@ impl FaceRecord {
 }
 
 /// A builder for [`FaceRecord`](crate::types::FaceRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FaceRecordBuilder {
     pub(crate) face: ::std::option::Option<crate::types::Face>,
     pub(crate) face_detail: ::std::option::Option<crate::types::FaceDetail>,

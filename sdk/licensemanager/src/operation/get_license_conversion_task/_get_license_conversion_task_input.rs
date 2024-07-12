@@ -20,8 +20,8 @@ impl GetLicenseConversionTaskInput {
 }
 
 /// A builder for [`GetLicenseConversionTaskInput`](crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLicenseConversionTaskInputBuilder {
     pub(crate) license_conversion_task_id: ::std::option::Option<::std::string::String>,
 }

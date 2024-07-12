@@ -27,8 +27,8 @@ impl BuiltInSlotTypeSortBy {
 }
 
 /// A builder for [`BuiltInSlotTypeSortBy`](crate::types::BuiltInSlotTypeSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuiltInSlotTypeSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::BuiltInSlotTypeSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,

@@ -32,8 +32,8 @@ impl ListBackupPlanVersionsInput {
 }
 
 /// A builder for [`ListBackupPlanVersionsInput`](crate::operation::list_backup_plan_versions::ListBackupPlanVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBackupPlanVersionsInputBuilder {
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

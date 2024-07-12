@@ -166,8 +166,8 @@ impl CreateCustomKeyStoreInput {
 }
 
 /// A builder for [`CreateCustomKeyStoreInput`](crate::operation::create_custom_key_store::CreateCustomKeyStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateCustomKeyStoreInputBuilder {
     pub(crate) custom_key_store_name: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_hsm_cluster_id: ::std::option::Option<::std::string::String>,

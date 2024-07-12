@@ -28,8 +28,8 @@ impl CustomAuthCredentials {
 }
 
 /// A builder for [`CustomAuthCredentials`](crate::types::CustomAuthCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomAuthCredentialsBuilder {
     pub(crate) custom_authentication_type: ::std::option::Option<::std::string::String>,
     pub(crate) credentials_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

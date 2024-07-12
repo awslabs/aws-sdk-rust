@@ -22,8 +22,8 @@ impl FunnelChartFieldWells {
 }
 
 /// A builder for [`FunnelChartFieldWells`](crate::types::FunnelChartFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunnelChartFieldWellsBuilder {
     pub(crate) funnel_chart_aggregated_field_wells: ::std::option::Option<crate::types::FunnelChartAggregatedFieldWells>,
 }

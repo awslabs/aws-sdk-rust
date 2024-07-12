@@ -18,8 +18,8 @@ impl AttachTrafficSourcesOutput {
 }
 
 /// A builder for [`AttachTrafficSourcesOutput`](crate::operation::attach_traffic_sources::AttachTrafficSourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachTrafficSourcesOutputBuilder {
     _request_id: Option<String>,
 }

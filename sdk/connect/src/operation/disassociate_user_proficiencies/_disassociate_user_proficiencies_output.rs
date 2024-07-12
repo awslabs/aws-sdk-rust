@@ -18,8 +18,8 @@ impl DisassociateUserProficienciesOutput {
 }
 
 /// A builder for [`DisassociateUserProficienciesOutput`](crate::operation::disassociate_user_proficiencies::DisassociateUserProficienciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateUserProficienciesOutputBuilder {
     _request_id: Option<String>,
 }

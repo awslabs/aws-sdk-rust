@@ -20,8 +20,8 @@ impl DescribeImportInput {
 }
 
 /// A builder for [`DescribeImportInput`](crate::operation::describe_import::DescribeImportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImportInputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
 }

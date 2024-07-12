@@ -20,8 +20,8 @@ impl DeletePricingPlanInput {
 }
 
 /// A builder for [`DeletePricingPlanInput`](crate::operation::delete_pricing_plan::DeletePricingPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePricingPlanInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

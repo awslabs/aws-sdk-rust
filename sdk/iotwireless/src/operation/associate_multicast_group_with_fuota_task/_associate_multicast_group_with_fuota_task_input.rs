@@ -26,8 +26,8 @@ impl AssociateMulticastGroupWithFuotaTaskInput {
 }
 
 /// A builder for [`AssociateMulticastGroupWithFuotaTaskInput`](crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMulticastGroupWithFuotaTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) multicast_group_id: ::std::option::Option<::std::string::String>,

@@ -76,8 +76,8 @@ impl GetTextDetectionOutput {
 }
 
 /// A builder for [`GetTextDetectionOutput`](crate::operation::get_text_detection::GetTextDetectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTextDetectionOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

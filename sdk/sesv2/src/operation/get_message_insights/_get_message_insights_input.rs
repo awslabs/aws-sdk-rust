@@ -21,8 +21,8 @@ impl GetMessageInsightsInput {
 }
 
 /// A builder for [`GetMessageInsightsInput`](crate::operation::get_message_insights::GetMessageInsightsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMessageInsightsInputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
 }

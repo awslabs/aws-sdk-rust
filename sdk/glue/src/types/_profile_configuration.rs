@@ -29,8 +29,8 @@ impl ProfileConfiguration {
 }
 
 /// A builder for [`ProfileConfiguration`](crate::types::ProfileConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProfileConfigurationBuilder {
     pub(crate) session_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ConfigurationObject>>,
     pub(crate) job_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ConfigurationObject>>,

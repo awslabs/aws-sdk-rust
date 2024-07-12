@@ -26,8 +26,8 @@ impl UpdateAttendeeCapabilitiesOutput {
 }
 
 /// A builder for [`UpdateAttendeeCapabilitiesOutput`](crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAttendeeCapabilitiesOutputBuilder {
     pub(crate) attendee: ::std::option::Option<crate::types::Attendee>,
     _request_id: Option<String>,

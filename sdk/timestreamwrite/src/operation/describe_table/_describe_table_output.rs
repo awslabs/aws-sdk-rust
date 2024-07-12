@@ -26,8 +26,8 @@ impl DescribeTableOutput {
 }
 
 /// A builder for [`DescribeTableOutput`](crate::operation::describe_table::DescribeTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTableOutputBuilder {
     pub(crate) table: ::std::option::Option<crate::types::Table>,
     _request_id: Option<String>,

@@ -29,8 +29,8 @@ impl AudioChannelMapping {
 }
 
 /// A builder for [`AudioChannelMapping`](crate::types::AudioChannelMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioChannelMappingBuilder {
     pub(crate) input_channel_levels: ::std::option::Option<::std::vec::Vec<crate::types::InputChannelLevel>>,
     pub(crate) output_channel: ::std::option::Option<i32>,

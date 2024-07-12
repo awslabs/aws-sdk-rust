@@ -46,8 +46,8 @@ impl ListTemplateAliasesOutput {
 }
 
 /// A builder for [`ListTemplateAliasesOutput`](crate::operation::list_template_aliases::ListTemplateAliasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateAliasesOutputBuilder {
     pub(crate) template_alias_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateAlias>>,
     pub(crate) status: ::std::option::Option<i32>,

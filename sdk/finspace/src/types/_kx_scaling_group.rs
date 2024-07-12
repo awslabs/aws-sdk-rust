@@ -95,8 +95,8 @@ impl KxScalingGroup {
 }
 
 /// A builder for [`KxScalingGroup`](crate::types::KxScalingGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KxScalingGroupBuilder {
     pub(crate) scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) host_type: ::std::option::Option<::std::string::String>,

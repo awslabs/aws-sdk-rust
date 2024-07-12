@@ -47,8 +47,8 @@ impl DescribeRegistrationVersionsOutput {
 }
 
 /// A builder for [`DescribeRegistrationVersionsOutput`](crate::operation::describe_registration_versions::DescribeRegistrationVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistrationVersionsOutputBuilder {
     pub(crate) registration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,

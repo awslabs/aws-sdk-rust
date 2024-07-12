@@ -28,8 +28,8 @@ impl GetMessagingStreamingConfigurationsOutput {
 }
 
 /// A builder for [`GetMessagingStreamingConfigurationsOutput`](crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMessagingStreamingConfigurationsOutputBuilder {
     pub(crate) streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
     _request_id: Option<String>,

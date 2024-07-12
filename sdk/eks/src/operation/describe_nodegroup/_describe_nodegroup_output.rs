@@ -26,8 +26,8 @@ impl DescribeNodegroupOutput {
 }
 
 /// A builder for [`DescribeNodegroupOutput`](crate::operation::describe_nodegroup::DescribeNodegroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNodegroupOutputBuilder {
     pub(crate) nodegroup: ::std::option::Option<crate::types::Nodegroup>,
     _request_id: Option<String>,

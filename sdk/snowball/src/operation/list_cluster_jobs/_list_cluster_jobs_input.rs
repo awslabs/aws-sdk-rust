@@ -32,8 +32,8 @@ impl ListClusterJobsInput {
 }
 
 /// A builder for [`ListClusterJobsInput`](crate::operation::list_cluster_jobs::ListClusterJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListClusterJobsInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

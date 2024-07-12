@@ -46,8 +46,8 @@ impl ListFindingAggregationsInput {
 }
 
 /// A builder for [`ListFindingAggregationsInput`](crate::operation::list_finding_aggregations::ListFindingAggregationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFindingAggregationsInputBuilder {
     pub(crate) aggregation_type: ::std::option::Option<crate::types::AggregationType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

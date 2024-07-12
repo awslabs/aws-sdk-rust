@@ -21,8 +21,8 @@ impl ProcessingStoppingCondition {
 }
 
 /// A builder for [`ProcessingStoppingCondition`](crate::types::ProcessingStoppingCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessingStoppingConditionBuilder {
     pub(crate) max_runtime_in_seconds: ::std::option::Option<i32>,
 }

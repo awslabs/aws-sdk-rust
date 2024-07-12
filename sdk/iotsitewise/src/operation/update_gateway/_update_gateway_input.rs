@@ -26,8 +26,8 @@ impl UpdateGatewayInput {
 }
 
 /// A builder for [`UpdateGatewayInput`](crate::operation::update_gateway::UpdateGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGatewayInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_name: ::std::option::Option<::std::string::String>,

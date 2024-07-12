@@ -61,8 +61,8 @@ impl MeshRef {
 }
 
 /// A builder for [`MeshRef`](crate::types::MeshRef).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MeshRefBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_owner: ::std::option::Option<::std::string::String>,

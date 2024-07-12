@@ -52,8 +52,8 @@ impl ListIndexInput {
 }
 
 /// A builder for [`ListIndexInput`](crate::operation::list_index::ListIndexInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIndexInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ranges_on_indexed_values: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,

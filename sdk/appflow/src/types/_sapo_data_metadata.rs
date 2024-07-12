@@ -12,8 +12,8 @@ impl SapoDataMetadata {
 }
 
 /// A builder for [`SapoDataMetadata`](crate::types::SapoDataMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SapoDataMetadataBuilder {}
 impl SapoDataMetadataBuilder {
     /// Consumes the builder and constructs a [`SapoDataMetadata`](crate::types::SapoDataMetadata).

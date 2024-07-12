@@ -20,8 +20,8 @@ impl DeleteSafetyRuleInput {
 }
 
 /// A builder for [`DeleteSafetyRuleInput`](crate::operation::delete_safety_rule::DeleteSafetyRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSafetyRuleInputBuilder {
     pub(crate) safety_rule_arn: ::std::option::Option<::std::string::String>,
 }

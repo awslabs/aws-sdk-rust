@@ -36,8 +36,8 @@ impl GetSessionTokenInput {
 }
 
 /// A builder for [`GetSessionTokenInput`](crate::operation::get_session_token::GetSessionTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSessionTokenInputBuilder {
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,

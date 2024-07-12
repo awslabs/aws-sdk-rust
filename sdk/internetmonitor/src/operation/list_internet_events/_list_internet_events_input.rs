@@ -50,8 +50,8 @@ impl ListInternetEventsInput {
 }
 
 /// A builder for [`ListInternetEventsInput`](crate::operation::list_internet_events::ListInternetEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInternetEventsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

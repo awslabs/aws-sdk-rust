@@ -27,8 +27,8 @@ impl DataSummary {
 }
 
 /// A builder for [`DataSummary`](crate::types::DataSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSummaryBuilder {
     pub(crate) reference: ::std::option::Option<crate::types::DataReference>,
     pub(crate) details: ::std::option::Option<crate::types::DataDetails>,

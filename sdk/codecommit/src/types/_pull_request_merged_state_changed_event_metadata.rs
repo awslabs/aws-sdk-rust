@@ -33,8 +33,8 @@ impl PullRequestMergedStateChangedEventMetadata {
 }
 
 /// A builder for [`PullRequestMergedStateChangedEventMetadata`](crate::types::PullRequestMergedStateChangedEventMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PullRequestMergedStateChangedEventMetadataBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_reference: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListIcd10CmInferenceJobsOutput {
 }
 
 /// A builder for [`ListIcd10CmInferenceJobsOutput`](crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIcd10CmInferenceJobsOutputBuilder {
     pub(crate) comprehend_medical_async_job_properties_list:
         ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,

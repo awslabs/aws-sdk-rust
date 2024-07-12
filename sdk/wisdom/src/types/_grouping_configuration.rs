@@ -55,8 +55,8 @@ impl GroupingConfiguration {
 }
 
 /// A builder for [`GroupingConfiguration`](crate::types::GroupingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GroupingConfigurationBuilder {
     pub(crate) criteria: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

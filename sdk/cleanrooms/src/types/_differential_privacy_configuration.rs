@@ -22,8 +22,8 @@ impl DifferentialPrivacyConfiguration {
 }
 
 /// A builder for [`DifferentialPrivacyConfiguration`](crate::types::DifferentialPrivacyConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DifferentialPrivacyConfigurationBuilder {
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::DifferentialPrivacyColumn>>,
 }

@@ -20,8 +20,8 @@ impl DeleteTrainingDatasetInput {
 }
 
 /// A builder for [`DeleteTrainingDatasetInput`](crate::operation::delete_training_dataset::DeleteTrainingDatasetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrainingDatasetInputBuilder {
     pub(crate) training_dataset_arn: ::std::option::Option<::std::string::String>,
 }

@@ -42,8 +42,8 @@ impl GetBuiltinIntentOutput {
 }
 
 /// A builder for [`GetBuiltinIntentOutput`](crate::operation::get_builtin_intent::GetBuiltinIntentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBuiltinIntentOutputBuilder {
     pub(crate) signature: ::std::option::Option<::std::string::String>,
     pub(crate) supported_locales: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>,

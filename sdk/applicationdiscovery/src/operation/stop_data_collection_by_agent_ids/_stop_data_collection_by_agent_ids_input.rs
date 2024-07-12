@@ -22,8 +22,8 @@ impl StopDataCollectionByAgentIdsInput {
 }
 
 /// A builder for [`StopDataCollectionByAgentIdsInput`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDataCollectionByAgentIdsInputBuilder {
     pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

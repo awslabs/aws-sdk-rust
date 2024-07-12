@@ -37,8 +37,8 @@ impl BatchStartOutput {
 }
 
 /// A builder for [`BatchStartOutput`](crate::operation::batch_start::BatchStartOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStartOutputBuilder {
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>,
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,

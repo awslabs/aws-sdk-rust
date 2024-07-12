@@ -18,8 +18,8 @@ impl StartMonitoringMemberOutput {
 }
 
 /// A builder for [`StartMonitoringMemberOutput`](crate::operation::start_monitoring_member::StartMonitoringMemberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMonitoringMemberOutputBuilder {
     _request_id: Option<String>,
 }

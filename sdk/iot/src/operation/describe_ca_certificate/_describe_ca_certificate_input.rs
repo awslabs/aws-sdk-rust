@@ -21,8 +21,8 @@ impl DescribeCaCertificateInput {
 }
 
 /// A builder for [`DescribeCaCertificateInput`](crate::operation::describe_ca_certificate::DescribeCaCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCaCertificateInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
 }

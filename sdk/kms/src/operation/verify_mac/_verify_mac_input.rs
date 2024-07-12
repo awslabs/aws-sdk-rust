@@ -72,8 +72,8 @@ impl VerifyMacInput {
 }
 
 /// A builder for [`VerifyMacInput`](crate::operation::verify_mac::VerifyMacInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct VerifyMacInputBuilder {
     pub(crate) message: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,

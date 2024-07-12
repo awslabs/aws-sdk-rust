@@ -27,8 +27,8 @@ impl ProtectionGroupLimits {
 }
 
 /// A builder for [`ProtectionGroupLimits`](crate::types::ProtectionGroupLimits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectionGroupLimitsBuilder {
     pub(crate) max_protection_groups: ::std::option::Option<i64>,
     pub(crate) pattern_type_limits: ::std::option::Option<crate::types::ProtectionGroupPatternTypeLimits>,

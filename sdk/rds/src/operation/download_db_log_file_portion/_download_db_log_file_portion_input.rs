@@ -71,8 +71,8 @@ impl DownloadDbLogFilePortionInput {
 }
 
 /// A builder for [`DownloadDbLogFilePortionInput`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DownloadDbLogFilePortionInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) log_file_name: ::std::option::Option<::std::string::String>,

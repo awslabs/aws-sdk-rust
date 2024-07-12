@@ -38,8 +38,8 @@ impl DescribeJobsInput {
 }
 
 /// A builder for [`DescribeJobsInput`](crate::operation::describe_jobs::DescribeJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeJobsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::DescribeJobsRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,

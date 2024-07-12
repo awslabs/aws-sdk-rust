@@ -114,8 +114,8 @@ impl CreateLocationHdfsInput {
 }
 
 /// A builder for [`CreateLocationHdfsInput`](crate::operation::create_location_hdfs::CreateLocationHdfsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocationHdfsInputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) name_nodes: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>,

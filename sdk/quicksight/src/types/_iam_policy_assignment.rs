@@ -51,8 +51,8 @@ impl IamPolicyAssignment {
 }
 
 /// A builder for [`IamPolicyAssignment`](crate::types::IamPolicyAssignment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IamPolicyAssignmentBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_id: ::std::option::Option<::std::string::String>,

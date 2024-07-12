@@ -18,8 +18,8 @@ impl DeleteSecurityConfigurationOutput {
 }
 
 /// A builder for [`DeleteSecurityConfigurationOutput`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSecurityConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

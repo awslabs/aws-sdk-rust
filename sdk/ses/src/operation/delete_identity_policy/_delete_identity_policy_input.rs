@@ -29,8 +29,8 @@ impl DeleteIdentityPolicyInput {
 }
 
 /// A builder for [`DeleteIdentityPolicyInput`](crate::operation::delete_identity_policy::DeleteIdentityPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIdentityPolicyInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,

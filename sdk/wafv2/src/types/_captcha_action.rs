@@ -40,8 +40,8 @@ impl CaptchaAction {
 }
 
 /// A builder for [`CaptchaAction`](crate::types::CaptchaAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaptchaActionBuilder {
     pub(crate) custom_request_handling: ::std::option::Option<crate::types::CustomRequestHandling>,
 }

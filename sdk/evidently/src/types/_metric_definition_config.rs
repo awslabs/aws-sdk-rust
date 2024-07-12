@@ -50,8 +50,8 @@ impl MetricDefinitionConfig {
 }
 
 /// A builder for [`MetricDefinitionConfig`](crate::types::MetricDefinitionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricDefinitionConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id_key: ::std::option::Option<::std::string::String>,

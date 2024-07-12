@@ -20,8 +20,8 @@ impl CreateCachePolicyInput {
 }
 
 /// A builder for [`CreateCachePolicyInput`](crate::operation::create_cache_policy::CreateCachePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCachePolicyInputBuilder {
     pub(crate) cache_policy_config: ::std::option::Option<crate::types::CachePolicyConfig>,
 }

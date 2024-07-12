@@ -36,8 +36,8 @@ impl BatchApplyUpdateActionOutput {
 }
 
 /// A builder for [`BatchApplyUpdateActionOutput`](crate::operation::batch_apply_update_action::BatchApplyUpdateActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchApplyUpdateActionOutputBuilder {
     pub(crate) processed_update_actions: ::std::option::Option<::std::vec::Vec<crate::types::ProcessedUpdateAction>>,
     pub(crate) unprocessed_update_actions: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedUpdateAction>>,

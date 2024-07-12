@@ -53,8 +53,8 @@ impl BackendApiResourceConfig {
 }
 
 /// A builder for [`BackendApiResourceConfig`](crate::types::BackendApiResourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackendApiResourceConfigBuilder {
     pub(crate) additional_auth_types: ::std::option::Option<::std::vec::Vec<crate::types::BackendApiAuthType>>,
     pub(crate) api_name: ::std::option::Option<::std::string::String>,

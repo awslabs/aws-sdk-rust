@@ -21,8 +21,8 @@ impl ProgressUpdateStreamSummary {
 }
 
 /// A builder for [`ProgressUpdateStreamSummary`](crate::types::ProgressUpdateStreamSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProgressUpdateStreamSummaryBuilder {
     pub(crate) progress_update_stream_name: ::std::option::Option<::std::string::String>,
 }

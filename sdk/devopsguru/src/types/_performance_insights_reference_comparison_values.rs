@@ -27,8 +27,8 @@ impl PerformanceInsightsReferenceComparisonValues {
 }
 
 /// A builder for [`PerformanceInsightsReferenceComparisonValues`](crate::types::PerformanceInsightsReferenceComparisonValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PerformanceInsightsReferenceComparisonValuesBuilder {
     pub(crate) reference_scalar: ::std::option::Option<crate::types::PerformanceInsightsReferenceScalar>,
     pub(crate) reference_metric: ::std::option::Option<crate::types::PerformanceInsightsReferenceMetric>,

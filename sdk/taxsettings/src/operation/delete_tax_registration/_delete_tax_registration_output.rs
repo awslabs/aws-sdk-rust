@@ -18,8 +18,8 @@ impl DeleteTaxRegistrationOutput {
 }
 
 /// A builder for [`DeleteTaxRegistrationOutput`](crate::operation::delete_tax_registration::DeleteTaxRegistrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTaxRegistrationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,8 +18,8 @@ impl DeleteKxVolumeOutput {
 }
 
 /// A builder for [`DeleteKxVolumeOutput`](crate::operation::delete_kx_volume::DeleteKxVolumeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKxVolumeOutputBuilder {
     _request_id: Option<String>,
 }

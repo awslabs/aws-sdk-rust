@@ -27,8 +27,8 @@ impl LoadBalancersConfig {
 }
 
 /// A builder for [`LoadBalancersConfig`](crate::types::LoadBalancersConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoadBalancersConfigBuilder {
     pub(crate) classic_load_balancers_config: ::std::option::Option<crate::types::ClassicLoadBalancersConfig>,
     pub(crate) target_groups_config: ::std::option::Option<crate::types::TargetGroupsConfig>,

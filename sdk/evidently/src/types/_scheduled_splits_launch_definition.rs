@@ -23,8 +23,8 @@ impl ScheduledSplitsLaunchDefinition {
 }
 
 /// A builder for [`ScheduledSplitsLaunchDefinition`](crate::types::ScheduledSplitsLaunchDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduledSplitsLaunchDefinitionBuilder {
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledSplit>>,
 }

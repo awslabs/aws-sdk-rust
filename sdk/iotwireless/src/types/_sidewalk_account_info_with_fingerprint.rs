@@ -42,8 +42,8 @@ impl SidewalkAccountInfoWithFingerprint {
 }
 
 /// A builder for [`SidewalkAccountInfoWithFingerprint`](crate::types::SidewalkAccountInfoWithFingerprint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SidewalkAccountInfoWithFingerprintBuilder {
     pub(crate) amazon_id: ::std::option::Option<::std::string::String>,
     pub(crate) fingerprint: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl CreateTestGridUrlOutput {
 }
 
 /// A builder for [`CreateTestGridUrlOutput`](crate::operation::create_test_grid_url::CreateTestGridUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateTestGridUrlOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) expires: ::std::option::Option<::aws_smithy_types::DateTime>,

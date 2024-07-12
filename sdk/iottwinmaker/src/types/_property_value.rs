@@ -79,8 +79,8 @@ impl PropertyValue {
 }
 
 /// A builder for [`PropertyValue`](crate::types::PropertyValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyValueBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) value: ::std::option::Option<crate::types::DataValue>,

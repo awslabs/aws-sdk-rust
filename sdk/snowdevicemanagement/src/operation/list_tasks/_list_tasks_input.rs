@@ -32,8 +32,8 @@ impl ListTasksInput {
 }
 
 /// A builder for [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTasksInputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::TaskState>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -18,8 +18,8 @@ impl PutGroupConfigurationOutput {
 }
 
 /// A builder for [`PutGroupConfigurationOutput`](crate::operation::put_group_configuration::PutGroupConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutGroupConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

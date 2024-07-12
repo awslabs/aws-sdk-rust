@@ -38,8 +38,8 @@ impl AddAttributesActivity {
 }
 
 /// A builder for [`AddAttributesActivity`](crate::types::AddAttributesActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddAttributesActivityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

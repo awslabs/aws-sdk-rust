@@ -39,8 +39,8 @@ impl ThemeConfiguration {
 }
 
 /// A builder for [`ThemeConfiguration`](crate::types::ThemeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThemeConfigurationBuilder {
     pub(crate) data_color_palette: ::std::option::Option<crate::types::DataColorPalette>,
     pub(crate) ui_color_palette: ::std::option::Option<crate::types::UiColorPalette>,

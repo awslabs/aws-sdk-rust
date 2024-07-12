@@ -42,8 +42,8 @@ impl SymmetricEncryptionAttributes {
 }
 
 /// A builder for [`SymmetricEncryptionAttributes`](crate::types::SymmetricEncryptionAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SymmetricEncryptionAttributesBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::EncryptionMode>,
     pub(crate) initialization_vector: ::std::option::Option<::std::string::String>,

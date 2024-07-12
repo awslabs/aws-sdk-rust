@@ -203,8 +203,8 @@ impl CreateEventSourceMappingOutput {
 }
 
 /// A builder for [`CreateEventSourceMappingOutput`](crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEventSourceMappingOutputBuilder {
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
     pub(crate) starting_position: ::std::option::Option<crate::types::EventSourcePosition>,

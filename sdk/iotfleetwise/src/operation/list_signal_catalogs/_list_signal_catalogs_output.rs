@@ -34,8 +34,8 @@ impl ListSignalCatalogsOutput {
 }
 
 /// A builder for [`ListSignalCatalogsOutput`](crate::operation::list_signal_catalogs::ListSignalCatalogsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSignalCatalogsOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

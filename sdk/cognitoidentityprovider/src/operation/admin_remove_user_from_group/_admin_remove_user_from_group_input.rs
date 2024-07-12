@@ -41,8 +41,8 @@ impl AdminRemoveUserFromGroupInput {
 }
 
 /// A builder for [`AdminRemoveUserFromGroupInput`](crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminRemoveUserFromGroupInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,

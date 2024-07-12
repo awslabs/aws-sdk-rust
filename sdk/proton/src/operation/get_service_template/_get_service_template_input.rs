@@ -20,8 +20,8 @@ impl GetServiceTemplateInput {
 }
 
 /// A builder for [`GetServiceTemplateInput`](crate::operation::get_service_template::GetServiceTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceTemplateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

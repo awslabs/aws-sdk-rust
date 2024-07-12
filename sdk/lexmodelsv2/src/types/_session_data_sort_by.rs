@@ -43,8 +43,8 @@ impl SessionDataSortBy {
 }
 
 /// A builder for [`SessionDataSortBy`](crate::types::SessionDataSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionDataSortByBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsSessionSortByName>,
     pub(crate) order: ::std::option::Option<crate::types::AnalyticsSortOrder>,

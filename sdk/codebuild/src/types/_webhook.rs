@@ -89,8 +89,8 @@ impl Webhook {
 }
 
 /// A builder for [`Webhook`](crate::types::Webhook).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WebhookBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) payload_url: ::std::option::Option<::std::string::String>,

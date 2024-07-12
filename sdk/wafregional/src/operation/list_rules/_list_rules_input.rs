@@ -26,8 +26,8 @@ impl ListRulesInput {
 }
 
 /// A builder for [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRulesInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

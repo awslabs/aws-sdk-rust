@@ -45,8 +45,8 @@ impl ClusterNodeSummary {
 }
 
 /// A builder for [`ClusterNodeSummary`](crate::types::ClusterNodeSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterNodeSummaryBuilder {
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

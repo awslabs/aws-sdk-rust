@@ -60,8 +60,8 @@ impl CreateVariableInput {
 }
 
 /// A builder for [`CreateVariableInput`](crate::operation::create_variable::CreateVariableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVariableInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<crate::types::DataType>,

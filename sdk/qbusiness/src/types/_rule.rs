@@ -39,8 +39,8 @@ impl Rule {
 }
 
 /// A builder for [`Rule`](crate::types::Rule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleBuilder {
     pub(crate) included_users_and_groups: ::std::option::Option<crate::types::UsersAndGroups>,
     pub(crate) excluded_users_and_groups: ::std::option::Option<crate::types::UsersAndGroups>,

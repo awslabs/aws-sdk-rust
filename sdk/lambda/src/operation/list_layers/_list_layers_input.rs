@@ -40,8 +40,8 @@ impl ListLayersInput {
 }
 
 /// A builder for [`ListLayersInput`](crate::operation::list_layers::ListLayersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLayersInputBuilder {
     pub(crate) compatible_runtime: ::std::option::Option<crate::types::Runtime>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

@@ -55,8 +55,8 @@ impl ImportSourceCredentialsInput {
 }
 
 /// A builder for [`ImportSourceCredentialsInput`](crate::operation::import_source_credentials::ImportSourceCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ImportSourceCredentialsInputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,

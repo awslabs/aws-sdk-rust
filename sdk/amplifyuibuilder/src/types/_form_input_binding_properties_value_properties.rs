@@ -21,8 +21,8 @@ impl FormInputBindingPropertiesValueProperties {
 }
 
 /// A builder for [`FormInputBindingPropertiesValueProperties`](crate::types::FormInputBindingPropertiesValueProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FormInputBindingPropertiesValuePropertiesBuilder {
     pub(crate) model: ::std::option::Option<::std::string::String>,
 }

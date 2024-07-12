@@ -21,8 +21,8 @@ impl SubscribedProjectInput {
 }
 
 /// A builder for [`SubscribedProjectInput`](crate::types::SubscribedProjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubscribedProjectInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

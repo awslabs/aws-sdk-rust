@@ -48,8 +48,8 @@ impl DeleteBucketLifecycleConfigurationInput {
 }
 
 /// A builder for [`DeleteBucketLifecycleConfigurationInput`](crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBucketLifecycleConfigurationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

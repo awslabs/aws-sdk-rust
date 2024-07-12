@@ -38,8 +38,8 @@ impl CreateVpceConfigurationInput {
 }
 
 /// A builder for [`CreateVpceConfigurationInput`](crate::operation::create_vpce_configuration::CreateVpceConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpceConfigurationInputBuilder {
     pub(crate) vpce_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) vpce_service_name: ::std::option::Option<::std::string::String>,

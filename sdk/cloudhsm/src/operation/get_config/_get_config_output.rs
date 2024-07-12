@@ -38,8 +38,8 @@ impl GetConfigOutput {
 }
 
 /// A builder for [`GetConfigOutput`](crate::operation::get_config::GetConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfigOutputBuilder {
     pub(crate) config_type: ::std::option::Option<::std::string::String>,
     pub(crate) config_file: ::std::option::Option<::std::string::String>,

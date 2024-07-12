@@ -26,8 +26,8 @@ impl GetFirewallDomainListOutput {
 }
 
 /// A builder for [`GetFirewallDomainListOutput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFirewallDomainListOutputBuilder {
     pub(crate) firewall_domain_list: ::std::option::Option<crate::types::FirewallDomainList>,
     _request_id: Option<String>,

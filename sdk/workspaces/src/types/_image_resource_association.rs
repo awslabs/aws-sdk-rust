@@ -57,8 +57,8 @@ impl ImageResourceAssociation {
 }
 
 /// A builder for [`ImageResourceAssociation`](crate::types::ImageResourceAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageResourceAssociationBuilder {
     pub(crate) associated_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) associated_resource_type: ::std::option::Option<crate::types::ImageAssociatedResourceType>,

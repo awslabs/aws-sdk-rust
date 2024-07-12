@@ -38,8 +38,8 @@ impl GetRouteResponsesInput {
 }
 
 /// A builder for [`GetRouteResponsesInput`](crate::operation::get_route_responses::GetRouteResponsesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRouteResponsesInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,

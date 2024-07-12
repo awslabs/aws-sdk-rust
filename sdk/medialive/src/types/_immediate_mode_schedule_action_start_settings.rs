@@ -12,8 +12,8 @@ impl ImmediateModeScheduleActionStartSettings {
 }
 
 /// A builder for [`ImmediateModeScheduleActionStartSettings`](crate::types::ImmediateModeScheduleActionStartSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImmediateModeScheduleActionStartSettingsBuilder {}
 impl ImmediateModeScheduleActionStartSettingsBuilder {
     /// Consumes the builder and constructs a [`ImmediateModeScheduleActionStartSettings`](crate::types::ImmediateModeScheduleActionStartSettings).

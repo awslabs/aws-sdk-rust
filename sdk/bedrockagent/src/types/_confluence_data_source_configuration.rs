@@ -27,8 +27,8 @@ impl ConfluenceDataSourceConfiguration {
 }
 
 /// A builder for [`ConfluenceDataSourceConfiguration`](crate::types::ConfluenceDataSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfluenceDataSourceConfigurationBuilder {
     pub(crate) source_configuration: ::std::option::Option<crate::types::ConfluenceSourceConfiguration>,
     pub(crate) crawler_configuration: ::std::option::Option<crate::types::ConfluenceCrawlerConfiguration>,

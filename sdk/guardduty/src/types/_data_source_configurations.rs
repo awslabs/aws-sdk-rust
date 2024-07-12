@@ -33,8 +33,8 @@ impl DataSourceConfigurations {
 }
 
 /// A builder for [`DataSourceConfigurations`](crate::types::DataSourceConfigurations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSourceConfigurationsBuilder {
     pub(crate) s3_logs: ::std::option::Option<crate::types::S3LogsConfiguration>,
     pub(crate) kubernetes: ::std::option::Option<crate::types::KubernetesConfiguration>,

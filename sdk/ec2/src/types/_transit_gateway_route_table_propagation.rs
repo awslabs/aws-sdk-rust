@@ -45,8 +45,8 @@ impl TransitGatewayRouteTablePropagation {
 }
 
 /// A builder for [`TransitGatewayRouteTablePropagation`](crate::types::TransitGatewayRouteTablePropagation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayRouteTablePropagationBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

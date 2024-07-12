@@ -27,8 +27,8 @@ impl UpdateWorkloadOutput {
 }
 
 /// A builder for [`UpdateWorkloadOutput`](crate::operation::update_workload::UpdateWorkloadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkloadOutputBuilder {
     pub(crate) workload: ::std::option::Option<crate::types::Workload>,
     _request_id: Option<String>,

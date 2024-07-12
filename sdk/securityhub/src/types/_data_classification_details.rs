@@ -27,8 +27,8 @@ impl DataClassificationDetails {
 }
 
 /// A builder for [`DataClassificationDetails`](crate::types::DataClassificationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataClassificationDetailsBuilder {
     pub(crate) detailed_results_location: ::std::option::Option<::std::string::String>,
     pub(crate) result: ::std::option::Option<crate::types::ClassificationResult>,

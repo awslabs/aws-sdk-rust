@@ -74,8 +74,8 @@ impl CreateLaunchInput {
 }
 
 /// A builder for [`CreateLaunchInput`](crate::operation::create_launch::CreateLaunchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLaunchInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

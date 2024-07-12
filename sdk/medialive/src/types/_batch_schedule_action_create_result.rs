@@ -23,8 +23,8 @@ impl BatchScheduleActionCreateResult {
 }
 
 /// A builder for [`BatchScheduleActionCreateResult`](crate::types::BatchScheduleActionCreateResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchScheduleActionCreateResultBuilder {
     pub(crate) schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
 }

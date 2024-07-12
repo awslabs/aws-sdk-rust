@@ -28,8 +28,8 @@ impl CreateStandbyWorkspacesInput {
 }
 
 /// A builder for [`CreateStandbyWorkspacesInput`](crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStandbyWorkspacesInputBuilder {
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,
     pub(crate) standby_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>>,

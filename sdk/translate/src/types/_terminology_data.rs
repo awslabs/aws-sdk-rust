@@ -72,8 +72,8 @@ impl TerminologyData {
 }
 
 /// A builder for [`TerminologyData`](crate::types::TerminologyData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TerminologyDataBuilder {
     pub(crate) file: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) format: ::std::option::Option<crate::types::TerminologyDataFormat>,

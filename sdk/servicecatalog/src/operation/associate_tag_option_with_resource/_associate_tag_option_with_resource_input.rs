@@ -26,8 +26,8 @@ impl AssociateTagOptionWithResourceInput {
 }
 
 /// A builder for [`AssociateTagOptionWithResourceInput`](crate::operation::associate_tag_option_with_resource::AssociateTagOptionWithResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTagOptionWithResourceInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_option_id: ::std::option::Option<::std::string::String>,

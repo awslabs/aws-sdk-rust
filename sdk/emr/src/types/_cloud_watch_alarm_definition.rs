@@ -71,8 +71,8 @@ impl CloudWatchAlarmDefinition {
 }
 
 /// A builder for [`CloudWatchAlarmDefinition`](crate::types::CloudWatchAlarmDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchAlarmDefinitionBuilder {
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     pub(crate) evaluation_periods: ::std::option::Option<i32>,

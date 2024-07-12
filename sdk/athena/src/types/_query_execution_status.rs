@@ -49,8 +49,8 @@ impl QueryExecutionStatus {
 }
 
 /// A builder for [`QueryExecutionStatus`](crate::types::QueryExecutionStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryExecutionStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::QueryExecutionState>,
     pub(crate) state_change_reason: ::std::option::Option<::std::string::String>,

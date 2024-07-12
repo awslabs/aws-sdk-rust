@@ -167,8 +167,8 @@ impl CampaignResponse {
 }
 
 /// A builder for [`CampaignResponse`](crate::types::CampaignResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CampaignResponseBuilder {
     pub(crate) additional_treatments: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentResource>>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,

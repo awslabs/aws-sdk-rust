@@ -26,8 +26,8 @@ impl CreateLifecyclePolicyOutput {
 }
 
 /// A builder for [`CreateLifecyclePolicyOutput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLifecyclePolicyOutputBuilder {
     pub(crate) lifecycle_policy_detail: ::std::option::Option<crate::types::LifecyclePolicyDetail>,
     _request_id: Option<String>,

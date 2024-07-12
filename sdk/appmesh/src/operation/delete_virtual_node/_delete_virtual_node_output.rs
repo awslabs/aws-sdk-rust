@@ -26,8 +26,8 @@ impl DeleteVirtualNodeOutput {
 }
 
 /// A builder for [`DeleteVirtualNodeOutput`](crate::operation::delete_virtual_node::DeleteVirtualNodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVirtualNodeOutputBuilder {
     pub(crate) virtual_node: ::std::option::Option<crate::types::VirtualNodeData>,
     _request_id: Option<String>,

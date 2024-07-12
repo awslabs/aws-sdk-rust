@@ -34,8 +34,8 @@ impl DescribeStandardsControlsOutput {
 }
 
 /// A builder for [`DescribeStandardsControlsOutput`](crate::operation::describe_standards_controls::DescribeStandardsControlsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStandardsControlsOutputBuilder {
     pub(crate) controls: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControl>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

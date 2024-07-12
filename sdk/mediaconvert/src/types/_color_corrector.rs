@@ -81,8 +81,8 @@ impl ColorCorrector {
 }
 
 /// A builder for [`ColorCorrector`](crate::types::ColorCorrector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColorCorrectorBuilder {
     pub(crate) brightness: ::std::option::Option<i32>,
     pub(crate) clip_limits: ::std::option::Option<crate::types::ClipLimits>,

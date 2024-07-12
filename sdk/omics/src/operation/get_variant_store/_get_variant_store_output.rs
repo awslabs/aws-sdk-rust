@@ -97,8 +97,8 @@ impl GetVariantStoreOutput {
 }
 
 /// A builder for [`GetVariantStoreOutput`](crate::operation::get_variant_store::GetVariantStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVariantStoreOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,

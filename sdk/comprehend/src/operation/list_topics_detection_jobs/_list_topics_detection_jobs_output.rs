@@ -34,8 +34,8 @@ impl ListTopicsDetectionJobsOutput {
 }
 
 /// A builder for [`ListTopicsDetectionJobsOutput`](crate::operation::list_topics_detection_jobs::ListTopicsDetectionJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTopicsDetectionJobsOutputBuilder {
     pub(crate) topics_detection_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::TopicsDetectionJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

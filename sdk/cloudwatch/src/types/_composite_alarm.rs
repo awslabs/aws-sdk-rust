@@ -143,8 +143,8 @@ impl CompositeAlarm {
 }
 
 /// A builder for [`CompositeAlarm`](crate::types::CompositeAlarm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompositeAlarmBuilder {
     pub(crate) actions_enabled: ::std::option::Option<bool>,
     pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

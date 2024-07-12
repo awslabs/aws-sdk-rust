@@ -96,8 +96,8 @@ impl ModifyListenerInput {
 }
 
 /// A builder for [`ModifyListenerInput`](crate::operation::modify_listener::ModifyListenerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

@@ -40,8 +40,8 @@ impl UpdateLagInput {
 }
 
 /// A builder for [`UpdateLagInput`](crate::operation::update_lag::UpdateLagInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLagInputBuilder {
     pub(crate) lag_id: ::std::option::Option<::std::string::String>,
     pub(crate) lag_name: ::std::option::Option<::std::string::String>,

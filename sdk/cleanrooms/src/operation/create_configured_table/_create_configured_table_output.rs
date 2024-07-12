@@ -26,8 +26,8 @@ impl CreateConfiguredTableOutput {
 }
 
 /// A builder for [`CreateConfiguredTableOutput`](crate::operation::create_configured_table::CreateConfiguredTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConfiguredTableOutputBuilder {
     pub(crate) configured_table: ::std::option::Option<crate::types::ConfiguredTable>,
     _request_id: Option<String>,

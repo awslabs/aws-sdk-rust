@@ -21,8 +21,8 @@ impl CreateTransitGatewayPeeringAttachmentRequestOptions {
 }
 
 /// A builder for [`CreateTransitGatewayPeeringAttachmentRequestOptions`](crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitGatewayPeeringAttachmentRequestOptionsBuilder {
     pub(crate) dynamic_routing: ::std::option::Option<crate::types::DynamicRoutingValue>,
 }

@@ -29,8 +29,8 @@ impl FailureSummary {
 }
 
 /// A builder for [`FailureSummary`](crate::types::FailureSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailureSummaryBuilder {
     pub(crate) total_failure_count: ::std::option::Option<i32>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::WorldFailure>>,

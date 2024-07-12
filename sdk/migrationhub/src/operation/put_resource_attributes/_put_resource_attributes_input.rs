@@ -58,8 +58,8 @@ impl PutResourceAttributesInput {
 }
 
 /// A builder for [`PutResourceAttributesInput`](crate::operation::put_resource_attributes::PutResourceAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutResourceAttributesInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl AwsMskClusterClusterInfoClientAuthenticationDetails {
 }
 
 /// A builder for [`AwsMskClusterClusterInfoClientAuthenticationDetails`](crate::types::AwsMskClusterClusterInfoClientAuthenticationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsMskClusterClusterInfoClientAuthenticationDetailsBuilder {
     pub(crate) sasl: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslDetails>,
     pub(crate) unauthenticated: ::std::option::Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails>,

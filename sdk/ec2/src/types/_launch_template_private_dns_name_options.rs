@@ -33,8 +33,8 @@ impl LaunchTemplatePrivateDnsNameOptions {
 }
 
 /// A builder for [`LaunchTemplatePrivateDnsNameOptions`](crate::types::LaunchTemplatePrivateDnsNameOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplatePrivateDnsNameOptionsBuilder {
     pub(crate) hostname_type: ::std::option::Option<crate::types::HostnameType>,
     pub(crate) enable_resource_name_dns_a_record: ::std::option::Option<bool>,

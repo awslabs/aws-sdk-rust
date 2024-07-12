@@ -52,8 +52,8 @@ impl TestInvokeAuthorizerOutput {
 }
 
 /// A builder for [`TestInvokeAuthorizerOutput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestInvokeAuthorizerOutputBuilder {
     pub(crate) is_authenticated: ::std::option::Option<bool>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,

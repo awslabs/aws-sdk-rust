@@ -136,8 +136,8 @@ impl DescribeDataSourcesInput {
 }
 
 /// A builder for [`DescribeDataSourcesInput`](crate::operation::describe_data_sources::DescribeDataSourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataSourcesInputBuilder {
     pub(crate) filter_variable: ::std::option::Option<crate::types::DataSourceFilterVariable>,
     pub(crate) eq: ::std::option::Option<::std::string::String>,

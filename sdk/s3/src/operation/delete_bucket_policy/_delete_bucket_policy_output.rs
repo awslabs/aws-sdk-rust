@@ -24,8 +24,8 @@ impl DeleteBucketPolicyOutput {
 }
 
 /// A builder for [`DeleteBucketPolicyOutput`](crate::operation::delete_bucket_policy::DeleteBucketPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBucketPolicyOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

@@ -39,8 +39,8 @@ impl ScopeDetails {
 }
 
 /// A builder for [`ScopeDetails`](crate::types::ScopeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScopeDetailsBuilder {
     pub(crate) lake_formation_tag_policies: ::std::option::Option<::std::vec::Vec<crate::types::LakeFormationTagPolicyDetails>>,
     pub(crate) redshift_data_shares: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareDetails>>,

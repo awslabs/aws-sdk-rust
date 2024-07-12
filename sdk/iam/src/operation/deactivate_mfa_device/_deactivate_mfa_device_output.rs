@@ -18,8 +18,8 @@ impl DeactivateMfaDeviceOutput {
 }
 
 /// A builder for [`DeactivateMfaDeviceOutput`](crate::operation::deactivate_mfa_device::DeactivateMfaDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivateMfaDeviceOutputBuilder {
     _request_id: Option<String>,
 }

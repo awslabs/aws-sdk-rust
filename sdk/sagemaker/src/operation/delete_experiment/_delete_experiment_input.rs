@@ -20,8 +20,8 @@ impl DeleteExperimentInput {
 }
 
 /// A builder for [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteExperimentInputBuilder {
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
 }

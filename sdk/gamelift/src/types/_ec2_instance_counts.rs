@@ -57,8 +57,8 @@ impl Ec2InstanceCounts {
 }
 
 /// A builder for [`Ec2InstanceCounts`](crate::types::Ec2InstanceCounts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2InstanceCountsBuilder {
     pub(crate) desired: ::std::option::Option<i32>,
     pub(crate) minimum: ::std::option::Option<i32>,

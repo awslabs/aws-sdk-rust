@@ -49,8 +49,8 @@ impl ProjectFileSystemLocation {
 }
 
 /// A builder for [`ProjectFileSystemLocation`](crate::types::ProjectFileSystemLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectFileSystemLocationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FileSystemType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

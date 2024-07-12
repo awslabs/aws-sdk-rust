@@ -34,8 +34,8 @@ impl ListLakeFormationOptInsOutput {
 }
 
 /// A builder for [`ListLakeFormationOptInsOutput`](crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLakeFormationOptInsOutputBuilder {
     pub(crate) lake_formation_opt_ins_info_list: ::std::option::Option<::std::vec::Vec<crate::types::LakeFormationOptInsInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

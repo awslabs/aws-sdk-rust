@@ -39,8 +39,8 @@ impl InAppMessageButton {
 }
 
 /// A builder for [`InAppMessageButton`](crate::types::InAppMessageButton).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InAppMessageButtonBuilder {
     pub(crate) android: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
     pub(crate) default_config: ::std::option::Option<crate::types::DefaultButtonConfiguration>,

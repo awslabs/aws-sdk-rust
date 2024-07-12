@@ -27,8 +27,8 @@ impl GetOnPremisesInstanceOutput {
 }
 
 /// A builder for [`GetOnPremisesInstanceOutput`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOnPremisesInstanceOutputBuilder {
     pub(crate) instance_info: ::std::option::Option<crate::types::InstanceInfo>,
     _request_id: Option<String>,

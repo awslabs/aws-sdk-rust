@@ -32,8 +32,8 @@ impl ListRunGroupsInput {
 }
 
 /// A builder for [`ListRunGroupsInput`](crate::operation::list_run_groups::ListRunGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRunGroupsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) starting_token: ::std::option::Option<::std::string::String>,

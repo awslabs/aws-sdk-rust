@@ -77,8 +77,8 @@ impl ApplicationConfigurationDescription {
 }
 
 /// A builder for [`ApplicationConfigurationDescription`](crate::types::ApplicationConfigurationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationConfigurationDescriptionBuilder {
     pub(crate) sql_application_configuration_description: ::std::option::Option<crate::types::SqlApplicationConfigurationDescription>,
     pub(crate) application_code_configuration_description: ::std::option::Option<crate::types::ApplicationCodeConfigurationDescription>,

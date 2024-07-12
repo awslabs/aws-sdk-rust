@@ -36,8 +36,8 @@ impl BatchGetLifecyclePolicyOutput {
 }
 
 /// A builder for [`BatchGetLifecyclePolicyOutput`](crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetLifecyclePolicyOutputBuilder {
     pub(crate) lifecycle_policy_details: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>>,
     pub(crate) lifecycle_policy_error_details: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyErrorDetail>>,

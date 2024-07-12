@@ -19,8 +19,8 @@ impl StartConfigRulesEvaluationOutput {
 }
 
 /// A builder for [`StartConfigRulesEvaluationOutput`](crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartConfigRulesEvaluationOutputBuilder {
     _request_id: Option<String>,
 }

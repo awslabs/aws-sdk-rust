@@ -21,8 +21,8 @@ impl InputLossFailoverSettings {
 }
 
 /// A builder for [`InputLossFailoverSettings`](crate::types::InputLossFailoverSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputLossFailoverSettingsBuilder {
     pub(crate) input_loss_threshold_msec: ::std::option::Option<i32>,
 }

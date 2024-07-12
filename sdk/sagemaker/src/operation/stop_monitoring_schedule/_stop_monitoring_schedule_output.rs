@@ -18,8 +18,8 @@ impl StopMonitoringScheduleOutput {
 }
 
 /// A builder for [`StopMonitoringScheduleOutput`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopMonitoringScheduleOutputBuilder {
     _request_id: Option<String>,
 }

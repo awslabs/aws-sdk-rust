@@ -32,8 +32,8 @@ impl CreateRoutingProfileOutput {
 }
 
 /// A builder for [`CreateRoutingProfileOutput`](crate::operation::create_routing_profile::CreateRoutingProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRoutingProfileOutputBuilder {
     pub(crate) routing_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,

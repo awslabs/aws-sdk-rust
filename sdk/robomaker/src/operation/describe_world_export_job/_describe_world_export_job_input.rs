@@ -20,8 +20,8 @@ impl DescribeWorldExportJobInput {
 }
 
 /// A builder for [`DescribeWorldExportJobInput`](crate::operation::describe_world_export_job::DescribeWorldExportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorldExportJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }

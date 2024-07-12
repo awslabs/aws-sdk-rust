@@ -20,8 +20,8 @@ impl DescribeInstanceAccessControlAttributeConfigurationInput {
 }
 
 /// A builder for [`DescribeInstanceAccessControlAttributeConfigurationInput`](crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceAccessControlAttributeConfigurationInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
 }

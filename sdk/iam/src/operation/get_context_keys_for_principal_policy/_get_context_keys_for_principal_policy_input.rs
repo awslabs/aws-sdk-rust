@@ -48,8 +48,8 @@ impl GetContextKeysForPrincipalPolicyInput {
 }
 
 /// A builder for [`GetContextKeysForPrincipalPolicyInput`](crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContextKeysForPrincipalPolicyInputBuilder {
     pub(crate) policy_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_input_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

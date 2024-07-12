@@ -28,8 +28,8 @@ impl DeleteSchemaVersionsOutput {
 }
 
 /// A builder for [`DeleteSchemaVersionsOutput`](crate::operation::delete_schema_versions::DeleteSchemaVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSchemaVersionsOutputBuilder {
     pub(crate) schema_version_errors: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionErrorItem>>,
     _request_id: Option<String>,

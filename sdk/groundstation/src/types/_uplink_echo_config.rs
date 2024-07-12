@@ -29,8 +29,8 @@ impl UplinkEchoConfig {
 }
 
 /// A builder for [`UplinkEchoConfig`](crate::types::UplinkEchoConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UplinkEchoConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) antenna_uplink_config_arn: ::std::option::Option<::std::string::String>,

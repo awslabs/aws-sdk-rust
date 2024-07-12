@@ -56,8 +56,8 @@ impl SharedFileSystemConfiguration {
 }
 
 /// A builder for [`SharedFileSystemConfiguration`](crate::types::SharedFileSystemConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SharedFileSystemConfigurationBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,

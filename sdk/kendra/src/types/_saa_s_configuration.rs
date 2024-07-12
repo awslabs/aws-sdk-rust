@@ -29,8 +29,8 @@ impl SaaSConfiguration {
 }
 
 /// A builder for [`SaaSConfiguration`](crate::types::SaaSConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SaaSConfigurationBuilder {
     pub(crate) organization_name: ::std::option::Option<::std::string::String>,
     pub(crate) host_url: ::std::option::Option<::std::string::String>,

@@ -49,8 +49,8 @@ impl FlowInput {
 }
 
 /// A builder for [`FlowInput`](crate::types::FlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FlowInputBuilder {
     pub(crate) node_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_output_name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl BatchAttachPolicy {
 }
 
 /// A builder for [`BatchAttachPolicy`](crate::types::BatchAttachPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAttachPolicyBuilder {
     pub(crate) policy_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,

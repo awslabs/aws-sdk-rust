@@ -26,8 +26,8 @@ impl CreatePartnerEventSourceOutput {
 }
 
 /// A builder for [`CreatePartnerEventSourceOutput`](crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePartnerEventSourceOutputBuilder {
     pub(crate) event_source_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

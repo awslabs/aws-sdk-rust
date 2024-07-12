@@ -39,8 +39,8 @@ impl DeleteUserAttributesInput {
 }
 
 /// A builder for [`DeleteUserAttributesInput`](crate::operation::delete_user_attributes::DeleteUserAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DeleteUserAttributesInputBuilder {
     pub(crate) user_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,

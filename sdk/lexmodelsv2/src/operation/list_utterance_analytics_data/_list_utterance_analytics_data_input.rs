@@ -60,8 +60,8 @@ impl ListUtteranceAnalyticsDataInput {
 }
 
 /// A builder for [`ListUtteranceAnalyticsDataInput`](crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUtteranceAnalyticsDataInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,

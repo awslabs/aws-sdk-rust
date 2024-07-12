@@ -27,8 +27,8 @@ impl ForgotPasswordOutput {
 }
 
 /// A builder for [`ForgotPasswordOutput`](crate::operation::forgot_password::ForgotPasswordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ForgotPasswordOutputBuilder {
     pub(crate) code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     _request_id: Option<String>,

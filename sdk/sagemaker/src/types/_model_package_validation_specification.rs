@@ -29,8 +29,8 @@ impl ModelPackageValidationSpecification {
 }
 
 /// A builder for [`ModelPackageValidationSpecification`](crate::types::ModelPackageValidationSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelPackageValidationSpecificationBuilder {
     pub(crate) validation_role: ::std::option::Option<::std::string::String>,
     pub(crate) validation_profiles: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageValidationProfile>>,

@@ -26,8 +26,8 @@ impl DeleteMetricFilterInput {
 }
 
 /// A builder for [`DeleteMetricFilterInput`](crate::operation::delete_metric_filter::DeleteMetricFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMetricFilterInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_name: ::std::option::Option<::std::string::String>,

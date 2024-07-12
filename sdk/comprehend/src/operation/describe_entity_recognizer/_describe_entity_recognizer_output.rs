@@ -26,8 +26,8 @@ impl DescribeEntityRecognizerOutput {
 }
 
 /// A builder for [`DescribeEntityRecognizerOutput`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEntityRecognizerOutputBuilder {
     pub(crate) entity_recognizer_properties: ::std::option::Option<crate::types::EntityRecognizerProperties>,
     _request_id: Option<String>,

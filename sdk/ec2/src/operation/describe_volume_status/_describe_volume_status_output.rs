@@ -34,8 +34,8 @@ impl DescribeVolumeStatusOutput {
 }
 
 /// A builder for [`DescribeVolumeStatusOutput`](crate::operation::describe_volume_status::DescribeVolumeStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVolumeStatusOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) volume_statuses: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>>,

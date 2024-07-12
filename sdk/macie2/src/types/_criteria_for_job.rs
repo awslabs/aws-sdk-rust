@@ -27,8 +27,8 @@ impl CriteriaForJob {
 }
 
 /// A builder for [`CriteriaForJob`](crate::types::CriteriaForJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CriteriaForJobBuilder {
     pub(crate) simple_criterion: ::std::option::Option<crate::types::SimpleCriterionForJob>,
     pub(crate) tag_criterion: ::std::option::Option<crate::types::TagCriterionForJob>,

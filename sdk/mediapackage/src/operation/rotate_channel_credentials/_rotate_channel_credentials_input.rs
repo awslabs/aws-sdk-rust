@@ -21,8 +21,8 @@ impl RotateChannelCredentialsInput {
 }
 
 /// A builder for [`RotateChannelCredentialsInput`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RotateChannelCredentialsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

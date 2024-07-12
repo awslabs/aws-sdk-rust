@@ -26,8 +26,8 @@ impl DisassociateApplicationFleetInput {
 }
 
 /// A builder for [`DisassociateApplicationFleetInput`](crate::operation::disassociate_application_fleet::DisassociateApplicationFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateApplicationFleetInputBuilder {
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,

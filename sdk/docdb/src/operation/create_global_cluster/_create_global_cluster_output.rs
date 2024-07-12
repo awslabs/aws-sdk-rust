@@ -26,8 +26,8 @@ impl CreateGlobalClusterOutput {
 }
 
 /// A builder for [`CreateGlobalClusterOutput`](crate::operation::create_global_cluster::CreateGlobalClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGlobalClusterOutputBuilder {
     pub(crate) global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,

@@ -44,8 +44,8 @@ impl ListDatasetContentsInput {
 }
 
 /// A builder for [`ListDatasetContentsInput`](crate::operation::list_dataset_contents::ListDatasetContentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDatasetContentsInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

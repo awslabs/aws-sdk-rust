@@ -151,8 +151,8 @@ impl CopyObjectOutput {
 }
 
 /// A builder for [`CopyObjectOutput`](crate::operation::copy_object::CopyObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CopyObjectOutputBuilder {
     pub(crate) copy_object_result: ::std::option::Option<crate::types::CopyObjectResult>,
     pub(crate) expiration: ::std::option::Option<::std::string::String>,

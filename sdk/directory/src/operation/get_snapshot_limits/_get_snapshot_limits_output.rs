@@ -27,8 +27,8 @@ impl GetSnapshotLimitsOutput {
 }
 
 /// A builder for [`GetSnapshotLimitsOutput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSnapshotLimitsOutputBuilder {
     pub(crate) snapshot_limits: ::std::option::Option<crate::types::SnapshotLimits>,
     _request_id: Option<String>,

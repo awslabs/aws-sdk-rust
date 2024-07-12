@@ -34,8 +34,8 @@ impl Topic {
 }
 
 /// A builder for [`Topic`](crate::types::Topic).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TopicBuilder {
     pub(crate) subject: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<crate::types::NotificationResource>,

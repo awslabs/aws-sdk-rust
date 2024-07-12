@@ -38,8 +38,8 @@ impl SearchSchemasInput {
 }
 
 /// A builder for [`SearchSchemasInput`](crate::operation::search_schemas::SearchSchemasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchSchemasInputBuilder {
     pub(crate) keywords: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

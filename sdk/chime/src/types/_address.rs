@@ -91,8 +91,8 @@ impl Address {
 }
 
 /// A builder for [`Address`](crate::types::Address).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AddressBuilder {
     pub(crate) street_name: ::std::option::Option<::std::string::String>,
     pub(crate) street_suffix: ::std::option::Option<::std::string::String>,

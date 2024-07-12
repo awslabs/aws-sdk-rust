@@ -44,8 +44,8 @@ impl ListChannelMembershipsForAppInstanceUserOutput {
 }
 
 /// A builder for [`ListChannelMembershipsForAppInstanceUserOutput`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListChannelMembershipsForAppInstanceUserOutputBuilder {
     pub(crate) channel_memberships: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMembershipForAppInstanceUserSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

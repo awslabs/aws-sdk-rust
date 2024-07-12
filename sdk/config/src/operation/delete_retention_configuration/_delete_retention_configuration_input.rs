@@ -20,8 +20,8 @@ impl DeleteRetentionConfigurationInput {
 }
 
 /// A builder for [`DeleteRetentionConfigurationInput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRetentionConfigurationInputBuilder {
     pub(crate) retention_configuration_name: ::std::option::Option<::std::string::String>,
 }

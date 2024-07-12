@@ -34,8 +34,8 @@ impl ListCheckSummariesOutput {
 }
 
 /// A builder for [`ListCheckSummariesOutput`](crate::operation::list_check_summaries::ListCheckSummariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCheckSummariesOutputBuilder {
     pub(crate) check_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CheckSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

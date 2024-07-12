@@ -55,8 +55,8 @@ impl BadRequestException {
 }
 
 /// A builder for [`BadRequestException`](crate::types::error::BadRequestException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BadRequestExceptionBuilder {
     pub(crate) error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListImpersonationRolesOutput {
 }
 
 /// A builder for [`ListImpersonationRolesOutput`](crate::operation::list_impersonation_roles::ListImpersonationRolesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImpersonationRolesOutputBuilder {
     pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRole>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

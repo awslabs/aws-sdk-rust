@@ -20,8 +20,8 @@ impl DescribeResiliencyPolicyInput {
 }
 
 /// A builder for [`DescribeResiliencyPolicyInput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResiliencyPolicyInputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
 }

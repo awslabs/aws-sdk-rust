@@ -18,8 +18,8 @@ impl DeleteServicePrincipalNameOutput {
 }
 
 /// A builder for [`DeleteServicePrincipalNameOutput`](crate::operation::delete_service_principal_name::DeleteServicePrincipalNameOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServicePrincipalNameOutputBuilder {
     _request_id: Option<String>,
 }

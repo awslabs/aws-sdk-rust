@@ -54,8 +54,8 @@ impl UpdateRuleInput {
 }
 
 /// A builder for [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRuleInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period: ::std::option::Option<crate::types::RetentionPeriod>,

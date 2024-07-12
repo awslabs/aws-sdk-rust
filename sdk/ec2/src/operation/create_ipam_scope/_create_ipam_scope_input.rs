@@ -46,8 +46,8 @@ impl CreateIpamScopeInput {
 }
 
 /// A builder for [`CreateIpamScopeInput`](crate::operation::create_ipam_scope::CreateIpamScopeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIpamScopeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_id: ::std::option::Option<::std::string::String>,

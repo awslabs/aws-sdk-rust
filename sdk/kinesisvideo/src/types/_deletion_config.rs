@@ -35,8 +35,8 @@ impl DeletionConfig {
 }
 
 /// A builder for [`DeletionConfig`](crate::types::DeletionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletionConfigBuilder {
     pub(crate) edge_retention_in_hours: ::std::option::Option<i32>,
     pub(crate) local_size_config: ::std::option::Option<crate::types::LocalSizeConfig>,

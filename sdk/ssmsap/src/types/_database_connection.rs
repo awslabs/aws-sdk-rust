@@ -33,8 +33,8 @@ impl DatabaseConnection {
 }
 
 /// A builder for [`DatabaseConnection`](crate::types::DatabaseConnection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatabaseConnectionBuilder {
     pub(crate) database_connection_method: ::std::option::Option<crate::types::DatabaseConnectionMethod>,
     pub(crate) database_arn: ::std::option::Option<::std::string::String>,

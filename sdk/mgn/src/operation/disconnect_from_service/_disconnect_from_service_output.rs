@@ -125,8 +125,8 @@ impl DisconnectFromServiceOutput {
 }
 
 /// A builder for [`DisconnectFromServiceOutput`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DisconnectFromServiceOutputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

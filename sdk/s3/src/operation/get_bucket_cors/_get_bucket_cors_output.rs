@@ -34,8 +34,8 @@ impl GetBucketCorsOutput {
 }
 
 /// A builder for [`GetBucketCorsOutput`](crate::operation::get_bucket_cors::GetBucketCorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketCorsOutputBuilder {
     pub(crate) cors_rules: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
     _extended_request_id: Option<String>,

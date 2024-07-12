@@ -40,8 +40,8 @@ impl PatternToken {
 }
 
 /// A builder for [`PatternToken`](crate::types::PatternToken).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PatternTokenBuilder {
     pub(crate) dynamic_token_position: ::std::option::Option<i32>,
     pub(crate) is_dynamic: ::std::option::Option<bool>,

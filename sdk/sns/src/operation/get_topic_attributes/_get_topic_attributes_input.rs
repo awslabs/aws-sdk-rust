@@ -21,8 +21,8 @@ impl GetTopicAttributesInput {
 }
 
 /// A builder for [`GetTopicAttributesInput`](crate::operation::get_topic_attributes::GetTopicAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTopicAttributesInputBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
 }

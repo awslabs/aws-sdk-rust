@@ -38,8 +38,8 @@ impl ListResolversInput {
 }
 
 /// A builder for [`ListResolversInput`](crate::operation::list_resolvers::ListResolversInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResolversInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,

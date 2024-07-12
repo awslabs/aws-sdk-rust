@@ -60,8 +60,8 @@ impl GeoProximityLocation {
 }
 
 /// A builder for [`GeoProximityLocation`](crate::types::GeoProximityLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeoProximityLocationBuilder {
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,
     pub(crate) local_zone_group: ::std::option::Option<::std::string::String>,

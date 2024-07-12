@@ -56,8 +56,8 @@ impl ListActiveViolationsInput {
 }
 
 /// A builder for [`ListActiveViolationsInput`](crate::operation::list_active_violations::ListActiveViolationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListActiveViolationsInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,

@@ -11,8 +11,8 @@ impl GetLatestAssessmentIdInput {
 }
 
 /// A builder for [`GetLatestAssessmentIdInput`](crate::operation::get_latest_assessment_id::GetLatestAssessmentIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLatestAssessmentIdInputBuilder {}
 impl GetLatestAssessmentIdInputBuilder {
     /// Consumes the builder and constructs a [`GetLatestAssessmentIdInput`](crate::operation::get_latest_assessment_id::GetLatestAssessmentIdInput).

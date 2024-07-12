@@ -43,8 +43,8 @@ impl GetSendQuotaOutput {
 }
 
 /// A builder for [`GetSendQuotaOutput`](crate::operation::get_send_quota::GetSendQuotaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSendQuotaOutputBuilder {
     pub(crate) max24_hour_send: ::std::option::Option<f64>,
     pub(crate) max_send_rate: ::std::option::Option<f64>,

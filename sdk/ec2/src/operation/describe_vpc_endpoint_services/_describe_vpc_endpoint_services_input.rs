@@ -90,8 +90,8 @@ impl DescribeVpcEndpointServicesInput {
 }
 
 /// A builder for [`DescribeVpcEndpointServicesInput`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcEndpointServicesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

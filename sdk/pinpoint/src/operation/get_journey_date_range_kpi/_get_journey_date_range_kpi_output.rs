@@ -26,8 +26,8 @@ impl GetJourneyDateRangeKpiOutput {
 }
 
 /// A builder for [`GetJourneyDateRangeKpiOutput`](crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetJourneyDateRangeKpiOutputBuilder {
     pub(crate) journey_date_range_kpi_response: ::std::option::Option<crate::types::JourneyDateRangeKpiResponse>,
     _request_id: Option<String>,

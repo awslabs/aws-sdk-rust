@@ -206,8 +206,8 @@ impl GetCostCategoriesInput {
 }
 
 /// A builder for [`GetCostCategoriesInput`](crate::operation::get_cost_categories::GetCostCategoriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCostCategoriesInputBuilder {
     pub(crate) search_string: ::std::option::Option<::std::string::String>,
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,

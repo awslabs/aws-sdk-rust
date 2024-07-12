@@ -27,8 +27,8 @@ impl AvailBlanking {
 }
 
 /// A builder for [`AvailBlanking`](crate::types::AvailBlanking).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AvailBlankingBuilder {
     pub(crate) avail_blanking_image: ::std::option::Option<crate::types::InputLocation>,
     pub(crate) state: ::std::option::Option<crate::types::AvailBlankingState>,

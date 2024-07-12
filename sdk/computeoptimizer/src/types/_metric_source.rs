@@ -27,8 +27,8 @@ impl MetricSource {
 }
 
 /// A builder for [`MetricSource`](crate::types::MetricSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricSourceBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::MetricSourceProvider>,
     pub(crate) provider_arn: ::std::option::Option<::std::string::String>,

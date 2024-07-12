@@ -27,8 +27,8 @@ impl AwsKinesisStreamStreamEncryptionDetails {
 }
 
 /// A builder for [`AwsKinesisStreamStreamEncryptionDetails`](crate::types::AwsKinesisStreamStreamEncryptionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsKinesisStreamStreamEncryptionDetailsBuilder {
     pub(crate) encryption_type: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,

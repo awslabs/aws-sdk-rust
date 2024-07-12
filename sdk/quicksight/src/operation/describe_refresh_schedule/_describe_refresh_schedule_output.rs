@@ -44,8 +44,8 @@ impl DescribeRefreshScheduleOutput {
 }
 
 /// A builder for [`DescribeRefreshScheduleOutput`](crate::operation::describe_refresh_schedule::DescribeRefreshScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRefreshScheduleOutputBuilder {
     pub(crate) refresh_schedule: ::std::option::Option<crate::types::RefreshSchedule>,
     pub(crate) status: ::std::option::Option<i32>,

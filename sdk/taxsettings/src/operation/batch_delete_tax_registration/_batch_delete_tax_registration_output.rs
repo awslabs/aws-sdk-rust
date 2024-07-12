@@ -27,8 +27,8 @@ impl BatchDeleteTaxRegistrationOutput {
 }
 
 /// A builder for [`BatchDeleteTaxRegistrationOutput`](crate::operation::batch_delete_tax_registration::BatchDeleteTaxRegistrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteTaxRegistrationOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteTaxRegistrationError>>,
     _request_id: Option<String>,

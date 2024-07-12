@@ -26,8 +26,8 @@ impl AssociateConnectPeerOutput {
 }
 
 /// A builder for [`AssociateConnectPeerOutput`](crate::operation::associate_connect_peer::AssociateConnectPeerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateConnectPeerOutputBuilder {
     pub(crate) connect_peer_association: ::std::option::Option<crate::types::ConnectPeerAssociation>,
     _request_id: Option<String>,

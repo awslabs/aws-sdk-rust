@@ -51,8 +51,8 @@ impl TableSideBorderOptions {
 }
 
 /// A builder for [`TableSideBorderOptions`](crate::types::TableSideBorderOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableSideBorderOptionsBuilder {
     pub(crate) inner_vertical: ::std::option::Option<crate::types::TableBorderOptions>,
     pub(crate) inner_horizontal: ::std::option::Option<crate::types::TableBorderOptions>,

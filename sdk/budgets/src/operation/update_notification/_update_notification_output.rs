@@ -19,8 +19,8 @@ impl UpdateNotificationOutput {
 }
 
 /// A builder for [`UpdateNotificationOutput`](crate::operation::update_notification::UpdateNotificationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNotificationOutputBuilder {
     _request_id: Option<String>,
 }

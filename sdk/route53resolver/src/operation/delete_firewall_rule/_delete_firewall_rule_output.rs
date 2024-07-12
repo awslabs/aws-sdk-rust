@@ -26,8 +26,8 @@ impl DeleteFirewallRuleOutput {
 }
 
 /// A builder for [`DeleteFirewallRuleOutput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFirewallRuleOutputBuilder {
     pub(crate) firewall_rule: ::std::option::Option<crate::types::FirewallRule>,
     _request_id: Option<String>,

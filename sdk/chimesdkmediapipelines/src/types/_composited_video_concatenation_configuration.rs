@@ -21,8 +21,8 @@ impl CompositedVideoConcatenationConfiguration {
 }
 
 /// A builder for [`CompositedVideoConcatenationConfiguration`](crate::types::CompositedVideoConcatenationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompositedVideoConcatenationConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }

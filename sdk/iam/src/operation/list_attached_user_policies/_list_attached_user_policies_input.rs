@@ -44,8 +44,8 @@ impl ListAttachedUserPoliciesInput {
 }
 
 /// A builder for [`ListAttachedUserPoliciesInput`](crate::operation::list_attached_user_policies::ListAttachedUserPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAttachedUserPoliciesInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) path_prefix: ::std::option::Option<::std::string::String>,

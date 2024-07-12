@@ -27,8 +27,8 @@ impl FindingAction {
 }
 
 /// A builder for [`FindingAction`](crate::types::FindingAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingActionBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::FindingActionType>,
     pub(crate) api_call_details: ::std::option::Option<crate::types::ApiCallDetails>,

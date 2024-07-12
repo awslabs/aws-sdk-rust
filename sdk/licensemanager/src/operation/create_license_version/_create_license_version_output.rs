@@ -38,8 +38,8 @@ impl CreateLicenseVersionOutput {
 }
 
 /// A builder for [`CreateLicenseVersionOutput`](crate::operation::create_license_version::CreateLicenseVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLicenseVersionOutputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

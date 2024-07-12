@@ -40,8 +40,8 @@ impl ListDomainsInput {
 }
 
 /// A builder for [`ListDomainsInput`](crate::operation::list_domains::ListDomainsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDomainsInputBuilder {
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     pub(crate) registration_status: ::std::option::Option<crate::types::RegistrationStatus>,

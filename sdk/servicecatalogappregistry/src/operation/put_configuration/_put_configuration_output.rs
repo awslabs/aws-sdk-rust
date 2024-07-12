@@ -18,8 +18,8 @@ impl PutConfigurationOutput {
 }
 
 /// A builder for [`PutConfigurationOutput`](crate::operation::put_configuration::PutConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

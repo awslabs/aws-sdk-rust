@@ -59,8 +59,8 @@ impl DescribeNetworkInterfaceAttributeOutput {
 }
 
 /// A builder for [`DescribeNetworkInterfaceAttributeOutput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNetworkInterfaceAttributeOutputBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::NetworkInterfaceAttachment>,
     pub(crate) description: ::std::option::Option<crate::types::AttributeValue>,

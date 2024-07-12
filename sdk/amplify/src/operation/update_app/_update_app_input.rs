@@ -172,8 +172,8 @@ impl UpdateAppInput {
 }
 
 /// A builder for [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateAppInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

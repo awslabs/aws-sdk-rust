@@ -18,8 +18,8 @@ impl DeleteTrainingDatasetOutput {
 }
 
 /// A builder for [`DeleteTrainingDatasetOutput`](crate::operation::delete_training_dataset::DeleteTrainingDatasetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrainingDatasetOutputBuilder {
     _request_id: Option<String>,
 }

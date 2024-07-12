@@ -29,8 +29,8 @@ impl ResultSetMetadata {
 }
 
 /// A builder for [`ResultSetMetadata`](crate::types::ResultSetMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResultSetMetadataBuilder {
     pub(crate) column_count: ::std::option::Option<i64>,
     pub(crate) column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,

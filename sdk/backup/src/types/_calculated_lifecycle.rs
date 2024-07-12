@@ -30,8 +30,8 @@ impl CalculatedLifecycle {
 }
 
 /// A builder for [`CalculatedLifecycle`](crate::types::CalculatedLifecycle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CalculatedLifecycleBuilder {
     pub(crate) move_to_cold_storage_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delete_at: ::std::option::Option<::aws_smithy_types::DateTime>,

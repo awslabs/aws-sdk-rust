@@ -55,8 +55,8 @@ impl GetResourcesInput {
 }
 
 /// A builder for [`GetResourcesInput`](crate::operation::get_resources::GetResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetResourcesInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

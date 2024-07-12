@@ -144,8 +144,8 @@ impl ReplicateKeyInput {
 }
 
 /// A builder for [`ReplicateKeyInput`](crate::operation::replicate_key::ReplicateKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicateKeyInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) replica_region: ::std::option::Option<::std::string::String>,

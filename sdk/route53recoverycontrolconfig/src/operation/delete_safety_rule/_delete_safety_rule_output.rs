@@ -18,8 +18,8 @@ impl DeleteSafetyRuleOutput {
 }
 
 /// A builder for [`DeleteSafetyRuleOutput`](crate::operation::delete_safety_rule::DeleteSafetyRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSafetyRuleOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,8 +28,8 @@ impl GetContainerServicePowersOutput {
 }
 
 /// A builder for [`GetContainerServicePowersOutput`](crate::operation::get_container_service_powers::GetContainerServicePowersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerServicePowersOutputBuilder {
     pub(crate) powers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>>,
     _request_id: Option<String>,

@@ -39,8 +39,8 @@ impl InferRxNormOutput {
 }
 
 /// A builder for [`InferRxNormOutput`](crate::operation::infer_rx_norm::InferRxNormOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferRxNormOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::RxNormEntity>>,
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl InferenceComponentStartupParameters {
 }
 
 /// A builder for [`InferenceComponentStartupParameters`](crate::types::InferenceComponentStartupParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceComponentStartupParametersBuilder {
     pub(crate) model_data_download_timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) container_startup_health_check_timeout_in_seconds: ::std::option::Option<i32>,

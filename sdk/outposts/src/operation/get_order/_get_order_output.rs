@@ -26,8 +26,8 @@ impl GetOrderOutput {
 }
 
 /// A builder for [`GetOrderOutput`](crate::operation::get_order::GetOrderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOrderOutputBuilder {
     pub(crate) order: ::std::option::Option<crate::types::Order>,
     _request_id: Option<String>,

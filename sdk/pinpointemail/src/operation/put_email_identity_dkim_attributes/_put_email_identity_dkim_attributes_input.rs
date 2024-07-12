@@ -29,8 +29,8 @@ impl PutEmailIdentityDkimAttributesInput {
 }
 
 /// A builder for [`PutEmailIdentityDkimAttributesInput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEmailIdentityDkimAttributesInputBuilder {
     pub(crate) email_identity: ::std::option::Option<::std::string::String>,
     pub(crate) signing_enabled: ::std::option::Option<bool>,

@@ -20,8 +20,8 @@ impl DescribeDashboardInput {
 }
 
 /// A builder for [`DescribeDashboardInput`](crate::operation::describe_dashboard::DescribeDashboardInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDashboardInputBuilder {
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
 }

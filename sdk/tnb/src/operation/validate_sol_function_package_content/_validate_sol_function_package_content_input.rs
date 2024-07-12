@@ -32,8 +32,8 @@ impl ValidateSolFunctionPackageContentInput {
 }
 
 /// A builder for [`ValidateSolFunctionPackageContentInput`](crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateSolFunctionPackageContentInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<crate::types::PackageContentType>,

@@ -29,8 +29,8 @@ impl PhoneNumberCountry {
 }
 
 /// A builder for [`PhoneNumberCountry`](crate::types::PhoneNumberCountry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PhoneNumberCountryBuilder {
     pub(crate) country_code: ::std::option::Option<::std::string::String>,
     pub(crate) supported_phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,

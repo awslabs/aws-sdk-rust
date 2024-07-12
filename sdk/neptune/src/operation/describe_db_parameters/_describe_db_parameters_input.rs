@@ -64,8 +64,8 @@ impl DescribeDbParametersInput {
 }
 
 /// A builder for [`DescribeDbParametersInput`](crate::operation::describe_db_parameters::DescribeDbParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbParametersInputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,

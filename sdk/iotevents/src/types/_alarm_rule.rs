@@ -21,8 +21,8 @@ impl AlarmRule {
 }
 
 /// A builder for [`AlarmRule`](crate::types::AlarmRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlarmRuleBuilder {
     pub(crate) simple_rule: ::std::option::Option<crate::types::SimpleRule>,
 }

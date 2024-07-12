@@ -23,8 +23,8 @@ impl AnonymousUserSnapshotJobResult {
 }
 
 /// A builder for [`AnonymousUserSnapshotJobResult`](crate::types::AnonymousUserSnapshotJobResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnonymousUserSnapshotJobResultBuilder {
     pub(crate) file_groups: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobResultFileGroup>>,
 }

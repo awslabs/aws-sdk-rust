@@ -33,8 +33,8 @@ impl TestReportSummary {
 }
 
 /// A builder for [`TestReportSummary`](crate::types::TestReportSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestReportSummaryBuilder {
     pub(crate) total: ::std::option::Option<i32>,
     pub(crate) status_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,

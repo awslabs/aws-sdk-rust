@@ -26,8 +26,8 @@ impl AcceptVpcPeeringConnectionInput {
 }
 
 /// A builder for [`AcceptVpcPeeringConnectionInput`](crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptVpcPeeringConnectionInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_peering_connection_id: ::std::option::Option<::std::string::String>,

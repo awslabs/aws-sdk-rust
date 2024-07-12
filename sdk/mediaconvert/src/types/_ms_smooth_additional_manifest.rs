@@ -29,8 +29,8 @@ impl MsSmoothAdditionalManifest {
 }
 
 /// A builder for [`MsSmoothAdditionalManifest`](crate::types::MsSmoothAdditionalManifest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MsSmoothAdditionalManifestBuilder {
     pub(crate) manifest_name_modifier: ::std::option::Option<::std::string::String>,
     pub(crate) selected_outputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

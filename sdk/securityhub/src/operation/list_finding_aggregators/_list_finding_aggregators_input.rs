@@ -26,8 +26,8 @@ impl ListFindingAggregatorsInput {
 }
 
 /// A builder for [`ListFindingAggregatorsInput`](crate::operation::list_finding_aggregators::ListFindingAggregatorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFindingAggregatorsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

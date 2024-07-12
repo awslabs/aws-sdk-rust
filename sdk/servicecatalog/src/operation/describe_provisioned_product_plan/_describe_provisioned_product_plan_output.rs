@@ -40,8 +40,8 @@ impl DescribeProvisionedProductPlanOutput {
 }
 
 /// A builder for [`DescribeProvisionedProductPlanOutput`](crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProvisionedProductPlanOutputBuilder {
     pub(crate) provisioned_product_plan_details: ::std::option::Option<crate::types::ProvisionedProductPlanDetails>,
     pub(crate) resource_changes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceChange>>,

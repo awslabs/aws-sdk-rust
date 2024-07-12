@@ -30,8 +30,8 @@ impl LocationTimestamp {
 }
 
 /// A builder for [`LocationTimestamp`](crate::types::LocationTimestamp).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LocationTimestampBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,

@@ -91,8 +91,8 @@ impl Problem {
 }
 
 /// A builder for [`Problem`](crate::types::Problem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProblemBuilder {
     pub(crate) run: ::std::option::Option<crate::types::ProblemDetail>,
     pub(crate) job: ::std::option::Option<crate::types::ProblemDetail>,

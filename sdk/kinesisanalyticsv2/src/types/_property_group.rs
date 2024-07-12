@@ -28,8 +28,8 @@ impl PropertyGroup {
 }
 
 /// A builder for [`PropertyGroup`](crate::types::PropertyGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyGroupBuilder {
     pub(crate) property_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

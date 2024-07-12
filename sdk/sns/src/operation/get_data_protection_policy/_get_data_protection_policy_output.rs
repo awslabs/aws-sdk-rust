@@ -26,8 +26,8 @@ impl GetDataProtectionPolicyOutput {
 }
 
 /// A builder for [`GetDataProtectionPolicyOutput`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataProtectionPolicyOutputBuilder {
     pub(crate) data_protection_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

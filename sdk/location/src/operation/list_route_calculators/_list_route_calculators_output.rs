@@ -33,8 +33,8 @@ impl ListRouteCalculatorsOutput {
 }
 
 /// A builder for [`ListRouteCalculatorsOutput`](crate::operation::list_route_calculators::ListRouteCalculatorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRouteCalculatorsOutputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::ListRouteCalculatorsResponseEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

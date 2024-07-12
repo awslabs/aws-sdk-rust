@@ -27,8 +27,8 @@ impl ModelExplainabilityJobInput {
 }
 
 /// A builder for [`ModelExplainabilityJobInput`](crate::types::ModelExplainabilityJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelExplainabilityJobInputBuilder {
     pub(crate) endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
     pub(crate) batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,

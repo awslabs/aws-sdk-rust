@@ -35,8 +35,8 @@ impl StorageProfileSummary {
 }
 
 /// A builder for [`StorageProfileSummary`](crate::types::StorageProfileSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageProfileSummaryBuilder {
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

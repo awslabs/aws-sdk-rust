@@ -34,8 +34,8 @@ impl ListDelegatedAdministratorsInput {
 }
 
 /// A builder for [`ListDelegatedAdministratorsInput`](crate::operation::list_delegated_administrators::ListDelegatedAdministratorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDelegatedAdministratorsInputBuilder {
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

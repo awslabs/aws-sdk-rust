@@ -45,8 +45,8 @@ impl LabelCounters {
 }
 
 /// A builder for [`LabelCounters`](crate::types::LabelCounters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelCountersBuilder {
     pub(crate) total_labeled: ::std::option::Option<i32>,
     pub(crate) human_labeled: ::std::option::Option<i32>,

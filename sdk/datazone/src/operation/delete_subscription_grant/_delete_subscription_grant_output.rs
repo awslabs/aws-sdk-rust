@@ -92,8 +92,8 @@ impl DeleteSubscriptionGrantOutput {
 }
 
 /// A builder for [`DeleteSubscriptionGrantOutput`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSubscriptionGrantOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl AwsS3BucketWebsiteConfiguration {
 }
 
 /// A builder for [`AwsS3BucketWebsiteConfiguration`](crate::types::AwsS3BucketWebsiteConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketWebsiteConfigurationBuilder {
     pub(crate) error_document: ::std::option::Option<::std::string::String>,
     pub(crate) index_document_suffix: ::std::option::Option<::std::string::String>,

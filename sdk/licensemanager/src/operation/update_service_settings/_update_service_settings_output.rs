@@ -18,8 +18,8 @@ impl UpdateServiceSettingsOutput {
 }
 
 /// A builder for [`UpdateServiceSettingsOutput`](crate::operation::update_service_settings::UpdateServiceSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceSettingsOutputBuilder {
     _request_id: Option<String>,
 }

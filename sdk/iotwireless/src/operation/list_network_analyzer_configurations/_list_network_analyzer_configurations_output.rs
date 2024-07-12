@@ -34,8 +34,8 @@ impl ListNetworkAnalyzerConfigurationsOutput {
 }
 
 /// A builder for [`ListNetworkAnalyzerConfigurationsOutput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNetworkAnalyzerConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) network_analyzer_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAnalyzerConfigurations>>,

@@ -35,8 +35,8 @@ impl Srt {
 }
 
 /// A builder for [`Srt`](crate::types::Srt).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SrtBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) passphrase: ::std::option::Option<::std::string::String>,

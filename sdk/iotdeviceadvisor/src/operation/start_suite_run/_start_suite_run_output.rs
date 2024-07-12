@@ -44,8 +44,8 @@ impl StartSuiteRunOutput {
 }
 
 /// A builder for [`StartSuiteRunOutput`](crate::operation::start_suite_run::StartSuiteRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSuiteRunOutputBuilder {
     pub(crate) suite_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_run_arn: ::std::option::Option<::std::string::String>,

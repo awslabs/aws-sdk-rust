@@ -35,8 +35,8 @@ impl DescribeSourceRegionsOutput {
 }
 
 /// A builder for [`DescribeSourceRegionsOutput`](crate::operation::describe_source_regions::DescribeSourceRegionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSourceRegionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) source_regions: ::std::option::Option<::std::vec::Vec<crate::types::SourceRegion>>,

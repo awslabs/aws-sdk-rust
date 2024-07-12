@@ -33,8 +33,8 @@ impl LastRunErrorStatus {
 }
 
 /// A builder for [`LastRunErrorStatus`](crate::types::LastRunErrorStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LastRunErrorStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::LastRunErrorStatusCode>,
 }

@@ -32,8 +32,8 @@ impl ListDeploymentEventsInput {
 }
 
 /// A builder for [`ListDeploymentEventsInput`](crate::operation::list_deployment_events::ListDeploymentEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeploymentEventsInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

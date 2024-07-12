@@ -26,8 +26,8 @@ impl GetContentSummaryOutput {
 }
 
 /// A builder for [`GetContentSummaryOutput`](crate::operation::get_content_summary::GetContentSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContentSummaryOutputBuilder {
     pub(crate) content_summary: ::std::option::Option<crate::types::ContentSummary>,
     _request_id: Option<String>,

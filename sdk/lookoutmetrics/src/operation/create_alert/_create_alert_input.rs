@@ -56,8 +56,8 @@ impl CreateAlertInput {
 }
 
 /// A builder for [`CreateAlertInput`](crate::operation::create_alert::CreateAlertInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAlertInputBuilder {
     pub(crate) alert_name: ::std::option::Option<::std::string::String>,
     pub(crate) alert_sensitivity_threshold: ::std::option::Option<i32>,

@@ -29,8 +29,8 @@ impl RetrieveEnvironmentInfoOutput {
 }
 
 /// A builder for [`RetrieveEnvironmentInfoOutput`](crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetrieveEnvironmentInfoOutputBuilder {
     pub(crate) environment_info: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
     _request_id: Option<String>,

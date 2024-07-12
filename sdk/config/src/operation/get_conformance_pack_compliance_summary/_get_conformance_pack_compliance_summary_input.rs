@@ -34,8 +34,8 @@ impl GetConformancePackComplianceSummaryInput {
 }
 
 /// A builder for [`GetConformancePackComplianceSummaryInput`](crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConformancePackComplianceSummaryInputBuilder {
     pub(crate) conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,

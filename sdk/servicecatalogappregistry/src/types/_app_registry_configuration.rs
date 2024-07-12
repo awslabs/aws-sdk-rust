@@ -21,8 +21,8 @@ impl AppRegistryConfiguration {
 }
 
 /// A builder for [`AppRegistryConfiguration`](crate::types::AppRegistryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppRegistryConfigurationBuilder {
     pub(crate) tag_query_configuration: ::std::option::Option<crate::types::TagQueryConfiguration>,
 }

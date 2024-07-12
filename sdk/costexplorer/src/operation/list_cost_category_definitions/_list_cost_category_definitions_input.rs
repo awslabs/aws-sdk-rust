@@ -32,8 +32,8 @@ impl ListCostCategoryDefinitionsInput {
 }
 
 /// A builder for [`ListCostCategoryDefinitionsInput`](crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCostCategoryDefinitionsInputBuilder {
     pub(crate) effective_on: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

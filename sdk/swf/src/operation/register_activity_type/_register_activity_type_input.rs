@@ -92,8 +92,8 @@ impl RegisterActivityTypeInput {
 }
 
 /// A builder for [`RegisterActivityTypeInput`](crate::operation::register_activity_type::RegisterActivityTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterActivityTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

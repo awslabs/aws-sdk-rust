@@ -27,8 +27,8 @@ impl ObjectIdentifierAndLinkNameTuple {
 }
 
 /// A builder for [`ObjectIdentifierAndLinkNameTuple`](crate::types::ObjectIdentifierAndLinkNameTuple).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectIdentifierAndLinkNameTupleBuilder {
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) link_name: ::std::option::Option<::std::string::String>,

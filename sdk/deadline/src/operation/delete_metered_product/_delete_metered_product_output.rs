@@ -18,8 +18,8 @@ impl DeleteMeteredProductOutput {
 }
 
 /// A builder for [`DeleteMeteredProductOutput`](crate::operation::delete_metered_product::DeleteMeteredProductOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMeteredProductOutputBuilder {
     _request_id: Option<String>,
 }

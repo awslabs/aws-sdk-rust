@@ -23,8 +23,8 @@ impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
 }
 
 /// A builder for [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

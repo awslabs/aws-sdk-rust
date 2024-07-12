@@ -34,8 +34,8 @@ impl ListSolNetworkInstancesOutput {
 }
 
 /// A builder for [`ListSolNetworkInstancesOutput`](crate::operation::list_sol_network_instances::ListSolNetworkInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSolNetworkInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) network_instances: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkInstanceInfo>>,

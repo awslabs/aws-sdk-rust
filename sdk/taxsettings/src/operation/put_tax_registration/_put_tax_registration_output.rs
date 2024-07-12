@@ -26,8 +26,8 @@ impl PutTaxRegistrationOutput {
 }
 
 /// A builder for [`PutTaxRegistrationOutput`](crate::operation::put_tax_registration::PutTaxRegistrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutTaxRegistrationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TaxRegistrationStatus>,
     _request_id: Option<String>,

@@ -103,8 +103,8 @@ impl NotificationOutput {
 }
 
 /// A builder for [`NotificationOutput`](crate::types::NotificationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct NotificationOutputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,

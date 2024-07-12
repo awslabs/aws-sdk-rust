@@ -33,8 +33,8 @@ impl ListStreamsInput {
 }
 
 /// A builder for [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) exclusive_start_stream_name: ::std::option::Option<::std::string::String>,

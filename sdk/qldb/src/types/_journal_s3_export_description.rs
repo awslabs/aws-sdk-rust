@@ -84,8 +84,8 @@ impl JournalS3ExportDescription {
 }
 
 /// A builder for [`JournalS3ExportDescription`](crate::types::JournalS3ExportDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JournalS3ExportDescriptionBuilder {
     pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
     pub(crate) export_id: ::std::option::Option<::std::string::String>,

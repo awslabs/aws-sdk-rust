@@ -26,8 +26,8 @@ impl ConfirmCustomerAgreementOutput {
 }
 
 /// A builder for [`ConfirmCustomerAgreementOutput`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfirmCustomerAgreementOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

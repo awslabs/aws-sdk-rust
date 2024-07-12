@@ -200,8 +200,8 @@ impl GitHubConfiguration {
 }
 
 /// A builder for [`GitHubConfiguration`](crate::types::GitHubConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GitHubConfigurationBuilder {
     pub(crate) saa_s_configuration: ::std::option::Option<crate::types::SaaSConfiguration>,
     pub(crate) on_premise_configuration: ::std::option::Option<crate::types::OnPremiseConfiguration>,

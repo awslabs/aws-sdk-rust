@@ -34,8 +34,8 @@ impl ListSubscribedRuleGroupsOutput {
 }
 
 /// A builder for [`ListSubscribedRuleGroupsOutput`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSubscribedRuleGroupsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>,

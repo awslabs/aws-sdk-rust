@@ -78,8 +78,8 @@ impl ListTasksInput {
 }
 
 /// A builder for [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTasksInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) container_instance: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl AssociatePackageOutput {
 }
 
 /// A builder for [`AssociatePackageOutput`](crate::operation::associate_package::AssociatePackageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociatePackageOutputBuilder {
     pub(crate) domain_package_details: ::std::option::Option<crate::types::DomainPackageDetails>,
     _request_id: Option<String>,

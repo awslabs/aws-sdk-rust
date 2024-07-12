@@ -39,8 +39,8 @@ impl ActionHistory {
 }
 
 /// A builder for [`ActionHistory`](crate::types::ActionHistory).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionHistoryBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ActionStatus>,

@@ -43,8 +43,8 @@ impl CheckNoNewAccessInput {
 }
 
 /// A builder for [`CheckNoNewAccessInput`](crate::operation::check_no_new_access::CheckNoNewAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CheckNoNewAccessInputBuilder {
     pub(crate) new_policy_document: ::std::option::Option<::std::string::String>,
     pub(crate) existing_policy_document: ::std::option::Option<::std::string::String>,

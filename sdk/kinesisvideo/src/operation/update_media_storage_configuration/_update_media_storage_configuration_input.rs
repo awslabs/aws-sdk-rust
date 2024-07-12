@@ -26,8 +26,8 @@ impl UpdateMediaStorageConfigurationInput {
 }
 
 /// A builder for [`UpdateMediaStorageConfigurationInput`](crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMediaStorageConfigurationInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) media_storage_configuration: ::std::option::Option<crate::types::MediaStorageConfiguration>,

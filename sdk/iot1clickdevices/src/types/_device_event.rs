@@ -26,8 +26,8 @@ impl DeviceEvent {
 }
 
 /// A builder for [`DeviceEvent`](crate::types::DeviceEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceEventBuilder {
     pub(crate) device: ::std::option::Option<crate::types::Device>,
     pub(crate) std_event: ::std::option::Option<::std::string::String>,

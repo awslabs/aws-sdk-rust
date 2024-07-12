@@ -39,8 +39,8 @@ impl Usage {
 }
 
 /// A builder for [`Usage`](crate::types::Usage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::UsageType>,
     pub(crate) total: ::std::option::Option<f64>,

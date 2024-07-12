@@ -71,8 +71,8 @@ impl CheckpointConfigurationUpdate {
 }
 
 /// A builder for [`CheckpointConfigurationUpdate`](crate::types::CheckpointConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckpointConfigurationUpdateBuilder {
     pub(crate) configuration_type_update: ::std::option::Option<crate::types::ConfigurationType>,
     pub(crate) checkpointing_enabled_update: ::std::option::Option<bool>,

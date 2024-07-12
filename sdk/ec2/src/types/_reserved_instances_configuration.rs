@@ -49,8 +49,8 @@ impl ReservedInstancesConfiguration {
 }
 
 /// A builder for [`ReservedInstancesConfiguration`](crate::types::ReservedInstancesConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservedInstancesConfigurationBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) instance_count: ::std::option::Option<i32>,

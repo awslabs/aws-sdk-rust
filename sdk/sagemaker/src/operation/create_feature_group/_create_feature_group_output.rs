@@ -26,8 +26,8 @@ impl CreateFeatureGroupOutput {
 }
 
 /// A builder for [`CreateFeatureGroupOutput`](crate::operation::create_feature_group::CreateFeatureGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFeatureGroupOutputBuilder {
     pub(crate) feature_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -50,8 +50,8 @@ impl GetBackupSelectionOutput {
 }
 
 /// A builder for [`GetBackupSelectionOutput`](crate::operation::get_backup_selection::GetBackupSelectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBackupSelectionOutputBuilder {
     pub(crate) backup_selection: ::std::option::Option<crate::types::BackupSelection>,
     pub(crate) selection_id: ::std::option::Option<::std::string::String>,

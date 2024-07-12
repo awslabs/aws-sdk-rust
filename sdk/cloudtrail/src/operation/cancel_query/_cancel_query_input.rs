@@ -28,8 +28,8 @@ impl CancelQueryInput {
 }
 
 /// A builder for [`CancelQueryInput`](crate::operation::cancel_query::CancelQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelQueryInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) query_id: ::std::option::Option<::std::string::String>,

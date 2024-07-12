@@ -18,8 +18,8 @@ impl DisassociateSourceServersOutput {
 }
 
 /// A builder for [`DisassociateSourceServersOutput`](crate::operation::disassociate_source_servers::DisassociateSourceServersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateSourceServersOutputBuilder {
     _request_id: Option<String>,
 }

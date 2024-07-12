@@ -68,8 +68,8 @@ impl UpdateSchemaOutput {
 }
 
 /// A builder for [`UpdateSchemaOutput`](crate::operation::update_schema::UpdateSchemaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSchemaOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,

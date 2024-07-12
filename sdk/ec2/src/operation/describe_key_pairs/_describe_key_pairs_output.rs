@@ -28,8 +28,8 @@ impl DescribeKeyPairsOutput {
 }
 
 /// A builder for [`DescribeKeyPairsOutput`](crate::operation::describe_key_pairs::DescribeKeyPairsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeKeyPairsOutputBuilder {
     pub(crate) key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::KeyPairInfo>>,
     _request_id: Option<String>,

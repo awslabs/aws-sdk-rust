@@ -20,8 +20,8 @@ impl DisassociateTrustStoreInput {
 }
 
 /// A builder for [`DisassociateTrustStoreInput`](crate::operation::disassociate_trust_store::DisassociateTrustStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTrustStoreInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl FilterRule {
 }
 
 /// A builder for [`FilterRule`](crate::types::FilterRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterRuleBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FilterRuleName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

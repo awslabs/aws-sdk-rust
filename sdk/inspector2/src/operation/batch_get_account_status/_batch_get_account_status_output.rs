@@ -35,8 +35,8 @@ impl BatchGetAccountStatusOutput {
 }
 
 /// A builder for [`BatchGetAccountStatusOutput`](crate::operation::batch_get_account_status::BatchGetAccountStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAccountStatusOutputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountState>>,
     pub(crate) failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>,

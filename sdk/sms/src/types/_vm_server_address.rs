@@ -27,8 +27,8 @@ impl VmServerAddress {
 }
 
 /// A builder for [`VmServerAddress`](crate::types::VmServerAddress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VmServerAddressBuilder {
     pub(crate) vm_manager_id: ::std::option::Option<::std::string::String>,
     pub(crate) vm_id: ::std::option::Option<::std::string::String>,

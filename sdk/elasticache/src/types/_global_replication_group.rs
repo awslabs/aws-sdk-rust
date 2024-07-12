@@ -109,8 +109,8 @@ impl GlobalReplicationGroup {
 }
 
 /// A builder for [`GlobalReplicationGroup`](crate::types::GlobalReplicationGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlobalReplicationGroupBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) global_replication_group_description: ::std::option::Option<::std::string::String>,

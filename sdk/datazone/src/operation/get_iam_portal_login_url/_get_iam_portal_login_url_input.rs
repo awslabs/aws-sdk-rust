@@ -20,8 +20,8 @@ impl GetIamPortalLoginUrlInput {
 }
 
 /// A builder for [`GetIamPortalLoginUrlInput`](crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIamPortalLoginUrlInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
 }

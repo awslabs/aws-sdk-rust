@@ -20,8 +20,8 @@ impl DescribeAutoMlJobV2Input {
 }
 
 /// A builder for [`DescribeAutoMlJobV2Input`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAutoMlJobV2InputBuilder {
     pub(crate) auto_ml_job_name: ::std::option::Option<::std::string::String>,
 }

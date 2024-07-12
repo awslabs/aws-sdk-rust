@@ -32,8 +32,8 @@ impl ListChannelsInput {
 }
 
 /// A builder for [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListChannelsInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

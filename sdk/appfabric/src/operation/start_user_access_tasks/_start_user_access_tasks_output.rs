@@ -28,8 +28,8 @@ impl StartUserAccessTasksOutput {
 }
 
 /// A builder for [`StartUserAccessTasksOutput`](crate::operation::start_user_access_tasks::StartUserAccessTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartUserAccessTasksOutputBuilder {
     pub(crate) user_access_tasks_list: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessTaskItem>>,
     _request_id: Option<String>,

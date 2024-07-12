@@ -26,8 +26,8 @@ impl UpdateAcceleratorOutput {
 }
 
 /// A builder for [`UpdateAcceleratorOutput`](crate::operation::update_accelerator::UpdateAcceleratorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAcceleratorOutputBuilder {
     pub(crate) accelerator: ::std::option::Option<crate::types::Accelerator>,
     _request_id: Option<String>,

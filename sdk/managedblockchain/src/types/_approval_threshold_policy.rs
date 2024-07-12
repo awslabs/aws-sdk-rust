@@ -34,8 +34,8 @@ impl ApprovalThresholdPolicy {
 }
 
 /// A builder for [`ApprovalThresholdPolicy`](crate::types::ApprovalThresholdPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApprovalThresholdPolicyBuilder {
     pub(crate) threshold_percentage: ::std::option::Option<i32>,
     pub(crate) proposal_duration_in_hours: ::std::option::Option<i32>,

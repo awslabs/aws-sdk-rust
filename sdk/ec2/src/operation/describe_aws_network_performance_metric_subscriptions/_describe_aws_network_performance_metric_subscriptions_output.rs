@@ -34,8 +34,8 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {
 }
 
 /// A builder for [`DescribeAwsNetworkPerformanceMetricSubscriptionsOutput`](crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAwsNetworkPerformanceMetricSubscriptionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,

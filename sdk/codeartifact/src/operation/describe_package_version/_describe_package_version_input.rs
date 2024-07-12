@@ -96,8 +96,8 @@ impl DescribePackageVersionInput {
 }
 
 /// A builder for [`DescribePackageVersionInput`](crate::operation::describe_package_version::DescribePackageVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePackageVersionInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

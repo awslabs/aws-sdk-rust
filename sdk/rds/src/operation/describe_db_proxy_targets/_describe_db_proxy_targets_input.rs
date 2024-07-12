@@ -50,8 +50,8 @@ impl DescribeDbProxyTargetsInput {
 }
 
 /// A builder for [`DescribeDbProxyTargetsInput`](crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbProxyTargetsInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_group_name: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeVolumesModificationsOutput {
 }
 
 /// A builder for [`DescribeVolumesModificationsOutput`](crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVolumesModificationsOutputBuilder {
     pub(crate) volumes_modifications: ::std::option::Option<::std::vec::Vec<crate::types::VolumeModification>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

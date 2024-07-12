@@ -18,8 +18,8 @@ impl SuspendProcessesOutput {
 }
 
 /// A builder for [`SuspendProcessesOutput`](crate::operation::suspend_processes::SuspendProcessesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuspendProcessesOutputBuilder {
     _request_id: Option<String>,
 }

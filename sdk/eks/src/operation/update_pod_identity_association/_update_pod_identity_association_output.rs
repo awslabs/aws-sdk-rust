@@ -26,8 +26,8 @@ impl UpdatePodIdentityAssociationOutput {
 }
 
 /// A builder for [`UpdatePodIdentityAssociationOutput`](crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePodIdentityAssociationOutputBuilder {
     pub(crate) association: ::std::option::Option<crate::types::PodIdentityAssociation>,
     _request_id: Option<String>,

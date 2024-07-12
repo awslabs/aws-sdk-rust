@@ -20,8 +20,8 @@ impl DeleteGatewayInput {
 }
 
 /// A builder for [`DeleteGatewayInput`](crate::operation::delete_gateway::DeleteGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGatewayInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
 }

@@ -148,8 +148,8 @@ impl DynamoDbAction {
 }
 
 /// A builder for [`DynamoDbAction`](crate::types::DynamoDbAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DynamoDbActionBuilder {
     pub(crate) hash_key_type: ::std::option::Option<::std::string::String>,
     pub(crate) hash_key_field: ::std::option::Option<::std::string::String>,

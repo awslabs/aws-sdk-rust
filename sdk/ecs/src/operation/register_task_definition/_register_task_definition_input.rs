@@ -322,8 +322,8 @@ impl RegisterTaskDefinitionInput {
 }
 
 /// A builder for [`RegisterTaskDefinitionInput`](crate::operation::register_task_definition::RegisterTaskDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterTaskDefinitionInputBuilder {
     pub(crate) family: ::std::option::Option<::std::string::String>,
     pub(crate) task_role_arn: ::std::option::Option<::std::string::String>,

@@ -56,8 +56,8 @@ impl CreateEventActionOutput {
 }
 
 /// A builder for [`CreateEventActionOutput`](crate::operation::create_event_action::CreateEventActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEventActionOutputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

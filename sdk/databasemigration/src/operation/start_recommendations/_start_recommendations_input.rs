@@ -26,8 +26,8 @@ impl StartRecommendationsInput {
 }
 
 /// A builder for [`StartRecommendationsInput`](crate::operation::start_recommendations::StartRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartRecommendationsInputBuilder {
     pub(crate) database_id: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<crate::types::RecommendationSettings>,

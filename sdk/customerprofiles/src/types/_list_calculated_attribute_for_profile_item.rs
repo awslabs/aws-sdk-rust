@@ -39,8 +39,8 @@ impl ListCalculatedAttributeForProfileItem {
 }
 
 /// A builder for [`ListCalculatedAttributeForProfileItem`](crate::types::ListCalculatedAttributeForProfileItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCalculatedAttributeForProfileItemBuilder {
     pub(crate) calculated_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

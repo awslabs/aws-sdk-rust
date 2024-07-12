@@ -26,8 +26,8 @@ impl CreateStackInstancesOutput {
 }
 
 /// A builder for [`CreateStackInstancesOutput`](crate::operation::create_stack_instances::CreateStackInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStackInstancesOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

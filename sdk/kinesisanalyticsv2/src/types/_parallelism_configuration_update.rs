@@ -39,8 +39,8 @@ impl ParallelismConfigurationUpdate {
 }
 
 /// A builder for [`ParallelismConfigurationUpdate`](crate::types::ParallelismConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParallelismConfigurationUpdateBuilder {
     pub(crate) configuration_type_update: ::std::option::Option<crate::types::ConfigurationType>,
     pub(crate) parallelism_update: ::std::option::Option<i32>,

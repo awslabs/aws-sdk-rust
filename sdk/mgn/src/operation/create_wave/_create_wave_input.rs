@@ -48,8 +48,8 @@ impl CreateWaveInput {
 }
 
 /// A builder for [`CreateWaveInput`](crate::operation::create_wave::CreateWaveInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateWaveInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

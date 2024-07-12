@@ -115,8 +115,8 @@ impl GetChangesetOutput {
 }
 
 /// A builder for [`GetChangesetOutput`](crate::operation::get_changeset::GetChangesetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChangesetOutputBuilder {
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_arn: ::std::option::Option<::std::string::String>,

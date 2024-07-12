@@ -28,8 +28,8 @@ impl BatchDeleteImportDataOutput {
 }
 
 /// A builder for [`BatchDeleteImportDataOutput`](crate::operation::batch_delete_import_data::BatchDeleteImportDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteImportDataOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteImportDataError>>,
     _request_id: Option<String>,

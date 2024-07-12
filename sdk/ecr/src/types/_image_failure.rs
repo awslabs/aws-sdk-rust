@@ -33,8 +33,8 @@ impl ImageFailure {
 }
 
 /// A builder for [`ImageFailure`](crate::types::ImageFailure).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageFailureBuilder {
     pub(crate) image_id: ::std::option::Option<crate::types::ImageIdentifier>,
     pub(crate) failure_code: ::std::option::Option<crate::types::ImageFailureCode>,

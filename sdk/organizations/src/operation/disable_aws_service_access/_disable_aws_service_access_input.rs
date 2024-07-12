@@ -20,8 +20,8 @@ impl DisableAwsServiceAccessInput {
 }
 
 /// A builder for [`DisableAwsServiceAccessInput`](crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableAwsServiceAccessInputBuilder {
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
 }

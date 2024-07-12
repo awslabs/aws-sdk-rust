@@ -27,8 +27,8 @@ impl CompareDatabaseCdcSummary {
 }
 
 /// A builder for [`CompareDatabaseCdcSummary`](crate::types::CompareDatabaseCdcSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompareDatabaseCdcSummaryBuilder {
     pub(crate) step_input: ::std::option::Option<crate::types::CompareDatabaseCdcStepInput>,
     pub(crate) step_output: ::std::option::Option<crate::types::CompareDatabaseCdcStepOutput>,

@@ -29,8 +29,8 @@ impl SchemaChangeRequestDetails {
 }
 
 /// A builder for [`SchemaChangeRequestDetails`](crate::types::SchemaChangeRequestDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SchemaChangeRequestDetailsBuilder {
     pub(crate) changes: ::std::option::Option<::std::vec::Vec<crate::types::SchemaChangeDetails>>,
     pub(crate) schema_change_at: ::std::option::Option<::aws_smithy_types::DateTime>,

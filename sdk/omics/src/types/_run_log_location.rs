@@ -27,8 +27,8 @@ impl RunLogLocation {
 }
 
 /// A builder for [`RunLogLocation`](crate::types::RunLogLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunLogLocationBuilder {
     pub(crate) engine_log_stream: ::std::option::Option<::std::string::String>,
     pub(crate) run_log_stream: ::std::option::Option<::std::string::String>,

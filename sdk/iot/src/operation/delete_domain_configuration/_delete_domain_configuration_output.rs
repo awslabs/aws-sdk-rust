@@ -18,8 +18,8 @@ impl DeleteDomainConfigurationOutput {
 }
 
 /// A builder for [`DeleteDomainConfigurationOutput`](crate::operation::delete_domain_configuration::DeleteDomainConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDomainConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

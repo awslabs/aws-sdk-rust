@@ -125,8 +125,8 @@ impl UpdateQueueInput {
 }
 
 /// A builder for [`UpdateQueueInput`](crate::operation::update_queue::UpdateQueueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateQueueInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl CreateDatasetInput {
 }
 
 /// A builder for [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDatasetInputBuilder {
     pub(crate) dataset_source: ::std::option::Option<crate::types::DatasetSource>,
     pub(crate) dataset_type: ::std::option::Option<crate::types::DatasetType>,

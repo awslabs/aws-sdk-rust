@@ -33,8 +33,8 @@ impl Ec2CopyRouteTableAction {
 }
 
 /// A builder for [`Ec2CopyRouteTableAction`](crate::types::Ec2CopyRouteTableAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2CopyRouteTableActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<crate::types::ActionTarget>,

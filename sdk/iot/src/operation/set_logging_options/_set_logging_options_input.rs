@@ -21,8 +21,8 @@ impl SetLoggingOptionsInput {
 }
 
 /// A builder for [`SetLoggingOptionsInput`](crate::operation::set_logging_options::SetLoggingOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetLoggingOptionsInputBuilder {
     pub(crate) logging_options_payload: ::std::option::Option<crate::types::LoggingOptionsPayload>,
 }

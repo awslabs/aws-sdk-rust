@@ -39,8 +39,8 @@ impl WebsiteAuthorizationProviderSummary {
 }
 
 /// A builder for [`WebsiteAuthorizationProviderSummary`](crate::types::WebsiteAuthorizationProviderSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WebsiteAuthorizationProviderSummaryBuilder {
     pub(crate) authorization_provider_id: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_provider_type: ::std::option::Option<crate::types::AuthorizationProviderType>,

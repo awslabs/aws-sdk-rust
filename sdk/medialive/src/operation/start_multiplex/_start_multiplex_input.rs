@@ -21,8 +21,8 @@ impl StartMultiplexInput {
 }
 
 /// A builder for [`StartMultiplexInput`](crate::operation::start_multiplex::StartMultiplexInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMultiplexInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
 }

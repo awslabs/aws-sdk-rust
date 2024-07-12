@@ -31,8 +31,8 @@ impl RateBasedStatementManagedKeysIpSet {
 }
 
 /// A builder for [`RateBasedStatementManagedKeysIpSet`](crate::types::RateBasedStatementManagedKeysIpSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RateBasedStatementManagedKeysIpSetBuilder {
     pub(crate) ip_address_version: ::std::option::Option<crate::types::IpAddressVersion>,
     pub(crate) addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

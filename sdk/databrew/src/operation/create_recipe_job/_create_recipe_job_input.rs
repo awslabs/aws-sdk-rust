@@ -122,8 +122,8 @@ impl CreateRecipeJobInput {
 }
 
 /// A builder for [`CreateRecipeJobInput`](crate::operation::create_recipe_job::CreateRecipeJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRecipeJobInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetRegexMatchSetInput {
 }
 
 /// A builder for [`GetRegexMatchSetInput`](crate::operation::get_regex_match_set::GetRegexMatchSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegexMatchSetInputBuilder {
     pub(crate) regex_match_set_id: ::std::option::Option<::std::string::String>,
 }

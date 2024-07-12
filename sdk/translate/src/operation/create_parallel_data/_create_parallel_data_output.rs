@@ -32,8 +32,8 @@ impl CreateParallelDataOutput {
 }
 
 /// A builder for [`CreateParallelDataOutput`](crate::operation::create_parallel_data::CreateParallelDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateParallelDataOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ParallelDataStatus>,

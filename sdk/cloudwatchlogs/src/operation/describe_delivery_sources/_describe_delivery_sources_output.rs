@@ -34,8 +34,8 @@ impl DescribeDeliverySourcesOutput {
 }
 
 /// A builder for [`DescribeDeliverySourcesOutput`](crate::operation::describe_delivery_sources::DescribeDeliverySourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeliverySourcesOutputBuilder {
     pub(crate) delivery_sources: ::std::option::Option<::std::vec::Vec<crate::types::DeliverySource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

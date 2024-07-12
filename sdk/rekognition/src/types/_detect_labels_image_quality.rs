@@ -33,8 +33,8 @@ impl DetectLabelsImageQuality {
 }
 
 /// A builder for [`DetectLabelsImageQuality`](crate::types::DetectLabelsImageQuality).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectLabelsImageQualityBuilder {
     pub(crate) brightness: ::std::option::Option<f32>,
     pub(crate) sharpness: ::std::option::Option<f32>,

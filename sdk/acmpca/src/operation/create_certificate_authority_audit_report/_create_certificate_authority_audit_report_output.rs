@@ -32,8 +32,8 @@ impl CreateCertificateAuthorityAuditReportOutput {
 }
 
 /// A builder for [`CreateCertificateAuthorityAuditReportOutput`](crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCertificateAuthorityAuditReportOutputBuilder {
     pub(crate) audit_report_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl ConformancePackComplianceSummary {
 }
 
 /// A builder for [`ConformancePackComplianceSummary`](crate::types::ConformancePackComplianceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConformancePackComplianceSummaryBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
     pub(crate) conformance_pack_compliance_status: ::std::option::Option<crate::types::ConformancePackComplianceType>,

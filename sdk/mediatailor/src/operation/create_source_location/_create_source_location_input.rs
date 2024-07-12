@@ -52,8 +52,8 @@ impl CreateSourceLocationInput {
 }
 
 /// A builder for [`CreateSourceLocationInput`](crate::operation::create_source_location::CreateSourceLocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSourceLocationInputBuilder {
     pub(crate) access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     pub(crate) default_segment_delivery_configuration: ::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>,

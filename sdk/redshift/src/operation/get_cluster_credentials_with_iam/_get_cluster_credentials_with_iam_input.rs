@@ -40,8 +40,8 @@ impl GetClusterCredentialsWithIamInput {
 }
 
 /// A builder for [`GetClusterCredentialsWithIamInput`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClusterCredentialsWithIamInputBuilder {
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,

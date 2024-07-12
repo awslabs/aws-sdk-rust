@@ -20,8 +20,8 @@ impl GetConfiguredAudienceModelPolicyInput {
 }
 
 /// A builder for [`GetConfiguredAudienceModelPolicyInput`](crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfiguredAudienceModelPolicyInputBuilder {
     pub(crate) configured_audience_model_arn: ::std::option::Option<::std::string::String>,
 }

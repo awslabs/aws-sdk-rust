@@ -25,8 +25,8 @@ impl CommonControlFilter {
 }
 
 /// A builder for [`CommonControlFilter`](crate::types::CommonControlFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CommonControlFilterBuilder {
     pub(crate) objectives: ::std::option::Option<::std::vec::Vec<crate::types::ObjectiveResourceFilter>>,
 }

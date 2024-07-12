@@ -40,8 +40,8 @@ impl UpdateDistributionWithStagingConfigInput {
 }
 
 /// A builder for [`UpdateDistributionWithStagingConfigInput`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDistributionWithStagingConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) staging_distribution_id: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl HumanLoopSummary {
 }
 
 /// A builder for [`HumanLoopSummary`](crate::types::HumanLoopSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HumanLoopSummaryBuilder {
     pub(crate) human_loop_name: ::std::option::Option<::std::string::String>,
     pub(crate) human_loop_status: ::std::option::Option<crate::types::HumanLoopStatus>,

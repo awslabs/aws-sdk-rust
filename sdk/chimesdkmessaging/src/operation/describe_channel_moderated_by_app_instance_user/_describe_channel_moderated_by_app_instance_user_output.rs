@@ -27,8 +27,8 @@ impl DescribeChannelModeratedByAppInstanceUserOutput {
 }
 
 /// A builder for [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChannelModeratedByAppInstanceUserOutputBuilder {
     pub(crate) channel: ::std::option::Option<crate::types::ChannelModeratedByAppInstanceUserSummary>,
     _request_id: Option<String>,

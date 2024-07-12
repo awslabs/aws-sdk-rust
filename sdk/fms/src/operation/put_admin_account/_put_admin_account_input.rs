@@ -26,8 +26,8 @@ impl PutAdminAccountInput {
 }
 
 /// A builder for [`PutAdminAccountInput`](crate::operation::put_admin_account::PutAdminAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAdminAccountInputBuilder {
     pub(crate) admin_account: ::std::option::Option<::std::string::String>,
     pub(crate) admin_scope: ::std::option::Option<crate::types::AdminScope>,

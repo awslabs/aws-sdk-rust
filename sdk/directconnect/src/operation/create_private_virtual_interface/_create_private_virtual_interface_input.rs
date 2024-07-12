@@ -26,8 +26,8 @@ impl CreatePrivateVirtualInterfaceInput {
 }
 
 /// A builder for [`CreatePrivateVirtualInterfaceInput`](crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePrivateVirtualInterfaceInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_private_virtual_interface: ::std::option::Option<crate::types::NewPrivateVirtualInterface>,

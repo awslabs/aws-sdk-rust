@@ -40,8 +40,8 @@ impl DescribeRemediationExecutionStatusInput {
 }
 
 /// A builder for [`DescribeRemediationExecutionStatusInput`](crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRemediationExecutionStatusInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,

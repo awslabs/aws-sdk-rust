@@ -18,8 +18,8 @@ impl PutConfigurationRecorderOutput {
 }
 
 /// A builder for [`PutConfigurationRecorderOutput`](crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigurationRecorderOutputBuilder {
     _request_id: Option<String>,
 }

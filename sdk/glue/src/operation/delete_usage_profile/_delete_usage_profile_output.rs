@@ -18,8 +18,8 @@ impl DeleteUsageProfileOutput {
 }
 
 /// A builder for [`DeleteUsageProfileOutput`](crate::operation::delete_usage_profile::DeleteUsageProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUsageProfileOutputBuilder {
     _request_id: Option<String>,
 }

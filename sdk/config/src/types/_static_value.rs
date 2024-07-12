@@ -22,8 +22,8 @@ impl StaticValue {
 }
 
 /// A builder for [`StaticValue`](crate::types::StaticValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StaticValueBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

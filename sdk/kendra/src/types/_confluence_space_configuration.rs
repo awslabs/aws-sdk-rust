@@ -53,8 +53,8 @@ impl ConfluenceSpaceConfiguration {
 }
 
 /// A builder for [`ConfluenceSpaceConfiguration`](crate::types::ConfluenceSpaceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfluenceSpaceConfigurationBuilder {
     pub(crate) crawl_personal_spaces: ::std::option::Option<bool>,
     pub(crate) crawl_archived_spaces: ::std::option::Option<bool>,

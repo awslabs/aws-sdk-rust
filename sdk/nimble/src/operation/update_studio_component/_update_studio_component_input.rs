@@ -117,8 +117,8 @@ impl UpdateStudioComponentInput {
 }
 
 /// A builder for [`UpdateStudioComponentInput`](crate::operation::update_studio_component::UpdateStudioComponentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateStudioComponentInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::StudioComponentConfiguration>,

@@ -71,8 +71,8 @@ impl DescribeScheduledInstancesInput {
 }
 
 /// A builder for [`DescribeScheduledInstancesInput`](crate::operation::describe_scheduled_instances::DescribeScheduledInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScheduledInstancesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

@@ -100,8 +100,8 @@ impl CreateProbeOutput {
 }
 
 /// A builder for [`CreateProbeOutput`](crate::operation::create_probe::CreateProbeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProbeOutputBuilder {
     pub(crate) probe_id: ::std::option::Option<::std::string::String>,
     pub(crate) probe_arn: ::std::option::Option<::std::string::String>,

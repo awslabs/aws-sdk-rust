@@ -34,8 +34,8 @@ impl DescribeInternetGatewaysOutput {
 }
 
 /// A builder for [`DescribeInternetGatewaysOutput`](crate::operation::describe_internet_gateways::DescribeInternetGatewaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInternetGatewaysOutputBuilder {
     pub(crate) internet_gateways: ::std::option::Option<::std::vec::Vec<crate::types::InternetGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

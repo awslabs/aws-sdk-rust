@@ -88,8 +88,8 @@ impl StartZonalShiftOutput {
 }
 
 /// A builder for [`StartZonalShiftOutput`](crate::operation::start_zonal_shift::StartZonalShiftOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartZonalShiftOutputBuilder {
     pub(crate) zonal_shift_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,

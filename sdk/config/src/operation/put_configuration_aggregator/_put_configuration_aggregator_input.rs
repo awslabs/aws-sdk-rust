@@ -42,8 +42,8 @@ impl PutConfigurationAggregatorInput {
 }
 
 /// A builder for [`PutConfigurationAggregatorInput`](crate::operation::put_configuration_aggregator::PutConfigurationAggregatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigurationAggregatorInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     pub(crate) account_aggregation_sources: ::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>>,

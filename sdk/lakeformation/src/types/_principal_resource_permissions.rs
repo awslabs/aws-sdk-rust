@@ -61,8 +61,8 @@ impl PrincipalResourcePermissions {
 }
 
 /// A builder for [`PrincipalResourcePermissions`](crate::types::PrincipalResourcePermissions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrincipalResourcePermissionsBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,

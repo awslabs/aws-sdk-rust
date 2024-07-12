@@ -34,8 +34,8 @@ impl GetMediaForFragmentListInput {
 }
 
 /// A builder for [`GetMediaForFragmentListInput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMediaForFragmentListInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,

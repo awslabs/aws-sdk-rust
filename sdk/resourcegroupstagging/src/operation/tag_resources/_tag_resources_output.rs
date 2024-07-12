@@ -26,8 +26,8 @@ impl TagResourcesOutput {
 }
 
 /// A builder for [`TagResourcesOutput`](crate::operation::tag_resources::TagResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagResourcesOutputBuilder {
     pub(crate) failed_resources_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailureInfo>>,
     _request_id: Option<String>,

@@ -42,8 +42,8 @@ impl RestoreObjectOutput {
 }
 
 /// A builder for [`RestoreObjectOutput`](crate::operation::restore_object::RestoreObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreObjectOutputBuilder {
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
     pub(crate) restore_output_path: ::std::option::Option<::std::string::String>,

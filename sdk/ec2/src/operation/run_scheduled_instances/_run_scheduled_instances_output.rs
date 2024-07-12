@@ -29,8 +29,8 @@ impl RunScheduledInstancesOutput {
 }
 
 /// A builder for [`RunScheduledInstancesOutput`](crate::operation::run_scheduled_instances::RunScheduledInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunScheduledInstancesOutputBuilder {
     pub(crate) instance_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl EnableKeyRotationOutput {
 }
 
 /// A builder for [`EnableKeyRotationOutput`](crate::operation::enable_key_rotation::EnableKeyRotationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableKeyRotationOutputBuilder {
     _request_id: Option<String>,
 }

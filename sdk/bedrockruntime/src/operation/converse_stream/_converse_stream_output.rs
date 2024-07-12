@@ -28,8 +28,8 @@ impl ConverseStreamOutput {
 }
 
 /// A builder for [`ConverseStreamOutput`](crate::operation::converse_stream::ConverseStreamOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConverseStreamOutputBuilder {
     pub(crate) stream: ::std::option::Option<
         crate::event_receiver::EventReceiver<crate::types::ConverseStreamOutput, crate::types::error::ConverseStreamOutputError>,

@@ -34,8 +34,8 @@ impl ListTargetGroupsOutput {
 }
 
 /// A builder for [`ListTargetGroupsOutput`](crate::operation::list_target_groups::ListTargetGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTargetGroupsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

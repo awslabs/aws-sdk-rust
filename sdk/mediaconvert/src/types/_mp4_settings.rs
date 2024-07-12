@@ -51,8 +51,8 @@ impl Mp4Settings {
 }
 
 /// A builder for [`Mp4Settings`](crate::types::Mp4Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Mp4SettingsBuilder {
     pub(crate) audio_duration: ::std::option::Option<crate::types::CmfcAudioDuration>,
     pub(crate) cslg_atom: ::std::option::Option<crate::types::Mp4CslgAtom>,

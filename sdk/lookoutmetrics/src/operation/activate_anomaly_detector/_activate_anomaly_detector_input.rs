@@ -20,8 +20,8 @@ impl ActivateAnomalyDetectorInput {
 }
 
 /// A builder for [`ActivateAnomalyDetectorInput`](crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivateAnomalyDetectorInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
 }

@@ -31,8 +31,8 @@ impl IpSetUpdate {
 }
 
 /// A builder for [`IpSetUpdate`](crate::types::IpSetUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpSetUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) ip_set_descriptor: ::std::option::Option<crate::types::IpSetDescriptor>,

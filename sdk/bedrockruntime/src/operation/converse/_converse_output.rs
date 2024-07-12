@@ -56,8 +56,8 @@ impl ConverseOutput {
 }
 
 /// A builder for [`ConverseOutput`](crate::operation::converse::ConverseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConverseOutputBuilder {
     pub(crate) output: ::std::option::Option<crate::types::ConverseOutput>,
     pub(crate) stop_reason: ::std::option::Option<crate::types::StopReason>,

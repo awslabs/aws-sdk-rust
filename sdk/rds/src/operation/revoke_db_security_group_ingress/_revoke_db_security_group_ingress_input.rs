@@ -45,8 +45,8 @@ impl RevokeDbSecurityGroupIngressInput {
 }
 
 /// A builder for [`RevokeDbSecurityGroupIngressInput`](crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeDbSecurityGroupIngressInputBuilder {
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cidrip: ::std::option::Option<::std::string::String>,

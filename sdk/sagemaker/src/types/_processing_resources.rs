@@ -21,8 +21,8 @@ impl ProcessingResources {
 }
 
 /// A builder for [`ProcessingResources`](crate::types::ProcessingResources).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessingResourcesBuilder {
     pub(crate) cluster_config: ::std::option::Option<crate::types::ProcessingClusterConfig>,
 }

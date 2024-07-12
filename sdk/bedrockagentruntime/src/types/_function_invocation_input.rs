@@ -41,8 +41,8 @@ impl FunctionInvocationInput {
 }
 
 /// A builder for [`FunctionInvocationInput`](crate::types::FunctionInvocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunctionInvocationInputBuilder {
     pub(crate) action_group: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::FunctionParameter>>,

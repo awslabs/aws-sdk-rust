@@ -26,8 +26,8 @@ impl CreateLogStreamInput {
 }
 
 /// A builder for [`CreateLogStreamInput`](crate::operation::create_log_stream::CreateLogStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLogStreamInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,

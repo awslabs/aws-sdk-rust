@@ -39,8 +39,8 @@ impl HlsOutputSettings {
 }
 
 /// A builder for [`HlsOutputSettings`](crate::types::HlsOutputSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsOutputSettingsBuilder {
     pub(crate) h265_packaging_type: ::std::option::Option<crate::types::HlsH265PackagingType>,
     pub(crate) hls_settings: ::std::option::Option<crate::types::HlsSettings>,

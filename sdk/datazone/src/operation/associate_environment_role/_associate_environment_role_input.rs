@@ -32,8 +32,8 @@ impl AssociateEnvironmentRoleInput {
 }
 
 /// A builder for [`AssociateEnvironmentRoleInput`](crate::operation::associate_environment_role::AssociateEnvironmentRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateEnvironmentRoleInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,

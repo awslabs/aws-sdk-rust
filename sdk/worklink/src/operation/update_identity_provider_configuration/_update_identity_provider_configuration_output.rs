@@ -18,8 +18,8 @@ impl UpdateIdentityProviderConfigurationOutput {
 }
 
 /// A builder for [`UpdateIdentityProviderConfigurationOutput`](crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIdentityProviderConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

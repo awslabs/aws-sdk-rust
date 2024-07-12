@@ -21,8 +21,8 @@ impl ModelCardExportOutputConfig {
 }
 
 /// A builder for [`ModelCardExportOutputConfig`](crate::types::ModelCardExportOutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelCardExportOutputConfigBuilder {
     pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
 }

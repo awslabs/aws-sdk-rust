@@ -33,8 +33,8 @@ impl DialogAction {
 }
 
 /// A builder for [`DialogAction`](crate::types::DialogAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DialogActionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DialogActionType>,
     pub(crate) slot_to_elicit: ::std::option::Option<::std::string::String>,

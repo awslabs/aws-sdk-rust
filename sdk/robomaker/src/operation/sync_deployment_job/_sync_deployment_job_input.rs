@@ -29,8 +29,8 @@ impl SyncDeploymentJobInput {
 }
 
 /// A builder for [`SyncDeploymentJobInput`](crate::operation::sync_deployment_job::SyncDeploymentJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyncDeploymentJobInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) fleet: ::std::option::Option<::std::string::String>,

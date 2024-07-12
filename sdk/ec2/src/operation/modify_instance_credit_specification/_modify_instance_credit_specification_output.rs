@@ -37,8 +37,8 @@ impl ModifyInstanceCreditSpecificationOutput {
 }
 
 /// A builder for [`ModifyInstanceCreditSpecificationOutput`](crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstanceCreditSpecificationOutputBuilder {
     pub(crate) successful_instance_credit_specifications:
         ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulInstanceCreditSpecificationItem>>,

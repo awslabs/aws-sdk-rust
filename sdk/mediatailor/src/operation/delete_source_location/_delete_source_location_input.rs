@@ -20,8 +20,8 @@ impl DeleteSourceLocationInput {
 }
 
 /// A builder for [`DeleteSourceLocationInput`](crate::operation::delete_source_location::DeleteSourceLocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSourceLocationInputBuilder {
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
 }

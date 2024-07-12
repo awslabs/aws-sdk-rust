@@ -34,8 +34,8 @@ impl ListEventBusesOutput {
 }
 
 /// A builder for [`ListEventBusesOutput`](crate::operation::list_event_buses::ListEventBusesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventBusesOutputBuilder {
     pub(crate) event_buses: ::std::option::Option<::std::vec::Vec<crate::types::EventBus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

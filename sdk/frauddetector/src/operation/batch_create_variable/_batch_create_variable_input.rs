@@ -30,8 +30,8 @@ impl BatchCreateVariableInput {
 }
 
 /// A builder for [`BatchCreateVariableInput`](crate::operation::batch_create_variable::BatchCreateVariableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateVariableInputBuilder {
     pub(crate) variable_entries: ::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

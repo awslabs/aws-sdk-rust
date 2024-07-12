@@ -26,8 +26,8 @@ impl DescribeFeatureTransformationOutput {
 }
 
 /// A builder for [`DescribeFeatureTransformationOutput`](crate::operation::describe_feature_transformation::DescribeFeatureTransformationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFeatureTransformationOutputBuilder {
     pub(crate) feature_transformation: ::std::option::Option<crate::types::FeatureTransformation>,
     _request_id: Option<String>,

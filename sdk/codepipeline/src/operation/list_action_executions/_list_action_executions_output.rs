@@ -34,8 +34,8 @@ impl ListActionExecutionsOutput {
 }
 
 /// A builder for [`ListActionExecutionsOutput`](crate::operation::list_action_executions::ListActionExecutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListActionExecutionsOutputBuilder {
     pub(crate) action_execution_details: ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl ListDevicesForWirelessDeviceImportTaskOutput {
 }
 
 /// A builder for [`ListDevicesForWirelessDeviceImportTaskOutput`](crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevicesForWirelessDeviceImportTaskOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,

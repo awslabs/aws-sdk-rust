@@ -45,8 +45,8 @@ impl EndpointOutputConfiguration {
 }
 
 /// A builder for [`EndpointOutputConfiguration`](crate::types::EndpointOutputConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointOutputConfigurationBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) variant_name: ::std::option::Option<::std::string::String>,

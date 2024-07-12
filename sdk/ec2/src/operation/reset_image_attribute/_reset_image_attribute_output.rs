@@ -18,8 +18,8 @@ impl ResetImageAttributeOutput {
 }
 
 /// A builder for [`ResetImageAttributeOutput`](crate::operation::reset_image_attribute::ResetImageAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetImageAttributeOutputBuilder {
     _request_id: Option<String>,
 }

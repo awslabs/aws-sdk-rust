@@ -23,8 +23,8 @@ impl AlarmEventActions {
 }
 
 /// A builder for [`AlarmEventActions`](crate::types::AlarmEventActions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlarmEventActionsBuilder {
     pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec<crate::types::AlarmAction>>,
 }

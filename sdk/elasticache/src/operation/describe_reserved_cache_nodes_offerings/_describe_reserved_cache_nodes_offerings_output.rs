@@ -35,8 +35,8 @@ impl DescribeReservedCacheNodesOfferingsOutput {
 }
 
 /// A builder for [`DescribeReservedCacheNodesOfferingsOutput`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedCacheNodesOfferingsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_cache_nodes_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>>,

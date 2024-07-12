@@ -33,8 +33,8 @@ impl HandshakeFilter {
 }
 
 /// A builder for [`HandshakeFilter`](crate::types::HandshakeFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HandshakeFilterBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ActionType>,
     pub(crate) parent_handshake_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListResolverEndpointIpAddressesInput {
 }
 
 /// A builder for [`ListResolverEndpointIpAddressesInput`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResolverEndpointIpAddressesInputBuilder {
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

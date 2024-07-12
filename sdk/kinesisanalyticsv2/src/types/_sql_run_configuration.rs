@@ -28,8 +28,8 @@ impl SqlRunConfiguration {
 }
 
 /// A builder for [`SqlRunConfiguration`](crate::types::SqlRunConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SqlRunConfigurationBuilder {
     pub(crate) input_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,

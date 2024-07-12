@@ -27,8 +27,8 @@ impl ContinuousBackupsDescription {
 }
 
 /// A builder for [`ContinuousBackupsDescription`](crate::types::ContinuousBackupsDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContinuousBackupsDescriptionBuilder {
     pub(crate) continuous_backups_status: ::std::option::Option<crate::types::ContinuousBackupsStatus>,
     pub(crate) point_in_time_recovery_description: ::std::option::Option<crate::types::PointInTimeRecoveryDescription>,

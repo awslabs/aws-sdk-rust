@@ -12,8 +12,8 @@ impl OneTimeSchedule {
 }
 
 /// A builder for [`OneTimeSchedule`](crate::types::OneTimeSchedule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OneTimeScheduleBuilder {}
 impl OneTimeScheduleBuilder {
     /// Consumes the builder and constructs a [`OneTimeSchedule`](crate::types::OneTimeSchedule).

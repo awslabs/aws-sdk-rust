@@ -20,8 +20,8 @@ impl GetCompositionInput {
 }
 
 /// A builder for [`GetCompositionInput`](crate::operation::get_composition::GetCompositionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCompositionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

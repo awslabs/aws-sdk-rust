@@ -26,8 +26,8 @@ impl UpdateEmailChannelOutput {
 }
 
 /// A builder for [`UpdateEmailChannelOutput`](crate::operation::update_email_channel::UpdateEmailChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEmailChannelOutputBuilder {
     pub(crate) email_channel_response: ::std::option::Option<crate::types::EmailChannelResponse>,
     _request_id: Option<String>,

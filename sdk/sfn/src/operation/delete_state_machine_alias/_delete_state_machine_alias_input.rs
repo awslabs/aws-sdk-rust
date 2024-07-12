@@ -20,8 +20,8 @@ impl DeleteStateMachineAliasInput {
 }
 
 /// A builder for [`DeleteStateMachineAliasInput`](crate::operation::delete_state_machine_alias::DeleteStateMachineAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStateMachineAliasInputBuilder {
     pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
 }

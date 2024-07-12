@@ -57,8 +57,8 @@ impl PutVoiceConnectorProxyInput {
 }
 
 /// A builder for [`PutVoiceConnectorProxyInput`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutVoiceConnectorProxyInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) default_session_expiry_minutes: ::std::option::Option<i32>,

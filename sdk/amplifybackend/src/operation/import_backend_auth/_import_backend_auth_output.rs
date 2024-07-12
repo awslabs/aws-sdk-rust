@@ -56,8 +56,8 @@ impl ImportBackendAuthOutput {
 }
 
 /// A builder for [`ImportBackendAuthOutput`](crate::operation::import_backend_auth::ImportBackendAuthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportBackendAuthOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,

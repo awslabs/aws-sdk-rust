@@ -44,8 +44,8 @@ impl UpdateDataSourcePermissionsOutput {
 }
 
 /// A builder for [`UpdateDataSourcePermissionsOutput`](crate::operation::update_data_source_permissions::UpdateDataSourcePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDataSourcePermissionsOutputBuilder {
     pub(crate) data_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,

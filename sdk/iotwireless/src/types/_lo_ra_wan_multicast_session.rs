@@ -45,8 +45,8 @@ impl LoRaWanMulticastSession {
 }
 
 /// A builder for [`LoRaWanMulticastSession`](crate::types::LoRaWanMulticastSession).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanMulticastSessionBuilder {
     pub(crate) dl_dr: ::std::option::Option<i32>,
     pub(crate) dl_freq: ::std::option::Option<i32>,

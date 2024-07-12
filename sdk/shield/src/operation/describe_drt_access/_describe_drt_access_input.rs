@@ -11,8 +11,8 @@ impl DescribeDrtAccessInput {
 }
 
 /// A builder for [`DescribeDrtAccessInput`](crate::operation::describe_drt_access::DescribeDrtAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDrtAccessInputBuilder {}
 impl DescribeDrtAccessInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDrtAccessInput`](crate::operation::describe_drt_access::DescribeDrtAccessInput).

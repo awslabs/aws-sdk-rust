@@ -44,8 +44,8 @@ impl GetCommentsForComparedCommitInput {
 }
 
 /// A builder for [`GetCommentsForComparedCommitInput`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCommentsForComparedCommitInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) before_commit_id: ::std::option::Option<::std::string::String>,

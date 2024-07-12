@@ -34,8 +34,8 @@ impl ListProvisioningTemplateVersionsOutput {
 }
 
 /// A builder for [`ListProvisioningTemplateVersionsOutput`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProvisioningTemplateVersionsOutputBuilder {
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl M2NonManagedApplication {
 }
 
 /// A builder for [`M2NonManagedApplication`](crate::types::M2NonManagedApplication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct M2NonManagedApplicationBuilder {
     pub(crate) vpc_endpoint_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) listener_port: ::std::option::Option<::std::string::String>,

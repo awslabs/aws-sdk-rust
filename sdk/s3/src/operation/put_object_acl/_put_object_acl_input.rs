@@ -124,8 +124,8 @@ impl PutObjectAclInput {
 }
 
 /// A builder for [`PutObjectAclInput`](crate::operation::put_object_acl::PutObjectAclInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutObjectAclInputBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::ObjectCannedAcl>,
     pub(crate) access_control_policy: ::std::option::Option<crate::types::AccessControlPolicy>,

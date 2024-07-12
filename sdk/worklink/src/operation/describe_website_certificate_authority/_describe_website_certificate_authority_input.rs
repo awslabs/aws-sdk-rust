@@ -26,8 +26,8 @@ impl DescribeWebsiteCertificateAuthorityInput {
 }
 
 /// A builder for [`DescribeWebsiteCertificateAuthorityInput`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWebsiteCertificateAuthorityInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) website_ca_id: ::std::option::Option<::std::string::String>,

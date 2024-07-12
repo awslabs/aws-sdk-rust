@@ -51,8 +51,8 @@ impl TaskFailedEventDetails {
 }
 
 /// A builder for [`TaskFailedEventDetails`](crate::types::TaskFailedEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TaskFailedEventDetailsBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,

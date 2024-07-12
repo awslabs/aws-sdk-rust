@@ -28,8 +28,8 @@ impl GetPullRequestApprovalStatesOutput {
 }
 
 /// A builder for [`GetPullRequestApprovalStatesOutput`](crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPullRequestApprovalStatesOutputBuilder {
     pub(crate) approvals: ::std::option::Option<::std::vec::Vec<crate::types::Approval>>,
     _request_id: Option<String>,

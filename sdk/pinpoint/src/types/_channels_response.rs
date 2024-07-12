@@ -21,8 +21,8 @@ impl ChannelsResponse {
 }
 
 /// A builder for [`ChannelsResponse`](crate::types::ChannelsResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelsResponseBuilder {
     pub(crate) channels: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChannelResponse>>,
 }

@@ -50,8 +50,8 @@ impl ImportModelVersionOutput {
 }
 
 /// A builder for [`ImportModelVersionOutput`](crate::operation::import_model_version::ImportModelVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportModelVersionOutputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,

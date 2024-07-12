@@ -27,8 +27,8 @@ impl CompareDataSetsSummary {
 }
 
 /// A builder for [`CompareDataSetsSummary`](crate::types::CompareDataSetsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompareDataSetsSummaryBuilder {
     pub(crate) step_input: ::std::option::Option<crate::types::CompareDataSetsStepInput>,
     pub(crate) step_output: ::std::option::Option<crate::types::CompareDataSetsStepOutput>,

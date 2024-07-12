@@ -34,8 +34,8 @@ impl DescribeTransitGatewayMulticastDomainsOutput {
 }
 
 /// A builder for [`DescribeTransitGatewayMulticastDomainsOutput`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransitGatewayMulticastDomainsOutputBuilder {
     pub(crate) transit_gateway_multicast_domains: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomain>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

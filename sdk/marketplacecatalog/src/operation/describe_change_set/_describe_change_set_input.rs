@@ -26,8 +26,8 @@ impl DescribeChangeSetInput {
 }
 
 /// A builder for [`DescribeChangeSetInput`](crate::operation::describe_change_set::DescribeChangeSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChangeSetInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_id: ::std::option::Option<::std::string::String>,

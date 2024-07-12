@@ -21,8 +21,8 @@ impl ConnectionOAuthClientResponseParameters {
 }
 
 /// A builder for [`ConnectionOAuthClientResponseParameters`](crate::types::ConnectionOAuthClientResponseParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionOAuthClientResponseParametersBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
 }

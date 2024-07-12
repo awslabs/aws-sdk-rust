@@ -37,8 +37,8 @@ impl CreatePipelineOutput {
 }
 
 /// A builder for [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePipelineOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,

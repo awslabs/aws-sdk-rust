@@ -20,8 +20,8 @@ impl DescribeAggregateIdFormatInput {
 }
 
 /// A builder for [`DescribeAggregateIdFormatInput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAggregateIdFormatInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }

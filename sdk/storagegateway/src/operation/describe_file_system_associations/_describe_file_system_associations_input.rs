@@ -22,8 +22,8 @@ impl DescribeFileSystemAssociationsInput {
 }
 
 /// A builder for [`DescribeFileSystemAssociationsInput`](crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFileSystemAssociationsInputBuilder {
     pub(crate) file_system_association_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

@@ -50,8 +50,8 @@ impl StopInferenceSchedulerOutput {
 }
 
 /// A builder for [`StopInferenceSchedulerOutput`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopInferenceSchedulerOutputBuilder {
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,

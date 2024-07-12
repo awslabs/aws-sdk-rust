@@ -39,8 +39,8 @@ impl CreateKeySigningKeyOutput {
 }
 
 /// A builder for [`CreateKeySigningKeyOutput`](crate::operation::create_key_signing_key::CreateKeySigningKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKeySigningKeyOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     pub(crate) key_signing_key: ::std::option::Option<crate::types::KeySigningKey>,

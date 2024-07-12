@@ -21,8 +21,8 @@ impl ConnectionApiKeyAuthResponseParameters {
 }
 
 /// A builder for [`ConnectionApiKeyAuthResponseParameters`](crate::types::ConnectionApiKeyAuthResponseParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionApiKeyAuthResponseParametersBuilder {
     pub(crate) api_key_name: ::std::option::Option<::std::string::String>,
 }

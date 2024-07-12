@@ -20,8 +20,8 @@ impl StartResourceScanInput {
 }
 
 /// A builder for [`StartResourceScanInput`](crate::operation::start_resource_scan::StartResourceScanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartResourceScanInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }

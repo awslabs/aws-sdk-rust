@@ -26,8 +26,8 @@ impl UpdateMetricAttributionOutput {
 }
 
 /// A builder for [`UpdateMetricAttributionOutput`](crate::operation::update_metric_attribution::UpdateMetricAttributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMetricAttributionOutputBuilder {
     pub(crate) metric_attribution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

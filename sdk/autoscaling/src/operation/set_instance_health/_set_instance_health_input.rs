@@ -34,8 +34,8 @@ impl SetInstanceHealthInput {
 }
 
 /// A builder for [`SetInstanceHealthInput`](crate::operation::set_instance_health::SetInstanceHealthInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetInstanceHealthInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) health_status: ::std::option::Option<::std::string::String>,

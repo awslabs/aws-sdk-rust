@@ -20,8 +20,8 @@ impl DescribeRouteCalculatorInput {
 }
 
 /// A builder for [`DescribeRouteCalculatorInput`](crate::operation::describe_route_calculator::DescribeRouteCalculatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRouteCalculatorInputBuilder {
     pub(crate) calculator_name: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl ConnectivityInfo {
 }
 
 /// A builder for [`ConnectivityInfo`](crate::types::ConnectivityInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectivityInfoBuilder {
     pub(crate) public_access: ::std::option::Option<crate::types::PublicAccess>,
     pub(crate) vpc_connectivity: ::std::option::Option<crate::types::VpcConnectivity>,

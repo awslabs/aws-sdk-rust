@@ -39,8 +39,8 @@ impl ListTablesOutput {
 }
 
 /// A builder for [`ListTablesOutput`](crate::operation::list_tables::ListTablesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTablesOutputBuilder {
     pub(crate) table_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) last_evaluated_table_name: ::std::option::Option<::std::string::String>,

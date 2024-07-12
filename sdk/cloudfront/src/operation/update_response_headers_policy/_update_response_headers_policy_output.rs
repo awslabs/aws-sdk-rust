@@ -32,8 +32,8 @@ impl UpdateResponseHeadersPolicyOutput {
 }
 
 /// A builder for [`UpdateResponseHeadersPolicyOutput`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResponseHeadersPolicyOutputBuilder {
     pub(crate) response_headers_policy: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

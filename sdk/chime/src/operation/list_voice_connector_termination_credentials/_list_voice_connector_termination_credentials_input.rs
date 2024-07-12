@@ -21,8 +21,8 @@ impl ListVoiceConnectorTerminationCredentialsInput {
 }
 
 /// A builder for [`ListVoiceConnectorTerminationCredentialsInput`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVoiceConnectorTerminationCredentialsInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
 }

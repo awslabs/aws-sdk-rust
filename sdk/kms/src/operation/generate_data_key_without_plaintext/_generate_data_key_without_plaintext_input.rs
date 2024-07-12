@@ -90,8 +90,8 @@ impl GenerateDataKeyWithoutPlaintextInput {
 }
 
 /// A builder for [`GenerateDataKeyWithoutPlaintextInput`](crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateDataKeyWithoutPlaintextInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

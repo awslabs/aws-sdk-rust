@@ -18,8 +18,8 @@ impl UpdateLicenseSpecificationsForResourceOutput {
 }
 
 /// A builder for [`UpdateLicenseSpecificationsForResourceOutput`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLicenseSpecificationsForResourceOutputBuilder {
     _request_id: Option<String>,
 }

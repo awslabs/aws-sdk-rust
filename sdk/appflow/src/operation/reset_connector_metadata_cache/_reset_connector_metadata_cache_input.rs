@@ -58,8 +58,8 @@ impl ResetConnectorMetadataCacheInput {
 }
 
 /// A builder for [`ResetConnectorMetadataCacheInput`](crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetConnectorMetadataCacheInputBuilder {
     pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,

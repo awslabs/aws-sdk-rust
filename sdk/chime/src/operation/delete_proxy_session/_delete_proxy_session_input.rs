@@ -26,8 +26,8 @@ impl DeleteProxySessionInput {
 }
 
 /// A builder for [`DeleteProxySessionInput`](crate::operation::delete_proxy_session::DeleteProxySessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProxySessionInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) proxy_session_id: ::std::option::Option<::std::string::String>,

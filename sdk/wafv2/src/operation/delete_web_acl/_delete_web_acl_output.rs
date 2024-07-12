@@ -18,8 +18,8 @@ impl DeleteWebAclOutput {
 }
 
 /// A builder for [`DeleteWebAclOutput`](crate::operation::delete_web_acl::DeleteWebAclOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWebAclOutputBuilder {
     _request_id: Option<String>,
 }

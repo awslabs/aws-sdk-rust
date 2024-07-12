@@ -42,8 +42,8 @@ impl Session {
 }
 
 /// A builder for [`Session`](crate::types::Session).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SessionBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) stream_url: ::std::option::Option<::std::string::String>,

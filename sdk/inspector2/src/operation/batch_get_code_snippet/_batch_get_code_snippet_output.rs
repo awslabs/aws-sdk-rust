@@ -36,8 +36,8 @@ impl BatchGetCodeSnippetOutput {
 }
 
 /// A builder for [`BatchGetCodeSnippetOutput`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetCodeSnippetOutputBuilder {
     pub(crate) code_snippet_results: ::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetResult>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetError>>,

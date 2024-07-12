@@ -38,8 +38,8 @@ impl ListRecommendationSummariesInput {
 }
 
 /// A builder for [`ListRecommendationSummariesInput`](crate::operation::list_recommendation_summaries::ListRecommendationSummariesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecommendationSummariesInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::Filter>,
     pub(crate) group_by: ::std::option::Option<::std::string::String>,

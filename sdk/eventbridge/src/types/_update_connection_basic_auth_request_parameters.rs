@@ -35,8 +35,8 @@ impl UpdateConnectionBasicAuthRequestParameters {
 }
 
 /// A builder for [`UpdateConnectionBasicAuthRequestParameters`](crate::types::UpdateConnectionBasicAuthRequestParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateConnectionBasicAuthRequestParametersBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,

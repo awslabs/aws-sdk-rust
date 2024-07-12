@@ -39,8 +39,8 @@ impl ServiceSyncBlockerSummary {
 }
 
 /// A builder for [`ServiceSyncBlockerSummary`](crate::types::ServiceSyncBlockerSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceSyncBlockerSummaryBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,

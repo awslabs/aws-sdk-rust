@@ -28,8 +28,8 @@ impl BatchGetSchemaAnalysisRuleInput {
 }
 
 /// A builder for [`BatchGetSchemaAnalysisRuleInput`](crate::operation::batch_get_schema_analysis_rule::BatchGetSchemaAnalysisRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetSchemaAnalysisRuleInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) schema_analysis_rule_requests: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAnalysisRuleRequest>>,

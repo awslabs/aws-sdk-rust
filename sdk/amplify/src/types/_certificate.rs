@@ -39,8 +39,8 @@ impl Certificate {
 }
 
 /// A builder for [`Certificate`](crate::types::Certificate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CertificateBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CertificateType>,
     pub(crate) custom_certificate_arn: ::std::option::Option<::std::string::String>,

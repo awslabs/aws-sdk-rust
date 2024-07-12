@@ -20,8 +20,8 @@ impl DeleteBatchPredictionInput {
 }
 
 /// A builder for [`DeleteBatchPredictionInput`](crate::operation::delete_batch_prediction::DeleteBatchPredictionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBatchPredictionInputBuilder {
     pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
 }

@@ -47,8 +47,8 @@ impl FilePaths {
 }
 
 /// A builder for [`FilePaths`](crate::types::FilePaths).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilePathsBuilder {
     pub(crate) file_path: ::std::option::Option<::std::string::String>,
     pub(crate) file_name: ::std::option::Option<::std::string::String>,

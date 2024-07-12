@@ -33,8 +33,8 @@ impl ConnectAttachment {
 }
 
 /// A builder for [`ConnectAttachment`](crate::types::ConnectAttachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectAttachmentBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     pub(crate) transport_attachment_id: ::std::option::Option<::std::string::String>,

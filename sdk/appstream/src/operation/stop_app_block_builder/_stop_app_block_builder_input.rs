@@ -20,8 +20,8 @@ impl StopAppBlockBuilderInput {
 }
 
 /// A builder for [`StopAppBlockBuilderInput`](crate::operation::stop_app_block_builder::StopAppBlockBuilderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopAppBlockBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

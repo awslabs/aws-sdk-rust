@@ -33,8 +33,8 @@ impl SystemTemplateDescription {
 }
 
 /// A builder for [`SystemTemplateDescription`](crate::types::SystemTemplateDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SystemTemplateDescriptionBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SystemTemplateSummary>,
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,

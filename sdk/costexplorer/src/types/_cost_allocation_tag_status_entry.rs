@@ -28,8 +28,8 @@ impl CostAllocationTagStatusEntry {
 }
 
 /// A builder for [`CostAllocationTagStatusEntry`](crate::types::CostAllocationTagStatusEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CostAllocationTagStatusEntryBuilder {
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CostAllocationTagStatus>,

@@ -21,8 +21,8 @@ impl ResourceStateUpdateExclusionRules {
 }
 
 /// A builder for [`ResourceStateUpdateExclusionRules`](crate::types::ResourceStateUpdateExclusionRules).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceStateUpdateExclusionRulesBuilder {
     pub(crate) amis: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>,
 }

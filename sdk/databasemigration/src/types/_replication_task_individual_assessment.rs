@@ -75,8 +75,8 @@ impl ReplicationTaskIndividualAssessment {
 }
 
 /// A builder for [`ReplicationTaskIndividualAssessment`](crate::types::ReplicationTaskIndividualAssessment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationTaskIndividualAssessmentBuilder {
     pub(crate) replication_task_individual_assessment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replication_task_assessment_run_arn: ::std::option::Option<::std::string::String>,

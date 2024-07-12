@@ -82,8 +82,8 @@ impl IpAccessSettings {
 }
 
 /// A builder for [`IpAccessSettings`](crate::types::IpAccessSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct IpAccessSettingsBuilder {
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -46,8 +46,8 @@ impl GrowthRateComputation {
 }
 
 /// A builder for [`GrowthRateComputation`](crate::types::GrowthRateComputation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrowthRateComputationBuilder {
     pub(crate) computation_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

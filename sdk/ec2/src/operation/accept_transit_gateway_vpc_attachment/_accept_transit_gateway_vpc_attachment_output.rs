@@ -26,8 +26,8 @@ impl AcceptTransitGatewayVpcAttachmentOutput {
 }
 
 /// A builder for [`AcceptTransitGatewayVpcAttachmentOutput`](crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptTransitGatewayVpcAttachmentOutputBuilder {
     pub(crate) transit_gateway_vpc_attachment: ::std::option::Option<crate::types::TransitGatewayVpcAttachment>,
     _request_id: Option<String>,

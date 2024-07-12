@@ -56,8 +56,8 @@ impl CvssScoreDetails {
 }
 
 /// A builder for [`CvssScoreDetails`](crate::types::CvssScoreDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CvssScoreDetailsBuilder {
     pub(crate) score_source: ::std::option::Option<::std::string::String>,
     pub(crate) cvss_source: ::std::option::Option<::std::string::String>,

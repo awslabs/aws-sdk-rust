@@ -52,8 +52,8 @@ impl DescribeScalingPlansInput {
 }
 
 /// A builder for [`DescribeScalingPlansInput`](crate::operation::describe_scaling_plans::DescribeScalingPlansInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScalingPlansInputBuilder {
     pub(crate) scaling_plan_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) scaling_plan_version: ::std::option::Option<i64>,

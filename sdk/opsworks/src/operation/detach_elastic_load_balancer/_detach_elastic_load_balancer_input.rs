@@ -26,8 +26,8 @@ impl DetachElasticLoadBalancerInput {
 }
 
 /// A builder for [`DetachElasticLoadBalancerInput`](crate::operation::detach_elastic_load_balancer::DetachElasticLoadBalancerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachElasticLoadBalancerInputBuilder {
     pub(crate) elastic_load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,

@@ -88,8 +88,8 @@ impl CreateBotAliasOutput {
 }
 
 /// A builder for [`CreateBotAliasOutput`](crate::operation::create_bot_alias::CreateBotAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBotAliasOutputBuilder {
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias_name: ::std::option::Option<::std::string::String>,

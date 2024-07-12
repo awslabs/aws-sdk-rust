@@ -50,8 +50,8 @@ impl CreateTapePoolInput {
 }
 
 /// A builder for [`CreateTapePoolInput`](crate::operation::create_tape_pool::CreateTapePoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTapePoolInputBuilder {
     pub(crate) pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_class: ::std::option::Option<crate::types::TapeStorageClass>,

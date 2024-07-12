@@ -27,8 +27,8 @@ impl DeleteReplicationConfigOutput {
 }
 
 /// A builder for [`DeleteReplicationConfigOutput`](crate::operation::delete_replication_config::DeleteReplicationConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicationConfigOutputBuilder {
     pub(crate) replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     _request_id: Option<String>,

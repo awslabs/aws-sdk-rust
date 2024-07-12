@@ -49,8 +49,8 @@ impl S3HudiSource {
 }
 
 /// A builder for [`S3HudiSource`](crate::types::S3HudiSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3HudiSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

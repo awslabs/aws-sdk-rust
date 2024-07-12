@@ -18,8 +18,8 @@ impl PutThirdPartyJobFailureResultOutput {
 }
 
 /// A builder for [`PutThirdPartyJobFailureResultOutput`](crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutThirdPartyJobFailureResultOutputBuilder {
     _request_id: Option<String>,
 }

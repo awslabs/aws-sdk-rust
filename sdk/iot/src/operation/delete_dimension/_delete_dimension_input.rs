@@ -20,8 +20,8 @@ impl DeleteDimensionInput {
 }
 
 /// A builder for [`DeleteDimensionInput`](crate::operation::delete_dimension::DeleteDimensionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDimensionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

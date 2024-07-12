@@ -34,8 +34,8 @@ impl GetBotChannelAssociationsOutput {
 }
 
 /// A builder for [`GetBotChannelAssociationsOutput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBotChannelAssociationsOutputBuilder {
     pub(crate) bot_channel_associations: ::std::option::Option<::std::vec::Vec<crate::types::BotChannelAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

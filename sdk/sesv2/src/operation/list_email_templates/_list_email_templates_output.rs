@@ -35,8 +35,8 @@ impl ListEmailTemplatesOutput {
 }
 
 /// A builder for [`ListEmailTemplatesOutput`](crate::operation::list_email_templates::ListEmailTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEmailTemplatesOutputBuilder {
     pub(crate) templates_metadata: ::std::option::Option<::std::vec::Vec<crate::types::EmailTemplateMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

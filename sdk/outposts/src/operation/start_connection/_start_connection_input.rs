@@ -38,8 +38,8 @@ impl StartConnectionInput {
 }
 
 /// A builder for [`StartConnectionInput`](crate::operation::start_connection::StartConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartConnectionInputBuilder {
     pub(crate) device_serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,

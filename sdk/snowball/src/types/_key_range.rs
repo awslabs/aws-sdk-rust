@@ -27,8 +27,8 @@ impl KeyRange {
 }
 
 /// A builder for [`KeyRange`](crate::types::KeyRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeyRangeBuilder {
     pub(crate) begin_marker: ::std::option::Option<::std::string::String>,
     pub(crate) end_marker: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl GetObjectTorrentOutput {
 }
 
 /// A builder for [`GetObjectTorrentOutput`](crate::operation::get_object_torrent::GetObjectTorrentOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectTorrentOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,

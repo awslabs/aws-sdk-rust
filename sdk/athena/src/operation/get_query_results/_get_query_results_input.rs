@@ -32,8 +32,8 @@ impl GetQueryResultsInput {
 }
 
 /// A builder for [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQueryResultsInputBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

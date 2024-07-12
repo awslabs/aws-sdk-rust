@@ -35,8 +35,8 @@ impl ComparativeOrder {
 }
 
 /// A builder for [`ComparativeOrder`](crate::types::ComparativeOrder).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComparativeOrderBuilder {
     pub(crate) use_ordering: ::std::option::Option<crate::types::ColumnOrderingType>,
     pub(crate) specifed_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

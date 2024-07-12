@@ -125,8 +125,8 @@ impl RequestSpotInstancesInput {
 }
 
 /// A builder for [`RequestSpotInstancesInput`](crate::operation::request_spot_instances::RequestSpotInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestSpotInstancesInputBuilder {
     pub(crate) availability_zone_group: ::std::option::Option<::std::string::String>,
     pub(crate) block_duration_minutes: ::std::option::Option<i32>,

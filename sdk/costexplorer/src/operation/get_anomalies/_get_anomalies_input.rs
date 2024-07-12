@@ -50,8 +50,8 @@ impl GetAnomaliesInput {
 }
 
 /// A builder for [`GetAnomaliesInput`](crate::operation::get_anomalies::GetAnomaliesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnomaliesInputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) date_interval: ::std::option::Option<crate::types::AnomalyDateInterval>,

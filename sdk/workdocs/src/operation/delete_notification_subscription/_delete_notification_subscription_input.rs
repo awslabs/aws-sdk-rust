@@ -26,8 +26,8 @@ impl DeleteNotificationSubscriptionInput {
 }
 
 /// A builder for [`DeleteNotificationSubscriptionInput`](crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNotificationSubscriptionInputBuilder {
     pub(crate) subscription_id: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,

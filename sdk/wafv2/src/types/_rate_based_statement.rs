@@ -163,8 +163,8 @@ impl RateBasedStatement {
 }
 
 /// A builder for [`RateBasedStatement`](crate::types::RateBasedStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RateBasedStatementBuilder {
     pub(crate) limit: ::std::option::Option<i64>,
     pub(crate) evaluation_window_sec: ::std::option::Option<i64>,

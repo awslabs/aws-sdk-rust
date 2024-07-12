@@ -21,8 +21,8 @@ impl RetrievalResultSalesforceLocation {
 }
 
 /// A builder for [`RetrievalResultSalesforceLocation`](crate::types::RetrievalResultSalesforceLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetrievalResultSalesforceLocationBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
 }

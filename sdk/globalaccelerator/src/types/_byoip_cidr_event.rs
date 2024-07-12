@@ -27,8 +27,8 @@ impl ByoipCidrEvent {
 }
 
 /// A builder for [`ByoipCidrEvent`](crate::types::ByoipCidrEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ByoipCidrEventBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

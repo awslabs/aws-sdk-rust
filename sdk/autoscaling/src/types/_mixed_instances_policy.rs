@@ -28,8 +28,8 @@ impl MixedInstancesPolicy {
 }
 
 /// A builder for [`MixedInstancesPolicy`](crate::types::MixedInstancesPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MixedInstancesPolicyBuilder {
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
     pub(crate) instances_distribution: ::std::option::Option<crate::types::InstancesDistribution>,

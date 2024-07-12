@@ -44,8 +44,8 @@ impl TestGridSessionArtifact {
 }
 
 /// A builder for [`TestGridSessionArtifact`](crate::types::TestGridSessionArtifact).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TestGridSessionArtifactBuilder {
     pub(crate) filename: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::TestGridSessionArtifactType>,

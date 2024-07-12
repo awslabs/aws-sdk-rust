@@ -32,8 +32,8 @@ impl GetDatabaseInput {
 }
 
 /// A builder for [`GetDatabaseInput`](crate::operation::get_database::GetDatabaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDatabaseInputBuilder {
     pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

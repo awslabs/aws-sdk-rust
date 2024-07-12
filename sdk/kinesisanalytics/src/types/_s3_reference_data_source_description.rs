@@ -36,8 +36,8 @@ impl S3ReferenceDataSourceDescription {
 }
 
 /// A builder for [`S3ReferenceDataSourceDescription`](crate::types::S3ReferenceDataSourceDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ReferenceDataSourceDescriptionBuilder {
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) file_key: ::std::option::Option<::std::string::String>,

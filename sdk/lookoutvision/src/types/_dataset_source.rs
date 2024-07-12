@@ -21,8 +21,8 @@ impl DatasetSource {
 }
 
 /// A builder for [`DatasetSource`](crate::types::DatasetSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetSourceBuilder {
     pub(crate) ground_truth_manifest: ::std::option::Option<crate::types::DatasetGroundTruthManifest>,
 }

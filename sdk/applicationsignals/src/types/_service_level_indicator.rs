@@ -33,8 +33,8 @@ impl ServiceLevelIndicator {
 }
 
 /// A builder for [`ServiceLevelIndicator`](crate::types::ServiceLevelIndicator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceLevelIndicatorBuilder {
     pub(crate) sli_metric: ::std::option::Option<crate::types::ServiceLevelIndicatorMetric>,
     pub(crate) metric_threshold: ::std::option::Option<f64>,

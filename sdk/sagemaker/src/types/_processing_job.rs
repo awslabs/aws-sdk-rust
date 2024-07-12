@@ -167,8 +167,8 @@ impl ProcessingJob {
 }
 
 /// A builder for [`ProcessingJob`](crate::types::ProcessingJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessingJobBuilder {
     pub(crate) processing_inputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>,
     pub(crate) processing_output_config: ::std::option::Option<crate::types::ProcessingOutputConfig>,

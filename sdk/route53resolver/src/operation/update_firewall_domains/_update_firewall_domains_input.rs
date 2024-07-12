@@ -72,8 +72,8 @@ impl UpdateFirewallDomainsInput {
 }
 
 /// A builder for [`UpdateFirewallDomainsInput`](crate::operation::update_firewall_domains::UpdateFirewallDomainsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFirewallDomainsInputBuilder {
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) operation: ::std::option::Option<crate::types::FirewallDomainUpdateOperation>,

@@ -20,8 +20,8 @@ impl GetFirewallDomainListInput {
 }
 
 /// A builder for [`GetFirewallDomainListInput`](crate::operation::get_firewall_domain_list::GetFirewallDomainListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFirewallDomainListInputBuilder {
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
 }

@@ -30,8 +30,8 @@ impl GetInlinePolicyForPermissionSetOutput {
 }
 
 /// A builder for [`GetInlinePolicyForPermissionSetOutput`](crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInlinePolicyForPermissionSetOutputBuilder {
     pub(crate) inline_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

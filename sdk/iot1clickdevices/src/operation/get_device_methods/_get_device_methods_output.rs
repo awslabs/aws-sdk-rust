@@ -28,8 +28,8 @@ impl GetDeviceMethodsOutput {
 }
 
 /// A builder for [`GetDeviceMethodsOutput`](crate::operation::get_device_methods::GetDeviceMethodsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeviceMethodsOutputBuilder {
     pub(crate) device_methods: ::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl NodeFrameworkAttributes {
 }
 
 /// A builder for [`NodeFrameworkAttributes`](crate::types::NodeFrameworkAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeFrameworkAttributesBuilder {
     pub(crate) fabric: ::std::option::Option<crate::types::NodeFabricAttributes>,
     pub(crate) ethereum: ::std::option::Option<crate::types::NodeEthereumAttributes>,

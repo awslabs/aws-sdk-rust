@@ -26,8 +26,8 @@ impl UpdateCapacityReservationInput {
 }
 
 /// A builder for [`UpdateCapacityReservationInput`](crate::operation::update_capacity_reservation::UpdateCapacityReservationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCapacityReservationInputBuilder {
     pub(crate) target_dpus: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

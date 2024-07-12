@@ -46,8 +46,8 @@ impl GetTerminologyOutput {
 }
 
 /// A builder for [`GetTerminologyOutput`](crate::operation::get_terminology::GetTerminologyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTerminologyOutputBuilder {
     pub(crate) terminology_properties: ::std::option::Option<crate::types::TerminologyProperties>,
     pub(crate) terminology_data_location: ::std::option::Option<crate::types::TerminologyDataLocation>,

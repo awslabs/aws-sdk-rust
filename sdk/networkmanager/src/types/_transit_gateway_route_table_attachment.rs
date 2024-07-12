@@ -33,8 +33,8 @@ impl TransitGatewayRouteTableAttachment {
 }
 
 /// A builder for [`TransitGatewayRouteTableAttachment`](crate::types::TransitGatewayRouteTableAttachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayRouteTableAttachmentBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     pub(crate) peering_id: ::std::option::Option<::std::string::String>,

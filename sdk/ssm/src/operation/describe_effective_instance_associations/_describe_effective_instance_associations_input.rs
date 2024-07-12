@@ -32,8 +32,8 @@ impl DescribeEffectiveInstanceAssociationsInput {
 }
 
 /// A builder for [`DescribeEffectiveInstanceAssociationsInput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEffectiveInstanceAssociationsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

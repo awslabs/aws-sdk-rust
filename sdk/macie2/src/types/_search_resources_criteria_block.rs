@@ -23,8 +23,8 @@ impl SearchResourcesCriteriaBlock {
 }
 
 /// A builder for [`SearchResourcesCriteriaBlock`](crate::types::SearchResourcesCriteriaBlock).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchResourcesCriteriaBlockBuilder {
     pub(crate) and: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesCriteria>>,
 }

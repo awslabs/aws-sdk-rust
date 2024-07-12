@@ -101,8 +101,8 @@ impl UpdateRecommenderConfigurationShape {
 }
 
 /// A builder for [`UpdateRecommenderConfigurationShape`](crate::types::UpdateRecommenderConfigurationShape).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRecommenderConfigurationShapeBuilder {
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteTimeSeriesDataPointsOutput {
 }
 
 /// A builder for [`DeleteTimeSeriesDataPointsOutput`](crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTimeSeriesDataPointsOutputBuilder {
     _request_id: Option<String>,
 }

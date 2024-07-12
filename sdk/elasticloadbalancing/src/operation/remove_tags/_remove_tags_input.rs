@@ -31,8 +31,8 @@ impl RemoveTagsInput {
 }
 
 /// A builder for [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveTagsInputBuilder {
     pub(crate) load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagKeyOnly>>,

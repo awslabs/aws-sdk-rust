@@ -50,8 +50,8 @@ impl ColumnConfiguration {
 }
 
 /// A builder for [`ColumnConfiguration`](crate::types::ColumnConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnConfigurationBuilder {
     pub(crate) document_id_column_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_data_column_name: ::std::option::Option<::std::string::String>,

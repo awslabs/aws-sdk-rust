@@ -59,8 +59,8 @@ impl SavingsPlansPurchaseRecommendation {
 }
 
 /// A builder for [`SavingsPlansPurchaseRecommendation`](crate::types::SavingsPlansPurchaseRecommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlansPurchaseRecommendationBuilder {
     pub(crate) account_scope: ::std::option::Option<crate::types::AccountScope>,
     pub(crate) savings_plans_type: ::std::option::Option<crate::types::SupportedSavingsPlansType>,

@@ -20,8 +20,8 @@ impl DeleteMeetingInput {
 }
 
 /// A builder for [`DeleteMeetingInput`](crate::operation::delete_meeting::DeleteMeetingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMeetingInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
 }

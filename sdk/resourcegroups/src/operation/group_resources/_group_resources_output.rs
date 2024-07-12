@@ -44,8 +44,8 @@ impl GroupResourcesOutput {
 }
 
 /// A builder for [`GroupResourcesOutput`](crate::operation::group_resources::GroupResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GroupResourcesOutputBuilder {
     pub(crate) succeeded: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>,

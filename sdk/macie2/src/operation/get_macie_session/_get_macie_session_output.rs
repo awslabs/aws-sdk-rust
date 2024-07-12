@@ -50,8 +50,8 @@ impl GetMacieSessionOutput {
 }
 
 /// A builder for [`GetMacieSessionOutput`](crate::operation::get_macie_session::GetMacieSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMacieSessionOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,

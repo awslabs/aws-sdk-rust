@@ -45,8 +45,8 @@ impl EnrollmentFlagsV4 {
 }
 
 /// A builder for [`EnrollmentFlagsV4`](crate::types::EnrollmentFlagsV4).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnrollmentFlagsV4Builder {
     pub(crate) include_symmetric_algorithms: ::std::option::Option<bool>,
     pub(crate) user_interaction_required: ::std::option::Option<bool>,

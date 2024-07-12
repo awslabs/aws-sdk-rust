@@ -40,8 +40,8 @@ impl ListRolePoliciesOutput {
 }
 
 /// A builder for [`ListRolePoliciesOutput`](crate::operation::list_role_policies::ListRolePoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRolePoliciesOutputBuilder {
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

@@ -45,8 +45,8 @@ impl ReceiptFilter {
 }
 
 /// A builder for [`ReceiptFilter`](crate::types::ReceiptFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReceiptFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_filter: ::std::option::Option<crate::types::ReceiptIpFilter>,

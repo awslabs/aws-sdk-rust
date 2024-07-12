@@ -39,8 +39,8 @@ impl AddonSubscription {
 }
 
 /// A builder for [`AddonSubscription`](crate::types::AddonSubscription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddonSubscriptionBuilder {
     pub(crate) addon_subscription_id: ::std::option::Option<::std::string::String>,
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,

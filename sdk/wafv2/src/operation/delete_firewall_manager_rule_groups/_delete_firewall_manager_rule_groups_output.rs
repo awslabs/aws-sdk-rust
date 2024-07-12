@@ -26,8 +26,8 @@ impl DeleteFirewallManagerRuleGroupsOutput {
 }
 
 /// A builder for [`DeleteFirewallManagerRuleGroupsOutput`](crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFirewallManagerRuleGroupsOutputBuilder {
     pub(crate) next_web_acl_lock_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

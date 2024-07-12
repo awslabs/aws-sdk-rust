@@ -33,8 +33,8 @@ impl CoipCidr {
 }
 
 /// A builder for [`CoipCidr`](crate::types::CoipCidr).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoipCidrBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) coip_pool_id: ::std::option::Option<::std::string::String>,

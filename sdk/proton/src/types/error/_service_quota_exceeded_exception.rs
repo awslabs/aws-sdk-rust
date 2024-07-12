@@ -49,8 +49,8 @@ impl ServiceQuotaExceededException {
 }
 
 /// A builder for [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ServiceQuotaExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

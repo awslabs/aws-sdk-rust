@@ -28,8 +28,8 @@ impl CreateLocalGatewayRouteTableVpcAssociationOutput {
 }
 
 /// A builder for [`CreateLocalGatewayRouteTableVpcAssociationOutput`](crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocalGatewayRouteTableVpcAssociationOutputBuilder {
     pub(crate) local_gateway_route_table_vpc_association: ::std::option::Option<crate::types::LocalGatewayRouteTableVpcAssociation>,
     _request_id: Option<String>,

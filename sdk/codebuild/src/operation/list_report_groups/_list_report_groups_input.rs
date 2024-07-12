@@ -54,8 +54,8 @@ impl ListReportGroupsInput {
 }
 
 /// A builder for [`ListReportGroupsInput`](crate::operation::list_report_groups::ListReportGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReportGroupsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ReportGroupSortByType>,

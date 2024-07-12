@@ -63,8 +63,8 @@ impl ClassifierEvaluationMetrics {
 }
 
 /// A builder for [`ClassifierEvaluationMetrics`](crate::types::ClassifierEvaluationMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClassifierEvaluationMetricsBuilder {
     pub(crate) accuracy: ::std::option::Option<f64>,
     pub(crate) precision: ::std::option::Option<f64>,

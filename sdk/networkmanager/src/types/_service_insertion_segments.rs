@@ -31,8 +31,8 @@ impl ServiceInsertionSegments {
 }
 
 /// A builder for [`ServiceInsertionSegments`](crate::types::ServiceInsertionSegments).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceInsertionSegmentsBuilder {
     pub(crate) send_via: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) send_to: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

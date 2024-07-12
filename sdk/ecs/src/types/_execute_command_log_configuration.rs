@@ -53,8 +53,8 @@ impl ExecuteCommandLogConfiguration {
 }
 
 /// A builder for [`ExecuteCommandLogConfiguration`](crate::types::ExecuteCommandLogConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteCommandLogConfigurationBuilder {
     pub(crate) cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_encryption_enabled: ::std::option::Option<bool>,

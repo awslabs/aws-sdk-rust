@@ -20,8 +20,8 @@ impl DeleteConfigurationPolicyInput {
 }
 
 /// A builder for [`DeleteConfigurationPolicyInput`](crate::operation::delete_configuration_policy::DeleteConfigurationPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfigurationPolicyInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

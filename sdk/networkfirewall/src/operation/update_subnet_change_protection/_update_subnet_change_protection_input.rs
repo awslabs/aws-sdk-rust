@@ -46,8 +46,8 @@ impl UpdateSubnetChangeProtectionInput {
 }
 
 /// A builder for [`UpdateSubnetChangeProtectionInput`](crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSubnetChangeProtectionInputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,

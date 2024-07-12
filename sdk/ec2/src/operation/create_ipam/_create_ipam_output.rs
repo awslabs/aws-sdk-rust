@@ -26,8 +26,8 @@ impl CreateIpamOutput {
 }
 
 /// A builder for [`CreateIpamOutput`](crate::operation::create_ipam::CreateIpamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIpamOutputBuilder {
     pub(crate) ipam: ::std::option::Option<crate::types::Ipam>,
     _request_id: Option<String>,

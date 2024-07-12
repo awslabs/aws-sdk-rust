@@ -34,8 +34,8 @@ impl DescribeFileCachesOutput {
 }
 
 /// A builder for [`DescribeFileCachesOutput`](crate::operation::describe_file_caches::DescribeFileCachesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFileCachesOutputBuilder {
     pub(crate) file_caches: ::std::option::Option<::std::vec::Vec<crate::types::FileCache>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

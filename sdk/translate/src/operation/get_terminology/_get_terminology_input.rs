@@ -30,8 +30,8 @@ impl GetTerminologyInput {
 }
 
 /// A builder for [`GetTerminologyInput`](crate::operation::get_terminology::GetTerminologyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTerminologyInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) terminology_data_format: ::std::option::Option<crate::types::TerminologyDataFormat>,

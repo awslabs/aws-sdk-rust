@@ -35,8 +35,8 @@ impl AnchorDateConfiguration {
 }
 
 /// A builder for [`AnchorDateConfiguration`](crate::types::AnchorDateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnchorDateConfigurationBuilder {
     pub(crate) anchor_option: ::std::option::Option<crate::types::AnchorOption>,
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,

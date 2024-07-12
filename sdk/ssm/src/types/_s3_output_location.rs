@@ -33,8 +33,8 @@ impl S3OutputLocation {
 }
 
 /// A builder for [`S3OutputLocation`](crate::types::S3OutputLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3OutputLocationBuilder {
     pub(crate) output_s3_region: ::std::option::Option<::std::string::String>,
     pub(crate) output_s3_bucket_name: ::std::option::Option<::std::string::String>,

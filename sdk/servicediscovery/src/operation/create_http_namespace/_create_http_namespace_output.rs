@@ -26,8 +26,8 @@ impl CreateHttpNamespaceOutput {
 }
 
 /// A builder for [`CreateHttpNamespaceOutput`](crate::operation::create_http_namespace::CreateHttpNamespaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHttpNamespaceOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

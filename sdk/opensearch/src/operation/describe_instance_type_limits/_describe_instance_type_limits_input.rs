@@ -33,8 +33,8 @@ impl DescribeInstanceTypeLimitsInput {
 }
 
 /// A builder for [`DescribeInstanceTypeLimitsInput`](crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceTypeLimitsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,

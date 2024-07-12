@@ -40,8 +40,8 @@ impl ListPoolOriginationIdentitiesInput {
 }
 
 /// A builder for [`ListPoolOriginationIdentitiesInput`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPoolOriginationIdentitiesInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>>,

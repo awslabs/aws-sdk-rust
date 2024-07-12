@@ -83,8 +83,8 @@ impl UpdateUserInput {
 }
 
 /// A builder for [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateUserInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

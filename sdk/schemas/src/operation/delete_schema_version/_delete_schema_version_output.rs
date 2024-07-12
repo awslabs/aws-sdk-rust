@@ -18,8 +18,8 @@ impl DeleteSchemaVersionOutput {
 }
 
 /// A builder for [`DeleteSchemaVersionOutput`](crate::operation::delete_schema_version::DeleteSchemaVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSchemaVersionOutputBuilder {
     _request_id: Option<String>,
 }

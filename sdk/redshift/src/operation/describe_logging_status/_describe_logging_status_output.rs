@@ -71,8 +71,8 @@ impl DescribeLoggingStatusOutput {
 }
 
 /// A builder for [`DescribeLoggingStatusOutput`](crate::operation::describe_logging_status::DescribeLoggingStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLoggingStatusOutputBuilder {
     pub(crate) logging_enabled: ::std::option::Option<bool>,
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,

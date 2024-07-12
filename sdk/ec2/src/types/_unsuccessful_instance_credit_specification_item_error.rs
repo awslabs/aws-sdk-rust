@@ -27,8 +27,8 @@ impl UnsuccessfulInstanceCreditSpecificationItemError {
 }
 
 /// A builder for [`UnsuccessfulInstanceCreditSpecificationItemError`](crate::types::UnsuccessfulInstanceCreditSpecificationItemError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnsuccessfulInstanceCreditSpecificationItemErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

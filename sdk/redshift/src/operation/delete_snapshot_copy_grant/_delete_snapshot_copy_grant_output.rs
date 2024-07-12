@@ -18,8 +18,8 @@ impl DeleteSnapshotCopyGrantOutput {
 }
 
 /// A builder for [`DeleteSnapshotCopyGrantOutput`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSnapshotCopyGrantOutputBuilder {
     _request_id: Option<String>,
 }

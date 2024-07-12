@@ -28,8 +28,8 @@ impl AggregateColumn {
 }
 
 /// A builder for [`AggregateColumn`](crate::types::AggregateColumn).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregateColumnBuilder {
     pub(crate) column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) function: ::std::option::Option<crate::types::AggregateFunctionName>,

@@ -45,8 +45,8 @@ impl InvalidDomainValidationOptionsException {
 }
 
 /// A builder for [`InvalidDomainValidationOptionsException`](crate::types::error::InvalidDomainValidationOptionsException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidDomainValidationOptionsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

@@ -40,8 +40,8 @@ impl CreateCarrierGatewayInput {
 }
 
 /// A builder for [`CreateCarrierGatewayInput`](crate::operation::create_carrier_gateway::CreateCarrierGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCarrierGatewayInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,

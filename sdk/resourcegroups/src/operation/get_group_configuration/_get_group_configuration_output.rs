@@ -26,8 +26,8 @@ impl GetGroupConfigurationOutput {
 }
 
 /// A builder for [`GetGroupConfigurationOutput`](crate::operation::get_group_configuration::GetGroupConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGroupConfigurationOutputBuilder {
     pub(crate) group_configuration: ::std::option::Option<crate::types::GroupConfiguration>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl GetClassifierInput {
 }
 
 /// A builder for [`GetClassifierInput`](crate::operation::get_classifier::GetClassifierInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClassifierInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

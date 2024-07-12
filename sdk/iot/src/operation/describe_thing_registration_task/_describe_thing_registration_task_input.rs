@@ -20,8 +20,8 @@ impl DescribeThingRegistrationTaskInput {
 }
 
 /// A builder for [`DescribeThingRegistrationTaskInput`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeThingRegistrationTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl DeleteNetworkAclInput {
 }
 
 /// A builder for [`DeleteNetworkAclInput`](crate::operation::delete_network_acl::DeleteNetworkAclInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkAclInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) network_acl_id: ::std::option::Option<::std::string::String>,

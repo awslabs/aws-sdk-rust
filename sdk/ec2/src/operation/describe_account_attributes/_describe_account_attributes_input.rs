@@ -28,8 +28,8 @@ impl DescribeAccountAttributesInput {
 }
 
 /// A builder for [`DescribeAccountAttributesInput`](crate::operation::describe_account_attributes::DescribeAccountAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountAttributesInputBuilder {
     pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>>,
     pub(crate) dry_run: ::std::option::Option<bool>,

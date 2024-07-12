@@ -38,8 +38,8 @@ impl ListConflictingAliasesInput {
 }
 
 /// A builder for [`ListConflictingAliasesInput`](crate::operation::list_conflicting_aliases::ListConflictingAliasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConflictingAliasesInputBuilder {
     pub(crate) distribution_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,

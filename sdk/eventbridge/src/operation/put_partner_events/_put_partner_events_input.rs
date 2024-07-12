@@ -22,8 +22,8 @@ impl PutPartnerEventsInput {
 }
 
 /// A builder for [`PutPartnerEventsInput`](crate::operation::put_partner_events::PutPartnerEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutPartnerEventsInputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>>,
 }

@@ -40,8 +40,8 @@ impl GetColumnStatisticsForTableInput {
 }
 
 /// A builder for [`GetColumnStatisticsForTableInput`](crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetColumnStatisticsForTableInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

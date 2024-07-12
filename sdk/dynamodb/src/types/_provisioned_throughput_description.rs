@@ -45,8 +45,8 @@ impl ProvisionedThroughputDescription {
 }
 
 /// A builder for [`ProvisionedThroughputDescription`](crate::types::ProvisionedThroughputDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionedThroughputDescriptionBuilder {
     pub(crate) last_increase_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_decrease_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -50,8 +50,8 @@ impl RegisterAccountOutput {
 }
 
 /// A builder for [`RegisterAccountOutput`](crate::operation::register_account::RegisterAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterAccountOutputBuilder {
     pub(crate) register_account_status: ::std::option::Option<crate::types::RegistrationStatus>,
     pub(crate) timestream_resources: ::std::option::Option<crate::types::TimestreamResources>,

@@ -64,8 +64,8 @@ impl GetSavingsPlansPurchaseRecommendationInput {
 }
 
 /// A builder for [`GetSavingsPlansPurchaseRecommendationInput`](crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSavingsPlansPurchaseRecommendationInputBuilder {
     pub(crate) savings_plans_type: ::std::option::Option<crate::types::SupportedSavingsPlansType>,
     pub(crate) term_in_years: ::std::option::Option<crate::types::TermInYears>,

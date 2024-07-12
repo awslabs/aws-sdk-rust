@@ -42,8 +42,8 @@ impl SizeConstraintStatement {
 }
 
 /// A builder for [`SizeConstraintStatement`](crate::types::SizeConstraintStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SizeConstraintStatementBuilder {
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,

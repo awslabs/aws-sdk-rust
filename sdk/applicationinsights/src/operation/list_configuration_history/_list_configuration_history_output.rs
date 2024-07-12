@@ -34,8 +34,8 @@ impl ListConfigurationHistoryOutput {
 }
 
 /// A builder for [`ListConfigurationHistoryOutput`](crate::operation::list_configuration_history::ListConfigurationHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfigurationHistoryOutputBuilder {
     pub(crate) event_list: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

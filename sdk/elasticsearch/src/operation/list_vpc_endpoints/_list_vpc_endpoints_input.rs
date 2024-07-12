@@ -21,8 +21,8 @@ impl ListVpcEndpointsInput {
 }
 
 /// A builder for [`ListVpcEndpointsInput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVpcEndpointsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }

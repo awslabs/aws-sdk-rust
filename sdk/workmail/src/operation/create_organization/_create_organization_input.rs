@@ -52,8 +52,8 @@ impl CreateOrganizationInput {
 }
 
 /// A builder for [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOrganizationInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetProbeInput {
 }
 
 /// A builder for [`GetProbeInput`](crate::operation::get_probe::GetProbeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProbeInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) probe_id: ::std::option::Option<::std::string::String>,

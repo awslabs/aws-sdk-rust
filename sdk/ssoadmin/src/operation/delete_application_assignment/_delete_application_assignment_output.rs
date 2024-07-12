@@ -18,8 +18,8 @@ impl DeleteApplicationAssignmentOutput {
 }
 
 /// A builder for [`DeleteApplicationAssignmentOutput`](crate::operation::delete_application_assignment::DeleteApplicationAssignmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationAssignmentOutputBuilder {
     _request_id: Option<String>,
 }

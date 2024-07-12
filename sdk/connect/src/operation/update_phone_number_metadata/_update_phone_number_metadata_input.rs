@@ -32,8 +32,8 @@ impl UpdatePhoneNumberMetadataInput {
 }
 
 /// A builder for [`UpdatePhoneNumberMetadataInput`](crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePhoneNumberMetadataInputBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number_description: ::std::option::Option<::std::string::String>,

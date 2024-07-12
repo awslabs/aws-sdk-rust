@@ -33,8 +33,8 @@ impl ServerlessCacheConfiguration {
 }
 
 /// A builder for [`ServerlessCacheConfiguration`](crate::types::ServerlessCacheConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerlessCacheConfigurationBuilder {
     pub(crate) serverless_cache_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,

@@ -214,8 +214,8 @@ impl DeleteScalingPolicyInput {
 }
 
 /// A builder for [`DeleteScalingPolicyInput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteScalingPolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,

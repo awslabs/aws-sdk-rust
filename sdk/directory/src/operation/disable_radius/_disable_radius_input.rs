@@ -21,8 +21,8 @@ impl DisableRadiusInput {
 }
 
 /// A builder for [`DisableRadiusInput`](crate::operation::disable_radius::DisableRadiusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableRadiusInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
 }

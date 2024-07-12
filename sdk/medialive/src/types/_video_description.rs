@@ -57,8 +57,8 @@ impl VideoDescription {
 }
 
 /// A builder for [`VideoDescription`](crate::types::VideoDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoDescriptionBuilder {
     pub(crate) codec_settings: ::std::option::Option<crate::types::VideoCodecSettings>,
     pub(crate) height: ::std::option::Option<i32>,

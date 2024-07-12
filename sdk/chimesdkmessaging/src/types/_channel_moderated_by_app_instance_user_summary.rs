@@ -21,8 +21,8 @@ impl ChannelModeratedByAppInstanceUserSummary {
 }
 
 /// A builder for [`ChannelModeratedByAppInstanceUserSummary`](crate::types::ChannelModeratedByAppInstanceUserSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelModeratedByAppInstanceUserSummaryBuilder {
     pub(crate) channel_summary: ::std::option::Option<crate::types::ChannelSummary>,
 }

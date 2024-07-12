@@ -34,8 +34,8 @@ impl ListAutomationRulesOutput {
 }
 
 /// A builder for [`ListAutomationRulesOutput`](crate::operation::list_automation_rules::ListAutomationRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAutomationRulesOutputBuilder {
     pub(crate) automation_rules_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

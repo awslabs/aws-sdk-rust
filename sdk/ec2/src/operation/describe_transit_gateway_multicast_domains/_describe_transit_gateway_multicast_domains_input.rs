@@ -64,8 +64,8 @@ impl DescribeTransitGatewayMulticastDomainsInput {
 }
 
 /// A builder for [`DescribeTransitGatewayMulticastDomainsInput`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransitGatewayMulticastDomainsInputBuilder {
     pub(crate) transit_gateway_multicast_domain_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

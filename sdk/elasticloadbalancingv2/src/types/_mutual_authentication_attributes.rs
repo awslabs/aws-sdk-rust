@@ -33,8 +33,8 @@ impl MutualAuthenticationAttributes {
 }
 
 /// A builder for [`MutualAuthenticationAttributes`](crate::types::MutualAuthenticationAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MutualAuthenticationAttributesBuilder {
     pub(crate) mode: ::std::option::Option<::std::string::String>,
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl HeartbeatEvent {
 }
 
 /// A builder for [`HeartbeatEvent`](crate::types::HeartbeatEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HeartbeatEventBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
 }

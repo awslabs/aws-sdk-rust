@@ -28,8 +28,8 @@ impl UpdateDatasetGroupInput {
 }
 
 /// A builder for [`UpdateDatasetGroupInput`](crate::operation::update_dataset_group::UpdateDatasetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDatasetGroupInputBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

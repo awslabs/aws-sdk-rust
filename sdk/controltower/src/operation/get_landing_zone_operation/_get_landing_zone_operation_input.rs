@@ -20,8 +20,8 @@ impl GetLandingZoneOperationInput {
 }
 
 /// A builder for [`GetLandingZoneOperationInput`](crate::operation::get_landing_zone_operation::GetLandingZoneOperationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLandingZoneOperationInputBuilder {
     pub(crate) operation_identifier: ::std::option::Option<::std::string::String>,
 }

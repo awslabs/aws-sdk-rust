@@ -46,8 +46,8 @@ impl ListMetadataTransferJobsInput {
 }
 
 /// A builder for [`ListMetadataTransferJobsInput`](crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMetadataTransferJobsInputBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
     pub(crate) destination_type: ::std::option::Option<crate::types::DestinationType>,

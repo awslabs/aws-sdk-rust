@@ -45,8 +45,8 @@ impl CreateNetworkInterfacePermissionInput {
 }
 
 /// A builder for [`CreateNetworkInterfacePermissionInput`](crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkInterfacePermissionInputBuilder {
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,

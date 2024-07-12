@@ -33,8 +33,8 @@ impl ArchiveOutputSettings {
 }
 
 /// A builder for [`ArchiveOutputSettings`](crate::types::ArchiveOutputSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArchiveOutputSettingsBuilder {
     pub(crate) container_settings: ::std::option::Option<crate::types::ArchiveContainerSettings>,
     pub(crate) extension: ::std::option::Option<::std::string::String>,

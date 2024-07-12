@@ -40,8 +40,8 @@ impl PutDetectorInput {
 }
 
 /// A builder for [`PutDetectorInput`](crate::operation::put_detector::PutDetectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDetectorInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

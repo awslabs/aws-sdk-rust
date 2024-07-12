@@ -34,8 +34,8 @@ impl DescribeVerifiedAccessInstancesOutput {
 }
 
 /// A builder for [`DescribeVerifiedAccessInstancesOutput`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVerifiedAccessInstancesOutputBuilder {
     pub(crate) verified_access_instances: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

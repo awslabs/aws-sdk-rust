@@ -28,8 +28,8 @@ impl CreateBlueGreenDeploymentOutput {
 }
 
 /// A builder for [`CreateBlueGreenDeploymentOutput`](crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBlueGreenDeploymentOutputBuilder {
     pub(crate) blue_green_deployment: ::std::option::Option<crate::types::BlueGreenDeployment>,
     _request_id: Option<String>,

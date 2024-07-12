@@ -27,8 +27,8 @@ impl MagneticStoreWriteProperties {
 }
 
 /// A builder for [`MagneticStoreWriteProperties`](crate::types::MagneticStoreWriteProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MagneticStoreWritePropertiesBuilder {
     pub(crate) enable_magnetic_store_writes: ::std::option::Option<bool>,
     pub(crate) magnetic_store_rejected_data_location: ::std::option::Option<crate::types::MagneticStoreRejectedDataLocation>,

@@ -27,8 +27,8 @@ impl MessageReviewHandler {
 }
 
 /// A builder for [`MessageReviewHandler`](crate::types::MessageReviewHandler).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageReviewHandlerBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) fallback_result: ::std::option::Option<crate::types::FallbackResult>,

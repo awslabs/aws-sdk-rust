@@ -26,8 +26,8 @@ impl CopyProjectVersionOutput {
 }
 
 /// A builder for [`CopyProjectVersionOutput`](crate::operation::copy_project_version::CopyProjectVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyProjectVersionOutputBuilder {
     pub(crate) project_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

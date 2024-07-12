@@ -26,8 +26,8 @@ impl GetTaxRegistrationDocumentOutput {
 }
 
 /// A builder for [`GetTaxRegistrationDocumentOutput`](crate::operation::get_tax_registration_document::GetTaxRegistrationDocumentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTaxRegistrationDocumentOutputBuilder {
     pub(crate) destination_file_path: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

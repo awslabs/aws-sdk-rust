@@ -33,8 +33,8 @@ impl ManagePropertygraphStatisticsOutput {
 }
 
 /// A builder for [`ManagePropertygraphStatisticsOutput`](crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManagePropertygraphStatisticsOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<crate::types::RefreshStatisticsIdMap>,

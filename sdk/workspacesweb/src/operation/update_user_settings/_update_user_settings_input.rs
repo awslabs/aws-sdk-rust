@@ -101,8 +101,8 @@ impl UpdateUserSettingsInput {
 }
 
 /// A builder for [`UpdateUserSettingsInput`](crate::operation::update_user_settings::UpdateUserSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateUserSettingsInputBuilder {
     pub(crate) user_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) copy_allowed: ::std::option::Option<crate::types::EnabledType>,

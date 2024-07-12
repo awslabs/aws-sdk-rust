@@ -18,8 +18,8 @@ impl DeleteEvaluationFormOutput {
 }
 
 /// A builder for [`DeleteEvaluationFormOutput`](crate::operation::delete_evaluation_form::DeleteEvaluationFormOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEvaluationFormOutputBuilder {
     _request_id: Option<String>,
 }

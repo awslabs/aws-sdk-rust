@@ -37,8 +37,8 @@ impl ExecuteStatementRequest {
 }
 
 /// A builder for [`ExecuteStatementRequest`](crate::types::ExecuteStatementRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteStatementRequestBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) statement: ::std::option::Option<::std::string::String>,

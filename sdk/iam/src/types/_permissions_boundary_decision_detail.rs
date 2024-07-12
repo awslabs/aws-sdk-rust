@@ -21,8 +21,8 @@ impl PermissionsBoundaryDecisionDetail {
 }
 
 /// A builder for [`PermissionsBoundaryDecisionDetail`](crate::types::PermissionsBoundaryDecisionDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PermissionsBoundaryDecisionDetailBuilder {
     pub(crate) allowed_by_permissions_boundary: ::std::option::Option<bool>,
 }

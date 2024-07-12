@@ -22,8 +22,8 @@ impl DescribeAutoScalingConfigurationInput {
 }
 
 /// A builder for [`DescribeAutoScalingConfigurationInput`](crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAutoScalingConfigurationInputBuilder {
     pub(crate) auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
 }

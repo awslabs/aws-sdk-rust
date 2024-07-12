@@ -33,8 +33,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
     pub(crate) container_port: ::std::option::Option<i32>,
     pub(crate) host_port: ::std::option::Option<i32>,

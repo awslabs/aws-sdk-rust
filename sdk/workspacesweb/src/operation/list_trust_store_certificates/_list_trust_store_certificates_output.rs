@@ -41,8 +41,8 @@ impl ListTrustStoreCertificatesOutput {
 }
 
 /// A builder for [`ListTrustStoreCertificatesOutput`](crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrustStoreCertificatesOutputBuilder {
     pub(crate) certificate_list: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,

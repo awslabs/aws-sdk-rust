@@ -32,8 +32,8 @@ impl ListCollaborationsInput {
 }
 
 /// A builder for [`ListCollaborationsInput`](crate::operation::list_collaborations::ListCollaborationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCollaborationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

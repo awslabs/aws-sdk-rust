@@ -29,8 +29,8 @@ impl ExportAttributes {
 }
 
 /// A builder for [`ExportAttributes`](crate::types::ExportAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportAttributesBuilder {
     pub(crate) export_dukpt_initial_key: ::std::option::Option<crate::types::ExportDukptInitialKey>,
     pub(crate) key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,

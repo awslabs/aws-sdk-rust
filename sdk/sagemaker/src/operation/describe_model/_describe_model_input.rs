@@ -20,8 +20,8 @@ impl DescribeModelInput {
 }
 
 /// A builder for [`DescribeModelInput`](crate::operation::describe_model::DescribeModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeModelInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
 }

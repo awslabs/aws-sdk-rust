@@ -27,8 +27,8 @@ impl TemporalFilterSettings {
 }
 
 /// A builder for [`TemporalFilterSettings`](crate::types::TemporalFilterSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemporalFilterSettingsBuilder {
     pub(crate) post_filter_sharpening: ::std::option::Option<crate::types::TemporalFilterPostFilterSharpening>,
     pub(crate) strength: ::std::option::Option<crate::types::TemporalFilterStrength>,

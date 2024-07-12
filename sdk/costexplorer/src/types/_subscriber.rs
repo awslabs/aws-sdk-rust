@@ -33,8 +33,8 @@ impl Subscriber {
 }
 
 /// A builder for [`Subscriber`](crate::types::Subscriber).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubscriberBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::SubscriberType>,

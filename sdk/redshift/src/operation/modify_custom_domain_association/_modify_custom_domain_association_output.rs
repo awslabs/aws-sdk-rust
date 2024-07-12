@@ -44,8 +44,8 @@ impl ModifyCustomDomainAssociationOutput {
 }
 
 /// A builder for [`ModifyCustomDomainAssociationOutput`](crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyCustomDomainAssociationOutputBuilder {
     pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,

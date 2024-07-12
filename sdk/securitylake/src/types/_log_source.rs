@@ -35,8 +35,8 @@ impl LogSource {
 }
 
 /// A builder for [`LogSource`](crate::types::LogSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogSourceBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,

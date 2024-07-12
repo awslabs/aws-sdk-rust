@@ -48,8 +48,8 @@ impl DeleteFileOutput {
 }
 
 /// A builder for [`DeleteFileOutput`](crate::operation::delete_file::DeleteFileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFileOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) blob_id: ::std::option::Option<::std::string::String>,

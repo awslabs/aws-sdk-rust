@@ -34,8 +34,8 @@ impl DataBarsOptions {
 }
 
 /// A builder for [`DataBarsOptions`](crate::types::DataBarsOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataBarsOptionsBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) positive_color: ::std::option::Option<::std::string::String>,

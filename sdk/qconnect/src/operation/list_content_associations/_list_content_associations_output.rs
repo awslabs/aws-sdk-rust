@@ -33,8 +33,8 @@ impl ListContentAssociationsOutput {
 }
 
 /// A builder for [`ListContentAssociationsOutput`](crate::operation::list_content_associations::ListContentAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContentAssociationsOutputBuilder {
     pub(crate) content_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ContentAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

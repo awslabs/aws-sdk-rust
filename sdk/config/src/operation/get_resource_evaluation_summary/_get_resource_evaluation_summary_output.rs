@@ -62,8 +62,8 @@ impl GetResourceEvaluationSummaryOutput {
 }
 
 /// A builder for [`GetResourceEvaluationSummaryOutput`](crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceEvaluationSummaryOutputBuilder {
     pub(crate) resource_evaluation_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,

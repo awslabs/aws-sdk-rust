@@ -83,8 +83,8 @@ impl GetApiKeyOutput {
 }
 
 /// A builder for [`GetApiKeyOutput`](crate::operation::get_api_key::GetApiKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApiKeyOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

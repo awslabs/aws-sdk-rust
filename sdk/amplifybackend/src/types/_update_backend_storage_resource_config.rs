@@ -27,8 +27,8 @@ impl UpdateBackendStorageResourceConfig {
 }
 
 /// A builder for [`UpdateBackendStorageResourceConfig`](crate::types::UpdateBackendStorageResourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBackendStorageResourceConfigBuilder {
     pub(crate) permissions: ::std::option::Option<crate::types::BackendStoragePermissions>,
     pub(crate) service_name: ::std::option::Option<crate::types::ServiceName>,

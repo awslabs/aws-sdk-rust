@@ -36,8 +36,8 @@ impl RespondActivityTaskFailedInput {
 }
 
 /// A builder for [`RespondActivityTaskFailedInput`](crate::operation::respond_activity_task_failed::RespondActivityTaskFailedInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RespondActivityTaskFailedInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

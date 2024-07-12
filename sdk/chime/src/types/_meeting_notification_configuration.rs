@@ -35,8 +35,8 @@ impl MeetingNotificationConfiguration {
 }
 
 /// A builder for [`MeetingNotificationConfiguration`](crate::types::MeetingNotificationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MeetingNotificationConfigurationBuilder {
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sqs_queue_arn: ::std::option::Option<::std::string::String>,

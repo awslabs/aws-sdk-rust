@@ -27,8 +27,8 @@ impl UpdateEnabledControlOutput {
 }
 
 /// A builder for [`UpdateEnabledControlOutput`](crate::operation::update_enabled_control::UpdateEnabledControlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEnabledControlOutputBuilder {
     pub(crate) operation_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

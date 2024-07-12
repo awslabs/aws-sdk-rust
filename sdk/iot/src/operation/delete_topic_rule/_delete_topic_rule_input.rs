@@ -21,8 +21,8 @@ impl DeleteTopicRuleInput {
 }
 
 /// A builder for [`DeleteTopicRuleInput`](crate::operation::delete_topic_rule::DeleteTopicRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTopicRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
 }

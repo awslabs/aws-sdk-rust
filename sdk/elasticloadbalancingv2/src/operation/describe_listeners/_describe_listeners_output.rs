@@ -34,8 +34,8 @@ impl DescribeListenersOutput {
 }
 
 /// A builder for [`DescribeListenersOutput`](crate::operation::describe_listeners::DescribeListenersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeListenersOutputBuilder {
     pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

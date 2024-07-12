@@ -45,8 +45,8 @@ impl DeploymentTarget {
 }
 
 /// A builder for [`DeploymentTarget`](crate::types::DeploymentTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentTargetBuilder {
     pub(crate) deployment_target_type: ::std::option::Option<crate::types::DeploymentTargetType>,
     pub(crate) instance_target: ::std::option::Option<crate::types::InstanceTarget>,

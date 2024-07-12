@@ -34,8 +34,8 @@ impl RestoreDbClusterFromSnapshotOutput {
 }
 
 /// A builder for [`RestoreDbClusterFromSnapshotOutput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreDbClusterFromSnapshotOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,

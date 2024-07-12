@@ -28,8 +28,8 @@ impl ContainerLogRotationConfiguration {
 }
 
 /// A builder for [`ContainerLogRotationConfiguration`](crate::types::ContainerLogRotationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerLogRotationConfigurationBuilder {
     pub(crate) rotation_size: ::std::option::Option<::std::string::String>,
     pub(crate) max_files_to_keep: ::std::option::Option<i32>,

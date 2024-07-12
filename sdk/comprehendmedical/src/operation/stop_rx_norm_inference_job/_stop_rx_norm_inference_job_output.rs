@@ -26,8 +26,8 @@ impl StopRxNormInferenceJobOutput {
 }
 
 /// A builder for [`StopRxNormInferenceJobOutput`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopRxNormInferenceJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

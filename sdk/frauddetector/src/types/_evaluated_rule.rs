@@ -72,8 +72,8 @@ impl EvaluatedRule {
 }
 
 /// A builder for [`EvaluatedRule`](crate::types::EvaluatedRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EvaluatedRuleBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) rule_version: ::std::option::Option<::std::string::String>,

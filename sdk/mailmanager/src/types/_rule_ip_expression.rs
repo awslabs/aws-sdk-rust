@@ -34,8 +34,8 @@ impl RuleIpExpression {
 }
 
 /// A builder for [`RuleIpExpression`](crate::types::RuleIpExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleIpExpressionBuilder {
     pub(crate) evaluate: ::std::option::Option<crate::types::RuleIpToEvaluate>,
     pub(crate) operator: ::std::option::Option<crate::types::RuleIpOperator>,

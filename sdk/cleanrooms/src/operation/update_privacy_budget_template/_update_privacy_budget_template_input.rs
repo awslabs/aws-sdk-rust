@@ -38,8 +38,8 @@ impl UpdatePrivacyBudgetTemplateInput {
 }
 
 /// A builder for [`UpdatePrivacyBudgetTemplateInput`](crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePrivacyBudgetTemplateInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) privacy_budget_template_identifier: ::std::option::Option<::std::string::String>,

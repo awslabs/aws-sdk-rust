@@ -18,8 +18,8 @@ impl AssociatePrincipalWithPortfolioOutput {
 }
 
 /// A builder for [`AssociatePrincipalWithPortfolioOutput`](crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociatePrincipalWithPortfolioOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl ExecuteOpenCypherQueryInput {
 }
 
 /// A builder for [`ExecuteOpenCypherQueryInput`](crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteOpenCypherQueryInputBuilder {
     pub(crate) open_cypher_query: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::string::String>,

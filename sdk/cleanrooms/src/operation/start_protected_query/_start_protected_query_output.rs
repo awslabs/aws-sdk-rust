@@ -26,8 +26,8 @@ impl StartProtectedQueryOutput {
 }
 
 /// A builder for [`StartProtectedQueryOutput`](crate::operation::start_protected_query::StartProtectedQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartProtectedQueryOutputBuilder {
     pub(crate) protected_query: ::std::option::Option<crate::types::ProtectedQuery>,
     _request_id: Option<String>,

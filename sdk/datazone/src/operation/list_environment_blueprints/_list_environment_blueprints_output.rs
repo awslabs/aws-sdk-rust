@@ -33,8 +33,8 @@ impl ListEnvironmentBlueprintsOutput {
 }
 
 /// A builder for [`ListEnvironmentBlueprintsOutput`](crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentBlueprintsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentBlueprintSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

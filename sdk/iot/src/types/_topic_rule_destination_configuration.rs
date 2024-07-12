@@ -27,8 +27,8 @@ impl TopicRuleDestinationConfiguration {
 }
 
 /// A builder for [`TopicRuleDestinationConfiguration`](crate::types::TopicRuleDestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TopicRuleDestinationConfigurationBuilder {
     pub(crate) http_url_configuration: ::std::option::Option<crate::types::HttpUrlDestinationConfiguration>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcDestinationConfiguration>,

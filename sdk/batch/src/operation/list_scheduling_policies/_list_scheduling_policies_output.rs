@@ -34,8 +34,8 @@ impl ListSchedulingPoliciesOutput {
 }
 
 /// A builder for [`ListSchedulingPoliciesOutput`](crate::operation::list_scheduling_policies::ListSchedulingPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSchedulingPoliciesOutputBuilder {
     pub(crate) scheduling_policies: ::std::option::Option<::std::vec::Vec<crate::types::SchedulingPolicyListingDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

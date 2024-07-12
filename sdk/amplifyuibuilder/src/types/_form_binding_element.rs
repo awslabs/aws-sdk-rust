@@ -29,8 +29,8 @@ impl FormBindingElement {
 }
 
 /// A builder for [`FormBindingElement`](crate::types::FormBindingElement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FormBindingElementBuilder {
     pub(crate) element: ::std::option::Option<::std::string::String>,
     pub(crate) property: ::std::option::Option<::std::string::String>,

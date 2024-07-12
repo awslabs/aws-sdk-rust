@@ -27,8 +27,8 @@ impl ContentArtifactsConfiguration {
 }
 
 /// A builder for [`ContentArtifactsConfiguration`](crate::types::ContentArtifactsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentArtifactsConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsState>,
     pub(crate) mux_type: ::std::option::Option<crate::types::ContentMuxType>,

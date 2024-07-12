@@ -20,8 +20,8 @@ impl ExtendTransactionInput {
 }
 
 /// A builder for [`ExtendTransactionInput`](crate::operation::extend_transaction::ExtendTransactionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExtendTransactionInputBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
 }

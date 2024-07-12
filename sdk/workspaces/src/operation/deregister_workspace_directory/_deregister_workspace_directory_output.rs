@@ -18,8 +18,8 @@ impl DeregisterWorkspaceDirectoryOutput {
 }
 
 /// A builder for [`DeregisterWorkspaceDirectoryOutput`](crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterWorkspaceDirectoryOutputBuilder {
     _request_id: Option<String>,
 }

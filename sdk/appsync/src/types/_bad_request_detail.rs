@@ -23,8 +23,8 @@ impl BadRequestDetail {
 }
 
 /// A builder for [`BadRequestDetail`](crate::types::BadRequestDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BadRequestDetailBuilder {
     pub(crate) code_errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>,
 }

@@ -18,8 +18,8 @@ impl ModifyImageAttributeOutput {
 }
 
 /// A builder for [`ModifyImageAttributeOutput`](crate::operation::modify_image_attribute::ModifyImageAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyImageAttributeOutputBuilder {
     _request_id: Option<String>,
 }

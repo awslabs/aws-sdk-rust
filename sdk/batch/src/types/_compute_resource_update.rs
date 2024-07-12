@@ -283,8 +283,8 @@ impl ComputeResourceUpdate {
 }
 
 /// A builder for [`ComputeResourceUpdate`](crate::types::ComputeResourceUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComputeResourceUpdateBuilder {
     pub(crate) minv_cpus: ::std::option::Option<i32>,
     pub(crate) maxv_cpus: ::std::option::Option<i32>,

@@ -18,8 +18,8 @@ impl DeleteCollaborationOutput {
 }
 
 /// A builder for [`DeleteCollaborationOutput`](crate::operation::delete_collaboration::DeleteCollaborationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCollaborationOutputBuilder {
     _request_id: Option<String>,
 }

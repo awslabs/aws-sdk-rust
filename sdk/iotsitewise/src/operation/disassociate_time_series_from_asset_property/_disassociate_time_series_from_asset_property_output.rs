@@ -19,8 +19,8 @@ impl DisassociateTimeSeriesFromAssetPropertyOutput {
 }
 
 /// A builder for [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTimeSeriesFromAssetPropertyOutputBuilder {
     _request_id: Option<String>,
 }

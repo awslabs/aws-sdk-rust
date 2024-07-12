@@ -49,8 +49,8 @@ impl WarningDetail {
 }
 
 /// A builder for [`WarningDetail`](crate::types::WarningDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WarningDetailBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WarningType>,
     pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::WarningProperty>>,

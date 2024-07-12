@@ -50,8 +50,8 @@ impl DisassociatePrincipalFromPortfolioInput {
 }
 
 /// A builder for [`DisassociatePrincipalFromPortfolioInput`](crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociatePrincipalFromPortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,

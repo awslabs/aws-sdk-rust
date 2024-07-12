@@ -27,8 +27,8 @@ impl CreateFaceLivenessSessionOutput {
 }
 
 /// A builder for [`CreateFaceLivenessSessionOutput`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFaceLivenessSessionOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

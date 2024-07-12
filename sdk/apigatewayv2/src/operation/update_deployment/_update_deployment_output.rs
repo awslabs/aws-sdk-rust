@@ -56,8 +56,8 @@ impl UpdateDeploymentOutput {
 }
 
 /// A builder for [`UpdateDeploymentOutput`](crate::operation::update_deployment::UpdateDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeploymentOutputBuilder {
     pub(crate) auto_deployed: ::std::option::Option<bool>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,

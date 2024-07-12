@@ -69,8 +69,8 @@ impl InstanceMetadataOptions {
 }
 
 /// A builder for [`InstanceMetadataOptions`](crate::types::InstanceMetadataOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceMetadataOptionsBuilder {
     pub(crate) state: ::std::option::Option<crate::types::InstanceMetadataState>,
     pub(crate) http_tokens: ::std::option::Option<crate::types::HttpTokens>,

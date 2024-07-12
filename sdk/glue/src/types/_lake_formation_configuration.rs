@@ -27,8 +27,8 @@ impl LakeFormationConfiguration {
 }
 
 /// A builder for [`LakeFormationConfiguration`](crate::types::LakeFormationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LakeFormationConfigurationBuilder {
     pub(crate) use_lake_formation_credentials: ::std::option::Option<bool>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

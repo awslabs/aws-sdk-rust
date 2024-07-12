@@ -46,8 +46,8 @@ impl DataSourceConfiguration {
 }
 
 /// A builder for [`DataSourceConfiguration`](crate::types::DataSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSourceConfigurationBuilder {
     pub(crate) intended_use: ::std::option::Option<crate::types::IntendedUse>,
 }

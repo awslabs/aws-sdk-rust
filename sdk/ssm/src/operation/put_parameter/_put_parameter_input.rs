@@ -273,8 +273,8 @@ impl PutParameterInput {
 }
 
 /// A builder for [`PutParameterInput`](crate::operation::put_parameter::PutParameterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutParameterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -56,8 +56,8 @@ impl UserMetadata {
 }
 
 /// A builder for [`UserMetadata`](crate::types::UserMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UserMetadataBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,

@@ -23,8 +23,8 @@ impl Evidence {
 }
 
 /// A builder for [`Evidence`](crate::types::Evidence).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvidenceBuilder {
     pub(crate) threat_intelligence_details: ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelligenceDetail>>,
 }

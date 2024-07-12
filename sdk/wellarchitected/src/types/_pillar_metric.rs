@@ -37,8 +37,8 @@ impl PillarMetric {
 }
 
 /// A builder for [`PillarMetric`](crate::types::PillarMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PillarMetricBuilder {
     pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
     pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,

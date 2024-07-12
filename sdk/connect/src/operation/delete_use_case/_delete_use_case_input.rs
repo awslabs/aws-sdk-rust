@@ -32,8 +32,8 @@ impl DeleteUseCaseInput {
 }
 
 /// A builder for [`DeleteUseCaseInput`](crate::operation::delete_use_case::DeleteUseCaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUseCaseInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_association_id: ::std::option::Option<::std::string::String>,

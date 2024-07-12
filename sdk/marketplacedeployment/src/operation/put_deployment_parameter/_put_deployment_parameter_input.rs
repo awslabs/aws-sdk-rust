@@ -56,8 +56,8 @@ impl PutDeploymentParameterInput {
 }
 
 /// A builder for [`PutDeploymentParameterInput`](crate::operation::put_deployment_parameter::PutDeploymentParameterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDeploymentParameterInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,

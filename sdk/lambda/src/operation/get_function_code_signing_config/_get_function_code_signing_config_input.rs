@@ -40,8 +40,8 @@ impl GetFunctionCodeSigningConfigInput {
 }
 
 /// A builder for [`GetFunctionCodeSigningConfigInput`](crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFunctionCodeSigningConfigInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
 }

@@ -63,8 +63,8 @@ impl LoadBalancerTlsCertificateRenewalSummary {
 }
 
 /// A builder for [`LoadBalancerTlsCertificateRenewalSummary`](crate::types::LoadBalancerTlsCertificateRenewalSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoadBalancerTlsCertificateRenewalSummaryBuilder {
     pub(crate) renewal_status: ::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalStatus>,
     pub(crate) domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationOption>>,

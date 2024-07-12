@@ -29,8 +29,8 @@ impl NodeGroupUpdateStatus {
 }
 
 /// A builder for [`NodeGroupUpdateStatus`](crate::types::NodeGroupUpdateStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeGroupUpdateStatusBuilder {
     pub(crate) node_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_group_member_update_status: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>>,

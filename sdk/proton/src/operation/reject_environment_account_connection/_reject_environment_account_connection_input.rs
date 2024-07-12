@@ -20,8 +20,8 @@ impl RejectEnvironmentAccountConnectionInput {
 }
 
 /// A builder for [`RejectEnvironmentAccountConnectionInput`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectEnvironmentAccountConnectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

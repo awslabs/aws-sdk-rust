@@ -27,8 +27,8 @@ impl AwsOpenSearchServiceDomainLogPublishingOption {
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::types::AwsOpenSearchServiceDomainLogPublishingOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsOpenSearchServiceDomainLogPublishingOptionBuilder {
     pub(crate) cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

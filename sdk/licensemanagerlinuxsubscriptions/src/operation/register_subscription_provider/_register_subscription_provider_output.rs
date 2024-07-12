@@ -38,8 +38,8 @@ impl RegisterSubscriptionProviderOutput {
 }
 
 /// A builder for [`RegisterSubscriptionProviderOutput`](crate::operation::register_subscription_provider::RegisterSubscriptionProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterSubscriptionProviderOutputBuilder {
     pub(crate) subscription_provider_source: ::std::option::Option<crate::types::SubscriptionProviderSource>,
     pub(crate) subscription_provider_arn: ::std::option::Option<::std::string::String>,

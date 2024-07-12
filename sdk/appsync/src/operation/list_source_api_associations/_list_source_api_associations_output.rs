@@ -34,8 +34,8 @@ impl ListSourceApiAssociationsOutput {
 }
 
 /// A builder for [`ListSourceApiAssociationsOutput`](crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSourceApiAssociationsOutputBuilder {
     pub(crate) source_api_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SourceApiAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

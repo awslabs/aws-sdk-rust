@@ -33,8 +33,8 @@ impl ListProtectedQueriesOutput {
 }
 
 /// A builder for [`ListProtectedQueriesOutput`](crate::operation::list_protected_queries::ListProtectedQueriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProtectedQueriesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) protected_queries: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>>,

@@ -20,8 +20,8 @@ impl AssociateCertificateInput {
 }
 
 /// A builder for [`AssociateCertificateInput`](crate::operation::associate_certificate::AssociateCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateCertificateInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

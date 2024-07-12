@@ -18,8 +18,8 @@ impl DeleteWirelessDeviceOutput {
 }
 
 /// A builder for [`DeleteWirelessDeviceOutput`](crate::operation::delete_wireless_device::DeleteWirelessDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWirelessDeviceOutputBuilder {
     _request_id: Option<String>,
 }

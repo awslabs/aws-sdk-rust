@@ -26,8 +26,8 @@ impl UndeprecateActivityTypeInput {
 }
 
 /// A builder for [`UndeprecateActivityTypeInput`](crate::operation::undeprecate_activity_type::UndeprecateActivityTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UndeprecateActivityTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) activity_type: ::std::option::Option<crate::types::ActivityType>,

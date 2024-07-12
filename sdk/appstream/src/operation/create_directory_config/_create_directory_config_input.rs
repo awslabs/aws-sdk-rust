@@ -40,8 +40,8 @@ impl CreateDirectoryConfigInput {
 }
 
 /// A builder for [`CreateDirectoryConfigInput`](crate::operation::create_directory_config::CreateDirectoryConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDirectoryConfigInputBuilder {
     pub(crate) directory_name: ::std::option::Option<::std::string::String>,
     pub(crate) organizational_unit_distinguished_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

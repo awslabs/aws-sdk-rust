@@ -26,8 +26,8 @@ impl StartProductSubscriptionOutput {
 }
 
 /// A builder for [`StartProductSubscriptionOutput`](crate::operation::start_product_subscription::StartProductSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartProductSubscriptionOutputBuilder {
     pub(crate) product_user_summary: ::std::option::Option<crate::types::ProductUserSummary>,
     _request_id: Option<String>,

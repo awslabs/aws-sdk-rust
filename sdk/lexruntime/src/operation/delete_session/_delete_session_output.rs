@@ -44,8 +44,8 @@ impl DeleteSessionOutput {
 }
 
 /// A builder for [`DeleteSessionOutput`](crate::operation::delete_session::DeleteSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSessionOutputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias: ::std::option::Option<::std::string::String>,

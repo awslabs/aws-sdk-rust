@@ -33,8 +33,8 @@ impl MxfSettings {
 }
 
 /// A builder for [`MxfSettings`](crate::types::MxfSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MxfSettingsBuilder {
     pub(crate) afd_signaling: ::std::option::Option<crate::types::MxfAfdSignaling>,
     pub(crate) profile: ::std::option::Option<crate::types::MxfProfile>,

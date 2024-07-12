@@ -21,8 +21,8 @@ impl ScaleOutPolicyDescription {
 }
 
 /// A builder for [`ScaleOutPolicyDescription`](crate::types::ScaleOutPolicyDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScaleOutPolicyDescriptionBuilder {
     pub(crate) cpu_utilization_percentage: ::std::option::Option<i32>,
 }

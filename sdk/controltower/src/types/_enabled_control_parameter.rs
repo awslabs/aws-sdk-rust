@@ -28,8 +28,8 @@ impl EnabledControlParameter {
 }
 
 /// A builder for [`EnabledControlParameter`](crate::types::EnabledControlParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnabledControlParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::aws_smithy_types::Document>,

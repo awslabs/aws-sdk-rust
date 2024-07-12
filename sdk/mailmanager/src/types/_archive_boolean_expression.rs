@@ -27,8 +27,8 @@ impl ArchiveBooleanExpression {
 }
 
 /// A builder for [`ArchiveBooleanExpression`](crate::types::ArchiveBooleanExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArchiveBooleanExpressionBuilder {
     pub(crate) evaluate: ::std::option::Option<crate::types::ArchiveBooleanToEvaluate>,
     pub(crate) operator: ::std::option::Option<crate::types::ArchiveBooleanOperator>,

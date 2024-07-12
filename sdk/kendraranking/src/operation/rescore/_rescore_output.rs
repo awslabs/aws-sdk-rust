@@ -34,8 +34,8 @@ impl RescoreOutput {
 }
 
 /// A builder for [`RescoreOutput`](crate::operation::rescore::RescoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RescoreOutputBuilder {
     pub(crate) rescore_id: ::std::option::Option<::std::string::String>,
     pub(crate) result_items: ::std::option::Option<::std::vec::Vec<crate::types::RescoreResultItem>>,

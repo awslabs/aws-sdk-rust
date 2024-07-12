@@ -38,8 +38,8 @@ impl ResiliencyScore {
 }
 
 /// A builder for [`ResiliencyScore`](crate::types::ResiliencyScore).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResiliencyScoreBuilder {
     pub(crate) score: ::std::option::Option<f64>,
     pub(crate) disruption_score: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, f64>>,

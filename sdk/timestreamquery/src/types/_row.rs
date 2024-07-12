@@ -22,8 +22,8 @@ impl Row {
 }
 
 /// A builder for [`Row`](crate::types::Row).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RowBuilder {
     pub(crate) data: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
 }

@@ -28,8 +28,8 @@ impl ActionGroupInvocationOutput {
 }
 
 /// A builder for [`ActionGroupInvocationOutput`](crate::types::ActionGroupInvocationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ActionGroupInvocationOutputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

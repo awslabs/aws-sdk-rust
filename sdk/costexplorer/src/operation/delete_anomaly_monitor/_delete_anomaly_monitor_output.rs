@@ -18,8 +18,8 @@ impl DeleteAnomalyMonitorOutput {
 }
 
 /// A builder for [`DeleteAnomalyMonitorOutput`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAnomalyMonitorOutputBuilder {
     _request_id: Option<String>,
 }

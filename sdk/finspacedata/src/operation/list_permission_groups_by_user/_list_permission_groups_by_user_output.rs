@@ -34,8 +34,8 @@ impl ListPermissionGroupsByUserOutput {
 }
 
 /// A builder for [`ListPermissionGroupsByUserOutput`](crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPermissionGroupsByUserOutputBuilder {
     pub(crate) permission_groups: ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroupByUser>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

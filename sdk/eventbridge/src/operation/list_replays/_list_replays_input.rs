@@ -44,8 +44,8 @@ impl ListReplaysInput {
 }
 
 /// A builder for [`ListReplaysInput`](crate::operation::list_replays::ListReplaysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReplaysInputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ReplayState>,

@@ -46,8 +46,8 @@ impl CreateAccessGrantsLocationInput {
 }
 
 /// A builder for [`CreateAccessGrantsLocationInput`](crate::operation::create_access_grants_location::CreateAccessGrantsLocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessGrantsLocationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) location_scope: ::std::option::Option<::std::string::String>,

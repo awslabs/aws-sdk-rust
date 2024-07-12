@@ -46,8 +46,8 @@ impl DescribeConnectorProfilesInput {
 }
 
 /// A builder for [`DescribeConnectorProfilesInput`](crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectorProfilesInputBuilder {
     pub(crate) connector_profile_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,

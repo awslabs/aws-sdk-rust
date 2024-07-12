@@ -58,8 +58,8 @@ impl DescribeSnapshotScheduleOutput {
 }
 
 /// A builder for [`DescribeSnapshotScheduleOutput`](crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSnapshotScheduleOutputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_at: ::std::option::Option<i32>,

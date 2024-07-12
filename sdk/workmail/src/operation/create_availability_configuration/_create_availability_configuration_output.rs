@@ -18,8 +18,8 @@ impl CreateAvailabilityConfigurationOutput {
 }
 
 /// A builder for [`CreateAvailabilityConfigurationOutput`](crate::operation::create_availability_configuration::CreateAvailabilityConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAvailabilityConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

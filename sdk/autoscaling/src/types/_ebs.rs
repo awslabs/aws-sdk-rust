@@ -109,8 +109,8 @@ impl Ebs {
 }
 
 /// A builder for [`Ebs`](crate::types::Ebs).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_size: ::std::option::Option<i32>,

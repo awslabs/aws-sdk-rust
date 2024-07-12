@@ -100,8 +100,8 @@ impl DescribeTransitGatewaysInput {
 }
 
 /// A builder for [`DescribeTransitGatewaysInput`](crate::operation::describe_transit_gateways::DescribeTransitGatewaysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransitGatewaysInputBuilder {
     pub(crate) transit_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

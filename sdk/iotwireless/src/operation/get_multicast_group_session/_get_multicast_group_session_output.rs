@@ -26,8 +26,8 @@ impl GetMulticastGroupSessionOutput {
 }
 
 /// A builder for [`GetMulticastGroupSessionOutput`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMulticastGroupSessionOutputBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastSession>,
     _request_id: Option<String>,

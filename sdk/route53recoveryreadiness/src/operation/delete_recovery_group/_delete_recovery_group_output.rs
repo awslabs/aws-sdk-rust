@@ -18,8 +18,8 @@ impl DeleteRecoveryGroupOutput {
 }
 
 /// A builder for [`DeleteRecoveryGroupOutput`](crate::operation::delete_recovery_group::DeleteRecoveryGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecoveryGroupOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,8 +28,8 @@ impl AssociateProactiveEngagementDetailsInput {
 }
 
 /// A builder for [`AssociateProactiveEngagementDetailsInput`](crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateProactiveEngagementDetailsInputBuilder {
     pub(crate) emergency_contact_list: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>,
 }

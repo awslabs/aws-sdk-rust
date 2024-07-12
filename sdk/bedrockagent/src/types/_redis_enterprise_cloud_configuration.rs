@@ -42,8 +42,8 @@ impl RedisEnterpriseCloudConfiguration {
 }
 
 /// A builder for [`RedisEnterpriseCloudConfiguration`](crate::types::RedisEnterpriseCloudConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedisEnterpriseCloudConfigurationBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) vector_index_name: ::std::option::Option<::std::string::String>,

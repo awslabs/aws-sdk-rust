@@ -26,8 +26,8 @@ impl StartMetadataModelAssessmentInput {
 }
 
 /// A builder for [`StartMetadataModelAssessmentInput`](crate::operation::start_metadata_model_assessment::StartMetadataModelAssessmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMetadataModelAssessmentInputBuilder {
     pub(crate) migration_project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) selection_rules: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl UpdateChannelClassInput {
 }
 
 /// A builder for [`UpdateChannelClassInput`](crate::operation::update_channel_class::UpdateChannelClassInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateChannelClassInputBuilder {
     pub(crate) channel_class: ::std::option::Option<crate::types::ChannelClass>,
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,

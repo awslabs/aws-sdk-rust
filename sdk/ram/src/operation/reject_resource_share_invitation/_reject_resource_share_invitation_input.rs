@@ -30,8 +30,8 @@ impl RejectResourceShareInvitationInput {
 }
 
 /// A builder for [`RejectResourceShareInvitationInput`](crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectResourceShareInvitationInputBuilder {
     pub(crate) resource_share_invitation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl TaskTemplateConstraints {
 }
 
 /// A builder for [`TaskTemplateConstraints`](crate::types::TaskTemplateConstraints).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskTemplateConstraintsBuilder {
     pub(crate) required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredFieldInfo>>,
     pub(crate) read_only_fields: ::std::option::Option<::std::vec::Vec<crate::types::ReadOnlyFieldInfo>>,

@@ -18,8 +18,8 @@ impl DeregisterDbProxyTargetsOutput {
 }
 
 /// A builder for [`DeregisterDbProxyTargetsOutput`](crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterDbProxyTargetsOutputBuilder {
     _request_id: Option<String>,
 }

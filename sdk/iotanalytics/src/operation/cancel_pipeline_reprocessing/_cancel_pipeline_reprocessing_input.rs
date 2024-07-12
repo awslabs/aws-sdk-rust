@@ -26,8 +26,8 @@ impl CancelPipelineReprocessingInput {
 }
 
 /// A builder for [`CancelPipelineReprocessingInput`](crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelPipelineReprocessingInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) reprocessing_id: ::std::option::Option<::std::string::String>,

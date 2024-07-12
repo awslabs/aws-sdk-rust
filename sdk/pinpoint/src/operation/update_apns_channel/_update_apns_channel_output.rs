@@ -26,8 +26,8 @@ impl UpdateApnsChannelOutput {
 }
 
 /// A builder for [`UpdateApnsChannelOutput`](crate::operation::update_apns_channel::UpdateApnsChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApnsChannelOutputBuilder {
     pub(crate) apns_channel_response: ::std::option::Option<crate::types::ApnsChannelResponse>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl UpdateTypedLinkFacetOutput {
 }
 
 /// A builder for [`UpdateTypedLinkFacetOutput`](crate::operation::update_typed_link_facet::UpdateTypedLinkFacetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTypedLinkFacetOutputBuilder {
     _request_id: Option<String>,
 }

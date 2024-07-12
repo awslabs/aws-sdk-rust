@@ -33,8 +33,8 @@ impl AdmChannelRequest {
 }
 
 /// A builder for [`AdmChannelRequest`](crate::types::AdmChannelRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdmChannelRequestBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,

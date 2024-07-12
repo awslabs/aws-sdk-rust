@@ -20,8 +20,8 @@ impl DisassociateUserAccessLoggingSettingsInput {
 }
 
 /// A builder for [`DisassociateUserAccessLoggingSettingsInput`](crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateUserAccessLoggingSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }

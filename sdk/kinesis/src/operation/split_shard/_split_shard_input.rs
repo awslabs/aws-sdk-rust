@@ -39,8 +39,8 @@ impl SplitShardInput {
 }
 
 /// A builder for [`SplitShardInput`](crate::operation::split_shard::SplitShardInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SplitShardInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) shard_to_split: ::std::option::Option<::std::string::String>,

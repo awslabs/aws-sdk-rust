@@ -27,8 +27,8 @@ impl LocalPortDetails {
 }
 
 /// A builder for [`LocalPortDetails`](crate::types::LocalPortDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LocalPortDetailsBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) port_name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DiscoverInstancesRevisionOutput {
 }
 
 /// A builder for [`DiscoverInstancesRevisionOutput`](crate::operation::discover_instances_revision::DiscoverInstancesRevisionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiscoverInstancesRevisionOutputBuilder {
     pub(crate) instances_revision: ::std::option::Option<i64>,
     _request_id: Option<String>,

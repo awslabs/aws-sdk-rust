@@ -20,8 +20,8 @@ impl DescribeBuildInput {
 }
 
 /// A builder for [`DescribeBuildInput`](crate::operation::describe_build::DescribeBuildInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBuildInputBuilder {
     pub(crate) build_id: ::std::option::Option<::std::string::String>,
 }

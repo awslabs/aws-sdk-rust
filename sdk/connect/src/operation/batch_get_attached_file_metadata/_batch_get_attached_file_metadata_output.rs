@@ -36,8 +36,8 @@ impl BatchGetAttachedFileMetadataOutput {
 }
 
 /// A builder for [`BatchGetAttachedFileMetadataOutput`](crate::operation::batch_get_attached_file_metadata::BatchGetAttachedFileMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAttachedFileMetadataOutputBuilder {
     pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::AttachedFile>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AttachedFileError>>,

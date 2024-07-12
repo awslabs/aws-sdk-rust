@@ -27,8 +27,8 @@ impl CancelArchivalOutput {
 }
 
 /// A builder for [`CancelArchivalOutput`](crate::operation::cancel_archival::CancelArchivalOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelArchivalOutputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -31,8 +31,8 @@ impl IpAddresses {
 }
 
 /// A builder for [`IpAddresses`](crate::types::IpAddresses).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpAddressesBuilder {
     pub(crate) ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

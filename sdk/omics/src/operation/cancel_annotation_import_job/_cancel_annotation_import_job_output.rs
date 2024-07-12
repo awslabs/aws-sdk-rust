@@ -18,8 +18,8 @@ impl CancelAnnotationImportJobOutput {
 }
 
 /// A builder for [`CancelAnnotationImportJobOutput`](crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelAnnotationImportJobOutputBuilder {
     _request_id: Option<String>,
 }

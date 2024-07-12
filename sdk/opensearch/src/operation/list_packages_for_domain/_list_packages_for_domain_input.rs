@@ -33,8 +33,8 @@ impl ListPackagesForDomainInput {
 }
 
 /// A builder for [`ListPackagesForDomainInput`](crate::operation::list_packages_for_domain::ListPackagesForDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPackagesForDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

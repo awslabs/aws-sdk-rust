@@ -42,8 +42,8 @@ impl UpdateThingGroupsForThingInput {
 }
 
 /// A builder for [`UpdateThingGroupsForThingInput`](crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateThingGroupsForThingInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_groups_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

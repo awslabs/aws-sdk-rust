@@ -27,8 +27,8 @@ impl ContainerProductSort {
 }
 
 /// A builder for [`ContainerProductSort`](crate::types::ContainerProductSort).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerProductSortBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ContainerProductSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

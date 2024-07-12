@@ -26,8 +26,8 @@ impl CreateServiceLevelObjectiveOutput {
 }
 
 /// A builder for [`CreateServiceLevelObjectiveOutput`](crate::operation::create_service_level_objective::CreateServiceLevelObjectiveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServiceLevelObjectiveOutputBuilder {
     pub(crate) slo: ::std::option::Option<crate::types::ServiceLevelObjective>,
     _request_id: Option<String>,

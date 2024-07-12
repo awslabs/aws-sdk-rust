@@ -40,8 +40,8 @@ impl ReportedRuntimeContextState {
 }
 
 /// A builder for [`ReportedRuntimeContextState`](crate::types::ReportedRuntimeContextState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportedRuntimeContextStateBuilder {
     pub(crate) desired_state: ::std::option::Option<crate::types::DesiredState>,
     pub(crate) runtime_context_name: ::std::option::Option<::std::string::String>,

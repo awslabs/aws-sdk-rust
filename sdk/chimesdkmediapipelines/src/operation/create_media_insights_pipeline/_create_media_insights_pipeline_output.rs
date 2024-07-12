@@ -26,8 +26,8 @@ impl CreateMediaInsightsPipelineOutput {
 }
 
 /// A builder for [`CreateMediaInsightsPipelineOutput`](crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMediaInsightsPipelineOutputBuilder {
     pub(crate) media_insights_pipeline: ::std::option::Option<crate::types::MediaInsightsPipeline>,
     _request_id: Option<String>,

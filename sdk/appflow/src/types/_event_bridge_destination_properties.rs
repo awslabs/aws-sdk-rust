@@ -28,8 +28,8 @@ impl EventBridgeDestinationProperties {
 }
 
 /// A builder for [`EventBridgeDestinationProperties`](crate::types::EventBridgeDestinationProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventBridgeDestinationPropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
     pub(crate) error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,

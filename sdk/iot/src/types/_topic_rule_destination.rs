@@ -109,8 +109,8 @@ impl TopicRuleDestination {
 }
 
 /// A builder for [`TopicRuleDestination`](crate::types::TopicRuleDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TopicRuleDestinationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TopicRuleDestinationStatus>,

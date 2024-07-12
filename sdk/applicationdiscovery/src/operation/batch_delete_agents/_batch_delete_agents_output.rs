@@ -28,8 +28,8 @@ impl BatchDeleteAgentsOutput {
 }
 
 /// A builder for [`BatchDeleteAgentsOutput`](crate::operation::batch_delete_agents::BatchDeleteAgentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteAgentsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteAgentError>>,
     _request_id: Option<String>,

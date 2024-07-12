@@ -26,8 +26,8 @@ impl GetCapacityAssignmentConfigurationOutput {
 }
 
 /// A builder for [`GetCapacityAssignmentConfigurationOutput`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCapacityAssignmentConfigurationOutputBuilder {
     pub(crate) capacity_assignment_configuration: ::std::option::Option<crate::types::CapacityAssignmentConfiguration>,
     _request_id: Option<String>,

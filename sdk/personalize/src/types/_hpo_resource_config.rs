@@ -27,8 +27,8 @@ impl HpoResourceConfig {
 }
 
 /// A builder for [`HpoResourceConfig`](crate::types::HpoResourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HpoResourceConfigBuilder {
     pub(crate) max_number_of_training_jobs: ::std::option::Option<::std::string::String>,
     pub(crate) max_parallel_training_jobs: ::std::option::Option<::std::string::String>,

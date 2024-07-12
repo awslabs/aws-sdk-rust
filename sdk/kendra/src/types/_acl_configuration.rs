@@ -22,8 +22,8 @@ impl AclConfiguration {
 }
 
 /// A builder for [`AclConfiguration`](crate::types::AclConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AclConfigurationBuilder {
     pub(crate) allowed_groups_column_name: ::std::option::Option<::std::string::String>,
 }

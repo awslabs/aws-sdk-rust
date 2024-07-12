@@ -35,8 +35,8 @@ impl PosixUser {
 }
 
 /// A builder for [`PosixUser`](crate::types::PosixUser).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PosixUserBuilder {
     pub(crate) uid: ::std::option::Option<i64>,
     pub(crate) gid: ::std::option::Option<i64>,

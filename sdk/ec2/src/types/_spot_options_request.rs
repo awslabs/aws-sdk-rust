@@ -143,8 +143,8 @@ impl SpotOptionsRequest {
 }
 
 /// A builder for [`SpotOptionsRequest`](crate::types::SpotOptionsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpotOptionsRequestBuilder {
     pub(crate) allocation_strategy: ::std::option::Option<crate::types::SpotAllocationStrategy>,
     pub(crate) maintenance_strategies: ::std::option::Option<crate::types::FleetSpotMaintenanceStrategiesRequest>,

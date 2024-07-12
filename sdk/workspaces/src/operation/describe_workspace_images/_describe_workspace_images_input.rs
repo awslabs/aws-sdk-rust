@@ -40,8 +40,8 @@ impl DescribeWorkspaceImagesInput {
 }
 
 /// A builder for [`DescribeWorkspaceImagesInput`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceImagesInputBuilder {
     pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) image_type: ::std::option::Option<crate::types::ImageType>,

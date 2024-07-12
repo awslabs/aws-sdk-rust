@@ -35,8 +35,8 @@ impl FreeTrialPricingTerm {
 }
 
 /// A builder for [`FreeTrialPricingTerm`](crate::types::FreeTrialPricingTerm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FreeTrialPricingTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<::std::string::String>,

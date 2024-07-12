@@ -28,8 +28,8 @@ impl UpdateCostAllocationTagsStatusOutput {
 }
 
 /// A builder for [`UpdateCostAllocationTagsStatusOutput`](crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCostAllocationTagsStatusOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>,
     _request_id: Option<String>,

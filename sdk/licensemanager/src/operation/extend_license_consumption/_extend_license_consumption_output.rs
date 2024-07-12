@@ -32,8 +32,8 @@ impl ExtendLicenseConsumptionOutput {
 }
 
 /// A builder for [`ExtendLicenseConsumptionOutput`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExtendLicenseConsumptionOutputBuilder {
     pub(crate) license_consumption_token: ::std::option::Option<::std::string::String>,
     pub(crate) expiration: ::std::option::Option<::std::string::String>,

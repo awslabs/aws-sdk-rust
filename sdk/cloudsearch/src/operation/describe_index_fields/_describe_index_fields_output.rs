@@ -28,8 +28,8 @@ impl DescribeIndexFieldsOutput {
 }
 
 /// A builder for [`DescribeIndexFieldsOutput`](crate::operation::describe_index_fields::DescribeIndexFieldsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIndexFieldsOutputBuilder {
     pub(crate) index_fields: ::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>>,
     _request_id: Option<String>,

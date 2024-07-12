@@ -26,8 +26,8 @@ impl StartMlLabelingSetGenerationTaskRunOutput {
 }
 
 /// A builder for [`StartMlLabelingSetGenerationTaskRunOutput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMlLabelingSetGenerationTaskRunOutputBuilder {
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

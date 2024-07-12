@@ -20,8 +20,8 @@ impl DeleteKeyspaceInput {
 }
 
 /// A builder for [`DeleteKeyspaceInput`](crate::operation::delete_keyspace::DeleteKeyspaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKeyspaceInputBuilder {
     pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
 }

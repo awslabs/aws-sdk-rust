@@ -21,8 +21,8 @@ impl GetRepositoryInput {
 }
 
 /// A builder for [`GetRepositoryInput`](crate::operation::get_repository::GetRepositoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositoryInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
 }

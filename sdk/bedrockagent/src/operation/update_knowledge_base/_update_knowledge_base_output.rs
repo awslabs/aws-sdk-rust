@@ -26,8 +26,8 @@ impl UpdateKnowledgeBaseOutput {
 }
 
 /// A builder for [`UpdateKnowledgeBaseOutput`](crate::operation::update_knowledge_base::UpdateKnowledgeBaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKnowledgeBaseOutputBuilder {
     pub(crate) knowledge_base: ::std::option::Option<crate::types::KnowledgeBase>,
     _request_id: Option<String>,

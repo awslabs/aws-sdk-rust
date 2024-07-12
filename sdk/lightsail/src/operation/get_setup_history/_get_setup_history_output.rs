@@ -38,8 +38,8 @@ impl GetSetupHistoryOutput {
 }
 
 /// A builder for [`GetSetupHistoryOutput`](crate::operation::get_setup_history::GetSetupHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSetupHistoryOutputBuilder {
     pub(crate) setup_history: ::std::option::Option<::std::vec::Vec<crate::types::SetupHistory>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

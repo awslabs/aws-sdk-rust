@@ -48,8 +48,8 @@ impl RegistrationFieldValueInformation {
 }
 
 /// A builder for [`RegistrationFieldValueInformation`](crate::types::RegistrationFieldValueInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegistrationFieldValueInformationBuilder {
     pub(crate) field_path: ::std::option::Option<::std::string::String>,
     pub(crate) select_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

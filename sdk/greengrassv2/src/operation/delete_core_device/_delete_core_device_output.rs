@@ -18,8 +18,8 @@ impl DeleteCoreDeviceOutput {
 }
 
 /// A builder for [`DeleteCoreDeviceOutput`](crate::operation::delete_core_device::DeleteCoreDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCoreDeviceOutputBuilder {
     _request_id: Option<String>,
 }

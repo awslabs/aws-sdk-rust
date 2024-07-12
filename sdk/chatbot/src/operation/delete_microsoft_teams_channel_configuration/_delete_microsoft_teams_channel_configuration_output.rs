@@ -19,8 +19,8 @@ impl DeleteMicrosoftTeamsChannelConfigurationOutput {
 }
 
 /// A builder for [`DeleteMicrosoftTeamsChannelConfigurationOutput`](crate::operation::delete_microsoft_teams_channel_configuration::DeleteMicrosoftTeamsChannelConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMicrosoftTeamsChannelConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

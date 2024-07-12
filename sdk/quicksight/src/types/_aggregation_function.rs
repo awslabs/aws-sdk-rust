@@ -72,8 +72,8 @@ impl AggregationFunction {
 }
 
 /// A builder for [`AggregationFunction`](crate::types::AggregationFunction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregationFunctionBuilder {
     pub(crate) numerical_aggregation_function: ::std::option::Option<crate::types::NumericalAggregationFunction>,
     pub(crate) categorical_aggregation_function: ::std::option::Option<crate::types::CategoricalAggregationFunction>,

@@ -21,8 +21,8 @@ impl GetWorkloadInput {
 }
 
 /// A builder for [`GetWorkloadInput`](crate::operation::get_workload::GetWorkloadInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorkloadInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl DeleteIpAccessSettingsOutput {
 }
 
 /// A builder for [`DeleteIpAccessSettingsOutput`](crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIpAccessSettingsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -50,8 +50,8 @@ impl GetResourceEventConfigurationOutput {
 }
 
 /// A builder for [`GetResourceEventConfigurationOutput`](crate::operation::get_resource_event_configuration::GetResourceEventConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceEventConfigurationOutputBuilder {
     pub(crate) device_registration_state: ::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration>,
     pub(crate) proximity: ::std::option::Option<crate::types::ProximityEventConfiguration>,

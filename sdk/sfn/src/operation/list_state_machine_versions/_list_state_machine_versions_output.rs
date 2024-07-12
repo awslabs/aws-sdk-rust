@@ -33,8 +33,8 @@ impl ListStateMachineVersionsOutput {
 }
 
 /// A builder for [`ListStateMachineVersionsOutput`](crate::operation::list_state_machine_versions::ListStateMachineVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStateMachineVersionsOutputBuilder {
     pub(crate) state_machine_versions: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineVersionListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

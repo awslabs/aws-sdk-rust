@@ -91,8 +91,8 @@ impl CreateRouteInput {
 }
 
 /// A builder for [`CreateRouteInput`](crate::operation::create_route::CreateRouteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRouteInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_required: ::std::option::Option<bool>,

@@ -80,8 +80,8 @@ impl GetLegalHoldOutput {
 }
 
 /// A builder for [`GetLegalHoldOutput`](crate::operation::get_legal_hold::GetLegalHoldOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLegalHoldOutputBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::LegalHoldStatus>,

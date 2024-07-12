@@ -33,8 +33,8 @@ impl DetectedField {
 }
 
 /// A builder for [`DetectedField`](crate::types::DetectedField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectedFieldBuilder {
     pub(crate) value: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) confidence: ::std::option::Option<crate::types::Confidence>,

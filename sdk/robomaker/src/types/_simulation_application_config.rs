@@ -92,8 +92,8 @@ impl SimulationApplicationConfig {
 }
 
 /// A builder for [`SimulationApplicationConfig`](crate::types::SimulationApplicationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimulationApplicationConfigBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<::std::string::String>,

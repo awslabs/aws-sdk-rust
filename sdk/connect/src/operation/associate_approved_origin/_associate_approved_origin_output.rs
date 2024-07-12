@@ -18,8 +18,8 @@ impl AssociateApprovedOriginOutput {
 }
 
 /// A builder for [`AssociateApprovedOriginOutput`](crate::operation::associate_approved_origin::AssociateApprovedOriginOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateApprovedOriginOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl CreatePushTemplateOutput {
 }
 
 /// A builder for [`CreatePushTemplateOutput`](crate::operation::create_push_template::CreatePushTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePushTemplateOutputBuilder {
     pub(crate) create_template_message_body: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
     _request_id: Option<String>,

@@ -103,8 +103,8 @@ impl UpdateServiceSettingInput {
 }
 
 /// A builder for [`UpdateServiceSettingInput`](crate::operation::update_service_setting::UpdateServiceSettingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceSettingInputBuilder {
     pub(crate) setting_id: ::std::option::Option<::std::string::String>,
     pub(crate) setting_value: ::std::option::Option<::std::string::String>,

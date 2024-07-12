@@ -21,8 +21,8 @@ impl CatalogConfigurationUpdate {
 }
 
 /// A builder for [`CatalogConfigurationUpdate`](crate::types::CatalogConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CatalogConfigurationUpdateBuilder {
     pub(crate) glue_data_catalog_configuration_update: ::std::option::Option<crate::types::GlueDataCatalogConfigurationUpdate>,
 }

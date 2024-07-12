@@ -43,8 +43,8 @@ impl S3BucketConfiguration {
 }
 
 /// A builder for [`S3BucketConfiguration`](crate::types::S3BucketConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3BucketConfigurationBuilder {
     pub(crate) bucket_policy: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_acl_grants: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketAclGrantConfiguration>>,

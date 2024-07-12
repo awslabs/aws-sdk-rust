@@ -27,8 +27,8 @@ impl ListQueriesOutput {
 }
 
 /// A builder for [`ListQueriesOutput`](crate::operation::list_queries::ListQueriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListQueriesOutputBuilder {
     pub(crate) queries: ::std::option::Option<::std::vec::Vec<crate::types::QuerySummary>>,
     _request_id: Option<String>,

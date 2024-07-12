@@ -18,8 +18,8 @@ impl DeleteHumanLoopOutput {
 }
 
 /// A builder for [`DeleteHumanLoopOutput`](crate::operation::delete_human_loop::DeleteHumanLoopOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHumanLoopOutputBuilder {
     _request_id: Option<String>,
 }

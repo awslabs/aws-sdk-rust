@@ -51,8 +51,8 @@ impl AwsApiGatewayV2RouteSettings {
 }
 
 /// A builder for [`AwsApiGatewayV2RouteSettings`](crate::types::AwsApiGatewayV2RouteSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsApiGatewayV2RouteSettingsBuilder {
     pub(crate) detailed_metrics_enabled: ::std::option::Option<bool>,
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,

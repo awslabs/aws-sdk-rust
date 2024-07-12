@@ -61,8 +61,8 @@ impl AssistantAssociationData {
 }
 
 /// A builder for [`AssistantAssociationData`](crate::types::AssistantAssociationData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssistantAssociationDataBuilder {
     pub(crate) assistant_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) assistant_association_arn: ::std::option::Option<::std::string::String>,

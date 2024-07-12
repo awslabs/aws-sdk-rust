@@ -84,8 +84,8 @@ impl GetScalingPlanResourceForecastDataInput {
 }
 
 /// A builder for [`GetScalingPlanResourceForecastDataInput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetScalingPlanResourceForecastDataInputBuilder {
     pub(crate) scaling_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_plan_version: ::std::option::Option<i64>,

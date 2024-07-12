@@ -27,8 +27,8 @@ impl AwsElasticsearchDomainLogPublishingOptionsLogConfig {
 }
 
 /// A builder for [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsElasticsearchDomainLogPublishingOptionsLogConfigBuilder {
     pub(crate) cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

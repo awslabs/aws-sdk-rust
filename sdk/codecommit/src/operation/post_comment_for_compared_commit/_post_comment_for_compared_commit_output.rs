@@ -62,8 +62,8 @@ impl PostCommentForComparedCommitOutput {
 }
 
 /// A builder for [`PostCommentForComparedCommitOutput`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostCommentForComparedCommitOutputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) before_commit_id: ::std::option::Option<::std::string::String>,

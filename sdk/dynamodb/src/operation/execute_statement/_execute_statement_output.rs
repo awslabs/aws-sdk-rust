@@ -46,8 +46,8 @@ impl ExecuteStatementOutput {
 }
 
 /// A builder for [`ExecuteStatementOutput`](crate::operation::execute_statement::ExecuteStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteStatementOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

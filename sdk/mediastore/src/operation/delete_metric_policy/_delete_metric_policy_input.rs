@@ -20,8 +20,8 @@ impl DeleteMetricPolicyInput {
 }
 
 /// A builder for [`DeleteMetricPolicyInput`](crate::operation::delete_metric_policy::DeleteMetricPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMetricPolicyInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }

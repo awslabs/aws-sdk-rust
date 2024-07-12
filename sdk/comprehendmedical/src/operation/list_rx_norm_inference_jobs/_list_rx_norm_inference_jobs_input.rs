@@ -32,8 +32,8 @@ impl ListRxNormInferenceJobsInput {
 }
 
 /// A builder for [`ListRxNormInferenceJobsInput`](crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRxNormInferenceJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

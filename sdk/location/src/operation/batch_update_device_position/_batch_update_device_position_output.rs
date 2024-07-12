@@ -27,8 +27,8 @@ impl BatchUpdateDevicePositionOutput {
 }
 
 /// A builder for [`BatchUpdateDevicePositionOutput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateDevicePositionOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
     _request_id: Option<String>,

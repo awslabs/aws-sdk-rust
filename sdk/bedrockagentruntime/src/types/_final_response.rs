@@ -28,8 +28,8 @@ impl FinalResponse {
 }
 
 /// A builder for [`FinalResponse`](crate::types::FinalResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FinalResponseBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

@@ -29,8 +29,8 @@ impl Time {
 }
 
 /// A builder for [`Time`](crate::types::Time).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeBuilder {
     pub(crate) time_of_day: ::std::option::Option<::std::string::String>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,

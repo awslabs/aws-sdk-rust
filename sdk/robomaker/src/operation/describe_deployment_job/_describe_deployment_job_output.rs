@@ -87,8 +87,8 @@ impl DescribeDeploymentJobOutput {
 }
 
 /// A builder for [`DescribeDeploymentJobOutput`](crate::operation::describe_deployment_job::DescribeDeploymentJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeploymentJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) fleet: ::std::option::Option<::std::string::String>,

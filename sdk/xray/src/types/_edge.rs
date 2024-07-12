@@ -69,8 +69,8 @@ impl Edge {
 }
 
 /// A builder for [`Edge`](crate::types::Edge).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EdgeBuilder {
     pub(crate) reference_id: ::std::option::Option<i32>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

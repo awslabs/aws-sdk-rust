@@ -26,8 +26,8 @@ impl UpdateNetworkSettingsOutput {
 }
 
 /// A builder for [`UpdateNetworkSettingsOutput`](crate::operation::update_network_settings::UpdateNetworkSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNetworkSettingsOutputBuilder {
     pub(crate) network_settings: ::std::option::Option<crate::types::NetworkSettings>,
     _request_id: Option<String>,

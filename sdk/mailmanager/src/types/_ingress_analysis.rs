@@ -29,8 +29,8 @@ impl IngressAnalysis {
 }
 
 /// A builder for [`IngressAnalysis`](crate::types::IngressAnalysis).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngressAnalysisBuilder {
     pub(crate) analyzer: ::std::option::Option<::std::string::String>,
     pub(crate) result_field: ::std::option::Option<::std::string::String>,

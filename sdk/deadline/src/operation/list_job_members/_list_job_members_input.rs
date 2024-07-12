@@ -44,8 +44,8 @@ impl ListJobMembersInput {
 }
 
 /// A builder for [`ListJobMembersInput`](crate::operation::list_job_members::ListJobMembersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJobMembersInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

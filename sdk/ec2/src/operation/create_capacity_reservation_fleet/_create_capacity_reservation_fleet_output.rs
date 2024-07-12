@@ -90,8 +90,8 @@ impl CreateCapacityReservationFleetOutput {
 }
 
 /// A builder for [`CreateCapacityReservationFleetOutput`](crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCapacityReservationFleetOutputBuilder {
     pub(crate) capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CapacityReservationFleetState>,

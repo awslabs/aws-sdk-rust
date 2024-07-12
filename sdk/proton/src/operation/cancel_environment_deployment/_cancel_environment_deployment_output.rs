@@ -26,8 +26,8 @@ impl CancelEnvironmentDeploymentOutput {
 }
 
 /// A builder for [`CancelEnvironmentDeploymentOutput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelEnvironmentDeploymentOutputBuilder {
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     _request_id: Option<String>,

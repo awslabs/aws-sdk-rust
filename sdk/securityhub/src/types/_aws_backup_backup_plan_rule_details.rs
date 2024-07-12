@@ -73,8 +73,8 @@ impl AwsBackupBackupPlanRuleDetails {
 }
 
 /// A builder for [`AwsBackupBackupPlanRuleDetails`](crate::types::AwsBackupBackupPlanRuleDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsBackupBackupPlanRuleDetailsBuilder {
     pub(crate) target_backup_vault: ::std::option::Option<::std::string::String>,
     pub(crate) start_window_minutes: ::std::option::Option<i64>,

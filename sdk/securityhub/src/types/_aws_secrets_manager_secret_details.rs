@@ -63,8 +63,8 @@ impl AwsSecretsManagerSecretDetails {
 }
 
 /// A builder for [`AwsSecretsManagerSecretDetails`](crate::types::AwsSecretsManagerSecretDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsSecretsManagerSecretDetailsBuilder {
     pub(crate) rotation_rules: ::std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>,
     pub(crate) rotation_occurred_within_frequency: ::std::option::Option<bool>,

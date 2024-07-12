@@ -51,8 +51,8 @@ impl TransitGatewayPolicyRule {
 }
 
 /// A builder for [`TransitGatewayPolicyRule`](crate::types::TransitGatewayPolicyRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayPolicyRuleBuilder {
     pub(crate) source_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) source_port_range: ::std::option::Option<::std::string::String>,

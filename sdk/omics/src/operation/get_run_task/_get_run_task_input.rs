@@ -26,8 +26,8 @@ impl GetRunTaskInput {
 }
 
 /// A builder for [`GetRunTaskInput`](crate::operation::get_run_task::GetRunTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRunTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,

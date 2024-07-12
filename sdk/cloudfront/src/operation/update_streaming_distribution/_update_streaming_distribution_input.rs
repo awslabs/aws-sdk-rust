@@ -33,8 +33,8 @@ impl UpdateStreamingDistributionInput {
 }
 
 /// A builder for [`UpdateStreamingDistributionInput`](crate::operation::update_streaming_distribution::UpdateStreamingDistributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStreamingDistributionInputBuilder {
     pub(crate) streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

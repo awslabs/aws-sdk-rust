@@ -26,8 +26,8 @@ impl CreateIpamScopeOutput {
 }
 
 /// A builder for [`CreateIpamScopeOutput`](crate::operation::create_ipam_scope::CreateIpamScopeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIpamScopeOutputBuilder {
     pub(crate) ipam_scope: ::std::option::Option<crate::types::IpamScope>,
     _request_id: Option<String>,

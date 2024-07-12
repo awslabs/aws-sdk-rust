@@ -48,8 +48,8 @@ impl GetCurrentMetricDataOutput {
 }
 
 /// A builder for [`GetCurrentMetricDataOutput`](crate::operation::get_current_metric_data::GetCurrentMetricDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCurrentMetricDataOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) metric_results: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>>,

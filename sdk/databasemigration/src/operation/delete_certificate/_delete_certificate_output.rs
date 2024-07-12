@@ -26,8 +26,8 @@ impl DeleteCertificateOutput {
 }
 
 /// A builder for [`DeleteCertificateOutput`](crate::operation::delete_certificate::DeleteCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<crate::types::Certificate>,
     _request_id: Option<String>,

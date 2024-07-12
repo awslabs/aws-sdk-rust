@@ -26,8 +26,8 @@ impl AssociateWebsiteAuthorizationProviderOutput {
 }
 
 /// A builder for [`AssociateWebsiteAuthorizationProviderOutput`](crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWebsiteAuthorizationProviderOutputBuilder {
     pub(crate) authorization_provider_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

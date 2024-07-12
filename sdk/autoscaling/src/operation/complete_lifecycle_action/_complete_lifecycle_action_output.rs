@@ -18,8 +18,8 @@ impl CompleteLifecycleActionOutput {
 }
 
 /// A builder for [`CompleteLifecycleActionOutput`](crate::operation::complete_lifecycle_action::CompleteLifecycleActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompleteLifecycleActionOutputBuilder {
     _request_id: Option<String>,
 }

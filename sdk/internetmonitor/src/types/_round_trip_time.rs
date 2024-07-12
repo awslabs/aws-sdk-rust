@@ -33,8 +33,8 @@ impl RoundTripTime {
 }
 
 /// A builder for [`RoundTripTime`](crate::types::RoundTripTime).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RoundTripTimeBuilder {
     pub(crate) p50: ::std::option::Option<f64>,
     pub(crate) p90: ::std::option::Option<f64>,

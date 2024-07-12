@@ -29,8 +29,8 @@ impl DescribeSeverityLevelsOutput {
 }
 
 /// A builder for [`DescribeSeverityLevelsOutput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSeverityLevelsOutputBuilder {
     pub(crate) severity_levels: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>,
     _request_id: Option<String>,

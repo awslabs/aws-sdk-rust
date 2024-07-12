@@ -21,8 +21,8 @@ impl ChallengeConfig {
 }
 
 /// A builder for [`ChallengeConfig`](crate::types::ChallengeConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChallengeConfigBuilder {
     pub(crate) immunity_time_property: ::std::option::Option<crate::types::ImmunityTimeProperty>,
 }

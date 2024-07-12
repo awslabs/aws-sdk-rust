@@ -64,8 +64,8 @@ impl DescribeTransitGatewayConnectPeersInput {
 }
 
 /// A builder for [`DescribeTransitGatewayConnectPeersInput`](crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransitGatewayConnectPeersInputBuilder {
     pub(crate) transit_gateway_connect_peer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

@@ -26,8 +26,8 @@ impl DescribeActivityTypeInput {
 }
 
 /// A builder for [`DescribeActivityTypeInput`](crate::operation::describe_activity_type::DescribeActivityTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeActivityTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) activity_type: ::std::option::Option<crate::types::ActivityType>,

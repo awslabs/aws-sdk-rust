@@ -75,8 +75,8 @@ impl GetDataSetDetailsOutput {
 }
 
 /// A builder for [`GetDataSetDetailsOutput`](crate::operation::get_data_set_details::GetDataSetDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataSetDetailsOutputBuilder {
     pub(crate) data_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_org: ::std::option::Option<crate::types::DatasetDetailOrgAttributes>,

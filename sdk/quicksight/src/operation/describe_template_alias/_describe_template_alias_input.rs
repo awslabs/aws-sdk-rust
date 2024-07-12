@@ -32,8 +32,8 @@ impl DescribeTemplateAliasInput {
 }
 
 /// A builder for [`DescribeTemplateAliasInput`](crate::operation::describe_template_alias::DescribeTemplateAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTemplateAliasInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,

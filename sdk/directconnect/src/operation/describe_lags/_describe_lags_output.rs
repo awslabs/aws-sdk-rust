@@ -28,8 +28,8 @@ impl DescribeLagsOutput {
 }
 
 /// A builder for [`DescribeLagsOutput`](crate::operation::describe_lags::DescribeLagsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLagsOutputBuilder {
     pub(crate) lags: ::std::option::Option<::std::vec::Vec<crate::types::Lag>>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl CreateConnectorOutput {
 }
 
 /// A builder for [`CreateConnectorOutput`](crate::operation::create_connector::CreateConnectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectorOutputBuilder {
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connector_name: ::std::option::Option<::std::string::String>,

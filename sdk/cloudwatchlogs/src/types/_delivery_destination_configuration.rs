@@ -22,8 +22,8 @@ impl DeliveryDestinationConfiguration {
 }
 
 /// A builder for [`DeliveryDestinationConfiguration`](crate::types::DeliveryDestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeliveryDestinationConfigurationBuilder {
     pub(crate) destination_resource_arn: ::std::option::Option<::std::string::String>,
 }

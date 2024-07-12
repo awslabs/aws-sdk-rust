@@ -28,8 +28,8 @@ impl TableFieldWells {
 }
 
 /// A builder for [`TableFieldWells`](crate::types::TableFieldWells).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableFieldWellsBuilder {
     pub(crate) table_aggregated_field_wells: ::std::option::Option<crate::types::TableAggregatedFieldWells>,
     pub(crate) table_unaggregated_field_wells: ::std::option::Option<crate::types::TableUnaggregatedFieldWells>,

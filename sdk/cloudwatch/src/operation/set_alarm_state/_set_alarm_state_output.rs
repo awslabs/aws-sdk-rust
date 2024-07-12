@@ -18,8 +18,8 @@ impl SetAlarmStateOutput {
 }
 
 /// A builder for [`SetAlarmStateOutput`](crate::operation::set_alarm_state::SetAlarmStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetAlarmStateOutputBuilder {
     _request_id: Option<String>,
 }

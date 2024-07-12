@@ -29,8 +29,8 @@ impl NodegroupResources {
 }
 
 /// A builder for [`NodegroupResources`](crate::types::NodegroupResources).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodegroupResourcesBuilder {
     pub(crate) auto_scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     pub(crate) remote_access_security_group: ::std::option::Option<::std::string::String>,

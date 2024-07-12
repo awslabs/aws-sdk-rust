@@ -18,8 +18,8 @@ impl DeleteNotificationSubscriptionOutput {
 }
 
 /// A builder for [`DeleteNotificationSubscriptionOutput`](crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNotificationSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

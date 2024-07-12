@@ -34,8 +34,8 @@ impl DescribeReplicationConfigurationsOutput {
 }
 
 /// A builder for [`DescribeReplicationConfigurationsOutput`](crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReplicationConfigurationsOutputBuilder {
     pub(crate) replications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

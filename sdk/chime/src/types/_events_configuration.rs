@@ -42,8 +42,8 @@ impl EventsConfiguration {
 }
 
 /// A builder for [`EventsConfiguration`](crate::types::EventsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EventsConfigurationBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) outbound_events_https_endpoint: ::std::option::Option<::std::string::String>,

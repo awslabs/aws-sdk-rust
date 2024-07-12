@@ -188,8 +188,8 @@ impl CreateConstraintInput {
 }
 
 /// A builder for [`CreateConstraintInput`](crate::operation::create_constraint::CreateConstraintInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConstraintInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl ConnectionDraining {
 }
 
 /// A builder for [`ConnectionDraining`](crate::types::ConnectionDraining).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionDrainingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) timeout: ::std::option::Option<i32>,

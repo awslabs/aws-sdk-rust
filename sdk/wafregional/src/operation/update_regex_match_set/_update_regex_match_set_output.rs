@@ -26,8 +26,8 @@ impl UpdateRegexMatchSetOutput {
 }
 
 /// A builder for [`UpdateRegexMatchSetOutput`](crate::operation::update_regex_match_set::UpdateRegexMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRegexMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

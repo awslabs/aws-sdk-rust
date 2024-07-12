@@ -69,8 +69,8 @@ impl UpdateQueueEnvironmentInput {
 }
 
 /// A builder for [`UpdateQueueEnvironmentInput`](crate::operation::update_queue_environment::UpdateQueueEnvironmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateQueueEnvironmentInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,

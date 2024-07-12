@@ -36,8 +36,8 @@ impl BatchAssociateAssessmentReportEvidenceOutput {
 }
 
 /// A builder for [`BatchAssociateAssessmentReportEvidenceOutput`](crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAssociateAssessmentReportEvidenceOutputBuilder {
     pub(crate) evidence_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportEvidenceError>>,

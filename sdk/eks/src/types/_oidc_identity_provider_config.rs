@@ -87,8 +87,8 @@ impl OidcIdentityProviderConfig {
 }
 
 /// A builder for [`OidcIdentityProviderConfig`](crate::types::OidcIdentityProviderConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OidcIdentityProviderConfigBuilder {
     pub(crate) identity_provider_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_config_arn: ::std::option::Option<::std::string::String>,

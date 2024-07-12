@@ -27,8 +27,8 @@ impl GdgDetailAttributes {
 }
 
 /// A builder for [`GdgDetailAttributes`](crate::types::GdgDetailAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GdgDetailAttributesBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) roll_disposition: ::std::option::Option<::std::string::String>,

@@ -69,8 +69,8 @@ impl SchemaResponse {
 }
 
 /// A builder for [`SchemaResponse`](crate::types::SchemaResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SchemaResponseBuilder {
     pub(crate) code_line_count: ::std::option::Option<i64>,
     pub(crate) code_size: ::std::option::Option<i64>,

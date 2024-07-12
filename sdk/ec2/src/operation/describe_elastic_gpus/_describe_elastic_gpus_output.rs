@@ -40,8 +40,8 @@ impl DescribeElasticGpusOutput {
 }
 
 /// A builder for [`DescribeElasticGpusOutput`](crate::operation::describe_elastic_gpus::DescribeElasticGpusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeElasticGpusOutputBuilder {
     pub(crate) elastic_gpu_set: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpus>>,
     pub(crate) max_results: ::std::option::Option<i32>,

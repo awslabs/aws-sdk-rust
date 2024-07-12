@@ -139,8 +139,8 @@ impl Host {
 }
 
 /// A builder for [`Host`](crate::types::Host).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HostBuilder {
     pub(crate) auto_placement: ::std::option::Option<crate::types::AutoPlacement>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,

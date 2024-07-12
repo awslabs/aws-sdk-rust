@@ -128,8 +128,8 @@ impl StackSetDriftDetectionDetails {
 }
 
 /// A builder for [`StackSetDriftDetectionDetails`](crate::types::StackSetDriftDetectionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StackSetDriftDetectionDetailsBuilder {
     pub(crate) drift_status: ::std::option::Option<crate::types::StackSetDriftStatus>,
     pub(crate) drift_detection_status: ::std::option::Option<crate::types::StackSetDriftDetectionStatus>,

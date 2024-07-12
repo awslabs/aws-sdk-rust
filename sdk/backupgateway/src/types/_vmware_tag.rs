@@ -34,8 +34,8 @@ impl VmwareTag {
 }
 
 /// A builder for [`VmwareTag`](crate::types::VmwareTag).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VmwareTagBuilder {
     pub(crate) vmware_category: ::std::option::Option<::std::string::String>,
     pub(crate) vmware_tag_name: ::std::option::Option<::std::string::String>,

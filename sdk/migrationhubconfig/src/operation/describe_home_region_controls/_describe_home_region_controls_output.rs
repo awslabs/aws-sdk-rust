@@ -34,8 +34,8 @@ impl DescribeHomeRegionControlsOutput {
 }
 
 /// A builder for [`DescribeHomeRegionControlsOutput`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHomeRegionControlsOutputBuilder {
     pub(crate) home_region_controls: ::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

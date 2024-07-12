@@ -34,8 +34,8 @@ impl OptedOutNumberInformation {
 }
 
 /// A builder for [`OptedOutNumberInformation`](crate::types::OptedOutNumberInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OptedOutNumberInformationBuilder {
     pub(crate) opted_out_number: ::std::option::Option<::std::string::String>,
     pub(crate) opted_out_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

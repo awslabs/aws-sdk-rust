@@ -29,8 +29,8 @@ impl UpdateBackendAuthPasswordPolicyConfig {
 }
 
 /// A builder for [`UpdateBackendAuthPasswordPolicyConfig`](crate::types::UpdateBackendAuthPasswordPolicyConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBackendAuthPasswordPolicyConfigBuilder {
     pub(crate) additional_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalConstraintsElement>>,
     pub(crate) minimum_length: ::std::option::Option<f64>,

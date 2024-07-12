@@ -76,8 +76,8 @@ impl NewPublicVirtualInterfaceAllocation {
 }
 
 /// A builder for [`NewPublicVirtualInterfaceAllocation`](crate::types::NewPublicVirtualInterfaceAllocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NewPublicVirtualInterfaceAllocationBuilder {
     pub(crate) virtual_interface_name: ::std::option::Option<::std::string::String>,
     pub(crate) vlan: ::std::option::Option<i32>,

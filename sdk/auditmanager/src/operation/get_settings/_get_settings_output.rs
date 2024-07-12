@@ -26,8 +26,8 @@ impl GetSettingsOutput {
 }
 
 /// A builder for [`GetSettingsOutput`](crate::operation::get_settings::GetSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSettingsOutputBuilder {
     pub(crate) settings: ::std::option::Option<crate::types::Settings>,
     _request_id: Option<String>,

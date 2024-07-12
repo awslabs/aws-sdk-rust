@@ -34,8 +34,8 @@ impl ImportHostKeyOutput {
 }
 
 /// A builder for [`ImportHostKeyOutput`](crate::operation::import_host_key::ImportHostKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportHostKeyOutputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) host_key_id: ::std::option::Option<::std::string::String>,

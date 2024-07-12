@@ -34,8 +34,8 @@ impl InviteUsersInput {
 }
 
 /// A builder for [`InviteUsersInput`](crate::operation::invite_users::InviteUsersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InviteUsersInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_email_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

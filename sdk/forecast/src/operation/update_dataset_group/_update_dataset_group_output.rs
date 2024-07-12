@@ -18,8 +18,8 @@ impl UpdateDatasetGroupOutput {
 }
 
 /// A builder for [`UpdateDatasetGroupOutput`](crate::operation::update_dataset_group::UpdateDatasetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDatasetGroupOutputBuilder {
     _request_id: Option<String>,
 }

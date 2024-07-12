@@ -46,8 +46,8 @@ impl ListLayerVersionsInput {
 }
 
 /// A builder for [`ListLayerVersionsInput`](crate::operation::list_layer_versions::ListLayerVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLayerVersionsInputBuilder {
     pub(crate) compatible_runtime: ::std::option::Option<crate::types::Runtime>,
     pub(crate) layer_name: ::std::option::Option<::std::string::String>,

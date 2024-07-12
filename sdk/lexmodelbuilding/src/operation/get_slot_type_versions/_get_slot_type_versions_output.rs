@@ -34,8 +34,8 @@ impl GetSlotTypeVersionsOutput {
 }
 
 /// A builder for [`GetSlotTypeVersionsOutput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSlotTypeVersionsOutputBuilder {
     pub(crate) slot_types: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

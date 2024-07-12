@@ -33,8 +33,8 @@ impl DeploymentStage {
 }
 
 /// A builder for [`DeploymentStage`](crate::types::DeploymentStage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentStageBuilder {
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_selection_config: ::std::option::Option<crate::types::DeviceSelectionConfig>,

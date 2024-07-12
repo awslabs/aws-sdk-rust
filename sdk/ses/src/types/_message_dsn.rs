@@ -37,8 +37,8 @@ impl MessageDsn {
 }
 
 /// A builder for [`MessageDsn`](crate::types::MessageDsn).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageDsnBuilder {
     pub(crate) reporting_mta: ::std::option::Option<::std::string::String>,
     pub(crate) arrival_date: ::std::option::Option<::aws_smithy_types::DateTime>,

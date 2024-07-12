@@ -33,8 +33,8 @@ impl AutoMlCandidateStep {
 }
 
 /// A builder for [`AutoMlCandidateStep`](crate::types::AutoMlCandidateStep).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoMlCandidateStepBuilder {
     pub(crate) candidate_step_type: ::std::option::Option<crate::types::CandidateStepType>,
     pub(crate) candidate_step_arn: ::std::option::Option<::std::string::String>,

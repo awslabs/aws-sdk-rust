@@ -26,8 +26,8 @@ impl DescribeServiceIntegrationOutput {
 }
 
 /// A builder for [`DescribeServiceIntegrationOutput`](crate::operation::describe_service_integration::DescribeServiceIntegrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServiceIntegrationOutputBuilder {
     pub(crate) service_integration: ::std::option::Option<crate::types::ServiceIntegrationConfig>,
     _request_id: Option<String>,

@@ -28,8 +28,8 @@ impl AddTrustStoreRevocationsInput {
 }
 
 /// A builder for [`AddTrustStoreRevocationsInput`](crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddTrustStoreRevocationsInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) revocation_contents: ::std::option::Option<::std::vec::Vec<crate::types::RevocationContent>>,

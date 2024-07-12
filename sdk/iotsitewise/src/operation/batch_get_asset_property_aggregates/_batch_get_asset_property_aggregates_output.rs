@@ -47,8 +47,8 @@ impl BatchGetAssetPropertyAggregatesOutput {
 }
 
 /// A builder for [`BatchGetAssetPropertyAggregatesOutput`](crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAssetPropertyAggregatesOutputBuilder {
     pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesErrorEntry>>,
     pub(crate) success_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesSuccessEntry>>,

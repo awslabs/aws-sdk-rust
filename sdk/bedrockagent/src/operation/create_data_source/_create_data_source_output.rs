@@ -26,8 +26,8 @@ impl CreateDataSourceOutput {
 }
 
 /// A builder for [`CreateDataSourceOutput`](crate::operation::create_data_source::CreateDataSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataSourceOutputBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl RespondActivityTaskFailedOutput {
 }
 
 /// A builder for [`RespondActivityTaskFailedOutput`](crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RespondActivityTaskFailedOutputBuilder {
     _request_id: Option<String>,
 }

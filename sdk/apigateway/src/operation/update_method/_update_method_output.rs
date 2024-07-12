@@ -89,8 +89,8 @@ impl UpdateMethodOutput {
 }
 
 /// A builder for [`UpdateMethodOutput`](crate::operation::update_method::UpdateMethodOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMethodOutputBuilder {
     pub(crate) http_method: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_type: ::std::option::Option<::std::string::String>,

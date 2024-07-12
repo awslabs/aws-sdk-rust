@@ -26,8 +26,8 @@ impl GetCodeBindingSourceOutput {
 }
 
 /// A builder for [`GetCodeBindingSourceOutput`](crate::operation::get_code_binding_source::GetCodeBindingSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCodeBindingSourceOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

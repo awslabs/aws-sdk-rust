@@ -33,8 +33,8 @@ impl LambdaFunctionMemoryProjectedMetric {
 }
 
 /// A builder for [`LambdaFunctionMemoryProjectedMetric`](crate::types::LambdaFunctionMemoryProjectedMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaFunctionMemoryProjectedMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::LambdaFunctionMemoryMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::LambdaFunctionMemoryMetricStatistic>,

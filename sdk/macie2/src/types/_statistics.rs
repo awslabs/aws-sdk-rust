@@ -27,8 +27,8 @@ impl Statistics {
 }
 
 /// A builder for [`Statistics`](crate::types::Statistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatisticsBuilder {
     pub(crate) approximate_number_of_objects_to_process: ::std::option::Option<f64>,
     pub(crate) number_of_runs: ::std::option::Option<f64>,

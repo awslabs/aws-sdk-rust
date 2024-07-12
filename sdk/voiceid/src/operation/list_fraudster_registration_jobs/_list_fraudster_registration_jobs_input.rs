@@ -38,8 +38,8 @@ impl ListFraudsterRegistrationJobsInput {
 }
 
 /// A builder for [`ListFraudsterRegistrationJobsInput`](crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFraudsterRegistrationJobsInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>,

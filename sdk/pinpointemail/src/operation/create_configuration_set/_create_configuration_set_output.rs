@@ -19,8 +19,8 @@ impl CreateConfigurationSetOutput {
 }
 
 /// A builder for [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConfigurationSetOutputBuilder {
     _request_id: Option<String>,
 }

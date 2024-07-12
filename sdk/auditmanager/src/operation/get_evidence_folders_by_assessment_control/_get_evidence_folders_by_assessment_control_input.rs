@@ -44,8 +44,8 @@ impl GetEvidenceFoldersByAssessmentControlInput {
 }
 
 /// A builder for [`GetEvidenceFoldersByAssessmentControlInput`](crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEvidenceFoldersByAssessmentControlInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListAvailableManagementCidrRangesOutput {
 }
 
 /// A builder for [`ListAvailableManagementCidrRangesOutput`](crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableManagementCidrRangesOutputBuilder {
     pub(crate) management_cidr_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

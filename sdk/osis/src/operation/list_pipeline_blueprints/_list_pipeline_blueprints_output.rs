@@ -28,8 +28,8 @@ impl ListPipelineBlueprintsOutput {
 }
 
 /// A builder for [`ListPipelineBlueprintsOutput`](crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPipelineBlueprintsOutputBuilder {
     pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<crate::types::PipelineBlueprintSummary>>,
     _request_id: Option<String>,

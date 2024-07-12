@@ -32,8 +32,8 @@ impl UpdateHostKeyInput {
 }
 
 /// A builder for [`UpdateHostKeyInput`](crate::operation::update_host_key::UpdateHostKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateHostKeyInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) host_key_id: ::std::option::Option<::std::string::String>,

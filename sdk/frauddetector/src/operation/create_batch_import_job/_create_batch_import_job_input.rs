@@ -54,8 +54,8 @@ impl CreateBatchImportJobInput {
 }
 
 /// A builder for [`CreateBatchImportJobInput`](crate::operation::create_batch_import_job::CreateBatchImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBatchImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_path: ::std::option::Option<::std::string::String>,

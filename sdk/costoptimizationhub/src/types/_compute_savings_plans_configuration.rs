@@ -39,8 +39,8 @@ impl ComputeSavingsPlansConfiguration {
 }
 
 /// A builder for [`ComputeSavingsPlansConfiguration`](crate::types::ComputeSavingsPlansConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComputeSavingsPlansConfigurationBuilder {
     pub(crate) account_scope: ::std::option::Option<::std::string::String>,
     pub(crate) term: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteVodSourceOutput {
 }
 
 /// A builder for [`DeleteVodSourceOutput`](crate::operation::delete_vod_source::DeleteVodSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVodSourceOutputBuilder {
     _request_id: Option<String>,
 }

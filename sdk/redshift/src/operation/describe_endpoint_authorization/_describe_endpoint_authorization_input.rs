@@ -44,8 +44,8 @@ impl DescribeEndpointAuthorizationInput {
 }
 
 /// A builder for [`DescribeEndpointAuthorizationInput`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEndpointAuthorizationInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,

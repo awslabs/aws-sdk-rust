@@ -129,8 +129,8 @@ impl LoRaWanGetServiceProfileInfo {
 }
 
 /// A builder for [`LoRaWanGetServiceProfileInfo`](crate::types::LoRaWanGetServiceProfileInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanGetServiceProfileInfoBuilder {
     pub(crate) ul_rate: ::std::option::Option<i32>,
     pub(crate) ul_bucket_size: ::std::option::Option<i32>,

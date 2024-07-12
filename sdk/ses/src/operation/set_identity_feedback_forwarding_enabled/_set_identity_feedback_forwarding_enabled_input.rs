@@ -27,8 +27,8 @@ impl SetIdentityFeedbackForwardingEnabledInput {
 }
 
 /// A builder for [`SetIdentityFeedbackForwardingEnabledInput`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetIdentityFeedbackForwardingEnabledInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) forwarding_enabled: ::std::option::Option<bool>,

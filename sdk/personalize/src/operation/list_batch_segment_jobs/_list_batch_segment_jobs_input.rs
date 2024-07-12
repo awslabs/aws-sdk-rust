@@ -32,8 +32,8 @@ impl ListBatchSegmentJobsInput {
 }
 
 /// A builder for [`ListBatchSegmentJobsInput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBatchSegmentJobsInputBuilder {
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl CrlDistributionPointExtensionConfiguration {
 }
 
 /// A builder for [`CrlDistributionPointExtensionConfiguration`](crate::types::CrlDistributionPointExtensionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrlDistributionPointExtensionConfigurationBuilder {
     pub(crate) omit_extension: ::std::option::Option<bool>,
 }

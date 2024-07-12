@@ -33,8 +33,8 @@ impl ModelVariantConfig {
 }
 
 /// A builder for [`ModelVariantConfig`](crate::types::ModelVariantConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelVariantConfigBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) variant_name: ::std::option::Option<::std::string::String>,

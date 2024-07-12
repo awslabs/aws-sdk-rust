@@ -50,8 +50,8 @@ impl ListChannelModeratorsOutput {
 }
 
 /// A builder for [`ListChannelModeratorsOutput`](crate::operation::list_channel_moderators::ListChannelModeratorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListChannelModeratorsOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

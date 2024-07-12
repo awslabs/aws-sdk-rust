@@ -48,8 +48,8 @@ impl GenerateCardValidationDataInput {
 }
 
 /// A builder for [`GenerateCardValidationDataInput`](crate::operation::generate_card_validation_data::GenerateCardValidationDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GenerateCardValidationDataInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) primary_account_number: ::std::option::Option<::std::string::String>,

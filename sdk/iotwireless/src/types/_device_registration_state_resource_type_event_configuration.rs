@@ -21,8 +21,8 @@ impl DeviceRegistrationStateResourceTypeEventConfiguration {
 }
 
 /// A builder for [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::types::DeviceRegistrationStateResourceTypeEventConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceRegistrationStateResourceTypeEventConfigurationBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
 }

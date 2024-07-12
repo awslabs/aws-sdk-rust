@@ -18,8 +18,8 @@ impl DeleteProxySessionOutput {
 }
 
 /// A builder for [`DeleteProxySessionOutput`](crate::operation::delete_proxy_session::DeleteProxySessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProxySessionOutputBuilder {
     _request_id: Option<String>,
 }

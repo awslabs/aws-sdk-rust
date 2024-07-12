@@ -26,8 +26,8 @@ impl DescribeModelPackagingJobInput {
 }
 
 /// A builder for [`DescribeModelPackagingJobInput`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeModelPackagingJobInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,

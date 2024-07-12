@@ -104,8 +104,8 @@ impl GetAnnotationImportJobOutput {
 }
 
 /// A builder for [`GetAnnotationImportJobOutput`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnnotationImportJobOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,

@@ -55,8 +55,8 @@ impl EventDestinationDefinition {
 }
 
 /// A builder for [`EventDestinationDefinition`](crate::types::EventDestinationDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventDestinationDefinitionBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,

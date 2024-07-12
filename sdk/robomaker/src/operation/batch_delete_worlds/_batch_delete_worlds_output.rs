@@ -28,8 +28,8 @@ impl BatchDeleteWorldsOutput {
 }
 
 /// A builder for [`BatchDeleteWorldsOutput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteWorldsOutputBuilder {
     pub(crate) unprocessed_worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

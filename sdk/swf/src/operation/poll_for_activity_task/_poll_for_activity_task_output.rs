@@ -59,8 +59,8 @@ impl PollForActivityTaskOutput {
 }
 
 /// A builder for [`PollForActivityTaskOutput`](crate::operation::poll_for_activity_task::PollForActivityTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PollForActivityTaskOutputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) activity_id: ::std::option::Option<::std::string::String>,

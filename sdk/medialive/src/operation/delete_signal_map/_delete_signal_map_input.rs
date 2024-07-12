@@ -21,8 +21,8 @@ impl DeleteSignalMapInput {
 }
 
 /// A builder for [`DeleteSignalMapInput`](crate::operation::delete_signal_map::DeleteSignalMapInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSignalMapInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

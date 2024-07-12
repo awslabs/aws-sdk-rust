@@ -82,8 +82,8 @@ impl MediaInsightsPipelineConfiguration {
 }
 
 /// A builder for [`MediaInsightsPipelineConfiguration`](crate::types::MediaInsightsPipelineConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MediaInsightsPipelineConfigurationBuilder {
     pub(crate) media_insights_pipeline_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) media_insights_pipeline_configuration_arn: ::std::option::Option<::std::string::String>,

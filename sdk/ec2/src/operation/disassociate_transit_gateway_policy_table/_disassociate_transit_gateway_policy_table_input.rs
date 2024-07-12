@@ -32,8 +32,8 @@ impl DisassociateTransitGatewayPolicyTableInput {
 }
 
 /// A builder for [`DisassociateTransitGatewayPolicyTableInput`](crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTransitGatewayPolicyTableInputBuilder {
     pub(crate) transit_gateway_policy_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,

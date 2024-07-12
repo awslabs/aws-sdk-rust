@@ -18,8 +18,8 @@ impl NotifyApplicationStateOutput {
 }
 
 /// A builder for [`NotifyApplicationStateOutput`](crate::operation::notify_application_state::NotifyApplicationStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyApplicationStateOutputBuilder {
     _request_id: Option<String>,
 }

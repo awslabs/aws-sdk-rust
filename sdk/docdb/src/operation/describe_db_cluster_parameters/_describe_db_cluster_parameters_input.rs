@@ -61,8 +61,8 @@ impl DescribeDbClusterParametersInput {
 }
 
 /// A builder for [`DescribeDbClusterParametersInput`](crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbClusterParametersInputBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,

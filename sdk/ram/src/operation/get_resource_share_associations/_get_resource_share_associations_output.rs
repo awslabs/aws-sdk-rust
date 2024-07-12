@@ -34,8 +34,8 @@ impl GetResourceShareAssociationsOutput {
 }
 
 /// A builder for [`GetResourceShareAssociationsOutput`](crate::operation::get_resource_share_associations::GetResourceShareAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceShareAssociationsOutputBuilder {
     pub(crate) resource_share_associations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -36,8 +36,8 @@ impl EvaluationDataset {
 }
 
 /// A builder for [`EvaluationDataset`](crate::types::EvaluationDataset).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EvaluationDatasetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_location: ::std::option::Option<crate::types::EvaluationDatasetLocation>,

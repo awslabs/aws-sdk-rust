@@ -20,8 +20,8 @@ impl DetachStaticIpInput {
 }
 
 /// A builder for [`DetachStaticIpInput`](crate::operation::detach_static_ip::DetachStaticIpInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachStaticIpInputBuilder {
     pub(crate) static_ip_name: ::std::option::Option<::std::string::String>,
 }

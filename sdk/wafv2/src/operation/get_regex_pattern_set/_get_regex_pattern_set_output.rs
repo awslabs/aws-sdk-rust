@@ -32,8 +32,8 @@ impl GetRegexPatternSetOutput {
 }
 
 /// A builder for [`GetRegexPatternSetOutput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegexPatternSetOutputBuilder {
     pub(crate) regex_pattern_set: ::std::option::Option<crate::types::RegexPatternSet>,
     pub(crate) lock_token: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl RejectInputDeviceTransferInput {
 }
 
 /// A builder for [`RejectInputDeviceTransferInput`](crate::operation::reject_input_device_transfer::RejectInputDeviceTransferInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectInputDeviceTransferInputBuilder {
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
 }

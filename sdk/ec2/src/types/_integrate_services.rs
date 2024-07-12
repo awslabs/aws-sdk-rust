@@ -23,8 +23,8 @@ impl IntegrateServices {
 }
 
 /// A builder for [`IntegrateServices`](crate::types::IntegrateServices).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntegrateServicesBuilder {
     pub(crate) athena_integrations: ::std::option::Option<::std::vec::Vec<crate::types::AthenaIntegration>>,
 }

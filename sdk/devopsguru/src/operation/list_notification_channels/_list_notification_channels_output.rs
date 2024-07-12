@@ -34,8 +34,8 @@ impl ListNotificationChannelsOutput {
 }
 
 /// A builder for [`ListNotificationChannelsOutput`](crate::operation::list_notification_channels::ListNotificationChannelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNotificationChannelsOutputBuilder {
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::NotificationChannel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -102,8 +102,8 @@ impl StackSetOperationPreferences {
 }
 
 /// A builder for [`StackSetOperationPreferences`](crate::types::StackSetOperationPreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StackSetOperationPreferencesBuilder {
     pub(crate) region_concurrency_type: ::std::option::Option<crate::types::RegionConcurrencyType>,
     pub(crate) region_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

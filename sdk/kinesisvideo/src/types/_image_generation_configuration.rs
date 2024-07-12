@@ -63,8 +63,8 @@ impl ImageGenerationConfiguration {
 }
 
 /// A builder for [`ImageGenerationConfiguration`](crate::types::ImageGenerationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageGenerationConfigurationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ConfigurationStatus>,
     pub(crate) image_selector_type: ::std::option::Option<crate::types::ImageSelectorType>,

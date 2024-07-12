@@ -28,8 +28,8 @@ impl GetDistributionBundlesOutput {
 }
 
 /// A builder for [`GetDistributionBundlesOutput`](crate::operation::get_distribution_bundles::GetDistributionBundlesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDistributionBundlesOutputBuilder {
     pub(crate) bundles: ::std::option::Option<::std::vec::Vec<crate::types::DistributionBundle>>,
     _request_id: Option<String>,

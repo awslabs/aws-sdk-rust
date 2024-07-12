@@ -26,8 +26,8 @@ impl CreateVirtualNodeOutput {
 }
 
 /// A builder for [`CreateVirtualNodeOutput`](crate::operation::create_virtual_node::CreateVirtualNodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVirtualNodeOutputBuilder {
     pub(crate) virtual_node: ::std::option::Option<crate::types::VirtualNodeData>,
     _request_id: Option<String>,

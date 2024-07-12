@@ -28,8 +28,8 @@ impl PutVoiceConnectorEmergencyCallingConfigurationOutput {
 }
 
 /// A builder for [`PutVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
     pub(crate) emergency_calling_configuration: ::std::option::Option<crate::types::EmergencyCallingConfiguration>,
     _request_id: Option<String>,

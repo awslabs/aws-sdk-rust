@@ -44,8 +44,8 @@ impl GetDataSourceIntrospectionOutput {
 }
 
 /// A builder for [`GetDataSourceIntrospectionOutput`](crate::operation::get_data_source_introspection::GetDataSourceIntrospectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataSourceIntrospectionOutputBuilder {
     pub(crate) introspection_id: ::std::option::Option<::std::string::String>,
     pub(crate) introspection_status: ::std::option::Option<crate::types::DataSourceIntrospectionStatus>,

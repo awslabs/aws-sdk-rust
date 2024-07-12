@@ -20,8 +20,8 @@ impl GetDeviceMethodsInput {
 }
 
 /// A builder for [`GetDeviceMethodsInput`](crate::operation::get_device_methods::GetDeviceMethodsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeviceMethodsInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
 }

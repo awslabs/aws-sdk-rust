@@ -38,8 +38,8 @@ impl ListLibraryItemsInput {
 }
 
 /// A builder for [`ListLibraryItemsInput`](crate::operation::list_library_items::ListLibraryItemsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLibraryItemsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

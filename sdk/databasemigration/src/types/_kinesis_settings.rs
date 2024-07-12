@@ -75,8 +75,8 @@ impl KinesisSettings {
 }
 
 /// A builder for [`KinesisSettings`](crate::types::KinesisSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KinesisSettingsBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_format: ::std::option::Option<crate::types::MessageFormatValue>,

@@ -46,8 +46,8 @@ impl ListRoutingProfileQueuesOutput {
 }
 
 /// A builder for [`ListRoutingProfileQueuesOutput`](crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRoutingProfileQueuesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_queue_config_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfigSummary>>,

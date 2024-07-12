@@ -20,8 +20,8 @@ impl GetProfileResourceAssociationInput {
 }
 
 /// A builder for [`GetProfileResourceAssociationInput`](crate::operation::get_profile_resource_association::GetProfileResourceAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProfileResourceAssociationInputBuilder {
     pub(crate) profile_resource_association_id: ::std::option::Option<::std::string::String>,
 }

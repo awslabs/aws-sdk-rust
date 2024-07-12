@@ -32,8 +32,8 @@ impl GetObjectLegalHoldOutput {
 }
 
 /// A builder for [`GetObjectLegalHoldOutput`](crate::operation::get_object_legal_hold::GetObjectLegalHoldOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectLegalHoldOutputBuilder {
     pub(crate) legal_hold: ::std::option::Option<crate::types::ObjectLockLegalHold>,
     _extended_request_id: Option<String>,

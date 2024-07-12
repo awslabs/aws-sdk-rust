@@ -27,8 +27,8 @@ impl ObjectAttributeRange {
 }
 
 /// A builder for [`ObjectAttributeRange`](crate::types::ObjectAttributeRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectAttributeRangeBuilder {
     pub(crate) attribute_key: ::std::option::Option<crate::types::AttributeKey>,
     pub(crate) range: ::std::option::Option<crate::types::TypedAttributeValueRange>,

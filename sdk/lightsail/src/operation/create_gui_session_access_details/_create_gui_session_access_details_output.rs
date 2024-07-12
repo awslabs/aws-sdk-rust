@@ -52,8 +52,8 @@ impl CreateGuiSessionAccessDetailsOutput {
 }
 
 /// A builder for [`CreateGuiSessionAccessDetailsOutput`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGuiSessionAccessDetailsOutputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,

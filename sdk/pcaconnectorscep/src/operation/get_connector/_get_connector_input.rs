@@ -20,8 +20,8 @@ impl GetConnectorInput {
 }
 
 /// A builder for [`GetConnectorInput`](crate::operation::get_connector::GetConnectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectorInputBuilder {
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
 }

@@ -48,8 +48,8 @@ impl DescribeFleetAdvisorCollectorsInput {
 }
 
 /// A builder for [`DescribeFleetAdvisorCollectorsInput`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetAdvisorCollectorsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,

@@ -19,8 +19,8 @@ impl DisassociateWebsiteAuthorizationProviderOutput {
 }
 
 /// A builder for [`DisassociateWebsiteAuthorizationProviderOutput`](crate::operation::disassociate_website_authorization_provider::DisassociateWebsiteAuthorizationProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWebsiteAuthorizationProviderOutputBuilder {
     _request_id: Option<String>,
 }

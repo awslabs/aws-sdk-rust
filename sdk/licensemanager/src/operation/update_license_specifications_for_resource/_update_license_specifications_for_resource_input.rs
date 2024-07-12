@@ -36,8 +36,8 @@ impl UpdateLicenseSpecificationsForResourceInput {
 }
 
 /// A builder for [`UpdateLicenseSpecificationsForResourceInput`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLicenseSpecificationsForResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) add_license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,

@@ -34,8 +34,8 @@ impl FilterExpression {
 }
 
 /// A builder for [`FilterExpression`](crate::types::FilterExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterExpressionBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::FilterOperation>,
     pub(crate) negated: ::std::option::Option<bool>,

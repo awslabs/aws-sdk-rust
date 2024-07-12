@@ -40,8 +40,8 @@ impl ListInstanceProfilesOutput {
 }
 
 /// A builder for [`ListInstanceProfilesOutput`](crate::operation::list_instance_profiles::ListInstanceProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInstanceProfilesOutputBuilder {
     pub(crate) instance_profiles: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

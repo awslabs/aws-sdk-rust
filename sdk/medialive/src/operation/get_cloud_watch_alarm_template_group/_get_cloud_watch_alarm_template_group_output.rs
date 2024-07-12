@@ -63,8 +63,8 @@ impl GetCloudWatchAlarmTemplateGroupOutput {
 }
 
 /// A builder for [`GetCloudWatchAlarmTemplateGroupOutput`](crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCloudWatchAlarmTemplateGroupOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,

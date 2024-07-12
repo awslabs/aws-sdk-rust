@@ -20,8 +20,8 @@ impl StopKeyPhrasesDetectionJobInput {
 }
 
 /// A builder for [`StopKeyPhrasesDetectionJobInput`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopKeyPhrasesDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

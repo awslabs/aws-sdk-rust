@@ -32,8 +32,8 @@ impl UpdateInferenceComponentInput {
 }
 
 /// A builder for [`UpdateInferenceComponentInput`](crate::operation::update_inference_component::UpdateInferenceComponentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInferenceComponentInputBuilder {
     pub(crate) inference_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) specification: ::std::option::Option<crate::types::InferenceComponentSpecification>,

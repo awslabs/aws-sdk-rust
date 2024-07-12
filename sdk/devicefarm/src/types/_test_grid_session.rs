@@ -51,8 +51,8 @@ impl TestGridSession {
 }
 
 /// A builder for [`TestGridSession`](crate::types::TestGridSession).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestGridSessionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TestGridSessionStatus>,

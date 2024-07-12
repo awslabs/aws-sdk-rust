@@ -77,8 +77,8 @@ impl LteCellDetails {
 }
 
 /// A builder for [`LteCellDetails`](crate::types::LteCellDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LteCellDetailsBuilder {
     pub(crate) cell_id: ::std::option::Option<i32>,
     pub(crate) mcc: ::std::option::Option<i32>,

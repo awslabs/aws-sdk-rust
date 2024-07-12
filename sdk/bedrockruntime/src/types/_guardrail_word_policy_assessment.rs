@@ -29,8 +29,8 @@ impl GuardrailWordPolicyAssessment {
 }
 
 /// A builder for [`GuardrailWordPolicyAssessment`](crate::types::GuardrailWordPolicyAssessment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailWordPolicyAssessmentBuilder {
     pub(crate) custom_words: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailCustomWord>>,
     pub(crate) managed_word_lists: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailManagedWord>>,

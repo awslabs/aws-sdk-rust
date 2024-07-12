@@ -22,8 +22,8 @@ impl VotingPolicy {
 }
 
 /// A builder for [`VotingPolicy`](crate::types::VotingPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VotingPolicyBuilder {
     pub(crate) approval_threshold_policy: ::std::option::Option<crate::types::ApprovalThresholdPolicy>,
 }

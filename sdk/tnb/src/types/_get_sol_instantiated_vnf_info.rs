@@ -22,8 +22,8 @@ impl GetSolInstantiatedVnfInfo {
 }
 
 /// A builder for [`GetSolInstantiatedVnfInfo`](crate::types::GetSolInstantiatedVnfInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSolInstantiatedVnfInfoBuilder {
     pub(crate) vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
 }

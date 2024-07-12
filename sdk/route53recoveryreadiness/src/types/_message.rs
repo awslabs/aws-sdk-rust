@@ -21,8 +21,8 @@ impl Message {
 }
 
 /// A builder for [`Message`](crate::types::Message).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageBuilder {
     pub(crate) message_text: ::std::option::Option<::std::string::String>,
 }

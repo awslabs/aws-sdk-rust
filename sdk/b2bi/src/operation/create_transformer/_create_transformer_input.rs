@@ -58,8 +58,8 @@ impl CreateTransformerInput {
 }
 
 /// A builder for [`CreateTransformerInput`](crate::operation::create_transformer::CreateTransformerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransformerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) file_format: ::std::option::Option<crate::types::FileFormat>,

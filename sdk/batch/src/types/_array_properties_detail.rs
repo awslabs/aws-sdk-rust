@@ -33,8 +33,8 @@ impl ArrayPropertiesDetail {
 }
 
 /// A builder for [`ArrayPropertiesDetail`](crate::types::ArrayPropertiesDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArrayPropertiesDetailBuilder {
     pub(crate) status_summary: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     pub(crate) size: ::std::option::Option<i32>,

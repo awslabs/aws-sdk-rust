@@ -18,8 +18,8 @@ impl DisassociatePhoneNumberContactFlowOutput {
 }
 
 /// A builder for [`DisassociatePhoneNumberContactFlowOutput`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociatePhoneNumberContactFlowOutputBuilder {
     _request_id: Option<String>,
 }

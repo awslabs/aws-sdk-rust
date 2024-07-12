@@ -38,8 +38,8 @@ impl DeletePropertygraphStatisticsOutput {
 }
 
 /// A builder for [`DeletePropertygraphStatisticsOutput`](crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePropertygraphStatisticsOutputBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

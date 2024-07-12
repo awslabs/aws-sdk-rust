@@ -35,8 +35,8 @@ impl DescribeClusterSecurityGroupsOutput {
 }
 
 /// A builder for [`DescribeClusterSecurityGroupsOutput`](crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClusterSecurityGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroup>>,

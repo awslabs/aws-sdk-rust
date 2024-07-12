@@ -27,8 +27,8 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

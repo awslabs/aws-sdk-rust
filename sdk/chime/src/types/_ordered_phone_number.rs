@@ -35,8 +35,8 @@ impl OrderedPhoneNumber {
 }
 
 /// A builder for [`OrderedPhoneNumber`](crate::types::OrderedPhoneNumber).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct OrderedPhoneNumberBuilder {
     pub(crate) e164_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::OrderedPhoneNumberStatus>,

@@ -27,8 +27,8 @@ impl KnownFraudsterRisk {
 }
 
 /// A builder for [`KnownFraudsterRisk`](crate::types::KnownFraudsterRisk).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KnownFraudsterRiskBuilder {
     pub(crate) risk_score: ::std::option::Option<i32>,
     pub(crate) generated_fraudster_id: ::std::option::Option<::std::string::String>,

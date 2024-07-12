@@ -35,8 +35,8 @@ impl RepositoryAggregation {
 }
 
 /// A builder for [`RepositoryAggregation`](crate::types::RepositoryAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryAggregationBuilder {
     pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

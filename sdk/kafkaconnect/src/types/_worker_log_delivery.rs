@@ -33,8 +33,8 @@ impl WorkerLogDelivery {
 }
 
 /// A builder for [`WorkerLogDelivery`](crate::types::WorkerLogDelivery).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkerLogDeliveryBuilder {
     pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsLogDelivery>,
     pub(crate) firehose: ::std::option::Option<crate::types::FirehoseLogDelivery>,

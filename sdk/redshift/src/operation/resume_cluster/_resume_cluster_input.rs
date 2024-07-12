@@ -21,8 +21,8 @@ impl ResumeClusterInput {
 }
 
 /// A builder for [`ResumeClusterInput`](crate::operation::resume_cluster::ResumeClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResumeClusterInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }

@@ -69,8 +69,8 @@ impl AwsCodeBuildProjectArtifactsDetails {
 }
 
 /// A builder for [`AwsCodeBuildProjectArtifactsDetails`](crate::types::AwsCodeBuildProjectArtifactsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCodeBuildProjectArtifactsDetailsBuilder {
     pub(crate) artifact_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_disabled: ::std::option::Option<bool>,

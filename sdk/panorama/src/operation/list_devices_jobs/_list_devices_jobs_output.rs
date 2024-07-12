@@ -34,8 +34,8 @@ impl ListDevicesJobsOutput {
 }
 
 /// A builder for [`ListDevicesJobsOutput`](crate::operation::list_devices_jobs::ListDevicesJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDevicesJobsOutputBuilder {
     pub(crate) device_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DeviceJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

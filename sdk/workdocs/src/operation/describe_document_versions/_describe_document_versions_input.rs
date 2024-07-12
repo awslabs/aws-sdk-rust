@@ -62,8 +62,8 @@ impl DescribeDocumentVersionsInput {
 }
 
 /// A builder for [`DescribeDocumentVersionsInput`](crate::operation::describe_document_versions::DescribeDocumentVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeDocumentVersionsInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) document_id: ::std::option::Option<::std::string::String>,

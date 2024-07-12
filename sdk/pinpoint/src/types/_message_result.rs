@@ -77,8 +77,8 @@ impl MessageResult {
 }
 
 /// A builder for [`MessageResult`](crate::types::MessageResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageResultBuilder {
     pub(crate) delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,

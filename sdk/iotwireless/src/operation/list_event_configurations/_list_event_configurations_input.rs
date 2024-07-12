@@ -32,8 +32,8 @@ impl ListEventConfigurationsInput {
 }
 
 /// A builder for [`ListEventConfigurationsInput`](crate::operation::list_event_configurations::ListEventConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventConfigurationsInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::EventNotificationResourceType>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -77,8 +77,8 @@ impl ScheduleRunConfiguration {
 }
 
 /// A builder for [`ScheduleRunConfiguration`](crate::types::ScheduleRunConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduleRunConfigurationBuilder {
     pub(crate) extra_data_package_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_profile_arn: ::std::option::Option<::std::string::String>,

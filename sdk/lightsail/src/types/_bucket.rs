@@ -145,8 +145,8 @@ impl Bucket {
 }
 
 /// A builder for [`Bucket`](crate::types::Bucket).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) access_rules: ::std::option::Option<crate::types::AccessRules>,

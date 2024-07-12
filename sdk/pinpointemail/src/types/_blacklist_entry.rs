@@ -33,8 +33,8 @@ impl BlacklistEntry {
 }
 
 /// A builder for [`BlacklistEntry`](crate::types::BlacklistEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlacklistEntryBuilder {
     pub(crate) rbl_name: ::std::option::Option<::std::string::String>,
     pub(crate) listing_time: ::std::option::Option<::aws_smithy_types::DateTime>,

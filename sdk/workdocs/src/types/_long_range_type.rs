@@ -27,8 +27,8 @@ impl LongRangeType {
 }
 
 /// A builder for [`LongRangeType`](crate::types::LongRangeType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LongRangeTypeBuilder {
     pub(crate) start_value: ::std::option::Option<i64>,
     pub(crate) end_value: ::std::option::Option<i64>,

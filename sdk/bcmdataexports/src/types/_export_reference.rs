@@ -35,8 +35,8 @@ impl ExportReference {
 }
 
 /// A builder for [`ExportReference`](crate::types::ExportReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportReferenceBuilder {
     pub(crate) export_arn: ::std::option::Option<::std::string::String>,
     pub(crate) export_name: ::std::option::Option<::std::string::String>,

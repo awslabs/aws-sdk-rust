@@ -35,8 +35,8 @@ impl DevicePoolCompatibilityResult {
 }
 
 /// A builder for [`DevicePoolCompatibilityResult`](crate::types::DevicePoolCompatibilityResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DevicePoolCompatibilityResultBuilder {
     pub(crate) device: ::std::option::Option<crate::types::Device>,
     pub(crate) compatible: ::std::option::Option<bool>,

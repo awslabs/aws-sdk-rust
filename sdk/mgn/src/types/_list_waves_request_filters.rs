@@ -29,8 +29,8 @@ impl ListWavesRequestFilters {
 }
 
 /// A builder for [`ListWavesRequestFilters`](crate::types::ListWavesRequestFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWavesRequestFiltersBuilder {
     pub(crate) wave_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_archived: ::std::option::Option<bool>,

@@ -35,8 +35,8 @@ impl ShareRule {
 }
 
 /// A builder for [`ShareRule`](crate::types::ShareRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShareRuleBuilder {
     pub(crate) target_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) unshare_interval: ::std::option::Option<i32>,

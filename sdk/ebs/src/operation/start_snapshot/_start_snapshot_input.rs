@@ -118,8 +118,8 @@ impl StartSnapshotInput {
 }
 
 /// A builder for [`StartSnapshotInput`](crate::operation::start_snapshot::StartSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartSnapshotInputBuilder {
     pub(crate) volume_size: ::std::option::Option<i64>,
     pub(crate) parent_snapshot_id: ::std::option::Option<::std::string::String>,

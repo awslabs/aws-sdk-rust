@@ -20,8 +20,8 @@ impl DescribeDevicePolicyConfigurationInput {
 }
 
 /// A builder for [`DescribeDevicePolicyConfigurationInput`](crate::operation::describe_device_policy_configuration::DescribeDevicePolicyConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDevicePolicyConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
 }

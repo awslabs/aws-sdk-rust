@@ -28,8 +28,8 @@ impl RoutingProfileQueueReference {
 }
 
 /// A builder for [`RoutingProfileQueueReference`](crate::types::RoutingProfileQueueReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RoutingProfileQueueReferenceBuilder {
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,

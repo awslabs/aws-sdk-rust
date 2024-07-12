@@ -27,8 +27,8 @@ impl UpdateShareInvitationInput {
 }
 
 /// A builder for [`UpdateShareInvitationInput`](crate::operation::update_share_invitation::UpdateShareInvitationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateShareInvitationInputBuilder {
     pub(crate) share_invitation_id: ::std::option::Option<::std::string::String>,
     pub(crate) share_invitation_action: ::std::option::Option<crate::types::ShareInvitationAction>,

@@ -31,8 +31,8 @@ impl RuleGroupDetails {
 }
 
 /// A builder for [`RuleGroupDetails`](crate::types::RuleGroupDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupDetailsBuilder {
     pub(crate) rule_variables: ::std::option::Option<crate::types::RuleGroupVariables>,
     pub(crate) rules_source: ::std::option::Option<crate::types::RuleGroupSource>,

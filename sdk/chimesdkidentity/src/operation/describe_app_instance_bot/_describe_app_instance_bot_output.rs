@@ -26,8 +26,8 @@ impl DescribeAppInstanceBotOutput {
 }
 
 /// A builder for [`DescribeAppInstanceBotOutput`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppInstanceBotOutputBuilder {
     pub(crate) app_instance_bot: ::std::option::Option<crate::types::AppInstanceBot>,
     _request_id: Option<String>,

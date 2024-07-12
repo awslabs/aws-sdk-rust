@@ -33,8 +33,8 @@ impl ListResourceSetResourcesOutput {
 }
 
 /// A builder for [`ListResourceSetResourcesOutput`](crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceSetResourcesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

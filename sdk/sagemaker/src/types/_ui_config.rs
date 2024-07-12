@@ -91,8 +91,8 @@ impl UiConfig {
 }
 
 /// A builder for [`UiConfig`](crate::types::UiConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UiConfigBuilder {
     pub(crate) ui_template_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) human_task_ui_arn: ::std::option::Option<::std::string::String>,

@@ -43,8 +43,8 @@ impl UpdateChannelFlowInput {
 }
 
 /// A builder for [`UpdateChannelFlowInput`](crate::operation::update_channel_flow::UpdateChannelFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateChannelFlowInputBuilder {
     pub(crate) channel_flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,

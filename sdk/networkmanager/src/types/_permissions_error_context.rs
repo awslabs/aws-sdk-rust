@@ -21,8 +21,8 @@ impl PermissionsErrorContext {
 }
 
 /// A builder for [`PermissionsErrorContext`](crate::types::PermissionsErrorContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PermissionsErrorContextBuilder {
     pub(crate) missing_permission: ::std::option::Option<::std::string::String>,
 }

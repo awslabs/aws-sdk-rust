@@ -20,8 +20,8 @@ impl GetGroupsInput {
 }
 
 /// A builder for [`GetGroupsInput`](crate::operation::get_groups::GetGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }

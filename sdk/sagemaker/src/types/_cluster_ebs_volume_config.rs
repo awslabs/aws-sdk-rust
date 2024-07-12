@@ -21,8 +21,8 @@ impl ClusterEbsVolumeConfig {
 }
 
 /// A builder for [`ClusterEbsVolumeConfig`](crate::types::ClusterEbsVolumeConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterEbsVolumeConfigBuilder {
     pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
 }

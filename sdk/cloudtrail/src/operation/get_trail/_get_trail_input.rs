@@ -20,8 +20,8 @@ impl GetTrailInput {
 }
 
 /// A builder for [`GetTrailInput`](crate::operation::get_trail::GetTrailInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTrailInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

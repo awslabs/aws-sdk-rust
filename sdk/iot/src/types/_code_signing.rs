@@ -33,8 +33,8 @@ impl CodeSigning {
 }
 
 /// A builder for [`CodeSigning`](crate::types::CodeSigning).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeSigningBuilder {
     pub(crate) aws_signer_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_signing_job_parameter: ::std::option::Option<crate::types::StartSigningJobParameter>,

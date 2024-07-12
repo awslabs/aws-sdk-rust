@@ -42,8 +42,8 @@ impl UpdateVpcAttachmentInput {
 }
 
 /// A builder for [`UpdateVpcAttachmentInput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVpcAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) add_subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

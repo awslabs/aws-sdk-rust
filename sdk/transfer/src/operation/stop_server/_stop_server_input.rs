@@ -20,8 +20,8 @@ impl StopServerInput {
 }
 
 /// A builder for [`StopServerInput`](crate::operation::stop_server::StopServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopServerInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
 }

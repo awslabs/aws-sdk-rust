@@ -18,8 +18,8 @@ impl ModifyWorkspaceCreationPropertiesOutput {
 }
 
 /// A builder for [`ModifyWorkspaceCreationPropertiesOutput`](crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyWorkspaceCreationPropertiesOutputBuilder {
     _request_id: Option<String>,
 }

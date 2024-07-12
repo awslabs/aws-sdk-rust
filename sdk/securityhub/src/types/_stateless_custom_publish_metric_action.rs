@@ -23,8 +23,8 @@ impl StatelessCustomPublishMetricAction {
 }
 
 /// A builder for [`StatelessCustomPublishMetricAction`](crate::types::StatelessCustomPublishMetricAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatelessCustomPublishMetricActionBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::StatelessCustomPublishMetricActionDimension>>,
 }

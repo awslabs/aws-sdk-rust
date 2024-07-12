@@ -33,8 +33,8 @@ impl DescribeRegistrationsOutput {
 }
 
 /// A builder for [`DescribeRegistrationsOutput`](crate::operation::describe_registrations::DescribeRegistrationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistrationsOutputBuilder {
     pub(crate) registrations: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

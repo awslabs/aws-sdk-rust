@@ -20,8 +20,8 @@ impl StartServerInput {
 }
 
 /// A builder for [`StartServerInput`](crate::operation::start_server::StartServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartServerInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
 }

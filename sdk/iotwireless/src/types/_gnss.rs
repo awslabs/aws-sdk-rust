@@ -54,8 +54,8 @@ impl Gnss {
 }
 
 /// A builder for [`Gnss`](crate::types::Gnss).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GnssBuilder {
     pub(crate) payload: ::std::option::Option<::std::string::String>,
     pub(crate) capture_time: ::std::option::Option<f32>,

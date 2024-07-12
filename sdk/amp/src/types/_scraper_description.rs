@@ -90,8 +90,8 @@ impl ScraperDescription {
 }
 
 /// A builder for [`ScraperDescription`](crate::types::ScraperDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScraperDescriptionBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) scraper_id: ::std::option::Option<::std::string::String>,

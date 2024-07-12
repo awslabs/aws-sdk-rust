@@ -23,8 +23,8 @@ impl ResourcePath {
 }
 
 /// A builder for [`ResourcePath`](crate::types::ResourcePath).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourcePathBuilder {
     pub(crate) components: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePathComponent>>,
 }

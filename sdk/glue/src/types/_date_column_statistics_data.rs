@@ -39,8 +39,8 @@ impl DateColumnStatisticsData {
 }
 
 /// A builder for [`DateColumnStatisticsData`](crate::types::DateColumnStatisticsData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DateColumnStatisticsDataBuilder {
     pub(crate) minimum_value: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) maximum_value: ::std::option::Option<::aws_smithy_types::DateTime>,

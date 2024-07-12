@@ -18,8 +18,8 @@ impl UpdateInstanceStorageConfigOutput {
 }
 
 /// A builder for [`UpdateInstanceStorageConfigOutput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInstanceStorageConfigOutputBuilder {
     _request_id: Option<String>,
 }

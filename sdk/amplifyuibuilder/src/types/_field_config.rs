@@ -47,8 +47,8 @@ impl FieldConfig {
 }
 
 /// A builder for [`FieldConfig`](crate::types::FieldConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FieldConfigBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<crate::types::FieldPosition>,

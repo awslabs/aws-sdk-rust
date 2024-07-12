@@ -33,8 +33,8 @@ impl SensitiveDataDetections {
 }
 
 /// A builder for [`SensitiveDataDetections`](crate::types::SensitiveDataDetections).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SensitiveDataDetectionsBuilder {
     pub(crate) count: ::std::option::Option<i64>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

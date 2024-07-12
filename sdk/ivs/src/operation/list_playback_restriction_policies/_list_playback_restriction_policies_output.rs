@@ -33,8 +33,8 @@ impl ListPlaybackRestrictionPoliciesOutput {
 }
 
 /// A builder for [`ListPlaybackRestrictionPoliciesOutput`](crate::operation::list_playback_restriction_policies::ListPlaybackRestrictionPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPlaybackRestrictionPoliciesOutputBuilder {
     pub(crate) playback_restriction_policies: ::std::option::Option<::std::vec::Vec<crate::types::PlaybackRestrictionPolicySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

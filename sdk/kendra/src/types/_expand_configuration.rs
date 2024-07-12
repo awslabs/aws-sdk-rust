@@ -27,8 +27,8 @@ impl ExpandConfiguration {
 }
 
 /// A builder for [`ExpandConfiguration`](crate::types::ExpandConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExpandConfigurationBuilder {
     pub(crate) max_result_items_to_expand: ::std::option::Option<i32>,
     pub(crate) max_expanded_results_per_item: ::std::option::Option<i32>,

@@ -20,8 +20,8 @@ impl DescribeRegistryInput {
 }
 
 /// A builder for [`DescribeRegistryInput`](crate::operation::describe_registry::DescribeRegistryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistryInputBuilder {
     pub(crate) registry_name: ::std::option::Option<::std::string::String>,
 }

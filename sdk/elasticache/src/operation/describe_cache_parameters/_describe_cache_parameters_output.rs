@@ -43,8 +43,8 @@ impl DescribeCacheParametersOutput {
 }
 
 /// A builder for [`DescribeCacheParametersOutput`](crate::operation::describe_cache_parameters::DescribeCacheParametersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCacheParametersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,

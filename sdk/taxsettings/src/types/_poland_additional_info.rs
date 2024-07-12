@@ -27,8 +27,8 @@ impl PolandAdditionalInfo {
 }
 
 /// A builder for [`PolandAdditionalInfo`](crate::types::PolandAdditionalInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolandAdditionalInfoBuilder {
     pub(crate) individual_registration_number: ::std::option::Option<::std::string::String>,
     pub(crate) is_group_vat_enabled: ::std::option::Option<bool>,

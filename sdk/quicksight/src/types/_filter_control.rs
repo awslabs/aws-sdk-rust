@@ -64,8 +64,8 @@ impl FilterControl {
 }
 
 /// A builder for [`FilterControl`](crate::types::FilterControl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterControlBuilder {
     pub(crate) date_time_picker: ::std::option::Option<crate::types::FilterDateTimePickerControl>,
     pub(crate) list: ::std::option::Option<crate::types::FilterListControl>,

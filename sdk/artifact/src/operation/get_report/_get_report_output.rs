@@ -26,8 +26,8 @@ impl GetReportOutput {
 }
 
 /// A builder for [`GetReportOutput`](crate::operation::get_report::GetReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReportOutputBuilder {
     pub(crate) document_presigned_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

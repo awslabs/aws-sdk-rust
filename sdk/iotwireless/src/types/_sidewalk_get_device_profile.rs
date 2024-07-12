@@ -44,8 +44,8 @@ impl SidewalkGetDeviceProfile {
 }
 
 /// A builder for [`SidewalkGetDeviceProfile`](crate::types::SidewalkGetDeviceProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SidewalkGetDeviceProfileBuilder {
     pub(crate) application_server_public_key: ::std::option::Option<::std::string::String>,
     pub(crate) qualification_status: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl DetectMetricSetConfigInput {
 }
 
 /// A builder for [`DetectMetricSetConfigInput`](crate::operation::detect_metric_set_config::DetectMetricSetConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectMetricSetConfigInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) auto_detection_metric_source: ::std::option::Option<crate::types::AutoDetectionMetricSource>,

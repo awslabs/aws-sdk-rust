@@ -35,8 +35,8 @@ impl ListInputSecurityGroupsOutput {
 }
 
 /// A builder for [`ListInputSecurityGroupsOutput`](crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInputSecurityGroupsOutputBuilder {
     pub(crate) input_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::InputSecurityGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

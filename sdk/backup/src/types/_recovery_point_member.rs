@@ -39,8 +39,8 @@ impl RecoveryPointMember {
 }
 
 /// A builder for [`RecoveryPointMember`](crate::types::RecoveryPointMember).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecoveryPointMemberBuilder {
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

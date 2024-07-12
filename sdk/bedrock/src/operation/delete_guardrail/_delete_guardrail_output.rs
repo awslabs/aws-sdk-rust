@@ -18,8 +18,8 @@ impl DeleteGuardrailOutput {
 }
 
 /// A builder for [`DeleteGuardrailOutput`](crate::operation::delete_guardrail::DeleteGuardrailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGuardrailOutputBuilder {
     _request_id: Option<String>,
 }

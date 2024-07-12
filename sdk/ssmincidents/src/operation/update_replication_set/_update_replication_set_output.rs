@@ -18,8 +18,8 @@ impl UpdateReplicationSetOutput {
 }
 
 /// A builder for [`UpdateReplicationSetOutput`](crate::operation::update_replication_set::UpdateReplicationSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateReplicationSetOutputBuilder {
     _request_id: Option<String>,
 }

@@ -66,8 +66,8 @@ impl DocumentInfo {
 }
 
 /// A builder for [`DocumentInfo`](crate::types::DocumentInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentInfoBuilder {
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,

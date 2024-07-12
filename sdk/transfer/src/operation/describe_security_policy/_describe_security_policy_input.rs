@@ -20,8 +20,8 @@ impl DescribeSecurityPolicyInput {
 }
 
 /// A builder for [`DescribeSecurityPolicyInput`](crate::operation::describe_security_policy::DescribeSecurityPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSecurityPolicyInputBuilder {
     pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
 }

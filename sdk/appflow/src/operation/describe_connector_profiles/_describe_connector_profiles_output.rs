@@ -34,8 +34,8 @@ impl DescribeConnectorProfilesOutput {
 }
 
 /// A builder for [`DescribeConnectorProfilesOutput`](crate::operation::describe_connector_profiles::DescribeConnectorProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectorProfilesOutputBuilder {
     pub(crate) connector_profile_details: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorProfile>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

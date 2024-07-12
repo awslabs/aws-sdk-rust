@@ -73,8 +73,8 @@ impl UpdateInputInput {
 }
 
 /// A builder for [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInputInputBuilder {
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>,
     pub(crate) input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceRequest>>,

@@ -18,8 +18,8 @@ impl UpdateConnectClientAddInOutput {
 }
 
 /// A builder for [`UpdateConnectClientAddInOutput`](crate::operation::update_connect_client_add_in::UpdateConnectClientAddInOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConnectClientAddInOutputBuilder {
     _request_id: Option<String>,
 }

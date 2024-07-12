@@ -66,8 +66,8 @@ impl ListDistributedGrantsInput {
 }
 
 /// A builder for [`ListDistributedGrantsInput`](crate::operation::list_distributed_grants::ListDistributedGrantsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributedGrantsInputBuilder {
     pub(crate) grant_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

@@ -32,8 +32,8 @@ impl GetBucketEncryptionOutput {
 }
 
 /// A builder for [`GetBucketEncryptionOutput`](crate::operation::get_bucket_encryption::GetBucketEncryptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketEncryptionOutputBuilder {
     pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     _extended_request_id: Option<String>,

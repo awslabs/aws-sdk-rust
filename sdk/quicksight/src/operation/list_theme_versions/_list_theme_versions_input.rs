@@ -38,8 +38,8 @@ impl ListThemeVersionsInput {
 }
 
 /// A builder for [`ListThemeVersionsInput`](crate::operation::list_theme_versions::ListThemeVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListThemeVersionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,

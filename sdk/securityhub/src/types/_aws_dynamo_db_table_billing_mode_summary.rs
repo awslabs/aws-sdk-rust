@@ -53,8 +53,8 @@ impl AwsDynamoDbTableBillingModeSummary {
 }
 
 /// A builder for [`AwsDynamoDbTableBillingModeSummary`](crate::types::AwsDynamoDbTableBillingModeSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDynamoDbTableBillingModeSummaryBuilder {
     pub(crate) billing_mode: ::std::option::Option<::std::string::String>,
     pub(crate) last_update_to_pay_per_request_date_time: ::std::option::Option<::std::string::String>,

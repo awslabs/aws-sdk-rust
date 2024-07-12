@@ -41,8 +41,8 @@ impl VerifySoftwareTokenOutput {
 }
 
 /// A builder for [`VerifySoftwareTokenOutput`](crate::operation::verify_software_token::VerifySoftwareTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct VerifySoftwareTokenOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VerifySoftwareTokenResponseType>,
     pub(crate) session: ::std::option::Option<::std::string::String>,

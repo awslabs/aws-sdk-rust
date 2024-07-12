@@ -38,8 +38,8 @@ impl EnableUserInput {
 }
 
 /// A builder for [`EnableUserInput`](crate::operation::enable_user::EnableUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EnableUserInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,

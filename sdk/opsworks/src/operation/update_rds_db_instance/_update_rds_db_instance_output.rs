@@ -18,8 +18,8 @@ impl UpdateRdsDbInstanceOutput {
 }
 
 /// A builder for [`UpdateRdsDbInstanceOutput`](crate::operation::update_rds_db_instance::UpdateRdsDbInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRdsDbInstanceOutputBuilder {
     _request_id: Option<String>,
 }

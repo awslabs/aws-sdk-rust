@@ -35,8 +35,8 @@ impl DescribeBudgetsOutput {
 }
 
 /// A builder for [`DescribeBudgetsOutput`](crate::operation::describe_budgets::DescribeBudgetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBudgetsOutputBuilder {
     pub(crate) budgets: ::std::option::Option<::std::vec::Vec<crate::types::Budget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

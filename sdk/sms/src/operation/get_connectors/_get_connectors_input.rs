@@ -26,8 +26,8 @@ impl GetConnectorsInput {
 }
 
 /// A builder for [`GetConnectorsInput`](crate::operation::get_connectors::GetConnectorsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectorsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

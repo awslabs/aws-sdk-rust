@@ -116,8 +116,8 @@ impl GetFormTypeOutput {
 }
 
 /// A builder for [`GetFormTypeOutput`](crate::operation::get_form_type::GetFormTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetFormTypeOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetCorsPolicyInput {
 }
 
 /// A builder for [`GetCorsPolicyInput`](crate::operation::get_cors_policy::GetCorsPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCorsPolicyInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }

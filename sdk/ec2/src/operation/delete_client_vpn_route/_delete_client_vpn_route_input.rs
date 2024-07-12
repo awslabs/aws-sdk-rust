@@ -38,8 +38,8 @@ impl DeleteClientVpnRouteInput {
 }
 
 /// A builder for [`DeleteClientVpnRouteInput`](crate::operation::delete_client_vpn_route::DeleteClientVpnRouteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClientVpnRouteInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_vpc_subnet_id: ::std::option::Option<::std::string::String>,

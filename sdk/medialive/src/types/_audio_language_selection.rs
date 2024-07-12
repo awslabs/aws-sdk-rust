@@ -27,8 +27,8 @@ impl AudioLanguageSelection {
 }
 
 /// A builder for [`AudioLanguageSelection`](crate::types::AudioLanguageSelection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioLanguageSelectionBuilder {
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
     pub(crate) language_selection_policy: ::std::option::Option<crate::types::AudioLanguageSelectionPolicy>,

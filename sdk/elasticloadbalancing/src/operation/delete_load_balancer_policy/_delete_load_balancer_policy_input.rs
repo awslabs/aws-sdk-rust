@@ -27,8 +27,8 @@ impl DeleteLoadBalancerPolicyInput {
 }
 
 /// A builder for [`DeleteLoadBalancerPolicyInput`](crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLoadBalancerPolicyInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,

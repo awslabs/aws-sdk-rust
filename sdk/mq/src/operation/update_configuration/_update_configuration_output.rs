@@ -58,8 +58,8 @@ impl UpdateConfigurationOutput {
 }
 
 /// A builder for [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,

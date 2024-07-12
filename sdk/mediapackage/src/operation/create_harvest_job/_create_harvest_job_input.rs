@@ -45,8 +45,8 @@ impl CreateHarvestJobInput {
 }
 
 /// A builder for [`CreateHarvestJobInput`](crate::operation::create_harvest_job::CreateHarvestJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHarvestJobInputBuilder {
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

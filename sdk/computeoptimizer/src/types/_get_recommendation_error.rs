@@ -34,8 +34,8 @@ impl GetRecommendationError {
 }
 
 /// A builder for [`GetRecommendationError`](crate::types::GetRecommendationError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecommendationErrorBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

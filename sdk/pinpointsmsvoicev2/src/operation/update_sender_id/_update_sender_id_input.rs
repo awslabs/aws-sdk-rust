@@ -32,8 +32,8 @@ impl UpdateSenderIdInput {
 }
 
 /// A builder for [`UpdateSenderIdInput`](crate::operation::update_sender_id::UpdateSenderIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSenderIdInputBuilder {
     pub(crate) sender_id: ::std::option::Option<::std::string::String>,
     pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,

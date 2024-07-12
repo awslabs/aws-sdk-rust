@@ -33,8 +33,8 @@ impl InstanceGroupStatus {
 }
 
 /// A builder for [`InstanceGroupStatus`](crate::types::InstanceGroupStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceGroupStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::InstanceGroupState>,
     pub(crate) state_change_reason: ::std::option::Option<crate::types::InstanceGroupStateChangeReason>,

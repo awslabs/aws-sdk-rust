@@ -23,8 +23,8 @@ impl RealTimeContactAnalysisPointOfInterest {
 }
 
 /// A builder for [`RealTimeContactAnalysisPointOfInterest`](crate::types::RealTimeContactAnalysisPointOfInterest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RealTimeContactAnalysisPointOfInterestBuilder {
     pub(crate) transcript_items: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>>,
 }

@@ -32,8 +32,8 @@ impl ListDistributionsByCachePolicyIdInput {
 }
 
 /// A builder for [`ListDistributionsByCachePolicyIdInput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsByCachePolicyIdInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,

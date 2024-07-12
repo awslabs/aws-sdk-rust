@@ -31,8 +31,8 @@ impl LoggingConfig {
 }
 
 /// A builder for [`LoggingConfig`](crate::types::LoggingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoggingConfigBuilder {
     pub(crate) record_all_ros_topics: ::std::option::Option<bool>,
 }

@@ -26,8 +26,8 @@ impl RestoreTableFromBackupOutput {
 }
 
 /// A builder for [`RestoreTableFromBackupOutput`](crate::operation::restore_table_from_backup::RestoreTableFromBackupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreTableFromBackupOutputBuilder {
     pub(crate) table_description: ::std::option::Option<crate::types::TableDescription>,
     _request_id: Option<String>,

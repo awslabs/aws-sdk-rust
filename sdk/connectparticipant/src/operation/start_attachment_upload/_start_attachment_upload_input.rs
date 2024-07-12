@@ -44,8 +44,8 @@ impl StartAttachmentUploadInput {
 }
 
 /// A builder for [`StartAttachmentUploadInput`](crate::operation::start_attachment_upload::StartAttachmentUploadInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAttachmentUploadInputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_size_in_bytes: ::std::option::Option<i64>,

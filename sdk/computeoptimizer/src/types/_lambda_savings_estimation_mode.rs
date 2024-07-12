@@ -21,8 +21,8 @@ impl LambdaSavingsEstimationMode {
 }
 
 /// A builder for [`LambdaSavingsEstimationMode`](crate::types::LambdaSavingsEstimationMode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaSavingsEstimationModeBuilder {
     pub(crate) source: ::std::option::Option<crate::types::LambdaSavingsEstimationModeSource>,
 }

@@ -70,8 +70,8 @@ impl CandidateAddress {
 }
 
 /// A builder for [`CandidateAddress`](crate::types::CandidateAddress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CandidateAddressBuilder {
     pub(crate) street_info: ::std::option::Option<::std::string::String>,
     pub(crate) street_number: ::std::option::Option<::std::string::String>,

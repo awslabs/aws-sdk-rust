@@ -32,8 +32,8 @@ impl GetImageFrameInput {
 }
 
 /// A builder for [`GetImageFrameInput`](crate::operation::get_image_frame::GetImageFrameInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImageFrameInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_set_id: ::std::option::Option<::std::string::String>,

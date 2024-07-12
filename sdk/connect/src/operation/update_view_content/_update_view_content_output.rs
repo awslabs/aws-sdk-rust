@@ -26,8 +26,8 @@ impl UpdateViewContentOutput {
 }
 
 /// A builder for [`UpdateViewContentOutput`](crate::operation::update_view_content::UpdateViewContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateViewContentOutputBuilder {
     pub(crate) view: ::std::option::Option<crate::types::View>,
     _request_id: Option<String>,

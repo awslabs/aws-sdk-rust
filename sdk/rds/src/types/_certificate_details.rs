@@ -28,8 +28,8 @@ impl CertificateDetails {
 }
 
 /// A builder for [`CertificateDetails`](crate::types::CertificateDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CertificateDetailsBuilder {
     pub(crate) ca_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,

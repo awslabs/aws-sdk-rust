@@ -65,8 +65,8 @@ impl CreateJobQueueInput {
 }
 
 /// A builder for [`CreateJobQueueInput`](crate::operation::create_job_queue::CreateJobQueueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateJobQueueInputBuilder {
     pub(crate) job_queue_name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::JqState>,

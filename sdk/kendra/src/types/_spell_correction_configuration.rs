@@ -23,8 +23,8 @@ impl SpellCorrectionConfiguration {
 }
 
 /// A builder for [`SpellCorrectionConfiguration`](crate::types::SpellCorrectionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpellCorrectionConfigurationBuilder {
     pub(crate) include_query_spell_check_suggestions: ::std::option::Option<bool>,
 }

@@ -34,8 +34,8 @@ impl ListConfigurationPolicyAssociationsOutput {
 }
 
 /// A builder for [`ListConfigurationPolicyAssociationsOutput`](crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfigurationPolicyAssociationsOutputBuilder {
     pub(crate) configuration_policy_association_summaries:
         ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociationSummary>>,

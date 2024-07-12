@@ -33,8 +33,8 @@ impl CoverageEcsClusterDetails {
 }
 
 /// A builder for [`CoverageEcsClusterDetails`](crate::types::CoverageEcsClusterDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoverageEcsClusterDetailsBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) fargate_details: ::std::option::Option<crate::types::FargateDetails>,

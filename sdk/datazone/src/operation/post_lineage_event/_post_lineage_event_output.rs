@@ -18,8 +18,8 @@ impl PostLineageEventOutput {
 }
 
 /// A builder for [`PostLineageEventOutput`](crate::operation::post_lineage_event::PostLineageEventOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostLineageEventOutputBuilder {
     _request_id: Option<String>,
 }

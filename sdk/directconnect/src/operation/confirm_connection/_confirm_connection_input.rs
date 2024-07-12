@@ -20,8 +20,8 @@ impl ConfirmConnectionInput {
 }
 
 /// A builder for [`ConfirmConnectionInput`](crate::operation::confirm_connection::ConfirmConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfirmConnectionInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
 }

@@ -50,8 +50,8 @@ impl DetectLabelsInput {
 }
 
 /// A builder for [`DetectLabelsInput`](crate::operation::detect_labels::DetectLabelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectLabelsInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) max_labels: ::std::option::Option<i32>,

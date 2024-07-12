@@ -50,8 +50,8 @@ impl GetBackendApiOutput {
 }
 
 /// A builder for [`GetBackendApiOutput`](crate::operation::get_backend_api::GetBackendApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBackendApiOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,

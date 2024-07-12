@@ -40,8 +40,8 @@ impl DescribeWarmPoolOutput {
 }
 
 /// A builder for [`DescribeWarmPoolOutput`](crate::operation::describe_warm_pool::DescribeWarmPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWarmPoolOutputBuilder {
     pub(crate) warm_pool_configuration: ::std::option::Option<crate::types::WarmPoolConfiguration>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,

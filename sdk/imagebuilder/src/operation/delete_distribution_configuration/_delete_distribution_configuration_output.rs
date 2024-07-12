@@ -32,8 +32,8 @@ impl DeleteDistributionConfigurationOutput {
 }
 
 /// A builder for [`DeleteDistributionConfigurationOutput`](crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDistributionConfigurationOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) distribution_configuration_arn: ::std::option::Option<::std::string::String>,

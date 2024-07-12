@@ -20,8 +20,8 @@ impl GetAssignmentInput {
 }
 
 /// A builder for [`GetAssignmentInput`](crate::operation::get_assignment::GetAssignmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssignmentInputBuilder {
     pub(crate) assignment_id: ::std::option::Option<::std::string::String>,
 }

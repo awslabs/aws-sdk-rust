@@ -59,8 +59,8 @@ impl GetConfigurationSetOutput {
 }
 
 /// A builder for [`GetConfigurationSetOutput`](crate::operation::get_configuration_set::GetConfigurationSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfigurationSetOutputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) tracking_options: ::std::option::Option<crate::types::TrackingOptions>,

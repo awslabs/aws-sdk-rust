@@ -20,8 +20,8 @@ impl GetEbsEncryptionByDefaultInput {
 }
 
 /// A builder for [`GetEbsEncryptionByDefaultInput`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEbsEncryptionByDefaultInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }

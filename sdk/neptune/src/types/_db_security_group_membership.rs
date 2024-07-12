@@ -27,8 +27,8 @@ impl DbSecurityGroupMembership {
 }
 
 /// A builder for [`DbSecurityGroupMembership`](crate::types::DbSecurityGroupMembership).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbSecurityGroupMembershipBuilder {
     pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

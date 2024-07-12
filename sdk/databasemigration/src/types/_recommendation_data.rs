@@ -21,8 +21,8 @@ impl RecommendationData {
 }
 
 /// A builder for [`RecommendationData`](crate::types::RecommendationData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationDataBuilder {
     pub(crate) rds_engine: ::std::option::Option<crate::types::RdsRecommendation>,
 }

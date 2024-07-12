@@ -28,8 +28,8 @@ impl SeriesItem {
 }
 
 /// A builder for [`SeriesItem`](crate::types::SeriesItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SeriesItemBuilder {
     pub(crate) field_series_item: ::std::option::Option<crate::types::FieldSeriesItem>,
     pub(crate) data_field_series_item: ::std::option::Option<crate::types::DataFieldSeriesItem>,

@@ -33,8 +33,8 @@ impl AxisLabelOptions {
 }
 
 /// A builder for [`AxisLabelOptions`](crate::types::AxisLabelOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AxisLabelOptionsBuilder {
     pub(crate) font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     pub(crate) custom_label: ::std::option::Option<::std::string::String>,

@@ -50,8 +50,8 @@ impl RecoverySnapshot {
 }
 
 /// A builder for [`RecoverySnapshot`](crate::types::RecoverySnapshot).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecoverySnapshotBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,

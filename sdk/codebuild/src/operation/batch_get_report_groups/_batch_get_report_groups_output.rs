@@ -36,8 +36,8 @@ impl BatchGetReportGroupsOutput {
 }
 
 /// A builder for [`BatchGetReportGroupsOutput`](crate::operation::batch_get_report_groups::BatchGetReportGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetReportGroupsOutputBuilder {
     pub(crate) report_groups: ::std::option::Option<::std::vec::Vec<crate::types::ReportGroup>>,
     pub(crate) report_groups_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

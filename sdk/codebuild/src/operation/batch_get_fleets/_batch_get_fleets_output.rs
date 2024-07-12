@@ -36,8 +36,8 @@ impl BatchGetFleetsOutput {
 }
 
 /// A builder for [`BatchGetFleetsOutput`](crate::operation::batch_get_fleets::BatchGetFleetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetFleetsOutputBuilder {
     pub(crate) fleets: ::std::option::Option<::std::vec::Vec<crate::types::Fleet>>,
     pub(crate) fleets_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

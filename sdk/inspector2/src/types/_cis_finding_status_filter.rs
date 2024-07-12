@@ -27,8 +27,8 @@ impl CisFindingStatusFilter {
 }
 
 /// A builder for [`CisFindingStatusFilter`](crate::types::CisFindingStatusFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisFindingStatusFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::CisFindingStatusComparison>,
     pub(crate) value: ::std::option::Option<crate::types::CisFindingStatus>,

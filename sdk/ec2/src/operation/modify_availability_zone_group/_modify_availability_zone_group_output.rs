@@ -26,8 +26,8 @@ impl ModifyAvailabilityZoneGroupOutput {
 }
 
 /// A builder for [`ModifyAvailabilityZoneGroupOutput`](crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyAvailabilityZoneGroupOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

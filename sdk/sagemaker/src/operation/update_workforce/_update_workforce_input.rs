@@ -40,8 +40,8 @@ impl UpdateWorkforceInput {
 }
 
 /// A builder for [`UpdateWorkforceInput`](crate::operation::update_workforce::UpdateWorkforceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkforceInputBuilder {
     pub(crate) workforce_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_ip_config: ::std::option::Option<crate::types::SourceIpConfig>,

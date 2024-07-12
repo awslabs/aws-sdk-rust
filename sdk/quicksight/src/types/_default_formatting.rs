@@ -27,8 +27,8 @@ impl DefaultFormatting {
 }
 
 /// A builder for [`DefaultFormatting`](crate::types::DefaultFormatting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultFormattingBuilder {
     pub(crate) display_format: ::std::option::Option<crate::types::DisplayFormat>,
     pub(crate) display_format_options: ::std::option::Option<crate::types::DisplayFormatOptions>,

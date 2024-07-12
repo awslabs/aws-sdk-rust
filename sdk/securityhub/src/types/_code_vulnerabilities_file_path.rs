@@ -39,8 +39,8 @@ impl CodeVulnerabilitiesFilePath {
 }
 
 /// A builder for [`CodeVulnerabilitiesFilePath`](crate::types::CodeVulnerabilitiesFilePath).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeVulnerabilitiesFilePathBuilder {
     pub(crate) end_line: ::std::option::Option<i32>,
     pub(crate) file_name: ::std::option::Option<::std::string::String>,

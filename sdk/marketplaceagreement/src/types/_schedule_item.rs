@@ -27,8 +27,8 @@ impl ScheduleItem {
 }
 
 /// A builder for [`ScheduleItem`](crate::types::ScheduleItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduleItemBuilder {
     pub(crate) charge_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) charge_amount: ::std::option::Option<::std::string::String>,

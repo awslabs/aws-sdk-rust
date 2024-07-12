@@ -125,8 +125,8 @@ impl PauseReplicationOutput {
 }
 
 /// A builder for [`PauseReplicationOutput`](crate::operation::pause_replication::PauseReplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PauseReplicationOutputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

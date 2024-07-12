@@ -30,8 +30,8 @@ impl GetSystemTemplateInput {
 }
 
 /// A builder for [`GetSystemTemplateInput`](crate::operation::get_system_template::GetSystemTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSystemTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_number: ::std::option::Option<i64>,

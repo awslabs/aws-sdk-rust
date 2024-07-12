@@ -34,8 +34,8 @@ impl ListClusterJobsOutput {
 }
 
 /// A builder for [`ListClusterJobsOutput`](crate::operation::list_cluster_jobs::ListClusterJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListClusterJobsOutputBuilder {
     pub(crate) job_list_entries: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

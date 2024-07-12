@@ -23,8 +23,8 @@ impl BatchScheduleActionDeleteResult {
 }
 
 /// A builder for [`BatchScheduleActionDeleteResult`](crate::types::BatchScheduleActionDeleteResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchScheduleActionDeleteResultBuilder {
     pub(crate) schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
 }

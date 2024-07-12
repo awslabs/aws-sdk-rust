@@ -18,8 +18,8 @@ impl AssociateMemberToFleetOutput {
 }
 
 /// A builder for [`AssociateMemberToFleetOutput`](crate::operation::associate_member_to_fleet::AssociateMemberToFleetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMemberToFleetOutputBuilder {
     _request_id: Option<String>,
 }

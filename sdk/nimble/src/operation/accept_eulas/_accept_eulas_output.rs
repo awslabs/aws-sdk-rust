@@ -28,8 +28,8 @@ impl AcceptEulasOutput {
 }
 
 /// A builder for [`AcceptEulasOutput`](crate::operation::accept_eulas::AcceptEulasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptEulasOutputBuilder {
     pub(crate) eula_acceptances: ::std::option::Option<::std::vec::Vec<crate::types::EulaAcceptance>>,
     _request_id: Option<String>,

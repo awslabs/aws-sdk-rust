@@ -20,8 +20,8 @@ impl FailoverPrimaryComputeInput {
 }
 
 /// A builder for [`FailoverPrimaryComputeInput`](crate::operation::failover_primary_compute::FailoverPrimaryComputeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailoverPrimaryComputeInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }

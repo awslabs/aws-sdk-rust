@@ -22,8 +22,8 @@ impl GetCertificateAuthorityCertificateInput {
 }
 
 /// A builder for [`GetCertificateAuthorityCertificateInput`](crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCertificateAuthorityCertificateInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl DeleteDimensionOutput {
 }
 
 /// A builder for [`DeleteDimensionOutput`](crate::operation::delete_dimension::DeleteDimensionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDimensionOutputBuilder {
     _request_id: Option<String>,
 }

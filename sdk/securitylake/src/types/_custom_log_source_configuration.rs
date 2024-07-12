@@ -27,8 +27,8 @@ impl CustomLogSourceConfiguration {
 }
 
 /// A builder for [`CustomLogSourceConfiguration`](crate::types::CustomLogSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomLogSourceConfigurationBuilder {
     pub(crate) crawler_configuration: ::std::option::Option<crate::types::CustomLogSourceCrawlerConfiguration>,
     pub(crate) provider_identity: ::std::option::Option<crate::types::AwsIdentity>,

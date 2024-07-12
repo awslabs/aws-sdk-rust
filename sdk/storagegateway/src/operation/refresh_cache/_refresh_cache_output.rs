@@ -33,8 +33,8 @@ impl RefreshCacheOutput {
 }
 
 /// A builder for [`RefreshCacheOutput`](crate::operation::refresh_cache::RefreshCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RefreshCacheOutputBuilder {
     pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) notification_id: ::std::option::Option<::std::string::String>,

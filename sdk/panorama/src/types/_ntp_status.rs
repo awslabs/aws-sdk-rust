@@ -33,8 +33,8 @@ impl NtpStatus {
 }
 
 /// A builder for [`NtpStatus`](crate::types::NtpStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NtpStatusBuilder {
     pub(crate) connection_status: ::std::option::Option<crate::types::NetworkConnectionStatus>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,

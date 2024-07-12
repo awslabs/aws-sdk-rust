@@ -20,8 +20,8 @@ impl GetRepositoryLinkInput {
 }
 
 /// A builder for [`GetRepositoryLinkInput`](crate::operation::get_repository_link::GetRepositoryLinkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositoryLinkInputBuilder {
     pub(crate) repository_link_id: ::std::option::Option<::std::string::String>,
 }

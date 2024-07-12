@@ -92,8 +92,8 @@ impl UpdateAnomalySubscriptionInput {
 }
 
 /// A builder for [`UpdateAnomalySubscriptionInput`](crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAnomalySubscriptionInputBuilder {
     pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
     pub(crate) threshold: ::std::option::Option<f64>,

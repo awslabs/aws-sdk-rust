@@ -34,8 +34,8 @@ impl CreateStageOutput {
 }
 
 /// A builder for [`CreateStageOutput`](crate::operation::create_stage::CreateStageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStageOutputBuilder {
     pub(crate) stage: ::std::option::Option<crate::types::Stage>,
     pub(crate) participant_tokens: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantToken>>,

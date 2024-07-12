@@ -75,8 +75,8 @@ impl DefaultClientBrandingAttributes {
 }
 
 /// A builder for [`DefaultClientBrandingAttributes`](crate::types::DefaultClientBrandingAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultClientBrandingAttributesBuilder {
     pub(crate) logo_url: ::std::option::Option<::std::string::String>,
     pub(crate) support_email: ::std::option::Option<::std::string::String>,

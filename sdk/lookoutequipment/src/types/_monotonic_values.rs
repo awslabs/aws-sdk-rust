@@ -27,8 +27,8 @@ impl MonotonicValues {
 }
 
 /// A builder for [`MonotonicValues`](crate::types::MonotonicValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonotonicValuesBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
     pub(crate) monotonicity: ::std::option::Option<crate::types::Monotonicity>,

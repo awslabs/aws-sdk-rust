@@ -36,8 +36,8 @@ impl ConditionalFormattingSolidColor {
 }
 
 /// A builder for [`ConditionalFormattingSolidColor`](crate::types::ConditionalFormattingSolidColor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConditionalFormattingSolidColorBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) color: ::std::option::Option<::std::string::String>,

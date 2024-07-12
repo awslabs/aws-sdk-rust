@@ -56,8 +56,8 @@ impl TestAuthorizationInput {
 }
 
 /// A builder for [`TestAuthorizationInput`](crate::operation::test_authorization::TestAuthorizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestAuthorizationInputBuilder {
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) cognito_identity_pool_id: ::std::option::Option<::std::string::String>,

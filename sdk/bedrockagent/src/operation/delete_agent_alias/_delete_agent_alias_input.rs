@@ -26,8 +26,8 @@ impl DeleteAgentAliasInput {
 }
 
 /// A builder for [`DeleteAgentAliasInput`](crate::operation::delete_agent_alias::DeleteAgentAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAgentAliasInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListPipelineExecutionStepsOutput {
 }
 
 /// A builder for [`ListPipelineExecutionStepsOutput`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPipelineExecutionStepsOutputBuilder {
     pub(crate) pipeline_execution_steps: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionStep>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

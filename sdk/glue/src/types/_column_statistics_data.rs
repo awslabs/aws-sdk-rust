@@ -63,8 +63,8 @@ impl ColumnStatisticsData {
 }
 
 /// A builder for [`ColumnStatisticsData`](crate::types::ColumnStatisticsData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnStatisticsDataBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ColumnStatisticsType>,
     pub(crate) boolean_column_statistics_data: ::std::option::Option<crate::types::BooleanColumnStatisticsData>,

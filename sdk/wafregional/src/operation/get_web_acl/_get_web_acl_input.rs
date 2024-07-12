@@ -20,8 +20,8 @@ impl GetWebAclInput {
 }
 
 /// A builder for [`GetWebAclInput`](crate::operation::get_web_acl::GetWebAclInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWebAclInputBuilder {
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
 }

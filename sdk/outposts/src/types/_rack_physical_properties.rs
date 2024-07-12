@@ -69,8 +69,8 @@ impl RackPhysicalProperties {
 }
 
 /// A builder for [`RackPhysicalProperties`](crate::types::RackPhysicalProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RackPhysicalPropertiesBuilder {
     pub(crate) power_draw_kva: ::std::option::Option<crate::types::PowerDrawKva>,
     pub(crate) power_phase: ::std::option::Option<crate::types::PowerPhase>,

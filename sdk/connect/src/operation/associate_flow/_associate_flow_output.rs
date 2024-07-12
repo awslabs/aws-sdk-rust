@@ -18,8 +18,8 @@ impl AssociateFlowOutput {
 }
 
 /// A builder for [`AssociateFlowOutput`](crate::operation::associate_flow::AssociateFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateFlowOutputBuilder {
     _request_id: Option<String>,
 }

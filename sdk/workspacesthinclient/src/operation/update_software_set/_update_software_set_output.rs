@@ -18,8 +18,8 @@ impl UpdateSoftwareSetOutput {
 }
 
 /// A builder for [`UpdateSoftwareSetOutput`](crate::operation::update_software_set::UpdateSoftwareSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSoftwareSetOutputBuilder {
     _request_id: Option<String>,
 }

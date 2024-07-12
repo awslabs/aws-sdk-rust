@@ -72,8 +72,8 @@ impl DescribeIpv6PoolsInput {
 }
 
 /// A builder for [`DescribeIpv6PoolsInput`](crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIpv6PoolsInputBuilder {
     pub(crate) pool_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

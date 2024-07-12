@@ -21,8 +21,8 @@ impl Ipv6PrefixSpecification {
 }
 
 /// A builder for [`Ipv6PrefixSpecification`](crate::types::Ipv6PrefixSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ipv6PrefixSpecificationBuilder {
     pub(crate) ipv6_prefix: ::std::option::Option<::std::string::String>,
 }

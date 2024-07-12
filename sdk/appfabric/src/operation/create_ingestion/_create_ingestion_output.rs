@@ -26,8 +26,8 @@ impl CreateIngestionOutput {
 }
 
 /// A builder for [`CreateIngestionOutput`](crate::operation::create_ingestion::CreateIngestionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIngestionOutputBuilder {
     pub(crate) ingestion: ::std::option::Option<crate::types::Ingestion>,
     _request_id: Option<String>,

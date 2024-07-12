@@ -26,8 +26,8 @@ impl StartMetadataModelAssessmentOutput {
 }
 
 /// A builder for [`StartMetadataModelAssessmentOutput`](crate::operation::start_metadata_model_assessment::StartMetadataModelAssessmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMetadataModelAssessmentOutputBuilder {
     pub(crate) request_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl UpdateServiceSpecificCredentialOutput {
 }
 
 /// A builder for [`UpdateServiceSpecificCredentialOutput`](crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceSpecificCredentialOutputBuilder {
     _request_id: Option<String>,
 }

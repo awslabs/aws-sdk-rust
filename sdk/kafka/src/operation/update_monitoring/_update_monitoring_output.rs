@@ -32,8 +32,8 @@ impl UpdateMonitoringOutput {
 }
 
 /// A builder for [`UpdateMonitoringOutput`](crate::operation::update_monitoring::UpdateMonitoringOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMonitoringOutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_operation_arn: ::std::option::Option<::std::string::String>,

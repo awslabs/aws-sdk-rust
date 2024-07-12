@@ -18,8 +18,8 @@ impl DeleteCodeRepositoryOutput {
 }
 
 /// A builder for [`DeleteCodeRepositoryOutput`](crate::operation::delete_code_repository::DeleteCodeRepositoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCodeRepositoryOutputBuilder {
     _request_id: Option<String>,
 }

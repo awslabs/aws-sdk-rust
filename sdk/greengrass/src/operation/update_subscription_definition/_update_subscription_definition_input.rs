@@ -26,8 +26,8 @@ impl UpdateSubscriptionDefinitionInput {
 }
 
 /// A builder for [`UpdateSubscriptionDefinitionInput`](crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSubscriptionDefinitionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_definition_id: ::std::option::Option<::std::string::String>,

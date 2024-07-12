@@ -34,8 +34,8 @@ impl DescribeCustomDomainAssociationsOutput {
 }
 
 /// A builder for [`DescribeCustomDomainAssociationsOutput`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomDomainAssociationsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,

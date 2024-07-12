@@ -36,8 +36,8 @@ impl BatchPutTaxRegistrationInput {
 }
 
 /// A builder for [`BatchPutTaxRegistrationInput`](crate::operation::batch_put_tax_registration::BatchPutTaxRegistrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchPutTaxRegistrationInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tax_registration_entry: ::std::option::Option<crate::types::TaxRegistrationEntry>,

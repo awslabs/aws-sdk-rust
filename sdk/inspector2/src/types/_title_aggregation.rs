@@ -55,8 +55,8 @@ impl TitleAggregation {
 }
 
 /// A builder for [`TitleAggregation`](crate::types::TitleAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TitleAggregationBuilder {
     pub(crate) titles: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) vulnerability_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,

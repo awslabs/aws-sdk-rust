@@ -34,8 +34,8 @@ impl UpdateRouteCalculatorInput {
 }
 
 /// A builder for [`UpdateRouteCalculatorInput`](crate::operation::update_route_calculator::UpdateRouteCalculatorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRouteCalculatorInputBuilder {
     pub(crate) calculator_name: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,

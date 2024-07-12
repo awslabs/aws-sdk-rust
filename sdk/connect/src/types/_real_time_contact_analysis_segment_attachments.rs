@@ -54,8 +54,8 @@ impl RealTimeContactAnalysisSegmentAttachments {
 }
 
 /// A builder for [`RealTimeContactAnalysisSegmentAttachments`](crate::types::RealTimeContactAnalysisSegmentAttachments).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RealTimeContactAnalysisSegmentAttachmentsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,

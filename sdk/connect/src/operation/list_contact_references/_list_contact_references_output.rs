@@ -38,8 +38,8 @@ impl ListContactReferencesOutput {
 }
 
 /// A builder for [`ListContactReferencesOutput`](crate::operation::list_contact_references::ListContactReferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContactReferencesOutputBuilder {
     pub(crate) reference_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

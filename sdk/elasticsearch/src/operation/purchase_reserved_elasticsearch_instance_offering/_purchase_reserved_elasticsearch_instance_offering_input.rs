@@ -35,8 +35,8 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
 }
 
 /// A builder for [`PurchaseReservedElasticsearchInstanceOfferingInput`](crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseReservedElasticsearchInstanceOfferingInputBuilder {
     pub(crate) reserved_elasticsearch_instance_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) reservation_name: ::std::option::Option<::std::string::String>,

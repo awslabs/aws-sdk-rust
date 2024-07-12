@@ -33,8 +33,8 @@ impl StreamSelection {
 }
 
 /// A builder for [`StreamSelection`](crate::types::StreamSelection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamSelectionBuilder {
     pub(crate) max_video_bits_per_second: ::std::option::Option<i32>,
     pub(crate) min_video_bits_per_second: ::std::option::Option<i32>,

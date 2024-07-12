@@ -26,8 +26,8 @@ impl GetVoiceChannelOutput {
 }
 
 /// A builder for [`GetVoiceChannelOutput`](crate::operation::get_voice_channel::GetVoiceChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVoiceChannelOutputBuilder {
     pub(crate) voice_channel_response: ::std::option::Option<crate::types::VoiceChannelResponse>,
     _request_id: Option<String>,

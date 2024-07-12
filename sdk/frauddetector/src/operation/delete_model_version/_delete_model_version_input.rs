@@ -32,8 +32,8 @@ impl DeleteModelVersionInput {
 }
 
 /// A builder for [`DeleteModelVersionInput`](crate::operation::delete_model_version::DeleteModelVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelVersionInputBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_type: ::std::option::Option<crate::types::ModelTypeEnum>,

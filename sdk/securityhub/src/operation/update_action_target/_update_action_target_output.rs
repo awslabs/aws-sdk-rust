@@ -18,8 +18,8 @@ impl UpdateActionTargetOutput {
 }
 
 /// A builder for [`UpdateActionTargetOutput`](crate::operation::update_action_target::UpdateActionTargetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateActionTargetOutputBuilder {
     _request_id: Option<String>,
 }

@@ -38,8 +38,8 @@ impl ListTemplateAliasesInput {
 }
 
 /// A builder for [`ListTemplateAliasesInput`](crate::operation::list_template_aliases::ListTemplateAliasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateAliasesInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl CancelAuditTaskOutput {
 }
 
 /// A builder for [`CancelAuditTaskOutput`](crate::operation::cancel_audit_task::CancelAuditTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelAuditTaskOutputBuilder {
     _request_id: Option<String>,
 }

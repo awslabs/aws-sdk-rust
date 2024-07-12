@@ -26,8 +26,8 @@ impl UpdateMacieSessionInput {
 }
 
 /// A builder for [`UpdateMacieSessionInput`](crate::operation::update_macie_session::UpdateMacieSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMacieSessionInputBuilder {
     pub(crate) finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     pub(crate) status: ::std::option::Option<crate::types::MacieStatus>,

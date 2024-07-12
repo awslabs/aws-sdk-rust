@@ -40,8 +40,8 @@ impl ListUsersOutput {
 }
 
 /// A builder for [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUsersOutputBuilder {
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

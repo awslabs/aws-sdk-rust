@@ -20,8 +20,8 @@ impl ResetEnabledBaselineInput {
 }
 
 /// A builder for [`ResetEnabledBaselineInput`](crate::operation::reset_enabled_baseline::ResetEnabledBaselineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetEnabledBaselineInputBuilder {
     pub(crate) enabled_baseline_identifier: ::std::option::Option<::std::string::String>,
 }

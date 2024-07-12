@@ -71,8 +71,8 @@ impl CreateCustomActionTypeInput {
 }
 
 /// A builder for [`CreateCustomActionTypeInput`](crate::operation::create_custom_action_type::CreateCustomActionTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomActionTypeInputBuilder {
     pub(crate) category: ::std::option::Option<crate::types::ActionCategory>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,

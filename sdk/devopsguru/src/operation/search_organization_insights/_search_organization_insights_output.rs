@@ -42,8 +42,8 @@ impl SearchOrganizationInsightsOutput {
 }
 
 /// A builder for [`SearchOrganizationInsightsOutput`](crate::operation::search_organization_insights::SearchOrganizationInsightsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchOrganizationInsightsOutputBuilder {
     pub(crate) proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
     pub(crate) reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,

@@ -22,8 +22,8 @@ impl BatchAssociateUserStackInput {
 }
 
 /// A builder for [`BatchAssociateUserStackInput`](crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAssociateUserStackInputBuilder {
     pub(crate) user_stack_associations: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociation>>,
 }

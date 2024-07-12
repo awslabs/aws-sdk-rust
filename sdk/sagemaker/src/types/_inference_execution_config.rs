@@ -33,8 +33,8 @@ impl InferenceExecutionConfig {
 }
 
 /// A builder for [`InferenceExecutionConfig`](crate::types::InferenceExecutionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceExecutionConfigBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::InferenceExecutionMode>,
 }

@@ -29,8 +29,8 @@ impl PatternObjectFilterConfiguration {
 }
 
 /// A builder for [`PatternObjectFilterConfiguration`](crate::types::PatternObjectFilterConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PatternObjectFilterConfigurationBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PatternObjectFilter>>,
 }

@@ -88,8 +88,8 @@ impl DescribeMapOutput {
 }
 
 /// A builder for [`DescribeMapOutput`](crate::operation::describe_map::DescribeMapOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMapOutputBuilder {
     pub(crate) map_name: ::std::option::Option<::std::string::String>,
     pub(crate) map_arn: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteConnectInstanceConfigOutput {
 }
 
 /// A builder for [`DeleteConnectInstanceConfigOutput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConnectInstanceConfigOutputBuilder {
     _request_id: Option<String>,
 }

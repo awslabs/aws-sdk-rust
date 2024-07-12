@@ -32,8 +32,8 @@ impl ImportTerminologyOutput {
 }
 
 /// A builder for [`ImportTerminologyOutput`](crate::operation::import_terminology::ImportTerminologyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportTerminologyOutputBuilder {
     pub(crate) terminology_properties: ::std::option::Option<crate::types::TerminologyProperties>,
     pub(crate) auxiliary_data_location: ::std::option::Option<crate::types::TerminologyDataLocation>,

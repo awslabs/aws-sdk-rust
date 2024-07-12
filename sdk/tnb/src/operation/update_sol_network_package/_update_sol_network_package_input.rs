@@ -26,8 +26,8 @@ impl UpdateSolNetworkPackageInput {
 }
 
 /// A builder for [`UpdateSolNetworkPackageInput`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSolNetworkPackageInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
     pub(crate) nsd_operational_state: ::std::option::Option<crate::types::NsdOperationalState>,

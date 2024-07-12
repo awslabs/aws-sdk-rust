@@ -21,8 +21,8 @@ impl ConsumedUsages {
 }
 
 /// A builder for [`ConsumedUsages`](crate::types::ConsumedUsages).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConsumedUsagesBuilder {
     pub(crate) approximate_dollar_usage: ::std::option::Option<f32>,
 }

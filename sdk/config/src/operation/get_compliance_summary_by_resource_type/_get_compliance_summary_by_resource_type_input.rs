@@ -25,8 +25,8 @@ impl GetComplianceSummaryByResourceTypeInput {
 }
 
 /// A builder for [`GetComplianceSummaryByResourceTypeInput`](crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetComplianceSummaryByResourceTypeInputBuilder {
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

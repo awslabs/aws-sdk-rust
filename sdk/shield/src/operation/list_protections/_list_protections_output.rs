@@ -38,8 +38,8 @@ impl ListProtectionsOutput {
 }
 
 /// A builder for [`ListProtectionsOutput`](crate::operation::list_protections::ListProtectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProtectionsOutputBuilder {
     pub(crate) protections: ::std::option::Option<::std::vec::Vec<crate::types::Protection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

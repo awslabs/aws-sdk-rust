@@ -34,8 +34,8 @@ impl SnsAction {
 }
 
 /// A builder for [`SnsAction`](crate::types::SnsAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnsActionBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encoding: ::std::option::Option<crate::types::SnsActionEncoding>,

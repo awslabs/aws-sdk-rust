@@ -26,8 +26,8 @@ impl ListSolNetworkOperationsInput {
 }
 
 /// A builder for [`ListSolNetworkOperationsInput`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSolNetworkOperationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

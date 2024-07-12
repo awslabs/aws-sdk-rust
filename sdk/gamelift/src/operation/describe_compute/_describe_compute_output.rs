@@ -26,8 +26,8 @@ impl DescribeComputeOutput {
 }
 
 /// A builder for [`DescribeComputeOutput`](crate::operation::describe_compute::DescribeComputeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeComputeOutputBuilder {
     pub(crate) compute: ::std::option::Option<crate::types::Compute>,
     _request_id: Option<String>,

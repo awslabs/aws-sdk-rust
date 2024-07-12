@@ -44,8 +44,8 @@ impl CreateVirtualClusterInput {
 }
 
 /// A builder for [`CreateVirtualClusterInput`](crate::operation::create_virtual_cluster::CreateVirtualClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVirtualClusterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) container_provider: ::std::option::Option<crate::types::ContainerProvider>,

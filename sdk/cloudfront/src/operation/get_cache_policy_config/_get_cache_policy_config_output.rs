@@ -32,8 +32,8 @@ impl GetCachePolicyConfigOutput {
 }
 
 /// A builder for [`GetCachePolicyConfigOutput`](crate::operation::get_cache_policy_config::GetCachePolicyConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCachePolicyConfigOutputBuilder {
     pub(crate) cache_policy_config: ::std::option::Option<crate::types::CachePolicyConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

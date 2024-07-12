@@ -52,8 +52,8 @@ impl SearchForSuggestionsResult {
 }
 
 /// A builder for [`SearchForSuggestionsResult`](crate::types::SearchForSuggestionsResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchForSuggestionsResultBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) place_id: ::std::option::Option<::std::string::String>,

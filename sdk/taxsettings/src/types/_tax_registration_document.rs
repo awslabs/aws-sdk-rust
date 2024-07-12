@@ -21,8 +21,8 @@ impl TaxRegistrationDocument {
 }
 
 /// A builder for [`TaxRegistrationDocument`](crate::types::TaxRegistrationDocument).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaxRegistrationDocumentBuilder {
     pub(crate) s3_location: ::std::option::Option<crate::types::SourceS3Location>,
 }

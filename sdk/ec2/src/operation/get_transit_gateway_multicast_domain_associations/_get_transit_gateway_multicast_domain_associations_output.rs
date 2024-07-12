@@ -36,8 +36,8 @@ impl GetTransitGatewayMulticastDomainAssociationsOutput {
 }
 
 /// A builder for [`GetTransitGatewayMulticastDomainAssociationsOutput`](crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayMulticastDomainAssociationsOutputBuilder {
     pub(crate) multicast_domain_associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

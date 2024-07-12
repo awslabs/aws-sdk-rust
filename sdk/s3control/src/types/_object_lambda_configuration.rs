@@ -43,8 +43,8 @@ impl ObjectLambdaConfiguration {
 }
 
 /// A builder for [`ObjectLambdaConfiguration`](crate::types::ObjectLambdaConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectLambdaConfigurationBuilder {
     pub(crate) supporting_access_point: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_metrics_enabled: ::std::option::Option<bool>,

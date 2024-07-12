@@ -32,8 +32,8 @@ impl DescribeServerlessCachesInput {
 }
 
 /// A builder for [`DescribeServerlessCachesInput`](crate::operation::describe_serverless_caches::DescribeServerlessCachesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServerlessCachesInputBuilder {
     pub(crate) serverless_cache_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

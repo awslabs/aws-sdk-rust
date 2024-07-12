@@ -26,8 +26,8 @@ impl StopInstanceInput {
 }
 
 /// A builder for [`StopInstanceInput`](crate::operation::stop_instance::StopInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,

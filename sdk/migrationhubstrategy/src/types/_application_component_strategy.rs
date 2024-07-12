@@ -33,8 +33,8 @@ impl ApplicationComponentStrategy {
 }
 
 /// A builder for [`ApplicationComponentStrategy`](crate::types::ApplicationComponentStrategy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationComponentStrategyBuilder {
     pub(crate) recommendation: ::std::option::Option<crate::types::RecommendationSet>,
     pub(crate) status: ::std::option::Option<crate::types::StrategyRecommendation>,

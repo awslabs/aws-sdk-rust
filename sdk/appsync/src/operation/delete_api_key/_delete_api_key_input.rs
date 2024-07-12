@@ -26,8 +26,8 @@ impl DeleteApiKeyInput {
 }
 
 /// A builder for [`DeleteApiKeyInput`](crate::operation::delete_api_key::DeleteApiKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApiKeyInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

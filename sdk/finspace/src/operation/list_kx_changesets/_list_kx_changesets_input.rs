@@ -38,8 +38,8 @@ impl ListKxChangesetsInput {
 }
 
 /// A builder for [`ListKxChangesetsInput`](crate::operation::list_kx_changesets::ListKxChangesetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKxChangesetsInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl StartDataCollectionByAgentIdsOutput {
 }
 
 /// A builder for [`StartDataCollectionByAgentIdsOutput`](crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDataCollectionByAgentIdsOutputBuilder {
     pub(crate) agents_configuration_status: ::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl UpdateRepositoryEncryptionKeyOutput {
 }
 
 /// A builder for [`UpdateRepositoryEncryptionKeyOutput`](crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRepositoryEncryptionKeyOutputBuilder {
     pub(crate) repository_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

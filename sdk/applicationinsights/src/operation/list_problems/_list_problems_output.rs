@@ -46,8 +46,8 @@ impl ListProblemsOutput {
 }
 
 /// A builder for [`ListProblemsOutput`](crate::operation::list_problems::ListProblemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProblemsOutputBuilder {
     pub(crate) problem_list: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

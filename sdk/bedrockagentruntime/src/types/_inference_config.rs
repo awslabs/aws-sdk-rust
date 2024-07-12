@@ -21,8 +21,8 @@ impl InferenceConfig {
 }
 
 /// A builder for [`InferenceConfig`](crate::types::InferenceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceConfigBuilder {
     pub(crate) text_inference_config: ::std::option::Option<crate::types::TextInferenceConfig>,
 }

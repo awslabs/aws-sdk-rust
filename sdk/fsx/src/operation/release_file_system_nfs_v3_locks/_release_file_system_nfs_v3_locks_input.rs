@@ -26,8 +26,8 @@ impl ReleaseFileSystemNfsV3LocksInput {
 }
 
 /// A builder for [`ReleaseFileSystemNfsV3LocksInput`](crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleaseFileSystemNfsV3LocksInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

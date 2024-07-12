@@ -28,8 +28,8 @@ impl ListMobileDeviceAccessRulesOutput {
 }
 
 /// A builder for [`ListMobileDeviceAccessRulesOutput`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMobileDeviceAccessRulesOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessRule>>,
     _request_id: Option<String>,

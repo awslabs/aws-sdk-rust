@@ -27,8 +27,8 @@ impl SlotDateTimeRangeRequest {
 }
 
 /// A builder for [`SlotDateTimeRangeRequest`](crate::types::SlotDateTimeRangeRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotDateTimeRangeRequestBuilder {
     pub(crate) earliest_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_time: ::std::option::Option<::aws_smithy_types::DateTime>,

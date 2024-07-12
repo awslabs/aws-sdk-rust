@@ -26,8 +26,8 @@ impl UpdateAccessPolicyOutput {
 }
 
 /// A builder for [`UpdateAccessPolicyOutput`](crate::operation::update_access_policy::UpdateAccessPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccessPolicyOutputBuilder {
     pub(crate) access_policy_detail: ::std::option::Option<crate::types::AccessPolicyDetail>,
     _request_id: Option<String>,

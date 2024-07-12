@@ -38,8 +38,8 @@ impl GetMapStyleDescriptorOutput {
 }
 
 /// A builder for [`GetMapStyleDescriptorOutput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMapStyleDescriptorOutputBuilder {
     pub(crate) blob: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

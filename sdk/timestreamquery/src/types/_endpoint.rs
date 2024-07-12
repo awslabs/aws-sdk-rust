@@ -28,8 +28,8 @@ impl Endpoint {
 }
 
 /// A builder for [`Endpoint`](crate::types::Endpoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) cache_period_in_minutes: ::std::option::Option<i64>,

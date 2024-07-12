@@ -21,8 +21,8 @@ impl ReportFilter {
 }
 
 /// A builder for [`ReportFilter`](crate::types::ReportFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportFilterBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ReportStatusType>,
 }

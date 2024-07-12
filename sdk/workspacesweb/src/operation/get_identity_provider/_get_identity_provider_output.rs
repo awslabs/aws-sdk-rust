@@ -26,8 +26,8 @@ impl GetIdentityProviderOutput {
 }
 
 /// A builder for [`GetIdentityProviderOutput`](crate::operation::get_identity_provider::GetIdentityProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityProviderOutputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     _request_id: Option<String>,

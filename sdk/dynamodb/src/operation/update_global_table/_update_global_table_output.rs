@@ -26,8 +26,8 @@ impl UpdateGlobalTableOutput {
 }
 
 /// A builder for [`UpdateGlobalTableOutput`](crate::operation::update_global_table::UpdateGlobalTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGlobalTableOutputBuilder {
     pub(crate) global_table_description: ::std::option::Option<crate::types::GlobalTableDescription>,
     _request_id: Option<String>,

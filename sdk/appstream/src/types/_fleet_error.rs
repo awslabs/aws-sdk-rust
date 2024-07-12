@@ -27,8 +27,8 @@ impl FleetError {
 }
 
 /// A builder for [`FleetError`](crate::types::FleetError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetErrorBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::FleetErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

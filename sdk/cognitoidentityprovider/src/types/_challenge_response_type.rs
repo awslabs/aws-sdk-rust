@@ -27,8 +27,8 @@ impl ChallengeResponseType {
 }
 
 /// A builder for [`ChallengeResponseType`](crate::types::ChallengeResponseType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChallengeResponseTypeBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeName>,
     pub(crate) challenge_response: ::std::option::Option<crate::types::ChallengeResponse>,

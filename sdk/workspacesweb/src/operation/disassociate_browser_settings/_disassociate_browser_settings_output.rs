@@ -18,8 +18,8 @@ impl DisassociateBrowserSettingsOutput {
 }
 
 /// A builder for [`DisassociateBrowserSettingsOutput`](crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateBrowserSettingsOutputBuilder {
     _request_id: Option<String>,
 }

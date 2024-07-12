@@ -27,8 +27,8 @@ impl FleetAdvisorLsaAnalysisResponse {
 }
 
 /// A builder for [`FleetAdvisorLsaAnalysisResponse`](crate::types::FleetAdvisorLsaAnalysisResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetAdvisorLsaAnalysisResponseBuilder {
     pub(crate) lsa_analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

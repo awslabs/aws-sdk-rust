@@ -20,8 +20,8 @@ impl GetAttributeGroupInput {
 }
 
 /// A builder for [`GetAttributeGroupInput`](crate::operation::get_attribute_group::GetAttributeGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAttributeGroupInputBuilder {
     pub(crate) attribute_group: ::std::option::Option<::std::string::String>,
 }

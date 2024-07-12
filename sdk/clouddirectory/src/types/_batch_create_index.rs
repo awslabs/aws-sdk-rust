@@ -46,8 +46,8 @@ impl BatchCreateIndex {
 }
 
 /// A builder for [`BatchCreateIndex`](crate::types::BatchCreateIndex).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateIndexBuilder {
     pub(crate) ordered_indexed_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKey>>,
     pub(crate) is_unique: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl GetUiCustomizationOutput {
 }
 
 /// A builder for [`GetUiCustomizationOutput`](crate::operation::get_ui_customization::GetUiCustomizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUiCustomizationOutputBuilder {
     pub(crate) ui_customization: ::std::option::Option<crate::types::UiCustomizationType>,
     _request_id: Option<String>,

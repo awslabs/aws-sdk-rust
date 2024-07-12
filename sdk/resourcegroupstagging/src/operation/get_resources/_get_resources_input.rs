@@ -130,8 +130,8 @@ impl GetResourcesInput {
 }
 
 /// A builder for [`GetResourcesInput`](crate::operation::get_resources::GetResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourcesInputBuilder {
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
     pub(crate) tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,

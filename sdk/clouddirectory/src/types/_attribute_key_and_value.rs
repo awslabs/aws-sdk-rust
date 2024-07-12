@@ -27,8 +27,8 @@ impl AttributeKeyAndValue {
 }
 
 /// A builder for [`AttributeKeyAndValue`](crate::types::AttributeKeyAndValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributeKeyAndValueBuilder {
     pub(crate) key: ::std::option::Option<crate::types::AttributeKey>,
     pub(crate) value: ::std::option::Option<crate::types::TypedAttributeValue>,

@@ -47,8 +47,8 @@ impl AwsWafRegionalWebAclDetails {
 }
 
 /// A builder for [`AwsWafRegionalWebAclDetails`](crate::types::AwsWafRegionalWebAclDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafRegionalWebAclDetailsBuilder {
     pub(crate) default_action: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,

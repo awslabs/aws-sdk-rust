@@ -44,8 +44,8 @@ impl StartReplayOutput {
 }
 
 /// A builder for [`StartReplayOutput`](crate::operation::start_replay::StartReplayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReplayOutputBuilder {
     pub(crate) replay_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ReplayState>,

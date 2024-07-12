@@ -26,8 +26,8 @@ impl CreateStreamingImageOutput {
 }
 
 /// A builder for [`CreateStreamingImageOutput`](crate::operation::create_streaming_image::CreateStreamingImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStreamingImageOutputBuilder {
     pub(crate) streaming_image: ::std::option::Option<crate::types::StreamingImage>,
     _request_id: Option<String>,

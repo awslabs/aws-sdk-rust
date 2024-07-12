@@ -87,8 +87,8 @@ impl ClusterConfig {
 }
 
 /// A builder for [`ClusterConfig`](crate::types::ClusterConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,

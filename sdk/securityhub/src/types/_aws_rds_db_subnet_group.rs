@@ -53,8 +53,8 @@ impl AwsRdsDbSubnetGroup {
 }
 
 /// A builder for [`AwsRdsDbSubnetGroup`](crate::types::AwsRdsDbSubnetGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRdsDbSubnetGroupBuilder {
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_description: ::std::option::Option<::std::string::String>,

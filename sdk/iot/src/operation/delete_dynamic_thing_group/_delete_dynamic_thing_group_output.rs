@@ -18,8 +18,8 @@ impl DeleteDynamicThingGroupOutput {
 }
 
 /// A builder for [`DeleteDynamicThingGroupOutput`](crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDynamicThingGroupOutputBuilder {
     _request_id: Option<String>,
 }

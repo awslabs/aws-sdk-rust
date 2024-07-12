@@ -39,8 +39,8 @@ impl InferenceComponentSpecificationSummary {
 }
 
 /// A builder for [`InferenceComponentSpecificationSummary`](crate::types::InferenceComponentSpecificationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceComponentSpecificationSummaryBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) container: ::std::option::Option<crate::types::InferenceComponentContainerSpecificationSummary>,

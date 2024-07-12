@@ -20,8 +20,8 @@ impl UpdateClusterSoftwareInput {
 }
 
 /// A builder for [`UpdateClusterSoftwareInput`](crate::operation::update_cluster_software::UpdateClusterSoftwareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClusterSoftwareInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
 }

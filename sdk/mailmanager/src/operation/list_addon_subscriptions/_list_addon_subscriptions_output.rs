@@ -34,8 +34,8 @@ impl ListAddonSubscriptionsOutput {
 }
 
 /// A builder for [`ListAddonSubscriptionsOutput`](crate::operation::list_addon_subscriptions::ListAddonSubscriptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAddonSubscriptionsOutputBuilder {
     pub(crate) addon_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::AddonSubscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

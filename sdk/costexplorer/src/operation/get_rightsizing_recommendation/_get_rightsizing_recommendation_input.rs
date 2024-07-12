@@ -148,8 +148,8 @@ impl GetRightsizingRecommendationInput {
 }
 
 /// A builder for [`GetRightsizingRecommendationInput`](crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRightsizingRecommendationInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::Expression>,
     pub(crate) configuration: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>,

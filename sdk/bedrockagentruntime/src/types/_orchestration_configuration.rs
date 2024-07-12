@@ -21,8 +21,8 @@ impl OrchestrationConfiguration {
 }
 
 /// A builder for [`OrchestrationConfiguration`](crate::types::OrchestrationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrchestrationConfigurationBuilder {
     pub(crate) query_transformation_configuration: ::std::option::Option<crate::types::QueryTransformationConfiguration>,
 }

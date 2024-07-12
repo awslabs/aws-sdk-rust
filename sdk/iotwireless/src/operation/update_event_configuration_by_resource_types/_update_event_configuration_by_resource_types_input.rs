@@ -45,8 +45,8 @@ impl UpdateEventConfigurationByResourceTypesInput {
 }
 
 /// A builder for [`UpdateEventConfigurationByResourceTypesInput`](crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventConfigurationByResourceTypesInputBuilder {
     pub(crate) device_registration_state: ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
     pub(crate) proximity: ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>,

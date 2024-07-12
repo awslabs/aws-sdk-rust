@@ -45,8 +45,8 @@ impl ModifyTransitGatewayVpcAttachmentRequestOptions {
 }
 
 /// A builder for [`ModifyTransitGatewayVpcAttachmentRequestOptions`](crate::types::ModifyTransitGatewayVpcAttachmentRequestOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTransitGatewayVpcAttachmentRequestOptionsBuilder {
     pub(crate) dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
     pub(crate) security_group_referencing_support: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,

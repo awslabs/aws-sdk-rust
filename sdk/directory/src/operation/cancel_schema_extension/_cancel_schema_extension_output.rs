@@ -18,8 +18,8 @@ impl CancelSchemaExtensionOutput {
 }
 
 /// A builder for [`CancelSchemaExtensionOutput`](crate::operation::cancel_schema_extension::CancelSchemaExtensionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSchemaExtensionOutputBuilder {
     _request_id: Option<String>,
 }

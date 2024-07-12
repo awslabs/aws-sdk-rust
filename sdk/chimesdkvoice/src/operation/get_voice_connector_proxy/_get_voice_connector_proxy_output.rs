@@ -26,8 +26,8 @@ impl GetVoiceConnectorProxyOutput {
 }
 
 /// A builder for [`GetVoiceConnectorProxyOutput`](crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVoiceConnectorProxyOutputBuilder {
     pub(crate) proxy: ::std::option::Option<crate::types::Proxy>,
     _request_id: Option<String>,

@@ -32,8 +32,8 @@ impl GetPullRequestOverrideStateOutput {
 }
 
 /// A builder for [`GetPullRequestOverrideStateOutput`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPullRequestOverrideStateOutputBuilder {
     pub(crate) overridden: ::std::option::Option<bool>,
     pub(crate) overrider: ::std::option::Option<::std::string::String>,

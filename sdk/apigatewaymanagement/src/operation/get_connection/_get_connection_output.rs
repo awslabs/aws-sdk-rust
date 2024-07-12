@@ -38,8 +38,8 @@ impl GetConnectionOutput {
 }
 
 /// A builder for [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectionOutputBuilder {
     pub(crate) connected_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) identity: ::std::option::Option<crate::types::Identity>,

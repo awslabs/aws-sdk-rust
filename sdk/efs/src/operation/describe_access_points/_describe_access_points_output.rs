@@ -34,8 +34,8 @@ impl DescribeAccessPointsOutput {
 }
 
 /// A builder for [`DescribeAccessPointsOutput`](crate::operation::describe_access_points::DescribeAccessPointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccessPointsOutputBuilder {
     pub(crate) access_points: ::std::option::Option<::std::vec::Vec<crate::types::AccessPointDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

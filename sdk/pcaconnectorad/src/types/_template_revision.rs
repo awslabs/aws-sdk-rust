@@ -27,8 +27,8 @@ impl TemplateRevision {
 }
 
 /// A builder for [`TemplateRevision`](crate::types::TemplateRevision).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateRevisionBuilder {
     pub(crate) major_revision: ::std::option::Option<i32>,
     pub(crate) minor_revision: ::std::option::Option<i32>,

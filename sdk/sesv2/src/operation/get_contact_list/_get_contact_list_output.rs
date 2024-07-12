@@ -60,8 +60,8 @@ impl GetContactListOutput {
 }
 
 /// A builder for [`GetContactListOutput`](crate::operation::get_contact_list::GetContactListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContactListOutputBuilder {
     pub(crate) contact_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) topics: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,

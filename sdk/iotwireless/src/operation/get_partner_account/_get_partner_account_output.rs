@@ -32,8 +32,8 @@ impl GetPartnerAccountOutput {
 }
 
 /// A builder for [`GetPartnerAccountOutput`](crate::operation::get_partner_account::GetPartnerAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPartnerAccountOutputBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint>,
     pub(crate) account_linked: ::std::option::Option<bool>,

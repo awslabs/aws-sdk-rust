@@ -32,8 +32,8 @@ impl SendChatIntegrationEventOutput {
 }
 
 /// A builder for [`SendChatIntegrationEventOutput`](crate::operation::send_chat_integration_event::SendChatIntegrationEventOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendChatIntegrationEventOutputBuilder {
     pub(crate) initial_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_chat_created: ::std::option::Option<bool>,

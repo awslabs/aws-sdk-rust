@@ -35,8 +35,8 @@ impl FailureTrace {
 }
 
 /// A builder for [`FailureTrace`](crate::types::FailureTrace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FailureTraceBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,

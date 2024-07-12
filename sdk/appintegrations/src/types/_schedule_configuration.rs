@@ -34,8 +34,8 @@ impl ScheduleConfiguration {
 }
 
 /// A builder for [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduleConfigurationBuilder {
     pub(crate) first_execution_from: ::std::option::Option<::std::string::String>,
     pub(crate) object: ::std::option::Option<::std::string::String>,

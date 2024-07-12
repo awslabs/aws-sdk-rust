@@ -21,8 +21,8 @@ impl DataLakePrincipal {
 }
 
 /// A builder for [`DataLakePrincipal`](crate::types::DataLakePrincipal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataLakePrincipalBuilder {
     pub(crate) data_lake_principal_identifier: ::std::option::Option<::std::string::String>,
 }

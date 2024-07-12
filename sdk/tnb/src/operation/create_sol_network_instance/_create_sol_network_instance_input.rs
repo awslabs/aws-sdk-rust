@@ -48,8 +48,8 @@ impl CreateSolNetworkInstanceInput {
 }
 
 /// A builder for [`CreateSolNetworkInstanceInput`](crate::operation::create_sol_network_instance::CreateSolNetworkInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateSolNetworkInstanceInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
     pub(crate) ns_name: ::std::option::Option<::std::string::String>,

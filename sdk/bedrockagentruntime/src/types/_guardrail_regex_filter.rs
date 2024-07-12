@@ -49,8 +49,8 @@ impl GuardrailRegexFilter {
 }
 
 /// A builder for [`GuardrailRegexFilter`](crate::types::GuardrailRegexFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GuardrailRegexFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) regex: ::std::option::Option<::std::string::String>,

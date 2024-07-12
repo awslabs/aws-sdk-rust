@@ -27,8 +27,8 @@ impl BatchItemError {
 }
 
 /// A builder for [`BatchItemError`](crate::types::BatchItemError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchItemErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::BatchItemErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

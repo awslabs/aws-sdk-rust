@@ -26,8 +26,8 @@ impl DescribeQueueOutput {
 }
 
 /// A builder for [`DescribeQueueOutput`](crate::operation::describe_queue::DescribeQueueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeQueueOutputBuilder {
     pub(crate) queue: ::std::option::Option<crate::types::Queue>,
     _request_id: Option<String>,

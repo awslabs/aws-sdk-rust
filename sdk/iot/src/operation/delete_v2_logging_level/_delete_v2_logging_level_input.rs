@@ -26,8 +26,8 @@ impl DeleteV2LoggingLevelInput {
 }
 
 /// A builder for [`DeleteV2LoggingLevelInput`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteV2LoggingLevelInputBuilder {
     pub(crate) target_type: ::std::option::Option<crate::types::LogTargetType>,
     pub(crate) target_name: ::std::option::Option<::std::string::String>,

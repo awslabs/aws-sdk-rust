@@ -27,8 +27,8 @@ impl BatchDeleteDevicePositionHistoryOutput {
 }
 
 /// A builder for [`BatchDeleteDevicePositionHistoryOutput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteDevicePositionHistoryOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>>,
     _request_id: Option<String>,

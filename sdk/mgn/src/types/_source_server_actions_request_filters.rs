@@ -23,8 +23,8 @@ impl SourceServerActionsRequestFilters {
 }
 
 /// A builder for [`SourceServerActionsRequestFilters`](crate::types::SourceServerActionsRequestFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceServerActionsRequestFiltersBuilder {
     pub(crate) action_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

@@ -38,8 +38,8 @@ impl ListRevisionAssetsInput {
 }
 
 /// A builder for [`ListRevisionAssetsInput`](crate::operation::list_revision_assets::ListRevisionAssetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRevisionAssetsInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

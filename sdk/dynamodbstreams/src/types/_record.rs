@@ -91,8 +91,8 @@ impl Record {
 }
 
 /// A builder for [`Record`](crate::types::Record).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_name: ::std::option::Option<crate::types::OperationType>,

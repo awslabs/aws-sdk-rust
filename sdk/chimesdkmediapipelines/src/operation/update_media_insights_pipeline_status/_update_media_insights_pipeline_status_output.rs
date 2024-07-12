@@ -18,8 +18,8 @@ impl UpdateMediaInsightsPipelineStatusOutput {
 }
 
 /// A builder for [`UpdateMediaInsightsPipelineStatusOutput`](crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMediaInsightsPipelineStatusOutputBuilder {
     _request_id: Option<String>,
 }

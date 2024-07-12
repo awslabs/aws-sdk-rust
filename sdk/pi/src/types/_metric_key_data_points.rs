@@ -29,8 +29,8 @@ impl MetricKeyDataPoints {
 }
 
 /// A builder for [`MetricKeyDataPoints`](crate::types::MetricKeyDataPoints).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricKeyDataPointsBuilder {
     pub(crate) key: ::std::option::Option<crate::types::ResponseResourceMetricKey>,
     pub(crate) data_points: ::std::option::Option<::std::vec::Vec<crate::types::DataPoint>>,

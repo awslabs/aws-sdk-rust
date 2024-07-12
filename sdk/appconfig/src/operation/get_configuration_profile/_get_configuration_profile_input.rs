@@ -26,8 +26,8 @@ impl GetConfigurationProfileInput {
 }
 
 /// A builder for [`GetConfigurationProfileInput`](crate::operation::get_configuration_profile::GetConfigurationProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfigurationProfileInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,

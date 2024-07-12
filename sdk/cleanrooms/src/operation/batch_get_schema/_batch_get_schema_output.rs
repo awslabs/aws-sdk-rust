@@ -34,8 +34,8 @@ impl BatchGetSchemaOutput {
 }
 
 /// A builder for [`BatchGetSchemaOutput`](crate::operation::batch_get_schema::BatchGetSchemaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetSchemaOutputBuilder {
     pub(crate) schemas: ::std::option::Option<::std::vec::Vec<crate::types::Schema>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaError>>,

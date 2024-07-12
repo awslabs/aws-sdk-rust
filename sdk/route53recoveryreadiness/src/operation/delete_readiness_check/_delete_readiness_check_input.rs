@@ -20,8 +20,8 @@ impl DeleteReadinessCheckInput {
 }
 
 /// A builder for [`DeleteReadinessCheckInput`](crate::operation::delete_readiness_check::DeleteReadinessCheckInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReadinessCheckInputBuilder {
     pub(crate) readiness_check_name: ::std::option::Option<::std::string::String>,
 }

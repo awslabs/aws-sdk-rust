@@ -34,8 +34,8 @@ impl ListSimulationsOutput {
 }
 
 /// A builder for [`ListSimulationsOutput`](crate::operation::list_simulations::ListSimulationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSimulationsOutputBuilder {
     pub(crate) simulations: ::std::option::Option<::std::vec::Vec<crate::types::SimulationMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

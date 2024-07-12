@@ -108,8 +108,8 @@ impl GetUnfilteredTableMetadataInput {
 }
 
 /// A builder for [`GetUnfilteredTableMetadataInput`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUnfilteredTableMetadataInputBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,

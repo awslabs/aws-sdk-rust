@@ -18,8 +18,8 @@ impl DeleteRunGroupOutput {
 }
 
 /// A builder for [`DeleteRunGroupOutput`](crate::operation::delete_run_group::DeleteRunGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRunGroupOutputBuilder {
     _request_id: Option<String>,
 }

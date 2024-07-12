@@ -20,8 +20,8 @@ impl GetConfiguredAudienceModelInput {
 }
 
 /// A builder for [`GetConfiguredAudienceModelInput`](crate::operation::get_configured_audience_model::GetConfiguredAudienceModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConfiguredAudienceModelInputBuilder {
     pub(crate) configured_audience_model_arn: ::std::option::Option<::std::string::String>,
 }

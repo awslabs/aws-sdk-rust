@@ -26,8 +26,8 @@ impl ActivateNetworkSiteOutput {
 }
 
 /// A builder for [`ActivateNetworkSiteOutput`](crate::operation::activate_network_site::ActivateNetworkSiteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivateNetworkSiteOutputBuilder {
     pub(crate) network_site: ::std::option::Option<crate::types::NetworkSite>,
     _request_id: Option<String>,

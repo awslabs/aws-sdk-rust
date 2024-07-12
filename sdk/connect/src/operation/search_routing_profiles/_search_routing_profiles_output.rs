@@ -40,8 +40,8 @@ impl SearchRoutingProfilesOutput {
 }
 
 /// A builder for [`SearchRoutingProfilesOutput`](crate::operation::search_routing_profiles::SearchRoutingProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchRoutingProfilesOutputBuilder {
     pub(crate) routing_profiles: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfile>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

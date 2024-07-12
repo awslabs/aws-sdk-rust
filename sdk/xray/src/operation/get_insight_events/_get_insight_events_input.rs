@@ -32,8 +32,8 @@ impl GetInsightEventsInput {
 }
 
 /// A builder for [`GetInsightEventsInput`](crate::operation::get_insight_events::GetInsightEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInsightEventsInputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

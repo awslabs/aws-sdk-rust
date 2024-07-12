@@ -27,8 +27,8 @@ impl TimestampRange {
 }
 
 /// A builder for [`TimestampRange`](crate::types::TimestampRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimestampRangeBuilder {
     pub(crate) begin_offset_millis: ::std::option::Option<i64>,
     pub(crate) end_offset_millis: ::std::option::Option<i64>,

@@ -27,8 +27,8 @@ impl ResaleAuthorizationSort {
 }
 
 /// A builder for [`ResaleAuthorizationSort`](crate::types::ResaleAuthorizationSort).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResaleAuthorizationSortBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ResaleAuthorizationSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

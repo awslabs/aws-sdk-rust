@@ -127,8 +127,8 @@ impl UserAccessResultItem {
 }
 
 /// A builder for [`UserAccessResultItem`](crate::types::UserAccessResultItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UserAccessResultItemBuilder {
     pub(crate) app: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,

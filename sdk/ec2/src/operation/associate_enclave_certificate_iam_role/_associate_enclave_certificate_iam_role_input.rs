@@ -32,8 +32,8 @@ impl AssociateEnclaveCertificateIamRoleInput {
 }
 
 /// A builder for [`AssociateEnclaveCertificateIamRoleInput`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateEnclaveCertificateIamRoleInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

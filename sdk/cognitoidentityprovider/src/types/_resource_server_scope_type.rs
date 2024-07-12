@@ -29,8 +29,8 @@ impl ResourceServerScopeType {
 }
 
 /// A builder for [`ResourceServerScopeType`](crate::types::ResourceServerScopeType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceServerScopeTypeBuilder {
     pub(crate) scope_name: ::std::option::Option<::std::string::String>,
     pub(crate) scope_description: ::std::option::Option<::std::string::String>,

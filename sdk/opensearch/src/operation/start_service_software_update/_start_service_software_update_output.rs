@@ -27,8 +27,8 @@ impl StartServiceSoftwareUpdateOutput {
 }
 
 /// A builder for [`StartServiceSoftwareUpdateOutput`](crate::operation::start_service_software_update::StartServiceSoftwareUpdateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartServiceSoftwareUpdateOutputBuilder {
     pub(crate) service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     _request_id: Option<String>,

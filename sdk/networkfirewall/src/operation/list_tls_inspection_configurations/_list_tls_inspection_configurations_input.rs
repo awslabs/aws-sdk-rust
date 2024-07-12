@@ -26,8 +26,8 @@ impl ListTlsInspectionConfigurationsInput {
 }
 
 /// A builder for [`ListTlsInspectionConfigurationsInput`](crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTlsInspectionConfigurationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

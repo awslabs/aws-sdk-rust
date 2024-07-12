@@ -42,8 +42,8 @@ impl AdminGetDeviceInput {
 }
 
 /// A builder for [`AdminGetDeviceInput`](crate::operation::admin_get_device::AdminGetDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminGetDeviceInputBuilder {
     pub(crate) device_key: ::std::option::Option<::std::string::String>,
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ExportBundleInput {
 }
 
 /// A builder for [`ExportBundleInput`](crate::operation::export_bundle::ExportBundleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportBundleInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_id: ::std::option::Option<::std::string::String>,

@@ -55,8 +55,8 @@ impl CreateLegalHoldInput {
 }
 
 /// A builder for [`CreateLegalHoldInput`](crate::operation::create_legal_hold::CreateLegalHoldInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateLegalHoldInputBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

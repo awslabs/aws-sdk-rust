@@ -34,8 +34,8 @@ impl ListPortalsOutput {
 }
 
 /// A builder for [`ListPortalsOutput`](crate::operation::list_portals::ListPortalsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPortalsOutputBuilder {
     pub(crate) portal_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PortalSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

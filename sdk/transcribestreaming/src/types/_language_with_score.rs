@@ -27,8 +27,8 @@ impl LanguageWithScore {
 }
 
 /// A builder for [`LanguageWithScore`](crate::types::LanguageWithScore).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LanguageWithScoreBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) score: ::std::option::Option<f64>,

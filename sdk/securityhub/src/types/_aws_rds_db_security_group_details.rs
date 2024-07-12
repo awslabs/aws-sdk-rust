@@ -61,8 +61,8 @@ impl AwsRdsDbSecurityGroupDetails {
 }
 
 /// A builder for [`AwsRdsDbSecurityGroupDetails`](crate::types::AwsRdsDbSecurityGroupDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRdsDbSecurityGroupDetailsBuilder {
     pub(crate) db_security_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_security_group_description: ::std::option::Option<::std::string::String>,

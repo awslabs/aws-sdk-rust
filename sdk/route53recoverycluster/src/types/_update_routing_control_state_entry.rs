@@ -28,8 +28,8 @@ impl UpdateRoutingControlStateEntry {
 }
 
 /// A builder for [`UpdateRoutingControlStateEntry`](crate::types::UpdateRoutingControlStateEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoutingControlStateEntryBuilder {
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
     pub(crate) routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,

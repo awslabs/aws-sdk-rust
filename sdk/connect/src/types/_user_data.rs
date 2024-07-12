@@ -71,8 +71,8 @@ impl UserData {
 }
 
 /// A builder for [`UserData`](crate::types::UserData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserDataBuilder {
     pub(crate) user: ::std::option::Option<crate::types::UserReference>,
     pub(crate) routing_profile: ::std::option::Option<crate::types::RoutingProfileReference>,

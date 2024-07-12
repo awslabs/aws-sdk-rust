@@ -48,8 +48,8 @@ impl DescribeRecommendationExportJobsInput {
 }
 
 /// A builder for [`DescribeRecommendationExportJobsInput`](crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRecommendationExportJobsInputBuilder {
     pub(crate) job_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::JobFilter>>,

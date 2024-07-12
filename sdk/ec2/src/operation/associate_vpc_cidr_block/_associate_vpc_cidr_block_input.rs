@@ -80,8 +80,8 @@ impl AssociateVpcCidrBlockInput {
 }
 
 /// A builder for [`AssociateVpcCidrBlockInput`](crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateVpcCidrBlockInputBuilder {
     pub(crate) amazon_provided_ipv6_cidr_block: ::std::option::Option<bool>,
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,

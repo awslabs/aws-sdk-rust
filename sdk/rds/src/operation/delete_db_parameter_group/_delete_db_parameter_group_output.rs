@@ -18,8 +18,8 @@ impl DeleteDbParameterGroupOutput {
 }
 
 /// A builder for [`DeleteDbParameterGroupOutput`](crate::operation::delete_db_parameter_group::DeleteDbParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbParameterGroupOutputBuilder {
     _request_id: Option<String>,
 }

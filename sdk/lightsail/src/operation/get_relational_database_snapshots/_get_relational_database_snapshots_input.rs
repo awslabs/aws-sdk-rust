@@ -22,8 +22,8 @@ impl GetRelationalDatabaseSnapshotsInput {
 }
 
 /// A builder for [`GetRelationalDatabaseSnapshotsInput`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseSnapshotsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }

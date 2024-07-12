@@ -36,8 +36,8 @@ impl ListUserPoliciesInput {
 }
 
 /// A builder for [`ListUserPoliciesInput`](crate::operation::list_user_policies::ListUserPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUserPoliciesInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

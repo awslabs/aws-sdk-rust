@@ -18,8 +18,8 @@ impl DeleteQueryLoggingConfigOutput {
 }
 
 /// A builder for [`DeleteQueryLoggingConfigOutput`](crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQueryLoggingConfigOutputBuilder {
     _request_id: Option<String>,
 }

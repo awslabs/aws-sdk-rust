@@ -34,8 +34,8 @@ impl ListPreparedStatementsOutput {
 }
 
 /// A builder for [`ListPreparedStatementsOutput`](crate::operation::list_prepared_statements::ListPreparedStatementsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPreparedStatementsOutputBuilder {
     pub(crate) prepared_statements: ::std::option::Option<::std::vec::Vec<crate::types::PreparedStatementSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl VerifyOtpMessageOutput {
 }
 
 /// A builder for [`VerifyOtpMessageOutput`](crate::operation::verify_otp_message::VerifyOtpMessageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyOtpMessageOutputBuilder {
     pub(crate) verification_response: ::std::option::Option<crate::types::VerificationResponse>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl GetMicrosoftTeamsChannelConfigurationOutput {
 }
 
 /// A builder for [`GetMicrosoftTeamsChannelConfigurationOutput`](crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMicrosoftTeamsChannelConfigurationOutputBuilder {
     pub(crate) channel_configuration: ::std::option::Option<crate::types::TeamsChannelConfiguration>,
     _request_id: Option<String>,

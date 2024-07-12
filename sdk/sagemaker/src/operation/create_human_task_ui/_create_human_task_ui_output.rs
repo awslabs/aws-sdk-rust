@@ -26,8 +26,8 @@ impl CreateHumanTaskUiOutput {
 }
 
 /// A builder for [`CreateHumanTaskUiOutput`](crate::operation::create_human_task_ui::CreateHumanTaskUiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHumanTaskUiOutputBuilder {
     pub(crate) human_task_ui_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

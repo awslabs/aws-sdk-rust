@@ -33,8 +33,8 @@ impl BinaryColumnStatisticsData {
 }
 
 /// A builder for [`BinaryColumnStatisticsData`](crate::types::BinaryColumnStatisticsData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BinaryColumnStatisticsDataBuilder {
     pub(crate) maximum_length: ::std::option::Option<i64>,
     pub(crate) average_length: ::std::option::Option<f64>,

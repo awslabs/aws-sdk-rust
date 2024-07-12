@@ -26,8 +26,8 @@ impl GetInvitationsCountOutput {
 }
 
 /// A builder for [`GetInvitationsCountOutput`](crate::operation::get_invitations_count::GetInvitationsCountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInvitationsCountOutputBuilder {
     pub(crate) invitations_count: ::std::option::Option<i32>,
     _request_id: Option<String>,

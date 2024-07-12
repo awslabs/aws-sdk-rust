@@ -33,8 +33,8 @@ impl FolderConfiguration {
 }
 
 /// A builder for [`FolderConfiguration`](crate::types::FolderConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FolderConfigurationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::FolderName>,
     pub(crate) action: ::std::option::Option<crate::types::RetentionAction>,

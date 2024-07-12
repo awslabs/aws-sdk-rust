@@ -26,8 +26,8 @@ impl DeleteIpSetOutput {
 }
 
 /// A builder for [`DeleteIpSetOutput`](crate::operation::delete_ip_set::DeleteIpSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIpSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

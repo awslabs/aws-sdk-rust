@@ -79,8 +79,8 @@ impl ComputeConfig {
 }
 
 /// A builder for [`ComputeConfig`](crate::types::ComputeConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComputeConfigBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) dns_name_servers: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl RealtimeMetricsSubscriptionConfig {
 }
 
 /// A builder for [`RealtimeMetricsSubscriptionConfig`](crate::types::RealtimeMetricsSubscriptionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RealtimeMetricsSubscriptionConfigBuilder {
     pub(crate) realtime_metrics_subscription_status: ::std::option::Option<crate::types::RealtimeMetricsSubscriptionStatus>,
 }

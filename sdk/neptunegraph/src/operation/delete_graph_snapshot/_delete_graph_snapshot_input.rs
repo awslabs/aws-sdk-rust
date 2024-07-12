@@ -20,8 +20,8 @@ impl DeleteGraphSnapshotInput {
 }
 
 /// A builder for [`DeleteGraphSnapshotInput`](crate::operation::delete_graph_snapshot::DeleteGraphSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGraphSnapshotInputBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
 }

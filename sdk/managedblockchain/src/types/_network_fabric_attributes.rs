@@ -27,8 +27,8 @@ impl NetworkFabricAttributes {
 }
 
 /// A builder for [`NetworkFabricAttributes`](crate::types::NetworkFabricAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkFabricAttributesBuilder {
     pub(crate) ordering_service_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) edition: ::std::option::Option<crate::types::Edition>,

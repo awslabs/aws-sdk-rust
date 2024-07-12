@@ -72,8 +72,8 @@ impl RemoveDraftAppVersionResourceMappingsInput {
 }
 
 /// A builder for [`RemoveDraftAppVersionResourceMappingsInput`](crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveDraftAppVersionResourceMappingsInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

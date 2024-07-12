@@ -20,8 +20,8 @@ impl GetRdfGraphSummaryInput {
 }
 
 /// A builder for [`GetRdfGraphSummaryInput`](crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRdfGraphSummaryInputBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::GraphSummaryType>,
 }

@@ -34,8 +34,8 @@ impl ListEdgePackagingJobsOutput {
 }
 
 /// A builder for [`ListEdgePackagingJobsOutput`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEdgePackagingJobsOutputBuilder {
     pub(crate) edge_packaging_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EdgePackagingJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

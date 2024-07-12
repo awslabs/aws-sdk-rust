@@ -69,8 +69,8 @@ impl HistogramConfiguration {
 }
 
 /// A builder for [`HistogramConfiguration`](crate::types::HistogramConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HistogramConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::HistogramFieldWells>,
     pub(crate) x_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,

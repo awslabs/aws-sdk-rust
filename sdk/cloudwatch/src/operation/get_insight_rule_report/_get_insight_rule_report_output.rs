@@ -62,8 +62,8 @@ impl GetInsightRuleReportOutput {
 }
 
 /// A builder for [`GetInsightRuleReportOutput`](crate::operation::get_insight_rule_report::GetInsightRuleReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInsightRuleReportOutputBuilder {
     pub(crate) key_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) aggregation_statistic: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl ServerSideEncryptionRule {
 }
 
 /// A builder for [`ServerSideEncryptionRule`](crate::types::ServerSideEncryptionRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerSideEncryptionRuleBuilder {
     pub(crate) apply_server_side_encryption_by_default: ::std::option::Option<crate::types::ServerSideEncryptionByDefault>,
     pub(crate) bucket_key_enabled: ::std::option::Option<bool>,

@@ -20,8 +20,8 @@ impl GetMetricPolicyInput {
 }
 
 /// A builder for [`GetMetricPolicyInput`](crate::operation::get_metric_policy::GetMetricPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricPolicyInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }

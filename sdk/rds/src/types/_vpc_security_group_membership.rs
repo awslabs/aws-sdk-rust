@@ -29,8 +29,8 @@ impl VpcSecurityGroupMembership {
 }
 
 /// A builder for [`VpcSecurityGroupMembership`](crate::types::VpcSecurityGroupMembership).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcSecurityGroupMembershipBuilder {
     pub(crate) vpc_security_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

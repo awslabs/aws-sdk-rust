@@ -28,8 +28,8 @@ impl UpdateAccountSettingsInput {
 }
 
 /// A builder for [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccountSettingsInputBuilder {
     pub(crate) max_query_tcu: ::std::option::Option<i32>,
     pub(crate) query_pricing_model: ::std::option::Option<crate::types::QueryPricingModel>,

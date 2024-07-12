@@ -38,8 +38,8 @@ impl StartStreamingSessionInput {
 }
 
 /// A builder for [`StartStreamingSessionInput`](crate::operation::start_streaming_session::StartStreamingSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartStreamingSessionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl DescribeAccountAuditConfigurationOutput {
 }
 
 /// A builder for [`DescribeAccountAuditConfigurationOutput`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountAuditConfigurationOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) audit_notification_target_configurations:

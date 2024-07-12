@@ -27,8 +27,8 @@ impl DeleteResiliencyPolicyOutput {
 }
 
 /// A builder for [`DeleteResiliencyPolicyOutput`](crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResiliencyPolicyOutputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

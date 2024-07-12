@@ -20,8 +20,8 @@ impl DescribePredictorInput {
 }
 
 /// A builder for [`DescribePredictorInput`](crate::operation::describe_predictor::DescribePredictorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePredictorInputBuilder {
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
 }

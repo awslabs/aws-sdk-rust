@@ -29,8 +29,8 @@ impl DescribeServiceActionExecutionParametersOutput {
 }
 
 /// A builder for [`DescribeServiceActionExecutionParametersOutput`](crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServiceActionExecutionParametersOutputBuilder {
     pub(crate) service_action_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionParameter>>,
     _request_id: Option<String>,

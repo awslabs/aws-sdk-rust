@@ -26,8 +26,8 @@ impl StartProjectSessionInput {
 }
 
 /// A builder for [`StartProjectSessionInput`](crate::operation::start_project_session::StartProjectSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartProjectSessionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) assume_control: ::std::option::Option<bool>,

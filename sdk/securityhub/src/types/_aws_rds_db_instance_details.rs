@@ -481,8 +481,8 @@ impl AwsRdsDbInstanceDetails {
 }
 
 /// A builder for [`AwsRdsDbInstanceDetails`](crate::types::AwsRdsDbInstanceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRdsDbInstanceDetailsBuilder {
     pub(crate) associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceAssociatedRole>>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl LakeFormationDataPermissionDetails {
 }
 
 /// A builder for [`LakeFormationDataPermissionDetails`](crate::types::LakeFormationDataPermissionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LakeFormationDataPermissionDetailsBuilder {
     pub(crate) lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyDetails>,
 }

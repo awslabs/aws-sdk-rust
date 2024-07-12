@@ -26,8 +26,8 @@ impl SendPipelineExecutionStepFailureOutput {
 }
 
 /// A builder for [`SendPipelineExecutionStepFailureOutput`](crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendPipelineExecutionStepFailureOutputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

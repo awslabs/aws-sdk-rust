@@ -41,8 +41,8 @@ impl StartReferenceImportJobSourceItem {
 }
 
 /// A builder for [`StartReferenceImportJobSourceItem`](crate::types::StartReferenceImportJobSourceItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartReferenceImportJobSourceItemBuilder {
     pub(crate) source_file: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

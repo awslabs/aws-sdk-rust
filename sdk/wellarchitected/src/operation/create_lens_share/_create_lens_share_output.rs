@@ -26,8 +26,8 @@ impl CreateLensShareOutput {
 }
 
 /// A builder for [`CreateLensShareOutput`](crate::operation::create_lens_share::CreateLensShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLensShareOutputBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl TableClassSummary {
 }
 
 /// A builder for [`TableClassSummary`](crate::types::TableClassSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableClassSummaryBuilder {
     pub(crate) table_class: ::std::option::Option<crate::types::TableClass>,
     pub(crate) last_update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,

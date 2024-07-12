@@ -57,8 +57,8 @@ impl ImportInstanceVolumeDetailItem {
 }
 
 /// A builder for [`ImportInstanceVolumeDetailItem`](crate::types::ImportInstanceVolumeDetailItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportInstanceVolumeDetailItemBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) bytes_converted: ::std::option::Option<i64>,

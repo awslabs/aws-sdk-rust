@@ -18,8 +18,8 @@ impl DisableStageTransitionOutput {
 }
 
 /// A builder for [`DisableStageTransitionOutput`](crate::operation::disable_stage_transition::DisableStageTransitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableStageTransitionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -59,8 +59,8 @@ impl Captions {
 }
 
 /// A builder for [`Captions`](crate::types::Captions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaptionsBuilder {
     pub(crate) merge_policy: ::std::option::Option<::std::string::String>,
     pub(crate) caption_sources: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,

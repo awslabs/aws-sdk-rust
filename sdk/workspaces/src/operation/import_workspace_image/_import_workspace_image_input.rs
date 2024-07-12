@@ -74,8 +74,8 @@ impl ImportWorkspaceImageInput {
 }
 
 /// A builder for [`ImportWorkspaceImageInput`](crate::operation::import_workspace_image::ImportWorkspaceImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportWorkspaceImageInputBuilder {
     pub(crate) ec2_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_process: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>,

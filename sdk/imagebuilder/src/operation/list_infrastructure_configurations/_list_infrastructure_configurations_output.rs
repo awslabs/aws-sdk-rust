@@ -40,8 +40,8 @@ impl ListInfrastructureConfigurationsOutput {
 }
 
 /// A builder for [`ListInfrastructureConfigurationsOutput`](crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInfrastructureConfigurationsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) infrastructure_configuration_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::InfrastructureConfigurationSummary>>,

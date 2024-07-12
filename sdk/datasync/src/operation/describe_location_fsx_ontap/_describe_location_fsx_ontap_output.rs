@@ -64,8 +64,8 @@ impl DescribeLocationFsxOntapOutput {
 }
 
 /// A builder for [`DescribeLocationFsxOntapOutput`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationFsxOntapOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,

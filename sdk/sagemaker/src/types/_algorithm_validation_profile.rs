@@ -34,8 +34,8 @@ impl AlgorithmValidationProfile {
 }
 
 /// A builder for [`AlgorithmValidationProfile`](crate::types::AlgorithmValidationProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlgorithmValidationProfileBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) training_job_definition: ::std::option::Option<crate::types::TrainingJobDefinition>,

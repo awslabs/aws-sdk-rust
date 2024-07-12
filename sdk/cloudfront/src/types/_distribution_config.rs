@@ -216,8 +216,8 @@ impl DistributionConfig {
 }
 
 /// A builder for [`DistributionConfig`](crate::types::DistributionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DistributionConfigBuilder {
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
     pub(crate) aliases: ::std::option::Option<crate::types::Aliases>,

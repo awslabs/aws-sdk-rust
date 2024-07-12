@@ -34,8 +34,8 @@ impl ListReplaysOutput {
 }
 
 /// A builder for [`ListReplaysOutput`](crate::operation::list_replays::ListReplaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReplaysOutputBuilder {
     pub(crate) replays: ::std::option::Option<::std::vec::Vec<crate::types::Replay>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

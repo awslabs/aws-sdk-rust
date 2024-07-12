@@ -34,8 +34,8 @@ impl CreateDecoderManifestOutput {
 }
 
 /// A builder for [`CreateDecoderManifestOutput`](crate::operation::create_decoder_manifest::CreateDecoderManifestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDecoderManifestOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DeleteSiteOutput {
 }
 
 /// A builder for [`DeleteSiteOutput`](crate::operation::delete_site::DeleteSiteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSiteOutputBuilder {
     pub(crate) site: ::std::option::Option<crate::types::Site>,
     _request_id: Option<String>,

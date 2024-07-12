@@ -26,8 +26,8 @@ impl CreateDocumentOutput {
 }
 
 /// A builder for [`CreateDocumentOutput`](crate::operation::create_document::CreateDocumentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDocumentOutputBuilder {
     pub(crate) document_description: ::std::option::Option<crate::types::DocumentDescription>,
     _request_id: Option<String>,

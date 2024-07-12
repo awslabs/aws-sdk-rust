@@ -20,8 +20,8 @@ impl DeleteCrlInput {
 }
 
 /// A builder for [`DeleteCrlInput`](crate::operation::delete_crl::DeleteCrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCrlInputBuilder {
     pub(crate) crl_id: ::std::option::Option<::std::string::String>,
 }

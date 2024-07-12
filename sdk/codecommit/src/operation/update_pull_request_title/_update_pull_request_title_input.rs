@@ -26,8 +26,8 @@ impl UpdatePullRequestTitleInput {
 }
 
 /// A builder for [`UpdatePullRequestTitleInput`](crate::operation::update_pull_request_title::UpdatePullRequestTitleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePullRequestTitleInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,

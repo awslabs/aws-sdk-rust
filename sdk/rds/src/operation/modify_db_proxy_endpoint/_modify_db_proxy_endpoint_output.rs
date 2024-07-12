@@ -26,8 +26,8 @@ impl ModifyDbProxyEndpointOutput {
 }
 
 /// A builder for [`ModifyDbProxyEndpointOutput`](crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbProxyEndpointOutputBuilder {
     pub(crate) db_proxy_endpoint: ::std::option::Option<crate::types::DbProxyEndpoint>,
     _request_id: Option<String>,

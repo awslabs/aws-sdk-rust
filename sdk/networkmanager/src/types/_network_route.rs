@@ -47,8 +47,8 @@ impl NetworkRoute {
 }
 
 /// A builder for [`NetworkRoute`](crate::types::NetworkRoute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkRouteBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::NetworkRouteDestination>>,

@@ -27,8 +27,8 @@ impl InitialCapacityConfig {
 }
 
 /// A builder for [`InitialCapacityConfig`](crate::types::InitialCapacityConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InitialCapacityConfigBuilder {
     pub(crate) worker_count: ::std::option::Option<i64>,
     pub(crate) worker_configuration: ::std::option::Option<crate::types::WorkerResourceConfig>,

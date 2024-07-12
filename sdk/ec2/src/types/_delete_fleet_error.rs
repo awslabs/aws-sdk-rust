@@ -27,8 +27,8 @@ impl DeleteFleetError {
 }
 
 /// A builder for [`DeleteFleetError`](crate::types::DeleteFleetError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFleetErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::DeleteFleetErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

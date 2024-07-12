@@ -155,8 +155,8 @@ impl UpdateUserPoolInput {
 }
 
 /// A builder for [`UpdateUserPoolInput`](crate::operation::update_user_pool::UpdateUserPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserPoolInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) policies: ::std::option::Option<crate::types::UserPoolPolicyType>,

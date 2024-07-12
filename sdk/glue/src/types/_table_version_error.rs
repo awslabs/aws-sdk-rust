@@ -33,8 +33,8 @@ impl TableVersionError {
 }
 
 /// A builder for [`TableVersionError`](crate::types::TableVersionError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableVersionErrorBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,

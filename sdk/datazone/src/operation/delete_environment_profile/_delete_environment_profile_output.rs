@@ -18,8 +18,8 @@ impl DeleteEnvironmentProfileOutput {
 }
 
 /// A builder for [`DeleteEnvironmentProfileOutput`](crate::operation::delete_environment_profile::DeleteEnvironmentProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEnvironmentProfileOutputBuilder {
     _request_id: Option<String>,
 }

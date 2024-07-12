@@ -20,8 +20,8 @@ impl DeleteDataProtectionPolicyInput {
 }
 
 /// A builder for [`DeleteDataProtectionPolicyInput`](crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataProtectionPolicyInputBuilder {
     pub(crate) log_group_identifier: ::std::option::Option<::std::string::String>,
 }

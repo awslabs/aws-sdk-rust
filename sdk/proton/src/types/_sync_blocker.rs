@@ -67,8 +67,8 @@ impl SyncBlocker {
 }
 
 /// A builder for [`SyncBlocker`](crate::types::SyncBlocker).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SyncBlockerBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::BlockerType>,

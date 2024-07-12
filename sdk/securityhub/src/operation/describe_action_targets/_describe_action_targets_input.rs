@@ -36,8 +36,8 @@ impl DescribeActionTargetsInput {
 }
 
 /// A builder for [`DescribeActionTargetsInput`](crate::operation::describe_action_targets::DescribeActionTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeActionTargetsInputBuilder {
     pub(crate) action_target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

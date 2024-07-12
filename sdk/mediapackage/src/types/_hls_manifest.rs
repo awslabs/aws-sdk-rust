@@ -77,8 +77,8 @@ impl HlsManifest {
 }
 
 /// A builder for [`HlsManifest`](crate::types::HlsManifest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsManifestBuilder {
     pub(crate) ad_markers: ::std::option::Option<crate::types::AdMarkers>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

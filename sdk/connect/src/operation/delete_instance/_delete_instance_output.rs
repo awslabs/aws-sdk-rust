@@ -18,8 +18,8 @@ impl DeleteInstanceOutput {
 }
 
 /// A builder for [`DeleteInstanceOutput`](crate::operation::delete_instance::DeleteInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInstanceOutputBuilder {
     _request_id: Option<String>,
 }

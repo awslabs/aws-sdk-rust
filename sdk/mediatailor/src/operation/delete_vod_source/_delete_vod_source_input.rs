@@ -26,8 +26,8 @@ impl DeleteVodSourceInput {
 }
 
 /// A builder for [`DeleteVodSourceInput`](crate::operation::delete_vod_source::DeleteVodSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVodSourceInputBuilder {
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,

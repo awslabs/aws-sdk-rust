@@ -120,8 +120,8 @@ impl CreateApiOutput {
 }
 
 /// A builder for [`CreateApiOutput`](crate::operation::create_api::CreateApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateApiOutputBuilder {
     pub(crate) api_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) api_gateway_managed: ::std::option::Option<bool>,

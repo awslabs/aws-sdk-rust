@@ -26,8 +26,8 @@ impl ImportPublicKeyOutput {
 }
 
 /// A builder for [`ImportPublicKeyOutput`](crate::operation::import_public_key::ImportPublicKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportPublicKeyOutputBuilder {
     pub(crate) public_key: ::std::option::Option<crate::types::PublicKey>,
     _request_id: Option<String>,

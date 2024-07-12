@@ -29,8 +29,8 @@ impl SupportedProductConfig {
 }
 
 /// A builder for [`SupportedProductConfig`](crate::types::SupportedProductConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SupportedProductConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

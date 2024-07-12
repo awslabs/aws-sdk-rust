@@ -55,8 +55,8 @@ impl GetTokenBalanceOutput {
 }
 
 /// A builder for [`GetTokenBalanceOutput`](crate::operation::get_token_balance::GetTokenBalanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTokenBalanceOutputBuilder {
     pub(crate) owner_identifier: ::std::option::Option<crate::types::OwnerIdentifier>,
     pub(crate) token_identifier: ::std::option::Option<crate::types::TokenIdentifier>,

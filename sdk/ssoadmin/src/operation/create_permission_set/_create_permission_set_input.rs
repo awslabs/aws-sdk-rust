@@ -52,8 +52,8 @@ impl CreatePermissionSetInput {
 }
 
 /// A builder for [`CreatePermissionSetInput`](crate::operation::create_permission_set::CreatePermissionSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePermissionSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

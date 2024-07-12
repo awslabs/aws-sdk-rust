@@ -26,8 +26,8 @@ impl GetRecoveryPointOutput {
 }
 
 /// A builder for [`GetRecoveryPointOutput`](crate::operation::get_recovery_point::GetRecoveryPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecoveryPointOutputBuilder {
     pub(crate) recovery_point: ::std::option::Option<crate::types::RecoveryPoint>,
     _request_id: Option<String>,

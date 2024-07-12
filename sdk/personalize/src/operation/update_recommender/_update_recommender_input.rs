@@ -26,8 +26,8 @@ impl UpdateRecommenderInput {
 }
 
 /// A builder for [`UpdateRecommenderInput`](crate::operation::update_recommender::UpdateRecommenderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRecommenderInputBuilder {
     pub(crate) recommender_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,

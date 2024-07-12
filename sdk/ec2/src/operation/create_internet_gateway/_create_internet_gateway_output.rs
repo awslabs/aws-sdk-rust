@@ -26,8 +26,8 @@ impl CreateInternetGatewayOutput {
 }
 
 /// A builder for [`CreateInternetGatewayOutput`](crate::operation::create_internet_gateway::CreateInternetGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInternetGatewayOutputBuilder {
     pub(crate) internet_gateway: ::std::option::Option<crate::types::InternetGateway>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl GetEntityTypesOutput {
 }
 
 /// A builder for [`GetEntityTypesOutput`](crate::operation::get_entity_types::GetEntityTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEntityTypesOutputBuilder {
     pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

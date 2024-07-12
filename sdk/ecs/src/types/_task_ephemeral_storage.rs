@@ -27,8 +27,8 @@ impl TaskEphemeralStorage {
 }
 
 /// A builder for [`TaskEphemeralStorage`](crate::types::TaskEphemeralStorage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskEphemeralStorageBuilder {
     pub(crate) size_in_gib: ::std::option::Option<i32>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

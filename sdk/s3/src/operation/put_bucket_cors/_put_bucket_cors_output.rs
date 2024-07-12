@@ -24,8 +24,8 @@ impl PutBucketCorsOutput {
 }
 
 /// A builder for [`PutBucketCorsOutput`](crate::operation::put_bucket_cors::PutBucketCorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketCorsOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl Ec2ScanModeState {
 }
 
 /// A builder for [`Ec2ScanModeState`](crate::types::Ec2ScanModeState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2ScanModeStateBuilder {
     pub(crate) scan_mode: ::std::option::Option<crate::types::Ec2ScanMode>,
     pub(crate) scan_mode_status: ::std::option::Option<crate::types::Ec2ScanModeStatus>,

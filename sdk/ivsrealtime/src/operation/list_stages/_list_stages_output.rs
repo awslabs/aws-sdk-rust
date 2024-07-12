@@ -33,8 +33,8 @@ impl ListStagesOutput {
 }
 
 /// A builder for [`ListStagesOutput`](crate::operation::list_stages::ListStagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStagesOutputBuilder {
     pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::StageSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

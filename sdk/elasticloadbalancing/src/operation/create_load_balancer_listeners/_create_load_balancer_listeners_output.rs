@@ -19,8 +19,8 @@ impl CreateLoadBalancerListenersOutput {
 }
 
 /// A builder for [`CreateLoadBalancerListenersOutput`](crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLoadBalancerListenersOutputBuilder {
     _request_id: Option<String>,
 }

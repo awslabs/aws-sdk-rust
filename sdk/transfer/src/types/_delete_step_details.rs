@@ -39,8 +39,8 @@ impl DeleteStepDetails {
 }
 
 /// A builder for [`DeleteStepDetails`](crate::types::DeleteStepDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStepDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source_file_location: ::std::option::Option<::std::string::String>,

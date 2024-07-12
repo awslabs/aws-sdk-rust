@@ -69,8 +69,8 @@ impl RdsInstanceDetails {
 }
 
 /// A builder for [`RdsInstanceDetails`](crate::types::RdsInstanceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsInstanceDetailsBuilder {
     pub(crate) family: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,

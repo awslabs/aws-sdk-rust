@@ -36,8 +36,8 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
 }
 
 /// A builder for [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,

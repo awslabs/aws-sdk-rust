@@ -20,8 +20,8 @@ impl GetImagePolicyInput {
 }
 
 /// A builder for [`GetImagePolicyInput`](crate::operation::get_image_policy::GetImagePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImagePolicyInputBuilder {
     pub(crate) image_arn: ::std::option::Option<::std::string::String>,
 }

@@ -34,8 +34,8 @@ impl ListStreamingSessionBackupsOutput {
 }
 
 /// A builder for [`ListStreamingSessionBackupsOutput`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamingSessionBackupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_session_backups: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>>,

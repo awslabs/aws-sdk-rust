@@ -26,8 +26,8 @@ impl DeleteAssetModelInput {
 }
 
 /// A builder for [`DeleteAssetModelInput`](crate::operation::delete_asset_model::DeleteAssetModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssetModelInputBuilder {
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

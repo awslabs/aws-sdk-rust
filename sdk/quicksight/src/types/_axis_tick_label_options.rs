@@ -27,8 +27,8 @@ impl AxisTickLabelOptions {
 }
 
 /// A builder for [`AxisTickLabelOptions`](crate::types::AxisTickLabelOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AxisTickLabelOptionsBuilder {
     pub(crate) label_options: ::std::option::Option<crate::types::LabelOptions>,
     pub(crate) rotation_angle: ::std::option::Option<f64>,

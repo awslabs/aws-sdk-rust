@@ -26,8 +26,8 @@ impl DescribeStreamSummaryInput {
 }
 
 /// A builder for [`DescribeStreamSummaryInput`](crate::operation::describe_stream_summary::DescribeStreamSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStreamSummaryInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,

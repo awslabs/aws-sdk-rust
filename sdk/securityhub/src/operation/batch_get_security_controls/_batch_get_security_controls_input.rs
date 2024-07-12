@@ -22,8 +22,8 @@ impl BatchGetSecurityControlsInput {
 }
 
 /// A builder for [`BatchGetSecurityControlsInput`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetSecurityControlsInputBuilder {
     pub(crate) security_control_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

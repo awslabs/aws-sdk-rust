@@ -18,8 +18,8 @@ impl DeleteVoiceConnectorProxyOutput {
 }
 
 /// A builder for [`DeleteVoiceConnectorProxyOutput`](crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVoiceConnectorProxyOutputBuilder {
     _request_id: Option<String>,
 }

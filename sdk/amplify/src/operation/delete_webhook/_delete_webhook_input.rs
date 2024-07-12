@@ -21,8 +21,8 @@ impl DeleteWebhookInput {
 }
 
 /// A builder for [`DeleteWebhookInput`](crate::operation::delete_webhook::DeleteWebhookInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWebhookInputBuilder {
     pub(crate) webhook_id: ::std::option::Option<::std::string::String>,
 }

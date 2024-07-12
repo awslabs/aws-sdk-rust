@@ -31,8 +31,8 @@ impl ScteHls {
 }
 
 /// A builder for [`ScteHls`](crate::types::ScteHls).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScteHlsBuilder {
     pub(crate) ad_marker_hls: ::std::option::Option<crate::types::AdMarkerHls>,
 }

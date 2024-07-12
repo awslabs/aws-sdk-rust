@@ -27,8 +27,8 @@ impl Rule {
 }
 
 /// A builder for [`Rule`](crate::types::Rule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RuleType>,
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

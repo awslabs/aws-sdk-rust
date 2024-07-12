@@ -66,8 +66,8 @@ impl CreateClusterInput {
 }
 
 /// A builder for [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateClusterInputBuilder {
     pub(crate) backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     pub(crate) hsm_type: ::std::option::Option<::std::string::String>,

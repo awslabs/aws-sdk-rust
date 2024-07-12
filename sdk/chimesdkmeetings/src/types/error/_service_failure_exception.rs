@@ -59,8 +59,8 @@ impl ServiceFailureException {
 }
 
 /// A builder for [`ServiceFailureException`](crate::types::error::ServiceFailureException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceFailureExceptionBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

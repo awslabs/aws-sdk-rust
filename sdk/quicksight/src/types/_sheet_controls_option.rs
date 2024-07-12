@@ -21,8 +21,8 @@ impl SheetControlsOption {
 }
 
 /// A builder for [`SheetControlsOption`](crate::types::SheetControlsOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SheetControlsOptionBuilder {
     pub(crate) visibility_state: ::std::option::Option<crate::types::DashboardUiState>,
 }

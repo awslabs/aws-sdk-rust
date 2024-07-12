@@ -32,8 +32,8 @@ impl UpdateContributorInsightsInput {
 }
 
 /// A builder for [`UpdateContributorInsightsInput`](crate::operation::update_contributor_insights::UpdateContributorInsightsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContributorInsightsInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl FrameCaptureOutputSettings {
 }
 
 /// A builder for [`FrameCaptureOutputSettings`](crate::types::FrameCaptureOutputSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FrameCaptureOutputSettingsBuilder {
     pub(crate) name_modifier: ::std::option::Option<::std::string::String>,
 }

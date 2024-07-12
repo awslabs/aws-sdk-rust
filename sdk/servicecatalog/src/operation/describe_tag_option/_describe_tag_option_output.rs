@@ -26,8 +26,8 @@ impl DescribeTagOptionOutput {
 }
 
 /// A builder for [`DescribeTagOptionOutput`](crate::operation::describe_tag_option::DescribeTagOptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTagOptionOutputBuilder {
     pub(crate) tag_option_detail: ::std::option::Option<crate::types::TagOptionDetail>,
     _request_id: Option<String>,

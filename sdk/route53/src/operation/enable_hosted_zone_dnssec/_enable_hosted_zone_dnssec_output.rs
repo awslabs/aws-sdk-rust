@@ -26,8 +26,8 @@ impl EnableHostedZoneDnssecOutput {
 }
 
 /// A builder for [`EnableHostedZoneDnssecOutput`](crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableHostedZoneDnssecOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,

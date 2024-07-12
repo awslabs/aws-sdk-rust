@@ -28,8 +28,8 @@ impl DescribeDeviceEc2InstancesInput {
 }
 
 /// A builder for [`DescribeDeviceEc2InstancesInput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeviceEc2InstancesInputBuilder {
     pub(crate) managed_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

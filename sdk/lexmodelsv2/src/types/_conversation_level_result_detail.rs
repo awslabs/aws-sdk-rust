@@ -27,8 +27,8 @@ impl ConversationLevelResultDetail {
 }
 
 /// A builder for [`ConversationLevelResultDetail`](crate::types::ConversationLevelResultDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConversationLevelResultDetailBuilder {
     pub(crate) end_to_end_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
     pub(crate) speech_transcription_result: ::std::option::Option<crate::types::TestResultMatchStatus>,

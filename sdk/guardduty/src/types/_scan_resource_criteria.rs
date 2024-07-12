@@ -27,8 +27,8 @@ impl ScanResourceCriteria {
 }
 
 /// A builder for [`ScanResourceCriteria`](crate::types::ScanResourceCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanResourceCriteriaBuilder {
     pub(crate) include: ::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>>,
     pub(crate) exclude: ::std::option::Option<::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>>,

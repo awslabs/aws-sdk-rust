@@ -178,8 +178,8 @@ impl GetReportGroupTrendInput {
 }
 
 /// A builder for [`GetReportGroupTrendInput`](crate::operation::get_report_group_trend::GetReportGroupTrendInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReportGroupTrendInputBuilder {
     pub(crate) report_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) num_of_reports: ::std::option::Option<i32>,

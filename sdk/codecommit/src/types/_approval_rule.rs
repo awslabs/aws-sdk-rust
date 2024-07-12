@@ -63,8 +63,8 @@ impl ApprovalRule {
 }
 
 /// A builder for [`ApprovalRule`](crate::types::ApprovalRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApprovalRuleBuilder {
     pub(crate) approval_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) approval_rule_name: ::std::option::Option<::std::string::String>,

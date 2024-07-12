@@ -39,8 +39,8 @@ impl ChannelModerator {
 }
 
 /// A builder for [`ChannelModerator`](crate::types::ChannelModerator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelModeratorBuilder {
     pub(crate) moderator: ::std::option::Option<crate::types::Identity>,
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,

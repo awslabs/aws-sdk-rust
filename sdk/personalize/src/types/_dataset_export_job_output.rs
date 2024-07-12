@@ -21,8 +21,8 @@ impl DatasetExportJobOutput {
 }
 
 /// A builder for [`DatasetExportJobOutput`](crate::types::DatasetExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetExportJobOutputBuilder {
     pub(crate) s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
 }

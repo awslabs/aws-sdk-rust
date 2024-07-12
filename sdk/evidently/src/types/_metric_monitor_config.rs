@@ -21,8 +21,8 @@ impl MetricMonitorConfig {
 }
 
 /// A builder for [`MetricMonitorConfig`](crate::types::MetricMonitorConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricMonitorConfigBuilder {
     pub(crate) metric_definition: ::std::option::Option<crate::types::MetricDefinitionConfig>,
 }

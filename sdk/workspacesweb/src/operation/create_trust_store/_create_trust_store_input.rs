@@ -38,8 +38,8 @@ impl CreateTrustStoreInput {
 }
 
 /// A builder for [`CreateTrustStoreInput`](crate::operation::create_trust_store::CreateTrustStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTrustStoreInputBuilder {
     pub(crate) certificate_list: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

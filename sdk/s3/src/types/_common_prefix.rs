@@ -21,8 +21,8 @@ impl CommonPrefix {
 }
 
 /// A builder for [`CommonPrefix`](crate::types::CommonPrefix).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CommonPrefixBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl ModifyReportDefinitionInput {
 }
 
 /// A builder for [`ModifyReportDefinitionInput`](crate::operation::modify_report_definition::ModifyReportDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyReportDefinitionInputBuilder {
     pub(crate) report_name: ::std::option::Option<::std::string::String>,
     pub(crate) report_definition: ::std::option::Option<crate::types::ReportDefinition>,

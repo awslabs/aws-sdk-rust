@@ -40,8 +40,8 @@ impl ExecuteFastResetInput {
 }
 
 /// A builder for [`ExecuteFastResetInput`](crate::operation::execute_fast_reset::ExecuteFastResetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteFastResetInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) token: ::std::option::Option<::std::string::String>,

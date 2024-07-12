@@ -74,8 +74,8 @@ impl DecreaseReplicaCountInput {
 }
 
 /// A builder for [`DecreaseReplicaCountInput`](crate::operation::decrease_replica_count::DecreaseReplicaCountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecreaseReplicaCountInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_replica_count: ::std::option::Option<i32>,

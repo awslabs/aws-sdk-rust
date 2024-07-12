@@ -60,8 +60,8 @@ impl RefreshSchedule {
 }
 
 /// A builder for [`RefreshSchedule`](crate::types::RefreshSchedule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RefreshScheduleBuilder {
     pub(crate) schedule_id: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_frequency: ::std::option::Option<crate::types::RefreshFrequency>,

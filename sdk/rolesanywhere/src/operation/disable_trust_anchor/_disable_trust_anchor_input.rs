@@ -20,8 +20,8 @@ impl DisableTrustAnchorInput {
 }
 
 /// A builder for [`DisableTrustAnchorInput`](crate::operation::disable_trust_anchor::DisableTrustAnchorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableTrustAnchorInputBuilder {
     pub(crate) trust_anchor_id: ::std::option::Option<::std::string::String>,
 }

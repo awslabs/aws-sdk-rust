@@ -44,8 +44,8 @@ impl ExecuteCommandInput {
 }
 
 /// A builder for [`ExecuteCommandInput`](crate::operation::execute_command::ExecuteCommandInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteCommandInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) container: ::std::option::Option<::std::string::String>,

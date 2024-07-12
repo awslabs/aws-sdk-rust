@@ -33,8 +33,8 @@ impl ListGroupsFilters {
 }
 
 /// A builder for [`ListGroupsFilters`](crate::types::ListGroupsFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupsFiltersBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) primary_email_prefix: ::std::option::Option<::std::string::String>,

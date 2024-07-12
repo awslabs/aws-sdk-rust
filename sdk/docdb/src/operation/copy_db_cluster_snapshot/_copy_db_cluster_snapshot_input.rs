@@ -121,8 +121,8 @@ impl CopyDbClusterSnapshotInput {
 }
 
 /// A builder for [`CopyDbClusterSnapshotInput`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyDbClusterSnapshotInputBuilder {
     pub(crate) source_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,

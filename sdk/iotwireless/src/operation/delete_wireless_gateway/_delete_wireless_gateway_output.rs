@@ -18,8 +18,8 @@ impl DeleteWirelessGatewayOutput {
 }
 
 /// A builder for [`DeleteWirelessGatewayOutput`](crate::operation::delete_wireless_gateway::DeleteWirelessGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWirelessGatewayOutputBuilder {
     _request_id: Option<String>,
 }

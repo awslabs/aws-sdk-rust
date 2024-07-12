@@ -32,8 +32,8 @@ impl GetCalculatedAttributeForProfileInput {
 }
 
 /// A builder for [`GetCalculatedAttributeForProfileInput`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCalculatedAttributeForProfileInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,

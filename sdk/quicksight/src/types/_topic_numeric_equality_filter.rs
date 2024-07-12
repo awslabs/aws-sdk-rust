@@ -35,8 +35,8 @@ impl TopicNumericEqualityFilter {
 }
 
 /// A builder for [`TopicNumericEqualityFilter`](crate::types::TopicNumericEqualityFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TopicNumericEqualityFilterBuilder {
     pub(crate) constant: ::std::option::Option<crate::types::TopicSingularFilterConstant>,
     pub(crate) aggregation: ::std::option::Option<crate::types::NamedFilterAggType>,

@@ -33,8 +33,8 @@ impl ManagedRuleDescription {
 }
 
 /// A builder for [`ManagedRuleDescription`](crate::types::ManagedRuleDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManagedRuleDescriptionBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

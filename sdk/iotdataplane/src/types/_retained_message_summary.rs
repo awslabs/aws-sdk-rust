@@ -39,8 +39,8 @@ impl RetainedMessageSummary {
 }
 
 /// A builder for [`RetainedMessageSummary`](crate::types::RetainedMessageSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetainedMessageSummaryBuilder {
     pub(crate) topic: ::std::option::Option<::std::string::String>,
     pub(crate) payload_size: ::std::option::Option<i64>,

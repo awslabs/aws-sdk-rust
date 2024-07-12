@@ -33,8 +33,8 @@ impl IdFormat {
 }
 
 /// A builder for [`IdFormat`](crate::types::IdFormat).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdFormatBuilder {
     pub(crate) deadline: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl JobExecutionsRolloutConfig {
 }
 
 /// A builder for [`JobExecutionsRolloutConfig`](crate::types::JobExecutionsRolloutConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobExecutionsRolloutConfigBuilder {
     pub(crate) maximum_per_minute: ::std::option::Option<i32>,
     pub(crate) exponential_rate: ::std::option::Option<crate::types::ExponentialRolloutRate>,

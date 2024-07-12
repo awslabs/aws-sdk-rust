@@ -95,8 +95,8 @@ impl CreatePartnershipOutput {
 }
 
 /// A builder for [`CreatePartnershipOutput`](crate::operation::create_partnership::CreatePartnershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreatePartnershipOutputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) partnership_id: ::std::option::Option<::std::string::String>,

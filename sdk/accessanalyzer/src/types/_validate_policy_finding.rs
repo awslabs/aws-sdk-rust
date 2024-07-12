@@ -57,8 +57,8 @@ impl ValidatePolicyFinding {
 }
 
 /// A builder for [`ValidatePolicyFinding`](crate::types::ValidatePolicyFinding).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidatePolicyFindingBuilder {
     pub(crate) finding_details: ::std::option::Option<::std::string::String>,
     pub(crate) finding_type: ::std::option::Option<crate::types::ValidatePolicyFindingType>,

@@ -27,8 +27,8 @@ impl OriginRequestPolicySummary {
 }
 
 /// A builder for [`OriginRequestPolicySummary`](crate::types::OriginRequestPolicySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OriginRequestPolicySummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OriginRequestPolicyType>,
     pub(crate) origin_request_policy: ::std::option::Option<crate::types::OriginRequestPolicy>,

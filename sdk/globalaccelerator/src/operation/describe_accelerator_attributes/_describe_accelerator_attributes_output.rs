@@ -26,8 +26,8 @@ impl DescribeAcceleratorAttributesOutput {
 }
 
 /// A builder for [`DescribeAcceleratorAttributesOutput`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAcceleratorAttributesOutputBuilder {
     pub(crate) accelerator_attributes: ::std::option::Option<crate::types::AcceleratorAttributes>,
     _request_id: Option<String>,

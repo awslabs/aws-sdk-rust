@@ -33,8 +33,8 @@ impl QuestionDifference {
 }
 
 /// A builder for [`QuestionDifference`](crate::types::QuestionDifference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QuestionDifferenceBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) question_title: ::std::option::Option<::std::string::String>,

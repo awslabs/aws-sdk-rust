@@ -42,8 +42,8 @@ impl CreateCallAnalyticsCategoryInput {
 }
 
 /// A builder for [`CreateCallAnalyticsCategoryInput`](crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCallAnalyticsCategoryInputBuilder {
     pub(crate) category_name: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,

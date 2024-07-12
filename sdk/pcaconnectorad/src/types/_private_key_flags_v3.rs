@@ -39,8 +39,8 @@ impl PrivateKeyFlagsV3 {
 }
 
 /// A builder for [`PrivateKeyFlagsV3`](crate::types::PrivateKeyFlagsV3).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrivateKeyFlagsV3Builder {
     pub(crate) exportable_key: ::std::option::Option<bool>,
     pub(crate) strong_key_protection_required: ::std::option::Option<bool>,

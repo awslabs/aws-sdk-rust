@@ -27,8 +27,8 @@ impl DeleteTrafficPolicyInput {
 }
 
 /// A builder for [`DeleteTrafficPolicyInput`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrafficPolicyInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,

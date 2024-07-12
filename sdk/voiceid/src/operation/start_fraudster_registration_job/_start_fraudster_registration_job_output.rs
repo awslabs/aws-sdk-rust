@@ -26,8 +26,8 @@ impl StartFraudsterRegistrationJobOutput {
 }
 
 /// A builder for [`StartFraudsterRegistrationJobOutput`](crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartFraudsterRegistrationJobOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::FraudsterRegistrationJob>,
     _request_id: Option<String>,

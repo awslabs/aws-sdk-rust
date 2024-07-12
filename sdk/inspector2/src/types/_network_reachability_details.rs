@@ -33,8 +33,8 @@ impl NetworkReachabilityDetails {
 }
 
 /// A builder for [`NetworkReachabilityDetails`](crate::types::NetworkReachabilityDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkReachabilityDetailsBuilder {
     pub(crate) open_port_range: ::std::option::Option<crate::types::PortRange>,
     pub(crate) protocol: ::std::option::Option<crate::types::NetworkProtocol>,

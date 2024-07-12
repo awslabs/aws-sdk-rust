@@ -64,8 +64,8 @@ impl ImportResourcesToDraftAppVersionOutput {
 }
 
 /// A builder for [`ImportResourcesToDraftAppVersionOutput`](crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportResourcesToDraftAppVersionOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,

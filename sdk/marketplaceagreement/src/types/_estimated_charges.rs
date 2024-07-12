@@ -37,8 +37,8 @@ impl EstimatedCharges {
 }
 
 /// A builder for [`EstimatedCharges`](crate::types::EstimatedCharges).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EstimatedChargesBuilder {
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) agreement_value: ::std::option::Option<::std::string::String>,

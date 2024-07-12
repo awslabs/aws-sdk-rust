@@ -27,8 +27,8 @@ impl SoftwareUpdateOptionsStatus {
 }
 
 /// A builder for [`SoftwareUpdateOptionsStatus`](crate::types::SoftwareUpdateOptionsStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SoftwareUpdateOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

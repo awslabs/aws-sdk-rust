@@ -33,8 +33,8 @@ impl BatchImportEvidenceToAssessmentControlError {
 }
 
 /// A builder for [`BatchImportEvidenceToAssessmentControlError`](crate::types::BatchImportEvidenceToAssessmentControlError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchImportEvidenceToAssessmentControlErrorBuilder {
     pub(crate) manual_evidence: ::std::option::Option<crate::types::ManualEvidence>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

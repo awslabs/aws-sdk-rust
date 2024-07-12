@@ -38,8 +38,8 @@ impl ListMembersOutput {
 }
 
 /// A builder for [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMembersOutputBuilder {
     pub(crate) member_details: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

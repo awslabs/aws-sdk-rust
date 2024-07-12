@@ -26,8 +26,8 @@ impl ShareDirectoryOutput {
 }
 
 /// A builder for [`ShareDirectoryOutput`](crate::operation::share_directory::ShareDirectoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShareDirectoryOutputBuilder {
     pub(crate) shared_directory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

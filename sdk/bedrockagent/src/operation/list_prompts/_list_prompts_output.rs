@@ -33,8 +33,8 @@ impl ListPromptsOutput {
 }
 
 /// A builder for [`ListPromptsOutput`](crate::operation::list_prompts::ListPromptsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPromptsOutputBuilder {
     pub(crate) prompt_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PromptSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

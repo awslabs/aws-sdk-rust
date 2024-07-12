@@ -45,8 +45,8 @@ impl SnapshotRecycleBinInfo {
 }
 
 /// A builder for [`SnapshotRecycleBinInfo`](crate::types::SnapshotRecycleBinInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotRecycleBinInfoBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) recycle_bin_enter_time: ::std::option::Option<::aws_smithy_types::DateTime>,

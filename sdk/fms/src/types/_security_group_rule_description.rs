@@ -51,8 +51,8 @@ impl SecurityGroupRuleDescription {
 }
 
 /// A builder for [`SecurityGroupRuleDescription`](crate::types::SecurityGroupRuleDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityGroupRuleDescriptionBuilder {
     pub(crate) ipv4_range: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_range: ::std::option::Option<::std::string::String>,

@@ -132,8 +132,8 @@ impl CreateDiskFromSnapshotInput {
 }
 
 /// A builder for [`CreateDiskFromSnapshotInput`](crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDiskFromSnapshotInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
     pub(crate) disk_snapshot_name: ::std::option::Option<::std::string::String>,

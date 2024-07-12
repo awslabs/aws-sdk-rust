@@ -20,8 +20,8 @@ impl DescribeIpRestrictionInput {
 }
 
 /// A builder for [`DescribeIpRestrictionInput`](crate::operation::describe_ip_restriction::DescribeIpRestrictionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIpRestrictionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
 }

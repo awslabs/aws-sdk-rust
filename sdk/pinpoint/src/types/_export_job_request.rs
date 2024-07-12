@@ -47,8 +47,8 @@ impl ExportJobRequest {
 }
 
 /// A builder for [`ExportJobRequest`](crate::types::ExportJobRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportJobRequestBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) s3_url_prefix: ::std::option::Option<::std::string::String>,

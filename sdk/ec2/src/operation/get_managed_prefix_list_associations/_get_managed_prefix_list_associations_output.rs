@@ -34,8 +34,8 @@ impl GetManagedPrefixListAssociationsOutput {
 }
 
 /// A builder for [`GetManagedPrefixListAssociationsOutput`](crate::operation::get_managed_prefix_list_associations::GetManagedPrefixListAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetManagedPrefixListAssociationsOutputBuilder {
     pub(crate) prefix_list_associations: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

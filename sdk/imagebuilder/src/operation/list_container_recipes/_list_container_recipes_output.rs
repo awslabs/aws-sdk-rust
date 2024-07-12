@@ -40,8 +40,8 @@ impl ListContainerRecipesOutput {
 }
 
 /// A builder for [`ListContainerRecipesOutput`](crate::operation::list_container_recipes::ListContainerRecipesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContainerRecipesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) container_recipe_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecipeSummary>>,

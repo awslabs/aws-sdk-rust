@@ -43,8 +43,8 @@ impl KeyBlockHeaders {
 }
 
 /// A builder for [`KeyBlockHeaders`](crate::types::KeyBlockHeaders).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeyBlockHeadersBuilder {
     pub(crate) key_modes_of_use: ::std::option::Option<crate::types::KeyModesOfUse>,
     pub(crate) key_exportability: ::std::option::Option<crate::types::KeyExportability>,

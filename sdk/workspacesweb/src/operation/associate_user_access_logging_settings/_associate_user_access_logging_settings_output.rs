@@ -34,8 +34,8 @@ impl AssociateUserAccessLoggingSettingsOutput {
 }
 
 /// A builder for [`AssociateUserAccessLoggingSettingsOutput`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateUserAccessLoggingSettingsOutputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteVpceConfigurationOutput {
 }
 
 /// A builder for [`DeleteVpceConfigurationOutput`](crate::operation::delete_vpce_configuration::DeleteVpceConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpceConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

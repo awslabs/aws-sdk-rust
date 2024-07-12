@@ -106,8 +106,8 @@ impl StartChatContactInput {
 }
 
 /// A builder for [`StartChatContactInput`](crate::operation::start_chat_contact::StartChatContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartChatContactInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,

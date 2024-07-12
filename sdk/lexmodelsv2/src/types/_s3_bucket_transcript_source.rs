@@ -46,8 +46,8 @@ impl S3BucketTranscriptSource {
 }
 
 /// A builder for [`S3BucketTranscriptSource`](crate::types::S3BucketTranscriptSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3BucketTranscriptSourceBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) path_format: ::std::option::Option<crate::types::PathFormat>,

@@ -46,8 +46,8 @@ impl GetMatchesOutput {
 }
 
 /// A builder for [`GetMatchesOutput`](crate::operation::get_matches::GetMatchesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMatchesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) match_generation_date: ::std::option::Option<::aws_smithy_types::DateTime>,

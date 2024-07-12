@@ -81,8 +81,8 @@ impl WorkflowTypeConfiguration {
 }
 
 /// A builder for [`WorkflowTypeConfiguration`](crate::types::WorkflowTypeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowTypeConfigurationBuilder {
     pub(crate) default_task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     pub(crate) default_execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl ServiceUpdateNotFoundFault {
 }
 
 /// A builder for [`ServiceUpdateNotFoundFault`](crate::types::error::ServiceUpdateNotFoundFault).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceUpdateNotFoundFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

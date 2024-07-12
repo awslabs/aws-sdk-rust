@@ -91,8 +91,8 @@ impl InvokeEndpointWithResponseStreamInput {
 }
 
 /// A builder for [`InvokeEndpointWithResponseStreamInput`](crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeEndpointWithResponseStreamInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,

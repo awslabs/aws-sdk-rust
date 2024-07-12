@@ -37,8 +37,8 @@ impl MembershipQueryComputePaymentConfig {
 }
 
 /// A builder for [`MembershipQueryComputePaymentConfig`](crate::types::MembershipQueryComputePaymentConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MembershipQueryComputePaymentConfigBuilder {
     pub(crate) is_responsible: ::std::option::Option<bool>,
 }

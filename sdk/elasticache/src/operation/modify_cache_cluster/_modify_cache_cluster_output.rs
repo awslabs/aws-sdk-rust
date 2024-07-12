@@ -26,8 +26,8 @@ impl ModifyCacheClusterOutput {
 }
 
 /// A builder for [`ModifyCacheClusterOutput`](crate::operation::modify_cache_cluster::ModifyCacheClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyCacheClusterOutputBuilder {
     pub(crate) cache_cluster: ::std::option::Option<crate::types::CacheCluster>,
     _request_id: Option<String>,

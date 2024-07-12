@@ -22,8 +22,8 @@ impl RejectInboundCrossClusterSearchConnectionInput {
 }
 
 /// A builder for [`RejectInboundCrossClusterSearchConnectionInput`](crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectInboundCrossClusterSearchConnectionInputBuilder {
     pub(crate) cross_cluster_search_connection_id: ::std::option::Option<::std::string::String>,
 }

@@ -28,8 +28,8 @@ impl OptedOutFilter {
 }
 
 /// A builder for [`OptedOutFilter`](crate::types::OptedOutFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OptedOutFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OptedOutFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

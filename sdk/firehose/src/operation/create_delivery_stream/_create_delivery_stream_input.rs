@@ -135,8 +135,8 @@ impl CreateDeliveryStreamInput {
 }
 
 /// A builder for [`CreateDeliveryStreamInput`](crate::operation::create_delivery_stream::CreateDeliveryStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDeliveryStreamInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_stream_type: ::std::option::Option<crate::types::DeliveryStreamType>,

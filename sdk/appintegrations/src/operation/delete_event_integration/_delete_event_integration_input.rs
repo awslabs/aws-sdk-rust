@@ -20,8 +20,8 @@ impl DeleteEventIntegrationInput {
 }
 
 /// A builder for [`DeleteEventIntegrationInput`](crate::operation::delete_event_integration::DeleteEventIntegrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventIntegrationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

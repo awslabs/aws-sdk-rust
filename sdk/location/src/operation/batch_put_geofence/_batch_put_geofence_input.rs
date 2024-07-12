@@ -28,8 +28,8 @@ impl BatchPutGeofenceInput {
 }
 
 /// A builder for [`BatchPutGeofenceInput`](crate::operation::batch_put_geofence::BatchPutGeofenceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutGeofenceInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>>,

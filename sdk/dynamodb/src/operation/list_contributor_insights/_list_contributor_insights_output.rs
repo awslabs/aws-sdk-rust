@@ -34,8 +34,8 @@ impl ListContributorInsightsOutput {
 }
 
 /// A builder for [`ListContributorInsightsOutput`](crate::operation::list_contributor_insights::ListContributorInsightsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContributorInsightsOutputBuilder {
     pub(crate) contributor_insights_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ContributorInsightsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

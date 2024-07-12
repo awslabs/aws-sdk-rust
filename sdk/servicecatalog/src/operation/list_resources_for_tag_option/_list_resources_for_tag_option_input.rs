@@ -50,8 +50,8 @@ impl ListResourcesForTagOptionInput {
 }
 
 /// A builder for [`ListResourcesForTagOptionInput`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourcesForTagOptionInputBuilder {
     pub(crate) tag_option_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,

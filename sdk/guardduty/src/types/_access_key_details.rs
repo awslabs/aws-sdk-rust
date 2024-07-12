@@ -39,8 +39,8 @@ impl AccessKeyDetails {
 }
 
 /// A builder for [`AccessKeyDetails`](crate::types::AccessKeyDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessKeyDetailsBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,

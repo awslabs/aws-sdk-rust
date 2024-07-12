@@ -34,8 +34,8 @@ impl DescribeProductsOutput {
 }
 
 /// A builder for [`DescribeProductsOutput`](crate::operation::describe_products::DescribeProductsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProductsOutputBuilder {
     pub(crate) products: ::std::option::Option<::std::vec::Vec<crate::types::Product>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

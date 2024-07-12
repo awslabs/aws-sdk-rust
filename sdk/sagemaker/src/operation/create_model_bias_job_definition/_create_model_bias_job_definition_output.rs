@@ -26,8 +26,8 @@ impl CreateModelBiasJobDefinitionOutput {
 }
 
 /// A builder for [`CreateModelBiasJobDefinitionOutput`](crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateModelBiasJobDefinitionOutputBuilder {
     pub(crate) job_definition_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

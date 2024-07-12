@@ -36,8 +36,8 @@ impl DescribeOrganizationsAccessInput {
 }
 
 /// A builder for [`DescribeOrganizationsAccessInput`](crate::operation::describe_organizations_access::DescribeOrganizationsAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationsAccessInputBuilder {
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
 }

@@ -26,8 +26,8 @@ impl GetReadSetActivationJobInput {
 }
 
 /// A builder for [`GetReadSetActivationJobInput`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReadSetActivationJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,

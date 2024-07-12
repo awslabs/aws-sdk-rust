@@ -27,8 +27,8 @@ impl Capacity {
 }
 
 /// A builder for [`Capacity`](crate::types::Capacity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacityBuilder {
     pub(crate) auto_scaling: ::std::option::Option<crate::types::AutoScaling>,
     pub(crate) provisioned_capacity: ::std::option::Option<crate::types::ProvisionedCapacity>,

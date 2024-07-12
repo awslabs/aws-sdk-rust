@@ -27,8 +27,8 @@ impl ListDistributionsByOriginRequestPolicyIdOutput {
 }
 
 /// A builder for [`ListDistributionsByOriginRequestPolicyIdOutput`](crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsByOriginRequestPolicyIdOutputBuilder {
     pub(crate) distribution_id_list: ::std::option::Option<crate::types::DistributionIdList>,
     _request_id: Option<String>,

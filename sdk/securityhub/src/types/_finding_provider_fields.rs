@@ -71,8 +71,8 @@ impl FindingProviderFields {
 }
 
 /// A builder for [`FindingProviderFields`](crate::types::FindingProviderFields).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingProviderFieldsBuilder {
     pub(crate) confidence: ::std::option::Option<i32>,
     pub(crate) criticality: ::std::option::Option<i32>,

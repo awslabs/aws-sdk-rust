@@ -35,8 +35,8 @@ impl GetTransitGatewayRouteTableAssociationsOutput {
 }
 
 /// A builder for [`GetTransitGatewayRouteTableAssociationsOutput`](crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayRouteTableAssociationsOutputBuilder {
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

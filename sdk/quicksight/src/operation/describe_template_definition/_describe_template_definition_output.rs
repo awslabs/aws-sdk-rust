@@ -104,8 +104,8 @@ impl DescribeTemplateDefinitionOutput {
 }
 
 /// A builder for [`DescribeTemplateDefinitionOutput`](crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTemplateDefinitionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,

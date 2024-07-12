@@ -33,8 +33,8 @@ impl PromptSearchFilter {
 }
 
 /// A builder for [`PromptSearchFilter`](crate::types::PromptSearchFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromptSearchFilterBuilder {
     pub(crate) tag_filter: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
 }

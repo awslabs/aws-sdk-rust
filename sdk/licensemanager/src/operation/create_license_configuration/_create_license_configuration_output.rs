@@ -26,8 +26,8 @@ impl CreateLicenseConfigurationOutput {
 }
 
 /// A builder for [`CreateLicenseConfigurationOutput`](crate::operation::create_license_configuration::CreateLicenseConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLicenseConfigurationOutputBuilder {
     pub(crate) license_configuration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

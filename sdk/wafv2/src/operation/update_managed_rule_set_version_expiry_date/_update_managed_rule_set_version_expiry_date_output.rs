@@ -40,8 +40,8 @@ impl UpdateManagedRuleSetVersionExpiryDateOutput {
 }
 
 /// A builder for [`UpdateManagedRuleSetVersionExpiryDateOutput`](crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateManagedRuleSetVersionExpiryDateOutputBuilder {
     pub(crate) expiring_version: ::std::option::Option<::std::string::String>,
     pub(crate) expiry_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

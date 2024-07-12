@@ -58,8 +58,8 @@ impl GetRateBasedStatementManagedKeysInput {
 }
 
 /// A builder for [`GetRateBasedStatementManagedKeysInput`](crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRateBasedStatementManagedKeysInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) web_acl_name: ::std::option::Option<::std::string::String>,

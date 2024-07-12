@@ -29,8 +29,8 @@ impl DescribeNfsFileSharesOutput {
 }
 
 /// A builder for [`DescribeNfsFileSharesOutput`](crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNfsFileSharesOutputBuilder {
     pub(crate) nfs_file_share_info_list: ::std::option::Option<::std::vec::Vec<crate::types::NfsFileShareInfo>>,
     _request_id: Option<String>,

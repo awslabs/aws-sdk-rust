@@ -22,8 +22,8 @@ impl RemoveAccountFromOrganizationInput {
 }
 
 /// A builder for [`RemoveAccountFromOrganizationInput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveAccountFromOrganizationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

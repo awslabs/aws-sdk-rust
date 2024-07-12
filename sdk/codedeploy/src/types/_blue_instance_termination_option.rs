@@ -43,8 +43,8 @@ impl BlueInstanceTerminationOption {
 }
 
 /// A builder for [`BlueInstanceTerminationOption`](crate::types::BlueInstanceTerminationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlueInstanceTerminationOptionBuilder {
     pub(crate) action: ::std::option::Option<crate::types::InstanceAction>,
     pub(crate) termination_wait_time_in_minutes: ::std::option::Option<i32>,

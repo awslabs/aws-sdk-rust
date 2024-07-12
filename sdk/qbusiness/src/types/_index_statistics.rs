@@ -21,8 +21,8 @@ impl IndexStatistics {
 }
 
 /// A builder for [`IndexStatistics`](crate::types::IndexStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IndexStatisticsBuilder {
     pub(crate) text_document_statistics: ::std::option::Option<crate::types::TextDocumentStatistics>,
 }

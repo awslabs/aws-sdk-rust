@@ -555,8 +555,8 @@ impl VideoParameters {
 }
 
 /// A builder for [`VideoParameters`](crate::types::VideoParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoParametersBuilder {
     pub(crate) codec: ::std::option::Option<::std::string::String>,
     pub(crate) codec_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

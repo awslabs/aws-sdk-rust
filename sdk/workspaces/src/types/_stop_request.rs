@@ -21,8 +21,8 @@ impl StopRequest {
 }
 
 /// A builder for [`StopRequest`](crate::types::StopRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopRequestBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }

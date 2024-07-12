@@ -22,8 +22,8 @@ impl BatchGetTableOptimizerInput {
 }
 
 /// A builder for [`BatchGetTableOptimizerInput`](crate::operation::batch_get_table_optimizer::BatchGetTableOptimizerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetTableOptimizerInputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTableOptimizerEntry>>,
 }

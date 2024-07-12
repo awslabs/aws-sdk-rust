@@ -39,8 +39,8 @@ impl DataEncryptionMetadata {
 }
 
 /// A builder for [`DataEncryptionMetadata`](crate::types::DataEncryptionMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataEncryptionMetadataBuilder {
     pub(crate) allow_cleartext: ::std::option::Option<bool>,
     pub(crate) allow_duplicates: ::std::option::Option<bool>,

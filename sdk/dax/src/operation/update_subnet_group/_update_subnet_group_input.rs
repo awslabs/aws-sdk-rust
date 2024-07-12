@@ -34,8 +34,8 @@ impl UpdateSubnetGroupInput {
 }
 
 /// A builder for [`UpdateSubnetGroupInput`](crate::operation::update_subnet_group::UpdateSubnetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSubnetGroupInputBuilder {
     pub(crate) subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

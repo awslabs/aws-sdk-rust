@@ -45,8 +45,8 @@ impl DataSourceSyncJobMetrics {
 }
 
 /// A builder for [`DataSourceSyncJobMetrics`](crate::types::DataSourceSyncJobMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSourceSyncJobMetricsBuilder {
     pub(crate) documents_added: ::std::option::Option<::std::string::String>,
     pub(crate) documents_modified: ::std::option::Option<::std::string::String>,

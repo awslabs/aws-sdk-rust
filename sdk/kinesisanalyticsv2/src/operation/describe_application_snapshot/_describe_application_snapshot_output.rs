@@ -26,8 +26,8 @@ impl DescribeApplicationSnapshotOutput {
 }
 
 /// A builder for [`DescribeApplicationSnapshotOutput`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeApplicationSnapshotOutputBuilder {
     pub(crate) snapshot_details: ::std::option::Option<crate::types::SnapshotDetails>,
     _request_id: Option<String>,

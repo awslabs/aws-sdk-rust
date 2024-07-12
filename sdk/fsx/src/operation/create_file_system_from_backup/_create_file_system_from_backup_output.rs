@@ -27,8 +27,8 @@ impl CreateFileSystemFromBackupOutput {
 }
 
 /// A builder for [`CreateFileSystemFromBackupOutput`](crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFileSystemFromBackupOutputBuilder {
     pub(crate) file_system: ::std::option::Option<crate::types::FileSystem>,
     _request_id: Option<String>,

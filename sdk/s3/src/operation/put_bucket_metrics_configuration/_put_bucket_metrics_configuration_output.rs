@@ -24,8 +24,8 @@ impl PutBucketMetricsConfigurationOutput {
 }
 
 /// A builder for [`PutBucketMetricsConfigurationOutput`](crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketMetricsConfigurationOutputBuilder {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

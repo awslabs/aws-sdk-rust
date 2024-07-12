@@ -42,8 +42,8 @@ impl OidcJwtConfiguration {
 }
 
 /// A builder for [`OidcJwtConfiguration`](crate::types::OidcJwtConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OidcJwtConfigurationBuilder {
     pub(crate) issuer_url: ::std::option::Option<::std::string::String>,
     pub(crate) claim_attribute_path: ::std::option::Option<::std::string::String>,

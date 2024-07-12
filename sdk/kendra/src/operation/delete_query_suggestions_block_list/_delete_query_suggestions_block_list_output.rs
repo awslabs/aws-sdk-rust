@@ -18,8 +18,8 @@ impl DeleteQuerySuggestionsBlockListOutput {
 }
 
 /// A builder for [`DeleteQuerySuggestionsBlockListOutput`](crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQuerySuggestionsBlockListOutputBuilder {
     _request_id: Option<String>,
 }

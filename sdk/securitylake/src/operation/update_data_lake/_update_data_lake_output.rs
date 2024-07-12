@@ -28,8 +28,8 @@ impl UpdateDataLakeOutput {
 }
 
 /// A builder for [`UpdateDataLakeOutput`](crate::operation::update_data_lake::UpdateDataLakeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDataLakeOutputBuilder {
     pub(crate) data_lakes: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeResource>>,
     _request_id: Option<String>,

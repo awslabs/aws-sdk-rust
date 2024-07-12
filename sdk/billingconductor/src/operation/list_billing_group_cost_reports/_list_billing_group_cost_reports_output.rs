@@ -34,8 +34,8 @@ impl ListBillingGroupCostReportsOutput {
 }
 
 /// A builder for [`ListBillingGroupCostReportsOutput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBillingGroupCostReportsOutputBuilder {
     pub(crate) billing_group_cost_reports: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupCostReportElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

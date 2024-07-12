@@ -26,8 +26,8 @@ impl DeletePackageInput {
 }
 
 /// A builder for [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePackageInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

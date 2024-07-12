@@ -32,8 +32,8 @@ impl RegisterIdentityProviderInput {
 }
 
 /// A builder for [`RegisterIdentityProviderInput`](crate::operation::register_identity_provider::RegisterIdentityProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterIdentityProviderInputBuilder {
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     pub(crate) product: ::std::option::Option<::std::string::String>,

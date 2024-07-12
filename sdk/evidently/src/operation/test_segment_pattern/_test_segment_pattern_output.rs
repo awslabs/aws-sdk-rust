@@ -26,8 +26,8 @@ impl TestSegmentPatternOutput {
 }
 
 /// A builder for [`TestSegmentPatternOutput`](crate::operation::test_segment_pattern::TestSegmentPatternOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestSegmentPatternOutputBuilder {
     pub(crate) r#match: ::std::option::Option<bool>,
     _request_id: Option<String>,

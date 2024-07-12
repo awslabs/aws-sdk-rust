@@ -29,8 +29,8 @@ impl LabelingJobStoppingConditions {
 }
 
 /// A builder for [`LabelingJobStoppingConditions`](crate::types::LabelingJobStoppingConditions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelingJobStoppingConditionsBuilder {
     pub(crate) max_human_labeled_object_count: ::std::option::Option<i32>,
     pub(crate) max_percentage_of_input_dataset_labeled: ::std::option::Option<i32>,

@@ -29,8 +29,8 @@ impl SubjectStructure {
 }
 
 /// A builder for [`SubjectStructure`](crate::types::SubjectStructure).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubjectStructureBuilder {
     pub(crate) count: ::std::option::Option<i64>,
     pub(crate) predicates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

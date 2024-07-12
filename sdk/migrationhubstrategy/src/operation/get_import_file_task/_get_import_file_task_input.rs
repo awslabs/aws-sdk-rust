@@ -20,8 +20,8 @@ impl GetImportFileTaskInput {
 }
 
 /// A builder for [`GetImportFileTaskInput`](crate::operation::get_import_file_task::GetImportFileTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImportFileTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

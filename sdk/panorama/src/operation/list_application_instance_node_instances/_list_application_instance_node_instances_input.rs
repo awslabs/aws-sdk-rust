@@ -32,8 +32,8 @@ impl ListApplicationInstanceNodeInstancesInput {
 }
 
 /// A builder for [`ListApplicationInstanceNodeInstancesInput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationInstanceNodeInstancesInputBuilder {
     pub(crate) application_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

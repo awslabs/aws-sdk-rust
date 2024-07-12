@@ -38,8 +38,8 @@ impl UpdatePreparedStatementInput {
 }
 
 /// A builder for [`UpdatePreparedStatementInput`](crate::operation::update_prepared_statement::UpdatePreparedStatementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePreparedStatementInputBuilder {
     pub(crate) statement_name: ::std::option::Option<::std::string::String>,
     pub(crate) work_group: ::std::option::Option<::std::string::String>,

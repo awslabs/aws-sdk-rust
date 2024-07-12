@@ -38,8 +38,8 @@ impl DeleteTableOptimizerInput {
 }
 
 /// A builder for [`DeleteTableOptimizerInput`](crate::operation::delete_table_optimizer::DeleteTableOptimizerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTableOptimizerInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

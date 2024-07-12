@@ -33,8 +33,8 @@ impl ListEnvironmentOutputsOutput {
 }
 
 /// A builder for [`ListEnvironmentOutputsOutput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentOutputsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,

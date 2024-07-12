@@ -26,8 +26,8 @@ impl CreateQuickResponseOutput {
 }
 
 /// A builder for [`CreateQuickResponseOutput`](crate::operation::create_quick_response::CreateQuickResponseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateQuickResponseOutputBuilder {
     pub(crate) quick_response: ::std::option::Option<crate::types::QuickResponseData>,
     _request_id: Option<String>,

@@ -28,8 +28,8 @@ impl ModifyLoadBalancerAttributesOutput {
 }
 
 /// A builder for [`ModifyLoadBalancerAttributesOutput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyLoadBalancerAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>,
     _request_id: Option<String>,

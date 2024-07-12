@@ -105,8 +105,8 @@ impl InvokeEndpointInput {
 }
 
 /// A builder for [`InvokeEndpointInput`](crate::operation::invoke_endpoint::InvokeEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeEndpointInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,

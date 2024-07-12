@@ -27,8 +27,8 @@ impl GetSuiteOutput {
 }
 
 /// A builder for [`GetSuiteOutput`](crate::operation::get_suite::GetSuiteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSuiteOutputBuilder {
     pub(crate) suite: ::std::option::Option<crate::types::Suite>,
     _request_id: Option<String>,

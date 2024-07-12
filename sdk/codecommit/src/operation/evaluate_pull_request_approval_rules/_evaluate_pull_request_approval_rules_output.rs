@@ -26,8 +26,8 @@ impl EvaluatePullRequestApprovalRulesOutput {
 }
 
 /// A builder for [`EvaluatePullRequestApprovalRulesOutput`](crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluatePullRequestApprovalRulesOutputBuilder {
     pub(crate) evaluation: ::std::option::Option<crate::types::Evaluation>,
     _request_id: Option<String>,

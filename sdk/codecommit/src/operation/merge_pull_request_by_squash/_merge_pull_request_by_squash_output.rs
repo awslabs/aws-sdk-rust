@@ -26,8 +26,8 @@ impl MergePullRequestBySquashOutput {
 }
 
 /// A builder for [`MergePullRequestBySquashOutput`](crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MergePullRequestBySquashOutputBuilder {
     pub(crate) pull_request: ::std::option::Option<crate::types::PullRequest>,
     _request_id: Option<String>,

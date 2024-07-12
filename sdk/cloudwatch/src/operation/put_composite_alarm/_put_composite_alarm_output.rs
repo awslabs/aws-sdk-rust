@@ -18,8 +18,8 @@ impl PutCompositeAlarmOutput {
 }
 
 /// A builder for [`PutCompositeAlarmOutput`](crate::operation::put_composite_alarm::PutCompositeAlarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutCompositeAlarmOutputBuilder {
     _request_id: Option<String>,
 }

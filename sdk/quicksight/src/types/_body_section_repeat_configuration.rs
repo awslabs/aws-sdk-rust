@@ -37,8 +37,8 @@ impl BodySectionRepeatConfiguration {
 }
 
 /// A builder for [`BodySectionRepeatConfiguration`](crate::types::BodySectionRepeatConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BodySectionRepeatConfigurationBuilder {
     pub(crate) dimension_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BodySectionRepeatDimensionConfiguration>>,
     pub(crate) page_break_configuration: ::std::option::Option<crate::types::BodySectionRepeatPageBreakConfiguration>,

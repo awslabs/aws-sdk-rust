@@ -51,8 +51,8 @@ impl FileSourceSettings {
 }
 
 /// A builder for [`FileSourceSettings`](crate::types::FileSourceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileSourceSettingsBuilder {
     pub(crate) convert608_to708: ::std::option::Option<crate::types::FileSourceConvert608To708>,
     pub(crate) convert_paint_to_pop: ::std::option::Option<crate::types::CaptionSourceConvertPaintOnToPopOn>,

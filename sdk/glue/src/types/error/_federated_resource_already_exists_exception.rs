@@ -53,8 +53,8 @@ impl FederatedResourceAlreadyExistsException {
 }
 
 /// A builder for [`FederatedResourceAlreadyExistsException`](crate::types::error::FederatedResourceAlreadyExistsException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FederatedResourceAlreadyExistsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) associated_glue_resource: ::std::option::Option<::std::string::String>,

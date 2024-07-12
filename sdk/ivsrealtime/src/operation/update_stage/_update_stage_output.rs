@@ -26,8 +26,8 @@ impl UpdateStageOutput {
 }
 
 /// A builder for [`UpdateStageOutput`](crate::operation::update_stage::UpdateStageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStageOutputBuilder {
     pub(crate) stage: ::std::option::Option<crate::types::Stage>,
     _request_id: Option<String>,

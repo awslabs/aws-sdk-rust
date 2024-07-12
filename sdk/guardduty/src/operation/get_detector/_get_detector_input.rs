@@ -20,8 +20,8 @@ impl GetDetectorInput {
 }
 
 /// A builder for [`GetDetectorInput`](crate::operation::get_detector::GetDetectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDetectorInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
 }

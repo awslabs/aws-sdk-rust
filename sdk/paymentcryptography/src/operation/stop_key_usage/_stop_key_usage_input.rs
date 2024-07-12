@@ -20,8 +20,8 @@ impl StopKeyUsageInput {
 }
 
 /// A builder for [`StopKeyUsageInput`](crate::operation::stop_key_usage::StopKeyUsageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopKeyUsageInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
 }

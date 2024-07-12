@@ -18,8 +18,8 @@ impl UpdateQueueHoursOfOperationOutput {
 }
 
 /// A builder for [`UpdateQueueHoursOfOperationOutput`](crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateQueueHoursOfOperationOutputBuilder {
     _request_id: Option<String>,
 }

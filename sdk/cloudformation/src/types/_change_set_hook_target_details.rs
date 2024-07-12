@@ -27,8 +27,8 @@ impl ChangeSetHookTargetDetails {
 }
 
 /// A builder for [`ChangeSetHookTargetDetails`](crate::types::ChangeSetHookTargetDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeSetHookTargetDetailsBuilder {
     pub(crate) target_type: ::std::option::Option<crate::types::HookTargetType>,
     pub(crate) resource_target_details: ::std::option::Option<crate::types::ChangeSetHookResourceTargetDetails>,

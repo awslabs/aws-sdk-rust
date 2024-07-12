@@ -27,8 +27,8 @@ impl ListApplicationsFilter {
 }
 
 /// A builder for [`ListApplicationsFilter`](crate::types::ListApplicationsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationsFilterBuilder {
     pub(crate) application_account: ::std::option::Option<::std::string::String>,
     pub(crate) application_provider: ::std::option::Option<::std::string::String>,

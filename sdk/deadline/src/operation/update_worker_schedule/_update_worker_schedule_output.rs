@@ -44,8 +44,8 @@ impl UpdateWorkerScheduleOutput {
 }
 
 /// A builder for [`UpdateWorkerScheduleOutput`](crate::operation::update_worker_schedule::UpdateWorkerScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkerScheduleOutputBuilder {
     pub(crate) assigned_sessions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssignedSession>>,
     pub(crate) cancel_session_actions:

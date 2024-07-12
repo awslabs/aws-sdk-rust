@@ -33,8 +33,8 @@ impl ListSyncConfigurationsOutput {
 }
 
 /// A builder for [`ListSyncConfigurationsOutput`](crate::operation::list_sync_configurations::ListSyncConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSyncConfigurationsOutputBuilder {
     pub(crate) sync_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SyncConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

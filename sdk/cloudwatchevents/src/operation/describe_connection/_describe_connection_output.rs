@@ -86,8 +86,8 @@ impl DescribeConnectionOutput {
 }
 
 /// A builder for [`DescribeConnectionOutput`](crate::operation::describe_connection::DescribeConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectionOutputBuilder {
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

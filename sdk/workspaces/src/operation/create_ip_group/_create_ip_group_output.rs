@@ -26,8 +26,8 @@ impl CreateIpGroupOutput {
 }
 
 /// A builder for [`CreateIpGroupOutput`](crate::operation::create_ip_group::CreateIpGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIpGroupOutputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

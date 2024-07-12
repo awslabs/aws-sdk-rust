@@ -26,8 +26,8 @@ impl DetachClassicLinkVpcOutput {
 }
 
 /// A builder for [`DetachClassicLinkVpcOutput`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachClassicLinkVpcOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

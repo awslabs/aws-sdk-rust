@@ -11,8 +11,8 @@ impl VerifySessionInput {
 }
 
 /// A builder for [`VerifySessionInput`](crate::operation::verify_session::VerifySessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifySessionInputBuilder {}
 impl VerifySessionInputBuilder {
     /// Consumes the builder and constructs a [`VerifySessionInput`](crate::operation::verify_session::VerifySessionInput).

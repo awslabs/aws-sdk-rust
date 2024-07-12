@@ -27,8 +27,8 @@ impl InstanceFleetResizingSpecifications {
 }
 
 /// A builder for [`InstanceFleetResizingSpecifications`](crate::types::InstanceFleetResizingSpecifications).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceFleetResizingSpecificationsBuilder {
     pub(crate) spot_resize_specification: ::std::option::Option<crate::types::SpotResizingSpecification>,
     pub(crate) on_demand_resize_specification: ::std::option::Option<crate::types::OnDemandResizingSpecification>,

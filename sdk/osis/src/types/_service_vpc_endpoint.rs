@@ -27,8 +27,8 @@ impl ServiceVpcEndpoint {
 }
 
 /// A builder for [`ServiceVpcEndpoint`](crate::types::ServiceVpcEndpoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceVpcEndpointBuilder {
     pub(crate) service_name: ::std::option::Option<crate::types::VpcEndpointServiceName>,
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,

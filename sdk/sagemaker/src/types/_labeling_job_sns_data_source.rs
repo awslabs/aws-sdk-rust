@@ -21,8 +21,8 @@ impl LabelingJobSnsDataSource {
 }
 
 /// A builder for [`LabelingJobSnsDataSource`](crate::types::LabelingJobSnsDataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelingJobSnsDataSourceBuilder {
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
 }

@@ -22,8 +22,8 @@ impl DeleteInstanceProfileInput {
 }
 
 /// A builder for [`DeleteInstanceProfileInput`](crate::operation::delete_instance_profile::DeleteInstanceProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInstanceProfileInputBuilder {
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
 }

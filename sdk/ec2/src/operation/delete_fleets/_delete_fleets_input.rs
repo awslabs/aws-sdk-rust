@@ -40,8 +40,8 @@ impl DeleteFleetsInput {
 }
 
 /// A builder for [`DeleteFleetsInput`](crate::operation::delete_fleets::DeleteFleetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFleetsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

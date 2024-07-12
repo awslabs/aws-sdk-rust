@@ -35,8 +35,8 @@ impl AttributeAggregationFunction {
 }
 
 /// A builder for [`AttributeAggregationFunction`](crate::types::AttributeAggregationFunction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributeAggregationFunctionBuilder {
     pub(crate) simple_attribute_aggregation: ::std::option::Option<crate::types::SimpleAttributeAggregationFunction>,
     pub(crate) value_for_multiple_values: ::std::option::Option<::std::string::String>,

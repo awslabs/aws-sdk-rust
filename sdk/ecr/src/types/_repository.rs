@@ -63,8 +63,8 @@ impl Repository {
 }
 
 /// A builder for [`Repository`](crate::types::Repository).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryBuilder {
     pub(crate) repository_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,

@@ -23,8 +23,8 @@ impl OfferTargetingFilter {
 }
 
 /// A builder for [`OfferTargetingFilter`](crate::types::OfferTargetingFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OfferTargetingFilterBuilder {
     pub(crate) value_list: ::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>>,
 }

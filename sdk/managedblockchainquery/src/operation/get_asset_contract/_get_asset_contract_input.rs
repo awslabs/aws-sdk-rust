@@ -20,8 +20,8 @@ impl GetAssetContractInput {
 }
 
 /// A builder for [`GetAssetContractInput`](crate::operation::get_asset_contract::GetAssetContractInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssetContractInputBuilder {
     pub(crate) contract_identifier: ::std::option::Option<crate::types::ContractIdentifier>,
 }

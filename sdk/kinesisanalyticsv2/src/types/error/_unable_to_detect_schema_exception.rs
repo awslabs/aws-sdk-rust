@@ -63,8 +63,8 @@ impl UnableToDetectSchemaException {
 }
 
 /// A builder for [`UnableToDetectSchemaException`](crate::types::error::UnableToDetectSchemaException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnableToDetectSchemaExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) raw_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

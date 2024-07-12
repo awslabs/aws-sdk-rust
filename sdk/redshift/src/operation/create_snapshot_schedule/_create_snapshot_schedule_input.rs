@@ -54,8 +54,8 @@ impl CreateSnapshotScheduleInput {
 }
 
 /// A builder for [`CreateSnapshotScheduleInput`](crate::operation::create_snapshot_schedule::CreateSnapshotScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSnapshotScheduleInputBuilder {
     pub(crate) schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) schedule_identifier: ::std::option::Option<::std::string::String>,

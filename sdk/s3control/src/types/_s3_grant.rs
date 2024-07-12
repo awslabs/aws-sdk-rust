@@ -27,8 +27,8 @@ impl S3Grant {
 }
 
 /// A builder for [`S3Grant`](crate::types::S3Grant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3GrantBuilder {
     pub(crate) grantee: ::std::option::Option<crate::types::S3Grantee>,
     pub(crate) permission: ::std::option::Option<crate::types::S3Permission>,

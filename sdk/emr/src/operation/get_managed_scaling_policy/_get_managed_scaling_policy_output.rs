@@ -26,8 +26,8 @@ impl GetManagedScalingPolicyOutput {
 }
 
 /// A builder for [`GetManagedScalingPolicyOutput`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetManagedScalingPolicyOutputBuilder {
     pub(crate) managed_scaling_policy: ::std::option::Option<crate::types::ManagedScalingPolicy>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl StageEndpoints {
 }
 
 /// A builder for [`StageEndpoints`](crate::types::StageEndpoints).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StageEndpointsBuilder {
     pub(crate) events: ::std::option::Option<::std::string::String>,
     pub(crate) whip: ::std::option::Option<::std::string::String>,

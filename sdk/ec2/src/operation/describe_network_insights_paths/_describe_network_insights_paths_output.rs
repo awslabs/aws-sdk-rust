@@ -34,8 +34,8 @@ impl DescribeNetworkInsightsPathsOutput {
 }
 
 /// A builder for [`DescribeNetworkInsightsPathsOutput`](crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNetworkInsightsPathsOutputBuilder {
     pub(crate) network_insights_paths: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsPath>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

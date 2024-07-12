@@ -45,8 +45,8 @@ impl TrainingJobStatusCounters {
 }
 
 /// A builder for [`TrainingJobStatusCounters`](crate::types::TrainingJobStatusCounters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingJobStatusCountersBuilder {
     pub(crate) completed: ::std::option::Option<i32>,
     pub(crate) in_progress: ::std::option::Option<i32>,

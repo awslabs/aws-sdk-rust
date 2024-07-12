@@ -23,8 +23,8 @@ impl Ec2TagSet {
 }
 
 /// A builder for [`Ec2TagSet`](crate::types::Ec2TagSet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2TagSetBuilder {
     pub(crate) ec2_tag_set_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Ec2TagFilter>>>,
 }

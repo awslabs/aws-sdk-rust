@@ -26,8 +26,8 @@ impl AssociateIamInstanceProfileInput {
 }
 
 /// A builder for [`AssociateIamInstanceProfileInput`](crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateIamInstanceProfileInputBuilder {
     pub(crate) iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

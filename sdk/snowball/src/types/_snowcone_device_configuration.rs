@@ -21,8 +21,8 @@ impl SnowconeDeviceConfiguration {
 }
 
 /// A builder for [`SnowconeDeviceConfiguration`](crate::types::SnowconeDeviceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnowconeDeviceConfigurationBuilder {
     pub(crate) wireless_connection: ::std::option::Option<crate::types::WirelessConnection>,
 }

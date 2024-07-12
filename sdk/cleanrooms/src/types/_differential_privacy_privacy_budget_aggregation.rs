@@ -33,8 +33,8 @@ impl DifferentialPrivacyPrivacyBudgetAggregation {
 }
 
 /// A builder for [`DifferentialPrivacyPrivacyBudgetAggregation`](crate::types::DifferentialPrivacyPrivacyBudgetAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DifferentialPrivacyPrivacyBudgetAggregationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DifferentialPrivacyAggregationType>,
     pub(crate) max_count: ::std::option::Option<i32>,

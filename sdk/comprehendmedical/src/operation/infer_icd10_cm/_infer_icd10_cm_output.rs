@@ -39,8 +39,8 @@ impl InferIcd10CmOutput {
 }
 
 /// A builder for [`InferIcd10CmOutput`](crate::operation::infer_icd10_cm::InferIcd10CmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferIcd10CmOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmEntity>>,
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,

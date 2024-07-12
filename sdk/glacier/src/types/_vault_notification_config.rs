@@ -29,8 +29,8 @@ impl VaultNotificationConfig {
 }
 
 /// A builder for [`VaultNotificationConfig`](crate::types::VaultNotificationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VaultNotificationConfigBuilder {
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

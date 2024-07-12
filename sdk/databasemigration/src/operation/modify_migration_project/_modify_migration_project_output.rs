@@ -26,8 +26,8 @@ impl ModifyMigrationProjectOutput {
 }
 
 /// A builder for [`ModifyMigrationProjectOutput`](crate::operation::modify_migration_project::ModifyMigrationProjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyMigrationProjectOutputBuilder {
     pub(crate) migration_project: ::std::option::Option<crate::types::MigrationProject>,
     _request_id: Option<String>,

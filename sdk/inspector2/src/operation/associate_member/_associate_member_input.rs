@@ -20,8 +20,8 @@ impl AssociateMemberInput {
 }
 
 /// A builder for [`AssociateMemberInput`](crate::operation::associate_member::AssociateMemberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMemberInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

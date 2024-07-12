@@ -26,8 +26,8 @@ impl GetMaintenanceWindowExecutionTaskInput {
 }
 
 /// A builder for [`GetMaintenanceWindowExecutionTaskInput`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMaintenanceWindowExecutionTaskInputBuilder {
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,

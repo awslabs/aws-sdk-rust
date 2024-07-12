@@ -21,8 +21,8 @@ impl VpcConnectivityScram {
 }
 
 /// A builder for [`VpcConnectivityScram`](crate::types::VpcConnectivityScram).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcConnectivityScramBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

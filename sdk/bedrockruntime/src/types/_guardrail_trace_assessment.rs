@@ -38,8 +38,8 @@ impl GuardrailTraceAssessment {
 }
 
 /// A builder for [`GuardrailTraceAssessment`](crate::types::GuardrailTraceAssessment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GuardrailTraceAssessmentBuilder {
     pub(crate) model_output: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) input_assessment: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::GuardrailAssessment>>,

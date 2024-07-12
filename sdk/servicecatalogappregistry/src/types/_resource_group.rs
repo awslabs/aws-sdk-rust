@@ -45,8 +45,8 @@ impl ResourceGroup {
 }
 
 /// A builder for [`ResourceGroup`](crate::types::ResourceGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceGroupBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ResourceGroupState>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

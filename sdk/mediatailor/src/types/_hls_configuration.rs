@@ -21,8 +21,8 @@ impl HlsConfiguration {
 }
 
 /// A builder for [`HlsConfiguration`](crate::types::HlsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsConfigurationBuilder {
     pub(crate) manifest_endpoint_prefix: ::std::option::Option<::std::string::String>,
 }

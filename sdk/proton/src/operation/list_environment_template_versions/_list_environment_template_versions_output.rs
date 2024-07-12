@@ -33,8 +33,8 @@ impl ListEnvironmentTemplateVersionsOutput {
 }
 
 /// A builder for [`ListEnvironmentTemplateVersionsOutput`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentTemplateVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) template_versions: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>>,

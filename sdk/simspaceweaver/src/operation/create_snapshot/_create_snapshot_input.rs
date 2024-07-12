@@ -28,8 +28,8 @@ impl CreateSnapshotInput {
 }
 
 /// A builder for [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSnapshotInputBuilder {
     pub(crate) simulation: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::S3Destination>,

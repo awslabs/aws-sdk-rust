@@ -20,8 +20,8 @@ impl DescribeBrokerInput {
 }
 
 /// A builder for [`DescribeBrokerInput`](crate::operation::describe_broker::DescribeBrokerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBrokerInputBuilder {
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
 }

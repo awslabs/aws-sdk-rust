@@ -34,8 +34,8 @@ impl ListOpsMetadataInput {
 }
 
 /// A builder for [`ListOpsMetadataInput`](crate::operation::list_ops_metadata::ListOpsMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOpsMetadataInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadataFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

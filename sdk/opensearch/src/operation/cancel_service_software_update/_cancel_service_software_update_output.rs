@@ -27,8 +27,8 @@ impl CancelServiceSoftwareUpdateOutput {
 }
 
 /// A builder for [`CancelServiceSoftwareUpdateOutput`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelServiceSoftwareUpdateOutputBuilder {
     pub(crate) service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     _request_id: Option<String>,

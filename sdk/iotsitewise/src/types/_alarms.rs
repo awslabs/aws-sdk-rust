@@ -28,8 +28,8 @@ impl Alarms {
 }
 
 /// A builder for [`Alarms`](crate::types::Alarms).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlarmsBuilder {
     pub(crate) alarm_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) notification_lambda_arn: ::std::option::Option<::std::string::String>,

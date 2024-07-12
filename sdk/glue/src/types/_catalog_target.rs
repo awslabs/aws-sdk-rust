@@ -47,8 +47,8 @@ impl CatalogTarget {
 }
 
 /// A builder for [`CatalogTarget`](crate::types::CatalogTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CatalogTargetBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

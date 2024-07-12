@@ -41,8 +41,8 @@ impl DeltaTarget {
 }
 
 /// A builder for [`DeltaTarget`](crate::types::DeltaTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeltaTargetBuilder {
     pub(crate) delta_tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,

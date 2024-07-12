@@ -35,8 +35,8 @@ impl MongoDbTarget {
 }
 
 /// A builder for [`MongoDbTarget`](crate::types::MongoDbTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MongoDbTargetBuilder {
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,

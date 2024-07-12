@@ -50,8 +50,8 @@ impl FilterCondition {
 }
 
 /// A builder for [`FilterCondition`](crate::types::FilterCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterConditionBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ListDomainsAttributeName>,
     pub(crate) operator: ::std::option::Option<crate::types::Operator>,

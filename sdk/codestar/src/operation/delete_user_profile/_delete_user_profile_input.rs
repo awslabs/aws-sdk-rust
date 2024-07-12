@@ -20,8 +20,8 @@ impl DeleteUserProfileInput {
 }
 
 /// A builder for [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserProfileInputBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
 }

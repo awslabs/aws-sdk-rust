@@ -20,8 +20,8 @@ impl GetPipelineInput {
 }
 
 /// A builder for [`GetPipelineInput`](crate::operation::get_pipeline::GetPipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
 }

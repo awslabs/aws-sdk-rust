@@ -33,8 +33,8 @@ impl ListConformancePackComplianceScoresOutput {
 }
 
 /// A builder for [`ListConformancePackComplianceScoresOutput`](crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConformancePackComplianceScoresOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) conformance_pack_compliance_scores: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackComplianceScore>>,

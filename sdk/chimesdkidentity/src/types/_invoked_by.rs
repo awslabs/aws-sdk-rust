@@ -59,8 +59,8 @@ impl InvokedBy {
 }
 
 /// A builder for [`InvokedBy`](crate::types::InvokedBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvokedByBuilder {
     pub(crate) standard_messages: ::std::option::Option<crate::types::StandardMessages>,
     pub(crate) targeted_messages: ::std::option::Option<crate::types::TargetedMessages>,

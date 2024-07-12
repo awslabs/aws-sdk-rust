@@ -52,8 +52,8 @@ impl GetIpamPoolAllocationsInput {
 }
 
 /// A builder for [`GetIpamPoolAllocationsInput`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIpamPoolAllocationsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DescribeStatementInput {
 }
 
 /// A builder for [`DescribeStatementInput`](crate::operation::describe_statement::DescribeStatementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStatementInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

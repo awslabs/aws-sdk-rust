@@ -253,8 +253,8 @@ impl UpdateWorkloadInput {
 }
 
 /// A builder for [`UpdateWorkloadInput`](crate::operation::update_workload::UpdateWorkloadInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkloadInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,

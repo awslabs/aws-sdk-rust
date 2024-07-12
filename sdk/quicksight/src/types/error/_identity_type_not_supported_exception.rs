@@ -53,8 +53,8 @@ impl IdentityTypeNotSupportedException {
 }
 
 /// A builder for [`IdentityTypeNotSupportedException`](crate::types::error::IdentityTypeNotSupportedException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityTypeNotSupportedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

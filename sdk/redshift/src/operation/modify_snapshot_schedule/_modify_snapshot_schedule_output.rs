@@ -71,8 +71,8 @@ impl ModifySnapshotScheduleOutput {
 }
 
 /// A builder for [`ModifySnapshotScheduleOutput`](crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifySnapshotScheduleOutputBuilder {
     pub(crate) schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) schedule_identifier: ::std::option::Option<::std::string::String>,

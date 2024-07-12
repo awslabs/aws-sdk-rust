@@ -21,8 +21,8 @@ impl DeviceJobConfig {
 }
 
 /// A builder for [`DeviceJobConfig`](crate::types::DeviceJobConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceJobConfigBuilder {
     pub(crate) ota_job_config: ::std::option::Option<crate::types::OtaJobConfig>,
 }

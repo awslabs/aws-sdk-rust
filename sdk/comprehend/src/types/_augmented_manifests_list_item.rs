@@ -73,8 +73,8 @@ impl AugmentedManifestsListItem {
 }
 
 /// A builder for [`AugmentedManifestsListItem`](crate::types::AugmentedManifestsListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AugmentedManifestsListItemBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) split: ::std::option::Option<crate::types::Split>,

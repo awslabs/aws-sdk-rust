@@ -20,8 +20,8 @@ impl StartRelationalDatabaseInput {
 }
 
 /// A builder for [`StartRelationalDatabaseInput`](crate::operation::start_relational_database::StartRelationalDatabaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartRelationalDatabaseInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
 }

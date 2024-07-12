@@ -28,8 +28,8 @@ impl SwitchoverBlueGreenDeploymentOutput {
 }
 
 /// A builder for [`SwitchoverBlueGreenDeploymentOutput`](crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SwitchoverBlueGreenDeploymentOutputBuilder {
     pub(crate) blue_green_deployment: ::std::option::Option<crate::types::BlueGreenDeployment>,
     _request_id: Option<String>,

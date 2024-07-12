@@ -32,8 +32,8 @@ impl GetServiceQuotaInput {
 }
 
 /// A builder for [`GetServiceQuotaInput`](crate::operation::get_service_quota::GetServiceQuotaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceQuotaInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) quota_code: ::std::option::Option<::std::string::String>,

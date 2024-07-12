@@ -34,8 +34,8 @@ impl DescribeActivitiesOutput {
 }
 
 /// A builder for [`DescribeActivitiesOutput`](crate::operation::describe_activities::DescribeActivitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeActivitiesOutputBuilder {
     pub(crate) user_activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

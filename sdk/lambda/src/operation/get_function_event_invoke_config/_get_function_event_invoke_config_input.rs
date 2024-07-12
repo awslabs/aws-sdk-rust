@@ -46,8 +46,8 @@ impl GetFunctionEventInvokeConfigInput {
 }
 
 /// A builder for [`GetFunctionEventInvokeConfigInput`](crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFunctionEventInvokeConfigInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,

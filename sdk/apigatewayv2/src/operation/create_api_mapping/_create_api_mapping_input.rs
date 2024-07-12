@@ -39,8 +39,8 @@ impl CreateApiMappingInput {
 }
 
 /// A builder for [`CreateApiMappingInput`](crate::operation::create_api_mapping::CreateApiMappingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateApiMappingInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_mapping_key: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl LogSettingsResponse {
 }
 
 /// A builder for [`LogSettingsResponse`](crate::types::LogSettingsResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogSettingsResponseBuilder {
     pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,

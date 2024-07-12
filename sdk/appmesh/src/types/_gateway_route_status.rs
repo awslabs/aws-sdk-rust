@@ -21,8 +21,8 @@ impl GatewayRouteStatus {
 }
 
 /// A builder for [`GatewayRouteStatus`](crate::types::GatewayRouteStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GatewayRouteStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::GatewayRouteStatusCode>,
 }

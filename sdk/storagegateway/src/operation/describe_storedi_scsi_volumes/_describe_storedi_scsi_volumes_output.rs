@@ -96,8 +96,8 @@ impl DescribeStorediScsiVolumesOutput {
 }
 
 /// A builder for [`DescribeStorediScsiVolumesOutput`](crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStorediScsiVolumesOutputBuilder {
     pub(crate) storedi_scsi_volumes: ::std::option::Option<::std::vec::Vec<crate::types::StorediScsiVolume>>,
     _request_id: Option<String>,

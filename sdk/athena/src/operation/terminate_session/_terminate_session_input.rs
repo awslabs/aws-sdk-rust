@@ -20,8 +20,8 @@ impl TerminateSessionInput {
 }
 
 /// A builder for [`TerminateSessionInput`](crate::operation::terminate_session::TerminateSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateSessionInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }

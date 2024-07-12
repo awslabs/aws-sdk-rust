@@ -56,8 +56,8 @@ impl GetEventActionOutput {
 }
 
 /// A builder for [`GetEventActionOutput`](crate::operation::get_event_action::GetEventActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEventActionOutputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

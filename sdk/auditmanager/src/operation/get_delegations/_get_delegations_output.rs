@@ -34,8 +34,8 @@ impl GetDelegationsOutput {
 }
 
 /// A builder for [`GetDelegationsOutput`](crate::operation::get_delegations::GetDelegationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDelegationsOutputBuilder {
     pub(crate) delegations: ::std::option::Option<::std::vec::Vec<crate::types::DelegationMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

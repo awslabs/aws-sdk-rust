@@ -27,8 +27,8 @@ impl FaceDetection {
 }
 
 /// A builder for [`FaceDetection`](crate::types::FaceDetection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FaceDetectionBuilder {
     pub(crate) timestamp: ::std::option::Option<i64>,
     pub(crate) face: ::std::option::Option<crate::types::FaceDetail>,

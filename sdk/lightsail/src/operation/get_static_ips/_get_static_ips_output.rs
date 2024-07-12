@@ -38,8 +38,8 @@ impl GetStaticIpsOutput {
 }
 
 /// A builder for [`GetStaticIpsOutput`](crate::operation::get_static_ips::GetStaticIpsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStaticIpsOutputBuilder {
     pub(crate) static_ips: ::std::option::Option<::std::vec::Vec<crate::types::StaticIp>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

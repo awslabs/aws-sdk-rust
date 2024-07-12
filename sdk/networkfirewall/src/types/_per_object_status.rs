@@ -27,8 +27,8 @@ impl PerObjectStatus {
 }
 
 /// A builder for [`PerObjectStatus`](crate::types::PerObjectStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PerObjectStatusBuilder {
     pub(crate) sync_status: ::std::option::Option<crate::types::PerObjectSyncStatus>,
     pub(crate) update_token: ::std::option::Option<::std::string::String>,

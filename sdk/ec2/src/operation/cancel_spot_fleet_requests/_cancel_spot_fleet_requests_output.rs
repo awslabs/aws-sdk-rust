@@ -37,8 +37,8 @@ impl CancelSpotFleetRequestsOutput {
 }
 
 /// A builder for [`CancelSpotFleetRequestsOutput`](crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSpotFleetRequestsOutputBuilder {
     pub(crate) successful_fleet_requests: ::std::option::Option<::std::vec::Vec<crate::types::CancelSpotFleetRequestsSuccessItem>>,
     pub(crate) unsuccessful_fleet_requests: ::std::option::Option<::std::vec::Vec<crate::types::CancelSpotFleetRequestsErrorItem>>,

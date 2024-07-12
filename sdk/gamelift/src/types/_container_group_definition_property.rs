@@ -30,8 +30,8 @@ impl ContainerGroupDefinitionProperty {
 }
 
 /// A builder for [`ContainerGroupDefinitionProperty`](crate::types::ContainerGroupDefinitionProperty).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerGroupDefinitionPropertyBuilder {
     pub(crate) scheduling_strategy: ::std::option::Option<crate::types::ContainerSchedulingStrategy>,
     pub(crate) container_group_definition_name: ::std::option::Option<::std::string::String>,

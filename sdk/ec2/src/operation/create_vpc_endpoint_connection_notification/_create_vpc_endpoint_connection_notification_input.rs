@@ -52,8 +52,8 @@ impl CreateVpcEndpointConnectionNotificationInput {
 }
 
 /// A builder for [`CreateVpcEndpointConnectionNotificationInput`](crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpcEndpointConnectionNotificationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,

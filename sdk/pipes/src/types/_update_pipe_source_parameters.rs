@@ -69,8 +69,8 @@ impl UpdatePipeSourceParameters {
 }
 
 /// A builder for [`UpdatePipeSourceParameters`](crate::types::UpdatePipeSourceParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePipeSourceParametersBuilder {
     pub(crate) filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     pub(crate) kinesis_stream_parameters: ::std::option::Option<crate::types::UpdatePipeSourceKinesisStreamParameters>,

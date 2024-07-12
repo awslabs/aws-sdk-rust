@@ -32,8 +32,8 @@ impl ExportNotebookOutput {
 }
 
 /// A builder for [`ExportNotebookOutput`](crate::operation::export_notebook::ExportNotebookOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportNotebookOutputBuilder {
     pub(crate) notebook_metadata: ::std::option::Option<crate::types::NotebookMetadata>,
     pub(crate) payload: ::std::option::Option<::std::string::String>,

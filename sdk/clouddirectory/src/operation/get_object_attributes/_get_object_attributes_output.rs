@@ -28,8 +28,8 @@ impl GetObjectAttributesOutput {
 }
 
 /// A builder for [`GetObjectAttributesOutput`](crate::operation::get_object_attributes::GetObjectAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     _request_id: Option<String>,

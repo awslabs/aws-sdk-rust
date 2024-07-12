@@ -33,8 +33,8 @@ impl PeeringConnectionOptionsRequest {
 }
 
 /// A builder for [`PeeringConnectionOptionsRequest`](crate::types::PeeringConnectionOptionsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PeeringConnectionOptionsRequestBuilder {
     pub(crate) allow_dns_resolution_from_remote_vpc: ::std::option::Option<bool>,
     pub(crate) allow_egress_from_local_classic_link_to_remote_vpc: ::std::option::Option<bool>,

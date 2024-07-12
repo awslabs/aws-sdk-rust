@@ -18,8 +18,8 @@ impl DeleteAccessGrantOutput {
 }
 
 /// A builder for [`DeleteAccessGrantOutput`](crate::operation::delete_access_grant::DeleteAccessGrantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessGrantOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl DescribeServerInput {
 }
 
 /// A builder for [`DescribeServerInput`](crate::operation::describe_server::DescribeServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServerInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
 }

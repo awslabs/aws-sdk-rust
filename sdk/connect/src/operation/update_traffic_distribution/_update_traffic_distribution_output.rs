@@ -18,8 +18,8 @@ impl UpdateTrafficDistributionOutput {
 }
 
 /// A builder for [`UpdateTrafficDistributionOutput`](crate::operation::update_traffic_distribution::UpdateTrafficDistributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTrafficDistributionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -44,8 +44,8 @@ impl UpdateServiceSyncConfigInput {
 }
 
 /// A builder for [`UpdateServiceSyncConfigInput`](crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceSyncConfigInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,

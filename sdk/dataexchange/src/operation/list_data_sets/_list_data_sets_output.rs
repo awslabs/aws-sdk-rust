@@ -34,8 +34,8 @@ impl ListDataSetsOutput {
 }
 
 /// A builder for [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataSetsOutputBuilder {
     pub(crate) data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DataSetEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl LoRaWanStartFuotaTask {
 }
 
 /// A builder for [`LoRaWanStartFuotaTask`](crate::types::LoRaWanStartFuotaTask).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanStartFuotaTaskBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }

@@ -27,8 +27,8 @@ impl JobManifest {
 }
 
 /// A builder for [`JobManifest`](crate::types::JobManifest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobManifestBuilder {
     pub(crate) spec: ::std::option::Option<crate::types::JobManifestSpec>,
     pub(crate) location: ::std::option::Option<crate::types::JobManifestLocation>,

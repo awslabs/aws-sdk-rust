@@ -26,8 +26,8 @@ impl DeleteVpcInput {
 }
 
 /// A builder for [`DeleteVpcInput`](crate::operation::delete_vpc::DeleteVpcInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpcInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

@@ -51,8 +51,8 @@ impl ParquetSerDe {
 }
 
 /// A builder for [`ParquetSerDe`](crate::types::ParquetSerDe).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParquetSerDeBuilder {
     pub(crate) block_size_bytes: ::std::option::Option<i32>,
     pub(crate) page_size_bytes: ::std::option::Option<i32>,

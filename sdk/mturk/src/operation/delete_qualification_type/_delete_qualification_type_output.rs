@@ -18,8 +18,8 @@ impl DeleteQualificationTypeOutput {
 }
 
 /// A builder for [`DeleteQualificationTypeOutput`](crate::operation::delete_qualification_type::DeleteQualificationTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQualificationTypeOutputBuilder {
     _request_id: Option<String>,
 }

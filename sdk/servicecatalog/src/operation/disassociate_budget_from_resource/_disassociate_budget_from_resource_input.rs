@@ -26,8 +26,8 @@ impl DisassociateBudgetFromResourceInput {
 }
 
 /// A builder for [`DisassociateBudgetFromResourceInput`](crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateBudgetFromResourceInputBuilder {
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

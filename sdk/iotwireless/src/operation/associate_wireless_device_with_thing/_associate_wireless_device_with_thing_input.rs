@@ -26,8 +26,8 @@ impl AssociateWirelessDeviceWithThingInput {
 }
 
 /// A builder for [`AssociateWirelessDeviceWithThingInput`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWirelessDeviceWithThingInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_arn: ::std::option::Option<::std::string::String>,

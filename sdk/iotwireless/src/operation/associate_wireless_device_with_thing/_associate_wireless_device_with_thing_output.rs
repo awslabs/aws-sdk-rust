@@ -18,8 +18,8 @@ impl AssociateWirelessDeviceWithThingOutput {
 }
 
 /// A builder for [`AssociateWirelessDeviceWithThingOutput`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWirelessDeviceWithThingOutputBuilder {
     _request_id: Option<String>,
 }

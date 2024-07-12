@@ -64,8 +64,8 @@ impl Hsm {
 }
 
 /// A builder for [`Hsm`](crate::types::Hsm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HsmBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,

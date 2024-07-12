@@ -18,8 +18,8 @@ impl RemoveStorageSystemOutput {
 }
 
 /// A builder for [`RemoveStorageSystemOutput`](crate::operation::remove_storage_system::RemoveStorageSystemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveStorageSystemOutputBuilder {
     _request_id: Option<String>,
 }

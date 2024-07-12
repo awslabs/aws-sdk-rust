@@ -27,8 +27,8 @@ impl RecoveryOptionType {
 }
 
 /// A builder for [`RecoveryOptionType`](crate::types::RecoveryOptionType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecoveryOptionTypeBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<crate::types::RecoveryOptionNameType>,

@@ -21,8 +21,8 @@ impl EventDescription {
 }
 
 /// A builder for [`EventDescription`](crate::types::EventDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventDescriptionBuilder {
     pub(crate) latest_description: ::std::option::Option<::std::string::String>,
 }

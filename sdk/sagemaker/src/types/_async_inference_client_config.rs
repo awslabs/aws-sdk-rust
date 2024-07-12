@@ -21,8 +21,8 @@ impl AsyncInferenceClientConfig {
 }
 
 /// A builder for [`AsyncInferenceClientConfig`](crate::types::AsyncInferenceClientConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AsyncInferenceClientConfigBuilder {
     pub(crate) max_concurrent_invocations_per_instance: ::std::option::Option<i32>,
 }

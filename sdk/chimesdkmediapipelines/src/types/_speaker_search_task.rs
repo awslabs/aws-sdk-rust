@@ -39,8 +39,8 @@ impl SpeakerSearchTask {
 }
 
 /// A builder for [`SpeakerSearchTask`](crate::types::SpeakerSearchTask).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpeakerSearchTaskBuilder {
     pub(crate) speaker_search_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) speaker_search_task_status: ::std::option::Option<crate::types::MediaPipelineTaskStatus>,

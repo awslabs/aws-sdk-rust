@@ -79,8 +79,8 @@ impl SimpleScopeTerm {
 }
 
 /// A builder for [`SimpleScopeTerm`](crate::types::SimpleScopeTerm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimpleScopeTermBuilder {
     pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
     pub(crate) key: ::std::option::Option<crate::types::ScopeFilterKey>,

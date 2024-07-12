@@ -155,8 +155,8 @@ impl FieldToMatch {
 }
 
 /// A builder for [`FieldToMatch`](crate::types::FieldToMatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FieldToMatchBuilder {
     pub(crate) single_header: ::std::option::Option<crate::types::SingleHeader>,
     pub(crate) single_query_argument: ::std::option::Option<crate::types::SingleQueryArgument>,

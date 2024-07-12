@@ -62,8 +62,8 @@ impl RegisterClientInput {
 }
 
 /// A builder for [`RegisterClientInput`](crate::operation::register_client::RegisterClientInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterClientInputBuilder {
     pub(crate) client_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_type: ::std::option::Option<::std::string::String>,

@@ -55,8 +55,8 @@ impl ReplicationSubnetGroup {
 }
 
 /// A builder for [`ReplicationSubnetGroup`](crate::types::ReplicationSubnetGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationSubnetGroupBuilder {
     pub(crate) replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) replication_subnet_group_description: ::std::option::Option<::std::string::String>,

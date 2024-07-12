@@ -26,8 +26,8 @@ impl AssociateExternalConnectionOutput {
 }
 
 /// A builder for [`AssociateExternalConnectionOutput`](crate::operation::associate_external_connection::AssociateExternalConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateExternalConnectionOutputBuilder {
     pub(crate) repository: ::std::option::Option<crate::types::RepositoryDescription>,
     _request_id: Option<String>,

@@ -35,8 +35,8 @@ impl UpdateDeploymentInput {
 }
 
 /// A builder for [`UpdateDeploymentInput`](crate::operation::update_deployment::UpdateDeploymentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeploymentInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,

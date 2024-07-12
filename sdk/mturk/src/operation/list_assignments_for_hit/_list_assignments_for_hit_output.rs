@@ -40,8 +40,8 @@ impl ListAssignmentsForHitOutput {
 }
 
 /// A builder for [`ListAssignmentsForHitOutput`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssignmentsForHitOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) num_results: ::std::option::Option<i32>,

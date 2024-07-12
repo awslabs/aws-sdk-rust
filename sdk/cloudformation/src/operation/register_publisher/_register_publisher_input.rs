@@ -30,8 +30,8 @@ impl RegisterPublisherInput {
 }
 
 /// A builder for [`RegisterPublisherInput`](crate::operation::register_publisher::RegisterPublisherInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterPublisherInputBuilder {
     pub(crate) accept_terms_and_conditions: ::std::option::Option<bool>,
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,

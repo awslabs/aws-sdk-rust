@@ -52,8 +52,8 @@ impl CreateScanOutput {
 }
 
 /// A builder for [`CreateScanOutput`](crate::operation::create_scan::CreateScanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateScanOutputBuilder {
     pub(crate) scan_name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,

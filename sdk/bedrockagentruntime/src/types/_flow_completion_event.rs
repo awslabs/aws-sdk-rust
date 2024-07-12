@@ -33,8 +33,8 @@ impl FlowCompletionEvent {
 }
 
 /// A builder for [`FlowCompletionEvent`](crate::types::FlowCompletionEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FlowCompletionEventBuilder {
     pub(crate) completion_reason: ::std::option::Option<crate::types::FlowCompletionReason>,
 }

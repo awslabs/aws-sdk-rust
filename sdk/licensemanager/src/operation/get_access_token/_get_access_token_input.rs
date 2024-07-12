@@ -28,8 +28,8 @@ impl GetAccessTokenInput {
 }
 
 /// A builder for [`GetAccessTokenInput`](crate::operation::get_access_token::GetAccessTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessTokenInputBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
     pub(crate) token_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

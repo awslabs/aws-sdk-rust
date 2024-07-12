@@ -38,8 +38,8 @@ impl DeleteDataRepositoryAssociationOutput {
 }
 
 /// A builder for [`DeleteDataRepositoryAssociationOutput`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataRepositoryAssociationOutputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::DataRepositoryLifecycle>,

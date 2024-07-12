@@ -26,8 +26,8 @@ impl DeleteConnectPeerOutput {
 }
 
 /// A builder for [`DeleteConnectPeerOutput`](crate::operation::delete_connect_peer::DeleteConnectPeerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConnectPeerOutputBuilder {
     pub(crate) connect_peer: ::std::option::Option<crate::types::ConnectPeer>,
     _request_id: Option<String>,

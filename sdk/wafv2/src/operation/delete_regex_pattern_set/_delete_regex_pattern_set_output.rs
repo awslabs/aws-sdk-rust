@@ -18,8 +18,8 @@ impl DeleteRegexPatternSetOutput {
 }
 
 /// A builder for [`DeleteRegexPatternSetOutput`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRegexPatternSetOutputBuilder {
     _request_id: Option<String>,
 }

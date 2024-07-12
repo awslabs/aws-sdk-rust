@@ -18,8 +18,8 @@ impl DisconnectRecoveryInstanceOutput {
 }
 
 /// A builder for [`DisconnectRecoveryInstanceOutput`](crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisconnectRecoveryInstanceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl GetBackupPlanFromJsonInput {
 }
 
 /// A builder for [`GetBackupPlanFromJsonInput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBackupPlanFromJsonInputBuilder {
     pub(crate) backup_plan_template_json: ::std::option::Option<::std::string::String>,
 }

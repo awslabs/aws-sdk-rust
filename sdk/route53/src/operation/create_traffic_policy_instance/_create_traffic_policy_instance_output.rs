@@ -34,8 +34,8 @@ impl CreateTrafficPolicyInstanceOutput {
 }
 
 /// A builder for [`CreateTrafficPolicyInstanceOutput`](crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTrafficPolicyInstanceOutputBuilder {
     pub(crate) traffic_policy_instance: ::std::option::Option<crate::types::TrafficPolicyInstance>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

@@ -12,8 +12,8 @@ impl BatchUpdateLinkAttributesResponse {
 }
 
 /// A builder for [`BatchUpdateLinkAttributesResponse`](crate::types::BatchUpdateLinkAttributesResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateLinkAttributesResponseBuilder {}
 impl BatchUpdateLinkAttributesResponseBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateLinkAttributesResponse`](crate::types::BatchUpdateLinkAttributesResponse).

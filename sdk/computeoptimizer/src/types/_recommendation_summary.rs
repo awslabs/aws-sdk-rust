@@ -55,8 +55,8 @@ impl RecommendationSummary {
 }
 
 /// A builder for [`RecommendationSummary`](crate::types::RecommendationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationSummaryBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>,
     pub(crate) recommendation_resource_type: ::std::option::Option<crate::types::RecommendationSourceType>,

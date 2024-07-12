@@ -18,8 +18,8 @@ impl RemoveKnowledgeBaseTemplateUriOutput {
 }
 
 /// A builder for [`RemoveKnowledgeBaseTemplateUriOutput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveKnowledgeBaseTemplateUriOutputBuilder {
     _request_id: Option<String>,
 }

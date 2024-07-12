@@ -26,8 +26,8 @@ impl DescribeHoursOfOperationOutput {
 }
 
 /// A builder for [`DescribeHoursOfOperationOutput`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHoursOfOperationOutputBuilder {
     pub(crate) hours_of_operation: ::std::option::Option<crate::types::HoursOfOperation>,
     _request_id: Option<String>,

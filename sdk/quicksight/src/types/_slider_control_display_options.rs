@@ -27,8 +27,8 @@ impl SliderControlDisplayOptions {
 }
 
 /// A builder for [`SliderControlDisplayOptions`](crate::types::SliderControlDisplayOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SliderControlDisplayOptionsBuilder {
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
     pub(crate) info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,

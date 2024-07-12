@@ -44,8 +44,8 @@ impl GenerativeDataDetails {
 }
 
 /// A builder for [`GenerativeDataDetails`](crate::types::GenerativeDataDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GenerativeDataDetailsBuilder {
     pub(crate) completion: ::std::option::Option<::std::string::String>,
     pub(crate) references: ::std::option::Option<::std::vec::Vec<crate::types::DataSummary>>,

@@ -34,8 +34,8 @@ impl DeleteApplicationInputProcessingConfigurationInput {
 }
 
 /// A builder for [`DeleteApplicationInputProcessingConfigurationInput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationInputProcessingConfigurationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,

@@ -26,8 +26,8 @@ impl GetVoiceToneAnalysisTaskInput {
 }
 
 /// A builder for [`GetVoiceToneAnalysisTaskInput`](crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVoiceToneAnalysisTaskInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) voice_tone_analysis_task_id: ::std::option::Option<::std::string::String>,

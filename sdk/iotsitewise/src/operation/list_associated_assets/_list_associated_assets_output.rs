@@ -33,8 +33,8 @@ impl ListAssociatedAssetsOutput {
 }
 
 /// A builder for [`ListAssociatedAssetsOutput`](crate::operation::list_associated_assets::ListAssociatedAssetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociatedAssetsOutputBuilder {
     pub(crate) asset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedAssetsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

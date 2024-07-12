@@ -34,8 +34,8 @@ impl DescribeLaunchTemplateVersionsOutput {
 }
 
 /// A builder for [`DescribeLaunchTemplateVersionsOutput`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLaunchTemplateVersionsOutputBuilder {
     pub(crate) launch_template_versions: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

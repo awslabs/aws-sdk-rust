@@ -26,8 +26,8 @@ impl RejectTransitGatewayVpcAttachmentInput {
 }
 
 /// A builder for [`RejectTransitGatewayVpcAttachmentInput`](crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectTransitGatewayVpcAttachmentInputBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

@@ -51,8 +51,8 @@ impl CampaignSmsMessage {
 }
 
 /// A builder for [`CampaignSmsMessage`](crate::types::CampaignSmsMessage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CampaignSmsMessageBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,

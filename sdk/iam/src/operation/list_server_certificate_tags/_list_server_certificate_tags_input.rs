@@ -36,8 +36,8 @@ impl ListServerCertificateTagsInput {
 }
 
 /// A builder for [`ListServerCertificateTagsInput`](crate::operation::list_server_certificate_tags::ListServerCertificateTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServerCertificateTagsInputBuilder {
     pub(crate) server_certificate_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

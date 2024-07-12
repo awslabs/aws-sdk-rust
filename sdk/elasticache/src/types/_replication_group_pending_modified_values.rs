@@ -71,8 +71,8 @@ impl ReplicationGroupPendingModifiedValues {
 }
 
 /// A builder for [`ReplicationGroupPendingModifiedValues`](crate::types::ReplicationGroupPendingModifiedValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationGroupPendingModifiedValuesBuilder {
     pub(crate) primary_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) automatic_failover_status: ::std::option::Option<crate::types::PendingAutomaticFailoverStatus>,

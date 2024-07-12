@@ -20,8 +20,8 @@ impl AllocateStaticIpInput {
 }
 
 /// A builder for [`AllocateStaticIpInput`](crate::operation::allocate_static_ip::AllocateStaticIpInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllocateStaticIpInputBuilder {
     pub(crate) static_ip_name: ::std::option::Option<::std::string::String>,
 }

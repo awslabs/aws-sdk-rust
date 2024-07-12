@@ -27,8 +27,8 @@ impl SqlConfiguration {
 }
 
 /// A builder for [`SqlConfiguration`](crate::types::SqlConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SqlConfigurationBuilder {
     pub(crate) query_identifiers_enclosing_option: ::std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
 }

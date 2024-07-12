@@ -57,8 +57,8 @@ impl UpgradeDomainOutput {
 }
 
 /// A builder for [`UpgradeDomainOutput`](crate::operation::upgrade_domain::UpgradeDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpgradeDomainOutputBuilder {
     pub(crate) upgrade_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl BlackFrame {
 }
 
 /// A builder for [`BlackFrame`](crate::types::BlackFrame).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlackFrameBuilder {
     pub(crate) max_pixel_threshold: ::std::option::Option<f32>,
     pub(crate) min_coverage_percentage: ::std::option::Option<f32>,

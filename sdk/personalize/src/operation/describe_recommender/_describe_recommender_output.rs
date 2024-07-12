@@ -26,8 +26,8 @@ impl DescribeRecommenderOutput {
 }
 
 /// A builder for [`DescribeRecommenderOutput`](crate::operation::describe_recommender::DescribeRecommenderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRecommenderOutputBuilder {
     pub(crate) recommender: ::std::option::Option<crate::types::Recommender>,
     _request_id: Option<String>,

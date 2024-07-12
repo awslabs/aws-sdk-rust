@@ -74,8 +74,8 @@ impl Validity {
 }
 
 /// A builder for [`Validity`](crate::types::Validity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidityBuilder {
     pub(crate) value: ::std::option::Option<i64>,
     pub(crate) r#type: ::std::option::Option<crate::types::ValidityPeriodType>,

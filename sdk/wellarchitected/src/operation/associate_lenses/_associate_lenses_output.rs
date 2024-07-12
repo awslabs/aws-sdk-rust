@@ -18,8 +18,8 @@ impl AssociateLensesOutput {
 }
 
 /// A builder for [`AssociateLensesOutput`](crate::operation::associate_lenses::AssociateLensesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateLensesOutputBuilder {
     _request_id: Option<String>,
 }

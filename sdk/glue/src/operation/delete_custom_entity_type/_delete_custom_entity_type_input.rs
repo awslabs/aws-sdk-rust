@@ -20,8 +20,8 @@ impl DeleteCustomEntityTypeInput {
 }
 
 /// A builder for [`DeleteCustomEntityTypeInput`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomEntityTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

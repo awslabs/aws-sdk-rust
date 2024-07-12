@@ -27,8 +27,8 @@ impl StopUserImportJobOutput {
 }
 
 /// A builder for [`StopUserImportJobOutput`](crate::operation::stop_user_import_job::StopUserImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopUserImportJobOutputBuilder {
     pub(crate) user_import_job: ::std::option::Option<crate::types::UserImportJobType>,
     _request_id: Option<String>,

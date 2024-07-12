@@ -20,8 +20,8 @@ impl DeleteCorsPolicyInput {
 }
 
 /// A builder for [`DeleteCorsPolicyInput`](crate::operation::delete_cors_policy::DeleteCorsPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCorsPolicyInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }

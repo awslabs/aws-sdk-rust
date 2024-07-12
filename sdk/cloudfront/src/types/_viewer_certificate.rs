@@ -179,8 +179,8 @@ impl ViewerCertificate {
 }
 
 /// A builder for [`ViewerCertificate`](crate::types::ViewerCertificate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ViewerCertificateBuilder {
     pub(crate) cloud_front_default_certificate: ::std::option::Option<bool>,
     pub(crate) iam_certificate_id: ::std::option::Option<::std::string::String>,

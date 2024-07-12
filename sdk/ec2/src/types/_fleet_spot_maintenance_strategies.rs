@@ -21,8 +21,8 @@ impl FleetSpotMaintenanceStrategies {
 }
 
 /// A builder for [`FleetSpotMaintenanceStrategies`](crate::types::FleetSpotMaintenanceStrategies).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetSpotMaintenanceStrategiesBuilder {
     pub(crate) capacity_rebalance: ::std::option::Option<crate::types::FleetSpotCapacityRebalance>,
 }

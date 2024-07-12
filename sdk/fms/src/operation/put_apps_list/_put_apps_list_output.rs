@@ -32,8 +32,8 @@ impl PutAppsListOutput {
 }
 
 /// A builder for [`PutAppsListOutput`](crate::operation::put_apps_list::PutAppsListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAppsListOutputBuilder {
     pub(crate) apps_list: ::std::option::Option<crate::types::AppsListData>,
     pub(crate) apps_list_arn: ::std::option::Option<::std::string::String>,

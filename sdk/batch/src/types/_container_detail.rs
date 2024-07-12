@@ -237,8 +237,8 @@ impl ContainerDetail {
 }
 
 /// A builder for [`ContainerDetail`](crate::types::ContainerDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerDetailBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) vcpus: ::std::option::Option<i32>,

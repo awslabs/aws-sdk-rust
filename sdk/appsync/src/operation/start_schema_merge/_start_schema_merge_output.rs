@@ -26,8 +26,8 @@ impl StartSchemaMergeOutput {
 }
 
 /// A builder for [`StartSchemaMergeOutput`](crate::operation::start_schema_merge::StartSchemaMergeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSchemaMergeOutputBuilder {
     pub(crate) source_api_association_status: ::std::option::Option<crate::types::SourceApiAssociationStatus>,
     _request_id: Option<String>,

@@ -57,8 +57,8 @@ impl AudioNormalizationSettings {
 }
 
 /// A builder for [`AudioNormalizationSettings`](crate::types::AudioNormalizationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioNormalizationSettingsBuilder {
     pub(crate) algorithm: ::std::option::Option<crate::types::AudioNormalizationAlgorithm>,
     pub(crate) algorithm_control: ::std::option::Option<crate::types::AudioNormalizationAlgorithmControl>,

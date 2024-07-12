@@ -12,8 +12,8 @@ impl DeregisterDataLakeDelegatedAdministratorInput {
 }
 
 /// A builder for [`DeregisterDataLakeDelegatedAdministratorInput`](crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterDataLakeDelegatedAdministratorInputBuilder {}
 impl DeregisterDataLakeDelegatedAdministratorInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterDataLakeDelegatedAdministratorInput`](crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorInput).

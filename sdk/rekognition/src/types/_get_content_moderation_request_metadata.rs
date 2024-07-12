@@ -27,8 +27,8 @@ impl GetContentModerationRequestMetadata {
 }
 
 /// A builder for [`GetContentModerationRequestMetadata`](crate::types::GetContentModerationRequestMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContentModerationRequestMetadataBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ContentModerationSortBy>,
     pub(crate) aggregate_by: ::std::option::Option<crate::types::ContentModerationAggregateBy>,

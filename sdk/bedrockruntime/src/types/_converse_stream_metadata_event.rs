@@ -33,8 +33,8 @@ impl ConverseStreamMetadataEvent {
 }
 
 /// A builder for [`ConverseStreamMetadataEvent`](crate::types::ConverseStreamMetadataEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConverseStreamMetadataEventBuilder {
     pub(crate) usage: ::std::option::Option<crate::types::TokenUsage>,
     pub(crate) metrics: ::std::option::Option<crate::types::ConverseStreamMetrics>,

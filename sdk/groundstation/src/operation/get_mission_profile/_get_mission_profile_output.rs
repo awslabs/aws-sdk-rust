@@ -95,8 +95,8 @@ impl GetMissionProfileOutput {
 }
 
 /// A builder for [`GetMissionProfileOutput`](crate::operation::get_mission_profile::GetMissionProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMissionProfileOutputBuilder {
     pub(crate) mission_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) mission_profile_arn: ::std::option::Option<::std::string::String>,

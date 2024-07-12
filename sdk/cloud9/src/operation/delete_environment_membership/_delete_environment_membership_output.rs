@@ -18,8 +18,8 @@ impl DeleteEnvironmentMembershipOutput {
 }
 
 /// A builder for [`DeleteEnvironmentMembershipOutput`](crate::operation::delete_environment_membership::DeleteEnvironmentMembershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEnvironmentMembershipOutputBuilder {
     _request_id: Option<String>,
 }

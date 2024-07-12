@@ -32,8 +32,8 @@ impl ListTestExecutionsInput {
 }
 
 /// A builder for [`ListTestExecutionsInput`](crate::operation::list_test_executions::ListTestExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestExecutionsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::TestExecutionSortBy>,
     pub(crate) max_results: ::std::option::Option<i32>,

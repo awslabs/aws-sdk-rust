@@ -82,8 +82,8 @@ impl ConformancePackDetail {
 }
 
 /// A builder for [`ConformancePackDetail`](crate::types::ConformancePackDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConformancePackDetailBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
     pub(crate) conformance_pack_arn: ::std::option::Option<::std::string::String>,

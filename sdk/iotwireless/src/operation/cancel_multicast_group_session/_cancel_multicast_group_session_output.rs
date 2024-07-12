@@ -18,8 +18,8 @@ impl CancelMulticastGroupSessionOutput {
 }
 
 /// A builder for [`CancelMulticastGroupSessionOutput`](crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelMulticastGroupSessionOutputBuilder {
     _request_id: Option<String>,
 }

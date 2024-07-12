@@ -81,8 +81,8 @@ impl SplunkDestinationDescription {
 }
 
 /// A builder for [`SplunkDestinationDescription`](crate::types::SplunkDestinationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SplunkDestinationDescriptionBuilder {
     pub(crate) hec_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) hec_endpoint_type: ::std::option::Option<crate::types::HecEndpointType>,

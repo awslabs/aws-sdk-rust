@@ -66,8 +66,8 @@ impl ConfirmConnectionOutput {
 }
 
 /// A builder for [`ConfirmConnectionOutput`](crate::operation::confirm_connection::ConfirmConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfirmConnectionOutputBuilder {
     pub(crate) connection_state: ::std::option::Option<crate::types::ConnectionState>,
     _request_id: Option<String>,

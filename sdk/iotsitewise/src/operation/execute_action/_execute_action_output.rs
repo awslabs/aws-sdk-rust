@@ -27,8 +27,8 @@ impl ExecuteActionOutput {
 }
 
 /// A builder for [`ExecuteActionOutput`](crate::operation::execute_action::ExecuteActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteActionOutputBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

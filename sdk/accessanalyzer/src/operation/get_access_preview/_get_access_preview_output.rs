@@ -26,8 +26,8 @@ impl GetAccessPreviewOutput {
 }
 
 /// A builder for [`GetAccessPreviewOutput`](crate::operation::get_access_preview::GetAccessPreviewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessPreviewOutputBuilder {
     pub(crate) access_preview: ::std::option::Option<crate::types::AccessPreview>,
     _request_id: Option<String>,

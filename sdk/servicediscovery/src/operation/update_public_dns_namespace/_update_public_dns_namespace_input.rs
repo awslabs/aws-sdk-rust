@@ -32,8 +32,8 @@ impl UpdatePublicDnsNamespaceInput {
 }
 
 /// A builder for [`UpdatePublicDnsNamespaceInput`](crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePublicDnsNamespaceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) updater_request_id: ::std::option::Option<::std::string::String>,

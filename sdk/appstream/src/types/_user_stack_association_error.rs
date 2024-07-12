@@ -33,8 +33,8 @@ impl UserStackAssociationError {
 }
 
 /// A builder for [`UserStackAssociationError`](crate::types::UserStackAssociationError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserStackAssociationErrorBuilder {
     pub(crate) user_stack_association: ::std::option::Option<crate::types::UserStackAssociation>,
     pub(crate) error_code: ::std::option::Option<crate::types::UserStackAssociationErrorCode>,

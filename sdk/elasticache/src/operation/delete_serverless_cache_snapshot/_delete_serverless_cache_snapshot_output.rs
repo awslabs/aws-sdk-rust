@@ -26,8 +26,8 @@ impl DeleteServerlessCacheSnapshotOutput {
 }
 
 /// A builder for [`DeleteServerlessCacheSnapshotOutput`](crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServerlessCacheSnapshotOutputBuilder {
     pub(crate) serverless_cache_snapshot: ::std::option::Option<crate::types::ServerlessCacheSnapshot>,
     _request_id: Option<String>,

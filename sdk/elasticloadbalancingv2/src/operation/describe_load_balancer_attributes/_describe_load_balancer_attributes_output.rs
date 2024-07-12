@@ -28,8 +28,8 @@ impl DescribeLoadBalancerAttributesOutput {
 }
 
 /// A builder for [`DescribeLoadBalancerAttributesOutput`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLoadBalancerAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAttribute>>,
     _request_id: Option<String>,

@@ -38,8 +38,8 @@ impl RdsdbUtilizationMetric {
 }
 
 /// A builder for [`RdsdbUtilizationMetric`](crate::types::RdsdbUtilizationMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsdbUtilizationMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::RdsdbMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::RdsdbMetricStatistic>,

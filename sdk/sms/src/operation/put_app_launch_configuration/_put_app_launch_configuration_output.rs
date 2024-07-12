@@ -18,8 +18,8 @@ impl PutAppLaunchConfigurationOutput {
 }
 
 /// A builder for [`PutAppLaunchConfigurationOutput`](crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAppLaunchConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

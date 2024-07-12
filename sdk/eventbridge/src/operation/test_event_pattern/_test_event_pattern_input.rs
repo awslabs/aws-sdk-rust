@@ -58,8 +58,8 @@ impl TestEventPatternInput {
 }
 
 /// A builder for [`TestEventPatternInput`](crate::operation::test_event_pattern::TestEventPatternInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestEventPatternInputBuilder {
     pub(crate) event_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) event: ::std::option::Option<::std::string::String>,

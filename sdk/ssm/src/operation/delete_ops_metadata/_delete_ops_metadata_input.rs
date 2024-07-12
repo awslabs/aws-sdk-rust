@@ -20,8 +20,8 @@ impl DeleteOpsMetadataInput {
 }
 
 /// A builder for [`DeleteOpsMetadataInput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOpsMetadataInputBuilder {
     pub(crate) ops_metadata_arn: ::std::option::Option<::std::string::String>,
 }

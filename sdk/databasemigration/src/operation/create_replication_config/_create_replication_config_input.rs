@@ -95,8 +95,8 @@ impl CreateReplicationConfigInput {
 }
 
 /// A builder for [`CreateReplicationConfigInput`](crate::operation::create_replication_config::CreateReplicationConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplicationConfigInputBuilder {
     pub(crate) replication_config_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_endpoint_arn: ::std::option::Option<::std::string::String>,

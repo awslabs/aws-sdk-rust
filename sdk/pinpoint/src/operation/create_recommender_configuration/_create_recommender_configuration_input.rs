@@ -20,8 +20,8 @@ impl CreateRecommenderConfigurationInput {
 }
 
 /// A builder for [`CreateRecommenderConfigurationInput`](crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRecommenderConfigurationInputBuilder {
     pub(crate) create_recommender_configuration: ::std::option::Option<crate::types::CreateRecommenderConfigurationShape>,
 }

@@ -23,8 +23,8 @@ impl DescribeDeliveryChannelStatusInput {
 }
 
 /// A builder for [`DescribeDeliveryChannelStatusInput`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeliveryChannelStatusInputBuilder {
     pub(crate) delivery_channel_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

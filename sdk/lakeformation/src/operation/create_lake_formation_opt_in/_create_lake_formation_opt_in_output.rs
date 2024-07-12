@@ -18,8 +18,8 @@ impl CreateLakeFormationOptInOutput {
 }
 
 /// A builder for [`CreateLakeFormationOptInOutput`](crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLakeFormationOptInOutputBuilder {
     _request_id: Option<String>,
 }

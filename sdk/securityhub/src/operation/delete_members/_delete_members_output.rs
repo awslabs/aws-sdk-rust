@@ -28,8 +28,8 @@ impl DeleteMembersOutput {
 }
 
 /// A builder for [`DeleteMembersOutput`](crate::operation::delete_members::DeleteMembersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMembersOutputBuilder {
     pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl ModuleLoggingConfigurationInput {
 }
 
 /// A builder for [`ModuleLoggingConfigurationInput`](crate::types::ModuleLoggingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModuleLoggingConfigurationInputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) log_level: ::std::option::Option<crate::types::LoggingLevel>,

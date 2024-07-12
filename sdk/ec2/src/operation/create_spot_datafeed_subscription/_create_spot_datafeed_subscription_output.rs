@@ -27,8 +27,8 @@ impl CreateSpotDatafeedSubscriptionOutput {
 }
 
 /// A builder for [`CreateSpotDatafeedSubscriptionOutput`](crate::operation::create_spot_datafeed_subscription::CreateSpotDatafeedSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSpotDatafeedSubscriptionOutputBuilder {
     pub(crate) spot_datafeed_subscription: ::std::option::Option<crate::types::SpotDatafeedSubscription>,
     _request_id: Option<String>,

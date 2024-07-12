@@ -35,8 +35,8 @@ impl OpenSearchServerlessConfiguration {
 }
 
 /// A builder for [`OpenSearchServerlessConfiguration`](crate::types::OpenSearchServerlessConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpenSearchServerlessConfigurationBuilder {
     pub(crate) collection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vector_index_name: ::std::option::Option<::std::string::String>,

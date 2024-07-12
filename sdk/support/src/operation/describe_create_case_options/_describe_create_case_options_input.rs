@@ -38,8 +38,8 @@ impl DescribeCreateCaseOptionsInput {
 }
 
 /// A builder for [`DescribeCreateCaseOptionsInput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCreateCaseOptionsInputBuilder {
     pub(crate) issue_type: ::std::option::Option<::std::string::String>,
     pub(crate) service_code: ::std::option::Option<::std::string::String>,

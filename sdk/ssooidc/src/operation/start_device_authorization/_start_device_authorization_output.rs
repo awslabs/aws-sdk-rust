@@ -56,8 +56,8 @@ impl StartDeviceAuthorizationOutput {
 }
 
 /// A builder for [`StartDeviceAuthorizationOutput`](crate::operation::start_device_authorization::StartDeviceAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDeviceAuthorizationOutputBuilder {
     pub(crate) device_code: ::std::option::Option<::std::string::String>,
     pub(crate) user_code: ::std::option::Option<::std::string::String>,

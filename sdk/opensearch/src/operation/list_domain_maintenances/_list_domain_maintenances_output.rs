@@ -35,8 +35,8 @@ impl ListDomainMaintenancesOutput {
 }
 
 /// A builder for [`ListDomainMaintenancesOutput`](crate::operation::list_domain_maintenances::ListDomainMaintenancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDomainMaintenancesOutputBuilder {
     pub(crate) domain_maintenances: ::std::option::Option<::std::vec::Vec<crate::types::DomainMaintenanceDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

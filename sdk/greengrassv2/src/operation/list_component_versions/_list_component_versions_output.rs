@@ -34,8 +34,8 @@ impl ListComponentVersionsOutput {
 }
 
 /// A builder for [`ListComponentVersionsOutput`](crate::operation::list_component_versions::ListComponentVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListComponentVersionsOutputBuilder {
     pub(crate) component_versions: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersionListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

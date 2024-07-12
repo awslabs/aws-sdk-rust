@@ -27,8 +27,8 @@ impl ShardConfiguration {
 }
 
 /// A builder for [`ShardConfiguration`](crate::types::ShardConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShardConfigurationBuilder {
     pub(crate) slots: ::std::option::Option<::std::string::String>,
     pub(crate) replica_count: ::std::option::Option<i32>,

@@ -43,8 +43,8 @@ impl ProfileConfiguration {
 }
 
 /// A builder for [`ProfileConfiguration`](crate::types::ProfileConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProfileConfigurationBuilder {
     pub(crate) dataset_statistics_configuration: ::std::option::Option<crate::types::StatisticsConfiguration>,
     pub(crate) profile_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>>,

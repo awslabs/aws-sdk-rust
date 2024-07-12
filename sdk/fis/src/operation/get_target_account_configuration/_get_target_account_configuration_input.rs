@@ -26,8 +26,8 @@ impl GetTargetAccountConfigurationInput {
 }
 
 /// A builder for [`GetTargetAccountConfigurationInput`](crate::operation::get_target_account_configuration::GetTargetAccountConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTargetAccountConfigurationInputBuilder {
     pub(crate) experiment_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

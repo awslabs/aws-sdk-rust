@@ -20,8 +20,8 @@ impl DeleteConformancePackInput {
 }
 
 /// A builder for [`DeleteConformancePackInput`](crate::operation::delete_conformance_pack::DeleteConformancePackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConformancePackInputBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
 }

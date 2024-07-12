@@ -27,8 +27,8 @@ impl AnalysisSchemeStatus {
 }
 
 /// A builder for [`AnalysisSchemeStatus`](crate::types::AnalysisSchemeStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisSchemeStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::AnalysisScheme>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,

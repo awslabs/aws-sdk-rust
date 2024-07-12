@@ -28,8 +28,8 @@ impl RegistrationSectionDefinition {
 }
 
 /// A builder for [`RegistrationSectionDefinition`](crate::types::RegistrationSectionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegistrationSectionDefinitionBuilder {
     pub(crate) section_path: ::std::option::Option<::std::string::String>,
     pub(crate) display_hints: ::std::option::Option<crate::types::RegistrationSectionDisplayHints>,

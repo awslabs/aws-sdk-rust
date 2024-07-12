@@ -42,8 +42,8 @@ impl UpdateCompanyNetworkConfigurationInput {
 }
 
 /// A builder for [`UpdateCompanyNetworkConfigurationInput`](crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCompanyNetworkConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

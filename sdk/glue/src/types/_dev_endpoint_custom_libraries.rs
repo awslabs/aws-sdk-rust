@@ -35,8 +35,8 @@ impl DevEndpointCustomLibraries {
 }
 
 /// A builder for [`DevEndpointCustomLibraries`](crate::types::DevEndpointCustomLibraries).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DevEndpointCustomLibrariesBuilder {
     pub(crate) extra_python_libs_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) extra_jars_s3_path: ::std::option::Option<::std::string::String>,

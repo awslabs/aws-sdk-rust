@@ -20,8 +20,8 @@ impl DescribeTimeToLiveInput {
 }
 
 /// A builder for [`DescribeTimeToLiveInput`](crate::operation::describe_time_to_live::DescribeTimeToLiveInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTimeToLiveInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
 }

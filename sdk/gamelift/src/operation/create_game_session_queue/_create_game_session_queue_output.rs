@@ -26,8 +26,8 @@ impl CreateGameSessionQueueOutput {
 }
 
 /// A builder for [`CreateGameSessionQueueOutput`](crate::operation::create_game_session_queue::CreateGameSessionQueueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGameSessionQueueOutputBuilder {
     pub(crate) game_session_queue: ::std::option::Option<crate::types::GameSessionQueue>,
     _request_id: Option<String>,

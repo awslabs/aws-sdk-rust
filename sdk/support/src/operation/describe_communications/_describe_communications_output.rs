@@ -35,8 +35,8 @@ impl DescribeCommunicationsOutput {
 }
 
 /// A builder for [`DescribeCommunicationsOutput`](crate::operation::describe_communications::DescribeCommunicationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCommunicationsOutputBuilder {
     pub(crate) communications: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl EventStartCondition {
 }
 
 /// A builder for [`EventStartCondition`](crate::types::EventStartCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventStartConditionBuilder {
     pub(crate) event_filter: ::std::option::Option<crate::types::EventFilter>,
     pub(crate) segment_id: ::std::option::Option<::std::string::String>,

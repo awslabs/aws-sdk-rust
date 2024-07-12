@@ -77,8 +77,8 @@ impl Comment {
 }
 
 /// A builder for [`Comment`](crate::types::Comment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CommentBuilder {
     pub(crate) comment_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,

@@ -30,8 +30,8 @@ impl DeleteDbSubnetGroupInput {
 }
 
 /// A builder for [`DeleteDbSubnetGroupInput`](crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbSubnetGroupInputBuilder {
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
 }

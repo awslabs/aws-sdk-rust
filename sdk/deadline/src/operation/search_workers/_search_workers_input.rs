@@ -54,8 +54,8 @@ impl SearchWorkersInput {
 }
 
 /// A builder for [`SearchWorkersInput`](crate::operation::search_workers::SearchWorkersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchWorkersInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

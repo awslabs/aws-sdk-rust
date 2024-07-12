@@ -38,8 +38,8 @@ impl ListThingRegistrationTaskReportsInput {
 }
 
 /// A builder for [`ListThingRegistrationTaskReportsInput`](crate::operation::list_thing_registration_task_reports::ListThingRegistrationTaskReportsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListThingRegistrationTaskReportsInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) report_type: ::std::option::Option<crate::types::ReportType>,

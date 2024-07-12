@@ -18,8 +18,8 @@ impl AssociateUserProficienciesOutput {
 }
 
 /// A builder for [`AssociateUserProficienciesOutput`](crate::operation::associate_user_proficiencies::AssociateUserProficienciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateUserProficienciesOutputBuilder {
     _request_id: Option<String>,
 }

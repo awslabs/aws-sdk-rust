@@ -34,8 +34,8 @@ impl GetChannelScheduleOutput {
 }
 
 /// A builder for [`GetChannelScheduleOutput`](crate::operation::get_channel_schedule::GetChannelScheduleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChannelScheduleOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

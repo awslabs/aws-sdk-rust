@@ -44,8 +44,8 @@ impl RegisterUserOutput {
 }
 
 /// A builder for [`RegisterUserOutput`](crate::operation::register_user::RegisterUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterUserOutputBuilder {
     pub(crate) user: ::std::option::Option<crate::types::User>,
     pub(crate) user_invitation_url: ::std::option::Option<::std::string::String>,

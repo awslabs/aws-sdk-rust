@@ -34,8 +34,8 @@ impl ModifyDefaultCreditSpecificationInput {
 }
 
 /// A builder for [`ModifyDefaultCreditSpecificationInput`](crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDefaultCreditSpecificationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_family: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,

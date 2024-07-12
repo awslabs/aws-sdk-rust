@@ -51,8 +51,8 @@ impl CheckDomainAvailabilityInput {
 }
 
 /// A builder for [`CheckDomainAvailabilityInput`](crate::operation::check_domain_availability::CheckDomainAvailabilityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckDomainAvailabilityInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) idn_lang_code: ::std::option::Option<::std::string::String>,

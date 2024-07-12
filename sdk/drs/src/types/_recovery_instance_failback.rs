@@ -75,8 +75,8 @@ impl RecoveryInstanceFailback {
 }
 
 /// A builder for [`RecoveryInstanceFailback`](crate::types::RecoveryInstanceFailback).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecoveryInstanceFailbackBuilder {
     pub(crate) failback_client_id: ::std::option::Option<::std::string::String>,
     pub(crate) failback_job_id: ::std::option::Option<::std::string::String>,

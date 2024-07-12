@@ -38,8 +38,8 @@ impl CreateProjectMembershipInput {
 }
 
 /// A builder for [`CreateProjectMembershipInput`](crate::operation::create_project_membership::CreateProjectMembershipInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProjectMembershipInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) project_identifier: ::std::option::Option<::std::string::String>,

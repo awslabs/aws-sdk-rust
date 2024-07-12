@@ -32,8 +32,8 @@ impl GetCalculationExecutionStatusOutput {
 }
 
 /// A builder for [`GetCalculationExecutionStatusOutput`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCalculationExecutionStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CalculationStatus>,
     pub(crate) statistics: ::std::option::Option<crate::types::CalculationStatistics>,

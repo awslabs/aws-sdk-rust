@@ -51,8 +51,8 @@ impl VolumeRecommendationOption {
 }
 
 /// A builder for [`VolumeRecommendationOption`](crate::types::VolumeRecommendationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VolumeRecommendationOptionBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::VolumeConfiguration>,
     pub(crate) performance_risk: ::std::option::Option<f64>,

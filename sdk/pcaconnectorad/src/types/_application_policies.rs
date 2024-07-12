@@ -28,8 +28,8 @@ impl ApplicationPolicies {
 }
 
 /// A builder for [`ApplicationPolicies`](crate::types::ApplicationPolicies).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationPoliciesBuilder {
     pub(crate) critical: ::std::option::Option<bool>,
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicy>>,

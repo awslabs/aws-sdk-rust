@@ -33,8 +33,8 @@ impl GetDatabasesOutput {
 }
 
 /// A builder for [`GetDatabasesOutput`](crate::operation::get_databases::GetDatabasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDatabasesOutputBuilder {
     pub(crate) database_list: ::std::option::Option<::std::vec::Vec<crate::types::Database>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

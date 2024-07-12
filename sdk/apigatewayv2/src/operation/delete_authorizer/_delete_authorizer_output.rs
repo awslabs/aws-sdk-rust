@@ -18,8 +18,8 @@ impl DeleteAuthorizerOutput {
 }
 
 /// A builder for [`DeleteAuthorizerOutput`](crate::operation::delete_authorizer::DeleteAuthorizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAuthorizerOutputBuilder {
     _request_id: Option<String>,
 }

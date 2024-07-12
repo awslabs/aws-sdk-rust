@@ -99,8 +99,8 @@ impl ChangeSetHook {
 }
 
 /// A builder for [`ChangeSetHook`](crate::types::ChangeSetHook).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeSetHookBuilder {
     pub(crate) invocation_point: ::std::option::Option<crate::types::HookInvocationPoint>,
     pub(crate) failure_mode: ::std::option::Option<crate::types::HookFailureMode>,

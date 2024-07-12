@@ -88,8 +88,8 @@ impl PipeSourceSelfManagedKafkaParameters {
 }
 
 /// A builder for [`PipeSourceSelfManagedKafkaParameters`](crate::types::PipeSourceSelfManagedKafkaParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PipeSourceSelfManagedKafkaParametersBuilder {
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
     pub(crate) starting_position: ::std::option::Option<crate::types::SelfManagedKafkaStartPosition>,

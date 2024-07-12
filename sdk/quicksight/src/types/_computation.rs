@@ -76,8 +76,8 @@ impl Computation {
 }
 
 /// A builder for [`Computation`](crate::types::Computation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComputationBuilder {
     pub(crate) top_bottom_ranked: ::std::option::Option<crate::types::TopBottomRankedComputation>,
     pub(crate) top_bottom_movers: ::std::option::Option<crate::types::TopBottomMoversComputation>,

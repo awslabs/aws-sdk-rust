@@ -91,8 +91,8 @@ impl EksPodPropertiesDetail {
 }
 
 /// A builder for [`EksPodPropertiesDetail`](crate::types::EksPodPropertiesDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksPodPropertiesDetailBuilder {
     pub(crate) service_account_name: ::std::option::Option<::std::string::String>,
     pub(crate) host_network: ::std::option::Option<bool>,

@@ -87,8 +87,8 @@ impl DisplayFormatOptions {
 }
 
 /// A builder for [`DisplayFormatOptions`](crate::types::DisplayFormatOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisplayFormatOptionsBuilder {
     pub(crate) use_blank_cell_format: ::std::option::Option<bool>,
     pub(crate) blank_cell_format: ::std::option::Option<::std::string::String>,

@@ -65,8 +65,8 @@ impl SegmentationDescriptor {
 }
 
 /// A builder for [`SegmentationDescriptor`](crate::types::SegmentationDescriptor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SegmentationDescriptorBuilder {
     pub(crate) segmentation_event_id: ::std::option::Option<i32>,
     pub(crate) segmentation_upid_type: ::std::option::Option<i32>,

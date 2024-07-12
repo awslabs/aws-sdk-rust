@@ -26,8 +26,8 @@ impl GetCallAnalyticsJobOutput {
 }
 
 /// A builder for [`GetCallAnalyticsJobOutput`](crate::operation::get_call_analytics_job::GetCallAnalyticsJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCallAnalyticsJobOutputBuilder {
     pub(crate) call_analytics_job: ::std::option::Option<crate::types::CallAnalyticsJob>,
     _request_id: Option<String>,

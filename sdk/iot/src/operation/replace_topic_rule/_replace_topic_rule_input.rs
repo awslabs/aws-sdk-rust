@@ -27,8 +27,8 @@ impl ReplaceTopicRuleInput {
 }
 
 /// A builder for [`ReplaceTopicRuleInput`](crate::operation::replace_topic_rule::ReplaceTopicRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplaceTopicRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) topic_rule_payload: ::std::option::Option<crate::types::TopicRulePayload>,

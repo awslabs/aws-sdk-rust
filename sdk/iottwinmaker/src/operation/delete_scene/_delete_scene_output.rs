@@ -18,8 +18,8 @@ impl DeleteSceneOutput {
 }
 
 /// A builder for [`DeleteSceneOutput`](crate::operation::delete_scene::DeleteSceneOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSceneOutputBuilder {
     _request_id: Option<String>,
 }

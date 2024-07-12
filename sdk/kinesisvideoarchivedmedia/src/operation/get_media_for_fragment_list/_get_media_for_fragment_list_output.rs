@@ -66,8 +66,8 @@ impl GetMediaForFragmentListOutput {
 }
 
 /// A builder for [`GetMediaForFragmentListOutput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMediaForFragmentListOutputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,

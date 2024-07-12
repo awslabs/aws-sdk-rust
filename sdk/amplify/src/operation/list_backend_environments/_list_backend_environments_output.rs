@@ -34,8 +34,8 @@ impl ListBackendEnvironmentsOutput {
 }
 
 /// A builder for [`ListBackendEnvironmentsOutput`](crate::operation::list_backend_environments::ListBackendEnvironmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBackendEnvironmentsOutputBuilder {
     pub(crate) backend_environments: ::std::option::Option<::std::vec::Vec<crate::types::BackendEnvironment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

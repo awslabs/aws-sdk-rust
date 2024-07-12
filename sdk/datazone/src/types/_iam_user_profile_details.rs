@@ -21,8 +21,8 @@ impl IamUserProfileDetails {
 }
 
 /// A builder for [`IamUserProfileDetails`](crate::types::IamUserProfileDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IamUserProfileDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

@@ -39,8 +39,8 @@ impl UpdateBridgeSourceInput {
 }
 
 /// A builder for [`UpdateBridgeSourceInput`](crate::operation::update_bridge_source::UpdateBridgeSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateBridgeSourceInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flow_source: ::std::option::Option<crate::types::UpdateBridgeFlowSourceRequest>,

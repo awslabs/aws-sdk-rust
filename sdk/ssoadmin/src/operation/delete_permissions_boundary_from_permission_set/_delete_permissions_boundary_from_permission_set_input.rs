@@ -27,8 +27,8 @@ impl DeletePermissionsBoundaryFromPermissionSetInput {
 }
 
 /// A builder for [`DeletePermissionsBoundaryFromPermissionSetInput`](crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePermissionsBoundaryFromPermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,

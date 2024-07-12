@@ -22,8 +22,8 @@ impl ReportContext {
 }
 
 /// A builder for [`ReportContext`](crate::types::ReportContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportContextBuilder {
     pub(crate) license_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

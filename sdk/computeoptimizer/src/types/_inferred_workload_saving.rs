@@ -71,8 +71,8 @@ impl InferredWorkloadSaving {
 }
 
 /// A builder for [`InferredWorkloadSaving`](crate::types::InferredWorkloadSaving).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferredWorkloadSavingBuilder {
     pub(crate) inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
     pub(crate) estimated_monthly_savings: ::std::option::Option<crate::types::EstimatedMonthlySavings>,

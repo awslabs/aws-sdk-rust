@@ -39,8 +39,8 @@ impl DescribeTableRestoreStatusInput {
 }
 
 /// A builder for [`DescribeTableRestoreStatusInput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTableRestoreStatusInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) table_restore_request_id: ::std::option::Option<::std::string::String>,

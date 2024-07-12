@@ -38,8 +38,8 @@ impl ListTranscriptionJobsInput {
 }
 
 /// A builder for [`ListTranscriptionJobsInput`](crate::operation::list_transcription_jobs::ListTranscriptionJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTranscriptionJobsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TranscriptionJobStatus>,
     pub(crate) job_name_contains: ::std::option::Option<::std::string::String>,

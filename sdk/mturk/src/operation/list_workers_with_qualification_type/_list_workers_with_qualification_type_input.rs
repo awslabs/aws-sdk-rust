@@ -38,8 +38,8 @@ impl ListWorkersWithQualificationTypeInput {
 }
 
 /// A builder for [`ListWorkersWithQualificationTypeInput`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkersWithQualificationTypeInputBuilder {
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::QualificationStatus>,

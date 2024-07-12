@@ -21,8 +21,8 @@ impl ModelPackagingOutputDetails {
 }
 
 /// A builder for [`ModelPackagingOutputDetails`](crate::types::ModelPackagingOutputDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelPackagingOutputDetailsBuilder {
     pub(crate) greengrass: ::std::option::Option<crate::types::GreengrassOutputDetails>,
 }

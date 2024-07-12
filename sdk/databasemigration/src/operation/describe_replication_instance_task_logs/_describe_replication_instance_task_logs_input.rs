@@ -36,8 +36,8 @@ impl DescribeReplicationInstanceTaskLogsInput {
 }
 
 /// A builder for [`DescribeReplicationInstanceTaskLogsInput`](crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReplicationInstanceTaskLogsInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

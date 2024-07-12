@@ -75,8 +75,8 @@ impl HttpEndpointDestinationUpdate {
 }
 
 /// A builder for [`HttpEndpointDestinationUpdate`](crate::types::HttpEndpointDestinationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpEndpointDestinationUpdateBuilder {
     pub(crate) endpoint_configuration: ::std::option::Option<crate::types::HttpEndpointConfiguration>,
     pub(crate) buffering_hints: ::std::option::Option<crate::types::HttpEndpointBufferingHints>,

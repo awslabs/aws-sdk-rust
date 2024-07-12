@@ -65,8 +65,8 @@ impl AwsDynamoDbTableRestoreSummary {
 }
 
 /// A builder for [`AwsDynamoDbTableRestoreSummary`](crate::types::AwsDynamoDbTableRestoreSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDynamoDbTableRestoreSummaryBuilder {
     pub(crate) source_backup_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_table_arn: ::std::option::Option<::std::string::String>,

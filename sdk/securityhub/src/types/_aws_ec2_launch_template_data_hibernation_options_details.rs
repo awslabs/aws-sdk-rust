@@ -21,8 +21,8 @@ impl AwsEc2LaunchTemplateDataHibernationOptionsDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataHibernationOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataHibernationOptionsDetailsBuilder {
     pub(crate) configured: ::std::option::Option<bool>,
 }

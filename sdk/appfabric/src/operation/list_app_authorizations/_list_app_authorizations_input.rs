@@ -34,8 +34,8 @@ impl ListAppAuthorizationsInput {
 }
 
 /// A builder for [`ListAppAuthorizationsInput`](crate::operation::list_app_authorizations::ListAppAuthorizationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppAuthorizationsInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

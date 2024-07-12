@@ -28,8 +28,8 @@ impl BatchRevokePermissionsInput {
 }
 
 /// A builder for [`BatchRevokePermissionsInput`](crate::operation::batch_revoke_permissions::BatchRevokePermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchRevokePermissionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,

@@ -29,8 +29,8 @@ impl DescribeInstanceHealthOutput {
 }
 
 /// A builder for [`DescribeInstanceHealthOutput`](crate::operation::describe_instance_health::DescribeInstanceHealthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceHealthOutputBuilder {
     pub(crate) instance_states: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>,
     _request_id: Option<String>,

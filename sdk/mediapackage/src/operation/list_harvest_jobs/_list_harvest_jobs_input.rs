@@ -38,8 +38,8 @@ impl ListHarvestJobsInput {
 }
 
 /// A builder for [`ListHarvestJobsInput`](crate::operation::list_harvest_jobs::ListHarvestJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHarvestJobsInputBuilder {
     pub(crate) include_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) include_status: ::std::option::Option<::std::string::String>,

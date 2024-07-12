@@ -54,8 +54,8 @@ impl FileUploaderFieldConfig {
 }
 
 /// A builder for [`FileUploaderFieldConfig`](crate::types::FileUploaderFieldConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileUploaderFieldConfigBuilder {
     pub(crate) access_level: ::std::option::Option<crate::types::StorageAccessLevel>,
     pub(crate) accepted_file_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

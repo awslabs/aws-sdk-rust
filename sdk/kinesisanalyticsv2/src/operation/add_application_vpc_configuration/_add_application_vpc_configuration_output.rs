@@ -44,8 +44,8 @@ impl AddApplicationVpcConfigurationOutput {
 }
 
 /// A builder for [`AddApplicationVpcConfigurationOutput`](crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddApplicationVpcConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,

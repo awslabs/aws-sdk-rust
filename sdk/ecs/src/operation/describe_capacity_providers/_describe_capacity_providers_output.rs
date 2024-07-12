@@ -42,8 +42,8 @@ impl DescribeCapacityProvidersOutput {
 }
 
 /// A builder for [`DescribeCapacityProvidersOutput`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCapacityProvidersOutputBuilder {
     pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,

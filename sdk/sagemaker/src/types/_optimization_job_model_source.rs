@@ -21,8 +21,8 @@ impl OptimizationJobModelSource {
 }
 
 /// A builder for [`OptimizationJobModelSource`](crate::types::OptimizationJobModelSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OptimizationJobModelSourceBuilder {
     pub(crate) s3: ::std::option::Option<crate::types::OptimizationJobModelSourceS3>,
 }

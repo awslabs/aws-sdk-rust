@@ -28,8 +28,8 @@ impl DeregisterDevicesInput {
 }
 
 /// A builder for [`DeregisterDevicesInput`](crate::operation::deregister_devices::DeregisterDevicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterDevicesInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

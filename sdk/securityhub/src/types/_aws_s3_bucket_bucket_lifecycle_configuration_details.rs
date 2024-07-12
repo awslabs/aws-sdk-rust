@@ -23,8 +23,8 @@ impl AwsS3BucketBucketLifecycleConfigurationDetails {
 }
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketBucketLifecycleConfigurationDetailsBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails>>,
 }

@@ -51,8 +51,8 @@ impl UpdateResourceCollectionFilter {
 }
 
 /// A builder for [`UpdateResourceCollectionFilter`](crate::types::UpdateResourceCollectionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResourceCollectionFilterBuilder {
     pub(crate) cloud_formation: ::std::option::Option<crate::types::UpdateCloudFormationCollectionFilter>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::UpdateTagCollectionFilter>>,

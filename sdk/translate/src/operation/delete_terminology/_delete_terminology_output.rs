@@ -18,8 +18,8 @@ impl DeleteTerminologyOutput {
 }
 
 /// A builder for [`DeleteTerminologyOutput`](crate::operation::delete_terminology::DeleteTerminologyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTerminologyOutputBuilder {
     _request_id: Option<String>,
 }

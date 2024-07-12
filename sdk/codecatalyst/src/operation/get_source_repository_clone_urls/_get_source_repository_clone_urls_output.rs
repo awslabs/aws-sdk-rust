@@ -27,8 +27,8 @@ impl GetSourceRepositoryCloneUrlsOutput {
 }
 
 /// A builder for [`GetSourceRepositoryCloneUrlsOutput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSourceRepositoryCloneUrlsOutputBuilder {
     pub(crate) https: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -101,8 +101,8 @@ impl MultiplexProgramPacketIdentifiersMap {
 }
 
 /// A builder for [`MultiplexProgramPacketIdentifiersMap`](crate::types::MultiplexProgramPacketIdentifiersMap).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiplexProgramPacketIdentifiersMapBuilder {
     pub(crate) audio_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) dvb_sub_pids: ::std::option::Option<::std::vec::Vec<i32>>,

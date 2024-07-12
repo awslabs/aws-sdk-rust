@@ -45,8 +45,8 @@ impl AggregationSortConfiguration {
 }
 
 /// A builder for [`AggregationSortConfiguration`](crate::types::AggregationSortConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregationSortConfigurationBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) sort_direction: ::std::option::Option<crate::types::SortDirection>,

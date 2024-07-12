@@ -47,8 +47,8 @@ impl NewAssertionRule {
 }
 
 /// A builder for [`NewAssertionRule`](crate::types::NewAssertionRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NewAssertionRuleBuilder {
     pub(crate) asserted_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,

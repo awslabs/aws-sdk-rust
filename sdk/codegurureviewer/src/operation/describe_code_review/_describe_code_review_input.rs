@@ -20,8 +20,8 @@ impl DescribeCodeReviewInput {
 }
 
 /// A builder for [`DescribeCodeReviewInput`](crate::operation::describe_code_review::DescribeCodeReviewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCodeReviewInputBuilder {
     pub(crate) code_review_arn: ::std::option::Option<::std::string::String>,
 }

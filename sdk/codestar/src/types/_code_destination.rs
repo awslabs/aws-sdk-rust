@@ -27,8 +27,8 @@ impl CodeDestination {
 }
 
 /// A builder for [`CodeDestination`](crate::types::CodeDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeDestinationBuilder {
     pub(crate) code_commit: ::std::option::Option<crate::types::CodeCommitCodeDestination>,
     pub(crate) git_hub: ::std::option::Option<crate::types::GitHubCodeDestination>,

@@ -78,8 +78,8 @@ impl ModifyTargetGroupInput {
 }
 
 /// A builder for [`ModifyTargetGroupInput`](crate::operation::modify_target_group::ModifyTargetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTargetGroupInputBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_protocol: ::std::option::Option<crate::types::ProtocolEnum>,

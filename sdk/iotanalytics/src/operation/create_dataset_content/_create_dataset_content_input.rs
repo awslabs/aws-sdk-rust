@@ -26,8 +26,8 @@ impl CreateDatasetContentInput {
 }
 
 /// A builder for [`CreateDatasetContentInput`](crate::operation::create_dataset_content::CreateDatasetContentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDatasetContentInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,

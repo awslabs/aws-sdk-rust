@@ -33,8 +33,8 @@ impl ListServiceNetworksOutput {
 }
 
 /// A builder for [`ListServiceNetworksOutput`](crate::operation::list_service_networks::ListServiceNetworksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceNetworksOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

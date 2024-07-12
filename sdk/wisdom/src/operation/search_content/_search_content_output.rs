@@ -33,8 +33,8 @@ impl SearchContentOutput {
 }
 
 /// A builder for [`SearchContentOutput`](crate::operation::search_content::SearchContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchContentOutputBuilder {
     pub(crate) content_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

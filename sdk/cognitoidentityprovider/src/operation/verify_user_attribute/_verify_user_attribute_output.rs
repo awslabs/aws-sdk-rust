@@ -19,8 +19,8 @@ impl VerifyUserAttributeOutput {
 }
 
 /// A builder for [`VerifyUserAttributeOutput`](crate::operation::verify_user_attribute::VerifyUserAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyUserAttributeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -39,8 +39,8 @@ impl WaitAndContinueSpecification {
 }
 
 /// A builder for [`WaitAndContinueSpecification`](crate::types::WaitAndContinueSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WaitAndContinueSpecificationBuilder {
     pub(crate) waiting_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) continue_response: ::std::option::Option<crate::types::ResponseSpecification>,

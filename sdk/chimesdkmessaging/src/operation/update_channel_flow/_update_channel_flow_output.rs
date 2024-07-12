@@ -26,8 +26,8 @@ impl UpdateChannelFlowOutput {
 }
 
 /// A builder for [`UpdateChannelFlowOutput`](crate::operation::update_channel_flow::UpdateChannelFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateChannelFlowOutputBuilder {
     pub(crate) channel_flow_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

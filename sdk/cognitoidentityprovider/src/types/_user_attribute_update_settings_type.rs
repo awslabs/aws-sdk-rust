@@ -27,8 +27,8 @@ impl UserAttributeUpdateSettingsType {
 }
 
 /// A builder for [`UserAttributeUpdateSettingsType`](crate::types::UserAttributeUpdateSettingsType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserAttributeUpdateSettingsTypeBuilder {
     pub(crate) attributes_require_verification_before_update: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAttributeType>>,
 }

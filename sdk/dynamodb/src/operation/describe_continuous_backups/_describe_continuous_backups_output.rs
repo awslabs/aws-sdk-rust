@@ -26,8 +26,8 @@ impl DescribeContinuousBackupsOutput {
 }
 
 /// A builder for [`DescribeContinuousBackupsOutput`](crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContinuousBackupsOutputBuilder {
     pub(crate) continuous_backups_description: ::std::option::Option<crate::types::ContinuousBackupsDescription>,
     _request_id: Option<String>,

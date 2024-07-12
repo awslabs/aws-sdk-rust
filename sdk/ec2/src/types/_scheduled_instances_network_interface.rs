@@ -95,8 +95,8 @@ impl ScheduledInstancesNetworkInterface {
 }
 
 /// A builder for [`ScheduledInstancesNetworkInterface`](crate::types::ScheduledInstancesNetworkInterface).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduledInstancesNetworkInterfaceBuilder {
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,

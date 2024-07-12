@@ -30,8 +30,8 @@ impl DescribeEntityAggregatesForOrganizationInput {
 }
 
 /// A builder for [`DescribeEntityAggregatesForOrganizationInput`](crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEntityAggregatesForOrganizationInputBuilder {
     pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

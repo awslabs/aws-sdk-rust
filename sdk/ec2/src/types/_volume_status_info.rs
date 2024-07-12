@@ -29,8 +29,8 @@ impl VolumeStatusInfo {
 }
 
 /// A builder for [`VolumeStatusInfo`](crate::types::VolumeStatusInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VolumeStatusInfoBuilder {
     pub(crate) details: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusDetails>>,
     pub(crate) status: ::std::option::Option<crate::types::VolumeStatusInfoStatus>,

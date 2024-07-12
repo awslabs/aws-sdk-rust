@@ -64,8 +64,8 @@ impl DataViewDestinationTypeParams {
 }
 
 /// A builder for [`DataViewDestinationTypeParams`](crate::types::DataViewDestinationTypeParams).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataViewDestinationTypeParamsBuilder {
     pub(crate) destination_type: ::std::option::Option<::std::string::String>,
     pub(crate) s3_destination_export_file_format: ::std::option::Option<crate::types::ExportFileFormat>,

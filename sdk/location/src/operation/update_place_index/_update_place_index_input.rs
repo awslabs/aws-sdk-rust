@@ -40,8 +40,8 @@ impl UpdatePlaceIndexInput {
 }
 
 /// A builder for [`UpdatePlaceIndexInput`](crate::operation::update_place_index::UpdatePlaceIndexInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePlaceIndexInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,

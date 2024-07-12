@@ -33,8 +33,8 @@ impl DescribeBudgetActionsForAccountOutput {
 }
 
 /// A builder for [`DescribeBudgetActionsForAccountOutput`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBudgetActionsForAccountOutputBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

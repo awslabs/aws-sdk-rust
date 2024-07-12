@@ -49,8 +49,8 @@ impl ClassifierMetadata {
 }
 
 /// A builder for [`ClassifierMetadata`](crate::types::ClassifierMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ClassifierMetadataBuilder {
     pub(crate) number_of_labels: ::std::option::Option<i32>,
     pub(crate) number_of_trained_documents: ::std::option::Option<i32>,

@@ -18,8 +18,8 @@ impl SubmitMultiRegionAccessPointRoutesOutput {
 }
 
 /// A builder for [`SubmitMultiRegionAccessPointRoutesOutput`](crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubmitMultiRegionAccessPointRoutesOutputBuilder {
     _request_id: Option<String>,
 }

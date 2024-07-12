@@ -34,8 +34,8 @@ impl LfTagPolicyResource {
 }
 
 /// A builder for [`LfTagPolicyResource`](crate::types::LfTagPolicyResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LfTagPolicyResourceBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,

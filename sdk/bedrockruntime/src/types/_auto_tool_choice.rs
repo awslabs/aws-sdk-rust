@@ -12,8 +12,8 @@ impl AutoToolChoice {
 }
 
 /// A builder for [`AutoToolChoice`](crate::types::AutoToolChoice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoToolChoiceBuilder {}
 impl AutoToolChoiceBuilder {
     /// Consumes the builder and constructs a [`AutoToolChoice`](crate::types::AutoToolChoice).

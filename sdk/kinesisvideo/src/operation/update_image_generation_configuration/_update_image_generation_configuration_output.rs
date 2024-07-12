@@ -18,8 +18,8 @@ impl UpdateImageGenerationConfigurationOutput {
 }
 
 /// A builder for [`UpdateImageGenerationConfigurationOutput`](crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateImageGenerationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

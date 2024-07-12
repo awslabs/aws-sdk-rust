@@ -27,8 +27,8 @@ impl MergeOperations {
 }
 
 /// A builder for [`MergeOperations`](crate::types::MergeOperations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MergeOperationsBuilder {
     pub(crate) source: ::std::option::Option<crate::types::ChangeTypeEnum>,
     pub(crate) destination: ::std::option::Option<crate::types::ChangeTypeEnum>,

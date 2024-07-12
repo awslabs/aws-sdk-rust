@@ -20,8 +20,8 @@ impl RestoreWorkspaceInput {
 }
 
 /// A builder for [`RestoreWorkspaceInput`](crate::operation::restore_workspace::RestoreWorkspaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreWorkspaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }

@@ -29,8 +29,8 @@ impl QueryArgProfile {
 }
 
 /// A builder for [`QueryArgProfile`](crate::types::QueryArgProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryArgProfileBuilder {
     pub(crate) query_arg: ::std::option::Option<::std::string::String>,
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,

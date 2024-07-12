@@ -33,8 +33,8 @@ impl NetworkFirewallPolicyModifiedViolation {
 }
 
 /// A builder for [`NetworkFirewallPolicyModifiedViolation`](crate::types::NetworkFirewallPolicyModifiedViolation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkFirewallPolicyModifiedViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
     pub(crate) current_policy_description: ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,

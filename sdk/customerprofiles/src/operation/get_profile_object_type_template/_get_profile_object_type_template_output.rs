@@ -76,8 +76,8 @@ impl GetProfileObjectTypeTemplateOutput {
 }
 
 /// A builder for [`GetProfileObjectTypeTemplateOutput`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetProfileObjectTypeTemplateOutputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_name: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl UpdateTopicInput {
 }
 
 /// A builder for [`UpdateTopicInput`](crate::operation::update_topic::UpdateTopicInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTopicInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,

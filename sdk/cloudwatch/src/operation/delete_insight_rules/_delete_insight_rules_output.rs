@@ -28,8 +28,8 @@ impl DeleteInsightRulesOutput {
 }
 
 /// A builder for [`DeleteInsightRulesOutput`](crate::operation::delete_insight_rules::DeleteInsightRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInsightRulesOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
     _request_id: Option<String>,

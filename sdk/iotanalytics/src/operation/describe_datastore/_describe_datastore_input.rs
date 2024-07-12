@@ -26,8 +26,8 @@ impl DescribeDatastoreInput {
 }
 
 /// A builder for [`DescribeDatastoreInput`](crate::operation::describe_datastore::DescribeDatastoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDatastoreInputBuilder {
     pub(crate) datastore_name: ::std::option::Option<::std::string::String>,
     pub(crate) include_statistics: ::std::option::Option<bool>,

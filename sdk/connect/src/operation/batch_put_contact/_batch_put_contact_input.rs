@@ -34,8 +34,8 @@ impl BatchPutContactInput {
 }
 
 /// A builder for [`BatchPutContactInput`](crate::operation::batch_put_contact::BatchPutContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutContactInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ProductionVariantManagedInstanceScaling {
 }
 
 /// A builder for [`ProductionVariantManagedInstanceScaling`](crate::types::ProductionVariantManagedInstanceScaling).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProductionVariantManagedInstanceScalingBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ManagedInstanceScalingStatus>,
     pub(crate) min_instance_count: ::std::option::Option<i32>,

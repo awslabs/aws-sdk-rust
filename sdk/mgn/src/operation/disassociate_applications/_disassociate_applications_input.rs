@@ -34,8 +34,8 @@ impl DisassociateApplicationsInput {
 }
 
 /// A builder for [`DisassociateApplicationsInput`](crate::operation::disassociate_applications::DisassociateApplicationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateApplicationsInputBuilder {
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

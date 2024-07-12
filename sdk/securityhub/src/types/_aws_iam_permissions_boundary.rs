@@ -27,8 +27,8 @@ impl AwsIamPermissionsBoundary {
 }
 
 /// A builder for [`AwsIamPermissionsBoundary`](crate::types::AwsIamPermissionsBoundary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsIamPermissionsBoundaryBuilder {
     pub(crate) permissions_boundary_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permissions_boundary_type: ::std::option::Option<::std::string::String>,

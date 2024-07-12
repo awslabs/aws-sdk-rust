@@ -76,8 +76,8 @@ impl GetLogAnomalyDetectorOutput {
 }
 
 /// A builder for [`GetLogAnomalyDetectorOutput`](crate::operation::get_log_anomaly_detector::GetLogAnomalyDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLogAnomalyDetectorOutputBuilder {
     pub(crate) detector_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

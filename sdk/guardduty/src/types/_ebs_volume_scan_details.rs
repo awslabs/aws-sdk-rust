@@ -59,8 +59,8 @@ impl EbsVolumeScanDetails {
 }
 
 /// A builder for [`EbsVolumeScanDetails`](crate::types::EbsVolumeScanDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsVolumeScanDetailsBuilder {
     pub(crate) scan_id: ::std::option::Option<::std::string::String>,
     pub(crate) scan_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,

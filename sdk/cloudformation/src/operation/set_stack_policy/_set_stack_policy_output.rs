@@ -18,8 +18,8 @@ impl SetStackPolicyOutput {
 }
 
 /// A builder for [`SetStackPolicyOutput`](crate::operation::set_stack_policy::SetStackPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetStackPolicyOutputBuilder {
     _request_id: Option<String>,
 }

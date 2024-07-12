@@ -30,8 +30,8 @@ impl GetSyncJobInput {
 }
 
 /// A builder for [`GetSyncJobInput`](crate::operation::get_sync_job::GetSyncJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSyncJobInputBuilder {
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,

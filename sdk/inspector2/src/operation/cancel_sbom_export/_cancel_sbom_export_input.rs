@@ -20,8 +20,8 @@ impl CancelSbomExportInput {
 }
 
 /// A builder for [`CancelSbomExportInput`](crate::operation::cancel_sbom_export::CancelSbomExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSbomExportInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl UpdateProfilingGroupOutput {
 }
 
 /// A builder for [`UpdateProfilingGroupOutput`](crate::operation::update_profiling_group::UpdateProfilingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProfilingGroupOutputBuilder {
     pub(crate) profiling_group: ::std::option::Option<crate::types::ProfilingGroupDescription>,
     _request_id: Option<String>,

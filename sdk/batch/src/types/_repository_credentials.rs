@@ -21,8 +21,8 @@ impl RepositoryCredentials {
 }
 
 /// A builder for [`RepositoryCredentials`](crate::types::RepositoryCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryCredentialsBuilder {
     pub(crate) credentials_parameter: ::std::option::Option<::std::string::String>,
 }

@@ -57,8 +57,8 @@ impl AssignPrivateIpAddressesInput {
 }
 
 /// A builder for [`AssignPrivateIpAddressesInput`](crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssignPrivateIpAddressesInputBuilder {
     pub(crate) allow_reassignment: ::std::option::Option<bool>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,

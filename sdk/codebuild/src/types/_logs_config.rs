@@ -27,8 +27,8 @@ impl LogsConfig {
 }
 
 /// A builder for [`LogsConfig`](crate::types::LogsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogsConfigBuilder {
     pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsConfig>,
     pub(crate) s3_logs: ::std::option::Option<crate::types::S3LogsConfig>,

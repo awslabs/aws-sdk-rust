@@ -38,8 +38,8 @@ impl DescribeAnomalyDetectionExecutionsInput {
 }
 
 /// A builder for [`DescribeAnomalyDetectionExecutionsInput`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAnomalyDetectionExecutionsInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl AcceptAccountLinkInvitationOutput {
 }
 
 /// A builder for [`AcceptAccountLinkInvitationOutput`](crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptAccountLinkInvitationOutputBuilder {
     pub(crate) account_link: ::std::option::Option<crate::types::AccountLink>,
     _request_id: Option<String>,

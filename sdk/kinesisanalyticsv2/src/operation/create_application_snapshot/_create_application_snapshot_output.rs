@@ -18,8 +18,8 @@ impl CreateApplicationSnapshotOutput {
 }
 
 /// A builder for [`CreateApplicationSnapshotOutput`](crate::operation::create_application_snapshot::CreateApplicationSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateApplicationSnapshotOutputBuilder {
     _request_id: Option<String>,
 }

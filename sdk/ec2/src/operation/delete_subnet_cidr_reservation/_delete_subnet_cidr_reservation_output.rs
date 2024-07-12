@@ -26,8 +26,8 @@ impl DeleteSubnetCidrReservationOutput {
 }
 
 /// A builder for [`DeleteSubnetCidrReservationOutput`](crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSubnetCidrReservationOutputBuilder {
     pub(crate) deleted_subnet_cidr_reservation: ::std::option::Option<crate::types::SubnetCidrReservation>,
     _request_id: Option<String>,

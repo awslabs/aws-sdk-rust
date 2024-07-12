@@ -30,8 +30,8 @@ impl DisassociatePhoneNumbersFromVoiceConnectorOutput {
 }
 
 /// A builder for [`DisassociatePhoneNumbersFromVoiceConnectorOutput`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder {
     pub(crate) phone_number_errors: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>>,
     _request_id: Option<String>,

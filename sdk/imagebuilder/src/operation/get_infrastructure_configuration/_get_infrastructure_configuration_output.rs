@@ -33,8 +33,8 @@ impl GetInfrastructureConfigurationOutput {
 }
 
 /// A builder for [`GetInfrastructureConfigurationOutput`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInfrastructureConfigurationOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) infrastructure_configuration: ::std::option::Option<crate::types::InfrastructureConfiguration>,

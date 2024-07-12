@@ -20,8 +20,8 @@ impl StopIcd10CmInferenceJobInput {
 }
 
 /// A builder for [`StopIcd10CmInferenceJobInput`](crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopIcd10CmInferenceJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

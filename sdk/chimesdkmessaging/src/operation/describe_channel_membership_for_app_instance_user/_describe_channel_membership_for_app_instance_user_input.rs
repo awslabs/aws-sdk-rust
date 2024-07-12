@@ -33,8 +33,8 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
 }
 
 /// A builder for [`DescribeChannelMembershipForAppInstanceUserInput`](crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChannelMembershipForAppInstanceUserInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_instance_user_arn: ::std::option::Option<::std::string::String>,

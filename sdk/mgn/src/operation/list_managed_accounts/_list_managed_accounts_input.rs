@@ -27,8 +27,8 @@ impl ListManagedAccountsInput {
 }
 
 /// A builder for [`ListManagedAccountsInput`](crate::operation::list_managed_accounts::ListManagedAccountsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListManagedAccountsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

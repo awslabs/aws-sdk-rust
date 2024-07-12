@@ -33,8 +33,8 @@ impl SourceFieldProperties {
 }
 
 /// A builder for [`SourceFieldProperties`](crate::types::SourceFieldProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceFieldPropertiesBuilder {
     pub(crate) is_retrievable: ::std::option::Option<bool>,
     pub(crate) is_queryable: ::std::option::Option<bool>,

@@ -21,8 +21,8 @@ impl GetCloudWatchAlarmTemplateGroupInput {
 }
 
 /// A builder for [`GetCloudWatchAlarmTemplateGroupInput`](crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCloudWatchAlarmTemplateGroupInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

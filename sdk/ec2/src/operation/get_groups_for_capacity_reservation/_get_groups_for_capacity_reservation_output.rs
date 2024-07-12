@@ -34,8 +34,8 @@ impl GetGroupsForCapacityReservationOutput {
 }
 
 /// A builder for [`GetGroupsForCapacityReservationOutput`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGroupsForCapacityReservationOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_reservation_groups: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationGroup>>,

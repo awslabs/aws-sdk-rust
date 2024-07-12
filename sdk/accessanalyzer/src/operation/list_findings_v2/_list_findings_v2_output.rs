@@ -33,8 +33,8 @@ impl ListFindingsV2Output {
 }
 
 /// A builder for [`ListFindingsV2Output`](crate::operation::list_findings_v2::ListFindingsV2Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFindingsV2OutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::FindingSummaryV2>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

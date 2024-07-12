@@ -45,8 +45,8 @@ impl AutoScalingDescription {
 }
 
 /// A builder for [`AutoScalingDescription`](crate::types::AutoScalingDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingDescriptionBuilder {
     pub(crate) max_worker_count: ::std::option::Option<i32>,
     pub(crate) mcu_count: ::std::option::Option<i32>,

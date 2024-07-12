@@ -21,8 +21,8 @@ impl PutEmailIdentityConfigurationSetAttributesOutput {
 }
 
 /// A builder for [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEmailIdentityConfigurationSetAttributesOutputBuilder {
     _request_id: Option<String>,
 }

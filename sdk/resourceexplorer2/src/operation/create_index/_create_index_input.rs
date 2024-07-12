@@ -34,8 +34,8 @@ impl CreateIndexInput {
 }
 
 /// A builder for [`CreateIndexInput`](crate::operation::create_index::CreateIndexInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateIndexInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

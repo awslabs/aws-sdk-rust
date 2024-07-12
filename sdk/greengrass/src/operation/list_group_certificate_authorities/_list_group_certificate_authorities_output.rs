@@ -28,8 +28,8 @@ impl ListGroupCertificateAuthoritiesOutput {
 }
 
 /// A builder for [`ListGroupCertificateAuthoritiesOutput`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupCertificateAuthoritiesOutputBuilder {
     pub(crate) group_certificate_authorities: ::std::option::Option<::std::vec::Vec<crate::types::GroupCertificateAuthorityProperties>>,
     _request_id: Option<String>,

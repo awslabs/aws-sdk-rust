@@ -26,8 +26,8 @@ impl DescribeLoggingOptionsOutput {
 }
 
 /// A builder for [`DescribeLoggingOptionsOutput`](crate::operation::describe_logging_options::DescribeLoggingOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLoggingOptionsOutputBuilder {
     pub(crate) logging_options: ::std::option::Option<crate::types::LoggingOptions>,
     _request_id: Option<String>,

@@ -80,8 +80,8 @@ impl DescribeAnomalyDetectorOutput {
 }
 
 /// A builder for [`DescribeAnomalyDetectorOutput`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAnomalyDetectorOutputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_detector_name: ::std::option::Option<::std::string::String>,

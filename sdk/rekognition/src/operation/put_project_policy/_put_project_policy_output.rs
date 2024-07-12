@@ -26,8 +26,8 @@ impl PutProjectPolicyOutput {
 }
 
 /// A builder for [`PutProjectPolicyOutput`](crate::operation::put_project_policy::PutProjectPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutProjectPolicyOutputBuilder {
     pub(crate) policy_revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

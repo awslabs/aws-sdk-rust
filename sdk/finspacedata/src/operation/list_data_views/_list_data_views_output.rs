@@ -34,8 +34,8 @@ impl ListDataViewsOutput {
 }
 
 /// A builder for [`ListDataViewsOutput`](crate::operation::list_data_views::ListDataViewsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataViewsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) data_views: ::std::option::Option<::std::vec::Vec<crate::types::DataViewSummary>>,

@@ -26,8 +26,8 @@ impl GetAccessGrantsInstanceForPrefixInput {
 }
 
 /// A builder for [`GetAccessGrantsInstanceForPrefixInput`](crate::operation::get_access_grants_instance_for_prefix::GetAccessGrantsInstanceForPrefixInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessGrantsInstanceForPrefixInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_prefix: ::std::option::Option<::std::string::String>,

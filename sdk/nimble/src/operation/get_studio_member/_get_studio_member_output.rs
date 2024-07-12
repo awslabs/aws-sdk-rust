@@ -26,8 +26,8 @@ impl GetStudioMemberOutput {
 }
 
 /// A builder for [`GetStudioMemberOutput`](crate::operation::get_studio_member::GetStudioMemberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStudioMemberOutputBuilder {
     pub(crate) member: ::std::option::Option<crate::types::StudioMembership>,
     _request_id: Option<String>,

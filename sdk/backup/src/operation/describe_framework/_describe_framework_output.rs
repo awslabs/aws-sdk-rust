@@ -92,8 +92,8 @@ impl DescribeFrameworkOutput {
 }
 
 /// A builder for [`DescribeFrameworkOutput`](crate::operation::describe_framework::DescribeFrameworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFrameworkOutputBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
     pub(crate) framework_arn: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl AcceptPortfolioShareOutput {
 }
 
 /// A builder for [`AcceptPortfolioShareOutput`](crate::operation::accept_portfolio_share::AcceptPortfolioShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptPortfolioShareOutputBuilder {
     _request_id: Option<String>,
 }

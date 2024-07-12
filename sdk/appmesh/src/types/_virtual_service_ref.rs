@@ -68,8 +68,8 @@ impl VirtualServiceRef {
 }
 
 /// A builder for [`VirtualServiceRef`](crate::types::VirtualServiceRef).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualServiceRefBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_service_name: ::std::option::Option<::std::string::String>,

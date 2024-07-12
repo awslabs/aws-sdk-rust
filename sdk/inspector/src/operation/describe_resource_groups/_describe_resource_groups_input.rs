@@ -22,8 +22,8 @@ impl DescribeResourceGroupsInput {
 }
 
 /// A builder for [`DescribeResourceGroupsInput`](crate::operation::describe_resource_groups::DescribeResourceGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeResourceGroupsInputBuilder {
     pub(crate) resource_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

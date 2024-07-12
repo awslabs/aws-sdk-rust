@@ -32,8 +32,8 @@ impl DeleteHubContentReferenceInput {
 }
 
 /// A builder for [`DeleteHubContentReferenceInput`](crate::operation::delete_hub_content_reference::DeleteHubContentReferenceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHubContentReferenceInputBuilder {
     pub(crate) hub_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_type: ::std::option::Option<crate::types::HubContentType>,

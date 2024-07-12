@@ -72,8 +72,8 @@ impl DescribeVodSourceOutput {
 }
 
 /// A builder for [`DescribeVodSourceOutput`](crate::operation::describe_vod_source::DescribeVodSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVodSourceOutputBuilder {
     pub(crate) ad_break_opportunities: ::std::option::Option<::std::vec::Vec<crate::types::AdBreakOpportunity>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

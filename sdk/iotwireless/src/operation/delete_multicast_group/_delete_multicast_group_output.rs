@@ -18,8 +18,8 @@ impl DeleteMulticastGroupOutput {
 }
 
 /// A builder for [`DeleteMulticastGroupOutput`](crate::operation::delete_multicast_group::DeleteMulticastGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMulticastGroupOutputBuilder {
     _request_id: Option<String>,
 }

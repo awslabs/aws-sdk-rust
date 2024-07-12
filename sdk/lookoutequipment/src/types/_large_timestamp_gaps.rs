@@ -33,8 +33,8 @@ impl LargeTimestampGaps {
 }
 
 /// A builder for [`LargeTimestampGaps`](crate::types::LargeTimestampGaps).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LargeTimestampGapsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
     pub(crate) number_of_large_timestamp_gaps: ::std::option::Option<i32>,

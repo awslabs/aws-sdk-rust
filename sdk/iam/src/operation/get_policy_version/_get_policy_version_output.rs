@@ -27,8 +27,8 @@ impl GetPolicyVersionOutput {
 }
 
 /// A builder for [`GetPolicyVersionOutput`](crate::operation::get_policy_version::GetPolicyVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPolicyVersionOutputBuilder {
     pub(crate) policy_version: ::std::option::Option<crate::types::PolicyVersion>,
     _request_id: Option<String>,

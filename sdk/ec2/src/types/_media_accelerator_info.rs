@@ -29,8 +29,8 @@ impl MediaAcceleratorInfo {
 }
 
 /// A builder for [`MediaAcceleratorInfo`](crate::types::MediaAcceleratorInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaAcceleratorInfoBuilder {
     pub(crate) accelerators: ::std::option::Option<::std::vec::Vec<crate::types::MediaDeviceInfo>>,
     pub(crate) total_media_memory_in_mib: ::std::option::Option<i32>,

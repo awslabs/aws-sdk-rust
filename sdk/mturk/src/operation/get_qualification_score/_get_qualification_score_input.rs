@@ -26,8 +26,8 @@ impl GetQualificationScoreInput {
 }
 
 /// A builder for [`GetQualificationScoreInput`](crate::operation::get_qualification_score::GetQualificationScoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQualificationScoreInputBuilder {
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,

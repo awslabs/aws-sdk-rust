@@ -125,8 +125,8 @@ impl ChangeServerLifeCycleStateOutput {
 }
 
 /// A builder for [`ChangeServerLifeCycleStateOutput`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ChangeServerLifeCycleStateOutputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

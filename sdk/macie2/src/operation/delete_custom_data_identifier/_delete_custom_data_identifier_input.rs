@@ -20,8 +20,8 @@ impl DeleteCustomDataIdentifierInput {
 }
 
 /// A builder for [`DeleteCustomDataIdentifierInput`](crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomDataIdentifierInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

@@ -45,8 +45,8 @@ impl DataQualitySummary {
 }
 
 /// A builder for [`DataQualitySummary`](crate::types::DataQualitySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataQualitySummaryBuilder {
     pub(crate) insufficient_sensor_data: ::std::option::Option<crate::types::InsufficientSensorData>,
     pub(crate) missing_sensor_data: ::std::option::Option<crate::types::MissingSensorData>,

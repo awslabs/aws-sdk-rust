@@ -35,8 +35,8 @@ impl SparkSqlJobDriver {
 }
 
 /// A builder for [`SparkSqlJobDriver`](crate::types::SparkSqlJobDriver).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SparkSqlJobDriverBuilder {
     pub(crate) entry_point: ::std::option::Option<::std::string::String>,
     pub(crate) spark_sql_parameters: ::std::option::Option<::std::string::String>,

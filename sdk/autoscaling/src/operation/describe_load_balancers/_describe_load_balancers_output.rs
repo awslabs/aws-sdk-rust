@@ -34,8 +34,8 @@ impl DescribeLoadBalancersOutput {
 }
 
 /// A builder for [`DescribeLoadBalancersOutput`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLoadBalancersOutputBuilder {
     pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

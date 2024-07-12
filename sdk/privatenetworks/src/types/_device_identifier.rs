@@ -84,8 +84,8 @@ impl DeviceIdentifier {
 }
 
 /// A builder for [`DeviceIdentifier`](crate::types::DeviceIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DeviceIdentifierBuilder {
     pub(crate) device_identifier_arn: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_group_arn: ::std::option::Option<::std::string::String>,

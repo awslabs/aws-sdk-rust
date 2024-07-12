@@ -18,8 +18,8 @@ impl ResumeResourceOutput {
 }
 
 /// A builder for [`ResumeResourceOutput`](crate::operation::resume_resource::ResumeResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResumeResourceOutputBuilder {
     _request_id: Option<String>,
 }

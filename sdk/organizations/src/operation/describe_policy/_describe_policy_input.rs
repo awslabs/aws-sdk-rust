@@ -22,8 +22,8 @@ impl DescribePolicyInput {
 }
 
 /// A builder for [`DescribePolicyInput`](crate::operation::describe_policy::DescribePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePolicyInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
 }

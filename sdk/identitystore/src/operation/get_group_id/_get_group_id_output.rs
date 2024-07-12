@@ -34,8 +34,8 @@ impl GetGroupIdOutput {
 }
 
 /// A builder for [`GetGroupIdOutput`](crate::operation::get_group_id::GetGroupIdOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGroupIdOutputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,

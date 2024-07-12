@@ -27,8 +27,8 @@ impl TfiModelPerformance {
 }
 
 /// A builder for [`TfiModelPerformance`](crate::types::TfiModelPerformance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TfiModelPerformanceBuilder {
     pub(crate) auc: ::std::option::Option<f32>,
     pub(crate) uncertainty_range: ::std::option::Option<crate::types::UncertaintyRange>,

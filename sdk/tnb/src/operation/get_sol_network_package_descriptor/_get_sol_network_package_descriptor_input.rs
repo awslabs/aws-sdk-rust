@@ -20,8 +20,8 @@ impl GetSolNetworkPackageDescriptorInput {
 }
 
 /// A builder for [`GetSolNetworkPackageDescriptorInput`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSolNetworkPackageDescriptorInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
 }

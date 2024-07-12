@@ -26,8 +26,8 @@ impl UpdateDeviceOutput {
 }
 
 /// A builder for [`UpdateDeviceOutput`](crate::operation::update_device::UpdateDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeviceOutputBuilder {
     pub(crate) device: ::std::option::Option<crate::types::Device>,
     _request_id: Option<String>,

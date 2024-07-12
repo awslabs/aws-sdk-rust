@@ -20,8 +20,8 @@ impl ListVolumeRecoveryPointsInput {
 }
 
 /// A builder for [`ListVolumeRecoveryPointsInput`](crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVolumeRecoveryPointsInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }

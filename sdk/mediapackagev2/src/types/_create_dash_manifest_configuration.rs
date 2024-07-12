@@ -94,8 +94,8 @@ impl CreateDashManifestConfiguration {
 }
 
 /// A builder for [`CreateDashManifestConfiguration`](crate::types::CreateDashManifestConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDashManifestConfigurationBuilder {
     pub(crate) manifest_name: ::std::option::Option<::std::string::String>,
     pub(crate) manifest_window_seconds: ::std::option::Option<i32>,

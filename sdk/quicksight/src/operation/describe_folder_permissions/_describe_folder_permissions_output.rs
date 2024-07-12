@@ -58,8 +58,8 @@ impl DescribeFolderPermissionsOutput {
 }
 
 /// A builder for [`DescribeFolderPermissionsOutput`](crate::operation::describe_folder_permissions::DescribeFolderPermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFolderPermissionsOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,

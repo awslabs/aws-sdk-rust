@@ -106,8 +106,8 @@ impl CreateResourceShareInput {
 }
 
 /// A builder for [`CreateResourceShareInput`](crate::operation::create_resource_share::CreateResourceShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateResourceShareInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -75,8 +75,8 @@ impl TaskRun {
 }
 
 /// A builder for [`TaskRun`](crate::types::TaskRun).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskRunBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl IncreaseReplicaCountOutput {
 }
 
 /// A builder for [`IncreaseReplicaCountOutput`](crate::operation::increase_replica_count::IncreaseReplicaCountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IncreaseReplicaCountOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,

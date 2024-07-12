@@ -50,8 +50,8 @@ impl UpdateSizeConstraintSetInput {
 }
 
 /// A builder for [`UpdateSizeConstraintSetInput`](crate::operation::update_size_constraint_set::UpdateSizeConstraintSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSizeConstraintSetInputBuilder {
     pub(crate) size_constraint_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

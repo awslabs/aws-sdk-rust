@@ -34,8 +34,8 @@ impl ExecuteTransactionInput {
 }
 
 /// A builder for [`ExecuteTransactionInput`](crate::operation::execute_transaction::ExecuteTransactionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteTransactionInputBuilder {
     pub(crate) transact_statements: ::std::option::Option<::std::vec::Vec<crate::types::ParameterizedStatement>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

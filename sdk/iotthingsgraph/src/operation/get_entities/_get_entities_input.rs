@@ -32,8 +32,8 @@ impl GetEntitiesInput {
 }
 
 /// A builder for [`GetEntitiesInput`](crate::operation::get_entities::GetEntitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEntitiesInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) namespace_version: ::std::option::Option<i64>,

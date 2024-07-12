@@ -213,8 +213,8 @@ impl DbRecommendation {
 }
 
 /// A builder for [`DbRecommendation`](crate::types::DbRecommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbRecommendationBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_id: ::std::option::Option<::std::string::String>,

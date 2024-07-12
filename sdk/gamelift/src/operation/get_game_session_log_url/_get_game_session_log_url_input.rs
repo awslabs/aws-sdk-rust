@@ -20,8 +20,8 @@ impl GetGameSessionLogUrlInput {
 }
 
 /// A builder for [`GetGameSessionLogUrlInput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGameSessionLogUrlInputBuilder {
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
 }

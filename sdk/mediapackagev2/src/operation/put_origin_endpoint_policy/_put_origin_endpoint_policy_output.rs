@@ -18,8 +18,8 @@ impl PutOriginEndpointPolicyOutput {
 }
 
 /// A builder for [`PutOriginEndpointPolicyOutput`](crate::operation::put_origin_endpoint_policy::PutOriginEndpointPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutOriginEndpointPolicyOutputBuilder {
     _request_id: Option<String>,
 }

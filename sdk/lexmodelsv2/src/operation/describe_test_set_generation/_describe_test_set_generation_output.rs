@@ -88,8 +88,8 @@ impl DescribeTestSetGenerationOutput {
 }
 
 /// A builder for [`DescribeTestSetGenerationOutput`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTestSetGenerationOutputBuilder {
     pub(crate) test_set_generation_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_set_generation_status: ::std::option::Option<crate::types::TestSetGenerationStatus>,

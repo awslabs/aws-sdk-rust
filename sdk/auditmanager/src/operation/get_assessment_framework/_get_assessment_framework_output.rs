@@ -26,8 +26,8 @@ impl GetAssessmentFrameworkOutput {
 }
 
 /// A builder for [`GetAssessmentFrameworkOutput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssessmentFrameworkOutputBuilder {
     pub(crate) framework: ::std::option::Option<crate::types::Framework>,
     _request_id: Option<String>,

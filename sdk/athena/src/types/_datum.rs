@@ -21,8 +21,8 @@ impl Datum {
 }
 
 /// A builder for [`Datum`](crate::types::Datum).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatumBuilder {
     pub(crate) var_char_value: ::std::option::Option<::std::string::String>,
 }

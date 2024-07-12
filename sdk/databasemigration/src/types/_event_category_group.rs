@@ -31,8 +31,8 @@ impl EventCategoryGroup {
 }
 
 /// A builder for [`EventCategoryGroup`](crate::types::EventCategoryGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventCategoryGroupBuilder {
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
     pub(crate) event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

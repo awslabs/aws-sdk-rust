@@ -26,8 +26,8 @@ impl MoveByoipCidrToIpamOutput {
 }
 
 /// A builder for [`MoveByoipCidrToIpamOutput`](crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MoveByoipCidrToIpamOutputBuilder {
     pub(crate) byoip_cidr: ::std::option::Option<crate::types::ByoipCidr>,
     _request_id: Option<String>,

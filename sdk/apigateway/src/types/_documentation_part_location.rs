@@ -45,8 +45,8 @@ impl DocumentationPartLocation {
 }
 
 /// A builder for [`DocumentationPartLocation`](crate::types::DocumentationPartLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentationPartLocationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DocumentationPartType>,
     pub(crate) path: ::std::option::Option<::std::string::String>,

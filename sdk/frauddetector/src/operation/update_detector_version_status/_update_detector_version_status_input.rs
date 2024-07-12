@@ -34,8 +34,8 @@ impl UpdateDetectorVersionStatusInput {
 }
 
 /// A builder for [`UpdateDetectorVersionStatusInput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDetectorVersionStatusInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_version_id: ::std::option::Option<::std::string::String>,

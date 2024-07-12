@@ -22,8 +22,8 @@ impl DescribeSecretInput {
 }
 
 /// A builder for [`DescribeSecretInput`](crate::operation::describe_secret::DescribeSecretInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSecretInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }

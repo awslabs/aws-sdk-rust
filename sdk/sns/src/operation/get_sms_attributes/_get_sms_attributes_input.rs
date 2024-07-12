@@ -27,8 +27,8 @@ impl GetSmsAttributesInput {
 }
 
 /// A builder for [`GetSmsAttributesInput`](crate::operation::get_sms_attributes::GetSmsAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSmsAttributesInputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

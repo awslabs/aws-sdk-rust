@@ -42,8 +42,8 @@ impl ChangePasswordInput {
 }
 
 /// A builder for [`ChangePasswordInput`](crate::operation::change_password::ChangePasswordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ChangePasswordInputBuilder {
     pub(crate) previous_password: ::std::option::Option<::std::string::String>,
     pub(crate) proposed_password: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl GetCloudFormationStackRecordsOutput {
 }
 
 /// A builder for [`GetCloudFormationStackRecordsOutput`](crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCloudFormationStackRecordsOutputBuilder {
     pub(crate) cloud_formation_stack_records: ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationStackRecord>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

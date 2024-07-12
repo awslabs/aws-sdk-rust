@@ -35,8 +35,8 @@ impl KeyPair {
 }
 
 /// A builder for [`KeyPair`](crate::types::KeyPair).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct KeyPairBuilder {
     pub(crate) public_key: ::std::option::Option<::std::string::String>,
     pub(crate) private_key: ::std::option::Option<::std::string::String>,

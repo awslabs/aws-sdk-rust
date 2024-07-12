@@ -18,8 +18,8 @@ impl PutVerificationStateOnViolationOutput {
 }
 
 /// A builder for [`PutVerificationStateOnViolationOutput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutVerificationStateOnViolationOutputBuilder {
     _request_id: Option<String>,
 }

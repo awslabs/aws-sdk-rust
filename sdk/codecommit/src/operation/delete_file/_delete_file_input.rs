@@ -62,8 +62,8 @@ impl DeleteFileInput {
 }
 
 /// A builder for [`DeleteFileInput`](crate::operation::delete_file::DeleteFileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFileInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl TransitionState {
 }
 
 /// A builder for [`TransitionState`](crate::types::TransitionState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitionStateBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) last_changed_by: ::std::option::Option<::std::string::String>,

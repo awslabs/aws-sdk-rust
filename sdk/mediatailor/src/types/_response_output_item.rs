@@ -48,8 +48,8 @@ impl ResponseOutputItem {
 }
 
 /// A builder for [`ResponseOutputItem`](crate::types::ResponseOutputItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseOutputItemBuilder {
     pub(crate) dash_playlist_settings: ::std::option::Option<crate::types::DashPlaylistSettings>,
     pub(crate) hls_playlist_settings: ::std::option::Option<crate::types::HlsPlaylistSettings>,

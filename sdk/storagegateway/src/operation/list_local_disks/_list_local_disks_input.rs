@@ -21,8 +21,8 @@ impl ListLocalDisksInput {
 }
 
 /// A builder for [`ListLocalDisksInput`](crate::operation::list_local_disks::ListLocalDisksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLocalDisksInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }

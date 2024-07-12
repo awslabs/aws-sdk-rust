@@ -59,8 +59,8 @@ impl Cors {
 }
 
 /// A builder for [`Cors`](crate::types::Cors).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CorsBuilder {
     pub(crate) allow_credentials: ::std::option::Option<bool>,
     pub(crate) allow_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

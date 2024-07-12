@@ -34,8 +34,8 @@ impl AssumeQueueRoleForUserOutput {
 }
 
 /// A builder for [`AssumeQueueRoleForUserOutput`](crate::operation::assume_queue_role_for_user::AssumeQueueRoleForUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssumeQueueRoleForUserOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::AwsCredentials>,
     _request_id: Option<String>,

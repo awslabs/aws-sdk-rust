@@ -60,8 +60,8 @@ impl CreateFargateProfileInput {
 }
 
 /// A builder for [`CreateFargateProfileInput`](crate::operation::create_fargate_profile::CreateFargateProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFargateProfileInputBuilder {
     pub(crate) fargate_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,

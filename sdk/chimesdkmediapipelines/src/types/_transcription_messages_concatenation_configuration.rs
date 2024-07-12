@@ -21,8 +21,8 @@ impl TranscriptionMessagesConcatenationConfiguration {
 }
 
 /// A builder for [`TranscriptionMessagesConcatenationConfiguration`](crate::types::TranscriptionMessagesConcatenationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranscriptionMessagesConcatenationConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }

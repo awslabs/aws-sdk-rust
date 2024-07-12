@@ -42,8 +42,8 @@ impl UpdateDatastoreInput {
 }
 
 /// A builder for [`UpdateDatastoreInput`](crate::operation::update_datastore::UpdateDatastoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDatastoreInputBuilder {
     pub(crate) datastore_name: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period: ::std::option::Option<crate::types::RetentionPeriod>,

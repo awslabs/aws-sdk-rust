@@ -33,8 +33,8 @@ impl MaintenanceUpdateSettings {
 }
 
 /// A builder for [`MaintenanceUpdateSettings`](crate::types::MaintenanceUpdateSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MaintenanceUpdateSettingsBuilder {
     pub(crate) maintenance_day: ::std::option::Option<crate::types::MaintenanceDay>,
     pub(crate) maintenance_scheduled_date: ::std::option::Option<::std::string::String>,

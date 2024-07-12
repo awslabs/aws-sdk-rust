@@ -34,8 +34,8 @@ impl ListServiceInstanceProvisionedResourcesOutput {
 }
 
 /// A builder for [`ListServiceInstanceProvisionedResourcesOutput`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceInstanceProvisionedResourcesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_resources: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>>,

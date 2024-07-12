@@ -18,8 +18,8 @@ impl StartIngestionOutput {
 }
 
 /// A builder for [`StartIngestionOutput`](crate::operation::start_ingestion::StartIngestionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartIngestionOutputBuilder {
     _request_id: Option<String>,
 }

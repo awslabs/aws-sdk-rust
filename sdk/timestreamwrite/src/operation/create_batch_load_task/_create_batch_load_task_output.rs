@@ -27,8 +27,8 @@ impl CreateBatchLoadTaskOutput {
 }
 
 /// A builder for [`CreateBatchLoadTaskOutput`](crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBatchLoadTaskOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

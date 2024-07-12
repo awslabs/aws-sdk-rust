@@ -29,8 +29,8 @@ impl LifecyclePolicyResourceSelection {
 }
 
 /// A builder for [`LifecyclePolicyResourceSelection`](crate::types::LifecyclePolicyResourceSelection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecyclePolicyResourceSelectionBuilder {
     pub(crate) recipes: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyResourceSelectionRecipe>>,
     pub(crate) tag_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

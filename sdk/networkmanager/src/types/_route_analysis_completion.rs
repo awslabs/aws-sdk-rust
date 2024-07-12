@@ -73,8 +73,8 @@ impl RouteAnalysisCompletion {
 }
 
 /// A builder for [`RouteAnalysisCompletion`](crate::types::RouteAnalysisCompletion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RouteAnalysisCompletionBuilder {
     pub(crate) result_code: ::std::option::Option<crate::types::RouteAnalysisCompletionResultCode>,
     pub(crate) reason_code: ::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode>,

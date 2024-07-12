@@ -39,8 +39,8 @@ impl UtteranceDataSortBy {
 }
 
 /// A builder for [`UtteranceDataSortBy`](crate::types::UtteranceDataSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UtteranceDataSortByBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsUtteranceSortByName>,
     pub(crate) order: ::std::option::Option<crate::types::AnalyticsSortOrder>,

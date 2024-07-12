@@ -31,8 +31,8 @@ impl ListJobsFilterCriteria {
 }
 
 /// A builder for [`ListJobsFilterCriteria`](crate::types::ListJobsFilterCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJobsFilterCriteriaBuilder {
     pub(crate) excludes: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,
     pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,

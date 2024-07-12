@@ -99,8 +99,8 @@ impl InstanceDetails {
 }
 
 /// A builder for [`InstanceDetails`](crate::types::InstanceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceDetailsBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfile>,

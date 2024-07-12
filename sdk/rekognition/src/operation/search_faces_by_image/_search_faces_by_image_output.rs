@@ -46,8 +46,8 @@ impl SearchFacesByImageOutput {
 }
 
 /// A builder for [`SearchFacesByImageOutput`](crate::operation::search_faces_by_image::SearchFacesByImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchFacesByImageOutputBuilder {
     pub(crate) searched_face_bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) searched_face_confidence: ::std::option::Option<f32>,

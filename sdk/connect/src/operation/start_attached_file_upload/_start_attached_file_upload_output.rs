@@ -57,8 +57,8 @@ impl StartAttachedFileUploadOutput {
 }
 
 /// A builder for [`StartAttachedFileUploadOutput`](crate::operation::start_attached_file_upload::StartAttachedFileUploadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAttachedFileUploadOutputBuilder {
     pub(crate) file_arn: ::std::option::Option<::std::string::String>,
     pub(crate) file_id: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DescribeReservationInput {
 }
 
 /// A builder for [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservationInputBuilder {
     pub(crate) reservation_arn: ::std::option::Option<::std::string::String>,
 }

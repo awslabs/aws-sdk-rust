@@ -18,8 +18,8 @@ impl DisassociateDrtRoleOutput {
 }
 
 /// A builder for [`DisassociateDrtRoleOutput`](crate::operation::disassociate_drt_role::DisassociateDrtRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateDrtRoleOutputBuilder {
     _request_id: Option<String>,
 }

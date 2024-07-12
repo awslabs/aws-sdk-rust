@@ -56,8 +56,8 @@ impl ExecutionStartedEventDetails {
 }
 
 /// A builder for [`ExecutionStartedEventDetails`](crate::types::ExecutionStartedEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ExecutionStartedEventDetailsBuilder {
     pub(crate) input: ::std::option::Option<::std::string::String>,
     pub(crate) input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,

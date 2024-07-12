@@ -32,8 +32,8 @@ impl UpdateConnectorInput {
 }
 
 /// A builder for [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConnectorInputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

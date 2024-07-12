@@ -26,8 +26,8 @@ impl DeleteTrafficMirrorFilterRuleInput {
 }
 
 /// A builder for [`DeleteTrafficMirrorFilterRuleInput`](crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrafficMirrorFilterRuleInputBuilder {
     pub(crate) traffic_mirror_filter_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

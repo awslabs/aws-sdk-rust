@@ -21,8 +21,8 @@ impl UnprocessedDataSourcesResult {
 }
 
 /// A builder for [`UnprocessedDataSourcesResult`](crate::types::UnprocessedDataSourcesResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnprocessedDataSourcesResultBuilder {
     pub(crate) malware_protection: ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
 }

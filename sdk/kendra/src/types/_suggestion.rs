@@ -37,8 +37,8 @@ impl Suggestion {
 }
 
 /// A builder for [`Suggestion`](crate::types::Suggestion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuggestionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::SuggestionValue>,

@@ -26,8 +26,8 @@ impl DeleteEksAnywhereSubscriptionOutput {
 }
 
 /// A builder for [`DeleteEksAnywhereSubscriptionOutput`](crate::operation::delete_eks_anywhere_subscription::DeleteEksAnywhereSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEksAnywhereSubscriptionOutputBuilder {
     pub(crate) subscription: ::std::option::Option<crate::types::EksAnywhereSubscription>,
     _request_id: Option<String>,

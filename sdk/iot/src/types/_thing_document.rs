@@ -69,8 +69,8 @@ impl ThingDocument {
 }
 
 /// A builder for [`ThingDocument`](crate::types::ThingDocument).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThingDocumentBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_id: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl SsekmsEncryption {
 }
 
 /// A builder for [`SsekmsEncryption`](crate::types::SsekmsEncryption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SsekmsEncryptionBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }

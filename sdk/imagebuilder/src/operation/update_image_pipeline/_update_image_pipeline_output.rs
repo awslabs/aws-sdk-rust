@@ -38,8 +38,8 @@ impl UpdateImagePipelineOutput {
 }
 
 /// A builder for [`UpdateImagePipelineOutput`](crate::operation::update_image_pipeline::UpdateImagePipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateImagePipelineOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

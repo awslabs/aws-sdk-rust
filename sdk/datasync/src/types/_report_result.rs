@@ -33,8 +33,8 @@ impl ReportResult {
 }
 
 /// A builder for [`ReportResult`](crate::types::ReportResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportResultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PhaseStatus>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

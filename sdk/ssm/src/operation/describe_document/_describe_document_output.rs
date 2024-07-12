@@ -26,8 +26,8 @@ impl DescribeDocumentOutput {
 }
 
 /// A builder for [`DescribeDocumentOutput`](crate::operation::describe_document::DescribeDocumentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDocumentOutputBuilder {
     pub(crate) document: ::std::option::Option<crate::types::DocumentDescription>,
     _request_id: Option<String>,

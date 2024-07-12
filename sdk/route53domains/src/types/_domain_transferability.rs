@@ -103,8 +103,8 @@ impl DomainTransferability {
 }
 
 /// A builder for [`DomainTransferability`](crate::types::DomainTransferability).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainTransferabilityBuilder {
     pub(crate) transferable: ::std::option::Option<crate::types::Transferable>,
 }

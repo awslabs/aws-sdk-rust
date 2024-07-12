@@ -61,8 +61,8 @@ impl PutSolFunctionPackageContentOutput {
 }
 
 /// A builder for [`PutSolFunctionPackageContentOutput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSolFunctionPackageContentOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) vnfd_id: ::std::option::Option<::std::string::String>,

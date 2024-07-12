@@ -33,8 +33,8 @@ impl AwsEc2ClientVpnEndpointConnectionLogOptionsDetails {
 }
 
 /// A builder for [`AwsEc2ClientVpnEndpointConnectionLogOptionsDetails`](crate::types::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2ClientVpnEndpointConnectionLogOptionsDetailsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) cloudwatch_log_group: ::std::option::Option<::std::string::String>,

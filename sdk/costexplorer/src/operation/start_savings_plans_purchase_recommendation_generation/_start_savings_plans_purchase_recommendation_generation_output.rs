@@ -38,8 +38,8 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
 }
 
 /// A builder for [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) generation_started_time: ::std::option::Option<::std::string::String>,

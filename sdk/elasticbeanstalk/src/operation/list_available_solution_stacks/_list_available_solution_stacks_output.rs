@@ -37,8 +37,8 @@ impl ListAvailableSolutionStacksOutput {
 }
 
 /// A builder for [`ListAvailableSolutionStacksOutput`](crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableSolutionStacksOutputBuilder {
     pub(crate) solution_stacks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) solution_stack_details: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>>,

@@ -40,8 +40,8 @@ impl StillWaitingResponseSpecification {
 }
 
 /// A builder for [`StillWaitingResponseSpecification`](crate::types::StillWaitingResponseSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StillWaitingResponseSpecificationBuilder {
     pub(crate) message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
     pub(crate) frequency_in_seconds: ::std::option::Option<i32>,

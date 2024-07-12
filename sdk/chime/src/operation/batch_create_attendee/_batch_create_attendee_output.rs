@@ -36,8 +36,8 @@ impl BatchCreateAttendeeOutput {
 }
 
 /// A builder for [`BatchCreateAttendeeOutput`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateAttendeeOutputBuilder {
     pub(crate) attendees: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeError>>,

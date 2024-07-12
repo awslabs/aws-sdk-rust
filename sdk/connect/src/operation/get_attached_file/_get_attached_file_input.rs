@@ -43,8 +43,8 @@ impl GetAttachedFileInput {
 }
 
 /// A builder for [`GetAttachedFileInput`](crate::operation::get_attached_file::GetAttachedFileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAttachedFileInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_id: ::std::option::Option<::std::string::String>,

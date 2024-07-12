@@ -26,8 +26,8 @@ impl CreateDeliveryStreamOutput {
 }
 
 /// A builder for [`CreateDeliveryStreamOutput`](crate::operation::create_delivery_stream::CreateDeliveryStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDeliveryStreamOutputBuilder {
     pub(crate) delivery_stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

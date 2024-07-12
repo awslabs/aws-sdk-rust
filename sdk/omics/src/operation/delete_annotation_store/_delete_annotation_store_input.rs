@@ -26,8 +26,8 @@ impl DeleteAnnotationStoreInput {
 }
 
 /// A builder for [`DeleteAnnotationStoreInput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAnnotationStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,

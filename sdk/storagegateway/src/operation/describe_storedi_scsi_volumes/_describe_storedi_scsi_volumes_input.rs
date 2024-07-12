@@ -23,8 +23,8 @@ impl DescribeStorediScsiVolumesInput {
 }
 
 /// A builder for [`DescribeStorediScsiVolumesInput`](crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStorediScsiVolumesInputBuilder {
     pub(crate) volume_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

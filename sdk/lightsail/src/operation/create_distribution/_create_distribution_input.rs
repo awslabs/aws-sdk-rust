@@ -92,8 +92,8 @@ impl CreateDistributionInput {
 }
 
 /// A builder for [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDistributionInputBuilder {
     pub(crate) distribution_name: ::std::option::Option<::std::string::String>,
     pub(crate) origin: ::std::option::Option<crate::types::InputOrigin>,

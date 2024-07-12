@@ -34,8 +34,8 @@ impl UpdateProfileResourceAssociationInput {
 }
 
 /// A builder for [`UpdateProfileResourceAssociationInput`](crate::operation::update_profile_resource_association::UpdateProfileResourceAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProfileResourceAssociationInputBuilder {
     pub(crate) profile_resource_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

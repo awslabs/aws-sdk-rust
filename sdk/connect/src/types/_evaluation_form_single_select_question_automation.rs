@@ -28,8 +28,8 @@ impl EvaluationFormSingleSelectQuestionAutomation {
 }
 
 /// A builder for [`EvaluationFormSingleSelectQuestionAutomation`](crate::types::EvaluationFormSingleSelectQuestionAutomation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationFormSingleSelectQuestionAutomationBuilder {
     pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>>,
     pub(crate) default_option_ref_id: ::std::option::Option<::std::string::String>,

@@ -102,8 +102,8 @@ impl CreateAssetModelInput {
 }
 
 /// A builder for [`CreateAssetModelInput`](crate::operation::create_asset_model::CreateAssetModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAssetModelInputBuilder {
     pub(crate) asset_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_description: ::std::option::Option<::std::string::String>,

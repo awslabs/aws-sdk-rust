@@ -18,8 +18,8 @@ impl ResyncMfaDeviceOutput {
 }
 
 /// A builder for [`ResyncMfaDeviceOutput`](crate::operation::resync_mfa_device::ResyncMfaDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResyncMfaDeviceOutputBuilder {
     _request_id: Option<String>,
 }

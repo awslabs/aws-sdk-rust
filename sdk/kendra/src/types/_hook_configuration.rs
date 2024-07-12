@@ -38,8 +38,8 @@ impl HookConfiguration {
 }
 
 /// A builder for [`HookConfiguration`](crate::types::HookConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HookConfigurationBuilder {
     pub(crate) invocation_condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,

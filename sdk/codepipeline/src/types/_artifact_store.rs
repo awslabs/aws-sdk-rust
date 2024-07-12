@@ -36,8 +36,8 @@ impl ArtifactStore {
 }
 
 /// A builder for [`ArtifactStore`](crate::types::ArtifactStore).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArtifactStoreBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ArtifactStoreType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

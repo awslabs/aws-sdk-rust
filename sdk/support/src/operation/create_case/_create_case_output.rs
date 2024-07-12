@@ -27,8 +27,8 @@ impl CreateCaseOutput {
 }
 
 /// A builder for [`CreateCaseOutput`](crate::operation::create_case::CreateCaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCaseOutputBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -11,8 +11,8 @@ impl GetAccountPasswordPolicyInput {
 }
 
 /// A builder for [`GetAccountPasswordPolicyInput`](crate::operation::get_account_password_policy::GetAccountPasswordPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountPasswordPolicyInputBuilder {}
 impl GetAccountPasswordPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountPasswordPolicyInput`](crate::operation::get_account_password_policy::GetAccountPasswordPolicyInput).

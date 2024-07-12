@@ -21,8 +21,8 @@ impl ExplainerConfig {
 }
 
 /// A builder for [`ExplainerConfig`](crate::types::ExplainerConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExplainerConfigBuilder {
     pub(crate) clarify_explainer_config: ::std::option::Option<crate::types::ClarifyExplainerConfig>,
 }

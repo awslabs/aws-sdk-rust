@@ -18,8 +18,8 @@ impl ResumeBatchLoadTaskOutput {
 }
 
 /// A builder for [`ResumeBatchLoadTaskOutput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResumeBatchLoadTaskOutputBuilder {
     _request_id: Option<String>,
 }

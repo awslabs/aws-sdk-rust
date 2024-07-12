@@ -26,8 +26,8 @@ impl ListTaxRegistrationsInput {
 }
 
 /// A builder for [`ListTaxRegistrationsInput`](crate::operation::list_tax_registrations::ListTaxRegistrationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTaxRegistrationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl ImageClassificationJobConfig {
 }
 
 /// A builder for [`ImageClassificationJobConfig`](crate::types::ImageClassificationJobConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImageClassificationJobConfigBuilder {
     pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
 }

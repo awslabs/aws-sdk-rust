@@ -51,8 +51,8 @@ impl StartVoiceToneAnalysisTaskInput {
 }
 
 /// A builder for [`StartVoiceToneAnalysisTaskInput`](crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartVoiceToneAnalysisTaskInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::VoiceAnalyticsLanguageCode>,

@@ -46,8 +46,8 @@ impl SnapshotDetails {
 }
 
 /// A builder for [`SnapshotDetails`](crate::types::SnapshotDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotDetailsBuilder {
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_status: ::std::option::Option<crate::types::SnapshotStatus>,

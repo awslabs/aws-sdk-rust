@@ -38,8 +38,8 @@ impl GetSavingsPlansPurchaseRecommendationOutput {
 }
 
 /// A builder for [`GetSavingsPlansPurchaseRecommendationOutput`](crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSavingsPlansPurchaseRecommendationOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationMetadata>,
     pub(crate) savings_plans_purchase_recommendation: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendation>,

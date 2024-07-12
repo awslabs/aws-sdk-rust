@@ -52,8 +52,8 @@ impl ListFunctionEventInvokeConfigsInput {
 }
 
 /// A builder for [`ListFunctionEventInvokeConfigsInput`](crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFunctionEventInvokeConfigsInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

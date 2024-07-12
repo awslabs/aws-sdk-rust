@@ -20,8 +20,8 @@ impl GetDefaultRetentionPolicyInput {
 }
 
 /// A builder for [`GetDefaultRetentionPolicyInput`](crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDefaultRetentionPolicyInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
 }

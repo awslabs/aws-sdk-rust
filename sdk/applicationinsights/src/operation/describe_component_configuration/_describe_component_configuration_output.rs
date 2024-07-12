@@ -38,8 +38,8 @@ impl DescribeComponentConfigurationOutput {
 }
 
 /// A builder for [`DescribeComponentConfigurationOutput`](crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeComponentConfigurationOutputBuilder {
     pub(crate) monitor: ::std::option::Option<bool>,
     pub(crate) tier: ::std::option::Option<crate::types::Tier>,

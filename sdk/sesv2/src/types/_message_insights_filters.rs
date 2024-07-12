@@ -68,8 +68,8 @@ impl MessageInsightsFilters {
 }
 
 /// A builder for [`MessageInsightsFilters`](crate::types::MessageInsightsFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageInsightsFiltersBuilder {
     pub(crate) from_email_address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) destination: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

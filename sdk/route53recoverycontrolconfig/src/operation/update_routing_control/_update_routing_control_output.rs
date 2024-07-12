@@ -26,8 +26,8 @@ impl UpdateRoutingControlOutput {
 }
 
 /// A builder for [`UpdateRoutingControlOutput`](crate::operation::update_routing_control::UpdateRoutingControlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoutingControlOutputBuilder {
     pub(crate) routing_control: ::std::option::Option<crate::types::RoutingControl>,
     _request_id: Option<String>,

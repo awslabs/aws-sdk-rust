@@ -34,8 +34,8 @@ impl AssociateSoftwareTokenInput {
 }
 
 /// A builder for [`AssociateSoftwareTokenInput`](crate::operation::associate_software_token::AssociateSoftwareTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssociateSoftwareTokenInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) session: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl UpdateSqlInjectionMatchSetOutput {
 }
 
 /// A builder for [`UpdateSqlInjectionMatchSetOutput`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSqlInjectionMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

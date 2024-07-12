@@ -35,8 +35,8 @@ impl AwsEfsAccessPointPosixUserDetails {
 }
 
 /// A builder for [`AwsEfsAccessPointPosixUserDetails`](crate::types::AwsEfsAccessPointPosixUserDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEfsAccessPointPosixUserDetailsBuilder {
     pub(crate) gid: ::std::option::Option<::std::string::String>,
     pub(crate) secondary_gids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

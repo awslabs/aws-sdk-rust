@@ -28,8 +28,8 @@ impl BatchUpdateLinkAttributes {
 }
 
 /// A builder for [`BatchUpdateLinkAttributes`](crate::types::BatchUpdateLinkAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateLinkAttributesBuilder {
     pub(crate) typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     pub(crate) attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::LinkAttributeUpdate>>,

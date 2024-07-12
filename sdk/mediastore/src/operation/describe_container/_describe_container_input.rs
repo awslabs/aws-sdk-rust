@@ -20,8 +20,8 @@ impl DescribeContainerInput {
 }
 
 /// A builder for [`DescribeContainerInput`](crate::operation::describe_container::DescribeContainerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContainerInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }

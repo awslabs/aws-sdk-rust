@@ -26,8 +26,8 @@ impl DeleteCollectionInput {
 }
 
 /// A builder for [`DeleteCollectionInput`](crate::operation::delete_collection::DeleteCollectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCollectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl DescribeEntitiesDetectionJobOutput {
 }
 
 /// A builder for [`DescribeEntitiesDetectionJobOutput`](crate::operation::describe_entities_detection_job::DescribeEntitiesDetectionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEntitiesDetectionJobOutputBuilder {
     pub(crate) entities_detection_job_properties: ::std::option::Option<crate::types::EntitiesDetectionJobProperties>,
     _request_id: Option<String>,

@@ -46,8 +46,8 @@ impl ListWorkflowsInput {
 }
 
 /// A builder for [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkflowsInputBuilder {
     pub(crate) owner: ::std::option::Option<crate::types::Ownership>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

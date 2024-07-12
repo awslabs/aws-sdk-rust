@@ -29,8 +29,8 @@ impl DeploymentRecommendation {
 }
 
 /// A builder for [`DeploymentRecommendation`](crate::types::DeploymentRecommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentRecommendationBuilder {
     pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     pub(crate) real_time_inference_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeInferenceRecommendation>>,

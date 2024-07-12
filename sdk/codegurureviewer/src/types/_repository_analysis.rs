@@ -27,8 +27,8 @@ impl RepositoryAnalysis {
 }
 
 /// A builder for [`RepositoryAnalysis`](crate::types::RepositoryAnalysis).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryAnalysisBuilder {
     pub(crate) repository_head: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
     pub(crate) source_code_type: ::std::option::Option<crate::types::SourceCodeType>,

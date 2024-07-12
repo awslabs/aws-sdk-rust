@@ -30,8 +30,8 @@ impl DisassociateConfigurationItemsFromApplicationInput {
 }
 
 /// A builder for [`DisassociateConfigurationItemsFromApplicationInput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateConfigurationItemsFromApplicationInputBuilder {
     pub(crate) application_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

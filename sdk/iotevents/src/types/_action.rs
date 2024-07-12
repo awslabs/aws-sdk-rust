@@ -93,8 +93,8 @@ impl Action {
 }
 
 /// A builder for [`Action`](crate::types::Action).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionBuilder {
     pub(crate) set_variable: ::std::option::Option<crate::types::SetVariableAction>,
     pub(crate) sns: ::std::option::Option<crate::types::SnsTopicPublishAction>,

@@ -42,8 +42,8 @@ impl ListInstalledComponentsOutput {
 }
 
 /// A builder for [`ListInstalledComponentsOutput`](crate::operation::list_installed_components::ListInstalledComponentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInstalledComponentsOutputBuilder {
     pub(crate) installed_components: ::std::option::Option<::std::vec::Vec<crate::types::InstalledComponent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

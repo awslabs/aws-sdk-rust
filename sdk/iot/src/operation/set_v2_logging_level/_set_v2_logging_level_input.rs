@@ -26,8 +26,8 @@ impl SetV2LoggingLevelInput {
 }
 
 /// A builder for [`SetV2LoggingLevelInput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetV2LoggingLevelInputBuilder {
     pub(crate) log_target: ::std::option::Option<crate::types::LogTarget>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,

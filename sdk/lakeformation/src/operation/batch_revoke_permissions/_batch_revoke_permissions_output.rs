@@ -28,8 +28,8 @@ impl BatchRevokePermissionsOutput {
 }
 
 /// A builder for [`BatchRevokePermissionsOutput`](crate::operation::batch_revoke_permissions::BatchRevokePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchRevokePermissionsOutputBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
     _request_id: Option<String>,

@@ -88,8 +88,8 @@ impl GetSegmentDetectionOutput {
 }
 
 /// A builder for [`GetSegmentDetectionOutput`](crate::operation::get_segment_detection::GetSegmentDetectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSegmentDetectionOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

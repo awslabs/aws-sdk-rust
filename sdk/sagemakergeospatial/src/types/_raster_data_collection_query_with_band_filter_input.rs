@@ -51,8 +51,8 @@ impl RasterDataCollectionQueryWithBandFilterInput {
 }
 
 /// A builder for [`RasterDataCollectionQueryWithBandFilterInput`](crate::types::RasterDataCollectionQueryWithBandFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RasterDataCollectionQueryWithBandFilterInputBuilder {
     pub(crate) time_range_filter: ::std::option::Option<crate::types::TimeRangeFilterInput>,
     pub(crate) area_of_interest: ::std::option::Option<crate::types::AreaOfInterest>,

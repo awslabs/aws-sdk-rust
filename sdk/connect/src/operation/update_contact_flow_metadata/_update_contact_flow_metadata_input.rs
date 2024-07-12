@@ -44,8 +44,8 @@ impl UpdateContactFlowMetadataInput {
 }
 
 /// A builder for [`UpdateContactFlowMetadataInput`](crate::operation::update_contact_flow_metadata::UpdateContactFlowMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContactFlowMetadataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,

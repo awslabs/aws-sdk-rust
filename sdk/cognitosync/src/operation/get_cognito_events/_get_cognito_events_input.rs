@@ -21,8 +21,8 @@ impl GetCognitoEventsInput {
 }
 
 /// A builder for [`GetCognitoEventsInput`](crate::operation::get_cognito_events::GetCognitoEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCognitoEventsInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
 }

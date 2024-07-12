@@ -110,8 +110,8 @@ impl CrlConfiguration {
 }
 
 /// A builder for [`CrlConfiguration`](crate::types::CrlConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrlConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) expiration_in_days: ::std::option::Option<i32>,

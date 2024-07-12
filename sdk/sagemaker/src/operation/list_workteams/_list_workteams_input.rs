@@ -44,8 +44,8 @@ impl ListWorkteamsInput {
 }
 
 /// A builder for [`ListWorkteamsInput`](crate::operation::list_workteams::ListWorkteamsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkteamsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ListWorkteamsSortByOptions>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

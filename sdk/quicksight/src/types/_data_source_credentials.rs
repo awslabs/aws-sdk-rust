@@ -42,8 +42,8 @@ impl DataSourceCredentials {
 }
 
 /// A builder for [`DataSourceCredentials`](crate::types::DataSourceCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DataSourceCredentialsBuilder {
     pub(crate) credential_pair: ::std::option::Option<crate::types::CredentialPair>,
     pub(crate) copy_source_arn: ::std::option::Option<::std::string::String>,

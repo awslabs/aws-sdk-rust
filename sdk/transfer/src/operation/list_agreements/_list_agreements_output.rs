@@ -33,8 +33,8 @@ impl ListAgreementsOutput {
 }
 
 /// A builder for [`ListAgreementsOutput`](crate::operation::list_agreements::ListAgreementsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAgreementsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) agreements: ::std::option::Option<::std::vec::Vec<crate::types::ListedAgreement>>,

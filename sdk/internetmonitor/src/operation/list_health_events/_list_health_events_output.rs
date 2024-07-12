@@ -33,8 +33,8 @@ impl ListHealthEventsOutput {
 }
 
 /// A builder for [`ListHealthEventsOutput`](crate::operation::list_health_events::ListHealthEventsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHealthEventsOutputBuilder {
     pub(crate) health_events: ::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl TestConfigurationLatestVersion {
 }
 
 /// A builder for [`TestConfigurationLatestVersion`](crate::types::TestConfigurationLatestVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestConfigurationLatestVersionBuilder {
     pub(crate) version: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::TestConfigurationLifecycle>,

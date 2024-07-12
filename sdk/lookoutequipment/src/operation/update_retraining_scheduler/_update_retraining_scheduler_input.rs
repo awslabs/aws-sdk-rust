@@ -60,8 +60,8 @@ impl UpdateRetrainingSchedulerInput {
 }
 
 /// A builder for [`UpdateRetrainingSchedulerInput`](crate::operation::update_retraining_scheduler::UpdateRetrainingSchedulerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRetrainingSchedulerInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) retraining_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,

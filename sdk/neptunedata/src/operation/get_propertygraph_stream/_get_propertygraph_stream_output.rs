@@ -54,8 +54,8 @@ impl GetPropertygraphStreamOutput {
 }
 
 /// A builder for [`GetPropertygraphStreamOutput`](crate::operation::get_propertygraph_stream::GetPropertygraphStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPropertygraphStreamOutputBuilder {
     pub(crate) last_event_id: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) last_trx_timestamp_in_millis: ::std::option::Option<i64>,

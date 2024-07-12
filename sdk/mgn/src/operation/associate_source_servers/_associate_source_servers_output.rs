@@ -18,8 +18,8 @@ impl AssociateSourceServersOutput {
 }
 
 /// A builder for [`AssociateSourceServersOutput`](crate::operation::associate_source_servers::AssociateSourceServersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateSourceServersOutputBuilder {
     _request_id: Option<String>,
 }

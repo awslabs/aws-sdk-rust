@@ -29,8 +29,8 @@ impl ConfigurationEvent {
 }
 
 /// A builder for [`ConfigurationEvent`](crate::types::ConfigurationEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurationEventBuilder {
     pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
     pub(crate) post_call_analytics_settings: ::std::option::Option<crate::types::PostCallAnalyticsSettings>,

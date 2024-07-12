@@ -33,8 +33,8 @@ impl BoxPlotOptions {
 }
 
 /// A builder for [`BoxPlotOptions`](crate::types::BoxPlotOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BoxPlotOptionsBuilder {
     pub(crate) style_options: ::std::option::Option<crate::types::BoxPlotStyleOptions>,
     pub(crate) outlier_visibility: ::std::option::Option<crate::types::Visibility>,

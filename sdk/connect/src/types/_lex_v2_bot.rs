@@ -21,8 +21,8 @@ impl LexV2Bot {
 }
 
 /// A builder for [`LexV2Bot`](crate::types::LexV2Bot).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LexV2BotBuilder {
     pub(crate) alias_arn: ::std::option::Option<::std::string::String>,
 }

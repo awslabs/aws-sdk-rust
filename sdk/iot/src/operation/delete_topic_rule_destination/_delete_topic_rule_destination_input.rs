@@ -20,8 +20,8 @@ impl DeleteTopicRuleDestinationInput {
 }
 
 /// A builder for [`DeleteTopicRuleDestinationInput`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTopicRuleDestinationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

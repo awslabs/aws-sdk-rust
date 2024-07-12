@@ -11,8 +11,8 @@ impl GetSendQuotaInput {
 }
 
 /// A builder for [`GetSendQuotaInput`](crate::operation::get_send_quota::GetSendQuotaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSendQuotaInputBuilder {}
 impl GetSendQuotaInputBuilder {
     /// Consumes the builder and constructs a [`GetSendQuotaInput`](crate::operation::get_send_quota::GetSendQuotaInput).

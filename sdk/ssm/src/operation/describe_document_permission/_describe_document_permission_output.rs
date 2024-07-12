@@ -42,8 +42,8 @@ impl DescribeDocumentPermissionOutput {
 }
 
 /// A builder for [`DescribeDocumentPermissionOutput`](crate::operation::describe_document_permission::DescribeDocumentPermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDocumentPermissionOutputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) account_sharing_info_list: ::std::option::Option<::std::vec::Vec<crate::types::AccountSharingInfo>>,

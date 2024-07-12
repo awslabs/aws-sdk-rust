@@ -20,8 +20,8 @@ impl DeleteBillingGroupInput {
 }
 
 /// A builder for [`DeleteBillingGroupInput`](crate::operation::delete_billing_group::DeleteBillingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBillingGroupInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

@@ -45,8 +45,8 @@ impl InspectionDataResponse {
 }
 
 /// A builder for [`InspectionDataResponse`](crate::types::InspectionDataResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InspectionDataResponseBuilder {
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) status_code: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl PutDomainPermissionsPolicyOutput {
 }
 
 /// A builder for [`PutDomainPermissionsPolicyOutput`](crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDomainPermissionsPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,

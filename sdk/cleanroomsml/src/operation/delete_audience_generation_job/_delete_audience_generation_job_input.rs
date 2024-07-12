@@ -20,8 +20,8 @@ impl DeleteAudienceGenerationJobInput {
 }
 
 /// A builder for [`DeleteAudienceGenerationJobInput`](crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAudienceGenerationJobInputBuilder {
     pub(crate) audience_generation_job_arn: ::std::option::Option<::std::string::String>,
 }

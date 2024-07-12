@@ -18,8 +18,8 @@ impl EnableTopicRuleOutput {
 }
 
 /// A builder for [`EnableTopicRuleOutput`](crate::operation::enable_topic_rule::EnableTopicRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableTopicRuleOutputBuilder {
     _request_id: Option<String>,
 }

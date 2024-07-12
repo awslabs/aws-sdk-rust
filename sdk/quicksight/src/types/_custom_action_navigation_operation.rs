@@ -22,8 +22,8 @@ impl CustomActionNavigationOperation {
 }
 
 /// A builder for [`CustomActionNavigationOperation`](crate::types::CustomActionNavigationOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomActionNavigationOperationBuilder {
     pub(crate) local_navigation_configuration: ::std::option::Option<crate::types::LocalNavigationConfiguration>,
 }

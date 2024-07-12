@@ -28,8 +28,8 @@ impl InvokeResponseStreamUpdate {
 }
 
 /// A builder for [`InvokeResponseStreamUpdate`](crate::types::InvokeResponseStreamUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InvokeResponseStreamUpdateBuilder {
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
 }

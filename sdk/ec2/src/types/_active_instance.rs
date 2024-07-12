@@ -39,8 +39,8 @@ impl ActiveInstance {
 }
 
 /// A builder for [`ActiveInstance`](crate::types::ActiveInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActiveInstanceBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,

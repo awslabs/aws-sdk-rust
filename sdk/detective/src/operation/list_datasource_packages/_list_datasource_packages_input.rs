@@ -32,8 +32,8 @@ impl ListDatasourcePackagesInput {
 }
 
 /// A builder for [`ListDatasourcePackagesInput`](crate::operation::list_datasource_packages::ListDatasourcePackagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDatasourcePackagesInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

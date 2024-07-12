@@ -26,8 +26,8 @@ impl UpdateResourceCollectionInput {
 }
 
 /// A builder for [`UpdateResourceCollectionInput`](crate::operation::update_resource_collection::UpdateResourceCollectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResourceCollectionInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::UpdateResourceCollectionAction>,
     pub(crate) resource_collection: ::std::option::Option<crate::types::UpdateResourceCollectionFilter>,

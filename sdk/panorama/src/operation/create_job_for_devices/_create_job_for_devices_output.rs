@@ -27,8 +27,8 @@ impl CreateJobForDevicesOutput {
 }
 
 /// A builder for [`CreateJobForDevicesOutput`](crate::operation::create_job_for_devices::CreateJobForDevicesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateJobForDevicesOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
     _request_id: Option<String>,

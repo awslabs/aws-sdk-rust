@@ -29,8 +29,8 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
 }
 
 /// A builder for [`DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput`](crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder {
     pub(crate) local_gateway_route_table_virtual_interface_group_association:
         ::std::option::Option<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,

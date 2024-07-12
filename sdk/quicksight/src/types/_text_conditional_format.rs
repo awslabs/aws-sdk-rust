@@ -33,8 +33,8 @@ impl TextConditionalFormat {
 }
 
 /// A builder for [`TextConditionalFormat`](crate::types::TextConditionalFormat).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextConditionalFormatBuilder {
     pub(crate) background_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     pub(crate) text_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,

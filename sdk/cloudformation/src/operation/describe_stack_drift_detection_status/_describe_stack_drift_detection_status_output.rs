@@ -102,8 +102,8 @@ impl DescribeStackDriftDetectionStatusOutput {
 }
 
 /// A builder for [`DescribeStackDriftDetectionStatusOutput`](crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackDriftDetectionStatusOutputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_drift_detection_id: ::std::option::Option<::std::string::String>,

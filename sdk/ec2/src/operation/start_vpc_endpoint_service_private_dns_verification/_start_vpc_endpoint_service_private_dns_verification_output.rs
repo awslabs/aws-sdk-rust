@@ -28,8 +28,8 @@ impl StartVpcEndpointServicePrivateDnsVerificationOutput {
 }
 
 /// A builder for [`StartVpcEndpointServicePrivateDnsVerificationOutput`](crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartVpcEndpointServicePrivateDnsVerificationOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl UpdateUserDefinedFunctionOutput {
 }
 
 /// A builder for [`UpdateUserDefinedFunctionOutput`](crate::operation::update_user_defined_function::UpdateUserDefinedFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserDefinedFunctionOutputBuilder {
     _request_id: Option<String>,
 }

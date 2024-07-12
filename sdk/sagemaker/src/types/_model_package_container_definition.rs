@@ -93,8 +93,8 @@ impl ModelPackageContainerDefinition {
 }
 
 /// A builder for [`ModelPackageContainerDefinition`](crate::types::ModelPackageContainerDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelPackageContainerDefinitionBuilder {
     pub(crate) container_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<::std::string::String>,

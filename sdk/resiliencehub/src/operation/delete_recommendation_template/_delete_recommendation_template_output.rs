@@ -33,8 +33,8 @@ impl DeleteRecommendationTemplateOutput {
 }
 
 /// A builder for [`DeleteRecommendationTemplateOutput`](crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecommendationTemplateOutputBuilder {
     pub(crate) recommendation_template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RecommendationTemplateStatus>,

@@ -27,8 +27,8 @@ impl GetDedicatedIpPoolOutput {
 }
 
 /// A builder for [`GetDedicatedIpPoolOutput`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDedicatedIpPoolOutputBuilder {
     pub(crate) dedicated_ip_pool: ::std::option::Option<crate::types::DedicatedIpPool>,
     _request_id: Option<String>,

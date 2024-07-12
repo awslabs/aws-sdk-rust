@@ -66,8 +66,8 @@ impl CreateConnectPeerInput {
 }
 
 /// A builder for [`CreateConnectPeerInput`](crate::operation::create_connect_peer::CreateConnectPeerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectPeerInputBuilder {
     pub(crate) connect_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_address: ::std::option::Option<::std::string::String>,

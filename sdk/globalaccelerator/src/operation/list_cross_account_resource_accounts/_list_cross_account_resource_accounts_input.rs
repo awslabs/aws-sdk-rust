@@ -11,8 +11,8 @@ impl ListCrossAccountResourceAccountsInput {
 }
 
 /// A builder for [`ListCrossAccountResourceAccountsInput`](crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCrossAccountResourceAccountsInputBuilder {}
 impl ListCrossAccountResourceAccountsInputBuilder {
     /// Consumes the builder and constructs a [`ListCrossAccountResourceAccountsInput`](crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsInput).

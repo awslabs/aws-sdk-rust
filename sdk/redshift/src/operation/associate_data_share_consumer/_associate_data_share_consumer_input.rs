@@ -44,8 +44,8 @@ impl AssociateDataShareConsumerInput {
 }
 
 /// A builder for [`AssociateDataShareConsumerInput`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDataShareConsumerInputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) associate_entire_account: ::std::option::Option<bool>,

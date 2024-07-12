@@ -32,8 +32,8 @@ impl CreateNetworkInsightsAccessScopeOutput {
 }
 
 /// A builder for [`CreateNetworkInsightsAccessScopeOutput`](crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkInsightsAccessScopeOutputBuilder {
     pub(crate) network_insights_access_scope: ::std::option::Option<crate::types::NetworkInsightsAccessScope>,
     pub(crate) network_insights_access_scope_content: ::std::option::Option<crate::types::NetworkInsightsAccessScopeContent>,

@@ -34,8 +34,8 @@ impl GetIntegrationsOutput {
 }
 
 /// A builder for [`GetIntegrationsOutput`](crate::operation::get_integrations::GetIntegrationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIntegrationsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

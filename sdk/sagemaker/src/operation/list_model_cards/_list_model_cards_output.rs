@@ -34,8 +34,8 @@ impl ListModelCardsOutput {
 }
 
 /// A builder for [`ListModelCardsOutput`](crate::operation::list_model_cards::ListModelCardsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelCardsOutputBuilder {
     pub(crate) model_card_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelCardSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl StopExperimentOutput {
 }
 
 /// A builder for [`StopExperimentOutput`](crate::operation::stop_experiment::StopExperimentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopExperimentOutputBuilder {
     pub(crate) ended_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,

@@ -29,8 +29,8 @@ impl DynamodbStreamConfiguration {
 }
 
 /// A builder for [`DynamodbStreamConfiguration`](crate::types::DynamodbStreamConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DynamodbStreamConfigurationBuilder {
     pub(crate) stream_policy: ::std::option::Option<::std::string::String>,
 }

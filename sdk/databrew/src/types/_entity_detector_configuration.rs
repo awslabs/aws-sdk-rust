@@ -112,8 +112,8 @@ impl EntityDetectorConfiguration {
 }
 
 /// A builder for [`EntityDetectorConfiguration`](crate::types::EntityDetectorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityDetectorConfigurationBuilder {
     pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_statistics: ::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>>,

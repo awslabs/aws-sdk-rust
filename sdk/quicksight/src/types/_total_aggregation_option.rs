@@ -28,8 +28,8 @@ impl TotalAggregationOption {
 }
 
 /// A builder for [`TotalAggregationOption`](crate::types::TotalAggregationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TotalAggregationOptionBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) total_aggregation_function: ::std::option::Option<crate::types::TotalAggregationFunction>,

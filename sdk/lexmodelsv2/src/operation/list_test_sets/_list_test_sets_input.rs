@@ -32,8 +32,8 @@ impl ListTestSetsInput {
 }
 
 /// A builder for [`ListTestSetsInput`](crate::operation::list_test_sets::ListTestSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestSetsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::TestSetSortBy>,
     pub(crate) max_results: ::std::option::Option<i32>,

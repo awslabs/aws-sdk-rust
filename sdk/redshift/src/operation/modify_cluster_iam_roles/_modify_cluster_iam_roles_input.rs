@@ -43,8 +43,8 @@ impl ModifyClusterIamRolesInput {
 }
 
 /// A builder for [`ModifyClusterIamRolesInput`](crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyClusterIamRolesInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) add_iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

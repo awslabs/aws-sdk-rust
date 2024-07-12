@@ -31,8 +31,8 @@ impl ExecutionResults {
 }
 
 /// A builder for [`ExecutionResults`](crate::types::ExecutionResults).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutionResultsBuilder {
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStepResult>>,
     pub(crate) on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStepResult>>,

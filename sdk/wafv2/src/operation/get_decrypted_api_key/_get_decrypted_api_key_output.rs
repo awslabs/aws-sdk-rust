@@ -34,8 +34,8 @@ impl GetDecryptedApiKeyOutput {
 }
 
 /// A builder for [`GetDecryptedApiKeyOutput`](crate::operation::get_decrypted_api_key::GetDecryptedApiKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDecryptedApiKeyOutputBuilder {
     pub(crate) token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

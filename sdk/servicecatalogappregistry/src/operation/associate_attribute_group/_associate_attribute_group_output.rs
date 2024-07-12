@@ -32,8 +32,8 @@ impl AssociateAttributeGroupOutput {
 }
 
 /// A builder for [`AssociateAttributeGroupOutput`](crate::operation::associate_attribute_group::AssociateAttributeGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAttributeGroupOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_group_arn: ::std::option::Option<::std::string::String>,

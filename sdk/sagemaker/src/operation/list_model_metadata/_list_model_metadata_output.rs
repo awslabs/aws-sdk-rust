@@ -34,8 +34,8 @@ impl ListModelMetadataOutput {
 }
 
 /// A builder for [`ListModelMetadataOutput`](crate::operation::list_model_metadata::ListModelMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelMetadataOutputBuilder {
     pub(crate) model_metadata_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

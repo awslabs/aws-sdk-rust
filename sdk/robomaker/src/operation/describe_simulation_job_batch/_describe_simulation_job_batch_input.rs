@@ -20,8 +20,8 @@ impl DescribeSimulationJobBatchInput {
 }
 
 /// A builder for [`DescribeSimulationJobBatchInput`](crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSimulationJobBatchInputBuilder {
     pub(crate) batch: ::std::option::Option<::std::string::String>,
 }

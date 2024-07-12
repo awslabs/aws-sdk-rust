@@ -21,8 +21,8 @@ impl MeshStatus {
 }
 
 /// A builder for [`MeshStatus`](crate::types::MeshStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MeshStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::MeshStatusCode>,
 }

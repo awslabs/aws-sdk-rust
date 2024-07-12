@@ -50,8 +50,8 @@ impl ControlPlaneUserAttributeFilter {
 }
 
 /// A builder for [`ControlPlaneUserAttributeFilter`](crate::types::ControlPlaneUserAttributeFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ControlPlaneUserAttributeFilterBuilder {
     pub(crate) or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeAndCondition>>,
     pub(crate) and_condition: ::std::option::Option<crate::types::AttributeAndCondition>,

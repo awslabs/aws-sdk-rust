@@ -20,8 +20,8 @@ impl GetFirewallRuleGroupPolicyInput {
 }
 
 /// A builder for [`GetFirewallRuleGroupPolicyInput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFirewallRuleGroupPolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

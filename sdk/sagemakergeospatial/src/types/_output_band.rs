@@ -28,8 +28,8 @@ impl OutputBand {
 }
 
 /// A builder for [`OutputBand`](crate::types::OutputBand).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputBandBuilder {
     pub(crate) band_name: ::std::option::Option<::std::string::String>,
     pub(crate) output_data_type: ::std::option::Option<crate::types::OutputType>,

@@ -18,8 +18,8 @@ impl DeleteApiOutput {
 }
 
 /// A builder for [`DeleteApiOutput`](crate::operation::delete_api::DeleteApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApiOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,8 +21,8 @@ impl DatastoreStatistics {
 }
 
 /// A builder for [`DatastoreStatistics`](crate::types::DatastoreStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatastoreStatisticsBuilder {
     pub(crate) size: ::std::option::Option<crate::types::EstimatedResourceSize>,
 }

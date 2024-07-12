@@ -117,8 +117,8 @@ impl ReservationAggregates {
 }
 
 /// A builder for [`ReservationAggregates`](crate::types::ReservationAggregates).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservationAggregatesBuilder {
     pub(crate) utilization_percentage: ::std::option::Option<::std::string::String>,
     pub(crate) utilization_percentage_in_units: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl ActionParameter {
 }
 
 /// A builder for [`ActionParameter`](crate::types::ActionParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionParameterBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) required: ::std::option::Option<bool>,

@@ -74,8 +74,8 @@ impl UpdateMetricSetInput {
 }
 
 /// A builder for [`UpdateMetricSetInput`](crate::operation::update_metric_set::UpdateMetricSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMetricSetInputBuilder {
     pub(crate) metric_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metric_set_description: ::std::option::Option<::std::string::String>,

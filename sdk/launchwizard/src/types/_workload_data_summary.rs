@@ -27,8 +27,8 @@ impl WorkloadDataSummary {
 }
 
 /// A builder for [`WorkloadDataSummary`](crate::types::WorkloadDataSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkloadDataSummaryBuilder {
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

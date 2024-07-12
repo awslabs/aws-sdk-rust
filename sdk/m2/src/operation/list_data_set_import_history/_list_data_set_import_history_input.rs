@@ -32,8 +32,8 @@ impl ListDataSetImportHistoryInput {
 }
 
 /// A builder for [`ListDataSetImportHistoryInput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataSetImportHistoryInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

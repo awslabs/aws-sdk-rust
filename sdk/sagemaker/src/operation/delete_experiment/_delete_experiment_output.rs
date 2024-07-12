@@ -26,8 +26,8 @@ impl DeleteExperimentOutput {
 }
 
 /// A builder for [`DeleteExperimentOutput`](crate::operation::delete_experiment::DeleteExperimentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteExperimentOutputBuilder {
     pub(crate) experiment_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

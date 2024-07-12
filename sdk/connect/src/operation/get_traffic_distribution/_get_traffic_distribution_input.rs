@@ -20,8 +20,8 @@ impl GetTrafficDistributionInput {
 }
 
 /// A builder for [`GetTrafficDistributionInput`](crate::operation::get_traffic_distribution::GetTrafficDistributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTrafficDistributionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

@@ -49,8 +49,8 @@ impl SlackUserIdentity {
 }
 
 /// A builder for [`SlackUserIdentity`](crate::types::SlackUserIdentity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlackUserIdentityBuilder {
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) chat_configuration_arn: ::std::option::Option<::std::string::String>,

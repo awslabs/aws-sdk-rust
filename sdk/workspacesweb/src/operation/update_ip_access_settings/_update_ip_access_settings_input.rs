@@ -59,8 +59,8 @@ impl UpdateIpAccessSettingsInput {
 }
 
 /// A builder for [`UpdateIpAccessSettingsInput`](crate::operation::update_ip_access_settings::UpdateIpAccessSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateIpAccessSettingsInputBuilder {
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

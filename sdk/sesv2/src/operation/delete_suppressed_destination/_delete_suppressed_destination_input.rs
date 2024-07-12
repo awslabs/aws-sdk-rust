@@ -21,8 +21,8 @@ impl DeleteSuppressedDestinationInput {
 }
 
 /// A builder for [`DeleteSuppressedDestinationInput`](crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSuppressedDestinationInputBuilder {
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
 }

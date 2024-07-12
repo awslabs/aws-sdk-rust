@@ -30,8 +30,8 @@ impl DatasourcePackageIngestDetail {
 }
 
 /// A builder for [`DatasourcePackageIngestDetail`](crate::types::DatasourcePackageIngestDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasourcePackageIngestDetailBuilder {
     pub(crate) datasource_package_ingest_state: ::std::option::Option<crate::types::DatasourcePackageIngestState>,
     pub(crate) last_ingest_state_change:

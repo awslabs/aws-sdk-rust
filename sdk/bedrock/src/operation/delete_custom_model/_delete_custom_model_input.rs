@@ -20,8 +20,8 @@ impl DeleteCustomModelInput {
 }
 
 /// A builder for [`DeleteCustomModelInput`](crate::operation::delete_custom_model::DeleteCustomModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomModelInputBuilder {
     pub(crate) model_identifier: ::std::option::Option<::std::string::String>,
 }

@@ -57,8 +57,8 @@ impl AudioCodecSettings {
 }
 
 /// A builder for [`AudioCodecSettings`](crate::types::AudioCodecSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioCodecSettingsBuilder {
     pub(crate) aac_settings: ::std::option::Option<crate::types::AacSettings>,
     pub(crate) ac3_settings: ::std::option::Option<crate::types::Ac3Settings>,

@@ -20,8 +20,8 @@ impl DeleteControlPanelInput {
 }
 
 /// A builder for [`DeleteControlPanelInput`](crate::operation::delete_control_panel::DeleteControlPanelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteControlPanelInputBuilder {
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
 }

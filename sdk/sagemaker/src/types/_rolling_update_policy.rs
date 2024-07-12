@@ -39,8 +39,8 @@ impl RollingUpdatePolicy {
 }
 
 /// A builder for [`RollingUpdatePolicy`](crate::types::RollingUpdatePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RollingUpdatePolicyBuilder {
     pub(crate) maximum_batch_size: ::std::option::Option<crate::types::CapacitySize>,
     pub(crate) wait_interval_in_seconds: ::std::option::Option<i32>,

@@ -18,8 +18,8 @@ impl UpdateDetectorVersionStatusOutput {
 }
 
 /// A builder for [`UpdateDetectorVersionStatusOutput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDetectorVersionStatusOutputBuilder {
     _request_id: Option<String>,
 }

@@ -32,8 +32,8 @@ impl ListFhirDatastoresInput {
 }
 
 /// A builder for [`ListFhirDatastoresInput`](crate::operation::list_fhir_datastores::ListFhirDatastoresInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFhirDatastoresInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::DatastoreFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

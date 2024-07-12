@@ -38,8 +38,8 @@ impl UpdateIpRestrictionOutput {
 }
 
 /// A builder for [`UpdateIpRestrictionOutput`](crate::operation::update_ip_restriction::UpdateIpRestrictionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIpRestrictionOutputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

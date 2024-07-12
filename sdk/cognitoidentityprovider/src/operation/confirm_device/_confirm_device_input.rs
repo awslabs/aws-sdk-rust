@@ -49,8 +49,8 @@ impl ConfirmDeviceInput {
 }
 
 /// A builder for [`ConfirmDeviceInput`](crate::operation::confirm_device::ConfirmDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConfirmDeviceInputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) device_key: ::std::option::Option<::std::string::String>,

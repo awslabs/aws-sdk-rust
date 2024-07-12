@@ -64,8 +64,8 @@ impl PutObjectLockConfigurationInput {
 }
 
 /// A builder for [`PutObjectLockConfigurationInput`](crate::operation::put_object_lock_configuration::PutObjectLockConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutObjectLockConfigurationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) object_lock_configuration: ::std::option::Option<crate::types::ObjectLockConfiguration>,

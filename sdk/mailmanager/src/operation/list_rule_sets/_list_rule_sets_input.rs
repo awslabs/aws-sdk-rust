@@ -26,8 +26,8 @@ impl ListRuleSetsInput {
 }
 
 /// A builder for [`ListRuleSetsInput`](crate::operation::list_rule_sets::ListRuleSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRuleSetsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,

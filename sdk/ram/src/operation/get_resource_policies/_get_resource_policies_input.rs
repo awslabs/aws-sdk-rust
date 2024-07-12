@@ -40,8 +40,8 @@ impl GetResourcePoliciesInput {
 }
 
 /// A builder for [`GetResourcePoliciesInput`](crate::operation::get_resource_policies::GetResourcePoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourcePoliciesInputBuilder {
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,

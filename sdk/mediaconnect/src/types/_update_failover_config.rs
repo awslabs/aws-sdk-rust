@@ -39,8 +39,8 @@ impl UpdateFailoverConfig {
 }
 
 /// A builder for [`UpdateFailoverConfig`](crate::types::UpdateFailoverConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFailoverConfigBuilder {
     pub(crate) failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     pub(crate) recovery_window: ::std::option::Option<i32>,

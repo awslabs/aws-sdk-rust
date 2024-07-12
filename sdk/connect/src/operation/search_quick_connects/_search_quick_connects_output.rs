@@ -40,8 +40,8 @@ impl SearchQuickConnectsOutput {
 }
 
 /// A builder for [`SearchQuickConnectsOutput`](crate::operation::search_quick_connects::SearchQuickConnectsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchQuickConnectsOutputBuilder {
     pub(crate) quick_connects: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

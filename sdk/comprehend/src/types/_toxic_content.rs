@@ -27,8 +27,8 @@ impl ToxicContent {
 }
 
 /// A builder for [`ToxicContent`](crate::types::ToxicContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ToxicContentBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ToxicContentType>,
     pub(crate) score: ::std::option::Option<f32>,

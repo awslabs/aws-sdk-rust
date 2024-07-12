@@ -35,8 +35,8 @@ impl SalesforceSourceConfiguration {
 }
 
 /// A builder for [`SalesforceSourceConfiguration`](crate::types::SalesforceSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SalesforceSourceConfigurationBuilder {
     pub(crate) host_url: ::std::option::Option<::std::string::String>,
     pub(crate) auth_type: ::std::option::Option<crate::types::SalesforceAuthType>,

@@ -34,8 +34,8 @@ impl ListSegmentReferencesOutput {
 }
 
 /// A builder for [`ListSegmentReferencesOutput`](crate::operation::list_segment_references::ListSegmentReferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSegmentReferencesOutputBuilder {
     pub(crate) referenced_by: ::std::option::Option<::std::vec::Vec<crate::types::RefResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

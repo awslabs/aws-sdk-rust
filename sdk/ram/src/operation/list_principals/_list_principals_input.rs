@@ -104,8 +104,8 @@ impl ListPrincipalsInput {
 }
 
 /// A builder for [`ListPrincipalsInput`](crate::operation::list_principals::ListPrincipalsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPrincipalsInputBuilder {
     pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

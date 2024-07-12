@@ -18,8 +18,8 @@ impl UpdateDeviceFleetOutput {
 }
 
 /// A builder for [`UpdateDeviceFleetOutput`](crate::operation::update_device_fleet::UpdateDeviceFleetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeviceFleetOutputBuilder {
     _request_id: Option<String>,
 }

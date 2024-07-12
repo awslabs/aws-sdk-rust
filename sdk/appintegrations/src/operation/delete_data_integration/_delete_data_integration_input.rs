@@ -20,8 +20,8 @@ impl DeleteDataIntegrationInput {
 }
 
 /// A builder for [`DeleteDataIntegrationInput`](crate::operation::delete_data_integration::DeleteDataIntegrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataIntegrationInputBuilder {
     pub(crate) data_integration_identifier: ::std::option::Option<::std::string::String>,
 }

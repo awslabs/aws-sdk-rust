@@ -33,8 +33,8 @@ impl AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsOpenSearchServiceDomainLogPublishingOptionsDetailsBuilder {
     pub(crate) index_slow_logs: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
     pub(crate) search_slow_logs: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,

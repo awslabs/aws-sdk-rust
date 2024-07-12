@@ -223,8 +223,8 @@ impl CreateNfsFileShareInput {
 }
 
 /// A builder for [`CreateNfsFileShareInput`](crate::operation::create_nfs_file_share::CreateNfsFileShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNfsFileShareInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) nfs_file_share_defaults: ::std::option::Option<crate::types::NfsFileShareDefaults>,

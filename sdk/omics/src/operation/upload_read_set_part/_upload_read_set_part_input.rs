@@ -44,8 +44,8 @@ impl UploadReadSetPartInput {
 }
 
 /// A builder for [`UploadReadSetPartInput`](crate::operation::upload_read_set_part::UploadReadSetPartInput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploadReadSetPartInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,

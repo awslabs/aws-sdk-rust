@@ -39,8 +39,8 @@ impl ToolResultBlock {
 }
 
 /// A builder for [`ToolResultBlock`](crate::types::ToolResultBlock).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ToolResultBlockBuilder {
     pub(crate) tool_use_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::ToolResultContentBlock>>,

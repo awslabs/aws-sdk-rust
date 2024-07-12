@@ -44,8 +44,8 @@ impl DescribeAutoScalingGroupsInput {
 }
 
 /// A builder for [`DescribeAutoScalingGroupsInput`](crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAutoScalingGroupsInputBuilder {
     pub(crate) auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl JupyterLabAppSettings {
 }
 
 /// A builder for [`JupyterLabAppSettings`](crate::types::JupyterLabAppSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JupyterLabAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     pub(crate) custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,

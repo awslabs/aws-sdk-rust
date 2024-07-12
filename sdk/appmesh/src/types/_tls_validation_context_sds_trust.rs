@@ -22,8 +22,8 @@ impl TlsValidationContextSdsTrust {
 }
 
 /// A builder for [`TlsValidationContextSdsTrust`](crate::types::TlsValidationContextSdsTrust).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TlsValidationContextSdsTrustBuilder {
     pub(crate) secret_name: ::std::option::Option<::std::string::String>,
 }

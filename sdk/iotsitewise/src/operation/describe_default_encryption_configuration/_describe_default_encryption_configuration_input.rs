@@ -11,8 +11,8 @@ impl DescribeDefaultEncryptionConfigurationInput {
 }
 
 /// A builder for [`DescribeDefaultEncryptionConfigurationInput`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDefaultEncryptionConfigurationInputBuilder {}
 impl DescribeDefaultEncryptionConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDefaultEncryptionConfigurationInput`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationInput).

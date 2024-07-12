@@ -34,8 +34,8 @@ impl DeleteDocumentInput {
 }
 
 /// A builder for [`DeleteDocumentInput`](crate::operation::delete_document::DeleteDocumentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DeleteDocumentInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) document_id: ::std::option::Option<::std::string::String>,

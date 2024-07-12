@@ -70,8 +70,8 @@ impl StartDocumentAnalysisInput {
 }
 
 /// A builder for [`StartDocumentAnalysisInput`](crate::operation::start_document_analysis::StartDocumentAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDocumentAnalysisInputBuilder {
     pub(crate) document_location: ::std::option::Option<crate::types::DocumentLocation>,
     pub(crate) feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,

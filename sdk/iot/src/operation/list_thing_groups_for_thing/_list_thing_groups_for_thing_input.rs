@@ -32,8 +32,8 @@ impl ListThingGroupsForThingInput {
 }
 
 /// A builder for [`ListThingGroupsForThingInput`](crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListThingGroupsForThingInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

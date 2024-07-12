@@ -71,8 +71,8 @@ impl DescribeKeyValueStoreOutput {
 }
 
 /// A builder for [`DescribeKeyValueStoreOutput`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeKeyValueStoreOutputBuilder {
     pub(crate) item_count: ::std::option::Option<i32>,
     pub(crate) total_size_in_bytes: ::std::option::Option<i64>,

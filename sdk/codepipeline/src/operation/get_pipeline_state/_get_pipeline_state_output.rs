@@ -57,8 +57,8 @@ impl GetPipelineStateOutput {
 }
 
 /// A builder for [`GetPipelineStateOutput`](crate::operation::get_pipeline_state::GetPipelineStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPipelineStateOutputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_version: ::std::option::Option<i32>,

@@ -35,8 +35,8 @@ impl SetIdentityMailFromDomainInput {
 }
 
 /// A builder for [`SetIdentityMailFromDomainInput`](crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetIdentityMailFromDomainInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) mail_from_domain: ::std::option::Option<::std::string::String>,

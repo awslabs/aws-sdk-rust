@@ -71,8 +71,8 @@ impl OnDemandOptions {
 }
 
 /// A builder for [`OnDemandOptions`](crate::types::OnDemandOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OnDemandOptionsBuilder {
     pub(crate) allocation_strategy: ::std::option::Option<crate::types::FleetOnDemandAllocationStrategy>,
     pub(crate) capacity_reservation_options: ::std::option::Option<crate::types::CapacityReservationOptions>,

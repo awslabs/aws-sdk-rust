@@ -26,8 +26,8 @@ impl PutImagePolicyInput {
 }
 
 /// A builder for [`PutImagePolicyInput`](crate::operation::put_image_policy::PutImagePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutImagePolicyInputBuilder {
     pub(crate) image_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

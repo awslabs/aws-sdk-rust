@@ -33,8 +33,8 @@ impl ClientAuthenticationSettingInfo {
 }
 
 /// A builder for [`ClientAuthenticationSettingInfo`](crate::types::ClientAuthenticationSettingInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientAuthenticationSettingInfoBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
     pub(crate) status: ::std::option::Option<crate::types::ClientAuthenticationStatus>,

@@ -28,8 +28,8 @@ impl DetectStackDriftOutput {
 }
 
 /// A builder for [`DetectStackDriftOutput`](crate::operation::detect_stack_drift::DetectStackDriftOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectStackDriftOutputBuilder {
     pub(crate) stack_drift_detection_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

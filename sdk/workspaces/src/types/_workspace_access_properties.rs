@@ -63,8 +63,8 @@ impl WorkspaceAccessProperties {
 }
 
 /// A builder for [`WorkspaceAccessProperties`](crate::types::WorkspaceAccessProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkspaceAccessPropertiesBuilder {
     pub(crate) device_type_windows: ::std::option::Option<crate::types::AccessPropertyValue>,
     pub(crate) device_type_osx: ::std::option::Option<crate::types::AccessPropertyValue>,

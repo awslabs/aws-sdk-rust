@@ -23,8 +23,8 @@ impl BaseKpiResult {
 }
 
 /// A builder for [`BaseKpiResult`](crate::types::BaseKpiResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BaseKpiResultBuilder {
     pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>,
 }

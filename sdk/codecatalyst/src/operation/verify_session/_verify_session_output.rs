@@ -26,8 +26,8 @@ impl VerifySessionOutput {
 }
 
 /// A builder for [`VerifySessionOutput`](crate::operation::verify_session::VerifySessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifySessionOutputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

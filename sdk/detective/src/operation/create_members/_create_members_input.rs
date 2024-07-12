@@ -52,8 +52,8 @@ impl CreateMembersInput {
 }
 
 /// A builder for [`CreateMembersInput`](crate::operation::create_members::CreateMembersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateMembersInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -56,8 +56,8 @@ impl ListFhirExportJobsInput {
 }
 
 /// A builder for [`ListFhirExportJobsInput`](crate::operation::list_fhir_export_jobs::ListFhirExportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFhirExportJobsInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

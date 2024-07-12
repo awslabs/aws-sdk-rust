@@ -27,8 +27,8 @@ impl GrantItem {
 }
 
 /// A builder for [`GrantItem`](crate::types::GrantItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrantItemBuilder {
     pub(crate) dimension_key: ::std::option::Option<::std::string::String>,
     pub(crate) max_quantity: ::std::option::Option<i32>,

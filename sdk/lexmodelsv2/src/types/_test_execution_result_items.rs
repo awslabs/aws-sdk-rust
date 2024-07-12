@@ -45,8 +45,8 @@ impl TestExecutionResultItems {
 }
 
 /// A builder for [`TestExecutionResultItems`](crate::types::TestExecutionResultItems).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestExecutionResultItemsBuilder {
     pub(crate) overall_test_results: ::std::option::Option<crate::types::OverallTestResults>,
     pub(crate) conversation_level_test_results: ::std::option::Option<crate::types::ConversationLevelTestResults>,

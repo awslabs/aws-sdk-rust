@@ -20,8 +20,8 @@ impl RestartSimulationJobInput {
 }
 
 /// A builder for [`RestartSimulationJobInput`](crate::operation::restart_simulation_job::RestartSimulationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestartSimulationJobInputBuilder {
     pub(crate) job: ::std::option::Option<::std::string::String>,
 }

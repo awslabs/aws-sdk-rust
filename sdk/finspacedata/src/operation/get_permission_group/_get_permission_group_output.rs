@@ -26,8 +26,8 @@ impl GetPermissionGroupOutput {
 }
 
 /// A builder for [`GetPermissionGroupOutput`](crate::operation::get_permission_group::GetPermissionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPermissionGroupOutputBuilder {
     pub(crate) permission_group: ::std::option::Option<crate::types::PermissionGroup>,
     _request_id: Option<String>,

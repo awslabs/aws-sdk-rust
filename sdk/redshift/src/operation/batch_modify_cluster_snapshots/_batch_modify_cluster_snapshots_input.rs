@@ -38,8 +38,8 @@ impl BatchModifyClusterSnapshotsInput {
 }
 
 /// A builder for [`BatchModifyClusterSnapshotsInput`](crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchModifyClusterSnapshotsInputBuilder {
     pub(crate) snapshot_identifier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) manual_snapshot_retention_period: ::std::option::Option<i32>,

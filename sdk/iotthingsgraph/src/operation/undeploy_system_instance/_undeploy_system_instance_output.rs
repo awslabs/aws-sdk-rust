@@ -26,8 +26,8 @@ impl UndeploySystemInstanceOutput {
 }
 
 /// A builder for [`UndeploySystemInstanceOutput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UndeploySystemInstanceOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     _request_id: Option<String>,

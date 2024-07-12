@@ -32,8 +32,8 @@ impl GetFreeTierUsageInput {
 }
 
 /// A builder for [`GetFreeTierUsageInput`](crate::operation::get_free_tier_usage::GetFreeTierUsageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFreeTierUsageInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::Expression>,
     pub(crate) max_results: ::std::option::Option<i32>,

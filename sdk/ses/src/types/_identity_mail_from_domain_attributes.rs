@@ -36,8 +36,8 @@ impl IdentityMailFromDomainAttributes {
 }
 
 /// A builder for [`IdentityMailFromDomainAttributes`](crate::types::IdentityMailFromDomainAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityMailFromDomainAttributesBuilder {
     pub(crate) mail_from_domain: ::std::option::Option<::std::string::String>,
     pub(crate) mail_from_domain_status: ::std::option::Option<crate::types::CustomMailFromStatus>,

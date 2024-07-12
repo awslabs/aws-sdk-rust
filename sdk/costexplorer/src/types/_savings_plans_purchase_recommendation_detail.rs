@@ -117,8 +117,8 @@ impl SavingsPlansPurchaseRecommendationDetail {
 }
 
 /// A builder for [`SavingsPlansPurchaseRecommendationDetail`](crate::types::SavingsPlansPurchaseRecommendationDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlansPurchaseRecommendationDetailBuilder {
     pub(crate) savings_plans_details: ::std::option::Option<crate::types::SavingsPlansDetails>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

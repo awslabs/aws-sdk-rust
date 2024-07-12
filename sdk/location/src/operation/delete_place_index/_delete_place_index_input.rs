@@ -20,8 +20,8 @@ impl DeletePlaceIndexInput {
 }
 
 /// A builder for [`DeletePlaceIndexInput`](crate::operation::delete_place_index::DeletePlaceIndexInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePlaceIndexInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
 }

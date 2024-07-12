@@ -22,8 +22,8 @@ impl EstoniaAdditionalInfo {
 }
 
 /// A builder for [`EstoniaAdditionalInfo`](crate::types::EstoniaAdditionalInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EstoniaAdditionalInfoBuilder {
     pub(crate) registry_commercial_code: ::std::option::Option<::std::string::String>,
 }

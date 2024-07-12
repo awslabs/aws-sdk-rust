@@ -38,8 +38,8 @@ impl OpenIdConnectGroupConfigurationItem {
 }
 
 /// A builder for [`OpenIdConnectGroupConfigurationItem`](crate::types::OpenIdConnectGroupConfigurationItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct OpenIdConnectGroupConfigurationItemBuilder {
     pub(crate) group_claim: ::std::option::Option<::std::string::String>,
     pub(crate) group_entity_type: ::std::option::Option<::std::string::String>,

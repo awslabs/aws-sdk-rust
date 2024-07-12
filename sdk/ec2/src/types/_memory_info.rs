@@ -21,8 +21,8 @@ impl MemoryInfo {
 }
 
 /// A builder for [`MemoryInfo`](crate::types::MemoryInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MemoryInfoBuilder {
     pub(crate) size_in_mib: ::std::option::Option<i64>,
 }

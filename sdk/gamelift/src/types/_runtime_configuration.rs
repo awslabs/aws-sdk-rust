@@ -38,8 +38,8 @@ impl RuntimeConfiguration {
 }
 
 /// A builder for [`RuntimeConfiguration`](crate::types::RuntimeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuntimeConfigurationBuilder {
     pub(crate) server_processes: ::std::option::Option<::std::vec::Vec<crate::types::ServerProcess>>,
     pub(crate) max_concurrent_game_session_activations: ::std::option::Option<i32>,

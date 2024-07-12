@@ -28,8 +28,8 @@ impl CreateSnapshotCopyGrantOutput {
 }
 
 /// A builder for [`CreateSnapshotCopyGrantOutput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSnapshotCopyGrantOutputBuilder {
     pub(crate) snapshot_copy_grant: ::std::option::Option<crate::types::SnapshotCopyGrant>,
     _request_id: Option<String>,

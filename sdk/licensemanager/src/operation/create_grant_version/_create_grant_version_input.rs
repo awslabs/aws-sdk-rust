@@ -64,8 +64,8 @@ impl CreateGrantVersionInput {
 }
 
 /// A builder for [`CreateGrantVersionInput`](crate::operation::create_grant_version::CreateGrantVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGrantVersionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,

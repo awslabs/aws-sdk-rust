@@ -206,8 +206,8 @@ impl InstanceProperty {
 }
 
 /// A builder for [`InstanceProperty`](crate::types::InstanceProperty).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InstancePropertyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

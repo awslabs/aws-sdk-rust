@@ -35,8 +35,8 @@ impl GeneratedResponsePart {
 }
 
 /// A builder for [`GeneratedResponsePart`](crate::types::GeneratedResponsePart).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GeneratedResponsePartBuilder {
     pub(crate) text_response_part: ::std::option::Option<crate::types::TextResponsePart>,
 }

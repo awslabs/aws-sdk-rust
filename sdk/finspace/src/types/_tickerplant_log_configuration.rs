@@ -23,8 +23,8 @@ impl TickerplantLogConfiguration {
 }
 
 /// A builder for [`TickerplantLogConfiguration`](crate::types::TickerplantLogConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TickerplantLogConfigurationBuilder {
     pub(crate) tickerplant_log_volumes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

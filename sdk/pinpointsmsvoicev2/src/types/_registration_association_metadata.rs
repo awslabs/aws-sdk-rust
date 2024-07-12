@@ -48,8 +48,8 @@ impl RegistrationAssociationMetadata {
 }
 
 /// A builder for [`RegistrationAssociationMetadata`](crate::types::RegistrationAssociationMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegistrationAssociationMetadataBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

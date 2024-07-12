@@ -26,8 +26,8 @@ impl EnableTrustAnchorOutput {
 }
 
 /// A builder for [`EnableTrustAnchorOutput`](crate::operation::enable_trust_anchor::EnableTrustAnchorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableTrustAnchorOutputBuilder {
     pub(crate) trust_anchor: ::std::option::Option<crate::types::TrustAnchorDetail>,
     _request_id: Option<String>,

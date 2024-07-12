@@ -26,8 +26,8 @@ impl PutPermissionPolicyInput {
 }
 
 /// A builder for [`PutPermissionPolicyInput`](crate::operation::put_permission_policy::PutPermissionPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutPermissionPolicyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

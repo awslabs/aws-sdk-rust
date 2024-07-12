@@ -34,8 +34,8 @@ impl ListSuiteRunsOutput {
 }
 
 /// A builder for [`ListSuiteRunsOutput`](crate::operation::list_suite_runs::ListSuiteRunsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSuiteRunsOutputBuilder {
     pub(crate) suite_runs_list: ::std::option::Option<::std::vec::Vec<crate::types::SuiteRunInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

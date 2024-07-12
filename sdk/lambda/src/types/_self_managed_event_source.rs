@@ -23,8 +23,8 @@ impl SelfManagedEventSource {
 }
 
 /// A builder for [`SelfManagedEventSource`](crate::types::SelfManagedEventSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelfManagedEventSourceBuilder {
     pub(crate) endpoints: ::std::option::Option<::std::collections::HashMap<crate::types::EndPointType, ::std::vec::Vec<::std::string::String>>>,
 }

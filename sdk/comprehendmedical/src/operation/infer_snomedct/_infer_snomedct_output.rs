@@ -51,8 +51,8 @@ impl InferSnomedctOutput {
 }
 
 /// A builder for [`InferSnomedctOutput`](crate::operation::infer_snomedct::InferSnomedctOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferSnomedctOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctEntity>>,
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,

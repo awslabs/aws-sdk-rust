@@ -21,8 +21,8 @@ impl StopMultiplexInput {
 }
 
 /// A builder for [`StopMultiplexInput`](crate::operation::stop_multiplex::StopMultiplexInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopMultiplexInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
 }

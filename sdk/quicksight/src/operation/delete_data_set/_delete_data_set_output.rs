@@ -44,8 +44,8 @@ impl DeleteDataSetOutput {
 }
 
 /// A builder for [`DeleteDataSetOutput`](crate::operation::delete_data_set::DeleteDataSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataSetOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

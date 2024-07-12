@@ -35,8 +35,8 @@ impl UpdateDocumentationVersionInput {
 }
 
 /// A builder for [`UpdateDocumentationVersionInput`](crate::operation::update_documentation_version::UpdateDocumentationVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDocumentationVersionInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_version: ::std::option::Option<::std::string::String>,

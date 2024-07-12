@@ -28,8 +28,8 @@ impl BatchSnoozeAlarmOutput {
 }
 
 /// A builder for [`BatchSnoozeAlarmOutput`](crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchSnoozeAlarmOutputBuilder {
     pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchAlarmActionErrorEntry>>,
     _request_id: Option<String>,

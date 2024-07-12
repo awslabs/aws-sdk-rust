@@ -46,8 +46,8 @@ impl StartQAppSessionInput {
 }
 
 /// A builder for [`StartQAppSessionInput`](crate::operation::start_q_app_session::StartQAppSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartQAppSessionInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl BatchDescribeModelPackageInput {
 }
 
 /// A builder for [`BatchDescribeModelPackageInput`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDescribeModelPackageInputBuilder {
     pub(crate) model_package_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

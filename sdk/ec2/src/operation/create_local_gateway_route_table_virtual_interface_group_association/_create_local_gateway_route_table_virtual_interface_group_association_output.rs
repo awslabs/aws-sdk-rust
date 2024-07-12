@@ -29,8 +29,8 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
 }
 
 /// A builder for [`CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput`](crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder {
     pub(crate) local_gateway_route_table_virtual_interface_group_association:
         ::std::option::Option<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,

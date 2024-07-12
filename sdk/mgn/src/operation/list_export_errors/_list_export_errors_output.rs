@@ -35,8 +35,8 @@ impl ListExportErrorsOutput {
 }
 
 /// A builder for [`ListExportErrorsOutput`](crate::operation::list_export_errors::ListExportErrorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExportErrorsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ExportTaskError>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

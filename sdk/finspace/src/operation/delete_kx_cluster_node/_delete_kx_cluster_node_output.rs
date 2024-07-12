@@ -18,8 +18,8 @@ impl DeleteKxClusterNodeOutput {
 }
 
 /// A builder for [`DeleteKxClusterNodeOutput`](crate::operation::delete_kx_cluster_node::DeleteKxClusterNodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKxClusterNodeOutputBuilder {
     _request_id: Option<String>,
 }

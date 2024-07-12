@@ -81,8 +81,8 @@ impl CreateStageInput {
 }
 
 /// A builder for [`CreateStageInput`](crate::operation::create_stage::CreateStageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStageInputBuilder {
     pub(crate) access_log_settings: ::std::option::Option<crate::types::AccessLogSettings>,
     pub(crate) api_id: ::std::option::Option<::std::string::String>,

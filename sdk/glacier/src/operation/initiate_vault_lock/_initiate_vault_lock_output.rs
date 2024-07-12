@@ -27,8 +27,8 @@ impl InitiateVaultLockOutput {
 }
 
 /// A builder for [`InitiateVaultLockOutput`](crate::operation::initiate_vault_lock::InitiateVaultLockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InitiateVaultLockOutputBuilder {
     pub(crate) lock_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

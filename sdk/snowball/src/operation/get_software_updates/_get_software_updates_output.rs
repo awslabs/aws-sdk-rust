@@ -26,8 +26,8 @@ impl GetSoftwareUpdatesOutput {
 }
 
 /// A builder for [`GetSoftwareUpdatesOutput`](crate::operation::get_software_updates::GetSoftwareUpdatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSoftwareUpdatesOutputBuilder {
     pub(crate) updates_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

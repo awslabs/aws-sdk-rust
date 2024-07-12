@@ -518,8 +518,8 @@ impl CreateClusterInput {
 }
 
 /// A builder for [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateClusterInputBuilder {
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,

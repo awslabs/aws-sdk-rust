@@ -33,8 +33,8 @@ impl DeleteTransitGatewayPrefixListReferenceInput {
 }
 
 /// A builder for [`DeleteTransitGatewayPrefixListReferenceInput`](crate::operation::delete_transit_gateway_prefix_list_reference::DeleteTransitGatewayPrefixListReferenceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTransitGatewayPrefixListReferenceInputBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListLoggerDefinitionVersionsOutput {
 }
 
 /// A builder for [`ListLoggerDefinitionVersionsOutput`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLoggerDefinitionVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,

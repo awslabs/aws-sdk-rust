@@ -33,8 +33,8 @@ impl RequestCancelActivityTaskDecisionAttributes {
 }
 
 /// A builder for [`RequestCancelActivityTaskDecisionAttributes`](crate::types::RequestCancelActivityTaskDecisionAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestCancelActivityTaskDecisionAttributesBuilder {
     pub(crate) activity_id: ::std::option::Option<::std::string::String>,
 }

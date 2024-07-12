@@ -64,8 +64,8 @@ impl QueryAssistantInput {
 }
 
 /// A builder for [`QueryAssistantInput`](crate::operation::query_assistant::QueryAssistantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct QueryAssistantInputBuilder {
     pub(crate) assistant_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_text: ::std::option::Option<::std::string::String>,

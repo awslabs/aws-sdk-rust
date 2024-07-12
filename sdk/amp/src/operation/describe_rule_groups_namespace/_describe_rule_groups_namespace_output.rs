@@ -27,8 +27,8 @@ impl DescribeRuleGroupsNamespaceOutput {
 }
 
 /// A builder for [`DescribeRuleGroupsNamespaceOutput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRuleGroupsNamespaceOutputBuilder {
     pub(crate) rule_groups_namespace: ::std::option::Option<crate::types::RuleGroupsNamespaceDescription>,
     _request_id: Option<String>,

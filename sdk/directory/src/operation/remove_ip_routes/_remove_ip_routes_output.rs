@@ -18,8 +18,8 @@ impl RemoveIpRoutesOutput {
 }
 
 /// A builder for [`RemoveIpRoutesOutput`](crate::operation::remove_ip_routes::RemoveIpRoutesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveIpRoutesOutputBuilder {
     _request_id: Option<String>,
 }

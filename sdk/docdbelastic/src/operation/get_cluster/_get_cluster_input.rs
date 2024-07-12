@@ -20,8 +20,8 @@ impl GetClusterInput {
 }
 
 /// A builder for [`GetClusterInput`](crate::operation::get_cluster::GetClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClusterInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
 }

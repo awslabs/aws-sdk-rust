@@ -47,8 +47,8 @@ impl PublishStateMachineVersionInput {
 }
 
 /// A builder for [`PublishStateMachineVersionInput`](crate::operation::publish_state_machine_version::PublishStateMachineVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PublishStateMachineVersionInputBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,

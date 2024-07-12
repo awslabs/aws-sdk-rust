@@ -18,8 +18,8 @@ impl AttachLoadBalancerTargetGroupsOutput {
 }
 
 /// A builder for [`AttachLoadBalancerTargetGroupsOutput`](crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachLoadBalancerTargetGroupsOutputBuilder {
     _request_id: Option<String>,
 }

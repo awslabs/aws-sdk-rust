@@ -18,8 +18,8 @@ impl UpdateWorkspaceAliasOutput {
 }
 
 /// A builder for [`UpdateWorkspaceAliasOutput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkspaceAliasOutputBuilder {
     _request_id: Option<String>,
 }

@@ -35,8 +35,8 @@ impl InputSwitchScheduleActionSettings {
 }
 
 /// A builder for [`InputSwitchScheduleActionSettings`](crate::types::InputSwitchScheduleActionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputSwitchScheduleActionSettingsBuilder {
     pub(crate) input_attachment_name_reference: ::std::option::Option<::std::string::String>,
     pub(crate) input_clipping_settings: ::std::option::Option<crate::types::InputClippingSettings>,

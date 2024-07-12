@@ -55,8 +55,8 @@ impl MetadataCatalogDetail {
 }
 
 /// A builder for [`MetadataCatalogDetail`](crate::types::MetadataCatalogDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetadataCatalogDetailBuilder {
     pub(crate) catalog_type: ::std::option::Option<crate::types::CatalogType>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,

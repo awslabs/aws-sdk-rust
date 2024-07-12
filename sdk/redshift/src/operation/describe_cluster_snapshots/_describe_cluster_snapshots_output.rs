@@ -35,8 +35,8 @@ impl DescribeClusterSnapshotsOutput {
 }
 
 /// A builder for [`DescribeClusterSnapshotsOutput`](crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClusterSnapshotsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,

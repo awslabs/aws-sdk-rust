@@ -34,8 +34,8 @@ impl ListReceivedGrantsOutput {
 }
 
 /// A builder for [`ListReceivedGrantsOutput`](crate::operation::list_received_grants::ListReceivedGrantsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReceivedGrantsOutputBuilder {
     pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

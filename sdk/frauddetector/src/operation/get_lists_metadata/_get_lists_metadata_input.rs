@@ -32,8 +32,8 @@ impl GetListsMetadataInput {
 }
 
 /// A builder for [`GetListsMetadataInput`](crate::operation::get_lists_metadata::GetListsMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetListsMetadataInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

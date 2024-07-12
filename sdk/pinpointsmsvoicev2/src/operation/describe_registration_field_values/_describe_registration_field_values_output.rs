@@ -53,8 +53,8 @@ impl DescribeRegistrationFieldValuesOutput {
 }
 
 /// A builder for [`DescribeRegistrationFieldValuesOutput`](crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistrationFieldValuesOutputBuilder {
     pub(crate) registration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,

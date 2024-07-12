@@ -38,8 +38,8 @@ impl CreateSubscriptionDefinitionInput {
 }
 
 /// A builder for [`CreateSubscriptionDefinitionInput`](crate::operation::create_subscription_definition::CreateSubscriptionDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSubscriptionDefinitionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) initial_version: ::std::option::Option<crate::types::SubscriptionDefinitionVersion>,

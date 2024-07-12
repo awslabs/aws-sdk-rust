@@ -22,8 +22,8 @@ impl TranscriptEvent {
 }
 
 /// A builder for [`TranscriptEvent`](crate::types::TranscriptEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranscriptEventBuilder {
     pub(crate) transcript: ::std::option::Option<crate::types::Transcript>,
 }

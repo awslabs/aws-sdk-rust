@@ -26,8 +26,8 @@ impl DeleteDeviceOutput {
 }
 
 /// A builder for [`DeleteDeviceOutput`](crate::operation::delete_device::DeleteDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeviceOutputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

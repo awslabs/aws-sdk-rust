@@ -33,8 +33,8 @@ impl IpAddressBasedRemoteInfo {
 }
 
 /// A builder for [`IpAddressBasedRemoteInfo`](crate::types::IpAddressBasedRemoteInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpAddressBasedRemoteInfoBuilder {
     pub(crate) ip_address_configuration_time_stamp: ::std::option::Option<::std::string::String>,
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,

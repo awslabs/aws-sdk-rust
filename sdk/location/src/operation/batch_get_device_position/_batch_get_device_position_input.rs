@@ -36,8 +36,8 @@ impl BatchGetDevicePositionInput {
 }
 
 /// A builder for [`BatchGetDevicePositionInput`](crate::operation::batch_get_device_position::BatchGetDevicePositionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetDevicePositionInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

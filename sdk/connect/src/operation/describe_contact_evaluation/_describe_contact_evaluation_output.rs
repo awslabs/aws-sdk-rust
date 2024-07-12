@@ -32,8 +32,8 @@ impl DescribeContactEvaluationOutput {
 }
 
 /// A builder for [`DescribeContactEvaluationOutput`](crate::operation::describe_contact_evaluation::DescribeContactEvaluationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContactEvaluationOutputBuilder {
     pub(crate) evaluation: ::std::option::Option<crate::types::Evaluation>,
     pub(crate) evaluation_form: ::std::option::Option<crate::types::EvaluationFormContent>,

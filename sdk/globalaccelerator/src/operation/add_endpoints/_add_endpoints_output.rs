@@ -34,8 +34,8 @@ impl AddEndpointsOutput {
 }
 
 /// A builder for [`AddEndpointsOutput`](crate::operation::add_endpoints::AddEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddEndpointsOutputBuilder {
     pub(crate) endpoint_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>>,
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,

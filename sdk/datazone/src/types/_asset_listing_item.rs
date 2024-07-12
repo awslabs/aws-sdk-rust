@@ -114,8 +114,8 @@ impl AssetListingItem {
 }
 
 /// A builder for [`AssetListingItem`](crate::types::AssetListingItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssetListingItemBuilder {
     pub(crate) listing_id: ::std::option::Option<::std::string::String>,
     pub(crate) listing_revision: ::std::option::Option<::std::string::String>,

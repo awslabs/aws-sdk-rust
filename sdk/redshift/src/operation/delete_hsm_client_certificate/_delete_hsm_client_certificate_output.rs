@@ -18,8 +18,8 @@ impl DeleteHsmClientCertificateOutput {
 }
 
 /// A builder for [`DeleteHsmClientCertificateOutput`](crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHsmClientCertificateOutputBuilder {
     _request_id: Option<String>,
 }

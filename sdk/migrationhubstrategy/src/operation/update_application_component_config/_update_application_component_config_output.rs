@@ -18,8 +18,8 @@ impl UpdateApplicationComponentConfigOutput {
 }
 
 /// A builder for [`UpdateApplicationComponentConfigOutput`](crate::operation::update_application_component_config::UpdateApplicationComponentConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApplicationComponentConfigOutputBuilder {
     _request_id: Option<String>,
 }

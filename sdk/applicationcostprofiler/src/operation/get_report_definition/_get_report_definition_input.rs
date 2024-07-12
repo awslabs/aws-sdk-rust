@@ -20,8 +20,8 @@ impl GetReportDefinitionInput {
 }
 
 /// A builder for [`GetReportDefinitionInput`](crate::operation::get_report_definition::GetReportDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReportDefinitionInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
 }

@@ -35,8 +35,8 @@ impl ListOutgoingCertificatesOutput {
 }
 
 /// A builder for [`ListOutgoingCertificatesOutput`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOutgoingCertificatesOutputBuilder {
     pub(crate) outgoing_certificates: ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

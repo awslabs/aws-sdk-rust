@@ -51,8 +51,8 @@ impl ExecutionStats {
 }
 
 /// A builder for [`ExecutionStats`](crate::types::ExecutionStats).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutionStatsBuilder {
     pub(crate) execution_time_in_millis: ::std::option::Option<i64>,
     pub(crate) data_writes: ::std::option::Option<i64>,

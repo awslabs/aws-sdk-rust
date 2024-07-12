@@ -29,8 +29,8 @@ impl InstanceStatusSummary {
 }
 
 /// A builder for [`InstanceStatusSummary`](crate::types::InstanceStatusSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceStatusSummaryBuilder {
     pub(crate) details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusDetails>>,
     pub(crate) status: ::std::option::Option<crate::types::SummaryStatus>,

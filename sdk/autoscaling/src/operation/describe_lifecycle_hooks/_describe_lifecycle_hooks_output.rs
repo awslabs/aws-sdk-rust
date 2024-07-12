@@ -28,8 +28,8 @@ impl DescribeLifecycleHooksOutput {
 }
 
 /// A builder for [`DescribeLifecycleHooksOutput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLifecycleHooksOutputBuilder {
     pub(crate) lifecycle_hooks: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleHook>>,
     _request_id: Option<String>,

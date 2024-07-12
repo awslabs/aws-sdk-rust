@@ -33,8 +33,8 @@ impl EncryptionConfig {
 }
 
 /// A builder for [`EncryptionConfig`](crate::types::EncryptionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EncryptionConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,

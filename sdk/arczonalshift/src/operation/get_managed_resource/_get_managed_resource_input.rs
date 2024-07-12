@@ -22,8 +22,8 @@ impl GetManagedResourceInput {
 }
 
 /// A builder for [`GetManagedResourceInput`](crate::operation::get_managed_resource::GetManagedResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetManagedResourceInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
 }

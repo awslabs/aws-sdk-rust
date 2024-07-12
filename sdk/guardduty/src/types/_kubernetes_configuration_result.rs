@@ -21,8 +21,8 @@ impl KubernetesConfigurationResult {
 }
 
 /// A builder for [`KubernetesConfigurationResult`](crate::types::KubernetesConfigurationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KubernetesConfigurationResultBuilder {
     pub(crate) audit_logs: ::std::option::Option<crate::types::KubernetesAuditLogsConfigurationResult>,
 }

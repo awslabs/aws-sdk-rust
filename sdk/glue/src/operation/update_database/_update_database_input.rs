@@ -32,8 +32,8 @@ impl UpdateDatabaseInput {
 }
 
 /// A builder for [`UpdateDatabaseInput`](crate::operation::update_database::UpdateDatabaseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDatabaseInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

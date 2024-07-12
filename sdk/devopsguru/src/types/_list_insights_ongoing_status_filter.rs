@@ -21,8 +21,8 @@ impl ListInsightsOngoingStatusFilter {
 }
 
 /// A builder for [`ListInsightsOngoingStatusFilter`](crate::types::ListInsightsOngoingStatusFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInsightsOngoingStatusFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InsightType>,
 }

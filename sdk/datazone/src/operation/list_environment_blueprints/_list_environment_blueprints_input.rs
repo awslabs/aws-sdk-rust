@@ -44,8 +44,8 @@ impl ListEnvironmentBlueprintsInput {
 }
 
 /// A builder for [`ListEnvironmentBlueprintsInput`](crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentBlueprintsInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -22,8 +22,8 @@ impl ComputationPreference {
 }
 
 /// A builder for [`ComputationPreference`](crate::types::ComputationPreference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComputationPreferenceBuilder {
     pub(crate) pricing_plan_arn: ::std::option::Option<::std::string::String>,
 }

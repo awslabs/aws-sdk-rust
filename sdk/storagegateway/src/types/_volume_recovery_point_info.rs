@@ -43,8 +43,8 @@ impl VolumeRecoveryPointInfo {
 }
 
 /// A builder for [`VolumeRecoveryPointInfo`](crate::types::VolumeRecoveryPointInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VolumeRecoveryPointInfoBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) volume_size_in_bytes: ::std::option::Option<i64>,

@@ -21,8 +21,8 @@ impl VoutFilter {
 }
 
 /// A builder for [`VoutFilter`](crate::types::VoutFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VoutFilterBuilder {
     pub(crate) vout_spent: ::std::option::Option<bool>,
 }

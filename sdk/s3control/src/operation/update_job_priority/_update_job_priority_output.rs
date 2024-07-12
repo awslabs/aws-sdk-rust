@@ -33,8 +33,8 @@ impl UpdateJobPriorityOutput {
 }
 
 /// A builder for [`UpdateJobPriorityOutput`](crate::operation::update_job_priority::UpdateJobPriorityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateJobPriorityOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,

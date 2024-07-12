@@ -34,8 +34,8 @@ impl DescribeEndpointSettingsOutput {
 }
 
 /// A builder for [`DescribeEndpointSettingsOutput`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEndpointSettingsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_settings: ::std::option::Option<::std::vec::Vec<crate::types::EndpointSetting>>,

@@ -50,8 +50,8 @@ impl UpdateVehicleRequestItem {
 }
 
 /// A builder for [`UpdateVehicleRequestItem`](crate::types::UpdateVehicleRequestItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVehicleRequestItemBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,

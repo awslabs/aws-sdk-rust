@@ -20,8 +20,8 @@ impl StopReplicationToReplicaInput {
 }
 
 /// A builder for [`StopReplicationToReplicaInput`](crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopReplicationToReplicaInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }

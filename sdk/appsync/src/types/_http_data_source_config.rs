@@ -27,8 +27,8 @@ impl HttpDataSourceConfig {
 }
 
 /// A builder for [`HttpDataSourceConfig`](crate::types::HttpDataSourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpDataSourceConfigBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_config: ::std::option::Option<crate::types::AuthorizationConfig>,

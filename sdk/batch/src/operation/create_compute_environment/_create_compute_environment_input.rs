@@ -89,8 +89,8 @@ impl CreateComputeEnvironmentInput {
 }
 
 /// A builder for [`CreateComputeEnvironmentInput`](crate::operation::create_compute_environment::CreateComputeEnvironmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateComputeEnvironmentInputBuilder {
     pub(crate) compute_environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::CeType>,

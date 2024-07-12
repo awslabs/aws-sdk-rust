@@ -40,8 +40,8 @@ impl SearchDataSetsInput {
 }
 
 /// A builder for [`SearchDataSetsInput`](crate::operation::search_data_sets::SearchDataSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchDataSetsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSearchFilter>>,

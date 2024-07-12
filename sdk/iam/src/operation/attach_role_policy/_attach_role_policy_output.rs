@@ -18,8 +18,8 @@ impl AttachRolePolicyOutput {
 }
 
 /// A builder for [`AttachRolePolicyOutput`](crate::operation::attach_role_policy::AttachRolePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachRolePolicyOutputBuilder {
     _request_id: Option<String>,
 }

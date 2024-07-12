@@ -29,8 +29,8 @@ impl EnableFastSnapshotRestoreErrorItem {
 }
 
 /// A builder for [`EnableFastSnapshotRestoreErrorItem`](crate::types::EnableFastSnapshotRestoreErrorItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableFastSnapshotRestoreErrorItemBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) fast_snapshot_restore_state_errors: ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreStateErrorItem>>,

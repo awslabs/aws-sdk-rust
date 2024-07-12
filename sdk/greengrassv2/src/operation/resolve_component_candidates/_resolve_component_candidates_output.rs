@@ -28,8 +28,8 @@ impl ResolveComponentCandidatesOutput {
 }
 
 /// A builder for [`ResolveComponentCandidatesOutput`](crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolveComponentCandidatesOutputBuilder {
     pub(crate) resolved_component_versions: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedComponentVersion>>,
     _request_id: Option<String>,

@@ -31,8 +31,8 @@ impl RuleGroupUpdate {
 }
 
 /// A builder for [`RuleGroupUpdate`](crate::types::RuleGroupUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) activated_rule: ::std::option::Option<crate::types::ActivatedRule>,

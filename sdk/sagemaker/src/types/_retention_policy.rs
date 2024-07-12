@@ -23,8 +23,8 @@ impl RetentionPolicy {
 }
 
 /// A builder for [`RetentionPolicy`](crate::types::RetentionPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetentionPolicyBuilder {
     pub(crate) home_efs_file_system: ::std::option::Option<crate::types::RetentionType>,
 }

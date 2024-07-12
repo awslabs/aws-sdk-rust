@@ -18,8 +18,8 @@ impl StopTrainingDocumentClassifierOutput {
 }
 
 /// A builder for [`StopTrainingDocumentClassifierOutput`](crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopTrainingDocumentClassifierOutputBuilder {
     _request_id: Option<String>,
 }

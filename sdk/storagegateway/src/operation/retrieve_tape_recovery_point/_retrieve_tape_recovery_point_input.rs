@@ -27,8 +27,8 @@ impl RetrieveTapeRecoveryPointInput {
 }
 
 /// A builder for [`RetrieveTapeRecoveryPointInput`](crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetrieveTapeRecoveryPointInputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,

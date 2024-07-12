@@ -38,8 +38,8 @@ impl ReplaceVpnTunnelInput {
 }
 
 /// A builder for [`ReplaceVpnTunnelInput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplaceVpnTunnelInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_tunnel_outside_ip_address: ::std::option::Option<::std::string::String>,

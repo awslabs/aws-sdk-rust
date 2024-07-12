@@ -45,8 +45,8 @@ impl TemplateVersionSummary {
 }
 
 /// A builder for [`TemplateVersionSummary`](crate::types::TemplateVersionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateVersionSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i64>,

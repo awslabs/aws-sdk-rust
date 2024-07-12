@@ -20,8 +20,8 @@ impl GetCellInput {
 }
 
 /// A builder for [`GetCellInput`](crate::operation::get_cell::GetCellInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCellInputBuilder {
     pub(crate) cell_name: ::std::option::Option<::std::string::String>,
 }

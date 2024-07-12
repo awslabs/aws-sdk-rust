@@ -26,8 +26,8 @@ impl ListByteMatchSetsInput {
 }
 
 /// A builder for [`ListByteMatchSetsInput`](crate::operation::list_byte_match_sets::ListByteMatchSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListByteMatchSetsInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

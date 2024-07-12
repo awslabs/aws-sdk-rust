@@ -51,8 +51,8 @@ impl DataTransferProgress {
 }
 
 /// A builder for [`DataTransferProgress`](crate::types::DataTransferProgress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataTransferProgressBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) current_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,

@@ -26,8 +26,8 @@ impl UpdateAuditStreamConfigurationInput {
 }
 
 /// A builder for [`UpdateAuditStreamConfigurationInput`](crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAuditStreamConfigurationInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) audit_stream_arn: ::std::option::Option<::std::string::String>,

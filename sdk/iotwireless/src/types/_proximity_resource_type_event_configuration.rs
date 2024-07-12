@@ -21,8 +21,8 @@ impl ProximityResourceTypeEventConfiguration {
 }
 
 /// A builder for [`ProximityResourceTypeEventConfiguration`](crate::types::ProximityResourceTypeEventConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProximityResourceTypeEventConfigurationBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
 }

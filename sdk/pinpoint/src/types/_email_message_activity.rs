@@ -43,8 +43,8 @@ impl EmailMessageActivity {
 }
 
 /// A builder for [`EmailMessageActivity`](crate::types::EmailMessageActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmailMessageActivityBuilder {
     pub(crate) message_config: ::std::option::Option<crate::types::JourneyEmailMessage>,
     pub(crate) next_activity: ::std::option::Option<::std::string::String>,

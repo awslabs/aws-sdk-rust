@@ -28,8 +28,8 @@ impl DeleteAttributesOutput {
 }
 
 /// A builder for [`DeleteAttributesOutput`](crate::operation::delete_attributes::DeleteAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     _request_id: Option<String>,

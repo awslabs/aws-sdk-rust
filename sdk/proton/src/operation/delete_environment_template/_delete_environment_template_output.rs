@@ -26,8 +26,8 @@ impl DeleteEnvironmentTemplateOutput {
 }
 
 /// A builder for [`DeleteEnvironmentTemplateOutput`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEnvironmentTemplateOutputBuilder {
     pub(crate) environment_template: ::std::option::Option<crate::types::EnvironmentTemplate>,
     _request_id: Option<String>,

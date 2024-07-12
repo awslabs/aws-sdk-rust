@@ -32,8 +32,8 @@ impl ListAccessControlConfigurationsInput {
 }
 
 /// A builder for [`ListAccessControlConfigurationsInput`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessControlConfigurationsInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

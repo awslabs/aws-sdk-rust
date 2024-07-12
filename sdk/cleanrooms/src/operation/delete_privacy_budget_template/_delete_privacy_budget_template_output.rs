@@ -18,8 +18,8 @@ impl DeletePrivacyBudgetTemplateOutput {
 }
 
 /// A builder for [`DeletePrivacyBudgetTemplateOutput`](crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePrivacyBudgetTemplateOutputBuilder {
     _request_id: Option<String>,
 }

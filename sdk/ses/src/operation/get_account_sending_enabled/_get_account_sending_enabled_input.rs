@@ -11,8 +11,8 @@ impl GetAccountSendingEnabledInput {
 }
 
 /// A builder for [`GetAccountSendingEnabledInput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountSendingEnabledInputBuilder {}
 impl GetAccountSendingEnabledInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountSendingEnabledInput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledInput).

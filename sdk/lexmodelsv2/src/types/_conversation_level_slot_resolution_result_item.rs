@@ -35,8 +35,8 @@ impl ConversationLevelSlotResolutionResultItem {
 }
 
 /// A builder for [`ConversationLevelSlotResolutionResultItem`](crate::types::ConversationLevelSlotResolutionResultItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConversationLevelSlotResolutionResultItemBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) slot_name: ::std::option::Option<::std::string::String>,

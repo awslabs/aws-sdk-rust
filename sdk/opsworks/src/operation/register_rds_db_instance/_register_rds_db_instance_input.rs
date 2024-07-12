@@ -38,8 +38,8 @@ impl RegisterRdsDbInstanceInput {
 }
 
 /// A builder for [`RegisterRdsDbInstanceInput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterRdsDbInstanceInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) rds_db_instance_arn: ::std::option::Option<::std::string::String>,

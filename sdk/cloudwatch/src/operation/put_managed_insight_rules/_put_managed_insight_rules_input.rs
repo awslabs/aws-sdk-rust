@@ -22,8 +22,8 @@ impl PutManagedInsightRulesInput {
 }
 
 /// A builder for [`PutManagedInsightRulesInput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutManagedInsightRulesInputBuilder {
     pub(crate) managed_rules: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>,
 }

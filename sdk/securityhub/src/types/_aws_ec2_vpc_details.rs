@@ -43,8 +43,8 @@ impl AwsEc2VpcDetails {
 }
 
 /// A builder for [`AwsEc2VpcDetails`](crate::types::AwsEc2VpcDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2VpcDetailsBuilder {
     pub(crate) cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>>,
     pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,

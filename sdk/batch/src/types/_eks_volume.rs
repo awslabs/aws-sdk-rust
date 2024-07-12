@@ -39,8 +39,8 @@ impl EksVolume {
 }
 
 /// A builder for [`EksVolume`](crate::types::EksVolume).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksVolumeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) host_path: ::std::option::Option<crate::types::EksHostPath>,

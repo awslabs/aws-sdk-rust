@@ -27,8 +27,8 @@ impl AssociateMemberOutput {
 }
 
 /// A builder for [`AssociateMemberOutput`](crate::operation::associate_member::AssociateMemberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMemberOutputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

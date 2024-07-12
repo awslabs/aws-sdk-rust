@@ -123,8 +123,8 @@ impl Severity {
 }
 
 /// A builder for [`Severity`](crate::types::Severity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SeverityBuilder {
     pub(crate) product: ::std::option::Option<f64>,
     pub(crate) label: ::std::option::Option<crate::types::SeverityLabel>,

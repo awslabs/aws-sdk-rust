@@ -101,8 +101,8 @@ impl PostTextInput {
 }
 
 /// A builder for [`PostTextInput`](crate::operation::post_text::PostTextInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PostTextInputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias: ::std::option::Option<::std::string::String>,

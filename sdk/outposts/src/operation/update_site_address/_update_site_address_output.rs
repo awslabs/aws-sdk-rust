@@ -32,8 +32,8 @@ impl UpdateSiteAddressOutput {
 }
 
 /// A builder for [`UpdateSiteAddressOutput`](crate::operation::update_site_address::UpdateSiteAddressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSiteAddressOutputBuilder {
     pub(crate) address_type: ::std::option::Option<crate::types::AddressType>,
     pub(crate) address: ::std::option::Option<crate::types::Address>,

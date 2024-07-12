@@ -27,8 +27,8 @@ impl ClusterConfiguration {
 }
 
 /// A builder for [`ClusterConfiguration`](crate::types::ClusterConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterConfigurationBuilder {
     pub(crate) execute_command_configuration: ::std::option::Option<crate::types::ExecuteCommandConfiguration>,
     pub(crate) managed_storage_configuration: ::std::option::Option<crate::types::ManagedStorageConfiguration>,

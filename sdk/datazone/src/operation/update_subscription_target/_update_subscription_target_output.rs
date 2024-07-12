@@ -144,8 +144,8 @@ impl UpdateSubscriptionTargetOutput {
 }
 
 /// A builder for [`UpdateSubscriptionTargetOutput`](crate::operation::update_subscription_target::UpdateSubscriptionTargetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateSubscriptionTargetOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) authorized_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

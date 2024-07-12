@@ -35,8 +35,8 @@ impl ListQueryLoggingConfigsOutput {
 }
 
 /// A builder for [`ListQueryLoggingConfigsOutput`](crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListQueryLoggingConfigsOutputBuilder {
     pub(crate) query_logging_configs: ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

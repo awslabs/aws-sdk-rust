@@ -130,8 +130,8 @@ impl StartSyncExecutionOutput {
 }
 
 /// A builder for [`StartSyncExecutionOutput`](crate::operation::start_sync_execution::StartSyncExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartSyncExecutionOutputBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,

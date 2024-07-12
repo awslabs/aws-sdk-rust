@@ -18,8 +18,8 @@ impl DeleteAssessmentRunOutput {
 }
 
 /// A builder for [`DeleteAssessmentRunOutput`](crate::operation::delete_assessment_run::DeleteAssessmentRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAssessmentRunOutputBuilder {
     _request_id: Option<String>,
 }

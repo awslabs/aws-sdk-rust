@@ -32,8 +32,8 @@ impl GetWorkflowRunInput {
 }
 
 /// A builder for [`GetWorkflowRunInput`](crate::operation::get_workflow_run::GetWorkflowRunInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorkflowRunInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListSegmentsOutput {
 }
 
 /// A builder for [`ListSegmentsOutput`](crate::operation::list_segments::ListSegmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSegmentsOutputBuilder {
     pub(crate) segments: ::std::option::Option<::std::vec::Vec<crate::types::Segment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

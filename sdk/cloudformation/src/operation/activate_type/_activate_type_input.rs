@@ -100,8 +100,8 @@ impl ActivateTypeInput {
 }
 
 /// A builder for [`ActivateTypeInput`](crate::operation::activate_type::ActivateTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivateTypeInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ThirdPartyType>,
     pub(crate) public_type_arn: ::std::option::Option<::std::string::String>,

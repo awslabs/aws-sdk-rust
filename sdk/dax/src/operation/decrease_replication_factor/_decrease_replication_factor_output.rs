@@ -26,8 +26,8 @@ impl DecreaseReplicationFactorOutput {
 }
 
 /// A builder for [`DecreaseReplicationFactorOutput`](crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecreaseReplicationFactorOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

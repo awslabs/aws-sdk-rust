@@ -34,8 +34,8 @@ impl DescribeAffectedEntitiesOutput {
 }
 
 /// A builder for [`DescribeAffectedEntitiesOutput`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAffectedEntitiesOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

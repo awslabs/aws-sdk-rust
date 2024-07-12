@@ -27,8 +27,8 @@ impl ShutdownEventConfiguration {
 }
 
 /// A builder for [`ShutdownEventConfiguration`](crate::types::ShutdownEventConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShutdownEventConfigurationBuilder {
     pub(crate) execution_timeout: ::std::option::Option<i32>,
     pub(crate) delay_until_elb_connections_drained: ::std::option::Option<bool>,

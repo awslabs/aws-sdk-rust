@@ -23,8 +23,8 @@ impl AwsEksClusterLoggingDetails {
 }
 
 /// A builder for [`AwsEksClusterLoggingDetails`](crate::types::AwsEksClusterLoggingDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEksClusterLoggingDetailsBuilder {
     pub(crate) cluster_logging: ::std::option::Option<::std::vec::Vec<crate::types::AwsEksClusterLoggingClusterLoggingDetails>>,
 }

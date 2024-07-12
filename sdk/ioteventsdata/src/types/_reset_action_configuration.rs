@@ -21,8 +21,8 @@ impl ResetActionConfiguration {
 }
 
 /// A builder for [`ResetActionConfiguration`](crate::types::ResetActionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetActionConfigurationBuilder {
     pub(crate) note: ::std::option::Option<::std::string::String>,
 }

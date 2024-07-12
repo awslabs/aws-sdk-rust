@@ -45,8 +45,8 @@ impl InstanceNetworkInterfaceAssociation {
 }
 
 /// A builder for [`InstanceNetworkInterfaceAssociation`](crate::types::InstanceNetworkInterfaceAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceNetworkInterfaceAssociationBuilder {
     pub(crate) carrier_ip: ::std::option::Option<::std::string::String>,
     pub(crate) customer_owned_ip: ::std::option::Option<::std::string::String>,

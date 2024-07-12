@@ -26,8 +26,8 @@ impl DescribeUserHierarchyGroupOutput {
 }
 
 /// A builder for [`DescribeUserHierarchyGroupOutput`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUserHierarchyGroupOutputBuilder {
     pub(crate) hierarchy_group: ::std::option::Option<crate::types::HierarchyGroup>,
     _request_id: Option<String>,

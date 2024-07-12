@@ -26,8 +26,8 @@ impl PredictQAppInput {
 }
 
 /// A builder for [`PredictQAppInput`](crate::operation::predict_q_app::PredictQAppInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredictQAppInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<crate::types::PredictQAppInputOptions>,

@@ -97,8 +97,8 @@ impl AutoMlCandidate {
 }
 
 /// A builder for [`AutoMlCandidate`](crate::types::AutoMlCandidate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoMlCandidateBuilder {
     pub(crate) candidate_name: ::std::option::Option<::std::string::String>,
     pub(crate) final_auto_ml_job_objective_metric: ::std::option::Option<crate::types::FinalAutoMlJobObjectiveMetric>,

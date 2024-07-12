@@ -20,8 +20,8 @@ impl StartWorkflowInput {
 }
 
 /// A builder for [`StartWorkflowInput`](crate::operation::start_workflow::StartWorkflowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartWorkflowInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

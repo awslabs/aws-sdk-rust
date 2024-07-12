@@ -48,8 +48,8 @@ impl ListSecretsInput {
 }
 
 /// A builder for [`ListSecretsInput`](crate::operation::list_secrets::ListSecretsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSecretsInputBuilder {
     pub(crate) include_planned_deletion: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,

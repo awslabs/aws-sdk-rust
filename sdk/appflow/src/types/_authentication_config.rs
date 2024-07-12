@@ -53,8 +53,8 @@ impl AuthenticationConfig {
 }
 
 /// A builder for [`AuthenticationConfig`](crate::types::AuthenticationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthenticationConfigBuilder {
     pub(crate) is_basic_auth_supported: ::std::option::Option<bool>,
     pub(crate) is_api_key_auth_supported: ::std::option::Option<bool>,

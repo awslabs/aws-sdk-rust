@@ -21,8 +21,8 @@ impl StatelessCustomActionDefinition {
 }
 
 /// A builder for [`StatelessCustomActionDefinition`](crate::types::StatelessCustomActionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatelessCustomActionDefinitionBuilder {
     pub(crate) publish_metric_action: ::std::option::Option<crate::types::StatelessCustomPublishMetricAction>,
 }

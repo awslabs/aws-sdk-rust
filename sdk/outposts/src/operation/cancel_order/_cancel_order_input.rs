@@ -20,8 +20,8 @@ impl CancelOrderInput {
 }
 
 /// A builder for [`CancelOrderInput`](crate::operation::cancel_order::CancelOrderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelOrderInputBuilder {
     pub(crate) order_id: ::std::option::Option<::std::string::String>,
 }

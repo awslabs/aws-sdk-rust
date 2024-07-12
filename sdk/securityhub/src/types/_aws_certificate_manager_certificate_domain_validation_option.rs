@@ -59,8 +59,8 @@ impl AwsCertificateManagerCertificateDomainValidationOption {
 }
 
 /// A builder for [`AwsCertificateManagerCertificateDomainValidationOption`](crate::types::AwsCertificateManagerCertificateDomainValidationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCertificateManagerCertificateDomainValidationOptionBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_record: ::std::option::Option<crate::types::AwsCertificateManagerCertificateResourceRecord>,

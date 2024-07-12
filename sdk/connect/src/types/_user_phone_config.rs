@@ -43,8 +43,8 @@ impl UserPhoneConfig {
 }
 
 /// A builder for [`UserPhoneConfig`](crate::types::UserPhoneConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserPhoneConfigBuilder {
     pub(crate) phone_type: ::std::option::Option<crate::types::PhoneType>,
     pub(crate) auto_accept: ::std::option::Option<bool>,

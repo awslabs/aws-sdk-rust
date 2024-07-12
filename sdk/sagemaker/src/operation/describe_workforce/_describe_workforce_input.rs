@@ -20,8 +20,8 @@ impl DescribeWorkforceInput {
 }
 
 /// A builder for [`DescribeWorkforceInput`](crate::operation::describe_workforce::DescribeWorkforceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkforceInputBuilder {
     pub(crate) workforce_name: ::std::option::Option<::std::string::String>,
 }

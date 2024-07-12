@@ -64,8 +64,8 @@ impl CreateEdgePackagingJobInput {
 }
 
 /// A builder for [`CreateEdgePackagingJobInput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEdgePackagingJobInputBuilder {
     pub(crate) edge_packaging_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) compilation_job_name: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl Evidence {
 }
 
 /// A builder for [`Evidence`](crate::types::Evidence).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvidenceBuilder {
     pub(crate) evidence_rule: ::std::option::Option<::std::string::String>,
     pub(crate) evidence_detail: ::std::option::Option<::std::string::String>,

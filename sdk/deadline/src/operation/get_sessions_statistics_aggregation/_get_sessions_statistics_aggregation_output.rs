@@ -46,8 +46,8 @@ impl GetSessionsStatisticsAggregationOutput {
 }
 
 /// A builder for [`GetSessionsStatisticsAggregationOutput`](crate::operation::get_sessions_statistics_aggregation::GetSessionsStatisticsAggregationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSessionsStatisticsAggregationOutputBuilder {
     pub(crate) statistics: ::std::option::Option<::std::vec::Vec<crate::types::Statistics>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

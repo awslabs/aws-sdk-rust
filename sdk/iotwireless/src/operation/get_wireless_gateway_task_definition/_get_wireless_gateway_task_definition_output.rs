@@ -44,8 +44,8 @@ impl GetWirelessGatewayTaskDefinitionOutput {
 }
 
 /// A builder for [`GetWirelessGatewayTaskDefinitionOutput`](crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWirelessGatewayTaskDefinitionOutputBuilder {
     pub(crate) auto_create_tasks: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

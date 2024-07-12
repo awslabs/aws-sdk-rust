@@ -34,8 +34,8 @@ impl BatchGetTokenBalanceOutput {
 }
 
 /// A builder for [`BatchGetTokenBalanceOutput`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetTokenBalanceOutputBuilder {
     pub(crate) token_balances: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>>,

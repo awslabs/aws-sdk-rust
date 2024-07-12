@@ -67,8 +67,8 @@ impl AnalysisResult {
 }
 
 /// A builder for [`AnalysisResult`](crate::types::AnalysisResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisResultBuilder {
     pub(crate) identified_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) identified_type: ::std::option::Option<crate::types::IdentifiedType>,

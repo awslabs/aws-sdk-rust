@@ -45,8 +45,8 @@ impl NewSessionDetails {
 }
 
 /// A builder for [`NewSessionDetails`](crate::types::NewSessionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NewSessionDetailsBuilder {
     pub(crate) supported_messaging_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) participant_details: ::std::option::Option<crate::types::ParticipantDetails>,

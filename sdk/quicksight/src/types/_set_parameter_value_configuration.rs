@@ -30,8 +30,8 @@ impl SetParameterValueConfiguration {
 }
 
 /// A builder for [`SetParameterValueConfiguration`](crate::types::SetParameterValueConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetParameterValueConfigurationBuilder {
     pub(crate) destination_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::DestinationParameterValueConfiguration>,

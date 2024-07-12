@@ -12,8 +12,8 @@ impl GetAccountSettingsInput {
 }
 
 /// A builder for [`GetAccountSettingsInput`](crate::operation::get_account_settings::GetAccountSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountSettingsInputBuilder {}
 impl GetAccountSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountSettingsInput`](crate::operation::get_account_settings::GetAccountSettingsInput).

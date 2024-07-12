@@ -18,8 +18,8 @@ impl StopSolutionVersionCreationOutput {
 }
 
 /// A builder for [`StopSolutionVersionCreationOutput`](crate::operation::stop_solution_version_creation::StopSolutionVersionCreationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopSolutionVersionCreationOutputBuilder {
     _request_id: Option<String>,
 }

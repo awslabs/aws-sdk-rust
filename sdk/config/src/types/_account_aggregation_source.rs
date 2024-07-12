@@ -36,8 +36,8 @@ impl AccountAggregationSource {
 }
 
 /// A builder for [`AccountAggregationSource`](crate::types::AccountAggregationSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountAggregationSourceBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) all_aws_regions: ::std::option::Option<bool>,

@@ -21,8 +21,8 @@ impl Ec2Specification {
 }
 
 /// A builder for [`Ec2Specification`](crate::types::Ec2Specification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2SpecificationBuilder {
     pub(crate) offering_class: ::std::option::Option<crate::types::OfferingClass>,
 }

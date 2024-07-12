@@ -20,8 +20,8 @@ impl DeleteSchemaMappingInput {
 }
 
 /// A builder for [`DeleteSchemaMappingInput`](crate::operation::delete_schema_mapping::DeleteSchemaMappingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSchemaMappingInputBuilder {
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
 }

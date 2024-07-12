@@ -26,8 +26,8 @@ impl ModifyAquaConfigurationInput {
 }
 
 /// A builder for [`ModifyAquaConfigurationInput`](crate::operation::modify_aqua_configuration::ModifyAquaConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyAquaConfigurationInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) aqua_configuration_status: ::std::option::Option<crate::types::AquaConfigurationStatus>,

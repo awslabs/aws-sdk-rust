@@ -110,8 +110,8 @@ impl RegisterTypeInput {
 }
 
 /// A builder for [`RegisterTypeInput`](crate::operation::register_type::RegisterTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterTypeInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RegistryType>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,

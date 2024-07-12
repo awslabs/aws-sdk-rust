@@ -58,8 +58,8 @@ impl QualificationRequirement {
 }
 
 /// A builder for [`QualificationRequirement`](crate::types::QualificationRequirement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QualificationRequirementBuilder {
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) comparator: ::std::option::Option<crate::types::Comparator>,

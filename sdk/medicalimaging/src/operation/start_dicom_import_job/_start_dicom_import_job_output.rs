@@ -46,8 +46,8 @@ impl StartDicomImportJobOutput {
 }
 
 /// A builder for [`StartDicomImportJobOutput`](crate::operation::start_dicom_import_job::StartDicomImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDicomImportJobOutputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,

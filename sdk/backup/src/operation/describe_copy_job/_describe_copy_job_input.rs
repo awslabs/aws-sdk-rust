@@ -20,8 +20,8 @@ impl DescribeCopyJobInput {
 }
 
 /// A builder for [`DescribeCopyJobInput`](crate::operation::describe_copy_job::DescribeCopyJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCopyJobInputBuilder {
     pub(crate) copy_job_id: ::std::option::Option<::std::string::String>,
 }

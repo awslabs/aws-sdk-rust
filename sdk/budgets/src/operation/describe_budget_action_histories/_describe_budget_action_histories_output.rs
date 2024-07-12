@@ -33,8 +33,8 @@ impl DescribeBudgetActionHistoriesOutput {
 }
 
 /// A builder for [`DescribeBudgetActionHistoriesOutput`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBudgetActionHistoriesOutputBuilder {
     pub(crate) action_histories: ::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

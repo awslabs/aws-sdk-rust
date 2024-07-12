@@ -52,8 +52,8 @@ impl GetIpamDiscoveredPublicAddressesInput {
 }
 
 /// A builder for [`GetIpamDiscoveredPublicAddressesInput`](crate::operation::get_ipam_discovered_public_addresses::GetIpamDiscoveredPublicAddressesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIpamDiscoveredPublicAddressesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,

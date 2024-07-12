@@ -33,8 +33,8 @@ impl EndpointConfigSummary {
 }
 
 /// A builder for [`EndpointConfigSummary`](crate::types::EndpointConfigSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointConfigSummaryBuilder {
     pub(crate) endpoint_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_config_arn: ::std::option::Option<::std::string::String>,

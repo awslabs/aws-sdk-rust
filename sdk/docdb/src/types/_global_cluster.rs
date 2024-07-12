@@ -77,8 +77,8 @@ impl GlobalCluster {
 }
 
 /// A builder for [`GlobalCluster`](crate::types::GlobalCluster).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlobalClusterBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) global_cluster_resource_id: ::std::option::Option<::std::string::String>,

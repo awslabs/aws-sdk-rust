@@ -20,8 +20,8 @@ impl GetInternetEventInput {
 }
 
 /// A builder for [`GetInternetEventInput`](crate::operation::get_internet_event::GetInternetEventInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInternetEventInputBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
 }

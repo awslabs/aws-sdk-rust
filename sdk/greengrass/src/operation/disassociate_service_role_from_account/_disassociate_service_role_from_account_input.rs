@@ -11,8 +11,8 @@ impl DisassociateServiceRoleFromAccountInput {
 }
 
 /// A builder for [`DisassociateServiceRoleFromAccountInput`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateServiceRoleFromAccountInputBuilder {}
 impl DisassociateServiceRoleFromAccountInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateServiceRoleFromAccountInput`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountInput).

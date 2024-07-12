@@ -34,8 +34,8 @@ impl BatchDetachObject {
 }
 
 /// A builder for [`BatchDetachObject`](crate::types::BatchDetachObject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDetachObjectBuilder {
     pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) link_name: ::std::option::Option<::std::string::String>,

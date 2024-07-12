@@ -26,8 +26,8 @@ impl DeleteInstanceConnectEndpointInput {
 }
 
 /// A builder for [`DeleteInstanceConnectEndpointInput`](crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInstanceConnectEndpointInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_connect_endpoint_id: ::std::option::Option<::std::string::String>,

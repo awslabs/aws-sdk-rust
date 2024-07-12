@@ -20,8 +20,8 @@ impl GetAudienceGenerationJobInput {
 }
 
 /// A builder for [`GetAudienceGenerationJobInput`](crate::operation::get_audience_generation_job::GetAudienceGenerationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAudienceGenerationJobInputBuilder {
     pub(crate) audience_generation_job_arn: ::std::option::Option<::std::string::String>,
 }

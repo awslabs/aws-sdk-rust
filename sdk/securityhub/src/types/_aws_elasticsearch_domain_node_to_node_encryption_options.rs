@@ -21,8 +21,8 @@ impl AwsElasticsearchDomainNodeToNodeEncryptionOptions {
 }
 
 /// A builder for [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

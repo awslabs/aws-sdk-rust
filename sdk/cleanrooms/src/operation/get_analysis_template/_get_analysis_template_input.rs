@@ -26,8 +26,8 @@ impl GetAnalysisTemplateInput {
 }
 
 /// A builder for [`GetAnalysisTemplateInput`](crate::operation::get_analysis_template::GetAnalysisTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnalysisTemplateInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_template_identifier: ::std::option::Option<::std::string::String>,

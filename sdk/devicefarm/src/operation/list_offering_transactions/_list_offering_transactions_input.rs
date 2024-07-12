@@ -21,8 +21,8 @@ impl ListOfferingTransactionsInput {
 }
 
 /// A builder for [`ListOfferingTransactionsInput`](crate::operation::list_offering_transactions::ListOfferingTransactionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOfferingTransactionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }

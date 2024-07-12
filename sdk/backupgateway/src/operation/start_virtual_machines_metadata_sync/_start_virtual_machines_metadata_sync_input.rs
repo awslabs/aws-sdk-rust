@@ -20,8 +20,8 @@ impl StartVirtualMachinesMetadataSyncInput {
 }
 
 /// A builder for [`StartVirtualMachinesMetadataSyncInput`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartVirtualMachinesMetadataSyncInputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
 }

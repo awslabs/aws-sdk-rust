@@ -18,8 +18,8 @@ impl UpdateMyUserProfileOutput {
 }
 
 /// A builder for [`UpdateMyUserProfileOutput`](crate::operation::update_my_user_profile::UpdateMyUserProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMyUserProfileOutputBuilder {
     _request_id: Option<String>,
 }

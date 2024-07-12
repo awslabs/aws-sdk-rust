@@ -32,8 +32,8 @@ impl EnableAddressTransferInput {
 }
 
 /// A builder for [`EnableAddressTransferInput`](crate::operation::enable_address_transfer::EnableAddressTransferInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableAddressTransferInputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) transfer_account_id: ::std::option::Option<::std::string::String>,

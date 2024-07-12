@@ -42,8 +42,8 @@ impl DeleteStackSetInput {
 }
 
 /// A builder for [`DeleteStackSetInput`](crate::operation::delete_stack_set::DeleteStackSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStackSetInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,

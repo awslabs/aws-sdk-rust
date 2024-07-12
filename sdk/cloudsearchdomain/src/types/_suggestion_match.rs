@@ -33,8 +33,8 @@ impl SuggestionMatch {
 }
 
 /// A builder for [`SuggestionMatch`](crate::types::SuggestionMatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuggestionMatchBuilder {
     pub(crate) suggestion: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<i64>,

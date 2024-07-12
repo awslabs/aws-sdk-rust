@@ -27,8 +27,8 @@ impl AquaConfiguration {
 }
 
 /// A builder for [`AquaConfiguration`](crate::types::AquaConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AquaConfigurationBuilder {
     pub(crate) aqua_status: ::std::option::Option<crate::types::AquaStatus>,
     pub(crate) aqua_configuration_status: ::std::option::Option<crate::types::AquaConfigurationStatus>,

@@ -26,8 +26,8 @@ impl UpdateWorkspacesPoolOutput {
 }
 
 /// A builder for [`UpdateWorkspacesPoolOutput`](crate::operation::update_workspaces_pool::UpdateWorkspacesPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkspacesPoolOutputBuilder {
     pub(crate) workspaces_pool: ::std::option::Option<crate::types::WorkspacesPool>,
     _request_id: Option<String>,

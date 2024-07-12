@@ -32,8 +32,8 @@ impl DisassociateDeviceFromPlacementInput {
 }
 
 /// A builder for [`DisassociateDeviceFromPlacementInput`](crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateDeviceFromPlacementInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,

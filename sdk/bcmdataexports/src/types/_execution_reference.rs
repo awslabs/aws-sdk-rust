@@ -28,8 +28,8 @@ impl ExecutionReference {
 }
 
 /// A builder for [`ExecutionReference`](crate::types::ExecutionReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutionReferenceBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_status: ::std::option::Option<crate::types::ExecutionStatus>,

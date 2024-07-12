@@ -29,8 +29,8 @@ impl ServiceCatalogProvisioningUpdateDetails {
 }
 
 /// A builder for [`ServiceCatalogProvisioningUpdateDetails`](crate::types::ServiceCatalogProvisioningUpdateDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceCatalogProvisioningUpdateDetailsBuilder {
     pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,

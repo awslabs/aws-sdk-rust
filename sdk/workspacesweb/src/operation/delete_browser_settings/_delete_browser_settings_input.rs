@@ -20,8 +20,8 @@ impl DeleteBrowserSettingsInput {
 }
 
 /// A builder for [`DeleteBrowserSettingsInput`](crate::operation::delete_browser_settings::DeleteBrowserSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBrowserSettingsInputBuilder {
     pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,
 }

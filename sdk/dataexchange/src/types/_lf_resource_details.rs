@@ -27,8 +27,8 @@ impl LfResourceDetails {
 }
 
 /// A builder for [`LfResourceDetails`](crate::types::LfResourceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LfResourceDetailsBuilder {
     pub(crate) database: ::std::option::Option<crate::types::DatabaseLfTagPolicy>,
     pub(crate) table: ::std::option::Option<crate::types::TableLfTagPolicy>,

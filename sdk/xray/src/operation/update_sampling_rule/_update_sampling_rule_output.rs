@@ -26,8 +26,8 @@ impl UpdateSamplingRuleOutput {
 }
 
 /// A builder for [`UpdateSamplingRuleOutput`](crate::operation::update_sampling_rule::UpdateSamplingRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSamplingRuleOutputBuilder {
     pub(crate) sampling_rule_record: ::std::option::Option<crate::types::SamplingRuleRecord>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl RetryBuildInput {
 }
 
 /// A builder for [`RetryBuildInput`](crate::operation::retry_build::RetryBuildInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetryBuildInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,

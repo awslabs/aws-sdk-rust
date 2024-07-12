@@ -34,8 +34,8 @@ impl BatchGetObjectAttributes {
 }
 
 /// A builder for [`BatchGetObjectAttributes`](crate::types::BatchGetObjectAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetObjectAttributesBuilder {
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) schema_facet: ::std::option::Option<crate::types::SchemaFacet>,

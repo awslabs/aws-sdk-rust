@@ -21,8 +21,8 @@ impl RunInstancesMonitoringEnabled {
 }
 
 /// A builder for [`RunInstancesMonitoringEnabled`](crate::types::RunInstancesMonitoringEnabled).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunInstancesMonitoringEnabledBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

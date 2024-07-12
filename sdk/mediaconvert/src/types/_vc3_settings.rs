@@ -69,8 +69,8 @@ impl Vc3Settings {
 }
 
 /// A builder for [`Vc3Settings`](crate::types::Vc3Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Vc3SettingsBuilder {
     pub(crate) framerate_control: ::std::option::Option<crate::types::Vc3FramerateControl>,
     pub(crate) framerate_conversion_algorithm: ::std::option::Option<crate::types::Vc3FramerateConversionAlgorithm>,

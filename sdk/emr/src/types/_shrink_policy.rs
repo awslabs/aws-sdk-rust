@@ -27,8 +27,8 @@ impl ShrinkPolicy {
 }
 
 /// A builder for [`ShrinkPolicy`](crate::types::ShrinkPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ShrinkPolicyBuilder {
     pub(crate) decommission_timeout: ::std::option::Option<i32>,
     pub(crate) instance_resize_policy: ::std::option::Option<crate::types::InstanceResizePolicy>,

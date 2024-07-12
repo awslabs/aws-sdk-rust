@@ -26,8 +26,8 @@ impl UpdateActiveModelVersionInput {
 }
 
 /// A builder for [`UpdateActiveModelVersionInput`](crate::operation::update_active_model_version::UpdateActiveModelVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateActiveModelVersionInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<i64>,

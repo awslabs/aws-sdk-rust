@@ -135,8 +135,8 @@ impl DocumentClassificationJobProperties {
 }
 
 /// A builder for [`DocumentClassificationJobProperties`](crate::types::DocumentClassificationJobProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentClassificationJobPropertiesBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,

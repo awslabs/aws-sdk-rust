@@ -12,8 +12,8 @@ impl JsonConfiguration {
 }
 
 /// A builder for [`JsonConfiguration`](crate::types::JsonConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JsonConfigurationBuilder {}
 impl JsonConfigurationBuilder {
     /// Consumes the builder and constructs a [`JsonConfiguration`](crate::types::JsonConfiguration).

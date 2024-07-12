@@ -18,8 +18,8 @@ impl UpdateFindingsFeedbackOutput {
 }
 
 /// A builder for [`UpdateFindingsFeedbackOutput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFindingsFeedbackOutputBuilder {
     _request_id: Option<String>,
 }

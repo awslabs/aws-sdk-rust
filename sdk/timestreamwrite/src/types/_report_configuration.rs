@@ -21,8 +21,8 @@ impl ReportConfiguration {
 }
 
 /// A builder for [`ReportConfiguration`](crate::types::ReportConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportConfigurationBuilder {
     pub(crate) report_s3_configuration: ::std::option::Option<crate::types::ReportS3Configuration>,
 }

@@ -52,8 +52,8 @@ impl DescribeLabelGroupOutput {
 }
 
 /// A builder for [`DescribeLabelGroupOutput`](crate::operation::describe_label_group::DescribeLabelGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLabelGroupOutputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_group_arn: ::std::option::Option<::std::string::String>,

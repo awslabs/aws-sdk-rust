@@ -50,8 +50,8 @@ impl AutoSnapshotAddOnRequest {
 }
 
 /// A builder for [`AutoSnapshotAddOnRequest`](crate::types::AutoSnapshotAddOnRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoSnapshotAddOnRequestBuilder {
     pub(crate) snapshot_time_of_day: ::std::option::Option<::std::string::String>,
 }

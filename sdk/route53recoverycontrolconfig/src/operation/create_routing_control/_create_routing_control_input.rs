@@ -39,8 +39,8 @@ impl CreateRoutingControlInput {
 }
 
 /// A builder for [`CreateRoutingControlInput`](crate::operation::create_routing_control::CreateRoutingControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRoutingControlInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,

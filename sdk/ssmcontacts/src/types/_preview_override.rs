@@ -35,8 +35,8 @@ impl PreviewOverride {
 }
 
 /// A builder for [`PreviewOverride`](crate::types::PreviewOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PreviewOverrideBuilder {
     pub(crate) new_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

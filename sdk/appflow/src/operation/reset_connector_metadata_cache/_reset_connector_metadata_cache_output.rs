@@ -18,8 +18,8 @@ impl ResetConnectorMetadataCacheOutput {
 }
 
 /// A builder for [`ResetConnectorMetadataCacheOutput`](crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetConnectorMetadataCacheOutputBuilder {
     _request_id: Option<String>,
 }

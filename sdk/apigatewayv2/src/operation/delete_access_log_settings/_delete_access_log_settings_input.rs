@@ -26,8 +26,8 @@ impl DeleteAccessLogSettingsInput {
 }
 
 /// A builder for [`DeleteAccessLogSettingsInput`](crate::operation::delete_access_log_settings::DeleteAccessLogSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessLogSettingsInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,

@@ -68,8 +68,8 @@ impl PutEmailIdentityDkimSigningAttributesOutput {
 }
 
 /// A builder for [`PutEmailIdentityDkimSigningAttributesOutput`](crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEmailIdentityDkimSigningAttributesOutputBuilder {
     pub(crate) dkim_status: ::std::option::Option<crate::types::DkimStatus>,
     pub(crate) dkim_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

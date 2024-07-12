@@ -26,8 +26,8 @@ impl DeleteSnapshotInput {
 }
 
 /// A builder for [`DeleteSnapshotInput`](crate::operation::delete_snapshot::DeleteSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSnapshotInputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

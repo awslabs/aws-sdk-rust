@@ -50,8 +50,8 @@ impl CreateTlsInspectionConfigurationInput {
 }
 
 /// A builder for [`CreateTlsInspectionConfigurationInput`](crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTlsInspectionConfigurationInputBuilder {
     pub(crate) tls_inspection_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) tls_inspection_configuration: ::std::option::Option<crate::types::TlsInspectionConfiguration>,

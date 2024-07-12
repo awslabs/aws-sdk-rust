@@ -26,8 +26,8 @@ impl GetAdministratorAccountOutput {
 }
 
 /// A builder for [`GetAdministratorAccountOutput`](crate::operation::get_administrator_account::GetAdministratorAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAdministratorAccountOutputBuilder {
     pub(crate) administrator: ::std::option::Option<crate::types::Administrator>,
     _request_id: Option<String>,

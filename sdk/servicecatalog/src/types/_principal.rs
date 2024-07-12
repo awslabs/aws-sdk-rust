@@ -29,8 +29,8 @@ impl Principal {
 }
 
 /// A builder for [`Principal`](crate::types::Principal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrincipalBuilder {
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal_type: ::std::option::Option<crate::types::PrincipalType>,

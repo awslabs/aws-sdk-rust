@@ -34,8 +34,8 @@ impl EnterStandbyInput {
 }
 
 /// A builder for [`EnterStandbyInput`](crate::operation::enter_standby::EnterStandbyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnterStandbyInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,

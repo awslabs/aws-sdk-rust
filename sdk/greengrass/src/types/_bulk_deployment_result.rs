@@ -65,8 +65,8 @@ impl BulkDeploymentResult {
 }
 
 /// A builder for [`BulkDeploymentResult`](crate::types::BulkDeploymentResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BulkDeploymentResultBuilder {
     pub(crate) created_at: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_arn: ::std::option::Option<::std::string::String>,

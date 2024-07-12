@@ -54,8 +54,8 @@ impl CreateSecurityGroupInput {
 }
 
 /// A builder for [`CreateSecurityGroupInput`](crate::operation::create_security_group::CreateSecurityGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSecurityGroupInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,

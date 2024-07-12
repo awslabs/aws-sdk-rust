@@ -43,8 +43,8 @@ impl CustomColor {
 }
 
 /// A builder for [`CustomColor`](crate::types::CustomColor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CustomColorBuilder {
     pub(crate) field_value: ::std::option::Option<::std::string::String>,
     pub(crate) color: ::std::option::Option<::std::string::String>,

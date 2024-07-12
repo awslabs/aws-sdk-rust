@@ -81,8 +81,8 @@ impl VideoSelector {
 }
 
 /// A builder for [`VideoSelector`](crate::types::VideoSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoSelectorBuilder {
     pub(crate) alpha_behavior: ::std::option::Option<crate::types::AlphaBehavior>,
     pub(crate) color_space: ::std::option::Option<crate::types::ColorSpace>,

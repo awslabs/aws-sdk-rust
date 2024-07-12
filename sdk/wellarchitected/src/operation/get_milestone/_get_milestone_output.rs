@@ -33,8 +33,8 @@ impl GetMilestoneOutput {
 }
 
 /// A builder for [`GetMilestoneOutput`](crate::operation::get_milestone::GetMilestoneOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMilestoneOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone: ::std::option::Option<crate::types::Milestone>,

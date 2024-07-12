@@ -57,8 +57,8 @@ impl HostOffering {
 }
 
 /// A builder for [`HostOffering`](crate::types::HostOffering).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HostOfferingBuilder {
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     pub(crate) duration: ::std::option::Option<i32>,

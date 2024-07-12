@@ -18,8 +18,8 @@ impl DeleteDataIntegrationOutput {
 }
 
 /// A builder for [`DeleteDataIntegrationOutput`](crate::operation::delete_data_integration::DeleteDataIntegrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataIntegrationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -31,8 +31,8 @@ impl S3InitiateRestoreObjectOperation {
 }
 
 /// A builder for [`S3InitiateRestoreObjectOperation`](crate::types::S3InitiateRestoreObjectOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3InitiateRestoreObjectOperationBuilder {
     pub(crate) expiration_in_days: ::std::option::Option<i32>,
     pub(crate) glacier_job_tier: ::std::option::Option<crate::types::S3GlacierJobTier>,

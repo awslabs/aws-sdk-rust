@@ -21,8 +21,8 @@ impl DateAxisOptions {
 }
 
 /// A builder for [`DateAxisOptions`](crate::types::DateAxisOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DateAxisOptionsBuilder {
     pub(crate) missing_date_visibility: ::std::option::Option<crate::types::Visibility>,
 }

@@ -26,8 +26,8 @@ impl DisassociateSourceGraphqlApiOutput {
 }
 
 /// A builder for [`DisassociateSourceGraphqlApiOutput`](crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateSourceGraphqlApiOutputBuilder {
     pub(crate) source_api_association_status: ::std::option::Option<crate::types::SourceApiAssociationStatus>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl DeleteEventActionInput {
 }
 
 /// A builder for [`DeleteEventActionInput`](crate::operation::delete_event_action::DeleteEventActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventActionInputBuilder {
     pub(crate) event_action_id: ::std::option::Option<::std::string::String>,
 }

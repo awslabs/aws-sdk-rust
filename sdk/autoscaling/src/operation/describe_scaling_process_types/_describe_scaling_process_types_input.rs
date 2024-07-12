@@ -11,8 +11,8 @@ impl DescribeScalingProcessTypesInput {
 }
 
 /// A builder for [`DescribeScalingProcessTypesInput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScalingProcessTypesInputBuilder {}
 impl DescribeScalingProcessTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScalingProcessTypesInput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesInput).

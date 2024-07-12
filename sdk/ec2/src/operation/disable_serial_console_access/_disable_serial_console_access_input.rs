@@ -20,8 +20,8 @@ impl DisableSerialConsoleAccessInput {
 }
 
 /// A builder for [`DisableSerialConsoleAccessInput`](crate::operation::disable_serial_console_access::DisableSerialConsoleAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableSerialConsoleAccessInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }

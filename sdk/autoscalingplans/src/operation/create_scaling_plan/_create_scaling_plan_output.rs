@@ -26,8 +26,8 @@ impl CreateScalingPlanOutput {
 }
 
 /// A builder for [`CreateScalingPlanOutput`](crate::operation::create_scaling_plan::CreateScalingPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateScalingPlanOutputBuilder {
     pub(crate) scaling_plan_version: ::std::option::Option<i64>,
     _request_id: Option<String>,

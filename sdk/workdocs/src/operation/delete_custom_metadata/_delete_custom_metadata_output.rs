@@ -18,8 +18,8 @@ impl DeleteCustomMetadataOutput {
 }
 
 /// A builder for [`DeleteCustomMetadataOutput`](crate::operation::delete_custom_metadata::DeleteCustomMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomMetadataOutputBuilder {
     _request_id: Option<String>,
 }

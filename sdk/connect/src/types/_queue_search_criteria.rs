@@ -49,8 +49,8 @@ impl QueueSearchCriteria {
 }
 
 /// A builder for [`QueueSearchCriteria`](crate::types::QueueSearchCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueueSearchCriteriaBuilder {
     pub(crate) or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::QueueSearchCriteria>>,
     pub(crate) and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::QueueSearchCriteria>>,

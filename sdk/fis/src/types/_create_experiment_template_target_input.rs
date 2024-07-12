@@ -74,8 +74,8 @@ impl CreateExperimentTemplateTargetInput {
 }
 
 /// A builder for [`CreateExperimentTemplateTargetInput`](crate::types::CreateExperimentTemplateTargetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateExperimentTemplateTargetInputBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

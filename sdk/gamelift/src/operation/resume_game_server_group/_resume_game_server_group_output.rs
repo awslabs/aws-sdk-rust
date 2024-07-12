@@ -26,8 +26,8 @@ impl ResumeGameServerGroupOutput {
 }
 
 /// A builder for [`ResumeGameServerGroupOutput`](crate::operation::resume_game_server_group::ResumeGameServerGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResumeGameServerGroupOutputBuilder {
     pub(crate) game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,

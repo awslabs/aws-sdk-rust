@@ -53,8 +53,8 @@ impl GenerateCardValidationDataOutput {
 }
 
 /// A builder for [`GenerateCardValidationDataOutput`](crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GenerateCardValidationDataOutputBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_check_value: ::std::option::Option<::std::string::String>,

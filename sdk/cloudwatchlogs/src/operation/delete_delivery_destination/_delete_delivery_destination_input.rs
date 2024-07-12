@@ -20,8 +20,8 @@ impl DeleteDeliveryDestinationInput {
 }
 
 /// A builder for [`DeleteDeliveryDestinationInput`](crate::operation::delete_delivery_destination::DeleteDeliveryDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeliveryDestinationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

@@ -92,8 +92,8 @@ impl DescribeManagedRuleGroupOutput {
 }
 
 /// A builder for [`DescribeManagedRuleGroupOutput`](crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeManagedRuleGroupOutputBuilder {
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,

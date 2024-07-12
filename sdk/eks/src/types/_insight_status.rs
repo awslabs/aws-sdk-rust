@@ -27,8 +27,8 @@ impl InsightStatus {
 }
 
 /// A builder for [`InsightStatus`](crate::types::InsightStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsightStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::InsightStatusValue>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

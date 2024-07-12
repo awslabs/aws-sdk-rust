@@ -47,8 +47,8 @@ impl StreamSpecification {
 }
 
 /// A builder for [`StreamSpecification`](crate::types::StreamSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamSpecificationBuilder {
     pub(crate) stream_enabled: ::std::option::Option<bool>,
     pub(crate) stream_view_type: ::std::option::Option<crate::types::StreamViewType>,

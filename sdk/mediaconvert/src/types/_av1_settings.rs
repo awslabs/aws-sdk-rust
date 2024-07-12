@@ -99,8 +99,8 @@ impl Av1Settings {
 }
 
 /// A builder for [`Av1Settings`](crate::types::Av1Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Av1SettingsBuilder {
     pub(crate) adaptive_quantization: ::std::option::Option<crate::types::Av1AdaptiveQuantization>,
     pub(crate) bit_depth: ::std::option::Option<crate::types::Av1BitDepth>,

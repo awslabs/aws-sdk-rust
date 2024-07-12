@@ -26,8 +26,8 @@ impl AttachObjectOutput {
 }
 
 /// A builder for [`AttachObjectOutput`](crate::operation::attach_object::AttachObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachObjectOutputBuilder {
     pub(crate) attached_object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -189,8 +189,8 @@ impl NetworkInterface {
 }
 
 /// A builder for [`NetworkInterface`](crate::types::NetworkInterface).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkInterfaceBuilder {
     pub(crate) association: ::std::option::Option<crate::types::NetworkInterfaceAssociation>,
     pub(crate) attachment: ::std::option::Option<crate::types::NetworkInterfaceAttachment>,

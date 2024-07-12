@@ -90,8 +90,8 @@ impl ModifyTrafficMirrorFilterRuleInput {
 }
 
 /// A builder for [`ModifyTrafficMirrorFilterRuleInput`](crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTrafficMirrorFilterRuleInputBuilder {
     pub(crate) traffic_mirror_filter_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_direction: ::std::option::Option<crate::types::TrafficDirection>,

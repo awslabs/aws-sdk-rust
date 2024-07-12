@@ -26,8 +26,8 @@ impl DeleteAnalysisTemplateInput {
 }
 
 /// A builder for [`DeleteAnalysisTemplateInput`](crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAnalysisTemplateInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_template_identifier: ::std::option::Option<::std::string::String>,

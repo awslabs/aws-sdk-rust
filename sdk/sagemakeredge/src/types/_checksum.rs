@@ -27,8 +27,8 @@ impl Checksum {
 }
 
 /// A builder for [`Checksum`](crate::types::Checksum).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChecksumBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ChecksumType>,
     pub(crate) sum: ::std::option::Option<::std::string::String>,

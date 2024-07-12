@@ -59,8 +59,8 @@ impl IntervalDetails {
 }
 
 /// A builder for [`IntervalDetails`](crate::types::IntervalDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntervalDetailsBuilder {
     pub(crate) time_zone: ::std::option::Option<::std::string::String>,
     pub(crate) interval_period: ::std::option::Option<crate::types::IntervalPeriod>,

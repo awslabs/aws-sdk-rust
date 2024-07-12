@@ -26,8 +26,8 @@ impl PublishFunctionOutput {
 }
 
 /// A builder for [`PublishFunctionOutput`](crate::operation::publish_function::PublishFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublishFunctionOutputBuilder {
     pub(crate) function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     _request_id: Option<String>,

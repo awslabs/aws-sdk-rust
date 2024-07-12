@@ -29,8 +29,8 @@ impl ProtectedQueryError {
 }
 
 /// A builder for [`ProtectedQueryError`](crate::types::ProtectedQueryError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProtectedQueryErrorBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

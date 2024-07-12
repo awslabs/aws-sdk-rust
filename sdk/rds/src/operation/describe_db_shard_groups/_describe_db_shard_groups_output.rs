@@ -34,8 +34,8 @@ impl DescribeDbShardGroupsOutput {
 }
 
 /// A builder for [`DescribeDbShardGroupsOutput`](crate::operation::describe_db_shard_groups::DescribeDbShardGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbShardGroupsOutputBuilder {
     pub(crate) db_shard_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbShardGroup>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

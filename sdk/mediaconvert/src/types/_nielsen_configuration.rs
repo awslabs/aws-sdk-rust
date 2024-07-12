@@ -27,8 +27,8 @@ impl NielsenConfiguration {
 }
 
 /// A builder for [`NielsenConfiguration`](crate::types::NielsenConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NielsenConfigurationBuilder {
     pub(crate) breakout_code: ::std::option::Option<i32>,
     pub(crate) distributor_id: ::std::option::Option<::std::string::String>,

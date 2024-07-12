@@ -21,8 +21,8 @@ impl DeleteEvaluationResultsInput {
 }
 
 /// A builder for [`DeleteEvaluationResultsInput`](crate::operation::delete_evaluation_results::DeleteEvaluationResultsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEvaluationResultsInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
 }

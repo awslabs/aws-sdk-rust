@@ -20,8 +20,8 @@ impl ListResourcePoliciesInput {
 }
 
 /// A builder for [`ListResourcePoliciesInput`](crate::operation::list_resource_policies::ListResourcePoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourcePoliciesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }

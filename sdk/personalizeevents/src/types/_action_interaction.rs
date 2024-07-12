@@ -125,8 +125,8 @@ impl ActionInteraction {
 }
 
 /// A builder for [`ActionInteraction`](crate::types::ActionInteraction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ActionInteractionBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

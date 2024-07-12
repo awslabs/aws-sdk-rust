@@ -32,8 +32,8 @@ impl ListStreamSessionsInput {
 }
 
 /// A builder for [`ListStreamSessionsInput`](crate::operation::list_stream_sessions::ListStreamSessionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamSessionsInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

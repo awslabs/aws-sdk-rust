@@ -18,8 +18,8 @@ impl DeleteSolNetworkInstanceOutput {
 }
 
 /// A builder for [`DeleteSolNetworkInstanceOutput`](crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSolNetworkInstanceOutputBuilder {
     _request_id: Option<String>,
 }

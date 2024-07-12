@@ -18,8 +18,8 @@ impl RegisterApplicationRevisionOutput {
 }
 
 /// A builder for [`RegisterApplicationRevisionOutput`](crate::operation::register_application_revision::RegisterApplicationRevisionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterApplicationRevisionOutputBuilder {
     _request_id: Option<String>,
 }

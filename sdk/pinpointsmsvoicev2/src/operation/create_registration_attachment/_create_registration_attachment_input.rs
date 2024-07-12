@@ -40,8 +40,8 @@ impl CreateRegistrationAttachmentInput {
 }
 
 /// A builder for [`CreateRegistrationAttachmentInput`](crate::operation::create_registration_attachment::CreateRegistrationAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRegistrationAttachmentInputBuilder {
     pub(crate) attachment_body: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) attachment_url: ::std::option::Option<::std::string::String>,

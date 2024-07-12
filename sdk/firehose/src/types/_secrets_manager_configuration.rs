@@ -33,8 +33,8 @@ impl SecretsManagerConfiguration {
 }
 
 /// A builder for [`SecretsManagerConfiguration`](crate::types::SecretsManagerConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecretsManagerConfigurationBuilder {
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

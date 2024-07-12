@@ -41,8 +41,8 @@ impl CertificateAuthorityConfiguration {
 }
 
 /// A builder for [`CertificateAuthorityConfiguration`](crate::types::CertificateAuthorityConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CertificateAuthorityConfigurationBuilder {
     pub(crate) key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     pub(crate) signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithm>,

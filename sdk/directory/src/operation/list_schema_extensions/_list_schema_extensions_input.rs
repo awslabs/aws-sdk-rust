@@ -32,8 +32,8 @@ impl ListSchemaExtensionsInput {
 }
 
 /// A builder for [`ListSchemaExtensionsInput`](crate::operation::list_schema_extensions::ListSchemaExtensionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSchemaExtensionsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

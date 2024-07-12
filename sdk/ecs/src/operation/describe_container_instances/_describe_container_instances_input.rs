@@ -36,8 +36,8 @@ impl DescribeContainerInstancesInput {
 }
 
 /// A builder for [`DescribeContainerInstancesInput`](crate::operation::describe_container_instances::DescribeContainerInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContainerInstancesInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) container_instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

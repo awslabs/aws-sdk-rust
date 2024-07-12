@@ -28,8 +28,8 @@ impl SuspendedProcess {
 }
 
 /// A builder for [`SuspendedProcess`](crate::types::SuspendedProcess).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuspendedProcessBuilder {
     pub(crate) process_name: ::std::option::Option<::std::string::String>,
     pub(crate) suspension_reason: ::std::option::Option<::std::string::String>,

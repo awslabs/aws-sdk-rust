@@ -28,8 +28,8 @@ impl SlotPriority {
 }
 
 /// A builder for [`SlotPriority`](crate::types::SlotPriority).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotPriorityBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) slot_id: ::std::option::Option<::std::string::String>,

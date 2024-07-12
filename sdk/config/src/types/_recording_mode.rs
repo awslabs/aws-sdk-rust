@@ -60,8 +60,8 @@ impl RecordingMode {
 }
 
 /// A builder for [`RecordingMode`](crate::types::RecordingMode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordingModeBuilder {
     pub(crate) recording_frequency: ::std::option::Option<crate::types::RecordingFrequency>,
     pub(crate) recording_mode_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RecordingModeOverride>>,

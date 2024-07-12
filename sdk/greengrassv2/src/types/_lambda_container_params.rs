@@ -47,8 +47,8 @@ impl LambdaContainerParams {
 }
 
 /// A builder for [`LambdaContainerParams`](crate::types::LambdaContainerParams).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaContainerParamsBuilder {
     pub(crate) memory_size_in_kb: ::std::option::Option<i32>,
     pub(crate) mount_ro_sysfs: ::std::option::Option<bool>,

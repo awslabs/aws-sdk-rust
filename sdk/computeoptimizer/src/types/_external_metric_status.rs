@@ -27,8 +27,8 @@ impl ExternalMetricStatus {
 }
 
 /// A builder for [`ExternalMetricStatus`](crate::types::ExternalMetricStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExternalMetricStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::ExternalMetricStatusCode>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,

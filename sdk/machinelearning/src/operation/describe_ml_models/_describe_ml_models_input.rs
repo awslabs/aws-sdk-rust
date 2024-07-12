@@ -152,8 +152,8 @@ impl DescribeMlModelsInput {
 }
 
 /// A builder for [`DescribeMlModelsInput`](crate::operation::describe_ml_models::DescribeMlModelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMlModelsInputBuilder {
     pub(crate) filter_variable: ::std::option::Option<crate::types::MlModelFilterVariable>,
     pub(crate) eq: ::std::option::Option<::std::string::String>,

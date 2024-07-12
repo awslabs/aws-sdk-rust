@@ -56,8 +56,8 @@ impl ImportClientBrandingOutput {
 }
 
 /// A builder for [`ImportClientBrandingOutput`](crate::operation::import_client_branding::ImportClientBrandingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportClientBrandingOutputBuilder {
     pub(crate) device_type_windows: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>,
     pub(crate) device_type_osx: ::std::option::Option<crate::types::DefaultClientBrandingAttributes>,

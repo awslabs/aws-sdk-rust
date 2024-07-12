@@ -46,8 +46,8 @@ impl GenerationConfiguration {
 }
 
 /// A builder for [`GenerationConfiguration`](crate::types::GenerationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerationConfigurationBuilder {
     pub(crate) prompt_template: ::std::option::Option<crate::types::PromptTemplate>,
     pub(crate) guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,

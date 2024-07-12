@@ -56,8 +56,8 @@ impl FunctionCode {
 }
 
 /// A builder for [`FunctionCode`](crate::types::FunctionCode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FunctionCodeBuilder {
     pub(crate) zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,

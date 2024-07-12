@@ -21,8 +21,8 @@ impl StartGatewayInput {
 }
 
 /// A builder for [`StartGatewayInput`](crate::operation::start_gateway::StartGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartGatewayInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }

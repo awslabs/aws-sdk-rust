@@ -51,8 +51,8 @@ impl IntOptions {
 }
 
 /// A builder for [`IntOptions`](crate::types::IntOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<i64>,
     pub(crate) source_field: ::std::option::Option<::std::string::String>,

@@ -73,8 +73,8 @@ impl FunctionUrlConfig {
 }
 
 /// A builder for [`FunctionUrlConfig`](crate::types::FunctionUrlConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FunctionUrlConfigBuilder {
     pub(crate) function_url: ::std::option::Option<::std::string::String>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,

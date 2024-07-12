@@ -95,8 +95,8 @@ impl GlossaryItem {
 }
 
 /// A builder for [`GlossaryItem`](crate::types::GlossaryItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GlossaryItemBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

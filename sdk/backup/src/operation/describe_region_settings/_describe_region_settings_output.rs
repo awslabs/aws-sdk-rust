@@ -38,8 +38,8 @@ impl DescribeRegionSettingsOutput {
 }
 
 /// A builder for [`DescribeRegionSettingsOutput`](crate::operation::describe_region_settings::DescribeRegionSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegionSettingsOutputBuilder {
     pub(crate) resource_type_opt_in_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     pub(crate) resource_type_management_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,

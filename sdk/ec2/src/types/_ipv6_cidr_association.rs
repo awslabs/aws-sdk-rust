@@ -27,8 +27,8 @@ impl Ipv6CidrAssociation {
 }
 
 /// A builder for [`Ipv6CidrAssociation`](crate::types::Ipv6CidrAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ipv6CidrAssociationBuilder {
     pub(crate) ipv6_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) associated_resource: ::std::option::Option<::std::string::String>,

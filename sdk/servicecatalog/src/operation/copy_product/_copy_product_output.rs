@@ -26,8 +26,8 @@ impl CopyProductOutput {
 }
 
 /// A builder for [`CopyProductOutput`](crate::operation::copy_product::CopyProductOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyProductOutputBuilder {
     pub(crate) copy_product_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

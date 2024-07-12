@@ -34,8 +34,8 @@ impl CodeArtifacts {
 }
 
 /// A builder for [`CodeArtifacts`](crate::types::CodeArtifacts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeArtifactsBuilder {
     pub(crate) source_code_artifacts_object_key: ::std::option::Option<::std::string::String>,
     pub(crate) build_artifacts_object_key: ::std::option::Option<::std::string::String>,

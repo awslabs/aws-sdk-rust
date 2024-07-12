@@ -41,8 +41,8 @@ impl AccessLog {
 }
 
 /// A builder for [`AccessLog`](crate::types::AccessLog).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessLogBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,

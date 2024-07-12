@@ -33,8 +33,8 @@ impl DestinationConfiguration {
 }
 
 /// A builder for [`DestinationConfiguration`](crate::types::DestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DestinationType>,
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,

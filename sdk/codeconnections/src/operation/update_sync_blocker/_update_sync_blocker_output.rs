@@ -39,8 +39,8 @@ impl UpdateSyncBlockerOutput {
 }
 
 /// A builder for [`UpdateSyncBlockerOutput`](crate::operation::update_sync_blocker::UpdateSyncBlockerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSyncBlockerOutputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) parent_resource_name: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl DescribeRulesPackagesInput {
 }
 
 /// A builder for [`DescribeRulesPackagesInput`](crate::operation::describe_rules_packages::DescribeRulesPackagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRulesPackagesInputBuilder {
     pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,

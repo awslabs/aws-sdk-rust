@@ -53,8 +53,8 @@ impl SessionKeyMastercard {
 }
 
 /// A builder for [`SessionKeyMastercard`](crate::types::SessionKeyMastercard).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SessionKeyMastercardBuilder {
     pub(crate) primary_account_number: ::std::option::Option<::std::string::String>,
     pub(crate) pan_sequence_number: ::std::option::Option<::std::string::String>,

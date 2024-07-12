@@ -54,8 +54,8 @@ impl UpdateIdMappingWorkflowInput {
 }
 
 /// A builder for [`UpdateIdMappingWorkflowInput`](crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIdMappingWorkflowInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

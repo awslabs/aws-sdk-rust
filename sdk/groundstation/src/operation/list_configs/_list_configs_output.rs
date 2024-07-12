@@ -35,8 +35,8 @@ impl ListConfigsOutput {
 }
 
 /// A builder for [`ListConfigsOutput`](crate::operation::list_configs::ListConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) config_list: ::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>>,

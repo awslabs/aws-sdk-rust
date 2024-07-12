@@ -33,8 +33,8 @@ impl ColumnHierarchy {
 }
 
 /// A builder for [`ColumnHierarchy`](crate::types::ColumnHierarchy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnHierarchyBuilder {
     pub(crate) explicit_hierarchy: ::std::option::Option<crate::types::ExplicitHierarchy>,
     pub(crate) date_time_hierarchy: ::std::option::Option<crate::types::DateTimeHierarchy>,

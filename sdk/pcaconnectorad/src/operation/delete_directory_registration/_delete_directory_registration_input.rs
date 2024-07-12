@@ -20,8 +20,8 @@ impl DeleteDirectoryRegistrationInput {
 }
 
 /// A builder for [`DeleteDirectoryRegistrationInput`](crate::operation::delete_directory_registration::DeleteDirectoryRegistrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDirectoryRegistrationInputBuilder {
     pub(crate) directory_registration_arn: ::std::option::Option<::std::string::String>,
 }

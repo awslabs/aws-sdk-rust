@@ -26,8 +26,8 @@ impl GetModelInvocationLoggingConfigurationOutput {
 }
 
 /// A builder for [`GetModelInvocationLoggingConfigurationOutput`](crate::operation::get_model_invocation_logging_configuration::GetModelInvocationLoggingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetModelInvocationLoggingConfigurationOutputBuilder {
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     _request_id: Option<String>,

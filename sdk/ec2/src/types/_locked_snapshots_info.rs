@@ -91,8 +91,8 @@ impl LockedSnapshotsInfo {
 }
 
 /// A builder for [`LockedSnapshotsInfo`](crate::types::LockedSnapshotsInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LockedSnapshotsInfoBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,

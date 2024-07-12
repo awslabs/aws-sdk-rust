@@ -118,8 +118,8 @@ impl SignUpInput {
 }
 
 /// A builder for [`SignUpInput`](crate::operation::sign_up::SignUpInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SignUpInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_hash: ::std::option::Option<::std::string::String>,

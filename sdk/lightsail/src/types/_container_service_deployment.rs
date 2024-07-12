@@ -68,8 +68,8 @@ impl ContainerServiceDeployment {
 }
 
 /// A builder for [`ContainerServiceDeployment`](crate::types::ContainerServiceDeployment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerServiceDeploymentBuilder {
     pub(crate) version: ::std::option::Option<i32>,
     pub(crate) state: ::std::option::Option<crate::types::ContainerServiceDeploymentState>,

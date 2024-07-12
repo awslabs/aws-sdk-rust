@@ -48,8 +48,8 @@ impl GetSessionEmbedUrlOutput {
 }
 
 /// A builder for [`GetSessionEmbedUrlOutput`](crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetSessionEmbedUrlOutputBuilder {
     pub(crate) embed_url: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,

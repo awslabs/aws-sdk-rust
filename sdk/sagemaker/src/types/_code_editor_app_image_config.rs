@@ -27,8 +27,8 @@ impl CodeEditorAppImageConfig {
 }
 
 /// A builder for [`CodeEditorAppImageConfig`](crate::types::CodeEditorAppImageConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeEditorAppImageConfigBuilder {
     pub(crate) file_system_config: ::std::option::Option<crate::types::FileSystemConfig>,
     pub(crate) container_config: ::std::option::Option<crate::types::ContainerConfig>,

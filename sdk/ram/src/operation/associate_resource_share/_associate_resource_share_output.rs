@@ -34,8 +34,8 @@ impl AssociateResourceShareOutput {
 }
 
 /// A builder for [`AssociateResourceShareOutput`](crate::operation::associate_resource_share::AssociateResourceShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateResourceShareOutputBuilder {
     pub(crate) resource_share_associations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShareAssociation>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

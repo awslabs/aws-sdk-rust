@@ -26,8 +26,8 @@ impl GetServiceQuotaOutput {
 }
 
 /// A builder for [`GetServiceQuotaOutput`](crate::operation::get_service_quota::GetServiceQuotaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceQuotaOutputBuilder {
     pub(crate) quota: ::std::option::Option<crate::types::ServiceQuota>,
     _request_id: Option<String>,

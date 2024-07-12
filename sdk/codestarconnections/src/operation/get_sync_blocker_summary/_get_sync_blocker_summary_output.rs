@@ -26,8 +26,8 @@ impl GetSyncBlockerSummaryOutput {
 }
 
 /// A builder for [`GetSyncBlockerSummaryOutput`](crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSyncBlockerSummaryOutputBuilder {
     pub(crate) sync_blocker_summary: ::std::option::Option<crate::types::SyncBlockerSummary>,
     _request_id: Option<String>,

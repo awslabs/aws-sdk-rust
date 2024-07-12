@@ -34,8 +34,8 @@ impl ListStoredQueriesOutput {
 }
 
 /// A builder for [`ListStoredQueriesOutput`](crate::operation::list_stored_queries::ListStoredQueriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStoredQueriesOutputBuilder {
     pub(crate) stored_query_metadata: ::std::option::Option<::std::vec::Vec<crate::types::StoredQueryMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -59,8 +59,8 @@ impl FirewallPolicyDetails {
 }
 
 /// A builder for [`FirewallPolicyDetails`](crate::types::FirewallPolicyDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FirewallPolicyDetailsBuilder {
     pub(crate) stateful_rule_group_references: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails>>,
     pub(crate) stateless_custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyStatelessCustomActionsDetails>>,

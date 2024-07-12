@@ -18,8 +18,8 @@ impl DeleteVpnGatewayOutput {
 }
 
 /// A builder for [`DeleteVpnGatewayOutput`](crate::operation::delete_vpn_gateway::DeleteVpnGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpnGatewayOutputBuilder {
     _request_id: Option<String>,
 }

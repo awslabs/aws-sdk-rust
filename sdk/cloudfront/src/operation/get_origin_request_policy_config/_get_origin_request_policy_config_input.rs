@@ -20,8 +20,8 @@ impl GetOriginRequestPolicyConfigInput {
 }
 
 /// A builder for [`GetOriginRequestPolicyConfigInput`](crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOriginRequestPolicyConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

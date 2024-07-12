@@ -27,8 +27,8 @@ impl InstanceRefreshProgressDetails {
 }
 
 /// A builder for [`InstanceRefreshProgressDetails`](crate::types::InstanceRefreshProgressDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceRefreshProgressDetailsBuilder {
     pub(crate) live_pool_progress: ::std::option::Option<crate::types::InstanceRefreshLivePoolProgress>,
     pub(crate) warm_pool_progress: ::std::option::Option<crate::types::InstanceRefreshWarmPoolProgress>,

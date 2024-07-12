@@ -32,8 +32,8 @@ impl RetryPipelineExecutionInput {
 }
 
 /// A builder for [`RetryPipelineExecutionInput`](crate::operation::retry_pipeline_execution::RetryPipelineExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetryPipelineExecutionInputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

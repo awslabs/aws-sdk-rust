@@ -41,8 +41,8 @@ impl ExperimentResultsData {
 }
 
 /// A builder for [`ExperimentResultsData`](crate::types::ExperimentResultsData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperimentResultsDataBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) treatment_name: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl ListCustomRoutingEndpointGroupsInput {
 }
 
 /// A builder for [`ListCustomRoutingEndpointGroupsInput`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomRoutingEndpointGroupsInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

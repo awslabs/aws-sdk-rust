@@ -18,8 +18,8 @@ impl PutPermissionsBoundaryToPermissionSetOutput {
 }
 
 /// A builder for [`PutPermissionsBoundaryToPermissionSetOutput`](crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutPermissionsBoundaryToPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }

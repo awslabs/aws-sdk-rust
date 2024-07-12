@@ -18,8 +18,8 @@ impl AddTagsToStreamOutput {
 }
 
 /// A builder for [`AddTagsToStreamOutput`](crate::operation::add_tags_to_stream::AddTagsToStreamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddTagsToStreamOutputBuilder {
     _request_id: Option<String>,
 }

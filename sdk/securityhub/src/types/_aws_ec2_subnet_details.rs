@@ -95,8 +95,8 @@ impl AwsEc2SubnetDetails {
 }
 
 /// A builder for [`AwsEc2SubnetDetails`](crate::types::AwsEc2SubnetDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2SubnetDetailsBuilder {
     pub(crate) assign_ipv6_address_on_creation: ::std::option::Option<bool>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,

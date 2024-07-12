@@ -78,8 +78,8 @@ impl CreateEnvironmentProfileInput {
 }
 
 /// A builder for [`CreateEnvironmentProfileInput`](crate::operation::create_environment_profile::CreateEnvironmentProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateEnvironmentProfileInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

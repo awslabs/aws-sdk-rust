@@ -65,8 +65,8 @@ impl GetQueueFleetAssociationOutput {
 }
 
 /// A builder for [`GetQueueFleetAssociationOutput`](crate::operation::get_queue_fleet_association::GetQueueFleetAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQueueFleetAssociationOutputBuilder {
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,

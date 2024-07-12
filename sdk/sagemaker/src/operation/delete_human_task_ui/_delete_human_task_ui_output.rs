@@ -18,8 +18,8 @@ impl DeleteHumanTaskUiOutput {
 }
 
 /// A builder for [`DeleteHumanTaskUiOutput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHumanTaskUiOutputBuilder {
     _request_id: Option<String>,
 }

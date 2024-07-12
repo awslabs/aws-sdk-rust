@@ -30,8 +30,8 @@ impl AddRoleToInstanceProfileInput {
 }
 
 /// A builder for [`AddRoleToInstanceProfileInput`](crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddRoleToInstanceProfileInputBuilder {
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,

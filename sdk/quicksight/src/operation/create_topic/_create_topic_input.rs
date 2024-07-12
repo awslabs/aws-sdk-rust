@@ -40,8 +40,8 @@ impl CreateTopicInput {
 }
 
 /// A builder for [`CreateTopicInput`](crate::operation::create_topic::CreateTopicInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTopicInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl Jurisdiction {
 }
 
 /// A builder for [`Jurisdiction`](crate::types::Jurisdiction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JurisdictionBuilder {
     pub(crate) state_or_region: ::std::option::Option<::std::string::String>,
     pub(crate) country_code: ::std::option::Option<::std::string::String>,

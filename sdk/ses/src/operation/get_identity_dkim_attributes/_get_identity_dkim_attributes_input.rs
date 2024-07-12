@@ -23,8 +23,8 @@ impl GetIdentityDkimAttributesInput {
 }
 
 /// A builder for [`GetIdentityDkimAttributesInput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityDkimAttributesInputBuilder {
     pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

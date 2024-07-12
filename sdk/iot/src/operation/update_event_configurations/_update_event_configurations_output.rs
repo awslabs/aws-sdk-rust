@@ -18,8 +18,8 @@ impl UpdateEventConfigurationsOutput {
 }
 
 /// A builder for [`UpdateEventConfigurationsOutput`](crate::operation::update_event_configurations::UpdateEventConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventConfigurationsOutputBuilder {
     _request_id: Option<String>,
 }

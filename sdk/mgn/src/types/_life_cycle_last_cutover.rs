@@ -33,8 +33,8 @@ impl LifeCycleLastCutover {
 }
 
 /// A builder for [`LifeCycleLastCutover`](crate::types::LifeCycleLastCutover).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifeCycleLastCutoverBuilder {
     pub(crate) initiated: ::std::option::Option<crate::types::LifeCycleLastCutoverInitiated>,
     pub(crate) reverted: ::std::option::Option<crate::types::LifeCycleLastCutoverReverted>,

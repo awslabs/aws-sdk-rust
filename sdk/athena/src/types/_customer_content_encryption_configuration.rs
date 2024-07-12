@@ -22,8 +22,8 @@ impl CustomerContentEncryptionConfiguration {
 }
 
 /// A builder for [`CustomerContentEncryptionConfiguration`](crate::types::CustomerContentEncryptionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomerContentEncryptionConfigurationBuilder {
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
 }

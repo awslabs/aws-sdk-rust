@@ -65,8 +65,8 @@ impl FleetAdvisorSchemaObjectResponse {
 }
 
 /// A builder for [`FleetAdvisorSchemaObjectResponse`](crate::types::FleetAdvisorSchemaObjectResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetAdvisorSchemaObjectResponseBuilder {
     pub(crate) schema_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_type: ::std::option::Option<::std::string::String>,

@@ -59,8 +59,8 @@ impl InternetEventSummary {
 }
 
 /// A builder for [`InternetEventSummary`](crate::types::InternetEventSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InternetEventSummaryBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,

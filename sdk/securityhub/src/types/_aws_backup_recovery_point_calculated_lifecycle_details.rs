@@ -27,8 +27,8 @@ impl AwsBackupRecoveryPointCalculatedLifecycleDetails {
 }
 
 /// A builder for [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsBackupRecoveryPointCalculatedLifecycleDetailsBuilder {
     pub(crate) delete_at: ::std::option::Option<::std::string::String>,
     pub(crate) move_to_cold_storage_at: ::std::option::Option<::std::string::String>,

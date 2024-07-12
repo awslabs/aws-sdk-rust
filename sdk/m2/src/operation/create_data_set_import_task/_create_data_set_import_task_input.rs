@@ -32,8 +32,8 @@ impl CreateDataSetImportTaskInput {
 }
 
 /// A builder for [`CreateDataSetImportTaskInput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataSetImportTaskInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) import_config: ::std::option::Option<crate::types::DataSetImportConfig>,

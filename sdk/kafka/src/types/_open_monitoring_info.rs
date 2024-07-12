@@ -21,8 +21,8 @@ impl OpenMonitoringInfo {
 }
 
 /// A builder for [`OpenMonitoringInfo`](crate::types::OpenMonitoringInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpenMonitoringInfoBuilder {
     pub(crate) prometheus: ::std::option::Option<crate::types::PrometheusInfo>,
 }

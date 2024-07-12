@@ -35,8 +35,8 @@ impl ListElasticsearchVersionsOutput {
 }
 
 /// A builder for [`ListElasticsearchVersionsOutput`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListElasticsearchVersionsOutputBuilder {
     pub(crate) elasticsearch_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

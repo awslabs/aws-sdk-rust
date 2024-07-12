@@ -27,8 +27,8 @@ impl VpcPeeringConnectionStatus {
 }
 
 /// A builder for [`VpcPeeringConnectionStatus`](crate::types::VpcPeeringConnectionStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcPeeringConnectionStatusBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

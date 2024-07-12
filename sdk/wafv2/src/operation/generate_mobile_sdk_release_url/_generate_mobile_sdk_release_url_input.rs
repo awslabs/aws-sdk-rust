@@ -26,8 +26,8 @@ impl GenerateMobileSdkReleaseUrlInput {
 }
 
 /// A builder for [`GenerateMobileSdkReleaseUrlInput`](crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateMobileSdkReleaseUrlInputBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
     pub(crate) release_version: ::std::option::Option<::std::string::String>,

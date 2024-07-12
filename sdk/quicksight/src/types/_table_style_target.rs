@@ -21,8 +21,8 @@ impl TableStyleTarget {
 }
 
 /// A builder for [`TableStyleTarget`](crate::types::TableStyleTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableStyleTargetBuilder {
     pub(crate) cell_type: ::std::option::Option<crate::types::StyledCellType>,
 }

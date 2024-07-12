@@ -19,8 +19,8 @@ impl ConfirmForgotPasswordOutput {
 }
 
 /// A builder for [`ConfirmForgotPasswordOutput`](crate::operation::confirm_forgot_password::ConfirmForgotPasswordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfirmForgotPasswordOutputBuilder {
     _request_id: Option<String>,
 }

@@ -32,8 +32,8 @@ impl ListPartnerEventSourceAccountsInput {
 }
 
 /// A builder for [`ListPartnerEventSourceAccountsInput`](crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPartnerEventSourceAccountsInputBuilder {
     pub(crate) event_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

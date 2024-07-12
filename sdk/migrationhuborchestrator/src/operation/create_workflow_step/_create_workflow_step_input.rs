@@ -82,8 +82,8 @@ impl CreateWorkflowStepInput {
 }
 
 /// A builder for [`CreateWorkflowStepInput`](crate::operation::create_workflow_step::CreateWorkflowStepInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkflowStepInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) step_group_id: ::std::option::Option<::std::string::String>,

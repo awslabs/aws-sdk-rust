@@ -27,8 +27,8 @@ impl SigningConfiguration {
 }
 
 /// A builder for [`SigningConfiguration`](crate::types::SigningConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SigningConfigurationBuilder {
     pub(crate) encryption_algorithm_options: ::std::option::Option<crate::types::EncryptionAlgorithmOptions>,
     pub(crate) hash_algorithm_options: ::std::option::Option<crate::types::HashAlgorithmOptions>,

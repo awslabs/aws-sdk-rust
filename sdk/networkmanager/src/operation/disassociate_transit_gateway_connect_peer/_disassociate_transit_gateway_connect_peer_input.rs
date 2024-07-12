@@ -26,8 +26,8 @@ impl DisassociateTransitGatewayConnectPeerInput {
 }
 
 /// A builder for [`DisassociateTransitGatewayConnectPeerInput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTransitGatewayConnectPeerInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_connect_peer_arn: ::std::option::Option<::std::string::String>,

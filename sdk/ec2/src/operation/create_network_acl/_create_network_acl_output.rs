@@ -32,8 +32,8 @@ impl CreateNetworkAclOutput {
 }
 
 /// A builder for [`CreateNetworkAclOutput`](crate::operation::create_network_acl::CreateNetworkAclOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkAclOutputBuilder {
     pub(crate) network_acl: ::std::option::Option<crate::types::NetworkAcl>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

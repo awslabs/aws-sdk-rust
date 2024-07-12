@@ -27,8 +27,8 @@ impl EnableDomainTransferLockOutput {
 }
 
 /// A builder for [`EnableDomainTransferLockOutput`](crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableDomainTransferLockOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

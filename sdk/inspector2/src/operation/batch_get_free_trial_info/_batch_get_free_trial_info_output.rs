@@ -34,8 +34,8 @@ impl BatchGetFreeTrialInfoOutput {
 }
 
 /// A builder for [`BatchGetFreeTrialInfoOutput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetFreeTrialInfoOutputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialAccountInfo>>,
     pub(crate) failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialInfoError>>,

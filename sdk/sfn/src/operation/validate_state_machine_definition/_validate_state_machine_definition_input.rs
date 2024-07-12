@@ -34,8 +34,8 @@ impl ValidateStateMachineDefinitionInput {
 }
 
 /// A builder for [`ValidateStateMachineDefinitionInput`](crate::operation::validate_state_machine_definition::ValidateStateMachineDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ValidateStateMachineDefinitionInputBuilder {
     pub(crate) definition: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::StateMachineType>,

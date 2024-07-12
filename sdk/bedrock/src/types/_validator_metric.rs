@@ -21,8 +21,8 @@ impl ValidatorMetric {
 }
 
 /// A builder for [`ValidatorMetric`](crate::types::ValidatorMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidatorMetricBuilder {
     pub(crate) validation_loss: ::std::option::Option<f32>,
 }

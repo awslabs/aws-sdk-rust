@@ -68,8 +68,8 @@ impl RotateIngestEndpointCredentialsOutput {
 }
 
 /// A builder for [`RotateIngestEndpointCredentialsOutput`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RotateIngestEndpointCredentialsOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::std::string::String>,

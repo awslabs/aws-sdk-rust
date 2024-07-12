@@ -44,8 +44,8 @@ impl GetMergeCommitInput {
 }
 
 /// A builder for [`GetMergeCommitInput`](crate::operation::get_merge_commit::GetMergeCommitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMergeCommitInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_commit_specifier: ::std::option::Option<::std::string::String>,

@@ -51,8 +51,8 @@ impl Esam {
 }
 
 /// A builder for [`Esam`](crate::types::Esam).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EsamBuilder {
     pub(crate) acquisition_point_id: ::std::option::Option<::std::string::String>,
     pub(crate) ad_avail_offset: ::std::option::Option<i32>,

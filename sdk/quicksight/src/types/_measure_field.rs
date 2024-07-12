@@ -39,8 +39,8 @@ impl MeasureField {
 }
 
 /// A builder for [`MeasureField`](crate::types::MeasureField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MeasureFieldBuilder {
     pub(crate) numerical_measure_field: ::std::option::Option<crate::types::NumericalMeasureField>,
     pub(crate) categorical_measure_field: ::std::option::Option<crate::types::CategoricalMeasureField>,

@@ -20,8 +20,8 @@ impl GetTransitGatewayPeeringInput {
 }
 
 /// A builder for [`GetTransitGatewayPeeringInput`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayPeeringInputBuilder {
     pub(crate) peering_id: ::std::option::Option<::std::string::String>,
 }

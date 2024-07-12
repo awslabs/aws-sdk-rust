@@ -42,8 +42,8 @@ impl DescribeSettingsOutput {
 }
 
 /// A builder for [`DescribeSettingsOutput`](crate::operation::describe_settings::DescribeSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSettingsOutputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) setting_entries: ::std::option::Option<::std::vec::Vec<crate::types::SettingEntry>>,

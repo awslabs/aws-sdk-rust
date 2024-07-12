@@ -40,8 +40,8 @@ impl DeleteFunctionConcurrencyInput {
 }
 
 /// A builder for [`DeleteFunctionConcurrencyInput`](crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFunctionConcurrencyInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
 }

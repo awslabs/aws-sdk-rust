@@ -18,8 +18,8 @@ impl PutStudioMembersOutput {
 }
 
 /// A builder for [`PutStudioMembersOutput`](crate::operation::put_studio_members::PutStudioMembersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutStudioMembersOutputBuilder {
     _request_id: Option<String>,
 }

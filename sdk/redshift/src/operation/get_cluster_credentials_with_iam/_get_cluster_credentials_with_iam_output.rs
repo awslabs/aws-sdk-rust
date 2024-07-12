@@ -55,8 +55,8 @@ impl GetClusterCredentialsWithIamOutput {
 }
 
 /// A builder for [`GetClusterCredentialsWithIamOutput`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetClusterCredentialsWithIamOutputBuilder {
     pub(crate) db_user: ::std::option::Option<::std::string::String>,
     pub(crate) db_password: ::std::option::Option<::std::string::String>,

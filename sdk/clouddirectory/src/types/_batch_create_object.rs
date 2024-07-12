@@ -47,8 +47,8 @@ impl BatchCreateObject {
 }
 
 /// A builder for [`BatchCreateObject`](crate::types::BatchCreateObject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateObjectBuilder {
     pub(crate) schema_facet: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     pub(crate) object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,

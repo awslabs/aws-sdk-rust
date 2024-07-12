@@ -93,8 +93,8 @@ impl ResaleAuthorizationFilters {
 }
 
 /// A builder for [`ResaleAuthorizationFilters`](crate::types::ResaleAuthorizationFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResaleAuthorizationFiltersBuilder {
     pub(crate) entity_id: ::std::option::Option<crate::types::ResaleAuthorizationEntityIdFilter>,
     pub(crate) name: ::std::option::Option<crate::types::ResaleAuthorizationNameFilter>,

@@ -21,8 +21,8 @@ impl VirtualGatewayLogging {
 }
 
 /// A builder for [`VirtualGatewayLogging`](crate::types::VirtualGatewayLogging).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualGatewayLoggingBuilder {
     pub(crate) access_log: ::std::option::Option<crate::types::VirtualGatewayAccessLog>,
 }

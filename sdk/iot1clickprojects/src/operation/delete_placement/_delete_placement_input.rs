@@ -26,8 +26,8 @@ impl DeletePlacementInput {
 }
 
 /// A builder for [`DeletePlacementInput`](crate::operation::delete_placement::DeletePlacementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePlacementInputBuilder {
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

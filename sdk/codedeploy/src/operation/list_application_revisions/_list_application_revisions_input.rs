@@ -109,8 +109,8 @@ impl ListApplicationRevisionsInput {
 }
 
 /// A builder for [`ListApplicationRevisionsInput`](crate::operation::list_application_revisions::ListApplicationRevisionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationRevisionsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ApplicationRevisionSortBy>,

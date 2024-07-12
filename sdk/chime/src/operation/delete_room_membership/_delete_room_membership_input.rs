@@ -32,8 +32,8 @@ impl DeleteRoomMembershipInput {
 }
 
 /// A builder for [`DeleteRoomMembershipInput`](crate::operation::delete_room_membership::DeleteRoomMembershipInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRoomMembershipInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_id: ::std::option::Option<::std::string::String>,

@@ -40,8 +40,8 @@ impl SearchUsersOutput {
 }
 
 /// A builder for [`SearchUsersOutput`](crate::operation::search_users::SearchUsersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchUsersOutputBuilder {
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::UserSearchSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

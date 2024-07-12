@@ -20,8 +20,8 @@ impl DeleteAddonInstanceInput {
 }
 
 /// A builder for [`DeleteAddonInstanceInput`](crate::operation::delete_addon_instance::DeleteAddonInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAddonInstanceInputBuilder {
     pub(crate) addon_instance_id: ::std::option::Option<::std::string::String>,
 }

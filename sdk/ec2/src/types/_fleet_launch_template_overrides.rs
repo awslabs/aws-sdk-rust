@@ -93,8 +93,8 @@ impl FleetLaunchTemplateOverrides {
 }
 
 /// A builder for [`FleetLaunchTemplateOverrides`](crate::types::FleetLaunchTemplateOverrides).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetLaunchTemplateOverridesBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) max_price: ::std::option::Option<::std::string::String>,

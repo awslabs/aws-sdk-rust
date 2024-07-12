@@ -11,8 +11,8 @@ impl DescribeVirtualGatewaysInput {
 }
 
 /// A builder for [`DescribeVirtualGatewaysInput`](crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVirtualGatewaysInputBuilder {}
 impl DescribeVirtualGatewaysInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualGatewaysInput`](crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput).

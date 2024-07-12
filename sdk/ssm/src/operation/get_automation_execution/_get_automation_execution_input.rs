@@ -20,8 +20,8 @@ impl GetAutomationExecutionInput {
 }
 
 /// A builder for [`GetAutomationExecutionInput`](crate::operation::get_automation_execution::GetAutomationExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAutomationExecutionInputBuilder {
     pub(crate) automation_execution_id: ::std::option::Option<::std::string::String>,
 }

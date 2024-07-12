@@ -48,8 +48,8 @@ impl CreatePackageOutput {
 }
 
 /// A builder for [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreatePackageOutputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) package_arn: ::std::option::Option<::std::string::String>,

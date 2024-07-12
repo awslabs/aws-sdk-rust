@@ -35,8 +35,8 @@ impl DescribeOrderableReplicationInstancesOutput {
 }
 
 /// A builder for [`DescribeOrderableReplicationInstancesOutput`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrderableReplicationInstancesOutputBuilder {
     pub(crate) orderable_replication_instances: ::std::option::Option<::std::vec::Vec<crate::types::OrderableReplicationInstance>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

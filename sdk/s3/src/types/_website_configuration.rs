@@ -45,8 +45,8 @@ impl WebsiteConfiguration {
 }
 
 /// A builder for [`WebsiteConfiguration`](crate::types::WebsiteConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WebsiteConfigurationBuilder {
     pub(crate) error_document: ::std::option::Option<crate::types::ErrorDocument>,
     pub(crate) index_document: ::std::option::Option<crate::types::IndexDocument>,

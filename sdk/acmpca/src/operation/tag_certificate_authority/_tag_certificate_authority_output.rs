@@ -18,8 +18,8 @@ impl TagCertificateAuthorityOutput {
 }
 
 /// A builder for [`TagCertificateAuthorityOutput`](crate::operation::tag_certificate_authority::TagCertificateAuthorityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagCertificateAuthorityOutputBuilder {
     _request_id: Option<String>,
 }

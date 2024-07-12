@@ -27,8 +27,8 @@ impl TemplateParameterConfiguration {
 }
 
 /// A builder for [`TemplateParameterConfiguration`](crate::types::TemplateParameterConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateParameterConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TemplateParameterDataType>,
     pub(crate) default_value: ::std::option::Option<::std::string::String>,

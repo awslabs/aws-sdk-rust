@@ -21,8 +21,8 @@ impl InstanceSavingsEstimationMode {
 }
 
 /// A builder for [`InstanceSavingsEstimationMode`](crate::types::InstanceSavingsEstimationMode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceSavingsEstimationModeBuilder {
     pub(crate) source: ::std::option::Option<crate::types::InstanceSavingsEstimationModeSource>,
 }

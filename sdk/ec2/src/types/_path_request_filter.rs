@@ -39,8 +39,8 @@ impl PathRequestFilter {
 }
 
 /// A builder for [`PathRequestFilter`](crate::types::PathRequestFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PathRequestFilterBuilder {
     pub(crate) source_address: ::std::option::Option<::std::string::String>,
     pub(crate) source_port_range: ::std::option::Option<crate::types::RequestFilterPortRange>,

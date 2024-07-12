@@ -34,8 +34,8 @@ impl AssociateSourceServersInput {
 }
 
 /// A builder for [`AssociateSourceServersInput`](crate::operation::associate_source_servers::AssociateSourceServersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateSourceServersInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

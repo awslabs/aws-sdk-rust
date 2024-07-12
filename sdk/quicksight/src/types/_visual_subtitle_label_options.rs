@@ -27,8 +27,8 @@ impl VisualSubtitleLabelOptions {
 }
 
 /// A builder for [`VisualSubtitleLabelOptions`](crate::types::VisualSubtitleLabelOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VisualSubtitleLabelOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) format_text: ::std::option::Option<crate::types::LongFormatText>,

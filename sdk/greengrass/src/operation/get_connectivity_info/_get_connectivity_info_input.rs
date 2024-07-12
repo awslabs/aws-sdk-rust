@@ -20,8 +20,8 @@ impl GetConnectivityInfoInput {
 }
 
 /// A builder for [`GetConnectivityInfoInput`](crate::operation::get_connectivity_info::GetConnectivityInfoInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectivityInfoInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }

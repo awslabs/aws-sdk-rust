@@ -55,8 +55,8 @@ impl CellTowers {
 }
 
 /// A builder for [`CellTowers`](crate::types::CellTowers).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CellTowersBuilder {
     pub(crate) gsm: ::std::option::Option<::std::vec::Vec<crate::types::GsmObj>>,
     pub(crate) wcdma: ::std::option::Option<::std::vec::Vec<crate::types::WcdmaObj>>,

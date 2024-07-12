@@ -39,8 +39,8 @@ impl Dimensions {
 }
 
 /// A builder for [`Dimensions`](crate::types::Dimensions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DimensionsBuilder {
     pub(crate) queue: ::std::option::Option<crate::types::QueueReference>,
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,

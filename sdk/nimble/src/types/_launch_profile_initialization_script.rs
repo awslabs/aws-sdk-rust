@@ -56,8 +56,8 @@ impl LaunchProfileInitializationScript {
 }
 
 /// A builder for [`LaunchProfileInitializationScript`](crate::types::LaunchProfileInitializationScript).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LaunchProfileInitializationScriptBuilder {
     pub(crate) script: ::std::option::Option<::std::string::String>,
     pub(crate) studio_component_id: ::std::option::Option<::std::string::String>,

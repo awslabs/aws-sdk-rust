@@ -26,8 +26,8 @@ impl GetLoadBalancerOutput {
 }
 
 /// A builder for [`GetLoadBalancerOutput`](crate::operation::get_load_balancer::GetLoadBalancerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoadBalancerOutputBuilder {
     pub(crate) load_balancer: ::std::option::Option<crate::types::LoadBalancer>,
     _request_id: Option<String>,

@@ -66,8 +66,8 @@ impl CreateDbClusterSnapshotInput {
 }
 
 /// A builder for [`CreateDbClusterSnapshotInput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDbClusterSnapshotInputBuilder {
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,

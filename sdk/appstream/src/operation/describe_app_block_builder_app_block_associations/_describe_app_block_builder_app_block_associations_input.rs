@@ -39,8 +39,8 @@ impl DescribeAppBlockBuilderAppBlockAssociationsInput {
 }
 
 /// A builder for [`DescribeAppBlockBuilderAppBlockAssociationsInput`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppBlockBuilderAppBlockAssociationsInputBuilder {
     pub(crate) app_block_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_block_builder_name: ::std::option::Option<::std::string::String>,

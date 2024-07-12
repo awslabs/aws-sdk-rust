@@ -33,8 +33,8 @@ impl ListInvalidationsInput {
 }
 
 /// A builder for [`ListInvalidationsInput`](crate::operation::list_invalidations::ListInvalidationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInvalidationsInputBuilder {
     pub(crate) distribution_id: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

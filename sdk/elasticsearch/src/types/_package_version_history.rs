@@ -33,8 +33,8 @@ impl PackageVersionHistory {
 }
 
 /// A builder for [`PackageVersionHistory`](crate::types::PackageVersionHistory).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackageVersionHistoryBuilder {
     pub(crate) package_version: ::std::option::Option<::std::string::String>,
     pub(crate) commit_message: ::std::option::Option<::std::string::String>,

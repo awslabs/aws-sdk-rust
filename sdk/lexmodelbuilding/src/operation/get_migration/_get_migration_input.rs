@@ -20,8 +20,8 @@ impl GetMigrationInput {
 }
 
 /// A builder for [`GetMigrationInput`](crate::operation::get_migration::GetMigrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMigrationInputBuilder {
     pub(crate) migration_id: ::std::option::Option<::std::string::String>,
 }

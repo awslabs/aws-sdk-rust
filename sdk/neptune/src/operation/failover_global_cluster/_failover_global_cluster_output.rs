@@ -28,8 +28,8 @@ impl FailoverGlobalClusterOutput {
 }
 
 /// A builder for [`FailoverGlobalClusterOutput`](crate::operation::failover_global_cluster::FailoverGlobalClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailoverGlobalClusterOutputBuilder {
     pub(crate) global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,

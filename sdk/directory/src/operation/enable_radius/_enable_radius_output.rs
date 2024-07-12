@@ -19,8 +19,8 @@ impl EnableRadiusOutput {
 }
 
 /// A builder for [`EnableRadiusOutput`](crate::operation::enable_radius::EnableRadiusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableRadiusOutputBuilder {
     _request_id: Option<String>,
 }

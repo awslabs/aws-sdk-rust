@@ -32,8 +32,8 @@ impl GetContinuousDeploymentPolicyOutput {
 }
 
 /// A builder for [`GetContinuousDeploymentPolicyOutput`](crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContinuousDeploymentPolicyOutputBuilder {
     pub(crate) continuous_deployment_policy: ::std::option::Option<crate::types::ContinuousDeploymentPolicy>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

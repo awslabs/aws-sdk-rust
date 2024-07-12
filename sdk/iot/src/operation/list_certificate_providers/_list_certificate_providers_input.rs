@@ -26,8 +26,8 @@ impl ListCertificateProvidersInput {
 }
 
 /// A builder for [`ListCertificateProvidersInput`](crate::operation::list_certificate_providers::ListCertificateProvidersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCertificateProvidersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) ascending_order: ::std::option::Option<bool>,

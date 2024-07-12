@@ -35,8 +35,8 @@ impl VpcAttachment {
 }
 
 /// A builder for [`VpcAttachment`](crate::types::VpcAttachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcAttachmentBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     pub(crate) subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

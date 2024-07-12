@@ -23,8 +23,8 @@ impl JwtBearerGrant {
 }
 
 /// A builder for [`JwtBearerGrant`](crate::types::JwtBearerGrant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JwtBearerGrantBuilder {
     pub(crate) authorized_token_issuers: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>>,
 }

@@ -26,8 +26,8 @@ impl CreateResourceServerOutput {
 }
 
 /// A builder for [`CreateResourceServerOutput`](crate::operation::create_resource_server::CreateResourceServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateResourceServerOutputBuilder {
     pub(crate) resource_server: ::std::option::Option<crate::types::ResourceServerType>,
     _request_id: Option<String>,

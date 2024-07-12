@@ -53,8 +53,8 @@ impl NodeGroup {
 }
 
 /// A builder for [`NodeGroup`](crate::types::NodeGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeGroupBuilder {
     pub(crate) node_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetServiceEndpointInput {
 }
 
 /// A builder for [`GetServiceEndpointInput`](crate::operation::get_service_endpoint::GetServiceEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceEndpointInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::WirelessGatewayServiceType>,
 }

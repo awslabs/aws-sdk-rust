@@ -66,8 +66,8 @@ impl StreamJournalToKinesisInput {
 }
 
 /// A builder for [`StreamJournalToKinesisInput`](crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamJournalToKinesisInputBuilder {
     pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

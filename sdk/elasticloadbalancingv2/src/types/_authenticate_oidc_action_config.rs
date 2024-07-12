@@ -107,8 +107,8 @@ impl AuthenticateOidcActionConfig {
 }
 
 /// A builder for [`AuthenticateOidcActionConfig`](crate::types::AuthenticateOidcActionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthenticateOidcActionConfigBuilder {
     pub(crate) issuer: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_endpoint: ::std::option::Option<::std::string::String>,

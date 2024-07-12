@@ -109,8 +109,8 @@ impl ResourceConfig {
 }
 
 /// A builder for [`ResourceConfig`](crate::types::ResourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,

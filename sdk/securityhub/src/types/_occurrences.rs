@@ -55,8 +55,8 @@ impl Occurrences {
 }
 
 /// A builder for [`Occurrences`](crate::types::Occurrences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OccurrencesBuilder {
     pub(crate) line_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     pub(crate) offset_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,

@@ -18,8 +18,8 @@ impl RenewCertificateOutput {
 }
 
 /// A builder for [`RenewCertificateOutput`](crate::operation::renew_certificate::RenewCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenewCertificateOutputBuilder {
     _request_id: Option<String>,
 }

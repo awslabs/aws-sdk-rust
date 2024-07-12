@@ -32,8 +32,8 @@ impl GetSolFunctionPackageContentOutput {
 }
 
 /// A builder for [`GetSolFunctionPackageContentOutput`](crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSolFunctionPackageContentOutputBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::PackageContentType>,
     pub(crate) package_content: ::std::option::Option<::aws_smithy_types::Blob>,

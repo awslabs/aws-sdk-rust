@@ -34,8 +34,8 @@ impl ValidateResourcePolicyOutput {
 }
 
 /// A builder for [`ValidateResourcePolicyOutput`](crate::operation::validate_resource_policy::ValidateResourcePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateResourcePolicyOutputBuilder {
     pub(crate) policy_validation_passed: ::std::option::Option<bool>,
     pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,

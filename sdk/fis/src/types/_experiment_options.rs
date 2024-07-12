@@ -33,8 +33,8 @@ impl ExperimentOptions {
 }
 
 /// A builder for [`ExperimentOptions`](crate::types::ExperimentOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperimentOptionsBuilder {
     pub(crate) account_targeting: ::std::option::Option<crate::types::AccountTargeting>,
     pub(crate) empty_target_resolution_mode: ::std::option::Option<crate::types::EmptyTargetResolutionMode>,

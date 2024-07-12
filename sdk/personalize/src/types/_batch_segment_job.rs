@@ -107,8 +107,8 @@ impl BatchSegmentJob {
 }
 
 /// A builder for [`BatchSegmentJob`](crate::types::BatchSegmentJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchSegmentJobBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) batch_segment_job_arn: ::std::option::Option<::std::string::String>,

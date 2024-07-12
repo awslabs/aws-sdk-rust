@@ -29,8 +29,8 @@ impl RequestSpotInstancesOutput {
 }
 
 /// A builder for [`RequestSpotInstancesOutput`](crate::operation::request_spot_instances::RequestSpotInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestSpotInstancesOutputBuilder {
     pub(crate) spot_instance_requests: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl PossibleRemediationAction {
 }
 
 /// A builder for [`PossibleRemediationAction`](crate::types::PossibleRemediationAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PossibleRemediationActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) ordered_remediation_actions: ::std::option::Option<::std::vec::Vec<crate::types::RemediationActionWithOrder>>,

@@ -34,8 +34,8 @@ impl ListControlsOutput {
 }
 
 /// A builder for [`ListControlsOutput`](crate::operation::list_controls::ListControlsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListControlsOutputBuilder {
     pub(crate) control_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::ControlMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

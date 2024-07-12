@@ -32,8 +32,8 @@ impl AssociateTransitGatewayRouteTableInput {
 }
 
 /// A builder for [`AssociateTransitGatewayRouteTableInput`](crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTransitGatewayRouteTableInputBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,

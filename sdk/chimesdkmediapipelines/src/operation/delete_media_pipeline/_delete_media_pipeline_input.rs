@@ -20,8 +20,8 @@ impl DeleteMediaPipelineInput {
 }
 
 /// A builder for [`DeleteMediaPipelineInput`](crate::operation::delete_media_pipeline::DeleteMediaPipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMediaPipelineInputBuilder {
     pub(crate) media_pipeline_id: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl CreateWebhookOutput {
 }
 
 /// A builder for [`CreateWebhookOutput`](crate::operation::create_webhook::CreateWebhookOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWebhookOutputBuilder {
     pub(crate) webhook: ::std::option::Option<crate::types::Webhook>,
     _request_id: Option<String>,

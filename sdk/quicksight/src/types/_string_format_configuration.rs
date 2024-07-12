@@ -27,8 +27,8 @@ impl StringFormatConfiguration {
 }
 
 /// A builder for [`StringFormatConfiguration`](crate::types::StringFormatConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StringFormatConfigurationBuilder {
     pub(crate) null_value_format_configuration: ::std::option::Option<crate::types::NullValueFormatConfiguration>,
     pub(crate) numeric_format_configuration: ::std::option::Option<crate::types::NumericFormatConfiguration>,

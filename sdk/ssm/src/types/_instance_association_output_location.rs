@@ -22,8 +22,8 @@ impl InstanceAssociationOutputLocation {
 }
 
 /// A builder for [`InstanceAssociationOutputLocation`](crate::types::InstanceAssociationOutputLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceAssociationOutputLocationBuilder {
     pub(crate) s3_location: ::std::option::Option<crate::types::S3OutputLocation>,
 }

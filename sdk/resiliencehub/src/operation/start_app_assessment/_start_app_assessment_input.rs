@@ -55,8 +55,8 @@ impl StartAppAssessmentInput {
 }
 
 /// A builder for [`StartAppAssessmentInput`](crate::operation::start_app_assessment::StartAppAssessmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartAppAssessmentInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl DescribeDataSetOutput {
 }
 
 /// A builder for [`DescribeDataSetOutput`](crate::operation::describe_data_set::DescribeDataSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataSetOutputBuilder {
     pub(crate) data_set: ::std::option::Option<crate::types::DataSet>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

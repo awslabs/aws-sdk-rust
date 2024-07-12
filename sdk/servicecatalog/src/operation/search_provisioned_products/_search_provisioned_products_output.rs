@@ -40,8 +40,8 @@ impl SearchProvisionedProductsOutput {
 }
 
 /// A builder for [`SearchProvisionedProductsOutput`](crate::operation::search_provisioned_products::SearchProvisionedProductsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchProvisionedProductsOutputBuilder {
     pub(crate) provisioned_products: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductAttribute>>,
     pub(crate) total_results_count: ::std::option::Option<i32>,

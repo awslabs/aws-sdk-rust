@@ -34,8 +34,8 @@ impl ListWhatIfAnalysesOutput {
 }
 
 /// A builder for [`ListWhatIfAnalysesOutput`](crate::operation::list_what_if_analyses::ListWhatIfAnalysesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWhatIfAnalysesOutputBuilder {
     pub(crate) what_if_analyses: ::std::option::Option<::std::vec::Vec<crate::types::WhatIfAnalysisSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

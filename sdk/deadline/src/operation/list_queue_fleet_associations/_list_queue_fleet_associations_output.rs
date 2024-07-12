@@ -33,8 +33,8 @@ impl ListQueueFleetAssociationsOutput {
 }
 
 /// A builder for [`ListQueueFleetAssociationsOutput`](crate::operation::list_queue_fleet_associations::ListQueueFleetAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListQueueFleetAssociationsOutputBuilder {
     pub(crate) queue_fleet_associations: ::std::option::Option<::std::vec::Vec<crate::types::QueueFleetAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

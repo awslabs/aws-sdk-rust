@@ -36,8 +36,8 @@ impl RdsDatabaseRecommendedOptionProjectedMetric {
 }
 
 /// A builder for [`RdsDatabaseRecommendedOptionProjectedMetric`](crate::types::RdsDatabaseRecommendedOptionProjectedMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsDatabaseRecommendedOptionProjectedMetricBuilder {
     pub(crate) recommended_db_instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) rank: ::std::option::Option<i32>,

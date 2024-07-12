@@ -18,8 +18,8 @@ impl DisableOrganizationAdminAccountOutput {
 }
 
 /// A builder for [`DisableOrganizationAdminAccountOutput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableOrganizationAdminAccountOutputBuilder {
     _request_id: Option<String>,
 }

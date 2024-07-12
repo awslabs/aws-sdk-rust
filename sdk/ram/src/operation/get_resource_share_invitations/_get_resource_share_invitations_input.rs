@@ -42,8 +42,8 @@ impl GetResourceShareInvitationsInput {
 }
 
 /// A builder for [`GetResourceShareInvitationsInput`](crate::operation::get_resource_share_invitations::GetResourceShareInvitationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceShareInvitationsInputBuilder {
     pub(crate) resource_share_invitation_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

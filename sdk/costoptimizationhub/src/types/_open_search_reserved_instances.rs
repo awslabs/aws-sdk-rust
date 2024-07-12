@@ -27,8 +27,8 @@ impl OpenSearchReservedInstances {
 }
 
 /// A builder for [`OpenSearchReservedInstances`](crate::types::OpenSearchReservedInstances).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpenSearchReservedInstancesBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::OpenSearchReservedInstancesConfiguration>,
     pub(crate) cost_calculation: ::std::option::Option<crate::types::ReservedInstancesCostCalculation>,

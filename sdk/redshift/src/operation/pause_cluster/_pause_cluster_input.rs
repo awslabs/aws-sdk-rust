@@ -21,8 +21,8 @@ impl PauseClusterInput {
 }
 
 /// A builder for [`PauseClusterInput`](crate::operation::pause_cluster::PauseClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PauseClusterInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }

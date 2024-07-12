@@ -29,8 +29,8 @@ impl TraceUser {
 }
 
 /// A builder for [`TraceUser`](crate::types::TraceUser).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TraceUserBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,

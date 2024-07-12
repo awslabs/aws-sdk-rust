@@ -81,8 +81,8 @@ impl ElasticsearchClusterConfig {
 }
 
 /// A builder for [`ElasticsearchClusterConfig`](crate::types::ElasticsearchClusterConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ElasticsearchClusterConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::EsPartitionInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,

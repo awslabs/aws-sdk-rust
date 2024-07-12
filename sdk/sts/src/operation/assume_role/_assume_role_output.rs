@@ -64,8 +64,8 @@ impl AssumeRoleOutput {
 }
 
 /// A builder for [`AssumeRoleOutput`](crate::operation::assume_role::AssumeRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssumeRoleOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) assumed_role_user: ::std::option::Option<crate::types::AssumedRoleUser>,

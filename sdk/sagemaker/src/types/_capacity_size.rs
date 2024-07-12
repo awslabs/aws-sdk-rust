@@ -40,8 +40,8 @@ impl CapacitySize {
 }
 
 /// A builder for [`CapacitySize`](crate::types::CapacitySize).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacitySizeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CapacitySizeType>,
     pub(crate) value: ::std::option::Option<i32>,

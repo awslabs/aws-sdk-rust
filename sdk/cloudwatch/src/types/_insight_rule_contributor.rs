@@ -39,8 +39,8 @@ impl InsightRuleContributor {
 }
 
 /// A builder for [`InsightRuleContributor`](crate::types::InsightRuleContributor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsightRuleContributorBuilder {
     pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) approximate_aggregate_value: ::std::option::Option<f64>,

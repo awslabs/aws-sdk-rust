@@ -20,8 +20,8 @@ impl DescribeCustomRoutingAcceleratorInput {
 }
 
 /// A builder for [`DescribeCustomRoutingAcceleratorInput`](crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAcceleratorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCustomRoutingAcceleratorInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
 }

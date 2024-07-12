@@ -104,8 +104,8 @@ impl UpdateRuleGroupInput {
 }
 
 /// A builder for [`UpdateRuleGroupInput`](crate::operation::update_rule_group::UpdateRuleGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRuleGroupInputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,

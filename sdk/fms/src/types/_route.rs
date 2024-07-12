@@ -39,8 +39,8 @@ impl Route {
 }
 
 /// A builder for [`Route`](crate::types::Route).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RouteBuilder {
     pub(crate) destination_type: ::std::option::Option<crate::types::DestinationType>,
     pub(crate) target_type: ::std::option::Option<crate::types::TargetType>,

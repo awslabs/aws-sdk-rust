@@ -23,8 +23,8 @@ impl FargateProfileHealth {
 }
 
 /// A builder for [`FargateProfileHealth`](crate::types::FargateProfileHealth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FargateProfileHealthBuilder {
     pub(crate) issues: ::std::option::Option<::std::vec::Vec<crate::types::FargateProfileIssue>>,
 }

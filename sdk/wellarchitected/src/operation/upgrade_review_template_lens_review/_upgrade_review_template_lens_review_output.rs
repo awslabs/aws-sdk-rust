@@ -18,8 +18,8 @@ impl UpgradeReviewTemplateLensReviewOutput {
 }
 
 /// A builder for [`UpgradeReviewTemplateLensReviewOutput`](crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpgradeReviewTemplateLensReviewOutputBuilder {
     _request_id: Option<String>,
 }

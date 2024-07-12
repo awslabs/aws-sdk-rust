@@ -39,8 +39,8 @@ impl AssociatedRole {
 }
 
 /// A builder for [`AssociatedRole`](crate::types::AssociatedRole).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociatedRoleBuilder {
     pub(crate) associated_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_s3_bucket_name: ::std::option::Option<::std::string::String>,

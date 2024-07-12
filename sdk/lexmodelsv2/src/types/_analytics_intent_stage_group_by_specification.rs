@@ -21,8 +21,8 @@ impl AnalyticsIntentStageGroupBySpecification {
 }
 
 /// A builder for [`AnalyticsIntentStageGroupBySpecification`](crate::types::AnalyticsIntentStageGroupBySpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsIntentStageGroupBySpecificationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentStageField>,
 }

@@ -26,8 +26,8 @@ impl PutNotificationSettingsOutput {
 }
 
 /// A builder for [`PutNotificationSettingsOutput`](crate::operation::put_notification_settings::PutNotificationSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutNotificationSettingsOutputBuilder {
     pub(crate) trust_anchor: ::std::option::Option<crate::types::TrustAnchorDetail>,
     _request_id: Option<String>,

@@ -32,8 +32,8 @@ impl CreateInsightInput {
 }
 
 /// A builder for [`CreateInsightInput`](crate::operation::create_insight::CreateInsightInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInsightInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,

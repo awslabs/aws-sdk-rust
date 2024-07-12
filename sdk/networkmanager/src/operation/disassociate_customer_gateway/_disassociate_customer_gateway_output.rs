@@ -26,8 +26,8 @@ impl DisassociateCustomerGatewayOutput {
 }
 
 /// A builder for [`DisassociateCustomerGatewayOutput`](crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateCustomerGatewayOutputBuilder {
     pub(crate) customer_gateway_association: ::std::option::Option<crate::types::CustomerGatewayAssociation>,
     _request_id: Option<String>,

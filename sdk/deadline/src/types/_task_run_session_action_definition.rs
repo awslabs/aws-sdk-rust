@@ -44,8 +44,8 @@ impl TaskRunSessionActionDefinition {
 }
 
 /// A builder for [`TaskRunSessionActionDefinition`](crate::types::TaskRunSessionActionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TaskRunSessionActionDefinitionBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_id: ::std::option::Option<::std::string::String>,

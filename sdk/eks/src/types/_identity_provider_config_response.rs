@@ -21,8 +21,8 @@ impl IdentityProviderConfigResponse {
 }
 
 /// A builder for [`IdentityProviderConfigResponse`](crate::types::IdentityProviderConfigResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityProviderConfigResponseBuilder {
     pub(crate) oidc: ::std::option::Option<crate::types::OidcIdentityProviderConfig>,
 }

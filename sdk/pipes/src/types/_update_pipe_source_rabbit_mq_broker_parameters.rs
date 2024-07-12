@@ -33,8 +33,8 @@ impl UpdatePipeSourceRabbitMqBrokerParameters {
 }
 
 /// A builder for [`UpdatePipeSourceRabbitMqBrokerParameters`](crate::types::UpdatePipeSourceRabbitMqBrokerParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePipeSourceRabbitMqBrokerParametersBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
     pub(crate) batch_size: ::std::option::Option<i32>,

@@ -29,8 +29,8 @@ impl BatchGetApplicationsOutput {
 }
 
 /// A builder for [`BatchGetApplicationsOutput`](crate::operation::batch_get_applications::BatchGetApplicationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetApplicationsOutputBuilder {
     pub(crate) applications_info: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
     _request_id: Option<String>,

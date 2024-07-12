@@ -33,8 +33,8 @@ impl SapoDataSourceProperties {
 }
 
 /// A builder for [`SapoDataSourceProperties`](crate::types::SapoDataSourceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SapoDataSourcePropertiesBuilder {
     pub(crate) object_path: ::std::option::Option<::std::string::String>,
     pub(crate) parallelism_config: ::std::option::Option<crate::types::SapoDataParallelismConfig>,

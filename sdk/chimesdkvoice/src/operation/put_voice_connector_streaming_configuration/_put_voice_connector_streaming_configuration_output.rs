@@ -27,8 +27,8 @@ impl PutVoiceConnectorStreamingConfigurationOutput {
 }
 
 /// A builder for [`PutVoiceConnectorStreamingConfigurationOutput`](crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutVoiceConnectorStreamingConfigurationOutputBuilder {
     pub(crate) streaming_configuration: ::std::option::Option<crate::types::StreamingConfiguration>,
     _request_id: Option<String>,

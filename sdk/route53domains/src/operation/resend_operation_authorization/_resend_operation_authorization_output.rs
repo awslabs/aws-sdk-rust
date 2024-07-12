@@ -18,8 +18,8 @@ impl ResendOperationAuthorizationOutput {
 }
 
 /// A builder for [`ResendOperationAuthorizationOutput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResendOperationAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }

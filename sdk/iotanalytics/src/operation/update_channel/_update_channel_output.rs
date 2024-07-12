@@ -18,8 +18,8 @@ impl UpdateChannelOutput {
 }
 
 /// A builder for [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateChannelOutputBuilder {
     _request_id: Option<String>,
 }

@@ -30,8 +30,8 @@ impl UpdateOrganizationalUnitInput {
 }
 
 /// A builder for [`UpdateOrganizationalUnitInput`](crate::operation::update_organizational_unit::UpdateOrganizationalUnitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOrganizationalUnitInputBuilder {
     pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

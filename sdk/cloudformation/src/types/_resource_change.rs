@@ -121,8 +121,8 @@ impl ResourceChange {
 }
 
 /// A builder for [`ResourceChange`](crate::types::ResourceChange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceChangeBuilder {
     pub(crate) policy_action: ::std::option::Option<crate::types::PolicyAction>,
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,

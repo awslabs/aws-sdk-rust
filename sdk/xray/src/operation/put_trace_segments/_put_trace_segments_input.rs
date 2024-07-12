@@ -22,8 +22,8 @@ impl PutTraceSegmentsInput {
 }
 
 /// A builder for [`PutTraceSegmentsInput`](crate::operation::put_trace_segments::PutTraceSegmentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutTraceSegmentsInputBuilder {
     pub(crate) trace_segment_documents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

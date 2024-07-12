@@ -45,8 +45,8 @@ impl HierarchyPathReference {
 }
 
 /// A builder for [`HierarchyPathReference`](crate::types::HierarchyPathReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HierarchyPathReferenceBuilder {
     pub(crate) level_one: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,
     pub(crate) level_two: ::std::option::Option<crate::types::HierarchyGroupSummaryReference>,

@@ -33,8 +33,8 @@ impl BlueGreenUpdatePolicy {
 }
 
 /// A builder for [`BlueGreenUpdatePolicy`](crate::types::BlueGreenUpdatePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlueGreenUpdatePolicyBuilder {
     pub(crate) traffic_routing_configuration: ::std::option::Option<crate::types::TrafficRoutingConfig>,
     pub(crate) termination_wait_in_seconds: ::std::option::Option<i32>,

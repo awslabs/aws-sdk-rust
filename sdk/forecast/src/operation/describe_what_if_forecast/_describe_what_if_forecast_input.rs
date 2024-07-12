@@ -20,8 +20,8 @@ impl DescribeWhatIfForecastInput {
 }
 
 /// A builder for [`DescribeWhatIfForecastInput`](crate::operation::describe_what_if_forecast::DescribeWhatIfForecastInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWhatIfForecastInputBuilder {
     pub(crate) what_if_forecast_arn: ::std::option::Option<::std::string::String>,
 }

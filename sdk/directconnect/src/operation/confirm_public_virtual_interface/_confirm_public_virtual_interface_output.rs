@@ -66,8 +66,8 @@ impl ConfirmPublicVirtualInterfaceOutput {
 }
 
 /// A builder for [`ConfirmPublicVirtualInterfaceOutput`](crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfirmPublicVirtualInterfaceOutputBuilder {
     pub(crate) virtual_interface_state: ::std::option::Option<crate::types::VirtualInterfaceState>,
     _request_id: Option<String>,

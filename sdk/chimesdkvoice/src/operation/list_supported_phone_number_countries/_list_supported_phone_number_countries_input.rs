@@ -20,8 +20,8 @@ impl ListSupportedPhoneNumberCountriesInput {
 }
 
 /// A builder for [`ListSupportedPhoneNumberCountriesInput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSupportedPhoneNumberCountriesInputBuilder {
     pub(crate) product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
 }

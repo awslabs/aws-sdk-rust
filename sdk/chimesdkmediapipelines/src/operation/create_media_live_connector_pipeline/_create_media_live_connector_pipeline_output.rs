@@ -26,8 +26,8 @@ impl CreateMediaLiveConnectorPipelineOutput {
 }
 
 /// A builder for [`CreateMediaLiveConnectorPipelineOutput`](crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMediaLiveConnectorPipelineOutputBuilder {
     pub(crate) media_live_connector_pipeline: ::std::option::Option<crate::types::MediaLiveConnectorPipeline>,
     _request_id: Option<String>,

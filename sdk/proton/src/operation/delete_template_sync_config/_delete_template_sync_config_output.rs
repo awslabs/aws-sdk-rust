@@ -26,8 +26,8 @@ impl DeleteTemplateSyncConfigOutput {
 }
 
 /// A builder for [`DeleteTemplateSyncConfigOutput`](crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTemplateSyncConfigOutputBuilder {
     pub(crate) template_sync_config: ::std::option::Option<crate::types::TemplateSyncConfig>,
     _request_id: Option<String>,

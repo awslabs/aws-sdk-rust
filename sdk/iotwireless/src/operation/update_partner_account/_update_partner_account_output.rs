@@ -18,8 +18,8 @@ impl UpdatePartnerAccountOutput {
 }
 
 /// A builder for [`UpdatePartnerAccountOutput`](crate::operation::update_partner_account::UpdatePartnerAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePartnerAccountOutputBuilder {
     _request_id: Option<String>,
 }

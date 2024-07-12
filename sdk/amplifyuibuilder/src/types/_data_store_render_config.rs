@@ -12,8 +12,8 @@ impl DataStoreRenderConfig {
 }
 
 /// A builder for [`DataStoreRenderConfig`](crate::types::DataStoreRenderConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataStoreRenderConfigBuilder {}
 impl DataStoreRenderConfigBuilder {
     /// Consumes the builder and constructs a [`DataStoreRenderConfig`](crate::types::DataStoreRenderConfig).

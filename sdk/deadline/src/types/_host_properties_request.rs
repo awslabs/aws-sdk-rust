@@ -27,8 +27,8 @@ impl HostPropertiesRequest {
 }
 
 /// A builder for [`HostPropertiesRequest`](crate::types::HostPropertiesRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HostPropertiesRequestBuilder {
     pub(crate) ip_addresses: ::std::option::Option<crate::types::IpAddresses>,
     pub(crate) host_name: ::std::option::Option<::std::string::String>,

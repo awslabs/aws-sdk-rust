@@ -54,8 +54,8 @@ impl DataModel {
 }
 
 /// A builder for [`DataModel`](crate::types::DataModel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataModelBuilder {
     pub(crate) time_column: ::std::option::Option<::std::string::String>,
     pub(crate) time_unit: ::std::option::Option<crate::types::TimeUnit>,

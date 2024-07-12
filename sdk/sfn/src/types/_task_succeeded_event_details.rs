@@ -51,8 +51,8 @@ impl TaskSucceededEventDetails {
 }
 
 /// A builder for [`TaskSucceededEventDetails`](crate::types::TaskSucceededEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TaskSucceededEventDetailsBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,

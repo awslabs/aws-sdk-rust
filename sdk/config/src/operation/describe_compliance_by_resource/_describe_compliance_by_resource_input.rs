@@ -47,8 +47,8 @@ impl DescribeComplianceByResourceInput {
 }
 
 /// A builder for [`DescribeComplianceByResourceInput`](crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeComplianceByResourceInputBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

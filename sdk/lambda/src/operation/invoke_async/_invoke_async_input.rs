@@ -47,8 +47,8 @@ impl InvokeAsyncInput {
 }
 
 /// A builder for [`InvokeAsyncInput`](crate::operation::invoke_async::InvokeAsyncInput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvokeAsyncInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) invoke_args: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,

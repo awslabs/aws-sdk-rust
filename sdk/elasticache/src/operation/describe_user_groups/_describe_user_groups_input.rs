@@ -32,8 +32,8 @@ impl DescribeUserGroupsInput {
 }
 
 /// A builder for [`DescribeUserGroupsInput`](crate::operation::describe_user_groups::DescribeUserGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUserGroupsInputBuilder {
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

@@ -90,8 +90,8 @@ impl GetRelationalDatabaseLogEventsInput {
 }
 
 /// A builder for [`GetRelationalDatabaseLogEventsInput`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseLogEventsInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,

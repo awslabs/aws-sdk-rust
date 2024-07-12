@@ -26,8 +26,8 @@ impl CreateHomeRegionControlOutput {
 }
 
 /// A builder for [`CreateHomeRegionControlOutput`](crate::operation::create_home_region_control::CreateHomeRegionControlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHomeRegionControlOutputBuilder {
     pub(crate) home_region_control: ::std::option::Option<crate::types::HomeRegionControl>,
     _request_id: Option<String>,

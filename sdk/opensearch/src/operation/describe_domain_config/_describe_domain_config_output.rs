@@ -27,8 +27,8 @@ impl DescribeDomainConfigOutput {
 }
 
 /// A builder for [`DescribeDomainConfigOutput`](crate::operation::describe_domain_config::DescribeDomainConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainConfigOutputBuilder {
     pub(crate) domain_config: ::std::option::Option<crate::types::DomainConfig>,
     _request_id: Option<String>,

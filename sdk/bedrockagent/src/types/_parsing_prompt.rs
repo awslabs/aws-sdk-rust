@@ -22,8 +22,8 @@ impl ParsingPrompt {
 }
 
 /// A builder for [`ParsingPrompt`](crate::types::ParsingPrompt).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParsingPromptBuilder {
     pub(crate) parsing_prompt_text: ::std::option::Option<::std::string::String>,
 }

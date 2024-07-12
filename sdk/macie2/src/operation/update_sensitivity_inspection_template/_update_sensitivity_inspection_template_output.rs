@@ -18,8 +18,8 @@ impl UpdateSensitivityInspectionTemplateOutput {
 }
 
 /// A builder for [`UpdateSensitivityInspectionTemplateOutput`](crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSensitivityInspectionTemplateOutputBuilder {
     _request_id: Option<String>,
 }

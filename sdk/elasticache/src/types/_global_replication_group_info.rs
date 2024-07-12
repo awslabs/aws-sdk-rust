@@ -27,8 +27,8 @@ impl GlobalReplicationGroupInfo {
 }
 
 /// A builder for [`GlobalReplicationGroupInfo`](crate::types::GlobalReplicationGroupInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlobalReplicationGroupInfoBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) global_replication_group_member_role: ::std::option::Option<::std::string::String>,

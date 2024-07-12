@@ -34,8 +34,8 @@ impl ListDeliverabilityTestReportsOutput {
 }
 
 /// A builder for [`ListDeliverabilityTestReportsOutput`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeliverabilityTestReportsOutputBuilder {
     pub(crate) deliverability_test_reports: ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

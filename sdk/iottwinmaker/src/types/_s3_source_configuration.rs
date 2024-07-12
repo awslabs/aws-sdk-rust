@@ -22,8 +22,8 @@ impl S3SourceConfiguration {
 }
 
 /// A builder for [`S3SourceConfiguration`](crate::types::S3SourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3SourceConfigurationBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
 }

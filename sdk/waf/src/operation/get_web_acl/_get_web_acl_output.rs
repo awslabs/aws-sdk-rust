@@ -46,8 +46,8 @@ impl GetWebAclOutput {
 }
 
 /// A builder for [`GetWebAclOutput`](crate::operation::get_web_acl::GetWebAclOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWebAclOutputBuilder {
     pub(crate) web_acl: ::std::option::Option<crate::types::WebAcl>,
     _request_id: Option<String>,

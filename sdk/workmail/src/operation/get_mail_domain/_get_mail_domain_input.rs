@@ -26,8 +26,8 @@ impl GetMailDomainInput {
 }
 
 /// A builder for [`GetMailDomainInput`](crate::operation::get_mail_domain::GetMailDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMailDomainInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

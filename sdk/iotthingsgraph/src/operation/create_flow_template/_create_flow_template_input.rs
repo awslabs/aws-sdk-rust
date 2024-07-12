@@ -28,8 +28,8 @@ impl CreateFlowTemplateInput {
 }
 
 /// A builder for [`CreateFlowTemplateInput`](crate::operation::create_flow_template::CreateFlowTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFlowTemplateInputBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,
     pub(crate) compatible_namespace_version: ::std::option::Option<i64>,

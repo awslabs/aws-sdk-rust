@@ -29,8 +29,8 @@ impl DeleteIdentitiesOutput {
 }
 
 /// A builder for [`DeleteIdentitiesOutput`](crate::operation::delete_identities::DeleteIdentitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIdentitiesOutputBuilder {
     pub(crate) unprocessed_identity_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedIdentityId>>,
     _request_id: Option<String>,

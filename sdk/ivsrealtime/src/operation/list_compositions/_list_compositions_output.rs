@@ -33,8 +33,8 @@ impl ListCompositionsOutput {
 }
 
 /// A builder for [`ListCompositionsOutput`](crate::operation::list_compositions::ListCompositionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCompositionsOutputBuilder {
     pub(crate) compositions: ::std::option::Option<::std::vec::Vec<crate::types::CompositionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

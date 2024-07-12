@@ -34,8 +34,8 @@ impl ListSharedReportGroupsOutput {
 }
 
 /// A builder for [`ListSharedReportGroupsOutput`](crate::operation::list_shared_report_groups::ListSharedReportGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSharedReportGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) report_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

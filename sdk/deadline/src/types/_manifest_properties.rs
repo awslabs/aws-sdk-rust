@@ -66,8 +66,8 @@ impl ManifestProperties {
 }
 
 /// A builder for [`ManifestProperties`](crate::types::ManifestProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ManifestPropertiesBuilder {
     pub(crate) file_system_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) root_path: ::std::option::Option<::std::string::String>,

@@ -55,8 +55,8 @@ impl ListEarthObservationJobsInput {
 }
 
 /// A builder for [`ListEarthObservationJobsInput`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListEarthObservationJobsInputBuilder {
     pub(crate) status_equals: ::std::option::Option<crate::types::EarthObservationJobStatus>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

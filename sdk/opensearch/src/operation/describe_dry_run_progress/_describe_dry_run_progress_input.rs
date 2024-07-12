@@ -32,8 +32,8 @@ impl DescribeDryRunProgressInput {
 }
 
 /// A builder for [`DescribeDryRunProgressInput`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDryRunProgressInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run_id: ::std::option::Option<::std::string::String>,

@@ -93,8 +93,8 @@ impl DisableFastSnapshotRestoreSuccessItem {
 }
 
 /// A builder for [`DisableFastSnapshotRestoreSuccessItem`](crate::types::DisableFastSnapshotRestoreSuccessItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableFastSnapshotRestoreSuccessItemBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,

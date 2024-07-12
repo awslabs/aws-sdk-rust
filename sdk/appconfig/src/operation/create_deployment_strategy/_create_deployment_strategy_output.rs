@@ -68,8 +68,8 @@ impl CreateDeploymentStrategyOutput {
 }
 
 /// A builder for [`CreateDeploymentStrategyOutput`](crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDeploymentStrategyOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

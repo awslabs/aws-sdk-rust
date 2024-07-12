@@ -27,8 +27,8 @@ impl ImportTaskSummaryWaves {
 }
 
 /// A builder for [`ImportTaskSummaryWaves`](crate::types::ImportTaskSummaryWaves).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportTaskSummaryWavesBuilder {
     pub(crate) created_count: ::std::option::Option<i64>,
     pub(crate) modified_count: ::std::option::Option<i64>,

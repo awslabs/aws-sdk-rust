@@ -21,8 +21,8 @@ impl Plugin {
 }
 
 /// A builder for [`Plugin`](crate::types::Plugin).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PluginBuilder {
     pub(crate) custom_plugin: ::std::option::Option<crate::types::CustomPlugin>,
 }

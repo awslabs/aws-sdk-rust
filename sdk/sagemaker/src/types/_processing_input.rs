@@ -39,8 +39,8 @@ impl ProcessingInput {
 }
 
 /// A builder for [`ProcessingInput`](crate::types::ProcessingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProcessingInputBuilder {
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
     pub(crate) app_managed: ::std::option::Option<bool>,

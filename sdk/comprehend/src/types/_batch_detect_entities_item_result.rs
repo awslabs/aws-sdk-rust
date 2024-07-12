@@ -29,8 +29,8 @@ impl BatchDetectEntitiesItemResult {
 }
 
 /// A builder for [`BatchDetectEntitiesItemResult`](crate::types::BatchDetectEntitiesItemResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDetectEntitiesItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,

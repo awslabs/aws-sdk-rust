@@ -22,8 +22,8 @@ impl TlsValidationContextFileTrust {
 }
 
 /// A builder for [`TlsValidationContextFileTrust`](crate::types::TlsValidationContextFileTrust).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TlsValidationContextFileTrustBuilder {
     pub(crate) certificate_chain: ::std::option::Option<::std::string::String>,
 }

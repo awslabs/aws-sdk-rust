@@ -35,8 +35,8 @@ impl InstanceFleetTimeline {
 }
 
 /// A builder for [`InstanceFleetTimeline`](crate::types::InstanceFleetTimeline).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceFleetTimelineBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ready_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -27,8 +27,8 @@ impl EyeOpen {
 }
 
 /// A builder for [`EyeOpen`](crate::types::EyeOpen).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EyeOpenBuilder {
     pub(crate) value: ::std::option::Option<bool>,
     pub(crate) confidence: ::std::option::Option<f32>,

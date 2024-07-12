@@ -40,8 +40,8 @@ impl CreateConnectionOAuthRequestParameters {
 }
 
 /// A builder for [`CreateConnectionOAuthRequestParameters`](crate::types::CreateConnectionOAuthRequestParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectionOAuthRequestParametersBuilder {
     pub(crate) client_parameters: ::std::option::Option<crate::types::CreateConnectionOAuthClientRequestParameters>,
     pub(crate) authorization_endpoint: ::std::option::Option<::std::string::String>,

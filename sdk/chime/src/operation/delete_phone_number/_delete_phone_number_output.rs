@@ -18,8 +18,8 @@ impl DeletePhoneNumberOutput {
 }
 
 /// A builder for [`DeletePhoneNumberOutput`](crate::operation::delete_phone_number::DeletePhoneNumberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }

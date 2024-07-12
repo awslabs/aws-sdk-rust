@@ -28,8 +28,8 @@ impl IssueCertificateOutput {
 }
 
 /// A builder for [`IssueCertificateOutput`](crate::operation::issue_certificate::IssueCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IssueCertificateOutputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

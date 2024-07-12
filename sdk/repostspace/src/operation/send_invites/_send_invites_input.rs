@@ -50,8 +50,8 @@ impl SendInvitesInput {
 }
 
 /// A builder for [`SendInvitesInput`](crate::operation::send_invites::SendInvitesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SendInvitesInputBuilder {
     pub(crate) space_id: ::std::option::Option<::std::string::String>,
     pub(crate) accessor_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

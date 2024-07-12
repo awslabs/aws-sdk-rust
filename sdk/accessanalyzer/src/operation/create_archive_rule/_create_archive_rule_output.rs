@@ -18,8 +18,8 @@ impl CreateArchiveRuleOutput {
 }
 
 /// A builder for [`CreateArchiveRuleOutput`](crate::operation::create_archive_rule::CreateArchiveRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateArchiveRuleOutputBuilder {
     _request_id: Option<String>,
 }

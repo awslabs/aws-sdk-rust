@@ -39,8 +39,8 @@ impl MonitoringConfiguration {
 }
 
 /// A builder for [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringConfigurationBuilder {
     pub(crate) persistent_app_ui: ::std::option::Option<crate::types::PersistentAppUi>,
     pub(crate) cloud_watch_monitoring_configuration: ::std::option::Option<crate::types::CloudWatchMonitoringConfiguration>,

@@ -26,8 +26,8 @@ impl GetAccessPointPolicyStatusOutput {
 }
 
 /// A builder for [`GetAccessPointPolicyStatusOutput`](crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessPointPolicyStatusOutputBuilder {
     pub(crate) policy_status: ::std::option::Option<crate::types::PolicyStatus>,
     _request_id: Option<String>,

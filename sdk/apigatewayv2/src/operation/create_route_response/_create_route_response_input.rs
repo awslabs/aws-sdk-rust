@@ -53,8 +53,8 @@ impl CreateRouteResponseInput {
 }
 
 /// A builder for [`CreateRouteResponseInput`](crate::operation::create_route_response::CreateRouteResponseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRouteResponseInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_selection_expression: ::std::option::Option<::std::string::String>,

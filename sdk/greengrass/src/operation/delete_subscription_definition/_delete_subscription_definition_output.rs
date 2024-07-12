@@ -18,8 +18,8 @@ impl DeleteSubscriptionDefinitionOutput {
 }
 
 /// A builder for [`DeleteSubscriptionDefinitionOutput`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSubscriptionDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

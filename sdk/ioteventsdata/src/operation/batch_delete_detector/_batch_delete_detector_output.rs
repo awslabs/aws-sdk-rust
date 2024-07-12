@@ -28,8 +28,8 @@ impl BatchDeleteDetectorOutput {
 }
 
 /// A builder for [`BatchDeleteDetectorOutput`](crate::operation::batch_delete_detector::BatchDeleteDetectorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteDetectorOutputBuilder {
     pub(crate) batch_delete_detector_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDetectorErrorEntry>>,
     _request_id: Option<String>,

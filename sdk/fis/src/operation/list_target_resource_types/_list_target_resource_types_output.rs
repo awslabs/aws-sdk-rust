@@ -34,8 +34,8 @@ impl ListTargetResourceTypesOutput {
 }
 
 /// A builder for [`ListTargetResourceTypesOutput`](crate::operation::list_target_resource_types::ListTargetResourceTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTargetResourceTypesOutputBuilder {
     pub(crate) target_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::TargetResourceTypeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

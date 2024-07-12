@@ -48,8 +48,8 @@ impl CreatePrivacyBudgetTemplateInput {
 }
 
 /// A builder for [`CreatePrivacyBudgetTemplateInput`](crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePrivacyBudgetTemplateInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) auto_refresh: ::std::option::Option<crate::types::PrivacyBudgetTemplateAutoRefresh>,

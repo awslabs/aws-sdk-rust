@@ -29,8 +29,8 @@ impl LogSetup {
 }
 
 /// A builder for [`LogSetup`](crate::types::LogSetup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogSetupBuilder {
     pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
     pub(crate) enabled: ::std::option::Option<bool>,

@@ -20,8 +20,8 @@ impl StartDataSourceIntrospectionInput {
 }
 
 /// A builder for [`StartDataSourceIntrospectionInput`](crate::operation::start_data_source_introspection::StartDataSourceIntrospectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDataSourceIntrospectionInputBuilder {
     pub(crate) rds_data_api_config: ::std::option::Option<crate::types::RdsDataApiConfig>,
 }

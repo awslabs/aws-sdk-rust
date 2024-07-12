@@ -18,8 +18,8 @@ impl ModifyStreamingPropertiesOutput {
 }
 
 /// A builder for [`ModifyStreamingPropertiesOutput`](crate::operation::modify_streaming_properties::ModifyStreamingPropertiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyStreamingPropertiesOutputBuilder {
     _request_id: Option<String>,
 }

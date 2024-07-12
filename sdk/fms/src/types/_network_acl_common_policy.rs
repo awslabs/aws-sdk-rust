@@ -22,8 +22,8 @@ impl NetworkAclCommonPolicy {
 }
 
 /// A builder for [`NetworkAclCommonPolicy`](crate::types::NetworkAclCommonPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkAclCommonPolicyBuilder {
     pub(crate) network_acl_entry_set: ::std::option::Option<crate::types::NetworkAclEntrySet>,
 }

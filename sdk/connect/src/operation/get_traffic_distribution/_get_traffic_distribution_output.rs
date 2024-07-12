@@ -50,8 +50,8 @@ impl GetTrafficDistributionOutput {
 }
 
 /// A builder for [`GetTrafficDistributionOutput`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTrafficDistributionOutputBuilder {
     pub(crate) telephony_config: ::std::option::Option<crate::types::TelephonyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

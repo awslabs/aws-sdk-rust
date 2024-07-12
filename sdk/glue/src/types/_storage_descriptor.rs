@@ -109,8 +109,8 @@ impl StorageDescriptor {
 }
 
 /// A builder for [`StorageDescriptor`](crate::types::StorageDescriptor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageDescriptorBuilder {
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

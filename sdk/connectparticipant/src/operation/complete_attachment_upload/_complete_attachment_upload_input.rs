@@ -34,8 +34,8 @@ impl CompleteAttachmentUploadInput {
 }
 
 /// A builder for [`CompleteAttachmentUploadInput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompleteAttachmentUploadInputBuilder {
     pub(crate) attachment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

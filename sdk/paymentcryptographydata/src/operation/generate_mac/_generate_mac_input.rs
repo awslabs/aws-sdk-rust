@@ -48,8 +48,8 @@ impl GenerateMacInput {
 }
 
 /// A builder for [`GenerateMacInput`](crate::operation::generate_mac::GenerateMacInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GenerateMacInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) message_data: ::std::option::Option<::std::string::String>,

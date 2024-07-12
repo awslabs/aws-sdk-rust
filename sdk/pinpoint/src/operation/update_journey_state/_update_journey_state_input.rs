@@ -32,8 +32,8 @@ impl UpdateJourneyStateInput {
 }
 
 /// A builder for [`UpdateJourneyStateInput`](crate::operation::update_journey_state::UpdateJourneyStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateJourneyStateInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) journey_id: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl GpsPointDimension {
 }
 
 /// A builder for [`GpsPointDimension`](crate::types::GpsPointDimension).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GpsPointDimensionBuilder {
     pub(crate) coordinates: ::std::option::Option<crate::types::GpsCoordinates>,
     pub(crate) range_in_kilometers: ::std::option::Option<f64>,

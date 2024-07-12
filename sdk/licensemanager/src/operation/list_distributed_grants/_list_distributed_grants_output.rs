@@ -34,8 +34,8 @@ impl ListDistributedGrantsOutput {
 }
 
 /// A builder for [`ListDistributedGrantsOutput`](crate::operation::list_distributed_grants::ListDistributedGrantsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributedGrantsOutputBuilder {
     pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl UpdateStateMachineAliasInput {
 }
 
 /// A builder for [`UpdateStateMachineAliasInput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateStateMachineAliasInputBuilder {
     pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

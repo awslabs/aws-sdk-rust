@@ -26,8 +26,8 @@ impl DisassociateMemberFromFarmInput {
 }
 
 /// A builder for [`DisassociateMemberFromFarmInput`](crate::operation::disassociate_member_from_farm::DisassociateMemberFromFarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateMemberFromFarmInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,

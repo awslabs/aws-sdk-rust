@@ -32,8 +32,8 @@ impl RestoreFromRecoveryPointOutput {
 }
 
 /// A builder for [`RestoreFromRecoveryPointOutput`](crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreFromRecoveryPointOutputBuilder {
     pub(crate) recovery_point_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<crate::types::Namespace>,

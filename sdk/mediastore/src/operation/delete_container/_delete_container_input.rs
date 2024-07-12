@@ -20,8 +20,8 @@ impl DeleteContainerInput {
 }
 
 /// A builder for [`DeleteContainerInput`](crate::operation::delete_container::DeleteContainerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContainerInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }

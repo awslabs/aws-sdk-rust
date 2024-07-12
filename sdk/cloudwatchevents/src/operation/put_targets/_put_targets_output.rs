@@ -34,8 +34,8 @@ impl PutTargetsOutput {
 }
 
 /// A builder for [`PutTargetsOutput`](crate::operation::put_targets::PutTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutTargetsOutputBuilder {
     pub(crate) failed_entry_count: ::std::option::Option<i32>,
     pub(crate) failed_entries: ::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>>,

@@ -33,8 +33,8 @@ impl TlsCertificateConfiguration {
 }
 
 /// A builder for [`TlsCertificateConfiguration`](crate::types::TlsCertificateConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TlsCertificateConfigurationBuilder {
     pub(crate) certificate_provider_type: ::std::option::Option<crate::types::CertificateProviderType>,
     pub(crate) public_certificate_secret_arn: ::std::option::Option<::std::string::String>,

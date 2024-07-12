@@ -78,8 +78,8 @@ impl AuthorizeSecurityGroupEgressInput {
 }
 
 /// A builder for [`AuthorizeSecurityGroupEgressInput`](crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeSecurityGroupEgressInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,

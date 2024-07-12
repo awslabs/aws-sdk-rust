@@ -27,8 +27,8 @@ impl GetMinuteUsageInput {
 }
 
 /// A builder for [`GetMinuteUsageInput`](crate::operation::get_minute_usage::GetMinuteUsageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMinuteUsageInputBuilder {
     pub(crate) month: ::std::option::Option<i32>,
     pub(crate) year: ::std::option::Option<i32>,

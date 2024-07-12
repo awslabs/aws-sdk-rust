@@ -40,8 +40,8 @@ impl ListAssetContractsInput {
 }
 
 /// A builder for [`ListAssetContractsInput`](crate::operation::list_asset_contracts::ListAssetContractsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssetContractsInputBuilder {
     pub(crate) contract_filter: ::std::option::Option<crate::types::ContractFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

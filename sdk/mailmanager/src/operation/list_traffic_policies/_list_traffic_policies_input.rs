@@ -26,8 +26,8 @@ impl ListTrafficPoliciesInput {
 }
 
 /// A builder for [`ListTrafficPoliciesInput`](crate::operation::list_traffic_policies::ListTrafficPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrafficPoliciesInputBuilder {
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

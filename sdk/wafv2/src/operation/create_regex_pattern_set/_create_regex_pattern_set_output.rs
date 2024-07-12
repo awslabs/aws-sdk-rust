@@ -26,8 +26,8 @@ impl CreateRegexPatternSetOutput {
 }
 
 /// A builder for [`CreateRegexPatternSetOutput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRegexPatternSetOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::RegexPatternSetSummary>,
     _request_id: Option<String>,

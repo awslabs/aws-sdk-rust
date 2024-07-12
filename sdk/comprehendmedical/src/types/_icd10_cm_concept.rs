@@ -33,8 +33,8 @@ impl Icd10CmConcept {
 }
 
 /// A builder for [`Icd10CmConcept`](crate::types::Icd10CmConcept).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Icd10CmConceptBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

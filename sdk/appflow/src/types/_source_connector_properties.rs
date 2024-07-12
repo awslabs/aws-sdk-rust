@@ -117,8 +117,8 @@ impl SourceConnectorProperties {
 }
 
 /// A builder for [`SourceConnectorProperties`](crate::types::SourceConnectorProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceConnectorPropertiesBuilder {
     pub(crate) amplitude: ::std::option::Option<crate::types::AmplitudeSourceProperties>,
     pub(crate) datadog: ::std::option::Option<crate::types::DatadogSourceProperties>,

@@ -18,8 +18,8 @@ impl RegisterDelegatedAdministratorOutput {
 }
 
 /// A builder for [`RegisterDelegatedAdministratorOutput`](crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterDelegatedAdministratorOutputBuilder {
     _request_id: Option<String>,
 }

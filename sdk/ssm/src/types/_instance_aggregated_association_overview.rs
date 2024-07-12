@@ -27,8 +27,8 @@ impl InstanceAggregatedAssociationOverview {
 }
 
 /// A builder for [`InstanceAggregatedAssociationOverview`](crate::types::InstanceAggregatedAssociationOverview).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceAggregatedAssociationOverviewBuilder {
     pub(crate) detailed_status: ::std::option::Option<::std::string::String>,
     pub(crate) instance_association_status_aggregated_count: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,

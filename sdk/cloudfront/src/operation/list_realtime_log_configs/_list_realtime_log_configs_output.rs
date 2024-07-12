@@ -26,8 +26,8 @@ impl ListRealtimeLogConfigsOutput {
 }
 
 /// A builder for [`ListRealtimeLogConfigsOutput`](crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRealtimeLogConfigsOutputBuilder {
     pub(crate) realtime_log_configs: ::std::option::Option<crate::types::RealtimeLogConfigs>,
     _request_id: Option<String>,

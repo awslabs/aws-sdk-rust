@@ -51,8 +51,8 @@ impl PrepareQueryOutput {
 }
 
 /// A builder for [`PrepareQueryOutput`](crate::operation::prepare_query::PrepareQueryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PrepareQueryOutputBuilder {
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>>,

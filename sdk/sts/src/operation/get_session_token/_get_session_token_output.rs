@@ -39,8 +39,8 @@ impl GetSessionTokenOutput {
 }
 
 /// A builder for [`GetSessionTokenOutput`](crate::operation::get_session_token::GetSessionTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetSessionTokenOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     _request_id: Option<String>,

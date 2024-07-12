@@ -40,8 +40,8 @@ impl GetHypervisorPropertyMappingsOutput {
 }
 
 /// A builder for [`GetHypervisorPropertyMappingsOutput`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHypervisorPropertyMappingsOutputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vmware_to_aws_tag_mappings: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,

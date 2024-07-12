@@ -28,8 +28,8 @@ impl VirtualServiceBackend {
 }
 
 /// A builder for [`VirtualServiceBackend`](crate::types::VirtualServiceBackend).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualServiceBackendBuilder {
     pub(crate) virtual_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_policy: ::std::option::Option<crate::types::ClientPolicy>,

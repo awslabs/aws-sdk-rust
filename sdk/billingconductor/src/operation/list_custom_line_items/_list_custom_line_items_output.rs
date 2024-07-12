@@ -34,8 +34,8 @@ impl ListCustomLineItemsOutput {
 }
 
 /// A builder for [`ListCustomLineItemsOutput`](crate::operation::list_custom_line_items::ListCustomLineItemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomLineItemsOutputBuilder {
     pub(crate) custom_line_items: ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl ServerlessClientAuthentication {
 }
 
 /// A builder for [`ServerlessClientAuthentication`](crate::types::ServerlessClientAuthentication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerlessClientAuthenticationBuilder {
     pub(crate) sasl: ::std::option::Option<crate::types::ServerlessSasl>,
 }

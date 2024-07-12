@@ -28,8 +28,8 @@ impl StopRelationalDatabaseOutput {
 }
 
 /// A builder for [`StopRelationalDatabaseOutput`](crate::operation::stop_relational_database::StopRelationalDatabaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopRelationalDatabaseOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

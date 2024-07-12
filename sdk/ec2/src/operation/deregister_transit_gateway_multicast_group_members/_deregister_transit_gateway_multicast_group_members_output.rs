@@ -28,8 +28,8 @@ impl DeregisterTransitGatewayMulticastGroupMembersOutput {
 }
 
 /// A builder for [`DeregisterTransitGatewayMulticastGroupMembersOutput`](crate::operation::deregister_transit_gateway_multicast_group_members::DeregisterTransitGatewayMulticastGroupMembersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterTransitGatewayMulticastGroupMembersOutputBuilder {
     pub(crate) deregistered_multicast_group_members: ::std::option::Option<crate::types::TransitGatewayMulticastDeregisteredGroupMembers>,
     _request_id: Option<String>,

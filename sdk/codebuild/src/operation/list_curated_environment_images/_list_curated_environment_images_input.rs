@@ -11,8 +11,8 @@ impl ListCuratedEnvironmentImagesInput {
 }
 
 /// A builder for [`ListCuratedEnvironmentImagesInput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCuratedEnvironmentImagesInputBuilder {}
 impl ListCuratedEnvironmentImagesInputBuilder {
     /// Consumes the builder and constructs a [`ListCuratedEnvironmentImagesInput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesInput).

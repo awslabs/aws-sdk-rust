@@ -20,8 +20,8 @@ impl GetEventIntegrationInput {
 }
 
 /// A builder for [`GetEventIntegrationInput`](crate::operation::get_event_integration::GetEventIntegrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEventIntegrationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

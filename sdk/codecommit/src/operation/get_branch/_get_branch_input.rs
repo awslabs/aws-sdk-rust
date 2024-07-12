@@ -27,8 +27,8 @@ impl GetBranchInput {
 }
 
 /// A builder for [`GetBranchInput`](crate::operation::get_branch::GetBranchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBranchInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,

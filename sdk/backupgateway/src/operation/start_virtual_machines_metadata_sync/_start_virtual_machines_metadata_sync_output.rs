@@ -26,8 +26,8 @@ impl StartVirtualMachinesMetadataSyncOutput {
 }
 
 /// A builder for [`StartVirtualMachinesMetadataSyncOutput`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartVirtualMachinesMetadataSyncOutputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

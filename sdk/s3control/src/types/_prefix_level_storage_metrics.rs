@@ -27,8 +27,8 @@ impl PrefixLevelStorageMetrics {
 }
 
 /// A builder for [`PrefixLevelStorageMetrics`](crate::types::PrefixLevelStorageMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrefixLevelStorageMetricsBuilder {
     pub(crate) is_enabled: ::std::option::Option<bool>,
     pub(crate) selection_criteria: ::std::option::Option<crate::types::SelectionCriteria>,

@@ -34,8 +34,8 @@ impl ListCommonControlsInput {
 }
 
 /// A builder for [`ListCommonControlsInput`](crate::operation::list_common_controls::ListCommonControlsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCommonControlsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

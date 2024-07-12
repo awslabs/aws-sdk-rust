@@ -21,8 +21,8 @@ impl DescribeBundleInput {
 }
 
 /// A builder for [`DescribeBundleInput`](crate::operation::describe_bundle::DescribeBundleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBundleInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
 }

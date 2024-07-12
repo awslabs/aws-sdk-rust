@@ -22,8 +22,8 @@ impl QueryLanguageVersion {
 }
 
 /// A builder for [`QueryLanguageVersion`](crate::types::QueryLanguageVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryLanguageVersionBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }

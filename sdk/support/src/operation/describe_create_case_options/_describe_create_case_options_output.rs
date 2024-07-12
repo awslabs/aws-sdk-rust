@@ -50,8 +50,8 @@ impl DescribeCreateCaseOptionsOutput {
 }
 
 /// A builder for [`DescribeCreateCaseOptionsOutput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCreateCaseOptionsOutputBuilder {
     pub(crate) language_availability: ::std::option::Option<::std::string::String>,
     pub(crate) communication_types: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>,

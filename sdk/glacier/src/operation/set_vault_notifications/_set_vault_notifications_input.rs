@@ -38,8 +38,8 @@ impl SetVaultNotificationsInput {
 }
 
 /// A builder for [`SetVaultNotificationsInput`](crate::operation::set_vault_notifications::SetVaultNotificationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetVaultNotificationsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,

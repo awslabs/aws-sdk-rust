@@ -32,8 +32,8 @@ impl GetDownloadUrlForLayerOutput {
 }
 
 /// A builder for [`GetDownloadUrlForLayerOutput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDownloadUrlForLayerOutputBuilder {
     pub(crate) download_url: ::std::option::Option<::std::string::String>,
     pub(crate) layer_digest: ::std::option::Option<::std::string::String>,

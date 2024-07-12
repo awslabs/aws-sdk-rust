@@ -36,8 +36,8 @@ impl AnalysisTemplateValidationStatusDetail {
 }
 
 /// A builder for [`AnalysisTemplateValidationStatusDetail`](crate::types::AnalysisTemplateValidationStatusDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisTemplateValidationStatusDetailBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AnalysisTemplateValidationType>,
     pub(crate) status: ::std::option::Option<crate::types::AnalysisTemplateValidationStatus>,

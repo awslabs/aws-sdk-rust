@@ -33,8 +33,8 @@ impl ListCollaborationsOutput {
 }
 
 /// A builder for [`ListCollaborationsOutput`](crate::operation::list_collaborations::ListCollaborationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCollaborationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_list: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>>,

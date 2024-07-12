@@ -22,8 +22,8 @@ impl EntityRecognitionConfig {
 }
 
 /// A builder for [`EntityRecognitionConfig`](crate::types::EntityRecognitionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityRecognitionConfigBuilder {
     pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityTypesListItem>>,
 }

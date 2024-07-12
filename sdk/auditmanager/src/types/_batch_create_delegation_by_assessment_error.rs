@@ -33,8 +33,8 @@ impl BatchCreateDelegationByAssessmentError {
 }
 
 /// A builder for [`BatchCreateDelegationByAssessmentError`](crate::types::BatchCreateDelegationByAssessmentError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateDelegationByAssessmentErrorBuilder {
     pub(crate) create_delegation_request: ::std::option::Option<crate::types::CreateDelegationRequest>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

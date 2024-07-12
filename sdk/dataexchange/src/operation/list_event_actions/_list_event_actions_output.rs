@@ -34,8 +34,8 @@ impl ListEventActionsOutput {
 }
 
 /// A builder for [`ListEventActionsOutput`](crate::operation::list_event_actions::ListEventActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventActionsOutputBuilder {
     pub(crate) event_actions: ::std::option::Option<::std::vec::Vec<crate::types::EventActionEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

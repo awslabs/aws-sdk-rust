@@ -20,8 +20,8 @@ impl InferSnomedctInput {
 }
 
 /// A builder for [`InferSnomedctInput`](crate::operation::infer_snomedct::InferSnomedctInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferSnomedctInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

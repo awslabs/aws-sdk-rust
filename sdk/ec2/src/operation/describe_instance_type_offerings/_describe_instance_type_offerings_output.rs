@@ -34,8 +34,8 @@ impl DescribeInstanceTypeOfferingsOutput {
 }
 
 /// A builder for [`DescribeInstanceTypeOfferingsOutput`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceTypeOfferingsOutputBuilder {
     pub(crate) instance_type_offerings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

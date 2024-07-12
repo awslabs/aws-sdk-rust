@@ -65,8 +65,8 @@ impl GetParametersForImportOutput {
 }
 
 /// A builder for [`GetParametersForImportOutput`](crate::operation::get_parameters_for_import::GetParametersForImportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetParametersForImportOutputBuilder {
     pub(crate) wrapping_key_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) wrapping_key_certificate_chain: ::std::option::Option<::std::string::String>,

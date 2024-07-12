@@ -24,8 +24,8 @@ impl DeleteTaskDefinitionsInput {
 }
 
 /// A builder for [`DeleteTaskDefinitionsInput`](crate::operation::delete_task_definitions::DeleteTaskDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTaskDefinitionsInputBuilder {
     pub(crate) task_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

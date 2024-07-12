@@ -20,8 +20,8 @@ impl PutFeedbackInput {
 }
 
 /// A builder for [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutFeedbackInputBuilder {
     pub(crate) insight_feedback: ::std::option::Option<crate::types::InsightFeedback>,
 }

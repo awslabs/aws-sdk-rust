@@ -33,8 +33,8 @@ impl Policy {
 }
 
 /// A builder for [`Policy`](crate::types::Policy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyBuilder {
     pub(crate) http_inputs: ::std::option::Option<crate::types::InputPolicy>,
     pub(crate) https_inputs: ::std::option::Option<crate::types::InputPolicy>,

@@ -20,8 +20,8 @@ impl DeleteIdentityProviderInput {
 }
 
 /// A builder for [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIdentityProviderInputBuilder {
     pub(crate) identity_provider_arn: ::std::option::Option<::std::string::String>,
 }

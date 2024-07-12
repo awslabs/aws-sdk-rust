@@ -63,8 +63,8 @@ impl ListTrafficPolicyInstancesByPolicyInput {
 }
 
 /// A builder for [`ListTrafficPolicyInstancesByPolicyInput`](crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrafficPolicyInstancesByPolicyInputBuilder {
     pub(crate) traffic_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_version: ::std::option::Option<i32>,

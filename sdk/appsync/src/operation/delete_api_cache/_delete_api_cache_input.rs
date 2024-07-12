@@ -21,8 +21,8 @@ impl DeleteApiCacheInput {
 }
 
 /// A builder for [`DeleteApiCacheInput`](crate::operation::delete_api_cache::DeleteApiCacheInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApiCacheInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }

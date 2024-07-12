@@ -29,8 +29,8 @@ impl UtilizationPreference {
 }
 
 /// A builder for [`UtilizationPreference`](crate::types::UtilizationPreference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UtilizationPreferenceBuilder {
     pub(crate) metric_name: ::std::option::Option<crate::types::CustomizableMetricName>,
     pub(crate) metric_parameters: ::std::option::Option<crate::types::CustomizableMetricParameters>,

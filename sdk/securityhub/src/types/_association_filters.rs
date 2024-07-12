@@ -33,8 +33,8 @@ impl AssociationFilters {
 }
 
 /// A builder for [`AssociationFilters`](crate::types::AssociationFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociationFiltersBuilder {
     pub(crate) configuration_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_type: ::std::option::Option<crate::types::AssociationType>,

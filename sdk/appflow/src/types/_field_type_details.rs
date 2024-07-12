@@ -61,8 +61,8 @@ impl FieldTypeDetails {
 }
 
 /// A builder for [`FieldTypeDetails`](crate::types::FieldTypeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FieldTypeDetailsBuilder {
     pub(crate) field_type: ::std::option::Option<::std::string::String>,
     pub(crate) filter_operators: ::std::option::Option<::std::vec::Vec<crate::types::Operator>>,

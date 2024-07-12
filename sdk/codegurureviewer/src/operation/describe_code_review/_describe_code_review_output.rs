@@ -26,8 +26,8 @@ impl DescribeCodeReviewOutput {
 }
 
 /// A builder for [`DescribeCodeReviewOutput`](crate::operation::describe_code_review::DescribeCodeReviewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCodeReviewOutputBuilder {
     pub(crate) code_review: ::std::option::Option<crate::types::CodeReview>,
     _request_id: Option<String>,

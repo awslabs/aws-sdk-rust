@@ -34,8 +34,8 @@ impl CreateAddonInstanceInput {
 }
 
 /// A builder for [`CreateAddonInstanceInput`](crate::operation::create_addon_instance::CreateAddonInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAddonInstanceInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) addon_subscription_id: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl DeleteDeploymentGroupOutput {
 }
 
 /// A builder for [`DeleteDeploymentGroupOutput`](crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDeploymentGroupOutputBuilder {
     pub(crate) hooks_not_cleaned_up: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     _request_id: Option<String>,

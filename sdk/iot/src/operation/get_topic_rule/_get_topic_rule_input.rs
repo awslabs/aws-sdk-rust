@@ -21,8 +21,8 @@ impl GetTopicRuleInput {
 }
 
 /// A builder for [`GetTopicRuleInput`](crate::operation::get_topic_rule::GetTopicRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTopicRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
 }

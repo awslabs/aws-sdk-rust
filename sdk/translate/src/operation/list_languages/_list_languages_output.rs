@@ -40,8 +40,8 @@ impl ListLanguagesOutput {
 }
 
 /// A builder for [`ListLanguagesOutput`](crate::operation::list_languages::ListLanguagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLanguagesOutputBuilder {
     pub(crate) languages: ::std::option::Option<::std::vec::Vec<crate::types::Language>>,
     pub(crate) display_language_code: ::std::option::Option<crate::types::DisplayLanguageCode>,

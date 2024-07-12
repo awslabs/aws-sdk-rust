@@ -76,8 +76,8 @@ impl CreateGlossaryTermInput {
 }
 
 /// A builder for [`CreateGlossaryTermInput`](crate::operation::create_glossary_term::CreateGlossaryTermInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateGlossaryTermInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_identifier: ::std::option::Option<::std::string::String>,

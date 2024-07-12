@@ -79,8 +79,8 @@ impl CustomRoutingAccelerator {
 }
 
 /// A builder for [`CustomRoutingAccelerator`](crate::types::CustomRoutingAccelerator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomRoutingAcceleratorBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

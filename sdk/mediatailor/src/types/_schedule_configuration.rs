@@ -27,8 +27,8 @@ impl ScheduleConfiguration {
 }
 
 /// A builder for [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduleConfigurationBuilder {
     pub(crate) transition: ::std::option::Option<crate::types::Transition>,
     pub(crate) clip_range: ::std::option::Option<crate::types::ClipRange>,

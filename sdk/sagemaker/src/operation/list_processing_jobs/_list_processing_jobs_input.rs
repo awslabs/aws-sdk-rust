@@ -74,8 +74,8 @@ impl ListProcessingJobsInput {
 }
 
 /// A builder for [`ListProcessingJobsInput`](crate::operation::list_processing_jobs::ListProcessingJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProcessingJobsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,

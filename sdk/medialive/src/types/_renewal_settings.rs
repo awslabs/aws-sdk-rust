@@ -27,8 +27,8 @@ impl RenewalSettings {
 }
 
 /// A builder for [`RenewalSettings`](crate::types::RenewalSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenewalSettingsBuilder {
     pub(crate) automatic_renewal: ::std::option::Option<crate::types::ReservationAutomaticRenewal>,
     pub(crate) renewal_count: ::std::option::Option<i32>,

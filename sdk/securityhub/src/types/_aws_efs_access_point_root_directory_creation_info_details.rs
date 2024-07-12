@@ -33,8 +33,8 @@ impl AwsEfsAccessPointRootDirectoryCreationInfoDetails {
 }
 
 /// A builder for [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEfsAccessPointRootDirectoryCreationInfoDetailsBuilder {
     pub(crate) owner_gid: ::std::option::Option<::std::string::String>,
     pub(crate) owner_uid: ::std::option::Option<::std::string::String>,

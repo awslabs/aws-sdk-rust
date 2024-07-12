@@ -48,8 +48,8 @@ impl SearchFacesByImageInput {
 }
 
 /// A builder for [`SearchFacesByImageInput`](crate::operation::search_faces_by_image::SearchFacesByImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchFacesByImageInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::Image>,

@@ -27,8 +27,8 @@ impl GetArchiveRuleOutput {
 }
 
 /// A builder for [`GetArchiveRuleOutput`](crate::operation::get_archive_rule::GetArchiveRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetArchiveRuleOutputBuilder {
     pub(crate) archive_rule: ::std::option::Option<crate::types::ArchiveRuleSummary>,
     _request_id: Option<String>,

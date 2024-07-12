@@ -40,8 +40,8 @@ impl CastColumnTypeOperation {
 }
 
 /// A builder for [`CastColumnTypeOperation`](crate::types::CastColumnTypeOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CastColumnTypeOperationBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_column_type: ::std::option::Option<crate::types::ColumnDataType>,

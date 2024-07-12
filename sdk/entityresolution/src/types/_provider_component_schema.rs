@@ -31,8 +31,8 @@ impl ProviderComponentSchema {
 }
 
 /// A builder for [`ProviderComponentSchema`](crate::types::ProviderComponentSchema).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProviderComponentSchemaBuilder {
     pub(crate) schemas: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     pub(crate) provider_schema_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ProviderSchemaAttribute>>,

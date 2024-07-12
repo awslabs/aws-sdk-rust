@@ -26,8 +26,8 @@ impl CreateTemplateSyncConfigOutput {
 }
 
 /// A builder for [`CreateTemplateSyncConfigOutput`](crate::operation::create_template_sync_config::CreateTemplateSyncConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTemplateSyncConfigOutputBuilder {
     pub(crate) template_sync_config: ::std::option::Option<crate::types::TemplateSyncConfig>,
     _request_id: Option<String>,

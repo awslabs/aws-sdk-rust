@@ -66,8 +66,8 @@ impl CreateMatchingWorkflowInput {
 }
 
 /// A builder for [`CreateMatchingWorkflowInput`](crate::operation::create_matching_workflow::CreateMatchingWorkflowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMatchingWorkflowInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

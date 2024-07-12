@@ -42,8 +42,8 @@ impl SsoUserProfileDetails {
 }
 
 /// A builder for [`SsoUserProfileDetails`](crate::types::SsoUserProfileDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SsoUserProfileDetailsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) first_name: ::std::option::Option<::std::string::String>,

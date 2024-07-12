@@ -40,8 +40,8 @@ impl PolicyFilter {
 }
 
 /// A builder for [`PolicyFilter`](crate::types::PolicyFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyFilterBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::EntityReference>,
     pub(crate) resource: ::std::option::Option<crate::types::EntityReference>,

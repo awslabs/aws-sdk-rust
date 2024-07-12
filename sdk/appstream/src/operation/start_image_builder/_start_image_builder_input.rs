@@ -26,8 +26,8 @@ impl StartImageBuilderInput {
 }
 
 /// A builder for [`StartImageBuilderInput`](crate::operation::start_image_builder::StartImageBuilderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartImageBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) appstream_agent_version: ::std::option::Option<::std::string::String>,

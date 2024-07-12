@@ -33,8 +33,8 @@ impl FrameCaptureSettings {
 }
 
 /// A builder for [`FrameCaptureSettings`](crate::types::FrameCaptureSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FrameCaptureSettingsBuilder {
     pub(crate) capture_interval: ::std::option::Option<i32>,
     pub(crate) capture_interval_units: ::std::option::Option<crate::types::FrameCaptureIntervalUnit>,

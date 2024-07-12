@@ -44,8 +44,8 @@ impl GetRecommendationPreferencesInput {
 }
 
 /// A builder for [`GetRecommendationPreferencesInput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecommendationPreferencesInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,

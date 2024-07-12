@@ -56,8 +56,8 @@ impl CreateWorkforceInput {
 }
 
 /// A builder for [`CreateWorkforceInput`](crate::operation::create_workforce::CreateWorkforceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkforceInputBuilder {
     pub(crate) cognito_config: ::std::option::Option<crate::types::CognitoConfig>,
     pub(crate) oidc_config: ::std::option::Option<crate::types::OidcConfig>,

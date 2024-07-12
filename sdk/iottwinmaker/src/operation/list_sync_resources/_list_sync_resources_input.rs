@@ -70,8 +70,8 @@ impl ListSyncResourcesInput {
 }
 
 /// A builder for [`ListSyncResourcesInput`](crate::operation::list_sync_resources::ListSyncResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSyncResourcesInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,

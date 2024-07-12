@@ -34,8 +34,8 @@ impl DescribeGlobalClustersOutput {
 }
 
 /// A builder for [`DescribeGlobalClustersOutput`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGlobalClustersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) global_clusters: ::std::option::Option<::std::vec::Vec<crate::types::GlobalCluster>>,

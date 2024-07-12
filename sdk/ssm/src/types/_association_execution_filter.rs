@@ -34,8 +34,8 @@ impl AssociationExecutionFilter {
 }
 
 /// A builder for [`AssociationExecutionFilter`](crate::types::AssociationExecutionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociationExecutionFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::AssociationExecutionFilterKey>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

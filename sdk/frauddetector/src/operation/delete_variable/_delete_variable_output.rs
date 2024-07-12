@@ -18,8 +18,8 @@ impl DeleteVariableOutput {
 }
 
 /// A builder for [`DeleteVariableOutput`](crate::operation::delete_variable::DeleteVariableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVariableOutputBuilder {
     _request_id: Option<String>,
 }

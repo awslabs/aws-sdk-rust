@@ -21,8 +21,8 @@ impl InventorySchedule {
 }
 
 /// A builder for [`InventorySchedule`](crate::types::InventorySchedule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InventoryScheduleBuilder {
     pub(crate) frequency: ::std::option::Option<crate::types::InventoryFrequency>,
 }

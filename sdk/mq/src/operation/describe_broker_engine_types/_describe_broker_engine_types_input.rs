@@ -32,8 +32,8 @@ impl DescribeBrokerEngineTypesInput {
 }
 
 /// A builder for [`DescribeBrokerEngineTypesInput`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBrokerEngineTypesInputBuilder {
     pub(crate) engine_type: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

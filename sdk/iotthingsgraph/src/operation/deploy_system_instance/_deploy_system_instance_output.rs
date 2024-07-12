@@ -32,8 +32,8 @@ impl DeploySystemInstanceOutput {
 }
 
 /// A builder for [`DeploySystemInstanceOutput`](crate::operation::deploy_system_instance::DeploySystemInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploySystemInstanceOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     pub(crate) greengrass_deployment_id: ::std::option::Option<::std::string::String>,

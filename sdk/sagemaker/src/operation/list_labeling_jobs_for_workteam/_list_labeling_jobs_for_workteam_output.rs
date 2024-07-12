@@ -34,8 +34,8 @@ impl ListLabelingJobsForWorkteamOutput {
 }
 
 /// A builder for [`ListLabelingJobsForWorkteamOutput`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLabelingJobsForWorkteamOutputBuilder {
     pub(crate) labeling_job_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::LabelingJobForWorkteamSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

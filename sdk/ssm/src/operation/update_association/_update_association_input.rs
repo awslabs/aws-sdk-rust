@@ -222,8 +222,8 @@ impl UpdateAssociationInput {
 }
 
 /// A builder for [`UpdateAssociationInput`](crate::operation::update_association::UpdateAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateAssociationInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,

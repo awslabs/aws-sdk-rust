@@ -52,8 +52,8 @@ impl CreateInterconnectInput {
 }
 
 /// A builder for [`CreateInterconnectInput`](crate::operation::create_interconnect::CreateInterconnectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInterconnectInputBuilder {
     pub(crate) interconnect_name: ::std::option::Option<::std::string::String>,
     pub(crate) bandwidth: ::std::option::Option<::std::string::String>,

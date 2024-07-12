@@ -38,8 +38,8 @@ impl GetOperationsOutput {
 }
 
 /// A builder for [`GetOperationsOutput`](crate::operation::get_operations::GetOperationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOperationsOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

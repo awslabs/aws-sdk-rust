@@ -39,8 +39,8 @@ impl RevokeSnapshotAccessInput {
 }
 
 /// A builder for [`RevokeSnapshotAccessInput`](crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeSnapshotAccessInputBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,

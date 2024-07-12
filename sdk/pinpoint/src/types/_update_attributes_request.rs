@@ -23,8 +23,8 @@ impl UpdateAttributesRequest {
 }
 
 /// A builder for [`UpdateAttributesRequest`](crate::types::UpdateAttributesRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAttributesRequestBuilder {
     pub(crate) blacklist: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

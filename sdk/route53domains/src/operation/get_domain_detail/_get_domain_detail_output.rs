@@ -206,8 +206,8 @@ impl GetDomainDetailOutput {
 }
 
 /// A builder for [`GetDomainDetailOutput`](crate::operation::get_domain_detail::GetDomainDetailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetDomainDetailOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) nameservers: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,

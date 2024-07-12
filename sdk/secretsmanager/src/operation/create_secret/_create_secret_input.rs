@@ -145,8 +145,8 @@ impl CreateSecretInput {
 }
 
 /// A builder for [`CreateSecretInput`](crate::operation::create_secret::CreateSecretInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateSecretInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,

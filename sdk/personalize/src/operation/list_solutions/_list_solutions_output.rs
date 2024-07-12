@@ -34,8 +34,8 @@ impl ListSolutionsOutput {
 }
 
 /// A builder for [`ListSolutionsOutput`](crate::operation::list_solutions::ListSolutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSolutionsOutputBuilder {
     pub(crate) solutions: ::std::option::Option<::std::vec::Vec<crate::types::SolutionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -25,8 +25,8 @@ impl TrainingDataConfig {
 }
 
 /// A builder for [`TrainingDataConfig`](crate::types::TrainingDataConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingDataConfigBuilder {
     pub(crate) excluded_dataset_columns:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,

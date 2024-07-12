@@ -46,8 +46,8 @@ impl ImportDatasetInput {
 }
 
 /// A builder for [`ImportDatasetInput`](crate::operation::import_dataset::ImportDatasetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportDatasetInputBuilder {
     pub(crate) source_dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,

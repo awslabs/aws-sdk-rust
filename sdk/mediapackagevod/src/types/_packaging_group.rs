@@ -63,8 +63,8 @@ impl PackagingGroup {
 }
 
 /// A builder for [`PackagingGroup`](crate::types::PackagingGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackagingGroupBuilder {
     pub(crate) approximate_asset_count: ::std::option::Option<i32>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

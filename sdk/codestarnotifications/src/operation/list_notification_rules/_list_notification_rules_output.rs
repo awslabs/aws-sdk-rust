@@ -34,8 +34,8 @@ impl ListNotificationRulesOutput {
 }
 
 /// A builder for [`ListNotificationRulesOutput`](crate::operation::list_notification_rules::ListNotificationRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNotificationRulesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) notification_rules: ::std::option::Option<::std::vec::Vec<crate::types::NotificationRuleSummary>>,

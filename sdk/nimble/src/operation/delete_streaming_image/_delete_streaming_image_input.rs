@@ -32,8 +32,8 @@ impl DeleteStreamingImageInput {
 }
 
 /// A builder for [`DeleteStreamingImageInput`](crate::operation::delete_streaming_image::DeleteStreamingImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStreamingImageInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) streaming_image_id: ::std::option::Option<::std::string::String>,

@@ -43,8 +43,8 @@ impl DescribeStreamInput {
 }
 
 /// A builder for [`DescribeStreamInput`](crate::operation::describe_stream::DescribeStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStreamInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,

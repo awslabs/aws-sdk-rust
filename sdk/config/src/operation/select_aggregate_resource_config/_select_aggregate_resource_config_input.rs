@@ -44,8 +44,8 @@ impl SelectAggregateResourceConfigInput {
 }
 
 /// A builder for [`SelectAggregateResourceConfigInput`](crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelectAggregateResourceConfigInputBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,

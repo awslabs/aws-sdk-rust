@@ -33,8 +33,8 @@ impl LifecyclePolicyDetail {
 }
 
 /// A builder for [`LifecyclePolicyDetail`](crate::types::LifecyclePolicyDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecyclePolicyDetailBuilder {
     pub(crate) action: ::std::option::Option<crate::types::LifecyclePolicyDetailAction>,
     pub(crate) filter: ::std::option::Option<crate::types::LifecyclePolicyDetailFilter>,

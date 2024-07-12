@@ -37,8 +37,8 @@ impl DataColorPalette {
 }
 
 /// A builder for [`DataColorPalette`](crate::types::DataColorPalette).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataColorPaletteBuilder {
     pub(crate) colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) min_max_gradient: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

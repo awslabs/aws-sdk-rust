@@ -21,8 +21,8 @@ impl DeletePresetInput {
 }
 
 /// A builder for [`DeletePresetInput`](crate::operation::delete_preset::DeletePresetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePresetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

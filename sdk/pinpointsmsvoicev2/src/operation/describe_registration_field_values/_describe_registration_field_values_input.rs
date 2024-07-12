@@ -52,8 +52,8 @@ impl DescribeRegistrationFieldValuesInput {
 }
 
 /// A builder for [`DescribeRegistrationFieldValuesInput`](crate::operation::describe_registration_field_values::DescribeRegistrationFieldValuesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistrationFieldValuesInputBuilder {
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_number: ::std::option::Option<i64>,

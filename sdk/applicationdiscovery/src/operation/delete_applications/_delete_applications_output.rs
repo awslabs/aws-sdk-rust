@@ -18,8 +18,8 @@ impl DeleteApplicationsOutput {
 }
 
 /// A builder for [`DeleteApplicationsOutput`](crate::operation::delete_applications::DeleteApplicationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationsOutputBuilder {
     _request_id: Option<String>,
 }

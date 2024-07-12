@@ -65,8 +65,8 @@ impl AuthEventType {
 }
 
 /// A builder for [`AuthEventType`](crate::types::AuthEventType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthEventTypeBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<crate::types::EventType>,

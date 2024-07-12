@@ -77,8 +77,8 @@ impl GetComputeAccessOutput {
 }
 
 /// A builder for [`GetComputeAccessOutput`](crate::operation::get_compute_access::GetComputeAccessOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetComputeAccessOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,

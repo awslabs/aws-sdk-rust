@@ -57,8 +57,8 @@ impl NodeInfo {
 }
 
 /// A builder for [`NodeInfo`](crate::types::NodeInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeInfoBuilder {
     pub(crate) added_to_cluster_time: ::std::option::Option<::std::string::String>,
     pub(crate) broker_node_info: ::std::option::Option<crate::types::BrokerNodeInfo>,

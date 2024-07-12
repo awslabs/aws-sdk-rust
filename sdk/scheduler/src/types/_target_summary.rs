@@ -22,8 +22,8 @@ impl TargetSummary {
 }
 
 /// A builder for [`TargetSummary`](crate::types::TargetSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

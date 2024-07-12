@@ -21,8 +21,8 @@ impl DeleteThingTypeInput {
 }
 
 /// A builder for [`DeleteThingTypeInput`](crate::operation::delete_thing_type::DeleteThingTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteThingTypeInputBuilder {
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
 }

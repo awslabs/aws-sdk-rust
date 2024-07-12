@@ -33,8 +33,8 @@ impl MonitoringDatasetFormat {
 }
 
 /// A builder for [`MonitoringDatasetFormat`](crate::types::MonitoringDatasetFormat).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringDatasetFormatBuilder {
     pub(crate) csv: ::std::option::Option<crate::types::MonitoringCsvDatasetFormat>,
     pub(crate) json: ::std::option::Option<crate::types::MonitoringJsonDatasetFormat>,

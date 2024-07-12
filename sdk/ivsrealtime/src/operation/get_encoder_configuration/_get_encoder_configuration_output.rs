@@ -26,8 +26,8 @@ impl GetEncoderConfigurationOutput {
 }
 
 /// A builder for [`GetEncoderConfigurationOutput`](crate::operation::get_encoder_configuration::GetEncoderConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEncoderConfigurationOutputBuilder {
     pub(crate) encoder_configuration: ::std::option::Option<crate::types::EncoderConfiguration>,
     _request_id: Option<String>,

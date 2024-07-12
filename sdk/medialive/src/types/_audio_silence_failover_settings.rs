@@ -27,8 +27,8 @@ impl AudioSilenceFailoverSettings {
 }
 
 /// A builder for [`AudioSilenceFailoverSettings`](crate::types::AudioSilenceFailoverSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioSilenceFailoverSettingsBuilder {
     pub(crate) audio_selector_name: ::std::option::Option<::std::string::String>,
     pub(crate) audio_silence_threshold_msec: ::std::option::Option<i32>,

@@ -20,8 +20,8 @@ impl DeleteApprovalRuleTemplateInput {
 }
 
 /// A builder for [`DeleteApprovalRuleTemplateInput`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApprovalRuleTemplateInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
 }

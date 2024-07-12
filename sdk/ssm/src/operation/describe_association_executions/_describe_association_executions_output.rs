@@ -34,8 +34,8 @@ impl DescribeAssociationExecutionsOutput {
 }
 
 /// A builder for [`DescribeAssociationExecutionsOutput`](crate::operation::describe_association_executions::DescribeAssociationExecutionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAssociationExecutionsOutputBuilder {
     pub(crate) association_executions: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecution>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

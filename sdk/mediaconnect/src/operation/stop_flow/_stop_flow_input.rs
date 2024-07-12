@@ -20,8 +20,8 @@ impl StopFlowInput {
 }
 
 /// A builder for [`StopFlowInput`](crate::operation::stop_flow::StopFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopFlowInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
 }

@@ -47,8 +47,8 @@ impl DynamicScalingConfiguration {
 }
 
 /// A builder for [`DynamicScalingConfiguration`](crate::types::DynamicScalingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DynamicScalingConfigurationBuilder {
     pub(crate) min_capacity: ::std::option::Option<i32>,
     pub(crate) max_capacity: ::std::option::Option<i32>,

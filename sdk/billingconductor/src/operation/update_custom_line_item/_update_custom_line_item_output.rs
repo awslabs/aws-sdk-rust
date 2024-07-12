@@ -76,8 +76,8 @@ impl UpdateCustomLineItemOutput {
 }
 
 /// A builder for [`UpdateCustomLineItemOutput`](crate::operation::update_custom_line_item::UpdateCustomLineItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateCustomLineItemOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_arn: ::std::option::Option<::std::string::String>,

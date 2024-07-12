@@ -27,8 +27,8 @@ impl CreateSolFunctionPackageInput {
 }
 
 /// A builder for [`CreateSolFunctionPackageInput`](crate::operation::create_sol_function_package::CreateSolFunctionPackageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateSolFunctionPackageInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }

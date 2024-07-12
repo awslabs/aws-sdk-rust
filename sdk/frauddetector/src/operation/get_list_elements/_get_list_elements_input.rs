@@ -32,8 +32,8 @@ impl GetListElementsInput {
 }
 
 /// A builder for [`GetListElementsInput`](crate::operation::get_list_elements::GetListElementsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetListElementsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

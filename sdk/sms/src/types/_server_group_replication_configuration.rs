@@ -29,8 +29,8 @@ impl ServerGroupReplicationConfiguration {
 }
 
 /// A builder for [`ServerGroupReplicationConfiguration`](crate::types::ServerGroupReplicationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerGroupReplicationConfigurationBuilder {
     pub(crate) server_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) server_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerReplicationConfiguration>>,

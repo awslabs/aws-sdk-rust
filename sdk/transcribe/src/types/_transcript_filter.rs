@@ -64,8 +64,8 @@ impl TranscriptFilter {
 }
 
 /// A builder for [`TranscriptFilter`](crate::types::TranscriptFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranscriptFilterBuilder {
     pub(crate) transcript_filter_type: ::std::option::Option<crate::types::TranscriptFilterType>,
     pub(crate) absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,

@@ -23,8 +23,8 @@ impl DisableSnapshotCopyInput {
 }
 
 /// A builder for [`DisableSnapshotCopyInput`](crate::operation::disable_snapshot_copy::DisableSnapshotCopyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableSnapshotCopyInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }

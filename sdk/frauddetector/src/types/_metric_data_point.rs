@@ -39,8 +39,8 @@ impl MetricDataPoint {
 }
 
 /// A builder for [`MetricDataPoint`](crate::types::MetricDataPoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricDataPointBuilder {
     pub(crate) fpr: ::std::option::Option<f32>,
     pub(crate) precision: ::std::option::Option<f32>,

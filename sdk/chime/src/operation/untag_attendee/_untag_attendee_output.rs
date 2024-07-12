@@ -18,8 +18,8 @@ impl UntagAttendeeOutput {
 }
 
 /// A builder for [`UntagAttendeeOutput`](crate::operation::untag_attendee::UntagAttendeeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagAttendeeOutputBuilder {
     _request_id: Option<String>,
 }

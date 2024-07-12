@@ -35,8 +35,8 @@ impl AnalysisError {
 }
 
 /// A builder for [`AnalysisError`](crate::types::AnalysisError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisErrorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AnalysisErrorType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

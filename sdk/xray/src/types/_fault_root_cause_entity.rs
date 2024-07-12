@@ -35,8 +35,8 @@ impl FaultRootCauseEntity {
 }
 
 /// A builder for [`FaultRootCauseEntity`](crate::types::FaultRootCauseEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FaultRootCauseEntityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) exceptions: ::std::option::Option<::std::vec::Vec<crate::types::RootCauseException>>,

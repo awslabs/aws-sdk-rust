@@ -38,8 +38,8 @@ impl DescribeEventConfigurationsOutput {
 }
 
 /// A builder for [`DescribeEventConfigurationsOutput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventConfigurationsOutputBuilder {
     pub(crate) event_configurations: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,

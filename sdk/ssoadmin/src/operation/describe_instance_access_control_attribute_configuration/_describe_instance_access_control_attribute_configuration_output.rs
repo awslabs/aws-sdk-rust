@@ -40,8 +40,8 @@ impl DescribeInstanceAccessControlAttributeConfigurationOutput {
 }
 
 /// A builder for [`DescribeInstanceAccessControlAttributeConfigurationOutput`](crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceAccessControlAttributeConfigurationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::InstanceAccessControlAttributeConfigurationStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,

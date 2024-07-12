@@ -41,8 +41,8 @@ impl GetDigestOutput {
 }
 
 /// A builder for [`GetDigestOutput`](crate::operation::get_digest::GetDigestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetDigestOutputBuilder {
     pub(crate) digest: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) digest_tip_address: ::std::option::Option<crate::types::ValueHolder>,

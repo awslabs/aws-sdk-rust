@@ -32,8 +32,8 @@ impl DeleteUtterancesInput {
 }
 
 /// A builder for [`DeleteUtterancesInput`](crate::operation::delete_utterances::DeleteUtterancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUtterancesInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,

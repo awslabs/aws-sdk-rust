@@ -32,8 +32,8 @@ impl DeleteLicenseOutput {
 }
 
 /// A builder for [`DeleteLicenseOutput`](crate::operation::delete_license::DeleteLicenseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLicenseOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LicenseDeletionStatus>,
     pub(crate) deletion_date: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl BotRecommendationSummary {
 }
 
 /// A builder for [`BotRecommendationSummary`](crate::types::BotRecommendationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BotRecommendationSummaryBuilder {
     pub(crate) bot_recommendation_status: ::std::option::Option<crate::types::BotRecommendationStatus>,
     pub(crate) bot_recommendation_id: ::std::option::Option<::std::string::String>,

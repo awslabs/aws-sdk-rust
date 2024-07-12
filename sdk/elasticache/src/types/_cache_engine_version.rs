@@ -47,8 +47,8 @@ impl CacheEngineVersion {
 }
 
 /// A builder for [`CacheEngineVersion`](crate::types::CacheEngineVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheEngineVersionBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,

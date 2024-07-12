@@ -47,8 +47,8 @@ impl SlotValueSelectionSetting {
 }
 
 /// A builder for [`SlotValueSelectionSetting`](crate::types::SlotValueSelectionSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotValueSelectionSettingBuilder {
     pub(crate) resolution_strategy: ::std::option::Option<crate::types::SlotValueResolutionStrategy>,
     pub(crate) regex_filter: ::std::option::Option<crate::types::SlotValueRegexFilter>,

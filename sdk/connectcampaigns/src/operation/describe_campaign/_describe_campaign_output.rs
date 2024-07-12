@@ -27,8 +27,8 @@ impl DescribeCampaignOutput {
 }
 
 /// A builder for [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCampaignOutputBuilder {
     pub(crate) campaign: ::std::option::Option<crate::types::Campaign>,
     _request_id: Option<String>,

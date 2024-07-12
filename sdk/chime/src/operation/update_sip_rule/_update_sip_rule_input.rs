@@ -40,8 +40,8 @@ impl UpdateSipRuleInput {
 }
 
 /// A builder for [`UpdateSipRuleInput`](crate::operation::update_sip_rule::UpdateSipRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSipRuleInputBuilder {
     pub(crate) sip_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

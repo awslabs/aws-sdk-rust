@@ -26,8 +26,8 @@ impl PurchaseReservedDbInstancesOfferingOutput {
 }
 
 /// A builder for [`PurchaseReservedDbInstancesOfferingOutput`](crate::operation::purchase_reserved_db_instances_offering::PurchaseReservedDbInstancesOfferingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseReservedDbInstancesOfferingOutputBuilder {
     pub(crate) reserved_db_instance: ::std::option::Option<crate::types::ReservedDbInstance>,
     _request_id: Option<String>,

@@ -32,8 +32,8 @@ impl CreateStreamingUrlOutput {
 }
 
 /// A builder for [`CreateStreamingUrlOutput`](crate::operation::create_streaming_url::CreateStreamingUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStreamingUrlOutputBuilder {
     pub(crate) streaming_url: ::std::option::Option<::std::string::String>,
     pub(crate) expires: ::std::option::Option<::aws_smithy_types::DateTime>,

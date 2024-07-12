@@ -69,8 +69,8 @@ impl HeatMapConfiguration {
 }
 
 /// A builder for [`HeatMapConfiguration`](crate::types::HeatMapConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HeatMapConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::HeatMapFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::HeatMapSortConfiguration>,

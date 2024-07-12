@@ -33,8 +33,8 @@ impl ListResourcesAssociatedToCustomLineItemResponseElement {
 }
 
 /// A builder for [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::types::ListResourcesAssociatedToCustomLineItemResponseElement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) relationship: ::std::option::Option<crate::types::CustomLineItemRelationship>,

@@ -20,8 +20,8 @@ impl GetFunctionDefinitionInput {
 }
 
 /// A builder for [`GetFunctionDefinitionInput`](crate::operation::get_function_definition::GetFunctionDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFunctionDefinitionInputBuilder {
     pub(crate) function_definition_id: ::std::option::Option<::std::string::String>,
 }

@@ -45,8 +45,8 @@ impl EsInstanceDetails {
 }
 
 /// A builder for [`EsInstanceDetails`](crate::types::EsInstanceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EsInstanceDetailsBuilder {
     pub(crate) instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) instance_size: ::std::option::Option<::std::string::String>,

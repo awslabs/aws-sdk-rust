@@ -39,8 +39,8 @@ impl ParameterGroup {
 }
 
 /// A builder for [`ParameterGroup`](crate::types::ParameterGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParameterGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) family: ::std::option::Option<::std::string::String>,

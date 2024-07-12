@@ -21,8 +21,8 @@ impl NotificationTargetActions {
 }
 
 /// A builder for [`NotificationTargetActions`](crate::types::NotificationTargetActions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotificationTargetActionsBuilder {
     pub(crate) lambda_action: ::std::option::Option<crate::types::LambdaAction>,
 }

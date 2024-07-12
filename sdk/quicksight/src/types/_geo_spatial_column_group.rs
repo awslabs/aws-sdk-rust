@@ -35,8 +35,8 @@ impl GeoSpatialColumnGroup {
 }
 
 /// A builder for [`GeoSpatialColumnGroup`](crate::types::GeoSpatialColumnGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeoSpatialColumnGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) country_code: ::std::option::Option<crate::types::GeoSpatialCountryCode>,

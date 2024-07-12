@@ -23,8 +23,8 @@ impl LineItemFields {
 }
 
 /// A builder for [`LineItemFields`](crate::types::LineItemFields).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineItemFieldsBuilder {
     pub(crate) line_item_expense_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>,
 }

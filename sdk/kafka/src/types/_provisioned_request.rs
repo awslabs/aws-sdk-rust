@@ -75,8 +75,8 @@ impl ProvisionedRequest {
 }
 
 /// A builder for [`ProvisionedRequest`](crate::types::ProvisionedRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionedRequestBuilder {
     pub(crate) broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
     pub(crate) client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,

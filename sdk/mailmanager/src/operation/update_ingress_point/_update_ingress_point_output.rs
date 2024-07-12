@@ -18,8 +18,8 @@ impl UpdateIngressPointOutput {
 }
 
 /// A builder for [`UpdateIngressPointOutput`](crate::operation::update_ingress_point::UpdateIngressPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIngressPointOutputBuilder {
     _request_id: Option<String>,
 }

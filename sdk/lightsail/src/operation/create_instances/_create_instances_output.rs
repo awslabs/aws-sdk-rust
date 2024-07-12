@@ -28,8 +28,8 @@ impl CreateInstancesOutput {
 }
 
 /// A builder for [`CreateInstancesOutput`](crate::operation::create_instances::CreateInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInstancesOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

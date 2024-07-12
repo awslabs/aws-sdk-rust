@@ -34,8 +34,8 @@ impl CreateCodeRepositoryInput {
 }
 
 /// A builder for [`CreateCodeRepositoryInput`](crate::operation::create_code_repository::CreateCodeRepositoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCodeRepositoryInputBuilder {
     pub(crate) code_repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) git_config: ::std::option::Option<crate::types::GitConfig>,

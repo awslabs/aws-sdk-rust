@@ -18,8 +18,8 @@ impl CreateOrUpdateTagsOutput {
 }
 
 /// A builder for [`CreateOrUpdateTagsOutput`](crate::operation::create_or_update_tags::CreateOrUpdateTagsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOrUpdateTagsOutputBuilder {
     _request_id: Option<String>,
 }

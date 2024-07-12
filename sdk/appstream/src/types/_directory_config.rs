@@ -47,8 +47,8 @@ impl DirectoryConfig {
 }
 
 /// A builder for [`DirectoryConfig`](crate::types::DirectoryConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DirectoryConfigBuilder {
     pub(crate) directory_name: ::std::option::Option<::std::string::String>,
     pub(crate) organizational_unit_distinguished_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

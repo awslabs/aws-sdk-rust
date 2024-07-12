@@ -37,8 +37,8 @@ impl FleetSpotCapacityRebalanceRequest {
 }
 
 /// A builder for [`FleetSpotCapacityRebalanceRequest`](crate::types::FleetSpotCapacityRebalanceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FleetSpotCapacityRebalanceRequestBuilder {
     pub(crate) replacement_strategy: ::std::option::Option<crate::types::FleetReplacementStrategy>,
     pub(crate) termination_delay: ::std::option::Option<i32>,

@@ -28,8 +28,8 @@ impl EntityRecognizerAnnotations {
 }
 
 /// A builder for [`EntityRecognizerAnnotations`](crate::types::EntityRecognizerAnnotations).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityRecognizerAnnotationsBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) test_s3_uri: ::std::option::Option<::std::string::String>,

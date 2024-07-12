@@ -51,8 +51,8 @@ impl GetGatewayResponseOutput {
 }
 
 /// A builder for [`GetGatewayResponseOutput`](crate::operation::get_gateway_response::GetGatewayResponseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGatewayResponseOutputBuilder {
     pub(crate) response_type: ::std::option::Option<crate::types::GatewayResponseType>,
     pub(crate) status_code: ::std::option::Option<::std::string::String>,

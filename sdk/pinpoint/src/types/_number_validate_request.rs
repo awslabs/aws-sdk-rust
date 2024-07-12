@@ -27,8 +27,8 @@ impl NumberValidateRequest {
 }
 
 /// A builder for [`NumberValidateRequest`](crate::types::NumberValidateRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NumberValidateRequestBuilder {
     pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,

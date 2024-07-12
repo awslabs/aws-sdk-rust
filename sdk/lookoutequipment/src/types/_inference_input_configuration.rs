@@ -33,8 +33,8 @@ impl InferenceInputConfiguration {
 }
 
 /// A builder for [`InferenceInputConfiguration`](crate::types::InferenceInputConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceInputConfigurationBuilder {
     pub(crate) s3_input_configuration: ::std::option::Option<crate::types::InferenceS3InputConfiguration>,
     pub(crate) input_time_zone_offset: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl DescribeDbSubnetGroupsInput {
 }
 
 /// A builder for [`DescribeDbSubnetGroupsInput`](crate::operation::describe_db_subnet_groups::DescribeDbSubnetGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbSubnetGroupsInputBuilder {
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

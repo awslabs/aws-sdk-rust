@@ -46,8 +46,8 @@ impl GetHostReservationPurchasePreviewOutput {
 }
 
 /// A builder for [`GetHostReservationPurchasePreviewOutput`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHostReservationPurchasePreviewOutputBuilder {
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     pub(crate) purchase: ::std::option::Option<::std::vec::Vec<crate::types::Purchase>>,

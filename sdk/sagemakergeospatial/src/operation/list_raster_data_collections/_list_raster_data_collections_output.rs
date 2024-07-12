@@ -42,8 +42,8 @@ impl ListRasterDataCollectionsOutput {
 }
 
 /// A builder for [`ListRasterDataCollectionsOutput`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListRasterDataCollectionsOutputBuilder {
     pub(crate) raster_data_collection_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RasterDataCollectionMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

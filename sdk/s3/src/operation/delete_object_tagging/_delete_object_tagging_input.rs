@@ -42,8 +42,8 @@ impl DeleteObjectTaggingInput {
 }
 
 /// A builder for [`DeleteObjectTaggingInput`](crate::operation::delete_object_tagging::DeleteObjectTaggingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteObjectTaggingInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

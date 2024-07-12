@@ -26,8 +26,8 @@ impl DescribeAlarmOutput {
 }
 
 /// A builder for [`DescribeAlarmOutput`](crate::operation::describe_alarm::DescribeAlarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAlarmOutputBuilder {
     pub(crate) alarm: ::std::option::Option<crate::types::Alarm>,
     _request_id: Option<String>,

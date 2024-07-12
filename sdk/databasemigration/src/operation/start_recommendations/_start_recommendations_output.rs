@@ -18,8 +18,8 @@ impl StartRecommendationsOutput {
 }
 
 /// A builder for [`StartRecommendationsOutput`](crate::operation::start_recommendations::StartRecommendationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartRecommendationsOutputBuilder {
     _request_id: Option<String>,
 }

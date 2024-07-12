@@ -18,8 +18,8 @@ impl DeleteProvisionedProductPlanOutput {
 }
 
 /// A builder for [`DeleteProvisionedProductPlanOutput`](crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProvisionedProductPlanOutputBuilder {
     _request_id: Option<String>,
 }

@@ -50,8 +50,8 @@ impl GenerateEmbedUrlForRegisteredUserOutput {
 }
 
 /// A builder for [`GenerateEmbedUrlForRegisteredUserOutput`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GenerateEmbedUrlForRegisteredUserOutputBuilder {
     pub(crate) embed_url: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,

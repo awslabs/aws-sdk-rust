@@ -27,8 +27,8 @@ impl GetThirdPartyJobDetailsOutput {
 }
 
 /// A builder for [`GetThirdPartyJobDetailsOutput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetThirdPartyJobDetailsOutputBuilder {
     pub(crate) job_details: ::std::option::Option<crate::types::ThirdPartyJobDetails>,
     _request_id: Option<String>,

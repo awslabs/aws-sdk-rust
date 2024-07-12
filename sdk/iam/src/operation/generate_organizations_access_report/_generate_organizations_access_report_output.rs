@@ -26,8 +26,8 @@ impl GenerateOrganizationsAccessReportOutput {
 }
 
 /// A builder for [`GenerateOrganizationsAccessReportOutput`](crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateOrganizationsAccessReportOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

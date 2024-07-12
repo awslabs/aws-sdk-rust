@@ -83,8 +83,8 @@ impl S3Bucket {
 }
 
 /// A builder for [`S3Bucket`](crate::types::S3Bucket).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3BucketBuilder {
     pub(crate) allows_unencrypted_object_uploads: ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl Fmp4HlsSettings {
 }
 
 /// A builder for [`Fmp4HlsSettings`](crate::types::Fmp4HlsSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Fmp4HlsSettingsBuilder {
     pub(crate) audio_rendition_sets: ::std::option::Option<::std::string::String>,
     pub(crate) nielsen_id3_behavior: ::std::option::Option<crate::types::Fmp4NielsenId3Behavior>,

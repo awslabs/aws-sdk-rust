@@ -29,8 +29,8 @@ impl AttributeAndCondition {
 }
 
 /// A builder for [`AttributeAndCondition`](crate::types::AttributeAndCondition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributeAndConditionBuilder {
     pub(crate) tag_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TagCondition>>,
     pub(crate) hierarchy_group_condition: ::std::option::Option<crate::types::HierarchyGroupCondition>,

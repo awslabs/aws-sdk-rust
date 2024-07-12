@@ -64,8 +64,8 @@ impl DescribeIpRestrictionOutput {
 }
 
 /// A builder for [`DescribeIpRestrictionOutput`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIpRestrictionOutputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_restriction_rule_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

@@ -40,8 +40,8 @@ impl RenderUiTemplateInput {
 }
 
 /// A builder for [`RenderUiTemplateInput`](crate::operation::render_ui_template::RenderUiTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenderUiTemplateInputBuilder {
     pub(crate) ui_template: ::std::option::Option<crate::types::UiTemplate>,
     pub(crate) task: ::std::option::Option<crate::types::RenderableTask>,

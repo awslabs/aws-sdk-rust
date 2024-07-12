@@ -56,8 +56,8 @@ impl UpdateEventActionOutput {
 }
 
 /// A builder for [`UpdateEventActionOutput`](crate::operation::update_event_action::UpdateEventActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventActionOutputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

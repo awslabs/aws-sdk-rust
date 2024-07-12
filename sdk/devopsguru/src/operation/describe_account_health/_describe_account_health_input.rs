@@ -11,8 +11,8 @@ impl DescribeAccountHealthInput {
 }
 
 /// A builder for [`DescribeAccountHealthInput`](crate::operation::describe_account_health::DescribeAccountHealthInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountHealthInputBuilder {}
 impl DescribeAccountHealthInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccountHealthInput`](crate::operation::describe_account_health::DescribeAccountHealthInput).

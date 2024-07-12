@@ -35,8 +35,8 @@ impl ListExperimentTargetAccountConfigurationsOutput {
 }
 
 /// A builder for [`ListExperimentTargetAccountConfigurationsOutput`](crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExperimentTargetAccountConfigurationsOutputBuilder {
     pub(crate) target_account_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentTargetAccountConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

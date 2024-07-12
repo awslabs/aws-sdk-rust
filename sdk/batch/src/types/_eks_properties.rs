@@ -21,8 +21,8 @@ impl EksProperties {
 }
 
 /// A builder for [`EksProperties`](crate::types::EksProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksPropertiesBuilder {
     pub(crate) pod_properties: ::std::option::Option<crate::types::EksPodProperties>,
 }

@@ -33,8 +33,8 @@ impl DescribeTagsInput {
 }
 
 /// A builder for [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTagsInputBuilder {
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

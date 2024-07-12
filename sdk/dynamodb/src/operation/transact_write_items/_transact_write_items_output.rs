@@ -37,8 +37,8 @@ impl TransactWriteItemsOutput {
 }
 
 /// A builder for [`TransactWriteItemsOutput`](crate::operation::transact_write_items::TransactWriteItemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransactWriteItemsOutputBuilder {
     pub(crate) consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
     pub(crate) item_collection_metrics:

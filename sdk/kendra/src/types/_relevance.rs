@@ -55,8 +55,8 @@ impl Relevance {
 }
 
 /// A builder for [`Relevance`](crate::types::Relevance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelevanceBuilder {
     pub(crate) freshness: ::std::option::Option<bool>,
     pub(crate) importance: ::std::option::Option<i32>,

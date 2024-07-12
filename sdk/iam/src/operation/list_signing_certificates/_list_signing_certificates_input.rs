@@ -36,8 +36,8 @@ impl ListSigningCertificatesInput {
 }
 
 /// A builder for [`ListSigningCertificatesInput`](crate::operation::list_signing_certificates::ListSigningCertificatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSigningCertificatesInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl GetLexiconOutput {
 }
 
 /// A builder for [`GetLexiconOutput`](crate::operation::get_lexicon::GetLexiconOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLexiconOutputBuilder {
     pub(crate) lexicon: ::std::option::Option<crate::types::Lexicon>,
     pub(crate) lexicon_attributes: ::std::option::Option<crate::types::LexiconAttributes>,

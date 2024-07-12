@@ -21,8 +21,8 @@ impl UpdateApplicationPortalOptions {
 }
 
 /// A builder for [`UpdateApplicationPortalOptions`](crate::types::UpdateApplicationPortalOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApplicationPortalOptionsBuilder {
     pub(crate) sign_in_options: ::std::option::Option<crate::types::SignInOptions>,
 }

@@ -38,8 +38,8 @@ impl UpdateUserProfileInput {
 }
 
 /// A builder for [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserProfileInputBuilder {
     pub(crate) iam_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_username: ::std::option::Option<::std::string::String>,

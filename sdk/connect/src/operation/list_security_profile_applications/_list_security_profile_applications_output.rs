@@ -46,8 +46,8 @@ impl ListSecurityProfileApplicationsOutput {
 }
 
 /// A builder for [`ListSecurityProfileApplicationsOutput`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSecurityProfileApplicationsOutputBuilder {
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

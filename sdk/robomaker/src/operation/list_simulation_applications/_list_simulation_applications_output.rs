@@ -34,8 +34,8 @@ impl ListSimulationApplicationsOutput {
 }
 
 /// A builder for [`ListSimulationApplicationsOutput`](crate::operation::list_simulation_applications::ListSimulationApplicationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSimulationApplicationsOutputBuilder {
     pub(crate) simulation_application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetPermissionGroupInput {
 }
 
 /// A builder for [`GetPermissionGroupInput`](crate::operation::get_permission_group::GetPermissionGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPermissionGroupInputBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
 }

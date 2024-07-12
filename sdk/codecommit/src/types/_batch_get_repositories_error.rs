@@ -39,8 +39,8 @@ impl BatchGetRepositoriesError {
 }
 
 /// A builder for [`BatchGetRepositoriesError`](crate::types::BatchGetRepositoriesError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetRepositoriesErrorBuilder {
     pub(crate) repository_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

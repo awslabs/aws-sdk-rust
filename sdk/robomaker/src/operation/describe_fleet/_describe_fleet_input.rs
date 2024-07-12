@@ -23,8 +23,8 @@ impl DescribeFleetInput {
 }
 
 /// A builder for [`DescribeFleetInput`](crate::operation::describe_fleet::DescribeFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetInputBuilder {
     pub(crate) fleet: ::std::option::Option<::std::string::String>,
 }

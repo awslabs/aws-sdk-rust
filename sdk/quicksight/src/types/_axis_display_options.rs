@@ -51,8 +51,8 @@ impl AxisDisplayOptions {
 }
 
 /// A builder for [`AxisDisplayOptions`](crate::types::AxisDisplayOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AxisDisplayOptionsBuilder {
     pub(crate) tick_label_options: ::std::option::Option<crate::types::AxisTickLabelOptions>,
     pub(crate) axis_line_visibility: ::std::option::Option<crate::types::Visibility>,

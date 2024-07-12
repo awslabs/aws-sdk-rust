@@ -67,8 +67,8 @@ impl AvailabilityZoneInfo {
 }
 
 /// A builder for [`AvailabilityZoneInfo`](crate::types::AvailabilityZoneInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AvailabilityZoneInfoBuilder {
     pub(crate) availability_zone_name: ::std::option::Option<::std::string::String>,
     pub(crate) zone_status: ::std::option::Option<crate::types::ZoneStatus>,

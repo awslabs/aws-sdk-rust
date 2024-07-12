@@ -34,8 +34,8 @@ impl SearchUserProfilesOutput {
 }
 
 /// A builder for [`SearchUserProfilesOutput`](crate::operation::search_user_profiles::SearchUserProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchUserProfilesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::UserProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

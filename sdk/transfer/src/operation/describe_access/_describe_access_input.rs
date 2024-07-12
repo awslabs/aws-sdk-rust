@@ -32,8 +32,8 @@ impl DescribeAccessInput {
 }
 
 /// A builder for [`DescribeAccessInput`](crate::operation::describe_access::DescribeAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccessInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,

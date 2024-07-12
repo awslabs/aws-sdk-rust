@@ -35,8 +35,8 @@ impl InstanceCredentials {
 }
 
 /// A builder for [`InstanceCredentials`](crate::types::InstanceCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InstanceCredentialsBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) secret: ::std::option::Option<::std::string::String>,

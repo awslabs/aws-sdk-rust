@@ -96,8 +96,8 @@ impl Leg {
 }
 
 /// A builder for [`Leg`](crate::types::Leg).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct LegBuilder {
     pub(crate) start_position: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) end_position: ::std::option::Option<::std::vec::Vec<f64>>,

@@ -143,8 +143,8 @@ impl QuickResponseData {
 }
 
 /// A builder for [`QuickResponseData`](crate::types::QuickResponseData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QuickResponseDataBuilder {
     pub(crate) quick_response_arn: ::std::option::Option<::std::string::String>,
     pub(crate) quick_response_id: ::std::option::Option<::std::string::String>,

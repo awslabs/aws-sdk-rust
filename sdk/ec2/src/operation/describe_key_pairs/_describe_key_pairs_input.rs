@@ -90,8 +90,8 @@ impl DescribeKeyPairsInput {
 }
 
 /// A builder for [`DescribeKeyPairsInput`](crate::operation::describe_key_pairs::DescribeKeyPairsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeKeyPairsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) key_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

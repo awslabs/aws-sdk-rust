@@ -18,8 +18,8 @@ impl DeleteAddonInstanceOutput {
 }
 
 /// A builder for [`DeleteAddonInstanceOutput`](crate::operation::delete_addon_instance::DeleteAddonInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAddonInstanceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -57,8 +57,8 @@ impl UsageLimit {
 }
 
 /// A builder for [`UsageLimit`](crate::types::UsageLimit).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageLimitBuilder {
     pub(crate) usage_limit_id: ::std::option::Option<::std::string::String>,
     pub(crate) usage_limit_arn: ::std::option::Option<::std::string::String>,

@@ -57,8 +57,8 @@ impl NoSuchEntityException {
 }
 
 /// A builder for [`NoSuchEntityException`](crate::types::error::NoSuchEntityException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NoSuchEntityExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::NoSuchEntityErrorCode>,

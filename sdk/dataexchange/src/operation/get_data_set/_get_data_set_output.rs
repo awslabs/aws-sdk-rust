@@ -86,8 +86,8 @@ impl GetDataSetOutput {
 }
 
 /// A builder for [`GetDataSetOutput`](crate::operation::get_data_set::GetDataSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataSetOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) asset_type: ::std::option::Option<crate::types::AssetType>,

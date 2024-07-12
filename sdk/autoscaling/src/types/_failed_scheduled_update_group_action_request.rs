@@ -33,8 +33,8 @@ impl FailedScheduledUpdateGroupActionRequest {
 }
 
 /// A builder for [`FailedScheduledUpdateGroupActionRequest`](crate::types::FailedScheduledUpdateGroupActionRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedScheduledUpdateGroupActionRequestBuilder {
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

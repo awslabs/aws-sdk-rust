@@ -27,8 +27,8 @@ impl IoUsage {
 }
 
 /// A builder for [`IoUsage`](crate::types::IoUsage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IoUsageBuilder {
     pub(crate) read_ios: ::std::option::Option<i64>,
     pub(crate) write_ios: ::std::option::Option<i64>,

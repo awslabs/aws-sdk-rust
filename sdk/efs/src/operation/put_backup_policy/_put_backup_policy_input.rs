@@ -26,8 +26,8 @@ impl PutBackupPolicyInput {
 }
 
 /// A builder for [`PutBackupPolicyInput`](crate::operation::put_backup_policy::PutBackupPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBackupPolicyInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_policy: ::std::option::Option<crate::types::BackupPolicy>,

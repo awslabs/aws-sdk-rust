@@ -29,8 +29,8 @@ impl BatchGetDeploymentInstancesInput {
 }
 
 /// A builder for [`BatchGetDeploymentInstancesInput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetDeploymentInstancesInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

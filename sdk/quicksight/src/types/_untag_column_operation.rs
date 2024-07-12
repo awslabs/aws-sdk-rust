@@ -29,8 +29,8 @@ impl UntagColumnOperation {
 }
 
 /// A builder for [`UntagColumnOperation`](crate::types::UntagColumnOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagColumnOperationBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
     pub(crate) tag_names: ::std::option::Option<::std::vec::Vec<crate::types::ColumnTagName>>,

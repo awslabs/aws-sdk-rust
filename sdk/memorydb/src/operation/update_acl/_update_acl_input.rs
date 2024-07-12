@@ -36,8 +36,8 @@ impl UpdateAclInput {
 }
 
 /// A builder for [`UpdateAclInput`](crate::operation::update_acl::UpdateAclInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAclInputBuilder {
     pub(crate) acl_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_names_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

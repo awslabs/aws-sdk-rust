@@ -40,8 +40,8 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
 }
 
 /// A builder for [`BatchDisassociateServiceActionFromProvisioningArtifactInput`](crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisassociateServiceActionFromProvisioningArtifactInputBuilder {
     pub(crate) service_action_associations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionAssociation>>,
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl UiTemplate {
 }
 
 /// A builder for [`UiTemplate`](crate::types::UiTemplate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UiTemplateBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
 }

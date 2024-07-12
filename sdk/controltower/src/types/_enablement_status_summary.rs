@@ -45,8 +45,8 @@ impl EnablementStatusSummary {
 }
 
 /// A builder for [`EnablementStatusSummary`](crate::types::EnablementStatusSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnablementStatusSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EnablementStatus>,
     pub(crate) last_operation_identifier: ::std::option::Option<::std::string::String>,

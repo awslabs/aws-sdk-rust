@@ -46,8 +46,8 @@ impl ListVpcConnectionsOutput {
 }
 
 /// A builder for [`ListVpcConnectionsOutput`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVpcConnectionsOutputBuilder {
     pub(crate) vpc_connection_summaries: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnectionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

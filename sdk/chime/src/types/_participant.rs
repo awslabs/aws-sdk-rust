@@ -35,8 +35,8 @@ impl Participant {
 }
 
 /// A builder for [`Participant`](crate::types::Participant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ParticipantBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) proxy_phone_number: ::std::option::Option<::std::string::String>,

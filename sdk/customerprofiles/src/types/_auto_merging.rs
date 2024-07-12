@@ -39,8 +39,8 @@ impl AutoMerging {
 }
 
 /// A builder for [`AutoMerging`](crate::types::AutoMerging).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoMergingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) consolidation: ::std::option::Option<crate::types::Consolidation>,

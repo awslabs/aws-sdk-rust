@@ -80,8 +80,8 @@ impl ModifyUserGroupOutput {
 }
 
 /// A builder for [`ModifyUserGroupOutput`](crate::operation::modify_user_group::ModifyUserGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyUserGroupOutputBuilder {
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

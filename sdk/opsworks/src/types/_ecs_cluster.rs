@@ -39,8 +39,8 @@ impl EcsCluster {
 }
 
 /// A builder for [`EcsCluster`](crate::types::EcsCluster).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsClusterBuilder {
     pub(crate) ecs_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ecs_cluster_name: ::std::option::Option<::std::string::String>,

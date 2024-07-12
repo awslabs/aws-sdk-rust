@@ -42,8 +42,8 @@ impl GetAppOutput {
 }
 
 /// A builder for [`GetAppOutput`](crate::operation::get_app::GetAppOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppOutputBuilder {
     pub(crate) app_summary: ::std::option::Option<crate::types::AppSummary>,
     pub(crate) server_groups: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>,

@@ -40,8 +40,8 @@ impl ListWorkspaceServiceAccountsOutput {
 }
 
 /// A builder for [`ListWorkspaceServiceAccountsOutput`](crate::operation::list_workspace_service_accounts::ListWorkspaceServiceAccountsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWorkspaceServiceAccountsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) service_accounts: ::std::option::Option<::std::vec::Vec<crate::types::ServiceAccountSummary>>,

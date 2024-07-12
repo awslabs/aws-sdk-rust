@@ -50,8 +50,8 @@ impl StopBotRecommendationOutput {
 }
 
 /// A builder for [`StopBotRecommendationOutput`](crate::operation::stop_bot_recommendation::StopBotRecommendationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopBotRecommendationOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,

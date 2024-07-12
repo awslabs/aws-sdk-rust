@@ -33,8 +33,8 @@ impl TextAreaControlDisplayOptions {
 }
 
 /// A builder for [`TextAreaControlDisplayOptions`](crate::types::TextAreaControlDisplayOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextAreaControlDisplayOptionsBuilder {
     pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
     pub(crate) placeholder_options: ::std::option::Option<crate::types::TextControlPlaceholderOptions>,

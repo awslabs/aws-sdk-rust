@@ -33,8 +33,8 @@ impl ListDbParameterGroupsOutput {
 }
 
 /// A builder for [`ListDbParameterGroupsOutput`](crate::operation::list_db_parameter_groups::ListDbParameterGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDbParameterGroupsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

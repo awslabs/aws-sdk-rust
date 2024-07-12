@@ -50,8 +50,8 @@ impl DeleteAccountAssignmentInput {
 }
 
 /// A builder for [`DeleteAccountAssignmentInput`](crate::operation::delete_account_assignment::DeleteAccountAssignmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccountAssignmentInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,

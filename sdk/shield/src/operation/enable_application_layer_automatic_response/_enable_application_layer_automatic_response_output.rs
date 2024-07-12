@@ -19,8 +19,8 @@ impl EnableApplicationLayerAutomaticResponseOutput {
 }
 
 /// A builder for [`EnableApplicationLayerAutomaticResponseOutput`](crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableApplicationLayerAutomaticResponseOutputBuilder {
     _request_id: Option<String>,
 }

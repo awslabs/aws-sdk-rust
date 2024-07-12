@@ -26,8 +26,8 @@ impl CreatePermissionSetOutput {
 }
 
 /// A builder for [`CreatePermissionSetOutput`](crate::operation::create_permission_set::CreatePermissionSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePermissionSetOutputBuilder {
     pub(crate) permission_set: ::std::option::Option<crate::types::PermissionSet>,
     _request_id: Option<String>,

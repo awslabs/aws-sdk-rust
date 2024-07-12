@@ -20,8 +20,8 @@ impl GetVoiceProfileDomainInput {
 }
 
 /// A builder for [`GetVoiceProfileDomainInput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVoiceProfileDomainInputBuilder {
     pub(crate) voice_profile_domain_id: ::std::option::Option<::std::string::String>,
 }

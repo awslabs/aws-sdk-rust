@@ -34,8 +34,8 @@ impl SearchProductsAsAdminOutput {
 }
 
 /// A builder for [`SearchProductsAsAdminOutput`](crate::operation::search_products_as_admin::SearchProductsAsAdminOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchProductsAsAdminOutputBuilder {
     pub(crate) product_view_details: ::std::option::Option<::std::vec::Vec<crate::types::ProductViewDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

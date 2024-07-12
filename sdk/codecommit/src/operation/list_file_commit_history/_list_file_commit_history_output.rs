@@ -33,8 +33,8 @@ impl ListFileCommitHistoryOutput {
 }
 
 /// A builder for [`ListFileCommitHistoryOutput`](crate::operation::list_file_commit_history::ListFileCommitHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFileCommitHistoryOutputBuilder {
     pub(crate) revision_dag: ::std::option::Option<::std::vec::Vec<crate::types::FileVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

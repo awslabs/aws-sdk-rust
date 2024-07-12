@@ -26,8 +26,8 @@ impl CreateConnectorProfileOutput {
 }
 
 /// A builder for [`CreateConnectorProfileOutput`](crate::operation::create_connector_profile::CreateConnectorProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectorProfileOutputBuilder {
     pub(crate) connector_profile_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

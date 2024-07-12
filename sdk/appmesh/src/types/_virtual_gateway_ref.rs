@@ -68,8 +68,8 @@ impl VirtualGatewayRef {
 }
 
 /// A builder for [`VirtualGatewayRef`](crate::types::VirtualGatewayRef).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualGatewayRefBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_gateway_name: ::std::option::Option<::std::string::String>,

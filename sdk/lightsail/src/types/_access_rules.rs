@@ -49,8 +49,8 @@ impl AccessRules {
 }
 
 /// A builder for [`AccessRules`](crate::types::AccessRules).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessRulesBuilder {
     pub(crate) get_object: ::std::option::Option<crate::types::AccessType>,
     pub(crate) allow_public_overrides: ::std::option::Option<bool>,

@@ -32,8 +32,8 @@ impl DescribePipelineDefinitionForExecutionOutput {
 }
 
 /// A builder for [`DescribePipelineDefinitionForExecutionOutput`](crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePipelineDefinitionForExecutionOutputBuilder {
     pub(crate) pipeline_definition: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,

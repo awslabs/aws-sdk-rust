@@ -19,8 +19,8 @@ impl DeleteThingTypeOutput {
 }
 
 /// A builder for [`DeleteThingTypeOutput`](crate::operation::delete_thing_type::DeleteThingTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteThingTypeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,8 +18,8 @@ impl UpdatePhoneNumberSettingsOutput {
 }
 
 /// A builder for [`UpdatePhoneNumberSettingsOutput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePhoneNumberSettingsOutputBuilder {
     _request_id: Option<String>,
 }

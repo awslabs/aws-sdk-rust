@@ -31,8 +31,8 @@ impl AlgorithmStatusDetails {
 }
 
 /// A builder for [`AlgorithmStatusDetails`](crate::types::AlgorithmStatusDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlgorithmStatusDetailsBuilder {
     pub(crate) validation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,
     pub(crate) image_scan_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmStatusItem>>,

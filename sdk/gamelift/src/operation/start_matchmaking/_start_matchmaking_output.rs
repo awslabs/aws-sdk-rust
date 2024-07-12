@@ -26,8 +26,8 @@ impl StartMatchmakingOutput {
 }
 
 /// A builder for [`StartMatchmakingOutput`](crate::operation::start_matchmaking::StartMatchmakingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMatchmakingOutputBuilder {
     pub(crate) matchmaking_ticket: ::std::option::Option<crate::types::MatchmakingTicket>,
     _request_id: Option<String>,

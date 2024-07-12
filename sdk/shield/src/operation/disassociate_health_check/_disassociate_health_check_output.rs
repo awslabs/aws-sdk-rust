@@ -18,8 +18,8 @@ impl DisassociateHealthCheckOutput {
 }
 
 /// A builder for [`DisassociateHealthCheckOutput`](crate::operation::disassociate_health_check::DisassociateHealthCheckOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateHealthCheckOutputBuilder {
     _request_id: Option<String>,
 }

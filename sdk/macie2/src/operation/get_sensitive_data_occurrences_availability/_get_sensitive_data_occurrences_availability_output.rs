@@ -85,8 +85,8 @@ impl GetSensitiveDataOccurrencesAvailabilityOutput {
 }
 
 /// A builder for [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSensitiveDataOccurrencesAvailabilityOutputBuilder {
     pub(crate) code: ::std::option::Option<crate::types::AvailabilityCode>,
     pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnavailabilityReasonCode>>,

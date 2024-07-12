@@ -21,8 +21,8 @@ impl AwsSecretsManagerSecretRotationRules {
 }
 
 /// A builder for [`AwsSecretsManagerSecretRotationRules`](crate::types::AwsSecretsManagerSecretRotationRules).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsSecretsManagerSecretRotationRulesBuilder {
     pub(crate) automatically_after_days: ::std::option::Option<i32>,
 }

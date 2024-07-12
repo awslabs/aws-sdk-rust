@@ -22,8 +22,8 @@ impl CancelRotateSecretInput {
 }
 
 /// A builder for [`CancelRotateSecretInput`](crate::operation::cancel_rotate_secret::CancelRotateSecretInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelRotateSecretInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }

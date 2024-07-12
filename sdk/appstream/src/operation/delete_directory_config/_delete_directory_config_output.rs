@@ -18,8 +18,8 @@ impl DeleteDirectoryConfigOutput {
 }
 
 /// A builder for [`DeleteDirectoryConfigOutput`](crate::operation::delete_directory_config::DeleteDirectoryConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDirectoryConfigOutputBuilder {
     _request_id: Option<String>,
 }

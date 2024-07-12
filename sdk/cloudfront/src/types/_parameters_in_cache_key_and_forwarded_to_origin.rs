@@ -94,8 +94,8 @@ impl ParametersInCacheKeyAndForwardedToOrigin {
 }
 
 /// A builder for [`ParametersInCacheKeyAndForwardedToOrigin`](crate::types::ParametersInCacheKeyAndForwardedToOrigin).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParametersInCacheKeyAndForwardedToOriginBuilder {
     pub(crate) enable_accept_encoding_gzip: ::std::option::Option<bool>,
     pub(crate) enable_accept_encoding_brotli: ::std::option::Option<bool>,

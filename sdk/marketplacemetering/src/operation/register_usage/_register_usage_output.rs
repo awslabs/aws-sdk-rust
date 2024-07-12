@@ -32,8 +32,8 @@ impl RegisterUsageOutput {
 }
 
 /// A builder for [`RegisterUsageOutput`](crate::operation::register_usage::RegisterUsageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterUsageOutputBuilder {
     pub(crate) public_key_rotation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) signature: ::std::option::Option<::std::string::String>,

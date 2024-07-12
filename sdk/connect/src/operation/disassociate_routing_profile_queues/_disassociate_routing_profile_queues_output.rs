@@ -18,8 +18,8 @@ impl DisassociateRoutingProfileQueuesOutput {
 }
 
 /// A builder for [`DisassociateRoutingProfileQueuesOutput`](crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateRoutingProfileQueuesOutputBuilder {
     _request_id: Option<String>,
 }

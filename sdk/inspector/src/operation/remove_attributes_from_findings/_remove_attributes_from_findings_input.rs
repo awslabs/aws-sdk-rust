@@ -30,8 +30,8 @@ impl RemoveAttributesFromFindingsInput {
 }
 
 /// A builder for [`RemoveAttributesFromFindingsInput`](crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveAttributesFromFindingsInputBuilder {
     pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) attribute_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

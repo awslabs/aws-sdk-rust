@@ -51,8 +51,8 @@ impl AccessControlEntrySummary {
 }
 
 /// A builder for [`AccessControlEntrySummary`](crate::types::AccessControlEntrySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessControlEntrySummaryBuilder {
     pub(crate) group_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) group_security_identifier: ::std::option::Option<::std::string::String>,

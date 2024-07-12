@@ -34,8 +34,8 @@ impl DeleteFraudsterInput {
 }
 
 /// A builder for [`DeleteFraudsterInput`](crate::operation::delete_fraudster::DeleteFraudsterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DeleteFraudsterInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) fraudster_id: ::std::option::Option<::std::string::String>,

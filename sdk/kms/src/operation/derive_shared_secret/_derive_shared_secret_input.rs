@@ -98,8 +98,8 @@ impl DeriveSharedSecretInput {
 }
 
 /// A builder for [`DeriveSharedSecretInput`](crate::operation::derive_shared_secret::DeriveSharedSecretInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeriveSharedSecretInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_agreement_algorithm: ::std::option::Option<crate::types::KeyAgreementAlgorithmSpec>,

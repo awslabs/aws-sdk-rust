@@ -30,8 +30,8 @@ impl PutSinkPolicyInput {
 }
 
 /// A builder for [`PutSinkPolicyInput`](crate::operation::put_sink_policy::PutSinkPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSinkPolicyInputBuilder {
     pub(crate) sink_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

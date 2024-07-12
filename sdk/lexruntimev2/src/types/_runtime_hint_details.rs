@@ -29,8 +29,8 @@ impl RuntimeHintDetails {
 }
 
 /// A builder for [`RuntimeHintDetails`](crate::types::RuntimeHintDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuntimeHintDetailsBuilder {
     pub(crate) runtime_hint_values: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeHintValue>>,
     pub(crate) sub_slot_hints: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,

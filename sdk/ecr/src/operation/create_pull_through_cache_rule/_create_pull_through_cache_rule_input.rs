@@ -80,8 +80,8 @@ impl CreatePullThroughCacheRuleInput {
 }
 
 /// A builder for [`CreatePullThroughCacheRuleInput`](crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePullThroughCacheRuleInputBuilder {
     pub(crate) ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) upstream_registry_url: ::std::option::Option<::std::string::String>,

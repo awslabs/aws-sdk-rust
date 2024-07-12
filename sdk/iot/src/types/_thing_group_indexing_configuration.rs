@@ -43,8 +43,8 @@ impl ThingGroupIndexingConfiguration {
 }
 
 /// A builder for [`ThingGroupIndexingConfiguration`](crate::types::ThingGroupIndexingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThingGroupIndexingConfigurationBuilder {
     pub(crate) thing_group_indexing_mode: ::std::option::Option<crate::types::ThingGroupIndexingMode>,
     pub(crate) managed_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,

@@ -32,8 +32,8 @@ impl ListQueryExecutionsInput {
 }
 
 /// A builder for [`ListQueryExecutionsInput`](crate::operation::list_query_executions::ListQueryExecutionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListQueryExecutionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

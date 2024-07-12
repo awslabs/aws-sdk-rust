@@ -29,8 +29,8 @@ impl DockerSettings {
 }
 
 /// A builder for [`DockerSettings`](crate::types::DockerSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DockerSettingsBuilder {
     pub(crate) enable_docker_access: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) vpc_only_trusted_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

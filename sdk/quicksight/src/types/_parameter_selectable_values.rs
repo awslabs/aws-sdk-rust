@@ -29,8 +29,8 @@ impl ParameterSelectableValues {
 }
 
 /// A builder for [`ParameterSelectableValues`](crate::types::ParameterSelectableValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParameterSelectableValuesBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) link_to_data_set_column: ::std::option::Option<crate::types::ColumnIdentifier>,

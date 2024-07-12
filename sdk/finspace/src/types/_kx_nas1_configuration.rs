@@ -27,8 +27,8 @@ impl KxNas1Configuration {
 }
 
 /// A builder for [`KxNas1Configuration`](crate::types::KxNas1Configuration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KxNas1ConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::KxNas1Type>,
     pub(crate) size: ::std::option::Option<i32>,

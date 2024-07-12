@@ -20,8 +20,8 @@ impl DisassociateConnectionAliasInput {
 }
 
 /// A builder for [`DisassociateConnectionAliasInput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateConnectionAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
 }

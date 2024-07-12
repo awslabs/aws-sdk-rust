@@ -57,8 +57,8 @@ impl StartContentUploadOutput {
 }
 
 /// A builder for [`StartContentUploadOutput`](crate::operation::start_content_upload::StartContentUploadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartContentUploadOutputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,

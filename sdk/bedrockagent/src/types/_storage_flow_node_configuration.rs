@@ -21,8 +21,8 @@ impl StorageFlowNodeConfiguration {
 }
 
 /// A builder for [`StorageFlowNodeConfiguration`](crate::types::StorageFlowNodeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageFlowNodeConfigurationBuilder {
     pub(crate) service_configuration: ::std::option::Option<crate::types::StorageFlowNodeServiceConfiguration>,
 }

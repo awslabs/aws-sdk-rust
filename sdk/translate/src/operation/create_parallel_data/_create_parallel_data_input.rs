@@ -52,8 +52,8 @@ impl CreateParallelDataInput {
 }
 
 /// A builder for [`CreateParallelDataInput`](crate::operation::create_parallel_data::CreateParallelDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateParallelDataInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

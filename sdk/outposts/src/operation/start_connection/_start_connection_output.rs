@@ -32,8 +32,8 @@ impl StartConnectionOutput {
 }
 
 /// A builder for [`StartConnectionOutput`](crate::operation::start_connection::StartConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartConnectionOutputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) underlay_ip_address: ::std::option::Option<::std::string::String>,

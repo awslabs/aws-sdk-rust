@@ -27,8 +27,8 @@ impl AllowedInputTypes {
 }
 
 /// A builder for [`AllowedInputTypes`](crate::types::AllowedInputTypes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllowedInputTypesBuilder {
     pub(crate) allow_audio_input: ::std::option::Option<bool>,
     pub(crate) allow_dtmf_input: ::std::option::Option<bool>,

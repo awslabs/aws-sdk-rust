@@ -26,8 +26,8 @@ impl CreateServiceLinkedRoleOutput {
 }
 
 /// A builder for [`CreateServiceLinkedRoleOutput`](crate::operation::create_service_linked_role::CreateServiceLinkedRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServiceLinkedRoleOutputBuilder {
     pub(crate) role: ::std::option::Option<crate::types::Role>,
     _request_id: Option<String>,

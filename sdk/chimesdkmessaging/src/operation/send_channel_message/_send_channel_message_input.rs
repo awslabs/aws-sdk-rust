@@ -112,8 +112,8 @@ impl SendChannelMessageInput {
 }
 
 /// A builder for [`SendChannelMessageInput`](crate::operation::send_channel_message::SendChannelMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SendChannelMessageInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,

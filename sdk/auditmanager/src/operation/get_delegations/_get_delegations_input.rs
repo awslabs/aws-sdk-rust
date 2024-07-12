@@ -26,8 +26,8 @@ impl GetDelegationsInput {
 }
 
 /// A builder for [`GetDelegationsInput`](crate::operation::get_delegations::GetDelegationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDelegationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

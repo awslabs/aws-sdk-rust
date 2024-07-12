@@ -28,8 +28,8 @@ impl BatchCreatePartitionOutput {
 }
 
 /// A builder for [`BatchCreatePartitionOutput`](crate::operation::batch_create_partition::BatchCreatePartitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreatePartitionOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::PartitionError>>,
     _request_id: Option<String>,

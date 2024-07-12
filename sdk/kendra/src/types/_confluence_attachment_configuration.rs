@@ -31,8 +31,8 @@ impl ConfluenceAttachmentConfiguration {
 }
 
 /// A builder for [`ConfluenceAttachmentConfiguration`](crate::types::ConfluenceAttachmentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfluenceAttachmentConfigurationBuilder {
     pub(crate) crawl_attachments: ::std::option::Option<bool>,
     pub(crate) attachment_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceAttachmentToIndexFieldMapping>>,

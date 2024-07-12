@@ -36,8 +36,8 @@ impl DeregistrationPolicy {
 }
 
 /// A builder for [`DeregistrationPolicy`](crate::types::DeregistrationPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregistrationPolicyBuilder {
     pub(crate) delete_resources: ::std::option::Option<crate::types::DeleteResources>,
 }

@@ -26,8 +26,8 @@ impl GetOutpostResolverOutput {
 }
 
 /// A builder for [`GetOutpostResolverOutput`](crate::operation::get_outpost_resolver::GetOutpostResolverOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOutpostResolverOutputBuilder {
     pub(crate) outpost_resolver: ::std::option::Option<crate::types::OutpostResolver>,
     _request_id: Option<String>,

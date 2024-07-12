@@ -205,8 +205,8 @@ impl CreateFileSystemOntapConfiguration {
 }
 
 /// A builder for [`CreateFileSystemOntapConfiguration`](crate::types::CreateFileSystemOntapConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateFileSystemOntapConfigurationBuilder {
     pub(crate) automatic_backup_retention_days: ::std::option::Option<i32>,
     pub(crate) daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,

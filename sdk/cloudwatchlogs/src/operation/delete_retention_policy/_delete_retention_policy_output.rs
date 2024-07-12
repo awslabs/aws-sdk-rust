@@ -18,8 +18,8 @@ impl DeleteRetentionPolicyOutput {
 }
 
 /// A builder for [`DeleteRetentionPolicyOutput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRetentionPolicyOutputBuilder {
     _request_id: Option<String>,
 }

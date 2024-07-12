@@ -48,8 +48,8 @@ impl GenerateEmbedUrlForRegisteredUserInput {
 }
 
 /// A builder for [`GenerateEmbedUrlForRegisteredUserInput`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateEmbedUrlForRegisteredUserInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_lifetime_in_minutes: ::std::option::Option<i64>,

@@ -29,8 +29,8 @@ impl ReceiveMessageOutput {
 }
 
 /// A builder for [`ReceiveMessageOutput`](crate::operation::receive_message::ReceiveMessageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReceiveMessageOutputBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     _request_id: Option<String>,

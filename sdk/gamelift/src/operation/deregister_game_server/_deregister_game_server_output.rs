@@ -18,8 +18,8 @@ impl DeregisterGameServerOutput {
 }
 
 /// A builder for [`DeregisterGameServerOutput`](crate::operation::deregister_game_server::DeregisterGameServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterGameServerOutputBuilder {
     _request_id: Option<String>,
 }

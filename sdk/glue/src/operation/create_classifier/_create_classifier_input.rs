@@ -38,8 +38,8 @@ impl CreateClassifierInput {
 }
 
 /// A builder for [`CreateClassifierInput`](crate::operation::create_classifier::CreateClassifierInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateClassifierInputBuilder {
     pub(crate) grok_classifier: ::std::option::Option<crate::types::CreateGrokClassifierRequest>,
     pub(crate) xml_classifier: ::std::option::Option<crate::types::CreateXmlClassifierRequest>,

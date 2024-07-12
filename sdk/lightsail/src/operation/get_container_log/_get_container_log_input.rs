@@ -114,8 +114,8 @@ impl GetContainerLogInput {
 }
 
 /// A builder for [`GetContainerLogInput`](crate::operation::get_container_log::GetContainerLogInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerLogInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) container_name: ::std::option::Option<::std::string::String>,

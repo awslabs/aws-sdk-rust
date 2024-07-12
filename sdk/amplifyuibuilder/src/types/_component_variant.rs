@@ -33,8 +33,8 @@ impl ComponentVariant {
 }
 
 /// A builder for [`ComponentVariant`](crate::types::ComponentVariant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComponentVariantBuilder {
     pub(crate) variant_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) overrides: ::std::option::Option<

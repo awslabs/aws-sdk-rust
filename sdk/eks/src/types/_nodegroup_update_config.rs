@@ -27,8 +27,8 @@ impl NodegroupUpdateConfig {
 }
 
 /// A builder for [`NodegroupUpdateConfig`](crate::types::NodegroupUpdateConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodegroupUpdateConfigBuilder {
     pub(crate) max_unavailable: ::std::option::Option<i32>,
     pub(crate) max_unavailable_percentage: ::std::option::Option<i32>,

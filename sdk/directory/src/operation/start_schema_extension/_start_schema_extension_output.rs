@@ -26,8 +26,8 @@ impl StartSchemaExtensionOutput {
 }
 
 /// A builder for [`StartSchemaExtensionOutput`](crate::operation::start_schema_extension::StartSchemaExtensionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSchemaExtensionOutputBuilder {
     pub(crate) schema_extension_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

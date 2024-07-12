@@ -31,8 +31,8 @@ impl LendingSummary {
 }
 
 /// A builder for [`LendingSummary`](crate::types::LendingSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LendingSummaryBuilder {
     pub(crate) document_groups: ::std::option::Option<::std::vec::Vec<crate::types::DocumentGroup>>,
     pub(crate) undetected_document_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

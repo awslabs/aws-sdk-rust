@@ -26,8 +26,8 @@ impl PutConfigurationAggregatorOutput {
 }
 
 /// A builder for [`PutConfigurationAggregatorOutput`](crate::operation::put_configuration_aggregator::PutConfigurationAggregatorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfigurationAggregatorOutputBuilder {
     pub(crate) configuration_aggregator: ::std::option::Option<crate::types::ConfigurationAggregator>,
     _request_id: Option<String>,

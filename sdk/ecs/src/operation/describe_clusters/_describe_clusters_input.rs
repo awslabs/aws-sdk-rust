@@ -40,8 +40,8 @@ impl DescribeClustersInput {
 }
 
 /// A builder for [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClustersInputBuilder {
     pub(crate) clusters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::ClusterField>>,

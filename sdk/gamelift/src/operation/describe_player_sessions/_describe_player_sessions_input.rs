@@ -84,8 +84,8 @@ impl DescribePlayerSessionsInput {
 }
 
 /// A builder for [`DescribePlayerSessionsInput`](crate::operation::describe_player_sessions::DescribePlayerSessionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribePlayerSessionsInputBuilder {
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_id: ::std::option::Option<::std::string::String>,

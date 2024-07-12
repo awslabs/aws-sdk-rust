@@ -26,8 +26,8 @@ impl StartResourceEvaluationOutput {
 }
 
 /// A builder for [`StartResourceEvaluationOutput`](crate::operation::start_resource_evaluation::StartResourceEvaluationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartResourceEvaluationOutputBuilder {
     pub(crate) resource_evaluation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

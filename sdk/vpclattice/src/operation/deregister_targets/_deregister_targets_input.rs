@@ -28,8 +28,8 @@ impl DeregisterTargetsInput {
 }
 
 /// A builder for [`DeregisterTargetsInput`](crate::operation::deregister_targets::DeregisterTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterTargetsInputBuilder {
     pub(crate) target_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,

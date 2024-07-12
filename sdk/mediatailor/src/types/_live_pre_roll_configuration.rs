@@ -27,8 +27,8 @@ impl LivePreRollConfiguration {
 }
 
 /// A builder for [`LivePreRollConfiguration`](crate::types::LivePreRollConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LivePreRollConfigurationBuilder {
     pub(crate) ad_decision_server_url: ::std::option::Option<::std::string::String>,
     pub(crate) max_duration_seconds: ::std::option::Option<i32>,

@@ -27,8 +27,8 @@ impl StartDeploymentOutput {
 }
 
 /// A builder for [`StartDeploymentOutput`](crate::operation::start_deployment::StartDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDeploymentOutputBuilder {
     pub(crate) job_summary: ::std::option::Option<crate::types::JobSummary>,
     _request_id: Option<String>,

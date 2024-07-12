@@ -39,8 +39,8 @@ impl MatchingRequest {
 }
 
 /// A builder for [`MatchingRequest`](crate::types::MatchingRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MatchingRequestBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) job_schedule: ::std::option::Option<crate::types::JobSchedule>,

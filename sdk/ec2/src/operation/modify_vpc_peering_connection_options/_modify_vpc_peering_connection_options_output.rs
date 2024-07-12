@@ -32,8 +32,8 @@ impl ModifyVpcPeeringConnectionOptionsOutput {
 }
 
 /// A builder for [`ModifyVpcPeeringConnectionOptionsOutput`](crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpcPeeringConnectionOptionsOutputBuilder {
     pub(crate) accepter_peering_connection_options: ::std::option::Option<crate::types::PeeringConnectionOptions>,
     pub(crate) requester_peering_connection_options: ::std::option::Option<crate::types::PeeringConnectionOptions>,

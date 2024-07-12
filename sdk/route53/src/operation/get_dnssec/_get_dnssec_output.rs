@@ -33,8 +33,8 @@ impl GetDnssecOutput {
 }
 
 /// A builder for [`GetDnssecOutput`](crate::operation::get_dnssec::GetDnssecOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDnssecOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DnssecStatus>,
     pub(crate) key_signing_keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySigningKey>>,

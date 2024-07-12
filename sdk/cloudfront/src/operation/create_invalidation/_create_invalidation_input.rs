@@ -27,8 +27,8 @@ impl CreateInvalidationInput {
 }
 
 /// A builder for [`CreateInvalidationInput`](crate::operation::create_invalidation::CreateInvalidationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInvalidationInputBuilder {
     pub(crate) distribution_id: ::std::option::Option<::std::string::String>,
     pub(crate) invalidation_batch: ::std::option::Option<crate::types::InvalidationBatch>,

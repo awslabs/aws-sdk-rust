@@ -27,8 +27,8 @@ impl CascadingControlSource {
 }
 
 /// A builder for [`CascadingControlSource`](crate::types::CascadingControlSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CascadingControlSourceBuilder {
     pub(crate) source_sheet_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) column_to_match: ::std::option::Option<crate::types::ColumnIdentifier>,

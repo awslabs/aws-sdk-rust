@@ -38,8 +38,8 @@ impl GetCommentReactionsInput {
 }
 
 /// A builder for [`GetCommentReactionsInput`](crate::operation::get_comment_reactions::GetCommentReactionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCommentReactionsInputBuilder {
     pub(crate) comment_id: ::std::option::Option<::std::string::String>,
     pub(crate) reaction_user_arn: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl WebCrawlerLimits {
 }
 
 /// A builder for [`WebCrawlerLimits`](crate::types::WebCrawlerLimits).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WebCrawlerLimitsBuilder {
     pub(crate) rate_limit: ::std::option::Option<i32>,
 }

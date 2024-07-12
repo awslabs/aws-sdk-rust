@@ -18,8 +18,8 @@ impl DeleteActivityTypeOutput {
 }
 
 /// A builder for [`DeleteActivityTypeOutput`](crate::operation::delete_activity_type::DeleteActivityTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteActivityTypeOutputBuilder {
     _request_id: Option<String>,
 }

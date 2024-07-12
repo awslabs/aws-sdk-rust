@@ -47,8 +47,8 @@ impl MetadataEvent {
 }
 
 /// A builder for [`MetadataEvent`](crate::types::MetadataEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetadataEventBuilder {
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_message_id: ::std::option::Option<::std::string::String>,

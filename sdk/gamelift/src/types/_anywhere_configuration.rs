@@ -21,8 +21,8 @@ impl AnywhereConfiguration {
 }
 
 /// A builder for [`AnywhereConfiguration`](crate::types::AnywhereConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnywhereConfigurationBuilder {
     pub(crate) cost: ::std::option::Option<::std::string::String>,
 }

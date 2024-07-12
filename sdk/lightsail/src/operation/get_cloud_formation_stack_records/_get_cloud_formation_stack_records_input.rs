@@ -22,8 +22,8 @@ impl GetCloudFormationStackRecordsInput {
 }
 
 /// A builder for [`GetCloudFormationStackRecordsInput`](crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCloudFormationStackRecordsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }

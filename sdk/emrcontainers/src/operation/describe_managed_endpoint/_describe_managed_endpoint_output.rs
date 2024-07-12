@@ -26,8 +26,8 @@ impl DescribeManagedEndpointOutput {
 }
 
 /// A builder for [`DescribeManagedEndpointOutput`](crate::operation::describe_managed_endpoint::DescribeManagedEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeManagedEndpointOutputBuilder {
     pub(crate) endpoint: ::std::option::Option<crate::types::Endpoint>,
     _request_id: Option<String>,

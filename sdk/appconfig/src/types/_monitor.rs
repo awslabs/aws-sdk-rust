@@ -28,8 +28,8 @@ impl Monitor {
 }
 
 /// A builder for [`Monitor`](crate::types::Monitor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitorBuilder {
     pub(crate) alarm_arn: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_role_arn: ::std::option::Option<::std::string::String>,

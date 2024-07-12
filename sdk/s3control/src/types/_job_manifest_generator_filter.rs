@@ -67,8 +67,8 @@ impl JobManifestGeneratorFilter {
 }
 
 /// A builder for [`JobManifestGeneratorFilter`](crate::types::JobManifestGeneratorFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobManifestGeneratorFilterBuilder {
     pub(crate) eligible_for_replication: ::std::option::Option<bool>,
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,

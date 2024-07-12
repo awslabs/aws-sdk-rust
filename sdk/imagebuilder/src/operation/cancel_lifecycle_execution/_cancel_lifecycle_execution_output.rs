@@ -26,8 +26,8 @@ impl CancelLifecycleExecutionOutput {
 }
 
 /// A builder for [`CancelLifecycleExecutionOutput`](crate::operation::cancel_lifecycle_execution::CancelLifecycleExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelLifecycleExecutionOutputBuilder {
     pub(crate) lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

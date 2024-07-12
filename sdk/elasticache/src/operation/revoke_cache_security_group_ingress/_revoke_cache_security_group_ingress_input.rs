@@ -33,8 +33,8 @@ impl RevokeCacheSecurityGroupIngressInput {
 }
 
 /// A builder for [`RevokeCacheSecurityGroupIngressInput`](crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeCacheSecurityGroupIngressInputBuilder {
     pub(crate) cache_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_security_group_name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl RegisterInstanceOutput {
 }
 
 /// A builder for [`RegisterInstanceOutput`](crate::operation::register_instance::RegisterInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterInstanceOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl LineChartSeriesSettings {
 }
 
 /// A builder for [`LineChartSeriesSettings`](crate::types::LineChartSeriesSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineChartSeriesSettingsBuilder {
     pub(crate) line_style_settings: ::std::option::Option<crate::types::LineChartLineStyleSettings>,
     pub(crate) marker_style_settings: ::std::option::Option<crate::types::LineChartMarkerStyleSettings>,

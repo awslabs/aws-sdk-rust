@@ -26,8 +26,8 @@ impl DeleteSamplingRuleOutput {
 }
 
 /// A builder for [`DeleteSamplingRuleOutput`](crate::operation::delete_sampling_rule::DeleteSamplingRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSamplingRuleOutputBuilder {
     pub(crate) sampling_rule_record: ::std::option::Option<crate::types::SamplingRuleRecord>,
     _request_id: Option<String>,

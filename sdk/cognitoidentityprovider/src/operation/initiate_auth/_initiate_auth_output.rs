@@ -104,8 +104,8 @@ impl InitiateAuthOutput {
 }
 
 /// A builder for [`InitiateAuthOutput`](crate::operation::initiate_auth::InitiateAuthOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InitiateAuthOutputBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     pub(crate) session: ::std::option::Option<::std::string::String>,

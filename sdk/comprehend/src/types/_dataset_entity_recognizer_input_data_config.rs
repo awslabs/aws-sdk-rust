@@ -33,8 +33,8 @@ impl DatasetEntityRecognizerInputDataConfig {
 }
 
 /// A builder for [`DatasetEntityRecognizerInputDataConfig`](crate::types::DatasetEntityRecognizerInputDataConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetEntityRecognizerInputDataConfigBuilder {
     pub(crate) annotations: ::std::option::Option<crate::types::DatasetEntityRecognizerAnnotations>,
     pub(crate) documents: ::std::option::Option<crate::types::DatasetEntityRecognizerDocuments>,

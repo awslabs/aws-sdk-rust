@@ -78,8 +78,8 @@ impl LogConfig {
 }
 
 /// A builder for [`LogConfig`](crate::types::LogConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogConfigBuilder {
     pub(crate) field_log_level: ::std::option::Option<crate::types::FieldLogLevel>,
     pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,

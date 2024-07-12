@@ -26,8 +26,8 @@ impl GetMultiRegionAccessPointPolicyStatusOutput {
 }
 
 /// A builder for [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMultiRegionAccessPointPolicyStatusOutputBuilder {
     pub(crate) established: ::std::option::Option<crate::types::PolicyStatus>,
     _request_id: Option<String>,

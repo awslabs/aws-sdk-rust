@@ -34,8 +34,8 @@ impl SearchTransitGatewayRoutesOutput {
 }
 
 /// A builder for [`SearchTransitGatewayRoutesOutput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchTransitGatewayRoutesOutputBuilder {
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>>,
     pub(crate) additional_routes_available: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl DescribeFhirExportJobOutput {
 }
 
 /// A builder for [`DescribeFhirExportJobOutput`](crate::operation::describe_fhir_export_job::DescribeFhirExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFhirExportJobOutputBuilder {
     pub(crate) export_job_properties: ::std::option::Option<crate::types::ExportJobProperties>,
     _request_id: Option<String>,

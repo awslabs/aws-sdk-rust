@@ -28,8 +28,8 @@ impl GetHostReservationPurchasePreviewInput {
 }
 
 /// A builder for [`GetHostReservationPurchasePreviewInput`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHostReservationPurchasePreviewInputBuilder {
     pub(crate) host_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) offering_id: ::std::option::Option<::std::string::String>,

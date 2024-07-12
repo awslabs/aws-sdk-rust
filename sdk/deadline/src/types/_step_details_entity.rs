@@ -60,8 +60,8 @@ impl StepDetailsEntity {
 }
 
 /// A builder for [`StepDetailsEntity`](crate::types::StepDetailsEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StepDetailsEntityBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_id: ::std::option::Option<::std::string::String>,

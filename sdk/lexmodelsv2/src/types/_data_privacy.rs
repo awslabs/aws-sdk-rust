@@ -21,8 +21,8 @@ impl DataPrivacy {
 }
 
 /// A builder for [`DataPrivacy`](crate::types::DataPrivacy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataPrivacyBuilder {
     pub(crate) child_directed: ::std::option::Option<bool>,
 }

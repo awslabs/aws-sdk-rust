@@ -38,8 +38,8 @@ impl GetBucketVersioningOutput {
 }
 
 /// A builder for [`GetBucketVersioningOutput`](crate::operation::get_bucket_versioning::GetBucketVersioningOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketVersioningOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BucketVersioningStatus>,
     pub(crate) mfa_delete: ::std::option::Option<crate::types::MfaDeleteStatus>,

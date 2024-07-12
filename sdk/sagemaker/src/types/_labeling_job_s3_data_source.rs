@@ -37,8 +37,8 @@ impl LabelingJobS3DataSource {
 }
 
 /// A builder for [`LabelingJobS3DataSource`](crate::types::LabelingJobS3DataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LabelingJobS3DataSourceBuilder {
     pub(crate) manifest_s3_uri: ::std::option::Option<::std::string::String>,
 }

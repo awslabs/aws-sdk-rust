@@ -80,8 +80,8 @@ impl DescribeFlowDefinitionOutput {
 }
 
 /// A builder for [`DescribeFlowDefinitionOutput`](crate::operation::describe_flow_definition::DescribeFlowDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFlowDefinitionOutputBuilder {
     pub(crate) flow_definition_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flow_definition_name: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl ImportSnapshotTask {
 }
 
 /// A builder for [`ImportSnapshotTask`](crate::types::ImportSnapshotTask).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportSnapshotTaskBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) import_task_id: ::std::option::Option<::std::string::String>,

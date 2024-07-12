@@ -50,8 +50,8 @@ impl DeleteAnalysisOutput {
 }
 
 /// A builder for [`DeleteAnalysisOutput`](crate::operation::delete_analysis::DeleteAnalysisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAnalysisOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

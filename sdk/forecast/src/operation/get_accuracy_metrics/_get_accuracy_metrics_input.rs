@@ -20,8 +20,8 @@ impl GetAccuracyMetricsInput {
 }
 
 /// A builder for [`GetAccuracyMetricsInput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccuracyMetricsInputBuilder {
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
 }

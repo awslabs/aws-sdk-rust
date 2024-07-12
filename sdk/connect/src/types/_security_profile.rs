@@ -91,8 +91,8 @@ impl SecurityProfile {
 }
 
 /// A builder for [`SecurityProfile`](crate::types::SecurityProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityProfileBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) organization_resource_id: ::std::option::Option<::std::string::String>,

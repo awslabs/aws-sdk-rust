@@ -20,8 +20,8 @@ impl GetQueryExecutionInput {
 }
 
 /// A builder for [`GetQueryExecutionInput`](crate::operation::get_query_execution::GetQueryExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetQueryExecutionInputBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
 }

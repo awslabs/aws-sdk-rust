@@ -18,8 +18,8 @@ impl DeleteWorldTemplateOutput {
 }
 
 /// A builder for [`DeleteWorldTemplateOutput`](crate::operation::delete_world_template::DeleteWorldTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorldTemplateOutputBuilder {
     _request_id: Option<String>,
 }

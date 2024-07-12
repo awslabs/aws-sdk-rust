@@ -28,8 +28,8 @@ impl GenerateOrganizationsAccessReportInput {
 }
 
 /// A builder for [`GenerateOrganizationsAccessReportInput`](crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateOrganizationsAccessReportInputBuilder {
     pub(crate) entity_path: ::std::option::Option<::std::string::String>,
     pub(crate) organizations_policy_id: ::std::option::Option<::std::string::String>,

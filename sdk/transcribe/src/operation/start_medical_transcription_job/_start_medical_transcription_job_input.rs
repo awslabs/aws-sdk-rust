@@ -182,8 +182,8 @@ impl StartMedicalTranscriptionJobInput {
 }
 
 /// A builder for [`StartMedicalTranscriptionJobInput`](crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMedicalTranscriptionJobInputBuilder {
     pub(crate) medical_transcription_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

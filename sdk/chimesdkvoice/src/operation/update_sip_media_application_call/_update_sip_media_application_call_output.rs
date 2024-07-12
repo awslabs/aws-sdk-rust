@@ -26,8 +26,8 @@ impl UpdateSipMediaApplicationCallOutput {
 }
 
 /// A builder for [`UpdateSipMediaApplicationCallOutput`](crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSipMediaApplicationCallOutputBuilder {
     pub(crate) sip_media_application_call: ::std::option::Option<crate::types::SipMediaApplicationCall>,
     _request_id: Option<String>,

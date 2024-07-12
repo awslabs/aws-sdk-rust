@@ -28,8 +28,8 @@ impl AssignedSessionAction {
 }
 
 /// A builder for [`AssignedSessionAction`](crate::types::AssignedSessionAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssignedSessionActionBuilder {
     pub(crate) session_action_id: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::AssignedSessionActionDefinition>,

@@ -32,8 +32,8 @@ impl UpdateKeyGroupOutput {
 }
 
 /// A builder for [`UpdateKeyGroupOutput`](crate::operation::update_key_group::UpdateKeyGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKeyGroupOutputBuilder {
     pub(crate) key_group: ::std::option::Option<crate::types::KeyGroup>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

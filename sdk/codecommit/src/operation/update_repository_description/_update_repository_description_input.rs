@@ -27,8 +27,8 @@ impl UpdateRepositoryDescriptionInput {
 }
 
 /// A builder for [`UpdateRepositoryDescriptionInput`](crate::operation::update_repository_description::UpdateRepositoryDescriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRepositoryDescriptionInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_description: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl DeregisterInstancesFromLoadBalancerOutput {
 }
 
 /// A builder for [`DeregisterInstancesFromLoadBalancerOutput`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterInstancesFromLoadBalancerOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     _request_id: Option<String>,

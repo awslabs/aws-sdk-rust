@@ -26,8 +26,8 @@ impl DeleteResourceDataSyncInput {
 }
 
 /// A builder for [`DeleteResourceDataSyncInput`](crate::operation::delete_resource_data_sync::DeleteResourceDataSyncInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResourceDataSyncInputBuilder {
     pub(crate) sync_name: ::std::option::Option<::std::string::String>,
     pub(crate) sync_type: ::std::option::Option<::std::string::String>,

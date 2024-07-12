@@ -34,8 +34,8 @@ impl DescribeConfigurationAggregatorsOutput {
 }
 
 /// A builder for [`DescribeConfigurationAggregatorsOutput`](crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigurationAggregatorsOutputBuilder {
     pub(crate) configuration_aggregators: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationAggregator>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

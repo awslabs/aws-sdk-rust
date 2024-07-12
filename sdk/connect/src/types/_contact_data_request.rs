@@ -51,8 +51,8 @@ impl ContactDataRequest {
 }
 
 /// A builder for [`ContactDataRequest`](crate::types::ContactDataRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContactDataRequestBuilder {
     pub(crate) system_endpoint: ::std::option::Option<crate::types::Endpoint>,
     pub(crate) customer_endpoint: ::std::option::Option<crate::types::Endpoint>,

@@ -23,8 +23,8 @@ impl AttendeeFeatures {
 }
 
 /// A builder for [`AttendeeFeatures`](crate::types::AttendeeFeatures).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttendeeFeaturesBuilder {
     pub(crate) max_count: ::std::option::Option<i32>,
 }

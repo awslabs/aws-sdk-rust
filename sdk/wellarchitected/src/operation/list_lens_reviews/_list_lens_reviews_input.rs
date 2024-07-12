@@ -41,8 +41,8 @@ impl ListLensReviewsInput {
 }
 
 /// A builder for [`ListLensReviewsInput`](crate::operation::list_lens_reviews::ListLensReviewsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLensReviewsInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_number: ::std::option::Option<i32>,

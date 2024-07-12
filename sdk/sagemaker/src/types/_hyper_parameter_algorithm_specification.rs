@@ -59,8 +59,8 @@ impl HyperParameterAlgorithmSpecification {
 }
 
 /// A builder for [`HyperParameterAlgorithmSpecification`](crate::types::HyperParameterAlgorithmSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HyperParameterAlgorithmSpecificationBuilder {
     pub(crate) training_image: ::std::option::Option<::std::string::String>,
     pub(crate) training_input_mode: ::std::option::Option<crate::types::TrainingInputMode>,

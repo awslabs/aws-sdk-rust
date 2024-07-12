@@ -62,8 +62,8 @@ impl DescribeCapacityBlockOfferingsInput {
 }
 
 /// A builder for [`DescribeCapacityBlockOfferingsInput`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCapacityBlockOfferingsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,

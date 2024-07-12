@@ -117,8 +117,8 @@ impl PipelineExecution {
 }
 
 /// A builder for [`PipelineExecution`](crate::types::PipelineExecution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineExecutionBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_version: ::std::option::Option<i32>,

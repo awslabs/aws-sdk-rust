@@ -21,8 +21,8 @@ impl ExportingLocation {
 }
 
 /// A builder for [`ExportingLocation`](crate::types::ExportingLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportingLocationBuilder {
     pub(crate) s3_exporting: ::std::option::Option<crate::types::S3ExportingLocation>,
 }

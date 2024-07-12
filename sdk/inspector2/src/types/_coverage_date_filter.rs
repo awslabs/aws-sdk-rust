@@ -27,8 +27,8 @@ impl CoverageDateFilter {
 }
 
 /// A builder for [`CoverageDateFilter`](crate::types::CoverageDateFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoverageDateFilterBuilder {
     pub(crate) start_inclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_inclusive: ::std::option::Option<::aws_smithy_types::DateTime>,

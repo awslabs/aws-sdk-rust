@@ -45,8 +45,8 @@ impl IngestedEventStatistics {
 }
 
 /// A builder for [`IngestedEventStatistics`](crate::types::IngestedEventStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngestedEventStatisticsBuilder {
     pub(crate) number_of_events: ::std::option::Option<i64>,
     pub(crate) event_data_size_in_bytes: ::std::option::Option<i64>,

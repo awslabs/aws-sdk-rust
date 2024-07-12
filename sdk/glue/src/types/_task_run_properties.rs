@@ -45,8 +45,8 @@ impl TaskRunProperties {
 }
 
 /// A builder for [`TaskRunProperties`](crate::types::TaskRunProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskRunPropertiesBuilder {
     pub(crate) task_type: ::std::option::Option<crate::types::TaskType>,
     pub(crate) import_labels_task_run_properties: ::std::option::Option<crate::types::ImportLabelsTaskRunProperties>,

@@ -26,8 +26,8 @@ impl PreviewPrivacyImpactInput {
 }
 
 /// A builder for [`PreviewPrivacyImpactInput`](crate::operation::preview_privacy_impact::PreviewPrivacyImpactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PreviewPrivacyImpactInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<crate::types::PreviewPrivacyImpactParametersInput>,

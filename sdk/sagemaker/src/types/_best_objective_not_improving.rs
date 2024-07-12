@@ -21,8 +21,8 @@ impl BestObjectiveNotImproving {
 }
 
 /// A builder for [`BestObjectiveNotImproving`](crate::types::BestObjectiveNotImproving).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BestObjectiveNotImprovingBuilder {
     pub(crate) max_number_of_training_jobs_not_improving: ::std::option::Option<i32>,
 }

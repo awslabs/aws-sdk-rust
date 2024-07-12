@@ -48,8 +48,8 @@ impl CookiePreference {
 }
 
 /// A builder for [`CookiePreference`](crate::types::CookiePreference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CookiePreferenceBuilder {
     pub(crate) forward: ::std::option::Option<crate::types::ItemSelection>,
     pub(crate) whitelisted_names: ::std::option::Option<crate::types::CookieNames>,

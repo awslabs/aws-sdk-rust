@@ -27,8 +27,8 @@ impl ServerStatusSummary {
 }
 
 /// A builder for [`ServerStatusSummary`](crate::types::ServerStatusSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerStatusSummaryBuilder {
     pub(crate) run_time_assessment_status: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
     pub(crate) count: ::std::option::Option<i32>,

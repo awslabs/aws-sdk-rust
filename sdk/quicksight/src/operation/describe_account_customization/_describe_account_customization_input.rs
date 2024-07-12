@@ -32,8 +32,8 @@ impl DescribeAccountCustomizationInput {
 }
 
 /// A builder for [`DescribeAccountCustomizationInput`](crate::operation::describe_account_customization::DescribeAccountCustomizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountCustomizationInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

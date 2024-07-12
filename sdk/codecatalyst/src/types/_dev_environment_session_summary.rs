@@ -49,8 +49,8 @@ impl DevEnvironmentSessionSummary {
 }
 
 /// A builder for [`DevEnvironmentSessionSummary`](crate::types::DevEnvironmentSessionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DevEnvironmentSessionSummaryBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

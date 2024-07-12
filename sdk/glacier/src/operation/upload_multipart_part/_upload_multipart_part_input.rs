@@ -56,8 +56,8 @@ impl UploadMultipartPartInput {
 }
 
 /// A builder for [`UploadMultipartPartInput`](crate::operation::upload_multipart_part::UploadMultipartPartInput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploadMultipartPartInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,

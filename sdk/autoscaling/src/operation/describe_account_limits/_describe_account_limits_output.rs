@@ -44,8 +44,8 @@ impl DescribeAccountLimitsOutput {
 }
 
 /// A builder for [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountLimitsOutputBuilder {
     pub(crate) max_number_of_auto_scaling_groups: ::std::option::Option<i32>,
     pub(crate) max_number_of_launch_configurations: ::std::option::Option<i32>,

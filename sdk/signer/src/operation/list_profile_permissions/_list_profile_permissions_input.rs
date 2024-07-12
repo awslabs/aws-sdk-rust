@@ -26,8 +26,8 @@ impl ListProfilePermissionsInput {
 }
 
 /// A builder for [`ListProfilePermissionsInput`](crate::operation::list_profile_permissions::ListProfilePermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfilePermissionsInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

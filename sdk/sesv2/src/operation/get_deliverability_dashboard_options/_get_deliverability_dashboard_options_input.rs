@@ -13,8 +13,8 @@ impl GetDeliverabilityDashboardOptionsInput {
 }
 
 /// A builder for [`GetDeliverabilityDashboardOptionsInput`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeliverabilityDashboardOptionsInputBuilder {}
 impl GetDeliverabilityDashboardOptionsInputBuilder {
     /// Consumes the builder and constructs a [`GetDeliverabilityDashboardOptionsInput`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsInput).

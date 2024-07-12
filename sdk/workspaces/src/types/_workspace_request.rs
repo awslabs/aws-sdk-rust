@@ -76,8 +76,8 @@ impl WorkspaceRequest {
 }
 
 /// A builder for [`WorkspaceRequest`](crate::types::WorkspaceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkspaceRequestBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,

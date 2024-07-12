@@ -214,8 +214,8 @@ impl Profile {
 }
 
 /// A builder for [`Profile`](crate::types::Profile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ProfileBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_number: ::std::option::Option<::std::string::String>,

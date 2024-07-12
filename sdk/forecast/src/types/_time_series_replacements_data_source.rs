@@ -39,8 +39,8 @@ impl TimeSeriesReplacementsDataSource {
 }
 
 /// A builder for [`TimeSeriesReplacementsDataSource`](crate::types::TimeSeriesReplacementsDataSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeSeriesReplacementsDataSourceBuilder {
     pub(crate) s3_config: ::std::option::Option<crate::types::S3Config>,
     pub(crate) schema: ::std::option::Option<crate::types::Schema>,

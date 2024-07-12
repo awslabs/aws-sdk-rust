@@ -18,8 +18,8 @@ impl FlushStageAuthorizersCacheOutput {
 }
 
 /// A builder for [`FlushStageAuthorizersCacheOutput`](crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlushStageAuthorizersCacheOutputBuilder {
     _request_id: Option<String>,
 }

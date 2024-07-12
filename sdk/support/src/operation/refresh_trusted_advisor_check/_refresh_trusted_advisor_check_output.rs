@@ -27,8 +27,8 @@ impl RefreshTrustedAdvisorCheckOutput {
 }
 
 /// A builder for [`RefreshTrustedAdvisorCheckOutput`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RefreshTrustedAdvisorCheckOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus>,
     _request_id: Option<String>,

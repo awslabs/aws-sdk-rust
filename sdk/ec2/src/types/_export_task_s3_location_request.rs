@@ -27,8 +27,8 @@ impl ExportTaskS3LocationRequest {
 }
 
 /// A builder for [`ExportTaskS3LocationRequest`](crate::types::ExportTaskS3LocationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportTaskS3LocationRequestBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_prefix: ::std::option::Option<::std::string::String>,

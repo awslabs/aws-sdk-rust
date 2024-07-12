@@ -35,8 +35,8 @@ impl ExecutionTimedOutEventDetails {
 }
 
 /// A builder for [`ExecutionTimedOutEventDetails`](crate::types::ExecutionTimedOutEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ExecutionTimedOutEventDetailsBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
     pub(crate) cause: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl DeleteInstanceSnapshotOutput {
 }
 
 /// A builder for [`DeleteInstanceSnapshotOutput`](crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInstanceSnapshotOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

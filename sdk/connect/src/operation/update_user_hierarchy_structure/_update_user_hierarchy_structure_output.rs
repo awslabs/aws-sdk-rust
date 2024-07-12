@@ -18,8 +18,8 @@ impl UpdateUserHierarchyStructureOutput {
 }
 
 /// A builder for [`UpdateUserHierarchyStructureOutput`](crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserHierarchyStructureOutputBuilder {
     _request_id: Option<String>,
 }

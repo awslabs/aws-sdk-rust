@@ -35,8 +35,8 @@ impl ListCustomVerificationEmailTemplatesOutput {
 }
 
 /// A builder for [`ListCustomVerificationEmailTemplatesOutput`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomVerificationEmailTemplatesOutputBuilder {
     pub(crate) custom_verification_email_templates: ::std::option::Option<::std::vec::Vec<crate::types::CustomVerificationEmailTemplateMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

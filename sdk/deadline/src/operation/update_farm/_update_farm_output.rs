@@ -18,8 +18,8 @@ impl UpdateFarmOutput {
 }
 
 /// A builder for [`UpdateFarmOutput`](crate::operation::update_farm::UpdateFarmOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFarmOutputBuilder {
     _request_id: Option<String>,
 }

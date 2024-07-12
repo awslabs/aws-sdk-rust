@@ -49,8 +49,8 @@ impl OpensearchConfiguration {
 }
 
 /// A builder for [`OpensearchConfiguration`](crate::types::OpensearchConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpensearchConfigurationBuilder {
     pub(crate) domain_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListDeviceResourcesOutput {
 }
 
 /// A builder for [`ListDeviceResourcesOutput`](crate::operation::list_device_resources::ListDeviceResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeviceResourcesOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl ListLocalDisksOutput {
 }
 
 /// A builder for [`ListLocalDisksOutput`](crate::operation::list_local_disks::ListLocalDisksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLocalDisksOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,

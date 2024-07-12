@@ -77,8 +77,8 @@ impl VerifiedAccessGroup {
 }
 
 /// A builder for [`VerifiedAccessGroup`](crate::types::VerifiedAccessGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifiedAccessGroupBuilder {
     pub(crate) verified_access_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,

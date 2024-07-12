@@ -20,8 +20,8 @@ impl DetectEntitiesV2Input {
 }
 
 /// A builder for [`DetectEntitiesV2Input`](crate::operation::detect_entities_v2::DetectEntitiesV2Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectEntitiesV2InputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }

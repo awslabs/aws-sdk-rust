@@ -34,8 +34,8 @@ impl ListEndpointsOutput {
 }
 
 /// A builder for [`ListEndpointsOutput`](crate::operation::list_endpoints::ListEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEndpointsOutputBuilder {
     pub(crate) endpoint_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EndpointProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

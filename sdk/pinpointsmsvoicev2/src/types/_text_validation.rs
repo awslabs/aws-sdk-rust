@@ -34,8 +34,8 @@ impl TextValidation {
 }
 
 /// A builder for [`TextValidation`](crate::types::TextValidation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TextValidationBuilder {
     pub(crate) min_length: ::std::option::Option<i32>,
     pub(crate) max_length: ::std::option::Option<i32>,

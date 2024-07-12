@@ -56,8 +56,8 @@ impl ListBuildBatchesForProjectInput {
 }
 
 /// A builder for [`ListBuildBatchesForProjectInput`](crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBuildBatchesForProjectInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::BuildBatchFilter>,

@@ -67,8 +67,8 @@ impl GetGeoLocationInput {
 }
 
 /// A builder for [`GetGeoLocationInput`](crate::operation::get_geo_location::GetGeoLocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGeoLocationInputBuilder {
     pub(crate) continent_code: ::std::option::Option<::std::string::String>,
     pub(crate) country_code: ::std::option::Option<::std::string::String>,

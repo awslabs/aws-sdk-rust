@@ -26,8 +26,8 @@ impl ReplaceIamInstanceProfileAssociationInput {
 }
 
 /// A builder for [`ReplaceIamInstanceProfileAssociationInput`](crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplaceIamInstanceProfileAssociationInputBuilder {
     pub(crate) iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,

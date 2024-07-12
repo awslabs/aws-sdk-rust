@@ -34,8 +34,8 @@ impl DatabaseOutput {
 }
 
 /// A builder for [`DatabaseOutput`](crate::types::DatabaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatabaseOutputBuilder {
     pub(crate) glue_connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_options: ::std::option::Option<crate::types::DatabaseTableOutputOptions>,

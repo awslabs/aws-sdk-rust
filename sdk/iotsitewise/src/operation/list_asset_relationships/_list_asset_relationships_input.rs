@@ -46,8 +46,8 @@ impl ListAssetRelationshipsInput {
 }
 
 /// A builder for [`ListAssetRelationshipsInput`](crate::operation::list_asset_relationships::ListAssetRelationshipsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssetRelationshipsInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) traversal_type: ::std::option::Option<crate::types::TraversalType>,

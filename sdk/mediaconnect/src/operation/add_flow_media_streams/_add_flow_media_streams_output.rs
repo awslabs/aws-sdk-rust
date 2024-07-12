@@ -34,8 +34,8 @@ impl AddFlowMediaStreamsOutput {
 }
 
 /// A builder for [`AddFlowMediaStreamsOutput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddFlowMediaStreamsOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) media_streams: ::std::option::Option<::std::vec::Vec<crate::types::MediaStream>>,

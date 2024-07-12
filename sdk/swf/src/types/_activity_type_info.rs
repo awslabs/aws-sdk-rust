@@ -45,8 +45,8 @@ impl ActivityTypeInfo {
 }
 
 /// A builder for [`ActivityTypeInfo`](crate::types::ActivityTypeInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivityTypeInfoBuilder {
     pub(crate) activity_type: ::std::option::Option<crate::types::ActivityType>,
     pub(crate) status: ::std::option::Option<crate::types::RegistrationStatus>,

@@ -26,8 +26,8 @@ impl CreateCrossAccountAuthorizationOutput {
 }
 
 /// A builder for [`CreateCrossAccountAuthorizationOutput`](crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCrossAccountAuthorizationOutputBuilder {
     pub(crate) cross_account_authorization: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

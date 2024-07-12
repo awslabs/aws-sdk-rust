@@ -26,8 +26,8 @@ impl ModifyDefaultCreditSpecificationOutput {
 }
 
 /// A builder for [`ModifyDefaultCreditSpecificationOutput`](crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDefaultCreditSpecificationOutputBuilder {
     pub(crate) instance_family_credit_specification: ::std::option::Option<crate::types::InstanceFamilyCreditSpecification>,
     _request_id: Option<String>,

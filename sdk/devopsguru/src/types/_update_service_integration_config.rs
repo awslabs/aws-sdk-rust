@@ -33,8 +33,8 @@ impl UpdateServiceIntegrationConfig {
 }
 
 /// A builder for [`UpdateServiceIntegrationConfig`](crate::types::UpdateServiceIntegrationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceIntegrationConfigBuilder {
     pub(crate) ops_center: ::std::option::Option<crate::types::OpsCenterIntegrationConfig>,
     pub(crate) logs_anomaly_detection: ::std::option::Option<crate::types::LogsAnomalyDetectionIntegrationConfig>,

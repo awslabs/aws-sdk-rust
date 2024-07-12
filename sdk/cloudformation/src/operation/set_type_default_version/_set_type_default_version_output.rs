@@ -18,8 +18,8 @@ impl SetTypeDefaultVersionOutput {
 }
 
 /// A builder for [`SetTypeDefaultVersionOutput`](crate::operation::set_type_default_version::SetTypeDefaultVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetTypeDefaultVersionOutputBuilder {
     _request_id: Option<String>,
 }

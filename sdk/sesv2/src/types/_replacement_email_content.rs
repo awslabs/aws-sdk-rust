@@ -21,8 +21,8 @@ impl ReplacementEmailContent {
 }
 
 /// A builder for [`ReplacementEmailContent`](crate::types::ReplacementEmailContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplacementEmailContentBuilder {
     pub(crate) replacement_template: ::std::option::Option<crate::types::ReplacementTemplate>,
 }

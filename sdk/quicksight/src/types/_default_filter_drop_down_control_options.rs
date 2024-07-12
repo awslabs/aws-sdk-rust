@@ -45,8 +45,8 @@ impl DefaultFilterDropDownControlOptions {
 }
 
 /// A builder for [`DefaultFilterDropDownControlOptions`](crate::types::DefaultFilterDropDownControlOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultFilterDropDownControlOptionsBuilder {
     pub(crate) display_options: ::std::option::Option<crate::types::DropDownControlDisplayOptions>,
     pub(crate) r#type: ::std::option::Option<crate::types::SheetControlListType>,

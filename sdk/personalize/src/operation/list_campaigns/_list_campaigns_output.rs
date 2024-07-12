@@ -34,8 +34,8 @@ impl ListCampaignsOutput {
 }
 
 /// A builder for [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCampaignsOutputBuilder {
     pub(crate) campaigns: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

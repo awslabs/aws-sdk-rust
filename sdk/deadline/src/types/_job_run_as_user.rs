@@ -33,8 +33,8 @@ impl JobRunAsUser {
 }
 
 /// A builder for [`JobRunAsUser`](crate::types::JobRunAsUser).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobRunAsUserBuilder {
     pub(crate) posix: ::std::option::Option<crate::types::PosixUser>,
     pub(crate) windows: ::std::option::Option<crate::types::WindowsUser>,

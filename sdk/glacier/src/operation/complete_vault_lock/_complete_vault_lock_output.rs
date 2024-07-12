@@ -18,8 +18,8 @@ impl CompleteVaultLockOutput {
 }
 
 /// A builder for [`CompleteVaultLockOutput`](crate::operation::complete_vault_lock::CompleteVaultLockOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompleteVaultLockOutputBuilder {
     _request_id: Option<String>,
 }

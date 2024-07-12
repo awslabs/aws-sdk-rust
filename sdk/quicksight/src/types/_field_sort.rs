@@ -40,8 +40,8 @@ impl FieldSort {
 }
 
 /// A builder for [`FieldSort`](crate::types::FieldSort).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FieldSortBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) direction: ::std::option::Option<crate::types::SortDirection>,

@@ -18,8 +18,8 @@ impl AssociateCreatedArtifactOutput {
 }
 
 /// A builder for [`AssociateCreatedArtifactOutput`](crate::operation::associate_created_artifact::AssociateCreatedArtifactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateCreatedArtifactOutputBuilder {
     _request_id: Option<String>,
 }

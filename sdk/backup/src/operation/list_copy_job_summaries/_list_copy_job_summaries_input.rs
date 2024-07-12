@@ -96,8 +96,8 @@ impl ListCopyJobSummariesInput {
 }
 
 /// A builder for [`ListCopyJobSummariesInput`](crate::operation::list_copy_job_summaries::ListCopyJobSummariesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCopyJobSummariesInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CopyJobStatus>,

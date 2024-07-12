@@ -35,8 +35,8 @@ impl DescribeMlModelsOutput {
 }
 
 /// A builder for [`DescribeMlModelsOutput`](crate::operation::describe_ml_models::DescribeMlModelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMlModelsOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::MlModel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

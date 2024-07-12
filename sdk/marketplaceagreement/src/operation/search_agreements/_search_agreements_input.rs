@@ -88,8 +88,8 @@ impl SearchAgreementsInput {
 }
 
 /// A builder for [`SearchAgreementsInput`](crate::operation::search_agreements::SearchAgreementsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchAgreementsInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

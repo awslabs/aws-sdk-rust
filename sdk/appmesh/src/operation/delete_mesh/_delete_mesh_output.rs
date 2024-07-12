@@ -26,8 +26,8 @@ impl DeleteMeshOutput {
 }
 
 /// A builder for [`DeleteMeshOutput`](crate::operation::delete_mesh::DeleteMeshOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMeshOutputBuilder {
     pub(crate) mesh: ::std::option::Option<crate::types::MeshData>,
     _request_id: Option<String>,

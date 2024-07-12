@@ -28,8 +28,8 @@ impl ScriptSummary {
 }
 
 /// A builder for [`ScriptSummary`](crate::types::ScriptSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScriptSummaryBuilder {
     pub(crate) script_location: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ScriptType>,

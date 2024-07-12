@@ -33,8 +33,8 @@ impl ComplianceSummaryItem {
 }
 
 /// A builder for [`ComplianceSummaryItem`](crate::types::ComplianceSummaryItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComplianceSummaryItemBuilder {
     pub(crate) compliance_type: ::std::option::Option<::std::string::String>,
     pub(crate) compliant_summary: ::std::option::Option<crate::types::CompliantSummary>,

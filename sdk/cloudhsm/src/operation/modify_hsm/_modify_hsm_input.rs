@@ -53,8 +53,8 @@ impl ModifyHsmInput {
 }
 
 /// A builder for [`ModifyHsmInput`](crate::operation::modify_hsm::ModifyHsmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyHsmInputBuilder {
     pub(crate) hsm_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,

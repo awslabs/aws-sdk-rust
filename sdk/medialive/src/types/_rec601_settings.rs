@@ -12,8 +12,8 @@ impl Rec601Settings {
 }
 
 /// A builder for [`Rec601Settings`](crate::types::Rec601Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Rec601SettingsBuilder {}
 impl Rec601SettingsBuilder {
     /// Consumes the builder and constructs a [`Rec601Settings`](crate::types::Rec601Settings).

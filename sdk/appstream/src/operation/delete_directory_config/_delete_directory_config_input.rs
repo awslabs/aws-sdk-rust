@@ -20,8 +20,8 @@ impl DeleteDirectoryConfigInput {
 }
 
 /// A builder for [`DeleteDirectoryConfigInput`](crate::operation::delete_directory_config::DeleteDirectoryConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDirectoryConfigInputBuilder {
     pub(crate) directory_name: ::std::option::Option<::std::string::String>,
 }

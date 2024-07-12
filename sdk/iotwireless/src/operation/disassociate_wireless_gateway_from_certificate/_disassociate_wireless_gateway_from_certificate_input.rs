@@ -21,8 +21,8 @@ impl DisassociateWirelessGatewayFromCertificateInput {
 }
 
 /// A builder for [`DisassociateWirelessGatewayFromCertificateInput`](crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWirelessGatewayFromCertificateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

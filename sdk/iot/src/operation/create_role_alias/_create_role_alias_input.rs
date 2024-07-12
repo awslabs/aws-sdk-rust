@@ -50,8 +50,8 @@ impl CreateRoleAliasInput {
 }
 
 /// A builder for [`CreateRoleAliasInput`](crate::operation::create_role_alias::CreateRoleAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRoleAliasInputBuilder {
     pub(crate) role_alias: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

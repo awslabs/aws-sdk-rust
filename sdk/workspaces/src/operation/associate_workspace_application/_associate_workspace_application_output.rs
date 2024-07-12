@@ -26,8 +26,8 @@ impl AssociateWorkspaceApplicationOutput {
 }
 
 /// A builder for [`AssociateWorkspaceApplicationOutput`](crate::operation::associate_workspace_application::AssociateWorkspaceApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWorkspaceApplicationOutputBuilder {
     pub(crate) association: ::std::option::Option<crate::types::WorkspaceResourceAssociation>,
     _request_id: Option<String>,

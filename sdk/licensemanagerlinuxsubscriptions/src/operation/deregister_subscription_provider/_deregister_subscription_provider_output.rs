@@ -18,8 +18,8 @@ impl DeregisterSubscriptionProviderOutput {
 }
 
 /// A builder for [`DeregisterSubscriptionProviderOutput`](crate::operation::deregister_subscription_provider::DeregisterSubscriptionProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterSubscriptionProviderOutputBuilder {
     _request_id: Option<String>,
 }

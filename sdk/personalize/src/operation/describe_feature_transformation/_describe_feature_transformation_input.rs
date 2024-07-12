@@ -20,8 +20,8 @@ impl DescribeFeatureTransformationInput {
 }
 
 /// A builder for [`DescribeFeatureTransformationInput`](crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFeatureTransformationInputBuilder {
     pub(crate) feature_transformation_arn: ::std::option::Option<::std::string::String>,
 }

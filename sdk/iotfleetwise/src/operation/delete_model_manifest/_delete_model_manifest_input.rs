@@ -20,8 +20,8 @@ impl DeleteModelManifestInput {
 }
 
 /// A builder for [`DeleteModelManifestInput`](crate::operation::delete_model_manifest::DeleteModelManifestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelManifestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

@@ -20,8 +20,8 @@ impl GetSizeConstraintSetInput {
 }
 
 /// A builder for [`GetSizeConstraintSetInput`](crate::operation::get_size_constraint_set::GetSizeConstraintSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSizeConstraintSetInputBuilder {
     pub(crate) size_constraint_set_id: ::std::option::Option<::std::string::String>,
 }

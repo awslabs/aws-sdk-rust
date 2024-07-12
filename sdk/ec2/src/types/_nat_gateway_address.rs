@@ -63,8 +63,8 @@ impl NatGatewayAddress {
 }
 
 /// A builder for [`NatGatewayAddress`](crate::types::NatGatewayAddress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NatGatewayAddressBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,

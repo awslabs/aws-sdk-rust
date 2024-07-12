@@ -20,8 +20,8 @@ impl DescribeEventBusInput {
 }
 
 /// A builder for [`DescribeEventBusInput`](crate::operation::describe_event_bus::DescribeEventBusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventBusInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

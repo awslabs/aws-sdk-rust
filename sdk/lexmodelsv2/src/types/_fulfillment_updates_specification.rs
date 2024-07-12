@@ -41,8 +41,8 @@ impl FulfillmentUpdatesSpecification {
 }
 
 /// A builder for [`FulfillmentUpdatesSpecification`](crate::types::FulfillmentUpdatesSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FulfillmentUpdatesSpecificationBuilder {
     pub(crate) active: ::std::option::Option<bool>,
     pub(crate) start_response: ::std::option::Option<crate::types::FulfillmentStartResponseSpecification>,

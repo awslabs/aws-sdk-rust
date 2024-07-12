@@ -29,8 +29,8 @@ impl UpdateTagsForDomainInput {
 }
 
 /// A builder for [`UpdateTagsForDomainInput`](crate::operation::update_tags_for_domain::UpdateTagsForDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTagsForDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags_to_update: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

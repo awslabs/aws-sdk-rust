@@ -76,8 +76,8 @@ impl DescribeImportOutput {
 }
 
 /// A builder for [`DescribeImportOutput`](crate::operation::describe_import::DescribeImportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImportOutputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_specification: ::std::option::Option<crate::types::ImportResourceSpecification>,

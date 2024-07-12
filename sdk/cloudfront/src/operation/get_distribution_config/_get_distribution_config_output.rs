@@ -33,8 +33,8 @@ impl GetDistributionConfigOutput {
 }
 
 /// A builder for [`GetDistributionConfigOutput`](crate::operation::get_distribution_config::GetDistributionConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDistributionConfigOutputBuilder {
     pub(crate) distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl ServiceOperation {
 }
 
 /// A builder for [`ServiceOperation`](crate::types::ServiceOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceOperationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_references: ::std::option::Option<::std::vec::Vec<crate::types::MetricReference>>,

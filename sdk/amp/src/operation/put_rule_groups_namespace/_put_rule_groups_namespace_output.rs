@@ -47,8 +47,8 @@ impl PutRuleGroupsNamespaceOutput {
 }
 
 /// A builder for [`PutRuleGroupsNamespaceOutput`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRuleGroupsNamespaceOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

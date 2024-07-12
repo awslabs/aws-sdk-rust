@@ -31,8 +31,8 @@ impl OutputChannelMapping {
 }
 
 /// A builder for [`OutputChannelMapping`](crate::types::OutputChannelMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputChannelMappingBuilder {
     pub(crate) input_channels: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) input_channels_fine_tune: ::std::option::Option<::std::vec::Vec<f64>>,

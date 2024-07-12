@@ -32,8 +32,8 @@ impl CreateCustomDomainAssociationInput {
 }
 
 /// A builder for [`CreateCustomDomainAssociationInput`](crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomDomainAssociationInputBuilder {
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,

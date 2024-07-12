@@ -41,8 +41,8 @@ impl MetricV2 {
 }
 
 /// A builder for [`MetricV2`](crate::types::MetricV2).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricV2Builder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) threshold: ::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>>,

@@ -39,8 +39,8 @@ impl PromptAttemptSpecification {
 }
 
 /// A builder for [`PromptAttemptSpecification`](crate::types::PromptAttemptSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromptAttemptSpecificationBuilder {
     pub(crate) allow_interrupt: ::std::option::Option<bool>,
     pub(crate) allowed_input_types: ::std::option::Option<crate::types::AllowedInputTypes>,

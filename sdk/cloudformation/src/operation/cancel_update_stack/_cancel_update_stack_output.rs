@@ -18,8 +18,8 @@ impl CancelUpdateStackOutput {
 }
 
 /// A builder for [`CancelUpdateStackOutput`](crate::operation::cancel_update_stack::CancelUpdateStackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelUpdateStackOutputBuilder {
     _request_id: Option<String>,
 }

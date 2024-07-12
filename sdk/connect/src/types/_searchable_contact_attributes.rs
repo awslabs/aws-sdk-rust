@@ -28,8 +28,8 @@ impl SearchableContactAttributes {
 }
 
 /// A builder for [`SearchableContactAttributes`](crate::types::SearchableContactAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchableContactAttributesBuilder {
     pub(crate) criteria: ::std::option::Option<::std::vec::Vec<crate::types::SearchableContactAttributesCriteria>>,
     pub(crate) match_type: ::std::option::Option<crate::types::SearchContactsMatchType>,

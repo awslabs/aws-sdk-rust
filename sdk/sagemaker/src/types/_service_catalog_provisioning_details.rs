@@ -41,8 +41,8 @@ impl ServiceCatalogProvisioningDetails {
 }
 
 /// A builder for [`ServiceCatalogProvisioningDetails`](crate::types::ServiceCatalogProvisioningDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceCatalogProvisioningDetailsBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl ConditionalSplitActivity {
 }
 
 /// A builder for [`ConditionalSplitActivity`](crate::types::ConditionalSplitActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConditionalSplitActivityBuilder {
     pub(crate) condition: ::std::option::Option<crate::types::Condition>,
     pub(crate) evaluation_wait_time: ::std::option::Option<crate::types::WaitTime>,

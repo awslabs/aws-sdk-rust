@@ -47,8 +47,8 @@ impl ConnectionAlias {
 }
 
 /// A builder for [`ConnectionAlias`](crate::types::ConnectionAlias).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionAliasBuilder {
     pub(crate) connection_string: ::std::option::Option<::std::string::String>,
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,

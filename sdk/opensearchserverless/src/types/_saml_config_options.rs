@@ -40,8 +40,8 @@ impl SamlConfigOptions {
 }
 
 /// A builder for [`SamlConfigOptions`](crate::types::SamlConfigOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SamlConfigOptionsBuilder {
     pub(crate) metadata: ::std::option::Option<::std::string::String>,
     pub(crate) user_attribute: ::std::option::Option<::std::string::String>,

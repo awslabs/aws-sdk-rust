@@ -26,8 +26,8 @@ impl PublishSchemaOutput {
 }
 
 /// A builder for [`PublishSchemaOutput`](crate::operation::publish_schema::PublishSchemaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublishSchemaOutputBuilder {
     pub(crate) published_schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

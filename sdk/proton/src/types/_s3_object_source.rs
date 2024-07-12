@@ -29,8 +29,8 @@ impl S3ObjectSource {
 }
 
 /// A builder for [`S3ObjectSource`](crate::types::S3ObjectSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ObjectSourceBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

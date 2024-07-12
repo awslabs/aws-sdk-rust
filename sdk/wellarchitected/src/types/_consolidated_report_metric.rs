@@ -67,8 +67,8 @@ impl ConsolidatedReportMetric {
 }
 
 /// A builder for [`ConsolidatedReportMetric`](crate::types::ConsolidatedReportMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConsolidatedReportMetricBuilder {
     pub(crate) metric_type: ::std::option::Option<crate::types::MetricType>,
     pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,

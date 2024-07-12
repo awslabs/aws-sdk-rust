@@ -23,8 +23,8 @@ impl AwsCloudFrontDistributionOrigins {
 }
 
 /// A builder for [`AwsCloudFrontDistributionOrigins`](crate::types::AwsCloudFrontDistributionOrigins).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudFrontDistributionOriginsBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>>,
 }

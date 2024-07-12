@@ -20,8 +20,8 @@ impl DeleteReplicationSetInput {
 }
 
 /// A builder for [`DeleteReplicationSetInput`](crate::operation::delete_replication_set::DeleteReplicationSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicationSetInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

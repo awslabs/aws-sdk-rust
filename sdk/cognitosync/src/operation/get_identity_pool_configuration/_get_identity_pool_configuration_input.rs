@@ -21,8 +21,8 @@ impl GetIdentityPoolConfigurationInput {
 }
 
 /// A builder for [`GetIdentityPoolConfigurationInput`](crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityPoolConfigurationInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
 }

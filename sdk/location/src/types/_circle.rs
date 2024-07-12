@@ -36,8 +36,8 @@ impl Circle {
 }
 
 /// A builder for [`Circle`](crate::types::Circle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CircleBuilder {
     pub(crate) center: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) radius: ::std::option::Option<f64>,

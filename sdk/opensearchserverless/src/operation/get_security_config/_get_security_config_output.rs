@@ -26,8 +26,8 @@ impl GetSecurityConfigOutput {
 }
 
 /// A builder for [`GetSecurityConfigOutput`](crate::operation::get_security_config::GetSecurityConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSecurityConfigOutputBuilder {
     pub(crate) security_config_detail: ::std::option::Option<crate::types::SecurityConfigDetail>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl DeleteQueryDefinitionInput {
 }
 
 /// A builder for [`DeleteQueryDefinitionInput`](crate::operation::delete_query_definition::DeleteQueryDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQueryDefinitionInputBuilder {
     pub(crate) query_definition_id: ::std::option::Option<::std::string::String>,
 }

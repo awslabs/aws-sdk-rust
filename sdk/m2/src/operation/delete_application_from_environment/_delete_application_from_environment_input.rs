@@ -26,8 +26,8 @@ impl DeleteApplicationFromEnvironmentInput {
 }
 
 /// A builder for [`DeleteApplicationFromEnvironmentInput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationFromEnvironmentInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,

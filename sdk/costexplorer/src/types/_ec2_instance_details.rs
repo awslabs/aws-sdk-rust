@@ -63,8 +63,8 @@ impl Ec2InstanceDetails {
 }
 
 /// A builder for [`Ec2InstanceDetails`](crate::types::Ec2InstanceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2InstanceDetailsBuilder {
     pub(crate) family: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,

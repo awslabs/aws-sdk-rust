@@ -92,8 +92,8 @@ impl RebootDbShardGroupOutput {
 }
 
 /// A builder for [`RebootDbShardGroupOutput`](crate::operation::reboot_db_shard_group::RebootDbShardGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootDbShardGroupOutputBuilder {
     pub(crate) db_shard_group_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_shard_group_identifier: ::std::option::Option<::std::string::String>,

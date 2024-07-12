@@ -115,8 +115,8 @@ impl BgpPeer {
 }
 
 /// A builder for [`BgpPeer`](crate::types::BgpPeer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BgpPeerBuilder {
     pub(crate) bgp_peer_id: ::std::option::Option<::std::string::String>,
     pub(crate) asn: ::std::option::Option<i32>,

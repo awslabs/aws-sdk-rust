@@ -26,8 +26,8 @@ impl ValidateMatchmakingRuleSetOutput {
 }
 
 /// A builder for [`ValidateMatchmakingRuleSetOutput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateMatchmakingRuleSetOutputBuilder {
     pub(crate) valid: ::std::option::Option<bool>,
     _request_id: Option<String>,

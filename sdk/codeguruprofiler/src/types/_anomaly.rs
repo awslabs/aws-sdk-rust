@@ -35,8 +35,8 @@ impl Anomaly {
 }
 
 /// A builder for [`Anomaly`](crate::types::Anomaly).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnomalyBuilder {
     pub(crate) metric: ::std::option::Option<crate::types::Metric>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl TerminateWorkspacesPoolInput {
 }
 
 /// A builder for [`TerminateWorkspacesPoolInput`](crate::operation::terminate_workspaces_pool::TerminateWorkspacesPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TerminateWorkspacesPoolInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
 }

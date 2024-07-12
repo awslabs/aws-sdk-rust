@@ -20,8 +20,8 @@ impl DeleteSchemaInput {
 }
 
 /// A builder for [`DeleteSchemaInput`](crate::operation::delete_schema::DeleteSchemaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSchemaInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
 }

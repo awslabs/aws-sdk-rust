@@ -35,8 +35,8 @@ impl UpdateApplicationMaintenanceConfigurationOutput {
 }
 
 /// A builder for [`UpdateApplicationMaintenanceConfigurationOutput`](crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApplicationMaintenanceConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_maintenance_configuration_description: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,

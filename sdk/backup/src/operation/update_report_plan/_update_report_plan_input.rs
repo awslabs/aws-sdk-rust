@@ -48,8 +48,8 @@ impl UpdateReportPlanInput {
 }
 
 /// A builder for [`UpdateReportPlanInput`](crate::operation::update_report_plan::UpdateReportPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateReportPlanInputBuilder {
     pub(crate) report_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) report_plan_description: ::std::option::Option<::std::string::String>,

@@ -63,8 +63,8 @@ impl TestCase {
 }
 
 /// A builder for [`TestCase`](crate::types::TestCase).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestCaseBuilder {
     pub(crate) report_arn: ::std::option::Option<::std::string::String>,
     pub(crate) test_raw_data_path: ::std::option::Option<::std::string::String>,

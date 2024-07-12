@@ -21,8 +21,8 @@ impl AwsEcsServiceNetworkConfigurationDetails {
 }
 
 /// A builder for [`AwsEcsServiceNetworkConfigurationDetails`](crate::types::AwsEcsServiceNetworkConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsServiceNetworkConfigurationDetailsBuilder {
     pub(crate) aws_vpc_configuration: ::std::option::Option<crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails>,
 }

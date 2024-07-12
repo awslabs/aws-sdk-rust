@@ -43,8 +43,8 @@ impl BatchDetectKeyPhrasesOutput {
 }
 
 /// A builder for [`BatchDetectKeyPhrasesOutput`](crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchDetectKeyPhrasesOutputBuilder {
     pub(crate) result_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchDetectKeyPhrasesItemResult>>,
     pub(crate) error_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>>,

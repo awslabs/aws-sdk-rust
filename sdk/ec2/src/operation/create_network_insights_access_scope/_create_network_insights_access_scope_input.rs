@@ -50,8 +50,8 @@ impl CreateNetworkInsightsAccessScopeInput {
 }
 
 /// A builder for [`CreateNetworkInsightsAccessScopeInput`](crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkInsightsAccessScopeInputBuilder {
     pub(crate) match_paths: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>>,
     pub(crate) exclude_paths: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>>,

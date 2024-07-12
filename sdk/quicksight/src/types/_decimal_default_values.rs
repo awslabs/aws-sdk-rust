@@ -29,8 +29,8 @@ impl DecimalDefaultValues {
 }
 
 /// A builder for [`DecimalDefaultValues`](crate::types::DecimalDefaultValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecimalDefaultValuesBuilder {
     pub(crate) dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
     pub(crate) static_values: ::std::option::Option<::std::vec::Vec<f64>>,

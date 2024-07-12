@@ -26,8 +26,8 @@ impl DeleteTlsInspectionConfigurationOutput {
 }
 
 /// A builder for [`DeleteTlsInspectionConfigurationOutput`](crate::operation::delete_tls_inspection_configuration::DeleteTlsInspectionConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTlsInspectionConfigurationOutputBuilder {
     pub(crate) tls_inspection_configuration_response: ::std::option::Option<crate::types::TlsInspectionConfigurationResponse>,
     _request_id: Option<String>,

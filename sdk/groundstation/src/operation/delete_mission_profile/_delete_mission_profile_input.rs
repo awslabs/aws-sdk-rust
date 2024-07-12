@@ -21,8 +21,8 @@ impl DeleteMissionProfileInput {
 }
 
 /// A builder for [`DeleteMissionProfileInput`](crate::operation::delete_mission_profile::DeleteMissionProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMissionProfileInputBuilder {
     pub(crate) mission_profile_id: ::std::option::Option<::std::string::String>,
 }

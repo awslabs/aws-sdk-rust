@@ -351,8 +351,8 @@ impl FilterCriteria {
 }
 
 /// A builder for [`FilterCriteria`](crate::types::FilterCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterCriteriaBuilder {
     pub(crate) finding_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) aws_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,

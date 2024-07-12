@@ -32,8 +32,8 @@ impl ListHandshakesForOrganizationInput {
 }
 
 /// A builder for [`ListHandshakesForOrganizationInput`](crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHandshakesForOrganizationInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::HandshakeFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

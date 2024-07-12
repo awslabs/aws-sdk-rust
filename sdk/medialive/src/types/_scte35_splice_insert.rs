@@ -33,8 +33,8 @@ impl Scte35SpliceInsert {
 }
 
 /// A builder for [`Scte35SpliceInsert`](crate::types::Scte35SpliceInsert).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte35SpliceInsertBuilder {
     pub(crate) ad_avail_offset: ::std::option::Option<i32>,
     pub(crate) no_regional_blackout_flag: ::std::option::Option<crate::types::Scte35SpliceInsertNoRegionalBlackoutBehavior>,

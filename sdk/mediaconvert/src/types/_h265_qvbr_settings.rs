@@ -33,8 +33,8 @@ impl H265QvbrSettings {
 }
 
 /// A builder for [`H265QvbrSettings`](crate::types::H265QvbrSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct H265QvbrSettingsBuilder {
     pub(crate) max_average_bitrate: ::std::option::Option<i32>,
     pub(crate) qvbr_quality_level: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl GetEnabledControlOutput {
 }
 
 /// A builder for [`GetEnabledControlOutput`](crate::operation::get_enabled_control::GetEnabledControlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnabledControlOutputBuilder {
     pub(crate) enabled_control_details: ::std::option::Option<crate::types::EnabledControlDetails>,
     _request_id: Option<String>,

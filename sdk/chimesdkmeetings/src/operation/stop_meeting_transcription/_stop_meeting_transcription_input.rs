@@ -20,8 +20,8 @@ impl StopMeetingTranscriptionInput {
 }
 
 /// A builder for [`StopMeetingTranscriptionInput`](crate::operation::stop_meeting_transcription::StopMeetingTranscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopMeetingTranscriptionInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
 }

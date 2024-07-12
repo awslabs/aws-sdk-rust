@@ -32,8 +32,8 @@ impl DeleteBucketInventoryConfigurationInput {
 }
 
 /// A builder for [`DeleteBucketInventoryConfigurationInput`](crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBucketInventoryConfigurationInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

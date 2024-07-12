@@ -39,8 +39,8 @@ impl GsmNmrObj {
 }
 
 /// A builder for [`GsmNmrObj`](crate::types::GsmNmrObj).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GsmNmrObjBuilder {
     pub(crate) bsic: ::std::option::Option<i32>,
     pub(crate) bcch: ::std::option::Option<i32>,

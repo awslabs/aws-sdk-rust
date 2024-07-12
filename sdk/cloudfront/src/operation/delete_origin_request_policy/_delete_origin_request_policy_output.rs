@@ -18,8 +18,8 @@ impl DeleteOriginRequestPolicyOutput {
 }
 
 /// A builder for [`DeleteOriginRequestPolicyOutput`](crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOriginRequestPolicyOutputBuilder {
     _request_id: Option<String>,
 }

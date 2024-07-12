@@ -27,8 +27,8 @@ impl MethodSnapshot {
 }
 
 /// A builder for [`MethodSnapshot`](crate::types::MethodSnapshot).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MethodSnapshotBuilder {
     pub(crate) authorization_type: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_required: ::std::option::Option<bool>,

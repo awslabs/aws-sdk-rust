@@ -34,8 +34,8 @@ impl DescribeExportImageTasksOutput {
 }
 
 /// A builder for [`DescribeExportImageTasksOutput`](crate::operation::describe_export_image_tasks::DescribeExportImageTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeExportImageTasksOutputBuilder {
     pub(crate) export_image_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ExportImageTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

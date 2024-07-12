@@ -51,8 +51,8 @@ impl Summary {
 }
 
 /// A builder for [`Summary`](crate::types::Summary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SummaryBuilder {
     pub(crate) last_updated: ::std::option::Option<::std::string::String>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl LogPublishingOption {
 }
 
 /// A builder for [`LogPublishingOption`](crate::types::LogPublishingOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogPublishingOptionBuilder {
     pub(crate) cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

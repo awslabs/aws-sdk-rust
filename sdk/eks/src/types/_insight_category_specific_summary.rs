@@ -23,8 +23,8 @@ impl InsightCategorySpecificSummary {
 }
 
 /// A builder for [`InsightCategorySpecificSummary`](crate::types::InsightCategorySpecificSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsightCategorySpecificSummaryBuilder {
     pub(crate) deprecation_details: ::std::option::Option<::std::vec::Vec<crate::types::DeprecationDetail>>,
 }

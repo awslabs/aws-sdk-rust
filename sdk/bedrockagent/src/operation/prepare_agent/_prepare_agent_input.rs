@@ -20,8 +20,8 @@ impl PrepareAgentInput {
 }
 
 /// A builder for [`PrepareAgentInput`](crate::operation::prepare_agent::PrepareAgentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrepareAgentInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
 }

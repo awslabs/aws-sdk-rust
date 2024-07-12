@@ -26,8 +26,8 @@ impl ListCellsInput {
 }
 
 /// A builder for [`ListCellsInput`](crate::operation::list_cells::ListCellsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCellsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

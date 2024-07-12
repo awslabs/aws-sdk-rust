@@ -34,8 +34,8 @@ impl ListDataCellsFilterOutput {
 }
 
 /// A builder for [`ListDataCellsFilterOutput`](crate::operation::list_data_cells_filter::ListDataCellsFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataCellsFilterOutputBuilder {
     pub(crate) data_cells_filters: ::std::option::Option<::std::vec::Vec<crate::types::DataCellsFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl SelfManageResources {
 }
 
 /// A builder for [`SelfManageResources`](crate::types::SelfManageResources).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelfManageResourcesBuilder {
     pub(crate) target_destination: ::std::option::Option<::std::vec::Vec<crate::types::SelfManageTargetDestination>>,
 }

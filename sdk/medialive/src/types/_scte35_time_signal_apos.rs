@@ -33,8 +33,8 @@ impl Scte35TimeSignalApos {
 }
 
 /// A builder for [`Scte35TimeSignalApos`](crate::types::Scte35TimeSignalApos).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Scte35TimeSignalAposBuilder {
     pub(crate) ad_avail_offset: ::std::option::Option<i32>,
     pub(crate) no_regional_blackout_flag: ::std::option::Option<crate::types::Scte35AposNoRegionalBlackoutBehavior>,

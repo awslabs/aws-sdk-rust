@@ -56,8 +56,8 @@ impl ListLabelsInput {
 }
 
 /// A builder for [`ListLabelsInput`](crate::operation::list_labels::ListLabelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLabelsInputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) interval_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

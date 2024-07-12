@@ -34,8 +34,8 @@ impl CreateFleetOutput {
 }
 
 /// A builder for [`CreateFleetOutput`](crate::operation::create_fleet::CreateFleetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFleetOutputBuilder {
     pub(crate) fleet_attributes: ::std::option::Option<crate::types::FleetAttributes>,
     pub(crate) location_states: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>,

@@ -28,8 +28,8 @@ impl ComparisonFormatConfiguration {
 }
 
 /// A builder for [`ComparisonFormatConfiguration`](crate::types::ComparisonFormatConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComparisonFormatConfigurationBuilder {
     pub(crate) number_display_format_configuration: ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
     pub(crate) percentage_display_format_configuration: ::std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,

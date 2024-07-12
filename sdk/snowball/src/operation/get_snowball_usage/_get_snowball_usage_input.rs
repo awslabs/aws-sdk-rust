@@ -11,8 +11,8 @@ impl GetSnowballUsageInput {
 }
 
 /// A builder for [`GetSnowballUsageInput`](crate::operation::get_snowball_usage::GetSnowballUsageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSnowballUsageInputBuilder {}
 impl GetSnowballUsageInputBuilder {
     /// Consumes the builder and constructs a [`GetSnowballUsageInput`](crate::operation::get_snowball_usage::GetSnowballUsageInput).

@@ -34,8 +34,8 @@ impl DisassociateNatGatewayAddressOutput {
 }
 
 /// A builder for [`DisassociateNatGatewayAddressOutput`](crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateNatGatewayAddressOutputBuilder {
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,

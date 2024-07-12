@@ -51,8 +51,8 @@ impl UpdateGatewayCapabilityConfigurationOutput {
 }
 
 /// A builder for [`UpdateGatewayCapabilityConfigurationOutput`](crate::operation::update_gateway_capability_configuration::UpdateGatewayCapabilityConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGatewayCapabilityConfigurationOutputBuilder {
     pub(crate) capability_namespace: ::std::option::Option<::std::string::String>,
     pub(crate) capability_sync_status: ::std::option::Option<crate::types::CapabilitySyncStatus>,

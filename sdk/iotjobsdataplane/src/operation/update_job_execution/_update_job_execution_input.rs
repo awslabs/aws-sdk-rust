@@ -68,8 +68,8 @@ impl UpdateJobExecutionInput {
 }
 
 /// A builder for [`UpdateJobExecutionInput`](crate::operation::update_job_execution::UpdateJobExecutionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateJobExecutionInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,

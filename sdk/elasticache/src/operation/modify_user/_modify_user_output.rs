@@ -76,8 +76,8 @@ impl ModifyUserOutput {
 }
 
 /// A builder for [`ModifyUserOutput`](crate::operation::modify_user::ModifyUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyUserOutputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,

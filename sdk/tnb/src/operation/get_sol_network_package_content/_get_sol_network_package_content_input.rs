@@ -26,8 +26,8 @@ impl GetSolNetworkPackageContentInput {
 }
 
 /// A builder for [`GetSolNetworkPackageContentInput`](crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSolNetworkPackageContentInputBuilder {
     pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
     pub(crate) accept: ::std::option::Option<crate::types::PackageContentType>,

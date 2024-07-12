@@ -65,8 +65,8 @@ impl DescribeEnvironmentStatusOutput {
 }
 
 /// A builder for [`DescribeEnvironmentStatusOutput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEnvironmentStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EnvironmentStatus>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

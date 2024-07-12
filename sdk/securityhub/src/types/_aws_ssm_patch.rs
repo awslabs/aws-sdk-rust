@@ -21,8 +21,8 @@ impl AwsSsmPatch {
 }
 
 /// A builder for [`AwsSsmPatch`](crate::types::AwsSsmPatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsSsmPatchBuilder {
     pub(crate) compliance_summary: ::std::option::Option<crate::types::AwsSsmComplianceSummary>,
 }

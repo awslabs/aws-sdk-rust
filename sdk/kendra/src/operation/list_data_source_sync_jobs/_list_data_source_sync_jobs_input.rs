@@ -50,8 +50,8 @@ impl ListDataSourceSyncJobsInput {
 }
 
 /// A builder for [`ListDataSourceSyncJobsInput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataSourceSyncJobsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,

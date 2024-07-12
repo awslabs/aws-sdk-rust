@@ -20,8 +20,8 @@ impl ExportSourceNetworkCfnTemplateInput {
 }
 
 /// A builder for [`ExportSourceNetworkCfnTemplateInput`](crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportSourceNetworkCfnTemplateInputBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
 }

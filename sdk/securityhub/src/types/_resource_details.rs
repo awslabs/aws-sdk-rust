@@ -624,8 +624,8 @@ impl ResourceDetails {
 }
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceDetailsBuilder {
     pub(crate) aws_auto_scaling_auto_scaling_group: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupDetails>,
     pub(crate) aws_code_build_project: ::std::option::Option<crate::types::AwsCodeBuildProjectDetails>,

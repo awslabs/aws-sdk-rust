@@ -26,8 +26,8 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationOutput {
 }
 
 /// A builder for [`ModifyVerifiedAccessInstanceLoggingConfigurationOutput`](crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVerifiedAccessInstanceLoggingConfigurationOutputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
     _request_id: Option<String>,

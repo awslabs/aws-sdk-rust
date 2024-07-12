@@ -26,8 +26,8 @@ impl CreateRegexMatchSetInput {
 }
 
 /// A builder for [`CreateRegexMatchSetInput`](crate::operation::create_regex_match_set::CreateRegexMatchSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRegexMatchSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

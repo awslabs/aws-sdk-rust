@@ -55,8 +55,8 @@ impl TranslationSettings {
 }
 
 /// A builder for [`TranslationSettings`](crate::types::TranslationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranslationSettingsBuilder {
     pub(crate) formality: ::std::option::Option<crate::types::Formality>,
     pub(crate) profanity: ::std::option::Option<crate::types::Profanity>,

@@ -27,8 +27,8 @@ impl AwsCodeBuildProjectLogsConfigDetails {
 }
 
 /// A builder for [`AwsCodeBuildProjectLogsConfigDetails`](crate::types::AwsCodeBuildProjectLogsConfigDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCodeBuildProjectLogsConfigDetailsBuilder {
     pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails>,
     pub(crate) s3_logs: ::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails>,

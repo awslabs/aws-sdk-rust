@@ -59,8 +59,8 @@ impl ChunkingConfiguration {
 }
 
 /// A builder for [`ChunkingConfiguration`](crate::types::ChunkingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChunkingConfigurationBuilder {
     pub(crate) chunking_strategy: ::std::option::Option<crate::types::ChunkingStrategy>,
     pub(crate) fixed_size_chunking_configuration: ::std::option::Option<crate::types::FixedSizeChunkingConfiguration>,

@@ -28,8 +28,8 @@ impl ValidationConfiguration {
 }
 
 /// A builder for [`ValidationConfiguration`](crate::types::ValidationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidationConfigurationBuilder {
     pub(crate) ruleset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) validation_mode: ::std::option::Option<crate::types::ValidationMode>,

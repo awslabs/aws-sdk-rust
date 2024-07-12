@@ -32,8 +32,8 @@ impl UpdateParticipantRoleConfigInput {
 }
 
 /// A builder for [`UpdateParticipantRoleConfigInput`](crate::operation::update_participant_role_config::UpdateParticipantRoleConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateParticipantRoleConfigInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,

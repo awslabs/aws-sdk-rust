@@ -21,8 +21,8 @@ impl TimeBasedCollectionScheme {
 }
 
 /// A builder for [`TimeBasedCollectionScheme`](crate::types::TimeBasedCollectionScheme).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeBasedCollectionSchemeBuilder {
     pub(crate) period_ms: ::std::option::Option<i64>,
 }

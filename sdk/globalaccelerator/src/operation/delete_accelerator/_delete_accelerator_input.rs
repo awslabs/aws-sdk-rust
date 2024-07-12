@@ -20,8 +20,8 @@ impl DeleteAcceleratorInput {
 }
 
 /// A builder for [`DeleteAcceleratorInput`](crate::operation::delete_accelerator::DeleteAcceleratorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAcceleratorInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
 }

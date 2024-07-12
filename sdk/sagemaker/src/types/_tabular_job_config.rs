@@ -93,8 +93,8 @@ impl TabularJobConfig {
 }
 
 /// A builder for [`TabularJobConfig`](crate::types::TabularJobConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TabularJobConfigBuilder {
     pub(crate) candidate_generation_config: ::std::option::Option<crate::types::CandidateGenerationConfig>,
     pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,

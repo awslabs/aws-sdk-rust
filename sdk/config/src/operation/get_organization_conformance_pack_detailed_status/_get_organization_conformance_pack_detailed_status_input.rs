@@ -39,8 +39,8 @@ impl GetOrganizationConformancePackDetailedStatusInput {
 }
 
 /// A builder for [`GetOrganizationConformancePackDetailedStatusInput`](crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOrganizationConformancePackDetailedStatusInputBuilder {
     pub(crate) organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters>,

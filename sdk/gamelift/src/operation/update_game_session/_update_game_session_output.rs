@@ -26,8 +26,8 @@ impl UpdateGameSessionOutput {
 }
 
 /// A builder for [`UpdateGameSessionOutput`](crate::operation::update_game_session::UpdateGameSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGameSessionOutputBuilder {
     pub(crate) game_session: ::std::option::Option<crate::types::GameSession>,
     _request_id: Option<String>,

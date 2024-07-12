@@ -40,8 +40,8 @@ impl CreateInputInput {
 }
 
 /// A builder for [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInputInputBuilder {
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
     pub(crate) input_description: ::std::option::Option<::std::string::String>,

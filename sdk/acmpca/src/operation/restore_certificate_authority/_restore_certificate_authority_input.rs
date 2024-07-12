@@ -22,8 +22,8 @@ impl RestoreCertificateAuthorityInput {
 }
 
 /// A builder for [`RestoreCertificateAuthorityInput`](crate::operation::restore_certificate_authority::RestoreCertificateAuthorityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreCertificateAuthorityInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }

@@ -28,8 +28,8 @@ impl PutInventoryInput {
 }
 
 /// A builder for [`PutInventoryInput`](crate::operation::put_inventory::PutInventoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutInventoryInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>>,

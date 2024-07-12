@@ -46,8 +46,8 @@ impl UpdateDeviceFleetInput {
 }
 
 /// A builder for [`UpdateDeviceFleetInput`](crate::operation::update_device_fleet::UpdateDeviceFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeviceFleetInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

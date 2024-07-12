@@ -60,8 +60,8 @@ impl UserIdentityInfo {
 }
 
 /// A builder for [`UserIdentityInfo`](crate::types::UserIdentityInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UserIdentityInfoBuilder {
     pub(crate) first_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_name: ::std::option::Option<::std::string::String>,

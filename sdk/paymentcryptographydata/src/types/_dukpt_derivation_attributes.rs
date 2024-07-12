@@ -34,8 +34,8 @@ impl DukptDerivationAttributes {
 }
 
 /// A builder for [`DukptDerivationAttributes`](crate::types::DukptDerivationAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DukptDerivationAttributesBuilder {
     pub(crate) key_serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) dukpt_key_derivation_type: ::std::option::Option<crate::types::DukptDerivationType>,

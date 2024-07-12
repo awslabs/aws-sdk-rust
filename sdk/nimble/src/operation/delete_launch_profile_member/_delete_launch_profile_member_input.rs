@@ -38,8 +38,8 @@ impl DeleteLaunchProfileMemberInput {
 }
 
 /// A builder for [`DeleteLaunchProfileMemberInput`](crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLaunchProfileMemberInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteWorkforceInput {
 }
 
 /// A builder for [`DeleteWorkforceInput`](crate::operation::delete_workforce::DeleteWorkforceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkforceInputBuilder {
     pub(crate) workforce_name: ::std::option::Option<::std::string::String>,
 }

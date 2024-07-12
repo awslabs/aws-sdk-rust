@@ -74,8 +74,8 @@ impl CreateCollaborationInput {
 }
 
 /// A builder for [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCollaborationInputBuilder {
     pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::MemberSpecification>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

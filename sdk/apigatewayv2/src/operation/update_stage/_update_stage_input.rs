@@ -75,8 +75,8 @@ impl UpdateStageInput {
 }
 
 /// A builder for [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStageInputBuilder {
     pub(crate) access_log_settings: ::std::option::Option<crate::types::AccessLogSettings>,
     pub(crate) api_id: ::std::option::Option<::std::string::String>,

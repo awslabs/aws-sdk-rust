@@ -26,8 +26,8 @@ impl GetKmsEncryptionKeyOutput {
 }
 
 /// A builder for [`GetKmsEncryptionKeyOutput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKmsEncryptionKeyOutputBuilder {
     pub(crate) kms_key: ::std::option::Option<crate::types::KmsKey>,
     _request_id: Option<String>,

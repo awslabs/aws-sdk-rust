@@ -26,8 +26,8 @@ impl PutDefaultEncryptionConfigurationInput {
 }
 
 /// A builder for [`PutDefaultEncryptionConfigurationInput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDefaultEncryptionConfigurationInputBuilder {
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

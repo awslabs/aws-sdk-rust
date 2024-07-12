@@ -27,8 +27,8 @@ impl ExtendedKeyUsage {
 }
 
 /// A builder for [`ExtendedKeyUsage`](crate::types::ExtendedKeyUsage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExtendedKeyUsageBuilder {
     pub(crate) extended_key_usage_type: ::std::option::Option<crate::types::ExtendedKeyUsageType>,
     pub(crate) extended_key_usage_object_identifier: ::std::option::Option<::std::string::String>,

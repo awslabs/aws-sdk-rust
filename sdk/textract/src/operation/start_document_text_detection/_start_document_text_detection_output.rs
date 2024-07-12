@@ -26,8 +26,8 @@ impl StartDocumentTextDetectionOutput {
 }
 
 /// A builder for [`StartDocumentTextDetectionOutput`](crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDocumentTextDetectionOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -42,8 +42,8 @@ impl DeleteChannelMembershipInput {
 }
 
 /// A builder for [`DeleteChannelMembershipInput`](crate::operation::delete_channel_membership::DeleteChannelMembershipInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChannelMembershipInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,

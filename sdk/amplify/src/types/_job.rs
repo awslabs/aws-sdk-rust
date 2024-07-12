@@ -28,8 +28,8 @@ impl Job {
 }
 
 /// A builder for [`Job`](crate::types::Job).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::JobSummary>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,

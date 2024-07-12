@@ -42,8 +42,8 @@ impl AuthorizeCacheSecurityGroupIngressOutput {
 }
 
 /// A builder for [`AuthorizeCacheSecurityGroupIngressOutput`](crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeCacheSecurityGroupIngressOutputBuilder {
     pub(crate) cache_security_group: ::std::option::Option<crate::types::CacheSecurityGroup>,
     _request_id: Option<String>,

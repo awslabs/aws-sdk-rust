@@ -54,8 +54,8 @@ impl ListStackSetAutoDeploymentTargetsInput {
 }
 
 /// A builder for [`ListStackSetAutoDeploymentTargetsInput`](crate::operation::list_stack_set_auto_deployment_targets::ListStackSetAutoDeploymentTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStackSetAutoDeploymentTargetsInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

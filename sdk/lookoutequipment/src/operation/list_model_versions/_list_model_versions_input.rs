@@ -68,8 +68,8 @@ impl ListModelVersionsInput {
 }
 
 /// A builder for [`ListModelVersionsInput`](crate::operation::list_model_versions::ListModelVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelVersionsInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

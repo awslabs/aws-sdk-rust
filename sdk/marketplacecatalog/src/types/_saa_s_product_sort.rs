@@ -27,8 +27,8 @@ impl SaaSProductSort {
 }
 
 /// A builder for [`SaaSProductSort`](crate::types::SaaSProductSort).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SaaSProductSortBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::SaaSProductSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

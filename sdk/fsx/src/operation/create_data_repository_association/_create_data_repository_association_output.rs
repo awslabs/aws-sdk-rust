@@ -26,8 +26,8 @@ impl CreateDataRepositoryAssociationOutput {
 }
 
 /// A builder for [`CreateDataRepositoryAssociationOutput`](crate::operation::create_data_repository_association::CreateDataRepositoryAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataRepositoryAssociationOutputBuilder {
     pub(crate) association: ::std::option::Option<crate::types::DataRepositoryAssociation>,
     _request_id: Option<String>,

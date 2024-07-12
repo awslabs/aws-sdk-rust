@@ -21,8 +21,8 @@ impl DeleteReservationInput {
 }
 
 /// A builder for [`DeleteReservationInput`](crate::operation::delete_reservation::DeleteReservationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReservationInputBuilder {
     pub(crate) reservation_id: ::std::option::Option<::std::string::String>,
 }

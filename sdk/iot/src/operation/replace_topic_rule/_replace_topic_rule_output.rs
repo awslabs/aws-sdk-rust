@@ -18,8 +18,8 @@ impl ReplaceTopicRuleOutput {
 }
 
 /// A builder for [`ReplaceTopicRuleOutput`](crate::operation::replace_topic_rule::ReplaceTopicRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplaceTopicRuleOutputBuilder {
     _request_id: Option<String>,
 }

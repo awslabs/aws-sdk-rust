@@ -48,8 +48,8 @@ impl GetRecordsOutput {
 }
 
 /// A builder for [`GetRecordsOutput`](crate::operation::get_records::GetRecordsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecordsOutputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     pub(crate) next_shard_iterator: ::std::option::Option<::std::string::String>,

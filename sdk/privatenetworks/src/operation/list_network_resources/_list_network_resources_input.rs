@@ -54,8 +54,8 @@ impl ListNetworkResourcesInput {
 }
 
 /// A builder for [`ListNetworkResourcesInput`](crate::operation::list_network_resources::ListNetworkResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNetworkResourcesInputBuilder {
     pub(crate) filters:
         ::std::option::Option<::std::collections::HashMap<crate::types::NetworkResourceFilterKeys, ::std::vec::Vec<::std::string::String>>>,

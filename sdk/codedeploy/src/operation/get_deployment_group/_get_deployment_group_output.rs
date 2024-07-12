@@ -27,8 +27,8 @@ impl GetDeploymentGroupOutput {
 }
 
 /// A builder for [`GetDeploymentGroupOutput`](crate::operation::get_deployment_group::GetDeploymentGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeploymentGroupOutputBuilder {
     pub(crate) deployment_group_info: ::std::option::Option<crate::types::DeploymentGroupInfo>,
     _request_id: Option<String>,

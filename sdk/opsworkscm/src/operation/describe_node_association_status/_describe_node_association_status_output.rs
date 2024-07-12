@@ -52,8 +52,8 @@ impl DescribeNodeAssociationStatusOutput {
 }
 
 /// A builder for [`DescribeNodeAssociationStatusOutput`](crate::operation::describe_node_association_status::DescribeNodeAssociationStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNodeAssociationStatusOutputBuilder {
     pub(crate) node_association_status: ::std::option::Option<crate::types::NodeAssociationStatus>,
     pub(crate) engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,

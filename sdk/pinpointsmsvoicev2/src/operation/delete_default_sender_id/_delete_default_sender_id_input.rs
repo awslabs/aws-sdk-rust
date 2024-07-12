@@ -20,8 +20,8 @@ impl DeleteDefaultSenderIdInput {
 }
 
 /// A builder for [`DeleteDefaultSenderIdInput`](crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDefaultSenderIdInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }

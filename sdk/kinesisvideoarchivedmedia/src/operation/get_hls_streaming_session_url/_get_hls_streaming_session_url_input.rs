@@ -138,8 +138,8 @@ impl GetHlsStreamingSessionUrlInput {
 }
 
 /// A builder for [`GetHlsStreamingSessionUrlInput`](crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHlsStreamingSessionUrlInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,

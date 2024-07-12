@@ -26,8 +26,8 @@ impl DescribeDashboardPermissionsInput {
 }
 
 /// A builder for [`DescribeDashboardPermissionsInput`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDashboardPermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,

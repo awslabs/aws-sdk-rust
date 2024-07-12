@@ -58,8 +58,8 @@ impl SessionActionSummary {
 }
 
 /// A builder for [`SessionActionSummary`](crate::types::SessionActionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionActionSummaryBuilder {
     pub(crate) session_action_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::SessionActionStatus>,

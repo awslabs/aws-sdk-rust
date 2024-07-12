@@ -33,8 +33,8 @@ impl ListApplicationVersionsOutput {
 }
 
 /// A builder for [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationVersionsOutputBuilder {
     pub(crate) application_versions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

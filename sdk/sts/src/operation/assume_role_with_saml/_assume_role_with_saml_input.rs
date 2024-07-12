@@ -88,8 +88,8 @@ impl AssumeRoleWithSamlInput {
 }
 
 /// A builder for [`AssumeRoleWithSamlInput`](crate::operation::assume_role_with_saml::AssumeRoleWithSamlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssumeRoleWithSamlInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,

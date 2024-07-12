@@ -104,8 +104,8 @@ impl CostTypes {
 }
 
 /// A builder for [`CostTypes`](crate::types::CostTypes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CostTypesBuilder {
     pub(crate) include_tax: ::std::option::Option<bool>,
     pub(crate) include_subscription: ::std::option::Option<bool>,

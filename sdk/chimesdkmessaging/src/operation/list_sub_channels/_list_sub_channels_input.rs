@@ -48,8 +48,8 @@ impl ListSubChannelsInput {
 }
 
 /// A builder for [`ListSubChannelsInput`](crate::operation::list_sub_channels::ListSubChannelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListSubChannelsInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) chime_bearer: ::std::option::Option<::std::string::String>,

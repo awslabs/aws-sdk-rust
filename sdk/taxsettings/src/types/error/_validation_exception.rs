@@ -67,8 +67,8 @@ impl ValidationException {
 }
 
 /// A builder for [`ValidationException`](crate::types::error::ValidationException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ValidationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::ValidationExceptionErrorCode>,

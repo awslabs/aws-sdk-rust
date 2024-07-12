@@ -26,8 +26,8 @@ impl GetClassifierOutput {
 }
 
 /// A builder for [`GetClassifierOutput`](crate::operation::get_classifier::GetClassifierOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClassifierOutputBuilder {
     pub(crate) classifier: ::std::option::Option<crate::types::Classifier>,
     _request_id: Option<String>,

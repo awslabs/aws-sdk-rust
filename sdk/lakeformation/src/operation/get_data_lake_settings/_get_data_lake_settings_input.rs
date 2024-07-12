@@ -20,8 +20,8 @@ impl GetDataLakeSettingsInput {
 }
 
 /// A builder for [`GetDataLakeSettingsInput`](crate::operation::get_data_lake_settings::GetDataLakeSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataLakeSettingsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }

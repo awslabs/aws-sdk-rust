@@ -27,8 +27,8 @@ impl EvaluationStatus {
 }
 
 /// A builder for [`EvaluationStatus`](crate::types::EvaluationStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ResourceEvaluationStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,

@@ -11,8 +11,8 @@ impl GetAdministratorAccountInput {
 }
 
 /// A builder for [`GetAdministratorAccountInput`](crate::operation::get_administrator_account::GetAdministratorAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAdministratorAccountInputBuilder {}
 impl GetAdministratorAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetAdministratorAccountInput`](crate::operation::get_administrator_account::GetAdministratorAccountInput).

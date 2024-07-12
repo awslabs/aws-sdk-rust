@@ -18,8 +18,8 @@ impl DeleteNetworkProfileOutput {
 }
 
 /// A builder for [`DeleteNetworkProfileOutput`](crate::operation::delete_network_profile::DeleteNetworkProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkProfileOutputBuilder {
     _request_id: Option<String>,
 }

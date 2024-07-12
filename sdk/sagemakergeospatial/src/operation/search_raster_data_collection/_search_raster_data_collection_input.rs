@@ -41,8 +41,8 @@ impl SearchRasterDataCollectionInput {
 }
 
 /// A builder for [`SearchRasterDataCollectionInput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchRasterDataCollectionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) raster_data_collection_query: ::std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput>,

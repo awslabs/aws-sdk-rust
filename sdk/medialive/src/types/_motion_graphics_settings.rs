@@ -21,8 +21,8 @@ impl MotionGraphicsSettings {
 }
 
 /// A builder for [`MotionGraphicsSettings`](crate::types::MotionGraphicsSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MotionGraphicsSettingsBuilder {
     pub(crate) html_motion_graphics_settings: ::std::option::Option<crate::types::HtmlMotionGraphicsSettings>,
 }

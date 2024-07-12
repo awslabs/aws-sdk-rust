@@ -33,8 +33,8 @@ impl ContinuousDeploymentPolicyConfig {
 }
 
 /// A builder for [`ContinuousDeploymentPolicyConfig`](crate::types::ContinuousDeploymentPolicyConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContinuousDeploymentPolicyConfigBuilder {
     pub(crate) staging_distribution_dns_names: ::std::option::Option<crate::types::StagingDistributionDnsNames>,
     pub(crate) enabled: ::std::option::Option<bool>,

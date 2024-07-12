@@ -20,8 +20,8 @@ impl StopTrainingEntityRecognizerInput {
 }
 
 /// A builder for [`StopTrainingEntityRecognizerInput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopTrainingEntityRecognizerInputBuilder {
     pub(crate) entity_recognizer_arn: ::std::option::Option<::std::string::String>,
 }

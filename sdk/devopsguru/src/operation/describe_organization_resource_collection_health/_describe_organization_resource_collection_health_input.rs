@@ -49,8 +49,8 @@ impl DescribeOrganizationResourceCollectionHealthInput {
 }
 
 /// A builder for [`DescribeOrganizationResourceCollectionHealthInput`](crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationResourceCollectionHealthInputBuilder {
     pub(crate) organization_resource_collection_type: ::std::option::Option<crate::types::OrganizationResourceCollectionType>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

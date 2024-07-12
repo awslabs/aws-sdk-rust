@@ -20,8 +20,8 @@ impl GetSchemaInput {
 }
 
 /// A builder for [`GetSchemaInput`](crate::operation::get_schema::GetSchemaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSchemaInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
 }

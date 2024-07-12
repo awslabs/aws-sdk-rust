@@ -35,8 +35,8 @@ impl DescribeCacheParameterGroupsOutput {
 }
 
 /// A builder for [`DescribeCacheParameterGroupsOutput`](crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCacheParameterGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cache_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>>,

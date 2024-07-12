@@ -28,8 +28,8 @@ impl DataProductItem {
 }
 
 /// A builder for [`DataProductItem`](crate::types::DataProductItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataProductItemBuilder {
     pub(crate) item_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,

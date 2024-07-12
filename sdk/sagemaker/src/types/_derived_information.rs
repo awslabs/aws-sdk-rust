@@ -21,8 +21,8 @@ impl DerivedInformation {
 }
 
 /// A builder for [`DerivedInformation`](crate::types::DerivedInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DerivedInformationBuilder {
     pub(crate) derived_data_input_config: ::std::option::Option<::std::string::String>,
 }

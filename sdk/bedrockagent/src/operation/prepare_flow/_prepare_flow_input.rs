@@ -20,8 +20,8 @@ impl PrepareFlowInput {
 }
 
 /// A builder for [`PrepareFlowInput`](crate::operation::prepare_flow::PrepareFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrepareFlowInputBuilder {
     pub(crate) flow_identifier: ::std::option::Option<::std::string::String>,
 }

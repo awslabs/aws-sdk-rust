@@ -20,8 +20,8 @@ impl CancelTransactionInput {
 }
 
 /// A builder for [`CancelTransactionInput`](crate::operation::cancel_transaction::CancelTransactionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelTransactionInputBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
 }

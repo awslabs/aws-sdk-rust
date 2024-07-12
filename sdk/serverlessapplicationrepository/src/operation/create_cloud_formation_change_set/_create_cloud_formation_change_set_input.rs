@@ -116,8 +116,8 @@ impl CreateCloudFormationChangeSetInput {
 }
 
 /// A builder for [`CreateCloudFormationChangeSetInput`](crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCloudFormationChangeSetInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

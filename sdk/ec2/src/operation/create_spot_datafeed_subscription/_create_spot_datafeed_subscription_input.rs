@@ -33,8 +33,8 @@ impl CreateSpotDatafeedSubscriptionInput {
 }
 
 /// A builder for [`CreateSpotDatafeedSubscriptionInput`](crate::operation::create_spot_datafeed_subscription::CreateSpotDatafeedSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSpotDatafeedSubscriptionInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

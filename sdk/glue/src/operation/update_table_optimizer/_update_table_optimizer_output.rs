@@ -18,8 +18,8 @@ impl UpdateTableOptimizerOutput {
 }
 
 /// A builder for [`UpdateTableOptimizerOutput`](crate::operation::update_table_optimizer::UpdateTableOptimizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTableOptimizerOutputBuilder {
     _request_id: Option<String>,
 }

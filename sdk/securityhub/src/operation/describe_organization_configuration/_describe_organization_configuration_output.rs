@@ -52,8 +52,8 @@ impl DescribeOrganizationConfigurationOutput {
 }
 
 /// A builder for [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrganizationConfigurationOutputBuilder {
     pub(crate) auto_enable: ::std::option::Option<bool>,
     pub(crate) member_account_limit_reached: ::std::option::Option<bool>,

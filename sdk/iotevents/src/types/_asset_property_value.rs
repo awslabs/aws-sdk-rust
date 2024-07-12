@@ -42,8 +42,8 @@ impl AssetPropertyValue {
 }
 
 /// A builder for [`AssetPropertyValue`](crate::types::AssetPropertyValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetPropertyValueBuilder {
     pub(crate) value: ::std::option::Option<crate::types::AssetPropertyVariant>,
     pub(crate) timestamp: ::std::option::Option<crate::types::AssetPropertyTimestamp>,

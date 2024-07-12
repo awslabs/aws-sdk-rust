@@ -45,8 +45,8 @@ impl DatasetDefinition {
 }
 
 /// A builder for [`DatasetDefinition`](crate::types::DatasetDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetDefinitionBuilder {
     pub(crate) athena_dataset_definition: ::std::option::Option<crate::types::AthenaDatasetDefinition>,
     pub(crate) redshift_dataset_definition: ::std::option::Option<crate::types::RedshiftDatasetDefinition>,

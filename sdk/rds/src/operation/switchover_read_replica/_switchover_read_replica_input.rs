@@ -30,8 +30,8 @@ impl SwitchoverReadReplicaInput {
 }
 
 /// A builder for [`SwitchoverReadReplicaInput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SwitchoverReadReplicaInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
 }

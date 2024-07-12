@@ -56,8 +56,8 @@ impl ListTransactionEventsInput {
 }
 
 /// A builder for [`ListTransactionEventsInput`](crate::operation::list_transaction_events::ListTransactionEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTransactionEventsInputBuilder {
     pub(crate) transaction_hash: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,

@@ -75,8 +75,8 @@ impl PipelineActivity {
 }
 
 /// A builder for [`PipelineActivity`](crate::types::PipelineActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineActivityBuilder {
     pub(crate) channel: ::std::option::Option<crate::types::ChannelActivity>,
     pub(crate) lambda: ::std::option::Option<crate::types::LambdaActivity>,

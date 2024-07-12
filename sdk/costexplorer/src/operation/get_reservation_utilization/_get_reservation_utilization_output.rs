@@ -39,8 +39,8 @@ impl GetReservationUtilizationOutput {
 }
 
 /// A builder for [`GetReservationUtilizationOutput`](crate::operation::get_reservation_utilization::GetReservationUtilizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReservationUtilizationOutputBuilder {
     pub(crate) utilizations_by_time: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>>,
     pub(crate) total: ::std::option::Option<crate::types::ReservationAggregates>,

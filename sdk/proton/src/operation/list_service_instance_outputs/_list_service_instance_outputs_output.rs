@@ -33,8 +33,8 @@ impl ListServiceInstanceOutputsOutput {
 }
 
 /// A builder for [`ListServiceInstanceOutputsOutput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceInstanceOutputsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,

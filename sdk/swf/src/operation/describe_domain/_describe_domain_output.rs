@@ -33,8 +33,8 @@ impl DescribeDomainOutput {
 }
 
 /// A builder for [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainOutputBuilder {
     pub(crate) domain_info: ::std::option::Option<crate::types::DomainInfo>,
     pub(crate) configuration: ::std::option::Option<crate::types::DomainConfiguration>,

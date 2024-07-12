@@ -35,8 +35,8 @@ impl Compliance {
 }
 
 /// A builder for [`Compliance`](crate::types::Compliance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComplianceBuilder {
     pub(crate) compliance_type: ::std::option::Option<crate::types::ComplianceType>,
     pub(crate) compliance_contributor_count: ::std::option::Option<crate::types::ComplianceContributorCount>,

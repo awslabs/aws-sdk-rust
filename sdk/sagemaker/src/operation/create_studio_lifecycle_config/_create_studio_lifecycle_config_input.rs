@@ -40,8 +40,8 @@ impl CreateStudioLifecycleConfigInput {
 }
 
 /// A builder for [`CreateStudioLifecycleConfigInput`](crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStudioLifecycleConfigInputBuilder {
     pub(crate) studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) studio_lifecycle_config_content: ::std::option::Option<::std::string::String>,

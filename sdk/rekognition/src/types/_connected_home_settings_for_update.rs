@@ -29,8 +29,8 @@ impl ConnectedHomeSettingsForUpdate {
 }
 
 /// A builder for [`ConnectedHomeSettingsForUpdate`](crate::types::ConnectedHomeSettingsForUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectedHomeSettingsForUpdateBuilder {
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) min_confidence: ::std::option::Option<f32>,

@@ -55,8 +55,8 @@ impl PropertyDifference {
 }
 
 /// A builder for [`PropertyDifference`](crate::types::PropertyDifference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyDifferenceBuilder {
     pub(crate) property_path: ::std::option::Option<::std::string::String>,
     pub(crate) expected_value: ::std::option::Option<::std::string::String>,

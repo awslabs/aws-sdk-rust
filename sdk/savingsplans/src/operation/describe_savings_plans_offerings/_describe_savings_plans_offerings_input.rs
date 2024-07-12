@@ -112,8 +112,8 @@ impl DescribeSavingsPlansOfferingsInput {
 }
 
 /// A builder for [`DescribeSavingsPlansOfferingsInput`](crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSavingsPlansOfferingsInputBuilder {
     pub(crate) offering_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) payment_options: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,

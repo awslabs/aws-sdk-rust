@@ -86,8 +86,8 @@ impl PutBucketAclInput {
 }
 
 /// A builder for [`PutBucketAclInput`](crate::operation::put_bucket_acl::PutBucketAclInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutBucketAclInputBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::BucketCannedAcl>,
     pub(crate) access_control_policy: ::std::option::Option<crate::types::AccessControlPolicy>,

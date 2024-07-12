@@ -11,8 +11,8 @@ impl GetSmsSandboxAccountStatusInput {
 }
 
 /// A builder for [`GetSmsSandboxAccountStatusInput`](crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSmsSandboxAccountStatusInputBuilder {}
 impl GetSmsSandboxAccountStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetSmsSandboxAccountStatusInput`](crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusInput).

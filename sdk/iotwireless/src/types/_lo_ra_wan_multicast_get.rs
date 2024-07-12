@@ -39,8 +39,8 @@ impl LoRaWanMulticastGet {
 }
 
 /// A builder for [`LoRaWanMulticastGet`](crate::types::LoRaWanMulticastGet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanMulticastGetBuilder {
     pub(crate) rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
     pub(crate) dl_class: ::std::option::Option<crate::types::DlClass>,

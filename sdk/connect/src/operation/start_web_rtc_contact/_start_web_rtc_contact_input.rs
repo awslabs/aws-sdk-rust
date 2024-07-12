@@ -89,8 +89,8 @@ impl StartWebRtcContactInput {
 }
 
 /// A builder for [`StartWebRtcContactInput`](crate::operation::start_web_rtc_contact::StartWebRtcContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartWebRtcContactInputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

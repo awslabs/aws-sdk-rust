@@ -32,8 +32,8 @@ impl CreateQuickConnectOutput {
 }
 
 /// A builder for [`CreateQuickConnectOutput`](crate::operation::create_quick_connect::CreateQuickConnectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateQuickConnectOutputBuilder {
     pub(crate) quick_connect_arn: ::std::option::Option<::std::string::String>,
     pub(crate) quick_connect_id: ::std::option::Option<::std::string::String>,

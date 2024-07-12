@@ -20,8 +20,8 @@ impl DeleteServerInput {
 }
 
 /// A builder for [`DeleteServerInput`](crate::operation::delete_server::DeleteServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServerInputBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
 }

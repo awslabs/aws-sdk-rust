@@ -27,8 +27,8 @@ impl PutJobFailureResultInput {
 }
 
 /// A builder for [`PutJobFailureResultInput`](crate::operation::put_job_failure_result::PutJobFailureResultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutJobFailureResultInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) failure_details: ::std::option::Option<crate::types::FailureDetails>,

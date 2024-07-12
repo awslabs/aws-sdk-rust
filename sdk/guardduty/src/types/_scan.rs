@@ -107,8 +107,8 @@ impl Scan {
 }
 
 /// A builder for [`Scan`](crate::types::Scan).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) admin_detector_id: ::std::option::Option<::std::string::String>,

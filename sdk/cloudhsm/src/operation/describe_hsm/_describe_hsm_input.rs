@@ -27,8 +27,8 @@ impl DescribeHsmInput {
 }
 
 /// A builder for [`DescribeHsmInput`](crate::operation::describe_hsm::DescribeHsmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHsmInputBuilder {
     pub(crate) hsm_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_serial_number: ::std::option::Option<::std::string::String>,

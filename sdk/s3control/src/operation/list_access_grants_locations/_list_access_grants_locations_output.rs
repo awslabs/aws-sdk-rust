@@ -34,8 +34,8 @@ impl ListAccessGrantsLocationsOutput {
 }
 
 /// A builder for [`ListAccessGrantsLocationsOutput`](crate::operation::list_access_grants_locations::ListAccessGrantsLocationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessGrantsLocationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) access_grants_locations_list: ::std::option::Option<::std::vec::Vec<crate::types::ListAccessGrantsLocationsEntry>>,

@@ -34,8 +34,8 @@ impl ListEnvironmentBlueprintConfigurationsOutput {
 }
 
 /// A builder for [`ListEnvironmentBlueprintConfigurationsOutput`](crate::operation::list_environment_blueprint_configurations::ListEnvironmentBlueprintConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentBlueprintConfigurationsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentBlueprintConfigurationItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

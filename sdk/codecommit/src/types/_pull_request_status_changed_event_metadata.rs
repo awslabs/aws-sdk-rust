@@ -21,8 +21,8 @@ impl PullRequestStatusChangedEventMetadata {
 }
 
 /// A builder for [`PullRequestStatusChangedEventMetadata`](crate::types::PullRequestStatusChangedEventMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PullRequestStatusChangedEventMetadataBuilder {
     pub(crate) pull_request_status: ::std::option::Option<crate::types::PullRequestStatusEnum>,
 }

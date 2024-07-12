@@ -26,8 +26,8 @@ impl GetProposalInput {
 }
 
 /// A builder for [`GetProposalInput`](crate::operation::get_proposal::GetProposalInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProposalInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,

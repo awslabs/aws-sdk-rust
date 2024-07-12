@@ -32,8 +32,8 @@ impl GetObjectRetentionOutput {
 }
 
 /// A builder for [`GetObjectRetentionOutput`](crate::operation::get_object_retention::GetObjectRetentionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectRetentionOutputBuilder {
     pub(crate) retention: ::std::option::Option<crate::types::ObjectLockRetention>,
     _extended_request_id: Option<String>,

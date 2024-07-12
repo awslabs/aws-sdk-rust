@@ -21,8 +21,8 @@ impl ExternalSourceSetting {
 }
 
 /// A builder for [`ExternalSourceSetting`](crate::types::ExternalSourceSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExternalSourceSettingBuilder {
     pub(crate) grammar_slot_type_setting: ::std::option::Option<crate::types::GrammarSlotTypeSetting>,
 }

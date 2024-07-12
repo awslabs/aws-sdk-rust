@@ -27,8 +27,8 @@ impl RuntimeDetails {
 }
 
 /// A builder for [`RuntimeDetails`](crate::types::RuntimeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuntimeDetailsBuilder {
     pub(crate) process: ::std::option::Option<crate::types::ProcessDetails>,
     pub(crate) context: ::std::option::Option<crate::types::RuntimeContext>,

@@ -28,8 +28,8 @@ impl StreamConfigurationSessionStorage {
 }
 
 /// A builder for [`StreamConfigurationSessionStorage`](crate::types::StreamConfigurationSessionStorage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamConfigurationSessionStorageBuilder {
     pub(crate) root: ::std::option::Option<crate::types::StreamingSessionStorageRoot>,
     pub(crate) mode: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionStorageMode>>,

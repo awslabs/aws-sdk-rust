@@ -20,8 +20,8 @@ impl GetSampleDataInput {
 }
 
 /// A builder for [`GetSampleDataInput`](crate::operation::get_sample_data::GetSampleDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSampleDataInputBuilder {
     pub(crate) s3_source_config: ::std::option::Option<crate::types::SampleDataS3SourceConfig>,
 }

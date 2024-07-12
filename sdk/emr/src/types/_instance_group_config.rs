@@ -83,8 +83,8 @@ impl InstanceGroupConfig {
 }
 
 /// A builder for [`InstanceGroupConfig`](crate::types::InstanceGroupConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceGroupConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) market: ::std::option::Option<crate::types::MarketType>,

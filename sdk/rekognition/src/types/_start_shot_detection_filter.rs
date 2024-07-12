@@ -23,8 +23,8 @@ impl StartShotDetectionFilter {
 }
 
 /// A builder for [`StartShotDetectionFilter`](crate::types::StartShotDetectionFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartShotDetectionFilterBuilder {
     pub(crate) min_segment_confidence: ::std::option::Option<f32>,
 }

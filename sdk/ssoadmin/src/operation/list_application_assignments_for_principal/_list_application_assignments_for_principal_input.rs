@@ -50,8 +50,8 @@ impl ListApplicationAssignmentsForPrincipalInput {
 }
 
 /// A builder for [`ListApplicationAssignmentsForPrincipalInput`](crate::operation::list_application_assignments_for_principal::ListApplicationAssignmentsForPrincipalInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationAssignmentsForPrincipalInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,

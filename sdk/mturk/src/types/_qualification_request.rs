@@ -51,8 +51,8 @@ impl QualificationRequest {
 }
 
 /// A builder for [`QualificationRequest`](crate::types::QualificationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QualificationRequestBuilder {
     pub(crate) qualification_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,

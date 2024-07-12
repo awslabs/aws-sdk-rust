@@ -20,8 +20,8 @@ impl GetDeviceDefinitionInput {
 }
 
 /// A builder for [`GetDeviceDefinitionInput`](crate::operation::get_device_definition::GetDeviceDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeviceDefinitionInputBuilder {
     pub(crate) device_definition_id: ::std::option::Option<::std::string::String>,
 }

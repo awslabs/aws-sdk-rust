@@ -66,8 +66,8 @@ impl ResponseHeadersPolicyReferrerPolicy {
 }
 
 /// A builder for [`ResponseHeadersPolicyReferrerPolicy`](crate::types::ResponseHeadersPolicyReferrerPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyReferrerPolicyBuilder {
     pub(crate) r#override: ::std::option::Option<bool>,
     pub(crate) referrer_policy: ::std::option::Option<crate::types::ReferrerPolicyList>,

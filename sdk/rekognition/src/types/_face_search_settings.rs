@@ -27,8 +27,8 @@ impl FaceSearchSettings {
 }
 
 /// A builder for [`FaceSearchSettings`](crate::types::FaceSearchSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FaceSearchSettingsBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) face_match_threshold: ::std::option::Option<f32>,

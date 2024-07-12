@@ -32,8 +32,8 @@ impl PutAccessGrantsInstanceResourcePolicyInput {
 }
 
 /// A builder for [`PutAccessGrantsInstanceResourcePolicyInput`](crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccessGrantsInstanceResourcePolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

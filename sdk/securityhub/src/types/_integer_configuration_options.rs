@@ -33,8 +33,8 @@ impl IntegerConfigurationOptions {
 }
 
 /// A builder for [`IntegerConfigurationOptions`](crate::types::IntegerConfigurationOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntegerConfigurationOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<i32>,
     pub(crate) min: ::std::option::Option<i32>,

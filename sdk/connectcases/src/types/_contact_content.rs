@@ -35,8 +35,8 @@ impl ContactContent {
 }
 
 /// A builder for [`ContactContent`](crate::types::ContactContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContactContentBuilder {
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl AwsEc2SecurityGroupIpRange {
 }
 
 /// A builder for [`AwsEc2SecurityGroupIpRange`](crate::types::AwsEc2SecurityGroupIpRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2SecurityGroupIpRangeBuilder {
     pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,
 }

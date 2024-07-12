@@ -29,8 +29,8 @@ impl DescribeVolumesOutput {
 }
 
 /// A builder for [`DescribeVolumesOutput`](crate::operation::describe_volumes::DescribeVolumesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVolumesOutputBuilder {
     pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     _request_id: Option<String>,

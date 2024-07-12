@@ -27,8 +27,8 @@ impl AttachedDisk {
 }
 
 /// A builder for [`AttachedDisk`](crate::types::AttachedDisk).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachedDiskBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) size_in_gb: ::std::option::Option<i32>,

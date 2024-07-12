@@ -59,8 +59,8 @@ impl NamespaceAlreadyExists {
 }
 
 /// A builder for [`NamespaceAlreadyExists`](crate::types::error::NamespaceAlreadyExists).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NamespaceAlreadyExistsBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,

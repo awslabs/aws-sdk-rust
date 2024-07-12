@@ -32,8 +32,8 @@ impl ResetDeploymentsOutput {
 }
 
 /// A builder for [`ResetDeploymentsOutput`](crate::operation::reset_deployments::ResetDeploymentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetDeploymentsOutputBuilder {
     pub(crate) deployment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,

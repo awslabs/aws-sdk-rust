@@ -33,8 +33,8 @@ impl ListEnvironmentProfilesOutput {
 }
 
 /// A builder for [`ListEnvironmentProfilesOutput`](crate::operation::list_environment_profiles::ListEnvironmentProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentProfilesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

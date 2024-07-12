@@ -34,8 +34,8 @@ impl ListSchemasOutput {
 }
 
 /// A builder for [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSchemasOutputBuilder {
     pub(crate) schemas: ::std::option::Option<::std::vec::Vec<crate::types::SchemaListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

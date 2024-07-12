@@ -19,8 +19,8 @@ impl AdminDeleteUserAttributesOutput {
 }
 
 /// A builder for [`AdminDeleteUserAttributesOutput`](crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminDeleteUserAttributesOutputBuilder {
     _request_id: Option<String>,
 }

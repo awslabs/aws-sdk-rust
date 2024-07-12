@@ -28,8 +28,8 @@ impl UpdateCodeRepositoryInput {
 }
 
 /// A builder for [`UpdateCodeRepositoryInput`](crate::operation::update_code_repository::UpdateCodeRepositoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCodeRepositoryInputBuilder {
     pub(crate) code_repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) git_config: ::std::option::Option<crate::types::GitConfigForUpdate>,

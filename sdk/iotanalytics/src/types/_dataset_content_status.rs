@@ -27,8 +27,8 @@ impl DatasetContentStatus {
 }
 
 /// A builder for [`DatasetContentStatus`](crate::types::DatasetContentStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetContentStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::DatasetContentState>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

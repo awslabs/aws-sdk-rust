@@ -28,8 +28,8 @@ impl NewStudioMember {
 }
 
 /// A builder for [`NewStudioMember`](crate::types::NewStudioMember).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NewStudioMemberBuilder {
     pub(crate) persona: ::std::option::Option<crate::types::StudioPersona>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,

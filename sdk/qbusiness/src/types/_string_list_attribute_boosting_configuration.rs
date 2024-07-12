@@ -24,8 +24,8 @@ impl StringListAttributeBoostingConfiguration {
 }
 
 /// A builder for [`StringListAttributeBoostingConfiguration`](crate::types::StringListAttributeBoostingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StringListAttributeBoostingConfigurationBuilder {
     pub(crate) boosting_level: ::std::option::Option<crate::types::DocumentAttributeBoostingLevel>,
 }

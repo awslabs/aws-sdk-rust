@@ -50,8 +50,8 @@ impl CreateServiceNetworkInput {
 }
 
 /// A builder for [`CreateServiceNetworkInput`](crate::operation::create_service_network::CreateServiceNetworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServiceNetworkInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

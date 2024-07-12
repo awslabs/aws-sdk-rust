@@ -27,8 +27,8 @@ impl AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDe
 }
 
 /// A builder for [`AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetailsBuilder {
     pub(crate) encryption_option: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,

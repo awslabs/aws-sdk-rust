@@ -34,8 +34,8 @@ impl ListProfileResourceAssociationsOutput {
 }
 
 /// A builder for [`ListProfileResourceAssociationsOutput`](crate::operation::list_profile_resource_associations::ListProfileResourceAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfileResourceAssociationsOutputBuilder {
     pub(crate) profile_resource_associations: ::std::option::Option<::std::vec::Vec<crate::types::ProfileResourceAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

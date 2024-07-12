@@ -34,8 +34,8 @@ impl UpdateScheduleInput {
 }
 
 /// A builder for [`UpdateScheduleInput`](crate::operation::update_schedule::UpdateScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateScheduleInputBuilder {
     pub(crate) job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cron_expression: ::std::option::Option<::std::string::String>,

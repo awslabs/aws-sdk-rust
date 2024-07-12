@@ -137,8 +137,8 @@ impl StopChannelOutput {
 }
 
 /// A builder for [`StopChannelOutput`](crate::operation::stop_channel::StopChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopChannelOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) cdi_input_specification: ::std::option::Option<crate::types::CdiInputSpecification>,

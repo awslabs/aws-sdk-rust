@@ -45,8 +45,8 @@ impl SendDataPoint {
 }
 
 /// A builder for [`SendDataPoint`](crate::types::SendDataPoint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendDataPointBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delivery_attempts: ::std::option::Option<i64>,

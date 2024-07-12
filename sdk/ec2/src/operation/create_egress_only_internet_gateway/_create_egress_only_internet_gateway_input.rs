@@ -40,8 +40,8 @@ impl CreateEgressOnlyInternetGatewayInput {
 }
 
 /// A builder for [`CreateEgressOnlyInternetGatewayInput`](crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEgressOnlyInternetGatewayInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

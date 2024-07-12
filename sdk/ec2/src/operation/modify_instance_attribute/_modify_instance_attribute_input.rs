@@ -134,8 +134,8 @@ impl ModifyInstanceAttributeInput {
 }
 
 /// A builder for [`ModifyInstanceAttributeInput`](crate::operation::modify_instance_attribute::ModifyInstanceAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstanceAttributeInputBuilder {
     pub(crate) source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) attribute: ::std::option::Option<crate::types::InstanceAttributeName>,

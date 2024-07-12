@@ -33,8 +33,8 @@ impl RedshiftMetadata {
 }
 
 /// A builder for [`RedshiftMetadata`](crate::types::RedshiftMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedshiftMetadataBuilder {
     pub(crate) redshift_database: ::std::option::Option<crate::types::RedshiftDatabase>,
     pub(crate) database_user_name: ::std::option::Option<::std::string::String>,

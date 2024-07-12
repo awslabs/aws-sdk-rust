@@ -34,8 +34,8 @@ impl ListControlInsightsByControlDomainOutput {
 }
 
 /// A builder for [`ListControlInsightsByControlDomainOutput`](crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListControlInsightsByControlDomainOutputBuilder {
     pub(crate) control_insights_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

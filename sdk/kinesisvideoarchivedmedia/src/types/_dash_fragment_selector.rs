@@ -37,8 +37,8 @@ impl DashFragmentSelector {
 }
 
 /// A builder for [`DashFragmentSelector`](crate::types::DashFragmentSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashFragmentSelectorBuilder {
     pub(crate) fragment_selector_type: ::std::option::Option<crate::types::DashFragmentSelectorType>,
     pub(crate) timestamp_range: ::std::option::Option<crate::types::DashTimestampRange>,

@@ -26,8 +26,8 @@ impl CreateTransitGatewayPeeringOutput {
 }
 
 /// A builder for [`CreateTransitGatewayPeeringOutput`](crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitGatewayPeeringOutputBuilder {
     pub(crate) transit_gateway_peering: ::std::option::Option<crate::types::TransitGatewayPeering>,
     _request_id: Option<String>,

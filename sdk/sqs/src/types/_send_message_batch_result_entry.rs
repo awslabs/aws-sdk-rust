@@ -58,8 +58,8 @@ impl SendMessageBatchResultEntry {
 }
 
 /// A builder for [`SendMessageBatchResultEntry`](crate::types::SendMessageBatchResultEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendMessageBatchResultEntryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetResolverDnssecConfigOutput {
 }
 
 /// A builder for [`GetResolverDnssecConfigOutput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResolverDnssecConfigOutputBuilder {
     pub(crate) resolver_dnssec_config: ::std::option::Option<crate::types::ResolverDnssecConfig>,
     _request_id: Option<String>,

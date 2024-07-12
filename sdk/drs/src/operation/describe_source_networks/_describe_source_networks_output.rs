@@ -34,8 +34,8 @@ impl DescribeSourceNetworksOutput {
 }
 
 /// A builder for [`DescribeSourceNetworksOutput`](crate::operation::describe_source_networks::DescribeSourceNetworksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSourceNetworksOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SourceNetwork>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

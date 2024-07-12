@@ -29,8 +29,8 @@ impl EcrContainerImageMetadata {
 }
 
 /// A builder for [`EcrContainerImageMetadata`](crate::types::EcrContainerImageMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcrContainerImageMetadataBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) image_pulled_at: ::std::option::Option<::aws_smithy_types::DateTime>,

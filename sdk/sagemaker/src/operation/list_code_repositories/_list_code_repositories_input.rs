@@ -68,8 +68,8 @@ impl ListCodeRepositoriesInput {
 }
 
 /// A builder for [`ListCodeRepositoriesInput`](crate::operation::list_code_repositories::ListCodeRepositoriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCodeRepositoriesInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,

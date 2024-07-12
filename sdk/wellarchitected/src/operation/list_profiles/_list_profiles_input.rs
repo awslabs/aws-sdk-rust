@@ -38,8 +38,8 @@ impl ListProfilesInput {
 }
 
 /// A builder for [`ListProfilesInput`](crate::operation::list_profiles::ListProfilesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProfilesInputBuilder {
     pub(crate) profile_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) profile_owner_type: ::std::option::Option<crate::types::ProfileOwnerType>,

@@ -26,8 +26,8 @@ impl SendTestEventNotificationInput {
 }
 
 /// A builder for [`SendTestEventNotificationInput`](crate::operation::send_test_event_notification::SendTestEventNotificationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendTestEventNotificationInputBuilder {
     pub(crate) notification: ::std::option::Option<crate::types::NotificationSpecification>,
     pub(crate) test_event_type: ::std::option::Option<crate::types::EventType>,

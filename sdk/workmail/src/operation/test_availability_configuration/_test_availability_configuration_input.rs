@@ -38,8 +38,8 @@ impl TestAvailabilityConfigurationInput {
 }
 
 /// A builder for [`TestAvailabilityConfigurationInput`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestAvailabilityConfigurationInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

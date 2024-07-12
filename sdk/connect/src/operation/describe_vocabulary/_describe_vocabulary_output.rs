@@ -26,8 +26,8 @@ impl DescribeVocabularyOutput {
 }
 
 /// A builder for [`DescribeVocabularyOutput`](crate::operation::describe_vocabulary::DescribeVocabularyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVocabularyOutputBuilder {
     pub(crate) vocabulary: ::std::option::Option<crate::types::Vocabulary>,
     _request_id: Option<String>,

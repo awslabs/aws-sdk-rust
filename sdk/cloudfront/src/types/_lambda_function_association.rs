@@ -56,8 +56,8 @@ impl LambdaFunctionAssociation {
 }
 
 /// A builder for [`LambdaFunctionAssociation`](crate::types::LambdaFunctionAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaFunctionAssociationBuilder {
     pub(crate) lambda_function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<crate::types::EventType>,

@@ -45,8 +45,8 @@ impl MediaPipeline {
 }
 
 /// A builder for [`MediaPipeline`](crate::types::MediaPipeline).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaPipelineBuilder {
     pub(crate) media_capture_pipeline: ::std::option::Option<crate::types::MediaCapturePipeline>,
     pub(crate) media_live_connector_pipeline: ::std::option::Option<crate::types::MediaLiveConnectorPipeline>,

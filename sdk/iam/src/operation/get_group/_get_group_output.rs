@@ -46,8 +46,8 @@ impl GetGroupOutput {
 }
 
 /// A builder for [`GetGroupOutput`](crate::operation::get_group::GetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGroupOutputBuilder {
     pub(crate) group: ::std::option::Option<crate::types::Group>,
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,

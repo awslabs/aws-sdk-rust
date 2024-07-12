@@ -163,8 +163,8 @@ impl Nodegroup {
 }
 
 /// A builder for [`Nodegroup`](crate::types::Nodegroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodegroupBuilder {
     pub(crate) nodegroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) nodegroup_arn: ::std::option::Option<::std::string::String>,

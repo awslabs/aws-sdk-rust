@@ -20,8 +20,8 @@ impl DeleteWirelessGatewayTaskInput {
 }
 
 /// A builder for [`DeleteWirelessGatewayTaskInput`](crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWirelessGatewayTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

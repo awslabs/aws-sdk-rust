@@ -20,8 +20,8 @@ impl CreateAppInput {
 }
 
 /// A builder for [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAppInputBuilder {
     pub(crate) create_application_request: ::std::option::Option<crate::types::CreateApplicationRequest>,
 }

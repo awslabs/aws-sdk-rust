@@ -27,8 +27,8 @@ impl AccessMethod {
 }
 
 /// A builder for [`AccessMethod`](crate::types::AccessMethod).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessMethodBuilder {
     pub(crate) custom_object_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) access_method_type: ::std::option::Option<crate::types::AccessMethodType>,

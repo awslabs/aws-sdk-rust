@@ -18,8 +18,8 @@ impl DeleteFlowTemplateOutput {
 }
 
 /// A builder for [`DeleteFlowTemplateOutput`](crate::operation::delete_flow_template::DeleteFlowTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFlowTemplateOutputBuilder {
     _request_id: Option<String>,
 }

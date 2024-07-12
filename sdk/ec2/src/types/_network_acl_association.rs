@@ -33,8 +33,8 @@ impl NetworkAclAssociation {
 }
 
 /// A builder for [`NetworkAclAssociation`](crate::types::NetworkAclAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkAclAssociationBuilder {
     pub(crate) network_acl_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_acl_id: ::std::option::Option<::std::string::String>,

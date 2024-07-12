@@ -18,8 +18,8 @@ impl DisassociateKmsKeyOutput {
 }
 
 /// A builder for [`DisassociateKmsKeyOutput`](crate::operation::disassociate_kms_key::DisassociateKmsKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateKmsKeyOutputBuilder {
     _request_id: Option<String>,
 }

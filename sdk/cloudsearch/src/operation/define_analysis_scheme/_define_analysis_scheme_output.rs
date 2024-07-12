@@ -27,8 +27,8 @@ impl DefineAnalysisSchemeOutput {
 }
 
 /// A builder for [`DefineAnalysisSchemeOutput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefineAnalysisSchemeOutputBuilder {
     pub(crate) analysis_scheme: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
     _request_id: Option<String>,

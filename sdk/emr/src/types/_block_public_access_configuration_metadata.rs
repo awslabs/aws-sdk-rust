@@ -27,8 +27,8 @@ impl BlockPublicAccessConfigurationMetadata {
 }
 
 /// A builder for [`BlockPublicAccessConfigurationMetadata`](crate::types::BlockPublicAccessConfigurationMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlockPublicAccessConfigurationMetadataBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by_arn: ::std::option::Option<::std::string::String>,

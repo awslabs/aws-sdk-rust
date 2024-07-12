@@ -20,8 +20,8 @@ impl GetGroupCertificateConfigurationInput {
 }
 
 /// A builder for [`GetGroupCertificateConfigurationInput`](crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGroupCertificateConfigurationInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }

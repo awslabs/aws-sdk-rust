@@ -68,8 +68,8 @@ impl PutSchemaVersionMetadataOutput {
 }
 
 /// A builder for [`PutSchemaVersionMetadataOutput`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSchemaVersionMetadataOutputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,

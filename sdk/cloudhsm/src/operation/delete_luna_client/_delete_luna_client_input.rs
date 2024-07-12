@@ -20,8 +20,8 @@ impl DeleteLunaClientInput {
 }
 
 /// A builder for [`DeleteLunaClientInput`](crate::operation::delete_luna_client::DeleteLunaClientInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLunaClientInputBuilder {
     pub(crate) client_arn: ::std::option::Option<::std::string::String>,
 }

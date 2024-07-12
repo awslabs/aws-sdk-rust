@@ -21,8 +21,8 @@ impl DisconnectReason {
 }
 
 /// A builder for [`DisconnectReason`](crate::types::DisconnectReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisconnectReasonBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
 }

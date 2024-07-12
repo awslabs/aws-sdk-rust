@@ -19,8 +19,8 @@ impl DeactivatePipelineOutput {
 }
 
 /// A builder for [`DeactivatePipelineOutput`](crate::operation::deactivate_pipeline::DeactivatePipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivatePipelineOutputBuilder {
     _request_id: Option<String>,
 }

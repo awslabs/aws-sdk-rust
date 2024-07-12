@@ -21,8 +21,8 @@ impl PipelineRollbackMetadata {
 }
 
 /// A builder for [`PipelineRollbackMetadata`](crate::types::PipelineRollbackMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipelineRollbackMetadataBuilder {
     pub(crate) rollback_target_pipeline_execution_id: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl DeleteKxEnvironmentInput {
 }
 
 /// A builder for [`DeleteKxEnvironmentInput`](crate::operation::delete_kx_environment::DeleteKxEnvironmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKxEnvironmentInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

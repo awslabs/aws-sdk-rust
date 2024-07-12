@@ -18,8 +18,8 @@ impl DeleteActivationOutput {
 }
 
 /// A builder for [`DeleteActivationOutput`](crate::operation::delete_activation::DeleteActivationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteActivationOutputBuilder {
     _request_id: Option<String>,
 }

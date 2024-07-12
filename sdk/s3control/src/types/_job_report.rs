@@ -59,8 +59,8 @@ impl JobReport {
 }
 
 /// A builder for [`JobReport`](crate::types::JobReport).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobReportBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::JobReportFormat>,

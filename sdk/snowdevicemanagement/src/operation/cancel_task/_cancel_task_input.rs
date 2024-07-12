@@ -20,8 +20,8 @@ impl CancelTaskInput {
 }
 
 /// A builder for [`CancelTaskInput`](crate::operation::cancel_task::CancelTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl ListDistributionsInput {
 }
 
 /// A builder for [`ListDistributionsInput`](crate::operation::list_distributions::ListDistributionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,

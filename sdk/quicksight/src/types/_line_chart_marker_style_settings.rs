@@ -63,8 +63,8 @@ impl LineChartMarkerStyleSettings {
 }
 
 /// A builder for [`LineChartMarkerStyleSettings`](crate::types::LineChartMarkerStyleSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineChartMarkerStyleSettingsBuilder {
     pub(crate) marker_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) marker_shape: ::std::option::Option<crate::types::LineChartMarkerShape>,

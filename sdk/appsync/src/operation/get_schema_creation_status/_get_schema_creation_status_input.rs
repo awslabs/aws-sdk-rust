@@ -20,8 +20,8 @@ impl GetSchemaCreationStatusInput {
 }
 
 /// A builder for [`GetSchemaCreationStatusInput`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSchemaCreationStatusInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }

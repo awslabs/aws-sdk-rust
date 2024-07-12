@@ -26,8 +26,8 @@ impl DeletePricingPlanOutput {
 }
 
 /// A builder for [`DeletePricingPlanOutput`](crate::operation::delete_pricing_plan::DeletePricingPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePricingPlanOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

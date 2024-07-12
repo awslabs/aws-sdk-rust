@@ -51,8 +51,8 @@ impl PartnerIntegrationInfo {
 }
 
 /// A builder for [`PartnerIntegrationInfo`](crate::types::PartnerIntegrationInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PartnerIntegrationInfoBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) partner_name: ::std::option::Option<::std::string::String>,

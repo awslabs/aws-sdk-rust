@@ -26,8 +26,8 @@ impl RotateIngestEndpointCredentialsInput {
 }
 
 /// A builder for [`RotateIngestEndpointCredentialsInput`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RotateIngestEndpointCredentialsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ingest_endpoint_id: ::std::option::Option<::std::string::String>,

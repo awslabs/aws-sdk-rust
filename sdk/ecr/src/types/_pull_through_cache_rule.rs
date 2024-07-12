@@ -57,8 +57,8 @@ impl PullThroughCacheRule {
 }
 
 /// A builder for [`PullThroughCacheRule`](crate::types::PullThroughCacheRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PullThroughCacheRuleBuilder {
     pub(crate) ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) upstream_registry_url: ::std::option::Option<::std::string::String>,

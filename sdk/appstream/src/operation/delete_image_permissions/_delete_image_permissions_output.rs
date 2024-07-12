@@ -18,8 +18,8 @@ impl DeleteImagePermissionsOutput {
 }
 
 /// A builder for [`DeleteImagePermissionsOutput`](crate::operation::delete_image_permissions::DeleteImagePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteImagePermissionsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -27,8 +27,8 @@ impl DeprecateThingTypeInput {
 }
 
 /// A builder for [`DeprecateThingTypeInput`](crate::operation::deprecate_thing_type::DeprecateThingTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprecateThingTypeInputBuilder {
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) undo_deprecate: ::std::option::Option<bool>,

@@ -18,8 +18,8 @@ impl DeleteRolePolicyOutput {
 }
 
 /// A builder for [`DeleteRolePolicyOutput`](crate::operation::delete_role_policy::DeleteRolePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRolePolicyOutputBuilder {
     _request_id: Option<String>,
 }

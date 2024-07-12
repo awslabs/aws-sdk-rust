@@ -39,8 +39,8 @@ impl InputAttachment {
 }
 
 /// A builder for [`InputAttachment`](crate::types::InputAttachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputAttachmentBuilder {
     pub(crate) automatic_input_failover_settings: ::std::option::Option<crate::types::AutomaticInputFailoverSettings>,
     pub(crate) input_attachment_name: ::std::option::Option<::std::string::String>,

@@ -58,8 +58,8 @@ impl CreateNodeFromTemplateJobInput {
 }
 
 /// A builder for [`CreateNodeFromTemplateJobInput`](crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNodeFromTemplateJobInputBuilder {
     pub(crate) template_type: ::std::option::Option<crate::types::TemplateType>,
     pub(crate) output_package_name: ::std::option::Option<::std::string::String>,

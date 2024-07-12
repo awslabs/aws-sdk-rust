@@ -18,8 +18,8 @@ impl DeleteHubContentReferenceOutput {
 }
 
 /// A builder for [`DeleteHubContentReferenceOutput`](crate::operation::delete_hub_content_reference::DeleteHubContentReferenceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHubContentReferenceOutputBuilder {
     _request_id: Option<String>,
 }

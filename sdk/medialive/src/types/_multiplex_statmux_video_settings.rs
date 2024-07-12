@@ -33,8 +33,8 @@ impl MultiplexStatmuxVideoSettings {
 }
 
 /// A builder for [`MultiplexStatmuxVideoSettings`](crate::types::MultiplexStatmuxVideoSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiplexStatmuxVideoSettingsBuilder {
     pub(crate) maximum_bitrate: ::std::option::Option<i32>,
     pub(crate) minimum_bitrate: ::std::option::Option<i32>,

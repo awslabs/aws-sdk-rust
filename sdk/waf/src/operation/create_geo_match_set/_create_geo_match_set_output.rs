@@ -32,8 +32,8 @@ impl CreateGeoMatchSetOutput {
 }
 
 /// A builder for [`CreateGeoMatchSetOutput`](crate::operation::create_geo_match_set::CreateGeoMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGeoMatchSetOutputBuilder {
     pub(crate) geo_match_set: ::std::option::Option<crate::types::GeoMatchSet>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

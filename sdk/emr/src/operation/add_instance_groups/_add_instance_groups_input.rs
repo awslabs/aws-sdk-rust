@@ -29,8 +29,8 @@ impl AddInstanceGroupsInput {
 }
 
 /// A builder for [`AddInstanceGroupsInput`](crate::operation::add_instance_groups::AddInstanceGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddInstanceGroupsInputBuilder {
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>>,
     pub(crate) job_flow_id: ::std::option::Option<::std::string::String>,

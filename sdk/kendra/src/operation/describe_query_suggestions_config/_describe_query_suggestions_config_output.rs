@@ -92,8 +92,8 @@ impl DescribeQuerySuggestionsConfigOutput {
 }
 
 /// A builder for [`DescribeQuerySuggestionsConfigOutput`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeQuerySuggestionsConfigOutputBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::Mode>,
     pub(crate) status: ::std::option::Option<crate::types::QuerySuggestionsStatus>,

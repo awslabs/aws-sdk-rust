@@ -26,8 +26,8 @@ impl DescribeRouteOutput {
 }
 
 /// A builder for [`DescribeRouteOutput`](crate::operation::describe_route::DescribeRouteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRouteOutputBuilder {
     pub(crate) route: ::std::option::Option<crate::types::RouteData>,
     _request_id: Option<String>,

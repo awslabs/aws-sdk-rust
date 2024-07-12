@@ -26,8 +26,8 @@ impl GetChannelPolicyOutput {
 }
 
 /// A builder for [`GetChannelPolicyOutput`](crate::operation::get_channel_policy::GetChannelPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChannelPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

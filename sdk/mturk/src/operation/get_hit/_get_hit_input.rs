@@ -20,8 +20,8 @@ impl GetHitInput {
 }
 
 /// A builder for [`GetHitInput`](crate::operation::get_hit::GetHitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
 }

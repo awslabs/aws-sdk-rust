@@ -21,8 +21,8 @@ impl ReplicationStartingPosition {
 }
 
 /// A builder for [`ReplicationStartingPosition`](crate::types::ReplicationStartingPosition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationStartingPositionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ReplicationStartingPositionType>,
 }

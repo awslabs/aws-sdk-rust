@@ -35,8 +35,8 @@ impl PersonMatch {
 }
 
 /// A builder for [`PersonMatch`](crate::types::PersonMatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PersonMatchBuilder {
     pub(crate) timestamp: ::std::option::Option<i64>,
     pub(crate) person: ::std::option::Option<crate::types::PersonDetail>,

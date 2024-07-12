@@ -35,8 +35,8 @@ impl ListShareInvitationsOutput {
 }
 
 /// A builder for [`ListShareInvitationsOutput`](crate::operation::list_share_invitations::ListShareInvitationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListShareInvitationsOutputBuilder {
     pub(crate) share_invitation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

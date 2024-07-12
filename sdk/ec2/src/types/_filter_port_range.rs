@@ -27,8 +27,8 @@ impl FilterPortRange {
 }
 
 /// A builder for [`FilterPortRange`](crate::types::FilterPortRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterPortRangeBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,

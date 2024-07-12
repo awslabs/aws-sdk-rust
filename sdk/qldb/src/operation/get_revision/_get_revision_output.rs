@@ -41,8 +41,8 @@ impl GetRevisionOutput {
 }
 
 /// A builder for [`GetRevisionOutput`](crate::operation::get_revision::GetRevisionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetRevisionOutputBuilder {
     pub(crate) proof: ::std::option::Option<crate::types::ValueHolder>,
     pub(crate) revision: ::std::option::Option<crate::types::ValueHolder>,

@@ -26,8 +26,8 @@ impl DeletePodIdentityAssociationOutput {
 }
 
 /// A builder for [`DeletePodIdentityAssociationOutput`](crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePodIdentityAssociationOutputBuilder {
     pub(crate) association: ::std::option::Option<crate::types::PodIdentityAssociation>,
     _request_id: Option<String>,

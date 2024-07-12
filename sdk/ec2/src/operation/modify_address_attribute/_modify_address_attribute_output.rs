@@ -26,8 +26,8 @@ impl ModifyAddressAttributeOutput {
 }
 
 /// A builder for [`ModifyAddressAttributeOutput`](crate::operation::modify_address_attribute::ModifyAddressAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyAddressAttributeOutputBuilder {
     pub(crate) address: ::std::option::Option<crate::types::AddressAttribute>,
     _request_id: Option<String>,

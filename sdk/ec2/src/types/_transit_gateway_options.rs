@@ -89,8 +89,8 @@ impl TransitGatewayOptions {
 }
 
 /// A builder for [`TransitGatewayOptions`](crate::types::TransitGatewayOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayOptionsBuilder {
     pub(crate) amazon_side_asn: ::std::option::Option<i64>,
     pub(crate) transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

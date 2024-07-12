@@ -22,8 +22,8 @@ impl BatchDescribeTypeConfigurationsInput {
 }
 
 /// A builder for [`BatchDescribeTypeConfigurationsInput`](crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDescribeTypeConfigurationsInputBuilder {
     pub(crate) type_configuration_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,
 }

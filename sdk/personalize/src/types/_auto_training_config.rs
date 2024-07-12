@@ -23,8 +23,8 @@ impl AutoTrainingConfig {
 }
 
 /// A builder for [`AutoTrainingConfig`](crate::types::AutoTrainingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoTrainingConfigBuilder {
     pub(crate) scheduling_expression: ::std::option::Option<::std::string::String>,
 }

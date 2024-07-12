@@ -28,8 +28,8 @@ impl CreateDbInstanceOutput {
 }
 
 /// A builder for [`CreateDbInstanceOutput`](crate::operation::create_db_instance::CreateDbInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDbInstanceOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,

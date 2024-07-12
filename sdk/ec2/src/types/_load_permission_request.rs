@@ -27,8 +27,8 @@ impl LoadPermissionRequest {
 }
 
 /// A builder for [`LoadPermissionRequest`](crate::types::LoadPermissionRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoadPermissionRequestBuilder {
     pub(crate) group: ::std::option::Option<crate::types::PermissionGroup>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

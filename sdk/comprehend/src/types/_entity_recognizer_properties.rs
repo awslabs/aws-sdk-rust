@@ -171,8 +171,8 @@ impl EntityRecognizerProperties {
 }
 
 /// A builder for [`EntityRecognizerProperties`](crate::types::EntityRecognizerProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EntityRecognizerPropertiesBuilder {
     pub(crate) entity_recognizer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

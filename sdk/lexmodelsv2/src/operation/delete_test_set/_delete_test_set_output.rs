@@ -18,8 +18,8 @@ impl DeleteTestSetOutput {
 }
 
 /// A builder for [`DeleteTestSetOutput`](crate::operation::delete_test_set::DeleteTestSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTestSetOutputBuilder {
     _request_id: Option<String>,
 }

@@ -49,8 +49,8 @@ impl ComponentState {
 }
 
 /// A builder for [`ComponentState`](crate::types::ComponentState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ComponentStateBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,

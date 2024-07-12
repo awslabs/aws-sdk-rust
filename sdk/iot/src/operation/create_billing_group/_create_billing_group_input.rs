@@ -34,8 +34,8 @@ impl CreateBillingGroupInput {
 }
 
 /// A builder for [`CreateBillingGroupInput`](crate::operation::create_billing_group::CreateBillingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBillingGroupInputBuilder {
     pub(crate) billing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_properties: ::std::option::Option<crate::types::BillingGroupProperties>,

@@ -32,8 +32,8 @@ impl GetReplicationJobsInput {
 }
 
 /// A builder for [`GetReplicationJobsInput`](crate::operation::get_replication_jobs::GetReplicationJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReplicationJobsInputBuilder {
     pub(crate) replication_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

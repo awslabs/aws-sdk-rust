@@ -27,8 +27,8 @@ impl GetAnalyzedResourceOutput {
 }
 
 /// A builder for [`GetAnalyzedResourceOutput`](crate::operation::get_analyzed_resource::GetAnalyzedResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnalyzedResourceOutputBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::AnalyzedResource>,
     _request_id: Option<String>,

@@ -92,8 +92,8 @@ impl ModifyDbShardGroupOutput {
 }
 
 /// A builder for [`ModifyDbShardGroupOutput`](crate::operation::modify_db_shard_group::ModifyDbShardGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbShardGroupOutputBuilder {
     pub(crate) db_shard_group_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_shard_group_identifier: ::std::option::Option<::std::string::String>,

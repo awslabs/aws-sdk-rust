@@ -18,8 +18,8 @@ impl DeleteColumnStatisticsForTableOutput {
 }
 
 /// A builder for [`DeleteColumnStatisticsForTableOutput`](crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteColumnStatisticsForTableOutputBuilder {
     _request_id: Option<String>,
 }

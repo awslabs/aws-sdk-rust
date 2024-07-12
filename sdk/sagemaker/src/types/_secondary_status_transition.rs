@@ -250,8 +250,8 @@ impl SecondaryStatusTransition {
 }
 
 /// A builder for [`SecondaryStatusTransition`](crate::types::SecondaryStatusTransition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecondaryStatusTransitionBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SecondaryStatus>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

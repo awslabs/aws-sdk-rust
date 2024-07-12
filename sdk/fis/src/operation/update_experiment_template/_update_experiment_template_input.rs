@@ -68,8 +68,8 @@ impl UpdateExperimentTemplateInput {
 }
 
 /// A builder for [`UpdateExperimentTemplateInput`](crate::operation::update_experiment_template::UpdateExperimentTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateExperimentTemplateInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

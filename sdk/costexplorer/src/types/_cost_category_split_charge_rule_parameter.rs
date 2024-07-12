@@ -28,8 +28,8 @@ impl CostCategorySplitChargeRuleParameter {
 }
 
 /// A builder for [`CostCategorySplitChargeRuleParameter`](crate::types::CostCategorySplitChargeRuleParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CostCategorySplitChargeRuleParameterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -20,8 +20,8 @@ impl DeleteVerifiedDestinationNumberInput {
 }
 
 /// A builder for [`DeleteVerifiedDestinationNumberInput`](crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVerifiedDestinationNumberInputBuilder {
     pub(crate) verified_destination_number_id: ::std::option::Option<::std::string::String>,
 }

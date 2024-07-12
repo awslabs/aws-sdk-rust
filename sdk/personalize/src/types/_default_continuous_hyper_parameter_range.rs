@@ -39,8 +39,8 @@ impl DefaultContinuousHyperParameterRange {
 }
 
 /// A builder for [`DefaultContinuousHyperParameterRange`](crate::types::DefaultContinuousHyperParameterRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultContinuousHyperParameterRangeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) min_value: ::std::option::Option<f64>,

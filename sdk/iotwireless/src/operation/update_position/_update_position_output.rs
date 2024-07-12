@@ -19,8 +19,8 @@ impl UpdatePositionOutput {
 }
 
 /// A builder for [`UpdatePositionOutput`](crate::operation::update_position::UpdatePositionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePositionOutputBuilder {
     _request_id: Option<String>,
 }

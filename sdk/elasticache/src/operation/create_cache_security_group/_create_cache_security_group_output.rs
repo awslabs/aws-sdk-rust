@@ -42,8 +42,8 @@ impl CreateCacheSecurityGroupOutput {
 }
 
 /// A builder for [`CreateCacheSecurityGroupOutput`](crate::operation::create_cache_security_group::CreateCacheSecurityGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCacheSecurityGroupOutputBuilder {
     pub(crate) cache_security_group: ::std::option::Option<crate::types::CacheSecurityGroup>,
     _request_id: Option<String>,

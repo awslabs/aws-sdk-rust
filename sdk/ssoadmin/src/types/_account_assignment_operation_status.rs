@@ -69,8 +69,8 @@ impl AccountAssignmentOperationStatus {
 }
 
 /// A builder for [`AccountAssignmentOperationStatus`](crate::types::AccountAssignmentOperationStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountAssignmentOperationStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatusValues>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

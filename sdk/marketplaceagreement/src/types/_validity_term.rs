@@ -39,8 +39,8 @@ impl ValidityTerm {
 }
 
 /// A builder for [`ValidityTerm`](crate::types::ValidityTerm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidityTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) agreement_duration: ::std::option::Option<::std::string::String>,

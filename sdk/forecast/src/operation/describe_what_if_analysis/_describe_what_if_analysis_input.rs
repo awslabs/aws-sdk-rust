@@ -20,8 +20,8 @@ impl DescribeWhatIfAnalysisInput {
 }
 
 /// A builder for [`DescribeWhatIfAnalysisInput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWhatIfAnalysisInputBuilder {
     pub(crate) what_if_analysis_arn: ::std::option::Option<::std::string::String>,
 }

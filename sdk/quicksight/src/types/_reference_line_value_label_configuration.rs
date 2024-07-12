@@ -39,8 +39,8 @@ impl ReferenceLineValueLabelConfiguration {
 }
 
 /// A builder for [`ReferenceLineValueLabelConfiguration`](crate::types::ReferenceLineValueLabelConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferenceLineValueLabelConfigurationBuilder {
     pub(crate) relative_position: ::std::option::Option<crate::types::ReferenceLineValueLabelRelativePosition>,
     pub(crate) format_configuration: ::std::option::Option<crate::types::NumericFormatConfiguration>,

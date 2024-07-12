@@ -35,8 +35,8 @@ impl BatchStepOutput {
 }
 
 /// A builder for [`BatchStepOutput`](crate::types::BatchStepOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStepOutputBuilder {
     pub(crate) data_set_export_location: ::std::option::Option<::std::string::String>,
     pub(crate) dms_output_location: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl CatalogConfiguration {
 }
 
 /// A builder for [`CatalogConfiguration`](crate::types::CatalogConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CatalogConfigurationBuilder {
     pub(crate) glue_data_catalog_configuration: ::std::option::Option<crate::types::GlueDataCatalogConfiguration>,
 }

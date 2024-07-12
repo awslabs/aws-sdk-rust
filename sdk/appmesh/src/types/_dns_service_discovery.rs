@@ -34,8 +34,8 @@ impl DnsServiceDiscovery {
 }
 
 /// A builder for [`DnsServiceDiscovery`](crate::types::DnsServiceDiscovery).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DnsServiceDiscoveryBuilder {
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) response_type: ::std::option::Option<crate::types::DnsResponseType>,

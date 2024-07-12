@@ -63,8 +63,8 @@ impl NetworkAcl {
 }
 
 /// A builder for [`NetworkAcl`](crate::types::NetworkAcl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkAclBuilder {
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclAssociation>>,
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,

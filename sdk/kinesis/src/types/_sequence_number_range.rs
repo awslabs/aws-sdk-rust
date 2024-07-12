@@ -28,8 +28,8 @@ impl SequenceNumberRange {
 }
 
 /// A builder for [`SequenceNumberRange`](crate::types::SequenceNumberRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SequenceNumberRangeBuilder {
     pub(crate) starting_sequence_number: ::std::option::Option<::std::string::String>,
     pub(crate) ending_sequence_number: ::std::option::Option<::std::string::String>,

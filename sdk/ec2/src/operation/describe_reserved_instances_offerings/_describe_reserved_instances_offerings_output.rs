@@ -35,8 +35,8 @@ impl DescribeReservedInstancesOfferingsOutput {
 }
 
 /// A builder for [`DescribeReservedInstancesOfferingsOutput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservedInstancesOfferingsOutputBuilder {
     pub(crate) reserved_instances_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesOffering>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

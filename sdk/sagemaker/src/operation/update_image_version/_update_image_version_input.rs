@@ -138,8 +138,8 @@ impl UpdateImageVersionInput {
 }
 
 /// A builder for [`UpdateImageVersionInput`](crate::operation::update_image_version::UpdateImageVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateImageVersionInputBuilder {
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,

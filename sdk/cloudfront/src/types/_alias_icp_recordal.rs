@@ -46,8 +46,8 @@ impl AliasIcpRecordal {
 }
 
 /// A builder for [`AliasIcpRecordal`](crate::types::AliasIcpRecordal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AliasIcpRecordalBuilder {
     pub(crate) cname: ::std::option::Option<::std::string::String>,
     pub(crate) icp_recordal_status: ::std::option::Option<crate::types::IcpRecordalStatus>,

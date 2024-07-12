@@ -77,8 +77,8 @@ impl StreamingSessionStream {
 }
 
 /// A builder for [`StreamingSessionStream`](crate::types::StreamingSessionStream).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StreamingSessionStreamBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,

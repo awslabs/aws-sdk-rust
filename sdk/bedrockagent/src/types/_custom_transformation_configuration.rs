@@ -30,8 +30,8 @@ impl CustomTransformationConfiguration {
 }
 
 /// A builder for [`CustomTransformationConfiguration`](crate::types::CustomTransformationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomTransformationConfigurationBuilder {
     pub(crate) intermediate_storage: ::std::option::Option<crate::types::IntermediateStorage>,
     pub(crate) transformations: ::std::option::Option<::std::vec::Vec<crate::types::Transformation>>,

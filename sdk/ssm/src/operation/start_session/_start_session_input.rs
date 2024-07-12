@@ -38,8 +38,8 @@ impl StartSessionInput {
 }
 
 /// A builder for [`StartSessionInput`](crate::operation::start_session::StartSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSessionInputBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) document_name: ::std::option::Option<::std::string::String>,

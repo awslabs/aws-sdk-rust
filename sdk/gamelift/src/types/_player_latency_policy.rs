@@ -27,8 +27,8 @@ impl PlayerLatencyPolicy {
 }
 
 /// A builder for [`PlayerLatencyPolicy`](crate::types::PlayerLatencyPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlayerLatencyPolicyBuilder {
     pub(crate) maximum_individual_player_latency_milliseconds: ::std::option::Option<i32>,
     pub(crate) policy_duration_seconds: ::std::option::Option<i32>,

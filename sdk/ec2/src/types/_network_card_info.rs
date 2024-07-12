@@ -45,8 +45,8 @@ impl NetworkCardInfo {
 }
 
 /// A builder for [`NetworkCardInfo`](crate::types::NetworkCardInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkCardInfoBuilder {
     pub(crate) network_card_index: ::std::option::Option<i32>,
     pub(crate) network_performance: ::std::option::Option<::std::string::String>,

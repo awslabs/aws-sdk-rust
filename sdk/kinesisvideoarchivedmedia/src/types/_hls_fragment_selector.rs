@@ -37,8 +37,8 @@ impl HlsFragmentSelector {
 }
 
 /// A builder for [`HlsFragmentSelector`](crate::types::HlsFragmentSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsFragmentSelectorBuilder {
     pub(crate) fragment_selector_type: ::std::option::Option<crate::types::HlsFragmentSelectorType>,
     pub(crate) timestamp_range: ::std::option::Option<crate::types::HlsTimestampRange>,

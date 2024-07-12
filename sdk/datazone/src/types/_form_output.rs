@@ -50,8 +50,8 @@ impl FormOutput {
 }
 
 /// A builder for [`FormOutput`](crate::types::FormOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FormOutputBuilder {
     pub(crate) form_name: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,

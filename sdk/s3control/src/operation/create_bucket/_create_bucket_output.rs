@@ -54,8 +54,8 @@ impl CreateBucketOutput {
 }
 
 /// A builder for [`CreateBucketOutput`](crate::operation::create_bucket::CreateBucketOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBucketOutputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,

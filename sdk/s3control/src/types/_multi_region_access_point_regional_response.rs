@@ -27,8 +27,8 @@ impl MultiRegionAccessPointRegionalResponse {
 }
 
 /// A builder for [`MultiRegionAccessPointRegionalResponse`](crate::types::MultiRegionAccessPointRegionalResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiRegionAccessPointRegionalResponseBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) request_status: ::std::option::Option<::std::string::String>,

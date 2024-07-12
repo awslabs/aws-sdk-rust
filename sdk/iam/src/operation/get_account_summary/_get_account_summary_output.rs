@@ -27,8 +27,8 @@ impl GetAccountSummaryOutput {
 }
 
 /// A builder for [`GetAccountSummaryOutput`](crate::operation::get_account_summary::GetAccountSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountSummaryOutputBuilder {
     pub(crate) summary_map: ::std::option::Option<::std::collections::HashMap<crate::types::SummaryKeyType, i32>>,
     _request_id: Option<String>,

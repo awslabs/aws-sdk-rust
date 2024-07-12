@@ -11,8 +11,8 @@ impl GetAccountPreferencesInput {
 }
 
 /// A builder for [`GetAccountPreferencesInput`](crate::operation::get_account_preferences::GetAccountPreferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountPreferencesInputBuilder {}
 impl GetAccountPreferencesInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountPreferencesInput`](crate::operation::get_account_preferences::GetAccountPreferencesInput).

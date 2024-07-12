@@ -23,8 +23,8 @@ impl RealTimeContactAnalysisTranscriptItemRedaction {
 }
 
 /// A builder for [`RealTimeContactAnalysisTranscriptItemRedaction`](crate::types::RealTimeContactAnalysisTranscriptItemRedaction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RealTimeContactAnalysisTranscriptItemRedactionBuilder {
     pub(crate) character_offsets: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisCharacterInterval>>,
 }

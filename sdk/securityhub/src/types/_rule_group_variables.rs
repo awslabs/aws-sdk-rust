@@ -27,8 +27,8 @@ impl RuleGroupVariables {
 }
 
 /// A builder for [`RuleGroupVariables`](crate::types::RuleGroupVariables).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupVariablesBuilder {
     pub(crate) ip_sets: ::std::option::Option<crate::types::RuleGroupVariablesIpSetsDetails>,
     pub(crate) port_sets: ::std::option::Option<crate::types::RuleGroupVariablesPortSetsDetails>,

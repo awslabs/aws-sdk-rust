@@ -99,8 +99,8 @@ impl WebCrawlerConfiguration {
 }
 
 /// A builder for [`WebCrawlerConfiguration`](crate::types::WebCrawlerConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WebCrawlerConfigurationBuilder {
     pub(crate) urls: ::std::option::Option<crate::types::Urls>,
     pub(crate) crawl_depth: ::std::option::Option<i32>,

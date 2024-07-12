@@ -28,8 +28,8 @@ impl GetMetricsOutput {
 }
 
 /// A builder for [`GetMetricsOutput`](crate::operation::get_metrics::GetMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricsOutputBuilder {
     pub(crate) summary_metric_query_results: ::std::option::Option<::std::vec::Vec<crate::types::SummaryMetricQueryResult>>,
     _request_id: Option<String>,

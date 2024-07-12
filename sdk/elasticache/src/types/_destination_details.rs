@@ -27,8 +27,8 @@ impl DestinationDetails {
 }
 
 /// A builder for [`DestinationDetails`](crate::types::DestinationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationDetailsBuilder {
     pub(crate) cloud_watch_logs_details: ::std::option::Option<crate::types::CloudWatchLogsDestinationDetails>,
     pub(crate) kinesis_firehose_details: ::std::option::Option<crate::types::KinesisFirehoseDestinationDetails>,

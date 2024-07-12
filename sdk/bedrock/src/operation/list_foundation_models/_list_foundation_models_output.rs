@@ -28,8 +28,8 @@ impl ListFoundationModelsOutput {
 }
 
 /// A builder for [`ListFoundationModelsOutput`](crate::operation::list_foundation_models::ListFoundationModelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFoundationModelsOutputBuilder {
     pub(crate) model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FoundationModelSummary>>,
     _request_id: Option<String>,

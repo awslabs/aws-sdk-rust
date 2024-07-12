@@ -33,8 +33,8 @@ impl ValidatePolicyOutput {
 }
 
 /// A builder for [`ValidatePolicyOutput`](crate::operation::validate_policy::ValidatePolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidatePolicyOutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::ValidatePolicyFinding>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

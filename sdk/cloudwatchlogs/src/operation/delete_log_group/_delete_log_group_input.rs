@@ -20,8 +20,8 @@ impl DeleteLogGroupInput {
 }
 
 /// A builder for [`DeleteLogGroupInput`](crate::operation::delete_log_group::DeleteLogGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLogGroupInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
 }

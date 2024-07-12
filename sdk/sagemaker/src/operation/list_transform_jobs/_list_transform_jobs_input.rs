@@ -74,8 +74,8 @@ impl ListTransformJobsInput {
 }
 
 /// A builder for [`ListTransformJobsInput`](crate::operation::list_transform_jobs::ListTransformJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTransformJobsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,

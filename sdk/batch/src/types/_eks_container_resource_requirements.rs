@@ -115,8 +115,8 @@ impl EksContainerResourceRequirements {
 }
 
 /// A builder for [`EksContainerResourceRequirements`](crate::types::EksContainerResourceRequirements).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EksContainerResourceRequirementsBuilder {
     pub(crate) limits: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) requests: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

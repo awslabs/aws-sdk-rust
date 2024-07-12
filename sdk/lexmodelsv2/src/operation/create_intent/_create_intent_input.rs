@@ -134,8 +134,8 @@ impl CreateIntentInput {
 }
 
 /// A builder for [`CreateIntentInput`](crate::operation::create_intent::CreateIntentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIntentInputBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

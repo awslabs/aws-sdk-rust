@@ -22,8 +22,8 @@ impl InputContext {
 }
 
 /// A builder for [`InputContext`](crate::types::InputContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputContextBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

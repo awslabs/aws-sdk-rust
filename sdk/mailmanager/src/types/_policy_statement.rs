@@ -28,8 +28,8 @@ impl PolicyStatement {
 }
 
 /// A builder for [`PolicyStatement`](crate::types::PolicyStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyStatementBuilder {
     pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyCondition>>,
     pub(crate) action: ::std::option::Option<crate::types::AcceptAction>,

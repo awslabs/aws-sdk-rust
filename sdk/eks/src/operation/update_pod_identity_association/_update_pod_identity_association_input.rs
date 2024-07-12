@@ -38,8 +38,8 @@ impl UpdatePodIdentityAssociationInput {
 }
 
 /// A builder for [`UpdatePodIdentityAssociationInput`](crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePodIdentityAssociationInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,

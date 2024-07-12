@@ -71,8 +71,8 @@ impl UpdateMaintenanceWindowTargetInput {
 }
 
 /// A builder for [`UpdateMaintenanceWindowTargetInput`](crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateMaintenanceWindowTargetInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) window_target_id: ::std::option::Option<::std::string::String>,

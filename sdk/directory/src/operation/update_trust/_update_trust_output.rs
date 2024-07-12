@@ -32,8 +32,8 @@ impl UpdateTrustOutput {
 }
 
 /// A builder for [`UpdateTrustOutput`](crate::operation::update_trust::UpdateTrustOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTrustOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) trust_id: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl UpdateLongTermPricingOutput {
 }
 
 /// A builder for [`UpdateLongTermPricingOutput`](crate::operation::update_long_term_pricing::UpdateLongTermPricingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLongTermPricingOutputBuilder {
     _request_id: Option<String>,
 }

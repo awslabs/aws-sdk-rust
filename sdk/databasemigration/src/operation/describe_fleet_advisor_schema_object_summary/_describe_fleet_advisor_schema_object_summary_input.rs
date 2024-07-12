@@ -45,8 +45,8 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInput {
 }
 
 /// A builder for [`DescribeFleetAdvisorSchemaObjectSummaryInput`](crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetAdvisorSchemaObjectSummaryInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,

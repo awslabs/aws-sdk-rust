@@ -28,8 +28,8 @@ impl DisableAwsNetworkPerformanceMetricSubscriptionOutput {
 }
 
 /// A builder for [`DisableAwsNetworkPerformanceMetricSubscriptionOutput`](crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableAwsNetworkPerformanceMetricSubscriptionOutputBuilder {
     pub(crate) output: ::std::option::Option<bool>,
     _request_id: Option<String>,

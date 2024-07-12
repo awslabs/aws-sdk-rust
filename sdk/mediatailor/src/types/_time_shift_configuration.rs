@@ -21,8 +21,8 @@ impl TimeShiftConfiguration {
 }
 
 /// A builder for [`TimeShiftConfiguration`](crate::types::TimeShiftConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeShiftConfigurationBuilder {
     pub(crate) max_time_delay_seconds: ::std::option::Option<i32>,
 }

@@ -20,8 +20,8 @@ impl DescribeTargetGroupAttributesInput {
 }
 
 /// A builder for [`DescribeTargetGroupAttributesInput`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTargetGroupAttributesInputBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
 }

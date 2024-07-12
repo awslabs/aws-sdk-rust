@@ -40,8 +40,8 @@ impl GetProductsOutput {
 }
 
 /// A builder for [`GetProductsOutput`](crate::operation::get_products::GetProductsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProductsOutputBuilder {
     pub(crate) format_version: ::std::option::Option<::std::string::String>,
     pub(crate) price_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

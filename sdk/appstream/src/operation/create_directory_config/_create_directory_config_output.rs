@@ -26,8 +26,8 @@ impl CreateDirectoryConfigOutput {
 }
 
 /// A builder for [`CreateDirectoryConfigOutput`](crate::operation::create_directory_config::CreateDirectoryConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDirectoryConfigOutputBuilder {
     pub(crate) directory_config: ::std::option::Option<crate::types::DirectoryConfig>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl DescribeCoipPoolsOutput {
 }
 
 /// A builder for [`DescribeCoipPoolsOutput`](crate::operation::describe_coip_pools::DescribeCoipPoolsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCoipPoolsOutputBuilder {
     pub(crate) coip_pools: ::std::option::Option<::std::vec::Vec<crate::types::CoipPool>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

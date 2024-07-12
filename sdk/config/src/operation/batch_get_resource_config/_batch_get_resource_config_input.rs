@@ -22,8 +22,8 @@ impl BatchGetResourceConfigInput {
 }
 
 /// A builder for [`BatchGetResourceConfigInput`](crate::operation::batch_get_resource_config::BatchGetResourceConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetResourceConfigInputBuilder {
     pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
 }

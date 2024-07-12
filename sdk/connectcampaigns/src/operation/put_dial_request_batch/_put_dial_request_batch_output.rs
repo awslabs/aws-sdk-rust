@@ -37,8 +37,8 @@ impl PutDialRequestBatchOutput {
 }
 
 /// A builder for [`PutDialRequestBatchOutput`](crate::operation::put_dial_request_batch::PutDialRequestBatchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDialRequestBatchOutputBuilder {
     pub(crate) successful_requests: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulRequest>>,
     pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedRequest>>,

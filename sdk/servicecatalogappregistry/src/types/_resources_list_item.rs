@@ -39,8 +39,8 @@ impl ResourcesListItem {
 }
 
 /// A builder for [`ResourcesListItem`](crate::types::ResourcesListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourcesListItemBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

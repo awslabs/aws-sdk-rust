@@ -35,8 +35,8 @@ impl RunConfiguration {
 }
 
 /// A builder for [`RunConfiguration`](crate::types::RunConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunConfigurationBuilder {
     pub(crate) flink_run_configuration: ::std::option::Option<crate::types::FlinkRunConfiguration>,
     pub(crate) sql_run_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SqlRunConfiguration>>,

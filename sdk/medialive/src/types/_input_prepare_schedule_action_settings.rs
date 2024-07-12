@@ -35,8 +35,8 @@ impl InputPrepareScheduleActionSettings {
 }
 
 /// A builder for [`InputPrepareScheduleActionSettings`](crate::types::InputPrepareScheduleActionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputPrepareScheduleActionSettingsBuilder {
     pub(crate) input_attachment_name_reference: ::std::option::Option<::std::string::String>,
     pub(crate) input_clipping_settings: ::std::option::Option<crate::types::InputClippingSettings>,

@@ -18,8 +18,8 @@ impl PutUserPermissionsBoundaryOutput {
 }
 
 /// A builder for [`PutUserPermissionsBoundaryOutput`](crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutUserPermissionsBoundaryOutputBuilder {
     _request_id: Option<String>,
 }

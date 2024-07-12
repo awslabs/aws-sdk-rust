@@ -23,8 +23,8 @@ impl DatasetEntityRecognizerEntityList {
 }
 
 /// A builder for [`DatasetEntityRecognizerEntityList`](crate::types::DatasetEntityRecognizerEntityList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetEntityRecognizerEntityListBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
 }

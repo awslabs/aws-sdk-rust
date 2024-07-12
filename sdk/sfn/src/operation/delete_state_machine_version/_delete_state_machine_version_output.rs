@@ -18,8 +18,8 @@ impl DeleteStateMachineVersionOutput {
 }
 
 /// A builder for [`DeleteStateMachineVersionOutput`](crate::operation::delete_state_machine_version::DeleteStateMachineVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStateMachineVersionOutputBuilder {
     _request_id: Option<String>,
 }

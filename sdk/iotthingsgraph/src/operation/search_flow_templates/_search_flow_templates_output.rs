@@ -34,8 +34,8 @@ impl SearchFlowTemplatesOutput {
 }
 
 /// A builder for [`SearchFlowTemplatesOutput`](crate::operation::search_flow_templates::SearchFlowTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchFlowTemplatesOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::FlowTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

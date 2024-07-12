@@ -35,8 +35,8 @@ impl FrameMetric {
 }
 
 /// A builder for [`FrameMetric`](crate::types::FrameMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FrameMetricBuilder {
     pub(crate) frame_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::MetricType>,

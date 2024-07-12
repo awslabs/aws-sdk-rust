@@ -20,8 +20,8 @@ impl DescribeAutoPredictorInput {
 }
 
 /// A builder for [`DescribeAutoPredictorInput`](crate::operation::describe_auto_predictor::DescribeAutoPredictorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAutoPredictorInputBuilder {
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
 }

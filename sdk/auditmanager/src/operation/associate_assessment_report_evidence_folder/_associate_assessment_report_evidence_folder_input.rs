@@ -26,8 +26,8 @@ impl AssociateAssessmentReportEvidenceFolderInput {
 }
 
 /// A builder for [`AssociateAssessmentReportEvidenceFolderInput`](crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAssessmentReportEvidenceFolderInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) evidence_folder_id: ::std::option::Option<::std::string::String>,

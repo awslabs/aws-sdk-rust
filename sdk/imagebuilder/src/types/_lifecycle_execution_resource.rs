@@ -89,8 +89,8 @@ impl LifecycleExecutionResource {
 }
 
 /// A builder for [`LifecycleExecutionResource`](crate::types::LifecycleExecutionResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifecycleExecutionResourceBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

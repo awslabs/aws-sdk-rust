@@ -59,8 +59,8 @@ impl ClusterInstanceGroupSpecification {
 }
 
 /// A builder for [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,

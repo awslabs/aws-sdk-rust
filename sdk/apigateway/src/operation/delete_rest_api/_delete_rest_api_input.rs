@@ -21,8 +21,8 @@ impl DeleteRestApiInput {
 }
 
 /// A builder for [`DeleteRestApiInput`](crate::operation::delete_rest_api::DeleteRestApiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRestApiInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
 }

@@ -35,8 +35,8 @@ impl CloudFrontOriginAccessIdentityConfig {
 }
 
 /// A builder for [`CloudFrontOriginAccessIdentityConfig`](crate::types::CloudFrontOriginAccessIdentityConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudFrontOriginAccessIdentityConfigBuilder {
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,

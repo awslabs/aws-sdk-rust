@@ -97,8 +97,8 @@ impl ReportGenerator {
 }
 
 /// A builder for [`ReportGenerator`](crate::types::ReportGenerator).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReportGeneratorBuilder {
     pub(crate) report_generator_name: ::std::option::Option<::std::string::String>,
     pub(crate) report_type: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>,

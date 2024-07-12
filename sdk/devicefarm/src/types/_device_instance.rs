@@ -53,8 +53,8 @@ impl DeviceInstance {
 }
 
 /// A builder for [`DeviceInstance`](crate::types::DeviceInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceInstanceBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,

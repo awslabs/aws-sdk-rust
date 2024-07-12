@@ -43,8 +43,8 @@ impl ReferenceLineStyleConfiguration {
 }
 
 /// A builder for [`ReferenceLineStyleConfiguration`](crate::types::ReferenceLineStyleConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReferenceLineStyleConfigurationBuilder {
     pub(crate) pattern: ::std::option::Option<crate::types::ReferenceLinePatternType>,
     pub(crate) color: ::std::option::Option<::std::string::String>,

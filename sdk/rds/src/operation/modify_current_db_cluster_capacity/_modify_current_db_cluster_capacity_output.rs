@@ -50,8 +50,8 @@ impl ModifyCurrentDbClusterCapacityOutput {
 }
 
 /// A builder for [`ModifyCurrentDbClusterCapacityOutput`](crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyCurrentDbClusterCapacityOutputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) pending_capacity: ::std::option::Option<i32>,

@@ -49,8 +49,8 @@ impl TestIdentityProviderOutput {
 }
 
 /// A builder for [`TestIdentityProviderOutput`](crate::operation::test_identity_provider::TestIdentityProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestIdentityProviderOutputBuilder {
     pub(crate) response: ::std::option::Option<::std::string::String>,
     pub(crate) status_code: ::std::option::Option<i32>,

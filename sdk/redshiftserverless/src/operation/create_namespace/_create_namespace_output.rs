@@ -26,8 +26,8 @@ impl CreateNamespaceOutput {
 }
 
 /// A builder for [`CreateNamespaceOutput`](crate::operation::create_namespace::CreateNamespaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNamespaceOutputBuilder {
     pub(crate) namespace: ::std::option::Option<crate::types::Namespace>,
     _request_id: Option<String>,

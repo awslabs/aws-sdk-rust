@@ -29,8 +29,8 @@ impl ListenerTlsFileCertificate {
 }
 
 /// A builder for [`ListenerTlsFileCertificate`](crate::types::ListenerTlsFileCertificate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListenerTlsFileCertificateBuilder {
     pub(crate) certificate_chain: ::std::option::Option<::std::string::String>,
     pub(crate) private_key: ::std::option::Option<::std::string::String>,

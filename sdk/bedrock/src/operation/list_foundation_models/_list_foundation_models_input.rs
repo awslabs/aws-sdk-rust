@@ -38,8 +38,8 @@ impl ListFoundationModelsInput {
 }
 
 /// A builder for [`ListFoundationModelsInput`](crate::operation::list_foundation_models::ListFoundationModelsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFoundationModelsInputBuilder {
     pub(crate) by_provider: ::std::option::Option<::std::string::String>,
     pub(crate) by_customization_type: ::std::option::Option<crate::types::ModelCustomization>,

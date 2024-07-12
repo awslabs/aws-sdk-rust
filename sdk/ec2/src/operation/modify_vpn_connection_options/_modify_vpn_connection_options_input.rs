@@ -58,8 +58,8 @@ impl ModifyVpnConnectionOptionsInput {
 }
 
 /// A builder for [`ModifyVpnConnectionOptionsInput`](crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVpnConnectionOptionsInputBuilder {
     pub(crate) vpn_connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) local_ipv4_network_cidr: ::std::option::Option<::std::string::String>,

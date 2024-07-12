@@ -26,8 +26,8 @@ impl GetFacetOutput {
 }
 
 /// A builder for [`GetFacetOutput`](crate::operation::get_facet::GetFacetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFacetOutputBuilder {
     pub(crate) facet: ::std::option::Option<crate::types::Facet>,
     _request_id: Option<String>,

@@ -57,8 +57,8 @@ impl LastSync {
 }
 
 /// A builder for [`LastSync`](crate::types::LastSync).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LastSyncBuilder {
     pub(crate) last_sync_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_sync_status: ::std::option::Option<crate::types::LastSyncStatus>,

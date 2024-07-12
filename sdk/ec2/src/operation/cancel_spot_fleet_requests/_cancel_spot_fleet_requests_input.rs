@@ -39,8 +39,8 @@ impl CancelSpotFleetRequestsInput {
 }
 
 /// A builder for [`CancelSpotFleetRequestsInput`](crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelSpotFleetRequestsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) spot_fleet_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

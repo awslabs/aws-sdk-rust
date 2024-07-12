@@ -22,8 +22,8 @@ impl BatchGetFindingDetailsInput {
 }
 
 /// A builder for [`BatchGetFindingDetailsInput`](crate::operation::batch_get_finding_details::BatchGetFindingDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetFindingDetailsInputBuilder {
     pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

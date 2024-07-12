@@ -18,8 +18,8 @@ impl DisassociateDeviceFromPlacementOutput {
 }
 
 /// A builder for [`DisassociateDeviceFromPlacementOutput`](crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateDeviceFromPlacementOutputBuilder {
     _request_id: Option<String>,
 }

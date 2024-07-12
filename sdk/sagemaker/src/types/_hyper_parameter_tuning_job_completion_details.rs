@@ -27,8 +27,8 @@ impl HyperParameterTuningJobCompletionDetails {
 }
 
 /// A builder for [`HyperParameterTuningJobCompletionDetails`](crate::types::HyperParameterTuningJobCompletionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HyperParameterTuningJobCompletionDetailsBuilder {
     pub(crate) number_of_training_jobs_objective_not_improving: ::std::option::Option<i32>,
     pub(crate) convergence_detected_time: ::std::option::Option<::aws_smithy_types::DateTime>,

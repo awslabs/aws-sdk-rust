@@ -20,8 +20,8 @@ impl DeletePredictorInput {
 }
 
 /// A builder for [`DeletePredictorInput`](crate::operation::delete_predictor::DeletePredictorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePredictorInputBuilder {
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
 }

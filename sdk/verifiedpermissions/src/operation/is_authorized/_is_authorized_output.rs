@@ -40,8 +40,8 @@ impl IsAuthorizedOutput {
 }
 
 /// A builder for [`IsAuthorizedOutput`](crate::operation::is_authorized::IsAuthorizedOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IsAuthorizedOutputBuilder {
     pub(crate) decision: ::std::option::Option<crate::types::Decision>,
     pub(crate) determining_policies: ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>,

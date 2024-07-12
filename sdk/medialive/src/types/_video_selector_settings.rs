@@ -27,8 +27,8 @@ impl VideoSelectorSettings {
 }
 
 /// A builder for [`VideoSelectorSettings`](crate::types::VideoSelectorSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoSelectorSettingsBuilder {
     pub(crate) video_selector_pid: ::std::option::Option<crate::types::VideoSelectorPid>,
     pub(crate) video_selector_program_id: ::std::option::Option<crate::types::VideoSelectorProgramId>,

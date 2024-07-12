@@ -61,8 +61,8 @@ impl DomainEndpointOptions {
 }
 
 /// A builder for [`DomainEndpointOptions`](crate::types::DomainEndpointOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainEndpointOptionsBuilder {
     pub(crate) enforce_https: ::std::option::Option<bool>,
     pub(crate) tls_security_policy: ::std::option::Option<crate::types::TlsSecurityPolicy>,

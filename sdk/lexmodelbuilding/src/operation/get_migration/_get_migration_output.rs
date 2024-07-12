@@ -96,8 +96,8 @@ impl GetMigrationOutput {
 }
 
 /// A builder for [`GetMigrationOutput`](crate::operation::get_migration::GetMigrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMigrationOutputBuilder {
     pub(crate) migration_id: ::std::option::Option<::std::string::String>,
     pub(crate) v1_bot_name: ::std::option::Option<::std::string::String>,

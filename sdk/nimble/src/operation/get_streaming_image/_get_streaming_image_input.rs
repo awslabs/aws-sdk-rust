@@ -26,8 +26,8 @@ impl GetStreamingImageInput {
 }
 
 /// A builder for [`GetStreamingImageInput`](crate::operation::get_streaming_image::GetStreamingImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStreamingImageInputBuilder {
     pub(crate) streaming_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,

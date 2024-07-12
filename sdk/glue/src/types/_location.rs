@@ -39,8 +39,8 @@ impl Location {
 }
 
 /// A builder for [`Location`](crate::types::Location).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LocationBuilder {
     pub(crate) jdbc: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     pub(crate) s3: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,

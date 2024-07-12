@@ -138,8 +138,8 @@ impl DescribeWhatIfForecastOutput {
 }
 
 /// A builder for [`DescribeWhatIfForecastOutput`](crate::operation::describe_what_if_forecast::DescribeWhatIfForecastOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWhatIfForecastOutputBuilder {
     pub(crate) what_if_forecast_name: ::std::option::Option<::std::string::String>,
     pub(crate) what_if_forecast_arn: ::std::option::Option<::std::string::String>,

@@ -63,8 +63,8 @@ impl VerificationInfo {
 }
 
 /// A builder for [`VerificationInfo`](crate::types::VerificationInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerificationInfoBuilder {
     pub(crate) last_checked_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_success_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -11,8 +11,8 @@ impl GetPricingPlanInput {
 }
 
 /// A builder for [`GetPricingPlanInput`](crate::operation::get_pricing_plan::GetPricingPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPricingPlanInputBuilder {}
 impl GetPricingPlanInputBuilder {
     /// Consumes the builder and constructs a [`GetPricingPlanInput`](crate::operation::get_pricing_plan::GetPricingPlanInput).

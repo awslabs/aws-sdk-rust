@@ -39,8 +39,8 @@ impl DeleteServiceLinkedRoleOutput {
 }
 
 /// A builder for [`DeleteServiceLinkedRoleOutput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceLinkedRoleOutputBuilder {
     pub(crate) deletion_task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

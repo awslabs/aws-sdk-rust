@@ -38,8 +38,8 @@ impl DeleteRecommendationPreferencesInput {
 }
 
 /// A builder for [`DeleteRecommendationPreferencesInput`](crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecommendationPreferencesInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,

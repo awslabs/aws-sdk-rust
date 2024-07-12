@@ -26,8 +26,8 @@ impl DeleteProgramInput {
 }
 
 /// A builder for [`DeleteProgramInput`](crate::operation::delete_program::DeleteProgramInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProgramInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,

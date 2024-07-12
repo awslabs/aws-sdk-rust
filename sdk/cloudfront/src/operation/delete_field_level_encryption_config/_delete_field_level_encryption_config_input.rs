@@ -26,8 +26,8 @@ impl DeleteFieldLevelEncryptionConfigInput {
 }
 
 /// A builder for [`DeleteFieldLevelEncryptionConfigInput`](crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFieldLevelEncryptionConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,

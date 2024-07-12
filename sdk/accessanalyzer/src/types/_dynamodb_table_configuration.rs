@@ -29,8 +29,8 @@ impl DynamodbTableConfiguration {
 }
 
 /// A builder for [`DynamodbTableConfiguration`](crate::types::DynamodbTableConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DynamodbTableConfigurationBuilder {
     pub(crate) table_policy: ::std::option::Option<::std::string::String>,
 }

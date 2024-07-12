@@ -28,8 +28,8 @@ impl DeleteRemediationExceptionsOutput {
 }
 
 /// A builder for [`DeleteRemediationExceptionsOutput`](crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRemediationExceptionsOutputBuilder {
     pub(crate) failed_batches: ::std::option::Option<::std::vec::Vec<crate::types::FailedDeleteRemediationExceptionsBatch>>,
     _request_id: Option<String>,

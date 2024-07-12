@@ -29,8 +29,8 @@ impl CandidateProperties {
 }
 
 /// A builder for [`CandidateProperties`](crate::types::CandidateProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CandidatePropertiesBuilder {
     pub(crate) candidate_artifact_locations: ::std::option::Option<crate::types::CandidateArtifactLocations>,
     pub(crate) candidate_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,

@@ -29,8 +29,8 @@ impl GeneratedPolicyResult {
 }
 
 /// A builder for [`GeneratedPolicyResult`](crate::types::GeneratedPolicyResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeneratedPolicyResultBuilder {
     pub(crate) properties: ::std::option::Option<crate::types::GeneratedPolicyProperties>,
     pub(crate) generated_policies: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>>,

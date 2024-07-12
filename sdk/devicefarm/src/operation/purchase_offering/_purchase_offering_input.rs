@@ -33,8 +33,8 @@ impl PurchaseOfferingInput {
 }
 
 /// A builder for [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseOfferingInputBuilder {
     pub(crate) offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) quantity: ::std::option::Option<i32>,

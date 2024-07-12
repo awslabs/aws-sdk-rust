@@ -93,8 +93,8 @@ impl CreateLocationFsxWindowsInput {
 }
 
 /// A builder for [`CreateLocationFsxWindowsInput`](crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateLocationFsxWindowsInputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) fsx_filesystem_arn: ::std::option::Option<::std::string::String>,

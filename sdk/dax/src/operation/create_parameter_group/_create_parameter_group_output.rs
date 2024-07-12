@@ -26,8 +26,8 @@ impl CreateParameterGroupOutput {
 }
 
 /// A builder for [`CreateParameterGroupOutput`](crate::operation::create_parameter_group::CreateParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateParameterGroupOutputBuilder {
     pub(crate) parameter_group: ::std::option::Option<crate::types::ParameterGroup>,
     _request_id: Option<String>,

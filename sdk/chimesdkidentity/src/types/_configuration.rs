@@ -21,8 +21,8 @@ impl Configuration {
 }
 
 /// A builder for [`Configuration`](crate::types::Configuration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurationBuilder {
     pub(crate) lex: ::std::option::Option<crate::types::LexConfiguration>,
 }

@@ -76,8 +76,8 @@ impl DescribeFolderContentsInput {
 }
 
 /// A builder for [`DescribeFolderContentsInput`](crate::operation::describe_folder_contents::DescribeFolderContentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeFolderContentsInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,

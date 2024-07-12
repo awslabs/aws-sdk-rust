@@ -19,8 +19,8 @@ impl AssociateApprovalRuleTemplateWithRepositoryOutput {
 }
 
 /// A builder for [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateApprovalRuleTemplateWithRepositoryOutputBuilder {
     _request_id: Option<String>,
 }

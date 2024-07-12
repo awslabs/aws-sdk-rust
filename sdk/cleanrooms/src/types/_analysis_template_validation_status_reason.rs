@@ -22,8 +22,8 @@ impl AnalysisTemplateValidationStatusReason {
 }
 
 /// A builder for [`AnalysisTemplateValidationStatusReason`](crate::types::AnalysisTemplateValidationStatusReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalysisTemplateValidationStatusReasonBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }

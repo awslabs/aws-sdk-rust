@@ -156,8 +156,8 @@ impl StopDeploymentOutput {
 }
 
 /// A builder for [`StopDeploymentOutput`](crate::operation::stop_deployment::StopDeploymentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopDeploymentOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,

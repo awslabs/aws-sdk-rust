@@ -44,8 +44,8 @@ impl UpgradeReviewTemplateLensReviewInput {
 }
 
 /// A builder for [`UpgradeReviewTemplateLensReviewInput`](crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpgradeReviewTemplateLensReviewInputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,

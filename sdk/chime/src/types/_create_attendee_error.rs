@@ -42,8 +42,8 @@ impl CreateAttendeeError {
 }
 
 /// A builder for [`CreateAttendeeError`](crate::types::CreateAttendeeError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateAttendeeErrorBuilder {
     pub(crate) external_user_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

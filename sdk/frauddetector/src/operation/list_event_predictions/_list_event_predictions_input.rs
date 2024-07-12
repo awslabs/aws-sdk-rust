@@ -56,8 +56,8 @@ impl ListEventPredictionsInput {
 }
 
 /// A builder for [`ListEventPredictionsInput`](crate::operation::list_event_predictions::ListEventPredictionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventPredictionsInputBuilder {
     pub(crate) event_id: ::std::option::Option<crate::types::FilterCondition>,
     pub(crate) event_type: ::std::option::Option<crate::types::FilterCondition>,

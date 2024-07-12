@@ -18,8 +18,8 @@ impl DeleteInstanceProfileOutput {
 }
 
 /// A builder for [`DeleteInstanceProfileOutput`](crate::operation::delete_instance_profile::DeleteInstanceProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInstanceProfileOutputBuilder {
     _request_id: Option<String>,
 }

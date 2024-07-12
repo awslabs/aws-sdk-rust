@@ -62,8 +62,8 @@ impl CreateNamespaceOutput {
 }
 
 /// A builder for [`CreateNamespaceOutput`](crate::operation::create_namespace::CreateNamespaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNamespaceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

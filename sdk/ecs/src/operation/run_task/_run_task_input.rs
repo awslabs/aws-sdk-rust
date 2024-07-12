@@ -212,8 +212,8 @@ impl RunTaskInput {
 }
 
 /// A builder for [`RunTaskInput`](crate::operation::run_task::RunTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunTaskInputBuilder {
     pub(crate) capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     pub(crate) cluster: ::std::option::Option<::std::string::String>,

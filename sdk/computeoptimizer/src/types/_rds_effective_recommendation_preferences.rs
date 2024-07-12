@@ -45,8 +45,8 @@ impl RdsEffectiveRecommendationPreferences {
 }
 
 /// A builder for [`RdsEffectiveRecommendationPreferences`](crate::types::RdsEffectiveRecommendationPreferences).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsEffectiveRecommendationPreferencesBuilder {
     pub(crate) cpu_vendor_architectures: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
     pub(crate) enhanced_infrastructure_metrics: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,

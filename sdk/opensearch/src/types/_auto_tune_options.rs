@@ -43,8 +43,8 @@ impl AutoTuneOptions {
 }
 
 /// A builder for [`AutoTuneOptions`](crate::types::AutoTuneOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoTuneOptionsBuilder {
     pub(crate) desired_state: ::std::option::Option<crate::types::AutoTuneDesiredState>,
     pub(crate) rollback_on_disable: ::std::option::Option<crate::types::RollbackOnDisable>,

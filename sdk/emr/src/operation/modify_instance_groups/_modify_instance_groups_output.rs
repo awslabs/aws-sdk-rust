@@ -18,8 +18,8 @@ impl ModifyInstanceGroupsOutput {
 }
 
 /// A builder for [`ModifyInstanceGroupsOutput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstanceGroupsOutputBuilder {
     _request_id: Option<String>,
 }

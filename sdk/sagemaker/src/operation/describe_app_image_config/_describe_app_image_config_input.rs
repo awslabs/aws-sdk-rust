@@ -20,8 +20,8 @@ impl DescribeAppImageConfigInput {
 }
 
 /// A builder for [`DescribeAppImageConfigInput`](crate::operation::describe_app_image_config::DescribeAppImageConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppImageConfigInputBuilder {
     pub(crate) app_image_config_name: ::std::option::Option<::std::string::String>,
 }

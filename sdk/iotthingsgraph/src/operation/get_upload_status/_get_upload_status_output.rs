@@ -65,8 +65,8 @@ impl GetUploadStatusOutput {
 }
 
 /// A builder for [`GetUploadStatusOutput`](crate::operation::get_upload_status::GetUploadStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUploadStatusOutputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_status: ::std::option::Option<crate::types::UploadStatus>,

@@ -37,8 +37,8 @@ impl ContainerGroupsAttributes {
 }
 
 /// A builder for [`ContainerGroupsAttributes`](crate::types::ContainerGroupsAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerGroupsAttributesBuilder {
     pub(crate) container_group_definition_properties: ::std::option::Option<::std::vec::Vec<crate::types::ContainerGroupDefinitionProperty>>,
     pub(crate) connection_port_range: ::std::option::Option<crate::types::ConnectionPortRange>,

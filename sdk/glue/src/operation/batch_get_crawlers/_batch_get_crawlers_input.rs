@@ -22,8 +22,8 @@ impl BatchGetCrawlersInput {
 }
 
 /// A builder for [`BatchGetCrawlersInput`](crate::operation::batch_get_crawlers::BatchGetCrawlersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetCrawlersInputBuilder {
     pub(crate) crawler_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

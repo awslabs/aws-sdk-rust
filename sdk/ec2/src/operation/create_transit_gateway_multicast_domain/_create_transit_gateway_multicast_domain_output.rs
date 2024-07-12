@@ -26,8 +26,8 @@ impl CreateTransitGatewayMulticastDomainOutput {
 }
 
 /// A builder for [`CreateTransitGatewayMulticastDomainOutput`](crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransitGatewayMulticastDomainOutputBuilder {
     pub(crate) transit_gateway_multicast_domain: ::std::option::Option<crate::types::TransitGatewayMulticastDomain>,
     _request_id: Option<String>,

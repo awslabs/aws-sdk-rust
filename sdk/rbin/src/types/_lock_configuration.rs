@@ -21,8 +21,8 @@ impl LockConfiguration {
 }
 
 /// A builder for [`LockConfiguration`](crate::types::LockConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LockConfigurationBuilder {
     pub(crate) unlock_delay: ::std::option::Option<crate::types::UnlockDelay>,
 }

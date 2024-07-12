@@ -35,8 +35,8 @@ impl StreamingLoggingConfig {
 }
 
 /// A builder for [`StreamingLoggingConfig`](crate::types::StreamingLoggingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamingLoggingConfigBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

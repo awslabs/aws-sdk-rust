@@ -26,8 +26,8 @@ impl UpdateFlywheelOutput {
 }
 
 /// A builder for [`UpdateFlywheelOutput`](crate::operation::update_flywheel::UpdateFlywheelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFlywheelOutputBuilder {
     pub(crate) flywheel_properties: ::std::option::Option<crate::types::FlywheelProperties>,
     _request_id: Option<String>,

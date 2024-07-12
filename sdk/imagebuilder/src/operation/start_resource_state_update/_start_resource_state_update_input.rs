@@ -56,8 +56,8 @@ impl StartResourceStateUpdateInput {
 }
 
 /// A builder for [`StartResourceStateUpdateInput`](crate::operation::start_resource_state_update::StartResourceStateUpdateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartResourceStateUpdateInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ResourceState>,

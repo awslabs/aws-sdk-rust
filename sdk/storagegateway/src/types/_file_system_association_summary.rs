@@ -39,8 +39,8 @@ impl FileSystemAssociationSummary {
 }
 
 /// A builder for [`FileSystemAssociationSummary`](crate::types::FileSystemAssociationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileSystemAssociationSummaryBuilder {
     pub(crate) file_system_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_association_arn: ::std::option::Option<::std::string::String>,

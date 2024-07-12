@@ -98,8 +98,8 @@ impl SnapshotTaskDetail {
 }
 
 /// A builder for [`SnapshotTaskDetail`](crate::types::SnapshotTaskDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SnapshotTaskDetailBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) disk_image_size: ::std::option::Option<f64>,

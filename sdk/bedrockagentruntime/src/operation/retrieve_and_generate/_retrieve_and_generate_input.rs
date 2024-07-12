@@ -48,8 +48,8 @@ impl RetrieveAndGenerateInput {
 }
 
 /// A builder for [`RetrieveAndGenerateInput`](crate::operation::retrieve_and_generate::RetrieveAndGenerateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RetrieveAndGenerateInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) input: ::std::option::Option<crate::types::RetrieveAndGenerateInput>,

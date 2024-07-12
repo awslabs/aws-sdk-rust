@@ -21,8 +21,8 @@ impl MainframeActionProperties {
 }
 
 /// A builder for [`MainframeActionProperties`](crate::types::MainframeActionProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MainframeActionPropertiesBuilder {
     pub(crate) dms_task_arn: ::std::option::Option<::std::string::String>,
 }

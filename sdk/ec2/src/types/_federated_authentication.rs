@@ -27,8 +27,8 @@ impl FederatedAuthentication {
 }
 
 /// A builder for [`FederatedAuthentication`](crate::types::FederatedAuthentication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FederatedAuthenticationBuilder {
     pub(crate) saml_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) self_service_saml_provider_arn: ::std::option::Option<::std::string::String>,

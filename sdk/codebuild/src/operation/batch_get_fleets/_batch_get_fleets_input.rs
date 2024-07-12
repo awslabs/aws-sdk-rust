@@ -22,8 +22,8 @@ impl BatchGetFleetsInput {
 }
 
 /// A builder for [`BatchGetFleetsInput`](crate::operation::batch_get_fleets::BatchGetFleetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetFleetsInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

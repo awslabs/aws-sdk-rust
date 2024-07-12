@@ -115,8 +115,8 @@ impl PipeTargetParameters {
 }
 
 /// A builder for [`PipeTargetParameters`](crate::types::PipeTargetParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PipeTargetParametersBuilder {
     pub(crate) input_template: ::std::option::Option<::std::string::String>,
     pub(crate) lambda_function_parameters: ::std::option::Option<crate::types::PipeTargetLambdaFunctionParameters>,

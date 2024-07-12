@@ -26,8 +26,8 @@ impl DisassociateTransitGatewayPolicyTableOutput {
 }
 
 /// A builder for [`DisassociateTransitGatewayPolicyTableOutput`](crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTransitGatewayPolicyTableOutputBuilder {
     pub(crate) association: ::std::option::Option<crate::types::TransitGatewayPolicyTableAssociation>,
     _request_id: Option<String>,

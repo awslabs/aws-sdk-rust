@@ -26,8 +26,8 @@ impl CreateImageBuilderStreamingUrlInput {
 }
 
 /// A builder for [`CreateImageBuilderStreamingUrlInput`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateImageBuilderStreamingUrlInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) validity: ::std::option::Option<i64>,

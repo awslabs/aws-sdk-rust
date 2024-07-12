@@ -21,8 +21,8 @@ impl HumanLoopRequestSource {
 }
 
 /// A builder for [`HumanLoopRequestSource`](crate::types::HumanLoopRequestSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HumanLoopRequestSourceBuilder {
     pub(crate) aws_managed_human_loop_request_source: ::std::option::Option<crate::types::AwsManagedHumanLoopRequestSource>,
 }

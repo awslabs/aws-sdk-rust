@@ -34,8 +34,8 @@ impl ScanProvisionedProductsOutput {
 }
 
 /// A builder for [`ScanProvisionedProductsOutput`](crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScanProvisionedProductsOutputBuilder {
     pub(crate) provisioned_products: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

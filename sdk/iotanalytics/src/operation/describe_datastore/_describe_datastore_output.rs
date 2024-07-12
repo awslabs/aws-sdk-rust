@@ -32,8 +32,8 @@ impl DescribeDatastoreOutput {
 }
 
 /// A builder for [`DescribeDatastoreOutput`](crate::operation::describe_datastore::DescribeDatastoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDatastoreOutputBuilder {
     pub(crate) datastore: ::std::option::Option<crate::types::Datastore>,
     pub(crate) statistics: ::std::option::Option<crate::types::DatastoreStatistics>,

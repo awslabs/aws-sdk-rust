@@ -52,8 +52,8 @@ impl AdminLinkProviderForUserInput {
 }
 
 /// A builder for [`AdminLinkProviderForUserInput`](crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminLinkProviderForUserInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_user: ::std::option::Option<crate::types::ProviderUserIdentifierType>,

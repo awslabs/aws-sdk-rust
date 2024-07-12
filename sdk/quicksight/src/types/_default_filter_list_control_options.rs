@@ -45,8 +45,8 @@ impl DefaultFilterListControlOptions {
 }
 
 /// A builder for [`DefaultFilterListControlOptions`](crate::types::DefaultFilterListControlOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultFilterListControlOptionsBuilder {
     pub(crate) display_options: ::std::option::Option<crate::types::ListControlDisplayOptions>,
     pub(crate) r#type: ::std::option::Option<crate::types::SheetControlListType>,

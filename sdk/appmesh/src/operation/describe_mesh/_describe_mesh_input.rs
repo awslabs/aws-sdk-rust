@@ -26,8 +26,8 @@ impl DescribeMeshInput {
 }
 
 /// A builder for [`DescribeMeshInput`](crate::operation::describe_mesh::DescribeMeshInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMeshInputBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_owner: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl AncillarySourceSettings {
 }
 
 /// A builder for [`AncillarySourceSettings`](crate::types::AncillarySourceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AncillarySourceSettingsBuilder {
     pub(crate) source_ancillary_channel_number: ::std::option::Option<i32>,
 }

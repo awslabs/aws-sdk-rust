@@ -25,8 +25,8 @@ impl MediaAnalysisInput {
 }
 
 /// A builder for [`MediaAnalysisInput`](crate::types::MediaAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaAnalysisInputBuilder {
     pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }

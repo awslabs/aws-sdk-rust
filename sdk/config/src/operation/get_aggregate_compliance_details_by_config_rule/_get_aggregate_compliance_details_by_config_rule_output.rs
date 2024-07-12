@@ -35,8 +35,8 @@ impl GetAggregateComplianceDetailsByConfigRuleOutput {
 }
 
 /// A builder for [`GetAggregateComplianceDetailsByConfigRuleOutput`](crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAggregateComplianceDetailsByConfigRuleOutputBuilder {
     pub(crate) aggregate_evaluation_results: ::std::option::Option<::std::vec::Vec<crate::types::AggregateEvaluationResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

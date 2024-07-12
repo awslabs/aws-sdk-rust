@@ -26,8 +26,8 @@ impl DescribeInstanceAttributeOutput {
 }
 
 /// A builder for [`DescribeInstanceAttributeOutput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceAttributeOutputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::Attribute>,
     _request_id: Option<String>,

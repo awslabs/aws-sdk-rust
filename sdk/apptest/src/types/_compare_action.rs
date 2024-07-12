@@ -27,8 +27,8 @@ impl CompareAction {
 }
 
 /// A builder for [`CompareAction`](crate::types::CompareAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompareActionBuilder {
     pub(crate) input: ::std::option::Option<crate::types::Input>,
     pub(crate) output: ::std::option::Option<crate::types::Output>,

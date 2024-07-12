@@ -26,8 +26,8 @@ impl GetApplicationDateRangeKpiOutput {
 }
 
 /// A builder for [`GetApplicationDateRangeKpiOutput`](crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApplicationDateRangeKpiOutputBuilder {
     pub(crate) application_date_range_kpi_response: ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>,
     _request_id: Option<String>,

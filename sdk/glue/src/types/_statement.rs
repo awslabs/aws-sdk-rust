@@ -57,8 +57,8 @@ impl Statement {
 }
 
 /// A builder for [`Statement`](crate::types::Statement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatementBuilder {
     pub(crate) id: ::std::option::Option<i32>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

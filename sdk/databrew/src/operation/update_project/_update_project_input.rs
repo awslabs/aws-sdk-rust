@@ -32,8 +32,8 @@ impl UpdateProjectInput {
 }
 
 /// A builder for [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProjectInputBuilder {
     pub(crate) sample: ::std::option::Option<crate::types::Sample>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

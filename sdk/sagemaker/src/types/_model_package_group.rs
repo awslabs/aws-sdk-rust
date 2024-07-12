@@ -87,8 +87,8 @@ impl ModelPackageGroup {
 }
 
 /// A builder for [`ModelPackageGroup`](crate::types::ModelPackageGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelPackageGroupBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_arn: ::std::option::Option<::std::string::String>,

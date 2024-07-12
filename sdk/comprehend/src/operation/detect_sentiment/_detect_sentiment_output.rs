@@ -41,8 +41,8 @@ impl DetectSentimentOutput {
 }
 
 /// A builder for [`DetectSentimentOutput`](crate::operation::detect_sentiment::DetectSentimentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectSentimentOutputBuilder {
     pub(crate) sentiment: ::std::option::Option<crate::types::SentimentType>,
     pub(crate) sentiment_score: ::std::option::Option<crate::types::SentimentScore>,

@@ -40,8 +40,8 @@ impl ListImageRecipesOutput {
 }
 
 /// A builder for [`ListImageRecipesOutput`](crate::operation::list_image_recipes::ListImageRecipesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImageRecipesOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_recipe_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ImageRecipeSummary>>,

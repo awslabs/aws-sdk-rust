@@ -54,8 +54,8 @@ impl CreateReplicationGroupMemberAction {
 }
 
 /// A builder for [`CreateReplicationGroupMemberAction`](crate::types::CreateReplicationGroupMemberAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplicationGroupMemberActionBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,

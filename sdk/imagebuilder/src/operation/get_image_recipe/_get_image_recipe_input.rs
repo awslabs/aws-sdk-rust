@@ -20,8 +20,8 @@ impl GetImageRecipeInput {
 }
 
 /// A builder for [`GetImageRecipeInput`](crate::operation::get_image_recipe::GetImageRecipeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImageRecipeInputBuilder {
     pub(crate) image_recipe_arn: ::std::option::Option<::std::string::String>,
 }

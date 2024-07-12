@@ -170,8 +170,8 @@ impl SourceKeyword {
 }
 
 /// A builder for [`SourceKeyword`](crate::types::SourceKeyword).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceKeywordBuilder {
     pub(crate) keyword_input_type: ::std::option::Option<crate::types::KeywordInputType>,
     pub(crate) keyword_value: ::std::option::Option<::std::string::String>,

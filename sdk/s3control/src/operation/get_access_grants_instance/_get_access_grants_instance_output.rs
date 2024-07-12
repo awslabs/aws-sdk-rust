@@ -44,8 +44,8 @@ impl GetAccessGrantsInstanceOutput {
 }
 
 /// A builder for [`GetAccessGrantsInstanceOutput`](crate::operation::get_access_grants_instance::GetAccessGrantsInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessGrantsInstanceOutputBuilder {
     pub(crate) access_grants_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) access_grants_instance_id: ::std::option::Option<::std::string::String>,

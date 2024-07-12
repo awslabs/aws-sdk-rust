@@ -441,8 +441,8 @@ impl CodeGenConfigurationNode {
 }
 
 /// A builder for [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeGenConfigurationNodeBuilder {
     pub(crate) athena_connector_source: ::std::option::Option<crate::types::AthenaConnectorSource>,
     pub(crate) jdbc_connector_source: ::std::option::Option<crate::types::JdbcConnectorSource>,

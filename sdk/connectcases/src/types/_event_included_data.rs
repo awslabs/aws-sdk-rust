@@ -27,8 +27,8 @@ impl EventIncludedData {
 }
 
 /// A builder for [`EventIncludedData`](crate::types::EventIncludedData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventIncludedDataBuilder {
     pub(crate) case_data: ::std::option::Option<crate::types::CaseEventIncludedData>,
     pub(crate) related_item_data: ::std::option::Option<crate::types::RelatedItemEventIncludedData>,

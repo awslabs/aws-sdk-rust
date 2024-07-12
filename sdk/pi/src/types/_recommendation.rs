@@ -35,8 +35,8 @@ impl Recommendation {
 }
 
 /// A builder for [`Recommendation`](crate::types::Recommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RecommendationBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_description: ::std::option::Option<::std::string::String>,

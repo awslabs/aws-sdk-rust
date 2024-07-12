@@ -26,8 +26,8 @@ impl GetLaunchTemplateDataOutput {
 }
 
 /// A builder for [`GetLaunchTemplateDataOutput`](crate::operation::get_launch_template_data::GetLaunchTemplateDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLaunchTemplateDataOutputBuilder {
     pub(crate) launch_template_data: ::std::option::Option<crate::types::ResponseLaunchTemplateData>,
     _request_id: Option<String>,

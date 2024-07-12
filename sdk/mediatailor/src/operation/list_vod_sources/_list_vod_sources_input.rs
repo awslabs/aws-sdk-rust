@@ -32,8 +32,8 @@ impl ListVodSourcesInput {
 }
 
 /// A builder for [`ListVodSourcesInput`](crate::operation::list_vod_sources::ListVodSourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVodSourcesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

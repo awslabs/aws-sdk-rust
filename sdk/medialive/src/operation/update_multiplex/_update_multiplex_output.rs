@@ -27,8 +27,8 @@ impl UpdateMultiplexOutput {
 }
 
 /// A builder for [`UpdateMultiplexOutput`](crate::operation::update_multiplex::UpdateMultiplexOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMultiplexOutputBuilder {
     pub(crate) multiplex: ::std::option::Option<crate::types::Multiplex>,
     _request_id: Option<String>,

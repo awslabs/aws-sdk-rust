@@ -37,8 +37,8 @@ impl SourceDocument {
 }
 
 /// A builder for [`SourceDocument`](crate::types::SourceDocument).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceDocumentBuilder {
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) suggestion_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

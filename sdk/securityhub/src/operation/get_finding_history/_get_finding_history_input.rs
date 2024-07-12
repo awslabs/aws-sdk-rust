@@ -100,8 +100,8 @@ impl GetFindingHistoryInput {
 }
 
 /// A builder for [`GetFindingHistoryInput`](crate::operation::get_finding_history::GetFindingHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingHistoryInputBuilder {
     pub(crate) finding_identifier: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

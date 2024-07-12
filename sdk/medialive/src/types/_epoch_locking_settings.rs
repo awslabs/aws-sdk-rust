@@ -27,8 +27,8 @@ impl EpochLockingSettings {
 }
 
 /// A builder for [`EpochLockingSettings`](crate::types::EpochLockingSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EpochLockingSettingsBuilder {
     pub(crate) custom_epoch: ::std::option::Option<::std::string::String>,
     pub(crate) jam_sync_time: ::std::option::Option<::std::string::String>,

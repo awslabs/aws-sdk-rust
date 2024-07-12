@@ -27,8 +27,8 @@ impl CreateServerOutput {
 }
 
 /// A builder for [`CreateServerOutput`](crate::operation::create_server::CreateServerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServerOutputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

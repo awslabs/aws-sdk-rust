@@ -27,8 +27,8 @@ impl GetIdentityDkimAttributesOutput {
 }
 
 /// A builder for [`GetIdentityDkimAttributesOutput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityDkimAttributesOutputBuilder {
     pub(crate) dkim_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>>,
     _request_id: Option<String>,

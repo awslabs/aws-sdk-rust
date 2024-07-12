@@ -30,8 +30,8 @@ impl RegisterAccountInput {
 }
 
 /// A builder for [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterAccountInputBuilder {
     pub(crate) timestream_resources: ::std::option::Option<crate::types::TimestreamResources>,
     pub(crate) iam_resources: ::std::option::Option<crate::types::IamResources>,

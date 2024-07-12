@@ -26,8 +26,8 @@ impl CreateServiceActionOutput {
 }
 
 /// A builder for [`CreateServiceActionOutput`](crate::operation::create_service_action::CreateServiceActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateServiceActionOutputBuilder {
     pub(crate) service_action_detail: ::std::option::Option<crate::types::ServiceActionDetail>,
     _request_id: Option<String>,

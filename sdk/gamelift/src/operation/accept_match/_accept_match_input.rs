@@ -43,8 +43,8 @@ impl AcceptMatchInput {
 }
 
 /// A builder for [`AcceptMatchInput`](crate::operation::accept_match::AcceptMatchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AcceptMatchInputBuilder {
     pub(crate) ticket_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

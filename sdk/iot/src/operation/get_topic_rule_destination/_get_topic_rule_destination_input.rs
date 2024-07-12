@@ -20,8 +20,8 @@ impl GetTopicRuleDestinationInput {
 }
 
 /// A builder for [`GetTopicRuleDestinationInput`](crate::operation::get_topic_rule_destination::GetTopicRuleDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTopicRuleDestinationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

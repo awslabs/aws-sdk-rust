@@ -63,8 +63,8 @@ impl DescribedExecution {
 }
 
 /// A builder for [`DescribedExecution`](crate::types::DescribedExecution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribedExecutionBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) initial_file_location: ::std::option::Option<crate::types::FileLocation>,

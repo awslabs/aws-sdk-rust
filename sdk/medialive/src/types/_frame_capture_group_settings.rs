@@ -27,8 +27,8 @@ impl FrameCaptureGroupSettings {
 }
 
 /// A builder for [`FrameCaptureGroupSettings`](crate::types::FrameCaptureGroupSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FrameCaptureGroupSettingsBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::OutputLocationRef>,
     pub(crate) frame_capture_cdn_settings: ::std::option::Option<crate::types::FrameCaptureCdnSettings>,

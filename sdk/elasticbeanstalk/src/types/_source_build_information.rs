@@ -70,8 +70,8 @@ impl SourceBuildInformation {
 }
 
 /// A builder for [`SourceBuildInformation`](crate::types::SourceBuildInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceBuildInformationBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
     pub(crate) source_repository: ::std::option::Option<crate::types::SourceRepository>,

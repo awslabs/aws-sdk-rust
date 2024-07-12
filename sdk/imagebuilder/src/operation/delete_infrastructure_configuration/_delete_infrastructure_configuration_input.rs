@@ -20,8 +20,8 @@ impl DeleteInfrastructureConfigurationInput {
 }
 
 /// A builder for [`DeleteInfrastructureConfigurationInput`](crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteInfrastructureConfigurationInputBuilder {
     pub(crate) infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
 }

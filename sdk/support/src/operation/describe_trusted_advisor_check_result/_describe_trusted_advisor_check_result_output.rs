@@ -27,8 +27,8 @@ impl DescribeTrustedAdvisorCheckResultOutput {
 }
 
 /// A builder for [`DescribeTrustedAdvisorCheckResultOutput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrustedAdvisorCheckResultOutputBuilder {
     pub(crate) result: ::std::option::Option<crate::types::TrustedAdvisorCheckResult>,
     _request_id: Option<String>,

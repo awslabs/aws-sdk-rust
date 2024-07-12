@@ -40,8 +40,8 @@ impl ListAppVersionResourcesOutput {
 }
 
 /// A builder for [`ListAppVersionResourcesOutput`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppVersionResourcesOutputBuilder {
     pub(crate) physical_resources: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResource>>,
     pub(crate) resolution_id: ::std::option::Option<::std::string::String>,

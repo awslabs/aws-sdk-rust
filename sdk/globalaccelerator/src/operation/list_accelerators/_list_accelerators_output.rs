@@ -34,8 +34,8 @@ impl ListAcceleratorsOutput {
 }
 
 /// A builder for [`ListAcceleratorsOutput`](crate::operation::list_accelerators::ListAcceleratorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAcceleratorsOutputBuilder {
     pub(crate) accelerators: ::std::option::Option<::std::vec::Vec<crate::types::Accelerator>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

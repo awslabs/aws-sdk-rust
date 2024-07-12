@@ -26,8 +26,8 @@ impl DeleteTransitGatewayPolicyTableOutput {
 }
 
 /// A builder for [`DeleteTransitGatewayPolicyTableOutput`](crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTransitGatewayPolicyTableOutputBuilder {
     pub(crate) transit_gateway_policy_table: ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
     _request_id: Option<String>,

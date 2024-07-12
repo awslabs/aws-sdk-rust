@@ -18,8 +18,8 @@ impl OverridePullRequestApprovalRulesOutput {
 }
 
 /// A builder for [`OverridePullRequestApprovalRulesOutput`](crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OverridePullRequestApprovalRulesOutputBuilder {
     _request_id: Option<String>,
 }

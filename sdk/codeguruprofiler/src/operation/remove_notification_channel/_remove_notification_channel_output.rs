@@ -27,8 +27,8 @@ impl RemoveNotificationChannelOutput {
 }
 
 /// A builder for [`RemoveNotificationChannelOutput`](crate::operation::remove_notification_channel::RemoveNotificationChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveNotificationChannelOutputBuilder {
     pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     _request_id: Option<String>,

@@ -28,8 +28,8 @@ impl AccessControl {
 }
 
 /// A builder for [`AccessControl`](crate::types::AccessControl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccessControlBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     pub(crate) member_relation: ::std::option::Option<crate::types::MemberRelation>,

@@ -34,8 +34,8 @@ impl CreateFirewallRuleGroupInput {
 }
 
 /// A builder for [`CreateFirewallRuleGroupInput`](crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFirewallRuleGroupInputBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

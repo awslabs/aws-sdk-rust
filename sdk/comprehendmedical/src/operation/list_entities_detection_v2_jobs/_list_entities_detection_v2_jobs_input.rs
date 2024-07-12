@@ -32,8 +32,8 @@ impl ListEntitiesDetectionV2JobsInput {
 }
 
 /// A builder for [`ListEntitiesDetectionV2JobsInput`](crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEntitiesDetectionV2JobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

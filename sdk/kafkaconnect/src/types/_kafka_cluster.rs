@@ -21,8 +21,8 @@ impl KafkaCluster {
 }
 
 /// A builder for [`KafkaCluster`](crate::types::KafkaCluster).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KafkaClusterBuilder {
     pub(crate) apache_kafka_cluster: ::std::option::Option<crate::types::ApacheKafkaCluster>,
 }

@@ -21,8 +21,8 @@ impl TrackingInformation {
 }
 
 /// A builder for [`TrackingInformation`](crate::types::TrackingInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrackingInformationBuilder {
     pub(crate) tracking_number: ::std::option::Option<::std::string::String>,
 }

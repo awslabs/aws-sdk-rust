@@ -27,8 +27,8 @@ impl BatchEvaluateGeofencesOutput {
 }
 
 /// A builder for [`BatchEvaluateGeofencesOutput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchEvaluateGeofencesOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>>,
     _request_id: Option<String>,

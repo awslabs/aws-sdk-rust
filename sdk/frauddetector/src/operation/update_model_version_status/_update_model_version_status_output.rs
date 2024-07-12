@@ -18,8 +18,8 @@ impl UpdateModelVersionStatusOutput {
 }
 
 /// A builder for [`UpdateModelVersionStatusOutput`](crate::operation::update_model_version_status::UpdateModelVersionStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateModelVersionStatusOutputBuilder {
     _request_id: Option<String>,
 }

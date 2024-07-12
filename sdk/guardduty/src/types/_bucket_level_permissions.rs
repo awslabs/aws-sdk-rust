@@ -33,8 +33,8 @@ impl BucketLevelPermissions {
 }
 
 /// A builder for [`BucketLevelPermissions`](crate::types::BucketLevelPermissions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketLevelPermissionsBuilder {
     pub(crate) access_control_list: ::std::option::Option<crate::types::AccessControlList>,
     pub(crate) bucket_policy: ::std::option::Option<crate::types::BucketPolicy>,

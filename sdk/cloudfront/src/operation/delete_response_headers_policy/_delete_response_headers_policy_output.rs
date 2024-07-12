@@ -18,8 +18,8 @@ impl DeleteResponseHeadersPolicyOutput {
 }
 
 /// A builder for [`DeleteResponseHeadersPolicyOutput`](crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResponseHeadersPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl SetDefaultAuthorizerInput {
 }
 
 /// A builder for [`SetDefaultAuthorizerInput`](crate::operation::set_default_authorizer::SetDefaultAuthorizerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetDefaultAuthorizerInputBuilder {
     pub(crate) authorizer_name: ::std::option::Option<::std::string::String>,
 }

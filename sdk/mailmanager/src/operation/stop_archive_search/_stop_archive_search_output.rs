@@ -20,8 +20,8 @@ impl StopArchiveSearchOutput {
 }
 
 /// A builder for [`StopArchiveSearchOutput`](crate::operation::stop_archive_search::StopArchiveSearchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopArchiveSearchOutputBuilder {
     _request_id: Option<String>,
 }

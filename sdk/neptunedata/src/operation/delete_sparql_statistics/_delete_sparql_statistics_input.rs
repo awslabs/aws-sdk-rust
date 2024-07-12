@@ -11,8 +11,8 @@ impl DeleteSparqlStatisticsInput {
 }
 
 /// A builder for [`DeleteSparqlStatisticsInput`](crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSparqlStatisticsInputBuilder {}
 impl DeleteSparqlStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSparqlStatisticsInput`](crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput).

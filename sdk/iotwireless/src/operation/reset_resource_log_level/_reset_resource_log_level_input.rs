@@ -26,8 +26,8 @@ impl ResetResourceLogLevelInput {
 }
 
 /// A builder for [`ResetResourceLogLevelInput`](crate::operation::reset_resource_log_level::ResetResourceLogLevelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetResourceLogLevelInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,

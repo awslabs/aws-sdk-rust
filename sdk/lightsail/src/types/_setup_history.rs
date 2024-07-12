@@ -48,8 +48,8 @@ impl SetupHistory {
 }
 
 /// A builder for [`SetupHistory`](crate::types::SetupHistory).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetupHistoryBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) request: ::std::option::Option<crate::types::SetupRequest>,

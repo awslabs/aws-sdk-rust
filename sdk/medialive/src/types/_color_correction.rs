@@ -33,8 +33,8 @@ impl ColorCorrection {
 }
 
 /// A builder for [`ColorCorrection`](crate::types::ColorCorrection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColorCorrectionBuilder {
     pub(crate) input_color_space: ::std::option::Option<crate::types::ColorSpace>,
     pub(crate) output_color_space: ::std::option::Option<crate::types::ColorSpace>,

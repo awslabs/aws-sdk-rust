@@ -26,8 +26,8 @@ impl CreateCustomEntityTypeOutput {
 }
 
 /// A builder for [`CreateCustomEntityTypeOutput`](crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomEntityTypeOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -34,8 +34,8 @@ impl ListEnvironmentVpcsOutput {
 }
 
 /// A builder for [`ListEnvironmentVpcsOutput`](crate::operation::list_environment_vpcs::ListEnvironmentVpcsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentVpcsOutputBuilder {
     pub(crate) environment_vpc_list: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVpc>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl DashConfigurationForPut {
 }
 
 /// A builder for [`DashConfigurationForPut`](crate::types::DashConfigurationForPut).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashConfigurationForPutBuilder {
     pub(crate) mpd_location: ::std::option::Option<::std::string::String>,
     pub(crate) origin_manifest_type: ::std::option::Option<crate::types::OriginManifestType>,

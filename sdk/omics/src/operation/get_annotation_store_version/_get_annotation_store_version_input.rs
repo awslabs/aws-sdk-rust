@@ -26,8 +26,8 @@ impl GetAnnotationStoreVersionInput {
 }
 
 /// A builder for [`GetAnnotationStoreVersionInput`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnnotationStoreVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,

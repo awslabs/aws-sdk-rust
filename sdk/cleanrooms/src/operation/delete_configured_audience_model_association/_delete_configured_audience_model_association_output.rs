@@ -19,8 +19,8 @@ impl DeleteConfiguredAudienceModelAssociationOutput {
 }
 
 /// A builder for [`DeleteConfiguredAudienceModelAssociationOutput`](crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfiguredAudienceModelAssociationOutputBuilder {
     _request_id: Option<String>,
 }

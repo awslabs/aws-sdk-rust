@@ -34,8 +34,8 @@ impl DescribeOrderableDbInstanceOptionsOutput {
 }
 
 /// A builder for [`DescribeOrderableDbInstanceOptionsOutput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrderableDbInstanceOptionsOutputBuilder {
     pub(crate) orderable_db_instance_options: ::std::option::Option<::std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

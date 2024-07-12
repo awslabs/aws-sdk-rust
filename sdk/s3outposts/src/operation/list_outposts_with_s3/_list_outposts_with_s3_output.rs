@@ -50,8 +50,8 @@ impl ListOutpostsWithS3Output {
 }
 
 /// A builder for [`ListOutpostsWithS3Output`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOutpostsWithS3OutputBuilder {
     pub(crate) outposts: ::std::option::Option<::std::vec::Vec<crate::types::Outpost>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl OutputGroup {
 }
 
 /// A builder for [`OutputGroup`](crate::types::OutputGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) output_group_settings: ::std::option::Option<crate::types::OutputGroupSettings>,

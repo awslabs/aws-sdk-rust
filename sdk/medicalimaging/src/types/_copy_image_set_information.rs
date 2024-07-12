@@ -27,8 +27,8 @@ impl CopyImageSetInformation {
 }
 
 /// A builder for [`CopyImageSetInformation`](crate::types::CopyImageSetInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyImageSetInformationBuilder {
     pub(crate) source_image_set: ::std::option::Option<crate::types::CopySourceImageSetInformation>,
     pub(crate) destination_image_set: ::std::option::Option<crate::types::CopyDestinationImageSet>,

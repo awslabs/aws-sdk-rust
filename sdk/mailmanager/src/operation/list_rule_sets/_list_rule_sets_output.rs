@@ -33,8 +33,8 @@ impl ListRuleSetsOutput {
 }
 
 /// A builder for [`ListRuleSetsOutput`](crate::operation::list_rule_sets::ListRuleSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRuleSetsOutputBuilder {
     pub(crate) rule_sets: ::std::option::Option<::std::vec::Vec<crate::types::RuleSet>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

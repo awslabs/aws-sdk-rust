@@ -34,8 +34,8 @@ impl ListTestGridSessionActionsOutput {
 }
 
 /// A builder for [`ListTestGridSessionActionsOutput`](crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTestGridSessionActionsOutputBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionAction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

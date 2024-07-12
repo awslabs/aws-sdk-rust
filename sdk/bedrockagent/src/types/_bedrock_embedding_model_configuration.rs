@@ -21,8 +21,8 @@ impl BedrockEmbeddingModelConfiguration {
 }
 
 /// A builder for [`BedrockEmbeddingModelConfiguration`](crate::types::BedrockEmbeddingModelConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BedrockEmbeddingModelConfigurationBuilder {
     pub(crate) dimensions: ::std::option::Option<i32>,
 }

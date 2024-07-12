@@ -18,8 +18,8 @@ impl UpdateResourceCollectionOutput {
 }
 
 /// A builder for [`UpdateResourceCollectionOutput`](crate::operation::update_resource_collection::UpdateResourceCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResourceCollectionOutputBuilder {
     _request_id: Option<String>,
 }

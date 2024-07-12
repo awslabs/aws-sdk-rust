@@ -33,8 +33,8 @@ impl ListRepositoryLinksOutput {
 }
 
 /// A builder for [`ListRepositoryLinksOutput`](crate::operation::list_repository_links::ListRepositoryLinksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRepositoryLinksOutputBuilder {
     pub(crate) repository_links: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryLinkInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

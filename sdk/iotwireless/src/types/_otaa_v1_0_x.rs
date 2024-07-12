@@ -39,8 +39,8 @@ impl OtaaV10X {
 }
 
 /// A builder for [`OtaaV10X`](crate::types::OtaaV10X).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OtaaV10XBuilder {
     pub(crate) app_key: ::std::option::Option<::std::string::String>,
     pub(crate) app_eui: ::std::option::Option<::std::string::String>,

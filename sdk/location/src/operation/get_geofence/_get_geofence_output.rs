@@ -97,8 +97,8 @@ impl GetGeofenceOutput {
 }
 
 /// A builder for [`GetGeofenceOutput`](crate::operation::get_geofence::GetGeofenceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetGeofenceOutputBuilder {
     pub(crate) geofence_id: ::std::option::Option<::std::string::String>,
     pub(crate) geometry: ::std::option::Option<crate::types::GeofenceGeometry>,

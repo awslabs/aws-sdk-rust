@@ -32,8 +32,8 @@ impl GetAssociatedPackageGroupOutput {
 }
 
 /// A builder for [`GetAssociatedPackageGroupOutput`](crate::operation::get_associated_package_group::GetAssociatedPackageGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssociatedPackageGroupOutputBuilder {
     pub(crate) package_group: ::std::option::Option<crate::types::PackageGroupDescription>,
     pub(crate) association_type: ::std::option::Option<crate::types::PackageGroupAssociationType>,

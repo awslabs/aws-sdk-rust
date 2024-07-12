@@ -41,8 +41,8 @@ impl PrivateDnsNameConfiguration {
 }
 
 /// A builder for [`PrivateDnsNameConfiguration`](crate::types::PrivateDnsNameConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrivateDnsNameConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::DnsNameState>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

@@ -47,8 +47,8 @@ impl PatternObjectFilter {
 }
 
 /// A builder for [`PatternObjectFilter`](crate::types::PatternObjectFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PatternObjectFilterBuilder {
     pub(crate) object_type: ::std::option::Option<::std::string::String>,
     pub(crate) inclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

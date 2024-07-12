@@ -39,8 +39,8 @@ impl ExportResourceSpecification {
 }
 
 /// A builder for [`ExportResourceSpecification`](crate::types::ExportResourceSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportResourceSpecificationBuilder {
     pub(crate) bot_export_specification: ::std::option::Option<crate::types::BotExportSpecification>,
     pub(crate) bot_locale_export_specification: ::std::option::Option<crate::types::BotLocaleExportSpecification>,

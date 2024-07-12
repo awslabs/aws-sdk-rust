@@ -29,8 +29,8 @@ impl ListPolicyVersionsOutput {
 }
 
 /// A builder for [`ListPolicyVersionsOutput`](crate::operation::list_policy_versions::ListPolicyVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPolicyVersionsOutputBuilder {
     pub(crate) policy_versions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
     _request_id: Option<String>,

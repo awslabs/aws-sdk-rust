@@ -46,8 +46,8 @@ impl GetReservedNodeExchangeConfigurationOptionsInput {
 }
 
 /// A builder for [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReservedNodeExchangeConfigurationOptionsInputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::ReservedNodeExchangeActionType>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,

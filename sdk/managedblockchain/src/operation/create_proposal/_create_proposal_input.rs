@@ -54,8 +54,8 @@ impl CreateProposalInput {
 }
 
 /// A builder for [`CreateProposalInput`](crate::operation::create_proposal::CreateProposalInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProposalInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) network_id: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteVirtualMfaDeviceOutput {
 }
 
 /// A builder for [`DeleteVirtualMfaDeviceOutput`](crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVirtualMfaDeviceOutputBuilder {
     _request_id: Option<String>,
 }

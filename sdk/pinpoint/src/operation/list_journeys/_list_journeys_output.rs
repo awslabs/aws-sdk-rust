@@ -26,8 +26,8 @@ impl ListJourneysOutput {
 }
 
 /// A builder for [`ListJourneysOutput`](crate::operation::list_journeys::ListJourneysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListJourneysOutputBuilder {
     pub(crate) journeys_response: ::std::option::Option<crate::types::JourneysResponse>,
     _request_id: Option<String>,

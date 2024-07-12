@@ -18,8 +18,8 @@ impl DisassociateLibraryItemReviewOutput {
 }
 
 /// A builder for [`DisassociateLibraryItemReviewOutput`](crate::operation::disassociate_library_item_review::DisassociateLibraryItemReviewOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateLibraryItemReviewOutputBuilder {
     _request_id: Option<String>,
 }

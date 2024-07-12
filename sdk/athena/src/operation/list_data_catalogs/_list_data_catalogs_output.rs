@@ -34,8 +34,8 @@ impl ListDataCatalogsOutput {
 }
 
 /// A builder for [`ListDataCatalogsOutput`](crate::operation::list_data_catalogs::ListDataCatalogsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataCatalogsOutputBuilder {
     pub(crate) data_catalogs_summary: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

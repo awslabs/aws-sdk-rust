@@ -68,8 +68,8 @@ impl UpdateDeploymentStrategyOutput {
 }
 
 /// A builder for [`UpdateDeploymentStrategyOutput`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeploymentStrategyOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -126,8 +126,8 @@ impl DescribeAgreementOutput {
 }
 
 /// A builder for [`DescribeAgreementOutput`](crate::operation::describe_agreement::DescribeAgreementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAgreementOutputBuilder {
     pub(crate) agreement_id: ::std::option::Option<::std::string::String>,
     pub(crate) acceptor: ::std::option::Option<crate::types::Acceptor>,

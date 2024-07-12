@@ -26,8 +26,8 @@ impl DeleteStorageVirtualMachineInput {
 }
 
 /// A builder for [`DeleteStorageVirtualMachineInput`](crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStorageVirtualMachineInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) storage_virtual_machine_id: ::std::option::Option<::std::string::String>,

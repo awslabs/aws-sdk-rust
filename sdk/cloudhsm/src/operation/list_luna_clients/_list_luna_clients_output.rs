@@ -33,8 +33,8 @@ impl ListLunaClientsOutput {
 }
 
 /// A builder for [`ListLunaClientsOutput`](crate::operation::list_luna_clients::ListLunaClientsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLunaClientsOutputBuilder {
     pub(crate) client_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

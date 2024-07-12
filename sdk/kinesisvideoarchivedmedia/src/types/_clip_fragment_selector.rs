@@ -28,8 +28,8 @@ impl ClipFragmentSelector {
 }
 
 /// A builder for [`ClipFragmentSelector`](crate::types::ClipFragmentSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClipFragmentSelectorBuilder {
     pub(crate) fragment_selector_type: ::std::option::Option<crate::types::ClipFragmentSelectorType>,
     pub(crate) timestamp_range: ::std::option::Option<crate::types::ClipTimestampRange>,

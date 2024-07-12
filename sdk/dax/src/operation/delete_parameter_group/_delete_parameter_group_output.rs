@@ -26,8 +26,8 @@ impl DeleteParameterGroupOutput {
 }
 
 /// A builder for [`DeleteParameterGroupOutput`](crate::operation::delete_parameter_group::DeleteParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteParameterGroupOutputBuilder {
     pub(crate) deletion_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -29,8 +29,8 @@ impl RecommendationSettings {
 }
 
 /// A builder for [`RecommendationSettings`](crate::types::RecommendationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommendationSettingsBuilder {
     pub(crate) instance_sizing_type: ::std::option::Option<::std::string::String>,
     pub(crate) workload_type: ::std::option::Option<::std::string::String>,

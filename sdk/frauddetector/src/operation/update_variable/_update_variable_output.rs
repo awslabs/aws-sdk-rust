@@ -18,8 +18,8 @@ impl UpdateVariableOutput {
 }
 
 /// A builder for [`UpdateVariableOutput`](crate::operation::update_variable::UpdateVariableOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVariableOutputBuilder {
     _request_id: Option<String>,
 }

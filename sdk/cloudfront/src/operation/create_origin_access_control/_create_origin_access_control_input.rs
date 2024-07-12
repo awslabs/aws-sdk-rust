@@ -20,8 +20,8 @@ impl CreateOriginAccessControlInput {
 }
 
 /// A builder for [`CreateOriginAccessControlInput`](crate::operation::create_origin_access_control::CreateOriginAccessControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOriginAccessControlInputBuilder {
     pub(crate) origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,
 }

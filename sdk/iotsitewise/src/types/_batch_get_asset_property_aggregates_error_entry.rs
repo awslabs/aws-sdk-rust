@@ -35,8 +35,8 @@ impl BatchGetAssetPropertyAggregatesErrorEntry {
 }
 
 /// A builder for [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::types::BatchGetAssetPropertyAggregatesErrorEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAssetPropertyAggregatesErrorEntryBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

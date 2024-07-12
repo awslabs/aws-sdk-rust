@@ -47,8 +47,8 @@ impl GetAnswerInput {
 }
 
 /// A builder for [`GetAnswerInput`](crate::operation::get_answer::GetAnswerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnswerInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,

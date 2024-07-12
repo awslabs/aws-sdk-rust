@@ -26,8 +26,8 @@ impl GetPreparedStatementInput {
 }
 
 /// A builder for [`GetPreparedStatementInput`](crate::operation::get_prepared_statement::GetPreparedStatementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPreparedStatementInputBuilder {
     pub(crate) statement_name: ::std::option::Option<::std::string::String>,
     pub(crate) work_group: ::std::option::Option<::std::string::String>,

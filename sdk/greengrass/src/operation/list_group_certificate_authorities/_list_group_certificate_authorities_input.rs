@@ -20,8 +20,8 @@ impl ListGroupCertificateAuthoritiesInput {
 }
 
 /// A builder for [`ListGroupCertificateAuthoritiesInput`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupCertificateAuthoritiesInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }

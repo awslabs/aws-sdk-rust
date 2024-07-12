@@ -21,8 +21,8 @@ impl LoRaWanGatewayCurrentVersion {
 }
 
 /// A builder for [`LoRaWanGatewayCurrentVersion`](crate::types::LoRaWanGatewayCurrentVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanGatewayCurrentVersionBuilder {
     pub(crate) current_version: ::std::option::Option<crate::types::LoRaWanGatewayVersion>,
 }

@@ -34,8 +34,8 @@ impl DeregisterContainerInstanceInput {
 }
 
 /// A builder for [`DeregisterContainerInstanceInput`](crate::operation::deregister_container_instance::DeregisterContainerInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterContainerInstanceInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) container_instance: ::std::option::Option<::std::string::String>,

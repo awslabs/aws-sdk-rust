@@ -33,8 +33,8 @@ impl GetSavingsPlansCoverageOutput {
 }
 
 /// A builder for [`GetSavingsPlansCoverageOutput`](crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSavingsPlansCoverageOutputBuilder {
     pub(crate) savings_plans_coverages: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansCoverage>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

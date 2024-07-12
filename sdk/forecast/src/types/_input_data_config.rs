@@ -33,8 +33,8 @@ impl InputDataConfig {
 }
 
 /// A builder for [`InputDataConfig`](crate::types::InputDataConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputDataConfigBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) supplementary_features: ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,

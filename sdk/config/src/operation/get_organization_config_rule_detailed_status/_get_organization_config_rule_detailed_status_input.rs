@@ -39,8 +39,8 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
 }
 
 /// A builder for [`GetOrganizationConfigRuleDetailedStatusInput`](crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOrganizationConfigRuleDetailedStatusInputBuilder {
     pub(crate) organization_config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::StatusDetailFilters>,

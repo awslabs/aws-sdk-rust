@@ -115,8 +115,8 @@ impl ProgressDetail {
 }
 
 /// A builder for [`ProgressDetail`](crate::types::ProgressDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProgressDetailBuilder {
     pub(crate) current_progress: ::std::option::Option<crate::types::RobotDeploymentStep>,
     pub(crate) percent_done: ::std::option::Option<f32>,

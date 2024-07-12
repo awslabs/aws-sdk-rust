@@ -34,8 +34,8 @@ impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
 }
 
 /// A builder for [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
     pub(crate) generation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::GenerationSummary>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

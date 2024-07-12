@@ -46,8 +46,8 @@ impl GetLoaderJobStatusInput {
 }
 
 /// A builder for [`GetLoaderJobStatusInput`](crate::operation::get_loader_job_status::GetLoaderJobStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoaderJobStatusInputBuilder {
     pub(crate) load_id: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<bool>,

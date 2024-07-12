@@ -18,8 +18,8 @@ impl UpdateThesaurusOutput {
 }
 
 /// A builder for [`UpdateThesaurusOutput`](crate::operation::update_thesaurus::UpdateThesaurusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateThesaurusOutputBuilder {
     _request_id: Option<String>,
 }

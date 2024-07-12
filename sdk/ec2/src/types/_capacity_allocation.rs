@@ -27,8 +27,8 @@ impl CapacityAllocation {
 }
 
 /// A builder for [`CapacityAllocation`](crate::types::CapacityAllocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CapacityAllocationBuilder {
     pub(crate) allocation_type: ::std::option::Option<crate::types::AllocationType>,
     pub(crate) count: ::std::option::Option<i32>,

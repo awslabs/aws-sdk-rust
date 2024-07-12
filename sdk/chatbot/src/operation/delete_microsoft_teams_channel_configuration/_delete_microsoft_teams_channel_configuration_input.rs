@@ -21,8 +21,8 @@ impl DeleteMicrosoftTeamsChannelConfigurationInput {
 }
 
 /// A builder for [`DeleteMicrosoftTeamsChannelConfigurationInput`](crate::operation::delete_microsoft_teams_channel_configuration::DeleteMicrosoftTeamsChannelConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMicrosoftTeamsChannelConfigurationInputBuilder {
     pub(crate) chat_configuration_arn: ::std::option::Option<::std::string::String>,
 }

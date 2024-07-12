@@ -39,8 +39,8 @@ impl ListTopicRulesInput {
 }
 
 /// A builder for [`ListTopicRulesInput`](crate::operation::list_topic_rules::ListTopicRulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTopicRulesInputBuilder {
     pub(crate) topic: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

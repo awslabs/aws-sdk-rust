@@ -38,8 +38,8 @@ impl UpdateConfiguredTableAssociationInput {
 }
 
 /// A builder for [`UpdateConfiguredTableAssociationInput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConfiguredTableAssociationInputBuilder {
     pub(crate) configured_table_association_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,

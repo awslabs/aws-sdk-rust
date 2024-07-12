@@ -52,8 +52,8 @@ impl GetServiceSettingsOutput {
 }
 
 /// A builder for [`GetServiceSettingsOutput`](crate::operation::get_service_settings::GetServiceSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceSettingsOutputBuilder {
     pub(crate) linux_subscriptions_discovery: ::std::option::Option<crate::types::LinuxSubscriptionsDiscovery>,
     pub(crate) linux_subscriptions_discovery_settings: ::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings>,

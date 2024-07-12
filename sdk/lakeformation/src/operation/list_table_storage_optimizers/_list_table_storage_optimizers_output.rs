@@ -34,8 +34,8 @@ impl ListTableStorageOptimizersOutput {
 }
 
 /// A builder for [`ListTableStorageOptimizersOutput`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTableStorageOptimizersOutputBuilder {
     pub(crate) storage_optimizer_list: ::std::option::Option<::std::vec::Vec<crate::types::StorageOptimizer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

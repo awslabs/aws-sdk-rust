@@ -51,8 +51,8 @@ impl AutomaticTapeCreationRule {
 }
 
 /// A builder for [`AutomaticTapeCreationRule`](crate::types::AutomaticTapeCreationRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutomaticTapeCreationRuleBuilder {
     pub(crate) tape_barcode_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,

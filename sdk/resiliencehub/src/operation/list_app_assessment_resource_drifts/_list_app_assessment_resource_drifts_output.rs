@@ -33,8 +33,8 @@ impl ListAppAssessmentResourceDriftsOutput {
 }
 
 /// A builder for [`ListAppAssessmentResourceDriftsOutput`](crate::operation::list_app_assessment_resource_drifts::ListAppAssessmentResourceDriftsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppAssessmentResourceDriftsOutputBuilder {
     pub(crate) resource_drifts: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDrift>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

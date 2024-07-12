@@ -26,8 +26,8 @@ impl CreateTransformJobOutput {
 }
 
 /// A builder for [`CreateTransformJobOutput`](crate::operation::create_transform_job::CreateTransformJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransformJobOutputBuilder {
     pub(crate) transform_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl ArtifactLocation {
 }
 
 /// A builder for [`ArtifactLocation`](crate::types::ArtifactLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArtifactLocationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ArtifactLocationType>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3ArtifactLocation>,

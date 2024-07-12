@@ -118,8 +118,8 @@ impl CreateAppAuthorizationInput {
 }
 
 /// A builder for [`CreateAppAuthorizationInput`](crate::operation::create_app_authorization::CreateAppAuthorizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAppAuthorizationInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) app: ::std::option::Option<::std::string::String>,

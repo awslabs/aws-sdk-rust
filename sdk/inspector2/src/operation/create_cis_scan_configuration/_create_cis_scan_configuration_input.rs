@@ -44,8 +44,8 @@ impl CreateCisScanConfigurationInput {
 }
 
 /// A builder for [`CreateCisScanConfigurationInput`](crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCisScanConfigurationInputBuilder {
     pub(crate) scan_name: ::std::option::Option<::std::string::String>,
     pub(crate) security_level: ::std::option::Option<crate::types::CisSecurityLevel>,

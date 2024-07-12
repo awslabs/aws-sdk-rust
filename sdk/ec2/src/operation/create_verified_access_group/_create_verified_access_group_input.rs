@@ -58,8 +58,8 @@ impl CreateVerifiedAccessGroupInput {
 }
 
 /// A builder for [`CreateVerifiedAccessGroupInput`](crate::operation::create_verified_access_group::CreateVerifiedAccessGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVerifiedAccessGroupInputBuilder {
     pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

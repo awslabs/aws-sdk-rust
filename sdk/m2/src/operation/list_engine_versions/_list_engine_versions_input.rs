@@ -32,8 +32,8 @@ impl ListEngineVersionsInput {
 }
 
 /// A builder for [`ListEngineVersionsInput`](crate::operation::list_engine_versions::ListEngineVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEngineVersionsInputBuilder {
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -51,8 +51,8 @@ impl ListStackInstancesForProvisionedProductInput {
 }
 
 /// A builder for [`ListStackInstancesForProvisionedProductInput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStackInstancesForProvisionedProductInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,

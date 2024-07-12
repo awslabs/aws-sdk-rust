@@ -33,8 +33,8 @@ impl MetadataTransferJobStatus {
 }
 
 /// A builder for [`MetadataTransferJobStatus`](crate::types::MetadataTransferJobStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetadataTransferJobStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::MetadataTransferJobState>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetails>,

@@ -21,8 +21,8 @@ impl ClaimDeviceInput {
 }
 
 /// A builder for [`ClaimDeviceInput`](crate::operation::claim_device::ClaimDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClaimDeviceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

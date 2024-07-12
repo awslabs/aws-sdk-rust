@@ -44,8 +44,8 @@ impl CreateBackendConfigOutput {
 }
 
 /// A builder for [`CreateBackendConfigOutput`](crate::operation::create_backend_config::CreateBackendConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBackendConfigOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,

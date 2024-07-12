@@ -27,8 +27,8 @@ impl AssociatedTargetNetwork {
 }
 
 /// A builder for [`AssociatedTargetNetwork`](crate::types::AssociatedTargetNetwork).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociatedTargetNetworkBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_type: ::std::option::Option<crate::types::AssociatedNetworkType>,

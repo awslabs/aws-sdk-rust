@@ -32,8 +32,8 @@ impl DeleteResourcePermissionInput {
 }
 
 /// A builder for [`DeleteResourcePermissionInput`](crate::operation::delete_resource_permission::DeleteResourcePermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResourcePermissionInputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::PermissionActionType>,
     pub(crate) source_resource_arn: ::std::option::Option<::std::string::String>,

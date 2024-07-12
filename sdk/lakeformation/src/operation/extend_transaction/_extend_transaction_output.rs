@@ -18,8 +18,8 @@ impl ExtendTransactionOutput {
 }
 
 /// A builder for [`ExtendTransactionOutput`](crate::operation::extend_transaction::ExtendTransactionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExtendTransactionOutputBuilder {
     _request_id: Option<String>,
 }

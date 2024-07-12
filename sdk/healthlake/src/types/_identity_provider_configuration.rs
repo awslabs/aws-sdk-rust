@@ -49,8 +49,8 @@ impl IdentityProviderConfiguration {
 }
 
 /// A builder for [`IdentityProviderConfiguration`](crate::types::IdentityProviderConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityProviderConfigurationBuilder {
     pub(crate) authorization_strategy: ::std::option::Option<crate::types::AuthorizationStrategy>,
     pub(crate) fine_grained_authorization_enabled: ::std::option::Option<bool>,

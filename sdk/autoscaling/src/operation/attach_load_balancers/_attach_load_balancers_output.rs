@@ -18,8 +18,8 @@ impl AttachLoadBalancersOutput {
 }
 
 /// A builder for [`AttachLoadBalancersOutput`](crate::operation::attach_load_balancers::AttachLoadBalancersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachLoadBalancersOutputBuilder {
     _request_id: Option<String>,
 }

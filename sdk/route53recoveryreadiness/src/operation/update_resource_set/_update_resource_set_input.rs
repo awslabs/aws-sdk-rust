@@ -37,8 +37,8 @@ impl UpdateResourceSetInput {
 }
 
 /// A builder for [`UpdateResourceSetInput`](crate::operation::update_resource_set::UpdateResourceSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResourceSetInputBuilder {
     pub(crate) resource_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_set_type: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListInstancesOutput {
 }
 
 /// A builder for [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInstancesOutputBuilder {
     pub(crate) instance_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

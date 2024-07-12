@@ -47,8 +47,8 @@ impl LaunchPermissionConfiguration {
 }
 
 /// A builder for [`LaunchPermissionConfiguration`](crate::types::LaunchPermissionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchPermissionConfigurationBuilder {
     pub(crate) user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

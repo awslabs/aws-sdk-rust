@@ -55,8 +55,8 @@ impl WriteEventStream {
 }
 
 /// A builder for [`WriteEventStream`](crate::types::WriteEventStream).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WriteEventStreamBuilder {
     pub(crate) destination_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

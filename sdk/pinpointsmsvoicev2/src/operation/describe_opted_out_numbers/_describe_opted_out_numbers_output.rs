@@ -46,8 +46,8 @@ impl DescribeOptedOutNumbersOutput {
 }
 
 /// A builder for [`DescribeOptedOutNumbersOutput`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOptedOutNumbersOutputBuilder {
     pub(crate) opt_out_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,

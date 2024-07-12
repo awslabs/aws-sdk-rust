@@ -26,8 +26,8 @@ impl GetTargetResourceTypeOutput {
 }
 
 /// A builder for [`GetTargetResourceTypeOutput`](crate::operation::get_target_resource_type::GetTargetResourceTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTargetResourceTypeOutputBuilder {
     pub(crate) target_resource_type: ::std::option::Option<crate::types::TargetResourceType>,
     _request_id: Option<String>,

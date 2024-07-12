@@ -34,8 +34,8 @@ impl DeleteResourcePolicyStatementInput {
 }
 
 /// A builder for [`DeleteResourcePolicyStatementInput`](crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResourcePolicyStatementInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) statement_id: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl DescribeSpotInstanceRequestsOutput {
 }
 
 /// A builder for [`DescribeSpotInstanceRequestsOutput`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSpotInstanceRequestsOutputBuilder {
     pub(crate) spot_instance_requests: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

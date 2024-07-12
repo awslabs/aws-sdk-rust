@@ -27,8 +27,8 @@ impl UpdateXssMatchSetOutput {
 }
 
 /// A builder for [`UpdateXssMatchSetOutput`](crate::operation::update_xss_match_set::UpdateXssMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateXssMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

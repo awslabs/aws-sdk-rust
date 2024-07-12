@@ -28,8 +28,8 @@ impl ResumeGameServerGroupInput {
 }
 
 /// A builder for [`ResumeGameServerGroupInput`](crate::operation::resume_game_server_group::ResumeGameServerGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResumeGameServerGroupInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) resume_actions: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,

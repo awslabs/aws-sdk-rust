@@ -34,8 +34,8 @@ impl PutTargetsInput {
 }
 
 /// A builder for [`PutTargetsInput`](crate::operation::put_targets::PutTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutTargetsInputBuilder {
     pub(crate) rule: ::std::option::Option<::std::string::String>,
     pub(crate) event_bus_name: ::std::option::Option<::std::string::String>,

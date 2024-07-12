@@ -18,8 +18,8 @@ impl PutDeliveryChannelOutput {
 }
 
 /// A builder for [`PutDeliveryChannelOutput`](crate::operation::put_delivery_channel::PutDeliveryChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDeliveryChannelOutputBuilder {
     _request_id: Option<String>,
 }

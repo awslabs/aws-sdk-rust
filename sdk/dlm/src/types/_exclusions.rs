@@ -37,8 +37,8 @@ impl Exclusions {
 }
 
 /// A builder for [`Exclusions`](crate::types::Exclusions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExclusionsBuilder {
     pub(crate) exclude_boot_volumes: ::std::option::Option<bool>,
     pub(crate) exclude_volume_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -21,8 +21,8 @@ impl MetricGranularityType {
 }
 
 /// A builder for [`MetricGranularityType`](crate::types::MetricGranularityType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricGranularityTypeBuilder {
     pub(crate) granularity: ::std::option::Option<::std::string::String>,
 }

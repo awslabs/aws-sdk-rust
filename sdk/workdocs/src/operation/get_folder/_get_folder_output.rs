@@ -32,8 +32,8 @@ impl GetFolderOutput {
 }
 
 /// A builder for [`GetFolderOutput`](crate::operation::get_folder::GetFolderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFolderOutputBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::FolderMetadata>,
     pub(crate) custom_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

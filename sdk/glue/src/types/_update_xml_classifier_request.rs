@@ -34,8 +34,8 @@ impl UpdateXmlClassifierRequest {
 }
 
 /// A builder for [`UpdateXmlClassifierRequest`](crate::types::UpdateXmlClassifierRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateXmlClassifierRequestBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) classification: ::std::option::Option<::std::string::String>,

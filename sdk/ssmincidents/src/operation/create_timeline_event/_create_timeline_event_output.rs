@@ -34,8 +34,8 @@ impl CreateTimelineEventOutput {
 }
 
 /// A builder for [`CreateTimelineEventOutput`](crate::operation::create_timeline_event::CreateTimelineEventOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTimelineEventOutputBuilder {
     pub(crate) incident_record_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,

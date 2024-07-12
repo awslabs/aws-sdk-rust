@@ -28,8 +28,8 @@ impl MessageSignal {
 }
 
 /// A builder for [`MessageSignal`](crate::types::MessageSignal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageSignalBuilder {
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
     pub(crate) structured_message: ::std::option::Option<crate::types::StructuredMessage>,

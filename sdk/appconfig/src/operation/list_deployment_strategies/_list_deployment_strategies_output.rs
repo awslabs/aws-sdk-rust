@@ -34,8 +34,8 @@ impl ListDeploymentStrategiesOutput {
 }
 
 /// A builder for [`ListDeploymentStrategiesOutput`](crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeploymentStrategiesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStrategy>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

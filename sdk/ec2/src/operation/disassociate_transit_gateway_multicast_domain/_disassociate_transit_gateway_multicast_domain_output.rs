@@ -27,8 +27,8 @@ impl DisassociateTransitGatewayMulticastDomainOutput {
 }
 
 /// A builder for [`DisassociateTransitGatewayMulticastDomainOutput`](crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTransitGatewayMulticastDomainOutputBuilder {
     pub(crate) associations: ::std::option::Option<crate::types::TransitGatewayMulticastDomainAssociations>,
     _request_id: Option<String>,

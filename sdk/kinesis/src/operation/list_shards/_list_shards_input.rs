@@ -80,8 +80,8 @@ impl ListShardsInput {
 }
 
 /// A builder for [`ListShardsInput`](crate::operation::list_shards::ListShardsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListShardsInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

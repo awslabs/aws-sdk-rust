@@ -83,8 +83,8 @@ impl ImportReadSetSourceItem {
 }
 
 /// A builder for [`ImportReadSetSourceItem`](crate::types::ImportReadSetSourceItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportReadSetSourceItemBuilder {
     pub(crate) source_files: ::std::option::Option<crate::types::SourceFiles>,
     pub(crate) source_file_type: ::std::option::Option<crate::types::FileType>,

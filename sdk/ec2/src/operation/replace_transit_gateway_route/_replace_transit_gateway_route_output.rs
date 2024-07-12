@@ -26,8 +26,8 @@ impl ReplaceTransitGatewayRouteOutput {
 }
 
 /// A builder for [`ReplaceTransitGatewayRouteOutput`](crate::operation::replace_transit_gateway_route::ReplaceTransitGatewayRouteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplaceTransitGatewayRouteOutputBuilder {
     pub(crate) route: ::std::option::Option<crate::types::TransitGatewayRoute>,
     _request_id: Option<String>,

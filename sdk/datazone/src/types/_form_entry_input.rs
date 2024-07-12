@@ -35,8 +35,8 @@ impl FormEntryInput {
 }
 
 /// A builder for [`FormEntryInput`](crate::types::FormEntryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FormEntryInputBuilder {
     pub(crate) type_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) type_revision: ::std::option::Option<::std::string::String>,

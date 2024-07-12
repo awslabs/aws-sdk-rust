@@ -26,8 +26,8 @@ impl GetCrlOutput {
 }
 
 /// A builder for [`GetCrlOutput`](crate::operation::get_crl::GetCrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCrlOutputBuilder {
     pub(crate) crl: ::std::option::Option<crate::types::CrlDetail>,
     _request_id: Option<String>,

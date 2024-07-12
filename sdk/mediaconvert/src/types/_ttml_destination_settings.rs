@@ -21,8 +21,8 @@ impl TtmlDestinationSettings {
 }
 
 /// A builder for [`TtmlDestinationSettings`](crate::types::TtmlDestinationSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TtmlDestinationSettingsBuilder {
     pub(crate) style_passthrough: ::std::option::Option<crate::types::TtmlStylePassthrough>,
 }

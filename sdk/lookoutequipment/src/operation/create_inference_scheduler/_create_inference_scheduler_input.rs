@@ -80,8 +80,8 @@ impl CreateInferenceSchedulerInput {
 }
 
 /// A builder for [`CreateInferenceSchedulerInput`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInferenceSchedulerInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) inference_scheduler_name: ::std::option::Option<::std::string::String>,

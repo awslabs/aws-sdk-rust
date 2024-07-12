@@ -32,8 +32,8 @@ impl ListDatasetExportJobsInput {
 }
 
 /// A builder for [`ListDatasetExportJobsInput`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDatasetExportJobsInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

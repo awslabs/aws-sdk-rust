@@ -34,8 +34,8 @@ impl ListAssessmentReportsOutput {
 }
 
 /// A builder for [`ListAssessmentReportsOutput`](crate::operation::list_assessment_reports::ListAssessmentReportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentReportsOutputBuilder {
     pub(crate) assessment_reports: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

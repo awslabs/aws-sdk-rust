@@ -122,8 +122,8 @@ impl CreateAutoMlJobV2Input {
 }
 
 /// A builder for [`CreateAutoMlJobV2Input`](crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAutoMlJobV2InputBuilder {
     pub(crate) auto_ml_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_ml_job_input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>>,

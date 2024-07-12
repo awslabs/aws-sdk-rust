@@ -65,8 +65,8 @@ impl ConnectPeerSummary {
 }
 
 /// A builder for [`ConnectPeerSummary`](crate::types::ConnectPeerSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectPeerSummaryBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) connect_attachment_id: ::std::option::Option<::std::string::String>,

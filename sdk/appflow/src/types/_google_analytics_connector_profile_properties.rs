@@ -12,8 +12,8 @@ impl GoogleAnalyticsConnectorProfileProperties {
 }
 
 /// A builder for [`GoogleAnalyticsConnectorProfileProperties`](crate::types::GoogleAnalyticsConnectorProfileProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GoogleAnalyticsConnectorProfilePropertiesBuilder {}
 impl GoogleAnalyticsConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`GoogleAnalyticsConnectorProfileProperties`](crate::types::GoogleAnalyticsConnectorProfileProperties).

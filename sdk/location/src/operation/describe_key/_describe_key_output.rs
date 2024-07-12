@@ -101,8 +101,8 @@ impl DescribeKeyOutput {
 }
 
 /// A builder for [`DescribeKeyOutput`](crate::operation::describe_key::DescribeKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeKeyOutputBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,

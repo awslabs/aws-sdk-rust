@@ -18,8 +18,8 @@ impl UpdateOpenIdConnectProviderThumbprintOutput {
 }
 
 /// A builder for [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIdConnectProviderThumbprintOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOpenIdConnectProviderThumbprintOutputBuilder {
     _request_id: Option<String>,
 }

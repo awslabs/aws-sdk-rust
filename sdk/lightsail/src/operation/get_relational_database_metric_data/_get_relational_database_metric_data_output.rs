@@ -34,8 +34,8 @@ impl GetRelationalDatabaseMetricDataOutput {
 }
 
 /// A builder for [`GetRelationalDatabaseMetricDataOutput`](crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseMetricDataOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<crate::types::RelationalDatabaseMetricName>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,

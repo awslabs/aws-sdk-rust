@@ -34,8 +34,8 @@ impl ListAuthenticationProfilesOutput {
 }
 
 /// A builder for [`ListAuthenticationProfilesOutput`](crate::operation::list_authentication_profiles::ListAuthenticationProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAuthenticationProfilesOutputBuilder {
     pub(crate) authentication_profile_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

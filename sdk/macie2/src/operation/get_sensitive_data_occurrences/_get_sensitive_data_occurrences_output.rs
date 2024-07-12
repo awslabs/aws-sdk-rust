@@ -57,8 +57,8 @@ impl GetSensitiveDataOccurrencesOutput {
 }
 
 /// A builder for [`GetSensitiveDataOccurrencesOutput`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSensitiveDataOccurrencesOutputBuilder {
     pub(crate) error: ::std::option::Option<::std::string::String>,
     pub(crate) sensitive_data_occurrences:

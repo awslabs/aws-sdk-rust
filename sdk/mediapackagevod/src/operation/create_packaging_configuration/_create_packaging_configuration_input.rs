@@ -57,8 +57,8 @@ impl CreatePackagingConfigurationInput {
 }
 
 /// A builder for [`CreatePackagingConfigurationInput`](crate::operation::create_packaging_configuration::CreatePackagingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePackagingConfigurationInputBuilder {
     pub(crate) cmaf_package: ::std::option::Option<crate::types::CmafPackage>,
     pub(crate) dash_package: ::std::option::Option<crate::types::DashPackage>,

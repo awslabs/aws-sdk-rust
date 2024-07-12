@@ -157,8 +157,8 @@ impl CreateApiCacheInput {
 }
 
 /// A builder for [`CreateApiCacheInput`](crate::operation::create_api_cache::CreateApiCacheInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateApiCacheInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) ttl: ::std::option::Option<i64>,

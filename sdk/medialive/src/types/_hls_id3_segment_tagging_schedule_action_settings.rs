@@ -27,8 +27,8 @@ impl HlsId3SegmentTaggingScheduleActionSettings {
 }
 
 /// A builder for [`HlsId3SegmentTaggingScheduleActionSettings`](crate::types::HlsId3SegmentTaggingScheduleActionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsId3SegmentTaggingScheduleActionSettingsBuilder {
     pub(crate) tag: ::std::option::Option<::std::string::String>,
     pub(crate) id3: ::std::option::Option<::std::string::String>,

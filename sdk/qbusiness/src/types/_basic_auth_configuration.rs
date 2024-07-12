@@ -29,8 +29,8 @@ impl BasicAuthConfiguration {
 }
 
 /// A builder for [`BasicAuthConfiguration`](crate::types::BasicAuthConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BasicAuthConfigurationBuilder {
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

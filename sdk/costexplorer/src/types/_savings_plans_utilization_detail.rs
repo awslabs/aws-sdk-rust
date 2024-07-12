@@ -45,8 +45,8 @@ impl SavingsPlansUtilizationDetail {
 }
 
 /// A builder for [`SavingsPlansUtilizationDetail`](crate::types::SavingsPlansUtilizationDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlansUtilizationDetailBuilder {
     pub(crate) savings_plan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

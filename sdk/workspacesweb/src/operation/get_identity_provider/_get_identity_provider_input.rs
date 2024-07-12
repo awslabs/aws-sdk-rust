@@ -20,8 +20,8 @@ impl GetIdentityProviderInput {
 }
 
 /// A builder for [`GetIdentityProviderInput`](crate::operation::get_identity_provider::GetIdentityProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdentityProviderInputBuilder {
     pub(crate) identity_provider_arn: ::std::option::Option<::std::string::String>,
 }

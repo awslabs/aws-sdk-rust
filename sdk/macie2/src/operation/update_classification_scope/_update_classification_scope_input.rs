@@ -26,8 +26,8 @@ impl UpdateClassificationScopeInput {
 }
 
 /// A builder for [`UpdateClassificationScopeInput`](crate::operation::update_classification_scope::UpdateClassificationScopeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClassificationScopeInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) s3: ::std::option::Option<crate::types::S3ClassificationScopeUpdate>,

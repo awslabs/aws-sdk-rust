@@ -34,8 +34,8 @@ impl ListThingGroupsForThingOutput {
 }
 
 /// A builder for [`ListThingGroupsForThingOutput`](crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListThingGroupsForThingOutputBuilder {
     pub(crate) thing_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupNameAndArn>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

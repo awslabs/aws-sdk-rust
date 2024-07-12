@@ -32,8 +32,8 @@ impl UpdatePortfolioShareOutput {
 }
 
 /// A builder for [`UpdatePortfolioShareOutput`](crate::operation::update_portfolio_share::UpdatePortfolioShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePortfolioShareOutputBuilder {
     pub(crate) portfolio_share_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ShareStatus>,

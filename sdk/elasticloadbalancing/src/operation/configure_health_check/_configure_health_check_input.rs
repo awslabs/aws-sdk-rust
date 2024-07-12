@@ -27,8 +27,8 @@ impl ConfigureHealthCheckInput {
 }
 
 /// A builder for [`ConfigureHealthCheckInput`](crate::operation::configure_health_check::ConfigureHealthCheckInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigureHealthCheckInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) health_check: ::std::option::Option<crate::types::HealthCheck>,

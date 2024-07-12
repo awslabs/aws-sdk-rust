@@ -27,8 +27,8 @@ impl Attachment {
 }
 
 /// A builder for [`Attachment`](crate::types::Attachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachmentBuilder {
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,

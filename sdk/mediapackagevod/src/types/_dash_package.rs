@@ -61,8 +61,8 @@ impl DashPackage {
 }
 
 /// A builder for [`DashPackage`](crate::types::DashPackage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashPackageBuilder {
     pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::DashManifest>>,
     pub(crate) encryption: ::std::option::Option<crate::types::DashEncryption>,

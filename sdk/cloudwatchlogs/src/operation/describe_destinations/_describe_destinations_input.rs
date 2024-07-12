@@ -32,8 +32,8 @@ impl DescribeDestinationsInput {
 }
 
 /// A builder for [`DescribeDestinationsInput`](crate::operation::describe_destinations::DescribeDestinationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDestinationsInputBuilder {
     pub(crate) destination_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

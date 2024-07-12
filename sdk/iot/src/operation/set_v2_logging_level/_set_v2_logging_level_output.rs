@@ -18,8 +18,8 @@ impl SetV2LoggingLevelOutput {
 }
 
 /// A builder for [`SetV2LoggingLevelOutput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetV2LoggingLevelOutputBuilder {
     _request_id: Option<String>,
 }

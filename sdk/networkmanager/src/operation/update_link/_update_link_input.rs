@@ -56,8 +56,8 @@ impl UpdateLinkInput {
 }
 
 /// A builder for [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLinkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) link_id: ::std::option::Option<::std::string::String>,

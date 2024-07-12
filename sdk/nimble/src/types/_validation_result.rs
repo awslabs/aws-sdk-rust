@@ -40,8 +40,8 @@ impl ValidationResult {
 }
 
 /// A builder for [`ValidationResult`](crate::types::ValidationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidationResultBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::LaunchProfileValidationType>,
     pub(crate) state: ::std::option::Option<crate::types::LaunchProfileValidationState>,

@@ -20,8 +20,8 @@ impl DescribeFileSystemPolicyInput {
 }
 
 /// A builder for [`DescribeFileSystemPolicyInput`](crate::operation::describe_file_system_policy::DescribeFileSystemPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFileSystemPolicyInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
 }

@@ -33,8 +33,8 @@ impl ListAppAuthorizationsOutput {
 }
 
 /// A builder for [`ListAppAuthorizationsOutput`](crate::operation::list_app_authorizations::ListAppAuthorizationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppAuthorizationsOutputBuilder {
     pub(crate) app_authorization_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AppAuthorizationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

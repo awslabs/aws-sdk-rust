@@ -74,8 +74,8 @@ impl DescribeRetrainingSchedulerOutput {
 }
 
 /// A builder for [`DescribeRetrainingSchedulerOutput`](crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRetrainingSchedulerOutputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,

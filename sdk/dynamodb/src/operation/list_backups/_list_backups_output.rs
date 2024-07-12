@@ -38,8 +38,8 @@ impl ListBackupsOutput {
 }
 
 /// A builder for [`ListBackupsOutput`](crate::operation::list_backups::ListBackupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBackupsOutputBuilder {
     pub(crate) backup_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BackupSummary>>,
     pub(crate) last_evaluated_backup_arn: ::std::option::Option<::std::string::String>,

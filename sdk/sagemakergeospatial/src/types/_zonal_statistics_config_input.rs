@@ -63,8 +63,8 @@ impl ZonalStatisticsConfigInput {
 }
 
 /// A builder for [`ZonalStatisticsConfigInput`](crate::types::ZonalStatisticsConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ZonalStatisticsConfigInputBuilder {
     pub(crate) zone_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) statistics: ::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>>,

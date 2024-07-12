@@ -18,8 +18,8 @@ impl DeleteAppReplicationConfigurationOutput {
 }
 
 /// A builder for [`DeleteAppReplicationConfigurationOutput`](crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppReplicationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

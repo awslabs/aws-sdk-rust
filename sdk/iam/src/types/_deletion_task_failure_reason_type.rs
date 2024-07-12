@@ -30,8 +30,8 @@ impl DeletionTaskFailureReasonType {
 }
 
 /// A builder for [`DeletionTaskFailureReasonType`](crate::types::DeletionTaskFailureReasonType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletionTaskFailureReasonTypeBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
     pub(crate) role_usage_list: ::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>>,

@@ -26,8 +26,8 @@ impl DisassociateOpsItemRelatedItemInput {
 }
 
 /// A builder for [`DisassociateOpsItemRelatedItemInput`](crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateOpsItemRelatedItemInputBuilder {
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,

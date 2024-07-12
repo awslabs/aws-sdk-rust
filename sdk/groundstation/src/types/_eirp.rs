@@ -27,8 +27,8 @@ impl Eirp {
 }
 
 /// A builder for [`Eirp`](crate::types::Eirp).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EirpBuilder {
     pub(crate) value: ::std::option::Option<f64>,
     pub(crate) units: ::std::option::Option<crate::types::EirpUnits>,

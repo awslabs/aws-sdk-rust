@@ -49,8 +49,8 @@ impl StorageOptimizer {
 }
 
 /// A builder for [`StorageOptimizer`](crate::types::StorageOptimizer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageOptimizerBuilder {
     pub(crate) storage_optimizer_type: ::std::option::Option<crate::types::OptimizerType>,
     pub(crate) config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

@@ -59,8 +59,8 @@ impl ImportCertificateInput {
 }
 
 /// A builder for [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ImportCertificateInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::aws_smithy_types::Blob>,

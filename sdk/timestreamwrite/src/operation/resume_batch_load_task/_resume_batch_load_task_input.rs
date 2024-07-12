@@ -20,8 +20,8 @@ impl ResumeBatchLoadTaskInput {
 }
 
 /// A builder for [`ResumeBatchLoadTaskInput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResumeBatchLoadTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }

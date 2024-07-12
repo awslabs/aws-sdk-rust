@@ -21,8 +21,8 @@ impl AudioWatermarkSettings {
 }
 
 /// A builder for [`AudioWatermarkSettings`](crate::types::AudioWatermarkSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioWatermarkSettingsBuilder {
     pub(crate) nielsen_watermarks_settings: ::std::option::Option<crate::types::NielsenWatermarksSettings>,
 }

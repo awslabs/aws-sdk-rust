@@ -34,8 +34,8 @@ impl DescribeLdapsSettingsOutput {
 }
 
 /// A builder for [`DescribeLdapsSettingsOutput`](crate::operation::describe_ldaps_settings::DescribeLdapsSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLdapsSettingsOutputBuilder {
     pub(crate) ldaps_settings_info: ::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

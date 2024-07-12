@@ -34,8 +34,8 @@ impl DescribeFleetCapacityOutput {
 }
 
 /// A builder for [`DescribeFleetCapacityOutput`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetCapacityOutputBuilder {
     pub(crate) fleet_capacity: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

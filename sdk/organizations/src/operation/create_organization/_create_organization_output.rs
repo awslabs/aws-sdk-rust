@@ -26,8 +26,8 @@ impl CreateOrganizationOutput {
 }
 
 /// A builder for [`CreateOrganizationOutput`](crate::operation::create_organization::CreateOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOrganizationOutputBuilder {
     pub(crate) organization: ::std::option::Option<crate::types::Organization>,
     _request_id: Option<String>,

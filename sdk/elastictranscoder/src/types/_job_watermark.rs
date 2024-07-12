@@ -35,8 +35,8 @@ impl JobWatermark {
 }
 
 /// A builder for [`JobWatermark`](crate::types::JobWatermark).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobWatermarkBuilder {
     pub(crate) preset_watermark_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_key: ::std::option::Option<::std::string::String>,

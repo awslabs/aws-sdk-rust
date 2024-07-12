@@ -34,8 +34,8 @@ impl ListUserHierarchyGroupsOutput {
 }
 
 /// A builder for [`ListUserHierarchyGroupsOutput`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUserHierarchyGroupsOutputBuilder {
     pub(crate) user_hierarchy_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchyGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

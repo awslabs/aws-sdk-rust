@@ -39,8 +39,8 @@ impl EntityItem {
 }
 
 /// A builder for [`EntityItem`](crate::types::EntityItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityItemBuilder {
     pub(crate) identifier: ::std::option::Option<crate::types::EntityIdentifier>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,

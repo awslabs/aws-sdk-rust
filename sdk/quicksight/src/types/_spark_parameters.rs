@@ -28,8 +28,8 @@ impl SparkParameters {
 }
 
 /// A builder for [`SparkParameters`](crate::types::SparkParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SparkParametersBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,

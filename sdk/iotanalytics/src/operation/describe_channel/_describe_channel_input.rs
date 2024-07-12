@@ -26,8 +26,8 @@ impl DescribeChannelInput {
 }
 
 /// A builder for [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) include_statistics: ::std::option::Option<bool>,

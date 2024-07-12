@@ -20,8 +20,8 @@ impl CancelResizeInput {
 }
 
 /// A builder for [`CancelResizeInput`](crate::operation::cancel_resize::CancelResizeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelResizeInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }

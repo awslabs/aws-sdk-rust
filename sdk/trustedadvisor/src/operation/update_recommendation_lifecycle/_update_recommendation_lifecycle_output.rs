@@ -18,8 +18,8 @@ impl UpdateRecommendationLifecycleOutput {
 }
 
 /// A builder for [`UpdateRecommendationLifecycleOutput`](crate::operation::update_recommendation_lifecycle::UpdateRecommendationLifecycleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRecommendationLifecycleOutputBuilder {
     _request_id: Option<String>,
 }

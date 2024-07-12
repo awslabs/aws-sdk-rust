@@ -25,8 +25,8 @@ impl CallAnalyticsJobDetails {
 }
 
 /// A builder for [`CallAnalyticsJobDetails`](crate::types::CallAnalyticsJobDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CallAnalyticsJobDetailsBuilder {
     pub(crate) skipped: ::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsSkippedFeature>>,
 }

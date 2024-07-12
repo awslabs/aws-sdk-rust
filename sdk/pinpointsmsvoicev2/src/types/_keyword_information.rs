@@ -35,8 +35,8 @@ impl KeywordInformation {
 }
 
 /// A builder for [`KeywordInformation`](crate::types::KeywordInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeywordInformationBuilder {
     pub(crate) keyword: ::std::option::Option<::std::string::String>,
     pub(crate) keyword_message: ::std::option::Option<::std::string::String>,

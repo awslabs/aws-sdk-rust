@@ -34,8 +34,8 @@ impl PutConfiguredAudienceModelPolicyOutput {
 }
 
 /// A builder for [`PutConfiguredAudienceModelPolicyOutput`](crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutConfiguredAudienceModelPolicyOutputBuilder {
     pub(crate) configured_audience_model_policy: ::std::option::Option<::std::string::String>,
     pub(crate) policy_hash: ::std::option::Option<::std::string::String>,

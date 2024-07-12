@@ -32,8 +32,8 @@ impl DescribeKeyValueStoreOutput {
 }
 
 /// A builder for [`DescribeKeyValueStoreOutput`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeKeyValueStoreOutputBuilder {
     pub(crate) key_value_store: ::std::option::Option<crate::types::KeyValueStore>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

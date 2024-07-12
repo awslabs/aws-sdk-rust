@@ -50,8 +50,8 @@ impl GetActionRecommendationsInput {
 }
 
 /// A builder for [`GetActionRecommendationsInput`](crate::operation::get_action_recommendations::GetActionRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetActionRecommendationsInputBuilder {
     pub(crate) campaign_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

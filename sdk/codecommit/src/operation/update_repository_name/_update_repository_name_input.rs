@@ -27,8 +27,8 @@ impl UpdateRepositoryNameInput {
 }
 
 /// A builder for [`UpdateRepositoryNameInput`](crate::operation::update_repository_name::UpdateRepositoryNameInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRepositoryNameInputBuilder {
     pub(crate) old_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_name: ::std::option::Option<::std::string::String>,

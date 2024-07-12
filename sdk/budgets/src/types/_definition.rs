@@ -33,8 +33,8 @@ impl Definition {
 }
 
 /// A builder for [`Definition`](crate::types::Definition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefinitionBuilder {
     pub(crate) iam_action_definition: ::std::option::Option<crate::types::IamActionDefinition>,
     pub(crate) scp_action_definition: ::std::option::Option<crate::types::ScpActionDefinition>,

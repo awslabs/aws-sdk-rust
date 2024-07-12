@@ -39,8 +39,8 @@ impl DataCellsFilterResource {
 }
 
 /// A builder for [`DataCellsFilterResource`](crate::types::DataCellsFilterResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataCellsFilterResourceBuilder {
     pub(crate) table_catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,

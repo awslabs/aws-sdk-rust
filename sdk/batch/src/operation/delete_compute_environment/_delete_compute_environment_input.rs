@@ -21,8 +21,8 @@ impl DeleteComputeEnvironmentInput {
 }
 
 /// A builder for [`DeleteComputeEnvironmentInput`](crate::operation::delete_compute_environment::DeleteComputeEnvironmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteComputeEnvironmentInputBuilder {
     pub(crate) compute_environment: ::std::option::Option<::std::string::String>,
 }

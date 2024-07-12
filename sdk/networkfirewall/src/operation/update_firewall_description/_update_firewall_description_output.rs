@@ -48,8 +48,8 @@ impl UpdateFirewallDescriptionOutput {
 }
 
 /// A builder for [`UpdateFirewallDescriptionOutput`](crate::operation::update_firewall_description::UpdateFirewallDescriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFirewallDescriptionOutputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,

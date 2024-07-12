@@ -203,8 +203,8 @@ impl PostTextOutput {
 }
 
 /// A builder for [`PostTextOutput`](crate::operation::post_text::PostTextOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PostTextOutputBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) nlu_intent_confidence: ::std::option::Option<crate::types::IntentConfidence>,

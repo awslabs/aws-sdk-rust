@@ -38,8 +38,8 @@ impl ModuleInfo {
 }
 
 /// A builder for [`ModuleInfo`](crate::types::ModuleInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModuleInfoBuilder {
     pub(crate) type_hierarchy: ::std::option::Option<::std::string::String>,
     pub(crate) logical_id_hierarchy: ::std::option::Option<::std::string::String>,

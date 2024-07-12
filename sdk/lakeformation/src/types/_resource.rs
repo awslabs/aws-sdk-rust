@@ -63,8 +63,8 @@ impl Resource {
 }
 
 /// A builder for [`Resource`](crate::types::Resource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceBuilder {
     pub(crate) catalog: ::std::option::Option<crate::types::CatalogResource>,
     pub(crate) database: ::std::option::Option<crate::types::DatabaseResource>,

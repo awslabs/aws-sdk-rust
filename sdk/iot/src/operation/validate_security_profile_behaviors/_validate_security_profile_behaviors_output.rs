@@ -34,8 +34,8 @@ impl ValidateSecurityProfileBehaviorsOutput {
 }
 
 /// A builder for [`ValidateSecurityProfileBehaviorsOutput`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateSecurityProfileBehaviorsOutputBuilder {
     pub(crate) valid: ::std::option::Option<bool>,
     pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,

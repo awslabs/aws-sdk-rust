@@ -39,8 +39,8 @@ impl DriftCheckBaselines {
 }
 
 /// A builder for [`DriftCheckBaselines`](crate::types::DriftCheckBaselines).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DriftCheckBaselinesBuilder {
     pub(crate) bias: ::std::option::Option<crate::types::DriftCheckBias>,
     pub(crate) explainability: ::std::option::Option<crate::types::DriftCheckExplainability>,

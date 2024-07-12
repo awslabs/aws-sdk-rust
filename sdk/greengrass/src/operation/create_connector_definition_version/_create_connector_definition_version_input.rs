@@ -34,8 +34,8 @@ impl CreateConnectorDefinitionVersionInput {
 }
 
 /// A builder for [`CreateConnectorDefinitionVersionInput`](crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateConnectorDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) connector_definition_id: ::std::option::Option<::std::string::String>,

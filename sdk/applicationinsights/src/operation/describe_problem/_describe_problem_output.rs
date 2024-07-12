@@ -26,8 +26,8 @@ impl DescribeProblemOutput {
 }
 
 /// A builder for [`DescribeProblemOutput`](crate::operation::describe_problem::DescribeProblemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProblemOutputBuilder {
     pub(crate) problem: ::std::option::Option<crate::types::Problem>,
     _request_id: Option<String>,

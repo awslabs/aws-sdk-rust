@@ -44,8 +44,8 @@ impl UpdateEnrollmentStatusInput {
 }
 
 /// A builder for [`UpdateEnrollmentStatusInput`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEnrollmentStatusInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) include_member_accounts: ::std::option::Option<bool>,

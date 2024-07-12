@@ -59,8 +59,8 @@ impl CountsSummary {
 }
 
 /// A builder for [`CountsSummary`](crate::types::CountsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CountsSummaryBuilder {
     pub(crate) components: ::std::option::Option<crate::types::ResourceCountsSummary>,
     pub(crate) environments: ::std::option::Option<crate::types::ResourceCountsSummary>,

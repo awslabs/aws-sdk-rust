@@ -40,8 +40,8 @@ impl ListAnomalousLogGroupsOutput {
 }
 
 /// A builder for [`ListAnomalousLogGroupsOutput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnomalousLogGroupsOutputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
     pub(crate) anomalous_log_groups: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>,

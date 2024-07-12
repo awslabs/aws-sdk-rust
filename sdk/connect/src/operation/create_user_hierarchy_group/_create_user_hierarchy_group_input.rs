@@ -38,8 +38,8 @@ impl CreateUserHierarchyGroupInput {
 }
 
 /// A builder for [`CreateUserHierarchyGroupInput`](crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUserHierarchyGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) parent_group_id: ::std::option::Option<::std::string::String>,

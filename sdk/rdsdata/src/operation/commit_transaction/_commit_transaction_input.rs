@@ -33,8 +33,8 @@ impl CommitTransactionInput {
 }
 
 /// A builder for [`CommitTransactionInput`](crate::operation::commit_transaction::CommitTransactionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CommitTransactionInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,

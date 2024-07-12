@@ -18,8 +18,8 @@ impl PutRecommendationFeedbackOutput {
 }
 
 /// A builder for [`PutRecommendationFeedbackOutput`](crate::operation::put_recommendation_feedback::PutRecommendationFeedbackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRecommendationFeedbackOutputBuilder {
     _request_id: Option<String>,
 }

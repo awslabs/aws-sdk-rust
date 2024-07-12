@@ -18,8 +18,8 @@ impl SkipWaitTimeForInstanceTerminationOutput {
 }
 
 /// A builder for [`SkipWaitTimeForInstanceTerminationOutput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SkipWaitTimeForInstanceTerminationOutputBuilder {
     _request_id: Option<String>,
 }

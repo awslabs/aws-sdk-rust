@@ -86,8 +86,8 @@ impl GetWirelessDeviceOutput {
 }
 
 /// A builder for [`GetWirelessDeviceOutput`](crate::operation::get_wireless_device::GetWirelessDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWirelessDeviceOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

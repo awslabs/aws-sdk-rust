@@ -32,8 +32,8 @@ impl ListRecommendersInput {
 }
 
 /// A builder for [`ListRecommendersInput`](crate::operation::list_recommenders::ListRecommendersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecommendersInputBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

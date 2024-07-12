@@ -44,8 +44,8 @@ impl ListSigningPlatformsInput {
 }
 
 /// A builder for [`ListSigningPlatformsInput`](crate::operation::list_signing_platforms::ListSigningPlatformsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSigningPlatformsInputBuilder {
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) partner: ::std::option::Option<::std::string::String>,

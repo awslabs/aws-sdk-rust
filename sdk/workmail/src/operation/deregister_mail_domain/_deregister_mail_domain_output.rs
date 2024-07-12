@@ -18,8 +18,8 @@ impl DeregisterMailDomainOutput {
 }
 
 /// A builder for [`DeregisterMailDomainOutput`](crate::operation::deregister_mail_domain::DeregisterMailDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterMailDomainOutputBuilder {
     _request_id: Option<String>,
 }

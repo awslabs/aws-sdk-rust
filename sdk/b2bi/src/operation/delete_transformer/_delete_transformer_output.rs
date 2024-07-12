@@ -18,8 +18,8 @@ impl DeleteTransformerOutput {
 }
 
 /// A builder for [`DeleteTransformerOutput`](crate::operation::delete_transformer::DeleteTransformerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTransformerOutputBuilder {
     _request_id: Option<String>,
 }

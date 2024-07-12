@@ -57,8 +57,8 @@ impl Extensions {
 }
 
 /// A builder for [`Extensions`](crate::types::Extensions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExtensionsBuilder {
     pub(crate) certificate_policies: ::std::option::Option<::std::vec::Vec<crate::types::PolicyInformation>>,
     pub(crate) extended_key_usage: ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsage>>,

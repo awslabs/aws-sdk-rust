@@ -103,8 +103,8 @@ impl AwsRedshiftClusterLoggingStatus {
 }
 
 /// A builder for [`AwsRedshiftClusterLoggingStatus`](crate::types::AwsRedshiftClusterLoggingStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRedshiftClusterLoggingStatusBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_failure_message: ::std::option::Option<::std::string::String>,

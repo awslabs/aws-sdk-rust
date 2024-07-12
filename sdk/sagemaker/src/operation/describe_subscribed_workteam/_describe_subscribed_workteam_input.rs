@@ -20,8 +20,8 @@ impl DescribeSubscribedWorkteamInput {
 }
 
 /// A builder for [`DescribeSubscribedWorkteamInput`](crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSubscribedWorkteamInputBuilder {
     pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
 }

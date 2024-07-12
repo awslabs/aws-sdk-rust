@@ -28,8 +28,8 @@ impl AuthorizeDbSecurityGroupIngressOutput {
 }
 
 /// A builder for [`AuthorizeDbSecurityGroupIngressOutput`](crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeDbSecurityGroupIngressOutputBuilder {
     pub(crate) db_security_group: ::std::option::Option<crate::types::DbSecurityGroup>,
     _request_id: Option<String>,

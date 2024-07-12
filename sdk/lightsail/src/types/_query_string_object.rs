@@ -34,8 +34,8 @@ impl QueryStringObject {
 }
 
 /// A builder for [`QueryStringObject`](crate::types::QueryStringObject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryStringObjectBuilder {
     pub(crate) option: ::std::option::Option<bool>,
     pub(crate) query_strings_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -70,8 +70,8 @@ impl StartSupportDataExportInput {
 }
 
 /// A builder for [`StartSupportDataExportInput`](crate::operation::start_support_data_export::StartSupportDataExportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSupportDataExportInputBuilder {
     pub(crate) data_set_type: ::std::option::Option<crate::types::SupportDataSetType>,
     pub(crate) from_date: ::std::option::Option<::aws_smithy_types::DateTime>,

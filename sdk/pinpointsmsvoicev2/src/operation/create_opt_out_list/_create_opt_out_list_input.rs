@@ -34,8 +34,8 @@ impl CreateOptOutListInput {
 }
 
 /// A builder for [`CreateOptOutListInput`](crate::operation::create_opt_out_list::CreateOptOutListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOptOutListInputBuilder {
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

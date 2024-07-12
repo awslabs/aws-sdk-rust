@@ -27,8 +27,8 @@ impl GeneratedManifestEncryption {
 }
 
 /// A builder for [`GeneratedManifestEncryption`](crate::types::GeneratedManifestEncryption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeneratedManifestEncryptionBuilder {
     pub(crate) sses3: ::std::option::Option<crate::types::Sses3Encryption>,
     pub(crate) ssekms: ::std::option::Option<crate::types::SsekmsEncryption>,

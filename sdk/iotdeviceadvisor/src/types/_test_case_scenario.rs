@@ -93,8 +93,8 @@ impl TestCaseScenario {
 }
 
 /// A builder for [`TestCaseScenario`](crate::types::TestCaseScenario).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestCaseScenarioBuilder {
     pub(crate) test_case_scenario_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_case_scenario_type: ::std::option::Option<crate::types::TestCaseScenarioType>,

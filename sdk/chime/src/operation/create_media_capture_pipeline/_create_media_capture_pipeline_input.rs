@@ -62,8 +62,8 @@ impl CreateMediaCapturePipelineInput {
 }
 
 /// A builder for [`CreateMediaCapturePipelineInput`](crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateMediaCapturePipelineInputBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::MediaPipelineSourceType>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,

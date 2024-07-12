@@ -26,8 +26,8 @@ impl UpdateInferenceComponentRuntimeConfigInput {
 }
 
 /// A builder for [`UpdateInferenceComponentRuntimeConfigInput`](crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInferenceComponentRuntimeConfigInputBuilder {
     pub(crate) inference_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) desired_runtime_config: ::std::option::Option<crate::types::InferenceComponentRuntimeConfig>,

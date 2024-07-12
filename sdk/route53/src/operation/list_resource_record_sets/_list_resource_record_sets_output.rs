@@ -64,8 +64,8 @@ impl ListResourceRecordSetsOutput {
 }
 
 /// A builder for [`ListResourceRecordSetsOutput`](crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceRecordSetsOutputBuilder {
     pub(crate) resource_record_sets: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecordSet>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

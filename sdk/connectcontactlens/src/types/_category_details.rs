@@ -23,8 +23,8 @@ impl CategoryDetails {
 }
 
 /// A builder for [`CategoryDetails`](crate::types::CategoryDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CategoryDetailsBuilder {
     pub(crate) points_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::PointOfInterest>>,
 }

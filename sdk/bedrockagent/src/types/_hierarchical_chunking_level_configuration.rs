@@ -21,8 +21,8 @@ impl HierarchicalChunkingLevelConfiguration {
 }
 
 /// A builder for [`HierarchicalChunkingLevelConfiguration`](crate::types::HierarchicalChunkingLevelConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HierarchicalChunkingLevelConfigurationBuilder {
     pub(crate) max_tokens: ::std::option::Option<i32>,
 }

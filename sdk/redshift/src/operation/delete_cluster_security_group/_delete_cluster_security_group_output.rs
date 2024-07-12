@@ -18,8 +18,8 @@ impl DeleteClusterSecurityGroupOutput {
 }
 
 /// A builder for [`DeleteClusterSecurityGroupOutput`](crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClusterSecurityGroupOutputBuilder {
     _request_id: Option<String>,
 }

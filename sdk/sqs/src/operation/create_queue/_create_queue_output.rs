@@ -27,8 +27,8 @@ impl CreateQueueOutput {
 }
 
 /// A builder for [`CreateQueueOutput`](crate::operation::create_queue::CreateQueueOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateQueueOutputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

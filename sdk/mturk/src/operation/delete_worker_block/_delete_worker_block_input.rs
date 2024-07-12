@@ -26,8 +26,8 @@ impl DeleteWorkerBlockInput {
 }
 
 /// A builder for [`DeleteWorkerBlockInput`](crate::operation::delete_worker_block::DeleteWorkerBlockInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkerBlockInputBuilder {
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

@@ -102,8 +102,8 @@ impl CreateModelCustomizationJobInput {
 }
 
 /// A builder for [`CreateModelCustomizationJobInput`](crate::operation::create_model_customization_job::CreateModelCustomizationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateModelCustomizationJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_model_name: ::std::option::Option<::std::string::String>,

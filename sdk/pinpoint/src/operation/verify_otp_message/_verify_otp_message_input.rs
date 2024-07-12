@@ -26,8 +26,8 @@ impl VerifyOtpMessageInput {
 }
 
 /// A builder for [`VerifyOtpMessageInput`](crate::operation::verify_otp_message::VerifyOtpMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyOtpMessageInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) verify_otp_message_request_parameters: ::std::option::Option<crate::types::VerifyOtpMessageRequestParameters>,

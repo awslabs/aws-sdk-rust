@@ -26,8 +26,8 @@ impl DescribeBotAliasInput {
 }
 
 /// A builder for [`DescribeBotAliasInput`](crate::operation::describe_bot_alias::DescribeBotAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBotAliasInputBuilder {
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,

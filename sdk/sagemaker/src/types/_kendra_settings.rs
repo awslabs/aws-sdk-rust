@@ -21,8 +21,8 @@ impl KendraSettings {
 }
 
 /// A builder for [`KendraSettings`](crate::types::KendraSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KendraSettingsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
 }

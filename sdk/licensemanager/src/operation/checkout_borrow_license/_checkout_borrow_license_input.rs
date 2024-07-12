@@ -54,8 +54,8 @@ impl CheckoutBorrowLicenseInput {
 }
 
 /// A builder for [`CheckoutBorrowLicenseInput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckoutBorrowLicenseInputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,

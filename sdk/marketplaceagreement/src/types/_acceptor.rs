@@ -21,8 +21,8 @@ impl Acceptor {
 }
 
 /// A builder for [`Acceptor`](crate::types::Acceptor).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptorBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

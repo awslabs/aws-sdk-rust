@@ -39,8 +39,8 @@ impl InputDecryptionSettings {
 }
 
 /// A builder for [`InputDecryptionSettings`](crate::types::InputDecryptionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InputDecryptionSettingsBuilder {
     pub(crate) decryption_mode: ::std::option::Option<crate::types::DecryptionMode>,
     pub(crate) encrypted_decryption_key: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl PutPortfolioPreferencesOutput {
 }
 
 /// A builder for [`PutPortfolioPreferencesOutput`](crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutPortfolioPreferencesOutputBuilder {
     _request_id: Option<String>,
 }

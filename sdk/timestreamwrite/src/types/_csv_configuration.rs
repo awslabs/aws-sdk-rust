@@ -45,8 +45,8 @@ impl CsvConfiguration {
 }
 
 /// A builder for [`CsvConfiguration`](crate::types::CsvConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CsvConfigurationBuilder {
     pub(crate) column_separator: ::std::option::Option<::std::string::String>,
     pub(crate) escape_char: ::std::option::Option<::std::string::String>,

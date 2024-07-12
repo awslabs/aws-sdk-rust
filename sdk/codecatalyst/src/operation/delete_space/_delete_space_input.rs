@@ -20,8 +20,8 @@ impl DeleteSpaceInput {
 }
 
 /// A builder for [`DeleteSpaceInput`](crate::operation::delete_space::DeleteSpaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSpaceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

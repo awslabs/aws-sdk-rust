@@ -33,8 +33,8 @@ impl Ec2EbsVolume {
 }
 
 /// A builder for [`Ec2EbsVolume`](crate::types::Ec2EbsVolume).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2EbsVolumeBuilder {
     pub(crate) size_gib: ::std::option::Option<i32>,
     pub(crate) iops: ::std::option::Option<i32>,

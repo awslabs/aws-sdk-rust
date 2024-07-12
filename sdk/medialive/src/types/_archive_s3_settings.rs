@@ -21,8 +21,8 @@ impl ArchiveS3Settings {
 }
 
 /// A builder for [`ArchiveS3Settings`](crate::types::ArchiveS3Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArchiveS3SettingsBuilder {
     pub(crate) canned_acl: ::std::option::Option<crate::types::S3CannedAcl>,
 }

@@ -37,8 +37,8 @@ impl ListResourcesInProtectionGroupOutput {
 }
 
 /// A builder for [`ListResourcesInProtectionGroupOutput`](crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourcesInProtectionGroupOutputBuilder {
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

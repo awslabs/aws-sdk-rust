@@ -33,8 +33,8 @@ impl TotalImpactFilter {
 }
 
 /// A builder for [`TotalImpactFilter`](crate::types::TotalImpactFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TotalImpactFilterBuilder {
     pub(crate) numeric_operator: ::std::option::Option<crate::types::NumericOperator>,
     pub(crate) start_value: ::std::option::Option<f64>,

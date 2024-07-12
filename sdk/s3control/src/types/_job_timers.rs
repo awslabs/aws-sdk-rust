@@ -21,8 +21,8 @@ impl JobTimers {
 }
 
 /// A builder for [`JobTimers`](crate::types::JobTimers).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobTimersBuilder {
     pub(crate) elapsed_time_in_active_seconds: ::std::option::Option<i64>,
 }

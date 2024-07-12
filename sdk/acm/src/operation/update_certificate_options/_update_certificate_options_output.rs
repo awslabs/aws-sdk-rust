@@ -18,8 +18,8 @@ impl UpdateCertificateOptionsOutput {
 }
 
 /// A builder for [`UpdateCertificateOptionsOutput`](crate::operation::update_certificate_options::UpdateCertificateOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCertificateOptionsOutputBuilder {
     _request_id: Option<String>,
 }

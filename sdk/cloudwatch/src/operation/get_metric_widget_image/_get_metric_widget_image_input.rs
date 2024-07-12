@@ -62,8 +62,8 @@ impl GetMetricWidgetImageInput {
 }
 
 /// A builder for [`GetMetricWidgetImageInput`](crate::operation::get_metric_widget_image::GetMetricWidgetImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricWidgetImageInputBuilder {
     pub(crate) metric_widget: ::std::option::Option<::std::string::String>,
     pub(crate) output_format: ::std::option::Option<::std::string::String>,

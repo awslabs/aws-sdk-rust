@@ -40,8 +40,8 @@ impl ListResourceScanRelatedResourcesInput {
 }
 
 /// A builder for [`ListResourceScanRelatedResourcesInput`](crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceScanRelatedResourcesInputBuilder {
     pub(crate) resource_scan_id: ::std::option::Option<::std::string::String>,
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ScannedResourceIdentifier>>,

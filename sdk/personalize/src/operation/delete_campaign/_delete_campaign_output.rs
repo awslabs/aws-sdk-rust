@@ -18,8 +18,8 @@ impl DeleteCampaignOutput {
 }
 
 /// A builder for [`DeleteCampaignOutput`](crate::operation::delete_campaign::DeleteCampaignOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCampaignOutputBuilder {
     _request_id: Option<String>,
 }

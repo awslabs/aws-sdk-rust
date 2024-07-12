@@ -35,8 +35,8 @@ impl TleData {
 }
 
 /// A builder for [`TleData`](crate::types::TleData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TleDataBuilder {
     pub(crate) tle_line1: ::std::option::Option<::std::string::String>,
     pub(crate) tle_line2: ::std::option::Option<::std::string::String>,

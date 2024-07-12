@@ -62,8 +62,8 @@ impl SendApiAssetInput {
 }
 
 /// A builder for [`SendApiAssetInput`](crate::operation::send_api_asset::SendApiAssetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendApiAssetInputBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) query_string_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

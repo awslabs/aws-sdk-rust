@@ -41,8 +41,8 @@ impl Result {
 }
 
 /// A builder for [`Result`](crate::types::Result).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResultBuilder {
     pub(crate) analysis_type: ::std::option::Option<crate::types::AnalysisType>,
     pub(crate) analysis_status: ::std::option::Option<crate::types::AnalysisStatusUnion>,

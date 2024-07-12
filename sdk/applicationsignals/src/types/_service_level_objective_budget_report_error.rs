@@ -43,8 +43,8 @@ impl ServiceLevelObjectiveBudgetReportError {
 }
 
 /// A builder for [`ServiceLevelObjectiveBudgetReportError`](crate::types::ServiceLevelObjectiveBudgetReportError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceLevelObjectiveBudgetReportErrorBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

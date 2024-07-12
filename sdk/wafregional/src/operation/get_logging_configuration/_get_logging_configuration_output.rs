@@ -26,8 +26,8 @@ impl GetLoggingConfigurationOutput {
 }
 
 /// A builder for [`GetLoggingConfigurationOutput`](crate::operation::get_logging_configuration::GetLoggingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoggingConfigurationOutputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     _request_id: Option<String>,

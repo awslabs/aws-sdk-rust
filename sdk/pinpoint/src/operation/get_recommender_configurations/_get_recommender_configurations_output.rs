@@ -26,8 +26,8 @@ impl GetRecommenderConfigurationsOutput {
 }
 
 /// A builder for [`GetRecommenderConfigurationsOutput`](crate::operation::get_recommender_configurations::GetRecommenderConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecommenderConfigurationsOutputBuilder {
     pub(crate) list_recommender_configurations_response: ::std::option::Option<crate::types::ListRecommenderConfigurationsResponse>,
     _request_id: Option<String>,

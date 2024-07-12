@@ -32,8 +32,8 @@ impl UpdateUserPhoneConfigInput {
 }
 
 /// A builder for [`UpdateUserPhoneConfigInput`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUserPhoneConfigInputBuilder {
     pub(crate) phone_config: ::std::option::Option<crate::types::UserPhoneConfig>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

@@ -23,8 +23,8 @@ impl ImplicitDeny {
 }
 
 /// A builder for [`ImplicitDeny`](crate::types::ImplicitDeny).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImplicitDenyBuilder {
     pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
 }

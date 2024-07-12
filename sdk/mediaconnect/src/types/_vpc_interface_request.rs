@@ -47,8 +47,8 @@ impl VpcInterfaceRequest {
 }
 
 /// A builder for [`VpcInterfaceRequest`](crate::types::VpcInterfaceRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcInterfaceRequestBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) network_interface_type: ::std::option::Option<crate::types::NetworkInterfaceType>,

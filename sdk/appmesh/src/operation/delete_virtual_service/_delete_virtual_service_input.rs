@@ -32,8 +32,8 @@ impl DeleteVirtualServiceInput {
 }
 
 /// A builder for [`DeleteVirtualServiceInput`](crate::operation::delete_virtual_service::DeleteVirtualServiceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVirtualServiceInputBuilder {
     pub(crate) virtual_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,

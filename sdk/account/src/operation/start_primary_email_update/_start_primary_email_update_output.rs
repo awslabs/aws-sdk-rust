@@ -26,8 +26,8 @@ impl StartPrimaryEmailUpdateOutput {
 }
 
 /// A builder for [`StartPrimaryEmailUpdateOutput`](crate::operation::start_primary_email_update::StartPrimaryEmailUpdateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartPrimaryEmailUpdateOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PrimaryEmailUpdateStatus>,
     _request_id: Option<String>,

@@ -84,8 +84,8 @@ impl CreateLicenseInput {
 }
 
 /// A builder for [`CreateLicenseInput`](crate::operation::create_license::CreateLicenseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLicenseInputBuilder {
     pub(crate) license_name: ::std::option::Option<::std::string::String>,
     pub(crate) product_name: ::std::option::Option<::std::string::String>,

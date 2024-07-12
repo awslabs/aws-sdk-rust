@@ -33,8 +33,8 @@ impl ListAccessPreviewsOutput {
 }
 
 /// A builder for [`ListAccessPreviewsOutput`](crate::operation::list_access_previews::ListAccessPreviewsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccessPreviewsOutputBuilder {
     pub(crate) access_previews: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

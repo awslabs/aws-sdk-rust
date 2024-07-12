@@ -22,8 +22,8 @@ impl DescribeStateMachineInput {
 }
 
 /// A builder for [`DescribeStateMachineInput`](crate::operation::describe_state_machine::DescribeStateMachineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStateMachineInputBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
 }

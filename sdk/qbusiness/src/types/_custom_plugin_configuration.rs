@@ -34,8 +34,8 @@ impl CustomPluginConfiguration {
 }
 
 /// A builder for [`CustomPluginConfiguration`](crate::types::CustomPluginConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomPluginConfigurationBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) api_schema_type: ::std::option::Option<crate::types::ApiSchemaType>,

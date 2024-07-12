@@ -20,8 +20,8 @@ impl DeleteProvisionedModelThroughputInput {
 }
 
 /// A builder for [`DeleteProvisionedModelThroughputInput`](crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProvisionedModelThroughputInputBuilder {
     pub(crate) provisioned_model_id: ::std::option::Option<::std::string::String>,
 }

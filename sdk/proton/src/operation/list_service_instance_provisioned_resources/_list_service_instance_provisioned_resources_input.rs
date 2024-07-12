@@ -32,8 +32,8 @@ impl ListServiceInstanceProvisionedResourcesInput {
 }
 
 /// A builder for [`ListServiceInstanceProvisionedResourcesInput`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceInstanceProvisionedResourcesInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,

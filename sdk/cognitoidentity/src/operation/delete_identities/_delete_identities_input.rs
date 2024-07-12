@@ -23,8 +23,8 @@ impl DeleteIdentitiesInput {
 }
 
 /// A builder for [`DeleteIdentitiesInput`](crate::operation::delete_identities::DeleteIdentitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIdentitiesInputBuilder {
     pub(crate) identity_ids_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

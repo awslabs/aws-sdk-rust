@@ -212,8 +212,8 @@ impl InstancePatchState {
 }
 
 /// A builder for [`InstancePatchState`](crate::types::InstancePatchState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InstancePatchStateBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,

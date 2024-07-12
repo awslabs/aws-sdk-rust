@@ -36,8 +36,8 @@ impl BatchGetMemberEc2DeepInspectionStatusOutput {
 }
 
 /// A builder for [`BatchGetMemberEc2DeepInspectionStatusOutput`](crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetMemberEc2DeepInspectionStatusOutputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatusState>>,
     pub(crate) failed_account_ids: ::std::option::Option<::std::vec::Vec<crate::types::FailedMemberAccountEc2DeepInspectionStatusState>>,

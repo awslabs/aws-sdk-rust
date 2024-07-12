@@ -32,8 +32,8 @@ impl GetTestGridSessionInput {
 }
 
 /// A builder for [`GetTestGridSessionInput`](crate::operation::get_test_grid_session::GetTestGridSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTestGridSessionInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,

@@ -83,8 +83,8 @@ impl CreateRestApiInput {
 }
 
 /// A builder for [`CreateRestApiInput`](crate::operation::create_rest_api::CreateRestApiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRestApiInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

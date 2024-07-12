@@ -34,8 +34,8 @@ impl PutDestinationPolicyInput {
 }
 
 /// A builder for [`PutDestinationPolicyInput`](crate::operation::put_destination_policy::PutDestinationPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDestinationPolicyInputBuilder {
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
     pub(crate) access_policy: ::std::option::Option<::std::string::String>,

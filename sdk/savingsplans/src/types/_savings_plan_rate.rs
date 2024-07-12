@@ -65,8 +65,8 @@ impl SavingsPlanRate {
 }
 
 /// A builder for [`SavingsPlanRate`](crate::types::SavingsPlanRate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlanRateBuilder {
     pub(crate) rate: ::std::option::Option<::std::string::String>,
     pub(crate) currency: ::std::option::Option<crate::types::CurrencyCode>,

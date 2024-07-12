@@ -74,8 +74,8 @@ impl UpdateStaticPolicyDefinition {
 }
 
 /// A builder for [`UpdateStaticPolicyDefinition`](crate::types::UpdateStaticPolicyDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateStaticPolicyDefinitionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) statement: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl RefreshTokenOutput {
 }
 
 /// A builder for [`RefreshTokenOutput`](crate::operation::refresh_token::RefreshTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RefreshTokenOutputBuilder {
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
     pub(crate) expires_in: ::std::option::Option<i32>,

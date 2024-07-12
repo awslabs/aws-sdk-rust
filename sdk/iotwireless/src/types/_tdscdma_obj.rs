@@ -71,8 +71,8 @@ impl TdscdmaObj {
 }
 
 /// A builder for [`TdscdmaObj`](crate::types::TdscdmaObj).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TdscdmaObjBuilder {
     pub(crate) mcc: ::std::option::Option<i32>,
     pub(crate) mnc: ::std::option::Option<i32>,

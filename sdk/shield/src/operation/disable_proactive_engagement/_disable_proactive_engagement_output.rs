@@ -18,8 +18,8 @@ impl DisableProactiveEngagementOutput {
 }
 
 /// A builder for [`DisableProactiveEngagementOutput`](crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableProactiveEngagementOutputBuilder {
     _request_id: Option<String>,
 }

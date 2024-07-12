@@ -32,8 +32,8 @@ impl PutRegistryScanningConfigurationInput {
 }
 
 /// A builder for [`PutRegistryScanningConfigurationInput`](crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRegistryScanningConfigurationInputBuilder {
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>,

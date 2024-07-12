@@ -61,8 +61,8 @@ impl CorsRule {
 }
 
 /// A builder for [`CorsRule`](crate::types::CorsRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CorsRuleBuilder {
     pub(crate) allowed_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_methods: ::std::option::Option<::std::vec::Vec<crate::types::MethodName>>,

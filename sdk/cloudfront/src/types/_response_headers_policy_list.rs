@@ -41,8 +41,8 @@ impl ResponseHeadersPolicyList {
 }
 
 /// A builder for [`ResponseHeadersPolicyList`](crate::types::ResponseHeadersPolicyList).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicyListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,

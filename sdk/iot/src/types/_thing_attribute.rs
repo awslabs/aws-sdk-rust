@@ -45,8 +45,8 @@ impl ThingAttribute {
 }
 
 /// A builder for [`ThingAttribute`](crate::types::ThingAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThingAttributeBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl BatchStartViewerSessionRevocationInput {
 }
 
 /// A builder for [`BatchStartViewerSessionRevocationInput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStartViewerSessionRevocationInputBuilder {
     pub(crate) viewer_sessions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
 }

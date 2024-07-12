@@ -52,8 +52,8 @@ impl CreateRoomInput {
 }
 
 /// A builder for [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRoomInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_message_rate_per_second: ::std::option::Option<i32>,

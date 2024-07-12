@@ -245,8 +245,8 @@ impl PublishVersionOutput {
 }
 
 /// A builder for [`PublishVersionOutput`](crate::operation::publish_version::PublishVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublishVersionOutputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl NoiseReducerTemporalFilterSettings {
 }
 
 /// A builder for [`NoiseReducerTemporalFilterSettings`](crate::types::NoiseReducerTemporalFilterSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NoiseReducerTemporalFilterSettingsBuilder {
     pub(crate) aggressive_mode: ::std::option::Option<i32>,
     pub(crate) post_temporal_sharpening: ::std::option::Option<crate::types::NoiseFilterPostTemporalSharpening>,

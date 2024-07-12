@@ -36,8 +36,8 @@ impl Role {
 }
 
 /// A builder for [`Role`](crate::types::Role).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RoleBuilder {
     pub(crate) role_type: ::std::option::Option<crate::types::RoleType>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

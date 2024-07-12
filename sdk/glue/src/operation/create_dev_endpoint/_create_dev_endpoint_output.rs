@@ -150,8 +150,8 @@ impl CreateDevEndpointOutput {
 }
 
 /// A builder for [`CreateDevEndpointOutput`](crate::operation::create_dev_endpoint::CreateDevEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDevEndpointOutputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

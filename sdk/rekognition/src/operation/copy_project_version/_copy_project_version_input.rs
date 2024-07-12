@@ -80,8 +80,8 @@ impl CopyProjectVersionInput {
 }
 
 /// A builder for [`CopyProjectVersionInput`](crate::operation::copy_project_version::CopyProjectVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyProjectVersionInputBuilder {
     pub(crate) source_project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_project_version_arn: ::std::option::Option<::std::string::String>,

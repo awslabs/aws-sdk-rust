@@ -20,8 +20,8 @@ impl DeleteJobTemplateInput {
 }
 
 /// A builder for [`DeleteJobTemplateInput`](crate::operation::delete_job_template::DeleteJobTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteJobTemplateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

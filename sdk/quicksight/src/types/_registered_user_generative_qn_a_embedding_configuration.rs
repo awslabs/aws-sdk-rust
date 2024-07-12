@@ -23,8 +23,8 @@ impl RegisteredUserGenerativeQnAEmbeddingConfiguration {
 }
 
 /// A builder for [`RegisteredUserGenerativeQnAEmbeddingConfiguration`](crate::types::RegisteredUserGenerativeQnAEmbeddingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisteredUserGenerativeQnAEmbeddingConfigurationBuilder {
     pub(crate) initial_topic_id: ::std::option::Option<::std::string::String>,
 }

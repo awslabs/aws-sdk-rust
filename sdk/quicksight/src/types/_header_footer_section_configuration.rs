@@ -34,8 +34,8 @@ impl HeaderFooterSectionConfiguration {
 }
 
 /// A builder for [`HeaderFooterSectionConfiguration`](crate::types::HeaderFooterSectionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HeaderFooterSectionConfigurationBuilder {
     pub(crate) section_id: ::std::option::Option<::std::string::String>,
     pub(crate) layout: ::std::option::Option<crate::types::SectionLayoutConfiguration>,

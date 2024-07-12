@@ -42,8 +42,8 @@ impl DescribeStackSetInput {
 }
 
 /// A builder for [`DescribeStackSetInput`](crate::operation::describe_stack_set::DescribeStackSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStackSetInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,

@@ -38,8 +38,8 @@ impl GetOutpostSupportedInstanceTypesInput {
 }
 
 /// A builder for [`GetOutpostSupportedInstanceTypesInput`](crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOutpostSupportedInstanceTypesInputBuilder {
     pub(crate) outpost_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,

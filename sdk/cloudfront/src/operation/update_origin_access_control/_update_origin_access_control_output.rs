@@ -32,8 +32,8 @@ impl UpdateOriginAccessControlOutput {
 }
 
 /// A builder for [`UpdateOriginAccessControlOutput`](crate::operation::update_origin_access_control::UpdateOriginAccessControlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOriginAccessControlOutputBuilder {
     pub(crate) origin_access_control: ::std::option::Option<crate::types::OriginAccessControl>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

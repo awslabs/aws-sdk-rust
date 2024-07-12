@@ -48,8 +48,8 @@ impl IntegerParameterDeclaration {
 }
 
 /// A builder for [`IntegerParameterDeclaration`](crate::types::IntegerParameterDeclaration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IntegerParameterDeclarationBuilder {
     pub(crate) parameter_value_type: ::std::option::Option<crate::types::ParameterValueType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl DeleteRepositoryOutput {
 }
 
 /// A builder for [`DeleteRepositoryOutput`](crate::operation::delete_repository::DeleteRepositoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRepositoryOutputBuilder {
     pub(crate) repository_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

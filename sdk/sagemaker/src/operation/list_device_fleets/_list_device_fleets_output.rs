@@ -34,8 +34,8 @@ impl ListDeviceFleetsOutput {
 }
 
 /// A builder for [`ListDeviceFleetsOutput`](crate::operation::list_device_fleets::ListDeviceFleetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeviceFleetsOutputBuilder {
     pub(crate) device_fleet_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFleetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

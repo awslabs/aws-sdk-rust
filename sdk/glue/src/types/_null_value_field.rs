@@ -28,8 +28,8 @@ impl NullValueField {
 }
 
 /// A builder for [`NullValueField`](crate::types::NullValueField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NullValueFieldBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) datatype: ::std::option::Option<crate::types::Datatype>,

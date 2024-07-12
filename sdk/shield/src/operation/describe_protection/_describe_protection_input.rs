@@ -26,8 +26,8 @@ impl DescribeProtectionInput {
 }
 
 /// A builder for [`DescribeProtectionInput`](crate::operation::describe_protection::DescribeProtectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeProtectionInputBuilder {
     pub(crate) protection_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

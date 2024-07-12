@@ -79,8 +79,8 @@ impl ComplianceDrift {
 }
 
 /// A builder for [`ComplianceDrift`](crate::types::ComplianceDrift).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComplianceDriftBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_type: ::std::option::Option<::std::string::String>,

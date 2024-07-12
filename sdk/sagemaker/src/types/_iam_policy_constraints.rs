@@ -27,8 +27,8 @@ impl IamPolicyConstraints {
 }
 
 /// A builder for [`IamPolicyConstraints`](crate::types::IamPolicyConstraints).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IamPolicyConstraintsBuilder {
     pub(crate) source_ip: ::std::option::Option<crate::types::EnabledOrDisabled>,
     pub(crate) vpc_source_ip: ::std::option::Option<crate::types::EnabledOrDisabled>,

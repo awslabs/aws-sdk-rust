@@ -64,8 +64,8 @@ impl DescribeChangeSetHooksOutput {
 }
 
 /// A builder for [`DescribeChangeSetHooksOutput`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChangeSetHooksOutputBuilder {
     pub(crate) change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,

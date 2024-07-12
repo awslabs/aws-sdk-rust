@@ -41,8 +41,8 @@ impl ScalingConfigurationOutput {
 }
 
 /// A builder for [`ScalingConfigurationOutput`](crate::types::ScalingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScalingConfigurationOutputBuilder {
     pub(crate) scaling_type: ::std::option::Option<crate::types::FleetScalingType>,
     pub(crate) target_tracking_scaling_configs: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingScalingConfiguration>>,

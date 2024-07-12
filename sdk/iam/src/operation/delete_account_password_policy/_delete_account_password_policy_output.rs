@@ -18,8 +18,8 @@ impl DeleteAccountPasswordPolicyOutput {
 }
 
 /// A builder for [`DeleteAccountPasswordPolicyOutput`](crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccountPasswordPolicyOutputBuilder {
     _request_id: Option<String>,
 }

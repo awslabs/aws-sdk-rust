@@ -26,8 +26,8 @@ impl DeleteCollectionOutput {
 }
 
 /// A builder for [`DeleteCollectionOutput`](crate::operation::delete_collection::DeleteCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCollectionOutputBuilder {
     pub(crate) delete_collection_detail: ::std::option::Option<crate::types::DeleteCollectionDetail>,
     _request_id: Option<String>,

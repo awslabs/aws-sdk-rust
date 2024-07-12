@@ -18,8 +18,8 @@ impl UndeprecateWorkflowTypeOutput {
 }
 
 /// A builder for [`UndeprecateWorkflowTypeOutput`](crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UndeprecateWorkflowTypeOutputBuilder {
     _request_id: Option<String>,
 }

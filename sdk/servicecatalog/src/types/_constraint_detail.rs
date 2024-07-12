@@ -71,8 +71,8 @@ impl ConstraintDetail {
 }
 
 /// A builder for [`ConstraintDetail`](crate::types::ConstraintDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConstraintDetailBuilder {
     pub(crate) constraint_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetApplicationVersionInput {
 }
 
 /// A builder for [`GetApplicationVersionInput`](crate::operation::get_application_version::GetApplicationVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApplicationVersionInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<i32>,

@@ -30,8 +30,8 @@ impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails`](crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetailsBuilder {
     pub(crate) capacity_reservation_preference: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_reservation_target:

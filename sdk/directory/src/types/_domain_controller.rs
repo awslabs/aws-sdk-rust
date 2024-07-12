@@ -75,8 +75,8 @@ impl DomainController {
 }
 
 /// A builder for [`DomainController`](crate::types::DomainController).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainControllerBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_controller_id: ::std::option::Option<::std::string::String>,

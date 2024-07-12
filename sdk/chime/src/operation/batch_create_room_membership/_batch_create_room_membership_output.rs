@@ -28,8 +28,8 @@ impl BatchCreateRoomMembershipOutput {
 }
 
 /// A builder for [`BatchCreateRoomMembershipOutput`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateRoomMembershipOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::MemberError>>,
     _request_id: Option<String>,

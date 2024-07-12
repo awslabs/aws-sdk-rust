@@ -38,8 +38,8 @@ impl CreateBlueprintInput {
 }
 
 /// A builder for [`CreateBlueprintInput`](crate::operation::create_blueprint::CreateBlueprintInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBlueprintInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

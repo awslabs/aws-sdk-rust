@@ -51,8 +51,8 @@ impl RuleGroupSourceStatefulRulesHeaderDetails {
 }
 
 /// A builder for [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::types::RuleGroupSourceStatefulRulesHeaderDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupSourceStatefulRulesHeaderDetailsBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) destination_port: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl PutScheduledUpdateGroupActionOutput {
 }
 
 /// A builder for [`PutScheduledUpdateGroupActionOutput`](crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutScheduledUpdateGroupActionOutputBuilder {
     _request_id: Option<String>,
 }

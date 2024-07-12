@@ -20,8 +20,8 @@ impl DisassociateConfigurationItemsFromApplicationOutput {
 }
 
 /// A builder for [`DisassociateConfigurationItemsFromApplicationOutput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateConfigurationItemsFromApplicationOutputBuilder {
     _request_id: Option<String>,
 }

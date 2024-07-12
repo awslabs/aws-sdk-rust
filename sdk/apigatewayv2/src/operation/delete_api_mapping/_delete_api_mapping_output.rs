@@ -18,8 +18,8 @@ impl DeleteApiMappingOutput {
 }
 
 /// A builder for [`DeleteApiMappingOutput`](crate::operation::delete_api_mapping::DeleteApiMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApiMappingOutputBuilder {
     _request_id: Option<String>,
 }

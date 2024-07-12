@@ -36,8 +36,8 @@ impl CreateWorkspaceServiceAccountInput {
 }
 
 /// A builder for [`CreateWorkspaceServiceAccountInput`](crate::operation::create_workspace_service_account::CreateWorkspaceServiceAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkspaceServiceAccountInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) grafana_role: ::std::option::Option<crate::types::Role>,

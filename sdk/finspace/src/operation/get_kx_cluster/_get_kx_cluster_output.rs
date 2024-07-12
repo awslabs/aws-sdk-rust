@@ -238,8 +238,8 @@ impl GetKxClusterOutput {
 }
 
 /// A builder for [`GetKxClusterOutput`](crate::operation::get_kx_cluster::GetKxClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKxClusterOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::KxClusterStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,

@@ -51,8 +51,8 @@ impl AutoScalingConfiguration {
 }
 
 /// A builder for [`AutoScalingConfiguration`](crate::types::AutoScalingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingConfigurationBuilder {
     pub(crate) min_node_count: ::std::option::Option<i32>,
     pub(crate) max_node_count: ::std::option::Option<i32>,

@@ -78,8 +78,8 @@ impl DescribeInstanceTypeOfferingsInput {
 }
 
 /// A builder for [`DescribeInstanceTypeOfferingsInput`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceTypeOfferingsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) location_type: ::std::option::Option<crate::types::LocationType>,

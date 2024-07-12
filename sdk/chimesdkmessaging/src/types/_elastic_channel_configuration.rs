@@ -33,8 +33,8 @@ impl ElasticChannelConfiguration {
 }
 
 /// A builder for [`ElasticChannelConfiguration`](crate::types::ElasticChannelConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ElasticChannelConfigurationBuilder {
     pub(crate) maximum_sub_channels: ::std::option::Option<i32>,
     pub(crate) target_memberships_per_sub_channel: ::std::option::Option<i32>,

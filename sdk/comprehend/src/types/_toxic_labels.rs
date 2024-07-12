@@ -29,8 +29,8 @@ impl ToxicLabels {
 }
 
 /// A builder for [`ToxicLabels`](crate::types::ToxicLabels).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ToxicLabelsBuilder {
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<crate::types::ToxicContent>>,
     pub(crate) toxicity: ::std::option::Option<f32>,

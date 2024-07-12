@@ -28,8 +28,8 @@ impl DescribeTaskDefinitionInput {
 }
 
 /// A builder for [`DescribeTaskDefinitionInput`](crate::operation::describe_task_definition::DescribeTaskDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTaskDefinitionInputBuilder {
     pub(crate) task_definition: ::std::option::Option<::std::string::String>,
     pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionField>>,

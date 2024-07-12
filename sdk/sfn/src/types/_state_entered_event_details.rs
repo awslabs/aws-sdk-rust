@@ -43,8 +43,8 @@ impl StateEnteredEventDetails {
 }
 
 /// A builder for [`StateEnteredEventDetails`](crate::types::StateEnteredEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StateEnteredEventDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) input: ::std::option::Option<::std::string::String>,

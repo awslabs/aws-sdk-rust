@@ -28,8 +28,8 @@ impl UpdateResourceProfileDetectionsInput {
 }
 
 /// A builder for [`UpdateResourceProfileDetectionsInput`](crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResourceProfileDetectionsInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) suppress_data_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>>,

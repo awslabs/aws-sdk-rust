@@ -35,8 +35,8 @@ impl DescribeCacheEngineVersionsOutput {
 }
 
 /// A builder for [`DescribeCacheEngineVersionsOutput`](crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCacheEngineVersionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cache_engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::CacheEngineVersion>>,

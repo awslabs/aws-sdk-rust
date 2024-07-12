@@ -34,8 +34,8 @@ impl DescribeInstanceAssociationsStatusOutput {
 }
 
 /// A builder for [`DescribeInstanceAssociationsStatusOutput`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceAssociationsStatusOutputBuilder {
     pub(crate) instance_association_status_infos: ::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociationStatusInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

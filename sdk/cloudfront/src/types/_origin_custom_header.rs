@@ -37,8 +37,8 @@ impl OriginCustomHeader {
 }
 
 /// A builder for [`OriginCustomHeader`](crate::types::OriginCustomHeader).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct OriginCustomHeaderBuilder {
     pub(crate) header_name: ::std::option::Option<::std::string::String>,
     pub(crate) header_value: ::std::option::Option<::std::string::String>,

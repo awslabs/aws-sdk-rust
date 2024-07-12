@@ -50,8 +50,8 @@ impl DescribeServersOutput {
 }
 
 /// A builder for [`DescribeServersOutput`](crate::operation::describe_servers::DescribeServersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeServersOutputBuilder {
     pub(crate) servers: ::std::option::Option<::std::vec::Vec<crate::types::Server>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

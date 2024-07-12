@@ -39,8 +39,8 @@ impl ResourceDetails {
 }
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceDetailsBuilder {
     pub(crate) net_app_ontapsvms: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapsvm>>,
     pub(crate) net_app_ontap_volumes: ::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapVolume>>,

@@ -11,8 +11,8 @@ impl DisableSecurityHubInput {
 }
 
 /// A builder for [`DisableSecurityHubInput`](crate::operation::disable_security_hub::DisableSecurityHubInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableSecurityHubInputBuilder {}
 impl DisableSecurityHubInputBuilder {
     /// Consumes the builder and constructs a [`DisableSecurityHubInput`](crate::operation::disable_security_hub::DisableSecurityHubInput).

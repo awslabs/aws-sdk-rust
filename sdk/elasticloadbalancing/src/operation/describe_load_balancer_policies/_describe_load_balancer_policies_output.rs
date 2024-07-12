@@ -29,8 +29,8 @@ impl DescribeLoadBalancerPoliciesOutput {
 }
 
 /// A builder for [`DescribeLoadBalancerPoliciesOutput`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLoadBalancerPoliciesOutputBuilder {
     pub(crate) policy_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescription>>,
     _request_id: Option<String>,

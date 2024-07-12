@@ -26,8 +26,8 @@ impl UpdateSolFunctionPackageOutput {
 }
 
 /// A builder for [`UpdateSolFunctionPackageOutput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSolFunctionPackageOutputBuilder {
     pub(crate) operational_state: ::std::option::Option<crate::types::OperationalState>,
     _request_id: Option<String>,

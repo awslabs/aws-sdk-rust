@@ -41,8 +41,8 @@ impl NodegroupScalingConfig {
 }
 
 /// A builder for [`NodegroupScalingConfig`](crate::types::NodegroupScalingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodegroupScalingConfigBuilder {
     pub(crate) min_size: ::std::option::Option<i32>,
     pub(crate) max_size: ::std::option::Option<i32>,

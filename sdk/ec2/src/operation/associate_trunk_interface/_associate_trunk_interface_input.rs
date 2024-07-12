@@ -50,8 +50,8 @@ impl AssociateTrunkInterfaceInput {
 }
 
 /// A builder for [`AssociateTrunkInterfaceInput`](crate::operation::associate_trunk_interface::AssociateTrunkInterfaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateTrunkInterfaceInputBuilder {
     pub(crate) branch_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) trunk_interface_id: ::std::option::Option<::std::string::String>,

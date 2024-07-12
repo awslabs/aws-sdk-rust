@@ -53,8 +53,8 @@ impl LexConfiguration {
 }
 
 /// A builder for [`LexConfiguration`](crate::types::LexConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LexConfigurationBuilder {
     pub(crate) responds_to: ::std::option::Option<crate::types::RespondsTo>,
     pub(crate) invoked_by: ::std::option::Option<crate::types::InvokedBy>,

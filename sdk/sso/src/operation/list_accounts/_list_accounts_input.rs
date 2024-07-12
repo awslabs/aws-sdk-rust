@@ -41,8 +41,8 @@ impl ListAccountsInput {
 }
 
 /// A builder for [`ListAccountsInput`](crate::operation::list_accounts::ListAccountsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListAccountsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -64,8 +64,8 @@ impl IndexFacesOutput {
 }
 
 /// A builder for [`IndexFacesOutput`](crate::operation::index_faces::IndexFacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IndexFacesOutputBuilder {
     pub(crate) face_records: ::std::option::Option<::std::vec::Vec<crate::types::FaceRecord>>,
     pub(crate) orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,

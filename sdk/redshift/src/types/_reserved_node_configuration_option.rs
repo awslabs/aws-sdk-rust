@@ -33,8 +33,8 @@ impl ReservedNodeConfigurationOption {
 }
 
 /// A builder for [`ReservedNodeConfigurationOption`](crate::types::ReservedNodeConfigurationOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservedNodeConfigurationOptionBuilder {
     pub(crate) source_reserved_node: ::std::option::Option<crate::types::ReservedNode>,
     pub(crate) target_reserved_node_count: ::std::option::Option<i32>,

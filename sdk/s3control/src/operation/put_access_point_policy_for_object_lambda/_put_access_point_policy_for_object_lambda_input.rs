@@ -32,8 +32,8 @@ impl PutAccessPointPolicyForObjectLambdaInput {
 }
 
 /// A builder for [`PutAccessPointPolicyForObjectLambdaInput`](crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccessPointPolicyForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

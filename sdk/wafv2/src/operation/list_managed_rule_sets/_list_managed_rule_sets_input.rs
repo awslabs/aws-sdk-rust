@@ -46,8 +46,8 @@ impl ListManagedRuleSetsInput {
 }
 
 /// A builder for [`ListManagedRuleSetsInput`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListManagedRuleSetsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

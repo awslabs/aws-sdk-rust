@@ -36,8 +36,8 @@ impl GetEnrollmentStatusesForOrganizationOutput {
 }
 
 /// A builder for [`GetEnrollmentStatusesForOrganizationOutput`](crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnrollmentStatusesForOrganizationOutputBuilder {
     pub(crate) account_enrollment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

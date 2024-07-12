@@ -26,8 +26,8 @@ impl EnablePolicyTypeOutput {
 }
 
 /// A builder for [`EnablePolicyTypeOutput`](crate::operation::enable_policy_type::EnablePolicyTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnablePolicyTypeOutputBuilder {
     pub(crate) root: ::std::option::Option<crate::types::Root>,
     _request_id: Option<String>,

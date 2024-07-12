@@ -35,8 +35,8 @@ impl DisassociateFileSystemAliasesInput {
 }
 
 /// A builder for [`DisassociateFileSystemAliasesInput`](crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateFileSystemAliasesInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,

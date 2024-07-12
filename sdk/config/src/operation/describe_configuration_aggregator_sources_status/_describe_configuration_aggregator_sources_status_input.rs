@@ -57,8 +57,8 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
 }
 
 /// A builder for [`DescribeConfigurationAggregatorSourcesStatusInput`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigurationAggregatorSourcesStatusInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     pub(crate) update_status: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>,

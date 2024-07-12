@@ -49,8 +49,8 @@ impl Invite {
 }
 
 /// A builder for [`Invite`](crate::types::Invite).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InviteBuilder {
     pub(crate) invite_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::InviteStatus>,

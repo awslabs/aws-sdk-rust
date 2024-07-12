@@ -21,8 +21,8 @@ impl ApplicationSourceConfig {
 }
 
 /// A builder for [`ApplicationSourceConfig`](crate::types::ApplicationSourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationSourceConfigBuilder {
     pub(crate) external_url_config: ::std::option::Option<crate::types::ExternalUrlConfig>,
 }

@@ -26,8 +26,8 @@ impl DeleteAutoSnapshotInput {
 }
 
 /// A builder for [`DeleteAutoSnapshotInput`](crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAutoSnapshotInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) date: ::std::option::Option<::std::string::String>,

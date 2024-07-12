@@ -18,8 +18,8 @@ impl CreateCustomMetadataOutput {
 }
 
 /// A builder for [`CreateCustomMetadataOutput`](crate::operation::create_custom_metadata::CreateCustomMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCustomMetadataOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl DescribeKeyRegistrationInput {
 }
 
 /// A builder for [`DescribeKeyRegistrationInput`](crate::operation::describe_key_registration::DescribeKeyRegistrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeKeyRegistrationInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) default_key_only: ::std::option::Option<bool>,

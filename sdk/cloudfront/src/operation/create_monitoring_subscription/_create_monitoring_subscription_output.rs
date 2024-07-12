@@ -26,8 +26,8 @@ impl CreateMonitoringSubscriptionOutput {
 }
 
 /// A builder for [`CreateMonitoringSubscriptionOutput`](crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMonitoringSubscriptionOutputBuilder {
     pub(crate) monitoring_subscription: ::std::option::Option<crate::types::MonitoringSubscription>,
     _request_id: Option<String>,

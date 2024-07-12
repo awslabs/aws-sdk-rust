@@ -23,8 +23,8 @@ impl Tags {
 }
 
 /// A builder for [`Tags`](crate::types::Tags).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagsBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }

@@ -41,8 +41,8 @@ impl AssociateSoftwareTokenOutput {
 }
 
 /// A builder for [`AssociateSoftwareTokenOutput`](crate::operation::associate_software_token::AssociateSoftwareTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssociateSoftwareTokenOutputBuilder {
     pub(crate) secret_code: ::std::option::Option<::std::string::String>,
     pub(crate) session: ::std::option::Option<::std::string::String>,

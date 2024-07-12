@@ -26,8 +26,8 @@ impl DescribeCopyJobOutput {
 }
 
 /// A builder for [`DescribeCopyJobOutput`](crate::operation::describe_copy_job::DescribeCopyJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCopyJobOutputBuilder {
     pub(crate) copy_job: ::std::option::Option<crate::types::CopyJob>,
     _request_id: Option<String>,

@@ -36,8 +36,8 @@ impl BatchGetCustomEntityTypesOutput {
 }
 
 /// A builder for [`BatchGetCustomEntityTypesOutput`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetCustomEntityTypesOutputBuilder {
     pub(crate) custom_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>,
     pub(crate) custom_entity_types_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

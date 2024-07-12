@@ -18,8 +18,8 @@ impl RevokeIpRulesOutput {
 }
 
 /// A builder for [`RevokeIpRulesOutput`](crate::operation::revoke_ip_rules::RevokeIpRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeIpRulesOutputBuilder {
     _request_id: Option<String>,
 }

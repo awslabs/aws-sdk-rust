@@ -46,8 +46,8 @@ impl DifferentialPrivacySensitivityParameters {
 }
 
 /// A builder for [`DifferentialPrivacySensitivityParameters`](crate::types::DifferentialPrivacySensitivityParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DifferentialPrivacySensitivityParametersBuilder {
     pub(crate) aggregation_type: ::std::option::Option<crate::types::DifferentialPrivacyAggregationType>,
     pub(crate) aggregation_expression: ::std::option::Option<::std::string::String>,

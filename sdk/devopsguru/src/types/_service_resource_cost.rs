@@ -45,8 +45,8 @@ impl ServiceResourceCost {
 }
 
 /// A builder for [`ServiceResourceCost`](crate::types::ServiceResourceCost).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceResourceCostBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CostEstimationServiceResourceState>,

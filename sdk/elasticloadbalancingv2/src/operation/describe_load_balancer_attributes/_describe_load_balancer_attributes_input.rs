@@ -20,8 +20,8 @@ impl DescribeLoadBalancerAttributesInput {
 }
 
 /// A builder for [`DescribeLoadBalancerAttributesInput`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLoadBalancerAttributesInputBuilder {
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
 }

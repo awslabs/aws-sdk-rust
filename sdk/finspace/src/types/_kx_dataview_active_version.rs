@@ -49,8 +49,8 @@ impl KxDataviewActiveVersion {
 }
 
 /// A builder for [`KxDataviewActiveVersion`](crate::types::KxDataviewActiveVersion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KxDataviewActiveVersionBuilder {
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
     pub(crate) segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,

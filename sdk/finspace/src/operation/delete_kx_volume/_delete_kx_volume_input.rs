@@ -32,8 +32,8 @@ impl DeleteKxVolumeInput {
 }
 
 /// A builder for [`DeleteKxVolumeInput`](crate::operation::delete_kx_volume::DeleteKxVolumeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKxVolumeInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_name: ::std::option::Option<::std::string::String>,

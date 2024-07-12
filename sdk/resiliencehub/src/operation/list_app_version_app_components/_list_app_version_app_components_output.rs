@@ -48,8 +48,8 @@ impl ListAppVersionAppComponentsOutput {
 }
 
 /// A builder for [`ListAppVersionAppComponentsOutput`](crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAppVersionAppComponentsOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl InsufficientSensorData {
 }
 
 /// A builder for [`InsufficientSensorData`](crate::types::InsufficientSensorData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsufficientSensorDataBuilder {
     pub(crate) missing_complete_sensor_data: ::std::option::Option<crate::types::MissingCompleteSensorData>,
     pub(crate) sensors_with_short_date_range: ::std::option::Option<crate::types::SensorsWithShortDateRange>,

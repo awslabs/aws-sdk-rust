@@ -33,8 +33,8 @@ impl DetectorModelSummary {
 }
 
 /// A builder for [`DetectorModelSummary`](crate::types::DetectorModelSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectorModelSummaryBuilder {
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) detector_model_description: ::std::option::Option<::std::string::String>,

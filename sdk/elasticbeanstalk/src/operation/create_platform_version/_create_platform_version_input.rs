@@ -57,8 +57,8 @@ impl CreatePlatformVersionInput {
 }
 
 /// A builder for [`CreatePlatformVersionInput`](crate::operation::create_platform_version::CreatePlatformVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePlatformVersionInputBuilder {
     pub(crate) platform_name: ::std::option::Option<::std::string::String>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetDataIntegrationInput {
 }
 
 /// A builder for [`GetDataIntegrationInput`](crate::operation::get_data_integration::GetDataIntegrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataIntegrationInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

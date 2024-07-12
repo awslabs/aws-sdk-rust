@@ -50,8 +50,8 @@ impl ListInstanceTypeDetailsInput {
 }
 
 /// A builder for [`ListInstanceTypeDetailsInput`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInstanceTypeDetailsInputBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

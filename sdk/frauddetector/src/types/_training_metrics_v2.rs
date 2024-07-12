@@ -33,8 +33,8 @@ impl TrainingMetricsV2 {
 }
 
 /// A builder for [`TrainingMetricsV2`](crate::types::TrainingMetricsV2).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingMetricsV2Builder {
     pub(crate) ofi: ::std::option::Option<crate::types::OfiTrainingMetricsValue>,
     pub(crate) tfi: ::std::option::Option<crate::types::TfiTrainingMetricsValue>,

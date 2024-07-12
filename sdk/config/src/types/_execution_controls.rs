@@ -21,8 +21,8 @@ impl ExecutionControls {
 }
 
 /// A builder for [`ExecutionControls`](crate::types::ExecutionControls).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutionControlsBuilder {
     pub(crate) ssm_controls: ::std::option::Option<crate::types::SsmControls>,
 }

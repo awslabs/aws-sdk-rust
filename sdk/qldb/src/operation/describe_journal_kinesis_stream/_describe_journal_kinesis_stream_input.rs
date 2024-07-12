@@ -26,8 +26,8 @@ impl DescribeJournalKinesisStreamInput {
 }
 
 /// A builder for [`DescribeJournalKinesisStreamInput`](crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeJournalKinesisStreamInputBuilder {
     pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,

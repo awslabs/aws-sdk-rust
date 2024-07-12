@@ -32,8 +32,8 @@ impl ListEventBusesInput {
 }
 
 /// A builder for [`ListEventBusesInput`](crate::operation::list_event_buses::ListEventBusesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventBusesInputBuilder {
     pub(crate) name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

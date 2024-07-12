@@ -57,8 +57,8 @@ impl PivotTableConfiguration {
 }
 
 /// A builder for [`PivotTableConfiguration`](crate::types::PivotTableConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::PivotTableFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::PivotTableSortConfiguration>,

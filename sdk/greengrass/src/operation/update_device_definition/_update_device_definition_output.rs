@@ -18,8 +18,8 @@ impl UpdateDeviceDefinitionOutput {
 }
 
 /// A builder for [`UpdateDeviceDefinitionOutput`](crate::operation::update_device_definition::UpdateDeviceDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeviceDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

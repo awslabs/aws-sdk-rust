@@ -33,8 +33,8 @@ impl NotifyWorkersFailureStatus {
 }
 
 /// A builder for [`NotifyWorkersFailureStatus`](crate::types::NotifyWorkersFailureStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyWorkersFailureStatusBuilder {
     pub(crate) notify_workers_failure_code: ::std::option::Option<crate::types::NotifyWorkersFailureCode>,
     pub(crate) notify_workers_failure_message: ::std::option::Option<::std::string::String>,

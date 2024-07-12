@@ -38,8 +38,8 @@ impl GetBucketsAggregationOutput {
 }
 
 /// A builder for [`GetBucketsAggregationOutput`](crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketsAggregationOutputBuilder {
     pub(crate) total_count: ::std::option::Option<i32>,
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,

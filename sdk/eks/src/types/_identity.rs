@@ -21,8 +21,8 @@ impl Identity {
 }
 
 /// A builder for [`Identity`](crate::types::Identity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityBuilder {
     pub(crate) oidc: ::std::option::Option<crate::types::Oidc>,
 }

@@ -53,8 +53,8 @@ impl OwnerDirectoryDescription {
 }
 
 /// A builder for [`OwnerDirectoryDescription`](crate::types::OwnerDirectoryDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OwnerDirectoryDescriptionBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

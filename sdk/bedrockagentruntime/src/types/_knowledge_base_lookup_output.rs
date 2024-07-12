@@ -23,8 +23,8 @@ impl KnowledgeBaseLookupOutput {
 }
 
 /// A builder for [`KnowledgeBaseLookupOutput`](crate::types::KnowledgeBaseLookupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KnowledgeBaseLookupOutputBuilder {
     pub(crate) retrieved_references: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>,
 }

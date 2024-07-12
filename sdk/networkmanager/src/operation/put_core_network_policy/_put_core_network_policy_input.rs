@@ -44,8 +44,8 @@ impl PutCoreNetworkPolicyInput {
 }
 
 /// A builder for [`PutCoreNetworkPolicyInput`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutCoreNetworkPolicyInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,

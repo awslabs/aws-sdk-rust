@@ -53,8 +53,8 @@ impl BrokerNodeInfo {
 }
 
 /// A builder for [`BrokerNodeInfo`](crate::types::BrokerNodeInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BrokerNodeInfoBuilder {
     pub(crate) attached_eni_id: ::std::option::Option<::std::string::String>,
     pub(crate) broker_id: ::std::option::Option<f64>,

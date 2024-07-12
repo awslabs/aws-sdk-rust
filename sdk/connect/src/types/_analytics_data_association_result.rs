@@ -40,8 +40,8 @@ impl AnalyticsDataAssociationResult {
 }
 
 /// A builder for [`AnalyticsDataAssociationResult`](crate::types::AnalyticsDataAssociationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyticsDataAssociationResultBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_account_id: ::std::option::Option<::std::string::String>,

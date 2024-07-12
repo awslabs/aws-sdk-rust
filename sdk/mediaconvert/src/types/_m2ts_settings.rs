@@ -271,8 +271,8 @@ impl M2tsSettings {
 }
 
 /// A builder for [`M2tsSettings`](crate::types::M2tsSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct M2tsSettingsBuilder {
     pub(crate) audio_buffer_model: ::std::option::Option<crate::types::M2tsAudioBufferModel>,
     pub(crate) audio_duration: ::std::option::Option<crate::types::M2tsAudioDuration>,

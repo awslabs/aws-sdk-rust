@@ -39,8 +39,8 @@ impl JobResource {
 }
 
 /// A builder for [`JobResource`](crate::types::JobResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobResourceBuilder {
     pub(crate) s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>,
     pub(crate) lambda_resources: ::std::option::Option<::std::vec::Vec<crate::types::LambdaResource>>,

@@ -34,8 +34,8 @@ impl ListIndexesOutput {
 }
 
 /// A builder for [`ListIndexesOutput`](crate::operation::list_indexes::ListIndexesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIndexesOutputBuilder {
     pub(crate) indexes: ::std::option::Option<::std::vec::Vec<crate::types::Index>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

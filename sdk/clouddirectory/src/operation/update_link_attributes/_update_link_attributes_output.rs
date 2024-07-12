@@ -18,8 +18,8 @@ impl UpdateLinkAttributesOutput {
 }
 
 /// A builder for [`UpdateLinkAttributesOutput`](crate::operation::update_link_attributes::UpdateLinkAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLinkAttributesOutputBuilder {
     _request_id: Option<String>,
 }

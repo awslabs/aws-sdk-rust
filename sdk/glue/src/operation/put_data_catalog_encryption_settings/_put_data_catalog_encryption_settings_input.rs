@@ -26,8 +26,8 @@ impl PutDataCatalogEncryptionSettingsInput {
 }
 
 /// A builder for [`PutDataCatalogEncryptionSettingsInput`](crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDataCatalogEncryptionSettingsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_catalog_encryption_settings: ::std::option::Option<crate::types::DataCatalogEncryptionSettings>,

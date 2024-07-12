@@ -46,8 +46,8 @@ impl ListInferenceRecommendationsJobStepsInput {
 }
 
 /// A builder for [`ListInferenceRecommendationsJobStepsInput`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInferenceRecommendationsJobStepsInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RecommendationJobStatus>,

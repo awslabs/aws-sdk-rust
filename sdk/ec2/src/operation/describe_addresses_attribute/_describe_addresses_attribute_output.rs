@@ -34,8 +34,8 @@ impl DescribeAddressesAttributeOutput {
 }
 
 /// A builder for [`DescribeAddressesAttributeOutput`](crate::operation::describe_addresses_attribute::DescribeAddressesAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAddressesAttributeOutputBuilder {
     pub(crate) addresses: ::std::option::Option<::std::vec::Vec<crate::types::AddressAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

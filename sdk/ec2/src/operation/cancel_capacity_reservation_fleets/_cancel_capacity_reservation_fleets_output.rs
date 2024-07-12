@@ -36,8 +36,8 @@ impl CancelCapacityReservationFleetsOutput {
 }
 
 /// A builder for [`CancelCapacityReservationFleetsOutput`](crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelCapacityReservationFleetsOutputBuilder {
     pub(crate) successful_fleet_cancellations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationFleetCancellationState>>,
     pub(crate) failed_fleet_cancellations: ::std::option::Option<::std::vec::Vec<crate::types::FailedCapacityReservationFleetCancellationResult>>,

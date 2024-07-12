@@ -98,8 +98,8 @@ impl GetObjectAttributesOutput {
 }
 
 /// A builder for [`GetObjectAttributesOutput`](crate::operation::get_object_attributes::GetObjectAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetObjectAttributesOutputBuilder {
     pub(crate) delete_marker: ::std::option::Option<bool>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,

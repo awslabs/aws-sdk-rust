@@ -22,8 +22,8 @@ impl SetRulePrioritiesInput {
 }
 
 /// A builder for [`SetRulePrioritiesInput`](crate::operation::set_rule_priorities::SetRulePrioritiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetRulePrioritiesInputBuilder {
     pub(crate) rule_priorities: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>,
 }

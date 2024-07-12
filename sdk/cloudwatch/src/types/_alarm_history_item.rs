@@ -51,8 +51,8 @@ impl AlarmHistoryItem {
 }
 
 /// A builder for [`AlarmHistoryItem`](crate::types::AlarmHistoryItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlarmHistoryItemBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_type: ::std::option::Option<crate::types::AlarmType>,

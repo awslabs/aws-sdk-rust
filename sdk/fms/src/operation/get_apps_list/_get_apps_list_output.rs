@@ -32,8 +32,8 @@ impl GetAppsListOutput {
 }
 
 /// A builder for [`GetAppsListOutput`](crate::operation::get_apps_list::GetAppsListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppsListOutputBuilder {
     pub(crate) apps_list: ::std::option::Option<crate::types::AppsListData>,
     pub(crate) apps_list_arn: ::std::option::Option<::std::string::String>,

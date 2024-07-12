@@ -20,8 +20,8 @@ impl CancelFindingsReportInput {
 }
 
 /// A builder for [`CancelFindingsReportInput`](crate::operation::cancel_findings_report::CancelFindingsReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelFindingsReportInputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
 }

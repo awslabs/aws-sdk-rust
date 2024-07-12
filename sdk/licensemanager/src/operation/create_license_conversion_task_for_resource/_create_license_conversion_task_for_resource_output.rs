@@ -26,8 +26,8 @@ impl CreateLicenseConversionTaskForResourceOutput {
 }
 
 /// A builder for [`CreateLicenseConversionTaskForResourceOutput`](crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLicenseConversionTaskForResourceOutputBuilder {
     pub(crate) license_conversion_task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

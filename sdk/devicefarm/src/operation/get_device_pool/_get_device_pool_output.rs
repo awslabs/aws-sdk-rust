@@ -27,8 +27,8 @@ impl GetDevicePoolOutput {
 }
 
 /// A builder for [`GetDevicePoolOutput`](crate::operation::get_device_pool::GetDevicePoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDevicePoolOutputBuilder {
     pub(crate) device_pool: ::std::option::Option<crate::types::DevicePool>,
     _request_id: Option<String>,

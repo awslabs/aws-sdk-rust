@@ -12,8 +12,8 @@ impl EndAssociatedTasksActionDefinition {
 }
 
 /// A builder for [`EndAssociatedTasksActionDefinition`](crate::types::EndAssociatedTasksActionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndAssociatedTasksActionDefinitionBuilder {}
 impl EndAssociatedTasksActionDefinitionBuilder {
     /// Consumes the builder and constructs a [`EndAssociatedTasksActionDefinition`](crate::types::EndAssociatedTasksActionDefinition).

@@ -41,8 +41,8 @@ impl ResultByTime {
 }
 
 /// A builder for [`ResultByTime`](crate::types::ResultByTime).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResultByTimeBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) total: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>>,

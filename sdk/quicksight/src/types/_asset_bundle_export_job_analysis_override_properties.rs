@@ -29,8 +29,8 @@ impl AssetBundleExportJobAnalysisOverrideProperties {
 }
 
 /// A builder for [`AssetBundleExportJobAnalysisOverrideProperties`](crate::types::AssetBundleExportJobAnalysisOverrideProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleExportJobAnalysisOverridePropertiesBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobAnalysisPropertyToOverride>>,

@@ -47,8 +47,8 @@ impl ListCustomLineItemsFilter {
 }
 
 /// A builder for [`ListCustomLineItemsFilter`](crate::types::ListCustomLineItemsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomLineItemsFilterBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) billing_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

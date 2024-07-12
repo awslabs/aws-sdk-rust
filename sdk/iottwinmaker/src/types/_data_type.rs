@@ -47,8 +47,8 @@ impl DataType {
 }
 
 /// A builder for [`DataType`](crate::types::DataType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataTypeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
     pub(crate) nested_type: ::std::option::Option<::std::boxed::Box<crate::types::DataType>>,

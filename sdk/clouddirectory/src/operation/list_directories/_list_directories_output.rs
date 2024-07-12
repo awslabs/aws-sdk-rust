@@ -33,8 +33,8 @@ impl ListDirectoriesOutput {
 }
 
 /// A builder for [`ListDirectoriesOutput`](crate::operation::list_directories::ListDirectoriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDirectoriesOutputBuilder {
     pub(crate) directories: ::std::option::Option<::std::vec::Vec<crate::types::Directory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

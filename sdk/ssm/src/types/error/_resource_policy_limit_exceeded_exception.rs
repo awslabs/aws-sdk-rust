@@ -59,8 +59,8 @@ impl ResourcePolicyLimitExceededException {
 }
 
 /// A builder for [`ResourcePolicyLimitExceededException`](crate::types::error::ResourcePolicyLimitExceededException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourcePolicyLimitExceededExceptionBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) limit_type: ::std::option::Option<::std::string::String>,

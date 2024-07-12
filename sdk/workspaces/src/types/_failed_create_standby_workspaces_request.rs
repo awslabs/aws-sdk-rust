@@ -33,8 +33,8 @@ impl FailedCreateStandbyWorkspacesRequest {
 }
 
 /// A builder for [`FailedCreateStandbyWorkspacesRequest`](crate::types::FailedCreateStandbyWorkspacesRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailedCreateStandbyWorkspacesRequestBuilder {
     pub(crate) standby_workspace_request: ::std::option::Option<crate::types::StandbyWorkspace>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

@@ -28,8 +28,8 @@ impl AllocateStaticIpOutput {
 }
 
 /// A builder for [`AllocateStaticIpOutput`](crate::operation::allocate_static_ip::AllocateStaticIpOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllocateStaticIpOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

@@ -29,8 +29,8 @@ impl DetectorModelDefinition {
 }
 
 /// A builder for [`DetectorModelDefinition`](crate::types::DetectorModelDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectorModelDefinitionBuilder {
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::State>>,
     pub(crate) initial_state_name: ::std::option::Option<::std::string::String>,

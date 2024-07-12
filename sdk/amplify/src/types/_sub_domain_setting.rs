@@ -29,8 +29,8 @@ impl SubDomainSetting {
 }
 
 /// A builder for [`SubDomainSetting`](crate::types::SubDomainSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubDomainSettingBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,

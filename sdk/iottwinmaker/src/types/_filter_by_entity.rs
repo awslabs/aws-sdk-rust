@@ -22,8 +22,8 @@ impl FilterByEntity {
 }
 
 /// A builder for [`FilterByEntity`](crate::types::FilterByEntity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterByEntityBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
 }

@@ -28,8 +28,8 @@ impl RestoreDbInstanceFromS3Output {
 }
 
 /// A builder for [`RestoreDbInstanceFromS3Output`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreDbInstanceFromS3OutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,

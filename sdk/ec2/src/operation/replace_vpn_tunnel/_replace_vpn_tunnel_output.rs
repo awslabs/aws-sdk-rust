@@ -26,8 +26,8 @@ impl ReplaceVpnTunnelOutput {
 }
 
 /// A builder for [`ReplaceVpnTunnelOutput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplaceVpnTunnelOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

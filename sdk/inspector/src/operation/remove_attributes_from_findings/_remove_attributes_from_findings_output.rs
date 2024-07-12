@@ -26,8 +26,8 @@ impl RemoveAttributesFromFindingsOutput {
 }
 
 /// A builder for [`RemoveAttributesFromFindingsOutput`](crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveAttributesFromFindingsOutputBuilder {
     pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,

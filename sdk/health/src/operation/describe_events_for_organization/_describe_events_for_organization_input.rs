@@ -38,8 +38,8 @@ impl DescribeEventsForOrganizationInput {
 }
 
 /// A builder for [`DescribeEventsForOrganizationInput`](crate::operation::describe_events_for_organization::DescribeEventsForOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventsForOrganizationInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::OrganizationEventFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

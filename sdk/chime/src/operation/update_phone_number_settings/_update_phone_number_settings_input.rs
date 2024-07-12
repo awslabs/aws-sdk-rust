@@ -27,8 +27,8 @@ impl UpdatePhoneNumberSettingsInput {
 }
 
 /// A builder for [`UpdatePhoneNumberSettingsInput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdatePhoneNumberSettingsInputBuilder {
     pub(crate) calling_name: ::std::option::Option<::std::string::String>,
 }

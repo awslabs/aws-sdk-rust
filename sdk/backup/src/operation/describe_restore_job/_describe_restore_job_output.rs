@@ -134,8 +134,8 @@ impl DescribeRestoreJobOutput {
 }
 
 /// A builder for [`DescribeRestoreJobOutput`](crate::operation::describe_restore_job::DescribeRestoreJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRestoreJobOutputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) restore_job_id: ::std::option::Option<::std::string::String>,

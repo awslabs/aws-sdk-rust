@@ -26,8 +26,8 @@ impl CreatePushTemplateInput {
 }
 
 /// A builder for [`CreatePushTemplateInput`](crate::operation::create_push_template::CreatePushTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePushTemplateInputBuilder {
     pub(crate) push_notification_template_request: ::std::option::Option<crate::types::PushNotificationTemplateRequest>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

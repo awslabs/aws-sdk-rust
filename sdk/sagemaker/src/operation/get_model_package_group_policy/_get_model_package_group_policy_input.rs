@@ -20,8 +20,8 @@ impl GetModelPackageGroupPolicyInput {
 }
 
 /// A builder for [`GetModelPackageGroupPolicyInput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetModelPackageGroupPolicyInputBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
 }

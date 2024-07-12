@@ -50,8 +50,8 @@ impl DescribeAffectedEntitiesForOrganizationInput {
 }
 
 /// A builder for [`DescribeAffectedEntitiesForOrganizationInput`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAffectedEntitiesForOrganizationInputBuilder {
     pub(crate) organization_entity_filters: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,

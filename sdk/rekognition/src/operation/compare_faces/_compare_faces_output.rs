@@ -62,8 +62,8 @@ impl CompareFacesOutput {
 }
 
 /// A builder for [`CompareFacesOutput`](crate::operation::compare_faces::CompareFacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompareFacesOutputBuilder {
     pub(crate) source_image_face: ::std::option::Option<crate::types::ComparedSourceImageFace>,
     pub(crate) face_matches: ::std::option::Option<::std::vec::Vec<crate::types::CompareFacesMatch>>,

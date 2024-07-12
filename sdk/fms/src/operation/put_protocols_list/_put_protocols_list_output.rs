@@ -32,8 +32,8 @@ impl PutProtocolsListOutput {
 }
 
 /// A builder for [`PutProtocolsListOutput`](crate::operation::put_protocols_list::PutProtocolsListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutProtocolsListOutputBuilder {
     pub(crate) protocols_list: ::std::option::Option<crate::types::ProtocolsListData>,
     pub(crate) protocols_list_arn: ::std::option::Option<::std::string::String>,

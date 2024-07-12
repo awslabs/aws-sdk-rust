@@ -26,8 +26,8 @@ impl DisassociateFileSystemOutput {
 }
 
 /// A builder for [`DisassociateFileSystemOutput`](crate::operation::disassociate_file_system::DisassociateFileSystemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateFileSystemOutputBuilder {
     pub(crate) file_system_association_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

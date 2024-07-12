@@ -23,8 +23,8 @@ impl GlueSchema {
 }
 
 /// A builder for [`GlueSchema`](crate::types::GlueSchema).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlueSchemaBuilder {
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
 }

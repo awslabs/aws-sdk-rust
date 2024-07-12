@@ -27,8 +27,8 @@ impl ProvideAnomalyFeedbackOutput {
 }
 
 /// A builder for [`ProvideAnomalyFeedbackOutput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvideAnomalyFeedbackOutputBuilder {
     pub(crate) anomaly_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

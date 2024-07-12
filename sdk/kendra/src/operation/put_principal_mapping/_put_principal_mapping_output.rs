@@ -18,8 +18,8 @@ impl PutPrincipalMappingOutput {
 }
 
 /// A builder for [`PutPrincipalMappingOutput`](crate::operation::put_principal_mapping::PutPrincipalMappingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutPrincipalMappingOutputBuilder {
     _request_id: Option<String>,
 }

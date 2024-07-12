@@ -90,8 +90,8 @@ impl DescribeDeviceOutput {
 }
 
 /// A builder for [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDeviceOutputBuilder {
     pub(crate) last_reached_out_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,

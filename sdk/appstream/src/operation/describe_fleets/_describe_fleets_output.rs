@@ -34,8 +34,8 @@ impl DescribeFleetsOutput {
 }
 
 /// A builder for [`DescribeFleetsOutput`](crate::operation::describe_fleets::DescribeFleetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFleetsOutputBuilder {
     pub(crate) fleets: ::std::option::Option<::std::vec::Vec<crate::types::Fleet>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

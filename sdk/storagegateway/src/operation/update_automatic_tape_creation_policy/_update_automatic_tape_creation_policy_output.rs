@@ -26,8 +26,8 @@ impl UpdateAutomaticTapeCreationPolicyOutput {
 }
 
 /// A builder for [`UpdateAutomaticTapeCreationPolicyOutput`](crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAutomaticTapeCreationPolicyOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

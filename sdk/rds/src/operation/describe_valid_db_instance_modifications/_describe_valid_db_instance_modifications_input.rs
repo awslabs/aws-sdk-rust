@@ -21,8 +21,8 @@ impl DescribeValidDbInstanceModificationsInput {
 }
 
 /// A builder for [`DescribeValidDbInstanceModificationsInput`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeValidDbInstanceModificationsInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
 }

@@ -32,8 +32,8 @@ impl UpdatePreferencesOutput {
 }
 
 /// A builder for [`UpdatePreferencesOutput`](crate::operation::update_preferences::UpdatePreferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePreferencesOutputBuilder {
     pub(crate) savings_estimation_mode: ::std::option::Option<crate::types::SavingsEstimationMode>,
     pub(crate) member_account_discount_visibility: ::std::option::Option<crate::types::MemberAccountDiscountVisibility>,

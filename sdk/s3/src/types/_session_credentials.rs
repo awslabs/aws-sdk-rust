@@ -54,8 +54,8 @@ impl SessionCredentials {
 }
 
 /// A builder for [`SessionCredentials`](crate::types::SessionCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SessionCredentialsBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_access_key: ::std::option::Option<::std::string::String>,

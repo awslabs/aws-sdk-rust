@@ -38,8 +38,8 @@ impl ListTemplateActionsInput {
 }
 
 /// A builder for [`ListTemplateActionsInput`](crate::operation::list_template_actions::ListTemplateActionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateActionsInputBuilder {
     pub(crate) launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::TemplateActionsRequestFilters>,

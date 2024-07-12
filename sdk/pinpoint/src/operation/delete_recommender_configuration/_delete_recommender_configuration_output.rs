@@ -26,8 +26,8 @@ impl DeleteRecommenderConfigurationOutput {
 }
 
 /// A builder for [`DeleteRecommenderConfigurationOutput`](crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecommenderConfigurationOutputBuilder {
     pub(crate) recommender_configuration_response: ::std::option::Option<crate::types::RecommenderConfigurationResponse>,
     _request_id: Option<String>,

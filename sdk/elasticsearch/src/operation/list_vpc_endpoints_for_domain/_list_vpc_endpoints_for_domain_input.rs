@@ -27,8 +27,8 @@ impl ListVpcEndpointsForDomainInput {
 }
 
 /// A builder for [`ListVpcEndpointsForDomainInput`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVpcEndpointsForDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

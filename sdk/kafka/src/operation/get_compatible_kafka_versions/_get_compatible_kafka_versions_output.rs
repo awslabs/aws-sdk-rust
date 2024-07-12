@@ -28,8 +28,8 @@ impl GetCompatibleKafkaVersionsOutput {
 }
 
 /// A builder for [`GetCompatibleKafkaVersionsOutput`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCompatibleKafkaVersionsOutputBuilder {
     pub(crate) compatible_kafka_versions: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleKafkaVersion>>,
     _request_id: Option<String>,

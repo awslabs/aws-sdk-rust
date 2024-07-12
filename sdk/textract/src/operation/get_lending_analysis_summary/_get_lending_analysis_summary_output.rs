@@ -58,8 +58,8 @@ impl GetLendingAnalysisSummaryOutput {
 }
 
 /// A builder for [`GetLendingAnalysisSummaryOutput`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLendingAnalysisSummaryOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,

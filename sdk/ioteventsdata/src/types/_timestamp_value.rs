@@ -21,8 +21,8 @@ impl TimestampValue {
 }
 
 /// A builder for [`TimestampValue`](crate::types::TimestampValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimestampValueBuilder {
     pub(crate) time_in_millis: ::std::option::Option<i64>,
 }

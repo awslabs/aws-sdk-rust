@@ -34,8 +34,8 @@ impl CreateAddonSubscriptionInput {
 }
 
 /// A builder for [`CreateAddonSubscriptionInput`](crate::operation::create_addon_subscription::CreateAddonSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAddonSubscriptionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,

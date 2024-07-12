@@ -30,8 +30,8 @@ impl ExecuteCommandSessionConfiguration {
 }
 
 /// A builder for [`ExecuteCommandSessionConfiguration`](crate::types::ExecuteCommandSessionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteCommandSessionConfigurationBuilder {
     pub(crate) command: ::std::option::Option<::std::string::String>,
     pub(crate) arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -29,8 +29,8 @@ impl InferenceAcceleratorInfo {
 }
 
 /// A builder for [`InferenceAcceleratorInfo`](crate::types::InferenceAcceleratorInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceAcceleratorInfoBuilder {
     pub(crate) accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
     pub(crate) total_inference_memory_in_mib: ::std::option::Option<i32>,

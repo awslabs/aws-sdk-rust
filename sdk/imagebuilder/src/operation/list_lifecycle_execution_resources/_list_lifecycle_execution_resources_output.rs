@@ -46,8 +46,8 @@ impl ListLifecycleExecutionResourcesOutput {
 }
 
 /// A builder for [`ListLifecycleExecutionResourcesOutput`](crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLifecycleExecutionResourcesOutputBuilder {
     pub(crate) lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_execution_state: ::std::option::Option<crate::types::LifecycleExecutionState>,

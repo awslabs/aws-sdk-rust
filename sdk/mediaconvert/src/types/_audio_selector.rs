@@ -91,8 +91,8 @@ impl AudioSelector {
 }
 
 /// A builder for [`AudioSelector`](crate::types::AudioSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioSelectorBuilder {
     pub(crate) audio_duration_correction: ::std::option::Option<crate::types::AudioDurationCorrection>,
     pub(crate) custom_language_code: ::std::option::Option<::std::string::String>,

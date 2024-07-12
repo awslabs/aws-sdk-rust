@@ -18,8 +18,8 @@ impl ImportMigrationTaskOutput {
 }
 
 /// A builder for [`ImportMigrationTaskOutput`](crate::operation::import_migration_task::ImportMigrationTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportMigrationTaskOutputBuilder {
     _request_id: Option<String>,
 }

@@ -93,8 +93,8 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicy {
 }
 
 /// A builder for [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) organization_config_rule_trigger_types: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConfigRuleTriggerTypeNoSn>>,

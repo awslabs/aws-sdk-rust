@@ -27,8 +27,8 @@ impl FieldSortOptions {
 }
 
 /// A builder for [`FieldSortOptions`](crate::types::FieldSortOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FieldSortOptionsBuilder {
     pub(crate) field_sort: ::std::option::Option<crate::types::FieldSort>,
     pub(crate) column_sort: ::std::option::Option<crate::types::ColumnSort>,

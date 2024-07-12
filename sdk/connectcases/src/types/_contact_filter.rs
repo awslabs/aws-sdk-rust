@@ -29,8 +29,8 @@ impl ContactFilter {
 }
 
 /// A builder for [`ContactFilter`](crate::types::ContactFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContactFilterBuilder {
     pub(crate) channel: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,

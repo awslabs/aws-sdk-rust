@@ -18,8 +18,8 @@ impl DeleteCloudWatchAlarmTemplateOutput {
 }
 
 /// A builder for [`DeleteCloudWatchAlarmTemplateOutput`](crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCloudWatchAlarmTemplateOutputBuilder {
     _request_id: Option<String>,
 }

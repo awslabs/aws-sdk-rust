@@ -29,8 +29,8 @@ impl CollapsedResultDetail {
 }
 
 /// A builder for [`CollapsedResultDetail`](crate::types::CollapsedResultDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CollapsedResultDetailBuilder {
     pub(crate) document_attribute: ::std::option::Option<crate::types::DocumentAttribute>,
     pub(crate) expanded_results: ::std::option::Option<::std::vec::Vec<crate::types::ExpandedResultItem>>,

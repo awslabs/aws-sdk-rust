@@ -36,8 +36,8 @@ impl UnassignIpv6AddressesInput {
 }
 
 /// A builder for [`UnassignIpv6AddressesInput`](crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnassignIpv6AddressesInputBuilder {
     pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

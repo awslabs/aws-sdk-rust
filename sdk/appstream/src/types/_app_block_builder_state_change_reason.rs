@@ -27,8 +27,8 @@ impl AppBlockBuilderStateChangeReason {
 }
 
 /// A builder for [`AppBlockBuilderStateChangeReason`](crate::types::AppBlockBuilderStateChangeReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppBlockBuilderStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

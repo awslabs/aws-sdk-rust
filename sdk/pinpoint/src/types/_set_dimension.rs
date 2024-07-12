@@ -29,8 +29,8 @@ impl SetDimension {
 }
 
 /// A builder for [`SetDimension`](crate::types::SetDimension).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetDimensionBuilder {
     pub(crate) dimension_type: ::std::option::Option<crate::types::DimensionType>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

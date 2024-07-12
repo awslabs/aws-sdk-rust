@@ -41,8 +41,8 @@ impl DataPathType {
 }
 
 /// A builder for [`DataPathType`](crate::types::DataPathType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataPathTypeBuilder {
     pub(crate) pivot_table_data_path_type: ::std::option::Option<crate::types::PivotTableDataPathType>,
 }

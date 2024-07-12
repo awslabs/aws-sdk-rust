@@ -54,8 +54,8 @@ impl PutLifecycleConfigurationInput {
 }
 
 /// A builder for [`PutLifecycleConfigurationInput`](crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutLifecycleConfigurationInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_policies: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,

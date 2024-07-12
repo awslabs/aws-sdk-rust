@@ -26,8 +26,8 @@ impl RefreshTokenInput {
 }
 
 /// A builder for [`RefreshTokenInput`](crate::operation::refresh_token::RefreshTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RefreshTokenInputBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::TokenProviders>,
     pub(crate) refresh_token_body: ::std::option::Option<crate::types::RefreshTokenRequestBody>,

@@ -18,8 +18,8 @@ impl DeleteCoreDefinitionOutput {
 }
 
 /// A builder for [`DeleteCoreDefinitionOutput`](crate::operation::delete_core_definition::DeleteCoreDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCoreDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

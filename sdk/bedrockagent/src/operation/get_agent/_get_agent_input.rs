@@ -20,8 +20,8 @@ impl GetAgentInput {
 }
 
 /// A builder for [`GetAgentInput`](crate::operation::get_agent::GetAgentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAgentInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
 }

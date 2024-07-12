@@ -38,8 +38,8 @@ impl BatchGetConfigurationPolicyAssociationsOutput {
 }
 
 /// A builder for [`BatchGetConfigurationPolicyAssociationsOutput`](crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetConfigurationPolicyAssociationsOutputBuilder {
     pub(crate) configuration_policy_associations: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociationSummary>>,
     pub(crate) unprocessed_configuration_policy_associations:

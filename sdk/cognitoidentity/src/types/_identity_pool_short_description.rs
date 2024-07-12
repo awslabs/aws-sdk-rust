@@ -27,8 +27,8 @@ impl IdentityPoolShortDescription {
 }
 
 /// A builder for [`IdentityPoolShortDescription`](crate::types::IdentityPoolShortDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityPoolShortDescriptionBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_pool_name: ::std::option::Option<::std::string::String>,

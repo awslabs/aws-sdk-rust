@@ -26,8 +26,8 @@ impl CreateInAppTemplateOutput {
 }
 
 /// A builder for [`CreateInAppTemplateOutput`](crate::operation::create_in_app_template::CreateInAppTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInAppTemplateOutputBuilder {
     pub(crate) template_create_message_body: ::std::option::Option<crate::types::TemplateCreateMessageBody>,
     _request_id: Option<String>,

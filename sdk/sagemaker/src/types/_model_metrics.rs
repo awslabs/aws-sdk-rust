@@ -39,8 +39,8 @@ impl ModelMetrics {
 }
 
 /// A builder for [`ModelMetrics`](crate::types::ModelMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelMetricsBuilder {
     pub(crate) model_quality: ::std::option::Option<crate::types::ModelQuality>,
     pub(crate) model_data_quality: ::std::option::Option<crate::types::ModelDataQuality>,

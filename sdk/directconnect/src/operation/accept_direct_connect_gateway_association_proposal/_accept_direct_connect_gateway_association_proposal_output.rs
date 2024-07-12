@@ -28,8 +28,8 @@ impl AcceptDirectConnectGatewayAssociationProposalOutput {
 }
 
 /// A builder for [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptDirectConnectGatewayAssociationProposalOutputBuilder {
     pub(crate) direct_connect_gateway_association: ::std::option::Option<crate::types::DirectConnectGatewayAssociation>,
     _request_id: Option<String>,

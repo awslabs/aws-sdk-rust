@@ -39,8 +39,8 @@ impl ListedExecution {
 }
 
 /// A builder for [`ListedExecution`](crate::types::ListedExecution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListedExecutionBuilder {
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) initial_file_location: ::std::option::Option<crate::types::FileLocation>,

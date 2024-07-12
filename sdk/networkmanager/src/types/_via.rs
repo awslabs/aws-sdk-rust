@@ -31,8 +31,8 @@ impl Via {
 }
 
 /// A builder for [`Via`](crate::types::Via).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ViaBuilder {
     pub(crate) network_function_groups: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFunctionGroup>>,
     pub(crate) with_edge_overrides: ::std::option::Option<::std::vec::Vec<crate::types::EdgeOverride>>,

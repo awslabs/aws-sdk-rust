@@ -69,8 +69,8 @@ impl UpdateGlobalTableSettingsInput {
 }
 
 /// A builder for [`UpdateGlobalTableSettingsInput`](crate::operation::update_global_table_settings::UpdateGlobalTableSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGlobalTableSettingsInputBuilder {
     pub(crate) global_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) global_table_billing_mode: ::std::option::Option<crate::types::BillingMode>,

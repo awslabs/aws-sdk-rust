@@ -26,8 +26,8 @@ impl AssociateSecurityKeyInput {
 }
 
 /// A builder for [`AssociateSecurityKeyInput`](crate::operation::associate_security_key::AssociateSecurityKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateSecurityKeyInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

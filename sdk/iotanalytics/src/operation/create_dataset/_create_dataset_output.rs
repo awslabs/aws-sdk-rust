@@ -38,8 +38,8 @@ impl CreateDatasetOutput {
 }
 
 /// A builder for [`CreateDatasetOutput`](crate::operation::create_dataset::CreateDatasetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDatasetOutputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,

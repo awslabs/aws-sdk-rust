@@ -65,8 +65,8 @@ impl Options {
 }
 
 /// A builder for [`Options`](crate::types::Options).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OptionsBuilder {
     pub(crate) activation_override_behavior: ::std::option::Option<crate::types::ActivationOverrideBehavior>,
 }

@@ -70,8 +70,8 @@ impl OrganizationManagedRuleMetadata {
 }
 
 /// A builder for [`OrganizationManagedRuleMetadata`](crate::types::OrganizationManagedRuleMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrganizationManagedRuleMetadataBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) rule_identifier: ::std::option::Option<::std::string::String>,

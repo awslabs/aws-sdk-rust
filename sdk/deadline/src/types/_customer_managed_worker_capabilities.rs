@@ -75,8 +75,8 @@ impl CustomerManagedWorkerCapabilities {
 }
 
 /// A builder for [`CustomerManagedWorkerCapabilities`](crate::types::CustomerManagedWorkerCapabilities).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomerManagedWorkerCapabilitiesBuilder {
     pub(crate) v_cpu_count: ::std::option::Option<crate::types::VCpuCountRange>,
     pub(crate) memory_mib: ::std::option::Option<crate::types::MemoryMiBRange>,

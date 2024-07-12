@@ -26,8 +26,8 @@ impl PutRetentionConfigurationOutput {
 }
 
 /// A builder for [`PutRetentionConfigurationOutput`](crate::operation::put_retention_configuration::PutRetentionConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRetentionConfigurationOutputBuilder {
     pub(crate) retention_configuration: ::std::option::Option<crate::types::RetentionConfiguration>,
     _request_id: Option<String>,

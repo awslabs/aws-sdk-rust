@@ -32,8 +32,8 @@ impl GetServiceLinkedRoleDeletionStatusInput {
 }
 
 /// A builder for [`GetServiceLinkedRoleDeletionStatusInput`](crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceLinkedRoleDeletionStatusInputBuilder {
     pub(crate) deletion_task_id: ::std::option::Option<::std::string::String>,
 }

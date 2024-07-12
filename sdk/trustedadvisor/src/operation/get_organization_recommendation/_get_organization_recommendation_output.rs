@@ -26,8 +26,8 @@ impl GetOrganizationRecommendationOutput {
 }
 
 /// A builder for [`GetOrganizationRecommendationOutput`](crate::operation::get_organization_recommendation::GetOrganizationRecommendationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOrganizationRecommendationOutputBuilder {
     pub(crate) organization_recommendation: ::std::option::Option<crate::types::OrganizationRecommendation>,
     _request_id: Option<String>,

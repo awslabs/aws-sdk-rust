@@ -50,8 +50,8 @@ impl SapoDataDestinationProperties {
 }
 
 /// A builder for [`SapoDataDestinationProperties`](crate::types::SapoDataDestinationProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SapoDataDestinationPropertiesBuilder {
     pub(crate) object_path: ::std::option::Option<::std::string::String>,
     pub(crate) success_response_handling_config: ::std::option::Option<crate::types::SuccessResponseHandlingConfig>,

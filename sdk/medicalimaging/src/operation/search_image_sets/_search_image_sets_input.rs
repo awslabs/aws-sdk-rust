@@ -48,8 +48,8 @@ impl SearchImageSetsInput {
 }
 
 /// A builder for [`SearchImageSetsInput`](crate::operation::search_image_sets::SearchImageSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchImageSetsInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) search_criteria: ::std::option::Option<crate::types::SearchCriteria>,

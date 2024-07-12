@@ -18,8 +18,8 @@ impl RevokeSigningProfileOutput {
 }
 
 /// A builder for [`RevokeSigningProfileOutput`](crate::operation::revoke_signing_profile::RevokeSigningProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeSigningProfileOutputBuilder {
     _request_id: Option<String>,
 }

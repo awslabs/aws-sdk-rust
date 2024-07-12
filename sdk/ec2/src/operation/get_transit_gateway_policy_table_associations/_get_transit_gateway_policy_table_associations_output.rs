@@ -35,8 +35,8 @@ impl GetTransitGatewayPolicyTableAssociationsOutput {
 }
 
 /// A builder for [`GetTransitGatewayPolicyTableAssociationsOutput`](crate::operation::get_transit_gateway_policy_table_associations::GetTransitGatewayPolicyTableAssociationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayPolicyTableAssociationsOutputBuilder {
     pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

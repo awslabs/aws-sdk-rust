@@ -35,8 +35,8 @@ impl ReplicaUpdate {
 }
 
 /// A builder for [`ReplicaUpdate`](crate::types::ReplicaUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicaUpdateBuilder {
     pub(crate) create: ::std::option::Option<crate::types::CreateReplicaAction>,
     pub(crate) delete: ::std::option::Option<crate::types::DeleteReplicaAction>,

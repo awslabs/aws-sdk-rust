@@ -27,8 +27,8 @@ impl CloneStackOutput {
 }
 
 /// A builder for [`CloneStackOutput`](crate::operation::clone_stack::CloneStackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloneStackOutputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

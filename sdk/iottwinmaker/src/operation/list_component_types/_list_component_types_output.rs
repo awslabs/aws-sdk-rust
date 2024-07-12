@@ -46,8 +46,8 @@ impl ListComponentTypesOutput {
 }
 
 /// A builder for [`ListComponentTypesOutput`](crate::operation::list_component_types::ListComponentTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListComponentTypesOutputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>>,

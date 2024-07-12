@@ -82,8 +82,8 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsInput {
 }
 
 /// A builder for [`DescribeLocalGatewayRouteTableVpcAssociationsInput`](crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocalGatewayRouteTableVpcAssociationsInputBuilder {
     pub(crate) local_gateway_route_table_vpc_association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

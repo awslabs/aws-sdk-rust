@@ -50,8 +50,8 @@ impl ModifyClusterMaintenanceInput {
 }
 
 /// A builder for [`ModifyClusterMaintenanceInput`](crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyClusterMaintenanceInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) defer_maintenance: ::std::option::Option<bool>,

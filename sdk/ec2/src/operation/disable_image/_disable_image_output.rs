@@ -26,8 +26,8 @@ impl DisableImageOutput {
 }
 
 /// A builder for [`DisableImageOutput`](crate::operation::disable_image::DisableImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableImageOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

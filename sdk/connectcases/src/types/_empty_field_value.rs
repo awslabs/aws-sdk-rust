@@ -13,8 +13,8 @@ impl EmptyFieldValue {
 }
 
 /// A builder for [`EmptyFieldValue`](crate::types::EmptyFieldValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EmptyFieldValueBuilder {}
 impl EmptyFieldValueBuilder {
     /// Consumes the builder and constructs a [`EmptyFieldValue`](crate::types::EmptyFieldValue).

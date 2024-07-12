@@ -35,8 +35,8 @@ impl ListFunctionsOutput {
 }
 
 /// A builder for [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFunctionsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) functions: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,

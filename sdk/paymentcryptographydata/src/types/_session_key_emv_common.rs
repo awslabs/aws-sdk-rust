@@ -45,8 +45,8 @@ impl SessionKeyEmvCommon {
 }
 
 /// A builder for [`SessionKeyEmvCommon`](crate::types::SessionKeyEmvCommon).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SessionKeyEmvCommonBuilder {
     pub(crate) primary_account_number: ::std::option::Option<::std::string::String>,
     pub(crate) pan_sequence_number: ::std::option::Option<::std::string::String>,

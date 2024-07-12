@@ -58,8 +58,8 @@ impl CreateIngressPointInput {
 }
 
 /// A builder for [`CreateIngressPointInput`](crate::operation::create_ingress_point::CreateIngressPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateIngressPointInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_point_name: ::std::option::Option<::std::string::String>,

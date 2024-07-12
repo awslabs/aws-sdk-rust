@@ -33,8 +33,8 @@ impl QueueSearchFilter {
 }
 
 /// A builder for [`QueueSearchFilter`](crate::types::QueueSearchFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueueSearchFilterBuilder {
     pub(crate) tag_filter: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
 }

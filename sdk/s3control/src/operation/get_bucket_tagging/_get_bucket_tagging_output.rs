@@ -27,8 +27,8 @@ impl GetBucketTaggingOutput {
 }
 
 /// A builder for [`GetBucketTaggingOutput`](crate::operation::get_bucket_tagging::GetBucketTaggingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketTaggingOutputBuilder {
     pub(crate) tag_set: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
     _request_id: Option<String>,

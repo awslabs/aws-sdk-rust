@@ -43,8 +43,8 @@ impl ListAppInstanceUserEndpointsOutput {
 }
 
 /// A builder for [`ListAppInstanceUserEndpointsOutput`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListAppInstanceUserEndpointsOutputBuilder {
     pub(crate) app_instance_user_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

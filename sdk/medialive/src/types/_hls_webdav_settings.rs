@@ -45,8 +45,8 @@ impl HlsWebdavSettings {
 }
 
 /// A builder for [`HlsWebdavSettings`](crate::types::HlsWebdavSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsWebdavSettingsBuilder {
     pub(crate) connection_retry_interval: ::std::option::Option<i32>,
     pub(crate) filecache_duration: ::std::option::Option<i32>,

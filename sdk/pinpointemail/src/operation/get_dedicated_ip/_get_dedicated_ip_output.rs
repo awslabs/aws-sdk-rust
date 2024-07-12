@@ -27,8 +27,8 @@ impl GetDedicatedIpOutput {
 }
 
 /// A builder for [`GetDedicatedIpOutput`](crate::operation::get_dedicated_ip::GetDedicatedIpOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDedicatedIpOutputBuilder {
     pub(crate) dedicated_ip: ::std::option::Option<crate::types::DedicatedIp>,
     _request_id: Option<String>,

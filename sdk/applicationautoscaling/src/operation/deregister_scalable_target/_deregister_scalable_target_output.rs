@@ -18,8 +18,8 @@ impl DeregisterScalableTargetOutput {
 }
 
 /// A builder for [`DeregisterScalableTargetOutput`](crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterScalableTargetOutputBuilder {
     _request_id: Option<String>,
 }

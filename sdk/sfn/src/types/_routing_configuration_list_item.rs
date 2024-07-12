@@ -30,8 +30,8 @@ impl RoutingConfigurationListItem {
 }
 
 /// A builder for [`RoutingConfigurationListItem`](crate::types::RoutingConfigurationListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RoutingConfigurationListItemBuilder {
     pub(crate) state_machine_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) weight: ::std::option::Option<i32>,

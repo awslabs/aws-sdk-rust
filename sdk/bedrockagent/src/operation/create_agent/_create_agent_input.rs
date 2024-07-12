@@ -106,8 +106,8 @@ impl CreateAgentInput {
 }
 
 /// A builder for [`CreateAgentInput`](crate::operation::create_agent::CreateAgentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateAgentInputBuilder {
     pub(crate) agent_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

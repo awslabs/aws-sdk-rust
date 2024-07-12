@@ -27,8 +27,8 @@ impl DeleteGatewayResponseInput {
 }
 
 /// A builder for [`DeleteGatewayResponseInput`](crate::operation::delete_gateway_response::DeleteGatewayResponseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGatewayResponseInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) response_type: ::std::option::Option<crate::types::GatewayResponseType>,

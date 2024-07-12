@@ -54,8 +54,8 @@ impl GetSnapshotBlockOutput {
 }
 
 /// A builder for [`GetSnapshotBlockOutput`](crate::operation::get_snapshot_block::GetSnapshotBlockOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default)]
+#[non_exhaustive]
 pub struct GetSnapshotBlockOutputBuilder {
     pub(crate) data_length: ::std::option::Option<i32>,
     pub(crate) block_data: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,

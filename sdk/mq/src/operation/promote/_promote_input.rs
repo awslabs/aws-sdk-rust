@@ -27,8 +27,8 @@ impl PromoteInput {
 }
 
 /// A builder for [`PromoteInput`](crate::operation::promote::PromoteInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromoteInputBuilder {
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::PromoteMode>,

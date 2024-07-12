@@ -19,8 +19,8 @@ impl DeleteConfiguredTableAnalysisRuleOutput {
 }
 
 /// A builder for [`DeleteConfiguredTableAnalysisRuleOutput`](crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConfiguredTableAnalysisRuleOutputBuilder {
     _request_id: Option<String>,
 }

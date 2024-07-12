@@ -65,8 +65,8 @@ impl RevisionLocation {
 }
 
 /// A builder for [`RevisionLocation`](crate::types::RevisionLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevisionLocationBuilder {
     pub(crate) revision_type: ::std::option::Option<crate::types::RevisionLocationType>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,

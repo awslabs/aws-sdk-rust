@@ -63,8 +63,8 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails`](crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
     pub(crate) encrypted: ::std::option::Option<bool>,

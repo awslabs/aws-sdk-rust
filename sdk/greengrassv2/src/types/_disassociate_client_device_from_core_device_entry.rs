@@ -22,8 +22,8 @@ impl DisassociateClientDeviceFromCoreDeviceEntry {
 }
 
 /// A builder for [`DisassociateClientDeviceFromCoreDeviceEntry`](crate::types::DisassociateClientDeviceFromCoreDeviceEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateClientDeviceFromCoreDeviceEntryBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }

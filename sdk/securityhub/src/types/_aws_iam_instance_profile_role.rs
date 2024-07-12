@@ -77,8 +77,8 @@ impl AwsIamInstanceProfileRole {
 }
 
 /// A builder for [`AwsIamInstanceProfileRole`](crate::types::AwsIamInstanceProfileRole).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsIamInstanceProfileRoleBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) assume_role_policy_document: ::std::option::Option<::std::string::String>,

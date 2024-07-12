@@ -23,8 +23,8 @@ impl S3ClassificationScopeExclusion {
 }
 
 /// A builder for [`S3ClassificationScopeExclusion`](crate::types::S3ClassificationScopeExclusion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ClassificationScopeExclusionBuilder {
     pub(crate) bucket_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

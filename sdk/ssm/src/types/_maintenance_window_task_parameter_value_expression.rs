@@ -30,8 +30,8 @@ impl MaintenanceWindowTaskParameterValueExpression {
 }
 
 /// A builder for [`MaintenanceWindowTaskParameterValueExpression`](crate::types::MaintenanceWindowTaskParameterValueExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MaintenanceWindowTaskParameterValueExpressionBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

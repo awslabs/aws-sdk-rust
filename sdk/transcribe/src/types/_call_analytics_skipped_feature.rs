@@ -36,8 +36,8 @@ impl CallAnalyticsSkippedFeature {
 }
 
 /// A builder for [`CallAnalyticsSkippedFeature`](crate::types::CallAnalyticsSkippedFeature).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CallAnalyticsSkippedFeatureBuilder {
     pub(crate) feature: ::std::option::Option<crate::types::CallAnalyticsFeature>,
     pub(crate) reason_code: ::std::option::Option<crate::types::CallAnalyticsSkippedReasonCode>,

@@ -26,8 +26,8 @@ impl UpdateAttributeGroupOutput {
 }
 
 /// A builder for [`UpdateAttributeGroupOutput`](crate::operation::update_attribute_group::UpdateAttributeGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAttributeGroupOutputBuilder {
     pub(crate) attribute_group: ::std::option::Option<crate::types::AttributeGroup>,
     _request_id: Option<String>,

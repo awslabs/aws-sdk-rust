@@ -26,8 +26,8 @@ impl GetContentInput {
 }
 
 /// A builder for [`GetContentInput`](crate::operation::get_content::GetContentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContentInputBuilder {
     pub(crate) content_id: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,

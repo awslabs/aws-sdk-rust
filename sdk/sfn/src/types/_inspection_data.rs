@@ -77,8 +77,8 @@ impl InspectionData {
 }
 
 /// A builder for [`InspectionData`](crate::types::InspectionData).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct InspectionDataBuilder {
     pub(crate) input: ::std::option::Option<::std::string::String>,
     pub(crate) after_input_path: ::std::option::Option<::std::string::String>,

@@ -63,8 +63,8 @@ impl BuildConfiguration {
 }
 
 /// A builder for [`BuildConfiguration`](crate::types::BuildConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuildConfigurationBuilder {
     pub(crate) artifact_name: ::std::option::Option<::std::string::String>,
     pub(crate) code_build_service_role: ::std::option::Option<::std::string::String>,

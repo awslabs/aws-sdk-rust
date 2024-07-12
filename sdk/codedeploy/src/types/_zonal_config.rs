@@ -42,8 +42,8 @@ impl ZonalConfig {
 }
 
 /// A builder for [`ZonalConfig`](crate::types::ZonalConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ZonalConfigBuilder {
     pub(crate) first_zone_monitor_duration_in_seconds: ::std::option::Option<i64>,
     pub(crate) monitor_duration_in_seconds: ::std::option::Option<i64>,

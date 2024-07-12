@@ -40,8 +40,8 @@ impl CreateRouteTableInput {
 }
 
 /// A builder for [`CreateRouteTableInput`](crate::operation::create_route_table::CreateRouteTableInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRouteTableInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

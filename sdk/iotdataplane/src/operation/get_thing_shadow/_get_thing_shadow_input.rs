@@ -27,8 +27,8 @@ impl GetThingShadowInput {
 }
 
 /// A builder for [`GetThingShadowInput`](crate::operation::get_thing_shadow::GetThingShadowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetThingShadowInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) shadow_name: ::std::option::Option<::std::string::String>,

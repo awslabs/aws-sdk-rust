@@ -58,8 +58,8 @@ impl DescribeVpcEndpointServicePermissionsInput {
 }
 
 /// A builder for [`DescribeVpcEndpointServicePermissionsInput`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcEndpointServicePermissionsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,

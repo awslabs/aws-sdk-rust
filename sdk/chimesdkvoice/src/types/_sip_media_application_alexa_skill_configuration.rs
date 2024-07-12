@@ -30,8 +30,8 @@ impl SipMediaApplicationAlexaSkillConfiguration {
 }
 
 /// A builder for [`SipMediaApplicationAlexaSkillConfiguration`](crate::types::SipMediaApplicationAlexaSkillConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SipMediaApplicationAlexaSkillConfigurationBuilder {
     pub(crate) alexa_skill_status: ::std::option::Option<crate::types::AlexaSkillStatus>,
     pub(crate) alexa_skill_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

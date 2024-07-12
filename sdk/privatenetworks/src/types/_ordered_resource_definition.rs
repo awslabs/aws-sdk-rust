@@ -33,8 +33,8 @@ impl OrderedResourceDefinition {
 }
 
 /// A builder for [`OrderedResourceDefinition`](crate::types::OrderedResourceDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrderedResourceDefinitionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
     pub(crate) count: ::std::option::Option<i32>,

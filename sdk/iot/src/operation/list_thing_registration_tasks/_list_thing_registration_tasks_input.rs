@@ -32,8 +32,8 @@ impl ListThingRegistrationTasksInput {
 }
 
 /// A builder for [`ListThingRegistrationTasksInput`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListThingRegistrationTasksInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -27,8 +27,8 @@ impl RetryCriteria {
 }
 
 /// A builder for [`RetryCriteria`](crate::types::RetryCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetryCriteriaBuilder {
     pub(crate) failure_type: ::std::option::Option<crate::types::RetryableFailureType>,
     pub(crate) number_of_retries: ::std::option::Option<i32>,

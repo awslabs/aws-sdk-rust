@@ -22,8 +22,8 @@ impl BatchGetTokenBalanceInput {
 }
 
 /// A builder for [`BatchGetTokenBalanceInput`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetTokenBalanceInputBuilder {
     pub(crate) get_token_balance_inputs: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>>,
 }

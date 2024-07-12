@@ -39,8 +39,8 @@ impl SecurityGroupRemediationAction {
 }
 
 /// A builder for [`SecurityGroupRemediationAction`](crate::types::SecurityGroupRemediationAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityGroupRemediationActionBuilder {
     pub(crate) remediation_action_type: ::std::option::Option<crate::types::RemediationActionType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

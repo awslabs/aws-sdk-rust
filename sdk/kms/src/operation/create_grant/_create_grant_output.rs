@@ -36,8 +36,8 @@ impl CreateGrantOutput {
 }
 
 /// A builder for [`CreateGrantOutput`](crate::operation::create_grant::CreateGrantOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGrantOutputBuilder {
     pub(crate) grant_token: ::std::option::Option<::std::string::String>,
     pub(crate) grant_id: ::std::option::Option<::std::string::String>,

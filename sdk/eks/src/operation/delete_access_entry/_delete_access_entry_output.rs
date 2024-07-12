@@ -18,8 +18,8 @@ impl DeleteAccessEntryOutput {
 }
 
 /// A builder for [`DeleteAccessEntryOutput`](crate::operation::delete_access_entry::DeleteAccessEntryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessEntryOutputBuilder {
     _request_id: Option<String>,
 }

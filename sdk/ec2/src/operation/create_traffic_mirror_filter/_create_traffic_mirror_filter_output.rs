@@ -32,8 +32,8 @@ impl CreateTrafficMirrorFilterOutput {
 }
 
 /// A builder for [`CreateTrafficMirrorFilterOutput`](crate::operation::create_traffic_mirror_filter::CreateTrafficMirrorFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTrafficMirrorFilterOutputBuilder {
     pub(crate) traffic_mirror_filter: ::std::option::Option<crate::types::TrafficMirrorFilter>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

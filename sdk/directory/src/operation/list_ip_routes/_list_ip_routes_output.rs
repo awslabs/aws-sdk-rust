@@ -34,8 +34,8 @@ impl ListIpRoutesOutput {
 }
 
 /// A builder for [`ListIpRoutesOutput`](crate::operation::list_ip_routes::ListIpRoutesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIpRoutesOutputBuilder {
     pub(crate) ip_routes_info: ::std::option::Option<::std::vec::Vec<crate::types::IpRouteInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

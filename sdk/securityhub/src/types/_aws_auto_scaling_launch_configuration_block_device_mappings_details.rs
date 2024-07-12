@@ -43,8 +43,8 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
 }
 
 /// A builder for [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) ebs: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails>,

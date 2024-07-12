@@ -26,8 +26,8 @@ impl DeleteCommentContentOutput {
 }
 
 /// A builder for [`DeleteCommentContentOutput`](crate::operation::delete_comment_content::DeleteCommentContentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCommentContentOutputBuilder {
     pub(crate) comment: ::std::option::Option<crate::types::Comment>,
     _request_id: Option<String>,

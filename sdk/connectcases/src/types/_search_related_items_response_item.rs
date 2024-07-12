@@ -52,8 +52,8 @@ impl SearchRelatedItemsResponseItem {
 }
 
 /// A builder for [`SearchRelatedItemsResponseItem`](crate::types::SearchRelatedItemsResponseItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchRelatedItemsResponseItemBuilder {
     pub(crate) related_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RelatedItemType>,

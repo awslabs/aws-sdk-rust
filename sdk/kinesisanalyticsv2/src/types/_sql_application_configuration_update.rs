@@ -39,8 +39,8 @@ impl SqlApplicationConfigurationUpdate {
 }
 
 /// A builder for [`SqlApplicationConfigurationUpdate`](crate::types::SqlApplicationConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SqlApplicationConfigurationUpdateBuilder {
     pub(crate) input_updates: ::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>>,
     pub(crate) output_updates: ::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>>,

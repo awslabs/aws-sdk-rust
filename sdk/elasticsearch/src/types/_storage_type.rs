@@ -59,8 +59,8 @@ impl StorageType {
 }
 
 /// A builder for [`StorageType`](crate::types::StorageType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageTypeBuilder {
     pub(crate) storage_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_sub_type_name: ::std::option::Option<::std::string::String>,

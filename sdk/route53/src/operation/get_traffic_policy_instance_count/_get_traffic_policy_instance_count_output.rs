@@ -27,8 +27,8 @@ impl GetTrafficPolicyInstanceCountOutput {
 }
 
 /// A builder for [`GetTrafficPolicyInstanceCountOutput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTrafficPolicyInstanceCountOutputBuilder {
     pub(crate) traffic_policy_instance_count: ::std::option::Option<i32>,
     _request_id: Option<String>,

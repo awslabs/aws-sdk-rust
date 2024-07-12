@@ -27,8 +27,8 @@ impl AcceptInboundConnectionOutput {
 }
 
 /// A builder for [`AcceptInboundConnectionOutput`](crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptInboundConnectionOutputBuilder {
     pub(crate) connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,

@@ -63,8 +63,8 @@ impl Mapping {
 }
 
 /// A builder for [`Mapping`](crate::types::Mapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MappingBuilder {
     pub(crate) to_key: ::std::option::Option<::std::string::String>,
     pub(crate) from_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

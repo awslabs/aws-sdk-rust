@@ -57,8 +57,8 @@ impl LogAnomalyClass {
 }
 
 /// A builder for [`LogAnomalyClass`](crate::types::LogAnomalyClass).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogAnomalyClassBuilder {
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_anomaly_type: ::std::option::Option<crate::types::LogAnomalyType>,

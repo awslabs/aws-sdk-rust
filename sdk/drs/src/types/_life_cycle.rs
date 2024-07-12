@@ -45,8 +45,8 @@ impl LifeCycle {
 }
 
 /// A builder for [`LifeCycle`](crate::types::LifeCycle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifeCycleBuilder {
     pub(crate) added_to_service_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) first_byte_date_time: ::std::option::Option<::std::string::String>,

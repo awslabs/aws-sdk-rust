@@ -22,8 +22,8 @@ impl BatchGetEffectiveLifecyclePolicyInput {
 }
 
 /// A builder for [`BatchGetEffectiveLifecyclePolicyInput`](crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetEffectiveLifecyclePolicyInputBuilder {
     pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyResourceIdentifier>>,
 }

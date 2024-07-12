@@ -73,8 +73,8 @@ impl RepositoryDescription {
 }
 
 /// A builder for [`RepositoryDescription`](crate::types::RepositoryDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RepositoryDescriptionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) administrator_account: ::std::option::Option<::std::string::String>,

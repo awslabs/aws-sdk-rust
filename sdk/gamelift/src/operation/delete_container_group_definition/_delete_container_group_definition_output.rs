@@ -18,8 +18,8 @@ impl DeleteContainerGroupDefinitionOutput {
 }
 
 /// A builder for [`DeleteContainerGroupDefinitionOutput`](crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteContainerGroupDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

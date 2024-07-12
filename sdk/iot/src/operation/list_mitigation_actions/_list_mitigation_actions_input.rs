@@ -32,8 +32,8 @@ impl ListMitigationActionsInput {
 }
 
 /// A builder for [`ListMitigationActionsInput`](crate::operation::list_mitigation_actions::ListMitigationActionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMitigationActionsInputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::MitigationActionType>,
     pub(crate) max_results: ::std::option::Option<i32>,

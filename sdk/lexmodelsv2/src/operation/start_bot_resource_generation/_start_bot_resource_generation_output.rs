@@ -62,8 +62,8 @@ impl StartBotResourceGenerationOutput {
 }
 
 /// A builder for [`StartBotResourceGenerationOutput`](crate::operation::start_bot_resource_generation::StartBotResourceGenerationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartBotResourceGenerationOutputBuilder {
     pub(crate) generation_input_prompt: ::std::option::Option<::std::string::String>,
     pub(crate) generation_id: ::std::option::Option<::std::string::String>,

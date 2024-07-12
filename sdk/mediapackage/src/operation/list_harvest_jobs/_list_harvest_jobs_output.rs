@@ -34,8 +34,8 @@ impl ListHarvestJobsOutput {
 }
 
 /// A builder for [`ListHarvestJobsOutput`](crate::operation::list_harvest_jobs::ListHarvestJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHarvestJobsOutputBuilder {
     pub(crate) harvest_jobs: ::std::option::Option<::std::vec::Vec<crate::types::HarvestJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

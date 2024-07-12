@@ -26,8 +26,8 @@ impl ModifyInstanceMetadataDefaultsOutput {
 }
 
 /// A builder for [`ModifyInstanceMetadataDefaultsOutput`](crate::operation::modify_instance_metadata_defaults::ModifyInstanceMetadataDefaultsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstanceMetadataDefaultsOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

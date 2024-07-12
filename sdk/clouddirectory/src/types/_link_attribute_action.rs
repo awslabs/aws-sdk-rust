@@ -27,8 +27,8 @@ impl LinkAttributeAction {
 }
 
 /// A builder for [`LinkAttributeAction`](crate::types::LinkAttributeAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LinkAttributeActionBuilder {
     pub(crate) attribute_action_type: ::std::option::Option<crate::types::UpdateActionType>,
     pub(crate) attribute_update_value: ::std::option::Option<crate::types::TypedAttributeValue>,

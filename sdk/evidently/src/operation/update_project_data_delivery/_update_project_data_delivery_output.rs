@@ -26,8 +26,8 @@ impl UpdateProjectDataDeliveryOutput {
 }
 
 /// A builder for [`UpdateProjectDataDeliveryOutput`](crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProjectDataDeliveryOutputBuilder {
     pub(crate) project: ::std::option::Option<crate::types::Project>,
     _request_id: Option<String>,

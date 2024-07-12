@@ -55,8 +55,8 @@ impl InvalidChangeBatch {
 }
 
 /// A builder for [`InvalidChangeBatch`](crate::types::error::InvalidChangeBatch).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidChangeBatchBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

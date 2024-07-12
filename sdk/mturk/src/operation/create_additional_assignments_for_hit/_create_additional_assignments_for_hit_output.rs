@@ -18,8 +18,8 @@ impl CreateAdditionalAssignmentsForHitOutput {
 }
 
 /// A builder for [`CreateAdditionalAssignmentsForHitOutput`](crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAdditionalAssignmentsForHitOutputBuilder {
     _request_id: Option<String>,
 }

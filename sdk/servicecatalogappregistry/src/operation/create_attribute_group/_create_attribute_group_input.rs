@@ -44,8 +44,8 @@ impl CreateAttributeGroupInput {
 }
 
 /// A builder for [`CreateAttributeGroupInput`](crate::operation::create_attribute_group::CreateAttributeGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAttributeGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

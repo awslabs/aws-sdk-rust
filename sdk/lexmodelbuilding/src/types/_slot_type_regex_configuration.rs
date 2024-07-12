@@ -60,8 +60,8 @@ impl SlotTypeRegexConfiguration {
 }
 
 /// A builder for [`SlotTypeRegexConfiguration`](crate::types::SlotTypeRegexConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlotTypeRegexConfigurationBuilder {
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
 }

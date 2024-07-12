@@ -85,8 +85,8 @@ impl ListResourceRecordSetsInput {
 }
 
 /// A builder for [`ListResourceRecordSetsInput`](crate::operation::list_resource_record_sets::ListResourceRecordSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceRecordSetsInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_record_name: ::std::option::Option<::std::string::String>,

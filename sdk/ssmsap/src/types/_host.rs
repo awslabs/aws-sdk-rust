@@ -51,8 +51,8 @@ impl Host {
 }
 
 /// A builder for [`Host`](crate::types::Host).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HostBuilder {
     pub(crate) host_name: ::std::option::Option<::std::string::String>,
     pub(crate) host_ip: ::std::option::Option<::std::string::String>,

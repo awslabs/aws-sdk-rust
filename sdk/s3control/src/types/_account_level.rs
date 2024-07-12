@@ -52,8 +52,8 @@ impl AccountLevel {
 }
 
 /// A builder for [`AccountLevel`](crate::types::AccountLevel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountLevelBuilder {
     pub(crate) activity_metrics: ::std::option::Option<crate::types::ActivityMetrics>,
     pub(crate) bucket_level: ::std::option::Option<crate::types::BucketLevel>,

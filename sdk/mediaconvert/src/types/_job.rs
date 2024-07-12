@@ -185,8 +185,8 @@ impl Job {
 }
 
 /// A builder for [`Job`](crate::types::Job).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobBuilder {
     pub(crate) acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     pub(crate) acceleration_status: ::std::option::Option<crate::types::AccelerationStatus>,

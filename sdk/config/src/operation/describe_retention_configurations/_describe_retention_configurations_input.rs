@@ -32,8 +32,8 @@ impl DescribeRetentionConfigurationsInput {
 }
 
 /// A builder for [`DescribeRetentionConfigurationsInput`](crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRetentionConfigurationsInputBuilder {
     pub(crate) retention_configuration_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

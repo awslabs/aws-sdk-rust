@@ -34,8 +34,8 @@ impl ListAssociatedResourcesOutput {
 }
 
 /// A builder for [`ListAssociatedResourcesOutput`](crate::operation::list_associated_resources::ListAssociatedResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociatedResourcesOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

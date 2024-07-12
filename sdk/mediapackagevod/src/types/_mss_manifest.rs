@@ -27,8 +27,8 @@ impl MssManifest {
 }
 
 /// A builder for [`MssManifest`](crate::types::MssManifest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MssManifestBuilder {
     pub(crate) manifest_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_selection: ::std::option::Option<crate::types::StreamSelection>,

@@ -20,8 +20,8 @@ impl GetIdNamespaceInput {
 }
 
 /// A builder for [`GetIdNamespaceInput`](crate::operation::get_id_namespace::GetIdNamespaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIdNamespaceInputBuilder {
     pub(crate) id_namespace_name: ::std::option::Option<::std::string::String>,
 }

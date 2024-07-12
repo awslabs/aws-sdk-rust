@@ -35,8 +35,8 @@ impl ModifyClusterSubnetGroupInput {
 }
 
 /// A builder for [`ModifyClusterSubnetGroupInput`](crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyClusterSubnetGroupInputBuilder {
     pub(crate) cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

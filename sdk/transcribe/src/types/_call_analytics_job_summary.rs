@@ -71,8 +71,8 @@ impl CallAnalyticsJobSummary {
 }
 
 /// A builder for [`CallAnalyticsJobSummary`](crate::types::CallAnalyticsJobSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CallAnalyticsJobSummaryBuilder {
     pub(crate) call_analytics_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,

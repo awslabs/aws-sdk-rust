@@ -34,8 +34,8 @@ impl VerifySmsSandboxPhoneNumberInput {
 }
 
 /// A builder for [`VerifySmsSandboxPhoneNumberInput`](crate::operation::verify_sms_sandbox_phone_number::VerifySmsSandboxPhoneNumberInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct VerifySmsSandboxPhoneNumberInputBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) one_time_password: ::std::option::Option<::std::string::String>,

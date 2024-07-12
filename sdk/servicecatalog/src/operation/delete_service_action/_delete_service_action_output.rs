@@ -18,8 +18,8 @@ impl DeleteServiceActionOutput {
 }
 
 /// A builder for [`DeleteServiceActionOutput`](crate::operation::delete_service_action::DeleteServiceActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceActionOutputBuilder {
     _request_id: Option<String>,
 }

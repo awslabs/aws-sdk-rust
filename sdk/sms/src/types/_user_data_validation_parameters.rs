@@ -27,8 +27,8 @@ impl UserDataValidationParameters {
 }
 
 /// A builder for [`UserDataValidationParameters`](crate::types::UserDataValidationParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserDataValidationParametersBuilder {
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) script_type: ::std::option::Option<crate::types::ScriptType>,

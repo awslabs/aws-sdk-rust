@@ -21,8 +21,8 @@ impl ListGitHubAccountTokenNamesInput {
 }
 
 /// A builder for [`ListGitHubAccountTokenNamesInput`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGitHubAccountTokenNamesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }

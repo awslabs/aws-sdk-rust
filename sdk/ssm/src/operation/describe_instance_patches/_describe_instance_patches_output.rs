@@ -66,8 +66,8 @@ impl DescribeInstancePatchesOutput {
 }
 
 /// A builder for [`DescribeInstancePatchesOutput`](crate::operation::describe_instance_patches::DescribeInstancePatchesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstancePatchesOutputBuilder {
     pub(crate) patches: ::std::option::Option<::std::vec::Vec<crate::types::PatchComplianceData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

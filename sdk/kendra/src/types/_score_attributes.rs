@@ -21,8 +21,8 @@ impl ScoreAttributes {
 }
 
 /// A builder for [`ScoreAttributes`](crate::types::ScoreAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScoreAttributesBuilder {
     pub(crate) score_confidence: ::std::option::Option<crate::types::ScoreConfidence>,
 }

@@ -44,8 +44,8 @@ impl CompleteLifecycleActionInput {
 }
 
 /// A builder for [`CompleteLifecycleActionInput`](crate::operation::complete_lifecycle_action::CompleteLifecycleActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompleteLifecycleActionInputBuilder {
     pub(crate) lifecycle_hook_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListAccountAssignmentCreationStatusOutput {
 }
 
 /// A builder for [`ListAccountAssignmentCreationStatusOutput`](crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountAssignmentCreationStatusOutputBuilder {
     pub(crate) account_assignments_creation_status: ::std::option::Option<::std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

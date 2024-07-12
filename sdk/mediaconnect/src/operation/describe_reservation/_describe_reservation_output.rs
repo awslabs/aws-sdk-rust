@@ -26,8 +26,8 @@ impl DescribeReservationOutput {
 }
 
 /// A builder for [`DescribeReservationOutput`](crate::operation::describe_reservation::DescribeReservationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReservationOutputBuilder {
     pub(crate) reservation: ::std::option::Option<crate::types::Reservation>,
     _request_id: Option<String>,

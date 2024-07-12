@@ -11,8 +11,8 @@ impl GetDiscoverySummaryInput {
 }
 
 /// A builder for [`GetDiscoverySummaryInput`](crate::operation::get_discovery_summary::GetDiscoverySummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDiscoverySummaryInputBuilder {}
 impl GetDiscoverySummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetDiscoverySummaryInput`](crate::operation::get_discovery_summary::GetDiscoverySummaryInput).

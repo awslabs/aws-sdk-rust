@@ -26,8 +26,8 @@ impl UpdateStorageVirtualMachineOutput {
 }
 
 /// A builder for [`UpdateStorageVirtualMachineOutput`](crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStorageVirtualMachineOutputBuilder {
     pub(crate) storage_virtual_machine: ::std::option::Option<crate::types::StorageVirtualMachine>,
     _request_id: Option<String>,

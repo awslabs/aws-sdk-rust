@@ -50,8 +50,8 @@ impl ListEventLogsInput {
 }
 
 /// A builder for [`ListEventLogsInput`](crate::operation::list_event_logs::ListEventLogsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventLogsInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

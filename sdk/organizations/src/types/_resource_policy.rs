@@ -27,8 +27,8 @@ impl ResourcePolicy {
 }
 
 /// A builder for [`ResourcePolicy`](crate::types::ResourcePolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourcePolicyBuilder {
     pub(crate) resource_policy_summary: ::std::option::Option<crate::types::ResourcePolicySummary>,
     pub(crate) content: ::std::option::Option<::std::string::String>,

@@ -22,8 +22,8 @@ impl BatchStartRecommendationsInput {
 }
 
 /// A builder for [`BatchStartRecommendationsInput`](crate::operation::batch_start_recommendations::BatchStartRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStartRecommendationsInputBuilder {
     pub(crate) data: ::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>,
 }

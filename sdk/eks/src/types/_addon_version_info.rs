@@ -49,8 +49,8 @@ impl AddonVersionInfo {
 }
 
 /// A builder for [`AddonVersionInfo`](crate::types::AddonVersionInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddonVersionInfoBuilder {
     pub(crate) addon_version: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

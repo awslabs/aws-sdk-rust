@@ -26,8 +26,8 @@ impl DeleteReplicationGroupOutput {
 }
 
 /// A builder for [`DeleteReplicationGroupOutput`](crate::operation::delete_replication_group::DeleteReplicationGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicationGroupOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,

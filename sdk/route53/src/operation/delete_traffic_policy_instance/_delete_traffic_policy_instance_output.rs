@@ -19,8 +19,8 @@ impl DeleteTrafficPolicyInstanceOutput {
 }
 
 /// A builder for [`DeleteTrafficPolicyInstanceOutput`](crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrafficPolicyInstanceOutputBuilder {
     _request_id: Option<String>,
 }

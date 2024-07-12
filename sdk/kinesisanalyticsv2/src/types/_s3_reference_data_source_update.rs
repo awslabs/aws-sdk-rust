@@ -27,8 +27,8 @@ impl S3ReferenceDataSourceUpdate {
 }
 
 /// A builder for [`S3ReferenceDataSourceUpdate`](crate::types::S3ReferenceDataSourceUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3ReferenceDataSourceUpdateBuilder {
     pub(crate) bucket_arn_update: ::std::option::Option<::std::string::String>,
     pub(crate) file_key_update: ::std::option::Option<::std::string::String>,

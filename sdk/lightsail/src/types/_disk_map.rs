@@ -27,8 +27,8 @@ impl DiskMap {
 }
 
 /// A builder for [`DiskMap`](crate::types::DiskMap).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiskMapBuilder {
     pub(crate) original_disk_path: ::std::option::Option<::std::string::String>,
     pub(crate) new_disk_name: ::std::option::Option<::std::string::String>,

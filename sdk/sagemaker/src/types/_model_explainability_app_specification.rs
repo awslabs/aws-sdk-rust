@@ -33,8 +33,8 @@ impl ModelExplainabilityAppSpecification {
 }
 
 /// A builder for [`ModelExplainabilityAppSpecification`](crate::types::ModelExplainabilityAppSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelExplainabilityAppSpecificationBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) config_uri: ::std::option::Option<::std::string::String>,

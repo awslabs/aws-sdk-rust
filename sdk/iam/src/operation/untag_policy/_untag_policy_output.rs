@@ -18,8 +18,8 @@ impl UntagPolicyOutput {
 }
 
 /// A builder for [`UntagPolicyOutput`](crate::operation::untag_policy::UntagPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagPolicyOutputBuilder {
     _request_id: Option<String>,
 }

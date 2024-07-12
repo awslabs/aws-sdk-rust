@@ -40,8 +40,8 @@ impl UnsupportedResource {
 }
 
 /// A builder for [`UnsupportedResource`](crate::types::UnsupportedResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnsupportedResourceBuilder {
     pub(crate) logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
     pub(crate) physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,

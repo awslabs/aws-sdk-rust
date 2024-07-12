@@ -44,8 +44,8 @@ impl PathMappingRule {
 }
 
 /// A builder for [`PathMappingRule`](crate::types::PathMappingRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PathMappingRuleBuilder {
     pub(crate) source_path_format: ::std::option::Option<crate::types::PathFormat>,
     pub(crate) source_path: ::std::option::Option<::std::string::String>,

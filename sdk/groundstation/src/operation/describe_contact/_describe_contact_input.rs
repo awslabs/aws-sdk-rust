@@ -21,8 +21,8 @@ impl DescribeContactInput {
 }
 
 /// A builder for [`DescribeContactInput`](crate::operation::describe_contact::DescribeContactInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContactInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
 }

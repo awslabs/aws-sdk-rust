@@ -20,8 +20,8 @@ impl StopEventsDetectionJobInput {
 }
 
 /// A builder for [`StopEventsDetectionJobInput`](crate::operation::stop_events_detection_job::StopEventsDetectionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopEventsDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

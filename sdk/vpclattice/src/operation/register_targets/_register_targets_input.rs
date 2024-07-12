@@ -28,8 +28,8 @@ impl RegisterTargetsInput {
 }
 
 /// A builder for [`RegisterTargetsInput`](crate::operation::register_targets::RegisterTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterTargetsInputBuilder {
     pub(crate) target_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,

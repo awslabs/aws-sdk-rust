@@ -34,8 +34,8 @@ impl GetEventTypesOutput {
 }
 
 /// A builder for [`GetEventTypesOutput`](crate::operation::get_event_types::GetEventTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEventTypesOutputBuilder {
     pub(crate) event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

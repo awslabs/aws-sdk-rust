@@ -50,8 +50,8 @@ impl DisassociateOriginationIdentityOutput {
 }
 
 /// A builder for [`DisassociateOriginationIdentityOutput`](crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateOriginationIdentityOutputBuilder {
     pub(crate) pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,

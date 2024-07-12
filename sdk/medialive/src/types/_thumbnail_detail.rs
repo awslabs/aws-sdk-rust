@@ -29,8 +29,8 @@ impl ThumbnailDetail {
 }
 
 /// A builder for [`ThumbnailDetail`](crate::types::ThumbnailDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThumbnailDetailBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) thumbnails: ::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>>,

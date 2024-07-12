@@ -27,8 +27,8 @@ impl AwsBackupBackupPlanLifecycleDetails {
 }
 
 /// A builder for [`AwsBackupBackupPlanLifecycleDetails`](crate::types::AwsBackupBackupPlanLifecycleDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsBackupBackupPlanLifecycleDetailsBuilder {
     pub(crate) delete_after_days: ::std::option::Option<i64>,
     pub(crate) move_to_cold_storage_after_days: ::std::option::Option<i64>,

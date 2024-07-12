@@ -26,8 +26,8 @@ impl AssociatePricingRulesOutput {
 }
 
 /// A builder for [`AssociatePricingRulesOutput`](crate::operation::associate_pricing_rules::AssociatePricingRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociatePricingRulesOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

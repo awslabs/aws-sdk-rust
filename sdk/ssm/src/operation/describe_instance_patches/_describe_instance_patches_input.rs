@@ -72,8 +72,8 @@ impl DescribeInstancePatchesInput {
 }
 
 /// A builder for [`DescribeInstancePatchesInput`](crate::operation::describe_instance_patches::DescribeInstancePatchesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstancePatchesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,

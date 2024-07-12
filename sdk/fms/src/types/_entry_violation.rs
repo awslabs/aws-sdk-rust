@@ -55,8 +55,8 @@ impl EntryViolation {
 }
 
 /// A builder for [`EntryViolation`](crate::types::EntryViolation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntryViolationBuilder {
     pub(crate) expected_entry: ::std::option::Option<crate::types::EntryDescription>,
     pub(crate) expected_evaluation_order: ::std::option::Option<::std::string::String>,

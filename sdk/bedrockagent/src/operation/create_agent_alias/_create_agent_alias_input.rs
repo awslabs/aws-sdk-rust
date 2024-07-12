@@ -52,8 +52,8 @@ impl CreateAgentAliasInput {
 }
 
 /// A builder for [`CreateAgentAliasInput`](crate::operation::create_agent_alias::CreateAgentAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAgentAliasInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_alias_name: ::std::option::Option<::std::string::String>,

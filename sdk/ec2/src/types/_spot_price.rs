@@ -51,8 +51,8 @@ impl SpotPrice {
 }
 
 /// A builder for [`SpotPrice`](crate::types::SpotPrice).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpotPriceBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,

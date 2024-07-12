@@ -29,8 +29,8 @@ impl ChangeResourceRecordSetsOutput {
 }
 
 /// A builder for [`ChangeResourceRecordSetsOutput`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChangeResourceRecordSetsOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl GetUserAttributeVerificationCodeOutput {
 }
 
 /// A builder for [`GetUserAttributeVerificationCodeOutput`](crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUserAttributeVerificationCodeOutputBuilder {
     pub(crate) code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     _request_id: Option<String>,

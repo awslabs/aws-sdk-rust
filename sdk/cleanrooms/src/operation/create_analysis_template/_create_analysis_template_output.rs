@@ -26,8 +26,8 @@ impl CreateAnalysisTemplateOutput {
 }
 
 /// A builder for [`CreateAnalysisTemplateOutput`](crate::operation::create_analysis_template::CreateAnalysisTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAnalysisTemplateOutputBuilder {
     pub(crate) analysis_template: ::std::option::Option<crate::types::AnalysisTemplate>,
     _request_id: Option<String>,

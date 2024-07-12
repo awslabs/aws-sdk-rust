@@ -45,8 +45,8 @@ impl GatewayResponse {
 }
 
 /// A builder for [`GatewayResponse`](crate::types::GatewayResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GatewayResponseBuilder {
     pub(crate) response_type: ::std::option::Option<crate::types::GatewayResponseType>,
     pub(crate) status_code: ::std::option::Option<::std::string::String>,

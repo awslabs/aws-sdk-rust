@@ -32,8 +32,8 @@ impl PutObjectTaggingOutput {
 }
 
 /// A builder for [`PutObjectTaggingOutput`](crate::operation::put_object_tagging::PutObjectTaggingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutObjectTaggingOutputBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,

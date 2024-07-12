@@ -90,8 +90,8 @@ impl GetMetadataTransferJobOutput {
 }
 
 /// A builder for [`GetMetadataTransferJobOutput`](crate::operation::get_metadata_transfer_job::GetMetadataTransferJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetadataTransferJobOutputBuilder {
     pub(crate) metadata_transfer_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl RegisterDefaultPatchBaselineOutput {
 }
 
 /// A builder for [`RegisterDefaultPatchBaselineOutput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterDefaultPatchBaselineOutputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

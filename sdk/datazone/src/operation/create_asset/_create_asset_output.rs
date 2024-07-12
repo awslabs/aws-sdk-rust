@@ -177,8 +177,8 @@ impl CreateAssetOutput {
 }
 
 /// A builder for [`CreateAssetOutput`](crate::operation::create_asset::CreateAssetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateAssetOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl FindingStatisticsSortCriteria {
 }
 
 /// A builder for [`FindingStatisticsSortCriteria`](crate::types::FindingStatisticsSortCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingStatisticsSortCriteriaBuilder {
     pub(crate) attribute_name: ::std::option::Option<crate::types::FindingStatisticsSortAttributeName>,
     pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,

@@ -127,8 +127,8 @@ impl SearchPlaceIndexForTextInput {
 }
 
 /// A builder for [`SearchPlaceIndexForTextInput`](crate::operation::search_place_index_for_text::SearchPlaceIndexForTextInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SearchPlaceIndexForTextInputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) text: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl DeleteProjectMembershipInput {
 }
 
 /// A builder for [`DeleteProjectMembershipInput`](crate::operation::delete_project_membership::DeleteProjectMembershipInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProjectMembershipInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) project_identifier: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetInlinePolicyForPermissionSetInput {
 }
 
 /// A builder for [`GetInlinePolicyForPermissionSetInput`](crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInlinePolicyForPermissionSetInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_set_arn: ::std::option::Option<::std::string::String>,

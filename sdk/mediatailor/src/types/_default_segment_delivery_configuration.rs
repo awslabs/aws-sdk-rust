@@ -21,8 +21,8 @@ impl DefaultSegmentDeliveryConfiguration {
 }
 
 /// A builder for [`DefaultSegmentDeliveryConfiguration`](crate::types::DefaultSegmentDeliveryConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultSegmentDeliveryConfigurationBuilder {
     pub(crate) base_url: ::std::option::Option<::std::string::String>,
 }

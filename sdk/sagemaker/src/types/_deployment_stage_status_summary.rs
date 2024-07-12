@@ -39,8 +39,8 @@ impl DeploymentStageStatusSummary {
 }
 
 /// A builder for [`DeploymentStageStatusSummary`](crate::types::DeploymentStageStatusSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentStageStatusSummaryBuilder {
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_selection_config: ::std::option::Option<crate::types::DeviceSelectionConfig>,

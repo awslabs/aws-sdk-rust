@@ -58,8 +58,8 @@ impl PublishVersionInput {
 }
 
 /// A builder for [`PublishVersionInput`](crate::operation::publish_version::PublishVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PublishVersionInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) code_sha256: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteCustomLogSourceOutput {
 }
 
 /// A builder for [`DeleteCustomLogSourceOutput`](crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCustomLogSourceOutputBuilder {
     _request_id: Option<String>,
 }

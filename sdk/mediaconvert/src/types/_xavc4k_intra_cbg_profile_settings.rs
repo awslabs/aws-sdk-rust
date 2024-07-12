@@ -21,8 +21,8 @@ impl Xavc4kIntraCbgProfileSettings {
 }
 
 /// A builder for [`Xavc4kIntraCbgProfileSettings`](crate::types::Xavc4kIntraCbgProfileSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Xavc4kIntraCbgProfileSettingsBuilder {
     pub(crate) xavc_class: ::std::option::Option<crate::types::Xavc4kIntraCbgProfileClass>,
 }

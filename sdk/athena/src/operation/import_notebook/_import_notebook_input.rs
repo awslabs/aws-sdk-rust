@@ -54,8 +54,8 @@ impl ImportNotebookInput {
 }
 
 /// A builder for [`ImportNotebookInput`](crate::operation::import_notebook::ImportNotebookInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportNotebookInputBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ImportDocumentOutput {
 }
 
 /// A builder for [`ImportDocumentOutput`](crate::operation::import_document::ImportDocumentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportDocumentOutputBuilder {
     pub(crate) file_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

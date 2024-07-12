@@ -27,8 +27,8 @@ impl DeleteCloudFormationSummary {
 }
 
 /// A builder for [`DeleteCloudFormationSummary`](crate::types::DeleteCloudFormationSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCloudFormationSummaryBuilder {
     pub(crate) step_input: ::std::option::Option<crate::types::DeleteCloudFormationStepInput>,
     pub(crate) step_output: ::std::option::Option<crate::types::DeleteCloudFormationStepOutput>,

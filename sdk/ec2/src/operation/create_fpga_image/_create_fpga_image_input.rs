@@ -58,8 +58,8 @@ impl CreateFpgaImageInput {
 }
 
 /// A builder for [`CreateFpgaImageInput`](crate::operation::create_fpga_image::CreateFpgaImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFpgaImageInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) input_storage_location: ::std::option::Option<crate::types::StorageLocation>,

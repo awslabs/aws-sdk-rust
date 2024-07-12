@@ -55,8 +55,8 @@ impl AwsElbLoadBalancerAttributes {
 }
 
 /// A builder for [`AwsElbLoadBalancerAttributes`](crate::types::AwsElbLoadBalancerAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsElbLoadBalancerAttributesBuilder {
     pub(crate) access_log: ::std::option::Option<crate::types::AwsElbLoadBalancerAccessLog>,
     pub(crate) connection_draining: ::std::option::Option<crate::types::AwsElbLoadBalancerConnectionDraining>,

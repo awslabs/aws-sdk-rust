@@ -39,8 +39,8 @@ impl ResetClusterParameterGroupInput {
 }
 
 /// A builder for [`ResetClusterParameterGroupInput`](crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetClusterParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) reset_all_parameters: ::std::option::Option<bool>,

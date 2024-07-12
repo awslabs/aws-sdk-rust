@@ -37,8 +37,8 @@ impl EventParameters {
 }
 
 /// A builder for [`EventParameters`](crate::types::EventParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventParametersBuilder {
     pub(crate) event_type: ::std::option::Option<crate::types::EventTypeValues>,
     pub(crate) snapshot_owner: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

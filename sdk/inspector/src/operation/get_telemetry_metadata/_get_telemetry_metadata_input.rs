@@ -20,8 +20,8 @@ impl GetTelemetryMetadataInput {
 }
 
 /// A builder for [`GetTelemetryMetadataInput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTelemetryMetadataInputBuilder {
     pub(crate) assessment_run_arn: ::std::option::Option<::std::string::String>,
 }

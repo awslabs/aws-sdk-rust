@@ -29,8 +29,8 @@ impl DescribeEventCategoriesOutput {
 }
 
 /// A builder for [`DescribeEventCategoriesOutput`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEventCategoriesOutputBuilder {
     pub(crate) event_categories_map_list: ::std::option::Option<::std::vec::Vec<crate::types::EventCategoriesMap>>,
     _request_id: Option<String>,

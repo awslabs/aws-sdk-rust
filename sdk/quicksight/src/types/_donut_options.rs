@@ -47,8 +47,8 @@ impl DonutOptions {
 }
 
 /// A builder for [`DonutOptions`](crate::types::DonutOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DonutOptionsBuilder {
     pub(crate) arc_options: ::std::option::Option<crate::types::ArcOptions>,
     pub(crate) donut_center_options: ::std::option::Option<crate::types::DonutCenterOptions>,

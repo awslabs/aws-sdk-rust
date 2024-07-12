@@ -35,8 +35,8 @@ impl SuppressionOptions {
 }
 
 /// A builder for [`SuppressionOptions`](crate::types::SuppressionOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuppressionOptionsBuilder {
     pub(crate) suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
 }

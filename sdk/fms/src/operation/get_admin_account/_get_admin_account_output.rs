@@ -32,8 +32,8 @@ impl GetAdminAccountOutput {
 }
 
 /// A builder for [`GetAdminAccountOutput`](crate::operation::get_admin_account::GetAdminAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAdminAccountOutputBuilder {
     pub(crate) admin_account: ::std::option::Option<::std::string::String>,
     pub(crate) role_status: ::std::option::Option<crate::types::AccountRoleStatus>,

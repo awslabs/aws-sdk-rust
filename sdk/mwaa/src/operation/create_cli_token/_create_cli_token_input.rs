@@ -20,8 +20,8 @@ impl CreateCliTokenInput {
 }
 
 /// A builder for [`CreateCliTokenInput`](crate::operation::create_cli_token::CreateCliTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCliTokenInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

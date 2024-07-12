@@ -34,8 +34,8 @@ impl ListModelBiasJobDefinitionsOutput {
 }
 
 /// A builder for [`ListModelBiasJobDefinitionsOutput`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelBiasJobDefinitionsOutputBuilder {
     pub(crate) job_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

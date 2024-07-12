@@ -29,8 +29,8 @@ impl CreateRemoteAccessSessionConfiguration {
 }
 
 /// A builder for [`CreateRemoteAccessSessionConfiguration`](crate::types::CreateRemoteAccessSessionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRemoteAccessSessionConfigurationBuilder {
     pub(crate) billing_method: ::std::option::Option<crate::types::BillingMethod>,
     pub(crate) vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

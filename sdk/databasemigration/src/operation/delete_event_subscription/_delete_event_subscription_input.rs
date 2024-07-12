@@ -21,8 +21,8 @@ impl DeleteEventSubscriptionInput {
 }
 
 /// A builder for [`DeleteEventSubscriptionInput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventSubscriptionInputBuilder {
     pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl UpdateHitReviewStatusOutput {
 }
 
 /// A builder for [`UpdateHitReviewStatusOutput`](crate::operation::update_hit_review_status::UpdateHitReviewStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateHitReviewStatusOutputBuilder {
     _request_id: Option<String>,
 }

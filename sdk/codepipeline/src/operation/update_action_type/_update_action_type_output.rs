@@ -18,8 +18,8 @@ impl UpdateActionTypeOutput {
 }
 
 /// A builder for [`UpdateActionTypeOutput`](crate::operation::update_action_type::UpdateActionTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateActionTypeOutputBuilder {
     _request_id: Option<String>,
 }

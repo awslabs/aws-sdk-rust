@@ -34,8 +34,8 @@ impl ListDetectorModelsOutput {
 }
 
 /// A builder for [`ListDetectorModelsOutput`](crate::operation::list_detector_models::ListDetectorModelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDetectorModelsOutputBuilder {
     pub(crate) detector_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DetectorModelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

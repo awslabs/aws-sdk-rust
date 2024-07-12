@@ -27,8 +27,8 @@ impl ObjectLambdaAccessPointAlias {
 }
 
 /// A builder for [`ObjectLambdaAccessPointAlias`](crate::types::ObjectLambdaAccessPointAlias).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectLambdaAccessPointAliasBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ObjectLambdaAccessPointAliasStatus>,

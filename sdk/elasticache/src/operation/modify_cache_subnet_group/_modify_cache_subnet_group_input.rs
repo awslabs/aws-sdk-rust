@@ -39,8 +39,8 @@ impl ModifyCacheSubnetGroupInput {
 }
 
 /// A builder for [`ModifyCacheSubnetGroupInput`](crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyCacheSubnetGroupInputBuilder {
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_subnet_group_description: ::std::option::Option<::std::string::String>,

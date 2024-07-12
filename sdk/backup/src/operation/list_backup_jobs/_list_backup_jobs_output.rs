@@ -34,8 +34,8 @@ impl ListBackupJobsOutput {
 }
 
 /// A builder for [`ListBackupJobsOutput`](crate::operation::list_backup_jobs::ListBackupJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBackupJobsOutputBuilder {
     pub(crate) backup_jobs: ::std::option::Option<::std::vec::Vec<crate::types::BackupJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl UsageByAccount {
 }
 
 /// A builder for [`UsageByAccount`](crate::types::UsageByAccount).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageByAccountBuilder {
     pub(crate) currency: ::std::option::Option<crate::types::Currency>,
     pub(crate) estimated_cost: ::std::option::Option<::std::string::String>,

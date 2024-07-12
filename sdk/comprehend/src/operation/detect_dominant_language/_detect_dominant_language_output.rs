@@ -38,8 +38,8 @@ impl DetectDominantLanguageOutput {
 }
 
 /// A builder for [`DetectDominantLanguageOutput`](crate::operation::detect_dominant_language::DetectDominantLanguageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DetectDominantLanguageOutputBuilder {
     pub(crate) languages: ::std::option::Option<::std::vec::Vec<crate::types::DominantLanguage>>,
     _request_id: Option<String>,

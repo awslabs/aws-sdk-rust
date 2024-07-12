@@ -63,8 +63,8 @@ impl DomainNodesStatus {
 }
 
 /// A builder for [`DomainNodesStatus`](crate::types::DomainNodesStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DomainNodesStatusBuilder {
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<crate::types::NodeType>,

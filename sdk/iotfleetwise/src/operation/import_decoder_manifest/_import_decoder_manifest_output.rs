@@ -34,8 +34,8 @@ impl ImportDecoderManifestOutput {
 }
 
 /// A builder for [`ImportDecoderManifestOutput`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportDecoderManifestOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

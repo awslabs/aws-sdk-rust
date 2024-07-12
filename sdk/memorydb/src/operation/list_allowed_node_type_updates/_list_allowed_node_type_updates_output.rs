@@ -36,8 +36,8 @@ impl ListAllowedNodeTypeUpdatesOutput {
 }
 
 /// A builder for [`ListAllowedNodeTypeUpdatesOutput`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAllowedNodeTypeUpdatesOutputBuilder {
     pub(crate) scale_up_node_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) scale_down_node_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

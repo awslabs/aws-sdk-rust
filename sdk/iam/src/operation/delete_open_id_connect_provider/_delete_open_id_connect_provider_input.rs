@@ -20,8 +20,8 @@ impl DeleteOpenIdConnectProviderInput {
 }
 
 /// A builder for [`DeleteOpenIdConnectProviderInput`](crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOpenIdConnectProviderInputBuilder {
     pub(crate) open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
 }

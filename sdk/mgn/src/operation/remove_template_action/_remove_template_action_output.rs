@@ -18,8 +18,8 @@ impl RemoveTemplateActionOutput {
 }
 
 /// A builder for [`RemoveTemplateActionOutput`](crate::operation::remove_template_action::RemoveTemplateActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveTemplateActionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -38,8 +38,8 @@ impl ListRunTasksInput {
 }
 
 /// A builder for [`ListRunTasksInput`](crate::operation::list_run_tasks::ListRunTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRunTasksInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatus>,

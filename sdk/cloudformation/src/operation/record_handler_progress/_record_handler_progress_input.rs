@@ -56,8 +56,8 @@ impl RecordHandlerProgressInput {
 }
 
 /// A builder for [`RecordHandlerProgressInput`](crate::operation::record_handler_progress::RecordHandlerProgressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordHandlerProgressInputBuilder {
     pub(crate) bearer_token: ::std::option::Option<::std::string::String>,
     pub(crate) operation_status: ::std::option::Option<crate::types::OperationStatus>,

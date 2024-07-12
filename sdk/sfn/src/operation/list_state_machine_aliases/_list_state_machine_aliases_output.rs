@@ -33,8 +33,8 @@ impl ListStateMachineAliasesOutput {
 }
 
 /// A builder for [`ListStateMachineAliasesOutput`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStateMachineAliasesOutputBuilder {
     pub(crate) state_machine_aliases: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

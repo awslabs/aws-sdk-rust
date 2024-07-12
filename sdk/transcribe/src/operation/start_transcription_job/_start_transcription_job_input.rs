@@ -266,8 +266,8 @@ impl StartTranscriptionJobInput {
 }
 
 /// A builder for [`StartTranscriptionJobInput`](crate::operation::start_transcription_job::StartTranscriptionJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartTranscriptionJobInputBuilder {
     pub(crate) transcription_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

@@ -28,8 +28,8 @@ impl GetHealthCheckLastFailureReasonOutput {
 }
 
 /// A builder for [`GetHealthCheckLastFailureReasonOutput`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHealthCheckLastFailureReasonOutputBuilder {
     pub(crate) health_check_observations: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
     _request_id: Option<String>,

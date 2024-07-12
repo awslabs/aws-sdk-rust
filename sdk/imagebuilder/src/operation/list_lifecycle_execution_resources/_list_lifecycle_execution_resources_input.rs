@@ -40,8 +40,8 @@ impl ListLifecycleExecutionResourcesInput {
 }
 
 /// A builder for [`ListLifecycleExecutionResourcesInput`](crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLifecycleExecutionResourcesInputBuilder {
     pub(crate) lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) parent_resource_id: ::std::option::Option<::std::string::String>,

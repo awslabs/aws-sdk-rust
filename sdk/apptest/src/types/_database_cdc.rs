@@ -27,8 +27,8 @@ impl DatabaseCdc {
 }
 
 /// A builder for [`DatabaseCdc`](crate::types::DatabaseCdc).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatabaseCdcBuilder {
     pub(crate) source_metadata: ::std::option::Option<crate::types::SourceDatabaseMetadata>,
     pub(crate) target_metadata: ::std::option::Option<crate::types::TargetDatabaseMetadata>,

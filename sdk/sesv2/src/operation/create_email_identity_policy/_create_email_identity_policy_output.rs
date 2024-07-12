@@ -19,8 +19,8 @@ impl CreateEmailIdentityPolicyOutput {
 }
 
 /// A builder for [`CreateEmailIdentityPolicyOutput`](crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEmailIdentityPolicyOutputBuilder {
     _request_id: Option<String>,
 }

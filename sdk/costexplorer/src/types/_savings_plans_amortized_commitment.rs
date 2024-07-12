@@ -33,8 +33,8 @@ impl SavingsPlansAmortizedCommitment {
 }
 
 /// A builder for [`SavingsPlansAmortizedCommitment`](crate::types::SavingsPlansAmortizedCommitment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SavingsPlansAmortizedCommitmentBuilder {
     pub(crate) amortized_recurring_commitment: ::std::option::Option<::std::string::String>,
     pub(crate) amortized_upfront_commitment: ::std::option::Option<::std::string::String>,

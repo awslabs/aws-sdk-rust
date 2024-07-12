@@ -69,8 +69,8 @@ impl ObdSignal {
 }
 
 /// A builder for [`ObdSignal`](crate::types::ObdSignal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObdSignalBuilder {
     pub(crate) pid_response_length: ::std::option::Option<i32>,
     pub(crate) service_mode: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl UpdateServiceActionOutput {
 }
 
 /// A builder for [`UpdateServiceActionOutput`](crate::operation::update_service_action::UpdateServiceActionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceActionOutputBuilder {
     pub(crate) service_action_detail: ::std::option::Option<crate::types::ServiceActionDetail>,
     _request_id: Option<String>,

@@ -88,8 +88,8 @@ impl DescribeBlueGreenDeploymentsInput {
 }
 
 /// A builder for [`DescribeBlueGreenDeploymentsInput`](crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBlueGreenDeploymentsInputBuilder {
     pub(crate) blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

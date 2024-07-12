@@ -27,8 +27,8 @@ impl CreateFileSystemOutput {
 }
 
 /// A builder for [`CreateFileSystemOutput`](crate::operation::create_file_system::CreateFileSystemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFileSystemOutputBuilder {
     pub(crate) file_system: ::std::option::Option<crate::types::FileSystem>,
     _request_id: Option<String>,

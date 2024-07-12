@@ -39,8 +39,8 @@ impl ConnectPeerBgpConfiguration {
 }
 
 /// A builder for [`ConnectPeerBgpConfiguration`](crate::types::ConnectPeerBgpConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectPeerBgpConfigurationBuilder {
     pub(crate) core_network_asn: ::std::option::Option<i64>,
     pub(crate) peer_asn: ::std::option::Option<i64>,

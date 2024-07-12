@@ -21,8 +21,8 @@ impl ConfigurationPolicyAssociation {
 }
 
 /// A builder for [`ConfigurationPolicyAssociation`](crate::types::ConfigurationPolicyAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurationPolicyAssociationBuilder {
     pub(crate) target: ::std::option::Option<crate::types::Target>,
 }

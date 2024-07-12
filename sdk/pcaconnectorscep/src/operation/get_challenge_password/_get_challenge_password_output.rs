@@ -34,8 +34,8 @@ impl GetChallengePasswordOutput {
 }
 
 /// A builder for [`GetChallengePasswordOutput`](crate::operation::get_challenge_password::GetChallengePasswordOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetChallengePasswordOutputBuilder {
     pub(crate) password: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -40,8 +40,8 @@ impl RestoreVolumeFromSnapshotOutput {
 }
 
 /// A builder for [`RestoreVolumeFromSnapshotOutput`](crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreVolumeFromSnapshotOutputBuilder {
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::VolumeLifecycle>,

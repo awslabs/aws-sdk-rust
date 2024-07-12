@@ -26,8 +26,8 @@ impl DescribeTimeToLiveOutput {
 }
 
 /// A builder for [`DescribeTimeToLiveOutput`](crate::operation::describe_time_to_live::DescribeTimeToLiveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTimeToLiveOutputBuilder {
     pub(crate) time_to_live_description: ::std::option::Option<crate::types::TimeToLiveDescription>,
     _request_id: Option<String>,

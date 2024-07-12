@@ -34,8 +34,8 @@ impl ListProgressUpdateStreamsOutput {
 }
 
 /// A builder for [`ListProgressUpdateStreamsOutput`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProgressUpdateStreamsOutputBuilder {
     pub(crate) progress_update_stream_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ProgressUpdateStreamSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

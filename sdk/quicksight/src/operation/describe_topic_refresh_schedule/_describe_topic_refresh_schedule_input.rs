@@ -32,8 +32,8 @@ impl DescribeTopicRefreshScheduleInput {
 }
 
 /// A builder for [`DescribeTopicRefreshScheduleInput`](crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTopicRefreshScheduleInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,

@@ -39,8 +39,8 @@ impl StagingArea {
 }
 
 /// A builder for [`StagingArea`](crate::types::StagingArea).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StagingAreaBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ExtensionStatus>,
     pub(crate) staging_account_id: ::std::option::Option<::std::string::String>,

@@ -45,8 +45,8 @@ impl BatchCreateDelegationByAssessmentOutput {
 }
 
 /// A builder for [`BatchCreateDelegationByAssessmentOutput`](crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchCreateDelegationByAssessmentOutputBuilder {
     pub(crate) delegations: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>>,

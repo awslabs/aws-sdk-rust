@@ -34,8 +34,8 @@ impl ListSensitivityInspectionTemplatesOutput {
 }
 
 /// A builder for [`ListSensitivityInspectionTemplatesOutput`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSensitivityInspectionTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sensitivity_inspection_templates: ::std::option::Option<::std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>,

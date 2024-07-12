@@ -33,8 +33,8 @@ impl PolicyAttachment {
 }
 
 /// A builder for [`PolicyAttachment`](crate::types::PolicyAttachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyAttachmentBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,

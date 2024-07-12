@@ -26,8 +26,8 @@ impl GetMetricsSummaryOutput {
 }
 
 /// A builder for [`GetMetricsSummaryOutput`](crate::operation::get_metrics_summary::GetMetricsSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricsSummaryOutputBuilder {
     pub(crate) metrics_summary: ::std::option::Option<crate::types::MetricsSummary>,
     _request_id: Option<String>,

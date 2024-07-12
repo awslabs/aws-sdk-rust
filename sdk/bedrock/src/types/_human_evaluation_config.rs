@@ -37,8 +37,8 @@ impl HumanEvaluationConfig {
 }
 
 /// A builder for [`HumanEvaluationConfig`](crate::types::HumanEvaluationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HumanEvaluationConfigBuilder {
     pub(crate) human_workflow_config: ::std::option::Option<crate::types::HumanWorkflowConfig>,
     pub(crate) custom_metrics: ::std::option::Option<::std::vec::Vec<crate::types::HumanEvaluationCustomMetric>>,

@@ -56,8 +56,8 @@ impl StartIcd10CmInferenceJobInput {
 }
 
 /// A builder for [`StartIcd10CmInferenceJobInput`](crate::operation::start_icd10_cm_inference_job::StartIcd10CmInferenceJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartIcd10CmInferenceJobInputBuilder {
     pub(crate) input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,

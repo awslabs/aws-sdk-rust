@@ -18,8 +18,8 @@ impl DeleteStateMachineAliasOutput {
 }
 
 /// A builder for [`DeleteStateMachineAliasOutput`](crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStateMachineAliasOutputBuilder {
     _request_id: Option<String>,
 }

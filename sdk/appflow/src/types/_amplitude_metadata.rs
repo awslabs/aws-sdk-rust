@@ -12,8 +12,8 @@ impl AmplitudeMetadata {
 }
 
 /// A builder for [`AmplitudeMetadata`](crate::types::AmplitudeMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmplitudeMetadataBuilder {}
 impl AmplitudeMetadataBuilder {
     /// Consumes the builder and constructs a [`AmplitudeMetadata`](crate::types::AmplitudeMetadata).

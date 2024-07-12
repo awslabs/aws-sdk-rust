@@ -53,8 +53,8 @@ impl EventDestination {
 }
 
 /// A builder for [`EventDestination`](crate::types::EventDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventDestinationBuilder {
     pub(crate) cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     pub(crate) enabled: ::std::option::Option<bool>,

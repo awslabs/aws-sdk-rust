@@ -63,8 +63,8 @@ impl UpdateModelCardInput {
 }
 
 /// A builder for [`UpdateModelCardInput`](crate::operation::update_model_card::UpdateModelCardInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateModelCardInputBuilder {
     pub(crate) model_card_name: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,

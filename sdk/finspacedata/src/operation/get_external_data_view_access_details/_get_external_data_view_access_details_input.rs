@@ -26,8 +26,8 @@ impl GetExternalDataViewAccessDetailsInput {
 }
 
 /// A builder for [`GetExternalDataViewAccessDetailsInput`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExternalDataViewAccessDetailsInputBuilder {
     pub(crate) data_view_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,

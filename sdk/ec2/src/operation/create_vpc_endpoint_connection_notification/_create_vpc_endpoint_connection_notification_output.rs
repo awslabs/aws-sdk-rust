@@ -33,8 +33,8 @@ impl CreateVpcEndpointConnectionNotificationOutput {
 }
 
 /// A builder for [`CreateVpcEndpointConnectionNotificationOutput`](crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpcEndpointConnectionNotificationOutputBuilder {
     pub(crate) connection_notification: ::std::option::Option<crate::types::ConnectionNotification>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

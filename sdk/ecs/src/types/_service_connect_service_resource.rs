@@ -32,8 +32,8 @@ impl ServiceConnectServiceResource {
 }
 
 /// A builder for [`ServiceConnectServiceResource`](crate::types::ServiceConnectServiceResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceConnectServiceResourceBuilder {
     pub(crate) discovery_name: ::std::option::Option<::std::string::String>,
     pub(crate) discovery_arn: ::std::option::Option<::std::string::String>,

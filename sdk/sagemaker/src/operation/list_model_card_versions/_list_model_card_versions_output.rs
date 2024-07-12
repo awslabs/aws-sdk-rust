@@ -34,8 +34,8 @@ impl ListModelCardVersionsOutput {
 }
 
 /// A builder for [`ListModelCardVersionsOutput`](crate::operation::list_model_card_versions::ListModelCardVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelCardVersionsOutputBuilder {
     pub(crate) model_card_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ModelCardVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

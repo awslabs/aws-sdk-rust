@@ -21,8 +21,8 @@ impl ErrorReportLocation {
 }
 
 /// A builder for [`ErrorReportLocation`](crate::types::ErrorReportLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ErrorReportLocationBuilder {
     pub(crate) s3_report_location: ::std::option::Option<crate::types::S3ReportLocation>,
 }

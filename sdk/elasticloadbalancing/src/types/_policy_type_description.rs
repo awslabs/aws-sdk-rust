@@ -35,8 +35,8 @@ impl PolicyTypeDescription {
 }
 
 /// A builder for [`PolicyTypeDescription`](crate::types::PolicyTypeDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyTypeDescriptionBuilder {
     pub(crate) policy_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

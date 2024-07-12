@@ -27,8 +27,8 @@ impl DeliverConfigSnapshotOutput {
 }
 
 /// A builder for [`DeliverConfigSnapshotOutput`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeliverConfigSnapshotOutputBuilder {
     pub(crate) config_snapshot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

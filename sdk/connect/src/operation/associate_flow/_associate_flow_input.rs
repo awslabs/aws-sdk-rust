@@ -38,8 +38,8 @@ impl AssociateFlowInput {
 }
 
 /// A builder for [`AssociateFlowInput`](crate::operation::associate_flow::AssociateFlowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateFlowInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

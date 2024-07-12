@@ -240,8 +240,8 @@ impl UpdateStackInput {
 }
 
 /// A builder for [`UpdateStackInput`](crate::operation::update_stack::UpdateStackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStackInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

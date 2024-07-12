@@ -82,8 +82,8 @@ impl CustomErrorResponse {
 }
 
 /// A builder for [`CustomErrorResponse`](crate::types::CustomErrorResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomErrorResponseBuilder {
     pub(crate) error_code: ::std::option::Option<i32>,
     pub(crate) response_page_path: ::std::option::Option<::std::string::String>,

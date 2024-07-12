@@ -18,8 +18,8 @@ impl DeleteTableOptimizerOutput {
 }
 
 /// A builder for [`DeleteTableOptimizerOutput`](crate::operation::delete_table_optimizer::DeleteTableOptimizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTableOptimizerOutputBuilder {
     _request_id: Option<String>,
 }

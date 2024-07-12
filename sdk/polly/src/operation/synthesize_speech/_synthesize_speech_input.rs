@@ -86,8 +86,8 @@ impl SynthesizeSpeechInput {
 }
 
 /// A builder for [`SynthesizeSpeechInput`](crate::operation::synthesize_speech::SynthesizeSpeechInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SynthesizeSpeechInputBuilder {
     pub(crate) engine: ::std::option::Option<crate::types::Engine>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

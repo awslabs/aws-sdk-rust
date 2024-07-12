@@ -30,8 +30,8 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkOutput {
 }
 
 /// A builder for [`ApplySecurityGroupsToClientVpnTargetNetworkOutput`](crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplySecurityGroupsToClientVpnTargetNetworkOutputBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

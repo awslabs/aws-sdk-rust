@@ -65,8 +65,8 @@ impl MsSmoothGroupSettings {
 }
 
 /// A builder for [`MsSmoothGroupSettings`](crate::types::MsSmoothGroupSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MsSmoothGroupSettingsBuilder {
     pub(crate) additional_manifests: ::std::option::Option<::std::vec::Vec<crate::types::MsSmoothAdditionalManifest>>,
     pub(crate) audio_deduplication: ::std::option::Option<crate::types::MsSmoothAudioDeduplication>,

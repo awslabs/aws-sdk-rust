@@ -35,8 +35,8 @@ impl CancelStepsInput {
 }
 
 /// A builder for [`CancelStepsInput`](crate::operation::cancel_steps::CancelStepsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelStepsInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

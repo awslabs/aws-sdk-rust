@@ -11,8 +11,8 @@ impl DescribeGlobalSettingsInput {
 }
 
 /// A builder for [`DescribeGlobalSettingsInput`](crate::operation::describe_global_settings::DescribeGlobalSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGlobalSettingsInputBuilder {}
 impl DescribeGlobalSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGlobalSettingsInput`](crate::operation::describe_global_settings::DescribeGlobalSettingsInput).

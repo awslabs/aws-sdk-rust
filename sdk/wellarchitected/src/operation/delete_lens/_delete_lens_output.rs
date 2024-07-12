@@ -18,8 +18,8 @@ impl DeleteLensOutput {
 }
 
 /// A builder for [`DeleteLensOutput`](crate::operation::delete_lens::DeleteLensOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLensOutputBuilder {
     _request_id: Option<String>,
 }

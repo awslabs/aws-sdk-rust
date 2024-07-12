@@ -20,8 +20,8 @@ impl DescribeApiDestinationInput {
 }
 
 /// A builder for [`DescribeApiDestinationInput`](crate::operation::describe_api_destination::DescribeApiDestinationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeApiDestinationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

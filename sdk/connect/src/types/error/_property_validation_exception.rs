@@ -53,8 +53,8 @@ impl PropertyValidationException {
 }
 
 /// A builder for [`PropertyValidationException`](crate::types::error::PropertyValidationException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyValidationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) property_list: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValidationExceptionProperty>>,

@@ -35,8 +35,8 @@ impl GetUpgradeHistoryOutput {
 }
 
 /// A builder for [`GetUpgradeHistoryOutput`](crate::operation::get_upgrade_history::GetUpgradeHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUpgradeHistoryOutputBuilder {
     pub(crate) upgrade_histories: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

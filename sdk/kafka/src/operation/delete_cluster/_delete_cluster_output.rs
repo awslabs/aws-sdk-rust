@@ -32,8 +32,8 @@ impl DeleteClusterOutput {
 }
 
 /// A builder for [`DeleteClusterOutput`](crate::operation::delete_cluster::DeleteClusterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClusterOutputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ClusterState>,

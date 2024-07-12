@@ -28,8 +28,8 @@ impl DescribeAutoScalingNotificationTypesOutput {
 }
 
 /// A builder for [`DescribeAutoScalingNotificationTypesOutput`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAutoScalingNotificationTypesOutputBuilder {
     pub(crate) auto_scaling_notification_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

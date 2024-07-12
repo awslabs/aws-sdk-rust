@@ -50,8 +50,8 @@ impl IpAccessSettingsSummary {
 }
 
 /// A builder for [`IpAccessSettingsSummary`](crate::types::IpAccessSettingsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct IpAccessSettingsSummaryBuilder {
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

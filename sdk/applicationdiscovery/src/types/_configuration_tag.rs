@@ -45,8 +45,8 @@ impl ConfigurationTag {
 }
 
 /// A builder for [`ConfigurationTag`](crate::types::ConfigurationTag).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurationTagBuilder {
     pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationItemType>,
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,

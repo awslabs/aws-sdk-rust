@@ -150,8 +150,8 @@ impl PutRecommendationPreferencesInput {
 }
 
 /// A builder for [`PutRecommendationPreferencesInput`](crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRecommendationPreferencesInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,

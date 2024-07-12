@@ -20,8 +20,8 @@ impl DeleteFarmInput {
 }
 
 /// A builder for [`DeleteFarmInput`](crate::operation::delete_farm::DeleteFarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFarmInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
 }

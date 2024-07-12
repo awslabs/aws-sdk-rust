@@ -34,8 +34,8 @@ impl PutAggregationAuthorizationInput {
 }
 
 /// A builder for [`PutAggregationAuthorizationInput`](crate::operation::put_aggregation_authorization::PutAggregationAuthorizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAggregationAuthorizationInputBuilder {
     pub(crate) authorized_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) authorized_aws_region: ::std::option::Option<::std::string::String>,

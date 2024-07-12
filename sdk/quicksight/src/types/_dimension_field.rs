@@ -33,8 +33,8 @@ impl DimensionField {
 }
 
 /// A builder for [`DimensionField`](crate::types::DimensionField).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DimensionFieldBuilder {
     pub(crate) numerical_dimension_field: ::std::option::Option<crate::types::NumericalDimensionField>,
     pub(crate) categorical_dimension_field: ::std::option::Option<crate::types::CategoricalDimensionField>,

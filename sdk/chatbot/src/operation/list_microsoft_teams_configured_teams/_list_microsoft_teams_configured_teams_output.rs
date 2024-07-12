@@ -34,8 +34,8 @@ impl ListMicrosoftTeamsConfiguredTeamsOutput {
 }
 
 /// A builder for [`ListMicrosoftTeamsConfiguredTeamsOutput`](crate::operation::list_microsoft_teams_configured_teams::ListMicrosoftTeamsConfiguredTeamsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMicrosoftTeamsConfiguredTeamsOutputBuilder {
     pub(crate) configured_teams: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTeam>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

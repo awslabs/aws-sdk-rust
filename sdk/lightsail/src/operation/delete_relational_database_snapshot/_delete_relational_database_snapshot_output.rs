@@ -28,8 +28,8 @@ impl DeleteRelationalDatabaseSnapshotOutput {
 }
 
 /// A builder for [`DeleteRelationalDatabaseSnapshotOutput`](crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRelationalDatabaseSnapshotOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl UpdateWebExperienceOutput {
 }
 
 /// A builder for [`UpdateWebExperienceOutput`](crate::operation::update_web_experience::UpdateWebExperienceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWebExperienceOutputBuilder {
     _request_id: Option<String>,
 }

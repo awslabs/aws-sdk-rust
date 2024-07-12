@@ -21,8 +21,8 @@ impl ApiKeyFilter {
 }
 
 /// A builder for [`ApiKeyFilter`](crate::types::ApiKeyFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApiKeyFilterBuilder {
     pub(crate) key_status: ::std::option::Option<crate::types::Status>,
 }

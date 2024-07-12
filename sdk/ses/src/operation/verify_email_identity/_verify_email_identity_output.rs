@@ -19,8 +19,8 @@ impl VerifyEmailIdentityOutput {
 }
 
 /// A builder for [`VerifyEmailIdentityOutput`](crate::operation::verify_email_identity::VerifyEmailIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifyEmailIdentityOutputBuilder {
     _request_id: Option<String>,
 }

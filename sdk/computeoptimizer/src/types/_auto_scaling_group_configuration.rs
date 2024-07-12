@@ -39,8 +39,8 @@ impl AutoScalingGroupConfiguration {
 }
 
 /// A builder for [`AutoScalingGroupConfiguration`](crate::types::AutoScalingGroupConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutoScalingGroupConfigurationBuilder {
     pub(crate) desired_capacity: ::std::option::Option<i32>,
     pub(crate) min_size: ::std::option::Option<i32>,

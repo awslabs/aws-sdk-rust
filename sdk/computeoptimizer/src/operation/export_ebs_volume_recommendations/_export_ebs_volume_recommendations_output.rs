@@ -34,8 +34,8 @@ impl ExportEbsVolumeRecommendationsOutput {
 }
 
 /// A builder for [`ExportEbsVolumeRecommendationsOutput`](crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportEbsVolumeRecommendationsOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,

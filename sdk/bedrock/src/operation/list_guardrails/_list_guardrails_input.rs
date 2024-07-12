@@ -32,8 +32,8 @@ impl ListGuardrailsInput {
 }
 
 /// A builder for [`ListGuardrailsInput`](crate::operation::list_guardrails::ListGuardrailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGuardrailsInputBuilder {
     pub(crate) guardrail_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

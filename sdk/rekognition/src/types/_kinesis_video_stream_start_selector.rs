@@ -27,8 +27,8 @@ impl KinesisVideoStreamStartSelector {
 }
 
 /// A builder for [`KinesisVideoStreamStartSelector`](crate::types::KinesisVideoStreamStartSelector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KinesisVideoStreamStartSelectorBuilder {
     pub(crate) producer_timestamp: ::std::option::Option<i64>,
     pub(crate) fragment_number: ::std::option::Option<::std::string::String>,

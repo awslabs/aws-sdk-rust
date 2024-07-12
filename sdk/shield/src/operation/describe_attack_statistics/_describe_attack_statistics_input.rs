@@ -11,8 +11,8 @@ impl DescribeAttackStatisticsInput {
 }
 
 /// A builder for [`DescribeAttackStatisticsInput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAttackStatisticsInputBuilder {}
 impl DescribeAttackStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAttackStatisticsInput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsInput).

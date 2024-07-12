@@ -26,8 +26,8 @@ impl GetRawMessageContentOutput {
 }
 
 /// A builder for [`GetRawMessageContentOutput`](crate::operation::get_raw_message_content::GetRawMessageContentOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRawMessageContentOutputBuilder {
     pub(crate) message_content: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     _request_id: Option<String>,

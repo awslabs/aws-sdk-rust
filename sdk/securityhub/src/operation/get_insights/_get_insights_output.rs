@@ -34,8 +34,8 @@ impl GetInsightsOutput {
 }
 
 /// A builder for [`GetInsightsOutput`](crate::operation::get_insights::GetInsightsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInsightsOutputBuilder {
     pub(crate) insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

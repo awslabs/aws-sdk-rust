@@ -26,8 +26,8 @@ impl DeregisterPatchBaselineForPatchGroupInput {
 }
 
 /// A builder for [`DeregisterPatchBaselineForPatchGroupInput`](crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterPatchBaselineForPatchGroupInputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,

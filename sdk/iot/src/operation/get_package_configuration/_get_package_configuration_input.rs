@@ -11,8 +11,8 @@ impl GetPackageConfigurationInput {
 }
 
 /// A builder for [`GetPackageConfigurationInput`](crate::operation::get_package_configuration::GetPackageConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPackageConfigurationInputBuilder {}
 impl GetPackageConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetPackageConfigurationInput`](crate::operation::get_package_configuration::GetPackageConfigurationInput).

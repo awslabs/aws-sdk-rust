@@ -18,8 +18,8 @@ impl DeleteFacetOutput {
 }
 
 /// A builder for [`DeleteFacetOutput`](crate::operation::delete_facet::DeleteFacetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFacetOutputBuilder {
     _request_id: Option<String>,
 }

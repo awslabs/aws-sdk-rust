@@ -35,8 +35,8 @@ impl FinishedWorldsSummary {
 }
 
 /// A builder for [`FinishedWorldsSummary`](crate::types::FinishedWorldsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FinishedWorldsSummaryBuilder {
     pub(crate) finished_count: ::std::option::Option<i32>,
     pub(crate) succeeded_worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

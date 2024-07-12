@@ -36,8 +36,8 @@ impl TestSetSlotDiscrepancyItem {
 }
 
 /// A builder for [`TestSetSlotDiscrepancyItem`](crate::types::TestSetSlotDiscrepancyItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestSetSlotDiscrepancyItemBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) slot_name: ::std::option::Option<::std::string::String>,

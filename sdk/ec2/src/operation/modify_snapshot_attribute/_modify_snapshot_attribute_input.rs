@@ -60,8 +60,8 @@ impl ModifySnapshotAttributeInput {
 }
 
 /// A builder for [`ModifySnapshotAttributeInput`](crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifySnapshotAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::SnapshotAttributeName>,
     pub(crate) create_volume_permission: ::std::option::Option<crate::types::CreateVolumePermissionModifications>,

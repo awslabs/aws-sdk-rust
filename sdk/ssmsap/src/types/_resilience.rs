@@ -45,8 +45,8 @@ impl Resilience {
 }
 
 /// A builder for [`Resilience`](crate::types::Resilience).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResilienceBuilder {
     pub(crate) hsr_tier: ::std::option::Option<::std::string::String>,
     pub(crate) hsr_replication_mode: ::std::option::Option<crate::types::ReplicationMode>,

@@ -18,8 +18,8 @@ impl DisassociateWebAclOutput {
 }
 
 /// A builder for [`DisassociateWebAclOutput`](crate::operation::disassociate_web_acl::DisassociateWebAclOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateWebAclOutputBuilder {
     _request_id: Option<String>,
 }

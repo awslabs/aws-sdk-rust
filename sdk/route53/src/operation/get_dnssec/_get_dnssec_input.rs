@@ -20,8 +20,8 @@ impl GetDnssecInput {
 }
 
 /// A builder for [`GetDnssecInput`](crate::operation::get_dnssec::GetDnssecInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDnssecInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
 }

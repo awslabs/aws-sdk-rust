@@ -21,8 +21,8 @@ impl GetHostedZoneInput {
 }
 
 /// A builder for [`GetHostedZoneInput`](crate::operation::get_hosted_zone::GetHostedZoneInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHostedZoneInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

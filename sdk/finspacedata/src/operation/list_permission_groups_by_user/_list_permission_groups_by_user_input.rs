@@ -32,8 +32,8 @@ impl ListPermissionGroupsByUserInput {
 }
 
 /// A builder for [`ListPermissionGroupsByUserInput`](crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPermissionGroupsByUserInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -44,8 +44,8 @@ impl DescribePatchPropertiesInput {
 }
 
 /// A builder for [`DescribePatchPropertiesInput`](crate::operation::describe_patch_properties::DescribePatchPropertiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePatchPropertiesInputBuilder {
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     pub(crate) property: ::std::option::Option<crate::types::PatchProperty>,

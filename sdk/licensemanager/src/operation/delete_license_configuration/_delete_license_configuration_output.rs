@@ -18,8 +18,8 @@ impl DeleteLicenseConfigurationOutput {
 }
 
 /// A builder for [`DeleteLicenseConfigurationOutput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLicenseConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

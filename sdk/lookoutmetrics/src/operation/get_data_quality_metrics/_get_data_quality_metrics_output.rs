@@ -28,8 +28,8 @@ impl GetDataQualityMetricsOutput {
 }
 
 /// A builder for [`GetDataQualityMetricsOutput`](crate::operation::get_data_quality_metrics::GetDataQualityMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataQualityMetricsOutputBuilder {
     pub(crate) anomaly_detector_data_quality_metric_list: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorDataQualityMetric>>,
     _request_id: Option<String>,

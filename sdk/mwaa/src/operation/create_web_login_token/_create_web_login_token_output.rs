@@ -55,8 +55,8 @@ impl CreateWebLoginTokenOutput {
 }
 
 /// A builder for [`CreateWebLoginTokenOutput`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateWebLoginTokenOutputBuilder {
     pub(crate) web_token: ::std::option::Option<::std::string::String>,
     pub(crate) web_server_hostname: ::std::option::Option<::std::string::String>,

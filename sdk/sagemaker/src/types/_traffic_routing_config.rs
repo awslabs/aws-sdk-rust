@@ -55,8 +55,8 @@ impl TrafficRoutingConfig {
 }
 
 /// A builder for [`TrafficRoutingConfig`](crate::types::TrafficRoutingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrafficRoutingConfigBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TrafficRoutingConfigType>,
     pub(crate) wait_interval_in_seconds: ::std::option::Option<i32>,

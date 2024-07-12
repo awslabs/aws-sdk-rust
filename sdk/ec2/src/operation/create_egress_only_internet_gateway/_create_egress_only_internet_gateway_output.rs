@@ -32,8 +32,8 @@ impl CreateEgressOnlyInternetGatewayOutput {
 }
 
 /// A builder for [`CreateEgressOnlyInternetGatewayOutput`](crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEgressOnlyInternetGatewayOutputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) egress_only_internet_gateway: ::std::option::Option<crate::types::EgressOnlyInternetGateway>,

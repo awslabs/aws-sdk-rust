@@ -26,8 +26,8 @@ impl CreateWorkspacesPoolOutput {
 }
 
 /// A builder for [`CreateWorkspacesPoolOutput`](crate::operation::create_workspaces_pool::CreateWorkspacesPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkspacesPoolOutputBuilder {
     pub(crate) workspaces_pool: ::std::option::Option<crate::types::WorkspacesPool>,
     _request_id: Option<String>,

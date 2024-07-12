@@ -26,8 +26,8 @@ impl CreateDeviceOutput {
 }
 
 /// A builder for [`CreateDeviceOutput`](crate::operation::create_device::CreateDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDeviceOutputBuilder {
     pub(crate) device: ::std::option::Option<crate::types::Device>,
     _request_id: Option<String>,

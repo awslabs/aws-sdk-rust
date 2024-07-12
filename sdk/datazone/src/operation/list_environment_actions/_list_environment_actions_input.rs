@@ -38,8 +38,8 @@ impl ListEnvironmentActionsInput {
 }
 
 /// A builder for [`ListEnvironmentActionsInput`](crate::operation::list_environment_actions::ListEnvironmentActionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEnvironmentActionsInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,

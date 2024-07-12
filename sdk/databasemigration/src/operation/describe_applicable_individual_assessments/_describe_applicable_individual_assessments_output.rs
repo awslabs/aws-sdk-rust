@@ -35,8 +35,8 @@ impl DescribeApplicableIndividualAssessmentsOutput {
 }
 
 /// A builder for [`DescribeApplicableIndividualAssessmentsOutput`](crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeApplicableIndividualAssessmentsOutputBuilder {
     pub(crate) individual_assessment_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

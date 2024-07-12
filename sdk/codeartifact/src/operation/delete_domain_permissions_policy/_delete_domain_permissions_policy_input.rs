@@ -32,8 +32,8 @@ impl DeleteDomainPermissionsPolicyInput {
 }
 
 /// A builder for [`DeleteDomainPermissionsPolicyInput`](crate::operation::delete_domain_permissions_policy::DeleteDomainPermissionsPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDomainPermissionsPolicyInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

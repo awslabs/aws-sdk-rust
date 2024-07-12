@@ -68,8 +68,8 @@ impl PostCommentForPullRequestOutput {
 }
 
 /// A builder for [`PostCommentForPullRequestOutput`](crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PostCommentForPullRequestOutputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,

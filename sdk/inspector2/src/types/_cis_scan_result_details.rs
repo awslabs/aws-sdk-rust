@@ -88,8 +88,8 @@ impl CisScanResultDetails {
 }
 
 /// A builder for [`CisScanResultDetails`](crate::types::CisScanResultDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisScanResultDetailsBuilder {
     pub(crate) scan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

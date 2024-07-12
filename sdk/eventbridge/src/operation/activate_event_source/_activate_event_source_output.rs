@@ -18,8 +18,8 @@ impl ActivateEventSourceOutput {
 }
 
 /// A builder for [`ActivateEventSourceOutput`](crate::operation::activate_event_source::ActivateEventSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivateEventSourceOutputBuilder {
     _request_id: Option<String>,
 }

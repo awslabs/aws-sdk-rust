@@ -48,8 +48,8 @@ impl UpdateRecommendationLifecycleInput {
 }
 
 /// A builder for [`UpdateRecommendationLifecycleInput`](crate::operation::update_recommendation_lifecycle::UpdateRecommendationLifecycleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateRecommendationLifecycleInputBuilder {
     pub(crate) lifecycle_stage: ::std::option::Option<crate::types::UpdateRecommendationLifecycleStage>,
     pub(crate) update_reason: ::std::option::Option<::std::string::String>,

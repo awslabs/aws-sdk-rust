@@ -118,8 +118,8 @@ impl UploadPartCopyOutput {
 }
 
 /// A builder for [`UploadPartCopyOutput`](crate::operation::upload_part_copy::UploadPartCopyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UploadPartCopyOutputBuilder {
     pub(crate) copy_source_version_id: ::std::option::Option<::std::string::String>,
     pub(crate) copy_part_result: ::std::option::Option<crate::types::CopyPartResult>,

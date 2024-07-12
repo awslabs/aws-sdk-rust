@@ -84,8 +84,8 @@ impl RestoreTableToPointInTimeInput {
 }
 
 /// A builder for [`RestoreTableToPointInTimeInput`](crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreTableToPointInTimeInputBuilder {
     pub(crate) source_table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_table_name: ::std::option::Option<::std::string::String>,

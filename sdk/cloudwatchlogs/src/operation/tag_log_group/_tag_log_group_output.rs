@@ -18,8 +18,8 @@ impl TagLogGroupOutput {
 }
 
 /// A builder for [`TagLogGroupOutput`](crate::operation::tag_log_group::TagLogGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagLogGroupOutputBuilder {
     _request_id: Option<String>,
 }

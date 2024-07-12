@@ -61,8 +61,8 @@ impl Note {
 }
 
 /// A builder for [`Note`](crate::types::Note).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NoteBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,

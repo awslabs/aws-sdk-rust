@@ -51,8 +51,8 @@ impl GeoLocationDetails {
 }
 
 /// A builder for [`GeoLocationDetails`](crate::types::GeoLocationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeoLocationDetailsBuilder {
     pub(crate) continent_code: ::std::option::Option<::std::string::String>,
     pub(crate) continent_name: ::std::option::Option<::std::string::String>,

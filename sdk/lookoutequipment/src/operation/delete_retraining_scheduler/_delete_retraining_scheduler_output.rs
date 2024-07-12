@@ -18,8 +18,8 @@ impl DeleteRetrainingSchedulerOutput {
 }
 
 /// A builder for [`DeleteRetrainingSchedulerOutput`](crate::operation::delete_retraining_scheduler::DeleteRetrainingSchedulerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRetrainingSchedulerOutputBuilder {
     _request_id: Option<String>,
 }

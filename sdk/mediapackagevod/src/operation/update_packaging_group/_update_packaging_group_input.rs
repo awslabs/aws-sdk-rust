@@ -27,8 +27,8 @@ impl UpdatePackagingGroupInput {
 }
 
 /// A builder for [`UpdatePackagingGroupInput`](crate::operation::update_packaging_group::UpdatePackagingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePackagingGroupInputBuilder {
     pub(crate) authorization: ::std::option::Option<crate::types::Authorization>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

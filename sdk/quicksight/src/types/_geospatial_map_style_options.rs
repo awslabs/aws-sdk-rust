@@ -21,8 +21,8 @@ impl GeospatialMapStyleOptions {
 }
 
 /// A builder for [`GeospatialMapStyleOptions`](crate::types::GeospatialMapStyleOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GeospatialMapStyleOptionsBuilder {
     pub(crate) base_map_style: ::std::option::Option<crate::types::BaseMapStyleType>,
 }

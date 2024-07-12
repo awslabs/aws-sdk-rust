@@ -26,8 +26,8 @@ impl DescribeAgreementInput {
 }
 
 /// A builder for [`DescribeAgreementInput`](crate::operation::describe_agreement::DescribeAgreementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAgreementInputBuilder {
     pub(crate) agreement_id: ::std::option::Option<::std::string::String>,
     pub(crate) server_id: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListHoursOfOperationsOutput {
 }
 
 /// A builder for [`ListHoursOfOperationsOutput`](crate::operation::list_hours_of_operations::ListHoursOfOperationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHoursOfOperationsOutputBuilder {
     pub(crate) hours_of_operation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -60,8 +60,8 @@ impl ListIntentsInput {
 }
 
 /// A builder for [`ListIntentsInput`](crate::operation::list_intents::ListIntentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIntentsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,

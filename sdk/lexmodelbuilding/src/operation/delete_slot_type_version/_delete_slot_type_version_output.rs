@@ -18,8 +18,8 @@ impl DeleteSlotTypeVersionOutput {
 }
 
 /// A builder for [`DeleteSlotTypeVersionOutput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSlotTypeVersionOutputBuilder {
     _request_id: Option<String>,
 }

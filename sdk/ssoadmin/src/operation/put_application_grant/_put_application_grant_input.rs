@@ -32,8 +32,8 @@ impl PutApplicationGrantInput {
 }
 
 /// A builder for [`PutApplicationGrantInput`](crate::operation::put_application_grant::PutApplicationGrantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutApplicationGrantInputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) grant_type: ::std::option::Option<crate::types::GrantType>,

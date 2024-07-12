@@ -154,8 +154,8 @@ impl GetWorkflowStepOutput {
 }
 
 /// A builder for [`GetWorkflowStepOutput`](crate::operation::get_workflow_step::GetWorkflowStepOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorkflowStepOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) step_group_id: ::std::option::Option<::std::string::String>,

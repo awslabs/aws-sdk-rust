@@ -143,8 +143,8 @@ impl JobFlowInstancesConfig {
 }
 
 /// A builder for [`JobFlowInstancesConfig`](crate::types::JobFlowInstancesConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobFlowInstancesConfigBuilder {
     pub(crate) master_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) slave_instance_type: ::std::option::Option<::std::string::String>,

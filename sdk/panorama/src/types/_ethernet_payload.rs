@@ -27,8 +27,8 @@ impl EthernetPayload {
 }
 
 /// A builder for [`EthernetPayload`](crate::types::EthernetPayload).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EthernetPayloadBuilder {
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
     pub(crate) static_ip_connection_info: ::std::option::Option<crate::types::StaticIpConnectionInfo>,

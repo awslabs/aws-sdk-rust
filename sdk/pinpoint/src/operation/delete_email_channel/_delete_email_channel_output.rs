@@ -26,8 +26,8 @@ impl DeleteEmailChannelOutput {
 }
 
 /// A builder for [`DeleteEmailChannelOutput`](crate::operation::delete_email_channel::DeleteEmailChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEmailChannelOutputBuilder {
     pub(crate) email_channel_response: ::std::option::Option<crate::types::EmailChannelResponse>,
     _request_id: Option<String>,

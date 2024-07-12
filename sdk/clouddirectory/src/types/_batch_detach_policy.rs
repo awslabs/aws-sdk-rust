@@ -27,8 +27,8 @@ impl BatchDetachPolicy {
 }
 
 /// A builder for [`BatchDetachPolicy`](crate::types::BatchDetachPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDetachPolicyBuilder {
     pub(crate) policy_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,

@@ -27,8 +27,8 @@ impl SessionContextAttributes {
 }
 
 /// A builder for [`SessionContextAttributes`](crate::types::SessionContextAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SessionContextAttributesBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) mfa_authenticated: ::std::option::Option<bool>,

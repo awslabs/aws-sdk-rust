@@ -81,8 +81,8 @@ impl ReplicationStats {
 }
 
 /// A builder for [`ReplicationStats`](crate::types::ReplicationStats).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationStatsBuilder {
     pub(crate) full_load_progress_percent: ::std::option::Option<i32>,
     pub(crate) elapsed_time_millis: ::std::option::Option<i64>,

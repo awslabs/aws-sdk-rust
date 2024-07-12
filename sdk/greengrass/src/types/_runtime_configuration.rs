@@ -21,8 +21,8 @@ impl RuntimeConfiguration {
 }
 
 /// A builder for [`RuntimeConfiguration`](crate::types::RuntimeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuntimeConfigurationBuilder {
     pub(crate) telemetry_configuration: ::std::option::Option<crate::types::TelemetryConfiguration>,
 }

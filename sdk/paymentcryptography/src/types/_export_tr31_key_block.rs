@@ -28,8 +28,8 @@ impl ExportTr31KeyBlock {
 }
 
 /// A builder for [`ExportTr31KeyBlock`](crate::types::ExportTr31KeyBlock).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportTr31KeyBlockBuilder {
     pub(crate) wrapping_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) key_block_headers: ::std::option::Option<crate::types::KeyBlockHeaders>,

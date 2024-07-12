@@ -18,8 +18,8 @@ impl DeleteReplicationConfigurationTemplateOutput {
 }
 
 /// A builder for [`DeleteReplicationConfigurationTemplateOutput`](crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicationConfigurationTemplateOutputBuilder {
     _request_id: Option<String>,
 }

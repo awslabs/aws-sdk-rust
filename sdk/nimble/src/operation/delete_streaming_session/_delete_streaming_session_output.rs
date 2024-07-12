@@ -26,8 +26,8 @@ impl DeleteStreamingSessionOutput {
 }
 
 /// A builder for [`DeleteStreamingSessionOutput`](crate::operation::delete_streaming_session::DeleteStreamingSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStreamingSessionOutputBuilder {
     pub(crate) session: ::std::option::Option<crate::types::StreamingSession>,
     _request_id: Option<String>,

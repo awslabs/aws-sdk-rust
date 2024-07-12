@@ -89,8 +89,8 @@ impl Resource {
 }
 
 /// A builder for [`Resource`](crate::types::Resource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceBuilder {
     pub(crate) access_key_details: ::std::option::Option<crate::types::AccessKeyDetails>,
     pub(crate) s3_bucket_details: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDetail>>,

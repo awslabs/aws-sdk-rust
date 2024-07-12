@@ -45,8 +45,8 @@ impl RuleGroupReferenceStatement {
 }
 
 /// A builder for [`RuleGroupReferenceStatement`](crate::types::RuleGroupReferenceStatement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupReferenceStatementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,

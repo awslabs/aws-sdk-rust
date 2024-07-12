@@ -58,8 +58,8 @@ impl CreateLanguageModelInput {
 }
 
 /// A builder for [`CreateLanguageModelInput`](crate::operation::create_language_model::CreateLanguageModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLanguageModelInputBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::ClmLanguageCode>,
     pub(crate) base_model_name: ::std::option::Option<crate::types::BaseModelName>,

@@ -18,8 +18,8 @@ impl DeleteDataProtectionPolicyOutput {
 }
 
 /// A builder for [`DeleteDataProtectionPolicyOutput`](crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataProtectionPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -39,8 +39,8 @@ impl SkewedInfo {
 }
 
 /// A builder for [`SkewedInfo`](crate::types::SkewedInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SkewedInfoBuilder {
     pub(crate) skewed_column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) skewed_column_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

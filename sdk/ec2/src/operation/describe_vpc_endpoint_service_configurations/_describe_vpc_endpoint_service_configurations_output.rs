@@ -35,8 +35,8 @@ impl DescribeVpcEndpointServiceConfigurationsOutput {
 }
 
 /// A builder for [`DescribeVpcEndpointServiceConfigurationsOutput`](crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcEndpointServiceConfigurationsOutputBuilder {
     pub(crate) service_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

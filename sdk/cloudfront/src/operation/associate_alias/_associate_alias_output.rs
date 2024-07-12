@@ -18,8 +18,8 @@ impl AssociateAliasOutput {
 }
 
 /// A builder for [`AssociateAliasOutput`](crate::operation::associate_alias::AssociateAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAliasOutputBuilder {
     _request_id: Option<String>,
 }

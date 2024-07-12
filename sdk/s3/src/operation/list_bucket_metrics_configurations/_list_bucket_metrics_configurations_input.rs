@@ -32,8 +32,8 @@ impl ListBucketMetricsConfigurationsInput {
 }
 
 /// A builder for [`ListBucketMetricsConfigurationsInput`](crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBucketMetricsConfigurationsInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) continuation_token: ::std::option::Option<::std::string::String>,

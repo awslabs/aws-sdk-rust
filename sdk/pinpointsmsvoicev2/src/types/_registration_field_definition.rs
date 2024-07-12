@@ -59,8 +59,8 @@ impl RegistrationFieldDefinition {
 }
 
 /// A builder for [`RegistrationFieldDefinition`](crate::types::RegistrationFieldDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegistrationFieldDefinitionBuilder {
     pub(crate) section_path: ::std::option::Option<::std::string::String>,
     pub(crate) field_path: ::std::option::Option<::std::string::String>,

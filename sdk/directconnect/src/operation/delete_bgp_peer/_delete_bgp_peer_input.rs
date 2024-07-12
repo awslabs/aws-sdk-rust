@@ -38,8 +38,8 @@ impl DeleteBgpPeerInput {
 }
 
 /// A builder for [`DeleteBgpPeerInput`](crate::operation::delete_bgp_peer::DeleteBgpPeerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBgpPeerInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) asn: ::std::option::Option<i32>,

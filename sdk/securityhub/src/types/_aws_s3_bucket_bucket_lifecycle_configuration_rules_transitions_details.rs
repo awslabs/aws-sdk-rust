@@ -83,8 +83,8 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
 }
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     pub(crate) date: ::std::option::Option<::std::string::String>,
     pub(crate) days: ::std::option::Option<i32>,

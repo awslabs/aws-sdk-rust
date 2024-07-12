@@ -26,8 +26,8 @@ impl DeleteDomainEntryOutput {
 }
 
 /// A builder for [`DeleteDomainEntryOutput`](crate::operation::delete_domain_entry::DeleteDomainEntryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDomainEntryOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,

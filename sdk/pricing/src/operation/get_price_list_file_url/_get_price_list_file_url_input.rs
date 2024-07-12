@@ -26,8 +26,8 @@ impl GetPriceListFileUrlInput {
 }
 
 /// A builder for [`GetPriceListFileUrlInput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPriceListFileUrlInputBuilder {
     pub(crate) price_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) file_format: ::std::option::Option<::std::string::String>,

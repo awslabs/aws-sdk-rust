@@ -20,8 +20,8 @@ impl DescribeStateMachineAliasInput {
 }
 
 /// A builder for [`DescribeStateMachineAliasInput`](crate::operation::describe_state_machine_alias::DescribeStateMachineAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStateMachineAliasInputBuilder {
     pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
 }

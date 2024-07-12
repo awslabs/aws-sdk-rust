@@ -54,8 +54,8 @@ impl DetectModerationLabelsOutput {
 }
 
 /// A builder for [`DetectModerationLabelsOutput`](crate::operation::detect_moderation_labels::DetectModerationLabelsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectModerationLabelsOutputBuilder {
     pub(crate) moderation_labels: ::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>>,
     pub(crate) moderation_model_version: ::std::option::Option<::std::string::String>,

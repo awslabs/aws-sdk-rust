@@ -18,8 +18,8 @@ impl ModifyIdentityIdFormatOutput {
 }
 
 /// A builder for [`ModifyIdentityIdFormatOutput`](crate::operation::modify_identity_id_format::ModifyIdentityIdFormatOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyIdentityIdFormatOutputBuilder {
     _request_id: Option<String>,
 }

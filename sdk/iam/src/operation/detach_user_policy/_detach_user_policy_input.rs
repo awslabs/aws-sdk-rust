@@ -30,8 +30,8 @@ impl DetachUserPolicyInput {
 }
 
 /// A builder for [`DetachUserPolicyInput`](crate::operation::detach_user_policy::DetachUserPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachUserPolicyInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,

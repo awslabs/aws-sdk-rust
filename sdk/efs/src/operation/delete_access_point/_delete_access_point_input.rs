@@ -20,8 +20,8 @@ impl DeleteAccessPointInput {
 }
 
 /// A builder for [`DeleteAccessPointInput`](crate::operation::delete_access_point::DeleteAccessPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccessPointInputBuilder {
     pub(crate) access_point_id: ::std::option::Option<::std::string::String>,
 }

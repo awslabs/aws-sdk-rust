@@ -34,8 +34,8 @@ impl ListRecoveryPointsByBackupVaultOutput {
 }
 
 /// A builder for [`ListRecoveryPointsByBackupVaultOutput`](crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRecoveryPointsByBackupVaultOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>>,

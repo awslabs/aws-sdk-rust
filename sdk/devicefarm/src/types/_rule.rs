@@ -223,8 +223,8 @@ impl Rule {
 }
 
 /// A builder for [`Rule`](crate::types::Rule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::DeviceAttribute>,
     pub(crate) operator: ::std::option::Option<crate::types::RuleOperator>,

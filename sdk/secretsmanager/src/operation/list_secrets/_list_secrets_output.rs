@@ -34,8 +34,8 @@ impl ListSecretsOutput {
 }
 
 /// A builder for [`ListSecretsOutput`](crate::operation::list_secrets::ListSecretsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSecretsOutputBuilder {
     pub(crate) secret_list: ::std::option::Option<::std::vec::Vec<crate::types::SecretListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

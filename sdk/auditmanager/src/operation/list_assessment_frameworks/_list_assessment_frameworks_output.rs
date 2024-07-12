@@ -34,8 +34,8 @@ impl ListAssessmentFrameworksOutput {
 }
 
 /// A builder for [`ListAssessmentFrameworksOutput`](crate::operation::list_assessment_frameworks::ListAssessmentFrameworksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentFrameworksOutputBuilder {
     pub(crate) framework_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

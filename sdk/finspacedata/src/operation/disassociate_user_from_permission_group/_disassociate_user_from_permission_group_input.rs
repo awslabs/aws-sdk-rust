@@ -32,8 +32,8 @@ impl DisassociateUserFromPermissionGroupInput {
 }
 
 /// A builder for [`DisassociateUserFromPermissionGroupInput`](crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateUserFromPermissionGroupInputBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

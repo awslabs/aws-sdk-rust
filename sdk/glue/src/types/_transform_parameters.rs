@@ -29,8 +29,8 @@ impl TransformParameters {
 }
 
 /// A builder for [`TransformParameters`](crate::types::TransformParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformParametersBuilder {
     pub(crate) transform_type: ::std::option::Option<crate::types::TransformType>,
     pub(crate) find_matches_parameters: ::std::option::Option<crate::types::FindMatchesParameters>,

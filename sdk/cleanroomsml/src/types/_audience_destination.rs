@@ -21,8 +21,8 @@ impl AudienceDestination {
 }
 
 /// A builder for [`AudienceDestination`](crate::types::AudienceDestination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudienceDestinationBuilder {
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3ConfigMap>,
 }

@@ -277,8 +277,8 @@ impl HlsGroupSettings {
 }
 
 /// A builder for [`HlsGroupSettings`](crate::types::HlsGroupSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsGroupSettingsBuilder {
     pub(crate) ad_markers: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>>,
     pub(crate) base_url_content: ::std::option::Option<::std::string::String>,

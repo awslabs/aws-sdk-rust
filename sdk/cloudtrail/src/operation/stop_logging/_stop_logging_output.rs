@@ -19,8 +19,8 @@ impl StopLoggingOutput {
 }
 
 /// A builder for [`StopLoggingOutput`](crate::operation::stop_logging::StopLoggingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopLoggingOutputBuilder {
     _request_id: Option<String>,
 }

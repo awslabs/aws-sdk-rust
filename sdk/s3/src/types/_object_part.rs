@@ -51,8 +51,8 @@ impl ObjectPart {
 }
 
 /// A builder for [`ObjectPart`](crate::types::ObjectPart).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ObjectPartBuilder {
     pub(crate) part_number: ::std::option::Option<i32>,
     pub(crate) size: ::std::option::Option<i64>,

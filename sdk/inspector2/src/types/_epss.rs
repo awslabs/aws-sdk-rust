@@ -21,8 +21,8 @@ impl Epss {
 }
 
 /// A builder for [`Epss`](crate::types::Epss).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EpssBuilder {
     pub(crate) score: ::std::option::Option<f64>,
 }

@@ -18,8 +18,8 @@ impl DeleteQueueFleetAssociationOutput {
 }
 
 /// A builder for [`DeleteQueueFleetAssociationOutput`](crate::operation::delete_queue_fleet_association::DeleteQueueFleetAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQueueFleetAssociationOutputBuilder {
     _request_id: Option<String>,
 }

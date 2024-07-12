@@ -58,8 +58,8 @@ impl RetrieveAndGenerateOutput {
 }
 
 /// A builder for [`RetrieveAndGenerateOutput`](crate::operation::retrieve_and_generate::RetrieveAndGenerateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RetrieveAndGenerateOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<crate::types::RetrieveAndGenerateOutput>,

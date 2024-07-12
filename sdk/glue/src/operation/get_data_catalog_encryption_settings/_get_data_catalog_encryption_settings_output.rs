@@ -26,8 +26,8 @@ impl GetDataCatalogEncryptionSettingsOutput {
 }
 
 /// A builder for [`GetDataCatalogEncryptionSettingsOutput`](crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataCatalogEncryptionSettingsOutputBuilder {
     pub(crate) data_catalog_encryption_settings: ::std::option::Option<crate::types::DataCatalogEncryptionSettings>,
     _request_id: Option<String>,

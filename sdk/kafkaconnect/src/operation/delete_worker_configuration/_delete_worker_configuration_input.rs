@@ -20,8 +20,8 @@ impl DeleteWorkerConfigurationInput {
 }
 
 /// A builder for [`DeleteWorkerConfigurationInput`](crate::operation::delete_worker_configuration::DeleteWorkerConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkerConfigurationInputBuilder {
     pub(crate) worker_configuration_arn: ::std::option::Option<::std::string::String>,
 }

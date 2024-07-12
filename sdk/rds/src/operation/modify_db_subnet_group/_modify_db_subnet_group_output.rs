@@ -28,8 +28,8 @@ impl ModifyDbSubnetGroupOutput {
 }
 
 /// A builder for [`ModifyDbSubnetGroupOutput`](crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbSubnetGroupOutputBuilder {
     pub(crate) db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     _request_id: Option<String>,

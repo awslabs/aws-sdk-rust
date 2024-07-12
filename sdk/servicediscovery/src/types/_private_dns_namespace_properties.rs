@@ -21,8 +21,8 @@ impl PrivateDnsNamespaceProperties {
 }
 
 /// A builder for [`PrivateDnsNamespaceProperties`](crate::types::PrivateDnsNamespaceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrivateDnsNamespacePropertiesBuilder {
     pub(crate) dns_properties: ::std::option::Option<crate::types::PrivateDnsPropertiesMutable>,
 }

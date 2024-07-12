@@ -114,8 +114,8 @@ impl S3DataSpec {
 }
 
 /// A builder for [`S3DataSpec`](crate::types::S3DataSpec).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3DataSpecBuilder {
     pub(crate) data_location_s3: ::std::option::Option<::std::string::String>,
     pub(crate) data_rearrangement: ::std::option::Option<::std::string::String>,

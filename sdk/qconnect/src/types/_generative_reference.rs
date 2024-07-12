@@ -27,8 +27,8 @@ impl GenerativeReference {
 }
 
 /// A builder for [`GenerativeReference`](crate::types::GenerativeReference).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerativeReferenceBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) generation_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl RestoreManagedPrefixListVersionOutput {
 }
 
 /// A builder for [`RestoreManagedPrefixListVersionOutput`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreManagedPrefixListVersionOutputBuilder {
     pub(crate) prefix_list: ::std::option::Option<crate::types::ManagedPrefixList>,
     _request_id: Option<String>,

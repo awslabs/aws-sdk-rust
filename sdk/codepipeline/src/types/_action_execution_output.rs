@@ -35,8 +35,8 @@ impl ActionExecutionOutput {
 }
 
 /// A builder for [`ActionExecutionOutput`](crate::types::ActionExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionExecutionOutputBuilder {
     pub(crate) output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactDetail>>,
     pub(crate) execution_result: ::std::option::Option<crate::types::ActionExecutionResult>,

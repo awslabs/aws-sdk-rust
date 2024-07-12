@@ -27,8 +27,8 @@ impl CreateInputSecurityGroupOutput {
 }
 
 /// A builder for [`CreateInputSecurityGroupOutput`](crate::operation::create_input_security_group::CreateInputSecurityGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateInputSecurityGroupOutputBuilder {
     pub(crate) security_group: ::std::option::Option<crate::types::InputSecurityGroup>,
     _request_id: Option<String>,

@@ -263,8 +263,8 @@ impl ComputeResource {
 }
 
 /// A builder for [`ComputeResource`](crate::types::ComputeResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComputeResourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CrType>,
     pub(crate) allocation_strategy: ::std::option::Option<crate::types::CrAllocationStrategy>,

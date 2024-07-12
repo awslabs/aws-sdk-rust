@@ -38,8 +38,8 @@ impl ListSpeakerEnrollmentJobsInput {
 }
 
 /// A builder for [`ListSpeakerEnrollmentJobsInput`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSpeakerEnrollmentJobsInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::SpeakerEnrollmentJobStatus>,

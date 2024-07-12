@@ -26,8 +26,8 @@ impl StartCodegenJobOutput {
 }
 
 /// A builder for [`StartCodegenJobOutput`](crate::operation::start_codegen_job::StartCodegenJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartCodegenJobOutputBuilder {
     pub(crate) entity: ::std::option::Option<crate::types::CodegenJob>,
     _request_id: Option<String>,

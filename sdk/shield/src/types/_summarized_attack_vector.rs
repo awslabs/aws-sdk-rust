@@ -30,8 +30,8 @@ impl SummarizedAttackVector {
 }
 
 /// A builder for [`SummarizedAttackVector`](crate::types::SummarizedAttackVector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SummarizedAttackVectorBuilder {
     pub(crate) vector_type: ::std::option::Option<::std::string::String>,
     pub(crate) vector_counters: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>,

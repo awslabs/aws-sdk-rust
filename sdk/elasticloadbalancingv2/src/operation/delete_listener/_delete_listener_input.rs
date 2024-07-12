@@ -20,8 +20,8 @@ impl DeleteListenerInput {
 }
 
 /// A builder for [`DeleteListenerInput`](crate::operation::delete_listener::DeleteListenerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
 }

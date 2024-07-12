@@ -20,8 +20,8 @@ impl DeregisterSubscriptionProviderInput {
 }
 
 /// A builder for [`DeregisterSubscriptionProviderInput`](crate::operation::deregister_subscription_provider::DeregisterSubscriptionProviderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterSubscriptionProviderInputBuilder {
     pub(crate) subscription_provider_arn: ::std::option::Option<::std::string::String>,
 }

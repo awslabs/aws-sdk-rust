@@ -34,8 +34,8 @@ impl CreateCoipPoolInput {
 }
 
 /// A builder for [`CreateCoipPoolInput`](crate::operation::create_coip_pool::CreateCoipPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCoipPoolInputBuilder {
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,

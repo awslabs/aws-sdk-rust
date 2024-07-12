@@ -32,8 +32,8 @@ impl GetRestoreTestingInferredMetadataInput {
 }
 
 /// A builder for [`GetRestoreTestingInferredMetadataInput`](crate::operation::get_restore_testing_inferred_metadata::GetRestoreTestingInferredMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRestoreTestingInferredMetadataInputBuilder {
     pub(crate) backup_vault_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,

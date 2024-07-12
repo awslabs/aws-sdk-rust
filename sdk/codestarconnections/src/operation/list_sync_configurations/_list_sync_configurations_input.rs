@@ -38,8 +38,8 @@ impl ListSyncConfigurationsInput {
 }
 
 /// A builder for [`ListSyncConfigurationsInput`](crate::operation::list_sync_configurations::ListSyncConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSyncConfigurationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -75,8 +75,8 @@ impl CrawlerHistory {
 }
 
 /// A builder for [`CrawlerHistory`](crate::types::CrawlerHistory).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrawlerHistoryBuilder {
     pub(crate) crawl_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CrawlerHistoryState>,

@@ -52,8 +52,8 @@ impl GetMailDomainOutput {
 }
 
 /// A builder for [`GetMailDomainOutput`](crate::operation::get_mail_domain::GetMailDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMailDomainOutputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
     pub(crate) is_test_domain: ::std::option::Option<bool>,

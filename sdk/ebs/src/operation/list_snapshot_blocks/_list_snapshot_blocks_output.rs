@@ -64,8 +64,8 @@ impl ListSnapshotBlocksOutput {
 }
 
 /// A builder for [`ListSnapshotBlocksOutput`](crate::operation::list_snapshot_blocks::ListSnapshotBlocksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListSnapshotBlocksOutputBuilder {
     pub(crate) blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
     pub(crate) expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,

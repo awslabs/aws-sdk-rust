@@ -29,8 +29,8 @@ impl CampaignEventFilter {
 }
 
 /// A builder for [`CampaignEventFilter`](crate::types::CampaignEventFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CampaignEventFilterBuilder {
     pub(crate) dimensions: ::std::option::Option<crate::types::EventDimensions>,
     pub(crate) filter_type: ::std::option::Option<crate::types::FilterType>,

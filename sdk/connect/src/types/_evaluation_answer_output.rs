@@ -27,8 +27,8 @@ impl EvaluationAnswerOutput {
 }
 
 /// A builder for [`EvaluationAnswerOutput`](crate::types::EvaluationAnswerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationAnswerOutputBuilder {
     pub(crate) value: ::std::option::Option<crate::types::EvaluationAnswerData>,
     pub(crate) system_suggested_value: ::std::option::Option<crate::types::EvaluationAnswerData>,

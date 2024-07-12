@@ -175,8 +175,8 @@ impl DeploymentGroupInfo {
 }
 
 /// A builder for [`DeploymentGroupInfo`](crate::types::DeploymentGroupInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentGroupInfoBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_group_id: ::std::option::Option<::std::string::String>,

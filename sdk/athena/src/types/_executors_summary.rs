@@ -64,8 +64,8 @@ impl ExecutorsSummary {
 }
 
 /// A builder for [`ExecutorsSummary`](crate::types::ExecutorsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutorsSummaryBuilder {
     pub(crate) executor_id: ::std::option::Option<::std::string::String>,
     pub(crate) executor_type: ::std::option::Option<crate::types::ExecutorType>,

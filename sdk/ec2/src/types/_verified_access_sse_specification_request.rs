@@ -29,8 +29,8 @@ impl VerifiedAccessSseSpecificationRequest {
 }
 
 /// A builder for [`VerifiedAccessSseSpecificationRequest`](crate::types::VerifiedAccessSseSpecificationRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifiedAccessSseSpecificationRequestBuilder {
     pub(crate) customer_managed_key_enabled: ::std::option::Option<bool>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,

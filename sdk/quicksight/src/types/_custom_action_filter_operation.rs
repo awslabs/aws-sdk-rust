@@ -27,8 +27,8 @@ impl CustomActionFilterOperation {
 }
 
 /// A builder for [`CustomActionFilterOperation`](crate::types::CustomActionFilterOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomActionFilterOperationBuilder {
     pub(crate) selected_fields_configuration: ::std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
     pub(crate) target_visuals_configuration: ::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,

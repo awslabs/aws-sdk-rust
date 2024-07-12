@@ -18,8 +18,8 @@ impl PutAutoTerminationPolicyOutput {
 }
 
 /// A builder for [`PutAutoTerminationPolicyOutput`](crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAutoTerminationPolicyOutputBuilder {
     _request_id: Option<String>,
 }

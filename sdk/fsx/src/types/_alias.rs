@@ -73,8 +73,8 @@ impl Alias {
 }
 
 /// A builder for [`Alias`](crate::types::Alias).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AliasBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle: ::std::option::Option<crate::types::AliasLifecycle>,

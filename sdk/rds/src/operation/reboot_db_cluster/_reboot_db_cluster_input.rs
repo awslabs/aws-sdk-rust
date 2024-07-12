@@ -30,8 +30,8 @@ impl RebootDbClusterInput {
 }
 
 /// A builder for [`RebootDbClusterInput`](crate::operation::reboot_db_cluster::RebootDbClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RebootDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }

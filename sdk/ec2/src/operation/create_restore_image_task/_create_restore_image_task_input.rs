@@ -58,8 +58,8 @@ impl CreateRestoreImageTaskInput {
 }
 
 /// A builder for [`CreateRestoreImageTaskInput`](crate::operation::create_restore_image_task::CreateRestoreImageTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRestoreImageTaskInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) object_key: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteCorsConfigurationInput {
 }
 
 /// A builder for [`DeleteCorsConfigurationInput`](crate::operation::delete_cors_configuration::DeleteCorsConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCorsConfigurationInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }

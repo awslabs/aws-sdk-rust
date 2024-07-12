@@ -26,8 +26,8 @@ impl ModifyDbInstanceOutput {
 }
 
 /// A builder for [`ModifyDbInstanceOutput`](crate::operation::modify_db_instance::ModifyDbInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbInstanceOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,

@@ -41,8 +41,8 @@ impl BatchIsAuthorizedWithTokenOutputItem {
 }
 
 /// A builder for [`BatchIsAuthorizedWithTokenOutputItem`](crate::types::BatchIsAuthorizedWithTokenOutputItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchIsAuthorizedWithTokenOutputItemBuilder {
     pub(crate) request: ::std::option::Option<crate::types::BatchIsAuthorizedWithTokenInputItem>,
     pub(crate) decision: ::std::option::Option<crate::types::Decision>,

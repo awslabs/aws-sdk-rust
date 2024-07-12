@@ -20,8 +20,8 @@ impl GetFieldLevelEncryptionProfileInput {
 }
 
 /// A builder for [`GetFieldLevelEncryptionProfileInput`](crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFieldLevelEncryptionProfileInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

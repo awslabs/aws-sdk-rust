@@ -27,8 +27,8 @@ impl ModifyReplicationGroupShardConfigurationOutput {
 }
 
 /// A builder for [`ModifyReplicationGroupShardConfigurationOutput`](crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyReplicationGroupShardConfigurationOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl DescribeStudioOutput {
 }
 
 /// A builder for [`DescribeStudioOutput`](crate::operation::describe_studio::DescribeStudioOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStudioOutputBuilder {
     pub(crate) studio: ::std::option::Option<crate::types::Studio>,
     _request_id: Option<String>,

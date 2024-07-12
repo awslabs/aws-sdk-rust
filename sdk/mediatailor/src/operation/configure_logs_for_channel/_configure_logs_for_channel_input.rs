@@ -28,8 +28,8 @@ impl ConfigureLogsForChannelInput {
 }
 
 /// A builder for [`ConfigureLogsForChannelInput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigureLogsForChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,

@@ -18,8 +18,8 @@ impl DeleteAppInstanceAdminOutput {
 }
 
 /// A builder for [`DeleteAppInstanceAdminOutput`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppInstanceAdminOutputBuilder {
     _request_id: Option<String>,
 }

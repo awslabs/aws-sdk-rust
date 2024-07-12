@@ -18,8 +18,8 @@ impl UpdateSchedulingPolicyOutput {
 }
 
 /// A builder for [`UpdateSchedulingPolicyOutput`](crate::operation::update_scheduling_policy::UpdateSchedulingPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSchedulingPolicyOutputBuilder {
     _request_id: Option<String>,
 }

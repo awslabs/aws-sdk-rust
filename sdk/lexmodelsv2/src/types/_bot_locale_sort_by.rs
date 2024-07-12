@@ -27,8 +27,8 @@ impl BotLocaleSortBy {
 }
 
 /// A builder for [`BotLocaleSortBy`](crate::types::BotLocaleSortBy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BotLocaleSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::BotLocaleSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,

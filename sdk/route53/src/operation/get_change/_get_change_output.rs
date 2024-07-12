@@ -27,8 +27,8 @@ impl GetChangeOutput {
 }
 
 /// A builder for [`GetChangeOutput`](crate::operation::get_change::GetChangeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetChangeOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,

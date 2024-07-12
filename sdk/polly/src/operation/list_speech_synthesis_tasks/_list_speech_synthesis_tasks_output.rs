@@ -34,8 +34,8 @@ impl ListSpeechSynthesisTasksOutput {
 }
 
 /// A builder for [`ListSpeechSynthesisTasksOutput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSpeechSynthesisTasksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) synthesis_tasks: ::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>>,

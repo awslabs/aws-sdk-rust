@@ -26,8 +26,8 @@ impl CreateNetworkInsightsPathOutput {
 }
 
 /// A builder for [`CreateNetworkInsightsPathOutput`](crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNetworkInsightsPathOutputBuilder {
     pub(crate) network_insights_path: ::std::option::Option<crate::types::NetworkInsightsPath>,
     _request_id: Option<String>,

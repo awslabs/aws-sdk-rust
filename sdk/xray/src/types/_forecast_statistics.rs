@@ -27,8 +27,8 @@ impl ForecastStatistics {
 }
 
 /// A builder for [`ForecastStatistics`](crate::types::ForecastStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ForecastStatisticsBuilder {
     pub(crate) fault_count_high: ::std::option::Option<i64>,
     pub(crate) fault_count_low: ::std::option::Option<i64>,

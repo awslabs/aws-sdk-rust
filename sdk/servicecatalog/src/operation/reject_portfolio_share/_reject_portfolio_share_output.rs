@@ -18,8 +18,8 @@ impl RejectPortfolioShareOutput {
 }
 
 /// A builder for [`RejectPortfolioShareOutput`](crate::operation::reject_portfolio_share::RejectPortfolioShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectPortfolioShareOutputBuilder {
     _request_id: Option<String>,
 }

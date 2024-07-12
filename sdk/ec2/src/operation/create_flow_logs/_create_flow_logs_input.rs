@@ -142,8 +142,8 @@ impl CreateFlowLogsInput {
 }
 
 /// A builder for [`CreateFlowLogsInput`](crate::operation::create_flow_logs::CreateFlowLogsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFlowLogsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

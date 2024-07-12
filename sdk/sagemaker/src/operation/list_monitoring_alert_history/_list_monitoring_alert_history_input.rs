@@ -68,8 +68,8 @@ impl ListMonitoringAlertHistoryInput {
 }
 
 /// A builder for [`ListMonitoringAlertHistoryInput`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMonitoringAlertHistoryInputBuilder {
     pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring_alert_name: ::std::option::Option<::std::string::String>,

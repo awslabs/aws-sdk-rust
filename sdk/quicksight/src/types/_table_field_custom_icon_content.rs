@@ -21,8 +21,8 @@ impl TableFieldCustomIconContent {
 }
 
 /// A builder for [`TableFieldCustomIconContent`](crate::types::TableFieldCustomIconContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableFieldCustomIconContentBuilder {
     pub(crate) icon: ::std::option::Option<crate::types::TableFieldIconSetType>,
 }

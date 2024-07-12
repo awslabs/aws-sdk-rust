@@ -69,8 +69,8 @@ impl AwsEc2NetworkInterfaceDetails {
 }
 
 /// A builder for [`AwsEc2NetworkInterfaceDetails`](crate::types::AwsEc2NetworkInterfaceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2NetworkInterfaceDetailsBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::AwsEc2NetworkInterfaceAttachment>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,

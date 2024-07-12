@@ -31,8 +31,8 @@ impl ByteMatchSetUpdate {
 }
 
 /// A builder for [`ByteMatchSetUpdate`](crate::types::ByteMatchSetUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ByteMatchSetUpdateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) byte_match_tuple: ::std::option::Option<crate::types::ByteMatchTuple>,

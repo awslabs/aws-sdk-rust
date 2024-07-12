@@ -41,8 +41,8 @@ impl DisconnectUserInput {
 }
 
 /// A builder for [`DisconnectUserInput`](crate::operation::disconnect_user::DisconnectUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DisconnectUserInputBuilder {
     pub(crate) room_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

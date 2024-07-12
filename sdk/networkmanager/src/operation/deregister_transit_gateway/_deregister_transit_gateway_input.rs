@@ -26,8 +26,8 @@ impl DeregisterTransitGatewayInput {
 }
 
 /// A builder for [`DeregisterTransitGatewayInput`](crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterTransitGatewayInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_arn: ::std::option::Option<::std::string::String>,

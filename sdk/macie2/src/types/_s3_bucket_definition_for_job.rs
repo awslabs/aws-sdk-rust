@@ -29,8 +29,8 @@ impl S3BucketDefinitionForJob {
 }
 
 /// A builder for [`S3BucketDefinitionForJob`](crate::types::S3BucketDefinitionForJob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3BucketDefinitionForJobBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

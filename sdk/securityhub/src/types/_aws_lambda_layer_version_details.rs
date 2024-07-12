@@ -67,8 +67,8 @@ impl AwsLambdaLayerVersionDetails {
 }
 
 /// A builder for [`AwsLambdaLayerVersionDetails`](crate::types::AwsLambdaLayerVersionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsLambdaLayerVersionDetailsBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) compatible_runtimes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

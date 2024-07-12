@@ -27,8 +27,8 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
 }
 
 /// A builder for [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::types::IotSiteWiseCustomerManagedDatastoreS3StorageSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IotSiteWiseCustomerManagedDatastoreS3StorageSummaryBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefix: ::std::option::Option<::std::string::String>,

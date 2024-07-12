@@ -20,8 +20,8 @@ impl SetAccountDefaultProtectConfigurationInput {
 }
 
 /// A builder for [`SetAccountDefaultProtectConfigurationInput`](crate::operation::set_account_default_protect_configuration::SetAccountDefaultProtectConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetAccountDefaultProtectConfigurationInputBuilder {
     pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,
 }

@@ -20,8 +20,8 @@ impl DeleteDataSetInput {
 }
 
 /// A builder for [`DeleteDataSetInput`](crate::operation::delete_data_set::DeleteDataSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataSetInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
 }

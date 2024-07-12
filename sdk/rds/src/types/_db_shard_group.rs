@@ -86,8 +86,8 @@ impl DbShardGroup {
 }
 
 /// A builder for [`DbShardGroup`](crate::types::DbShardGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DbShardGroupBuilder {
     pub(crate) db_shard_group_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_shard_group_identifier: ::std::option::Option<::std::string::String>,

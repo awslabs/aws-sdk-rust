@@ -26,8 +26,8 @@ impl UpdateAppOutput {
 }
 
 /// A builder for [`UpdateAppOutput`](crate::operation::update_app::UpdateAppOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAppOutputBuilder {
     pub(crate) app: ::std::option::Option<crate::types::App>,
     _request_id: Option<String>,

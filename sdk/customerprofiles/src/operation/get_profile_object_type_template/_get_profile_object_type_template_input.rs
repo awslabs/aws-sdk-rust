@@ -20,8 +20,8 @@ impl GetProfileObjectTypeTemplateInput {
 }
 
 /// A builder for [`GetProfileObjectTypeTemplateInput`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProfileObjectTypeTemplateInputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
 }

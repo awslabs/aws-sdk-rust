@@ -21,8 +21,8 @@ impl ContentBlockerRule {
 }
 
 /// A builder for [`ContentBlockerRule`](crate::types::ContentBlockerRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentBlockerRuleBuilder {
     pub(crate) system_message_override: ::std::option::Option<::std::string::String>,
 }

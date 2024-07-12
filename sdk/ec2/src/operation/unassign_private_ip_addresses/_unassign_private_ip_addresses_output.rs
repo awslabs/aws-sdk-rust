@@ -18,8 +18,8 @@ impl UnassignPrivateIpAddressesOutput {
 }
 
 /// A builder for [`UnassignPrivateIpAddressesOutput`](crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnassignPrivateIpAddressesOutputBuilder {
     _request_id: Option<String>,
 }

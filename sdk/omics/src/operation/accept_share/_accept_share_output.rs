@@ -26,8 +26,8 @@ impl AcceptShareOutput {
 }
 
 /// A builder for [`AcceptShareOutput`](crate::operation::accept_share::AcceptShareOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AcceptShareOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ShareStatus>,
     _request_id: Option<String>,

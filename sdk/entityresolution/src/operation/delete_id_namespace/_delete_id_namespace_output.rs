@@ -27,8 +27,8 @@ impl DeleteIdNamespaceOutput {
 }
 
 /// A builder for [`DeleteIdNamespaceOutput`](crate::operation::delete_id_namespace::DeleteIdNamespaceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteIdNamespaceOutputBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -87,8 +87,8 @@ impl Statistics {
 }
 
 /// A builder for [`Statistics`](crate::types::Statistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StatisticsBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) count_distinct: ::std::option::Option<i32>,

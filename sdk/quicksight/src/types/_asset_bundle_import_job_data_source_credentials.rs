@@ -35,8 +35,8 @@ impl AssetBundleImportJobDataSourceCredentials {
 }
 
 /// A builder for [`AssetBundleImportJobDataSourceCredentials`](crate::types::AssetBundleImportJobDataSourceCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AssetBundleImportJobDataSourceCredentialsBuilder {
     pub(crate) credential_pair: ::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentialPair>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,

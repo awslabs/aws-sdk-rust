@@ -20,8 +20,8 @@ impl DeleteHomeRegionControlInput {
 }
 
 /// A builder for [`DeleteHomeRegionControlInput`](crate::operation::delete_home_region_control::DeleteHomeRegionControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHomeRegionControlInputBuilder {
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
 }

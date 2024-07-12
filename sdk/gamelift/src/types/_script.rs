@@ -59,8 +59,8 @@ impl Script {
 }
 
 /// A builder for [`Script`](crate::types::Script).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScriptBuilder {
     pub(crate) script_id: ::std::option::Option<::std::string::String>,
     pub(crate) script_arn: ::std::option::Option<::std::string::String>,

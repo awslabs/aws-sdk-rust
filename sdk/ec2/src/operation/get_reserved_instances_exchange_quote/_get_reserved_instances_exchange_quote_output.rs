@@ -79,8 +79,8 @@ impl GetReservedInstancesExchangeQuoteOutput {
 }
 
 /// A builder for [`GetReservedInstancesExchangeQuoteOutput`](crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReservedInstancesExchangeQuoteOutputBuilder {
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) is_valid_exchange: ::std::option::Option<bool>,

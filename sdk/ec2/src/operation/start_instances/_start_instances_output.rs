@@ -28,8 +28,8 @@ impl StartInstancesOutput {
 }
 
 /// A builder for [`StartInstancesOutput`](crate::operation::start_instances::StartInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartInstancesOutputBuilder {
     pub(crate) starting_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,

@@ -32,8 +32,8 @@ impl ProposalActions {
 }
 
 /// A builder for [`ProposalActions`](crate::types::ProposalActions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProposalActionsBuilder {
     pub(crate) invitations: ::std::option::Option<::std::vec::Vec<crate::types::InviteAction>>,
     pub(crate) removals: ::std::option::Option<::std::vec::Vec<crate::types::RemoveAction>>,

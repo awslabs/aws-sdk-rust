@@ -28,8 +28,8 @@ impl GetTransitGatewayPolicyTableEntriesOutput {
 }
 
 /// A builder for [`GetTransitGatewayPolicyTableEntriesOutput`](crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayPolicyTableEntriesOutputBuilder {
     pub(crate) transit_gateway_policy_table_entries: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableEntry>>,
     _request_id: Option<String>,

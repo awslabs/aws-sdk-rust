@@ -53,8 +53,8 @@ impl ModifyDbParameterGroupInput {
 }
 
 /// A builder for [`ModifyDbParameterGroupInput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbParameterGroupInputBuilder {
     pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,

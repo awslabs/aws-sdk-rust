@@ -56,8 +56,8 @@ impl PutRolePolicyInput {
 }
 
 /// A builder for [`PutRolePolicyInput`](crate::operation::put_role_policy::PutRolePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRolePolicyInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,

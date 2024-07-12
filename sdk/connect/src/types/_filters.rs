@@ -47,8 +47,8 @@ impl Filters {
 }
 
 /// A builder for [`Filters`](crate::types::Filters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FiltersBuilder {
     pub(crate) queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,

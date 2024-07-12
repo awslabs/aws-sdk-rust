@@ -34,8 +34,8 @@ impl ListHandshakesForAccountOutput {
 }
 
 /// A builder for [`ListHandshakesForAccountOutput`](crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHandshakesForAccountOutputBuilder {
     pub(crate) handshakes: ::std::option::Option<::std::vec::Vec<crate::types::Handshake>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

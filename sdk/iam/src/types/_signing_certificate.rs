@@ -49,8 +49,8 @@ impl SigningCertificate {
 }
 
 /// A builder for [`SigningCertificate`](crate::types::SigningCertificate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SigningCertificateBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,

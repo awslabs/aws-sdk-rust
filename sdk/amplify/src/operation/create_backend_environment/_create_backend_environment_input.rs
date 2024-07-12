@@ -39,8 +39,8 @@ impl CreateBackendEnvironmentInput {
 }
 
 /// A builder for [`CreateBackendEnvironmentInput`](crate::operation::create_backend_environment::CreateBackendEnvironmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBackendEnvironmentInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,

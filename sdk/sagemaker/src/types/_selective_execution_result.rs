@@ -21,8 +21,8 @@ impl SelectiveExecutionResult {
 }
 
 /// A builder for [`SelectiveExecutionResult`](crate::types::SelectiveExecutionResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SelectiveExecutionResultBuilder {
     pub(crate) source_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
 }

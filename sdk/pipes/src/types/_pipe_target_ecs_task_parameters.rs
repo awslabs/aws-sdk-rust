@@ -141,8 +141,8 @@ impl PipeTargetEcsTaskParameters {
 }
 
 /// A builder for [`PipeTargetEcsTaskParameters`](crate::types::PipeTargetEcsTaskParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PipeTargetEcsTaskParametersBuilder {
     pub(crate) task_definition_arn: ::std::option::Option<::std::string::String>,
     pub(crate) task_count: ::std::option::Option<i32>,

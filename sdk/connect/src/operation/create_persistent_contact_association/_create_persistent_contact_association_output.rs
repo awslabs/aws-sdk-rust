@@ -26,8 +26,8 @@ impl CreatePersistentContactAssociationOutput {
 }
 
 /// A builder for [`CreatePersistentContactAssociationOutput`](crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePersistentContactAssociationOutputBuilder {
     pub(crate) continued_from_contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

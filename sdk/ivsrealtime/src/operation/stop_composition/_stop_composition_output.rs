@@ -18,8 +18,8 @@ impl StopCompositionOutput {
 }
 
 /// A builder for [`StopCompositionOutput`](crate::operation::stop_composition::StopCompositionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopCompositionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -48,8 +48,8 @@ impl DeleteSmsTemplateInput {
 }
 
 /// A builder for [`DeleteSmsTemplateInput`](crate::operation::delete_sms_template::DeleteSmsTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSmsTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

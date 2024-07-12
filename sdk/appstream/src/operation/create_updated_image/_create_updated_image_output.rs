@@ -32,8 +32,8 @@ impl CreateUpdatedImageOutput {
 }
 
 /// A builder for [`CreateUpdatedImageOutput`](crate::operation::create_updated_image::CreateUpdatedImageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUpdatedImageOutputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) can_update_image: ::std::option::Option<bool>,

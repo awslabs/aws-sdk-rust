@@ -27,8 +27,8 @@ impl DescribeInputDeviceThumbnailInput {
 }
 
 /// A builder for [`DescribeInputDeviceThumbnailInput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInputDeviceThumbnailInputBuilder {
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) accept: ::std::option::Option<crate::types::AcceptHeader>,

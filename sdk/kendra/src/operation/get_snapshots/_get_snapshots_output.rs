@@ -48,8 +48,8 @@ impl GetSnapshotsOutput {
 }
 
 /// A builder for [`GetSnapshotsOutput`](crate::operation::get_snapshots::GetSnapshotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSnapshotsOutputBuilder {
     pub(crate) snap_shot_time_filter: ::std::option::Option<crate::types::TimeRange>,
     pub(crate) snapshots_data_header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

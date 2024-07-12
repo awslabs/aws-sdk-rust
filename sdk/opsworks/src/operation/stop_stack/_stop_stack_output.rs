@@ -18,8 +18,8 @@ impl StopStackOutput {
 }
 
 /// A builder for [`StopStackOutput`](crate::operation::stop_stack::StopStackOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopStackOutputBuilder {
     _request_id: Option<String>,
 }

@@ -56,8 +56,8 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
 }
 
 /// A builder for [`ListRequestedServiceQuotaChangeHistoryByQuotaInput`](crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRequestedServiceQuotaChangeHistoryByQuotaInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) quota_code: ::std::option::Option<::std::string::String>,

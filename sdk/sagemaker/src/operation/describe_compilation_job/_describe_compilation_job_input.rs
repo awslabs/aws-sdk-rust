@@ -20,8 +20,8 @@ impl DescribeCompilationJobInput {
 }
 
 /// A builder for [`DescribeCompilationJobInput`](crate::operation::describe_compilation_job::DescribeCompilationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCompilationJobInputBuilder {
     pub(crate) compilation_job_name: ::std::option::Option<::std::string::String>,
 }

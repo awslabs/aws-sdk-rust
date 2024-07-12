@@ -28,8 +28,8 @@ impl DeleteQueuedReservedInstancesInput {
 }
 
 /// A builder for [`DeleteQueuedReservedInstancesInput`](crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQueuedReservedInstancesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) reserved_instances_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -93,8 +93,8 @@ impl DnssecStatus {
 }
 
 /// A builder for [`DnssecStatus`](crate::types::DnssecStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DnssecStatusBuilder {
     pub(crate) serve_signature: ::std::option::Option<::std::string::String>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,

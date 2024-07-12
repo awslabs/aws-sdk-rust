@@ -59,8 +59,8 @@ impl WorkspaceSummary {
 }
 
 /// A builder for [`WorkspaceSummary`](crate::types::WorkspaceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkspaceSummaryBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,

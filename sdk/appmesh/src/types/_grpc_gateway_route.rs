@@ -27,8 +27,8 @@ impl GrpcGatewayRoute {
 }
 
 /// A builder for [`GrpcGatewayRoute`](crate::types::GrpcGatewayRoute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrpcGatewayRouteBuilder {
     pub(crate) r#match: ::std::option::Option<crate::types::GrpcGatewayRouteMatch>,
     pub(crate) action: ::std::option::Option<crate::types::GrpcGatewayRouteAction>,

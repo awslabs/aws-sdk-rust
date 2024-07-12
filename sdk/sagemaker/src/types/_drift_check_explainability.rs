@@ -27,8 +27,8 @@ impl DriftCheckExplainability {
 }
 
 /// A builder for [`DriftCheckExplainability`](crate::types::DriftCheckExplainability).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DriftCheckExplainabilityBuilder {
     pub(crate) constraints: ::std::option::Option<crate::types::MetricsSource>,
     pub(crate) config_file: ::std::option::Option<crate::types::FileSource>,

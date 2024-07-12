@@ -44,8 +44,8 @@ impl UpdateIndexTypeOutput {
 }
 
 /// A builder for [`UpdateIndexTypeOutput`](crate::operation::update_index_type::UpdateIndexTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIndexTypeOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::IndexType>,

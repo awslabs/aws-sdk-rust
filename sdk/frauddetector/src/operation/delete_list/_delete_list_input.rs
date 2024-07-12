@@ -20,8 +20,8 @@ impl DeleteListInput {
 }
 
 /// A builder for [`DeleteListInput`](crate::operation::delete_list::DeleteListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteListInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

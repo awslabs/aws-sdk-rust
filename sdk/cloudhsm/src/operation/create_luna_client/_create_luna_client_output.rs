@@ -27,8 +27,8 @@ impl CreateLunaClientOutput {
 }
 
 /// A builder for [`CreateLunaClientOutput`](crate::operation::create_luna_client::CreateLunaClientOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLunaClientOutputBuilder {
     pub(crate) client_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

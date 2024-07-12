@@ -36,8 +36,8 @@ impl DeviceConfigurationType {
 }
 
 /// A builder for [`DeviceConfigurationType`](crate::types::DeviceConfigurationType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceConfigurationTypeBuilder {
     pub(crate) challenge_required_on_new_device: ::std::option::Option<bool>,
     pub(crate) device_only_remembered_on_user_prompt: ::std::option::Option<bool>,

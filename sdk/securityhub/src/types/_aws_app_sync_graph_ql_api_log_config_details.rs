@@ -33,8 +33,8 @@ impl AwsAppSyncGraphQlApiLogConfigDetails {
 }
 
 /// A builder for [`AwsAppSyncGraphQlApiLogConfigDetails`](crate::types::AwsAppSyncGraphQlApiLogConfigDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAppSyncGraphQlApiLogConfigDetailsBuilder {
     pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) exclude_verbose_content: ::std::option::Option<bool>,

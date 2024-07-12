@@ -181,8 +181,8 @@ impl UpdateIntegrationInput {
 }
 
 /// A builder for [`UpdateIntegrationInput`](crate::operation::update_integration::UpdateIntegrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIntegrationInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,

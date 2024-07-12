@@ -47,8 +47,8 @@ impl DescribeWorkflowTypeOutput {
 }
 
 /// A builder for [`DescribeWorkflowTypeOutput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkflowTypeOutputBuilder {
     pub(crate) type_info: ::std::option::Option<crate::types::WorkflowTypeInfo>,
     pub(crate) configuration: ::std::option::Option<crate::types::WorkflowTypeConfiguration>,

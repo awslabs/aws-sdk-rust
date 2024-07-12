@@ -34,8 +34,8 @@ impl GetPrimaryEmailOutput {
 }
 
 /// A builder for [`GetPrimaryEmailOutput`](crate::operation::get_primary_email::GetPrimaryEmailOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetPrimaryEmailOutputBuilder {
     pub(crate) primary_email: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

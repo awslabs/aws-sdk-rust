@@ -26,8 +26,8 @@ impl DescribeRepositoryOutput {
 }
 
 /// A builder for [`DescribeRepositoryOutput`](crate::operation::describe_repository::DescribeRepositoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRepositoryOutputBuilder {
     pub(crate) repository: ::std::option::Option<crate::types::RepositoryDescription>,
     _request_id: Option<String>,

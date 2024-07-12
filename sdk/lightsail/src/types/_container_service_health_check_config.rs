@@ -51,8 +51,8 @@ impl ContainerServiceHealthCheckConfig {
 }
 
 /// A builder for [`ContainerServiceHealthCheckConfig`](crate::types::ContainerServiceHealthCheckConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerServiceHealthCheckConfigBuilder {
     pub(crate) healthy_threshold: ::std::option::Option<i32>,
     pub(crate) unhealthy_threshold: ::std::option::Option<i32>,

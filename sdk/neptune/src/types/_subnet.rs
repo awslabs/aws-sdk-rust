@@ -34,8 +34,8 @@ impl Subnet {
 }
 
 /// A builder for [`Subnet`](crate::types::Subnet).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubnetBuilder {
     pub(crate) subnet_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,

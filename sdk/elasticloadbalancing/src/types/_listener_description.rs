@@ -29,8 +29,8 @@ impl ListenerDescription {
 }
 
 /// A builder for [`ListenerDescription`](crate::types::ListenerDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListenerDescriptionBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::Listener>,
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

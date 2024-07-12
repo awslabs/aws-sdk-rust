@@ -21,8 +21,8 @@ impl LifeCycleLastTestReverted {
 }
 
 /// A builder for [`LifeCycleLastTestReverted`](crate::types::LifeCycleLastTestReverted).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LifeCycleLastTestRevertedBuilder {
     pub(crate) api_call_date_time: ::std::option::Option<::std::string::String>,
 }

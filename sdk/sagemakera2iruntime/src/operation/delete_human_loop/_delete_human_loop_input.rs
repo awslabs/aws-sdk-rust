@@ -20,8 +20,8 @@ impl DeleteHumanLoopInput {
 }
 
 /// A builder for [`DeleteHumanLoopInput`](crate::operation::delete_human_loop::DeleteHumanLoopInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHumanLoopInputBuilder {
     pub(crate) human_loop_name: ::std::option::Option<::std::string::String>,
 }

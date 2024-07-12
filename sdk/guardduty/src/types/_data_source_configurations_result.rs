@@ -51,8 +51,8 @@ impl DataSourceConfigurationsResult {
 }
 
 /// A builder for [`DataSourceConfigurationsResult`](crate::types::DataSourceConfigurationsResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSourceConfigurationsResultBuilder {
     pub(crate) cloud_trail: ::std::option::Option<crate::types::CloudTrailConfigurationResult>,
     pub(crate) dns_logs: ::std::option::Option<crate::types::DnsLogsConfigurationResult>,

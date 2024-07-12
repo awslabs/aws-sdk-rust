@@ -20,8 +20,8 @@ impl DeleteAnomalySubscriptionInput {
 }
 
 /// A builder for [`DeleteAnomalySubscriptionInput`](crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAnomalySubscriptionInputBuilder {
     pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
 }

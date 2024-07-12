@@ -76,8 +76,8 @@ impl DescribeTestSetDiscrepancyReportOutput {
 }
 
 /// A builder for [`DescribeTestSetDiscrepancyReportOutput`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTestSetDiscrepancyReportOutputBuilder {
     pub(crate) test_set_discrepancy_report_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_set_id: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl DescribeClusterVersionsOutput {
 }
 
 /// A builder for [`DescribeClusterVersionsOutput`](crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClusterVersionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_versions: ::std::option::Option<::std::vec::Vec<crate::types::ClusterVersion>>,

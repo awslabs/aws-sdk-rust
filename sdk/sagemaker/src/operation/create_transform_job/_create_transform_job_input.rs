@@ -126,8 +126,8 @@ impl CreateTransformJobInput {
 }
 
 /// A builder for [`CreateTransformJobInput`](crate::operation::create_transform_job::CreateTransformJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTransformJobInputBuilder {
     pub(crate) transform_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,

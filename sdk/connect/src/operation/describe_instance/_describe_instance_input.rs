@@ -20,8 +20,8 @@ impl DescribeInstanceInput {
 }
 
 /// A builder for [`DescribeInstanceInput`](crate::operation::describe_instance::DescribeInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }

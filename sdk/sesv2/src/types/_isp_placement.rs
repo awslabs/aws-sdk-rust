@@ -27,8 +27,8 @@ impl IspPlacement {
 }
 
 /// A builder for [`IspPlacement`](crate::types::IspPlacement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IspPlacementBuilder {
     pub(crate) isp_name: ::std::option::Option<::std::string::String>,
     pub(crate) placement_statistics: ::std::option::Option<crate::types::PlacementStatistics>,

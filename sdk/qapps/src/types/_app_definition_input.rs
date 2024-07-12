@@ -28,8 +28,8 @@ impl AppDefinitionInput {
 }
 
 /// A builder for [`AppDefinitionInput`](crate::types::AppDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AppDefinitionInputBuilder {
     pub(crate) cards: ::std::option::Option<::std::vec::Vec<crate::types::CardInput>>,
     pub(crate) initial_prompt: ::std::option::Option<::std::string::String>,

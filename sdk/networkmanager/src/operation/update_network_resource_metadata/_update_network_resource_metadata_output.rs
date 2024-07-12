@@ -32,8 +32,8 @@ impl UpdateNetworkResourceMetadataOutput {
 }
 
 /// A builder for [`UpdateNetworkResourceMetadataOutput`](crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNetworkResourceMetadataOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

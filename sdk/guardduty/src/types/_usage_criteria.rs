@@ -49,8 +49,8 @@ impl UsageCriteria {
 }
 
 /// A builder for [`UsageCriteria`](crate::types::UsageCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageCriteriaBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,

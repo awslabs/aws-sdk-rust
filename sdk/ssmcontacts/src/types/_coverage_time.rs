@@ -27,8 +27,8 @@ impl CoverageTime {
 }
 
 /// A builder for [`CoverageTime`](crate::types::CoverageTime).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoverageTimeBuilder {
     pub(crate) start: ::std::option::Option<crate::types::HandOffTime>,
     pub(crate) end: ::std::option::Option<crate::types::HandOffTime>,

@@ -23,8 +23,8 @@ impl DeleteCacheSubnetGroupInput {
 }
 
 /// A builder for [`DeleteCacheSubnetGroupInput`](crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCacheSubnetGroupInputBuilder {
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
 }

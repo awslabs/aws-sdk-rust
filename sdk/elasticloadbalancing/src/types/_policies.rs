@@ -39,8 +39,8 @@ impl Policies {
 }
 
 /// A builder for [`Policies`](crate::types::Policies).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PoliciesBuilder {
     pub(crate) app_cookie_stickiness_policies: ::std::option::Option<::std::vec::Vec<crate::types::AppCookieStickinessPolicy>>,
     pub(crate) lb_cookie_stickiness_policies: ::std::option::Option<::std::vec::Vec<crate::types::LbCookieStickinessPolicy>>,

@@ -26,8 +26,8 @@ impl DescribeContainerOutput {
 }
 
 /// A builder for [`DescribeContainerOutput`](crate::operation::describe_container::DescribeContainerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContainerOutputBuilder {
     pub(crate) container: ::std::option::Option<crate::types::Container>,
     _request_id: Option<String>,

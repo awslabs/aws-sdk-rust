@@ -34,8 +34,8 @@ impl ListRegisteredSubscriptionProvidersOutput {
 }
 
 /// A builder for [`ListRegisteredSubscriptionProvidersOutput`](crate::operation::list_registered_subscription_providers::ListRegisteredSubscriptionProvidersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRegisteredSubscriptionProvidersOutputBuilder {
     pub(crate) registered_subscription_providers: ::std::option::Option<::std::vec::Vec<crate::types::RegisteredSubscriptionProvider>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

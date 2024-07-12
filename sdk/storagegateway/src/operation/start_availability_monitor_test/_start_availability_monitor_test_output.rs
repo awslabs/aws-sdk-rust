@@ -26,8 +26,8 @@ impl StartAvailabilityMonitorTestOutput {
 }
 
 /// A builder for [`StartAvailabilityMonitorTestOutput`](crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAvailabilityMonitorTestOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

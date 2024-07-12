@@ -47,8 +47,8 @@ impl Ec2Config {
 }
 
 /// A builder for [`Ec2Config`](crate::types::Ec2Config).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Ec2ConfigBuilder {
     pub(crate) subnet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

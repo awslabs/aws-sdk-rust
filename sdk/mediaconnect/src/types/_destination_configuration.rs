@@ -39,8 +39,8 @@ impl DestinationConfiguration {
 }
 
 /// A builder for [`DestinationConfiguration`](crate::types::DestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationConfigurationBuilder {
     pub(crate) destination_ip: ::std::option::Option<::std::string::String>,
     pub(crate) destination_port: ::std::option::Option<i32>,

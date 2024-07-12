@@ -32,8 +32,8 @@ impl DescribeFlowExecutionRecordsInput {
 }
 
 /// A builder for [`DescribeFlowExecutionRecordsInput`](crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFlowExecutionRecordsInputBuilder {
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -99,8 +99,8 @@ impl ApplicationVersionDescription {
 }
 
 /// A builder for [`ApplicationVersionDescription`](crate::types::ApplicationVersionDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationVersionDescriptionBuilder {
     pub(crate) application_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetLandingZoneOutput {
 }
 
 /// A builder for [`GetLandingZoneOutput`](crate::operation::get_landing_zone::GetLandingZoneOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLandingZoneOutputBuilder {
     pub(crate) landing_zone: ::std::option::Option<crate::types::LandingZoneDetail>,
     _request_id: Option<String>,

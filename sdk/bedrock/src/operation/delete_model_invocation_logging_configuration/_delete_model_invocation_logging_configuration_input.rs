@@ -12,8 +12,8 @@ impl DeleteModelInvocationLoggingConfigurationInput {
 }
 
 /// A builder for [`DeleteModelInvocationLoggingConfigurationInput`](crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelInvocationLoggingConfigurationInputBuilder {}
 impl DeleteModelInvocationLoggingConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteModelInvocationLoggingConfigurationInput`](crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationInput).

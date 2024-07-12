@@ -32,8 +32,8 @@ impl ListGroupVersionsInput {
 }
 
 /// A builder for [`ListGroupVersionsInput`](crate::operation::list_group_versions::ListGroupVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupVersionsInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,

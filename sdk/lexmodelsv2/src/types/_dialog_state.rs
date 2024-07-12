@@ -33,8 +33,8 @@ impl DialogState {
 }
 
 /// A builder for [`DialogState`](crate::types::DialogState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DialogStateBuilder {
     pub(crate) dialog_action: ::std::option::Option<crate::types::DialogAction>,
     pub(crate) intent: ::std::option::Option<crate::types::IntentOverride>,

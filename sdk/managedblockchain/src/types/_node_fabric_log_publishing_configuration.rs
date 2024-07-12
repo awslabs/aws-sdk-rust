@@ -27,8 +27,8 @@ impl NodeFabricLogPublishingConfiguration {
 }
 
 /// A builder for [`NodeFabricLogPublishingConfiguration`](crate::types::NodeFabricLogPublishingConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeFabricLogPublishingConfigurationBuilder {
     pub(crate) chaincode_logs: ::std::option::Option<crate::types::LogConfigurations>,
     pub(crate) peer_logs: ::std::option::Option<crate::types::LogConfigurations>,

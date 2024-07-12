@@ -64,8 +64,8 @@ impl TransactWriteItemsInput {
 }
 
 /// A builder for [`TransactWriteItemsInput`](crate::operation::transact_write_items::TransactWriteItemsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransactWriteItemsInputBuilder {
     pub(crate) transact_items: ::std::option::Option<::std::vec::Vec<crate::types::TransactWriteItem>>,
     pub(crate) return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,

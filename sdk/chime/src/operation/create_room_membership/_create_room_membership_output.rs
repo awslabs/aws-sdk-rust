@@ -26,8 +26,8 @@ impl CreateRoomMembershipOutput {
 }
 
 /// A builder for [`CreateRoomMembershipOutput`](crate::operation::create_room_membership::CreateRoomMembershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRoomMembershipOutputBuilder {
     pub(crate) room_membership: ::std::option::Option<crate::types::RoomMembership>,
     _request_id: Option<String>,

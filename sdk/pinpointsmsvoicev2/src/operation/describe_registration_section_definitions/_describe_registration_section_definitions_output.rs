@@ -40,8 +40,8 @@ impl DescribeRegistrationSectionDefinitionsOutput {
 }
 
 /// A builder for [`DescribeRegistrationSectionDefinitionsOutput`](crate::operation::describe_registration_section_definitions::DescribeRegistrationSectionDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistrationSectionDefinitionsOutputBuilder {
     pub(crate) registration_type: ::std::option::Option<::std::string::String>,
     pub(crate) registration_section_definitions: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationSectionDefinition>>,

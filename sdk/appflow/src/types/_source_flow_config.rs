@@ -45,8 +45,8 @@ impl SourceFlowConfig {
 }
 
 /// A builder for [`SourceFlowConfig`](crate::types::SourceFlowConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceFlowConfigBuilder {
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,
     pub(crate) api_version: ::std::option::Option<::std::string::String>,

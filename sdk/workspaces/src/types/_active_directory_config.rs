@@ -29,8 +29,8 @@ impl ActiveDirectoryConfig {
 }
 
 /// A builder for [`ActiveDirectoryConfig`](crate::types::ActiveDirectoryConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActiveDirectoryConfigBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_account_secret_arn: ::std::option::Option<::std::string::String>,

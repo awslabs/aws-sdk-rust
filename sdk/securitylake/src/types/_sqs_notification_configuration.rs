@@ -12,8 +12,8 @@ impl SqsNotificationConfiguration {
 }
 
 /// A builder for [`SqsNotificationConfiguration`](crate::types::SqsNotificationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SqsNotificationConfigurationBuilder {}
 impl SqsNotificationConfigurationBuilder {
     /// Consumes the builder and constructs a [`SqsNotificationConfiguration`](crate::types::SqsNotificationConfiguration).

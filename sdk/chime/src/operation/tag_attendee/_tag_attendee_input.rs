@@ -34,8 +34,8 @@ impl TagAttendeeInput {
 }
 
 /// A builder for [`TagAttendeeInput`](crate::operation::tag_attendee::TagAttendeeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TagAttendeeInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) attendee_id: ::std::option::Option<::std::string::String>,

@@ -29,8 +29,8 @@ impl GetConnectionsFilter {
 }
 
 /// A builder for [`GetConnectionsFilter`](crate::types::GetConnectionsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectionsFilterBuilder {
     pub(crate) match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,

@@ -29,8 +29,8 @@ impl ErrorRootCause {
 }
 
 /// A builder for [`ErrorRootCause`](crate::types::ErrorRootCause).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ErrorRootCauseBuilder {
     pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::ErrorRootCauseService>>,
     pub(crate) client_impacting: ::std::option::Option<bool>,

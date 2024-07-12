@@ -18,8 +18,8 @@ impl CancelVariantImportJobOutput {
 }
 
 /// A builder for [`CancelVariantImportJobOutput`](crate::operation::cancel_variant_import_job::CancelVariantImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelVariantImportJobOutputBuilder {
     _request_id: Option<String>,
 }

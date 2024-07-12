@@ -21,8 +21,8 @@ impl DescribeLocationSmbInput {
 }
 
 /// A builder for [`DescribeLocationSmbInput`](crate::operation::describe_location_smb::DescribeLocationSmbInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationSmbInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }

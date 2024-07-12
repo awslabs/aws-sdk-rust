@@ -29,8 +29,8 @@ impl ResaleAuthorizationManufacturerAccountIdFilter {
 }
 
 /// A builder for [`ResaleAuthorizationManufacturerAccountIdFilter`](crate::types::ResaleAuthorizationManufacturerAccountIdFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResaleAuthorizationManufacturerAccountIdFilterBuilder {
     pub(crate) value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) wild_card_value: ::std::option::Option<::std::string::String>,

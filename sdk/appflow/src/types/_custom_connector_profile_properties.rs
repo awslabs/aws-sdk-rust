@@ -27,8 +27,8 @@ impl CustomConnectorProfileProperties {
 }
 
 /// A builder for [`CustomConnectorProfileProperties`](crate::types::CustomConnectorProfileProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomConnectorProfilePropertiesBuilder {
     pub(crate) profile_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) o_auth2_properties: ::std::option::Option<crate::types::OAuth2Properties>,

@@ -32,8 +32,8 @@ impl EnableImageDeregistrationProtectionInput {
 }
 
 /// A builder for [`EnableImageDeregistrationProtectionInput`](crate::operation::enable_image_deregistration_protection::EnableImageDeregistrationProtectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableImageDeregistrationProtectionInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) with_cooldown: ::std::option::Option<bool>,

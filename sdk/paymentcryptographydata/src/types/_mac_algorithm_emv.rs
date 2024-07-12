@@ -58,8 +58,8 @@ impl MacAlgorithmEmv {
 }
 
 /// A builder for [`MacAlgorithmEmv`](crate::types::MacAlgorithmEmv).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MacAlgorithmEmvBuilder {
     pub(crate) major_key_derivation_mode: ::std::option::Option<crate::types::MajorKeyDerivationMode>,
     pub(crate) primary_account_number: ::std::option::Option<::std::string::String>,

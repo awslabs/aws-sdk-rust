@@ -20,8 +20,8 @@ impl UpdateSamplingRuleInput {
 }
 
 /// A builder for [`UpdateSamplingRuleInput`](crate::operation::update_sampling_rule::UpdateSamplingRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSamplingRuleInputBuilder {
     pub(crate) sampling_rule_update: ::std::option::Option<crate::types::SamplingRuleUpdate>,
 }

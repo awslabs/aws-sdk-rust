@@ -79,8 +79,8 @@ impl AttributeFilter {
 }
 
 /// A builder for [`AttributeFilter`](crate::types::AttributeFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributeFilterBuilder {
     pub(crate) and_all_filters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
     pub(crate) or_all_filters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,

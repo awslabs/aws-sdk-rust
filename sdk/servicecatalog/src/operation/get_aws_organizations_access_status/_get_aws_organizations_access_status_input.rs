@@ -11,8 +11,8 @@ impl GetAwsOrganizationsAccessStatusInput {
 }
 
 /// A builder for [`GetAwsOrganizationsAccessStatusInput`](crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAwsOrganizationsAccessStatusInputBuilder {}
 impl GetAwsOrganizationsAccessStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetAwsOrganizationsAccessStatusInput`](crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusInput).

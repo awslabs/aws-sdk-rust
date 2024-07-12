@@ -20,8 +20,8 @@ impl GetAssessmentInput {
 }
 
 /// A builder for [`GetAssessmentInput`](crate::operation::get_assessment::GetAssessmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssessmentInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
 }

@@ -18,8 +18,8 @@ impl AssociateHealthCheckOutput {
 }
 
 /// A builder for [`AssociateHealthCheckOutput`](crate::operation::associate_health_check::AssociateHealthCheckOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateHealthCheckOutputBuilder {
     _request_id: Option<String>,
 }

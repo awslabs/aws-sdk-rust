@@ -28,8 +28,8 @@ impl BatchGetAggregateResourceConfigInput {
 }
 
 /// A builder for [`BatchGetAggregateResourceConfigInput`](crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetAggregateResourceConfigInputBuilder {
     pub(crate) configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,

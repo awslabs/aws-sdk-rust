@@ -32,8 +32,8 @@ impl DisableFederationOutput {
 }
 
 /// A builder for [`DisableFederationOutput`](crate::operation::disable_federation::DisableFederationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableFederationOutputBuilder {
     pub(crate) event_data_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) federation_status: ::std::option::Option<crate::types::FederationStatus>,

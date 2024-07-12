@@ -22,8 +22,8 @@ impl PatchFilterGroup {
 }
 
 /// A builder for [`PatchFilterGroup`](crate::types::PatchFilterGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PatchFilterGroupBuilder {
     pub(crate) patch_filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>>,
 }

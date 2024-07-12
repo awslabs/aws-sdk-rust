@@ -21,8 +21,8 @@ impl EfaInfo {
 }
 
 /// A builder for [`EfaInfo`](crate::types::EfaInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EfaInfoBuilder {
     pub(crate) maximum_efa_interfaces: ::std::option::Option<i32>,
 }

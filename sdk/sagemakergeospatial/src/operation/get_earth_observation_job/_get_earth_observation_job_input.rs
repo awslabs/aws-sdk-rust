@@ -20,8 +20,8 @@ impl GetEarthObservationJobInput {
 }
 
 /// A builder for [`GetEarthObservationJobInput`](crate::operation::get_earth_observation_job::GetEarthObservationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEarthObservationJobInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

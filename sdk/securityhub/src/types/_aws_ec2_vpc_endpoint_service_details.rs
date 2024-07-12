@@ -115,8 +115,8 @@ impl AwsEc2VpcEndpointServiceDetails {
 }
 
 /// A builder for [`AwsEc2VpcEndpointServiceDetails`](crate::types::AwsEc2VpcEndpointServiceDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2VpcEndpointServiceDetailsBuilder {
     pub(crate) acceptance_required: ::std::option::Option<bool>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

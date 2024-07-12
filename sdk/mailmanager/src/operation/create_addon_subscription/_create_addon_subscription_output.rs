@@ -27,8 +27,8 @@ impl CreateAddonSubscriptionOutput {
 }
 
 /// A builder for [`CreateAddonSubscriptionOutput`](crate::operation::create_addon_subscription::CreateAddonSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAddonSubscriptionOutputBuilder {
     pub(crate) addon_subscription_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -35,8 +35,8 @@ impl ListTrafficPolicyVersionsInput {
 }
 
 /// A builder for [`ListTrafficPolicyVersionsInput`](crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrafficPolicyVersionsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_version_marker: ::std::option::Option<::std::string::String>,

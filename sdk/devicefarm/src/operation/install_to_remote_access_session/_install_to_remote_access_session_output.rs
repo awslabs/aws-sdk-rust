@@ -27,8 +27,8 @@ impl InstallToRemoteAccessSessionOutput {
 }
 
 /// A builder for [`InstallToRemoteAccessSessionOutput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstallToRemoteAccessSessionOutputBuilder {
     pub(crate) app_upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,

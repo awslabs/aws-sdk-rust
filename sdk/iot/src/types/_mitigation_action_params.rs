@@ -51,8 +51,8 @@ impl MitigationActionParams {
 }
 
 /// A builder for [`MitigationActionParams`](crate::types::MitigationActionParams).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MitigationActionParamsBuilder {
     pub(crate) update_device_certificate_params: ::std::option::Option<crate::types::UpdateDeviceCertificateParams>,
     pub(crate) update_ca_certificate_params: ::std::option::Option<crate::types::UpdateCaCertificateParams>,

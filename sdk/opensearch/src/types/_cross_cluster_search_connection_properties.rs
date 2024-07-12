@@ -21,8 +21,8 @@ impl CrossClusterSearchConnectionProperties {
 }
 
 /// A builder for [`CrossClusterSearchConnectionProperties`](crate::types::CrossClusterSearchConnectionProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CrossClusterSearchConnectionPropertiesBuilder {
     pub(crate) skip_unavailable: ::std::option::Option<crate::types::SkipUnavailableStatus>,
 }

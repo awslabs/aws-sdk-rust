@@ -36,8 +36,8 @@ impl UpdateServiceSpecificCredentialInput {
 }
 
 /// A builder for [`UpdateServiceSpecificCredentialInput`](crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateServiceSpecificCredentialInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_specific_credential_id: ::std::option::Option<::std::string::String>,

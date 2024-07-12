@@ -64,8 +64,8 @@ impl GetProvisionedProductOutputsInput {
 }
 
 /// A builder for [`GetProvisionedProductOutputsInput`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProvisionedProductOutputsInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,

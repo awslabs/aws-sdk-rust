@@ -33,8 +33,8 @@ impl ResolvedAttributes {
 }
 
 /// A builder for [`ResolvedAttributes`](crate::types::ResolvedAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolvedAttributesBuilder {
     pub(crate) auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
     pub(crate) problem_type: ::std::option::Option<crate::types::ProblemType>,

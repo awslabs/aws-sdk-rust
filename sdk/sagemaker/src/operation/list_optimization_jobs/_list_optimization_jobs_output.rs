@@ -34,8 +34,8 @@ impl ListOptimizationJobsOutput {
 }
 
 /// A builder for [`ListOptimizationJobsOutput`](crate::operation::list_optimization_jobs::ListOptimizationJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOptimizationJobsOutputBuilder {
     pub(crate) optimization_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::OptimizationJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

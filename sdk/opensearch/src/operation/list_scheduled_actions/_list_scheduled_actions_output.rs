@@ -34,8 +34,8 @@ impl ListScheduledActionsOutput {
 }
 
 /// A builder for [`ListScheduledActionsOutput`](crate::operation::list_scheduled_actions::ListScheduledActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListScheduledActionsOutputBuilder {
     pub(crate) scheduled_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledAction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

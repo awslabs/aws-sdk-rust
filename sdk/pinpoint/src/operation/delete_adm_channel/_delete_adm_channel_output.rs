@@ -26,8 +26,8 @@ impl DeleteAdmChannelOutput {
 }
 
 /// A builder for [`DeleteAdmChannelOutput`](crate::operation::delete_adm_channel::DeleteAdmChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAdmChannelOutputBuilder {
     pub(crate) adm_channel_response: ::std::option::Option<crate::types::AdmChannelResponse>,
     _request_id: Option<String>,

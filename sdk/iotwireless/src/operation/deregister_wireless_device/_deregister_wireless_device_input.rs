@@ -26,8 +26,8 @@ impl DeregisterWirelessDeviceInput {
 }
 
 /// A builder for [`DeregisterWirelessDeviceInput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterWirelessDeviceInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) wireless_device_type: ::std::option::Option<crate::types::WirelessDeviceType>,

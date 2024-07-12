@@ -36,8 +36,8 @@ impl EcsServiceRecommendedOptionProjectedMetric {
 }
 
 /// A builder for [`EcsServiceRecommendedOptionProjectedMetric`](crate::types::EcsServiceRecommendedOptionProjectedMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EcsServiceRecommendedOptionProjectedMetricBuilder {
     pub(crate) recommended_cpu_units: ::std::option::Option<i32>,
     pub(crate) recommended_memory_size: ::std::option::Option<i32>,

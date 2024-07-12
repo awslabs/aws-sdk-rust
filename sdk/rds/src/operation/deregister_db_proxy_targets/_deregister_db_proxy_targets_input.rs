@@ -42,8 +42,8 @@ impl DeregisterDbProxyTargetsInput {
 }
 
 /// A builder for [`DeregisterDbProxyTargetsInput`](crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterDbProxyTargetsInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_group_name: ::std::option::Option<::std::string::String>,

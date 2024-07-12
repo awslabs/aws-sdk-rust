@@ -21,8 +21,8 @@ impl TileStyle {
 }
 
 /// A builder for [`TileStyle`](crate::types::TileStyle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TileStyleBuilder {
     pub(crate) border: ::std::option::Option<crate::types::BorderStyle>,
 }

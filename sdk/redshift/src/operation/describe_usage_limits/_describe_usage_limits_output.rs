@@ -34,8 +34,8 @@ impl DescribeUsageLimitsOutput {
 }
 
 /// A builder for [`DescribeUsageLimitsOutput`](crate::operation::describe_usage_limits::DescribeUsageLimitsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUsageLimitsOutputBuilder {
     pub(crate) usage_limits: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

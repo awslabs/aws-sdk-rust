@@ -34,8 +34,8 @@ impl ListOpsMetadataOutput {
 }
 
 /// A builder for [`ListOpsMetadataOutput`](crate::operation::list_ops_metadata::ListOpsMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOpsMetadataOutputBuilder {
     pub(crate) ops_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl CreateProfileShareInput {
 }
 
 /// A builder for [`CreateProfileShareInput`](crate::operation::create_profile_share::CreateProfileShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateProfileShareInputBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl ModelEndpointDataBlob {
 }
 
 /// A builder for [`ModelEndpointDataBlob`](crate::types::ModelEndpointDataBlob).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelEndpointDataBlobBuilder {
     pub(crate) byte_buffer: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

@@ -66,8 +66,8 @@ impl GetPersonalizedRankingInput {
 }
 
 /// A builder for [`GetPersonalizedRankingInput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPersonalizedRankingInputBuilder {
     pub(crate) campaign_arn: ::std::option::Option<::std::string::String>,
     pub(crate) input_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -51,8 +51,8 @@ impl StorageConfiguration {
 }
 
 /// A builder for [`StorageConfiguration`](crate::types::StorageConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::KnowledgeBaseStorageType>,
     pub(crate) opensearch_serverless_configuration: ::std::option::Option<crate::types::OpenSearchServerlessConfiguration>,

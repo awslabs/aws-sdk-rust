@@ -19,8 +19,8 @@ impl DeregisterDataLakeDelegatedAdministratorOutput {
 }
 
 /// A builder for [`DeregisterDataLakeDelegatedAdministratorOutput`](crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterDataLakeDelegatedAdministratorOutputBuilder {
     _request_id: Option<String>,
 }

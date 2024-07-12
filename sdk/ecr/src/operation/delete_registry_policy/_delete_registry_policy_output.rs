@@ -32,8 +32,8 @@ impl DeleteRegistryPolicyOutput {
 }
 
 /// A builder for [`DeleteRegistryPolicyOutput`](crate::operation::delete_registry_policy::DeleteRegistryPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRegistryPolicyOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,

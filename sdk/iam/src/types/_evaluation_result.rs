@@ -85,8 +85,8 @@ impl EvaluationResult {
 }
 
 /// A builder for [`EvaluationResult`](crate::types::EvaluationResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationResultBuilder {
     pub(crate) eval_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) eval_resource_name: ::std::option::Option<::std::string::String>,

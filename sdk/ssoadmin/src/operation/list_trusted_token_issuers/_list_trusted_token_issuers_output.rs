@@ -34,8 +34,8 @@ impl ListTrustedTokenIssuersOutput {
 }
 
 /// A builder for [`ListTrustedTokenIssuersOutput`](crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrustedTokenIssuersOutputBuilder {
     pub(crate) trusted_token_issuers: ::std::option::Option<::std::vec::Vec<crate::types::TrustedTokenIssuerMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

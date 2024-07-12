@@ -39,8 +39,8 @@ impl SetIdentityNotificationTopicInput {
 }
 
 /// A builder for [`SetIdentityNotificationTopicInput`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetIdentityNotificationTopicInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) notification_type: ::std::option::Option<crate::types::NotificationType>,

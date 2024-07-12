@@ -33,8 +33,8 @@ impl PathComponent {
 }
 
 /// A builder for [`PathComponent`](crate::types::PathComponent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PathComponentBuilder {
     pub(crate) sequence: ::std::option::Option<i32>,
     pub(crate) resource: ::std::option::Option<crate::types::NetworkResourceSummary>,

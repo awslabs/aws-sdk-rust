@@ -20,8 +20,8 @@ impl DeleteVpcLinkInput {
 }
 
 /// A builder for [`DeleteVpcLinkInput`](crate::operation::delete_vpc_link::DeleteVpcLinkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVpcLinkInputBuilder {
     pub(crate) vpc_link_id: ::std::option::Option<::std::string::String>,
 }

@@ -67,8 +67,8 @@ impl Disk {
 }
 
 /// A builder for [`Disk`](crate::types::Disk).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiskBuilder {
     pub(crate) disk_id: ::std::option::Option<::std::string::String>,
     pub(crate) disk_path: ::std::option::Option<::std::string::String>,

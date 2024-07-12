@@ -22,8 +22,8 @@ impl RecognizeCelebritiesInput {
 }
 
 /// A builder for [`RecognizeCelebritiesInput`](crate::operation::recognize_celebrities::RecognizeCelebritiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecognizeCelebritiesInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
 }

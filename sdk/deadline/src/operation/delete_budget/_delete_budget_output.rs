@@ -18,8 +18,8 @@ impl DeleteBudgetOutput {
 }
 
 /// A builder for [`DeleteBudgetOutput`](crate::operation::delete_budget::DeleteBudgetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBudgetOutputBuilder {
     _request_id: Option<String>,
 }

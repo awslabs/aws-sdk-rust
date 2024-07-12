@@ -42,8 +42,8 @@ impl AssignPrivateIpAddressesOutput {
 }
 
 /// A builder for [`AssignPrivateIpAddressesOutput`](crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssignPrivateIpAddressesOutputBuilder {
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) assigned_private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AssignedPrivateIpAddress>>,

@@ -245,8 +245,8 @@ impl UpdateFunctionCodeOutput {
 }
 
 /// A builder for [`UpdateFunctionCodeOutput`](crate::operation::update_function_code::UpdateFunctionCodeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFunctionCodeOutputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,

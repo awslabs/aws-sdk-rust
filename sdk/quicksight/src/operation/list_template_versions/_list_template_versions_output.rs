@@ -46,8 +46,8 @@ impl ListTemplateVersionsOutput {
 }
 
 /// A builder for [`ListTemplateVersionsOutput`](crate::operation::list_template_versions::ListTemplateVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTemplateVersionsOutputBuilder {
     pub(crate) template_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

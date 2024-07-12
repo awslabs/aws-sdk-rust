@@ -27,8 +27,8 @@ impl RegisterElasticIpOutput {
 }
 
 /// A builder for [`RegisterElasticIpOutput`](crate::operation::register_elastic_ip::RegisterElasticIpOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterElasticIpOutputBuilder {
     pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

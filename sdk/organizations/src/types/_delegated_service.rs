@@ -27,8 +27,8 @@ impl DelegatedService {
 }
 
 /// A builder for [`DelegatedService`](crate::types::DelegatedService).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DelegatedServiceBuilder {
     pub(crate) service_principal: ::std::option::Option<::std::string::String>,
     pub(crate) delegation_enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,

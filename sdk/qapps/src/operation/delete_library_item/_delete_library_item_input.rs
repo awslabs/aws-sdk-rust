@@ -26,8 +26,8 @@ impl DeleteLibraryItemInput {
 }
 
 /// A builder for [`DeleteLibraryItemInput`](crate::operation::delete_library_item::DeleteLibraryItemInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLibraryItemInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) library_item_id: ::std::option::Option<::std::string::String>,

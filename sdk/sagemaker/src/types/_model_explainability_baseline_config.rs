@@ -27,8 +27,8 @@ impl ModelExplainabilityBaselineConfig {
 }
 
 /// A builder for [`ModelExplainabilityBaselineConfig`](crate::types::ModelExplainabilityBaselineConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModelExplainabilityBaselineConfigBuilder {
     pub(crate) baselining_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) constraints_resource: ::std::option::Option<crate::types::MonitoringConstraintsResource>,

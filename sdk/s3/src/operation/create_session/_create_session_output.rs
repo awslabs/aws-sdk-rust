@@ -32,8 +32,8 @@ impl CreateSessionOutput {
 }
 
 /// A builder for [`CreateSessionOutput`](crate::operation::create_session::CreateSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSessionOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::SessionCredentials>,
     _extended_request_id: Option<String>,

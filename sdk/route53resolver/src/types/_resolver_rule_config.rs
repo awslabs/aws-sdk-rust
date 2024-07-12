@@ -35,8 +35,8 @@ impl ResolverRuleConfig {
 }
 
 /// A builder for [`ResolverRuleConfig`](crate::types::ResolverRuleConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResolverRuleConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,

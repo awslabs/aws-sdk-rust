@@ -38,8 +38,8 @@ impl DescribeVoicesInput {
 }
 
 /// A builder for [`DescribeVoicesInput`](crate::operation::describe_voices::DescribeVoicesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVoicesInputBuilder {
     pub(crate) engine: ::std::option::Option<crate::types::Engine>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

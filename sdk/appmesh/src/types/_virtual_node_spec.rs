@@ -49,8 +49,8 @@ impl VirtualNodeSpec {
 }
 
 /// A builder for [`VirtualNodeSpec`](crate::types::VirtualNodeSpec).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualNodeSpecBuilder {
     pub(crate) service_discovery: ::std::option::Option<crate::types::ServiceDiscovery>,
     pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,

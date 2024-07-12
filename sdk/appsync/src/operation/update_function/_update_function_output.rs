@@ -26,8 +26,8 @@ impl UpdateFunctionOutput {
 }
 
 /// A builder for [`UpdateFunctionOutput`](crate::operation::update_function::UpdateFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFunctionOutputBuilder {
     pub(crate) function_configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
     _request_id: Option<String>,

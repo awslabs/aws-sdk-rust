@@ -46,8 +46,8 @@ impl DescribeComponentConfigurationRecommendationInput {
 }
 
 /// A builder for [`DescribeComponentConfigurationRecommendationInput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeComponentConfigurationRecommendationInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,

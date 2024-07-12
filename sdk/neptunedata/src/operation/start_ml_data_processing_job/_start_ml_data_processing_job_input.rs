@@ -108,8 +108,8 @@ impl StartMlDataProcessingJobInput {
 }
 
 /// A builder for [`StartMlDataProcessingJobInput`](crate::operation::start_ml_data_processing_job::StartMlDataProcessingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMlDataProcessingJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) previous_data_processing_job_id: ::std::option::Option<::std::string::String>,

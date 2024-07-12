@@ -50,8 +50,8 @@ impl ContainerHealthCheck {
 }
 
 /// A builder for [`ContainerHealthCheck`](crate::types::ContainerHealthCheck).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerHealthCheckBuilder {
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) interval: ::std::option::Option<i32>,

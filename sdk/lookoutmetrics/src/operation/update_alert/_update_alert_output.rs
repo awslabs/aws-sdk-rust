@@ -26,8 +26,8 @@ impl UpdateAlertOutput {
 }
 
 /// A builder for [`UpdateAlertOutput`](crate::operation::update_alert::UpdateAlertOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAlertOutputBuilder {
     pub(crate) alert_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

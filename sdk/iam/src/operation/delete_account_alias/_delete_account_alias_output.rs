@@ -18,8 +18,8 @@ impl DeleteAccountAliasOutput {
 }
 
 /// A builder for [`DeleteAccountAliasOutput`](crate::operation::delete_account_alias::DeleteAccountAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccountAliasOutputBuilder {
     _request_id: Option<String>,
 }

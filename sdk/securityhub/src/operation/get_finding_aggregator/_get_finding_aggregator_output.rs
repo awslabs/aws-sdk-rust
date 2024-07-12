@@ -46,8 +46,8 @@ impl GetFindingAggregatorOutput {
 }
 
 /// A builder for [`GetFindingAggregatorOutput`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingAggregatorOutputBuilder {
     pub(crate) finding_aggregator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) finding_aggregation_region: ::std::option::Option<::std::string::String>,

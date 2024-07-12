@@ -27,8 +27,8 @@ impl RetentionProperties {
 }
 
 /// A builder for [`RetentionProperties`](crate::types::RetentionProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetentionPropertiesBuilder {
     pub(crate) memory_store_retention_period_in_hours: ::std::option::Option<i64>,
     pub(crate) magnetic_store_retention_period_in_days: ::std::option::Option<i64>,

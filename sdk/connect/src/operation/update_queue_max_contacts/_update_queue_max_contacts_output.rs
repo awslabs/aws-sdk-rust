@@ -18,8 +18,8 @@ impl UpdateQueueMaxContactsOutput {
 }
 
 /// A builder for [`UpdateQueueMaxContactsOutput`](crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateQueueMaxContactsOutputBuilder {
     _request_id: Option<String>,
 }

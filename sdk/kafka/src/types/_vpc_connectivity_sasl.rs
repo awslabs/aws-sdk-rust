@@ -27,8 +27,8 @@ impl VpcConnectivitySasl {
 }
 
 /// A builder for [`VpcConnectivitySasl`](crate::types::VpcConnectivitySasl).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcConnectivitySaslBuilder {
     pub(crate) scram: ::std::option::Option<crate::types::VpcConnectivityScram>,
     pub(crate) iam: ::std::option::Option<crate::types::VpcConnectivityIam>,

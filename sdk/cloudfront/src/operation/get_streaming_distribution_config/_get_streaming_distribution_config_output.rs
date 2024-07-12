@@ -33,8 +33,8 @@ impl GetStreamingDistributionConfigOutput {
 }
 
 /// A builder for [`GetStreamingDistributionConfigOutput`](crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStreamingDistributionConfigOutputBuilder {
     pub(crate) streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

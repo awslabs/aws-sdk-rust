@@ -27,8 +27,8 @@ impl HttpContext {
 }
 
 /// A builder for [`HttpContext`](crate::types::HttpContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpContextBuilder {
     pub(crate) headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,

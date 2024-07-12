@@ -39,8 +39,8 @@ impl DataFormatConversionConfiguration {
 }
 
 /// A builder for [`DataFormatConversionConfiguration`](crate::types::DataFormatConversionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataFormatConversionConfigurationBuilder {
     pub(crate) schema_configuration: ::std::option::Option<crate::types::SchemaConfiguration>,
     pub(crate) input_format_configuration: ::std::option::Option<crate::types::InputFormatConfiguration>,

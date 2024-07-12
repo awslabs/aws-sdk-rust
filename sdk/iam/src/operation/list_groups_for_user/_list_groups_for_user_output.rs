@@ -40,8 +40,8 @@ impl ListGroupsForUserOutput {
 }
 
 /// A builder for [`ListGroupsForUserOutput`](crate::operation::list_groups_for_user::ListGroupsForUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupsForUserOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

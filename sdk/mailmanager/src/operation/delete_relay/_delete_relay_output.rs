@@ -18,8 +18,8 @@ impl DeleteRelayOutput {
 }
 
 /// A builder for [`DeleteRelayOutput`](crate::operation::delete_relay::DeleteRelayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRelayOutputBuilder {
     _request_id: Option<String>,
 }

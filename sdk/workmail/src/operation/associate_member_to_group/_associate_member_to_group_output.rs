@@ -18,8 +18,8 @@ impl AssociateMemberToGroupOutput {
 }
 
 /// A builder for [`AssociateMemberToGroupOutput`](crate::operation::associate_member_to_group::AssociateMemberToGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMemberToGroupOutputBuilder {
     _request_id: Option<String>,
 }

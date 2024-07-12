@@ -62,8 +62,8 @@ impl StartAppInput {
 }
 
 /// A builder for [`StartAppInput`](crate::operation::start_app::StartAppInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartAppInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) simulation: ::std::option::Option<::std::string::String>,

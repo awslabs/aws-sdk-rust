@@ -27,8 +27,8 @@ impl DataSetUsageConfiguration {
 }
 
 /// A builder for [`DataSetUsageConfiguration`](crate::types::DataSetUsageConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataSetUsageConfigurationBuilder {
     pub(crate) disable_use_as_direct_query_source: ::std::option::Option<bool>,
     pub(crate) disable_use_as_imported_source: ::std::option::Option<bool>,

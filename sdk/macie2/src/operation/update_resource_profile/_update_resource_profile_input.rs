@@ -26,8 +26,8 @@ impl UpdateResourceProfileInput {
 }
 
 /// A builder for [`UpdateResourceProfileInput`](crate::operation::update_resource_profile::UpdateResourceProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResourceProfileInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sensitivity_score_override: ::std::option::Option<i32>,

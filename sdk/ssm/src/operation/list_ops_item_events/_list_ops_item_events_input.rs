@@ -34,8 +34,8 @@ impl ListOpsItemEventsInput {
 }
 
 /// A builder for [`ListOpsItemEventsInput`](crate::operation::list_ops_item_events::ListOpsItemEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOpsItemEventsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemEventFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

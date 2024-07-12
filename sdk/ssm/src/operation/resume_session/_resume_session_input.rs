@@ -20,8 +20,8 @@ impl ResumeSessionInput {
 }
 
 /// A builder for [`ResumeSessionInput`](crate::operation::resume_session::ResumeSessionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResumeSessionInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }

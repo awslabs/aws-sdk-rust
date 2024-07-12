@@ -27,8 +27,8 @@ impl GetLabelDetectionRequestMetadata {
 }
 
 /// A builder for [`GetLabelDetectionRequestMetadata`](crate::types::GetLabelDetectionRequestMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLabelDetectionRequestMetadataBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::LabelDetectionSortBy>,
     pub(crate) aggregate_by: ::std::option::Option<crate::types::LabelDetectionAggregateBy>,

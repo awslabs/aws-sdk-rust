@@ -19,8 +19,8 @@ impl DisassociateTrafficDistributionGroupUserOutput {
 }
 
 /// A builder for [`DisassociateTrafficDistributionGroupUserOutput`](crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateTrafficDistributionGroupUserOutputBuilder {
     _request_id: Option<String>,
 }

@@ -20,8 +20,8 @@ impl DeleteMetricAttributionInput {
 }
 
 /// A builder for [`DeleteMetricAttributionInput`](crate::operation::delete_metric_attribution::DeleteMetricAttributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMetricAttributionInputBuilder {
     pub(crate) metric_attribution_arn: ::std::option::Option<::std::string::String>,
 }

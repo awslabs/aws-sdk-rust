@@ -181,8 +181,8 @@ impl CreateUserPoolInput {
 }
 
 /// A builder for [`CreateUserPoolInput`](crate::operation::create_user_pool::CreateUserPoolInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUserPoolInputBuilder {
     pub(crate) pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) policies: ::std::option::Option<crate::types::UserPoolPolicyType>,

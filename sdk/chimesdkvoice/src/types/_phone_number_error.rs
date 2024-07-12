@@ -42,8 +42,8 @@ impl PhoneNumberError {
 }
 
 /// A builder for [`PhoneNumberError`](crate::types::PhoneNumberError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PhoneNumberErrorBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,

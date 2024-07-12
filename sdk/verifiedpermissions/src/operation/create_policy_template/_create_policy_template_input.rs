@@ -54,8 +54,8 @@ impl CreatePolicyTemplateInput {
 }
 
 /// A builder for [`CreatePolicyTemplateInput`](crate::operation::create_policy_template::CreatePolicyTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreatePolicyTemplateInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,

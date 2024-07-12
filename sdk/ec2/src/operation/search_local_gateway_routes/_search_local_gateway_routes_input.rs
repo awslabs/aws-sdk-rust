@@ -78,8 +78,8 @@ impl SearchLocalGatewayRoutesInput {
 }
 
 /// A builder for [`SearchLocalGatewayRoutesInput`](crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchLocalGatewayRoutesInputBuilder {
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

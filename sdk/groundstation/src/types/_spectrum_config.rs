@@ -49,8 +49,8 @@ impl SpectrumConfig {
 }
 
 /// A builder for [`SpectrumConfig`](crate::types::SpectrumConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpectrumConfigBuilder {
     pub(crate) center_frequency: ::std::option::Option<crate::types::Frequency>,
     pub(crate) bandwidth: ::std::option::Option<crate::types::FrequencyBandwidth>,

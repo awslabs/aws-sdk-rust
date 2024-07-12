@@ -99,8 +99,8 @@ impl Stage {
 }
 
 /// A builder for [`Stage`](crate::types::Stage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StageBuilder {
     pub(crate) access_log_settings: ::std::option::Option<crate::types::AccessLogSettings>,
     pub(crate) api_gateway_managed: ::std::option::Option<bool>,

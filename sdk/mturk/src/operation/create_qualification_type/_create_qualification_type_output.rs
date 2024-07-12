@@ -26,8 +26,8 @@ impl CreateQualificationTypeOutput {
 }
 
 /// A builder for [`CreateQualificationTypeOutput`](crate::operation::create_qualification_type::CreateQualificationTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateQualificationTypeOutputBuilder {
     pub(crate) qualification_type: ::std::option::Option<crate::types::QualificationType>,
     _request_id: Option<String>,

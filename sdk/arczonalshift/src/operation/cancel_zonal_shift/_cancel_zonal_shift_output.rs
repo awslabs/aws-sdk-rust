@@ -88,8 +88,8 @@ impl CancelZonalShiftOutput {
 }
 
 /// A builder for [`CancelZonalShiftOutput`](crate::operation::cancel_zonal_shift::CancelZonalShiftOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelZonalShiftOutputBuilder {
     pub(crate) zonal_shift_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,

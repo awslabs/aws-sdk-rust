@@ -26,8 +26,8 @@ impl TestWirelessDeviceOutput {
 }
 
 /// A builder for [`TestWirelessDeviceOutput`](crate::operation::test_wireless_device::TestWirelessDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestWirelessDeviceOutputBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

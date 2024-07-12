@@ -29,8 +29,8 @@ impl DeleteTagsForDomainInput {
 }
 
 /// A builder for [`DeleteTagsForDomainInput`](crate::operation::delete_tags_for_domain::DeleteTagsForDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTagsForDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

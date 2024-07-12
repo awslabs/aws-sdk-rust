@@ -45,8 +45,8 @@ impl DescribeLimitsOutput {
 }
 
 /// A builder for [`DescribeLimitsOutput`](crate::operation::describe_limits::DescribeLimitsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLimitsOutputBuilder {
     pub(crate) account_max_read_capacity_units: ::std::option::Option<i64>,
     pub(crate) account_max_write_capacity_units: ::std::option::Option<i64>,

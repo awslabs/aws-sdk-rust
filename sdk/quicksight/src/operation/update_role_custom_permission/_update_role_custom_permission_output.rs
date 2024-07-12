@@ -32,8 +32,8 @@ impl UpdateRoleCustomPermissionOutput {
 }
 
 /// A builder for [`UpdateRoleCustomPermissionOutput`](crate::operation::update_role_custom_permission::UpdateRoleCustomPermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoleCustomPermissionOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,

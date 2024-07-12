@@ -27,8 +27,8 @@ impl AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails 
 }
 
 /// A builder for [`AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails`](crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetailsBuilder {
     pub(crate) saml_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) self_service_saml_provider_arn: ::std::option::Option<::std::string::String>,

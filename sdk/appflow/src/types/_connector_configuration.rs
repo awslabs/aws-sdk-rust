@@ -231,8 +231,8 @@ impl ConnectorConfiguration {
 }
 
 /// A builder for [`ConnectorConfiguration`](crate::types::ConnectorConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectorConfigurationBuilder {
     pub(crate) can_use_as_source: ::std::option::Option<bool>,
     pub(crate) can_use_as_destination: ::std::option::Option<bool>,

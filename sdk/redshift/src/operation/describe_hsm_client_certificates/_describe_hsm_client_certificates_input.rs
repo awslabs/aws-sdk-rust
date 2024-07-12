@@ -53,8 +53,8 @@ impl DescribeHsmClientCertificatesInput {
 }
 
 /// A builder for [`DescribeHsmClientCertificatesInput`](crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeHsmClientCertificatesInputBuilder {
     pub(crate) hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

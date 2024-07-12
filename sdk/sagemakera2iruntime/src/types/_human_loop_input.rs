@@ -21,8 +21,8 @@ impl HumanLoopInput {
 }
 
 /// A builder for [`HumanLoopInput`](crate::types::HumanLoopInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HumanLoopInputBuilder {
     pub(crate) input_content: ::std::option::Option<::std::string::String>,
 }

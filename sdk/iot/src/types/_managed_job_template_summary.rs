@@ -47,8 +47,8 @@ impl ManagedJobTemplateSummary {
 }
 
 /// A builder for [`ManagedJobTemplateSummary`](crate::types::ManagedJobTemplateSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManagedJobTemplateSummaryBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,

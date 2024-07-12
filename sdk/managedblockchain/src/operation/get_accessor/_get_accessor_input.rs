@@ -20,8 +20,8 @@ impl GetAccessorInput {
 }
 
 /// A builder for [`GetAccessorInput`](crate::operation::get_accessor::GetAccessorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessorInputBuilder {
     pub(crate) accessor_id: ::std::option::Option<::std::string::String>,
 }

@@ -56,8 +56,8 @@ impl PutSessionOutput {
 }
 
 /// A builder for [`PutSessionOutput`](crate::operation::put_session::PutSessionOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSessionOutputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl CoverageMapFilter {
 }
 
 /// A builder for [`CoverageMapFilter`](crate::types::CoverageMapFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoverageMapFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::CoverageMapComparison>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

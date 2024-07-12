@@ -38,8 +38,8 @@ impl ListNodegroupsOutput {
 }
 
 /// A builder for [`ListNodegroupsOutput`](crate::operation::list_nodegroups::ListNodegroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNodegroupsOutputBuilder {
     pub(crate) nodegroups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

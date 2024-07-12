@@ -53,8 +53,8 @@ impl ListReusableDelegationSetsOutput {
 }
 
 /// A builder for [`ListReusableDelegationSetsOutput`](crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReusableDelegationSetsOutputBuilder {
     pub(crate) delegation_sets: ::std::option::Option<::std::vec::Vec<crate::types::DelegationSet>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

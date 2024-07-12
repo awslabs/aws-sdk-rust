@@ -45,8 +45,8 @@ impl DataQualityResultFilterCriteria {
 }
 
 /// A builder for [`DataQualityResultFilterCriteria`](crate::types::DataQualityResultFilterCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataQualityResultFilterCriteriaBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,

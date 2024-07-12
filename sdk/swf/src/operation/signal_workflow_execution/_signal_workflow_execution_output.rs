@@ -18,8 +18,8 @@ impl SignalWorkflowExecutionOutput {
 }
 
 /// A builder for [`SignalWorkflowExecutionOutput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignalWorkflowExecutionOutputBuilder {
     _request_id: Option<String>,
 }

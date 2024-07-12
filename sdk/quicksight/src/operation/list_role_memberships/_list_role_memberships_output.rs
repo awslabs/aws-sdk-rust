@@ -46,8 +46,8 @@ impl ListRoleMembershipsOutput {
 }
 
 /// A builder for [`ListRoleMembershipsOutput`](crate::operation::list_role_memberships::ListRoleMembershipsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRoleMembershipsOutputBuilder {
     pub(crate) members_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

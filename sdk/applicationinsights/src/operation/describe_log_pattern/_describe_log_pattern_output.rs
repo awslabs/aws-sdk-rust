@@ -38,8 +38,8 @@ impl DescribeLogPatternOutput {
 }
 
 /// A builder for [`DescribeLogPatternOutput`](crate::operation::describe_log_pattern::DescribeLogPatternOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLogPatternOutputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

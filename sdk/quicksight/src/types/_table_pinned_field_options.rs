@@ -23,8 +23,8 @@ impl TablePinnedFieldOptions {
 }
 
 /// A builder for [`TablePinnedFieldOptions`](crate::types::TablePinnedFieldOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TablePinnedFieldOptionsBuilder {
     pub(crate) pinned_left_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

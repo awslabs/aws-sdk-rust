@@ -26,8 +26,8 @@ impl DeleteMultiRegionAccessPointOutput {
 }
 
 /// A builder for [`DeleteMultiRegionAccessPointOutput`](crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteMultiRegionAccessPointOutputBuilder {
     pub(crate) request_token_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

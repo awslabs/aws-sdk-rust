@@ -20,8 +20,8 @@ impl DescribeBandwidthRateLimitScheduleInput {
 }
 
 /// A builder for [`DescribeBandwidthRateLimitScheduleInput`](crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBandwidthRateLimitScheduleInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }

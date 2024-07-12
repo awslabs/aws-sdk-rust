@@ -61,8 +61,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsBuilder {
     pub(crate) capabilities: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails>,
     pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails>>,

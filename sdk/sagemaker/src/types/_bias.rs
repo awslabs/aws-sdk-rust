@@ -33,8 +33,8 @@ impl Bias {
 }
 
 /// A builder for [`Bias`](crate::types::Bias).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BiasBuilder {
     pub(crate) report: ::std::option::Option<crate::types::MetricsSource>,
     pub(crate) pre_training_report: ::std::option::Option<crate::types::MetricsSource>,

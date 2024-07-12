@@ -26,8 +26,8 @@ impl DisableImageDeprecationOutput {
 }
 
 /// A builder for [`DisableImageDeprecationOutput`](crate::operation::disable_image_deprecation::DisableImageDeprecationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableImageDeprecationOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

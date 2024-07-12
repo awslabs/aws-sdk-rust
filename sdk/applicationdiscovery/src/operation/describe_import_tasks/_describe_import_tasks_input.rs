@@ -34,8 +34,8 @@ impl DescribeImportTasksInput {
 }
 
 /// A builder for [`DescribeImportTasksInput`](crate::operation::describe_import_tasks::DescribeImportTasksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImportTasksInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ImportTaskFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,

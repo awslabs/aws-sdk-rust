@@ -70,8 +70,8 @@ impl CreateSnapshotsInput {
 }
 
 /// A builder for [`CreateSnapshotsInput`](crate::operation::create_snapshots::CreateSnapshotsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSnapshotsInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) instance_specification: ::std::option::Option<crate::types::InstanceSpecification>,

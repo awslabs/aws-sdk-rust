@@ -26,8 +26,8 @@ impl GetAppAuthorizationOutput {
 }
 
 /// A builder for [`GetAppAuthorizationOutput`](crate::operation::get_app_authorization::GetAppAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppAuthorizationOutputBuilder {
     pub(crate) app_authorization: ::std::option::Option<crate::types::AppAuthorization>,
     _request_id: Option<String>,

@@ -18,8 +18,8 @@ impl SetLoadBasedAutoScalingOutput {
 }
 
 /// A builder for [`SetLoadBasedAutoScalingOutput`](crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetLoadBasedAutoScalingOutputBuilder {
     _request_id: Option<String>,
 }

@@ -67,8 +67,8 @@ impl ValidStorageOptions {
 }
 
 /// A builder for [`ValidStorageOptions`](crate::types::ValidStorageOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidStorageOptionsBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) storage_size: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,

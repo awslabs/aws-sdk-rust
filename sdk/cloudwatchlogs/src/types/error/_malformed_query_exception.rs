@@ -54,8 +54,8 @@ impl MalformedQueryException {
 }
 
 /// A builder for [`MalformedQueryException`](crate::types::error::MalformedQueryException).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MalformedQueryExceptionBuilder {
     pub(crate) query_compile_error: ::std::option::Option<crate::types::QueryCompileError>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl GetDicomImportJobOutput {
 }
 
 /// A builder for [`GetDicomImportJobOutput`](crate::operation::get_dicom_import_job::GetDicomImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDicomImportJobOutputBuilder {
     pub(crate) job_properties: ::std::option::Option<crate::types::DicomImportJobProperties>,
     _request_id: Option<String>,

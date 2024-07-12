@@ -26,8 +26,8 @@ impl GetRateBasedRuleOutput {
 }
 
 /// A builder for [`GetRateBasedRuleOutput`](crate::operation::get_rate_based_rule::GetRateBasedRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRateBasedRuleOutputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::RateBasedRule>,
     _request_id: Option<String>,

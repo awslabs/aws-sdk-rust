@@ -27,8 +27,8 @@ impl ProvisioningArtifactView {
 }
 
 /// A builder for [`ProvisioningArtifactView`](crate::types::ProvisioningArtifactView).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisioningArtifactViewBuilder {
     pub(crate) product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
     pub(crate) provisioning_artifact: ::std::option::Option<crate::types::ProvisioningArtifact>,

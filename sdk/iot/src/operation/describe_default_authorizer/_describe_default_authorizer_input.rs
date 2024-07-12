@@ -11,8 +11,8 @@ impl DescribeDefaultAuthorizerInput {
 }
 
 /// A builder for [`DescribeDefaultAuthorizerInput`](crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDefaultAuthorizerInputBuilder {}
 impl DescribeDefaultAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDefaultAuthorizerInput`](crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerInput).

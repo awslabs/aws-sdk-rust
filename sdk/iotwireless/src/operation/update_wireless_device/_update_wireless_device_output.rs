@@ -18,8 +18,8 @@ impl UpdateWirelessDeviceOutput {
 }
 
 /// A builder for [`UpdateWirelessDeviceOutput`](crate::operation::update_wireless_device::UpdateWirelessDeviceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWirelessDeviceOutputBuilder {
     _request_id: Option<String>,
 }

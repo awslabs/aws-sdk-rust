@@ -28,8 +28,8 @@ impl NewLaunchProfileMember {
 }
 
 /// A builder for [`NewLaunchProfileMember`](crate::types::NewLaunchProfileMember).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NewLaunchProfileMemberBuilder {
     pub(crate) persona: ::std::option::Option<crate::types::LaunchProfilePersona>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl UpdateIndexingConfigurationInput {
 }
 
 /// A builder for [`UpdateIndexingConfigurationInput`](crate::operation::update_indexing_configuration::UpdateIndexingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIndexingConfigurationInputBuilder {
     pub(crate) thing_indexing_configuration: ::std::option::Option<crate::types::ThingIndexingConfiguration>,
     pub(crate) thing_group_indexing_configuration: ::std::option::Option<crate::types::ThingGroupIndexingConfiguration>,

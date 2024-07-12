@@ -20,8 +20,8 @@ impl DeleteDatastoreInput {
 }
 
 /// A builder for [`DeleteDatastoreInput`](crate::operation::delete_datastore::DeleteDatastoreInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDatastoreInputBuilder {
     pub(crate) datastore_name: ::std::option::Option<::std::string::String>,
 }

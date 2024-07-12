@@ -27,8 +27,8 @@ impl SuggestStatus {
 }
 
 /// A builder for [`SuggestStatus`](crate::types::SuggestStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SuggestStatusBuilder {
     pub(crate) timems: ::std::option::Option<i64>,
     pub(crate) rid: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteAlarmModelInput {
 }
 
 /// A builder for [`DeleteAlarmModelInput`](crate::operation::delete_alarm_model::DeleteAlarmModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAlarmModelInputBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
 }

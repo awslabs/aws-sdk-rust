@@ -177,8 +177,8 @@ impl AwsEcsTaskDefinitionDetails {
 }
 
 /// A builder for [`AwsEcsTaskDefinitionDetails`](crate::types::AwsEcsTaskDefinitionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEcsTaskDefinitionDetailsBuilder {
     pub(crate) container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
     pub(crate) cpu: ::std::option::Option<::std::string::String>,

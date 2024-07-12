@@ -29,8 +29,8 @@ impl DescribeElasticIpsOutput {
 }
 
 /// A builder for [`DescribeElasticIpsOutput`](crate::operation::describe_elastic_ips::DescribeElasticIpsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeElasticIpsOutputBuilder {
     pub(crate) elastic_ips: ::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>>,
     _request_id: Option<String>,

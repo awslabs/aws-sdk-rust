@@ -26,8 +26,8 @@ impl UpdateAgentAliasOutput {
 }
 
 /// A builder for [`UpdateAgentAliasOutput`](crate::operation::update_agent_alias::UpdateAgentAliasOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAgentAliasOutputBuilder {
     pub(crate) agent_alias: ::std::option::Option<crate::types::AgentAlias>,
     _request_id: Option<String>,

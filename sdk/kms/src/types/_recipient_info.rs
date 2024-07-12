@@ -28,8 +28,8 @@ impl RecipientInfo {
 }
 
 /// A builder for [`RecipientInfo`](crate::types::RecipientInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecipientInfoBuilder {
     pub(crate) key_encryption_algorithm: ::std::option::Option<crate::types::KeyEncryptionMechanism>,
     pub(crate) attestation_document: ::std::option::Option<::aws_smithy_types::Blob>,

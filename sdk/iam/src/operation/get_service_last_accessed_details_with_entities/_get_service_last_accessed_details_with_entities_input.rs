@@ -43,8 +43,8 @@ impl GetServiceLastAccessedDetailsWithEntitiesInput {
 }
 
 /// A builder for [`GetServiceLastAccessedDetailsWithEntitiesInput`](crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceLastAccessedDetailsWithEntitiesInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_namespace: ::std::option::Option<::std::string::String>,

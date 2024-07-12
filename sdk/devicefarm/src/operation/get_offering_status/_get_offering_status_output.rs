@@ -39,8 +39,8 @@ impl GetOfferingStatusOutput {
 }
 
 /// A builder for [`GetOfferingStatusOutput`](crate::operation::get_offering_status::GetOfferingStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOfferingStatusOutputBuilder {
     pub(crate) current: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>>,
     pub(crate) next_period: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>>,

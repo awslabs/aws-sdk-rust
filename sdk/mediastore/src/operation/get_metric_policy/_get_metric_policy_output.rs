@@ -26,8 +26,8 @@ impl GetMetricPolicyOutput {
 }
 
 /// A builder for [`GetMetricPolicyOutput`](crate::operation::get_metric_policy::GetMetricPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricPolicyOutputBuilder {
     pub(crate) metric_policy: ::std::option::Option<crate::types::MetricPolicy>,
     _request_id: Option<String>,

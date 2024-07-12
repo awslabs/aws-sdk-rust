@@ -34,8 +34,8 @@ impl ListContactFlowsOutput {
 }
 
 /// A builder for [`ListContactFlowsOutput`](crate::operation::list_contact_flows::ListContactFlowsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContactFlowsOutputBuilder {
     pub(crate) contact_flow_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

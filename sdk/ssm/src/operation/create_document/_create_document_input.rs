@@ -150,8 +150,8 @@ impl CreateDocumentInput {
 }
 
 /// A builder for [`CreateDocumentInput`](crate::operation::create_document::CreateDocumentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDocumentInputBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,

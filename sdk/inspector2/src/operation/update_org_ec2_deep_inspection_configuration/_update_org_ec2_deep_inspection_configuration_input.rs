@@ -23,8 +23,8 @@ impl UpdateOrgEc2DeepInspectionConfigurationInput {
 }
 
 /// A builder for [`UpdateOrgEc2DeepInspectionConfigurationInput`](crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOrgEc2DeepInspectionConfigurationInputBuilder {
     pub(crate) org_package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

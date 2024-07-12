@@ -21,8 +21,8 @@ impl UnsupportedTimestamps {
 }
 
 /// A builder for [`UnsupportedTimestamps`](crate::types::UnsupportedTimestamps).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnsupportedTimestampsBuilder {
     pub(crate) total_number_of_unsupported_timestamps: ::std::option::Option<i32>,
 }

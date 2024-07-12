@@ -31,8 +31,8 @@ impl ConversationLogSettings {
 }
 
 /// A builder for [`ConversationLogSettings`](crate::types::ConversationLogSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConversationLogSettingsBuilder {
     pub(crate) text_log_settings: ::std::option::Option<::std::vec::Vec<crate::types::TextLogSetting>>,
     pub(crate) audio_log_settings: ::std::option::Option<::std::vec::Vec<crate::types::AudioLogSetting>>,

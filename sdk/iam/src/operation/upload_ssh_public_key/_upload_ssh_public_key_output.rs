@@ -27,8 +27,8 @@ impl UploadSshPublicKeyOutput {
 }
 
 /// A builder for [`UploadSshPublicKeyOutput`](crate::operation::upload_ssh_public_key::UploadSshPublicKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploadSshPublicKeyOutputBuilder {
     pub(crate) ssh_public_key: ::std::option::Option<crate::types::SshPublicKey>,
     _request_id: Option<String>,

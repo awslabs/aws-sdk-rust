@@ -120,8 +120,8 @@ impl CacheNode {
 }
 
 /// A builder for [`CacheNode`](crate::types::CacheNode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheNodeBuilder {
     pub(crate) cache_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) cache_node_status: ::std::option::Option<::std::string::String>,

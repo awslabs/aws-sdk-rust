@@ -22,8 +22,8 @@ impl DeleteOrganizationalUnitInput {
 }
 
 /// A builder for [`DeleteOrganizationalUnitInput`](crate::operation::delete_organizational_unit::DeleteOrganizationalUnitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOrganizationalUnitInputBuilder {
     pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
 }

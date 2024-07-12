@@ -98,8 +98,8 @@ impl SlackChannelConfiguration {
 }
 
 /// A builder for [`SlackChannelConfiguration`](crate::types::SlackChannelConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlackChannelConfigurationBuilder {
     pub(crate) slack_team_name: ::std::option::Option<::std::string::String>,
     pub(crate) slack_team_id: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ListMediaPipelinesInput {
 }
 
 /// A builder for [`ListMediaPipelinesInput`](crate::operation::list_media_pipelines::ListMediaPipelinesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMediaPipelinesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

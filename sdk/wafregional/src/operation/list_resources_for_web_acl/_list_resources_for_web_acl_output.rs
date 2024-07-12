@@ -28,8 +28,8 @@ impl ListResourcesForWebAclOutput {
 }
 
 /// A builder for [`ListResourcesForWebAclOutput`](crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourcesForWebAclOutputBuilder {
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

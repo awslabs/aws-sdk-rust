@@ -27,8 +27,8 @@ impl OutputConfig {
 }
 
 /// A builder for [`OutputConfig`](crate::types::OutputConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputConfigBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key_prefix: ::std::option::Option<::std::string::String>,

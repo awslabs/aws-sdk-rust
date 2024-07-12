@@ -34,8 +34,8 @@ impl DescribeModelVersionsOutput {
 }
 
 /// A builder for [`DescribeModelVersionsOutput`](crate::operation::describe_model_versions::DescribeModelVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeModelVersionsOutputBuilder {
     pub(crate) model_version_details: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

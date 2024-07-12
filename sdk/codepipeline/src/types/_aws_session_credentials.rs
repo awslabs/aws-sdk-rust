@@ -45,8 +45,8 @@ impl AwsSessionCredentials {
 }
 
 /// A builder for [`AwsSessionCredentials`](crate::types::AwsSessionCredentials).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AwsSessionCredentialsBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_access_key: ::std::option::Option<::std::string::String>,

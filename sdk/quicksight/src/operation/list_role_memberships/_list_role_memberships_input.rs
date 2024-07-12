@@ -44,8 +44,8 @@ impl ListRoleMembershipsInput {
 }
 
 /// A builder for [`ListRoleMembershipsInput`](crate::operation::list_role_memberships::ListRoleMembershipsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRoleMembershipsInputBuilder {
     pub(crate) role: ::std::option::Option<crate::types::Role>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
 }
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesSourcePortsBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,

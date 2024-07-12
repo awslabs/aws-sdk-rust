@@ -32,8 +32,8 @@ impl ListTagsForVaultInput {
 }
 
 /// A builder for [`ListTagsForVaultInput`](crate::operation::list_tags_for_vault::ListTagsForVaultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTagsForVaultInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,

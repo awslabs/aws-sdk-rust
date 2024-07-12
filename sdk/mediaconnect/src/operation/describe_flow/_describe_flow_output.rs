@@ -32,8 +32,8 @@ impl DescribeFlowOutput {
 }
 
 /// A builder for [`DescribeFlowOutput`](crate::operation::describe_flow::DescribeFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFlowOutputBuilder {
     pub(crate) flow: ::std::option::Option<crate::types::Flow>,
     pub(crate) messages: ::std::option::Option<crate::types::Messages>,

@@ -27,8 +27,8 @@ impl UpdateApplicationVersionOutput {
 }
 
 /// A builder for [`UpdateApplicationVersionOutput`](crate::operation::update_application_version::UpdateApplicationVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApplicationVersionOutputBuilder {
     pub(crate) application_version: ::std::option::Option<crate::types::ApplicationVersionDescription>,
     _request_id: Option<String>,

@@ -30,8 +30,8 @@ impl EntityDetails {
 }
 
 /// A builder for [`EntityDetails`](crate::types::EntityDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityDetailsBuilder {
     pub(crate) entity_info: ::std::option::Option<crate::types::EntityInfo>,
     pub(crate) last_authenticated: ::std::option::Option<::aws_smithy_types::DateTime>,

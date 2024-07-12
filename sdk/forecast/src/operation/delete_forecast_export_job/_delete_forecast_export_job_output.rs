@@ -18,8 +18,8 @@ impl DeleteForecastExportJobOutput {
 }
 
 /// A builder for [`DeleteForecastExportJobOutput`](crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteForecastExportJobOutputBuilder {
     _request_id: Option<String>,
 }

@@ -62,8 +62,8 @@ impl GetRandomPasswordInput {
 }
 
 /// A builder for [`GetRandomPasswordInput`](crate::operation::get_random_password::GetRandomPasswordInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRandomPasswordInputBuilder {
     pub(crate) password_length: ::std::option::Option<i64>,
     pub(crate) exclude_characters: ::std::option::Option<::std::string::String>,

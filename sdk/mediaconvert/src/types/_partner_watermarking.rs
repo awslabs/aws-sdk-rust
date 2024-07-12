@@ -21,8 +21,8 @@ impl PartnerWatermarking {
 }
 
 /// A builder for [`PartnerWatermarking`](crate::types::PartnerWatermarking).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PartnerWatermarkingBuilder {
     pub(crate) nexguard_file_marker_settings: ::std::option::Option<crate::types::NexGuardFileMarkerSettings>,
 }

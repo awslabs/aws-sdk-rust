@@ -39,8 +39,8 @@ impl VideoCodecSettings {
 }
 
 /// A builder for [`VideoCodecSettings`](crate::types::VideoCodecSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoCodecSettingsBuilder {
     pub(crate) frame_capture_settings: ::std::option::Option<crate::types::FrameCaptureSettings>,
     pub(crate) h264_settings: ::std::option::Option<crate::types::H264Settings>,

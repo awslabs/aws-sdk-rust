@@ -18,8 +18,8 @@ impl DisassociateEnvironmentOperationsRoleOutput {
 }
 
 /// A builder for [`DisassociateEnvironmentOperationsRoleOutput`](crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateEnvironmentOperationsRoleOutputBuilder {
     _request_id: Option<String>,
 }

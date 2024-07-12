@@ -21,8 +21,8 @@ impl PrioritizeBusinessGoals {
 }
 
 /// A builder for [`PrioritizeBusinessGoals`](crate::types::PrioritizeBusinessGoals).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrioritizeBusinessGoalsBuilder {
     pub(crate) business_goals: ::std::option::Option<crate::types::BusinessGoals>,
 }

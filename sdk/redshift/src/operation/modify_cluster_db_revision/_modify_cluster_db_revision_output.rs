@@ -26,8 +26,8 @@ impl ModifyClusterDbRevisionOutput {
 }
 
 /// A builder for [`ModifyClusterDbRevisionOutput`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyClusterDbRevisionOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

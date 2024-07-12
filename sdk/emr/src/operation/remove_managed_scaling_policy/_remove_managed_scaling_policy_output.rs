@@ -18,8 +18,8 @@ impl RemoveManagedScalingPolicyOutput {
 }
 
 /// A builder for [`RemoveManagedScalingPolicyOutput`](crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveManagedScalingPolicyOutputBuilder {
     _request_id: Option<String>,
 }

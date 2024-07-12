@@ -29,8 +29,8 @@ impl AudienceMedia {
 }
 
 /// A builder for [`AudienceMedia`](crate::types::AudienceMedia).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudienceMediaBuilder {
     pub(crate) audience: ::std::option::Option<::std::string::String>,
     pub(crate) alternate_media: ::std::option::Option<::std::vec::Vec<crate::types::AlternateMedia>>,

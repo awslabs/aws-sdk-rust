@@ -30,8 +30,8 @@ impl DescribeBuildOutput {
 }
 
 /// A builder for [`DescribeBuildOutput`](crate::operation::describe_build::DescribeBuildOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBuildOutputBuilder {
     pub(crate) build_value: ::std::option::Option<crate::types::Build>,
     _request_id: Option<String>,

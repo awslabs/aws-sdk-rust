@@ -38,8 +38,8 @@ impl ListQueuesInput {
 }
 
 /// A builder for [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListQueuesInputBuilder {
     pub(crate) list_by: ::std::option::Option<crate::types::QueueListBy>,
     pub(crate) max_results: ::std::option::Option<i32>,

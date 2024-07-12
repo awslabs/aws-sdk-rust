@@ -62,8 +62,8 @@ impl TestDnsAnswerOutput {
 }
 
 /// A builder for [`TestDnsAnswerOutput`](crate::operation::test_dns_answer::TestDnsAnswerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestDnsAnswerOutputBuilder {
     pub(crate) nameserver: ::std::option::Option<::std::string::String>,
     pub(crate) record_name: ::std::option::Option<::std::string::String>,

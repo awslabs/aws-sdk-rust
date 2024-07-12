@@ -100,8 +100,8 @@ impl DkimAttributes {
 }
 
 /// A builder for [`DkimAttributes`](crate::types::DkimAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DkimAttributesBuilder {
     pub(crate) signing_enabled: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::DkimStatus>,

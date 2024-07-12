@@ -11,8 +11,8 @@ impl DescribeLifecycleHookTypesInput {
 }
 
 /// A builder for [`DescribeLifecycleHookTypesInput`](crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLifecycleHookTypesInputBuilder {}
 impl DescribeLifecycleHookTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLifecycleHookTypesInput`](crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesInput).

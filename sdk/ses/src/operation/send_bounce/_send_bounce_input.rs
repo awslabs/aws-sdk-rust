@@ -53,8 +53,8 @@ impl SendBounceInput {
 }
 
 /// A builder for [`SendBounceInput`](crate::operation::send_bounce::SendBounceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendBounceInputBuilder {
     pub(crate) original_message_id: ::std::option::Option<::std::string::String>,
     pub(crate) bounce_sender: ::std::option::Option<::std::string::String>,

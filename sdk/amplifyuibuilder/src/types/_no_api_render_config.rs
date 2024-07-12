@@ -12,8 +12,8 @@ impl NoApiRenderConfig {
 }
 
 /// A builder for [`NoApiRenderConfig`](crate::types::NoApiRenderConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NoApiRenderConfigBuilder {}
 impl NoApiRenderConfigBuilder {
     /// Consumes the builder and constructs a [`NoApiRenderConfig`](crate::types::NoApiRenderConfig).

@@ -29,8 +29,8 @@ impl MetricGoal {
 }
 
 /// A builder for [`MetricGoal`](crate::types::MetricGoal).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricGoalBuilder {
     pub(crate) metric_definition: ::std::option::Option<crate::types::MetricDefinition>,
     pub(crate) desired_change: ::std::option::Option<crate::types::ChangeDirectionEnum>,

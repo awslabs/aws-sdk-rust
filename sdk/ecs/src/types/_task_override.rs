@@ -77,8 +77,8 @@ impl TaskOverride {
 }
 
 /// A builder for [`TaskOverride`](crate::types::TaskOverride).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskOverrideBuilder {
     pub(crate) container_overrides: ::std::option::Option<::std::vec::Vec<crate::types::ContainerOverride>>,
     pub(crate) cpu: ::std::option::Option<::std::string::String>,

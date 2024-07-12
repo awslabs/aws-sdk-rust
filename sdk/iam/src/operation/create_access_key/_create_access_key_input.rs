@@ -22,8 +22,8 @@ impl CreateAccessKeyInput {
 }
 
 /// A builder for [`CreateAccessKeyInput`](crate::operation::create_access_key::CreateAccessKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessKeyInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
 }

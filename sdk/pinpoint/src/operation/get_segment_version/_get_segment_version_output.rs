@@ -26,8 +26,8 @@ impl GetSegmentVersionOutput {
 }
 
 /// A builder for [`GetSegmentVersionOutput`](crate::operation::get_segment_version::GetSegmentVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSegmentVersionOutputBuilder {
     pub(crate) segment_response: ::std::option::Option<crate::types::SegmentResponse>,
     _request_id: Option<String>,

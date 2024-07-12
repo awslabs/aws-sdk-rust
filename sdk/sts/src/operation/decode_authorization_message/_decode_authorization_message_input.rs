@@ -20,8 +20,8 @@ impl DecodeAuthorizationMessageInput {
 }
 
 /// A builder for [`DecodeAuthorizationMessageInput`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecodeAuthorizationMessageInputBuilder {
     pub(crate) encoded_message: ::std::option::Option<::std::string::String>,
 }

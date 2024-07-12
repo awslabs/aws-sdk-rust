@@ -46,8 +46,8 @@ impl UpdateMedicalVocabularyOutput {
 }
 
 /// A builder for [`UpdateMedicalVocabularyOutput`](crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMedicalVocabularyOutputBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,

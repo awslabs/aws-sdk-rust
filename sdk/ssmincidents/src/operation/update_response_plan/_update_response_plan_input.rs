@@ -128,8 +128,8 @@ impl UpdateResponsePlanInput {
 }
 
 /// A builder for [`UpdateResponsePlanInput`](crate::operation::update_response_plan::UpdateResponsePlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResponsePlanInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

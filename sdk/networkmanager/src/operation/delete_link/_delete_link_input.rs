@@ -26,8 +26,8 @@ impl DeleteLinkInput {
 }
 
 /// A builder for [`DeleteLinkInput`](crate::operation::delete_link::DeleteLinkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLinkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) link_id: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl DeleteProfilingGroupInput {
 }
 
 /// A builder for [`DeleteProfilingGroupInput`](crate::operation::delete_profiling_group::DeleteProfilingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProfilingGroupInputBuilder {
     pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
 }

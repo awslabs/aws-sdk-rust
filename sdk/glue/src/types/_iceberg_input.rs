@@ -27,8 +27,8 @@ impl IcebergInput {
 }
 
 /// A builder for [`IcebergInput`](crate::types::IcebergInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IcebergInputBuilder {
     pub(crate) metadata_operation: ::std::option::Option<crate::types::MetadataOperation>,
     pub(crate) version: ::std::option::Option<::std::string::String>,

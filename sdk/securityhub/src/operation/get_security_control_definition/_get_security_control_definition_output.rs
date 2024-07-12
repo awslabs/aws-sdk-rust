@@ -26,8 +26,8 @@ impl GetSecurityControlDefinitionOutput {
 }
 
 /// A builder for [`GetSecurityControlDefinitionOutput`](crate::operation::get_security_control_definition::GetSecurityControlDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSecurityControlDefinitionOutputBuilder {
     pub(crate) security_control_definition: ::std::option::Option<crate::types::SecurityControlDefinition>,
     _request_id: Option<String>,

@@ -45,8 +45,8 @@ impl HostProperties {
 }
 
 /// A builder for [`HostProperties`](crate::types::HostProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HostPropertiesBuilder {
     pub(crate) cores: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,

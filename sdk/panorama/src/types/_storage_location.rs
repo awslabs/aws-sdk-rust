@@ -50,8 +50,8 @@ impl StorageLocation {
 }
 
 /// A builder for [`StorageLocation`](crate::types::StorageLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageLocationBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) repo_prefix_location: ::std::option::Option<::std::string::String>,

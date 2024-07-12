@@ -53,8 +53,8 @@ impl TransitGatewayConnectPeer {
 }
 
 /// A builder for [`TransitGatewayConnectPeer`](crate::types::TransitGatewayConnectPeer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayConnectPeerBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_connect_peer_id: ::std::option::Option<::std::string::String>,

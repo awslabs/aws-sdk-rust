@@ -26,8 +26,8 @@ impl DeleteRecommendationTemplateInput {
 }
 
 /// A builder for [`DeleteRecommendationTemplateInput`](crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecommendationTemplateInputBuilder {
     pub(crate) recommendation_template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

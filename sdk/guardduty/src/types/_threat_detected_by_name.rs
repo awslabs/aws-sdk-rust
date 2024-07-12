@@ -41,8 +41,8 @@ impl ThreatDetectedByName {
 }
 
 /// A builder for [`ThreatDetectedByName`](crate::types::ThreatDetectedByName).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThreatDetectedByNameBuilder {
     pub(crate) item_count: ::std::option::Option<i32>,
     pub(crate) unique_threat_name_count: ::std::option::Option<i32>,

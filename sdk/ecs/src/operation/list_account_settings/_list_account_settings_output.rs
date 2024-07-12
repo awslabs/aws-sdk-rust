@@ -34,8 +34,8 @@ impl ListAccountSettingsOutput {
 }
 
 /// A builder for [`ListAccountSettingsOutput`](crate::operation::list_account_settings::ListAccountSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAccountSettingsOutputBuilder {
     pub(crate) settings: ::std::option::Option<::std::vec::Vec<crate::types::Setting>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

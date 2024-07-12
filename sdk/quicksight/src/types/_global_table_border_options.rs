@@ -27,8 +27,8 @@ impl GlobalTableBorderOptions {
 }
 
 /// A builder for [`GlobalTableBorderOptions`](crate::types::GlobalTableBorderOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GlobalTableBorderOptionsBuilder {
     pub(crate) uniform_border: ::std::option::Option<crate::types::TableBorderOptions>,
     pub(crate) side_specific_border: ::std::option::Option<crate::types::TableSideBorderOptions>,

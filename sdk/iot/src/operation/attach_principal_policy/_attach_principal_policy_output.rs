@@ -18,8 +18,8 @@ impl AttachPrincipalPolicyOutput {
 }
 
 /// A builder for [`AttachPrincipalPolicyOutput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachPrincipalPolicyOutputBuilder {
     _request_id: Option<String>,
 }

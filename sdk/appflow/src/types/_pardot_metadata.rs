@@ -12,8 +12,8 @@ impl PardotMetadata {
 }
 
 /// A builder for [`PardotMetadata`](crate::types::PardotMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PardotMetadataBuilder {}
 impl PardotMetadataBuilder {
     /// Consumes the builder and constructs a [`PardotMetadata`](crate::types::PardotMetadata).

@@ -39,8 +39,8 @@ impl AnonymousUserEmbeddingExperienceConfiguration {
 }
 
 /// A builder for [`AnonymousUserEmbeddingExperienceConfiguration`](crate::types::AnonymousUserEmbeddingExperienceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnonymousUserEmbeddingExperienceConfigurationBuilder {
     pub(crate) dashboard: ::std::option::Option<crate::types::AnonymousUserDashboardEmbeddingConfiguration>,
     pub(crate) dashboard_visual: ::std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>,

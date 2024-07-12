@@ -96,8 +96,8 @@ impl GetPackageVersionReadmeInput {
 }
 
 /// A builder for [`GetPackageVersionReadmeInput`](crate::operation::get_package_version_readme::GetPackageVersionReadmeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPackageVersionReadmeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

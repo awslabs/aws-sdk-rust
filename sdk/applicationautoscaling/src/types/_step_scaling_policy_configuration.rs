@@ -52,8 +52,8 @@ impl StepScalingPolicyConfiguration {
 }
 
 /// A builder for [`StepScalingPolicyConfiguration`](crate::types::StepScalingPolicyConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepScalingPolicyConfigurationBuilder {
     pub(crate) adjustment_type: ::std::option::Option<crate::types::AdjustmentType>,
     pub(crate) step_adjustments: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,

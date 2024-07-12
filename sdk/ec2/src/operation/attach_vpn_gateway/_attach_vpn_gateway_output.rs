@@ -27,8 +27,8 @@ impl AttachVpnGatewayOutput {
 }
 
 /// A builder for [`AttachVpnGatewayOutput`](crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachVpnGatewayOutputBuilder {
     pub(crate) vpc_attachment: ::std::option::Option<crate::types::VpcAttachment>,
     _request_id: Option<String>,

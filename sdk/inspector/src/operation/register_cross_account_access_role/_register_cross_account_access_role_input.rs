@@ -20,8 +20,8 @@ impl RegisterCrossAccountAccessRoleInput {
 }
 
 /// A builder for [`RegisterCrossAccountAccessRoleInput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterCrossAccountAccessRoleInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }

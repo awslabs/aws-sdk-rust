@@ -53,8 +53,8 @@ impl ModifyDbClusterSnapshotAttributeInput {
 }
 
 /// A builder for [`ModifyDbClusterSnapshotAttributeInput`](crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyDbClusterSnapshotAttributeInputBuilder {
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListCheckDetailsOutput {
 }
 
 /// A builder for [`ListCheckDetailsOutput`](crate::operation::list_check_details::ListCheckDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCheckDetailsOutputBuilder {
     pub(crate) check_details: ::std::option::Option<::std::vec::Vec<crate::types::CheckDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

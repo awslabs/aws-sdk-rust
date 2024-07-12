@@ -26,8 +26,8 @@ impl GetReviewTemplateOutput {
 }
 
 /// A builder for [`GetReviewTemplateOutput`](crate::operation::get_review_template::GetReviewTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReviewTemplateOutputBuilder {
     pub(crate) review_template: ::std::option::Option<crate::types::ReviewTemplate>,
     _request_id: Option<String>,

@@ -20,8 +20,8 @@ impl DescribeBatchLoadTaskInput {
 }
 
 /// A builder for [`DescribeBatchLoadTaskInput`](crate::operation::describe_batch_load_task::DescribeBatchLoadTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBatchLoadTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }

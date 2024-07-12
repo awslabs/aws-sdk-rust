@@ -26,8 +26,8 @@ impl UpdateDeviceMetadataOutput {
 }
 
 /// A builder for [`UpdateDeviceMetadataOutput`](crate::operation::update_device_metadata::UpdateDeviceMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDeviceMetadataOutputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

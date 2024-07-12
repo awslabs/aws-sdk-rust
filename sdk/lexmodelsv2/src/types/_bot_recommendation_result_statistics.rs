@@ -27,8 +27,8 @@ impl BotRecommendationResultStatistics {
 }
 
 /// A builder for [`BotRecommendationResultStatistics`](crate::types::BotRecommendationResultStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BotRecommendationResultStatisticsBuilder {
     pub(crate) intents: ::std::option::Option<crate::types::IntentStatistics>,
     pub(crate) slot_types: ::std::option::Option<crate::types::SlotTypeStatistics>,

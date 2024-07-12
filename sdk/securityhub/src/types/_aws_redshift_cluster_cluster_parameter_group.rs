@@ -35,8 +35,8 @@ impl AwsRedshiftClusterClusterParameterGroup {
 }
 
 /// A builder for [`AwsRedshiftClusterClusterParameterGroup`](crate::types::AwsRedshiftClusterClusterParameterGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRedshiftClusterClusterParameterGroupBuilder {
     pub(crate) cluster_parameter_status_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterStatus>>,
     pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,

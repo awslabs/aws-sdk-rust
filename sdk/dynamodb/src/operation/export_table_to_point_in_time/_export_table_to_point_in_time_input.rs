@@ -100,8 +100,8 @@ impl ExportTableToPointInTimeInput {
 }
 
 /// A builder for [`ExportTableToPointInTimeInput`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportTableToPointInTimeInputBuilder {
     pub(crate) table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) export_time: ::std::option::Option<::aws_smithy_types::DateTime>,

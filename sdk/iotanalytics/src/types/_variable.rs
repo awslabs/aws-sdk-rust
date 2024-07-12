@@ -46,8 +46,8 @@ impl Variable {
 }
 
 /// A builder for [`Variable`](crate::types::Variable).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VariableBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) string_value: ::std::option::Option<::std::string::String>,

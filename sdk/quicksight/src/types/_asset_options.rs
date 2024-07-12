@@ -27,8 +27,8 @@ impl AssetOptions {
 }
 
 /// A builder for [`AssetOptions`](crate::types::AssetOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetOptionsBuilder {
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
     pub(crate) week_start: ::std::option::Option<crate::types::DayOfTheWeek>,

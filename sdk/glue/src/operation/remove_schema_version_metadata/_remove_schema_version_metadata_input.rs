@@ -38,8 +38,8 @@ impl RemoveSchemaVersionMetadataInput {
 }
 
 /// A builder for [`RemoveSchemaVersionMetadataInput`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveSchemaVersionMetadataInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,

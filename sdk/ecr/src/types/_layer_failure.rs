@@ -33,8 +33,8 @@ impl LayerFailure {
 }
 
 /// A builder for [`LayerFailure`](crate::types::LayerFailure).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LayerFailureBuilder {
     pub(crate) layer_digest: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<crate::types::LayerFailureCode>,

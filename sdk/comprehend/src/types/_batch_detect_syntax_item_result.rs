@@ -29,8 +29,8 @@ impl BatchDetectSyntaxItemResult {
 }
 
 /// A builder for [`BatchDetectSyntaxItemResult`](crate::types::BatchDetectSyntaxItemResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDetectSyntaxItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
     pub(crate) syntax_tokens: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>,

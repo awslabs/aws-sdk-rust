@@ -46,8 +46,8 @@ impl ItemSource {
 }
 
 /// A builder for [`ItemSource`](crate::types::ItemSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ItemSourceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) geometry: ::std::option::Option<crate::types::Geometry>,

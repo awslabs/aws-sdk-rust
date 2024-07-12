@@ -60,8 +60,8 @@ impl FarmSummary {
 }
 
 /// A builder for [`FarmSummary`](crate::types::FarmSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FarmSummaryBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

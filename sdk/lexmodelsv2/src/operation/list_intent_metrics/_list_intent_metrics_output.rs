@@ -42,8 +42,8 @@ impl ListIntentMetricsOutput {
 }
 
 /// A builder for [`ListIntentMetricsOutput`](crate::operation::list_intent_metrics::ListIntentMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIntentMetricsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentResult>>,

@@ -20,8 +20,8 @@ impl ManageSparqlStatisticsInput {
 }
 
 /// A builder for [`ManageSparqlStatisticsInput`](crate::operation::manage_sparql_statistics::ManageSparqlStatisticsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ManageSparqlStatisticsInputBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::StatisticsAutoGenerationMode>,
 }

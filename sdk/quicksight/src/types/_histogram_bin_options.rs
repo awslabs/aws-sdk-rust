@@ -39,8 +39,8 @@ impl HistogramBinOptions {
 }
 
 /// A builder for [`HistogramBinOptions`](crate::types::HistogramBinOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HistogramBinOptionsBuilder {
     pub(crate) selected_bin_type: ::std::option::Option<crate::types::HistogramBinType>,
     pub(crate) bin_count: ::std::option::Option<crate::types::BinCountOptions>,

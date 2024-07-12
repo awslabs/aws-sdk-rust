@@ -26,8 +26,8 @@ impl DisconnectParticipantInput {
 }
 
 /// A builder for [`DisconnectParticipantInput`](crate::operation::disconnect_participant::DisconnectParticipantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisconnectParticipantInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) connection_token: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl CreateResourceDataSyncInput {
 }
 
 /// A builder for [`CreateResourceDataSyncInput`](crate::operation::create_resource_data_sync::CreateResourceDataSyncInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateResourceDataSyncInputBuilder {
     pub(crate) sync_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_destination: ::std::option::Option<crate::types::ResourceDataSyncS3Destination>,

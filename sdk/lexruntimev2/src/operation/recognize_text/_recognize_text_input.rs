@@ -71,8 +71,8 @@ impl RecognizeTextInput {
 }
 
 /// A builder for [`RecognizeTextInput`](crate::operation::recognize_text::RecognizeTextInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RecognizeTextInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,

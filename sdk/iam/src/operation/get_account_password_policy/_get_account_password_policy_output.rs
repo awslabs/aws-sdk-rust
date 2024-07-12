@@ -27,8 +27,8 @@ impl GetAccountPasswordPolicyOutput {
 }
 
 /// A builder for [`GetAccountPasswordPolicyOutput`](crate::operation::get_account_password_policy::GetAccountPasswordPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccountPasswordPolicyOutputBuilder {
     pub(crate) password_policy: ::std::option::Option<crate::types::PasswordPolicy>,
     _request_id: Option<String>,

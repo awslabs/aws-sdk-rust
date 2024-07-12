@@ -34,8 +34,8 @@ impl PrepareQueryInput {
 }
 
 /// A builder for [`PrepareQueryInput`](crate::operation::prepare_query::PrepareQueryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PrepareQueryInputBuilder {
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) validate_only: ::std::option::Option<bool>,

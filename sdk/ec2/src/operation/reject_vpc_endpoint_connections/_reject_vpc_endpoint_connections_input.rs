@@ -34,8 +34,8 @@ impl RejectVpcEndpointConnectionsInput {
 }
 
 /// A builder for [`RejectVpcEndpointConnectionsInput`](crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectVpcEndpointConnectionsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,

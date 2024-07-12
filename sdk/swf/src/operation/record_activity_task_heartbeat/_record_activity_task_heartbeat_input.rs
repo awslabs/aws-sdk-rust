@@ -30,8 +30,8 @@ impl RecordActivityTaskHeartbeatInput {
 }
 
 /// A builder for [`RecordActivityTaskHeartbeatInput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordActivityTaskHeartbeatInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,

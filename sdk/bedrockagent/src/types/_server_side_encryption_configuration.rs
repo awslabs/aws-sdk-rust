@@ -21,8 +21,8 @@ impl ServerSideEncryptionConfiguration {
 }
 
 /// A builder for [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServerSideEncryptionConfigurationBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }

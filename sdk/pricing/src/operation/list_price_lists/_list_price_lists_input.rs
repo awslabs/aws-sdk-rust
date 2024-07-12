@@ -54,8 +54,8 @@ impl ListPriceListsInput {
 }
 
 /// A builder for [`ListPriceListsInput`](crate::operation::list_price_lists::ListPriceListsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPriceListsInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) effective_date: ::std::option::Option<::aws_smithy_types::DateTime>,

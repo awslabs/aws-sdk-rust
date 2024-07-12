@@ -26,8 +26,8 @@ impl UpdateOutpostOutput {
 }
 
 /// A builder for [`UpdateOutpostOutput`](crate::operation::update_outpost::UpdateOutpostOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOutpostOutputBuilder {
     pub(crate) outpost: ::std::option::Option<crate::types::Outpost>,
     _request_id: Option<String>,

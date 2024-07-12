@@ -93,8 +93,8 @@ impl DescribeTransitGatewayPeeringAttachmentsInput {
 }
 
 /// A builder for [`DescribeTransitGatewayPeeringAttachmentsInput`](crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransitGatewayPeeringAttachmentsInputBuilder {
     pub(crate) transit_gateway_attachment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

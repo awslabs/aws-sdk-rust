@@ -39,8 +39,8 @@ impl UpdatePackageInput {
 }
 
 /// A builder for [`UpdatePackageInput`](crate::operation::update_package::UpdatePackageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePackageInputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) package_source: ::std::option::Option<crate::types::PackageSource>,

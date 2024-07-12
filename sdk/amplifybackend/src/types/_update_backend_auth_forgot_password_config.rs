@@ -42,8 +42,8 @@ impl UpdateBackendAuthForgotPasswordConfig {
 }
 
 /// A builder for [`UpdateBackendAuthForgotPasswordConfig`](crate::types::UpdateBackendAuthForgotPasswordConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateBackendAuthForgotPasswordConfigBuilder {
     pub(crate) delivery_method: ::std::option::Option<crate::types::DeliveryMethod>,
     pub(crate) email_settings: ::std::option::Option<crate::types::EmailSettings>,

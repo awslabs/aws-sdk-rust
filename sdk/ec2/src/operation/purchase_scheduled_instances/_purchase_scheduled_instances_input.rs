@@ -35,8 +35,8 @@ impl PurchaseScheduledInstancesInput {
 }
 
 /// A builder for [`PurchaseScheduledInstancesInput`](crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PurchaseScheduledInstancesInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

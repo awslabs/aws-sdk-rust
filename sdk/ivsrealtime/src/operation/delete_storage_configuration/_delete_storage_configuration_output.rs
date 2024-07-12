@@ -18,8 +18,8 @@ impl DeleteStorageConfigurationOutput {
 }
 
 /// A builder for [`DeleteStorageConfigurationOutput`](crate::operation::delete_storage_configuration::DeleteStorageConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStorageConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

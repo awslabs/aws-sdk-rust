@@ -26,8 +26,8 @@ impl RegisterAdminInput {
 }
 
 /// A builder for [`RegisterAdminInput`](crate::operation::register_admin::RegisterAdminInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterAdminInputBuilder {
     pub(crate) space_id: ::std::option::Option<::std::string::String>,
     pub(crate) admin_id: ::std::option::Option<::std::string::String>,

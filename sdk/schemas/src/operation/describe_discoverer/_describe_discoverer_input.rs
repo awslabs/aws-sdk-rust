@@ -20,8 +20,8 @@ impl DescribeDiscovererInput {
 }
 
 /// A builder for [`DescribeDiscovererInput`](crate::operation::describe_discoverer::DescribeDiscovererInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDiscovererInputBuilder {
     pub(crate) discoverer_id: ::std::option::Option<::std::string::String>,
 }

@@ -34,8 +34,8 @@ impl CreateUsageReportSubscriptionOutput {
 }
 
 /// A builder for [`CreateUsageReportSubscriptionOutput`](crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUsageReportSubscriptionOutputBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) schedule: ::std::option::Option<crate::types::UsageReportSchedule>,

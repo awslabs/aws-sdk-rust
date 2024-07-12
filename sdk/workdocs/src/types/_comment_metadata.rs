@@ -51,8 +51,8 @@ impl CommentMetadata {
 }
 
 /// A builder for [`CommentMetadata`](crate::types::CommentMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CommentMetadataBuilder {
     pub(crate) comment_id: ::std::option::Option<::std::string::String>,
     pub(crate) contributor: ::std::option::Option<crate::types::User>,

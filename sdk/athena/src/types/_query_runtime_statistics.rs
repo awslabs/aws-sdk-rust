@@ -33,8 +33,8 @@ impl QueryRuntimeStatistics {
 }
 
 /// A builder for [`QueryRuntimeStatistics`](crate::types::QueryRuntimeStatistics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryRuntimeStatisticsBuilder {
     pub(crate) timeline: ::std::option::Option<crate::types::QueryRuntimeStatisticsTimeline>,
     pub(crate) rows: ::std::option::Option<crate::types::QueryRuntimeStatisticsRows>,

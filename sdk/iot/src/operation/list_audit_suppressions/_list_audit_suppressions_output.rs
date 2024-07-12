@@ -34,8 +34,8 @@ impl ListAuditSuppressionsOutput {
 }
 
 /// A builder for [`ListAuditSuppressionsOutput`](crate::operation::list_audit_suppressions::ListAuditSuppressionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAuditSuppressionsOutputBuilder {
     pub(crate) suppressions: ::std::option::Option<::std::vec::Vec<crate::types::AuditSuppression>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

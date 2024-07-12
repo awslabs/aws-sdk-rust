@@ -34,8 +34,8 @@ impl ListAlarmModelVersionsOutput {
 }
 
 /// A builder for [`ListAlarmModelVersionsOutput`](crate::operation::list_alarm_model_versions::ListAlarmModelVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAlarmModelVersionsOutputBuilder {
     pub(crate) alarm_model_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AlarmModelVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

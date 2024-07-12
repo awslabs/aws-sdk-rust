@@ -81,8 +81,8 @@ impl InsertableImage {
 }
 
 /// A builder for [`InsertableImage`](crate::types::InsertableImage).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsertableImageBuilder {
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) fade_in: ::std::option::Option<i32>,

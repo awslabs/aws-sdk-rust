@@ -20,8 +20,8 @@ impl GetIngressPointInput {
 }
 
 /// A builder for [`GetIngressPointInput`](crate::operation::get_ingress_point::GetIngressPointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIngressPointInputBuilder {
     pub(crate) ingress_point_id: ::std::option::Option<::std::string::String>,
 }

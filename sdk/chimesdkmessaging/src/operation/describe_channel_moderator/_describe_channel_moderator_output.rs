@@ -26,8 +26,8 @@ impl DescribeChannelModeratorOutput {
 }
 
 /// A builder for [`DescribeChannelModeratorOutput`](crate::operation::describe_channel_moderator::DescribeChannelModeratorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeChannelModeratorOutputBuilder {
     pub(crate) channel_moderator: ::std::option::Option<crate::types::ChannelModerator>,
     _request_id: Option<String>,

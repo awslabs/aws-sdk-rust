@@ -33,8 +33,8 @@ impl ExplainabilityConfig {
 }
 
 /// A builder for [`ExplainabilityConfig`](crate::types::ExplainabilityConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExplainabilityConfigBuilder {
     pub(crate) time_series_granularity: ::std::option::Option<crate::types::TimeSeriesGranularity>,
     pub(crate) time_point_granularity: ::std::option::Option<crate::types::TimePointGranularity>,

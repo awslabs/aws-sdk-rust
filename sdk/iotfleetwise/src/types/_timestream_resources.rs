@@ -29,8 +29,8 @@ impl TimestreamResources {
 }
 
 /// A builder for [`TimestreamResources`](crate::types::TimestreamResources).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimestreamResourcesBuilder {
     pub(crate) timestream_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) timestream_table_name: ::std::option::Option<::std::string::String>,

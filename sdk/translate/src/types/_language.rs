@@ -29,8 +29,8 @@ impl Language {
 }
 
 /// A builder for [`Language`](crate::types::Language).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LanguageBuilder {
     pub(crate) language_name: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,

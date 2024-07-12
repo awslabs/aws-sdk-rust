@@ -48,8 +48,8 @@ impl ListOrganizationInsightsInput {
 }
 
 /// A builder for [`ListOrganizationInsightsInput`](crate::operation::list_organization_insights::ListOrganizationInsightsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOrganizationInsightsInputBuilder {
     pub(crate) status_filter: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
     pub(crate) max_results: ::std::option::Option<i32>,

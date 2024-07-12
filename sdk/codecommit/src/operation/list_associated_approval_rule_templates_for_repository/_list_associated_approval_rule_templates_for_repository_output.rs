@@ -34,8 +34,8 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
 }
 
 /// A builder for [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociatedApprovalRuleTemplatesForRepositoryOutputBuilder {
     pub(crate) approval_rule_template_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

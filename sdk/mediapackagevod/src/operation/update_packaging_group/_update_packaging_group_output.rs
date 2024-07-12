@@ -68,8 +68,8 @@ impl UpdatePackagingGroupOutput {
 }
 
 /// A builder for [`UpdatePackagingGroupOutput`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePackagingGroupOutputBuilder {
     pub(crate) approximate_asset_count: ::std::option::Option<i32>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

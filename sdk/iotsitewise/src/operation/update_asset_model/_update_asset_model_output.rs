@@ -26,8 +26,8 @@ impl UpdateAssetModelOutput {
 }
 
 /// A builder for [`UpdateAssetModelOutput`](crate::operation::update_asset_model::UpdateAssetModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAssetModelOutputBuilder {
     pub(crate) asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     _request_id: Option<String>,

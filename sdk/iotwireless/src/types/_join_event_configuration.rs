@@ -27,8 +27,8 @@ impl JoinEventConfiguration {
 }
 
 /// A builder for [`JoinEventConfiguration`](crate::types::JoinEventConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JoinEventConfigurationBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanJoinEventNotificationConfigurations>,
     pub(crate) wireless_device_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,

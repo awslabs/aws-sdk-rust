@@ -18,8 +18,8 @@ impl UpdateResourcePositionOutput {
 }
 
 /// A builder for [`UpdateResourcePositionOutput`](crate::operation::update_resource_position::UpdateResourcePositionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateResourcePositionOutputBuilder {
     _request_id: Option<String>,
 }

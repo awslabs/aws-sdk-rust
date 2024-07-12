@@ -18,8 +18,8 @@ impl SetInstanceProtectionOutput {
 }
 
 /// A builder for [`SetInstanceProtectionOutput`](crate::operation::set_instance_protection::SetInstanceProtectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetInstanceProtectionOutputBuilder {
     _request_id: Option<String>,
 }

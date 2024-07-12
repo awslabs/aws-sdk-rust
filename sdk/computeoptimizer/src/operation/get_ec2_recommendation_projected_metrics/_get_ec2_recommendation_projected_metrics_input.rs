@@ -50,8 +50,8 @@ impl GetEc2RecommendationProjectedMetricsInput {
 }
 
 /// A builder for [`GetEc2RecommendationProjectedMetricsInput`](crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEc2RecommendationProjectedMetricsInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stat: ::std::option::Option<crate::types::MetricStatistic>,

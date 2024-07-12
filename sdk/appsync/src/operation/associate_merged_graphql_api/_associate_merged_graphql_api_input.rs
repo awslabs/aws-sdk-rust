@@ -38,8 +38,8 @@ impl AssociateMergedGraphqlApiInput {
 }
 
 /// A builder for [`AssociateMergedGraphqlApiInput`](crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateMergedGraphqlApiInputBuilder {
     pub(crate) source_api_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) merged_api_identifier: ::std::option::Option<::std::string::String>,

@@ -11,8 +11,8 @@ impl ListSamlProvidersInput {
 }
 
 /// A builder for [`ListSamlProvidersInput`](crate::operation::list_saml_providers::ListSamlProvidersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSamlProvidersInputBuilder {}
 impl ListSamlProvidersInputBuilder {
     /// Consumes the builder and constructs a [`ListSamlProvidersInput`](crate::operation::list_saml_providers::ListSamlProvidersInput).

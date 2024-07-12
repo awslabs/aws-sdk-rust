@@ -39,8 +39,8 @@ impl VirtualGatewayListener {
 }
 
 /// A builder for [`VirtualGatewayListener`](crate::types::VirtualGatewayListener).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualGatewayListenerBuilder {
     pub(crate) health_check: ::std::option::Option<crate::types::VirtualGatewayHealthCheckPolicy>,
     pub(crate) port_mapping: ::std::option::Option<crate::types::VirtualGatewayPortMapping>,

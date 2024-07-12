@@ -47,8 +47,8 @@ impl CachePolicyQueryStringsConfig {
 }
 
 /// A builder for [`CachePolicyQueryStringsConfig`](crate::types::CachePolicyQueryStringsConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CachePolicyQueryStringsConfigBuilder {
     pub(crate) query_string_behavior: ::std::option::Option<crate::types::CachePolicyQueryStringBehavior>,
     pub(crate) query_strings: ::std::option::Option<crate::types::QueryStringNames>,

@@ -34,8 +34,8 @@ impl ListGatewayInstancesOutput {
 }
 
 /// A builder for [`ListGatewayInstancesOutput`](crate::operation::list_gateway_instances::ListGatewayInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGatewayInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

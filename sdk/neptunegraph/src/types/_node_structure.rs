@@ -37,8 +37,8 @@ impl NodeStructure {
 }
 
 /// A builder for [`NodeStructure`](crate::types::NodeStructure).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NodeStructureBuilder {
     pub(crate) count: ::std::option::Option<i64>,
     pub(crate) node_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

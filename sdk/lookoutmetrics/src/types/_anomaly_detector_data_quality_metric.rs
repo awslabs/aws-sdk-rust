@@ -29,8 +29,8 @@ impl AnomalyDetectorDataQualityMetric {
 }
 
 /// A builder for [`AnomalyDetectorDataQualityMetric`](crate::types::AnomalyDetectorDataQualityMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnomalyDetectorDataQualityMetricBuilder {
     pub(crate) start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) metric_set_data_quality_metric_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDataQualityMetric>>,

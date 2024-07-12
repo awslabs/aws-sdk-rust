@@ -21,8 +21,8 @@ impl DeleteConnectInstanceConfigInput {
 }
 
 /// A builder for [`DeleteConnectInstanceConfigInput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConnectInstanceConfigInputBuilder {
     pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
 }

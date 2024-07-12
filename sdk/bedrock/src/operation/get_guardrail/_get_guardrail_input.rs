@@ -26,8 +26,8 @@ impl GetGuardrailInput {
 }
 
 /// A builder for [`GetGuardrailInput`](crate::operation::get_guardrail::GetGuardrailInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGuardrailInputBuilder {
     pub(crate) guardrail_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) guardrail_version: ::std::option::Option<::std::string::String>,

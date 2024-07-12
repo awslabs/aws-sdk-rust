@@ -20,8 +20,8 @@ impl DeleteSnapshotCopyConfigurationInput {
 }
 
 /// A builder for [`DeleteSnapshotCopyConfigurationInput`](crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSnapshotCopyConfigurationInputBuilder {
     pub(crate) snapshot_copy_configuration_id: ::std::option::Option<::std::string::String>,
 }

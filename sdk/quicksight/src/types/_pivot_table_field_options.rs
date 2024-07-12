@@ -39,8 +39,8 @@ impl PivotTableFieldOptions {
 }
 
 /// A builder for [`PivotTableFieldOptions`](crate::types::PivotTableFieldOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PivotTableFieldOptionsBuilder {
     pub(crate) selected_field_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldOption>>,
     pub(crate) data_path_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableDataPathOption>>,

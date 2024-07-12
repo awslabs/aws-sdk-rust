@@ -34,8 +34,8 @@ impl DescribeIntegrationsOutput {
 }
 
 /// A builder for [`DescribeIntegrationsOutput`](crate::operation::describe_integrations::DescribeIntegrationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIntegrationsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,

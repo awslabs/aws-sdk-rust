@@ -47,8 +47,8 @@ impl DisassociateCustomDomainOutput {
 }
 
 /// A builder for [`DisassociateCustomDomainOutput`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateCustomDomainOutputBuilder {
     pub(crate) dns_target: ::std::option::Option<::std::string::String>,
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,

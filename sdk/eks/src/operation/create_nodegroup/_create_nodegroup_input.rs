@@ -130,8 +130,8 @@ impl CreateNodegroupInput {
 }
 
 /// A builder for [`CreateNodegroupInput`](crate::operation::create_nodegroup::CreateNodegroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateNodegroupInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) nodegroup_name: ::std::option::Option<::std::string::String>,

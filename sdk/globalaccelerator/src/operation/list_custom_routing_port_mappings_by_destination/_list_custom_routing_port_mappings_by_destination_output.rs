@@ -36,8 +36,8 @@ impl ListCustomRoutingPortMappingsByDestinationOutput {
 }
 
 /// A builder for [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCustomRoutingPortMappingsByDestinationOutputBuilder {
     pub(crate) destination_port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

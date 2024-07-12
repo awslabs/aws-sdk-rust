@@ -27,8 +27,8 @@ impl ElicitationCodeHookInvocationSetting {
 }
 
 /// A builder for [`ElicitationCodeHookInvocationSetting`](crate::types::ElicitationCodeHookInvocationSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ElicitationCodeHookInvocationSettingBuilder {
     pub(crate) enable_code_hook_invocation: ::std::option::Option<bool>,
     pub(crate) invocation_label: ::std::option::Option<::std::string::String>,

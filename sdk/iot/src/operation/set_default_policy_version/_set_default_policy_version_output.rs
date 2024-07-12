@@ -18,8 +18,8 @@ impl SetDefaultPolicyVersionOutput {
 }
 
 /// A builder for [`SetDefaultPolicyVersionOutput`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetDefaultPolicyVersionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,8 +18,8 @@ impl DeleteDbSubnetGroupOutput {
 }
 
 /// A builder for [`DeleteDbSubnetGroupOutput`](crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbSubnetGroupOutputBuilder {
     _request_id: Option<String>,
 }

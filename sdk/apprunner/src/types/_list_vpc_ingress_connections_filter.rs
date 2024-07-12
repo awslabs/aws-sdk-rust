@@ -27,8 +27,8 @@ impl ListVpcIngressConnectionsFilter {
 }
 
 /// A builder for [`ListVpcIngressConnectionsFilter`](crate::types::ListVpcIngressConnectionsFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVpcIngressConnectionsFilterBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,

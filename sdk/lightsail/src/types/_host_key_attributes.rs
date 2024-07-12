@@ -95,8 +95,8 @@ impl HostKeyAttributes {
 }
 
 /// A builder for [`HostKeyAttributes`](crate::types::HostKeyAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HostKeyAttributesBuilder {
     pub(crate) algorithm: ::std::option::Option<::std::string::String>,
     pub(crate) public_key: ::std::option::Option<::std::string::String>,

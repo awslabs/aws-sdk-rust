@@ -26,8 +26,8 @@ impl UpdateSmsChannelOutput {
 }
 
 /// A builder for [`UpdateSmsChannelOutput`](crate::operation::update_sms_channel::UpdateSmsChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSmsChannelOutputBuilder {
     pub(crate) sms_channel_response: ::std::option::Option<crate::types::SmsChannelResponse>,
     _request_id: Option<String>,

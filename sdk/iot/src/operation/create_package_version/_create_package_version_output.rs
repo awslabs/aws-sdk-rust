@@ -76,8 +76,8 @@ impl CreatePackageVersionOutput {
 }
 
 /// A builder for [`CreatePackageVersionOutput`](crate::operation::create_package_version::CreatePackageVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreatePackageVersionOutputBuilder {
     pub(crate) package_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) package_name: ::std::option::Option<::std::string::String>,

@@ -59,8 +59,8 @@ impl ReviewTemplateSummary {
 }
 
 /// A builder for [`ReviewTemplateSummary`](crate::types::ReviewTemplateSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReviewTemplateSummaryBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

@@ -28,8 +28,8 @@ impl GetDataLakeOrganizationConfigurationOutput {
 }
 
 /// A builder for [`GetDataLakeOrganizationConfigurationOutput`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataLakeOrganizationConfigurationOutputBuilder {
     pub(crate) auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
     _request_id: Option<String>,

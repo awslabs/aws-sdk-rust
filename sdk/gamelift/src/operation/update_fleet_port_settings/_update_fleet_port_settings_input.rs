@@ -36,8 +36,8 @@ impl UpdateFleetPortSettingsInput {
 }
 
 /// A builder for [`UpdateFleetPortSettingsInput`](crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFleetPortSettingsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) inbound_permission_authorizations: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,

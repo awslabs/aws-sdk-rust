@@ -31,8 +31,8 @@ impl FilterCriterion {
 }
 
 /// A builder for [`FilterCriterion`](crate::types::FilterCriterion).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterCriterionBuilder {
     pub(crate) criterion_key: ::std::option::Option<crate::types::CriterionKey>,
     pub(crate) filter_condition: ::std::option::Option<crate::types::FilterCondition>,

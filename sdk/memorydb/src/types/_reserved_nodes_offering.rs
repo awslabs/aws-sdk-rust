@@ -53,8 +53,8 @@ impl ReservedNodesOffering {
 }
 
 /// A builder for [`ReservedNodesOffering`](crate::types::ReservedNodesOffering).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservedNodesOfferingBuilder {
     pub(crate) reserved_nodes_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,

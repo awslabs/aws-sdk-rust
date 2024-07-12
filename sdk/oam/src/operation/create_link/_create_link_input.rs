@@ -70,8 +70,8 @@ impl CreateLinkInput {
 }
 
 /// A builder for [`CreateLinkInput`](crate::operation::create_link::CreateLinkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLinkInputBuilder {
     pub(crate) label_template: ::std::option::Option<::std::string::String>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,

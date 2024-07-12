@@ -34,8 +34,8 @@ impl ListLinuxSubscriptionInstancesOutput {
 }
 
 /// A builder for [`ListLinuxSubscriptionInstancesOutput`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListLinuxSubscriptionInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

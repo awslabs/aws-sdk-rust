@@ -20,8 +20,8 @@ impl DeleteRecordingConfigurationInput {
 }
 
 /// A builder for [`DeleteRecordingConfigurationInput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRecordingConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

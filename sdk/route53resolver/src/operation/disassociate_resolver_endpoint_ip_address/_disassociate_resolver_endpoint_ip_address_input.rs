@@ -26,8 +26,8 @@ impl DisassociateResolverEndpointIpAddressInput {
 }
 
 /// A builder for [`DisassociateResolverEndpointIpAddressInput`](crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateResolverEndpointIpAddressInputBuilder {
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<crate::types::IpAddressUpdate>,

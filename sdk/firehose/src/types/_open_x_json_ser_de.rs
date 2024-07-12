@@ -35,8 +35,8 @@ impl OpenXJsonSerDe {
 }
 
 /// A builder for [`OpenXJsonSerDe`](crate::types::OpenXJsonSerDe).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpenXJsonSerDeBuilder {
     pub(crate) convert_dots_in_json_keys_to_underscores: ::std::option::Option<bool>,
     pub(crate) case_insensitive: ::std::option::Option<bool>,

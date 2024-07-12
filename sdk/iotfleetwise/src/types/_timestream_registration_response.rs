@@ -53,8 +53,8 @@ impl TimestreamRegistrationResponse {
 }
 
 /// A builder for [`TimestreamRegistrationResponse`](crate::types::TimestreamRegistrationResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimestreamRegistrationResponseBuilder {
     pub(crate) timestream_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) timestream_table_name: ::std::option::Option<::std::string::String>,

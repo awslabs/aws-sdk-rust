@@ -34,8 +34,8 @@ impl DescribeLocalGatewayVirtualInterfacesOutput {
 }
 
 /// A builder for [`DescribeLocalGatewayVirtualInterfacesOutput`](crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocalGatewayVirtualInterfacesOutputBuilder {
     pub(crate) local_gateway_virtual_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::LocalGatewayVirtualInterface>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

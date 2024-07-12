@@ -77,8 +77,8 @@ impl Notification {
 }
 
 /// A builder for [`Notification`](crate::types::Notification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct NotificationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,

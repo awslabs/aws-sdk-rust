@@ -48,8 +48,8 @@ impl DescribeIpamResourceDiscoveriesInput {
 }
 
 /// A builder for [`DescribeIpamResourceDiscoveriesInput`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeIpamResourceDiscoveriesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_resource_discovery_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

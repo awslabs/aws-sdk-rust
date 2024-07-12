@@ -35,8 +35,8 @@ impl TrustedKeyGroups {
 }
 
 /// A builder for [`TrustedKeyGroups`](crate::types::TrustedKeyGroups).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrustedKeyGroupsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,

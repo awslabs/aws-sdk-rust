@@ -41,8 +41,8 @@ impl AwsWafRegionalRuleGroupDetails {
 }
 
 /// A builder for [`AwsWafRegionalRuleGroupDetails`](crate::types::AwsWafRegionalRuleGroupDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafRegionalRuleGroupDetailsBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

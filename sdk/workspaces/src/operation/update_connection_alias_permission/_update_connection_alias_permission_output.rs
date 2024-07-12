@@ -18,8 +18,8 @@ impl UpdateConnectionAliasPermissionOutput {
 }
 
 /// A builder for [`UpdateConnectionAliasPermissionOutput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateConnectionAliasPermissionOutputBuilder {
     _request_id: Option<String>,
 }

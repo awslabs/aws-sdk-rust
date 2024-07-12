@@ -27,8 +27,8 @@ impl ListSubscriptionsByTopicInput {
 }
 
 /// A builder for [`ListSubscriptionsByTopicInput`](crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSubscriptionsByTopicInputBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

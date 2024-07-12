@@ -28,8 +28,8 @@ impl StopInstancesOutput {
 }
 
 /// A builder for [`StopInstancesOutput`](crate::operation::stop_instances::StopInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopInstancesOutputBuilder {
     pub(crate) stopping_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,

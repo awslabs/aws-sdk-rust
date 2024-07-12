@@ -22,8 +22,8 @@ impl DatabaseLfTagPolicy {
 }
 
 /// A builder for [`DatabaseLfTagPolicy`](crate::types::DatabaseLfTagPolicy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatabaseLfTagPolicyBuilder {
     pub(crate) expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
 }

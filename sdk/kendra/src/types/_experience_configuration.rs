@@ -27,8 +27,8 @@ impl ExperienceConfiguration {
 }
 
 /// A builder for [`ExperienceConfiguration`](crate::types::ExperienceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExperienceConfigurationBuilder {
     pub(crate) content_source_configuration: ::std::option::Option<crate::types::ContentSourceConfiguration>,
     pub(crate) user_identity_configuration: ::std::option::Option<crate::types::UserIdentityConfiguration>,

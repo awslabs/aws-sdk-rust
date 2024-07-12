@@ -18,8 +18,8 @@ impl DeleteClientBrandingOutput {
 }
 
 /// A builder for [`DeleteClientBrandingOutput`](crate::operation::delete_client_branding::DeleteClientBrandingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteClientBrandingOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl PutRegistryCatalogDataOutput {
 }
 
 /// A builder for [`PutRegistryCatalogDataOutput`](crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRegistryCatalogDataOutputBuilder {
     pub(crate) registry_catalog_data: ::std::option::Option<crate::types::RegistryCatalogData>,
     _request_id: Option<String>,

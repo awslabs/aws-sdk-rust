@@ -18,8 +18,8 @@ impl DisassociateBudgetFromResourceOutput {
 }
 
 /// A builder for [`DisassociateBudgetFromResourceOutput`](crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateBudgetFromResourceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -21,8 +21,8 @@ impl AuthChallengeResponse {
 }
 
 /// A builder for [`AuthChallengeResponse`](crate::types::AuthChallengeResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthChallengeResponseBuilder {
     pub(crate) response_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }

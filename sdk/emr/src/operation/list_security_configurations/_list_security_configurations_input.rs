@@ -20,8 +20,8 @@ impl ListSecurityConfigurationsInput {
 }
 
 /// A builder for [`ListSecurityConfigurationsInput`](crate::operation::list_security_configurations::ListSecurityConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSecurityConfigurationsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }

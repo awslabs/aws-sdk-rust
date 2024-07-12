@@ -38,8 +38,8 @@ impl GetMetricDataOutput {
 }
 
 /// A builder for [`GetMetricDataOutput`](crate::operation::get_metric_data::GetMetricDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricDataOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) metric_results: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricResult>>,

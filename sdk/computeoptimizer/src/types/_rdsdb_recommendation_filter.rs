@@ -37,8 +37,8 @@ impl RdsdbRecommendationFilter {
 }
 
 /// A builder for [`RdsdbRecommendationFilter`](crate::types::RdsdbRecommendationFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsdbRecommendationFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::RdsdbRecommendationFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

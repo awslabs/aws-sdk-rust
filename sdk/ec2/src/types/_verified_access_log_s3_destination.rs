@@ -45,8 +45,8 @@ impl VerifiedAccessLogS3Destination {
 }
 
 /// A builder for [`VerifiedAccessLogS3Destination`](crate::types::VerifiedAccessLogS3Destination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerifiedAccessLogS3DestinationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) delivery_status: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,

@@ -33,8 +33,8 @@ impl JobEventDetails {
 }
 
 /// A builder for [`JobEventDetails`](crate::types::JobEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobEventDetailsBuilder {
     pub(crate) event_type: ::std::option::Option<crate::types::JobEventType>,
     pub(crate) time_of_event: ::std::option::Option<::aws_smithy_types::DateTime>,

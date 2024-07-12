@@ -28,8 +28,8 @@ impl SearchFilter {
 }
 
 /// A builder for [`SearchFilter`](crate::types::SearchFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchFilterBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::SearchByAttributeValue>>,
     pub(crate) operator: ::std::option::Option<crate::types::Operator>,

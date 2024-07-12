@@ -34,8 +34,8 @@ impl ListTimeSeriesDataPointsOutput {
 }
 
 /// A builder for [`ListTimeSeriesDataPointsOutput`](crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTimeSeriesDataPointsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

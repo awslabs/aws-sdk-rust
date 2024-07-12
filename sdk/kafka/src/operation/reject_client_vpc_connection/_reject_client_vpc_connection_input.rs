@@ -26,8 +26,8 @@ impl RejectClientVpcConnectionInput {
 }
 
 /// A builder for [`RejectClientVpcConnectionInput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectClientVpcConnectionInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_connection_arn: ::std::option::Option<::std::string::String>,

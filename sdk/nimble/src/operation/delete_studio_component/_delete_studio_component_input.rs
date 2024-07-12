@@ -32,8 +32,8 @@ impl DeleteStudioComponentInput {
 }
 
 /// A builder for [`DeleteStudioComponentInput`](crate::operation::delete_studio_component::DeleteStudioComponentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteStudioComponentInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) studio_component_id: ::std::option::Option<::std::string::String>,

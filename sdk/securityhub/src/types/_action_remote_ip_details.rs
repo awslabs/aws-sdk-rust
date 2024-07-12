@@ -45,8 +45,8 @@ impl ActionRemoteIpDetails {
 }
 
 /// A builder for [`ActionRemoteIpDetails`](crate::types::ActionRemoteIpDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionRemoteIpDetailsBuilder {
     pub(crate) ip_address_v4: ::std::option::Option<::std::string::String>,
     pub(crate) organization: ::std::option::Option<crate::types::IpOrganizationDetails>,

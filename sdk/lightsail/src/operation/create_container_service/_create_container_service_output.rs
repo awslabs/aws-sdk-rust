@@ -26,8 +26,8 @@ impl CreateContainerServiceOutput {
 }
 
 /// A builder for [`CreateContainerServiceOutput`](crate::operation::create_container_service::CreateContainerServiceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContainerServiceOutputBuilder {
     pub(crate) container_service: ::std::option::Option<crate::types::ContainerService>,
     _request_id: Option<String>,

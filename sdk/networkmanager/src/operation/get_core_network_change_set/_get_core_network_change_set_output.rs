@@ -34,8 +34,8 @@ impl GetCoreNetworkChangeSetOutput {
 }
 
 /// A builder for [`GetCoreNetworkChangeSetOutput`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCoreNetworkChangeSetOutputBuilder {
     pub(crate) core_network_changes: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChange>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

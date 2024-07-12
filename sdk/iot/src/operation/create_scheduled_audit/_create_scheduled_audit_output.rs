@@ -26,8 +26,8 @@ impl CreateScheduledAuditOutput {
 }
 
 /// A builder for [`CreateScheduledAuditOutput`](crate::operation::create_scheduled_audit::CreateScheduledAuditOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateScheduledAuditOutputBuilder {
     pub(crate) scheduled_audit_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

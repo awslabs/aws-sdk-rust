@@ -112,8 +112,8 @@ impl CreateNamespaceInput {
 }
 
 /// A builder for [`CreateNamespaceInput`](crate::operation::create_namespace::CreateNamespaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateNamespaceInputBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) admin_username: ::std::option::Option<::std::string::String>,

@@ -50,8 +50,8 @@ impl UpdateStepInput {
 }
 
 /// A builder for [`UpdateStepInput`](crate::operation::update_step::UpdateStepInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStepInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,

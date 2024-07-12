@@ -56,8 +56,8 @@ impl GetManagedEndpointSessionCredentialsInput {
 }
 
 /// A builder for [`GetManagedEndpointSessionCredentialsInput`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetManagedEndpointSessionCredentialsInputBuilder {
     pub(crate) endpoint_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_cluster_identifier: ::std::option::Option<::std::string::String>,

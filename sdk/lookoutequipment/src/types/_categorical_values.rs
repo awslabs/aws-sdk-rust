@@ -27,8 +27,8 @@ impl CategoricalValues {
 }
 
 /// A builder for [`CategoricalValues`](crate::types::CategoricalValues).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CategoricalValuesBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
     pub(crate) number_of_category: ::std::option::Option<i32>,

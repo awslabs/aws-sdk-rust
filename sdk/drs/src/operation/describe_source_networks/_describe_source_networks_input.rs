@@ -32,8 +32,8 @@ impl DescribeSourceNetworksInput {
 }
 
 /// A builder for [`DescribeSourceNetworksInput`](crate::operation::describe_source_networks::DescribeSourceNetworksInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSourceNetworksInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::DescribeSourceNetworksRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,

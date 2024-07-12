@@ -33,8 +33,8 @@ impl ListImportJobsInput {
 }
 
 /// A builder for [`ListImportJobsInput`](crate::operation::list_import_jobs::ListImportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListImportJobsInputBuilder {
     pub(crate) import_destination_type: ::std::option::Option<crate::types::ImportDestinationType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

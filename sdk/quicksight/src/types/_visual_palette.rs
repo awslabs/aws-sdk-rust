@@ -29,8 +29,8 @@ impl VisualPalette {
 }
 
 /// A builder for [`VisualPalette`](crate::types::VisualPalette).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VisualPaletteBuilder {
     pub(crate) chart_color: ::std::option::Option<::std::string::String>,
     pub(crate) color_map: ::std::option::Option<::std::vec::Vec<crate::types::DataPathColor>>,

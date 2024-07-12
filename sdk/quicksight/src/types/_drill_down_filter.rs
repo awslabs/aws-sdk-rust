@@ -34,8 +34,8 @@ impl DrillDownFilter {
 }
 
 /// A builder for [`DrillDownFilter`](crate::types::DrillDownFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DrillDownFilterBuilder {
     pub(crate) numeric_equality_filter: ::std::option::Option<crate::types::NumericEqualityDrillDownFilter>,
     pub(crate) category_filter: ::std::option::Option<crate::types::CategoryDrillDownFilter>,

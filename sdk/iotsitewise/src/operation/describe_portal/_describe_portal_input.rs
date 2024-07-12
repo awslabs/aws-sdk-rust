@@ -20,8 +20,8 @@ impl DescribePortalInput {
 }
 
 /// A builder for [`DescribePortalInput`](crate::operation::describe_portal::DescribePortalInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePortalInputBuilder {
     pub(crate) portal_id: ::std::option::Option<::std::string::String>,
 }

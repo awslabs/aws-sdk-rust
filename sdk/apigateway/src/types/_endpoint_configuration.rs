@@ -31,8 +31,8 @@ impl EndpointConfiguration {
 }
 
 /// A builder for [`EndpointConfiguration`](crate::types::EndpointConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointConfigurationBuilder {
     pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::EndpointType>>,
     pub(crate) vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

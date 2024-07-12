@@ -18,8 +18,8 @@ impl StartAppReplicationOutput {
 }
 
 /// A builder for [`StartAppReplicationOutput`](crate::operation::start_app_replication::StartAppReplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAppReplicationOutputBuilder {
     _request_id: Option<String>,
 }

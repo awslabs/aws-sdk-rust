@@ -51,8 +51,8 @@ impl ChapInfo {
 }
 
 /// A builder for [`ChapInfo`](crate::types::ChapInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ChapInfoBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_to_authenticate_initiator: ::std::option::Option<::std::string::String>,

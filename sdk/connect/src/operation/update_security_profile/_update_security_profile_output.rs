@@ -18,8 +18,8 @@ impl UpdateSecurityProfileOutput {
 }
 
 /// A builder for [`UpdateSecurityProfileOutput`](crate::operation::update_security_profile::UpdateSecurityProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSecurityProfileOutputBuilder {
     _request_id: Option<String>,
 }

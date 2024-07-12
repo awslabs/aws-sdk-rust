@@ -18,8 +18,8 @@ impl RevokeSignatureOutput {
 }
 
 /// A builder for [`RevokeSignatureOutput`](crate::operation::revoke_signature::RevokeSignatureOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RevokeSignatureOutputBuilder {
     _request_id: Option<String>,
 }

@@ -50,8 +50,8 @@ impl CreateRecordingConfigurationInput {
 }
 
 /// A builder for [`CreateRecordingConfigurationInput`](crate::operation::create_recording_configuration::CreateRecordingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRecordingConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,

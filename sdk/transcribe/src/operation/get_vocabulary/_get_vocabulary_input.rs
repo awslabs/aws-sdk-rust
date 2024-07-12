@@ -20,8 +20,8 @@ impl GetVocabularyInput {
 }
 
 /// A builder for [`GetVocabularyInput`](crate::operation::get_vocabulary::GetVocabularyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVocabularyInputBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
 }

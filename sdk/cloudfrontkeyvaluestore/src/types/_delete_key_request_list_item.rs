@@ -22,8 +22,8 @@ impl DeleteKeyRequestListItem {
 }
 
 /// A builder for [`DeleteKeyRequestListItem`](crate::types::DeleteKeyRequestListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteKeyRequestListItemBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
 }

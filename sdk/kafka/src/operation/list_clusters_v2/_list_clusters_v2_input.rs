@@ -38,8 +38,8 @@ impl ListClustersV2Input {
 }
 
 /// A builder for [`ListClustersV2Input`](crate::operation::list_clusters_v2::ListClustersV2Input).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListClustersV2InputBuilder {
     pub(crate) cluster_name_filter: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type_filter: ::std::option::Option<::std::string::String>,

@@ -57,8 +57,8 @@ impl Eac3AtmosSettings {
 }
 
 /// A builder for [`Eac3AtmosSettings`](crate::types::Eac3AtmosSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Eac3AtmosSettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<f64>,
     pub(crate) coding_mode: ::std::option::Option<crate::types::Eac3AtmosCodingMode>,

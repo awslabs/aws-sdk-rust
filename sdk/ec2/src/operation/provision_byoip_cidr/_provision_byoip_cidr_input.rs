@@ -88,8 +88,8 @@ impl ProvisionByoipCidrInput {
 }
 
 /// A builder for [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionByoipCidrInputBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_authorization_context: ::std::option::Option<crate::types::CidrAuthorizationContext>,

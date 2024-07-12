@@ -34,8 +34,8 @@ impl ListTargetsForSecurityProfileOutput {
 }
 
 /// A builder for [`ListTargetsForSecurityProfileOutput`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTargetsForSecurityProfileOutputBuilder {
     pub(crate) security_profile_targets: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl FlowTemplateDescription {
 }
 
 /// A builder for [`FlowTemplateDescription`](crate::types::FlowTemplateDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlowTemplateDescriptionBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::FlowTemplateSummary>,
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,

@@ -27,8 +27,8 @@ impl StartPolicyGenerationOutput {
 }
 
 /// A builder for [`StartPolicyGenerationOutput`](crate::operation::start_policy_generation::StartPolicyGenerationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartPolicyGenerationOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

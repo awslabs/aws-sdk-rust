@@ -31,8 +31,8 @@ impl StorageLensDataExport {
 }
 
 /// A builder for [`StorageLensDataExport`](crate::types::StorageLensDataExport).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StorageLensDataExportBuilder {
     pub(crate) s3_bucket_destination: ::std::option::Option<crate::types::S3BucketDestination>,
     pub(crate) cloud_watch_metrics: ::std::option::Option<crate::types::CloudWatchMetrics>,

@@ -27,8 +27,8 @@ impl PointInTimeRecoverySummary {
 }
 
 /// A builder for [`PointInTimeRecoverySummary`](crate::types::PointInTimeRecoverySummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PointInTimeRecoverySummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
     pub(crate) earliest_restorable_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,

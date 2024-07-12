@@ -30,8 +30,8 @@ impl ClassicLinkDnsSupport {
 }
 
 /// A builder for [`ClassicLinkDnsSupport`](crate::types::ClassicLinkDnsSupport).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClassicLinkDnsSupportBuilder {
     pub(crate) classic_link_dns_supported: ::std::option::Option<bool>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

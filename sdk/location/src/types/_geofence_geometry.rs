@@ -57,8 +57,8 @@ impl GeofenceGeometry {
 }
 
 /// A builder for [`GeofenceGeometry`](crate::types::GeofenceGeometry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GeofenceGeometryBuilder {
     pub(crate) polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
     pub(crate) circle: ::std::option::Option<crate::types::Circle>,

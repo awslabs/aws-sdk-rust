@@ -18,8 +18,8 @@ impl StopQAppSessionOutput {
 }
 
 /// A builder for [`StopQAppSessionOutput`](crate::operation::stop_q_app_session::StopQAppSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopQAppSessionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -35,8 +35,8 @@ impl TimeRangeFilterInput {
 }
 
 /// A builder for [`TimeRangeFilterInput`](crate::types::TimeRangeFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TimeRangeFilterInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -11,8 +11,8 @@ impl GetPortfolioSummaryInput {
 }
 
 /// A builder for [`GetPortfolioSummaryInput`](crate::operation::get_portfolio_summary::GetPortfolioSummaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPortfolioSummaryInputBuilder {}
 impl GetPortfolioSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetPortfolioSummaryInput`](crate::operation::get_portfolio_summary::GetPortfolioSummaryInput).

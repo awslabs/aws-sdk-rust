@@ -111,8 +111,8 @@ impl XavcSettings {
 }
 
 /// A builder for [`XavcSettings`](crate::types::XavcSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct XavcSettingsBuilder {
     pub(crate) adaptive_quantization: ::std::option::Option<crate::types::XavcAdaptiveQuantization>,
     pub(crate) entropy_encoding: ::std::option::Option<crate::types::XavcEntropyEncoding>,

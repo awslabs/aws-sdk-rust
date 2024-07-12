@@ -32,8 +32,8 @@ impl GetRuleInput {
 }
 
 /// A builder for [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRuleInputBuilder {
     pub(crate) service_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) listener_identifier: ::std::option::Option<::std::string::String>,

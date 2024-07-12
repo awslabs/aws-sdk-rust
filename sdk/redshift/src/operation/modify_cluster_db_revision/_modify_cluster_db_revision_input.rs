@@ -28,8 +28,8 @@ impl ModifyClusterDbRevisionInput {
 }
 
 /// A builder for [`ModifyClusterDbRevisionInput`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyClusterDbRevisionInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) revision_target: ::std::option::Option<::std::string::String>,

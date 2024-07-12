@@ -50,8 +50,8 @@ impl PracticeRunConfiguration {
 }
 
 /// A builder for [`PracticeRunConfiguration`](crate::types::PracticeRunConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PracticeRunConfigurationBuilder {
     pub(crate) blocking_alarms: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>,
     pub(crate) outcome_alarms: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>,

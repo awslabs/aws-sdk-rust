@@ -18,8 +18,8 @@ impl DeleteFileSystemPolicyOutput {
 }
 
 /// A builder for [`DeleteFileSystemPolicyOutput`](crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFileSystemPolicyOutputBuilder {
     _request_id: Option<String>,
 }

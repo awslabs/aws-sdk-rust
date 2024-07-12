@@ -88,8 +88,8 @@ impl CreateCompilationJobInput {
 }
 
 /// A builder for [`CreateCompilationJobInput`](crate::operation::create_compilation_job::CreateCompilationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCompilationJobInputBuilder {
     pub(crate) compilation_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

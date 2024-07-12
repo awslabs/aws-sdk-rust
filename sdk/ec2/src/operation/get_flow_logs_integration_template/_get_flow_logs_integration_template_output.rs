@@ -26,8 +26,8 @@ impl GetFlowLogsIntegrationTemplateOutput {
 }
 
 /// A builder for [`GetFlowLogsIntegrationTemplateOutput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFlowLogsIntegrationTemplateOutputBuilder {
     pub(crate) result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

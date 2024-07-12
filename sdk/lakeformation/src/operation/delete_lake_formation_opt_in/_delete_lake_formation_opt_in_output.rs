@@ -18,8 +18,8 @@ impl DeleteLakeFormationOptInOutput {
 }
 
 /// A builder for [`DeleteLakeFormationOptInOutput`](crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLakeFormationOptInOutputBuilder {
     _request_id: Option<String>,
 }

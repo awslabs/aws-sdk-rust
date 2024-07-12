@@ -38,8 +38,8 @@ impl UpdateApiKeyInput {
 }
 
 /// A builder for [`UpdateApiKeyInput`](crate::operation::update_api_key::UpdateApiKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateApiKeyInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

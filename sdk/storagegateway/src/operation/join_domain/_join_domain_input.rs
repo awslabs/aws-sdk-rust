@@ -72,8 +72,8 @@ impl JoinDomainInput {
 }
 
 /// A builder for [`JoinDomainInput`](crate::operation::join_domain::JoinDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct JoinDomainInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

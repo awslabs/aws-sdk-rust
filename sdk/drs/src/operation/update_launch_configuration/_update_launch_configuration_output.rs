@@ -80,8 +80,8 @@ impl UpdateLaunchConfigurationOutput {
 }
 
 /// A builder for [`UpdateLaunchConfigurationOutput`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLaunchConfigurationOutputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

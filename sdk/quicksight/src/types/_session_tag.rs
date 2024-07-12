@@ -37,8 +37,8 @@ impl SessionTag {
 }
 
 /// A builder for [`SessionTag`](crate::types::SessionTag).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SessionTagBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

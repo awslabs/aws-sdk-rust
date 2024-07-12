@@ -88,8 +88,8 @@ impl GetMetricDataInput {
 }
 
 /// A builder for [`GetMetricDataInput`](crate::operation::get_metric_data::GetMetricDataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMetricDataInputBuilder {
     pub(crate) metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

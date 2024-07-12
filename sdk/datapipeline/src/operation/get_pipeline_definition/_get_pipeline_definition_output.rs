@@ -45,8 +45,8 @@ impl GetPipelineDefinitionOutput {
 }
 
 /// A builder for [`GetPipelineDefinitionOutput`](crate::operation::get_pipeline_definition::GetPipelineDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPipelineDefinitionOutputBuilder {
     pub(crate) pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
     pub(crate) parameter_objects: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,

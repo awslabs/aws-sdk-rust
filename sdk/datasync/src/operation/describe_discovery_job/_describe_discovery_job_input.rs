@@ -20,8 +20,8 @@ impl DescribeDiscoveryJobInput {
 }
 
 /// A builder for [`DescribeDiscoveryJobInput`](crate::operation::describe_discovery_job::DescribeDiscoveryJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDiscoveryJobInputBuilder {
     pub(crate) discovery_job_arn: ::std::option::Option<::std::string::String>,
 }

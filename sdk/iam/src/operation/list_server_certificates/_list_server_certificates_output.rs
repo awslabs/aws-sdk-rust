@@ -40,8 +40,8 @@ impl ListServerCertificatesOutput {
 }
 
 /// A builder for [`ListServerCertificatesOutput`](crate::operation::list_server_certificates::ListServerCertificatesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServerCertificatesOutputBuilder {
     pub(crate) server_certificate_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateMetadata>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

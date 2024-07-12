@@ -26,8 +26,8 @@ impl GetSchemaAnalysisRuleOutput {
 }
 
 /// A builder for [`GetSchemaAnalysisRuleOutput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSchemaAnalysisRuleOutputBuilder {
     pub(crate) analysis_rule: ::std::option::Option<crate::types::AnalysisRule>,
     _request_id: Option<String>,

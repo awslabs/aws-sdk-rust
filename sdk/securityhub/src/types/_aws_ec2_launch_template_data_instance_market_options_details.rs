@@ -27,8 +27,8 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsDetailsBuilder {
     pub(crate) market_type: ::std::option::Option<::std::string::String>,
     pub(crate) spot_options: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails>,

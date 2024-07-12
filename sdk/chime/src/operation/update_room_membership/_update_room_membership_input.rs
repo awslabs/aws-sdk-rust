@@ -38,8 +38,8 @@ impl UpdateRoomMembershipInput {
 }
 
 /// A builder for [`UpdateRoomMembershipInput`](crate::operation::update_room_membership::UpdateRoomMembershipInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRoomMembershipInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) room_id: ::std::option::Option<::std::string::String>,

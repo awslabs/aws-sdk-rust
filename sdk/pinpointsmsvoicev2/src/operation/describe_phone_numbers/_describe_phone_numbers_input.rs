@@ -42,8 +42,8 @@ impl DescribePhoneNumbersInput {
 }
 
 /// A builder for [`DescribePhoneNumbersInput`](crate::operation::describe_phone_numbers::DescribePhoneNumbersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePhoneNumbersInputBuilder {
     pub(crate) phone_number_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberFilter>>,

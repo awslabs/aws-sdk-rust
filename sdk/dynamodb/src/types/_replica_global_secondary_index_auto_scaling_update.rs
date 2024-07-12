@@ -27,8 +27,8 @@ impl ReplicaGlobalSecondaryIndexAutoScalingUpdate {
 }
 
 /// A builder for [`ReplicaGlobalSecondaryIndexAutoScalingUpdate`](crate::types::ReplicaGlobalSecondaryIndexAutoScalingUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicaGlobalSecondaryIndexAutoScalingUpdateBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_read_capacity_auto_scaling_update: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,

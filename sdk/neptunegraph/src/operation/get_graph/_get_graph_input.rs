@@ -20,8 +20,8 @@ impl GetGraphInput {
 }
 
 /// A builder for [`GetGraphInput`](crate::operation::get_graph::GetGraphInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetGraphInputBuilder {
     pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
 }

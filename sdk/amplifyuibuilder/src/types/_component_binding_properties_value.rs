@@ -33,8 +33,8 @@ impl ComponentBindingPropertiesValue {
 }
 
 /// A builder for [`ComponentBindingPropertiesValue`](crate::types::ComponentBindingPropertiesValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComponentBindingPropertiesValueBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) binding_properties: ::std::option::Option<crate::types::ComponentBindingPropertiesValueProperties>,

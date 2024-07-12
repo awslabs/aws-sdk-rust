@@ -81,8 +81,8 @@ impl UpdateComponentTypeInput {
 }
 
 /// A builder for [`UpdateComponentTypeInput`](crate::operation::update_component_type::UpdateComponentTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateComponentTypeInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_singleton: ::std::option::Option<bool>,

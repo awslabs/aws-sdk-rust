@@ -70,8 +70,8 @@ impl DeriveSharedSecretOutput {
 }
 
 /// A builder for [`DeriveSharedSecretOutput`](crate::operation::derive_shared_secret::DeriveSharedSecretOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DeriveSharedSecretOutputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) shared_secret: ::std::option::Option<::aws_smithy_types::Blob>,

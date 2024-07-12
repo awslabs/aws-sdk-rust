@@ -38,8 +38,8 @@ impl ListAuthorizersInput {
 }
 
 /// A builder for [`ListAuthorizersInput`](crate::operation::list_authorizers::ListAuthorizersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAuthorizersInputBuilder {
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl IngressPointAuthConfiguration {
 }
 
 /// A builder for [`IngressPointAuthConfiguration`](crate::types::IngressPointAuthConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngressPointAuthConfigurationBuilder {
     pub(crate) ingress_point_password_configuration: ::std::option::Option<crate::types::IngressPointPasswordConfiguration>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,

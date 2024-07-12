@@ -39,8 +39,8 @@ impl TemplateShareSummary {
 }
 
 /// A builder for [`TemplateShareSummary`](crate::types::TemplateShareSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TemplateShareSummaryBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with: ::std::option::Option<::std::string::String>,

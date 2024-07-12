@@ -32,8 +32,8 @@ impl DescribeBudgetNotificationsForAccountInput {
 }
 
 /// A builder for [`DescribeBudgetNotificationsForAccountInput`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBudgetNotificationsForAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

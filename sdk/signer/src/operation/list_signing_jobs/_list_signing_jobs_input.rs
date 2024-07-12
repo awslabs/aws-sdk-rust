@@ -68,8 +68,8 @@ impl ListSigningJobsInput {
 }
 
 /// A builder for [`ListSigningJobsInput`](crate::operation::list_signing_jobs::ListSigningJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSigningJobsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SigningStatus>,
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,

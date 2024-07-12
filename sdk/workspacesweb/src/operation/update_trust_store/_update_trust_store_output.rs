@@ -27,8 +27,8 @@ impl UpdateTrustStoreOutput {
 }
 
 /// A builder for [`UpdateTrustStoreOutput`](crate::operation::update_trust_store::UpdateTrustStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTrustStoreOutputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

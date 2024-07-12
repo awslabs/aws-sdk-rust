@@ -26,8 +26,8 @@ impl ListCrlsInput {
 }
 
 /// A builder for [`ListCrlsInput`](crate::operation::list_crls::ListCrlsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCrlsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,

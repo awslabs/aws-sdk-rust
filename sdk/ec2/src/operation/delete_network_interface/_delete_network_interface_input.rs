@@ -27,8 +27,8 @@ impl DeleteNetworkInterfaceInput {
 }
 
 /// A builder for [`DeleteNetworkInterfaceInput`](crate::operation::delete_network_interface::DeleteNetworkInterfaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkInterfaceInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,

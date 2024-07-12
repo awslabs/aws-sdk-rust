@@ -83,8 +83,8 @@ impl EndpointMessageResult {
 }
 
 /// A builder for [`EndpointMessageResult`](crate::types::EndpointMessageResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointMessageResultBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,

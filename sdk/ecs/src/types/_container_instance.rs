@@ -171,8 +171,8 @@ impl ContainerInstance {
 }
 
 /// A builder for [`ContainerInstance`](crate::types::ContainerInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContainerInstanceBuilder {
     pub(crate) container_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,

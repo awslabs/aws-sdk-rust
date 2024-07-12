@@ -50,8 +50,8 @@ impl UpdateMailboxQuotaInput {
 }
 
 /// A builder for [`UpdateMailboxQuotaInput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMailboxQuotaInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,

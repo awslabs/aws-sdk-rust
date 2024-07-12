@@ -36,8 +36,8 @@ impl BatchGetVpcEndpointOutput {
 }
 
 /// A builder for [`BatchGetVpcEndpointOutput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetVpcEndpointOutputBuilder {
     pub(crate) vpc_endpoint_details: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointDetail>>,
     pub(crate) vpc_endpoint_error_details: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointErrorDetail>>,

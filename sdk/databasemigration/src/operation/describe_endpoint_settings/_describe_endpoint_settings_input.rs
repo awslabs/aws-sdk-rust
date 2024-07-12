@@ -32,8 +32,8 @@ impl DescribeEndpointSettingsInput {
 }
 
 /// A builder for [`DescribeEndpointSettingsInput`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEndpointSettingsInputBuilder {
     pub(crate) engine_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

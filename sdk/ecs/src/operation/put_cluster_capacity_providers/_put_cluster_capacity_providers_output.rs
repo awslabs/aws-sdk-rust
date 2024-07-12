@@ -26,8 +26,8 @@ impl PutClusterCapacityProvidersOutput {
 }
 
 /// A builder for [`PutClusterCapacityProvidersOutput`](crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutClusterCapacityProvidersOutputBuilder {
     pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,

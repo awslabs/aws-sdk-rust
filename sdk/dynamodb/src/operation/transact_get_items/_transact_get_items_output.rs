@@ -38,8 +38,8 @@ impl TransactGetItemsOutput {
 }
 
 /// A builder for [`TransactGetItemsOutput`](crate::operation::transact_get_items::TransactGetItemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransactGetItemsOutputBuilder {
     pub(crate) consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
     pub(crate) responses: ::std::option::Option<::std::vec::Vec<crate::types::ItemResponse>>,

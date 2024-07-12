@@ -89,8 +89,8 @@ impl GetMethodOutput {
 }
 
 /// A builder for [`GetMethodOutput`](crate::operation::get_method::GetMethodOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMethodOutputBuilder {
     pub(crate) http_method: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_type: ::std::option::Option<::std::string::String>,

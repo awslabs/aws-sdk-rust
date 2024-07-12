@@ -27,8 +27,8 @@ impl ScalingPolicyObjective {
 }
 
 /// A builder for [`ScalingPolicyObjective`](crate::types::ScalingPolicyObjective).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScalingPolicyObjectiveBuilder {
     pub(crate) min_invocations_per_minute: ::std::option::Option<i32>,
     pub(crate) max_invocations_per_minute: ::std::option::Option<i32>,

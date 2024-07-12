@@ -65,8 +65,8 @@ impl DataLakeResource {
 }
 
 /// A builder for [`DataLakeResource`](crate::types::DataLakeResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataLakeResourceBuilder {
     pub(crate) data_lake_arn: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl CancelExportTaskInput {
 }
 
 /// A builder for [`CancelExportTaskInput`](crate::operation::cancel_export_task::CancelExportTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelExportTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }

@@ -81,8 +81,8 @@ impl ScatterPlotConfiguration {
 }
 
 /// A builder for [`ScatterPlotConfiguration`](crate::types::ScatterPlotConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScatterPlotConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::ScatterPlotFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::ScatterPlotSortConfiguration>,

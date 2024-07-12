@@ -29,8 +29,8 @@ impl AmexCardSecurityCodeVersion1 {
 }
 
 /// A builder for [`AmexCardSecurityCodeVersion1`](crate::types::AmexCardSecurityCodeVersion1).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AmexCardSecurityCodeVersion1Builder {
     pub(crate) card_expiry_date: ::std::option::Option<::std::string::String>,
 }

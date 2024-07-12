@@ -44,8 +44,8 @@ impl StopInstancesInput {
 }
 
 /// A builder for [`StopInstancesInput`](crate::operation::stop_instances::StopInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopInstancesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) hibernate: ::std::option::Option<bool>,

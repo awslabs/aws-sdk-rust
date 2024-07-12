@@ -18,8 +18,8 @@ impl DeleteHomeRegionControlOutput {
 }
 
 /// A builder for [`DeleteHomeRegionControlOutput`](crate::operation::delete_home_region_control::DeleteHomeRegionControlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteHomeRegionControlOutputBuilder {
     _request_id: Option<String>,
 }

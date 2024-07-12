@@ -63,8 +63,8 @@ impl ReservationResourceSpecification {
 }
 
 /// A builder for [`ReservationResourceSpecification`](crate::types::ReservationResourceSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReservationResourceSpecificationBuilder {
     pub(crate) channel_class: ::std::option::Option<crate::types::ChannelClass>,
     pub(crate) codec: ::std::option::Option<crate::types::ReservationCodec>,

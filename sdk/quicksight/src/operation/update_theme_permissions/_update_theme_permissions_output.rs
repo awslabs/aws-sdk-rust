@@ -52,8 +52,8 @@ impl UpdateThemePermissionsOutput {
 }
 
 /// A builder for [`UpdateThemePermissionsOutput`](crate::operation::update_theme_permissions::UpdateThemePermissionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateThemePermissionsOutputBuilder {
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,

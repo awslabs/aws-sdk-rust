@@ -26,8 +26,8 @@ impl GetTemplateGroupAccessControlEntryInput {
 }
 
 /// A builder for [`GetTemplateGroupAccessControlEntryInput`](crate::operation::get_template_group_access_control_entry::GetTemplateGroupAccessControlEntryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTemplateGroupAccessControlEntryInputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) group_security_identifier: ::std::option::Option<::std::string::String>,

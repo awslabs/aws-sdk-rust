@@ -69,8 +69,8 @@ impl KeyModesOfUse {
 }
 
 /// A builder for [`KeyModesOfUse`](crate::types::KeyModesOfUse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KeyModesOfUseBuilder {
     pub(crate) encrypt: ::std::option::Option<bool>,
     pub(crate) decrypt: ::std::option::Option<bool>,

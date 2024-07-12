@@ -28,8 +28,8 @@ impl DescribeCertificateAuthorityAuditReportInput {
 }
 
 /// A builder for [`DescribeCertificateAuthorityAuditReportInput`](crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCertificateAuthorityAuditReportInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) audit_report_id: ::std::option::Option<::std::string::String>,

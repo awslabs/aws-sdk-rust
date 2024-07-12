@@ -32,8 +32,8 @@ impl DeleteApplicationReferenceDataSourceInput {
 }
 
 /// A builder for [`DeleteApplicationReferenceDataSourceInput`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationReferenceDataSourceInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,

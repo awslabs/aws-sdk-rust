@@ -21,8 +21,8 @@ impl BucketLoggingStatus {
 }
 
 /// A builder for [`BucketLoggingStatus`](crate::types::BucketLoggingStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BucketLoggingStatusBuilder {
     pub(crate) logging_enabled: ::std::option::Option<crate::types::LoggingEnabled>,
 }

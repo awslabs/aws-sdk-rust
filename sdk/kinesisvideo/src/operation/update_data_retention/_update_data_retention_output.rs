@@ -18,8 +18,8 @@ impl UpdateDataRetentionOutput {
 }
 
 /// A builder for [`UpdateDataRetentionOutput`](crate::operation::update_data_retention::UpdateDataRetentionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDataRetentionOutputBuilder {
     _request_id: Option<String>,
 }

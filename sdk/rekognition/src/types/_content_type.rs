@@ -27,8 +27,8 @@ impl ContentType {
 }
 
 /// A builder for [`ContentType`](crate::types::ContentType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ContentTypeBuilder {
     pub(crate) confidence: ::std::option::Option<f32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

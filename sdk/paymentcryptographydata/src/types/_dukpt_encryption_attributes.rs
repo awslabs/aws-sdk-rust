@@ -59,8 +59,8 @@ impl DukptEncryptionAttributes {
 }
 
 /// A builder for [`DukptEncryptionAttributes`](crate::types::DukptEncryptionAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DukptEncryptionAttributesBuilder {
     pub(crate) key_serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::DukptEncryptionMode>,

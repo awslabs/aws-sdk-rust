@@ -34,8 +34,8 @@ impl ListAwsServiceAccessForOrganizationOutput {
 }
 
 /// A builder for [`ListAwsServiceAccessForOrganizationOutput`](crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAwsServiceAccessForOrganizationOutputBuilder {
     pub(crate) enabled_service_principals: ::std::option::Option<::std::vec::Vec<crate::types::EnabledServicePrincipal>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -156,8 +156,8 @@ impl RegexMatchTuple {
 }
 
 /// A builder for [`RegexMatchTuple`](crate::types::RegexMatchTuple).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegexMatchTupleBuilder {
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     pub(crate) text_transformation: ::std::option::Option<crate::types::TextTransformation>,

@@ -34,8 +34,8 @@ impl DescribeVerifiedAccessTrustProvidersOutput {
 }
 
 /// A builder for [`DescribeVerifiedAccessTrustProvidersOutput`](crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVerifiedAccessTrustProvidersOutputBuilder {
     pub(crate) verified_access_trust_providers: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessTrustProvider>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

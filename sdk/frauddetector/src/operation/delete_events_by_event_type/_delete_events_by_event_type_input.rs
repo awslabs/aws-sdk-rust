@@ -20,8 +20,8 @@ impl DeleteEventsByEventTypeInput {
 }
 
 /// A builder for [`DeleteEventsByEventTypeInput`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEventsByEventTypeInputBuilder {
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
 }

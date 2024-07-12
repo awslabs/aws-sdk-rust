@@ -11,8 +11,8 @@ impl ExportConfigurationsInput {
 }
 
 /// A builder for [`ExportConfigurationsInput`](crate::operation::export_configurations::ExportConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportConfigurationsInputBuilder {}
 impl ExportConfigurationsInputBuilder {
     /// Consumes the builder and constructs a [`ExportConfigurationsInput`](crate::operation::export_configurations::ExportConfigurationsInput).

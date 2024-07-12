@@ -29,8 +29,8 @@ impl DescribeAppsOutput {
 }
 
 /// A builder for [`DescribeAppsOutput`](crate::operation::describe_apps::DescribeAppsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppsOutputBuilder {
     pub(crate) apps: ::std::option::Option<::std::vec::Vec<crate::types::App>>,
     _request_id: Option<String>,

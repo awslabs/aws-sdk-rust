@@ -35,8 +35,8 @@ impl ModifyReplicationSubnetGroupInput {
 }
 
 /// A builder for [`ModifyReplicationSubnetGroupInput`](crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyReplicationSubnetGroupInputBuilder {
     pub(crate) replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) replication_subnet_group_description: ::std::option::Option<::std::string::String>,

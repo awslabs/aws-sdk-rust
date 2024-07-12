@@ -71,8 +71,8 @@ impl CreateControlInput {
 }
 
 /// A builder for [`CreateControlInput`](crate::operation::create_control::CreateControlInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateControlInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

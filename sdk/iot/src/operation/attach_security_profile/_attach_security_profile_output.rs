@@ -18,8 +18,8 @@ impl AttachSecurityProfileOutput {
 }
 
 /// A builder for [`AttachSecurityProfileOutput`](crate::operation::attach_security_profile::AttachSecurityProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachSecurityProfileOutputBuilder {
     _request_id: Option<String>,
 }

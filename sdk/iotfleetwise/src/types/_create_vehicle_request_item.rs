@@ -56,8 +56,8 @@ impl CreateVehicleRequestItem {
 }
 
 /// A builder for [`CreateVehicleRequestItem`](crate::types::CreateVehicleRequestItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVehicleRequestItemBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteProjectMembershipOutput {
 }
 
 /// A builder for [`DeleteProjectMembershipOutput`](crate::operation::delete_project_membership::DeleteProjectMembershipOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProjectMembershipOutputBuilder {
     _request_id: Option<String>,
 }

@@ -56,8 +56,8 @@ impl DescribeTrafficSourcesInput {
 }
 
 /// A builder for [`DescribeTrafficSourcesInput`](crate::operation::describe_traffic_sources::DescribeTrafficSourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrafficSourcesInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_source_type: ::std::option::Option<::std::string::String>,

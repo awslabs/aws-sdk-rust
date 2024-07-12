@@ -55,8 +55,8 @@ impl GetCredentialsOutput {
 }
 
 /// A builder for [`GetCredentialsOutput`](crate::operation::get_credentials::GetCredentialsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetCredentialsOutputBuilder {
     pub(crate) db_user: ::std::option::Option<::std::string::String>,
     pub(crate) db_password: ::std::option::Option<::std::string::String>,

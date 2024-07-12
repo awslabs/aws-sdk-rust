@@ -34,8 +34,8 @@ impl ListBulkDeploymentDetailedReportsOutput {
 }
 
 /// A builder for [`ListBulkDeploymentDetailedReportsOutput`](crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBulkDeploymentDetailedReportsOutputBuilder {
     pub(crate) deployments: ::std::option::Option<::std::vec::Vec<crate::types::BulkDeploymentResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

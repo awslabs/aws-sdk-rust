@@ -18,8 +18,8 @@ impl PutContactInformationOutput {
 }
 
 /// A builder for [`PutContactInformationOutput`](crate::operation::put_contact_information::PutContactInformationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutContactInformationOutputBuilder {
     _request_id: Option<String>,
 }

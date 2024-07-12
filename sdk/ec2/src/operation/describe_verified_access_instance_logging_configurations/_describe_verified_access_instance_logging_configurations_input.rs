@@ -48,8 +48,8 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsInput {
 }
 
 /// A builder for [`DescribeVerifiedAccessInstanceLoggingConfigurationsInput`](crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVerifiedAccessInstanceLoggingConfigurationsInputBuilder {
     pub(crate) verified_access_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,

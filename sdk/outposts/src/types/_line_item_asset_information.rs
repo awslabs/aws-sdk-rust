@@ -29,8 +29,8 @@ impl LineItemAssetInformation {
 }
 
 /// A builder for [`LineItemAssetInformation`](crate::types::LineItemAssetInformation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineItemAssetInformationBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) mac_address_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

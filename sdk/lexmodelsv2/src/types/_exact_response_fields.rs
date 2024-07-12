@@ -29,8 +29,8 @@ impl ExactResponseFields {
 }
 
 /// A builder for [`ExactResponseFields`](crate::types::ExactResponseFields).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExactResponseFieldsBuilder {
     pub(crate) question_field: ::std::option::Option<::std::string::String>,
     pub(crate) answer_field: ::std::option::Option<::std::string::String>,

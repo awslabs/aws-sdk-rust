@@ -62,8 +62,8 @@ impl ListParticipantsInput {
 }
 
 /// A builder for [`ListParticipantsInput`](crate::operation::list_participants::ListParticipantsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListParticipantsInputBuilder {
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,

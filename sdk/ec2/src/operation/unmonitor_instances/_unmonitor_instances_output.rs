@@ -28,8 +28,8 @@ impl UnmonitorInstancesOutput {
 }
 
 /// A builder for [`UnmonitorInstancesOutput`](crate::operation::unmonitor_instances::UnmonitorInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnmonitorInstancesOutputBuilder {
     pub(crate) instance_monitorings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>>,
     _request_id: Option<String>,

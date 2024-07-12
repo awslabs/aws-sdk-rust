@@ -32,8 +32,8 @@ impl ConfigureLogsForPlaybackConfigurationOutput {
 }
 
 /// A builder for [`ConfigureLogsForPlaybackConfigurationOutput`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigureLogsForPlaybackConfigurationOutputBuilder {
     pub(crate) percent_enabled: ::std::option::Option<i32>,
     pub(crate) playback_configuration_name: ::std::option::Option<::std::string::String>,

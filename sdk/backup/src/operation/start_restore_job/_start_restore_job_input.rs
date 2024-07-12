@@ -164,8 +164,8 @@ impl StartRestoreJobInput {
 }
 
 /// A builder for [`StartRestoreJobInput`](crate::operation::start_restore_job::StartRestoreJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartRestoreJobInputBuilder {
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

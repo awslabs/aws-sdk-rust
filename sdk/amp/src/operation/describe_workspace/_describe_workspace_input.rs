@@ -21,8 +21,8 @@ impl DescribeWorkspaceInput {
 }
 
 /// A builder for [`DescribeWorkspaceInput`](crate::operation::describe_workspace::DescribeWorkspaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }

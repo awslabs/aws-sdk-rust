@@ -20,8 +20,8 @@ impl DeleteModelExplainabilityJobDefinitionInput {
 }
 
 /// A builder for [`DeleteModelExplainabilityJobDefinitionInput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteModelExplainabilityJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
 }

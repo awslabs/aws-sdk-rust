@@ -44,8 +44,8 @@ impl DescribeVpcAttributeOutput {
 }
 
 /// A builder for [`DescribeVpcAttributeOutput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeVpcAttributeOutputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable_dns_hostnames: ::std::option::Option<crate::types::AttributeBooleanValue>,

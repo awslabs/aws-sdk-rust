@@ -45,8 +45,8 @@ impl Fragment {
 }
 
 /// A builder for [`Fragment`](crate::types::Fragment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FragmentBuilder {
     pub(crate) fragment_number: ::std::option::Option<::std::string::String>,
     pub(crate) fragment_size_in_bytes: ::std::option::Option<i64>,

@@ -26,8 +26,8 @@ impl DescribeReportPlanOutput {
 }
 
 /// A builder for [`DescribeReportPlanOutput`](crate::operation::describe_report_plan::DescribeReportPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReportPlanOutputBuilder {
     pub(crate) report_plan: ::std::option::Option<crate::types::ReportPlan>,
     _request_id: Option<String>,

@@ -50,8 +50,8 @@ impl CreateUploadUrlOutput {
 }
 
 /// A builder for [`CreateUploadUrlOutput`](crate::operation::create_upload_url::CreateUploadUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateUploadUrlOutputBuilder {
     pub(crate) s3_url: ::std::option::Option<::std::string::String>,
     pub(crate) request_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

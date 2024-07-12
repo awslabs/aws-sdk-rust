@@ -18,8 +18,8 @@ impl DeleteChannelFlowOutput {
 }
 
 /// A builder for [`DeleteChannelFlowOutput`](crate::operation::delete_channel_flow::DeleteChannelFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteChannelFlowOutputBuilder {
     _request_id: Option<String>,
 }

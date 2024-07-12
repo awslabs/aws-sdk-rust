@@ -38,8 +38,8 @@ impl ListBillingGroupCostReportsInput {
 }
 
 /// A builder for [`ListBillingGroupCostReportsInput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBillingGroupCostReportsInputBuilder {
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -26,8 +26,8 @@ impl DescribeUserPoolDomainOutput {
 }
 
 /// A builder for [`DescribeUserPoolDomainOutput`](crate::operation::describe_user_pool_domain::DescribeUserPoolDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUserPoolDomainOutputBuilder {
     pub(crate) domain_description: ::std::option::Option<crate::types::DomainDescriptionType>,
     _request_id: Option<String>,

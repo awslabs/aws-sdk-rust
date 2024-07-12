@@ -18,8 +18,8 @@ impl UpdateExperienceOutput {
 }
 
 /// A builder for [`UpdateExperienceOutput`](crate::operation::update_experience::UpdateExperienceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateExperienceOutputBuilder {
     _request_id: Option<String>,
 }

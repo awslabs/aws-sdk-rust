@@ -40,8 +40,8 @@ impl CreateAppVersionAppComponentOutput {
 }
 
 /// A builder for [`CreateAppVersionAppComponentOutput`](crate::operation::create_app_version_app_component::CreateAppVersionAppComponentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAppVersionAppComponentOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,

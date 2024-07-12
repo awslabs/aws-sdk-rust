@@ -20,8 +20,8 @@ impl DescribeConnectionsOnInterconnectInput {
 }
 
 /// A builder for [`DescribeConnectionsOnInterconnectInput`](crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConnectionsOnInterconnectInputBuilder {
     pub(crate) interconnect_id: ::std::option::Option<::std::string::String>,
 }

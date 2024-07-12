@@ -33,8 +33,8 @@ impl TaskListEntry {
 }
 
 /// A builder for [`TaskListEntry`](crate::types::TaskListEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TaskListEntryBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatus>,

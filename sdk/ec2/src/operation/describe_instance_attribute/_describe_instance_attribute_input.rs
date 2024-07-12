@@ -34,8 +34,8 @@ impl DescribeInstanceAttributeInput {
 }
 
 /// A builder for [`DescribeInstanceAttributeInput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
     pub(crate) dry_run: ::std::option::Option<bool>,

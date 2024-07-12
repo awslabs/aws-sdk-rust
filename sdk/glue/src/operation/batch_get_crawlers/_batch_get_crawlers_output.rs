@@ -36,8 +36,8 @@ impl BatchGetCrawlersOutput {
 }
 
 /// A builder for [`BatchGetCrawlersOutput`](crate::operation::batch_get_crawlers::BatchGetCrawlersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetCrawlersOutputBuilder {
     pub(crate) crawlers: ::std::option::Option<::std::vec::Vec<crate::types::Crawler>>,
     pub(crate) crawlers_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

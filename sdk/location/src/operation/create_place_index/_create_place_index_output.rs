@@ -48,8 +48,8 @@ impl CreatePlaceIndexOutput {
 }
 
 /// A builder for [`CreatePlaceIndexOutput`](crate::operation::create_place_index::CreatePlaceIndexOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePlaceIndexOutputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_arn: ::std::option::Option<::std::string::String>,

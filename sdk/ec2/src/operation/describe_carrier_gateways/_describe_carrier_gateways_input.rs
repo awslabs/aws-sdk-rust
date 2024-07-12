@@ -88,8 +88,8 @@ impl DescribeCarrierGatewaysInput {
 }
 
 /// A builder for [`DescribeCarrierGatewaysInput`](crate::operation::describe_carrier_gateways::DescribeCarrierGatewaysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCarrierGatewaysInputBuilder {
     pub(crate) carrier_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

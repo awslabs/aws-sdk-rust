@@ -53,8 +53,8 @@ impl GuardrailTopicConfig {
 }
 
 /// A builder for [`GuardrailTopicConfig`](crate::types::GuardrailTopicConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GuardrailTopicConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<::std::string::String>,

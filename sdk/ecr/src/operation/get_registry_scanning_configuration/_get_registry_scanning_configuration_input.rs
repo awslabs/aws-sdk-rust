@@ -11,8 +11,8 @@ impl GetRegistryScanningConfigurationInput {
 }
 
 /// A builder for [`GetRegistryScanningConfigurationInput`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegistryScanningConfigurationInputBuilder {}
 impl GetRegistryScanningConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetRegistryScanningConfigurationInput`](crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationInput).

@@ -21,8 +21,8 @@ impl VirtualGatewayBackendDefaults {
 }
 
 /// A builder for [`VirtualGatewayBackendDefaults`](crate::types::VirtualGatewayBackendDefaults).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VirtualGatewayBackendDefaultsBuilder {
     pub(crate) client_policy: ::std::option::Option<crate::types::VirtualGatewayClientPolicy>,
 }

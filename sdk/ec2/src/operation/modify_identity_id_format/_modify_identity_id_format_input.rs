@@ -34,8 +34,8 @@ impl ModifyIdentityIdFormatInput {
 }
 
 /// A builder for [`ModifyIdentityIdFormatInput`](crate::operation::modify_identity_id_format::ModifyIdentityIdFormatInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyIdentityIdFormatInputBuilder {
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,

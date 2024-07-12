@@ -26,8 +26,8 @@ impl RestoreTableFromSnapshotOutput {
 }
 
 /// A builder for [`RestoreTableFromSnapshotOutput`](crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreTableFromSnapshotOutputBuilder {
     pub(crate) table_restore_status: ::std::option::Option<crate::types::TableRestoreStatus>,
     _request_id: Option<String>,

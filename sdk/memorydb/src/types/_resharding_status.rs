@@ -21,8 +21,8 @@ impl ReshardingStatus {
 }
 
 /// A builder for [`ReshardingStatus`](crate::types::ReshardingStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReshardingStatusBuilder {
     pub(crate) slot_migration: ::std::option::Option<crate::types::SlotMigration>,
 }

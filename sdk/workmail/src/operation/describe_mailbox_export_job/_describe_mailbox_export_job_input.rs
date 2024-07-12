@@ -26,8 +26,8 @@ impl DescribeMailboxExportJobInput {
 }
 
 /// A builder for [`DescribeMailboxExportJobInput`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMailboxExportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,

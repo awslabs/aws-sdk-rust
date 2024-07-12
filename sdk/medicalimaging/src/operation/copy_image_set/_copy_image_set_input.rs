@@ -32,8 +32,8 @@ impl CopyImageSetInput {
 }
 
 /// A builder for [`CopyImageSetInput`](crate::operation::copy_image_set::CopyImageSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyImageSetInputBuilder {
     pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_image_set_id: ::std::option::Option<::std::string::String>,

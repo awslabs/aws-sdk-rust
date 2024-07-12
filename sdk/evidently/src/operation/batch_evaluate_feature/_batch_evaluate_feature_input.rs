@@ -28,8 +28,8 @@ impl BatchEvaluateFeatureInput {
 }
 
 /// A builder for [`BatchEvaluateFeatureInput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchEvaluateFeatureInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) requests: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>>,

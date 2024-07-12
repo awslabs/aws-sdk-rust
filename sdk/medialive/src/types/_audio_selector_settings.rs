@@ -39,8 +39,8 @@ impl AudioSelectorSettings {
 }
 
 /// A builder for [`AudioSelectorSettings`](crate::types::AudioSelectorSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioSelectorSettingsBuilder {
     pub(crate) audio_hls_rendition_selection: ::std::option::Option<crate::types::AudioHlsRenditionSelection>,
     pub(crate) audio_language_selection: ::std::option::Option<crate::types::AudioLanguageSelection>,

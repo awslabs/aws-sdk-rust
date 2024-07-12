@@ -45,8 +45,8 @@ impl ExecutionStatus {
 }
 
 /// A builder for [`ExecutionStatus`](crate::types::ExecutionStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutionStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::ExecutionStatusCode>,
     pub(crate) status_reason: ::std::option::Option<crate::types::ExecutionStatusReason>,

@@ -18,8 +18,8 @@ impl DeleteApplicationFromEnvironmentOutput {
 }
 
 /// A builder for [`DeleteApplicationFromEnvironmentOutput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationFromEnvironmentOutputBuilder {
     _request_id: Option<String>,
 }

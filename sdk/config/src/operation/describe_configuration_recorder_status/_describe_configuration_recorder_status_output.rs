@@ -29,8 +29,8 @@ impl DescribeConfigurationRecorderStatusOutput {
 }
 
 /// A builder for [`DescribeConfigurationRecorderStatusOutput`](crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeConfigurationRecorderStatusOutputBuilder {
     pub(crate) configuration_recorders_status: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorderStatus>>,
     _request_id: Option<String>,

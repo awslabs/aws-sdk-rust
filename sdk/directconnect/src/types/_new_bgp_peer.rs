@@ -45,8 +45,8 @@ impl NewBgpPeer {
 }
 
 /// A builder for [`NewBgpPeer`](crate::types::NewBgpPeer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NewBgpPeerBuilder {
     pub(crate) asn: ::std::option::Option<i32>,
     pub(crate) auth_key: ::std::option::Option<::std::string::String>,

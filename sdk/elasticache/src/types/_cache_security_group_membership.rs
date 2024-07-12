@@ -27,8 +27,8 @@ impl CacheSecurityGroupMembership {
 }
 
 /// A builder for [`CacheSecurityGroupMembership`](crate::types::CacheSecurityGroupMembership).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheSecurityGroupMembershipBuilder {
     pub(crate) cache_security_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,

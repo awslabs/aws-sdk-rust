@@ -68,8 +68,8 @@ impl GetCostAndUsageWithResourcesInput {
 }
 
 /// A builder for [`GetCostAndUsageWithResourcesInput`](crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCostAndUsageWithResourcesInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) granularity: ::std::option::Option<crate::types::Granularity>,

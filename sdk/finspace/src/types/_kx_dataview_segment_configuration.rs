@@ -35,8 +35,8 @@ impl KxDataviewSegmentConfiguration {
 }
 
 /// A builder for [`KxDataviewSegmentConfiguration`](crate::types::KxDataviewSegmentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KxDataviewSegmentConfigurationBuilder {
     pub(crate) db_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) volume_name: ::std::option::Option<::std::string::String>,

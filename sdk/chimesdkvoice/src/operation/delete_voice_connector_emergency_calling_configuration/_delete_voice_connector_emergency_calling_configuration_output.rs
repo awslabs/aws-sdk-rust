@@ -18,8 +18,8 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationOutput {
 }
 
 /// A builder for [`DeleteVoiceConnectorEmergencyCallingConfigurationOutput`](crate::operation::delete_voice_connector_emergency_calling_configuration::DeleteVoiceConnectorEmergencyCallingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVoiceConnectorEmergencyCallingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

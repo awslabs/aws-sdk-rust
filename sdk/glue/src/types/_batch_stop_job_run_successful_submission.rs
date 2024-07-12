@@ -27,8 +27,8 @@ impl BatchStopJobRunSuccessfulSubmission {
 }
 
 /// A builder for [`BatchStopJobRunSuccessfulSubmission`](crate::types::BatchStopJobRunSuccessfulSubmission).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStopJobRunSuccessfulSubmissionBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_run_id: ::std::option::Option<::std::string::String>,

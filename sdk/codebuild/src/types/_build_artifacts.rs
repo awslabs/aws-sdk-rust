@@ -129,8 +129,8 @@ impl BuildArtifacts {
 }
 
 /// A builder for [`BuildArtifacts`](crate::types::BuildArtifacts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuildArtifactsBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) sha256_sum: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl HumanLoopConfig {
 }
 
 /// A builder for [`HumanLoopConfig`](crate::types::HumanLoopConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HumanLoopConfigBuilder {
     pub(crate) human_loop_name: ::std::option::Option<::std::string::String>,
     pub(crate) flow_definition_arn: ::std::option::Option<::std::string::String>,

@@ -53,8 +53,8 @@ impl DescribeMultiplexProgramOutput {
 }
 
 /// A builder for [`DescribeMultiplexProgramOutput`](crate::operation::describe_multiplex_program::DescribeMultiplexProgramOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMultiplexProgramOutputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) multiplex_program_settings: ::std::option::Option<crate::types::MultiplexProgramSettings>,

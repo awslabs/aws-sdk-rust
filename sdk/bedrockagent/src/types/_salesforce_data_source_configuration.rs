@@ -27,8 +27,8 @@ impl SalesforceDataSourceConfiguration {
 }
 
 /// A builder for [`SalesforceDataSourceConfiguration`](crate::types::SalesforceDataSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SalesforceDataSourceConfigurationBuilder {
     pub(crate) source_configuration: ::std::option::Option<crate::types::SalesforceSourceConfiguration>,
     pub(crate) crawler_configuration: ::std::option::Option<crate::types::SalesforceCrawlerConfiguration>,

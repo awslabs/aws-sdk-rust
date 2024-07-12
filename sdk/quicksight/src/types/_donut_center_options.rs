@@ -21,8 +21,8 @@ impl DonutCenterOptions {
 }
 
 /// A builder for [`DonutCenterOptions`](crate::types::DonutCenterOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DonutCenterOptionsBuilder {
     pub(crate) label_visibility: ::std::option::Option<crate::types::Visibility>,
 }

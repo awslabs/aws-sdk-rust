@@ -21,8 +21,8 @@ impl MediaDeviceMemoryInfo {
 }
 
 /// A builder for [`MediaDeviceMemoryInfo`](crate::types::MediaDeviceMemoryInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaDeviceMemoryInfoBuilder {
     pub(crate) size_in_mib: ::std::option::Option<i32>,
 }

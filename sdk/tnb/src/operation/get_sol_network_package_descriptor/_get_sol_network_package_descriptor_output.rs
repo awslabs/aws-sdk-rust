@@ -32,8 +32,8 @@ impl GetSolNetworkPackageDescriptorOutput {
 }
 
 /// A builder for [`GetSolNetworkPackageDescriptorOutput`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSolNetworkPackageDescriptorOutputBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::DescriptorContentType>,
     pub(crate) nsd: ::std::option::Option<::aws_smithy_types::Blob>,

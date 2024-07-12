@@ -18,8 +18,8 @@ impl DeletePredictorBacktestExportJobOutput {
 }
 
 /// A builder for [`DeletePredictorBacktestExportJobOutput`](crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePredictorBacktestExportJobOutputBuilder {
     _request_id: Option<String>,
 }

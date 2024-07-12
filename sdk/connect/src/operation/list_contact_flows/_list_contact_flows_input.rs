@@ -40,8 +40,8 @@ impl ListContactFlowsInput {
 }
 
 /// A builder for [`ListContactFlowsInput`](crate::operation::list_contact_flows::ListContactFlowsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListContactFlowsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_types: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowType>>,

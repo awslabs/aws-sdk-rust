@@ -20,8 +20,8 @@ impl GetConnectorDefinitionInput {
 }
 
 /// A builder for [`GetConnectorDefinitionInput`](crate::operation::get_connector_definition::GetConnectorDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectorDefinitionInputBuilder {
     pub(crate) connector_definition_id: ::std::option::Option<::std::string::String>,
 }

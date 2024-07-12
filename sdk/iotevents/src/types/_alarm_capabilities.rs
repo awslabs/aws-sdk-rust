@@ -27,8 +27,8 @@ impl AlarmCapabilities {
 }
 
 /// A builder for [`AlarmCapabilities`](crate::types::AlarmCapabilities).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AlarmCapabilitiesBuilder {
     pub(crate) initialization_configuration: ::std::option::Option<crate::types::InitializationConfiguration>,
     pub(crate) acknowledge_flow: ::std::option::Option<crate::types::AcknowledgeFlow>,

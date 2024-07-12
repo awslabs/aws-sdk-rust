@@ -29,8 +29,8 @@ impl BatchListObjectParentsResponse {
 }
 
 /// A builder for [`BatchListObjectParentsResponse`](crate::types::BatchListObjectParentsResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchListObjectParentsResponseBuilder {
     pub(crate) parent_links: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

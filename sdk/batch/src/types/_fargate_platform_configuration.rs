@@ -21,8 +21,8 @@ impl FargatePlatformConfiguration {
 }
 
 /// A builder for [`FargatePlatformConfiguration`](crate::types::FargatePlatformConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FargatePlatformConfigurationBuilder {
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
 }

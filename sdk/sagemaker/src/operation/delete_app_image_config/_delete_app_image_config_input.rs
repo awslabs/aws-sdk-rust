@@ -20,8 +20,8 @@ impl DeleteAppImageConfigInput {
 }
 
 /// A builder for [`DeleteAppImageConfigInput`](crate::operation::delete_app_image_config::DeleteAppImageConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAppImageConfigInputBuilder {
     pub(crate) app_image_config_name: ::std::option::Option<::std::string::String>,
 }

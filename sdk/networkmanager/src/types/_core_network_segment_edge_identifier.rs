@@ -33,8 +33,8 @@ impl CoreNetworkSegmentEdgeIdentifier {
 }
 
 /// A builder for [`CoreNetworkSegmentEdgeIdentifier`](crate::types::CoreNetworkSegmentEdgeIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CoreNetworkSegmentEdgeIdentifierBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,

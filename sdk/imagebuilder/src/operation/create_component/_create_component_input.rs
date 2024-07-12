@@ -114,8 +114,8 @@ impl CreateComponentInput {
 }
 
 /// A builder for [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateComponentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) semantic_version: ::std::option::Option<::std::string::String>,

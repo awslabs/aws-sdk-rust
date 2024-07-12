@@ -34,8 +34,8 @@ impl ListWebsiteAuthorizationProvidersOutput {
 }
 
 /// A builder for [`ListWebsiteAuthorizationProvidersOutput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWebsiteAuthorizationProvidersOutputBuilder {
     pub(crate) website_authorization_providers: ::std::option::Option<::std::vec::Vec<crate::types::WebsiteAuthorizationProviderSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

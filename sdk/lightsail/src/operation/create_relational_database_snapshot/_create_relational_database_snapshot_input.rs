@@ -50,8 +50,8 @@ impl CreateRelationalDatabaseSnapshotInput {
 }
 
 /// A builder for [`CreateRelationalDatabaseSnapshotInput`](crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRelationalDatabaseSnapshotInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) relational_database_snapshot_name: ::std::option::Option<::std::string::String>,

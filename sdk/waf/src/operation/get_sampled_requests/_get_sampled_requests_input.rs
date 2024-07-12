@@ -50,8 +50,8 @@ impl GetSampledRequestsInput {
 }
 
 /// A builder for [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSampledRequestsInputBuilder {
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,

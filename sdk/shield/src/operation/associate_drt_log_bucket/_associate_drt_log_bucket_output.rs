@@ -18,8 +18,8 @@ impl AssociateDrtLogBucketOutput {
 }
 
 /// A builder for [`AssociateDrtLogBucketOutput`](crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDrtLogBucketOutputBuilder {
     _request_id: Option<String>,
 }

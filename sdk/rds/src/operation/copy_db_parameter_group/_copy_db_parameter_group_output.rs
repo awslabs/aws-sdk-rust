@@ -28,8 +28,8 @@ impl CopyDbParameterGroupOutput {
 }
 
 /// A builder for [`CopyDbParameterGroupOutput`](crate::operation::copy_db_parameter_group::CopyDbParameterGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyDbParameterGroupOutputBuilder {
     pub(crate) db_parameter_group: ::std::option::Option<crate::types::DbParameterGroup>,
     _request_id: Option<String>,

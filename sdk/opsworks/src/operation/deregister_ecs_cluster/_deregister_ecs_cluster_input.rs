@@ -20,8 +20,8 @@ impl DeregisterEcsClusterInput {
 }
 
 /// A builder for [`DeregisterEcsClusterInput`](crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterEcsClusterInputBuilder {
     pub(crate) ecs_cluster_arn: ::std::option::Option<::std::string::String>,
 }

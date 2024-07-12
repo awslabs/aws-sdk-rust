@@ -33,8 +33,8 @@ impl ListArchiveSearchesInput {
 }
 
 /// A builder for [`ListArchiveSearchesInput`](crate::operation::list_archive_searches::ListArchiveSearchesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListArchiveSearchesInputBuilder {
     pub(crate) archive_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

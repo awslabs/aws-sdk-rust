@@ -27,8 +27,8 @@ impl WaitActivity {
 }
 
 /// A builder for [`WaitActivity`](crate::types::WaitActivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WaitActivityBuilder {
     pub(crate) next_activity: ::std::option::Option<::std::string::String>,
     pub(crate) wait_time: ::std::option::Option<crate::types::WaitTime>,

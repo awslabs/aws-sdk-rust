@@ -18,8 +18,8 @@ impl DeleteObjectsOnCancelOutput {
 }
 
 /// A builder for [`DeleteObjectsOnCancelOutput`](crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteObjectsOnCancelOutputBuilder {
     _request_id: Option<String>,
 }

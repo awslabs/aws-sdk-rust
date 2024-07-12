@@ -50,8 +50,8 @@ impl UploadArchiveInput {
 }
 
 /// A builder for [`UploadArchiveInput`](crate::operation::upload_archive::UploadArchiveInput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UploadArchiveInputBuilder {
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

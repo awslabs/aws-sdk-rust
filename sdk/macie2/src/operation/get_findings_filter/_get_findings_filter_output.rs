@@ -68,8 +68,8 @@ impl GetFindingsFilterOutput {
 }
 
 /// A builder for [`GetFindingsFilterOutput`](crate::operation::get_findings_filter::GetFindingsFilterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetFindingsFilterOutputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::FindingsFilterAction>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

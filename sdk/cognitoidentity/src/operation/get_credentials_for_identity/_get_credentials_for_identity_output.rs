@@ -33,8 +33,8 @@ impl GetCredentialsForIdentityOutput {
 }
 
 /// A builder for [`GetCredentialsForIdentityOutput`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCredentialsForIdentityOutputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,

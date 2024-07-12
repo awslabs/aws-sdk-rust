@@ -115,8 +115,8 @@ impl CreateTokenWithIamInput {
 }
 
 /// A builder for [`CreateTokenWithIamInput`](crate::operation::create_token_with_iam::CreateTokenWithIamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateTokenWithIamInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) grant_type: ::std::option::Option<::std::string::String>,

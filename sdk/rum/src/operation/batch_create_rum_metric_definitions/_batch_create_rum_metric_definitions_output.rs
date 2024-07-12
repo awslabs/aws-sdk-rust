@@ -35,8 +35,8 @@ impl BatchCreateRumMetricDefinitionsOutput {
 }
 
 /// A builder for [`BatchCreateRumMetricDefinitionsOutput`](crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchCreateRumMetricDefinitionsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>>,
     pub(crate) metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,

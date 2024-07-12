@@ -44,8 +44,8 @@ impl StartDiscoveryJobInput {
 }
 
 /// A builder for [`StartDiscoveryJobInput`](crate::operation::start_discovery_job::StartDiscoveryJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDiscoveryJobInputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
     pub(crate) collection_duration_minutes: ::std::option::Option<i32>,

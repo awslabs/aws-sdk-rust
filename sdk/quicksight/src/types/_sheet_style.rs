@@ -27,8 +27,8 @@ impl SheetStyle {
 }
 
 /// A builder for [`SheetStyle`](crate::types::SheetStyle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SheetStyleBuilder {
     pub(crate) tile: ::std::option::Option<crate::types::TileStyle>,
     pub(crate) tile_layout: ::std::option::Option<crate::types::TileLayoutStyle>,

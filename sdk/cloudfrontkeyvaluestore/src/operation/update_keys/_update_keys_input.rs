@@ -42,8 +42,8 @@ impl UpdateKeysInput {
 }
 
 /// A builder for [`UpdateKeysInput`](crate::operation::update_keys::UpdateKeysInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateKeysInputBuilder {
     pub(crate) kvs_arn: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,

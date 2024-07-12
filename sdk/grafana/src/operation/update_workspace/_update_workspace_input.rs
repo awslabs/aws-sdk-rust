@@ -151,8 +151,8 @@ impl UpdateWorkspaceInput {
 }
 
 /// A builder for [`UpdateWorkspaceInput`](crate::operation::update_workspace::UpdateWorkspaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateWorkspaceInputBuilder {
     pub(crate) account_access_type: ::std::option::Option<crate::types::AccountAccessType>,
     pub(crate) organization_role_name: ::std::option::Option<::std::string::String>,

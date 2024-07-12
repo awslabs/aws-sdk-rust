@@ -32,8 +32,8 @@ impl UpdateUsageLimitInput {
 }
 
 /// A builder for [`UpdateUsageLimitInput`](crate::operation::update_usage_limit::UpdateUsageLimitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUsageLimitInputBuilder {
     pub(crate) usage_limit_id: ::std::option::Option<::std::string::String>,
     pub(crate) amount: ::std::option::Option<i64>,

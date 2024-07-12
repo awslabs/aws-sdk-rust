@@ -45,8 +45,8 @@ impl BlackoutSlate {
 }
 
 /// A builder for [`BlackoutSlate`](crate::types::BlackoutSlate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BlackoutSlateBuilder {
     pub(crate) blackout_slate_image: ::std::option::Option<crate::types::InputLocation>,
     pub(crate) network_end_blackout: ::std::option::Option<crate::types::BlackoutSlateNetworkEndBlackout>,

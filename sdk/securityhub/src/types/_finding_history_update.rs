@@ -33,8 +33,8 @@ impl FindingHistoryUpdate {
 }
 
 /// A builder for [`FindingHistoryUpdate`](crate::types::FindingHistoryUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingHistoryUpdateBuilder {
     pub(crate) updated_field: ::std::option::Option<::std::string::String>,
     pub(crate) old_value: ::std::option::Option<::std::string::String>,

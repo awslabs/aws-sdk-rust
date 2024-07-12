@@ -68,8 +68,8 @@ impl CreateBulkImportJobOutput {
 }
 
 /// A builder for [`CreateBulkImportJobOutput`](crate::operation::create_bulk_import_job::CreateBulkImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBulkImportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,

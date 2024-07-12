@@ -101,8 +101,8 @@ impl ConfirmSignUpInput {
 }
 
 /// A builder for [`ConfirmSignUpInput`](crate::operation::confirm_sign_up::ConfirmSignUpInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConfirmSignUpInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_hash: ::std::option::Option<::std::string::String>,

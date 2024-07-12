@@ -53,8 +53,8 @@ impl ChannelNotBroadcasting {
 }
 
 /// A builder for [`ChannelNotBroadcasting`](crate::types::error::ChannelNotBroadcasting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChannelNotBroadcastingBuilder {
     pub(crate) exception_message: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

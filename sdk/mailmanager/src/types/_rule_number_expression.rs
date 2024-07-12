@@ -33,8 +33,8 @@ impl RuleNumberExpression {
 }
 
 /// A builder for [`RuleNumberExpression`](crate::types::RuleNumberExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleNumberExpressionBuilder {
     pub(crate) evaluate: ::std::option::Option<crate::types::RuleNumberToEvaluate>,
     pub(crate) operator: ::std::option::Option<crate::types::RuleNumberOperator>,

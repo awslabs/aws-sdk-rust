@@ -27,8 +27,8 @@ impl AmazonQSettings {
 }
 
 /// A builder for [`AmazonQSettings`](crate::types::AmazonQSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmazonQSettingsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) q_profile_arn: ::std::option::Option<::std::string::String>,

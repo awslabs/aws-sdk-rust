@@ -27,8 +27,8 @@ impl RecordFormat {
 }
 
 /// A builder for [`RecordFormat`](crate::types::RecordFormat).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecordFormatBuilder {
     pub(crate) record_format_type: ::std::option::Option<crate::types::RecordFormatType>,
     pub(crate) mapping_parameters: ::std::option::Option<crate::types::MappingParameters>,

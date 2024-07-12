@@ -26,8 +26,8 @@ impl GetResourcesSummaryOutput {
 }
 
 /// A builder for [`GetResourcesSummaryOutput`](crate::operation::get_resources_summary::GetResourcesSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourcesSummaryOutputBuilder {
     pub(crate) counts: ::std::option::Option<crate::types::CountsSummary>,
     _request_id: Option<String>,

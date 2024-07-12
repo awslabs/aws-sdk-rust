@@ -100,8 +100,8 @@ impl ListStackInstanceResourceDriftsInput {
 }
 
 /// A builder for [`ListStackInstanceResourceDriftsInput`](crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStackInstanceResourceDriftsInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

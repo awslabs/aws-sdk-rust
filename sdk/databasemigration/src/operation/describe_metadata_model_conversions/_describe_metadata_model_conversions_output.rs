@@ -36,8 +36,8 @@ impl DescribeMetadataModelConversionsOutput {
 }
 
 /// A builder for [`DescribeMetadataModelConversionsOutput`](crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMetadataModelConversionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) requests: ::std::option::Option<::std::vec::Vec<crate::types::SchemaConversionRequest>>,

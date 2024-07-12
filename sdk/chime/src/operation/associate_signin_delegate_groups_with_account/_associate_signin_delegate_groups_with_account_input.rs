@@ -29,8 +29,8 @@ impl AssociateSigninDelegateGroupsWithAccountInput {
 }
 
 /// A builder for [`AssociateSigninDelegateGroupsWithAccountInput`](crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateSigninDelegateGroupsWithAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) signin_delegate_groups: ::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>>,

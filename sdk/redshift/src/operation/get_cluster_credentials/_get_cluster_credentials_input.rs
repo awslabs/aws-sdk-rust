@@ -143,8 +143,8 @@ impl GetClusterCredentialsInput {
 }
 
 /// A builder for [`GetClusterCredentialsInput`](crate::operation::get_cluster_credentials::GetClusterCredentialsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetClusterCredentialsInputBuilder {
     pub(crate) db_user: ::std::option::Option<::std::string::String>,
     pub(crate) db_name: ::std::option::Option<::std::string::String>,

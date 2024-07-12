@@ -27,8 +27,8 @@ impl BackendApiAuthType {
 }
 
 /// A builder for [`BackendApiAuthType`](crate::types::BackendApiAuthType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackendApiAuthTypeBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::Mode>,
     pub(crate) settings: ::std::option::Option<crate::types::BackendApiAppSyncAuthSettings>,

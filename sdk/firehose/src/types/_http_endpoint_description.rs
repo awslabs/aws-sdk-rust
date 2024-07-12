@@ -35,8 +35,8 @@ impl HttpEndpointDescription {
 }
 
 /// A builder for [`HttpEndpointDescription`](crate::types::HttpEndpointDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct HttpEndpointDescriptionBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

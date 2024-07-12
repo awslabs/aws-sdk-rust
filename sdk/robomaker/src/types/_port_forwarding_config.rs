@@ -23,8 +23,8 @@ impl PortForwardingConfig {
 }
 
 /// A builder for [`PortForwardingConfig`](crate::types::PortForwardingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PortForwardingConfigBuilder {
     pub(crate) port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::PortMapping>>,
 }

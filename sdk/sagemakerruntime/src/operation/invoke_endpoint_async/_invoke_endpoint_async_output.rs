@@ -38,8 +38,8 @@ impl InvokeEndpointAsyncOutput {
 }
 
 /// A builder for [`InvokeEndpointAsyncOutput`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvokeEndpointAsyncOutputBuilder {
     pub(crate) inference_id: ::std::option::Option<::std::string::String>,
     pub(crate) output_location: ::std::option::Option<::std::string::String>,

@@ -77,8 +77,8 @@ impl OrderableReplicationInstance {
 }
 
 /// A builder for [`OrderableReplicationInstance`](crate::types::OrderableReplicationInstance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OrderableReplicationInstanceBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) replication_instance_class: ::std::option::Option<::std::string::String>,

@@ -12,8 +12,8 @@ impl GetRegistrationCodeInput {
 }
 
 /// A builder for [`GetRegistrationCodeInput`](crate::operation::get_registration_code::GetRegistrationCodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRegistrationCodeInputBuilder {}
 impl GetRegistrationCodeInputBuilder {
     /// Consumes the builder and constructs a [`GetRegistrationCodeInput`](crate::operation::get_registration_code::GetRegistrationCodeInput).

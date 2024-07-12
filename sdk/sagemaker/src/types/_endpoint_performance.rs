@@ -27,8 +27,8 @@ impl EndpointPerformance {
 }
 
 /// A builder for [`EndpointPerformance`](crate::types::EndpointPerformance).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EndpointPerformanceBuilder {
     pub(crate) metrics: ::std::option::Option<crate::types::InferenceMetrics>,
     pub(crate) endpoint_info: ::std::option::Option<crate::types::EndpointInfo>,

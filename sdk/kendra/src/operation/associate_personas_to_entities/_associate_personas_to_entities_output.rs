@@ -28,8 +28,8 @@ impl AssociatePersonasToEntitiesOutput {
 }
 
 /// A builder for [`AssociatePersonasToEntitiesOutput`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociatePersonasToEntitiesOutputBuilder {
     pub(crate) failed_entity_list: ::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>>,
     _request_id: Option<String>,

@@ -35,8 +35,8 @@ impl GetRepositoryTriggersOutput {
 }
 
 /// A builder for [`GetRepositoryTriggersOutput`](crate::operation::get_repository_triggers::GetRepositoryTriggersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRepositoryTriggersOutputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>,

@@ -39,8 +39,8 @@ impl ListControlDisplayOptions {
 }
 
 /// A builder for [`ListControlDisplayOptions`](crate::types::ListControlDisplayOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListControlDisplayOptionsBuilder {
     pub(crate) search_options: ::std::option::Option<crate::types::ListControlSearchOptions>,
     pub(crate) select_all_options: ::std::option::Option<crate::types::ListControlSelectAllOptions>,

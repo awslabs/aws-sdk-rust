@@ -39,8 +39,8 @@ impl AggregateConformancePackComplianceFilters {
 }
 
 /// A builder for [`AggregateConformancePackComplianceFilters`](crate::types::AggregateConformancePackComplianceFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AggregateConformancePackComplianceFiltersBuilder {
     pub(crate) conformance_pack_name: ::std::option::Option<::std::string::String>,
     pub(crate) compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,

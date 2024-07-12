@@ -45,8 +45,8 @@ impl VdmAttributes {
 }
 
 /// A builder for [`VdmAttributes`](crate::types::VdmAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VdmAttributesBuilder {
     pub(crate) vdm_enabled: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) dashboard_attributes: ::std::option::Option<crate::types::DashboardAttributes>,

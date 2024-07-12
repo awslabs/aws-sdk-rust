@@ -18,8 +18,8 @@ impl DissociateAccessGrantsIdentityCenterOutput {
 }
 
 /// A builder for [`DissociateAccessGrantsIdentityCenterOutput`](crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DissociateAccessGrantsIdentityCenterOutputBuilder {
     _request_id: Option<String>,
 }

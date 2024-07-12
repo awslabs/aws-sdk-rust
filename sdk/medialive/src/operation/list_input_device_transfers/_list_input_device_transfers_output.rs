@@ -35,8 +35,8 @@ impl ListInputDeviceTransfersOutput {
 }
 
 /// A builder for [`ListInputDeviceTransfersOutput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInputDeviceTransfersOutputBuilder {
     pub(crate) input_device_transfers: ::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

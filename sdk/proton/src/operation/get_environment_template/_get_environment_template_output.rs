@@ -26,8 +26,8 @@ impl GetEnvironmentTemplateOutput {
 }
 
 /// A builder for [`GetEnvironmentTemplateOutput`](crate::operation::get_environment_template::GetEnvironmentTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEnvironmentTemplateOutputBuilder {
     pub(crate) environment_template: ::std::option::Option<crate::types::EnvironmentTemplate>,
     _request_id: Option<String>,

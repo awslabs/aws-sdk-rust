@@ -27,8 +27,8 @@ impl AwsLambdaFunctionEnvironment {
 }
 
 /// A builder for [`AwsLambdaFunctionEnvironment`](crate::types::AwsLambdaFunctionEnvironment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsLambdaFunctionEnvironmentBuilder {
     pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) error: ::std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError>,

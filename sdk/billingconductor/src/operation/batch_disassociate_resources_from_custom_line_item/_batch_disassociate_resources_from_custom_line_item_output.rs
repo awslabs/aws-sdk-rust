@@ -38,8 +38,8 @@ impl BatchDisassociateResourcesFromCustomLineItemOutput {
 }
 
 /// A builder for [`BatchDisassociateResourcesFromCustomLineItemOutput`](crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
     pub(crate) successfully_disassociated_resources: ::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,
     pub(crate) failed_disassociated_resources: ::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>>,

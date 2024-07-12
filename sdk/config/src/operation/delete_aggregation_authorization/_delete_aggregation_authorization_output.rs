@@ -18,8 +18,8 @@ impl DeleteAggregationAuthorizationOutput {
 }
 
 /// A builder for [`DeleteAggregationAuthorizationOutput`](crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAggregationAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }

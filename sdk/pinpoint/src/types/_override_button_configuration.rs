@@ -27,8 +27,8 @@ impl OverrideButtonConfiguration {
 }
 
 /// A builder for [`OverrideButtonConfiguration`](crate::types::OverrideButtonConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OverrideButtonConfigurationBuilder {
     pub(crate) button_action: ::std::option::Option<crate::types::ButtonAction>,
     pub(crate) link: ::std::option::Option<::std::string::String>,

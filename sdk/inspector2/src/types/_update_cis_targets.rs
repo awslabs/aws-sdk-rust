@@ -31,8 +31,8 @@ impl UpdateCisTargets {
 }
 
 /// A builder for [`UpdateCisTargets`](crate::types::UpdateCisTargets).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCisTargetsBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) target_resource_tags:

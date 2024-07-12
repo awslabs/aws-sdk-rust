@@ -18,8 +18,8 @@ impl UpdateCapacityReservationOutput {
 }
 
 /// A builder for [`UpdateCapacityReservationOutput`](crate::operation::update_capacity_reservation::UpdateCapacityReservationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCapacityReservationOutputBuilder {
     _request_id: Option<String>,
 }

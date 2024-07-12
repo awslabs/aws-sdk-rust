@@ -116,8 +116,8 @@ impl UpdateScheduleInput {
 }
 
 /// A builder for [`UpdateScheduleInput`](crate::operation::update_schedule::UpdateScheduleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateScheduleInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,

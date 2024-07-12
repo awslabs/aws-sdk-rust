@@ -26,8 +26,8 @@ impl CommitTransactionOutput {
 }
 
 /// A builder for [`CommitTransactionOutput`](crate::operation::commit_transaction::CommitTransactionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CommitTransactionOutputBuilder {
     pub(crate) transaction_status: ::std::option::Option<crate::types::TransactionStatus>,
     _request_id: Option<String>,

@@ -39,8 +39,8 @@ impl RotationRulesType {
 }
 
 /// A builder for [`RotationRulesType`](crate::types::RotationRulesType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RotationRulesTypeBuilder {
     pub(crate) automatically_after_days: ::std::option::Option<i64>,
     pub(crate) duration: ::std::option::Option<::std::string::String>,

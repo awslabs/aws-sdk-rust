@@ -18,8 +18,8 @@ impl UpdateFunctionDefinitionOutput {
 }
 
 /// A builder for [`UpdateFunctionDefinitionOutput`](crate::operation::update_function_definition::UpdateFunctionDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFunctionDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

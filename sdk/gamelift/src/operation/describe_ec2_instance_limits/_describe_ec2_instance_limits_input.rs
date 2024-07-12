@@ -26,8 +26,8 @@ impl DescribeEc2InstanceLimitsInput {
 }
 
 /// A builder for [`DescribeEc2InstanceLimitsInput`](crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEc2InstanceLimitsInputBuilder {
     pub(crate) ec2_instance_type: ::std::option::Option<crate::types::Ec2InstanceType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

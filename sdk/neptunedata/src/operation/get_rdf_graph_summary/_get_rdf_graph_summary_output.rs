@@ -32,8 +32,8 @@ impl GetRdfGraphSummaryOutput {
 }
 
 /// A builder for [`GetRdfGraphSummaryOutput`](crate::operation::get_rdf_graph_summary::GetRdfGraphSummaryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRdfGraphSummaryOutputBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     pub(crate) payload: ::std::option::Option<crate::types::RdfGraphSummaryValueMap>,

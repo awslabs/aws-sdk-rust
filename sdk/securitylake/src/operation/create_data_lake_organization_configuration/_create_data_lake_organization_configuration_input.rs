@@ -22,8 +22,8 @@ impl CreateDataLakeOrganizationConfigurationInput {
 }
 
 /// A builder for [`CreateDataLakeOrganizationConfigurationInput`](crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDataLakeOrganizationConfigurationInputBuilder {
     pub(crate) auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
 }

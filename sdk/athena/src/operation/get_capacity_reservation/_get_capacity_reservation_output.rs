@@ -26,8 +26,8 @@ impl GetCapacityReservationOutput {
 }
 
 /// A builder for [`GetCapacityReservationOutput`](crate::operation::get_capacity_reservation::GetCapacityReservationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCapacityReservationOutputBuilder {
     pub(crate) capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
     _request_id: Option<String>,

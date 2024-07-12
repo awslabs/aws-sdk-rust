@@ -21,8 +21,8 @@ impl HttpProperties {
 }
 
 /// A builder for [`HttpProperties`](crate::types::HttpProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HttpPropertiesBuilder {
     pub(crate) http_name: ::std::option::Option<::std::string::String>,
 }

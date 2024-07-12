@@ -62,8 +62,8 @@ impl CreateAnomalySubscriptionInput {
 }
 
 /// A builder for [`CreateAnomalySubscriptionInput`](crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAnomalySubscriptionInputBuilder {
     pub(crate) anomaly_subscription: ::std::option::Option<crate::types::AnomalySubscription>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,

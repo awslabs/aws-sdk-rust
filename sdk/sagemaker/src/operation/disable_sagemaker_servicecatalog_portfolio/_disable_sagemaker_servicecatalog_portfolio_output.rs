@@ -18,8 +18,8 @@ impl DisableSagemakerServicecatalogPortfolioOutput {
 }
 
 /// A builder for [`DisableSagemakerServicecatalogPortfolioOutput`](crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableSagemakerServicecatalogPortfolioOutputBuilder {
     _request_id: Option<String>,
 }

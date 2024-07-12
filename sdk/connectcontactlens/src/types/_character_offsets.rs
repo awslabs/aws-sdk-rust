@@ -27,8 +27,8 @@ impl CharacterOffsets {
 }
 
 /// A builder for [`CharacterOffsets`](crate::types::CharacterOffsets).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CharacterOffsetsBuilder {
     pub(crate) begin_offset_char: ::std::option::Option<i32>,
     pub(crate) end_offset_char: ::std::option::Option<i32>,

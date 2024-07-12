@@ -27,8 +27,8 @@ impl TableFieldCustomTextContent {
 }
 
 /// A builder for [`TableFieldCustomTextContent`](crate::types::TableFieldCustomTextContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableFieldCustomTextContentBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) font_configuration: ::std::option::Option<crate::types::FontConfiguration>,

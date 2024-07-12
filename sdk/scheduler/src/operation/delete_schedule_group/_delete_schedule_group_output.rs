@@ -18,8 +18,8 @@ impl DeleteScheduleGroupOutput {
 }
 
 /// A builder for [`DeleteScheduleGroupOutput`](crate::operation::delete_schedule_group::DeleteScheduleGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteScheduleGroupOutputBuilder {
     _request_id: Option<String>,
 }

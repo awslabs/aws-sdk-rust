@@ -20,8 +20,8 @@ impl PutAccessPointConfigurationForObjectLambdaOutput {
 }
 
 /// A builder for [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutAccessPointConfigurationForObjectLambdaOutputBuilder {
     _request_id: Option<String>,
 }

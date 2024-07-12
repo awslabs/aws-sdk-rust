@@ -34,8 +34,8 @@ impl ListFindingsReportsOutput {
 }
 
 /// A builder for [`ListFindingsReportsOutput`](crate::operation::list_findings_reports::ListFindingsReportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFindingsReportsOutputBuilder {
     pub(crate) findings_report_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

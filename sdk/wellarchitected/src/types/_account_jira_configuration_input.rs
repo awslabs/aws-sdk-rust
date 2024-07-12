@@ -39,8 +39,8 @@ impl AccountJiraConfigurationInput {
 }
 
 /// A builder for [`AccountJiraConfigurationInput`](crate::types::AccountJiraConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AccountJiraConfigurationInputBuilder {
     pub(crate) issue_management_status: ::std::option::Option<crate::types::AccountJiraIssueManagementStatus>,
     pub(crate) issue_management_type: ::std::option::Option<crate::types::IssueManagementType>,

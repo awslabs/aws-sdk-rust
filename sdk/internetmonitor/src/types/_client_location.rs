@@ -68,8 +68,8 @@ impl ClientLocation {
 }
 
 /// A builder for [`ClientLocation`](crate::types::ClientLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClientLocationBuilder {
     pub(crate) as_name: ::std::option::Option<::std::string::String>,
     pub(crate) as_number: ::std::option::Option<i64>,

@@ -107,8 +107,8 @@ impl AwsIamRoleDetails {
 }
 
 /// A builder for [`AwsIamRoleDetails`](crate::types::AwsIamRoleDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsIamRoleDetailsBuilder {
     pub(crate) assume_role_policy_document: ::std::option::Option<::std::string::String>,
     pub(crate) attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,

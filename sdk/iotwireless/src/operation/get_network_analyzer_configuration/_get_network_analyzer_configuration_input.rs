@@ -20,8 +20,8 @@ impl GetNetworkAnalyzerConfigurationInput {
 }
 
 /// A builder for [`GetNetworkAnalyzerConfigurationInput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetNetworkAnalyzerConfigurationInputBuilder {
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
 }

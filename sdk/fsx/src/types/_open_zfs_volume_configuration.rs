@@ -161,8 +161,8 @@ impl OpenZfsVolumeConfiguration {
 }
 
 /// A builder for [`OpenZfsVolumeConfiguration`](crate::types::OpenZfsVolumeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpenZfsVolumeConfigurationBuilder {
     pub(crate) parent_volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_path: ::std::option::Option<::std::string::String>,

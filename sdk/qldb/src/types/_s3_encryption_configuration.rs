@@ -33,8 +33,8 @@ impl S3EncryptionConfiguration {
 }
 
 /// A builder for [`S3EncryptionConfiguration`](crate::types::S3EncryptionConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3EncryptionConfigurationBuilder {
     pub(crate) object_encryption_type: ::std::option::Option<crate::types::S3ObjectEncryptionType>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,

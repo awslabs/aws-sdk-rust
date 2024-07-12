@@ -18,8 +18,8 @@ impl DeleteExperienceOutput {
 }
 
 /// A builder for [`DeleteExperienceOutput`](crate::operation::delete_experience::DeleteExperienceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteExperienceOutputBuilder {
     _request_id: Option<String>,
 }

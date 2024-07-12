@@ -139,8 +139,8 @@ impl BaseConfigurationItem {
 }
 
 /// A builder for [`BaseConfigurationItem`](crate::types::BaseConfigurationItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BaseConfigurationItemBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

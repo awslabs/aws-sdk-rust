@@ -29,8 +29,8 @@ impl AvailableCapacity {
 }
 
 /// A builder for [`AvailableCapacity`](crate::types::AvailableCapacity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AvailableCapacityBuilder {
     pub(crate) available_instance_capacity: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>>,
     pub(crate) available_v_cpus: ::std::option::Option<i32>,

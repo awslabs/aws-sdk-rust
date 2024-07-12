@@ -26,8 +26,8 @@ impl GetTransitGatewayRouteTableAttachmentOutput {
 }
 
 /// A builder for [`GetTransitGatewayRouteTableAttachmentOutput`](crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayRouteTableAttachmentOutputBuilder {
     pub(crate) transit_gateway_route_table_attachment: ::std::option::Option<crate::types::TransitGatewayRouteTableAttachment>,
     _request_id: Option<String>,

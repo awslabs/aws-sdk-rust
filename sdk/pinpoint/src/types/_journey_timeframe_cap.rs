@@ -27,8 +27,8 @@ impl JourneyTimeframeCap {
 }
 
 /// A builder for [`JourneyTimeframeCap`](crate::types::JourneyTimeframeCap).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JourneyTimeframeCapBuilder {
     pub(crate) cap: ::std::option::Option<i32>,
     pub(crate) days: ::std::option::Option<i32>,

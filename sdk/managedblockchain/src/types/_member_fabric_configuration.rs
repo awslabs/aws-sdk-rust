@@ -37,8 +37,8 @@ impl MemberFabricConfiguration {
 }
 
 /// A builder for [`MemberFabricConfiguration`](crate::types::MemberFabricConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct MemberFabricConfigurationBuilder {
     pub(crate) admin_username: ::std::option::Option<::std::string::String>,
     pub(crate) admin_password: ::std::option::Option<::std::string::String>,

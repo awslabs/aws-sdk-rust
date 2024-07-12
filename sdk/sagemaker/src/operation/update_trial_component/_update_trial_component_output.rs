@@ -26,8 +26,8 @@ impl UpdateTrialComponentOutput {
 }
 
 /// A builder for [`UpdateTrialComponentOutput`](crate::operation::update_trial_component::UpdateTrialComponentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTrialComponentOutputBuilder {
     pub(crate) trial_component_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl GetStorageLensGroupOutput {
 }
 
 /// A builder for [`GetStorageLensGroupOutput`](crate::operation::get_storage_lens_group::GetStorageLensGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStorageLensGroupOutputBuilder {
     pub(crate) storage_lens_group: ::std::option::Option<crate::types::StorageLensGroup>,
     _request_id: Option<String>,

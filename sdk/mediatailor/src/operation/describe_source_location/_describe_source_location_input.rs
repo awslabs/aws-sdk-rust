@@ -20,8 +20,8 @@ impl DescribeSourceLocationInput {
 }
 
 /// A builder for [`DescribeSourceLocationInput`](crate::operation::describe_source_location::DescribeSourceLocationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSourceLocationInputBuilder {
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
 }

@@ -32,8 +32,8 @@ impl DescribeGlobalSettingsOutput {
 }
 
 /// A builder for [`DescribeGlobalSettingsOutput`](crate::operation::describe_global_settings::DescribeGlobalSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeGlobalSettingsOutputBuilder {
     pub(crate) global_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -136,8 +136,8 @@ impl BatchUpdateFindingsInput {
 }
 
 /// A builder for [`BatchUpdateFindingsInput`](crate::operation::batch_update_findings::BatchUpdateFindingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateFindingsInputBuilder {
     pub(crate) finding_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
     pub(crate) note: ::std::option::Option<crate::types::NoteUpdate>,

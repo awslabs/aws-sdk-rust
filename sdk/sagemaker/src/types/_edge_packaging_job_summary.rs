@@ -63,8 +63,8 @@ impl EdgePackagingJobSummary {
 }
 
 /// A builder for [`EdgePackagingJobSummary`](crate::types::EdgePackagingJobSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EdgePackagingJobSummaryBuilder {
     pub(crate) edge_packaging_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) edge_packaging_job_name: ::std::option::Option<::std::string::String>,

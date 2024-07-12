@@ -29,8 +29,8 @@ impl SlackWorkspace {
 }
 
 /// A builder for [`SlackWorkspace`](crate::types::SlackWorkspace).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SlackWorkspaceBuilder {
     pub(crate) slack_team_id: ::std::option::Option<::std::string::String>,
     pub(crate) slack_team_name: ::std::option::Option<::std::string::String>,

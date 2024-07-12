@@ -26,8 +26,8 @@ impl UpdateDetectorModelOutput {
 }
 
 /// A builder for [`UpdateDetectorModelOutput`](crate::operation::update_detector_model::UpdateDetectorModelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDetectorModelOutputBuilder {
     pub(crate) detector_model_configuration: ::std::option::Option<crate::types::DetectorModelConfiguration>,
     _request_id: Option<String>,

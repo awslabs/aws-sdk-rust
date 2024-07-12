@@ -90,8 +90,8 @@ impl UnarchiveWaveOutput {
 }
 
 /// A builder for [`UnarchiveWaveOutput`](crate::operation::unarchive_wave::UnarchiveWaveOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UnarchiveWaveOutputBuilder {
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ListDomainAssociationsInput {
 }
 
 /// A builder for [`ListDomainAssociationsInput`](crate::operation::list_domain_associations::ListDomainAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDomainAssociationsInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

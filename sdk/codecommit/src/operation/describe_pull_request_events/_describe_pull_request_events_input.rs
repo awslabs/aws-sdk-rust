@@ -44,8 +44,8 @@ impl DescribePullRequestEventsInput {
 }
 
 /// A builder for [`DescribePullRequestEventsInput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePullRequestEventsInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) pull_request_event_type: ::std::option::Option<crate::types::PullRequestEventType>,

@@ -27,8 +27,8 @@ impl MessageStopEvent {
 }
 
 /// A builder for [`MessageStopEvent`](crate::types::MessageStopEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MessageStopEventBuilder {
     pub(crate) stop_reason: ::std::option::Option<crate::types::StopReason>,
     pub(crate) additional_model_response_fields: ::std::option::Option<::aws_smithy_types::Document>,

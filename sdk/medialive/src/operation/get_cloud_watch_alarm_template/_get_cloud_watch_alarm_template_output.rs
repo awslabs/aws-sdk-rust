@@ -123,8 +123,8 @@ impl GetCloudWatchAlarmTemplateOutput {
 }
 
 /// A builder for [`GetCloudWatchAlarmTemplateOutput`](crate::operation::get_cloud_watch_alarm_template::GetCloudWatchAlarmTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCloudWatchAlarmTemplateOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::CloudWatchAlarmTemplateComparisonOperator>,

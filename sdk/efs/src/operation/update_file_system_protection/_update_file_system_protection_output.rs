@@ -45,8 +45,8 @@ impl UpdateFileSystemProtectionOutput {
 }
 
 /// A builder for [`UpdateFileSystemProtectionOutput`](crate::operation::update_file_system_protection::UpdateFileSystemProtectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateFileSystemProtectionOutputBuilder {
     pub(crate) replication_overwrite_protection: ::std::option::Option<crate::types::ReplicationOverwriteProtection>,
     _request_id: Option<String>,

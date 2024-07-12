@@ -26,8 +26,8 @@ impl CreatePresignedMlflowTrackingServerUrlOutput {
 }
 
 /// A builder for [`CreatePresignedMlflowTrackingServerUrlOutput`](crate::operation::create_presigned_mlflow_tracking_server_url::CreatePresignedMlflowTrackingServerUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePresignedMlflowTrackingServerUrlOutputBuilder {
     pub(crate) authorized_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

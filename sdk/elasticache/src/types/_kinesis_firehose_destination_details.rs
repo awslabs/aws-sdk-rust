@@ -21,8 +21,8 @@ impl KinesisFirehoseDestinationDetails {
 }
 
 /// A builder for [`KinesisFirehoseDestinationDetails`](crate::types::KinesisFirehoseDestinationDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KinesisFirehoseDestinationDetailsBuilder {
     pub(crate) delivery_stream: ::std::option::Option<::std::string::String>,
 }

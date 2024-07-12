@@ -26,8 +26,8 @@ impl CreatePublishingDestinationOutput {
 }
 
 /// A builder for [`CreatePublishingDestinationOutput`](crate::operation::create_publishing_destination::CreatePublishingDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePublishingDestinationOutputBuilder {
     pub(crate) destination_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

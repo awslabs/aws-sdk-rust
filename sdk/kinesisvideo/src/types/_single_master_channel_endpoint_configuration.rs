@@ -29,8 +29,8 @@ impl SingleMasterChannelEndpointConfiguration {
 }
 
 /// A builder for [`SingleMasterChannelEndpointConfiguration`](crate::types::SingleMasterChannelEndpointConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SingleMasterChannelEndpointConfigurationBuilder {
     pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::ChannelProtocol>>,
     pub(crate) role: ::std::option::Option<crate::types::ChannelRole>,

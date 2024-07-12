@@ -34,8 +34,8 @@ impl DeleteAttributeMappingInput {
 }
 
 /// A builder for [`DeleteAttributeMappingInput`](crate::operation::delete_attribute_mapping::DeleteAttributeMappingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAttributeMappingInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_field: ::std::option::Option<crate::types::CertificateField>,

@@ -42,8 +42,8 @@ impl StagingSourceServer {
 }
 
 /// A builder for [`StagingSourceServer`](crate::types::StagingSourceServer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StagingSourceServerBuilder {
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

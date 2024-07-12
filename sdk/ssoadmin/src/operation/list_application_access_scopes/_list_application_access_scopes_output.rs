@@ -33,8 +33,8 @@ impl ListApplicationAccessScopesOutput {
 }
 
 /// A builder for [`ListApplicationAccessScopesOutput`](crate::operation::list_application_access_scopes::ListApplicationAccessScopesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListApplicationAccessScopesOutputBuilder {
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ScopeDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

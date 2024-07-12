@@ -26,8 +26,8 @@ impl ListKxEnvironmentsInput {
 }
 
 /// A builder for [`ListKxEnvironmentsInput`](crate::operation::list_kx_environments::ListKxEnvironmentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKxEnvironmentsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

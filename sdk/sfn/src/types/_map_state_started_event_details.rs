@@ -21,8 +21,8 @@ impl MapStateStartedEventDetails {
 }
 
 /// A builder for [`MapStateStartedEventDetails`](crate::types::MapStateStartedEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MapStateStartedEventDetailsBuilder {
     pub(crate) length: ::std::option::Option<i32>,
 }

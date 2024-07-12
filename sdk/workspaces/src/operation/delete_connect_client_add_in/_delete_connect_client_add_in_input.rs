@@ -26,8 +26,8 @@ impl DeleteConnectClientAddInInput {
 }
 
 /// A builder for [`DeleteConnectClientAddInInput`](crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConnectClientAddInInputBuilder {
     pub(crate) add_in_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

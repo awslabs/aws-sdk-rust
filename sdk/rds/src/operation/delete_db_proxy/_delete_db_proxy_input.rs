@@ -20,8 +20,8 @@ impl DeleteDbProxyInput {
 }
 
 /// A builder for [`DeleteDbProxyInput`](crate::operation::delete_db_proxy::DeleteDbProxyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDbProxyInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
 }

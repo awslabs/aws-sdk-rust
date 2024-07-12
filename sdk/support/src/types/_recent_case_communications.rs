@@ -29,8 +29,8 @@ impl RecentCaseCommunications {
 }
 
 /// A builder for [`RecentCaseCommunications`](crate::types::RecentCaseCommunications).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecentCaseCommunicationsBuilder {
     pub(crate) communications: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

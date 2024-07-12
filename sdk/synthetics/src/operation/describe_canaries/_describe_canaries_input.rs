@@ -38,8 +38,8 @@ impl DescribeCanariesInput {
 }
 
 /// A builder for [`DescribeCanariesInput`](crate::operation::describe_canaries::DescribeCanariesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCanariesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

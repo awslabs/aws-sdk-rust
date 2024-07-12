@@ -45,8 +45,8 @@ impl CreateWorkloadShareInput {
 }
 
 /// A builder for [`CreateWorkloadShareInput`](crate::operation::create_workload_share::CreateWorkloadShareInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWorkloadShareInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with: ::std::option::Option<::std::string::String>,

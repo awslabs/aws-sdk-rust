@@ -26,8 +26,8 @@ impl StartRestoreJobOutput {
 }
 
 /// A builder for [`StartRestoreJobOutput`](crate::operation::start_restore_job::StartRestoreJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartRestoreJobOutputBuilder {
     pub(crate) restore_job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

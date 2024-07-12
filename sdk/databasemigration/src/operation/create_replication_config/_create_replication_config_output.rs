@@ -27,8 +27,8 @@ impl CreateReplicationConfigOutput {
 }
 
 /// A builder for [`CreateReplicationConfigOutput`](crate::operation::create_replication_config::CreateReplicationConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateReplicationConfigOutputBuilder {
     pub(crate) replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     _request_id: Option<String>,

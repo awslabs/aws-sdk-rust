@@ -33,8 +33,8 @@ impl TimeoutConfiguration {
 }
 
 /// A builder for [`TimeoutConfiguration`](crate::types::TimeoutConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeoutConfigurationBuilder {
     pub(crate) idle_timeout_seconds: ::std::option::Option<i32>,
     pub(crate) per_request_timeout_seconds: ::std::option::Option<i32>,

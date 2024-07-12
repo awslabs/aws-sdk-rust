@@ -50,8 +50,8 @@ impl GetUserProfileOutput {
 }
 
 /// A builder for [`GetUserProfileOutput`](crate::operation::get_user_profile::GetUserProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUserProfileOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

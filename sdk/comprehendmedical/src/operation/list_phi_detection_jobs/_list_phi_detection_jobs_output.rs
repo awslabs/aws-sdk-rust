@@ -34,8 +34,8 @@ impl ListPhiDetectionJobsOutput {
 }
 
 /// A builder for [`ListPhiDetectionJobsOutput`](crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPhiDetectionJobsOutputBuilder {
     pub(crate) comprehend_medical_async_job_properties_list:
         ::std::option::Option<::std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,

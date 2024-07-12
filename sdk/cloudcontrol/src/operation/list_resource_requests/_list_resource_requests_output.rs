@@ -34,8 +34,8 @@ impl ListResourceRequestsOutput {
 }
 
 /// A builder for [`ListResourceRequestsOutput`](crate::operation::list_resource_requests::ListResourceRequestsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceRequestsOutputBuilder {
     pub(crate) resource_request_status_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProgressEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

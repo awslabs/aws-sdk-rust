@@ -26,8 +26,8 @@ impl UpdateAccessLogSubscriptionInput {
 }
 
 /// A builder for [`UpdateAccessLogSubscriptionInput`](crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccessLogSubscriptionInputBuilder {
     pub(crate) access_log_subscription_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,

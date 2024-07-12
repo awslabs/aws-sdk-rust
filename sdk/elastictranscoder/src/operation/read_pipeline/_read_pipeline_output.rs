@@ -37,8 +37,8 @@ impl ReadPipelineOutput {
 }
 
 /// A builder for [`ReadPipelineOutput`](crate::operation::read_pipeline::ReadPipelineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReadPipelineOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,

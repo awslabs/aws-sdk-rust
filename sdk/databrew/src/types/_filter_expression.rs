@@ -28,8 +28,8 @@ impl FilterExpression {
 }
 
 /// A builder for [`FilterExpression`](crate::types::FilterExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FilterExpressionBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) values_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

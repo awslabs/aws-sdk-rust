@@ -58,8 +58,8 @@ impl DescribeCertificateProviderOutput {
 }
 
 /// A builder for [`DescribeCertificateProviderOutput`](crate::operation::describe_certificate_provider::DescribeCertificateProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCertificateProviderOutputBuilder {
     pub(crate) certificate_provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_provider_arn: ::std::option::Option<::std::string::String>,

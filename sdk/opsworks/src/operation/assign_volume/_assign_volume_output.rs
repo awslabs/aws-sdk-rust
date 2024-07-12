@@ -18,8 +18,8 @@ impl AssignVolumeOutput {
 }
 
 /// A builder for [`AssignVolumeOutput`](crate::operation::assign_volume::AssignVolumeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssignVolumeOutputBuilder {
     _request_id: Option<String>,
 }

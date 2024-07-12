@@ -51,8 +51,8 @@ impl ConfigExportDeliveryInfo {
 }
 
 /// A builder for [`ConfigExportDeliveryInfo`](crate::types::ConfigExportDeliveryInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigExportDeliveryInfoBuilder {
     pub(crate) last_status: ::std::option::Option<crate::types::DeliveryStatus>,
     pub(crate) last_error_code: ::std::option::Option<::std::string::String>,

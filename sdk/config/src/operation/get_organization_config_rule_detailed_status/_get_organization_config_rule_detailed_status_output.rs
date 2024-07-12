@@ -35,8 +35,8 @@ impl GetOrganizationConfigRuleDetailedStatusOutput {
 }
 
 /// A builder for [`GetOrganizationConfigRuleDetailedStatusOutput`](crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOrganizationConfigRuleDetailedStatusOutputBuilder {
     pub(crate) organization_config_rule_detailed_status: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccountStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

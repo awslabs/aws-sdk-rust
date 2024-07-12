@@ -38,8 +38,8 @@ impl ListPipelineExecutionStepsInput {
 }
 
 /// A builder for [`ListPipelineExecutionStepsInput`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPipelineExecutionStepsInputBuilder {
     pub(crate) pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

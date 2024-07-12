@@ -32,8 +32,8 @@ impl GetConnectorDefinitionVersionInput {
 }
 
 /// A builder for [`GetConnectorDefinitionVersionInput`](crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetConnectorDefinitionVersionInputBuilder {
     pub(crate) connector_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) connector_definition_version_id: ::std::option::Option<::std::string::String>,

@@ -49,8 +49,8 @@ impl R53HostedZoneDeletionState {
 }
 
 /// A builder for [`R53HostedZoneDeletionState`](crate::types::R53HostedZoneDeletionState).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct R53HostedZoneDeletionStateBuilder {
     pub(crate) code: ::std::option::Option<crate::types::R53HostedZoneDeletionStateCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

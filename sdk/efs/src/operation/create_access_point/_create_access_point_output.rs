@@ -83,8 +83,8 @@ impl CreateAccessPointOutput {
 }
 
 /// A builder for [`CreateAccessPointOutput`](crate::operation::create_access_point::CreateAccessPointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateAccessPointOutputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

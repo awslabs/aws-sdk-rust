@@ -172,8 +172,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     pub(crate) accelerator_count: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails>,
     pub(crate) accelerator_manufacturers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

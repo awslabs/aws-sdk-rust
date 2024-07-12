@@ -34,8 +34,8 @@ impl DescribeFlowLogsOutput {
 }
 
 /// A builder for [`DescribeFlowLogsOutput`](crate::operation::describe_flow_logs::DescribeFlowLogsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeFlowLogsOutputBuilder {
     pub(crate) flow_logs: ::std::option::Option<::std::vec::Vec<crate::types::FlowLog>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

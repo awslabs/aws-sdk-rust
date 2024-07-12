@@ -48,8 +48,8 @@ impl GetWirelessDeviceStatisticsOutput {
 }
 
 /// A builder for [`GetWirelessDeviceStatisticsOutput`](crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWirelessDeviceStatisticsOutputBuilder {
     pub(crate) wireless_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_uplink_received_at: ::std::option::Option<::std::string::String>,

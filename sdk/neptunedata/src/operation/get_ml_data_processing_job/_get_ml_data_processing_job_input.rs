@@ -26,8 +26,8 @@ impl GetMlDataProcessingJobInput {
 }
 
 /// A builder for [`GetMlDataProcessingJobInput`](crate::operation::get_ml_data_processing_job::GetMlDataProcessingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMlDataProcessingJobInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) neptune_iam_role_arn: ::std::option::Option<::std::string::String>,

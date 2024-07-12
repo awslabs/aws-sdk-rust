@@ -20,8 +20,8 @@ impl GetSpeechSynthesisTaskInput {
 }
 
 /// A builder for [`GetSpeechSynthesisTaskInput`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSpeechSynthesisTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }

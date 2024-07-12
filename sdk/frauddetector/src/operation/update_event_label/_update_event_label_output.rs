@@ -18,8 +18,8 @@ impl UpdateEventLabelOutput {
 }
 
 /// A builder for [`UpdateEventLabelOutput`](crate::operation::update_event_label::UpdateEventLabelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEventLabelOutputBuilder {
     _request_id: Option<String>,
 }

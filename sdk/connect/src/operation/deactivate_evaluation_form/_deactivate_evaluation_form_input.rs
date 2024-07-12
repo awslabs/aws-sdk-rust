@@ -32,8 +32,8 @@ impl DeactivateEvaluationFormInput {
 }
 
 /// A builder for [`DeactivateEvaluationFormInput`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeactivateEvaluationFormInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,

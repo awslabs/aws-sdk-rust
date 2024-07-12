@@ -26,8 +26,8 @@ impl GetInsightsByAssessmentOutput {
 }
 
 /// A builder for [`GetInsightsByAssessmentOutput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetInsightsByAssessmentOutputBuilder {
     pub(crate) insights: ::std::option::Option<crate::types::InsightsByAssessment>,
     _request_id: Option<String>,

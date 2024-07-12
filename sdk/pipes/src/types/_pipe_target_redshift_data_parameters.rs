@@ -65,8 +65,8 @@ impl PipeTargetRedshiftDataParameters {
 }
 
 /// A builder for [`PipeTargetRedshiftDataParameters`](crate::types::PipeTargetRedshiftDataParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PipeTargetRedshiftDataParametersBuilder {
     pub(crate) secret_manager_arn: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,

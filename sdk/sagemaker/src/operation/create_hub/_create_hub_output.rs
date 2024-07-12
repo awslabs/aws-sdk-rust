@@ -26,8 +26,8 @@ impl CreateHubOutput {
 }
 
 /// A builder for [`CreateHubOutput`](crate::operation::create_hub::CreateHubOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHubOutputBuilder {
     pub(crate) hub_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

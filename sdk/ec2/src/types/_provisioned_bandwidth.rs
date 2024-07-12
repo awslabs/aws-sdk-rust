@@ -45,8 +45,8 @@ impl ProvisionedBandwidth {
 }
 
 /// A builder for [`ProvisionedBandwidth`](crate::types::ProvisionedBandwidth).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionedBandwidthBuilder {
     pub(crate) provision_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) provisioned: ::std::option::Option<::std::string::String>,

@@ -42,8 +42,8 @@ impl GetByteMatchSetOutput {
 }
 
 /// A builder for [`GetByteMatchSetOutput`](crate::operation::get_byte_match_set::GetByteMatchSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetByteMatchSetOutputBuilder {
     pub(crate) byte_match_set: ::std::option::Option<crate::types::ByteMatchSet>,
     _request_id: Option<String>,

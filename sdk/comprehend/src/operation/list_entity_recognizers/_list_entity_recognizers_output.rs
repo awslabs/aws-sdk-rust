@@ -34,8 +34,8 @@ impl ListEntityRecognizersOutput {
 }
 
 /// A builder for [`ListEntityRecognizersOutput`](crate::operation::list_entity_recognizers::ListEntityRecognizersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEntityRecognizersOutputBuilder {
     pub(crate) entity_recognizer_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

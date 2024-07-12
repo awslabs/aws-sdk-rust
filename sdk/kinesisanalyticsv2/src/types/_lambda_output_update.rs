@@ -26,8 +26,8 @@ impl LambdaOutputUpdate {
 }
 
 /// A builder for [`LambdaOutputUpdate`](crate::types::LambdaOutputUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaOutputUpdateBuilder {
     pub(crate) resource_arn_update: ::std::option::Option<::std::string::String>,
 }

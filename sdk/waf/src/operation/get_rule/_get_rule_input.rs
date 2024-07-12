@@ -20,8 +20,8 @@ impl GetRuleInput {
 }
 
 /// A builder for [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRuleInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
 }

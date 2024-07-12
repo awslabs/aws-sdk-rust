@@ -46,8 +46,8 @@ impl CopyDistributionInput {
 }
 
 /// A builder for [`CopyDistributionInput`](crate::operation::copy_distribution::CopyDistributionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyDistributionInputBuilder {
     pub(crate) primary_distribution_id: ::std::option::Option<::std::string::String>,
     pub(crate) staging: ::std::option::Option<bool>,

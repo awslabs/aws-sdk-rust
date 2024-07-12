@@ -44,8 +44,8 @@ impl BatchGetSecretValueInput {
 }
 
 /// A builder for [`BatchGetSecretValueInput`](crate::operation::batch_get_secret_value::BatchGetSecretValueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetSecretValueInputBuilder {
     pub(crate) secret_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

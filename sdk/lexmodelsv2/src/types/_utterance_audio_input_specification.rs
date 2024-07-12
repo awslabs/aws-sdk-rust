@@ -22,8 +22,8 @@ impl UtteranceAudioInputSpecification {
 }
 
 /// A builder for [`UtteranceAudioInputSpecification`](crate::types::UtteranceAudioInputSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UtteranceAudioInputSpecificationBuilder {
     pub(crate) audio_file_s3_location: ::std::option::Option<::std::string::String>,
 }

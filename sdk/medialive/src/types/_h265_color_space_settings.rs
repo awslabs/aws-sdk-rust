@@ -45,8 +45,8 @@ impl H265ColorSpaceSettings {
 }
 
 /// A builder for [`H265ColorSpaceSettings`](crate::types::H265ColorSpaceSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct H265ColorSpaceSettingsBuilder {
     pub(crate) color_space_passthrough_settings: ::std::option::Option<crate::types::ColorSpacePassthroughSettings>,
     pub(crate) dolby_vision81_settings: ::std::option::Option<crate::types::DolbyVision81Settings>,

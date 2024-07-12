@@ -48,8 +48,8 @@ impl CreateWebAclMigrationStackInput {
 }
 
 /// A builder for [`CreateWebAclMigrationStackInput`](crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateWebAclMigrationStackInputBuilder {
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,

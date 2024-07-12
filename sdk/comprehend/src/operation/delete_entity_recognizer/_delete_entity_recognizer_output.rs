@@ -18,8 +18,8 @@ impl DeleteEntityRecognizerOutput {
 }
 
 /// A builder for [`DeleteEntityRecognizerOutput`](crate::operation::delete_entity_recognizer::DeleteEntityRecognizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEntityRecognizerOutputBuilder {
     _request_id: Option<String>,
 }

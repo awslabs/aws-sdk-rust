@@ -11,8 +11,8 @@ impl GetDefaultViewInput {
 }
 
 /// A builder for [`GetDefaultViewInput`](crate::operation::get_default_view::GetDefaultViewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDefaultViewInputBuilder {}
 impl GetDefaultViewInputBuilder {
     /// Consumes the builder and constructs a [`GetDefaultViewInput`](crate::operation::get_default_view::GetDefaultViewInput).

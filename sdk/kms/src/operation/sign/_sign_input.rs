@@ -130,8 +130,8 @@ impl SignInput {
 }
 
 /// A builder for [`SignInput`](crate::operation::sign::SignInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SignInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::aws_smithy_types::Blob>,

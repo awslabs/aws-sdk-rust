@@ -48,8 +48,8 @@ impl ListServiceQuotasInput {
 }
 
 /// A builder for [`ListServiceQuotasInput`](crate::operation::list_service_quotas::ListServiceQuotasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceQuotasInputBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

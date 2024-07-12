@@ -41,8 +41,8 @@ impl ListAppInstanceUsersInput {
 }
 
 /// A builder for [`ListAppInstanceUsersInput`](crate::operation::list_app_instance_users::ListAppInstanceUsersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListAppInstanceUsersInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

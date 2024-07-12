@@ -27,8 +27,8 @@ impl FailureDetails {
 }
 
 /// A builder for [`FailureDetails`](crate::types::FailureDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FailureDetailsBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

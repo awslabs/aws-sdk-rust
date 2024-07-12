@@ -28,8 +28,8 @@ impl DiscoveredResource {
 }
 
 /// A builder for [`DiscoveredResource`](crate::types::DiscoveredResource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DiscoveredResourceBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl GetRelationalDatabaseBundlesOutput {
 }
 
 /// A builder for [`GetRelationalDatabaseBundlesOutput`](crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseBundlesOutputBuilder {
     pub(crate) bundles: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBundle>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

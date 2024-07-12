@@ -106,8 +106,8 @@ impl StartSnapshotOutput {
 }
 
 /// A builder for [`StartSnapshotOutput`](crate::operation::start_snapshot::StartSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartSnapshotOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,

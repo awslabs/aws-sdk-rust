@@ -33,8 +33,8 @@ impl OutboundCallerConfig {
 }
 
 /// A builder for [`OutboundCallerConfig`](crate::types::OutboundCallerConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutboundCallerConfigBuilder {
     pub(crate) outbound_caller_id_name: ::std::option::Option<::std::string::String>,
     pub(crate) outbound_caller_id_number_id: ::std::option::Option<::std::string::String>,

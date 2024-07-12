@@ -28,8 +28,8 @@ impl SetUnhealthyNodeReplacementInput {
 }
 
 /// A builder for [`SetUnhealthyNodeReplacementInput`](crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetUnhealthyNodeReplacementInputBuilder {
     pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) unhealthy_node_replacement: ::std::option::Option<bool>,

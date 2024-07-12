@@ -29,8 +29,8 @@ impl RdsLoginAttemptAction {
 }
 
 /// A builder for [`RdsLoginAttemptAction`](crate::types::RdsLoginAttemptAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RdsLoginAttemptActionBuilder {
     pub(crate) remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
     pub(crate) login_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>>,

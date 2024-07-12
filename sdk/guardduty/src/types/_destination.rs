@@ -33,8 +33,8 @@ impl Destination {
 }
 
 /// A builder for [`Destination`](crate::types::Destination).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DestinationBuilder {
     pub(crate) destination_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_type: ::std::option::Option<crate::types::DestinationType>,

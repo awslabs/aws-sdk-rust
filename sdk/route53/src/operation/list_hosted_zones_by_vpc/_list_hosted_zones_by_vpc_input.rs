@@ -43,8 +43,8 @@ impl ListHostedZonesByVpcInput {
 }
 
 /// A builder for [`ListHostedZonesByVpcInput`](crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHostedZonesByVpcInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_region: ::std::option::Option<crate::types::VpcRegion>,

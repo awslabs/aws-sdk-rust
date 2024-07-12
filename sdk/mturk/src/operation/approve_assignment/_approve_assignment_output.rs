@@ -18,8 +18,8 @@ impl ApproveAssignmentOutput {
 }
 
 /// A builder for [`ApproveAssignmentOutput`](crate::operation::approve_assignment::ApproveAssignmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApproveAssignmentOutputBuilder {
     _request_id: Option<String>,
 }

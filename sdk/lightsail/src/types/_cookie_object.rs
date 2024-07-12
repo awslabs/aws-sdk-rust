@@ -30,8 +30,8 @@ impl CookieObject {
 }
 
 /// A builder for [`CookieObject`](crate::types::CookieObject).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CookieObjectBuilder {
     pub(crate) option: ::std::option::Option<crate::types::ForwardValues>,
     pub(crate) cookies_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

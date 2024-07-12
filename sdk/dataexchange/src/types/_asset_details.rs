@@ -45,8 +45,8 @@ impl AssetDetails {
 }
 
 /// A builder for [`AssetDetails`](crate::types::AssetDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetDetailsBuilder {
     pub(crate) s3_snapshot_asset: ::std::option::Option<crate::types::S3SnapshotAsset>,
     pub(crate) redshift_data_share_asset: ::std::option::Option<crate::types::RedshiftDataShareAsset>,

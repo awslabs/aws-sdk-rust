@@ -69,8 +69,8 @@ impl SearchCriteria {
 }
 
 /// A builder for [`SearchCriteria`](crate::types::SearchCriteria).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchCriteriaBuilder {
     pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) agent_hierarchy_groups: ::std::option::Option<crate::types::AgentHierarchyGroups>,

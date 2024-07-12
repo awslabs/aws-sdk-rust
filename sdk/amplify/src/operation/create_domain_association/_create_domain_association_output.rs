@@ -27,8 +27,8 @@ impl CreateDomainAssociationOutput {
 }
 
 /// A builder for [`CreateDomainAssociationOutput`](crate::operation::create_domain_association::CreateDomainAssociationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDomainAssociationOutputBuilder {
     pub(crate) domain_association: ::std::option::Option<crate::types::DomainAssociation>,
     _request_id: Option<String>,

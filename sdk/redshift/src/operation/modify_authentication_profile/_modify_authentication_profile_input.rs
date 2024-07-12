@@ -26,8 +26,8 @@ impl ModifyAuthenticationProfileInput {
 }
 
 /// A builder for [`ModifyAuthenticationProfileInput`](crate::operation::modify_authentication_profile::ModifyAuthenticationProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyAuthenticationProfileInputBuilder {
     pub(crate) authentication_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_profile_content: ::std::option::Option<::std::string::String>,

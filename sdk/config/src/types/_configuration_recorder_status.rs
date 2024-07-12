@@ -65,8 +65,8 @@ impl ConfigurationRecorderStatus {
 }
 
 /// A builder for [`ConfigurationRecorderStatus`](crate::types::ConfigurationRecorderStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurationRecorderStatusBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) last_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,

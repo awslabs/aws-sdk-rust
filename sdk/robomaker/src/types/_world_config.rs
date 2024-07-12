@@ -21,8 +21,8 @@ impl WorldConfig {
 }
 
 /// A builder for [`WorldConfig`](crate::types::WorldConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorldConfigBuilder {
     pub(crate) world: ::std::option::Option<::std::string::String>,
 }

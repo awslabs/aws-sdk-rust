@@ -45,8 +45,8 @@ impl ImpossibleTravelDetail {
 }
 
 /// A builder for [`ImpossibleTravelDetail`](crate::types::ImpossibleTravelDetail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImpossibleTravelDetailBuilder {
     pub(crate) starting_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) ending_ip_address: ::std::option::Option<::std::string::String>,

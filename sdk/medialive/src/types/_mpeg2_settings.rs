@@ -117,8 +117,8 @@ impl Mpeg2Settings {
 }
 
 /// A builder for [`Mpeg2Settings`](crate::types::Mpeg2Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Mpeg2SettingsBuilder {
     pub(crate) adaptive_quantization: ::std::option::Option<crate::types::Mpeg2AdaptiveQuantization>,
     pub(crate) afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,

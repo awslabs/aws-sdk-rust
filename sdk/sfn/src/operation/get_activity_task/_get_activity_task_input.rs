@@ -26,8 +26,8 @@ impl GetActivityTaskInput {
 }
 
 /// A builder for [`GetActivityTaskInput`](crate::operation::get_activity_task::GetActivityTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetActivityTaskInputBuilder {
     pub(crate) activity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) worker_name: ::std::option::Option<::std::string::String>,

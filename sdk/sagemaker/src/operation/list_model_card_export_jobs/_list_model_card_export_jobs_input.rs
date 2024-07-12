@@ -74,8 +74,8 @@ impl ListModelCardExportJobsInput {
 }
 
 /// A builder for [`ListModelCardExportJobsInput`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListModelCardExportJobsInputBuilder {
     pub(crate) model_card_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_card_version: ::std::option::Option<i32>,

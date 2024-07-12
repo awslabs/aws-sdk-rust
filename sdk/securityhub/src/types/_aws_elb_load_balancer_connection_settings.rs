@@ -21,8 +21,8 @@ impl AwsElbLoadBalancerConnectionSettings {
 }
 
 /// A builder for [`AwsElbLoadBalancerConnectionSettings`](crate::types::AwsElbLoadBalancerConnectionSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsElbLoadBalancerConnectionSettingsBuilder {
     pub(crate) idle_timeout: ::std::option::Option<i32>,
 }

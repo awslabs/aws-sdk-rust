@@ -53,8 +53,8 @@ impl GetFederationTokenOutput {
 }
 
 /// A builder for [`GetFederationTokenOutput`](crate::operation::get_federation_token::GetFederationTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetFederationTokenOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) federated_user: ::std::option::Option<crate::types::FederatedUser>,

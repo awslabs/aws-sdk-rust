@@ -21,8 +21,8 @@ impl ThemeGenerationConfig {
 }
 
 /// A builder for [`ThemeGenerationConfig`](crate::types::ThemeGenerationConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThemeGenerationConfigBuilder {
     pub(crate) fields_for_theme_generation: ::std::option::Option<crate::types::FieldsForThemeGeneration>,
 }

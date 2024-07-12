@@ -35,8 +35,8 @@ impl ListConfigurationSetsOutput {
 }
 
 /// A builder for [`ListConfigurationSetsOutput`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListConfigurationSetsOutputBuilder {
     pub(crate) configuration_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

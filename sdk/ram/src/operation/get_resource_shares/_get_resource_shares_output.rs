@@ -34,8 +34,8 @@ impl GetResourceSharesOutput {
 }
 
 /// A builder for [`GetResourceSharesOutput`](crate::operation::get_resource_shares::GetResourceSharesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceSharesOutputBuilder {
     pub(crate) resource_shares: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShare>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

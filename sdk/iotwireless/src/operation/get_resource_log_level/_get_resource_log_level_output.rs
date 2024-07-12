@@ -26,8 +26,8 @@ impl GetResourceLogLevelOutput {
 }
 
 /// A builder for [`GetResourceLogLevelOutput`](crate::operation::get_resource_log_level::GetResourceLogLevelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceLogLevelOutputBuilder {
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
     _request_id: Option<String>,

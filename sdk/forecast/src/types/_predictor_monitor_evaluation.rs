@@ -83,8 +83,8 @@ impl PredictorMonitorEvaluation {
 }
 
 /// A builder for [`PredictorMonitorEvaluation`](crate::types::PredictorMonitorEvaluation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredictorMonitorEvaluationBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListReportsOutput {
 }
 
 /// A builder for [`ListReportsOutput`](crate::operation::list_reports::ListReportsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListReportsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) reports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

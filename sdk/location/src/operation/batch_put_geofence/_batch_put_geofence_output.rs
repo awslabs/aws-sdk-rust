@@ -34,8 +34,8 @@ impl BatchPutGeofenceOutput {
 }
 
 /// A builder for [`BatchPutGeofenceOutput`](crate::operation::batch_put_geofence::BatchPutGeofenceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutGeofenceOutputBuilder {
     pub(crate) successes: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceSuccess>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceError>>,

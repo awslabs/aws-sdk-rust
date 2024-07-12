@@ -39,8 +39,8 @@ impl HistoricalMetric {
 }
 
 /// A builder for [`HistoricalMetric`](crate::types::HistoricalMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HistoricalMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::HistoricalMetricName>,
     pub(crate) threshold: ::std::option::Option<crate::types::Threshold>,

@@ -34,8 +34,8 @@ impl ListServiceActionsOutput {
 }
 
 /// A builder for [`ListServiceActionsOutput`](crate::operation::list_service_actions::ListServiceActionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListServiceActionsOutputBuilder {
     pub(crate) service_action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl VpcInfoCidrBlockSetDetails {
 }
 
 /// A builder for [`VpcInfoCidrBlockSetDetails`](crate::types::VpcInfoCidrBlockSetDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcInfoCidrBlockSetDetailsBuilder {
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
 }

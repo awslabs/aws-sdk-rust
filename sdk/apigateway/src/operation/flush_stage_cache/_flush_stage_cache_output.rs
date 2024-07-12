@@ -18,8 +18,8 @@ impl FlushStageCacheOutput {
 }
 
 /// A builder for [`FlushStageCacheOutput`](crate::operation::flush_stage_cache::FlushStageCacheOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlushStageCacheOutputBuilder {
     _request_id: Option<String>,
 }

@@ -27,8 +27,8 @@ impl SecurityProfileTargetMapping {
 }
 
 /// A builder for [`SecurityProfileTargetMapping`](crate::types::SecurityProfileTargetMapping).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityProfileTargetMappingBuilder {
     pub(crate) security_profile_identifier: ::std::option::Option<crate::types::SecurityProfileIdentifier>,
     pub(crate) target: ::std::option::Option<crate::types::SecurityProfileTarget>,

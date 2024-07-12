@@ -77,8 +77,8 @@ impl BatchIsAuthorizedWithTokenInput {
 }
 
 /// A builder for [`BatchIsAuthorizedWithTokenInput`](crate::operation::batch_is_authorized_with_token::BatchIsAuthorizedWithTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BatchIsAuthorizedWithTokenInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_token: ::std::option::Option<::std::string::String>,

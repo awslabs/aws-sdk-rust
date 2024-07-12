@@ -27,8 +27,8 @@ impl FlushStageCacheInput {
 }
 
 /// A builder for [`FlushStageCacheInput`](crate::operation::flush_stage_cache::FlushStageCacheInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FlushStageCacheInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,

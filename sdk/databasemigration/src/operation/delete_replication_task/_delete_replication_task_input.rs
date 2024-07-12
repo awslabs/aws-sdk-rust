@@ -21,8 +21,8 @@ impl DeleteReplicationTaskInput {
 }
 
 /// A builder for [`DeleteReplicationTaskInput`](crate::operation::delete_replication_task::DeleteReplicationTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReplicationTaskInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
 }

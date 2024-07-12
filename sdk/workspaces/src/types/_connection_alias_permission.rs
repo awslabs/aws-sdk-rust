@@ -28,8 +28,8 @@ impl ConnectionAliasPermission {
 }
 
 /// A builder for [`ConnectionAliasPermission`](crate::types::ConnectionAliasPermission).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConnectionAliasPermissionBuilder {
     pub(crate) shared_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) allow_association: ::std::option::Option<bool>,

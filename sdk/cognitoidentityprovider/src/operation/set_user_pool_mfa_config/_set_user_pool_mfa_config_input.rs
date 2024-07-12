@@ -54,8 +54,8 @@ impl SetUserPoolMfaConfigInput {
 }
 
 /// A builder for [`SetUserPoolMfaConfigInput`](crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetUserPoolMfaConfigInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) sms_mfa_configuration: ::std::option::Option<crate::types::SmsMfaConfigType>,

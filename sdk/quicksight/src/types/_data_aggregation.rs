@@ -27,8 +27,8 @@ impl DataAggregation {
 }
 
 /// A builder for [`DataAggregation`](crate::types::DataAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataAggregationBuilder {
     pub(crate) dataset_row_date_granularity: ::std::option::Option<crate::types::TopicTimeGranularity>,
     pub(crate) default_date_column_name: ::std::option::Option<::std::string::String>,

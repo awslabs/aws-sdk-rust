@@ -27,8 +27,8 @@ impl Resource {
 }
 
 /// A builder for [`Resource`](crate::types::Resource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceBuilder {
     pub(crate) portal: ::std::option::Option<crate::types::PortalResource>,
     pub(crate) project: ::std::option::Option<crate::types::ProjectResource>,

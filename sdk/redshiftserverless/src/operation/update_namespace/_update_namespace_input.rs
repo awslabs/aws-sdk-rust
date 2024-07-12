@@ -89,8 +89,8 @@ impl UpdateNamespaceInput {
 }
 
 /// A builder for [`UpdateNamespaceInput`](crate::operation::update_namespace::UpdateNamespaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateNamespaceInputBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) admin_user_password: ::std::option::Option<::std::string::String>,

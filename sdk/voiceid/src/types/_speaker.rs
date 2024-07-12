@@ -70,8 +70,8 @@ impl Speaker {
 }
 
 /// A builder for [`Speaker`](crate::types::Speaker).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SpeakerBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) customer_speaker_id: ::std::option::Option<::std::string::String>,

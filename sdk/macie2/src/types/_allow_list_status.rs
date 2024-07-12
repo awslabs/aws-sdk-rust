@@ -65,8 +65,8 @@ impl AllowListStatus {
 }
 
 /// A builder for [`AllowListStatus`](crate::types::AllowListStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AllowListStatusBuilder {
     pub(crate) code: ::std::option::Option<crate::types::AllowListStatusCode>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

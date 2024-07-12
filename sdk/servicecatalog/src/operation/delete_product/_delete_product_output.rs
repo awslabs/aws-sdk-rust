@@ -18,8 +18,8 @@ impl DeleteProductOutput {
 }
 
 /// A builder for [`DeleteProductOutput`](crate::operation::delete_product::DeleteProductOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteProductOutputBuilder {
     _request_id: Option<String>,
 }

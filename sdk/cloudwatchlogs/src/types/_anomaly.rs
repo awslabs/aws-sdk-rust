@@ -138,8 +138,8 @@ impl Anomaly {
 }
 
 /// A builder for [`Anomaly`](crate::types::Anomaly).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnomalyBuilder {
     pub(crate) anomaly_id: ::std::option::Option<::std::string::String>,
     pub(crate) pattern_id: ::std::option::Option<::std::string::String>,

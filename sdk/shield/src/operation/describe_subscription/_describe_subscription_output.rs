@@ -26,8 +26,8 @@ impl DescribeSubscriptionOutput {
 }
 
 /// A builder for [`DescribeSubscriptionOutput`](crate::operation::describe_subscription::DescribeSubscriptionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSubscriptionOutputBuilder {
     pub(crate) subscription: ::std::option::Option<crate::types::Subscription>,
     _request_id: Option<String>,

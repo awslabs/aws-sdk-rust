@@ -46,8 +46,8 @@ impl CreateSipRuleInput {
 }
 
 /// A builder for [`CreateSipRuleInput`](crate::operation::create_sip_rule::CreateSipRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSipRuleInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) trigger_type: ::std::option::Option<crate::types::SipRuleTriggerType>,

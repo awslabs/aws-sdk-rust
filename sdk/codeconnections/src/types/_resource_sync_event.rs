@@ -41,8 +41,8 @@ impl ResourceSyncEvent {
 }
 
 /// A builder for [`ResourceSyncEvent`](crate::types::ResourceSyncEvent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceSyncEventBuilder {
     pub(crate) event: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,

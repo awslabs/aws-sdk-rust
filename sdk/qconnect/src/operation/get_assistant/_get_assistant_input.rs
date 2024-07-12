@@ -20,8 +20,8 @@ impl GetAssistantInput {
 }
 
 /// A builder for [`GetAssistantInput`](crate::operation::get_assistant::GetAssistantInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAssistantInputBuilder {
     pub(crate) assistant_id: ::std::option::Option<::std::string::String>,
 }

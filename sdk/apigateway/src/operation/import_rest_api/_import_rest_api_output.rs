@@ -109,8 +109,8 @@ impl ImportRestApiOutput {
 }
 
 /// A builder for [`ImportRestApiOutput`](crate::operation::import_rest_api::ImportRestApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportRestApiOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

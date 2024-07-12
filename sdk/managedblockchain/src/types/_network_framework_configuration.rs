@@ -21,8 +21,8 @@ impl NetworkFrameworkConfiguration {
 }
 
 /// A builder for [`NetworkFrameworkConfiguration`](crate::types::NetworkFrameworkConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkFrameworkConfigurationBuilder {
     pub(crate) fabric: ::std::option::Option<crate::types::NetworkFabricConfiguration>,
 }

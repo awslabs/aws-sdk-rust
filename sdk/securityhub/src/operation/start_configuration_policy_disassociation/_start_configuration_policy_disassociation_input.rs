@@ -26,8 +26,8 @@ impl StartConfigurationPolicyDisassociationInput {
 }
 
 /// A builder for [`StartConfigurationPolicyDisassociationInput`](crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartConfigurationPolicyDisassociationInputBuilder {
     pub(crate) target: ::std::option::Option<crate::types::Target>,
     pub(crate) configuration_policy_identifier: ::std::option::Option<::std::string::String>,

@@ -21,8 +21,8 @@ impl GetDatasetInput {
 }
 
 /// A builder for [`GetDatasetInput`](crate::operation::get_dataset::GetDatasetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDatasetInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
 }

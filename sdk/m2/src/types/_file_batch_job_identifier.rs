@@ -28,8 +28,8 @@ impl FileBatchJobIdentifier {
 }
 
 /// A builder for [`FileBatchJobIdentifier`](crate::types::FileBatchJobIdentifier).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileBatchJobIdentifierBuilder {
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
     pub(crate) folder_path: ::std::option::Option<::std::string::String>,

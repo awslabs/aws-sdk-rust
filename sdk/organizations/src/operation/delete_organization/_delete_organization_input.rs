@@ -11,8 +11,8 @@ impl DeleteOrganizationInput {
 }
 
 /// A builder for [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteOrganizationInputBuilder {}
 impl DeleteOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).

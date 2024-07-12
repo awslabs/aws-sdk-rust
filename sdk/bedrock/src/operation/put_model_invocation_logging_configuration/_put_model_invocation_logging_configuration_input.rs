@@ -20,8 +20,8 @@ impl PutModelInvocationLoggingConfigurationInput {
 }
 
 /// A builder for [`PutModelInvocationLoggingConfigurationInput`](crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutModelInvocationLoggingConfigurationInputBuilder {
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
 }

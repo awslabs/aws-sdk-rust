@@ -53,8 +53,8 @@ impl AuthParameter {
 }
 
 /// A builder for [`AuthParameter`](crate::types::AuthParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) is_required: ::std::option::Option<bool>,

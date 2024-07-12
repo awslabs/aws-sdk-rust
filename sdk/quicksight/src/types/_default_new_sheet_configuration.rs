@@ -33,8 +33,8 @@ impl DefaultNewSheetConfiguration {
 }
 
 /// A builder for [`DefaultNewSheetConfiguration`](crate::types::DefaultNewSheetConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultNewSheetConfigurationBuilder {
     pub(crate) interactive_layout_configuration: ::std::option::Option<crate::types::DefaultInteractiveLayoutConfiguration>,
     pub(crate) paginated_layout_configuration: ::std::option::Option<crate::types::DefaultPaginatedLayoutConfiguration>,

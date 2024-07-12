@@ -34,8 +34,8 @@ impl DescribeCapacityReservationFleetsOutput {
 }
 
 /// A builder for [`DescribeCapacityReservationFleetsOutput`](crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCapacityReservationFleetsOutputBuilder {
     pub(crate) capacity_reservation_fleets: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationFleet>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

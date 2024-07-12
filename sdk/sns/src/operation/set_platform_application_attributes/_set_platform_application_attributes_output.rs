@@ -18,8 +18,8 @@ impl SetPlatformApplicationAttributesOutput {
 }
 
 /// A builder for [`SetPlatformApplicationAttributesOutput`](crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetPlatformApplicationAttributesOutputBuilder {
     _request_id: Option<String>,
 }

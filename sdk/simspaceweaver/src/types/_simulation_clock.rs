@@ -27,8 +27,8 @@ impl SimulationClock {
 }
 
 /// A builder for [`SimulationClock`](crate::types::SimulationClock).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SimulationClockBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClockStatus>,
     pub(crate) target_status: ::std::option::Option<crate::types::ClockTargetStatus>,

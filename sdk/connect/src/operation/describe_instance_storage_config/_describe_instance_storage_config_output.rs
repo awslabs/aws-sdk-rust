@@ -26,8 +26,8 @@ impl DescribeInstanceStorageConfigOutput {
 }
 
 /// A builder for [`DescribeInstanceStorageConfigOutput`](crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstanceStorageConfigOutputBuilder {
     pub(crate) storage_config: ::std::option::Option<crate::types::InstanceStorageConfig>,
     _request_id: Option<String>,

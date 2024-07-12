@@ -26,8 +26,8 @@ impl UpdateAgentKnowledgeBaseOutput {
 }
 
 /// A builder for [`UpdateAgentKnowledgeBaseOutput`](crate::operation::update_agent_knowledge_base::UpdateAgentKnowledgeBaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAgentKnowledgeBaseOutputBuilder {
     pub(crate) agent_knowledge_base: ::std::option::Option<crate::types::AgentKnowledgeBase>,
     _request_id: Option<String>,

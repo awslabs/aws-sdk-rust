@@ -26,8 +26,8 @@ impl RestoreBackupOutput {
 }
 
 /// A builder for [`RestoreBackupOutput`](crate::operation::restore_backup::RestoreBackupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreBackupOutputBuilder {
     pub(crate) backup: ::std::option::Option<crate::types::Backup>,
     _request_id: Option<String>,

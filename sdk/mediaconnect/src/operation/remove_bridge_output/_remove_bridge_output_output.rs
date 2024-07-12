@@ -32,8 +32,8 @@ impl RemoveBridgeOutputOutput {
 }
 
 /// A builder for [`RemoveBridgeOutputOutput`](crate::operation::remove_bridge_output::RemoveBridgeOutputOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveBridgeOutputOutputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) output_name: ::std::option::Option<::std::string::String>,

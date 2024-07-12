@@ -34,8 +34,8 @@ impl ListRegionalBucketsOutput {
 }
 
 /// A builder for [`ListRegionalBucketsOutput`](crate::operation::list_regional_buckets::ListRegionalBucketsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRegionalBucketsOutputBuilder {
     pub(crate) regional_bucket_list: ::std::option::Option<::std::vec::Vec<crate::types::RegionalBucket>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

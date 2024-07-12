@@ -454,8 +454,8 @@ impl InstanceRequirementsRequest {
 }
 
 /// A builder for [`InstanceRequirementsRequest`](crate::types::InstanceRequirementsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceRequirementsRequestBuilder {
     pub(crate) v_cpu_count: ::std::option::Option<crate::types::VCpuCountRangeRequest>,
     pub(crate) memory_mib: ::std::option::Option<crate::types::MemoryMiBRequest>,

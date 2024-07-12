@@ -57,8 +57,8 @@ impl CaptionSelectorSettings {
 }
 
 /// A builder for [`CaptionSelectorSettings`](crate::types::CaptionSelectorSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaptionSelectorSettingsBuilder {
     pub(crate) ancillary_source_settings: ::std::option::Option<crate::types::AncillarySourceSettings>,
     pub(crate) arib_source_settings: ::std::option::Option<crate::types::AribSourceSettings>,

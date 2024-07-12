@@ -41,8 +41,8 @@ impl ListStackResourcesInput {
 }
 
 /// A builder for [`ListStackResourcesInput`](crate::operation::list_stack_resources::ListStackResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStackResourcesInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

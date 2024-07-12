@@ -20,8 +20,8 @@ impl DescribeNotebookInstanceInput {
 }
 
 /// A builder for [`DescribeNotebookInstanceInput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNotebookInstanceInputBuilder {
     pub(crate) notebook_instance_name: ::std::option::Option<::std::string::String>,
 }

@@ -37,8 +37,8 @@ impl EntryDescription {
 }
 
 /// A builder for [`EntryDescription`](crate::types::EntryDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntryDescriptionBuilder {
     pub(crate) entry_detail: ::std::option::Option<crate::types::NetworkAclEntry>,
     pub(crate) entry_rule_number: ::std::option::Option<i32>,

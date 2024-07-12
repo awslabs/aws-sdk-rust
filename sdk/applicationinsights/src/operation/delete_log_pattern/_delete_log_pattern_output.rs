@@ -18,8 +18,8 @@ impl DeleteLogPatternOutput {
 }
 
 /// A builder for [`DeleteLogPatternOutput`](crate::operation::delete_log_pattern::DeleteLogPatternOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLogPatternOutputBuilder {
     _request_id: Option<String>,
 }

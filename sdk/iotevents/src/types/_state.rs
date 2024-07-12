@@ -40,8 +40,8 @@ impl State {
 }
 
 /// A builder for [`State`](crate::types::State).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StateBuilder {
     pub(crate) state_name: ::std::option::Option<::std::string::String>,
     pub(crate) on_input: ::std::option::Option<crate::types::OnInputLifecycle>,

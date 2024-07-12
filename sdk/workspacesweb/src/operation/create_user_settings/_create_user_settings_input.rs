@@ -115,8 +115,8 @@ impl CreateUserSettingsInput {
 }
 
 /// A builder for [`CreateUserSettingsInput`](crate::operation::create_user_settings::CreateUserSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateUserSettingsInputBuilder {
     pub(crate) copy_allowed: ::std::option::Option<crate::types::EnabledType>,
     pub(crate) paste_allowed: ::std::option::Option<crate::types::EnabledType>,

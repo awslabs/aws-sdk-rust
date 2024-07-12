@@ -26,8 +26,8 @@ impl RemoveTemplateActionInput {
 }
 
 /// A builder for [`RemoveTemplateActionInput`](crate::operation::remove_template_action::RemoveTemplateActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveTemplateActionInputBuilder {
     pub(crate) launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_id: ::std::option::Option<::std::string::String>,

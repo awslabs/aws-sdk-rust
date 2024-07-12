@@ -55,8 +55,8 @@ impl GetRecoveryPointRestoreMetadataOutput {
 }
 
 /// A builder for [`GetRecoveryPointRestoreMetadataOutput`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetRecoveryPointRestoreMetadataOutputBuilder {
     pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,

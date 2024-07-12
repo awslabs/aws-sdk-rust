@@ -18,8 +18,8 @@ impl RemoveAutoScalingPolicyOutput {
 }
 
 /// A builder for [`RemoveAutoScalingPolicyOutput`](crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveAutoScalingPolicyOutputBuilder {
     _request_id: Option<String>,
 }

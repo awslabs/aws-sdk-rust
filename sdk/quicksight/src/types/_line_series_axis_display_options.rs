@@ -29,8 +29,8 @@ impl LineSeriesAxisDisplayOptions {
 }
 
 /// A builder for [`LineSeriesAxisDisplayOptions`](crate::types::LineSeriesAxisDisplayOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineSeriesAxisDisplayOptionsBuilder {
     pub(crate) axis_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     pub(crate) missing_data_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MissingDataConfiguration>>,

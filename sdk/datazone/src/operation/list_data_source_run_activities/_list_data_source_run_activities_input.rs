@@ -44,8 +44,8 @@ impl ListDataSourceRunActivitiesInput {
 }
 
 /// A builder for [`ListDataSourceRunActivitiesInput`](crate::operation::list_data_source_run_activities::ListDataSourceRunActivitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataSourceRunActivitiesInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

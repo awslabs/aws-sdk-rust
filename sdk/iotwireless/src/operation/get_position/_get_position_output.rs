@@ -59,8 +59,8 @@ impl GetPositionOutput {
 }
 
 /// A builder for [`GetPositionOutput`](crate::operation::get_position::GetPositionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPositionOutputBuilder {
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f32>>,
     pub(crate) accuracy: ::std::option::Option<crate::types::Accuracy>,

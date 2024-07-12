@@ -28,8 +28,8 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
 }
 
 /// A builder for [`UpdateEndpointWeightsAndCapacitiesInput`](crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateEndpointWeightsAndCapacitiesInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) desired_weights_and_capacities: ::std::option::Option<::std::vec::Vec<crate::types::DesiredWeightAndCapacity>>,

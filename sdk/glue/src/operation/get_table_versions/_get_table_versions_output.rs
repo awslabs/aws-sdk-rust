@@ -34,8 +34,8 @@ impl GetTableVersionsOutput {
 }
 
 /// A builder for [`GetTableVersionsOutput`](crate::operation::get_table_versions::GetTableVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTableVersionsOutputBuilder {
     pub(crate) table_versions: ::std::option::Option<::std::vec::Vec<crate::types::TableVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

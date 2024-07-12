@@ -43,8 +43,8 @@ impl VpcConfigurationDescription {
 }
 
 /// A builder for [`VpcConfigurationDescription`](crate::types::VpcConfigurationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VpcConfigurationDescriptionBuilder {
     pub(crate) vpc_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

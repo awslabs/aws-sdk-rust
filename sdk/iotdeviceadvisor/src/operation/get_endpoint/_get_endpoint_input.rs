@@ -38,8 +38,8 @@ impl GetEndpointInput {
 }
 
 /// A builder for [`GetEndpointInput`](crate::operation::get_endpoint::GetEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEndpointInputBuilder {
     pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,

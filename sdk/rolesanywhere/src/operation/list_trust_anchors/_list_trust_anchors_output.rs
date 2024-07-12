@@ -34,8 +34,8 @@ impl ListTrustAnchorsOutput {
 }
 
 /// A builder for [`ListTrustAnchorsOutput`](crate::operation::list_trust_anchors::ListTrustAnchorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrustAnchorsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) trust_anchors: ::std::option::Option<::std::vec::Vec<crate::types::TrustAnchorDetail>>,

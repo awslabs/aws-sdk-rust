@@ -18,8 +18,8 @@ impl DeleteCodeSigningConfigOutput {
 }
 
 /// A builder for [`DeleteCodeSigningConfigOutput`](crate::operation::delete_code_signing_config::DeleteCodeSigningConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCodeSigningConfigOutputBuilder {
     _request_id: Option<String>,
 }

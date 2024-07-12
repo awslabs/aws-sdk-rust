@@ -18,8 +18,8 @@ impl DeleteRoutingProfileOutput {
 }
 
 /// A builder for [`DeleteRoutingProfileOutput`](crate::operation::delete_routing_profile::DeleteRoutingProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteRoutingProfileOutputBuilder {
     _request_id: Option<String>,
 }

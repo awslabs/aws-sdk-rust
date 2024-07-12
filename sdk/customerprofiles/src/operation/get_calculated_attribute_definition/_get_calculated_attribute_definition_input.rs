@@ -26,8 +26,8 @@ impl GetCalculatedAttributeDefinitionInput {
 }
 
 /// A builder for [`GetCalculatedAttributeDefinitionInput`](crate::operation::get_calculated_attribute_definition::GetCalculatedAttributeDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCalculatedAttributeDefinitionInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) calculated_attribute_name: ::std::option::Option<::std::string::String>,

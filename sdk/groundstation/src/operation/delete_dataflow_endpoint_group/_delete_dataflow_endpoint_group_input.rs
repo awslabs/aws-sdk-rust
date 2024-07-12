@@ -21,8 +21,8 @@ impl DeleteDataflowEndpointGroupInput {
 }
 
 /// A builder for [`DeleteDataflowEndpointGroupInput`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDataflowEndpointGroupInputBuilder {
     pub(crate) dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl AwsEc2VpcPeeringConnectionStatusDetails {
 }
 
 /// A builder for [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::types::AwsEc2VpcPeeringConnectionStatusDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsEc2VpcPeeringConnectionStatusDetailsBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

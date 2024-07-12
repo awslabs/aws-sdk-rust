@@ -43,8 +43,8 @@ impl ListGeoLocationsInput {
 }
 
 /// A builder for [`ListGeoLocationsInput`](crate::operation::list_geo_locations::ListGeoLocationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGeoLocationsInputBuilder {
     pub(crate) start_continent_code: ::std::option::Option<::std::string::String>,
     pub(crate) start_country_code: ::std::option::Option<::std::string::String>,

@@ -35,8 +35,8 @@ impl LoginProfile {
 }
 
 /// A builder for [`LoginProfile`](crate::types::LoginProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoginProfileBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,

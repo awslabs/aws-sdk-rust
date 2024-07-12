@@ -29,8 +29,8 @@ impl ResourceErrorsDetails {
 }
 
 /// A builder for [`ResourceErrorsDetails`](crate::types::ResourceErrorsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceErrorsDetailsBuilder {
     pub(crate) resource_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
     pub(crate) has_more_errors: ::std::option::Option<bool>,

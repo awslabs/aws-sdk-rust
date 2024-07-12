@@ -21,8 +21,8 @@ impl AudioDolbyEDecode {
 }
 
 /// A builder for [`AudioDolbyEDecode`](crate::types::AudioDolbyEDecode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AudioDolbyEDecodeBuilder {
     pub(crate) program_selection: ::std::option::Option<crate::types::DolbyEProgramSelection>,
 }

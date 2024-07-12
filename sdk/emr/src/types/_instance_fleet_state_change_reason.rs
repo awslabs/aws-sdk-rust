@@ -29,8 +29,8 @@ impl InstanceFleetStateChangeReason {
 }
 
 /// A builder for [`InstanceFleetStateChangeReason`](crate::types::InstanceFleetStateChangeReason).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceFleetStateChangeReasonBuilder {
     pub(crate) code: ::std::option::Option<crate::types::InstanceFleetStateChangeReasonCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

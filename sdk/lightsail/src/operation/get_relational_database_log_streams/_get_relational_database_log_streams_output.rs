@@ -28,8 +28,8 @@ impl GetRelationalDatabaseLogStreamsOutput {
 }
 
 /// A builder for [`GetRelationalDatabaseLogStreamsOutput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseLogStreamsOutputBuilder {
     pub(crate) log_streams: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,

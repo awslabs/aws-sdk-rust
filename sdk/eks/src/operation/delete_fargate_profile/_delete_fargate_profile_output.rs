@@ -26,8 +26,8 @@ impl DeleteFargateProfileOutput {
 }
 
 /// A builder for [`DeleteFargateProfileOutput`](crate::operation::delete_fargate_profile::DeleteFargateProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteFargateProfileOutputBuilder {
     pub(crate) fargate_profile: ::std::option::Option<crate::types::FargateProfile>,
     _request_id: Option<String>,

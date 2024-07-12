@@ -26,8 +26,8 @@ impl DescribeSecurityProfileOutput {
 }
 
 /// A builder for [`DescribeSecurityProfileOutput`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeSecurityProfileOutputBuilder {
     pub(crate) security_profile: ::std::option::Option<crate::types::SecurityProfile>,
     _request_id: Option<String>,

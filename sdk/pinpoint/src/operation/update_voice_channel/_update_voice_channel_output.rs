@@ -26,8 +26,8 @@ impl UpdateVoiceChannelOutput {
 }
 
 /// A builder for [`UpdateVoiceChannelOutput`](crate::operation::update_voice_channel::UpdateVoiceChannelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVoiceChannelOutputBuilder {
     pub(crate) voice_channel_response: ::std::option::Option<crate::types::VoiceChannelResponse>,
     _request_id: Option<String>,

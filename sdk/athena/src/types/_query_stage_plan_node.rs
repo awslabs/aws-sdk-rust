@@ -43,8 +43,8 @@ impl QueryStagePlanNode {
 }
 
 /// A builder for [`QueryStagePlanNode`](crate::types::QueryStagePlanNode).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QueryStagePlanNodeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

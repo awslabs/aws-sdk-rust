@@ -46,8 +46,8 @@ impl PutRumEventsInput {
 }
 
 /// A builder for [`PutRumEventsInput`](crate::operation::put_rum_events::PutRumEventsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRumEventsInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) batch_id: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DeleteTrackerInput {
 }
 
 /// A builder for [`DeleteTrackerInput`](crate::operation::delete_tracker::DeleteTrackerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrackerInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
 }

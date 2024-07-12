@@ -35,8 +35,8 @@ impl DescribeOrderableClusterOptionsOutput {
 }
 
 /// A builder for [`DescribeOrderableClusterOptionsOutput`](crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOrderableClusterOptionsOutputBuilder {
     pub(crate) orderable_cluster_options: ::std::option::Option<::std::vec::Vec<crate::types::OrderableClusterOption>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

@@ -57,8 +57,8 @@ impl CustomerAgentlessCollectorInfo {
 }
 
 /// A builder for [`CustomerAgentlessCollectorInfo`](crate::types::CustomerAgentlessCollectorInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomerAgentlessCollectorInfoBuilder {
     pub(crate) active_agentless_collectors: ::std::option::Option<i32>,
     pub(crate) healthy_agentless_collectors: ::std::option::Option<i32>,

@@ -49,8 +49,8 @@ impl CaptionDescription {
 }
 
 /// A builder for [`CaptionDescription`](crate::types::CaptionDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaptionDescriptionBuilder {
     pub(crate) caption_selector_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_language_code: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl AutomaticInputFailoverSettings {
 }
 
 /// A builder for [`AutomaticInputFailoverSettings`](crate::types::AutomaticInputFailoverSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AutomaticInputFailoverSettingsBuilder {
     pub(crate) error_clear_time_msec: ::std::option::Option<i32>,
     pub(crate) failover_conditions: ::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>>,

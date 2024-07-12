@@ -28,8 +28,8 @@ impl CreateEvaluationOutput {
 }
 
 /// A builder for [`CreateEvaluationOutput`](crate::operation::create_evaluation::CreateEvaluationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateEvaluationOutputBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

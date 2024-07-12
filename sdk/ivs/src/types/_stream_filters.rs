@@ -21,8 +21,8 @@ impl StreamFilters {
 }
 
 /// A builder for [`StreamFilters`](crate::types::StreamFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StreamFiltersBuilder {
     pub(crate) health: ::std::option::Option<crate::types::StreamHealth>,
 }

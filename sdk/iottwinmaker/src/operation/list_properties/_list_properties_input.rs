@@ -50,8 +50,8 @@ impl ListPropertiesInput {
 }
 
 /// A builder for [`ListPropertiesInput`](crate::operation::list_properties::ListPropertiesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPropertiesInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,

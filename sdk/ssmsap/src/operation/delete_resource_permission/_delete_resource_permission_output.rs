@@ -26,8 +26,8 @@ impl DeleteResourcePermissionOutput {
 }
 
 /// A builder for [`DeleteResourcePermissionOutput`](crate::operation::delete_resource_permission::DeleteResourcePermissionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteResourcePermissionOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

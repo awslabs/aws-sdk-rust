@@ -32,8 +32,8 @@ impl EnableHttpEndpointOutput {
 }
 
 /// A builder for [`EnableHttpEndpointOutput`](crate::operation::enable_http_endpoint::EnableHttpEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableHttpEndpointOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) http_endpoint_enabled: ::std::option::Option<bool>,

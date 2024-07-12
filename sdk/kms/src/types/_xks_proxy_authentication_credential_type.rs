@@ -38,8 +38,8 @@ impl XksProxyAuthenticationCredentialType {
 }
 
 /// A builder for [`XksProxyAuthenticationCredentialType`](crate::types::XksProxyAuthenticationCredentialType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct XksProxyAuthenticationCredentialTypeBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) raw_secret_access_key: ::std::option::Option<::std::string::String>,

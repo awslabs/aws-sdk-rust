@@ -26,8 +26,8 @@ impl GetRestoreTestingPlanOutput {
 }
 
 /// A builder for [`GetRestoreTestingPlanOutput`](crate::operation::get_restore_testing_plan::GetRestoreTestingPlanOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRestoreTestingPlanOutputBuilder {
     pub(crate) restore_testing_plan: ::std::option::Option<crate::types::RestoreTestingPlanForGet>,
     _request_id: Option<String>,

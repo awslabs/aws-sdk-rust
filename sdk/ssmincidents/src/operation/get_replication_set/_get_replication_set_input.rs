@@ -20,8 +20,8 @@ impl GetReplicationSetInput {
 }
 
 /// A builder for [`GetReplicationSetInput`](crate::operation::get_replication_set::GetReplicationSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReplicationSetInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

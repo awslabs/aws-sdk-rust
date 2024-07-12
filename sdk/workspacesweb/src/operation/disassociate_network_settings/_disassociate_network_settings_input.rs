@@ -20,8 +20,8 @@ impl DisassociateNetworkSettingsInput {
 }
 
 /// A builder for [`DisassociateNetworkSettingsInput`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateNetworkSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }

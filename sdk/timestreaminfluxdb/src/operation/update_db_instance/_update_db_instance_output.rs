@@ -128,8 +128,8 @@ impl UpdateDbInstanceOutput {
 }
 
 /// A builder for [`UpdateDbInstanceOutput`](crate::operation::update_db_instance::UpdateDbInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDbInstanceOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl PutDeliveryDestinationOutput {
 }
 
 /// A builder for [`PutDeliveryDestinationOutput`](crate::operation::put_delivery_destination::PutDeliveryDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDeliveryDestinationOutputBuilder {
     pub(crate) delivery_destination: ::std::option::Option<crate::types::DeliveryDestination>,
     _request_id: Option<String>,

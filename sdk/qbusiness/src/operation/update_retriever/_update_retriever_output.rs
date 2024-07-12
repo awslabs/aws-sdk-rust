@@ -18,8 +18,8 @@ impl UpdateRetrieverOutput {
 }
 
 /// A builder for [`UpdateRetrieverOutput`](crate::operation::update_retriever::UpdateRetrieverOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRetrieverOutputBuilder {
     _request_id: Option<String>,
 }

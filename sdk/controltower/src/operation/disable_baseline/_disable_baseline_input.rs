@@ -20,8 +20,8 @@ impl DisableBaselineInput {
 }
 
 /// A builder for [`DisableBaselineInput`](crate::operation::disable_baseline::DisableBaselineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableBaselineInputBuilder {
     pub(crate) enabled_baseline_identifier: ::std::option::Option<::std::string::String>,
 }

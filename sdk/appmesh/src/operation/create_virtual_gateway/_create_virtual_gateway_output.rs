@@ -26,8 +26,8 @@ impl CreateVirtualGatewayOutput {
 }
 
 /// A builder for [`CreateVirtualGatewayOutput`](crate::operation::create_virtual_gateway::CreateVirtualGatewayOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVirtualGatewayOutputBuilder {
     pub(crate) virtual_gateway: ::std::option::Option<crate::types::VirtualGatewayData>,
     _request_id: Option<String>,

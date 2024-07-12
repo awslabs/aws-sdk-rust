@@ -38,8 +38,8 @@ impl ListEvaluationFormVersionsInput {
 }
 
 /// A builder for [`ListEvaluationFormVersionsInput`](crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEvaluationFormVersionsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,

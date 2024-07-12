@@ -35,8 +35,8 @@ impl LogOddsMetric {
 }
 
 /// A builder for [`LogOddsMetric`](crate::types::LogOddsMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LogOddsMetricBuilder {
     pub(crate) variable_name: ::std::option::Option<::std::string::String>,
     pub(crate) variable_type: ::std::option::Option<::std::string::String>,

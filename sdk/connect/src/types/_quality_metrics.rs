@@ -27,8 +27,8 @@ impl QualityMetrics {
 }
 
 /// A builder for [`QualityMetrics`](crate::types::QualityMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QualityMetricsBuilder {
     pub(crate) agent: ::std::option::Option<crate::types::AgentQualityMetrics>,
     pub(crate) customer: ::std::option::Option<crate::types::CustomerQualityMetrics>,

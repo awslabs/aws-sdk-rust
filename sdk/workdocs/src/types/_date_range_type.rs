@@ -27,8 +27,8 @@ impl DateRangeType {
 }
 
 /// A builder for [`DateRangeType`](crate::types::DateRangeType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DateRangeTypeBuilder {
     pub(crate) start_value: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_value: ::std::option::Option<::aws_smithy_types::DateTime>,

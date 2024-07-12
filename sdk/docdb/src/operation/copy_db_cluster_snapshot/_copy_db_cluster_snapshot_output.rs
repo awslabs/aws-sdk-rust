@@ -26,8 +26,8 @@ impl CopyDbClusterSnapshotOutput {
 }
 
 /// A builder for [`CopyDbClusterSnapshotOutput`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CopyDbClusterSnapshotOutputBuilder {
     pub(crate) db_cluster_snapshot: ::std::option::Option<crate::types::DbClusterSnapshot>,
     _request_id: Option<String>,

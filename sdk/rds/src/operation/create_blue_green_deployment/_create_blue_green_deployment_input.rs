@@ -84,8 +84,8 @@ impl CreateBlueGreenDeploymentInput {
 }
 
 /// A builder for [`CreateBlueGreenDeploymentInput`](crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBlueGreenDeploymentInputBuilder {
     pub(crate) blue_green_deployment_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,

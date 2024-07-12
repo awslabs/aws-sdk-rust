@@ -53,8 +53,8 @@ impl ApplyPendingMaintenanceActionInput {
 }
 
 /// A builder for [`ApplyPendingMaintenanceActionInput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplyPendingMaintenanceActionInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) apply_action: ::std::option::Option<::std::string::String>,

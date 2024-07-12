@@ -42,8 +42,8 @@ impl ListAssessmentTemplatesInput {
 }
 
 /// A builder for [`ListAssessmentTemplatesInput`](crate::operation::list_assessment_templates::ListAssessmentTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentTemplatesInputBuilder {
     pub(crate) assessment_target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filter: ::std::option::Option<crate::types::AssessmentTemplateFilter>,

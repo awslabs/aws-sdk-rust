@@ -42,8 +42,8 @@ impl UpdateOrganizationConfigurationInput {
 }
 
 /// A builder for [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateOrganizationConfigurationInputBuilder {
     pub(crate) auto_enable: ::std::option::Option<bool>,
     pub(crate) auto_enable_standards: ::std::option::Option<crate::types::AutoEnableStandards>,

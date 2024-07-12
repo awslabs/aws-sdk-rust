@@ -33,8 +33,8 @@ impl TransferCertificateInput {
 }
 
 /// A builder for [`TransferCertificateInput`](crate::operation::transfer_certificate::TransferCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransferCertificateInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_aws_account: ::std::option::Option<::std::string::String>,

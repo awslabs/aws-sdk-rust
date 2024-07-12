@@ -34,8 +34,8 @@ impl ListDomainConfigurationsOutput {
 }
 
 /// A builder for [`ListDomainConfigurationsOutput`](crate::operation::list_domain_configurations::ListDomainConfigurationsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDomainConfigurationsOutputBuilder {
     pub(crate) domain_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainConfigurationSummary>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

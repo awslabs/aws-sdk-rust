@@ -34,8 +34,8 @@ impl ListAuditTasksOutput {
 }
 
 /// A builder for [`ListAuditTasksOutput`](crate::operation::list_audit_tasks::ListAuditTasksOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAuditTasksOutputBuilder {
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::AuditTaskMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

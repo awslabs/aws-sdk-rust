@@ -62,8 +62,8 @@ impl CreateDeviceDefinitionOutput {
 }
 
 /// A builder for [`CreateDeviceDefinitionOutput`](crate::operation::create_device_definition::CreateDeviceDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDeviceDefinitionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,

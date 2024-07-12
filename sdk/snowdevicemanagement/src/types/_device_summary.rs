@@ -39,8 +39,8 @@ impl DeviceSummary {
 }
 
 /// A builder for [`DeviceSummary`](crate::types::DeviceSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeviceSummaryBuilder {
     pub(crate) managed_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) managed_device_arn: ::std::option::Option<::std::string::String>,

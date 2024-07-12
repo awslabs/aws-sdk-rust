@@ -29,8 +29,8 @@ impl AtiTrainingMetricsValue {
 }
 
 /// A builder for [`AtiTrainingMetricsValue`](crate::types::AtiTrainingMetricsValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AtiTrainingMetricsValueBuilder {
     pub(crate) metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>>,
     pub(crate) model_performance: ::std::option::Option<crate::types::AtiModelPerformance>,

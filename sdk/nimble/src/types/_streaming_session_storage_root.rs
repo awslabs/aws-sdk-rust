@@ -35,8 +35,8 @@ impl StreamingSessionStorageRoot {
 }
 
 /// A builder for [`StreamingSessionStorageRoot`](crate::types::StreamingSessionStorageRoot).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StreamingSessionStorageRootBuilder {
     pub(crate) linux: ::std::option::Option<::std::string::String>,
     pub(crate) windows: ::std::option::Option<::std::string::String>,

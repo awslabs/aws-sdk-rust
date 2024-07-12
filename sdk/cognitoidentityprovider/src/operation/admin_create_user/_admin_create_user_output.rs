@@ -27,8 +27,8 @@ impl AdminCreateUserOutput {
 }
 
 /// A builder for [`AdminCreateUserOutput`](crate::operation::admin_create_user::AdminCreateUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminCreateUserOutputBuilder {
     pub(crate) user: ::std::option::Option<crate::types::UserType>,
     _request_id: Option<String>,

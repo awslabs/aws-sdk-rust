@@ -35,8 +35,8 @@ impl PatchFilter {
 }
 
 /// A builder for [`PatchFilter`](crate::types::PatchFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PatchFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::PatchFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

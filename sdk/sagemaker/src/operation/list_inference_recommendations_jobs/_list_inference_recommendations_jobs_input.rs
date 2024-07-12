@@ -86,8 +86,8 @@ impl ListInferenceRecommendationsJobsInput {
 }
 
 /// A builder for [`ListInferenceRecommendationsJobsInput`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInferenceRecommendationsJobsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,

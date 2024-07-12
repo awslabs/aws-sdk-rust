@@ -29,8 +29,8 @@ impl SetTerminationProtectionInput {
 }
 
 /// A builder for [`SetTerminationProtectionInput`](crate::operation::set_termination_protection::SetTerminationProtectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetTerminationProtectionInputBuilder {
     pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) termination_protected: ::std::option::Option<bool>,

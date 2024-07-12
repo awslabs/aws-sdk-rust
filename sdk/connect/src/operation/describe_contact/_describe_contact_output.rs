@@ -26,8 +26,8 @@ impl DescribeContactOutput {
 }
 
 /// A builder for [`DescribeContactOutput`](crate::operation::describe_contact::DescribeContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContactOutputBuilder {
     pub(crate) contact: ::std::option::Option<crate::types::Contact>,
     _request_id: Option<String>,

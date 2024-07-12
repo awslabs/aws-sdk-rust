@@ -38,8 +38,8 @@ impl ListIntegrationsInput {
 }
 
 /// A builder for [`ListIntegrationsInput`](crate::operation::list_integrations::ListIntegrationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIntegrationsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

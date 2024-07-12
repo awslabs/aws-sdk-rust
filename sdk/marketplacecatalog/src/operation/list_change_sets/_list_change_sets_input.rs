@@ -46,8 +46,8 @@ impl ListChangeSetsInput {
 }
 
 /// A builder for [`ListChangeSetsInput`](crate::operation::list_change_sets::ListChangeSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListChangeSetsInputBuilder {
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) filter_list: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

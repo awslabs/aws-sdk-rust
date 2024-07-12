@@ -27,8 +27,8 @@ impl TableOptimizerConfiguration {
 }
 
 /// A builder for [`TableOptimizerConfiguration`](crate::types::TableOptimizerConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TableOptimizerConfigurationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,

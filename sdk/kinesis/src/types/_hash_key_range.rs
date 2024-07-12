@@ -29,8 +29,8 @@ impl HashKeyRange {
 }
 
 /// A builder for [`HashKeyRange`](crate::types::HashKeyRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HashKeyRangeBuilder {
     pub(crate) starting_hash_key: ::std::option::Option<::std::string::String>,
     pub(crate) ending_hash_key: ::std::option::Option<::std::string::String>,

@@ -41,8 +41,8 @@ impl TrainingResultV2 {
 }
 
 /// A builder for [`TrainingResultV2`](crate::types::TrainingResultV2).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TrainingResultV2Builder {
     pub(crate) data_validation_metrics: ::std::option::Option<crate::types::DataValidationMetrics>,
     pub(crate) training_metrics_v2: ::std::option::Option<crate::types::TrainingMetricsV2>,

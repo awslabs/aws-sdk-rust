@@ -62,8 +62,8 @@ impl GetAutoScalingGroupRecommendationsInput {
 }
 
 /// A builder for [`GetAutoScalingGroupRecommendationsInput`](crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAutoScalingGroupRecommendationsInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_scaling_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

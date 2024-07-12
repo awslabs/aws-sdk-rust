@@ -33,8 +33,8 @@ impl DeleteNetworkInterfacePermissionInput {
 }
 
 /// A builder for [`DeleteNetworkInterfacePermissionInput`](crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteNetworkInterfacePermissionInputBuilder {
     pub(crate) network_interface_permission_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,

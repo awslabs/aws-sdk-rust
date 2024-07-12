@@ -741,8 +741,8 @@ impl CopyObjectInput {
 }
 
 /// A builder for [`CopyObjectInput`](crate::operation::copy_object::CopyObjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CopyObjectInputBuilder {
     pub(crate) acl: ::std::option::Option<crate::types::ObjectCannedAcl>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,

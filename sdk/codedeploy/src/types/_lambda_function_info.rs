@@ -45,8 +45,8 @@ impl LambdaFunctionInfo {
 }
 
 /// A builder for [`LambdaFunctionInfo`](crate::types::LambdaFunctionInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LambdaFunctionInfoBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) function_alias: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListTypedLinkFacetAttributesOutput {
 }
 
 /// A builder for [`ListTypedLinkFacetAttributesOutput`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTypedLinkFacetAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

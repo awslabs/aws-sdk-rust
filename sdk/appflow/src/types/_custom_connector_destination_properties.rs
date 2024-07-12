@@ -48,8 +48,8 @@ impl CustomConnectorDestinationProperties {
 }
 
 /// A builder for [`CustomConnectorDestinationProperties`](crate::types::CustomConnectorDestinationProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomConnectorDestinationPropertiesBuilder {
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,

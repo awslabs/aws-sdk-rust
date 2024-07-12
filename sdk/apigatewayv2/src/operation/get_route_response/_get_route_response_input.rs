@@ -32,8 +32,8 @@ impl GetRouteResponseInput {
 }
 
 /// A builder for [`GetRouteResponseInput`](crate::operation::get_route_response::GetRouteResponseInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRouteResponseInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_id: ::std::option::Option<::std::string::String>,

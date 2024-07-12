@@ -28,8 +28,8 @@ impl ListBatchJobRestartPointsOutput {
 }
 
 /// A builder for [`ListBatchJobRestartPointsOutput`](crate::operation::list_batch_job_restart_points::ListBatchJobRestartPointsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBatchJobRestartPointsOutputBuilder {
     pub(crate) batch_job_steps: ::std::option::Option<::std::vec::Vec<crate::types::JobStep>>,
     _request_id: Option<String>,

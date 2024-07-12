@@ -32,8 +32,8 @@ impl DeleteQueueEnvironmentInput {
 }
 
 /// A builder for [`DeleteQueueEnvironmentInput`](crate::operation::delete_queue_environment::DeleteQueueEnvironmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteQueueEnvironmentInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

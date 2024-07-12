@@ -32,8 +32,8 @@ impl ModifyTrafficMirrorFilterRuleOutput {
 }
 
 /// A builder for [`ModifyTrafficMirrorFilterRuleOutput`](crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyTrafficMirrorFilterRuleOutputBuilder {
     pub(crate) traffic_mirror_filter_rule: ::std::option::Option<crate::types::TrafficMirrorFilterRule>,
     _request_id: Option<String>,

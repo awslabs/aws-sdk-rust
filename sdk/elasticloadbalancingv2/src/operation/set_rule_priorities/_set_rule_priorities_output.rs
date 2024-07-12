@@ -28,8 +28,8 @@ impl SetRulePrioritiesOutput {
 }
 
 /// A builder for [`SetRulePrioritiesOutput`](crate::operation::set_rule_priorities::SetRulePrioritiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetRulePrioritiesOutputBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     _request_id: Option<String>,

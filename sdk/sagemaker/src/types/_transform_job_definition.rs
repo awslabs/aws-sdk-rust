@@ -59,8 +59,8 @@ impl TransformJobDefinition {
 }
 
 /// A builder for [`TransformJobDefinition`](crate::types::TransformJobDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformJobDefinitionBuilder {
     pub(crate) max_concurrent_transforms: ::std::option::Option<i32>,
     pub(crate) max_payload_in_mb: ::std::option::Option<i32>,

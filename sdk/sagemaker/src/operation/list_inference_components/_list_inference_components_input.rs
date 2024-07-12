@@ -86,8 +86,8 @@ impl ListInferenceComponentsInput {
 }
 
 /// A builder for [`ListInferenceComponentsInput`](crate::operation::list_inference_components::ListInferenceComponentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListInferenceComponentsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::InferenceComponentSortKey>,
     pub(crate) sort_order: ::std::option::Option<crate::types::OrderKey>,

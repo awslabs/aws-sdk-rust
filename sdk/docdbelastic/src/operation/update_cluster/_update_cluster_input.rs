@@ -118,8 +118,8 @@ impl UpdateClusterInput {
 }
 
 /// A builder for [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateClusterInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) auth_type: ::std::option::Option<crate::types::Auth>,

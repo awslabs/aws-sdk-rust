@@ -36,8 +36,8 @@ impl ListRoleTagsInput {
 }
 
 /// A builder for [`ListRoleTagsInput`](crate::operation::list_role_tags::ListRoleTagsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRoleTagsInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

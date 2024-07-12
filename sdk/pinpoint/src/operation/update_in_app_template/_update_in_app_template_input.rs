@@ -62,8 +62,8 @@ impl UpdateInAppTemplateInput {
 }
 
 /// A builder for [`UpdateInAppTemplateInput`](crate::operation::update_in_app_template::UpdateInAppTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInAppTemplateInputBuilder {
     pub(crate) create_new_version: ::std::option::Option<bool>,
     pub(crate) in_app_template_request: ::std::option::Option<crate::types::InAppTemplateRequest>,

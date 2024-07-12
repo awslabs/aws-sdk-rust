@@ -26,8 +26,8 @@ impl AssociateBudgetWithResourceInput {
 }
 
 /// A builder for [`AssociateBudgetWithResourceInput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateBudgetWithResourceInputBuilder {
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

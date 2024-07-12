@@ -74,8 +74,8 @@ impl CreateRegistrationAttachmentOutput {
 }
 
 /// A builder for [`CreateRegistrationAttachmentOutput`](crate::operation::create_registration_attachment::CreateRegistrationAttachmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRegistrationAttachmentOutputBuilder {
     pub(crate) registration_attachment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registration_attachment_id: ::std::option::Option<::std::string::String>,

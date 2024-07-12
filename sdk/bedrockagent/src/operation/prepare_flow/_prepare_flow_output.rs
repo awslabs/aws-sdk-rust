@@ -33,8 +33,8 @@ impl PrepareFlowOutput {
 }
 
 /// A builder for [`PrepareFlowOutput`](crate::operation::prepare_flow::PrepareFlowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PrepareFlowOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FlowStatus>,

@@ -27,8 +27,8 @@ impl FsxProtocol {
 }
 
 /// A builder for [`FsxProtocol`](crate::types::FsxProtocol).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FsxProtocolBuilder {
     pub(crate) nfs: ::std::option::Option<crate::types::FsxProtocolNfs>,
     pub(crate) smb: ::std::option::Option<crate::types::FsxProtocolSmb>,

@@ -44,8 +44,8 @@ impl SearchInsightsInput {
 }
 
 /// A builder for [`SearchInsightsInput`](crate::operation::search_insights::SearchInsightsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchInsightsInputBuilder {
     pub(crate) start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
     pub(crate) filters: ::std::option::Option<crate::types::SearchInsightsFilters>,

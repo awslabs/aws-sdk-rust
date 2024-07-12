@@ -45,8 +45,8 @@ impl AwsIamAccessKeySessionContextSessionIssuer {
 }
 
 /// A builder for [`AwsIamAccessKeySessionContextSessionIssuer`](crate::types::AwsIamAccessKeySessionContextSessionIssuer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsIamAccessKeySessionContextSessionIssuerBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,

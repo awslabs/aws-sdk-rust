@@ -34,8 +34,8 @@ impl GetDifferencesOutput {
 }
 
 /// A builder for [`GetDifferencesOutput`](crate::operation::get_differences::GetDifferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDifferencesOutputBuilder {
     pub(crate) differences: ::std::option::Option<::std::vec::Vec<crate::types::Difference>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

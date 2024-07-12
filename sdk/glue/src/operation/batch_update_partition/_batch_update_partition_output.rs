@@ -28,8 +28,8 @@ impl BatchUpdatePartitionOutput {
 }
 
 /// A builder for [`BatchUpdatePartitionOutput`](crate::operation::batch_update_partition::BatchUpdatePartitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdatePartitionOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionFailureEntry>>,
     _request_id: Option<String>,

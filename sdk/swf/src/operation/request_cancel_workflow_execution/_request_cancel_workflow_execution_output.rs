@@ -18,8 +18,8 @@ impl RequestCancelWorkflowExecutionOutput {
 }
 
 /// A builder for [`RequestCancelWorkflowExecutionOutput`](crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestCancelWorkflowExecutionOutputBuilder {
     _request_id: Option<String>,
 }

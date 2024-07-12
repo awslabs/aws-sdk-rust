@@ -27,8 +27,8 @@ impl IngestConfiguration {
 }
 
 /// A builder for [`IngestConfiguration`](crate::types::IngestConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngestConfigurationBuilder {
     pub(crate) video: ::std::option::Option<crate::types::VideoConfiguration>,
     pub(crate) audio: ::std::option::Option<crate::types::AudioConfiguration>,

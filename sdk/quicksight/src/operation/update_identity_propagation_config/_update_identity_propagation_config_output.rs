@@ -32,8 +32,8 @@ impl UpdateIdentityPropagationConfigOutput {
 }
 
 /// A builder for [`UpdateIdentityPropagationConfigOutput`](crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateIdentityPropagationConfigOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,

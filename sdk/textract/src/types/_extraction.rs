@@ -33,8 +33,8 @@ impl Extraction {
 }
 
 /// A builder for [`Extraction`](crate::types::Extraction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExtractionBuilder {
     pub(crate) lending_document: ::std::option::Option<crate::types::LendingDocument>,
     pub(crate) expense_document: ::std::option::Option<crate::types::ExpenseDocument>,

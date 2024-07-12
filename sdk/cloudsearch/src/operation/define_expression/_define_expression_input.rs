@@ -27,8 +27,8 @@ impl DefineExpressionInput {
 }
 
 /// A builder for [`DefineExpressionInput`](crate::operation::define_expression::DefineExpressionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefineExpressionInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<crate::types::Expression>,

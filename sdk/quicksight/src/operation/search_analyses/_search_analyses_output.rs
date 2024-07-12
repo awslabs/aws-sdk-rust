@@ -46,8 +46,8 @@ impl SearchAnalysesOutput {
 }
 
 /// A builder for [`SearchAnalysesOutput`](crate::operation::search_analyses::SearchAnalysesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchAnalysesOutputBuilder {
     pub(crate) analysis_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -102,8 +102,8 @@ impl CreateSubnetInput {
 }
 
 /// A builder for [`CreateSubnetInput`](crate::operation::create_subnet::CreateSubnetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSubnetInputBuilder {
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,

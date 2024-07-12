@@ -21,8 +21,8 @@ impl GetXssMatchSetInput {
 }
 
 /// A builder for [`GetXssMatchSetInput`](crate::operation::get_xss_match_set::GetXssMatchSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetXssMatchSetInputBuilder {
     pub(crate) xss_match_set_id: ::std::option::Option<::std::string::String>,
 }

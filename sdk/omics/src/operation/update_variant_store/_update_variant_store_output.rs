@@ -65,8 +65,8 @@ impl UpdateVariantStoreOutput {
 }
 
 /// A builder for [`UpdateVariantStoreOutput`](crate::operation::update_variant_store::UpdateVariantStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateVariantStoreOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,

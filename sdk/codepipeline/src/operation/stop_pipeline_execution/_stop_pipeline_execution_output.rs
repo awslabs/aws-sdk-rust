@@ -26,8 +26,8 @@ impl StopPipelineExecutionOutput {
 }
 
 /// A builder for [`StopPipelineExecutionOutput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopPipelineExecutionOutputBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

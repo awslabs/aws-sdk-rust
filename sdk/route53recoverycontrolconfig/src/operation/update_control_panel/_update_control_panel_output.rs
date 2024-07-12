@@ -26,8 +26,8 @@ impl UpdateControlPanelOutput {
 }
 
 /// A builder for [`UpdateControlPanelOutput`](crate::operation::update_control_panel::UpdateControlPanelOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateControlPanelOutputBuilder {
     pub(crate) control_panel: ::std::option::Option<crate::types::ControlPanel>,
     _request_id: Option<String>,

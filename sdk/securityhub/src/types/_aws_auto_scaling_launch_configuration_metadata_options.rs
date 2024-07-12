@@ -33,8 +33,8 @@ impl AwsAutoScalingLaunchConfigurationMetadataOptions {
 }
 
 /// A builder for [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsAutoScalingLaunchConfigurationMetadataOptionsBuilder {
     pub(crate) http_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) http_put_response_hop_limit: ::std::option::Option<i32>,

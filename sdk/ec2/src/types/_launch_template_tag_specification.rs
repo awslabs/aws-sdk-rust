@@ -29,8 +29,8 @@ impl LaunchTemplateTagSpecification {
 }
 
 /// A builder for [`LaunchTemplateTagSpecification`](crate::types::LaunchTemplateTagSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateTagSpecificationBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

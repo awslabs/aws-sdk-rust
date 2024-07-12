@@ -33,8 +33,8 @@ impl LineChartDefaultSeriesSettings {
 }
 
 /// A builder for [`LineChartDefaultSeriesSettings`](crate::types::LineChartDefaultSeriesSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LineChartDefaultSeriesSettingsBuilder {
     pub(crate) axis_binding: ::std::option::Option<crate::types::AxisBinding>,
     pub(crate) line_style_settings: ::std::option::Option<crate::types::LineChartLineStyleSettings>,

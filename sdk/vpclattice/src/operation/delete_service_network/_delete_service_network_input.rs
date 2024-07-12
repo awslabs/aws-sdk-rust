@@ -20,8 +20,8 @@ impl DeleteServiceNetworkInput {
 }
 
 /// A builder for [`DeleteServiceNetworkInput`](crate::operation::delete_service_network::DeleteServiceNetworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteServiceNetworkInputBuilder {
     pub(crate) service_network_identifier: ::std::option::Option<::std::string::String>,
 }

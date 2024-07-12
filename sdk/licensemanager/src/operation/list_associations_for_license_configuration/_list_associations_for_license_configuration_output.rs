@@ -35,8 +35,8 @@ impl ListAssociationsForLicenseConfigurationOutput {
 }
 
 /// A builder for [`ListAssociationsForLicenseConfigurationOutput`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociationsForLicenseConfigurationOutputBuilder {
     pub(crate) license_configuration_associations: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

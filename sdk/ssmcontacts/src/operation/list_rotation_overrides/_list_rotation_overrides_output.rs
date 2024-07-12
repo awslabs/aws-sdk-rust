@@ -34,8 +34,8 @@ impl ListRotationOverridesOutput {
 }
 
 /// A builder for [`ListRotationOverridesOutput`](crate::operation::list_rotation_overrides::ListRotationOverridesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRotationOverridesOutputBuilder {
     pub(crate) rotation_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RotationOverride>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

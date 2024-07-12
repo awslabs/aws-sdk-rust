@@ -27,8 +27,8 @@ impl PlacementConstraint {
 }
 
 /// A builder for [`PlacementConstraint`](crate::types::PlacementConstraint).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PlacementConstraintBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PlacementConstraintType>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,

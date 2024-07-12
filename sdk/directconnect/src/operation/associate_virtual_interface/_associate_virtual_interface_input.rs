@@ -26,8 +26,8 @@ impl AssociateVirtualInterfaceInput {
 }
 
 /// A builder for [`AssociateVirtualInterfaceInput`](crate::operation::associate_virtual_interface::AssociateVirtualInterfaceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateVirtualInterfaceInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,

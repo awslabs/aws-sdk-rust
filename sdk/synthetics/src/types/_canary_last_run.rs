@@ -27,8 +27,8 @@ impl CanaryLastRun {
 }
 
 /// A builder for [`CanaryLastRun`](crate::types::CanaryLastRun).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CanaryLastRunBuilder {
     pub(crate) canary_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_run: ::std::option::Option<crate::types::CanaryRun>,

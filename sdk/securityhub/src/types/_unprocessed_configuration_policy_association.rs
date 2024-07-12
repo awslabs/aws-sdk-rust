@@ -33,8 +33,8 @@ impl UnprocessedConfigurationPolicyAssociation {
 }
 
 /// A builder for [`UnprocessedConfigurationPolicyAssociation`](crate::types::UnprocessedConfigurationPolicyAssociation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnprocessedConfigurationPolicyAssociationBuilder {
     pub(crate) configuration_policy_association_identifiers: ::std::option::Option<crate::types::ConfigurationPolicyAssociation>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,

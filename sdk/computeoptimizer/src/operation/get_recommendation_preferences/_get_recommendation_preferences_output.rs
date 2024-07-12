@@ -36,8 +36,8 @@ impl GetRecommendationPreferencesOutput {
 }
 
 /// A builder for [`GetRecommendationPreferencesOutput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRecommendationPreferencesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_preferences_details: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>,

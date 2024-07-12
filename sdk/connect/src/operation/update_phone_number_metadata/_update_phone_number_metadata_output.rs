@@ -18,8 +18,8 @@ impl UpdatePhoneNumberMetadataOutput {
 }
 
 /// A builder for [`UpdatePhoneNumberMetadataOutput`](crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePhoneNumberMetadataOutputBuilder {
     _request_id: Option<String>,
 }

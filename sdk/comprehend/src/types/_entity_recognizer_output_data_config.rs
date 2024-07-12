@@ -21,8 +21,8 @@ impl EntityRecognizerOutputDataConfig {
 }
 
 /// A builder for [`EntityRecognizerOutputDataConfig`](crate::types::EntityRecognizerOutputDataConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EntityRecognizerOutputDataConfigBuilder {
     pub(crate) flywheel_stats_s3_prefix: ::std::option::Option<::std::string::String>,
 }

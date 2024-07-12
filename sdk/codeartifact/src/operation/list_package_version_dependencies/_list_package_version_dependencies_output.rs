@@ -92,8 +92,8 @@ impl ListPackageVersionDependenciesOutput {
 }
 
 /// A builder for [`ListPackageVersionDependenciesOutput`](crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPackageVersionDependenciesOutputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

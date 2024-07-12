@@ -26,8 +26,8 @@ impl CreateMetricSetOutput {
 }
 
 /// A builder for [`CreateMetricSetOutput`](crate::operation::create_metric_set::CreateMetricSetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateMetricSetOutputBuilder {
     pub(crate) metric_set_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl SendOtpMessageOutput {
 }
 
 /// A builder for [`SendOtpMessageOutput`](crate::operation::send_otp_message::SendOtpMessageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendOtpMessageOutputBuilder {
     pub(crate) message_response: ::std::option::Option<crate::types::MessageResponse>,
     _request_id: Option<String>,

@@ -26,8 +26,8 @@ impl DeleteTenantDatabaseOutput {
 }
 
 /// A builder for [`DeleteTenantDatabaseOutput`](crate::operation::delete_tenant_database::DeleteTenantDatabaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTenantDatabaseOutputBuilder {
     pub(crate) tenant_database: ::std::option::Option<crate::types::TenantDatabase>,
     _request_id: Option<String>,

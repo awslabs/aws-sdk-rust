@@ -29,8 +29,8 @@ impl HistoricalMetricResult {
 }
 
 /// A builder for [`HistoricalMetricResult`](crate::types::HistoricalMetricResult).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HistoricalMetricResultBuilder {
     pub(crate) dimensions: ::std::option::Option<crate::types::Dimensions>,
     pub(crate) collections: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricData>>,

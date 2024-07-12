@@ -33,8 +33,8 @@ impl ListVirtualRoutersOutput {
 }
 
 /// A builder for [`ListVirtualRoutersOutput`](crate::operation::list_virtual_routers::ListVirtualRoutersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVirtualRoutersOutputBuilder {
     pub(crate) virtual_routers: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

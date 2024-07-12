@@ -44,8 +44,8 @@ impl DescribeEngineDefaultClusterParametersInput {
 }
 
 /// A builder for [`DescribeEngineDefaultClusterParametersInput`](crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEngineDefaultClusterParametersInputBuilder {
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,

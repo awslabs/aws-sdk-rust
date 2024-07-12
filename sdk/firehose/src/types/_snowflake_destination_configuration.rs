@@ -159,8 +159,8 @@ impl SnowflakeDestinationConfiguration {
 }
 
 /// A builder for [`SnowflakeDestinationConfiguration`](crate::types::SnowflakeDestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct SnowflakeDestinationConfigurationBuilder {
     pub(crate) account_url: ::std::option::Option<::std::string::String>,
     pub(crate) private_key: ::std::option::Option<::std::string::String>,

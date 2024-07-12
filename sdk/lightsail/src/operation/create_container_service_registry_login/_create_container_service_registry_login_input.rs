@@ -11,8 +11,8 @@ impl CreateContainerServiceRegistryLoginInput {
 }
 
 /// A builder for [`CreateContainerServiceRegistryLoginInput`](crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateContainerServiceRegistryLoginInputBuilder {}
 impl CreateContainerServiceRegistryLoginInputBuilder {
     /// Consumes the builder and constructs a [`CreateContainerServiceRegistryLoginInput`](crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginInput).

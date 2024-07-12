@@ -26,8 +26,8 @@ impl DescribePhoneNumberOutput {
 }
 
 /// A builder for [`DescribePhoneNumberOutput`](crate::operation::describe_phone_number::DescribePhoneNumberOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePhoneNumberOutputBuilder {
     pub(crate) claimed_phone_number_summary: ::std::option::Option<crate::types::ClaimedPhoneNumberSummary>,
     _request_id: Option<String>,

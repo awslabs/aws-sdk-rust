@@ -32,8 +32,8 @@ impl DescribeApplicationStateOutput {
 }
 
 /// A builder for [`DescribeApplicationStateOutput`](crate::operation::describe_application_state::DescribeApplicationStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeApplicationStateOutputBuilder {
     pub(crate) application_status: ::std::option::Option<crate::types::ApplicationStatus>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,

@@ -28,8 +28,8 @@ impl DescribeBundleAssociationsInput {
 }
 
 /// A builder for [`DescribeBundleAssociationsInput`](crate::operation::describe_bundle_associations::DescribeBundleAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBundleAssociationsInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) associated_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::BundleAssociatedResourceType>>,

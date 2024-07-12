@@ -20,8 +20,8 @@ impl DeleteTrafficDistributionGroupInput {
 }
 
 /// A builder for [`DeleteTrafficDistributionGroupInput`](crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTrafficDistributionGroupInputBuilder {
     pub(crate) traffic_distribution_group_id: ::std::option::Option<::std::string::String>,
 }

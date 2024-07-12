@@ -54,8 +54,8 @@ impl JoinInstruction {
 }
 
 /// A builder for [`JoinInstruction`](crate::types::JoinInstruction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JoinInstructionBuilder {
     pub(crate) left_operand: ::std::option::Option<::std::string::String>,
     pub(crate) right_operand: ::std::option::Option<::std::string::String>,

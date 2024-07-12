@@ -34,8 +34,8 @@ impl SourceSchema {
 }
 
 /// A builder for [`SourceSchema`](crate::types::SourceSchema).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceSchemaBuilder {
     pub(crate) record_format: ::std::option::Option<crate::types::RecordFormat>,
     pub(crate) record_encoding: ::std::option::Option<::std::string::String>,

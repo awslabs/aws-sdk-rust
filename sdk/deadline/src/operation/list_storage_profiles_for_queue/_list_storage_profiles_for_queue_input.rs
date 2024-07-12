@@ -38,8 +38,8 @@ impl ListStorageProfilesForQueueInput {
 }
 
 /// A builder for [`ListStorageProfilesForQueueInput`](crate::operation::list_storage_profiles_for_queue::ListStorageProfilesForQueueInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStorageProfilesForQueueInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,

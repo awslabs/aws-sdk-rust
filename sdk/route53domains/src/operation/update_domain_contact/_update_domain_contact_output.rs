@@ -27,8 +27,8 @@ impl UpdateDomainContactOutput {
 }
 
 /// A builder for [`UpdateDomainContactOutput`](crate::operation::update_domain_contact::UpdateDomainContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDomainContactOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

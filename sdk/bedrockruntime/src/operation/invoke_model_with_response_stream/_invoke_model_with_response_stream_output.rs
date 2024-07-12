@@ -33,8 +33,8 @@ impl InvokeModelWithResponseStreamOutput {
 }
 
 /// A builder for [`InvokeModelWithResponseStreamOutput`](crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvokeModelWithResponseStreamOutputBuilder {
     pub(crate) body:
         ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,

@@ -27,8 +27,8 @@ impl AddCommunicationToCaseOutput {
 }
 
 /// A builder for [`AddCommunicationToCaseOutput`](crate::operation::add_communication_to_case::AddCommunicationToCaseOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddCommunicationToCaseOutputBuilder {
     pub(crate) result: ::std::option::Option<bool>,
     _request_id: Option<String>,

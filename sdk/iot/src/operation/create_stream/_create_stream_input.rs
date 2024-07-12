@@ -48,8 +48,8 @@ impl CreateStreamInput {
 }
 
 /// A builder for [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateStreamInputBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetVpcAttachmentInput {
 }
 
 /// A builder for [`GetVpcAttachmentInput`](crate::operation::get_vpc_attachment::GetVpcAttachmentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVpcAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
 }

@@ -34,8 +34,8 @@ impl SchemaChangeDetails {
 }
 
 /// A builder for [`SchemaChangeDetails`](crate::types::SchemaChangeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SchemaChangeDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::SchemaChangeType>,

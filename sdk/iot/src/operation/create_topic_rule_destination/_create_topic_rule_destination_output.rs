@@ -26,8 +26,8 @@ impl CreateTopicRuleDestinationOutput {
 }
 
 /// A builder for [`CreateTopicRuleDestinationOutput`](crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTopicRuleDestinationOutputBuilder {
     pub(crate) topic_rule_destination: ::std::option::Option<crate::types::TopicRuleDestination>,
     _request_id: Option<String>,

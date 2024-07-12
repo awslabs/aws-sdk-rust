@@ -70,8 +70,8 @@ impl PutEventTypeInput {
 }
 
 /// A builder for [`PutEventTypeInput`](crate::operation::put_event_type::PutEventTypeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutEventTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

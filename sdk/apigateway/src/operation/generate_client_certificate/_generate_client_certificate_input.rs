@@ -27,8 +27,8 @@ impl GenerateClientCertificateInput {
 }
 
 /// A builder for [`GenerateClientCertificateInput`](crate::operation::generate_client_certificate::GenerateClientCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateClientCertificateInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

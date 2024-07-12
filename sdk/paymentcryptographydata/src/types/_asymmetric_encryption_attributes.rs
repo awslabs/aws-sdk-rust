@@ -21,8 +21,8 @@ impl AsymmetricEncryptionAttributes {
 }
 
 /// A builder for [`AsymmetricEncryptionAttributes`](crate::types::AsymmetricEncryptionAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AsymmetricEncryptionAttributesBuilder {
     pub(crate) padding_type: ::std::option::Option<crate::types::PaddingType>,
 }

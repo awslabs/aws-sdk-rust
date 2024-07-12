@@ -58,8 +58,8 @@ impl CreateComputerInput {
 }
 
 /// A builder for [`CreateComputerInput`](crate::operation::create_computer::CreateComputerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateComputerInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) computer_name: ::std::option::Option<::std::string::String>,

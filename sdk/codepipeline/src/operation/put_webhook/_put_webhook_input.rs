@@ -28,8 +28,8 @@ impl PutWebhookInput {
 }
 
 /// A builder for [`PutWebhookInput`](crate::operation::put_webhook::PutWebhookInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutWebhookInputBuilder {
     pub(crate) webhook: ::std::option::Option<crate::types::WebhookDefinition>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

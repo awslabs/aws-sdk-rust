@@ -53,8 +53,8 @@ impl TimeSeriesDataPointSummaryFormOutput {
 }
 
 /// A builder for [`TimeSeriesDataPointSummaryFormOutput`](crate::types::TimeSeriesDataPointSummaryFormOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TimeSeriesDataPointSummaryFormOutputBuilder {
     pub(crate) form_name: ::std::option::Option<::std::string::String>,
     pub(crate) type_identifier: ::std::option::Option<::std::string::String>,

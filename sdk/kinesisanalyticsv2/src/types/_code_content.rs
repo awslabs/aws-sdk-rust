@@ -33,8 +33,8 @@ impl CodeContent {
 }
 
 /// A builder for [`CodeContent`](crate::types::CodeContent).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeContentBuilder {
     pub(crate) text_content: ::std::option::Option<::std::string::String>,
     pub(crate) zip_file_content: ::std::option::Option<::aws_smithy_types::Blob>,

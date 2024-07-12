@@ -33,8 +33,8 @@ impl ResetDeploymentsInput {
 }
 
 /// A builder for [`ResetDeploymentsInput`](crate::operation::reset_deployments::ResetDeploymentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResetDeploymentsInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,

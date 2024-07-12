@@ -27,8 +27,8 @@ impl ColumnStatisticsError {
 }
 
 /// A builder for [`ColumnStatisticsError`](crate::types::ColumnStatisticsError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ColumnStatisticsErrorBuilder {
     pub(crate) column_statistics: ::std::option::Option<crate::types::ColumnStatistics>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetail>,

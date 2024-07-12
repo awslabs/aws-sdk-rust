@@ -27,8 +27,8 @@ impl EventSource {
 }
 
 /// A builder for [`EventSource`](crate::types::EventSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EventSourceValues>,
     pub(crate) parameters: ::std::option::Option<crate::types::EventParameters>,

@@ -18,8 +18,8 @@ impl DeregisterJobDefinitionOutput {
 }
 
 /// A builder for [`DeregisterJobDefinitionOutput`](crate::operation::deregister_job_definition::DeregisterJobDefinitionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterJobDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

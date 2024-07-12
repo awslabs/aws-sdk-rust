@@ -192,8 +192,8 @@ impl Job {
 }
 
 /// A builder for [`Job`](crate::types::Job).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,

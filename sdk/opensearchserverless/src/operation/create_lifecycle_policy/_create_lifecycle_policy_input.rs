@@ -44,8 +44,8 @@ impl CreateLifecyclePolicyInput {
 }
 
 /// A builder for [`CreateLifecyclePolicyInput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLifecyclePolicyInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::LifecyclePolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

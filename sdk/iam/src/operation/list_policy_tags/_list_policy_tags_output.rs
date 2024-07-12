@@ -39,8 +39,8 @@ impl ListPolicyTagsOutput {
 }
 
 /// A builder for [`ListPolicyTagsOutput`](crate::operation::list_policy_tags::ListPolicyTagsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPolicyTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,

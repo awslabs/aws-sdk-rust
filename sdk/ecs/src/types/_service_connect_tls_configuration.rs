@@ -33,8 +33,8 @@ impl ServiceConnectTlsConfiguration {
 }
 
 /// A builder for [`ServiceConnectTlsConfiguration`](crate::types::ServiceConnectTlsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceConnectTlsConfigurationBuilder {
     pub(crate) issuer_certificate_authority: ::std::option::Option<crate::types::ServiceConnectTlsCertificateAuthority>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,

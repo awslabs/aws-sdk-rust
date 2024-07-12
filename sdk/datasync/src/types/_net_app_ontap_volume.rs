@@ -109,8 +109,8 @@ impl NetAppOntapVolume {
 }
 
 /// A builder for [`NetAppOntapVolume`](crate::types::NetAppOntapVolume).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetAppOntapVolumeBuilder {
     pub(crate) volume_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,

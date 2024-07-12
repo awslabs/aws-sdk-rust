@@ -32,8 +32,8 @@ impl AssociateDhcpOptionsInput {
 }
 
 /// A builder for [`AssociateDhcpOptionsInput`](crate::operation::associate_dhcp_options::AssociateDhcpOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateDhcpOptionsInputBuilder {
     pub(crate) dhcp_options_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,

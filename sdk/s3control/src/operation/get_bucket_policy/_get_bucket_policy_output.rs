@@ -26,8 +26,8 @@ impl GetBucketPolicyOutput {
 }
 
 /// A builder for [`GetBucketPolicyOutput`](crate::operation::get_bucket_policy::GetBucketPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBucketPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

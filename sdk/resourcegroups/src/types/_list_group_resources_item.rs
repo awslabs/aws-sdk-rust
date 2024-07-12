@@ -31,8 +31,8 @@ impl ListGroupResourcesItem {
 }
 
 /// A builder for [`ListGroupResourcesItem`](crate::types::ListGroupResourcesItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupResourcesItemBuilder {
     pub(crate) identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
     pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,

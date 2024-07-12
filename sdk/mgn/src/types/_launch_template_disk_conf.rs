@@ -33,8 +33,8 @@ impl LaunchTemplateDiskConf {
 }
 
 /// A builder for [`LaunchTemplateDiskConf`](crate::types::LaunchTemplateDiskConf).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplateDiskConfBuilder {
     pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
     pub(crate) iops: ::std::option::Option<i64>,

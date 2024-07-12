@@ -111,8 +111,8 @@ impl RouteSetDetails {
 }
 
 /// A builder for [`RouteSetDetails`](crate::types::RouteSetDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RouteSetDetailsBuilder {
     pub(crate) carrier_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_arn: ::std::option::Option<::std::string::String>,

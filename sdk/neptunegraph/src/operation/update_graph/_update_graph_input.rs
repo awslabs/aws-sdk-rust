@@ -40,8 +40,8 @@ impl UpdateGraphInput {
 }
 
 /// A builder for [`UpdateGraphInput`](crate::operation::update_graph::UpdateGraphInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGraphInputBuilder {
     pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) public_connectivity: ::std::option::Option<bool>,

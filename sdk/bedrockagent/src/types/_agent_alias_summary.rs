@@ -61,8 +61,8 @@ impl AgentAliasSummary {
 }
 
 /// A builder for [`AgentAliasSummary`](crate::types::AgentAliasSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentAliasSummaryBuilder {
     pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_alias_name: ::std::option::Option<::std::string::String>,

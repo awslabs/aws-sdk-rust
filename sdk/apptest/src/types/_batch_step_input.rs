@@ -48,8 +48,8 @@ impl BatchStepInput {
 }
 
 /// A builder for [`BatchStepInput`](crate::types::BatchStepInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchStepInputBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::MainframeResourceSummary>,
     pub(crate) batch_job_name: ::std::option::Option<::std::string::String>,

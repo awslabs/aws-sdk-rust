@@ -28,8 +28,8 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInput {
 }
 
 /// A builder for [`DisassociateApprovalRuleTemplateFromRepositoryInput`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateApprovalRuleTemplateFromRepositoryInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,

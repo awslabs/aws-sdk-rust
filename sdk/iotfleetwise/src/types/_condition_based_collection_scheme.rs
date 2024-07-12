@@ -44,8 +44,8 @@ impl ConditionBasedCollectionScheme {
 }
 
 /// A builder for [`ConditionBasedCollectionScheme`](crate::types::ConditionBasedCollectionScheme).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConditionBasedCollectionSchemeBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) minimum_trigger_interval_ms: ::std::option::Option<i64>,

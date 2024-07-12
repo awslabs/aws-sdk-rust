@@ -32,8 +32,8 @@ impl CancelJobRunOutput {
 }
 
 /// A builder for [`CancelJobRunOutput`](crate::operation::cancel_job_run::CancelJobRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelJobRunOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_cluster_id: ::std::option::Option<::std::string::String>,

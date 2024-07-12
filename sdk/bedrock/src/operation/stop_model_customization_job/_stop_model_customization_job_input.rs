@@ -20,8 +20,8 @@ impl StopModelCustomizationJobInput {
 }
 
 /// A builder for [`StopModelCustomizationJobInput`](crate::operation::stop_model_customization_job::StopModelCustomizationJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopModelCustomizationJobInputBuilder {
     pub(crate) job_identifier: ::std::option::Option<::std::string::String>,
 }

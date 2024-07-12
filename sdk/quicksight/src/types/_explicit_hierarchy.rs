@@ -37,8 +37,8 @@ impl ExplicitHierarchy {
 }
 
 /// A builder for [`ExplicitHierarchy`](crate::types::ExplicitHierarchy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExplicitHierarchyBuilder {
     pub(crate) hierarchy_id: ::std::option::Option<::std::string::String>,
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,

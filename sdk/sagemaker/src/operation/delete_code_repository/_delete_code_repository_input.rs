@@ -20,8 +20,8 @@ impl DeleteCodeRepositoryInput {
 }
 
 /// A builder for [`DeleteCodeRepositoryInput`](crate::operation::delete_code_repository::DeleteCodeRepositoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCodeRepositoryInputBuilder {
     pub(crate) code_repository_name: ::std::option::Option<::std::string::String>,
 }

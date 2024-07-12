@@ -26,8 +26,8 @@ impl CreateBgpPeerInput {
 }
 
 /// A builder for [`CreateBgpPeerInput`](crate::operation::create_bgp_peer::CreateBgpPeerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBgpPeerInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_bgp_peer: ::std::option::Option<crate::types::NewBgpPeer>,

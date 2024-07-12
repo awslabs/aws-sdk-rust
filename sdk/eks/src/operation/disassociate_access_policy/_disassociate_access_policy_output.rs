@@ -18,8 +18,8 @@ impl DisassociateAccessPolicyOutput {
 }
 
 /// A builder for [`DisassociateAccessPolicyOutput`](crate::operation::disassociate_access_policy::DisassociateAccessPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateAccessPolicyOutputBuilder {
     _request_id: Option<String>,
 }

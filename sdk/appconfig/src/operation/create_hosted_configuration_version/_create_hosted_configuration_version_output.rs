@@ -83,8 +83,8 @@ impl CreateHostedConfigurationVersionOutput {
 }
 
 /// A builder for [`CreateHostedConfigurationVersionOutput`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateHostedConfigurationVersionOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,

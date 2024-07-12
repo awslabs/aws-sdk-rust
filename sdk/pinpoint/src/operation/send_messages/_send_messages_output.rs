@@ -26,8 +26,8 @@ impl SendMessagesOutput {
 }
 
 /// A builder for [`SendMessagesOutput`](crate::operation::send_messages::SendMessagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SendMessagesOutputBuilder {
     pub(crate) message_response: ::std::option::Option<crate::types::MessageResponse>,
     _request_id: Option<String>,

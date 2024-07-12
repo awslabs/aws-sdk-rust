@@ -35,8 +35,8 @@ impl DescribeDbParameterGroupsOutput {
 }
 
 /// A builder for [`DescribeDbParameterGroupsOutput`](crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbParameterGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroup>>,

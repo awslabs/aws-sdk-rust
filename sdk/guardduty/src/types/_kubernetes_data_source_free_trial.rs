@@ -21,8 +21,8 @@ impl KubernetesDataSourceFreeTrial {
 }
 
 /// A builder for [`KubernetesDataSourceFreeTrial`](crate::types::KubernetesDataSourceFreeTrial).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct KubernetesDataSourceFreeTrialBuilder {
     pub(crate) audit_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
 }

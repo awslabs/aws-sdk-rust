@@ -21,8 +21,8 @@ impl EventsRequest {
 }
 
 /// A builder for [`EventsRequest`](crate::types::EventsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventsRequestBuilder {
     pub(crate) batch_item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EventsBatch>>,
 }

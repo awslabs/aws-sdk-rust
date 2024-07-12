@@ -28,8 +28,8 @@ impl GetUserOutput {
 }
 
 /// A builder for [`GetUserOutput`](crate::operation::get_user::GetUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUserOutputBuilder {
     pub(crate) user_aliases: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
     _request_id: Option<String>,

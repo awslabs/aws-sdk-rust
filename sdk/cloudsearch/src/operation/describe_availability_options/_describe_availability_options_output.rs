@@ -27,8 +27,8 @@ impl DescribeAvailabilityOptionsOutput {
 }
 
 /// A builder for [`DescribeAvailabilityOptionsOutput`](crate::operation::describe_availability_options::DescribeAvailabilityOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAvailabilityOptionsOutputBuilder {
     pub(crate) availability_options: ::std::option::Option<crate::types::AvailabilityOptionsStatus>,
     _request_id: Option<String>,

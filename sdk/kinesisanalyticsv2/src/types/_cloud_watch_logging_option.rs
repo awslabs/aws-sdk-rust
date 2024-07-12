@@ -22,8 +22,8 @@ impl CloudWatchLoggingOption {
 }
 
 /// A builder for [`CloudWatchLoggingOption`](crate::types::CloudWatchLoggingOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloudWatchLoggingOptionBuilder {
     pub(crate) log_stream_arn: ::std::option::Option<::std::string::String>,
 }

@@ -26,8 +26,8 @@ impl GetSolFunctionPackageDescriptorInput {
 }
 
 /// A builder for [`GetSolFunctionPackageDescriptorInput`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSolFunctionPackageDescriptorInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
     pub(crate) accept: ::std::option::Option<crate::types::DescriptorContentType>,

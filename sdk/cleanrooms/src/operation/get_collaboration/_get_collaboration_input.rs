@@ -20,8 +20,8 @@ impl GetCollaborationInput {
 }
 
 /// A builder for [`GetCollaborationInput`](crate::operation::get_collaboration::GetCollaborationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCollaborationInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
 }

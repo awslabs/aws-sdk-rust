@@ -47,8 +47,8 @@ impl GetSamlProviderOutput {
 }
 
 /// A builder for [`GetSamlProviderOutput`](crate::operation::get_saml_provider::GetSamlProviderOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSamlProviderOutputBuilder {
     pub(crate) saml_metadata_document: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,

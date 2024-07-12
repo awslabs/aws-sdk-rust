@@ -36,8 +36,8 @@ impl BatchGetCustomDataIdentifiersOutput {
 }
 
 /// A builder for [`BatchGetCustomDataIdentifiersOutput`](crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetCustomDataIdentifiersOutputBuilder {
     pub(crate) custom_data_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetCustomDataIdentifierSummary>>,
     pub(crate) not_found_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

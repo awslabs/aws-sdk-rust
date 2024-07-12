@@ -35,8 +35,8 @@ impl DeliverToMailboxAction {
 }
 
 /// A builder for [`DeliverToMailboxAction`](crate::types::DeliverToMailboxAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeliverToMailboxActionBuilder {
     pub(crate) action_failure_policy: ::std::option::Option<crate::types::ActionFailurePolicy>,
     pub(crate) mailbox_arn: ::std::option::Option<::std::string::String>,

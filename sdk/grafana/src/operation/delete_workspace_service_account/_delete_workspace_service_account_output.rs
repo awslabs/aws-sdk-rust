@@ -34,8 +34,8 @@ impl DeleteWorkspaceServiceAccountOutput {
 }
 
 /// A builder for [`DeleteWorkspaceServiceAccountOutput`](crate::operation::delete_workspace_service_account::DeleteWorkspaceServiceAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteWorkspaceServiceAccountOutputBuilder {
     pub(crate) service_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,

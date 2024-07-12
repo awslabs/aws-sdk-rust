@@ -39,8 +39,8 @@ impl MediaConcurrency {
 }
 
 /// A builder for [`MediaConcurrency`](crate::types::MediaConcurrency).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MediaConcurrencyBuilder {
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,
     pub(crate) concurrency: ::std::option::Option<i32>,

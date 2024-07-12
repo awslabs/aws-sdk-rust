@@ -39,8 +39,8 @@ impl ProfilerConfigForUpdate {
 }
 
 /// A builder for [`ProfilerConfigForUpdate`](crate::types::ProfilerConfigForUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProfilerConfigForUpdateBuilder {
     pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
     pub(crate) profiling_interval_in_milliseconds: ::std::option::Option<i64>,

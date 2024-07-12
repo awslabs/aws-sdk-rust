@@ -28,8 +28,8 @@ impl DescribeDomainsOutput {
 }
 
 /// A builder for [`DescribeDomainsOutput`](crate::operation::describe_domains::DescribeDomainsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDomainsOutputBuilder {
     pub(crate) domain_status_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>>,
     _request_id: Option<String>,

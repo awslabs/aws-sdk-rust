@@ -56,8 +56,8 @@ impl PutSigningProfileInput {
 }
 
 /// A builder for [`PutSigningProfileInput`](crate::operation::put_signing_profile::PutSigningProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSigningProfileInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) signing_material: ::std::option::Option<crate::types::SigningMaterial>,

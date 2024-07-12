@@ -21,8 +21,8 @@ impl ConverseMetrics {
 }
 
 /// A builder for [`ConverseMetrics`](crate::types::ConverseMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConverseMetricsBuilder {
     pub(crate) latency_ms: ::std::option::Option<i64>,
 }

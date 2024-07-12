@@ -26,8 +26,8 @@ impl AssociateAttributeGroupInput {
 }
 
 /// A builder for [`AssociateAttributeGroupInput`](crate::operation::associate_attribute_group::AssociateAttributeGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAttributeGroupInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_group: ::std::option::Option<::std::string::String>,

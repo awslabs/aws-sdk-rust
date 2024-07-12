@@ -32,8 +32,8 @@ impl UpdateInputInput {
 }
 
 /// A builder for [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateInputInputBuilder {
     pub(crate) input_name: ::std::option::Option<::std::string::String>,
     pub(crate) input_description: ::std::option::Option<::std::string::String>,

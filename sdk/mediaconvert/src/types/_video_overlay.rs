@@ -33,8 +33,8 @@ impl VideoOverlay {
 }
 
 /// A builder for [`VideoOverlay`](crate::types::VideoOverlay).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoOverlayBuilder {
     pub(crate) end_timecode: ::std::option::Option<::std::string::String>,
     pub(crate) input: ::std::option::Option<crate::types::VideoOverlayInput>,

@@ -20,8 +20,8 @@ impl GetApplicationAssignmentConfigurationInput {
 }
 
 /// A builder for [`GetApplicationAssignmentConfigurationInput`](crate::operation::get_application_assignment_configuration::GetApplicationAssignmentConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetApplicationAssignmentConfigurationInputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
 }

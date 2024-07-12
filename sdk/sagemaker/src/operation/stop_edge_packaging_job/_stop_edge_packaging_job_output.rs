@@ -18,8 +18,8 @@ impl StopEdgePackagingJobOutput {
 }
 
 /// A builder for [`StopEdgePackagingJobOutput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopEdgePackagingJobOutputBuilder {
     _request_id: Option<String>,
 }

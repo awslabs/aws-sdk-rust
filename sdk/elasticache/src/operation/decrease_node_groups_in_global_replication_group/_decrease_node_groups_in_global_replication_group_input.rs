@@ -50,8 +50,8 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
 }
 
 /// A builder for [`DecreaseNodeGroupsInGlobalReplicationGroupInput`](crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     pub(crate) global_replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_group_count: ::std::option::Option<i32>,

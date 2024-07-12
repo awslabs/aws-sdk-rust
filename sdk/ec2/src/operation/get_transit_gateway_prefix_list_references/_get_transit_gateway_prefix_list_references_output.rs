@@ -34,8 +34,8 @@ impl GetTransitGatewayPrefixListReferencesOutput {
 }
 
 /// A builder for [`GetTransitGatewayPrefixListReferencesOutput`](crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTransitGatewayPrefixListReferencesOutputBuilder {
     pub(crate) transit_gateway_prefix_list_references: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPrefixListReference>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

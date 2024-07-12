@@ -20,8 +20,8 @@ impl GetLinkInput {
 }
 
 /// A builder for [`GetLinkInput`](crate::operation::get_link::GetLinkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLinkInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

@@ -34,8 +34,8 @@ impl ListUsersInGroupOutput {
 }
 
 /// A builder for [`ListUsersInGroupOutput`](crate::operation::list_users_in_group::ListUsersInGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUsersInGroupOutputBuilder {
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::UserType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

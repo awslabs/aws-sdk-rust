@@ -63,8 +63,8 @@ impl VoiceProfile {
 }
 
 /// A builder for [`VoiceProfile`](crate::types::VoiceProfile).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct VoiceProfileBuilder {
     pub(crate) voice_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) voice_profile_arn: ::std::option::Option<::std::string::String>,

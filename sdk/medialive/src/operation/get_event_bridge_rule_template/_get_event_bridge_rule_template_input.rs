@@ -21,8 +21,8 @@ impl GetEventBridgeRuleTemplateInput {
 }
 
 /// A builder for [`GetEventBridgeRuleTemplateInput`](crate::operation::get_event_bridge_rule_template::GetEventBridgeRuleTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEventBridgeRuleTemplateInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }

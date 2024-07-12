@@ -187,8 +187,8 @@ impl CreateLagOutput {
 }
 
 /// A builder for [`CreateLagOutput`](crate::operation::create_lag::CreateLagOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLagOutputBuilder {
     pub(crate) connections_bandwidth: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_connections: ::std::option::Option<i32>,

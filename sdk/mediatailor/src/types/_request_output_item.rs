@@ -41,8 +41,8 @@ impl RequestOutputItem {
 }
 
 /// A builder for [`RequestOutputItem`](crate::types::RequestOutputItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestOutputItemBuilder {
     pub(crate) dash_playlist_settings: ::std::option::Option<crate::types::DashPlaylistSettings>,
     pub(crate) hls_playlist_settings: ::std::option::Option<crate::types::HlsPlaylistSettings>,

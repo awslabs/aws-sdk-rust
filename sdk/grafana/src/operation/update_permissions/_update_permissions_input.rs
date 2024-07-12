@@ -28,8 +28,8 @@ impl UpdatePermissionsInput {
 }
 
 /// A builder for [`UpdatePermissionsInput`](crate::operation::update_permissions::UpdatePermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdatePermissionsInputBuilder {
     pub(crate) update_instruction_batch: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,

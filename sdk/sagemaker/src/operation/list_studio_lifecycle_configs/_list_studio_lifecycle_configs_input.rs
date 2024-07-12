@@ -74,8 +74,8 @@ impl ListStudioLifecycleConfigsInput {
 }
 
 /// A builder for [`ListStudioLifecycleConfigsInput`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStudioLifecycleConfigsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

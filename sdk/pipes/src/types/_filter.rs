@@ -28,8 +28,8 @@ impl Filter {
 }
 
 /// A builder for [`Filter`](crate::types::Filter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct FilterBuilder {
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
 }

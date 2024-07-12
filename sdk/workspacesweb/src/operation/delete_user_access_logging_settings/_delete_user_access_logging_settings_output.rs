@@ -18,8 +18,8 @@ impl DeleteUserAccessLoggingSettingsOutput {
 }
 
 /// A builder for [`DeleteUserAccessLoggingSettingsOutput`](crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserAccessLoggingSettingsOutputBuilder {
     _request_id: Option<String>,
 }

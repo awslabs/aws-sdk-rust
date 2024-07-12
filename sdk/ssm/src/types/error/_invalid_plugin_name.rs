@@ -45,8 +45,8 @@ impl InvalidPluginName {
 }
 
 /// A builder for [`InvalidPluginName`](crate::types::error::InvalidPluginName).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidPluginNameBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

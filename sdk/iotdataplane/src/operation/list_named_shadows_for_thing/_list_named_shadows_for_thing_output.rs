@@ -40,8 +40,8 @@ impl ListNamedShadowsForThingOutput {
 }
 
 /// A builder for [`ListNamedShadowsForThingOutput`](crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListNamedShadowsForThingOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

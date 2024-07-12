@@ -37,8 +37,8 @@ impl HpoConfig {
 }
 
 /// A builder for [`HpoConfig`](crate::types::HpoConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HpoConfigBuilder {
     pub(crate) hpo_objective: ::std::option::Option<crate::types::HpoObjective>,
     pub(crate) hpo_resource_config: ::std::option::Option<crate::types::HpoResourceConfig>,

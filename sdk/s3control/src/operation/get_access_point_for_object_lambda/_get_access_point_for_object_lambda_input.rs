@@ -26,8 +26,8 @@ impl GetAccessPointForObjectLambdaInput {
 }
 
 /// A builder for [`GetAccessPointForObjectLambdaInput`](crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAccessPointForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

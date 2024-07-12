@@ -22,8 +22,8 @@ impl DifferentialPrivacyPrivacyImpact {
 }
 
 /// A builder for [`DifferentialPrivacyPrivacyImpact`](crate::types::DifferentialPrivacyPrivacyImpact).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DifferentialPrivacyPrivacyImpactBuilder {
     pub(crate) aggregations: ::std::option::Option<::std::vec::Vec<crate::types::DifferentialPrivacyPreviewAggregation>>,
 }

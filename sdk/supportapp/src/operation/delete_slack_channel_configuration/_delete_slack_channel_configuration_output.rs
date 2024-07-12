@@ -18,8 +18,8 @@ impl DeleteSlackChannelConfigurationOutput {
 }
 
 /// A builder for [`DeleteSlackChannelConfigurationOutput`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSlackChannelConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

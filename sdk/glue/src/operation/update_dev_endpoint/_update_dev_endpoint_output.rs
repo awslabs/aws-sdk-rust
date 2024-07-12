@@ -18,8 +18,8 @@ impl UpdateDevEndpointOutput {
 }
 
 /// A builder for [`UpdateDevEndpointOutput`](crate::operation::update_dev_endpoint::UpdateDevEndpointOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDevEndpointOutputBuilder {
     _request_id: Option<String>,
 }

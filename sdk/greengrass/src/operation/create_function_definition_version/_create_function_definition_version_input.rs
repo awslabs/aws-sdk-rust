@@ -41,8 +41,8 @@ impl CreateFunctionDefinitionVersionInput {
 }
 
 /// A builder for [`CreateFunctionDefinitionVersionInput`](crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFunctionDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) default_config: ::std::option::Option<crate::types::FunctionDefaultConfig>,

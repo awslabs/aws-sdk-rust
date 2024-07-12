@@ -26,8 +26,8 @@ impl GetTestGridProjectOutput {
 }
 
 /// A builder for [`GetTestGridProjectOutput`](crate::operation::get_test_grid_project::GetTestGridProjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTestGridProjectOutputBuilder {
     pub(crate) test_grid_project: ::std::option::Option<crate::types::TestGridProject>,
     _request_id: Option<String>,

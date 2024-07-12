@@ -34,8 +34,8 @@ impl SearchDatabasesByLfTagsOutput {
 }
 
 /// A builder for [`SearchDatabasesByLfTagsOutput`](crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchDatabasesByLfTagsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) database_list: ::std::option::Option<::std::vec::Vec<crate::types::TaggedDatabase>>,

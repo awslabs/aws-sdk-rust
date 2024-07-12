@@ -34,8 +34,8 @@ impl CategoryFilterConfiguration {
 }
 
 /// A builder for [`CategoryFilterConfiguration`](crate::types::CategoryFilterConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CategoryFilterConfigurationBuilder {
     pub(crate) filter_list_configuration: ::std::option::Option<crate::types::FilterListConfiguration>,
     pub(crate) custom_filter_list_configuration: ::std::option::Option<crate::types::CustomFilterListConfiguration>,

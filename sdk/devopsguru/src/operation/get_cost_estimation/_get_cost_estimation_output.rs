@@ -58,8 +58,8 @@ impl GetCostEstimationOutput {
 }
 
 /// A builder for [`GetCostEstimationOutput`](crate::operation::get_cost_estimation::GetCostEstimationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetCostEstimationOutputBuilder {
     pub(crate) resource_collection: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
     pub(crate) status: ::std::option::Option<crate::types::CostEstimationStatus>,

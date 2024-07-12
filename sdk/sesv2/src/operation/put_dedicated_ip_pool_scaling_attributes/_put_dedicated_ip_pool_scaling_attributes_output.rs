@@ -19,8 +19,8 @@ impl PutDedicatedIpPoolScalingAttributesOutput {
 }
 
 /// A builder for [`PutDedicatedIpPoolScalingAttributesOutput`](crate::operation::put_dedicated_ip_pool_scaling_attributes::PutDedicatedIpPoolScalingAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDedicatedIpPoolScalingAttributesOutputBuilder {
     _request_id: Option<String>,
 }

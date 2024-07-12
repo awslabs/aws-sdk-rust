@@ -20,8 +20,8 @@ impl GetByteMatchSetInput {
 }
 
 /// A builder for [`GetByteMatchSetInput`](crate::operation::get_byte_match_set::GetByteMatchSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetByteMatchSetInputBuilder {
     pub(crate) byte_match_set_id: ::std::option::Option<::std::string::String>,
 }

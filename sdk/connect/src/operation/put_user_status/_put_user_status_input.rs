@@ -32,8 +32,8 @@ impl PutUserStatusInput {
 }
 
 /// A builder for [`PutUserStatusInput`](crate::operation::put_user_status::PutUserStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutUserStatusInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

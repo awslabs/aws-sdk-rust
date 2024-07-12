@@ -26,8 +26,8 @@ impl CreateKeyOutput {
 }
 
 /// A builder for [`CreateKeyOutput`](crate::operation::create_key::CreateKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateKeyOutputBuilder {
     pub(crate) key_metadata: ::std::option::Option<crate::types::KeyMetadata>,
     _request_id: Option<String>,

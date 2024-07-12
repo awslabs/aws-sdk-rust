@@ -38,8 +38,8 @@ impl DetectAnomaliesInput {
 }
 
 /// A builder for [`DetectAnomaliesInput`](crate::operation::detect_anomalies::DetectAnomaliesInput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectAnomaliesInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_version: ::std::option::Option<::std::string::String>,

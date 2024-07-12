@@ -41,8 +41,8 @@ impl LookupDeveloperIdentityOutput {
 }
 
 /// A builder for [`LookupDeveloperIdentityOutput`](crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LookupDeveloperIdentityOutputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) developer_user_identifier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

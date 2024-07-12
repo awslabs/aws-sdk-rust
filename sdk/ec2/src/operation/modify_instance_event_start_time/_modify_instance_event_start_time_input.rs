@@ -38,8 +38,8 @@ impl ModifyInstanceEventStartTimeInput {
 }
 
 /// A builder for [`ModifyInstanceEventStartTimeInput`](crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyInstanceEventStartTimeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

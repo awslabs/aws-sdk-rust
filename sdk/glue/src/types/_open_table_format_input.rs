@@ -21,8 +21,8 @@ impl OpenTableFormatInput {
 }
 
 /// A builder for [`OpenTableFormatInput`](crate::types::OpenTableFormatInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OpenTableFormatInputBuilder {
     pub(crate) iceberg_input: ::std::option::Option<crate::types::IcebergInput>,
 }

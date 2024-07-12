@@ -45,8 +45,8 @@ impl AwsCloudFrontDistributionOriginItem {
 }
 
 /// A builder for [`AwsCloudFrontDistributionOriginItem`](crate::types::AwsCloudFrontDistributionOriginItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudFrontDistributionOriginItemBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

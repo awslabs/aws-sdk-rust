@@ -46,8 +46,8 @@ impl DescribePortfolioSharesInput {
 }
 
 /// A builder for [`DescribePortfolioSharesInput`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribePortfolioSharesInputBuilder {
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::DescribePortfolioShareType>,

@@ -33,8 +33,8 @@ impl SearchPlaceIndexForPositionOutput {
 }
 
 /// A builder for [`SearchPlaceIndexForPositionOutput`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchPlaceIndexForPositionOutputBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SearchPlaceIndexForPositionSummary>,
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::SearchForPositionResult>>,

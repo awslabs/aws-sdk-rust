@@ -38,8 +38,8 @@ impl PutSchemaVersionMetadataInput {
 }
 
 /// A builder for [`PutSchemaVersionMetadataInput`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSchemaVersionMetadataInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,

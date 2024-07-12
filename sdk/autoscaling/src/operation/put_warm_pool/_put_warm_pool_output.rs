@@ -18,8 +18,8 @@ impl PutWarmPoolOutput {
 }
 
 /// A builder for [`PutWarmPoolOutput`](crate::operation::put_warm_pool::PutWarmPoolOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutWarmPoolOutputBuilder {
     _request_id: Option<String>,
 }

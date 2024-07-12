@@ -80,8 +80,8 @@ impl GetWorkflowRunOutput {
 }
 
 /// A builder for [`GetWorkflowRunOutput`](crate::operation::get_workflow_run::GetWorkflowRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetWorkflowRunOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

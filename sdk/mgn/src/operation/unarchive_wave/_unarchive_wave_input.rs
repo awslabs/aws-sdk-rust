@@ -26,8 +26,8 @@ impl UnarchiveWaveInput {
 }
 
 /// A builder for [`UnarchiveWaveInput`](crate::operation::unarchive_wave::UnarchiveWaveInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UnarchiveWaveInputBuilder {
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,

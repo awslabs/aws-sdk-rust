@@ -33,8 +33,8 @@ impl DeploymentIoTJobConfiguration {
 }
 
 /// A builder for [`DeploymentIoTJobConfiguration`](crate::types::DeploymentIoTJobConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentIoTJobConfigurationBuilder {
     pub(crate) job_executions_rollout_config: ::std::option::Option<crate::types::IoTJobExecutionsRolloutConfig>,
     pub(crate) abort_config: ::std::option::Option<crate::types::IoTJobAbortConfig>,

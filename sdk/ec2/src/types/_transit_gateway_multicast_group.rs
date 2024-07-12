@@ -81,8 +81,8 @@ impl TransitGatewayMulticastGroup {
 }
 
 /// A builder for [`TransitGatewayMulticastGroup`](crate::types::TransitGatewayMulticastGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayMulticastGroupBuilder {
     pub(crate) group_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,

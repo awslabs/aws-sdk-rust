@@ -21,8 +21,8 @@ impl ExecutionRedrivenEventDetails {
 }
 
 /// A builder for [`ExecutionRedrivenEventDetails`](crate::types::ExecutionRedrivenEventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecutionRedrivenEventDetailsBuilder {
     pub(crate) redrive_count: ::std::option::Option<i32>,
 }

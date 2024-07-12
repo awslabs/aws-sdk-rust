@@ -40,8 +40,8 @@ impl ListGremlinQueriesOutput {
 }
 
 /// A builder for [`ListGremlinQueriesOutput`](crate::operation::list_gremlin_queries::ListGremlinQueriesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGremlinQueriesOutputBuilder {
     pub(crate) accepted_query_count: ::std::option::Option<i32>,
     pub(crate) running_query_count: ::std::option::Option<i32>,

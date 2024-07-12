@@ -20,8 +20,8 @@ impl DescribeContextInput {
 }
 
 /// A builder for [`DescribeContextInput`](crate::operation::describe_context::DescribeContextInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeContextInputBuilder {
     pub(crate) context_name: ::std::option::Option<::std::string::String>,
 }

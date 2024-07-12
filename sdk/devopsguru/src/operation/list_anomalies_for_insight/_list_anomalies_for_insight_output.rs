@@ -42,8 +42,8 @@ impl ListAnomaliesForInsightOutput {
 }
 
 /// A builder for [`ListAnomaliesForInsightOutput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnomaliesForInsightOutputBuilder {
     pub(crate) proactive_anomalies: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveAnomalySummary>>,
     pub(crate) reactive_anomalies: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveAnomalySummary>>,

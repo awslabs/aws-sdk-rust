@@ -53,8 +53,8 @@ impl NetworkAclEntry {
 }
 
 /// A builder for [`NetworkAclEntry`](crate::types::NetworkAclEntry).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkAclEntryBuilder {
     pub(crate) rule_number: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,

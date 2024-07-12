@@ -46,8 +46,8 @@ impl DescribeAddressesAttributeInput {
 }
 
 /// A builder for [`DescribeAddressesAttributeInput`](crate::operation::describe_addresses_attribute::DescribeAddressesAttributeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAddressesAttributeInputBuilder {
     pub(crate) allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) attribute: ::std::option::Option<crate::types::AddressAttributeName>,

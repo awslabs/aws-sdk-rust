@@ -33,8 +33,8 @@ impl ThingConnectivity {
 }
 
 /// A builder for [`ThingConnectivity`](crate::types::ThingConnectivity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThingConnectivityBuilder {
     pub(crate) connected: ::std::option::Option<bool>,
     pub(crate) timestamp: ::std::option::Option<i64>,

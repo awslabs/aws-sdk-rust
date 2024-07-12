@@ -33,8 +33,8 @@ impl GetLoggingOptionsOutput {
 }
 
 /// A builder for [`GetLoggingOptionsOutput`](crate::operation::get_logging_options::GetLoggingOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoggingOptionsOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,

@@ -26,8 +26,8 @@ impl EnableImportFindingsForProductOutput {
 }
 
 /// A builder for [`EnableImportFindingsForProductOutput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableImportFindingsForProductOutputBuilder {
     pub(crate) product_subscription_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

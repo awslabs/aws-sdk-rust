@@ -43,8 +43,8 @@ impl AwsElbLoadBalancerAccessLog {
 }
 
 /// A builder for [`AwsElbLoadBalancerAccessLog`](crate::types::AwsElbLoadBalancerAccessLog).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsElbLoadBalancerAccessLogBuilder {
     pub(crate) emit_interval: ::std::option::Option<i32>,
     pub(crate) enabled: ::std::option::Option<bool>,

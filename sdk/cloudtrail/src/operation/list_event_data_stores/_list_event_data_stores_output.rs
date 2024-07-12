@@ -34,8 +34,8 @@ impl ListEventDataStoresOutput {
 }
 
 /// A builder for [`ListEventDataStoresOutput`](crate::operation::list_event_data_stores::ListEventDataStoresOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListEventDataStoresOutputBuilder {
     pub(crate) event_data_stores: ::std::option::Option<::std::vec::Vec<crate::types::EventDataStore>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

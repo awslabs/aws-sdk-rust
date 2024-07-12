@@ -33,8 +33,8 @@ impl GetOpenIdTokenOutput {
 }
 
 /// A builder for [`GetOpenIdTokenOutput`](crate::operation::get_open_id_token::GetOpenIdTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetOpenIdTokenOutputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,

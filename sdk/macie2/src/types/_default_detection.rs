@@ -33,8 +33,8 @@ impl DefaultDetection {
 }
 
 /// A builder for [`DefaultDetection`](crate::types::DefaultDetection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DefaultDetectionBuilder {
     pub(crate) count: ::std::option::Option<i64>,
     pub(crate) occurrences: ::std::option::Option<crate::types::Occurrences>,

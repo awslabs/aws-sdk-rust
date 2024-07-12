@@ -28,8 +28,8 @@ impl DescribeImageAssociationsInput {
 }
 
 /// A builder for [`DescribeImageAssociationsInput`](crate::operation::describe_image_associations::DescribeImageAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeImageAssociationsInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) associated_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ImageAssociatedResourceType>>,

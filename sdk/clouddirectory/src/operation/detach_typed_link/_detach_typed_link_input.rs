@@ -26,8 +26,8 @@ impl DetachTypedLinkInput {
 }
 
 /// A builder for [`DetachTypedLinkInput`](crate::operation::detach_typed_link::DetachTypedLinkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetachTypedLinkInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,

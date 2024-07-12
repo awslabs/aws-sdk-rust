@@ -209,8 +209,8 @@ impl RegisterTaskWithMaintenanceWindowInput {
 }
 
 /// A builder for [`RegisterTaskWithMaintenanceWindowInput`](crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RegisterTaskWithMaintenanceWindowInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,

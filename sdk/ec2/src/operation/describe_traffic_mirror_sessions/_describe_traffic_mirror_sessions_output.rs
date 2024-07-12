@@ -34,8 +34,8 @@ impl DescribeTrafficMirrorSessionsOutput {
 }
 
 /// A builder for [`DescribeTrafficMirrorSessionsOutput`](crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrafficMirrorSessionsOutputBuilder {
     pub(crate) traffic_mirror_sessions: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSession>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

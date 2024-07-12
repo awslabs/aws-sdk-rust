@@ -33,8 +33,8 @@ impl BudgetedAndActualAmounts {
 }
 
 /// A builder for [`BudgetedAndActualAmounts`](crate::types::BudgetedAndActualAmounts).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BudgetedAndActualAmountsBuilder {
     pub(crate) budgeted_amount: ::std::option::Option<crate::types::Spend>,
     pub(crate) actual_amount: ::std::option::Option<crate::types::Spend>,

@@ -20,8 +20,8 @@ impl AssociateAdminAccountInput {
 }
 
 /// A builder for [`AssociateAdminAccountInput`](crate::operation::associate_admin_account::AssociateAdminAccountInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAdminAccountInputBuilder {
     pub(crate) admin_account: ::std::option::Option<::std::string::String>,
 }

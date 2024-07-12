@@ -29,8 +29,8 @@ impl AwsRedshiftClusterIamRole {
 }
 
 /// A builder for [`AwsRedshiftClusterIamRole`](crate::types::AwsRedshiftClusterIamRole).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRedshiftClusterIamRoleBuilder {
     pub(crate) apply_status: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,

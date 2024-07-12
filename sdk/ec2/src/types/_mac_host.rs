@@ -29,8 +29,8 @@ impl MacHost {
 }
 
 /// A builder for [`MacHost`](crate::types::MacHost).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MacHostBuilder {
     pub(crate) host_id: ::std::option::Option<::std::string::String>,
     pub(crate) mac_os_latest_supported_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

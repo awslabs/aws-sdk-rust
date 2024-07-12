@@ -21,8 +21,8 @@ impl UpdateAccessConfigRequest {
 }
 
 /// A builder for [`UpdateAccessConfigRequest`](crate::types::UpdateAccessConfigRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccessConfigRequestBuilder {
     pub(crate) authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
 }

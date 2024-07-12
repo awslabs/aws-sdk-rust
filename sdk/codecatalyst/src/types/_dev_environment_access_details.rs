@@ -37,8 +37,8 @@ impl DevEnvironmentAccessDetails {
 }
 
 /// A builder for [`DevEnvironmentAccessDetails`](crate::types::DevEnvironmentAccessDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DevEnvironmentAccessDetailsBuilder {
     pub(crate) stream_url: ::std::option::Option<::std::string::String>,
     pub(crate) token_value: ::std::option::Option<::std::string::String>,

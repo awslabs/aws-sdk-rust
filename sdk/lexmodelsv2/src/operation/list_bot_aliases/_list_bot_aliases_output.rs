@@ -40,8 +40,8 @@ impl ListBotAliasesOutput {
 }
 
 /// A builder for [`ListBotAliasesOutput`](crate::operation::list_bot_aliases::ListBotAliasesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBotAliasesOutputBuilder {
     pub(crate) bot_alias_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -23,8 +23,8 @@ impl MetricMathAnomalyDetector {
 }
 
 /// A builder for [`MetricMathAnomalyDetector`](crate::types::MetricMathAnomalyDetector).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetricMathAnomalyDetectorBuilder {
     pub(crate) metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
 }

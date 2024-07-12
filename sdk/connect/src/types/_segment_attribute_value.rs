@@ -21,8 +21,8 @@ impl SegmentAttributeValue {
 }
 
 /// A builder for [`SegmentAttributeValue`](crate::types::SegmentAttributeValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SegmentAttributeValueBuilder {
     pub(crate) value_string: ::std::option::Option<::std::string::String>,
 }

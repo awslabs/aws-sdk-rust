@@ -27,8 +27,8 @@ impl S3BucketInfo {
 }
 
 /// A builder for [`S3BucketInfo`](crate::types::S3BucketInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3BucketInfoBuilder {
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

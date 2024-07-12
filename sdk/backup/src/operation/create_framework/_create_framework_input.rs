@@ -46,8 +46,8 @@ impl CreateFrameworkInput {
 }
 
 /// A builder for [`CreateFrameworkInput`](crate::operation::create_framework::CreateFrameworkInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFrameworkInputBuilder {
     pub(crate) framework_name: ::std::option::Option<::std::string::String>,
     pub(crate) framework_description: ::std::option::Option<::std::string::String>,

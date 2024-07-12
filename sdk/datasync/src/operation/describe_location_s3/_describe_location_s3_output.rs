@@ -65,8 +65,8 @@ impl DescribeLocationS3Output {
 }
 
 /// A builder for [`DescribeLocationS3Output`](crate::operation::describe_location_s3::DescribeLocationS3Output).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLocationS3OutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,

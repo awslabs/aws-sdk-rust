@@ -39,8 +39,8 @@ impl GatewayRouteSpec {
 }
 
 /// A builder for [`GatewayRouteSpec`](crate::types::GatewayRouteSpec).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GatewayRouteSpecBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) http_route: ::std::option::Option<crate::types::HttpGatewayRoute>,

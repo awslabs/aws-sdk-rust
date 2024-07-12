@@ -34,8 +34,8 @@ impl PutTaxRegistrationInput {
 }
 
 /// A builder for [`PutTaxRegistrationInput`](crate::operation::put_tax_registration::PutTaxRegistrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct PutTaxRegistrationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) tax_registration_entry: ::std::option::Option<crate::types::TaxRegistrationEntry>,

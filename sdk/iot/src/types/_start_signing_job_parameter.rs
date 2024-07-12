@@ -33,8 +33,8 @@ impl StartSigningJobParameter {
 }
 
 /// A builder for [`StartSigningJobParameter`](crate::types::StartSigningJobParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSigningJobParameterBuilder {
     pub(crate) signing_profile_parameter: ::std::option::Option<crate::types::SigningProfileParameter>,
     pub(crate) signing_profile_name: ::std::option::Option<::std::string::String>,

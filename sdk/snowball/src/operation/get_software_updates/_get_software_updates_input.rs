@@ -20,8 +20,8 @@ impl GetSoftwareUpdatesInput {
 }
 
 /// A builder for [`GetSoftwareUpdatesInput`](crate::operation::get_software_updates::GetSoftwareUpdatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSoftwareUpdatesInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

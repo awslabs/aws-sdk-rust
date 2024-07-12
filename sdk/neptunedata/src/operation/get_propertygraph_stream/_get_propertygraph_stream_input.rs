@@ -66,8 +66,8 @@ impl GetPropertygraphStreamInput {
 }
 
 /// A builder for [`GetPropertygraphStreamInput`](crate::operation::get_propertygraph_stream::GetPropertygraphStreamInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPropertygraphStreamInputBuilder {
     pub(crate) limit: ::std::option::Option<i64>,
     pub(crate) iterator_type: ::std::option::Option<crate::types::IteratorType>,

@@ -22,8 +22,8 @@ impl GetLoadBalancerTlsPoliciesInput {
 }
 
 /// A builder for [`GetLoadBalancerTlsPoliciesInput`](crate::operation::get_load_balancer_tls_policies::GetLoadBalancerTlsPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoadBalancerTlsPoliciesInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }

@@ -28,8 +28,8 @@ impl GetPermissionInput {
 }
 
 /// A builder for [`GetPermissionInput`](crate::operation::get_permission::GetPermissionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPermissionInputBuilder {
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_version: ::std::option::Option<i32>,

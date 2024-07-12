@@ -109,8 +109,8 @@ impl CreateRestApiOutput {
 }
 
 /// A builder for [`CreateRestApiOutput`](crate::operation::create_rest_api::CreateRestApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRestApiOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

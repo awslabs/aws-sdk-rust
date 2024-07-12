@@ -26,8 +26,8 @@ impl SetTimeBasedAutoScalingInput {
 }
 
 /// A builder for [`SetTimeBasedAutoScalingInput`](crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetTimeBasedAutoScalingInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_schedule: ::std::option::Option<crate::types::WeeklyAutoScalingSchedule>,

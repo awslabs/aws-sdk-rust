@@ -22,8 +22,8 @@ impl ProjectOperation {
 }
 
 /// A builder for [`ProjectOperation`](crate::types::ProjectOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProjectOperationBuilder {
     pub(crate) projected_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

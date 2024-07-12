@@ -20,8 +20,8 @@ impl GetAnnotationImportJobInput {
 }
 
 /// A builder for [`GetAnnotationImportJobInput`](crate::operation::get_annotation_import_job::GetAnnotationImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAnnotationImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

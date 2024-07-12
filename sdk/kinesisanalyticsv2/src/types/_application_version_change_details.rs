@@ -27,8 +27,8 @@ impl ApplicationVersionChangeDetails {
 }
 
 /// A builder for [`ApplicationVersionChangeDetails`](crate::types::ApplicationVersionChangeDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationVersionChangeDetailsBuilder {
     pub(crate) application_version_updated_from: ::std::option::Option<i64>,
     pub(crate) application_version_updated_to: ::std::option::Option<i64>,

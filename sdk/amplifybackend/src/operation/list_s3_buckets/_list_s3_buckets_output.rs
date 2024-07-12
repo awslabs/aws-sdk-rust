@@ -34,8 +34,8 @@ impl ListS3BucketsOutput {
 }
 
 /// A builder for [`ListS3BucketsOutput`](crate::operation::list_s3_buckets::ListS3BucketsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListS3BucketsOutputBuilder {
     pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

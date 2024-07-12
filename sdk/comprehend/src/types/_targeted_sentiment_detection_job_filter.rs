@@ -39,8 +39,8 @@ impl TargetedSentimentDetectionJobFilter {
 }
 
 /// A builder for [`TargetedSentimentDetectionJobFilter`](crate::types::TargetedSentimentDetectionJobFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TargetedSentimentDetectionJobFilterBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,

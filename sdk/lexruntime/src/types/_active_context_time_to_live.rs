@@ -27,8 +27,8 @@ impl ActiveContextTimeToLive {
 }
 
 /// A builder for [`ActiveContextTimeToLive`](crate::types::ActiveContextTimeToLive).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActiveContextTimeToLiveBuilder {
     pub(crate) time_to_live_in_seconds: ::std::option::Option<i32>,
     pub(crate) turns_to_live: ::std::option::Option<i32>,

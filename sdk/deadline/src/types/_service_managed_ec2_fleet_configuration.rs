@@ -27,8 +27,8 @@ impl ServiceManagedEc2FleetConfiguration {
 }
 
 /// A builder for [`ServiceManagedEc2FleetConfiguration`](crate::types::ServiceManagedEc2FleetConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ServiceManagedEc2FleetConfigurationBuilder {
     pub(crate) instance_capabilities: ::std::option::Option<crate::types::ServiceManagedEc2InstanceCapabilities>,
     pub(crate) instance_market_options: ::std::option::Option<crate::types::ServiceManagedEc2InstanceMarketOptions>,

@@ -32,8 +32,8 @@ impl ExportServerEngineAttributeOutput {
 }
 
 /// A builder for [`ExportServerEngineAttributeOutput`](crate::operation::export_server_engine_attribute::ExportServerEngineAttributeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExportServerEngineAttributeOutputBuilder {
     pub(crate) engine_attribute: ::std::option::Option<crate::types::EngineAttribute>,
     pub(crate) server_name: ::std::option::Option<::std::string::String>,

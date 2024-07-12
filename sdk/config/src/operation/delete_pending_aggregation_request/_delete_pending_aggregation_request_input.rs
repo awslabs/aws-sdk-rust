@@ -26,8 +26,8 @@ impl DeletePendingAggregationRequestInput {
 }
 
 /// A builder for [`DeletePendingAggregationRequestInput`](crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePendingAggregationRequestInputBuilder {
     pub(crate) requester_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) requester_aws_region: ::std::option::Option<::std::string::String>,

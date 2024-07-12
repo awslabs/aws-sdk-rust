@@ -38,8 +38,8 @@ impl UpdateClusterKafkaVersionInput {
 }
 
 /// A builder for [`UpdateClusterKafkaVersionInput`](crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateClusterKafkaVersionInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_info: ::std::option::Option<crate::types::ConfigurationInfo>,

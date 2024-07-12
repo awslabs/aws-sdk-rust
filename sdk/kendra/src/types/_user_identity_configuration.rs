@@ -21,8 +21,8 @@ impl UserIdentityConfiguration {
 }
 
 /// A builder for [`UserIdentityConfiguration`](crate::types::UserIdentityConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UserIdentityConfigurationBuilder {
     pub(crate) identity_attribute_name: ::std::option::Option<::std::string::String>,
 }

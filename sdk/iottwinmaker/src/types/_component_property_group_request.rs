@@ -35,8 +35,8 @@ impl ComponentPropertyGroupRequest {
 }
 
 /// A builder for [`ComponentPropertyGroupRequest`](crate::types::ComponentPropertyGroupRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ComponentPropertyGroupRequestBuilder {
     pub(crate) group_type: ::std::option::Option<crate::types::GroupType>,
     pub(crate) property_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

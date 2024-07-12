@@ -45,8 +45,8 @@ impl ReplicationInfoDescription {
 }
 
 /// A builder for [`ReplicationInfoDescription`](crate::types::ReplicationInfoDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicationInfoDescriptionBuilder {
     pub(crate) consumer_group_replication: ::std::option::Option<crate::types::ConsumerGroupReplication>,
     pub(crate) source_kafka_cluster_alias: ::std::option::Option<::std::string::String>,

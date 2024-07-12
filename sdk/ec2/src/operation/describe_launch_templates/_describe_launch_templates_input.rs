@@ -88,8 +88,8 @@ impl DescribeLaunchTemplatesInput {
 }
 
 /// A builder for [`DescribeLaunchTemplatesInput`](crate::operation::describe_launch_templates::DescribeLaunchTemplatesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLaunchTemplatesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) launch_template_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

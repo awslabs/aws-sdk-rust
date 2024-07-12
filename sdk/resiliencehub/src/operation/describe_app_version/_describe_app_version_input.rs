@@ -26,8 +26,8 @@ impl DescribeAppVersionInput {
 }
 
 /// A builder for [`DescribeAppVersionInput`](crate::operation::describe_app_version::DescribeAppVersionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppVersionInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,

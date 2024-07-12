@@ -57,8 +57,8 @@ impl ProvisionedConcurrencyConfigListItem {
 }
 
 /// A builder for [`ProvisionedConcurrencyConfigListItem`](crate::types::ProvisionedConcurrencyConfigListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ProvisionedConcurrencyConfigListItemBuilder {
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) requested_provisioned_concurrent_executions: ::std::option::Option<i32>,

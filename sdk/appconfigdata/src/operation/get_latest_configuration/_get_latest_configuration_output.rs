@@ -66,8 +66,8 @@ impl GetLatestConfigurationOutput {
 }
 
 /// A builder for [`GetLatestConfigurationOutput`](crate::operation::get_latest_configuration::GetLatestConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetLatestConfigurationOutputBuilder {
     pub(crate) next_poll_configuration_token: ::std::option::Option<::std::string::String>,
     pub(crate) next_poll_interval_in_seconds: ::std::option::Option<i32>,

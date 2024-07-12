@@ -33,8 +33,8 @@ impl InvalidSignalDecoder {
 }
 
 /// A builder for [`InvalidSignalDecoder`](crate::types::InvalidSignalDecoder).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InvalidSignalDecoderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::SignalDecoderFailureReason>,

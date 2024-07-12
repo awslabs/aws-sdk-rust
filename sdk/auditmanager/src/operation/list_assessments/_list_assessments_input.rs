@@ -32,8 +32,8 @@ impl ListAssessmentsInput {
 }
 
 /// A builder for [`ListAssessmentsInput`](crate::operation::list_assessments::ListAssessmentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssessmentsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AssessmentStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

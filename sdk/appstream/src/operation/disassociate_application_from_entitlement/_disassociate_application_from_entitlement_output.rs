@@ -18,8 +18,8 @@ impl DisassociateApplicationFromEntitlementOutput {
 }
 
 /// A builder for [`DisassociateApplicationFromEntitlementOutput`](crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateApplicationFromEntitlementOutputBuilder {
     _request_id: Option<String>,
 }

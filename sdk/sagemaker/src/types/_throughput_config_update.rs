@@ -33,8 +33,8 @@ impl ThroughputConfigUpdate {
 }
 
 /// A builder for [`ThroughputConfigUpdate`](crate::types::ThroughputConfigUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ThroughputConfigUpdateBuilder {
     pub(crate) throughput_mode: ::std::option::Option<crate::types::ThroughputMode>,
     pub(crate) provisioned_read_capacity_units: ::std::option::Option<i32>,

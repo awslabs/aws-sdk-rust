@@ -27,8 +27,8 @@ impl InterpolatedAssetPropertyValue {
 }
 
 /// A builder for [`InterpolatedAssetPropertyValue`](crate::types::InterpolatedAssetPropertyValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InterpolatedAssetPropertyValueBuilder {
     pub(crate) timestamp: ::std::option::Option<crate::types::TimeInNanos>,
     pub(crate) value: ::std::option::Option<crate::types::Variant>,

@@ -93,8 +93,8 @@ impl CreateTaskInput {
 }
 
 /// A builder for [`CreateTaskInput`](crate::operation::create_task::CreateTaskInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTaskInputBuilder {
     pub(crate) source_location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_location_arn: ::std::option::Option<::std::string::String>,

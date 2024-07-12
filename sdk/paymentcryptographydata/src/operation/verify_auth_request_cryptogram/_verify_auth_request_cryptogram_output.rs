@@ -52,8 +52,8 @@ impl VerifyAuthRequestCryptogramOutput {
 }
 
 /// A builder for [`VerifyAuthRequestCryptogramOutput`](crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct VerifyAuthRequestCryptogramOutputBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_check_value: ::std::option::Option<::std::string::String>,

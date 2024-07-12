@@ -29,8 +29,8 @@ impl NfsOnDeviceServiceConfiguration {
 }
 
 /// A builder for [`NfsOnDeviceServiceConfiguration`](crate::types::NfsOnDeviceServiceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NfsOnDeviceServiceConfigurationBuilder {
     pub(crate) storage_limit: ::std::option::Option<i32>,
     pub(crate) storage_unit: ::std::option::Option<crate::types::StorageUnit>,

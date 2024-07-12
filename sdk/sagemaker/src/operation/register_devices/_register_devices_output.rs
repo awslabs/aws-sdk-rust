@@ -18,8 +18,8 @@ impl RegisterDevicesOutput {
 }
 
 /// A builder for [`RegisterDevicesOutput`](crate::operation::register_devices::RegisterDevicesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterDevicesOutputBuilder {
     _request_id: Option<String>,
 }

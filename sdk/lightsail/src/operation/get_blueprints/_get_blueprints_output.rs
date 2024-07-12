@@ -38,8 +38,8 @@ impl GetBlueprintsOutput {
 }
 
 /// A builder for [`GetBlueprintsOutput`](crate::operation::get_blueprints::GetBlueprintsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBlueprintsOutputBuilder {
     pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<crate::types::Blueprint>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,

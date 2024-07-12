@@ -56,8 +56,8 @@ impl UpdateProvisioningTemplateInput {
 }
 
 /// A builder for [`UpdateProvisioningTemplateInput`](crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateProvisioningTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ListRepositorySyncDefinitionsInput {
 }
 
 /// A builder for [`ListRepositorySyncDefinitionsInput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListRepositorySyncDefinitionsInputBuilder {
     pub(crate) repository_link_id: ::std::option::Option<::std::string::String>,
     pub(crate) sync_type: ::std::option::Option<crate::types::SyncConfigurationType>,

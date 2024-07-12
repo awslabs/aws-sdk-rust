@@ -19,8 +19,8 @@ impl DeleteVoiceConnectorStreamingConfigurationOutput {
 }
 
 /// A builder for [`DeleteVoiceConnectorStreamingConfigurationOutput`](crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteVoiceConnectorStreamingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

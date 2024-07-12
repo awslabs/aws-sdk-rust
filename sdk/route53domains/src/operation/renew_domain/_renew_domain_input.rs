@@ -35,8 +35,8 @@ impl RenewDomainInput {
 }
 
 /// A builder for [`RenewDomainInput`](crate::operation::renew_domain::RenewDomainInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RenewDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) duration_in_years: ::std::option::Option<i32>,

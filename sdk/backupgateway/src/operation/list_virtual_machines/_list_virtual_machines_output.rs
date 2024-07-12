@@ -34,8 +34,8 @@ impl ListVirtualMachinesOutput {
 }
 
 /// A builder for [`ListVirtualMachinesOutput`](crate::operation::list_virtual_machines::ListVirtualMachinesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListVirtualMachinesOutputBuilder {
     pub(crate) virtual_machines: ::std::option::Option<::std::vec::Vec<crate::types::VirtualMachine>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

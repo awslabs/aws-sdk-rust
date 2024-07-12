@@ -27,8 +27,8 @@ impl QnAIntentConfiguration {
 }
 
 /// A builder for [`QnAIntentConfiguration`](crate::types::QnAIntentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QnAIntentConfigurationBuilder {
     pub(crate) data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     pub(crate) bedrock_model_configuration: ::std::option::Option<crate::types::BedrockModelSpecification>,

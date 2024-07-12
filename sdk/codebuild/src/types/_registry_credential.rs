@@ -39,8 +39,8 @@ impl RegistryCredential {
 }
 
 /// A builder for [`RegistryCredential`](crate::types::RegistryCredential).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegistryCredentialBuilder {
     pub(crate) credential: ::std::option::Option<::std::string::String>,
     pub(crate) credential_provider: ::std::option::Option<crate::types::CredentialProviderType>,

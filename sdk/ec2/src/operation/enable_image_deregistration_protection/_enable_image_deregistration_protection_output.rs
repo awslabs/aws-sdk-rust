@@ -26,8 +26,8 @@ impl EnableImageDeregistrationProtectionOutput {
 }
 
 /// A builder for [`EnableImageDeregistrationProtectionOutput`](crate::operation::enable_image_deregistration_protection::EnableImageDeregistrationProtectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableImageDeregistrationProtectionOutputBuilder {
     pub(crate) r#return: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

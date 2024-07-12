@@ -27,8 +27,8 @@ impl FindingSource {
 }
 
 /// A builder for [`FindingSource`](crate::types::FindingSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FindingSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FindingSourceType>,
     pub(crate) detail: ::std::option::Option<crate::types::FindingSourceDetail>,

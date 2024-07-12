@@ -32,8 +32,8 @@ impl DescribeRecoveryInstancesInput {
 }
 
 /// A builder for [`DescribeRecoveryInstancesInput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRecoveryInstancesInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,

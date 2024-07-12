@@ -34,8 +34,8 @@ impl RelayAction {
 }
 
 /// A builder for [`RelayAction`](crate::types::RelayAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelayActionBuilder {
     pub(crate) action_failure_policy: ::std::option::Option<crate::types::ActionFailurePolicy>,
     pub(crate) relay: ::std::option::Option<::std::string::String>,

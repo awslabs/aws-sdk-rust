@@ -265,8 +265,8 @@ impl BuildPhase {
 }
 
 /// A builder for [`BuildPhase`](crate::types::BuildPhase).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BuildPhaseBuilder {
     pub(crate) phase_type: ::std::option::Option<crate::types::BuildPhaseType>,
     pub(crate) phase_status: ::std::option::Option<crate::types::StatusType>,

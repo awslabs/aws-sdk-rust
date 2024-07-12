@@ -35,8 +35,8 @@ impl ListDatasourcePackagesOutput {
 }
 
 /// A builder for [`ListDatasourcePackagesOutput`](crate::operation::list_datasource_packages::ListDatasourcePackagesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDatasourcePackagesOutputBuilder {
     pub(crate) datasource_packages:
         ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestDetail>>,

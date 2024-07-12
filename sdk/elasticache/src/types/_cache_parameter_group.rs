@@ -47,8 +47,8 @@ impl CacheParameterGroup {
 }
 
 /// A builder for [`CacheParameterGroup`](crate::types::CacheParameterGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheParameterGroupBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_parameter_group_family: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl UpdateSubscriptionInput {
 }
 
 /// A builder for [`UpdateSubscriptionInput`](crate::operation::update_subscription::UpdateSubscriptionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSubscriptionInputBuilder {
     pub(crate) auto_renew: ::std::option::Option<crate::types::AutoRenew>,
 }

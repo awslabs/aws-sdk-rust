@@ -23,8 +23,8 @@ impl DatasetChanges {
 }
 
 /// A builder for [`DatasetChanges`](crate::types::DatasetChanges).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatasetChangesBuilder {
     pub(crate) ground_truth: ::std::option::Option<::aws_smithy_types::Blob>,
 }

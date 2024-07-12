@@ -27,8 +27,8 @@ impl AuthorizeVpcEndpointAccessInput {
 }
 
 /// A builder for [`AuthorizeVpcEndpointAccessInput`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AuthorizeVpcEndpointAccessInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,

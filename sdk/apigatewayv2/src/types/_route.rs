@@ -97,8 +97,8 @@ impl Route {
 }
 
 /// A builder for [`Route`](crate::types::Route).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RouteBuilder {
     pub(crate) api_gateway_managed: ::std::option::Option<bool>,
     pub(crate) api_key_required: ::std::option::Option<bool>,

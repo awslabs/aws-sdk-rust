@@ -32,8 +32,8 @@ impl ListDataSetRevisionsInput {
 }
 
 /// A builder for [`ListDataSetRevisionsInput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDataSetRevisionsInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

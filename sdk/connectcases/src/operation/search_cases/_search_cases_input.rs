@@ -60,8 +60,8 @@ impl SearchCasesInput {
 }
 
 /// A builder for [`SearchCasesInput`](crate::operation::search_cases::SearchCasesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchCasesInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

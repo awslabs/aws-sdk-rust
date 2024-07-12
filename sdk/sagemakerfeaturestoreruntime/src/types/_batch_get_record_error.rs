@@ -39,8 +39,8 @@ impl BatchGetRecordError {
 }
 
 /// A builder for [`BatchGetRecordError`](crate::types::BatchGetRecordError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetRecordErrorBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_identifier_value_as_string: ::std::option::Option<::std::string::String>,

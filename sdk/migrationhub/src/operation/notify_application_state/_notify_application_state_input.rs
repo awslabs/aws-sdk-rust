@@ -38,8 +38,8 @@ impl NotifyApplicationStateInput {
 }
 
 /// A builder for [`NotifyApplicationStateInput`](crate::operation::notify_application_state::NotifyApplicationStateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyApplicationStateInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationStatus>,

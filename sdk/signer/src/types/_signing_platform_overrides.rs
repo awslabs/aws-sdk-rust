@@ -27,8 +27,8 @@ impl SigningPlatformOverrides {
 }
 
 /// A builder for [`SigningPlatformOverrides`](crate::types::SigningPlatformOverrides).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SigningPlatformOverridesBuilder {
     pub(crate) signing_configuration: ::std::option::Option<crate::types::SigningConfigurationOverrides>,
     pub(crate) signing_image_format: ::std::option::Option<crate::types::ImageFormat>,

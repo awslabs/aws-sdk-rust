@@ -48,8 +48,8 @@ impl CreateLocationFsxOpenZfsInput {
 }
 
 /// A builder for [`CreateLocationFsxOpenZfsInput`](crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocationFsxOpenZfsInputBuilder {
     pub(crate) fsx_filesystem_arn: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::FsxProtocol>,

@@ -20,8 +20,8 @@ impl DescribeEphemerisInput {
 }
 
 /// A builder for [`DescribeEphemerisInput`](crate::operation::describe_ephemeris::DescribeEphemerisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEphemerisInputBuilder {
     pub(crate) ephemeris_id: ::std::option::Option<::std::string::String>,
 }

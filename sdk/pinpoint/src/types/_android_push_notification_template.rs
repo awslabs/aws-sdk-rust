@@ -85,8 +85,8 @@ impl AndroidPushNotificationTemplate {
 }
 
 /// A builder for [`AndroidPushNotificationTemplate`](crate::types::AndroidPushNotificationTemplate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AndroidPushNotificationTemplateBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) body: ::std::option::Option<::std::string::String>,

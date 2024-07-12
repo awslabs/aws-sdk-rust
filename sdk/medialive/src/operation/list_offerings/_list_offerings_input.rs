@@ -87,8 +87,8 @@ impl ListOfferingsInput {
 }
 
 /// A builder for [`ListOfferingsInput`](crate::operation::list_offerings::ListOfferingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListOfferingsInputBuilder {
     pub(crate) channel_class: ::std::option::Option<::std::string::String>,
     pub(crate) channel_configuration: ::std::option::Option<::std::string::String>,

@@ -53,8 +53,8 @@ impl Redirect {
 }
 
 /// A builder for [`Redirect`](crate::types::Redirect).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedirectBuilder {
     pub(crate) host_name: ::std::option::Option<::std::string::String>,
     pub(crate) http_redirect_code: ::std::option::Option<::std::string::String>,

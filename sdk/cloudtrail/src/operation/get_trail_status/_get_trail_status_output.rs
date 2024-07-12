@@ -131,8 +131,8 @@ impl GetTrailStatusOutput {
 }
 
 /// A builder for [`GetTrailStatusOutput`](crate::operation::get_trail_status::GetTrailStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetTrailStatusOutputBuilder {
     pub(crate) is_logging: ::std::option::Option<bool>,
     pub(crate) latest_delivery_error: ::std::option::Option<::std::string::String>,

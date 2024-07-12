@@ -35,8 +35,8 @@ impl ListPackagesForDomainOutput {
 }
 
 /// A builder for [`ListPackagesForDomainOutput`](crate::operation::list_packages_for_domain::ListPackagesForDomainOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPackagesForDomainOutputBuilder {
     pub(crate) domain_package_details_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

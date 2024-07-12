@@ -33,8 +33,8 @@ impl FileSource {
 }
 
 /// A builder for [`FileSource`](crate::types::FileSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileSourceBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::FileSourceType>,
     pub(crate) s3_location: ::std::option::Option<crate::types::S3ObjectFile>,

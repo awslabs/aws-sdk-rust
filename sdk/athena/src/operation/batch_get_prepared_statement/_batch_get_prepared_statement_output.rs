@@ -36,8 +36,8 @@ impl BatchGetPreparedStatementOutput {
 }
 
 /// A builder for [`BatchGetPreparedStatementOutput`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetPreparedStatementOutputBuilder {
     pub(crate) prepared_statements: ::std::option::Option<::std::vec::Vec<crate::types::PreparedStatement>>,
     pub(crate) unprocessed_prepared_statement_names: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedPreparedStatementName>>,

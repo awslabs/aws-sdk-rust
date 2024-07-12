@@ -47,8 +47,8 @@ impl InclusionProtectionGroupFilters {
 }
 
 /// A builder for [`InclusionProtectionGroupFilters`](crate::types::InclusionProtectionGroupFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InclusionProtectionGroupFiltersBuilder {
     pub(crate) protection_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) patterns: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroupPattern>>,

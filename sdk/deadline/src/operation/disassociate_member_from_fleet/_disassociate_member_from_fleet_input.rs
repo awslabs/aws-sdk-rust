@@ -32,8 +32,8 @@ impl DisassociateMemberFromFleetInput {
 }
 
 /// A builder for [`DisassociateMemberFromFleetInput`](crate::operation::disassociate_member_from_fleet::DisassociateMemberFromFleetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateMemberFromFleetInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,

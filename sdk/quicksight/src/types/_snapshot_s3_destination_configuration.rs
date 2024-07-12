@@ -21,8 +21,8 @@ impl SnapshotS3DestinationConfiguration {
 }
 
 /// A builder for [`SnapshotS3DestinationConfiguration`](crate::types::SnapshotS3DestinationConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SnapshotS3DestinationConfigurationBuilder {
     pub(crate) bucket_configuration: ::std::option::Option<crate::types::S3BucketConfiguration>,
 }

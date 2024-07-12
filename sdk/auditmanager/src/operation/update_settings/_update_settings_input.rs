@@ -75,8 +75,8 @@ impl UpdateSettingsInput {
 }
 
 /// A builder for [`UpdateSettingsInput`](crate::operation::update_settings::UpdateSettingsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct UpdateSettingsInputBuilder {
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,
     pub(crate) default_assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,

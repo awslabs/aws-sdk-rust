@@ -26,8 +26,8 @@ impl AssociateApplicationFleetOutput {
 }
 
 /// A builder for [`AssociateApplicationFleetOutput`](crate::operation::associate_application_fleet::AssociateApplicationFleetOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateApplicationFleetOutputBuilder {
     pub(crate) application_fleet_association: ::std::option::Option<crate::types::ApplicationFleetAssociation>,
     _request_id: Option<String>,

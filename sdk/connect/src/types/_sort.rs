@@ -27,8 +27,8 @@ impl Sort {
 }
 
 /// A builder for [`Sort`](crate::types::Sort).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SortBuilder {
     pub(crate) field_name: ::std::option::Option<crate::types::SortableFieldName>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,

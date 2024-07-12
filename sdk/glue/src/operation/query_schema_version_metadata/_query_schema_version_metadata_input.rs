@@ -52,8 +52,8 @@ impl QuerySchemaVersionMetadataInput {
 }
 
 /// A builder for [`QuerySchemaVersionMetadataInput`](crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct QuerySchemaVersionMetadataInputBuilder {
     pub(crate) schema_id: ::std::option::Option<crate::types::SchemaId>,
     pub(crate) schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,

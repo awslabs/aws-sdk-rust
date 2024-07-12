@@ -44,8 +44,8 @@ impl UpdateShardCountOutput {
 }
 
 /// A builder for [`UpdateShardCountOutput`](crate::operation::update_shard_count::UpdateShardCountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateShardCountOutputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_shard_count: ::std::option::Option<i32>,

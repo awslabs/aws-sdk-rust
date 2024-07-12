@@ -31,8 +31,8 @@ impl StudioWebPortalSettings {
 }
 
 /// A builder for [`StudioWebPortalSettings`](crate::types::StudioWebPortalSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StudioWebPortalSettingsBuilder {
     pub(crate) hidden_ml_tools: ::std::option::Option<::std::vec::Vec<crate::types::MlTools>>,
     pub(crate) hidden_app_types: ::std::option::Option<::std::vec::Vec<crate::types::AppType>>,

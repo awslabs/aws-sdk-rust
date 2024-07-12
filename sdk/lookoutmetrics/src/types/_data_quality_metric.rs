@@ -39,8 +39,8 @@ impl DataQualityMetric {
 }
 
 /// A builder for [`DataQualityMetric`](crate::types::DataQualityMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DataQualityMetricBuilder {
     pub(crate) metric_type: ::std::option::Option<crate::types::DataQualityMetricType>,
     pub(crate) metric_description: ::std::option::Option<::std::string::String>,

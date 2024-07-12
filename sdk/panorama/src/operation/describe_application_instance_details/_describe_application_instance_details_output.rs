@@ -68,8 +68,8 @@ impl DescribeApplicationInstanceDetailsOutput {
 }
 
 /// A builder for [`DescribeApplicationInstanceDetailsOutput`](crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeApplicationInstanceDetailsOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

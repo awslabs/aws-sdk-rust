@@ -28,8 +28,8 @@ impl StepConsumer {
 }
 
 /// A builder for [`StepConsumer`](crate::types::StepConsumer).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StepConsumerBuilder {
     pub(crate) step_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DependencyConsumerResolutionStatus>,

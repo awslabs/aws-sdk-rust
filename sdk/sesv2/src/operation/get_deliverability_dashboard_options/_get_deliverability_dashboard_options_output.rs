@@ -55,8 +55,8 @@ impl GetDeliverabilityDashboardOptionsOutput {
 }
 
 /// A builder for [`GetDeliverabilityDashboardOptionsOutput`](crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDeliverabilityDashboardOptionsOutputBuilder {
     pub(crate) dashboard_enabled: ::std::option::Option<bool>,
     pub(crate) subscription_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,

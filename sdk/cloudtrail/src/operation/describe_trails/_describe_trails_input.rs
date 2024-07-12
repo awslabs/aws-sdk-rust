@@ -49,8 +49,8 @@ impl DescribeTrailsInput {
 }
 
 /// A builder for [`DescribeTrailsInput`](crate::operation::describe_trails::DescribeTrailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTrailsInputBuilder {
     pub(crate) trail_name_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include_shadow_trails: ::std::option::Option<bool>,

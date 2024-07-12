@@ -89,8 +89,8 @@ impl GetHealthEventOutput {
 }
 
 /// A builder for [`GetHealthEventOutput`](crate::operation::get_health_event::GetHealthEventOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetHealthEventOutputBuilder {
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,

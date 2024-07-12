@@ -39,8 +39,8 @@ impl HlsSettings {
 }
 
 /// A builder for [`HlsSettings`](crate::types::HlsSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HlsSettingsBuilder {
     pub(crate) audio_only_hls_settings: ::std::option::Option<crate::types::AudioOnlyHlsSettings>,
     pub(crate) fmp4_hls_settings: ::std::option::Option<crate::types::Fmp4HlsSettings>,

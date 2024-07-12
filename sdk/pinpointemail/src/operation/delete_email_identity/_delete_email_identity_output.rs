@@ -19,8 +19,8 @@ impl DeleteEmailIdentityOutput {
 }
 
 /// A builder for [`DeleteEmailIdentityOutput`](crate::operation::delete_email_identity::DeleteEmailIdentityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteEmailIdentityOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,8 +26,8 @@ impl CreateExportJobOutput {
 }
 
 /// A builder for [`CreateExportJobOutput`](crate::operation::create_export_job::CreateExportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateExportJobOutputBuilder {
     pub(crate) export_job_response: ::std::option::Option<crate::types::ExportJobResponse>,
     _request_id: Option<String>,

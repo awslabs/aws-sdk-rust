@@ -73,8 +73,8 @@ impl BackupPlansListMember {
 }
 
 /// A builder for [`BackupPlansListMember`](crate::types::BackupPlansListMember).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BackupPlansListMemberBuilder {
     pub(crate) backup_plan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) backup_plan_id: ::std::option::Option<::std::string::String>,

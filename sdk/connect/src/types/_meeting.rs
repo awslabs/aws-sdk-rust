@@ -39,8 +39,8 @@ impl Meeting {
 }
 
 /// A builder for [`Meeting`](crate::types::Meeting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MeetingBuilder {
     pub(crate) media_region: ::std::option::Option<::std::string::String>,
     pub(crate) media_placement: ::std::option::Option<crate::types::MediaPlacement>,

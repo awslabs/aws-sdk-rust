@@ -27,8 +27,8 @@ impl CisResultStatusFilter {
 }
 
 /// A builder for [`CisResultStatusFilter`](crate::types::CisResultStatusFilter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CisResultStatusFilterBuilder {
     pub(crate) comparison: ::std::option::Option<crate::types::CisResultStatusComparison>,
     pub(crate) value: ::std::option::Option<crate::types::CisResultStatus>,

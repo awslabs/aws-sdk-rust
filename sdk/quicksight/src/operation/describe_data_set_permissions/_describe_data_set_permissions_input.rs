@@ -26,8 +26,8 @@ impl DescribeDataSetPermissionsInput {
 }
 
 /// A builder for [`DescribeDataSetPermissionsInput`](crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDataSetPermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

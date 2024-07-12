@@ -135,8 +135,8 @@ impl Eac3Settings {
 }
 
 /// A builder for [`Eac3Settings`](crate::types::Eac3Settings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct Eac3SettingsBuilder {
     pub(crate) attenuation_control: ::std::option::Option<crate::types::Eac3AttenuationControl>,
     pub(crate) bitrate: ::std::option::Option<f64>,

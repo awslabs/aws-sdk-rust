@@ -21,8 +21,8 @@ impl DeployAsApplicationConfigurationUpdate {
 }
 
 /// A builder for [`DeployAsApplicationConfigurationUpdate`](crate::types::DeployAsApplicationConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeployAsApplicationConfigurationUpdateBuilder {
     pub(crate) s3_content_location_update: ::std::option::Option<crate::types::S3ContentBaseLocationUpdate>,
 }

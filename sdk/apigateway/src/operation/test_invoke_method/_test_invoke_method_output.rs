@@ -59,8 +59,8 @@ impl TestInvokeMethodOutput {
 }
 
 /// A builder for [`TestInvokeMethodOutput`](crate::operation::test_invoke_method::TestInvokeMethodOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestInvokeMethodOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) body: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl SharePointDataSourceConfiguration {
 }
 
 /// A builder for [`SharePointDataSourceConfiguration`](crate::types::SharePointDataSourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SharePointDataSourceConfigurationBuilder {
     pub(crate) source_configuration: ::std::option::Option<crate::types::SharePointSourceConfiguration>,
     pub(crate) crawler_configuration: ::std::option::Option<crate::types::SharePointCrawlerConfiguration>,

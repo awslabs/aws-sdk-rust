@@ -33,8 +33,8 @@ impl BulkDeploymentMetrics {
 }
 
 /// A builder for [`BulkDeploymentMetrics`](crate::types::BulkDeploymentMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BulkDeploymentMetricsBuilder {
     pub(crate) invalid_input_records: ::std::option::Option<i32>,
     pub(crate) records_processed: ::std::option::Option<i32>,

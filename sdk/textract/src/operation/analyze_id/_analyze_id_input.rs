@@ -22,8 +22,8 @@ impl AnalyzeIdInput {
 }
 
 /// A builder for [`AnalyzeIdInput`](crate::operation::analyze_id::AnalyzeIdInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AnalyzeIdInputBuilder {
     pub(crate) document_pages: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
 }

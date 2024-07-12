@@ -26,8 +26,8 @@ impl UpdateSegmentOutput {
 }
 
 /// A builder for [`UpdateSegmentOutput`](crate::operation::update_segment::UpdateSegmentOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSegmentOutputBuilder {
     pub(crate) segment_response: ::std::option::Option<crate::types::SegmentResponse>,
     _request_id: Option<String>,

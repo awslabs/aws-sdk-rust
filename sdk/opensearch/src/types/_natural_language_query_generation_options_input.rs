@@ -21,8 +21,8 @@ impl NaturalLanguageQueryGenerationOptionsInput {
 }
 
 /// A builder for [`NaturalLanguageQueryGenerationOptionsInput`](crate::types::NaturalLanguageQueryGenerationOptionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NaturalLanguageQueryGenerationOptionsInputBuilder {
     pub(crate) desired_state: ::std::option::Option<crate::types::NaturalLanguageQueryGenerationDesiredState>,
 }

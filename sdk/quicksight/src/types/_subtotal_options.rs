@@ -67,8 +67,8 @@ impl SubtotalOptions {
 }
 
 /// A builder for [`SubtotalOptions`](crate::types::SubtotalOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SubtotalOptionsBuilder {
     pub(crate) totals_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) custom_label: ::std::option::Option<::std::string::String>,

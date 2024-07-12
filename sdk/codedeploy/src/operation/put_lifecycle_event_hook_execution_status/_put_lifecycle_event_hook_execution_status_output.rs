@@ -26,8 +26,8 @@ impl PutLifecycleEventHookExecutionStatusOutput {
 }
 
 /// A builder for [`PutLifecycleEventHookExecutionStatusOutput`](crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutLifecycleEventHookExecutionStatusOutputBuilder {
     pub(crate) lifecycle_event_hook_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -63,8 +63,8 @@ impl RecommenderUpdateSummary {
 }
 
 /// A builder for [`RecommenderUpdateSummary`](crate::types::RecommenderUpdateSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecommenderUpdateSummaryBuilder {
     pub(crate) recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,

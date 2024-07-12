@@ -26,8 +26,8 @@ impl UpdateGraphqlApiOutput {
 }
 
 /// A builder for [`UpdateGraphqlApiOutput`](crate::operation::update_graphql_api::UpdateGraphqlApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateGraphqlApiOutputBuilder {
     pub(crate) graphql_api: ::std::option::Option<crate::types::GraphqlApi>,
     _request_id: Option<String>,

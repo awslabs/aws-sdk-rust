@@ -170,8 +170,8 @@ impl RegisterUserInput {
 }
 
 /// A builder for [`RegisterUserInput`](crate::operation::register_user::RegisterUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterUserInputBuilder {
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
     pub(crate) email: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl CreateOriginRequestPolicyOutput {
 }
 
 /// A builder for [`CreateOriginRequestPolicyOutput`](crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOriginRequestPolicyOutputBuilder {
     pub(crate) origin_request_policy: ::std::option::Option<crate::types::OriginRequestPolicy>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

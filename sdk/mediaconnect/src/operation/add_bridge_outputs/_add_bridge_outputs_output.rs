@@ -34,8 +34,8 @@ impl AddBridgeOutputsOutput {
 }
 
 /// A builder for [`AddBridgeOutputsOutput`](crate::operation::add_bridge_outputs::AddBridgeOutputsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddBridgeOutputsOutputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::BridgeOutput>>,

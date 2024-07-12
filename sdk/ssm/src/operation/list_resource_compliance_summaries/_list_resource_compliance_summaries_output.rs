@@ -34,8 +34,8 @@ impl ListResourceComplianceSummariesOutput {
 }
 
 /// A builder for [`ListResourceComplianceSummariesOutput`](crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceComplianceSummariesOutputBuilder {
     pub(crate) resource_compliance_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceComplianceSummaryItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

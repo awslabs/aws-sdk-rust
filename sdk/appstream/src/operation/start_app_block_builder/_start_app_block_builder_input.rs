@@ -20,8 +20,8 @@ impl StartAppBlockBuilderInput {
 }
 
 /// A builder for [`StartAppBlockBuilderInput`](crate::operation::start_app_block_builder::StartAppBlockBuilderInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAppBlockBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

@@ -27,8 +27,8 @@ impl InsightFeedback {
 }
 
 /// A builder for [`InsightFeedback`](crate::types::InsightFeedback).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InsightFeedbackBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) feedback: ::std::option::Option<crate::types::InsightFeedbackOption>,

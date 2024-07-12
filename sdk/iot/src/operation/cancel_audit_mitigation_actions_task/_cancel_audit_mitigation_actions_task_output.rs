@@ -18,8 +18,8 @@ impl CancelAuditMitigationActionsTaskOutput {
 }
 
 /// A builder for [`CancelAuditMitigationActionsTaskOutput`](crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelAuditMitigationActionsTaskOutputBuilder {
     _request_id: Option<String>,
 }

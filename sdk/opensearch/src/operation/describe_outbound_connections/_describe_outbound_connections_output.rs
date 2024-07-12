@@ -35,8 +35,8 @@ impl DescribeOutboundConnectionsOutput {
 }
 
 /// A builder for [`DescribeOutboundConnectionsOutput`](crate::operation::describe_outbound_connections::DescribeOutboundConnectionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeOutboundConnectionsOutputBuilder {
     pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::OutboundConnection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

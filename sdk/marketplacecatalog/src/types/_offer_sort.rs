@@ -27,8 +27,8 @@ impl OfferSort {
 }
 
 /// A builder for [`OfferSort`](crate::types::OfferSort).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OfferSortBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::OfferSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

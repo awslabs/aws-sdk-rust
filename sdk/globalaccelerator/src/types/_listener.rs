@@ -47,8 +47,8 @@ impl Listener {
 }
 
 /// A builder for [`Listener`](crate::types::Listener).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListenerBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,

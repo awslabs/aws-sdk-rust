@@ -28,8 +28,8 @@ impl GetAuthorizationTokenOutput {
 }
 
 /// A builder for [`GetAuthorizationTokenOutput`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAuthorizationTokenOutputBuilder {
     pub(crate) authorization_data: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizationData>>,
     _request_id: Option<String>,

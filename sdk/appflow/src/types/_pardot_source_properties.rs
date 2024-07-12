@@ -22,8 +22,8 @@ impl PardotSourceProperties {
 }
 
 /// A builder for [`PardotSourceProperties`](crate::types::PardotSourceProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PardotSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }

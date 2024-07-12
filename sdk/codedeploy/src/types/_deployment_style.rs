@@ -27,8 +27,8 @@ impl DeploymentStyle {
 }
 
 /// A builder for [`DeploymentStyle`](crate::types::DeploymentStyle).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentStyleBuilder {
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     pub(crate) deployment_option: ::std::option::Option<crate::types::DeploymentOption>,

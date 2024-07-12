@@ -20,8 +20,8 @@ impl DisableHostedZoneDnssecInput {
 }
 
 /// A builder for [`DisableHostedZoneDnssecInput`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisableHostedZoneDnssecInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
 }

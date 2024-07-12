@@ -44,8 +44,8 @@ impl GetExclusionsPreviewInput {
 }
 
 /// A builder for [`GetExclusionsPreviewInput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetExclusionsPreviewInputBuilder {
     pub(crate) assessment_template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) preview_token: ::std::option::Option<::std::string::String>,

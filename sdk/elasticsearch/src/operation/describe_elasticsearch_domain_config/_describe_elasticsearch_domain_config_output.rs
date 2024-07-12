@@ -27,8 +27,8 @@ impl DescribeElasticsearchDomainConfigOutput {
 }
 
 /// A builder for [`DescribeElasticsearchDomainConfigOutput`](crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeElasticsearchDomainConfigOutputBuilder {
     pub(crate) domain_config: ::std::option::Option<crate::types::ElasticsearchDomainConfig>,
     _request_id: Option<String>,

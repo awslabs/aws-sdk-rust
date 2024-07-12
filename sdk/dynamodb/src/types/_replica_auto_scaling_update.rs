@@ -36,8 +36,8 @@ impl ReplicaAutoScalingUpdate {
 }
 
 /// A builder for [`ReplicaAutoScalingUpdate`](crate::types::ReplicaAutoScalingUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReplicaAutoScalingUpdateBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) replica_global_secondary_index_updates:

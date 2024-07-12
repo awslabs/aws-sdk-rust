@@ -35,8 +35,8 @@ impl UsageBasedPricingTerm {
 }
 
 /// A builder for [`UsageBasedPricingTerm`](crate::types::UsageBasedPricingTerm).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageBasedPricingTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,

@@ -32,8 +32,8 @@ impl ListTrustedTokenIssuersInput {
 }
 
 /// A builder for [`ListTrustedTokenIssuersInput`](crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTrustedTokenIssuersInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

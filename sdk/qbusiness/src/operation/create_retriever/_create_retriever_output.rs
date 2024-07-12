@@ -32,8 +32,8 @@ impl CreateRetrieverOutput {
 }
 
 /// A builder for [`CreateRetrieverOutput`](crate::operation::create_retriever::CreateRetrieverOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateRetrieverOutputBuilder {
     pub(crate) retriever_id: ::std::option::Option<::std::string::String>,
     pub(crate) retriever_arn: ::std::option::Option<::std::string::String>,

@@ -88,8 +88,8 @@ impl UpdateZonalShiftOutput {
 }
 
 /// A builder for [`UpdateZonalShiftOutput`](crate::operation::update_zonal_shift::UpdateZonalShiftOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateZonalShiftOutputBuilder {
     pub(crate) zonal_shift_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,

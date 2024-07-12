@@ -26,8 +26,8 @@ impl UpdateCustomMetricInput {
 }
 
 /// A builder for [`UpdateCustomMetricInput`](crate::operation::update_custom_metric::UpdateCustomMetricInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateCustomMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,

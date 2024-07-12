@@ -48,8 +48,8 @@ impl AdminUpdateAuthEventFeedbackInput {
 }
 
 /// A builder for [`AdminUpdateAuthEventFeedbackInput`](crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct AdminUpdateAuthEventFeedbackInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,

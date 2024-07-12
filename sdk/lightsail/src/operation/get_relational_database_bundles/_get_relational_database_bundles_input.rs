@@ -28,8 +28,8 @@ impl GetRelationalDatabaseBundlesInput {
 }
 
 /// A builder for [`GetRelationalDatabaseBundlesInput`](crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelationalDatabaseBundlesInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
     pub(crate) include_inactive: ::std::option::Option<bool>,

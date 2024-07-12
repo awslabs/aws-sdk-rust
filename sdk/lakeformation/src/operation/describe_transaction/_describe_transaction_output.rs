@@ -26,8 +26,8 @@ impl DescribeTransactionOutput {
 }
 
 /// A builder for [`DescribeTransactionOutput`](crate::operation::describe_transaction::DescribeTransactionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransactionOutputBuilder {
     pub(crate) transaction_description: ::std::option::Option<crate::types::TransactionDescription>,
     _request_id: Option<String>,

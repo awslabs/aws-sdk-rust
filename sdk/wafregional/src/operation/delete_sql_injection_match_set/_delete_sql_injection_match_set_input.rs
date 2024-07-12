@@ -27,8 +27,8 @@ impl DeleteSqlInjectionMatchSetInput {
 }
 
 /// A builder for [`DeleteSqlInjectionMatchSetInput`](crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSqlInjectionMatchSetInputBuilder {
     pub(crate) sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

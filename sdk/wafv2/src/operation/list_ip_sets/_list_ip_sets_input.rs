@@ -46,8 +46,8 @@ impl ListIpSetsInput {
 }
 
 /// A builder for [`ListIpSetsInput`](crate::operation::list_ip_sets::ListIpSetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIpSetsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,

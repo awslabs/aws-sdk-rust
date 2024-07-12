@@ -28,8 +28,8 @@ impl StartDbInstanceAutomatedBackupsReplicationOutput {
 }
 
 /// A builder for [`StartDbInstanceAutomatedBackupsReplicationOutput`](crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartDbInstanceAutomatedBackupsReplicationOutputBuilder {
     pub(crate) db_instance_automated_backup: ::std::option::Option<crate::types::DbInstanceAutomatedBackup>,
     _request_id: Option<String>,

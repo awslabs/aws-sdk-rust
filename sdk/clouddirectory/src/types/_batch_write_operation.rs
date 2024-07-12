@@ -105,8 +105,8 @@ impl BatchWriteOperation {
 }
 
 /// A builder for [`BatchWriteOperation`](crate::types::BatchWriteOperation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchWriteOperationBuilder {
     pub(crate) create_object: ::std::option::Option<crate::types::BatchCreateObject>,
     pub(crate) attach_object: ::std::option::Option<crate::types::BatchAttachObject>,

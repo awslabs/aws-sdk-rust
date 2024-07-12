@@ -33,8 +33,8 @@ impl Relay {
 }
 
 /// A builder for [`Relay`](crate::types::Relay).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RelayBuilder {
     pub(crate) relay_id: ::std::option::Option<::std::string::String>,
     pub(crate) relay_name: ::std::option::Option<::std::string::String>,

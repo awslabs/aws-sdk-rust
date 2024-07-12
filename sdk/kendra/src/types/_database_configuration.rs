@@ -51,8 +51,8 @@ impl DatabaseConfiguration {
 }
 
 /// A builder for [`DatabaseConfiguration`](crate::types::DatabaseConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DatabaseConfigurationBuilder {
     pub(crate) database_engine_type: ::std::option::Option<crate::types::DatabaseEngineType>,
     pub(crate) connection_configuration: ::std::option::Option<crate::types::ConnectionConfiguration>,

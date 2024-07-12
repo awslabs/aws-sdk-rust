@@ -33,8 +33,8 @@ impl ChildBlock {
 }
 
 /// A builder for [`ChildBlock`](crate::types::ChildBlock).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChildBlockBuilder {
     pub(crate) child_block_id: ::std::option::Option<::std::string::String>,
     pub(crate) begin_offset: ::std::option::Option<i32>,

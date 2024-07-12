@@ -66,8 +66,8 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutput {
 }
 
 /// A builder for [`GetServiceLastAccessedDetailsWithEntitiesOutput`](crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatusType>,
     pub(crate) job_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,

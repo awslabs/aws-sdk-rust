@@ -18,8 +18,8 @@ impl RegisterWorkflowTypeOutput {
 }
 
 /// A builder for [`RegisterWorkflowTypeOutput`](crate::operation::register_workflow_type::RegisterWorkflowTypeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RegisterWorkflowTypeOutputBuilder {
     _request_id: Option<String>,
 }

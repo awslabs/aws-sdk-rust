@@ -20,8 +20,8 @@ impl DeleteConnectionAliasInput {
 }
 
 /// A builder for [`DeleteConnectionAliasInput`](crate::operation::delete_connection_alias::DeleteConnectionAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteConnectionAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
 }

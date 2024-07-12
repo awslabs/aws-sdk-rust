@@ -35,8 +35,8 @@ impl MetadataInfo {
 }
 
 /// A builder for [`MetadataInfo`](crate::types::MetadataInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MetadataInfoBuilder {
     pub(crate) metadata_value: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::std::string::String>,

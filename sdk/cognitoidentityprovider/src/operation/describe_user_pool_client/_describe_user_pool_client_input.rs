@@ -35,8 +35,8 @@ impl DescribeUserPoolClientInput {
 }
 
 /// A builder for [`DescribeUserPoolClientInput`](crate::operation::describe_user_pool_client::DescribeUserPoolClientInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DescribeUserPoolClientInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,

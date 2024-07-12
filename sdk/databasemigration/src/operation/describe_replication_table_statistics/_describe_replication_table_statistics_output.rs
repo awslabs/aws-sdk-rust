@@ -41,8 +41,8 @@ impl DescribeReplicationTableStatisticsOutput {
 }
 
 /// A builder for [`DescribeReplicationTableStatisticsOutput`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReplicationTableStatisticsOutputBuilder {
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,

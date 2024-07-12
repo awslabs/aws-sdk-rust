@@ -106,8 +106,8 @@ impl CreateCrawlerInput {
 }
 
 /// A builder for [`CreateCrawlerInput`](crate::operation::create_crawler::CreateCrawlerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCrawlerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<::std::string::String>,

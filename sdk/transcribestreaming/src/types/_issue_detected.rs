@@ -21,8 +21,8 @@ impl IssueDetected {
 }
 
 /// A builder for [`IssueDetected`](crate::types::IssueDetected).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IssueDetectedBuilder {
     pub(crate) character_offsets: ::std::option::Option<crate::types::CharacterOffsets>,
 }

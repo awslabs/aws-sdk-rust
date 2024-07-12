@@ -32,8 +32,8 @@ impl DescribeRedshiftIdcApplicationsInput {
 }
 
 /// A builder for [`DescribeRedshiftIdcApplicationsInput`](crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRedshiftIdcApplicationsInputBuilder {
     pub(crate) redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

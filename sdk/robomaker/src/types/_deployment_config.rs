@@ -39,8 +39,8 @@ impl DeploymentConfig {
 }
 
 /// A builder for [`DeploymentConfig`](crate::types::DeploymentConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentConfigBuilder {
     pub(crate) concurrent_deployment_percentage: ::std::option::Option<i32>,
     pub(crate) failure_threshold_percentage: ::std::option::Option<i32>,

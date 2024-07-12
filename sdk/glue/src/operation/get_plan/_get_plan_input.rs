@@ -66,8 +66,8 @@ impl GetPlanInput {
 }
 
 /// A builder for [`GetPlanInput`](crate::operation::get_plan::GetPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPlanInputBuilder {
     pub(crate) mapping: ::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>>,
     pub(crate) source: ::std::option::Option<crate::types::CatalogEntry>,

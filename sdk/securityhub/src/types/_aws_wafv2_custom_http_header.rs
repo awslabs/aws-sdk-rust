@@ -27,8 +27,8 @@ impl AwsWafv2CustomHttpHeader {
 }
 
 /// A builder for [`AwsWafv2CustomHttpHeader`](crate::types::AwsWafv2CustomHttpHeader).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafv2CustomHttpHeaderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

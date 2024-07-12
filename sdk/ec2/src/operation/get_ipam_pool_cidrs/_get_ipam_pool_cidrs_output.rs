@@ -34,8 +34,8 @@ impl GetIpamPoolCidrsOutput {
 }
 
 /// A builder for [`GetIpamPoolCidrsOutput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetIpamPoolCidrsOutputBuilder {
     pub(crate) ipam_pool_cidrs: ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolCidr>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

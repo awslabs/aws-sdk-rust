@@ -34,8 +34,8 @@ impl DescribeLockedSnapshotsOutput {
 }
 
 /// A builder for [`DescribeLockedSnapshotsOutput`](crate::operation::describe_locked_snapshots::DescribeLockedSnapshotsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeLockedSnapshotsOutputBuilder {
     pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::LockedSnapshotsInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

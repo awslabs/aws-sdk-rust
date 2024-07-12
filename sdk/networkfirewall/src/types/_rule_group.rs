@@ -41,8 +41,8 @@ impl RuleGroup {
 }
 
 /// A builder for [`RuleGroup`](crate::types::RuleGroup).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RuleGroupBuilder {
     pub(crate) rule_variables: ::std::option::Option<crate::types::RuleVariables>,
     pub(crate) reference_sets: ::std::option::Option<crate::types::ReferenceSets>,

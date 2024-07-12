@@ -74,8 +74,8 @@ impl ListHyperParameterTuningJobsInput {
 }
 
 /// A builder for [`ListHyperParameterTuningJobsInput`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListHyperParameterTuningJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

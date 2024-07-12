@@ -66,8 +66,8 @@ impl RestoreObjectInput {
 }
 
 /// A builder for [`RestoreObjectInput`](crate::operation::restore_object::RestoreObjectInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreObjectInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

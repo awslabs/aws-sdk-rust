@@ -35,8 +35,8 @@ impl AmiAggregation {
 }
 
 /// A builder for [`AmiAggregation`](crate::types::AmiAggregation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AmiAggregationBuilder {
     pub(crate) amis: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

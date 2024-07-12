@@ -27,8 +27,8 @@ impl FacetAttributeUpdate {
 }
 
 /// A builder for [`FacetAttributeUpdate`](crate::types::FacetAttributeUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FacetAttributeUpdateBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::FacetAttribute>,
     pub(crate) action: ::std::option::Option<crate::types::UpdateActionType>,

@@ -56,8 +56,8 @@ impl DeleteObjectOutput {
 }
 
 /// A builder for [`DeleteObjectOutput`](crate::operation::delete_object::DeleteObjectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteObjectOutputBuilder {
     pub(crate) delete_marker: ::std::option::Option<bool>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,

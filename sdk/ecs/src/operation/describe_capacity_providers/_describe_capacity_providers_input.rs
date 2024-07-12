@@ -46,8 +46,8 @@ impl DescribeCapacityProvidersInput {
 }
 
 /// A builder for [`DescribeCapacityProvidersInput`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCapacityProvidersInputBuilder {
     pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>,

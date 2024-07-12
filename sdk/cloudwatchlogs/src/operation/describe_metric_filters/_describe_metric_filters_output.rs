@@ -34,8 +34,8 @@ impl DescribeMetricFiltersOutput {
 }
 
 /// A builder for [`DescribeMetricFiltersOutput`](crate::operation::describe_metric_filters::DescribeMetricFiltersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMetricFiltersOutputBuilder {
     pub(crate) metric_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

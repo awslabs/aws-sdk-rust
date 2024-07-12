@@ -34,8 +34,8 @@ impl OverrideAction {
 }
 
 /// A builder for [`OverrideAction`](crate::types::OverrideAction).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OverrideActionBuilder {
     pub(crate) count: ::std::option::Option<crate::types::CountAction>,
     pub(crate) none: ::std::option::Option<crate::types::NoneAction>,

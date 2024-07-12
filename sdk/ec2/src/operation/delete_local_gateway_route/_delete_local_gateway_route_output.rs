@@ -26,8 +26,8 @@ impl DeleteLocalGatewayRouteOutput {
 }
 
 /// A builder for [`DeleteLocalGatewayRouteOutput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteLocalGatewayRouteOutputBuilder {
     pub(crate) route: ::std::option::Option<crate::types::LocalGatewayRoute>,
     _request_id: Option<String>,

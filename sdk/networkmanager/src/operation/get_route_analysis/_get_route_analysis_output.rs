@@ -26,8 +26,8 @@ impl GetRouteAnalysisOutput {
 }
 
 /// A builder for [`GetRouteAnalysisOutput`](crate::operation::get_route_analysis::GetRouteAnalysisOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRouteAnalysisOutputBuilder {
     pub(crate) route_analysis: ::std::option::Option<crate::types::RouteAnalysis>,
     _request_id: Option<String>,

@@ -27,8 +27,8 @@ impl PolicyQualifierInfo {
 }
 
 /// A builder for [`PolicyQualifierInfo`](crate::types::PolicyQualifierInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PolicyQualifierInfoBuilder {
     pub(crate) policy_qualifier_id: ::std::option::Option<crate::types::PolicyQualifierId>,
     pub(crate) qualifier: ::std::option::Option<crate::types::Qualifier>,

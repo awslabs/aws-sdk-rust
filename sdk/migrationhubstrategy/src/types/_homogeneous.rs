@@ -23,8 +23,8 @@ impl Homogeneous {
 }
 
 /// A builder for [`Homogeneous`](crate::types::Homogeneous).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HomogeneousBuilder {
     pub(crate) target_database_engine: ::std::option::Option<::std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>>,
 }

@@ -29,8 +29,8 @@ impl ExecuteSqlOutput {
 }
 
 /// A builder for [`ExecuteSqlOutput`](crate::operation::execute_sql::ExecuteSqlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteSqlOutputBuilder {
     pub(crate) sql_statement_results: ::std::option::Option<::std::vec::Vec<crate::types::SqlStatementResult>>,
     _request_id: Option<String>,

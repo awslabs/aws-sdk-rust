@@ -41,8 +41,8 @@ impl ListChannelFlowsInput {
 }
 
 /// A builder for [`ListChannelFlowsInput`](crate::operation::list_channel_flows::ListChannelFlowsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ListChannelFlowsInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

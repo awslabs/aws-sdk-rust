@@ -113,8 +113,8 @@ impl ResourceQuery {
 }
 
 /// A builder for [`ResourceQuery`](crate::types::ResourceQuery).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceQueryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::QueryType>,
     pub(crate) query: ::std::option::Option<::std::string::String>,

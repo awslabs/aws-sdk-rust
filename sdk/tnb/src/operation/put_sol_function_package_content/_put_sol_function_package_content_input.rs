@@ -32,8 +32,8 @@ impl PutSolFunctionPackageContentInput {
 }
 
 /// A builder for [`PutSolFunctionPackageContentInput`](crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutSolFunctionPackageContentInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<crate::types::PackageContentType>,

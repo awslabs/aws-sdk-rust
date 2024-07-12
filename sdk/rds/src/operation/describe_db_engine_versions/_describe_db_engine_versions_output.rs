@@ -35,8 +35,8 @@ impl DescribeDbEngineVersionsOutput {
 }
 
 /// A builder for [`DescribeDbEngineVersionsOutput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbEngineVersionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::DbEngineVersion>>,

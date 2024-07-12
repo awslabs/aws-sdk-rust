@@ -30,8 +30,8 @@ impl UpdateManagedInstanceRoleInput {
 }
 
 /// A builder for [`UpdateManagedInstanceRoleInput`](crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateManagedInstanceRoleInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role: ::std::option::Option<::std::string::String>,

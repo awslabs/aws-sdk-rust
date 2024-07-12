@@ -18,8 +18,8 @@ impl CancelBatchPredictionJobOutput {
 }
 
 /// A builder for [`CancelBatchPredictionJobOutput`](crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelBatchPredictionJobOutputBuilder {
     _request_id: Option<String>,
 }

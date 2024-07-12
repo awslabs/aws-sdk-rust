@@ -82,8 +82,8 @@ impl CreateDbProxyInput {
 }
 
 /// A builder for [`CreateDbProxyInput`](crate::operation::create_db_proxy::CreateDbProxyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateDbProxyInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine_family: ::std::option::Option<crate::types::EngineFamily>,

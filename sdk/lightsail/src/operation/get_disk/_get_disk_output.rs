@@ -26,8 +26,8 @@ impl GetDiskOutput {
 }
 
 /// A builder for [`GetDiskOutput`](crate::operation::get_disk::GetDiskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDiskOutputBuilder {
     pub(crate) disk: ::std::option::Option<crate::types::Disk>,
     _request_id: Option<String>,

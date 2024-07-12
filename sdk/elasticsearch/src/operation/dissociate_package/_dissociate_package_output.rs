@@ -27,8 +27,8 @@ impl DissociatePackageOutput {
 }
 
 /// A builder for [`DissociatePackageOutput`](crate::operation::dissociate_package::DissociatePackageOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DissociatePackageOutputBuilder {
     pub(crate) domain_package_details: ::std::option::Option<crate::types::DomainPackageDetails>,
     _request_id: Option<String>,

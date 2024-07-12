@@ -98,8 +98,8 @@ impl UpdateMlTransformInput {
 }
 
 /// A builder for [`UpdateMlTransformInput`](crate::operation::update_ml_transform::UpdateMlTransformInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateMlTransformInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

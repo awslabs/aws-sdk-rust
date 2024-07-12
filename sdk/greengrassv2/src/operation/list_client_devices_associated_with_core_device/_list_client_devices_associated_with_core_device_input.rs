@@ -33,8 +33,8 @@ impl ListClientDevicesAssociatedWithCoreDeviceInput {
 }
 
 /// A builder for [`ListClientDevicesAssociatedWithCoreDeviceInput`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListClientDevicesAssociatedWithCoreDeviceInputBuilder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

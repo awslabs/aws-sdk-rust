@@ -26,8 +26,8 @@ impl GetStaticIpOutput {
 }
 
 /// A builder for [`GetStaticIpOutput`](crate::operation::get_static_ip::GetStaticIpOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetStaticIpOutputBuilder {
     pub(crate) static_ip: ::std::option::Option<crate::types::StaticIp>,
     _request_id: Option<String>,

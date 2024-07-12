@@ -27,8 +27,8 @@ impl CertificateValidity {
 }
 
 /// A builder for [`CertificateValidity`](crate::types::CertificateValidity).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CertificateValidityBuilder {
     pub(crate) validity_period: ::std::option::Option<crate::types::ValidityPeriod>,
     pub(crate) renewal_period: ::std::option::Option<crate::types::ValidityPeriod>,

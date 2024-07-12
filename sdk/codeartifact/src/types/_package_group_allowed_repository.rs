@@ -27,8 +27,8 @@ impl PackageGroupAllowedRepository {
 }
 
 /// A builder for [`PackageGroupAllowedRepository`](crate::types::PackageGroupAllowedRepository).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PackageGroupAllowedRepositoryBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) origin_restriction_type: ::std::option::Option<crate::types::PackageGroupOriginRestrictionType>,

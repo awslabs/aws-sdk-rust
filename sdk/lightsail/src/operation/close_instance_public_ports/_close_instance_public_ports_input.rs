@@ -26,8 +26,8 @@ impl CloseInstancePublicPortsInput {
 }
 
 /// A builder for [`CloseInstancePublicPortsInput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CloseInstancePublicPortsInputBuilder {
     pub(crate) port_info: ::std::option::Option<crate::types::PortInfo>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,

@@ -67,8 +67,8 @@ impl CreateHostedZoneInput {
 }
 
 /// A builder for [`CreateHostedZoneInput`](crate::operation::create_hosted_zone::CreateHostedZoneInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHostedZoneInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<crate::types::Vpc>,

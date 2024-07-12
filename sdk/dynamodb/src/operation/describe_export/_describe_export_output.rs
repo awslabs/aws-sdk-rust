@@ -26,8 +26,8 @@ impl DescribeExportOutput {
 }
 
 /// A builder for [`DescribeExportOutput`](crate::operation::describe_export::DescribeExportOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeExportOutputBuilder {
     pub(crate) export_description: ::std::option::Option<crate::types::ExportDescription>,
     _request_id: Option<String>,

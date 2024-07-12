@@ -28,8 +28,8 @@ impl PromoteReadReplicaOutput {
 }
 
 /// A builder for [`PromoteReadReplicaOutput`](crate::operation::promote_read_replica::PromoteReadReplicaOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PromoteReadReplicaOutputBuilder {
     pub(crate) db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,

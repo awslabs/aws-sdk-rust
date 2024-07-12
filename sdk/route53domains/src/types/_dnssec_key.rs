@@ -68,8 +68,8 @@ impl DnssecKey {
 }
 
 /// A builder for [`DnssecKey`](crate::types::DnssecKey).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DnssecKeyBuilder {
     pub(crate) algorithm: ::std::option::Option<i32>,
     pub(crate) flags: ::std::option::Option<i32>,

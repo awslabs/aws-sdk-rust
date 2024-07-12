@@ -18,8 +18,8 @@ impl UpdateStorageSystemOutput {
 }
 
 /// A builder for [`UpdateStorageSystemOutput`](crate::operation::update_storage_system::UpdateStorageSystemOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStorageSystemOutputBuilder {
     _request_id: Option<String>,
 }

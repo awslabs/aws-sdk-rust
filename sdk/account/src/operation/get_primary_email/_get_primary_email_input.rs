@@ -26,8 +26,8 @@ impl GetPrimaryEmailInput {
 }
 
 /// A builder for [`GetPrimaryEmailInput`](crate::operation::get_primary_email::GetPrimaryEmailInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPrimaryEmailInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }

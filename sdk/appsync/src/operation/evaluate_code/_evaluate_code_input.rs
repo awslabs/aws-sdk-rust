@@ -38,8 +38,8 @@ impl EvaluateCodeInput {
 }
 
 /// A builder for [`EvaluateCodeInput`](crate::operation::evaluate_code::EvaluateCodeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluateCodeInputBuilder {
     pub(crate) runtime: ::std::option::Option<crate::types::AppSyncRuntime>,
     pub(crate) code: ::std::option::Option<::std::string::String>,

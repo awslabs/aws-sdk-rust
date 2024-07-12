@@ -41,8 +41,8 @@ impl GetEvidenceFileUploadUrlOutput {
 }
 
 /// A builder for [`GetEvidenceFileUploadUrlOutput`](crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct GetEvidenceFileUploadUrlOutputBuilder {
     pub(crate) evidence_file_name: ::std::option::Option<::std::string::String>,
     pub(crate) upload_url: ::std::option::Option<::std::string::String>,

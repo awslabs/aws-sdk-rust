@@ -27,8 +27,8 @@ impl FraudRiskDetails {
 }
 
 /// A builder for [`FraudRiskDetails`](crate::types::FraudRiskDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FraudRiskDetailsBuilder {
     pub(crate) known_fraudster_risk: ::std::option::Option<crate::types::KnownFraudsterRisk>,
     pub(crate) voice_spoofing_risk: ::std::option::Option<crate::types::VoiceSpoofingRisk>,

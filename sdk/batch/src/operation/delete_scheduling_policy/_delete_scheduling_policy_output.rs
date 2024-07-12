@@ -18,8 +18,8 @@ impl DeleteSchedulingPolicyOutput {
 }
 
 /// A builder for [`DeleteSchedulingPolicyOutput`](crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteSchedulingPolicyOutputBuilder {
     _request_id: Option<String>,
 }

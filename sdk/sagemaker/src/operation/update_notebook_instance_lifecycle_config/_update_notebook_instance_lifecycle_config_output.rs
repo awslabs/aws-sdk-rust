@@ -18,8 +18,8 @@ impl UpdateNotebookInstanceLifecycleConfigOutput {
 }
 
 /// A builder for [`UpdateNotebookInstanceLifecycleConfigOutput`](crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateNotebookInstanceLifecycleConfigOutputBuilder {
     _request_id: Option<String>,
 }

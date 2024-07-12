@@ -22,8 +22,8 @@ impl BatchDeleteBuildsInput {
 }
 
 /// A builder for [`BatchDeleteBuildsInput`](crate::operation::batch_delete_builds::BatchDeleteBuildsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteBuildsInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }

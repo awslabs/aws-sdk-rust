@@ -26,8 +26,8 @@ impl AssociateGatewayToServerInput {
 }
 
 /// A builder for [`AssociateGatewayToServerInput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateGatewayToServerInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) server_arn: ::std::option::Option<::std::string::String>,

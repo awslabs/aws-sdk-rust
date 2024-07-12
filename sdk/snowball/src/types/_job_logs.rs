@@ -36,8 +36,8 @@ impl JobLogs {
 }
 
 /// A builder for [`JobLogs`](crate::types::JobLogs).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JobLogsBuilder {
     pub(crate) job_completion_report_uri: ::std::option::Option<::std::string::String>,
     pub(crate) job_success_log_uri: ::std::option::Option<::std::string::String>,

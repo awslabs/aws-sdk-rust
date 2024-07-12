@@ -34,8 +34,8 @@ impl GetReportGroupTrendOutput {
 }
 
 /// A builder for [`GetReportGroupTrendOutput`](crate::operation::get_report_group_trend::GetReportGroupTrendOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetReportGroupTrendOutputBuilder {
     pub(crate) stats: ::std::option::Option<crate::types::ReportGroupTrendStats>,
     pub(crate) raw_data: ::std::option::Option<::std::vec::Vec<crate::types::ReportWithRawData>>,

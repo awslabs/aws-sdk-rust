@@ -36,8 +36,8 @@ impl GetMemberDetectorsOutput {
 }
 
 /// A builder for [`GetMemberDetectorsOutput`](crate::operation::get_member_detectors::GetMemberDetectorsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMemberDetectorsOutputBuilder {
     pub(crate) member_data_source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>>,
     pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,

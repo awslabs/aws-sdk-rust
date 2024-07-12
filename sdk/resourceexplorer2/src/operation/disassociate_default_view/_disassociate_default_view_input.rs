@@ -11,8 +11,8 @@ impl DisassociateDefaultViewInput {
 }
 
 /// A builder for [`DisassociateDefaultViewInput`](crate::operation::disassociate_default_view::DisassociateDefaultViewInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateDefaultViewInputBuilder {}
 impl DisassociateDefaultViewInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateDefaultViewInput`](crate::operation::disassociate_default_view::DisassociateDefaultViewInput).

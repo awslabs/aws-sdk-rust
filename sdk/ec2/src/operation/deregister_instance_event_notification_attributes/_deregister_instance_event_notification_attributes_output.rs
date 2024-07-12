@@ -28,8 +28,8 @@ impl DeregisterInstanceEventNotificationAttributesOutput {
 }
 
 /// A builder for [`DeregisterInstanceEventNotificationAttributesOutput`](crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterInstanceEventNotificationAttributesOutputBuilder {
     pub(crate) instance_tag_attribute: ::std::option::Option<crate::types::InstanceTagNotificationAttribute>,
     _request_id: Option<String>,

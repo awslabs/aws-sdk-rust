@@ -110,8 +110,8 @@ impl DescribeStreamProcessorOutput {
 }
 
 /// A builder for [`DescribeStreamProcessorOutput`](crate::operation::describe_stream_processor::DescribeStreamProcessorOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeStreamProcessorOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_processor_arn: ::std::option::Option<::std::string::String>,

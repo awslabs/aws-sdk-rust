@@ -22,8 +22,8 @@ impl TelephonyConfig {
 }
 
 /// A builder for [`TelephonyConfig`](crate::types::TelephonyConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TelephonyConfigBuilder {
     pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
 }

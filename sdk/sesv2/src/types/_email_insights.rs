@@ -44,8 +44,8 @@ impl EmailInsights {
 }
 
 /// A builder for [`EmailInsights`](crate::types::EmailInsights).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EmailInsightsBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) isp: ::std::option::Option<::std::string::String>,

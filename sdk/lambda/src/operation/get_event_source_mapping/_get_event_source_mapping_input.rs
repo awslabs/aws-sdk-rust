@@ -20,8 +20,8 @@ impl GetEventSourceMappingInput {
 }
 
 /// A builder for [`GetEventSourceMappingInput`](crate::operation::get_event_source_mapping::GetEventSourceMappingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEventSourceMappingInputBuilder {
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
 }

@@ -23,8 +23,8 @@ impl ListIdentityPoliciesInput {
 }
 
 /// A builder for [`ListIdentityPoliciesInput`](crate::operation::list_identity_policies::ListIdentityPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListIdentityPoliciesInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
 }

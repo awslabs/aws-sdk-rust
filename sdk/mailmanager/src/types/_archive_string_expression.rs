@@ -34,8 +34,8 @@ impl ArchiveStringExpression {
 }
 
 /// A builder for [`ArchiveStringExpression`](crate::types::ArchiveStringExpression).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ArchiveStringExpressionBuilder {
     pub(crate) evaluate: ::std::option::Option<crate::types::ArchiveStringToEvaluate>,
     pub(crate) operator: ::std::option::Option<crate::types::ArchiveStringOperator>,

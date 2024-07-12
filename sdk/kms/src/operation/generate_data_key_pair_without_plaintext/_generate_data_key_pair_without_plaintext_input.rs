@@ -86,8 +86,8 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
 }
 
 /// A builder for [`GenerateDataKeyPairWithoutPlaintextInput`](crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GenerateDataKeyPairWithoutPlaintextInputBuilder {
     pub(crate) encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,

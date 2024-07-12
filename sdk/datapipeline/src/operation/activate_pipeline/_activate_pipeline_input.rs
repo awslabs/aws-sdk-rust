@@ -35,8 +35,8 @@ impl ActivatePipelineInput {
 }
 
 /// A builder for [`ActivatePipelineInput`](crate::operation::activate_pipeline::ActivatePipelineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivatePipelineInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,

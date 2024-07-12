@@ -50,8 +50,8 @@ impl UpdateByteMatchSetInput {
 }
 
 /// A builder for [`UpdateByteMatchSetInput`](crate::operation::update_byte_match_set::UpdateByteMatchSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateByteMatchSetInputBuilder {
     pub(crate) byte_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,

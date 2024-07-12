@@ -83,8 +83,8 @@ impl InstanceMetadataOptionsRequest {
 }
 
 /// A builder for [`InstanceMetadataOptionsRequest`](crate::types::InstanceMetadataOptionsRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstanceMetadataOptionsRequestBuilder {
     pub(crate) http_tokens: ::std::option::Option<crate::types::HttpTokensState>,
     pub(crate) http_put_response_hop_limit: ::std::option::Option<i32>,

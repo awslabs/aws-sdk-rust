@@ -62,8 +62,8 @@ impl UpdateDataSourceInput {
 }
 
 /// A builder for [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateDataSourceInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,

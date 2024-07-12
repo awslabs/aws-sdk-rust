@@ -22,8 +22,8 @@ impl BatchSnoozeAlarmInput {
 }
 
 /// A builder for [`BatchSnoozeAlarmInput`](crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchSnoozeAlarmInputBuilder {
     pub(crate) snooze_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>,
 }

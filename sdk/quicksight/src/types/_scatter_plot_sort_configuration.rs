@@ -21,8 +21,8 @@ impl ScatterPlotSortConfiguration {
 }
 
 /// A builder for [`ScatterPlotSortConfiguration`](crate::types::ScatterPlotSortConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScatterPlotSortConfigurationBuilder {
     pub(crate) scatter_plot_limit_configuration: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }

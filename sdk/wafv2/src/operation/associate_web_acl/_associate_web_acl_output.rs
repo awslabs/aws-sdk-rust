@@ -18,8 +18,8 @@ impl AssociateWebAclOutput {
 }
 
 /// A builder for [`AssociateWebAclOutput`](crate::operation::associate_web_acl::AssociateWebAclOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateWebAclOutputBuilder {
     _request_id: Option<String>,
 }

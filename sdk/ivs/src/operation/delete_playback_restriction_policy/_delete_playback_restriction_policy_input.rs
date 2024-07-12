@@ -20,8 +20,8 @@ impl DeletePlaybackRestrictionPolicyInput {
 }
 
 /// A builder for [`DeletePlaybackRestrictionPolicyInput`](crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePlaybackRestrictionPolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

@@ -39,8 +39,8 @@ impl PartialFailure {
 }
 
 /// A builder for [`PartialFailure`](crate::types::PartialFailure).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PartialFailureBuilder {
     pub(crate) failure_resource: ::std::option::Option<::std::string::String>,
     pub(crate) exception_type: ::std::option::Option<::std::string::String>,

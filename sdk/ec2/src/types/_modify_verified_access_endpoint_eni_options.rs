@@ -27,8 +27,8 @@ impl ModifyVerifiedAccessEndpointEniOptions {
 }
 
 /// A builder for [`ModifyVerifiedAccessEndpointEniOptions`](crate::types::ModifyVerifiedAccessEndpointEniOptions).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyVerifiedAccessEndpointEniOptionsBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     pub(crate) port: ::std::option::Option<i32>,

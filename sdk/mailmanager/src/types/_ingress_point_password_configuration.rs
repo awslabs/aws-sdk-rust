@@ -33,8 +33,8 @@ impl IngressPointPasswordConfiguration {
 }
 
 /// A builder for [`IngressPointPasswordConfiguration`](crate::types::IngressPointPasswordConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IngressPointPasswordConfigurationBuilder {
     pub(crate) smtp_password_version: ::std::option::Option<::std::string::String>,
     pub(crate) previous_smtp_password_version: ::std::option::Option<::std::string::String>,

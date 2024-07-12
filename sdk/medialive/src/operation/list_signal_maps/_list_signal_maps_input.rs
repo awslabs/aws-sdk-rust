@@ -39,8 +39,8 @@ impl ListSignalMapsInput {
 }
 
 /// A builder for [`ListSignalMapsInput`](crate::operation::list_signal_maps::ListSignalMapsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSignalMapsInputBuilder {
     pub(crate) cloud_watch_alarm_template_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) event_bridge_rule_template_group_identifier: ::std::option::Option<::std::string::String>,

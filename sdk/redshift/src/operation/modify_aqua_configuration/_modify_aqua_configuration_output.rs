@@ -26,8 +26,8 @@ impl ModifyAquaConfigurationOutput {
 }
 
 /// A builder for [`ModifyAquaConfigurationOutput`](crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyAquaConfigurationOutputBuilder {
     pub(crate) aqua_configuration: ::std::option::Option<crate::types::AquaConfiguration>,
     _request_id: Option<String>,

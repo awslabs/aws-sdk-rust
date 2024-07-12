@@ -104,8 +104,8 @@ impl DeletePackageVersionsInput {
 }
 
 /// A builder for [`DeletePackageVersionsInput`](crate::operation::delete_package_versions::DeletePackageVersionsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeletePackageVersionsInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

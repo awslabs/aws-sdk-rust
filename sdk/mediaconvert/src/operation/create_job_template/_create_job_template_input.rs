@@ -76,8 +76,8 @@ impl CreateJobTemplateInput {
 }
 
 /// A builder for [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateJobTemplateInputBuilder {
     pub(crate) acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     pub(crate) category: ::std::option::Option<::std::string::String>,

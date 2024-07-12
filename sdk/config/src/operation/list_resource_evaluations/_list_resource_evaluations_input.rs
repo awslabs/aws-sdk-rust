@@ -32,8 +32,8 @@ impl ListResourceEvaluationsInput {
 }
 
 /// A builder for [`ListResourceEvaluationsInput`](crate::operation::list_resource_evaluations::ListResourceEvaluationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListResourceEvaluationsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ResourceEvaluationFilters>,
     pub(crate) limit: ::std::option::Option<i32>,

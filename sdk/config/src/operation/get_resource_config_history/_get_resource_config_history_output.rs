@@ -35,8 +35,8 @@ impl GetResourceConfigHistoryOutput {
 }
 
 /// A builder for [`GetResourceConfigHistoryOutput`](crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResourceConfigHistoryOutputBuilder {
     pub(crate) configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -48,8 +48,8 @@ impl ShareDirectoryInput {
 }
 
 /// A builder for [`ShareDirectoryInput`](crate::operation::share_directory::ShareDirectoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ShareDirectoryInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) share_notes: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ListTeamMembersOutput {
 }
 
 /// A builder for [`ListTeamMembersOutput`](crate::operation::list_team_members::ListTeamMembersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTeamMembersOutputBuilder {
     pub(crate) team_members: ::std::option::Option<::std::vec::Vec<crate::types::TeamMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -68,8 +68,8 @@ impl CreateLocationAzureBlobInput {
 }
 
 /// A builder for [`CreateLocationAzureBlobInput`](crate::operation::create_location_azure_blob::CreateLocationAzureBlobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLocationAzureBlobInputBuilder {
     pub(crate) container_url: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::AzureBlobAuthenticationType>,

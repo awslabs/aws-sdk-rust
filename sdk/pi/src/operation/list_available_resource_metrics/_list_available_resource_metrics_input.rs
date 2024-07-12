@@ -66,8 +66,8 @@ impl ListAvailableResourceMetricsInput {
 }
 
 /// A builder for [`ListAvailableResourceMetricsInput`](crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAvailableResourceMetricsInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,

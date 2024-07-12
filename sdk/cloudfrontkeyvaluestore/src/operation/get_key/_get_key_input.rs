@@ -26,8 +26,8 @@ impl GetKeyInput {
 }
 
 /// A builder for [`GetKeyInput`](crate::operation::get_key::GetKeyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetKeyInputBuilder {
     pub(crate) kvs_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,

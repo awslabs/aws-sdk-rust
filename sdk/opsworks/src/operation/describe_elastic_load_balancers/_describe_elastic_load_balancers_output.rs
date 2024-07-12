@@ -29,8 +29,8 @@ impl DescribeElasticLoadBalancersOutput {
 }
 
 /// A builder for [`DescribeElasticLoadBalancersOutput`](crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeElasticLoadBalancersOutputBuilder {
     pub(crate) elastic_load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::ElasticLoadBalancer>>,
     _request_id: Option<String>,

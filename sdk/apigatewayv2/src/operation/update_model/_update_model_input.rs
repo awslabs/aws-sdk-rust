@@ -51,8 +51,8 @@ impl UpdateModelInput {
 }
 
 /// A builder for [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateModelInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl UpdateWorkflowOutput {
 }
 
 /// A builder for [`UpdateWorkflowOutput`](crate::operation::update_workflow::UpdateWorkflowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateWorkflowOutputBuilder {
     _request_id: Option<String>,
 }

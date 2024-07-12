@@ -39,8 +39,8 @@ impl ParallelismConfiguration {
 }
 
 /// A builder for [`ParallelismConfiguration`](crate::types::ParallelismConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ParallelismConfigurationBuilder {
     pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
     pub(crate) parallelism: ::std::option::Option<i32>,

@@ -27,8 +27,8 @@ impl DescribeReceiptRuleOutput {
 }
 
 /// A builder for [`DescribeReceiptRuleOutput`](crate::operation::describe_receipt_rule::DescribeReceiptRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReceiptRuleOutputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::ReceiptRule>,
     _request_id: Option<String>,

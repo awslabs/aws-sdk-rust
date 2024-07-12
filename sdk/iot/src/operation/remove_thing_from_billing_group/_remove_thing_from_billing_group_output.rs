@@ -18,8 +18,8 @@ impl RemoveThingFromBillingGroupOutput {
 }
 
 /// A builder for [`RemoveThingFromBillingGroupOutput`](crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveThingFromBillingGroupOutputBuilder {
     _request_id: Option<String>,
 }

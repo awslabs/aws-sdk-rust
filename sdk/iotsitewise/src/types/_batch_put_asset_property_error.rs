@@ -35,8 +35,8 @@ impl BatchPutAssetPropertyError {
 }
 
 /// A builder for [`BatchPutAssetPropertyError`](crate::types::BatchPutAssetPropertyError).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchPutAssetPropertyErrorBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::BatchPutAssetPropertyValueErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,

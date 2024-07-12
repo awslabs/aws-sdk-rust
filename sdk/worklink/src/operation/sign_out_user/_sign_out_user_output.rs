@@ -18,8 +18,8 @@ impl SignOutUserOutput {
 }
 
 /// A builder for [`SignOutUserOutput`](crate::operation::sign_out_user::SignOutUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SignOutUserOutputBuilder {
     _request_id: Option<String>,
 }

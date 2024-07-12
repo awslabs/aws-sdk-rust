@@ -20,8 +20,8 @@ impl DeleteDecoderManifestInput {
 }
 
 /// A builder for [`DeleteDecoderManifestInput`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteDecoderManifestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

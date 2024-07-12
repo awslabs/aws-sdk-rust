@@ -41,8 +41,8 @@ impl SpekeKeyProvider {
 }
 
 /// A builder for [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SpekeKeyProviderBuilder {
     pub(crate) encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,

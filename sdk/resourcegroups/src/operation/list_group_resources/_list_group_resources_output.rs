@@ -56,8 +56,8 @@ impl ListGroupResourcesOutput {
 }
 
 /// A builder for [`ListGroupResourcesOutput`](crate::operation::list_group_resources::ListGroupResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListGroupResourcesOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ListGroupResourcesItem>>,
     pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,

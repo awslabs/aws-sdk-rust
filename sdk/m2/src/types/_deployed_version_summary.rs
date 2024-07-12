@@ -33,8 +33,8 @@ impl DeployedVersionSummary {
 }
 
 /// A builder for [`DeployedVersionSummary`](crate::types::DeployedVersionSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeployedVersionSummaryBuilder {
     pub(crate) application_version: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::DeploymentLifecycle>,

@@ -32,8 +32,8 @@ impl CreateCidrCollectionOutput {
 }
 
 /// A builder for [`CreateCidrCollectionOutput`](crate::operation::create_cidr_collection::CreateCidrCollectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCidrCollectionOutputBuilder {
     pub(crate) collection: ::std::option::Option<crate::types::CidrCollection>,
     pub(crate) location: ::std::option::Option<::std::string::String>,

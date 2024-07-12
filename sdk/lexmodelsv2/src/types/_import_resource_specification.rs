@@ -39,8 +39,8 @@ impl ImportResourceSpecification {
 }
 
 /// A builder for [`ImportResourceSpecification`](crate::types::ImportResourceSpecification).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportResourceSpecificationBuilder {
     pub(crate) bot_import_specification: ::std::option::Option<crate::types::BotImportSpecification>,
     pub(crate) bot_locale_import_specification: ::std::option::Option<crate::types::BotLocaleImportSpecification>,

@@ -128,8 +128,8 @@ impl CreateHitInput {
 }
 
 /// A builder for [`CreateHitInput`](crate::operation::create_hit::CreateHitInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateHitInputBuilder {
     pub(crate) max_assignments: ::std::option::Option<i32>,
     pub(crate) auto_approval_delay_in_seconds: ::std::option::Option<i64>,

@@ -46,8 +46,8 @@ impl PutOrganizationConfigRuleInput {
 }
 
 /// A builder for [`PutOrganizationConfigRuleInput`](crate::operation::put_organization_config_rule::PutOrganizationConfigRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutOrganizationConfigRuleInputBuilder {
     pub(crate) organization_config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) organization_managed_rule_metadata: ::std::option::Option<crate::types::OrganizationManagedRuleMetadata>,

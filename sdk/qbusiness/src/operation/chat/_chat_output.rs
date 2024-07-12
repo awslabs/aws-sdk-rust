@@ -26,8 +26,8 @@ impl ChatOutput {
 }
 
 /// A builder for [`ChatOutput`](crate::operation::chat::ChatOutput).
-#[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ChatOutputBuilder {
     pub(crate) output_stream:
         ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ChatOutputStream, crate::types::error::ChatOutputStreamError>>,

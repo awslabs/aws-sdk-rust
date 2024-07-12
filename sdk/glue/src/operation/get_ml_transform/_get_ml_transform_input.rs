@@ -20,8 +20,8 @@ impl GetMlTransformInput {
 }
 
 /// A builder for [`GetMlTransformInput`](crate::operation::get_ml_transform::GetMlTransformInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetMlTransformInputBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
 }

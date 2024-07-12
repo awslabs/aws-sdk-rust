@@ -38,8 +38,8 @@ impl AssociateOriginationIdentityInput {
 }
 
 /// A builder for [`AssociateOriginationIdentityInput`](crate::operation::associate_origination_identity::AssociateOriginationIdentityInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateOriginationIdentityInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,

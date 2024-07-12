@@ -21,8 +21,8 @@ impl LaunchTemplatesMonitoringRequest {
 }
 
 /// A builder for [`LaunchTemplatesMonitoringRequest`](crate::types::LaunchTemplatesMonitoringRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LaunchTemplatesMonitoringRequestBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }

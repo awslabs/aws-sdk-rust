@@ -34,8 +34,8 @@ impl CreateGlobalReplicationGroupOutput {
 }
 
 /// A builder for [`CreateGlobalReplicationGroupOutput`](crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateGlobalReplicationGroupOutputBuilder {
     pub(crate) global_replication_group: ::std::option::Option<crate::types::GlobalReplicationGroup>,
     _request_id: Option<String>,

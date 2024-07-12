@@ -26,8 +26,8 @@ impl GetAggregateResourceConfigOutput {
 }
 
 /// A builder for [`GetAggregateResourceConfigOutput`](crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAggregateResourceConfigOutputBuilder {
     pub(crate) configuration_item: ::std::option::Option<crate::types::ConfigurationItem>,
     _request_id: Option<String>,

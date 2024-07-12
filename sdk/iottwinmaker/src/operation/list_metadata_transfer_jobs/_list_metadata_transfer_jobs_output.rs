@@ -33,8 +33,8 @@ impl ListMetadataTransferJobsOutput {
 }
 
 /// A builder for [`ListMetadataTransferJobsOutput`](crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMetadataTransferJobsOutputBuilder {
     pub(crate) metadata_transfer_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MetadataTransferJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

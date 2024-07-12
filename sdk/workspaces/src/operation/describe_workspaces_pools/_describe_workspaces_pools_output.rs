@@ -34,8 +34,8 @@ impl DescribeWorkspacesPoolsOutput {
 }
 
 /// A builder for [`DescribeWorkspacesPoolsOutput`](crate::operation::describe_workspaces_pools::DescribeWorkspacesPoolsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeWorkspacesPoolsOutputBuilder {
     pub(crate) workspaces_pools: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesPool>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl GetRelayInput {
 }
 
 /// A builder for [`GetRelayInput`](crate::operation::get_relay::GetRelayInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRelayInputBuilder {
     pub(crate) relay_id: ::std::option::Option<::std::string::String>,
 }

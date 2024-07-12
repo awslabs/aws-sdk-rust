@@ -63,8 +63,8 @@ impl AwsWafWebAclRule {
 }
 
 /// A builder for [`AwsWafWebAclRule`](crate::types::AwsWafWebAclRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsWafWebAclRuleBuilder {
     pub(crate) action: ::std::option::Option<crate::types::WafAction>,
     pub(crate) excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::WafExcludedRule>>,

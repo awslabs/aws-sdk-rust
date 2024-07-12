@@ -21,8 +21,8 @@ impl WirelessConnection {
 }
 
 /// A builder for [`WirelessConnection`](crate::types::WirelessConnection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WirelessConnectionBuilder {
     pub(crate) is_wifi_enabled: ::std::option::Option<bool>,
 }

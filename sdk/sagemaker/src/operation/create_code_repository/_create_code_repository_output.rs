@@ -26,8 +26,8 @@ impl CreateCodeRepositoryOutput {
 }
 
 /// A builder for [`CreateCodeRepositoryOutput`](crate::operation::create_code_repository::CreateCodeRepositoryOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCodeRepositoryOutputBuilder {
     pub(crate) code_repository_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

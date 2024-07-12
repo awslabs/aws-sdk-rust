@@ -11,8 +11,8 @@ impl ActivateOrganizationsAccessInput {
 }
 
 /// A builder for [`ActivateOrganizationsAccessInput`](crate::operation::activate_organizations_access::ActivateOrganizationsAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActivateOrganizationsAccessInputBuilder {}
 impl ActivateOrganizationsAccessInputBuilder {
     /// Consumes the builder and constructs a [`ActivateOrganizationsAccessInput`](crate::operation::activate_organizations_access::ActivateOrganizationsAccessInput).

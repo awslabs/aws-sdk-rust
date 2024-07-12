@@ -29,8 +29,8 @@ impl EbsConfiguration {
 }
 
 /// A builder for [`EbsConfiguration`](crate::types::EbsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EbsConfigurationBuilder {
     pub(crate) ebs_block_device_configs: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,

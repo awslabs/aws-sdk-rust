@@ -26,8 +26,8 @@ impl AssociateRoleToGroupOutput {
 }
 
 /// A builder for [`AssociateRoleToGroupOutput`](crate::operation::associate_role_to_group::AssociateRoleToGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateRoleToGroupOutputBuilder {
     pub(crate) associated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

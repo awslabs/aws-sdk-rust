@@ -18,8 +18,8 @@ impl EnableClientAuthenticationOutput {
 }
 
 /// A builder for [`EnableClientAuthenticationOutput`](crate::operation::enable_client_authentication::EnableClientAuthenticationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EnableClientAuthenticationOutputBuilder {
     _request_id: Option<String>,
 }

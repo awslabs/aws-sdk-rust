@@ -40,8 +40,8 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
 }
 
 /// A builder for [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RequestCancelExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,

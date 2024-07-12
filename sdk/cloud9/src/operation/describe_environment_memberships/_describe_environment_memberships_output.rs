@@ -34,8 +34,8 @@ impl DescribeEnvironmentMembershipsOutput {
 }
 
 /// A builder for [`DescribeEnvironmentMembershipsOutput`](crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEnvironmentMembershipsOutputBuilder {
     pub(crate) memberships: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

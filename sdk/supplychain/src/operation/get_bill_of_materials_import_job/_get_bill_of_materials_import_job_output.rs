@@ -27,8 +27,8 @@ impl GetBillOfMaterialsImportJobOutput {
 }
 
 /// A builder for [`GetBillOfMaterialsImportJobOutput`](crate::operation::get_bill_of_materials_import_job::GetBillOfMaterialsImportJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetBillOfMaterialsImportJobOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::BillOfMaterialsImportJob>,
     _request_id: Option<String>,

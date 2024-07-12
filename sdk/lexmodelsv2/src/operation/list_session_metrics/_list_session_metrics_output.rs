@@ -42,8 +42,8 @@ impl ListSessionMetricsOutput {
 }
 
 /// A builder for [`ListSessionMetricsOutput`](crate::operation::list_session_metrics::ListSessionMetricsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSessionMetricsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionResult>>,

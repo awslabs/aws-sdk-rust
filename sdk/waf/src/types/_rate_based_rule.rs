@@ -65,8 +65,8 @@ impl RateBasedRule {
 }
 
 /// A builder for [`RateBasedRule`](crate::types::RateBasedRule).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RateBasedRuleBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

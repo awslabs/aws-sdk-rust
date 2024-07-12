@@ -18,8 +18,8 @@ impl AdminDeleteUserOutput {
 }
 
 /// A builder for [`AdminDeleteUserOutput`](crate::operation::admin_delete_user::AdminDeleteUserOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdminDeleteUserOutputBuilder {
     _request_id: Option<String>,
 }

@@ -40,8 +40,8 @@ impl ListUnsupportedAppVersionResourcesOutput {
 }
 
 /// A builder for [`ListUnsupportedAppVersionResourcesOutput`](crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListUnsupportedAppVersionResourcesOutputBuilder {
     pub(crate) unsupported_resources: ::std::option::Option<::std::vec::Vec<crate::types::UnsupportedResource>>,
     pub(crate) resolution_id: ::std::option::Option<::std::string::String>,

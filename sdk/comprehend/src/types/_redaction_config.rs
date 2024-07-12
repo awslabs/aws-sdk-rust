@@ -35,8 +35,8 @@ impl RedactionConfig {
 }
 
 /// A builder for [`RedactionConfig`](crate::types::RedactionConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RedactionConfigBuilder {
     pub(crate) pii_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::PiiEntityType>>,
     pub(crate) mask_mode: ::std::option::Option<crate::types::PiiEntitiesDetectionMaskMode>,

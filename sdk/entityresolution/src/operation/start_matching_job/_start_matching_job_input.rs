@@ -20,8 +20,8 @@ impl StartMatchingJobInput {
 }
 
 /// A builder for [`StartMatchingJobInput`](crate::operation::start_matching_job::StartMatchingJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartMatchingJobInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
 }

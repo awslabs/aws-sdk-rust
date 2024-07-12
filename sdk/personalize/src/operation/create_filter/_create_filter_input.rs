@@ -50,8 +50,8 @@ impl CreateFilterInput {
 }
 
 /// A builder for [`CreateFilterInput`](crate::operation::create_filter::CreateFilterInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct CreateFilterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,

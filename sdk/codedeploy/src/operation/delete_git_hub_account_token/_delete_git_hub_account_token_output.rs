@@ -27,8 +27,8 @@ impl DeleteGitHubAccountTokenOutput {
 }
 
 /// A builder for [`DeleteGitHubAccountTokenOutput`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteGitHubAccountTokenOutputBuilder {
     pub(crate) token_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

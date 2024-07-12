@@ -39,8 +39,8 @@ impl DescribeReplicationGroupsInput {
 }
 
 /// A builder for [`DescribeReplicationGroupsInput`](crate::operation::describe_replication_groups::DescribeReplicationGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeReplicationGroupsInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,

@@ -18,8 +18,8 @@ impl ReleaseAddressOutput {
 }
 
 /// A builder for [`ReleaseAddressOutput`](crate::operation::release_address::ReleaseAddressOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ReleaseAddressOutputBuilder {
     _request_id: Option<String>,
 }

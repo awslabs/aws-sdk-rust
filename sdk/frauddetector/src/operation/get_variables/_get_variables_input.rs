@@ -32,8 +32,8 @@ impl GetVariablesInput {
 }
 
 /// A builder for [`GetVariablesInput`](crate::operation::get_variables::GetVariablesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetVariablesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

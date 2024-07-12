@@ -42,8 +42,8 @@ impl ConnectionQueryStringParameter {
 }
 
 /// A builder for [`ConnectionQueryStringParameter`](crate::types::ConnectionQueryStringParameter).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConnectionQueryStringParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

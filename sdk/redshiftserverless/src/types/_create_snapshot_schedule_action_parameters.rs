@@ -43,8 +43,8 @@ impl CreateSnapshotScheduleActionParameters {
 }
 
 /// A builder for [`CreateSnapshotScheduleActionParameters`](crate::types::CreateSnapshotScheduleActionParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateSnapshotScheduleActionParametersBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_name_prefix: ::std::option::Option<::std::string::String>,

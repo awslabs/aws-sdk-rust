@@ -34,8 +34,8 @@ impl DescribeAppBlockBuildersOutput {
 }
 
 /// A builder for [`DescribeAppBlockBuildersOutput`](crate::operation::describe_app_block_builders::DescribeAppBlockBuildersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAppBlockBuildersOutputBuilder {
     pub(crate) app_block_builders: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilder>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

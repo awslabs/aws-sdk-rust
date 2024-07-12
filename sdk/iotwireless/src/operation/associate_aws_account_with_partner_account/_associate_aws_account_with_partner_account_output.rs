@@ -32,8 +32,8 @@ impl AssociateAwsAccountWithPartnerAccountOutput {
 }
 
 /// A builder for [`AssociateAwsAccountWithPartnerAccountOutput`](crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAwsAccountWithPartnerAccountOutputBuilder {
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkAccountInfo>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

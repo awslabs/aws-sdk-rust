@@ -69,8 +69,8 @@ impl NetworkInterfaceAttachment {
 }
 
 /// A builder for [`NetworkInterfaceAttachment`](crate::types::NetworkInterfaceAttachment).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NetworkInterfaceAttachmentBuilder {
     pub(crate) attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,

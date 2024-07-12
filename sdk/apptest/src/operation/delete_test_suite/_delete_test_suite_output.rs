@@ -18,8 +18,8 @@ impl DeleteTestSuiteOutput {
 }
 
 /// A builder for [`DeleteTestSuiteOutput`](crate::operation::delete_test_suite::DeleteTestSuiteOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTestSuiteOutputBuilder {
     _request_id: Option<String>,
 }

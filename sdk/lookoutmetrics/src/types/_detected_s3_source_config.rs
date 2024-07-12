@@ -21,8 +21,8 @@ impl DetectedS3SourceConfig {
 }
 
 /// A builder for [`DetectedS3SourceConfig`](crate::types::DetectedS3SourceConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DetectedS3SourceConfigBuilder {
     pub(crate) file_format_descriptor: ::std::option::Option<crate::types::DetectedFileFormatDescriptor>,
 }

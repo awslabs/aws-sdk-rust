@@ -22,8 +22,8 @@ impl SecurityProfileTarget {
 }
 
 /// A builder for [`SecurityProfileTarget`](crate::types::SecurityProfileTarget).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SecurityProfileTargetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

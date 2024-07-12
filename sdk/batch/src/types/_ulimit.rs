@@ -35,8 +35,8 @@ impl Ulimit {
 }
 
 /// A builder for [`Ulimit`](crate::types::Ulimit).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UlimitBuilder {
     pub(crate) hard_limit: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl ListFunctionDefinitionsOutput {
 }
 
 /// A builder for [`ListFunctionDefinitionsOutput`](crate::operation::list_function_definitions::ListFunctionDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListFunctionDefinitionsOutputBuilder {
     pub(crate) definitions: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

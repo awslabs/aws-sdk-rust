@@ -38,8 +38,8 @@ impl ListProvisioningArtifactsInput {
 }
 
 /// A builder for [`ListProvisioningArtifactsInput`](crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListProvisioningArtifactsInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,

@@ -99,8 +99,8 @@ impl CreateOpenZfsVolumeConfiguration {
 }
 
 /// A builder for [`CreateOpenZfsVolumeConfiguration`](crate::types::CreateOpenZfsVolumeConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOpenZfsVolumeConfigurationBuilder {
     pub(crate) parent_volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_capacity_reservation_gib: ::std::option::Option<i32>,

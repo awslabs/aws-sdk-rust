@@ -29,8 +29,8 @@ impl DescribeUserProfilesOutput {
 }
 
 /// A builder for [`DescribeUserProfilesOutput`](crate::operation::describe_user_profiles::DescribeUserProfilesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeUserProfilesOutputBuilder {
     pub(crate) user_profiles: ::std::option::Option<::std::vec::Vec<crate::types::UserProfile>>,
     _request_id: Option<String>,

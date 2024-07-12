@@ -36,8 +36,8 @@ impl DescribeAccountPoliciesInput {
 }
 
 /// A builder for [`DescribeAccountPoliciesInput`](crate::operation::describe_account_policies::DescribeAccountPoliciesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAccountPoliciesInputBuilder {
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,

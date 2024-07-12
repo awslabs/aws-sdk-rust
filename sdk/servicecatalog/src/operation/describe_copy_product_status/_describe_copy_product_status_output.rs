@@ -38,8 +38,8 @@ impl DescribeCopyProductStatusOutput {
 }
 
 /// A builder for [`DescribeCopyProductStatusOutput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCopyProductStatusOutputBuilder {
     pub(crate) copy_product_status: ::std::option::Option<crate::types::CopyProductStatus>,
     pub(crate) target_product_id: ::std::option::Option<::std::string::String>,

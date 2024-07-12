@@ -40,8 +40,8 @@ impl GetImpersonationRoleEffectOutput {
 }
 
 /// A builder for [`GetImpersonationRoleEffectOutput`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetImpersonationRoleEffectOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ImpersonationRoleType>,
     pub(crate) effect: ::std::option::Option<crate::types::AccessEffect>,

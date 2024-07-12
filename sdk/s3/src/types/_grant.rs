@@ -27,8 +27,8 @@ impl Grant {
 }
 
 /// A builder for [`Grant`](crate::types::Grant).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GrantBuilder {
     pub(crate) grantee: ::std::option::Option<crate::types::Grantee>,
     pub(crate) permission: ::std::option::Option<crate::types::Permission>,

@@ -27,8 +27,8 @@ impl LiveConnectorSinkConfiguration {
 }
 
 /// A builder for [`LiveConnectorSinkConfiguration`](crate::types::LiveConnectorSinkConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LiveConnectorSinkConfigurationBuilder {
     pub(crate) sink_type: ::std::option::Option<crate::types::LiveConnectorSinkType>,
     pub(crate) rtmp_configuration: ::std::option::Option<crate::types::LiveConnectorRtmpConfiguration>,

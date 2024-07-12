@@ -27,8 +27,8 @@ impl CacheNodeTypeSpecificValue {
 }
 
 /// A builder for [`CacheNodeTypeSpecificValue`](crate::types::CacheNodeTypeSpecificValue).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CacheNodeTypeSpecificValueBuilder {
     pub(crate) cache_node_type: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

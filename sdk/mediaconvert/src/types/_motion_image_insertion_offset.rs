@@ -27,8 +27,8 @@ impl MotionImageInsertionOffset {
 }
 
 /// A builder for [`MotionImageInsertionOffset`](crate::types::MotionImageInsertionOffset).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MotionImageInsertionOffsetBuilder {
     pub(crate) image_x: ::std::option::Option<i32>,
     pub(crate) image_y: ::std::option::Option<i32>,

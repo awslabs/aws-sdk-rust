@@ -23,8 +23,8 @@ impl AwsApiCallActionDomainDetails {
 }
 
 /// A builder for [`AwsApiCallActionDomainDetails`](crate::types::AwsApiCallActionDomainDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsApiCallActionDomainDetailsBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }

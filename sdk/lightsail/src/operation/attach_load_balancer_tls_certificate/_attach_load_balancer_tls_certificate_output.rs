@@ -30,8 +30,8 @@ impl AttachLoadBalancerTlsCertificateOutput {
 }
 
 /// A builder for [`AttachLoadBalancerTlsCertificateOutput`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachLoadBalancerTlsCertificateOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     _request_id: Option<String>,

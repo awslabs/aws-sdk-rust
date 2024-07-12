@@ -34,8 +34,8 @@ impl DescribeEgressOnlyInternetGatewaysOutput {
 }
 
 /// A builder for [`DescribeEgressOnlyInternetGatewaysOutput`](crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEgressOnlyInternetGatewaysOutputBuilder {
     pub(crate) egress_only_internet_gateways: ::std::option::Option<::std::vec::Vec<crate::types::EgressOnlyInternetGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

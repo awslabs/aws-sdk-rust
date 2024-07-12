@@ -18,8 +18,8 @@ impl DeprecateSystemTemplateOutput {
 }
 
 /// A builder for [`DeprecateSystemTemplateOutput`](crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeprecateSystemTemplateOutputBuilder {
     _request_id: Option<String>,
 }

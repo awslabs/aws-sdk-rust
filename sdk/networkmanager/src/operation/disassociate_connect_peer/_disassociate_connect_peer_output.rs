@@ -26,8 +26,8 @@ impl DisassociateConnectPeerOutput {
 }
 
 /// A builder for [`DisassociateConnectPeerOutput`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateConnectPeerOutputBuilder {
     pub(crate) connect_peer_association: ::std::option::Option<crate::types::ConnectPeerAssociation>,
     _request_id: Option<String>,

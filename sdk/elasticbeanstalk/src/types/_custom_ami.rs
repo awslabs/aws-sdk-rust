@@ -27,8 +27,8 @@ impl CustomAmi {
 }
 
 /// A builder for [`CustomAmi`](crate::types::CustomAmi).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CustomAmiBuilder {
     pub(crate) virtualization_type: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,

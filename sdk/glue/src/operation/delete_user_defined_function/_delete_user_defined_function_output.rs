@@ -18,8 +18,8 @@ impl DeleteUserDefinedFunctionOutput {
 }
 
 /// A builder for [`DeleteUserDefinedFunctionOutput`](crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteUserDefinedFunctionOutputBuilder {
     _request_id: Option<String>,
 }

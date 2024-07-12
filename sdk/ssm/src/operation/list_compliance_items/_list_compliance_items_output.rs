@@ -34,8 +34,8 @@ impl ListComplianceItemsOutput {
 }
 
 /// A builder for [`ListComplianceItemsOutput`](crate::operation::list_compliance_items::ListComplianceItemsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListComplianceItemsOutputBuilder {
     pub(crate) compliance_items: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

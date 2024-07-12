@@ -18,8 +18,8 @@ impl CancelLegalHoldOutput {
 }
 
 /// A builder for [`CancelLegalHoldOutput`](crate::operation::cancel_legal_hold::CancelLegalHoldOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CancelLegalHoldOutputBuilder {
     _request_id: Option<String>,
 }

@@ -61,8 +61,8 @@ impl ExecuteChangeSetInput {
 }
 
 /// A builder for [`ExecuteChangeSetInput`](crate::operation::execute_change_set::ExecuteChangeSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ExecuteChangeSetInputBuilder {
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,

@@ -116,8 +116,8 @@ impl GetEventDataStoreOutput {
 }
 
 /// A builder for [`GetEventDataStoreOutput`](crate::operation::get_event_data_store::GetEventDataStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEventDataStoreOutputBuilder {
     pub(crate) event_data_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

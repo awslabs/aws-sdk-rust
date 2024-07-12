@@ -26,8 +26,8 @@ impl GetSpeechSynthesisTaskOutput {
 }
 
 /// A builder for [`GetSpeechSynthesisTaskOutput`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSpeechSynthesisTaskOutputBuilder {
     pub(crate) synthesis_task: ::std::option::Option<crate::types::SynthesisTask>,
     _request_id: Option<String>,

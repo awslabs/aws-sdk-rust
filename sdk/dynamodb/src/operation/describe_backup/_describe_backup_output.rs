@@ -26,8 +26,8 @@ impl DescribeBackupOutput {
 }
 
 /// A builder for [`DescribeBackupOutput`](crate::operation::describe_backup::DescribeBackupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeBackupOutputBuilder {
     pub(crate) backup_description: ::std::option::Option<crate::types::BackupDescription>,
     _request_id: Option<String>,

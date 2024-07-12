@@ -47,8 +47,8 @@ impl DescribeClusterParametersInput {
 }
 
 /// A builder for [`DescribeClusterParametersInput`](crate::operation::describe_cluster_parameters::DescribeClusterParametersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeClusterParametersInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,

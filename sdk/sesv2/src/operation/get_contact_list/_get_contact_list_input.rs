@@ -20,8 +20,8 @@ impl GetContactListInput {
 }
 
 /// A builder for [`GetContactListInput`](crate::operation::get_contact_list::GetContactListInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContactListInputBuilder {
     pub(crate) contact_list_name: ::std::option::Option<::std::string::String>,
 }

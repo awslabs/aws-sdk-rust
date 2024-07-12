@@ -32,8 +32,8 @@ impl CreateResourcePolicyStatementOutput {
 }
 
 /// A builder for [`CreateResourcePolicyStatementOutput`](crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateResourcePolicyStatementOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,

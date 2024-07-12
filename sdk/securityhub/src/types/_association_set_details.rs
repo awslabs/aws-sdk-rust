@@ -51,8 +51,8 @@ impl AssociationSetDetails {
 }
 
 /// A builder for [`AssociationSetDetails`](crate::types::AssociationSetDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociationSetDetailsBuilder {
     pub(crate) association_state: ::std::option::Option<crate::types::AssociationStateDetails>,
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,

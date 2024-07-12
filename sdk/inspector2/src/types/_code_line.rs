@@ -28,8 +28,8 @@ impl CodeLine {
 }
 
 /// A builder for [`CodeLine`](crate::types::CodeLine).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeLineBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) line_number: ::std::option::Option<i32>,

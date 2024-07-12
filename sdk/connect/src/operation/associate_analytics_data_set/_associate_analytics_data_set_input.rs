@@ -32,8 +32,8 @@ impl AssociateAnalyticsDataSetInput {
 }
 
 /// A builder for [`AssociateAnalyticsDataSetInput`](crate::operation::associate_analytics_data_set::AssociateAnalyticsDataSetInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateAnalyticsDataSetInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,

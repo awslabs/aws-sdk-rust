@@ -33,8 +33,8 @@ impl UpdateElasticsearchDomainConfigOutput {
 }
 
 /// A builder for [`UpdateElasticsearchDomainConfigOutput`](crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateElasticsearchDomainConfigOutputBuilder {
     pub(crate) domain_config: ::std::option::Option<crate::types::ElasticsearchDomainConfig>,
     pub(crate) dry_run_results: ::std::option::Option<crate::types::DryRunResults>,

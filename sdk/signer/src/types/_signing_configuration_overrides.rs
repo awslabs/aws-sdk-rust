@@ -27,8 +27,8 @@ impl SigningConfigurationOverrides {
 }
 
 /// A builder for [`SigningConfigurationOverrides`](crate::types::SigningConfigurationOverrides).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SigningConfigurationOverridesBuilder {
     pub(crate) encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithm>,
     pub(crate) hash_algorithm: ::std::option::Option<crate::types::HashAlgorithm>,

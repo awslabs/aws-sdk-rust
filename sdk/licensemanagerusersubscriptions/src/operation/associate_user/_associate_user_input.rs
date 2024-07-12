@@ -38,8 +38,8 @@ impl AssociateUserInput {
 }
 
 /// A builder for [`AssociateUserInput`](crate::operation::associate_user::AssociateUserInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssociateUserInputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,

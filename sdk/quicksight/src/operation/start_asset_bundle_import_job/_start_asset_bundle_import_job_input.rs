@@ -66,8 +66,8 @@ impl StartAssetBundleImportJobInput {
 }
 
 /// A builder for [`StartAssetBundleImportJobInput`](crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartAssetBundleImportJobInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_bundle_import_job_id: ::std::option::Option<::std::string::String>,

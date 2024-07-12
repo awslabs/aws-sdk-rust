@@ -26,8 +26,8 @@ impl DescribeAnalysisDefinitionInput {
 }
 
 /// A builder for [`DescribeAnalysisDefinitionInput`](crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeAnalysisDefinitionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,

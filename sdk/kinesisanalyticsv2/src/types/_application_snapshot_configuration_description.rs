@@ -21,8 +21,8 @@ impl ApplicationSnapshotConfigurationDescription {
 }
 
 /// A builder for [`ApplicationSnapshotConfigurationDescription`](crate::types::ApplicationSnapshotConfigurationDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApplicationSnapshotConfigurationDescriptionBuilder {
     pub(crate) snapshots_enabled: ::std::option::Option<bool>,
 }

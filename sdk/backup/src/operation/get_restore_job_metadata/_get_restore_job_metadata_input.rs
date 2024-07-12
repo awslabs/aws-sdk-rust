@@ -20,8 +20,8 @@ impl GetRestoreJobMetadataInput {
 }
 
 /// A builder for [`GetRestoreJobMetadataInput`](crate::operation::get_restore_job_metadata::GetRestoreJobMetadataInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRestoreJobMetadataInputBuilder {
     pub(crate) restore_job_id: ::std::option::Option<::std::string::String>,
 }

@@ -84,8 +84,8 @@ impl DescribeCodeCoveragesInput {
 }
 
 /// A builder for [`DescribeCodeCoveragesInput`](crate::operation::describe_code_coverages::DescribeCodeCoveragesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeCodeCoveragesInputBuilder {
     pub(crate) report_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

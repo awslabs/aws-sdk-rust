@@ -59,8 +59,8 @@ impl BrowserSettings {
 }
 
 /// A builder for [`BrowserSettings`](crate::types::BrowserSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct BrowserSettingsBuilder {
     pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

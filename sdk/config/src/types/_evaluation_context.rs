@@ -21,8 +21,8 @@ impl EvaluationContext {
 }
 
 /// A builder for [`EvaluationContext`](crate::types::EvaluationContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluationContextBuilder {
     pub(crate) evaluation_context_identifier: ::std::option::Option<::std::string::String>,
 }

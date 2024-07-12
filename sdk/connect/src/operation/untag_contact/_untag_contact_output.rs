@@ -18,8 +18,8 @@ impl UntagContactOutput {
 }
 
 /// A builder for [`UntagContactOutput`](crate::operation::untag_contact::UntagContactOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UntagContactOutputBuilder {
     _request_id: Option<String>,
 }

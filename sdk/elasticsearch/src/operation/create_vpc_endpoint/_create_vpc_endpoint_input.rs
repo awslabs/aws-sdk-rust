@@ -33,8 +33,8 @@ impl CreateVpcEndpointInput {
 }
 
 /// A builder for [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateVpcEndpointInputBuilder {
     pub(crate) domain_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_options: ::std::option::Option<crate::types::VpcOptions>,

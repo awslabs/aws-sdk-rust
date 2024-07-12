@@ -18,8 +18,8 @@ impl UpdateSecurityHubConfigurationOutput {
 }
 
 /// A builder for [`UpdateSecurityHubConfigurationOutput`](crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSecurityHubConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

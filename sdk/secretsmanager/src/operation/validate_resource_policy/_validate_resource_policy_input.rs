@@ -26,8 +26,8 @@ impl ValidateResourcePolicyInput {
 }
 
 /// A builder for [`ValidateResourcePolicyInput`](crate::operation::validate_resource_policy::ValidateResourcePolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ValidateResourcePolicyInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_policy: ::std::option::Option<::std::string::String>,

@@ -26,8 +26,8 @@ impl ModifyIpamResourceCidrOutput {
 }
 
 /// A builder for [`ModifyIpamResourceCidrOutput`](crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyIpamResourceCidrOutputBuilder {
     pub(crate) ipam_resource_cidr: ::std::option::Option<crate::types::IpamResourceCidr>,
     _request_id: Option<String>,

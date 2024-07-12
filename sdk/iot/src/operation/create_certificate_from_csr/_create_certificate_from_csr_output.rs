@@ -39,8 +39,8 @@ impl CreateCertificateFromCsrOutput {
 }
 
 /// A builder for [`CreateCertificateFromCsrOutput`](crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCertificateFromCsrOutputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,

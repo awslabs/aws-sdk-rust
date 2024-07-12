@@ -39,8 +39,8 @@ impl MonitoringConfiguration {
 }
 
 /// A builder for [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MonitoringConfigurationBuilder {
     pub(crate) s3_monitoring_configuration: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
     pub(crate) managed_persistence_monitoring_configuration: ::std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,

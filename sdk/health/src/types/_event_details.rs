@@ -33,8 +33,8 @@ impl EventDetails {
 }
 
 /// A builder for [`EventDetails`](crate::types::EventDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EventDetailsBuilder {
     pub(crate) event: ::std::option::Option<crate::types::Event>,
     pub(crate) event_description: ::std::option::Option<crate::types::EventDescription>,

@@ -20,8 +20,8 @@ impl CreateTokenInput {
 }
 
 /// A builder for [`CreateTokenInput`](crate::operation::create_token::CreateTokenInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateTokenInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
 }

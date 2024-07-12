@@ -20,8 +20,8 @@ impl DeleteBackupVaultInput {
 }
 
 /// A builder for [`DeleteBackupVaultInput`](crate::operation::delete_backup_vault::DeleteBackupVaultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteBackupVaultInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
 }

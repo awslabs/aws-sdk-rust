@@ -103,8 +103,8 @@ impl CaptionFormat {
 }
 
 /// A builder for [`CaptionFormat`](crate::types::CaptionFormat).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CaptionFormatBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) pattern: ::std::option::Option<::std::string::String>,

@@ -94,8 +94,8 @@ impl AttributeValueUpdate {
 }
 
 /// A builder for [`AttributeValueUpdate`](crate::types::AttributeValueUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttributeValueUpdateBuilder {
     pub(crate) value: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) action: ::std::option::Option<crate::types::AttributeAction>,

@@ -23,8 +23,8 @@ impl ActionDefinition {
 }
 
 /// A builder for [`ActionDefinition`](crate::types::ActionDefinition).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ActionDefinitionBuilder {
     pub(crate) publish_metric_action: ::std::option::Option<crate::types::PublishMetricAction>,
 }

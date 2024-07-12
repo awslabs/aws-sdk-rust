@@ -36,8 +36,8 @@ impl CreateParticipantConnectionInput {
 }
 
 /// A builder for [`CreateParticipantConnectionInput`](crate::operation::create_participant_connection::CreateParticipantConnectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateParticipantConnectionInputBuilder {
     pub(crate) r#type: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>>,
     pub(crate) participant_token: ::std::option::Option<::std::string::String>,

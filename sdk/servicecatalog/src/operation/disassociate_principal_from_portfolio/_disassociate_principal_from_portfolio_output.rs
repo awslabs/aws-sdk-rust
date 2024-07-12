@@ -18,8 +18,8 @@ impl DisassociatePrincipalFromPortfolioOutput {
 }
 
 /// A builder for [`DisassociatePrincipalFromPortfolioOutput`](crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociatePrincipalFromPortfolioOutputBuilder {
     _request_id: Option<String>,
 }

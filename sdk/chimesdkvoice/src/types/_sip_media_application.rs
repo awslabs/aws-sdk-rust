@@ -59,8 +59,8 @@ impl SipMediaApplication {
 }
 
 /// A builder for [`SipMediaApplication`](crate::types::SipMediaApplication).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SipMediaApplicationBuilder {
     pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,

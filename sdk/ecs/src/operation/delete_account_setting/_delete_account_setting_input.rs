@@ -26,8 +26,8 @@ impl DeleteAccountSettingInput {
 }
 
 /// A builder for [`DeleteAccountSettingInput`](crate::operation::delete_account_setting::DeleteAccountSettingInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteAccountSettingInputBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SettingName>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,

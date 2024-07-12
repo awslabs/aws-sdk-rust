@@ -18,8 +18,8 @@ impl UpdateStandardsControlOutput {
 }
 
 /// A builder for [`UpdateStandardsControlOutput`](crate::operation::update_standards_control::UpdateStandardsControlOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStandardsControlOutputBuilder {
     _request_id: Option<String>,
 }

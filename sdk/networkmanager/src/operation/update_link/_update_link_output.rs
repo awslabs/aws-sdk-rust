@@ -26,8 +26,8 @@ impl UpdateLinkOutput {
 }
 
 /// A builder for [`UpdateLinkOutput`](crate::operation::update_link::UpdateLinkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateLinkOutputBuilder {
     pub(crate) link: ::std::option::Option<crate::types::Link>,
     _request_id: Option<String>,

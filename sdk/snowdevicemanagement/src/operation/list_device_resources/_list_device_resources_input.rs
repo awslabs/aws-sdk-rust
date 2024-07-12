@@ -38,8 +38,8 @@ impl ListDeviceResourcesInput {
 }
 
 /// A builder for [`ListDeviceResourcesInput`](crate::operation::list_device_resources::ListDeviceResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDeviceResourcesInputBuilder {
     pub(crate) managed_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

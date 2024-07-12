@@ -126,8 +126,8 @@ impl CreateCanaryInput {
 }
 
 /// A builder for [`CreateCanaryInput`](crate::operation::create_canary::CreateCanaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateCanaryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<crate::types::CanaryCodeInput>,

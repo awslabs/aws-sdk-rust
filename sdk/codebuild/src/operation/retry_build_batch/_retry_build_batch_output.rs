@@ -26,8 +26,8 @@ impl RetryBuildBatchOutput {
 }
 
 /// A builder for [`RetryBuildBatchOutput`](crate::operation::retry_build_batch::RetryBuildBatchOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RetryBuildBatchOutputBuilder {
     pub(crate) build_batch: ::std::option::Option<crate::types::BuildBatch>,
     _request_id: Option<String>,

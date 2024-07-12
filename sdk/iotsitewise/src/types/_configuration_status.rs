@@ -27,8 +27,8 @@ impl ConfigurationStatus {
 }
 
 /// A builder for [`ConfigurationStatus`](crate::types::ConfigurationStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigurationStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ConfigurationState>,
     pub(crate) error: ::std::option::Option<crate::types::ConfigurationErrorDetails>,

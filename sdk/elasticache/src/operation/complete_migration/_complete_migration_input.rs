@@ -26,8 +26,8 @@ impl CompleteMigrationInput {
 }
 
 /// A builder for [`CompleteMigrationInput`](crate::operation::complete_migration::CompleteMigrationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CompleteMigrationInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,

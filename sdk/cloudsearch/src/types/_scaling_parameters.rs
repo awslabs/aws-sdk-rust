@@ -33,8 +33,8 @@ impl ScalingParameters {
 }
 
 /// A builder for [`ScalingParameters`](crate::types::ScalingParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScalingParametersBuilder {
     pub(crate) desired_instance_type: ::std::option::Option<crate::types::PartitionInstanceType>,
     pub(crate) desired_replication_count: ::std::option::Option<i32>,

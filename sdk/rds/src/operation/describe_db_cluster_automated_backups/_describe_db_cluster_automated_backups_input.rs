@@ -74,8 +74,8 @@ impl DescribeDbClusterAutomatedBackupsInput {
 }
 
 /// A builder for [`DescribeDbClusterAutomatedBackupsInput`](crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDbClusterAutomatedBackupsInputBuilder {
     pub(crate) db_cluster_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,

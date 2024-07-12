@@ -120,8 +120,8 @@ impl ImportApiOutput {
 }
 
 /// A builder for [`ImportApiOutput`](crate::operation::import_api::ImportApiOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ImportApiOutputBuilder {
     pub(crate) api_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) api_gateway_managed: ::std::option::Option<bool>,

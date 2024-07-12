@@ -27,8 +27,8 @@ impl DescribeMultiRegionAccessPointOperationInput {
 }
 
 /// A builder for [`DescribeMultiRegionAccessPointOperationInput`](crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeMultiRegionAccessPointOperationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_token_arn: ::std::option::Option<::std::string::String>,

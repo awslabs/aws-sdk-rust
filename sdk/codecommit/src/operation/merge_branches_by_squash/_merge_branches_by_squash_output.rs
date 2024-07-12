@@ -32,8 +32,8 @@ impl MergeBranchesBySquashOutput {
 }
 
 /// A builder for [`MergeBranchesBySquashOutput`](crate::operation::merge_branches_by_squash::MergeBranchesBySquashOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MergeBranchesBySquashOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) tree_id: ::std::option::Option<::std::string::String>,

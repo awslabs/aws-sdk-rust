@@ -34,8 +34,8 @@ impl DescribeDirectConnectGatewayAssociationProposalsOutput {
 }
 
 /// A builder for [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeDirectConnectGatewayAssociationProposalsOutputBuilder {
     pub(crate) direct_connect_gateway_association_proposals:
         ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAssociationProposal>>,

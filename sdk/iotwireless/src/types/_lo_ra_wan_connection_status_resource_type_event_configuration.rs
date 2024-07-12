@@ -21,8 +21,8 @@ impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
 }
 
 /// A builder for [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoRaWanConnectionStatusResourceTypeEventConfigurationBuilder {
     pub(crate) wireless_gateway_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }

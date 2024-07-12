@@ -12,8 +12,8 @@ impl TranslationPinDataIsoFormat1 {
 }
 
 /// A builder for [`TranslationPinDataIsoFormat1`](crate::types::TranslationPinDataIsoFormat1).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TranslationPinDataIsoFormat1Builder {}
 impl TranslationPinDataIsoFormat1Builder {
     /// Consumes the builder and constructs a [`TranslationPinDataIsoFormat1`](crate::types::TranslationPinDataIsoFormat1).

@@ -35,8 +35,8 @@ impl DailyVolume {
 }
 
 /// A builder for [`DailyVolume`](crate::types::DailyVolume).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DailyVolumeBuilder {
     pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) volume_statistics: ::std::option::Option<crate::types::VolumeStatistics>,

@@ -18,8 +18,8 @@ impl AttachElasticLoadBalancerOutput {
 }
 
 /// A builder for [`AttachElasticLoadBalancerOutput`](crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AttachElasticLoadBalancerOutputBuilder {
     _request_id: Option<String>,
 }

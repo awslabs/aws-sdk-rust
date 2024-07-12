@@ -40,8 +40,8 @@ impl UpdateStateMachineOutput {
 }
 
 /// A builder for [`UpdateStateMachineOutput`](crate::operation::update_state_machine::UpdateStateMachineOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStateMachineOutputBuilder {
     pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,

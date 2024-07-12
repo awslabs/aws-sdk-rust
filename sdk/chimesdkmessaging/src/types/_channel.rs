@@ -105,8 +105,8 @@ impl Channel {
 }
 
 /// A builder for [`Channel`](crate::types::Channel).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ChannelBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,

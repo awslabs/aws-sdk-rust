@@ -26,8 +26,8 @@ impl GetDirectoryRegistrationOutput {
 }
 
 /// A builder for [`GetDirectoryRegistrationOutput`](crate::operation::get_directory_registration::GetDirectoryRegistrationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDirectoryRegistrationOutputBuilder {
     pub(crate) directory_registration: ::std::option::Option<crate::types::DirectoryRegistration>,
     _request_id: Option<String>,

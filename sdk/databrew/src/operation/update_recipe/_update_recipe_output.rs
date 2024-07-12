@@ -27,8 +27,8 @@ impl UpdateRecipeOutput {
 }
 
 /// A builder for [`UpdateRecipeOutput`](crate::operation::update_recipe::UpdateRecipeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateRecipeOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

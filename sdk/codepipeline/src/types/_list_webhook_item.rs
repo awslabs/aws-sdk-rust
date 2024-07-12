@@ -60,8 +60,8 @@ impl ListWebhookItem {
 }
 
 /// A builder for [`ListWebhookItem`](crate::types::ListWebhookItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListWebhookItemBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::WebhookDefinition>,
     pub(crate) url: ::std::option::Option<::std::string::String>,

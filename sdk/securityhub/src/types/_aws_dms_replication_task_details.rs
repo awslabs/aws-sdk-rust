@@ -93,8 +93,8 @@ impl AwsDmsReplicationTaskDetails {
 }
 
 /// A builder for [`AwsDmsReplicationTaskDetails`](crate::types::AwsDmsReplicationTaskDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsDmsReplicationTaskDetailsBuilder {
     pub(crate) cdc_start_position: ::std::option::Option<::std::string::String>,
     pub(crate) cdc_start_time: ::std::option::Option<::std::string::String>,

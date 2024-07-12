@@ -45,8 +45,8 @@ impl SourceConfiguration {
 }
 
 /// A builder for [`SourceConfiguration`](crate::types::SourceConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SourceConfigurationBuilder {
     pub(crate) code_repository: ::std::option::Option<crate::types::CodeRepository>,
     pub(crate) image_repository: ::std::option::Option<crate::types::ImageRepository>,

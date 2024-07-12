@@ -42,8 +42,8 @@ impl AddThingToBillingGroupInput {
 }
 
 /// A builder for [`AddThingToBillingGroupInput`](crate::operation::add_thing_to_billing_group::AddThingToBillingGroupInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddThingToBillingGroupInputBuilder {
     pub(crate) billing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) billing_group_arn: ::std::option::Option<::std::string::String>,

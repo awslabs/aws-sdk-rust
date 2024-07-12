@@ -20,8 +20,8 @@ impl GetPublicKeyCertificateInput {
 }
 
 /// A builder for [`GetPublicKeyCertificateInput`](crate::operation::get_public_key_certificate::GetPublicKeyCertificateInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPublicKeyCertificateInputBuilder {
     pub(crate) key_identifier: ::std::option::Option<::std::string::String>,
 }

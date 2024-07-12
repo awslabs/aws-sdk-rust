@@ -34,8 +34,8 @@ impl ListSafetyRulesOutput {
 }
 
 /// A builder for [`ListSafetyRulesOutput`](crate::operation::list_safety_rules::ListSafetyRulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSafetyRulesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) safety_rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,

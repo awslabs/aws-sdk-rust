@@ -34,8 +34,8 @@ impl MacAlgorithmDukpt {
 }
 
 /// A builder for [`MacAlgorithmDukpt`](crate::types::MacAlgorithmDukpt).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MacAlgorithmDukptBuilder {
     pub(crate) key_serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) dukpt_key_variant: ::std::option::Option<crate::types::DukptKeyVariant>,

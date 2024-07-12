@@ -49,8 +49,8 @@ impl ResourceProfileArtifact {
 }
 
 /// A builder for [`ResourceProfileArtifact`](crate::types::ResourceProfileArtifact).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResourceProfileArtifactBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) classification_result_status: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl FollowUpPrompt {
 }
 
 /// A builder for [`FollowUpPrompt`](crate::types::FollowUpPrompt).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FollowUpPromptBuilder {
     pub(crate) prompt: ::std::option::Option<crate::types::Prompt>,
     pub(crate) rejection_statement: ::std::option::Option<crate::types::Statement>,

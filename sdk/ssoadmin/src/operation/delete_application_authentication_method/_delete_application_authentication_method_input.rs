@@ -26,8 +26,8 @@ impl DeleteApplicationAuthenticationMethodInput {
 }
 
 /// A builder for [`DeleteApplicationAuthenticationMethodInput`](crate::operation::delete_application_authentication_method::DeleteApplicationAuthenticationMethodInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationAuthenticationMethodInputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_method_type: ::std::option::Option<crate::types::AuthenticationMethodType>,

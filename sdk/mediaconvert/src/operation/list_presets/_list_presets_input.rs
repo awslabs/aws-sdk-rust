@@ -44,8 +44,8 @@ impl ListPresetsInput {
 }
 
 /// A builder for [`ListPresetsInput`](crate::operation::list_presets::ListPresetsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPresetsInputBuilder {
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) list_by: ::std::option::Option<crate::types::PresetListBy>,

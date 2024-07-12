@@ -41,8 +41,8 @@ impl StartNetworkInsightsAccessScopeAnalysisInput {
 }
 
 /// A builder for [`StartNetworkInsightsAccessScopeAnalysisInput`](crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartNetworkInsightsAccessScopeAnalysisInputBuilder {
     pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,

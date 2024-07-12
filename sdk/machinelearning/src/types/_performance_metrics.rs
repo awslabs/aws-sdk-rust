@@ -30,8 +30,8 @@ impl PerformanceMetrics {
 }
 
 /// A builder for [`PerformanceMetrics`](crate::types::PerformanceMetrics).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PerformanceMetricsBuilder {
     pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }

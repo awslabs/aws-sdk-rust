@@ -34,8 +34,8 @@ impl ListCreateAccountStatusInput {
 }
 
 /// A builder for [`ListCreateAccountStatusInput`](crate::operation::list_create_account_status::ListCreateAccountStatusInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListCreateAccountStatusInputBuilder {
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

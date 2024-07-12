@@ -27,8 +27,8 @@ impl RobotSoftwareSuite {
 }
 
 /// A builder for [`RobotSoftwareSuite`](crate::types::RobotSoftwareSuite).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RobotSoftwareSuiteBuilder {
     pub(crate) name: ::std::option::Option<crate::types::RobotSoftwareSuiteType>,
     pub(crate) version: ::std::option::Option<crate::types::RobotSoftwareSuiteVersionType>,

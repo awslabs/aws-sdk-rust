@@ -34,8 +34,8 @@ impl ListMatchingWorkflowsOutput {
 }
 
 /// A builder for [`ListMatchingWorkflowsOutput`](crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMatchingWorkflowsOutputBuilder {
     pub(crate) workflow_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

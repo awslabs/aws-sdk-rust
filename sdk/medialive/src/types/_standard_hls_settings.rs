@@ -27,8 +27,8 @@ impl StandardHlsSettings {
 }
 
 /// A builder for [`StandardHlsSettings`](crate::types::StandardHlsSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StandardHlsSettingsBuilder {
     pub(crate) audio_rendition_sets: ::std::option::Option<::std::string::String>,
     pub(crate) m3u8_settings: ::std::option::Option<crate::types::M3u8Settings>,

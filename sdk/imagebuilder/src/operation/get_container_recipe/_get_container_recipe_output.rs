@@ -32,8 +32,8 @@ impl GetContainerRecipeOutput {
 }
 
 /// A builder for [`GetContainerRecipeOutput`](crate::operation::get_container_recipe::GetContainerRecipeOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetContainerRecipeOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) container_recipe: ::std::option::Option<crate::types::ContainerRecipe>,

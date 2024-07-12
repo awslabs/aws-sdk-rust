@@ -32,8 +32,8 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
 }
 
 /// A builder for [`BatchAssociateApprovalRuleTemplateWithRepositoriesInput`](crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesInputBuilder {
     pub(crate) approval_rule_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

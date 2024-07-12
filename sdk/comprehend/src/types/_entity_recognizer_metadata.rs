@@ -51,8 +51,8 @@ impl EntityRecognizerMetadata {
 }
 
 /// A builder for [`EntityRecognizerMetadata`](crate::types::EntityRecognizerMetadata).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct EntityRecognizerMetadataBuilder {
     pub(crate) number_of_trained_documents: ::std::option::Option<i32>,
     pub(crate) number_of_test_documents: ::std::option::Option<i32>,

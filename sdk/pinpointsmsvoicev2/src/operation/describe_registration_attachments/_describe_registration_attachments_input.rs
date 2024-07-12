@@ -42,8 +42,8 @@ impl DescribeRegistrationAttachmentsInput {
 }
 
 /// A builder for [`DescribeRegistrationAttachmentsInput`](crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRegistrationAttachmentsInputBuilder {
     pub(crate) registration_attachment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentFilter>>,

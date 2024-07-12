@@ -35,8 +35,8 @@ impl ListExportJobsOutput {
 }
 
 /// A builder for [`ListExportJobsOutput`](crate::operation::list_export_jobs::ListExportJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListExportJobsOutputBuilder {
     pub(crate) export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ExportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

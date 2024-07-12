@@ -21,8 +21,8 @@ impl MultiplexSettingsSummary {
 }
 
 /// A builder for [`MultiplexSettingsSummary`](crate::types::MultiplexSettingsSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MultiplexSettingsSummaryBuilder {
     pub(crate) transport_stream_bitrate: ::std::option::Option<i32>,
 }

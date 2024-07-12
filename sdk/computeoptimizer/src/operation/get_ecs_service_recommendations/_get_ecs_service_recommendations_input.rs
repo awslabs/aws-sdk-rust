@@ -60,8 +60,8 @@ impl GetEcsServiceRecommendationsInput {
 }
 
 /// A builder for [`GetEcsServiceRecommendationsInput`](crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetEcsServiceRecommendationsInputBuilder {
     pub(crate) service_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

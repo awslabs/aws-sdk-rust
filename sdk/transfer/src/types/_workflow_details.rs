@@ -37,8 +37,8 @@ impl WorkflowDetails {
 }
 
 /// A builder for [`WorkflowDetails`](crate::types::WorkflowDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct WorkflowDetailsBuilder {
     pub(crate) on_upload: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowDetail>>,
     pub(crate) on_partial_upload: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowDetail>>,

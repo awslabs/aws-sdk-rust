@@ -39,8 +39,8 @@ impl DescribeEnvironmentManagedActionHistoryInput {
 }
 
 /// A builder for [`DescribeEnvironmentManagedActionHistoryInput`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeEnvironmentManagedActionHistoryInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,

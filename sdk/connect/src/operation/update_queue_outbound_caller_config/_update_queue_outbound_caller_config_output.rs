@@ -18,8 +18,8 @@ impl UpdateQueueOutboundCallerConfigOutput {
 }
 
 /// A builder for [`UpdateQueueOutboundCallerConfigOutput`](crate::operation::update_queue_outbound_caller_config::UpdateQueueOutboundCallerConfigOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateQueueOutboundCallerConfigOutputBuilder {
     _request_id: Option<String>,
 }

@@ -44,8 +44,8 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultInput {
 }
 
 /// A builder for [`NotifyTerminateProvisionedProductEngineWorkflowResultInput`](crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
     pub(crate) workflow_token: ::std::option::Option<::std::string::String>,
     pub(crate) record_id: ::std::option::Option<::std::string::String>,

@@ -20,8 +20,8 @@ impl DescribeRoleAliasInput {
 }
 
 /// A builder for [`DescribeRoleAliasInput`](crate::operation::describe_role_alias::DescribeRoleAliasInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRoleAliasInputBuilder {
     pub(crate) role_alias: ::std::option::Option<::std::string::String>,
 }

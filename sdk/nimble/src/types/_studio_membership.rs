@@ -41,8 +41,8 @@ impl StudioMembership {
 }
 
 /// A builder for [`StudioMembership`](crate::types::StudioMembership).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StudioMembershipBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) persona: ::std::option::Option<crate::types::StudioPersona>,

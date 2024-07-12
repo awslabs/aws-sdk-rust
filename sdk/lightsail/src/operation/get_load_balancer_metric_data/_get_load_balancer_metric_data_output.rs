@@ -34,8 +34,8 @@ impl GetLoadBalancerMetricDataOutput {
 }
 
 /// A builder for [`GetLoadBalancerMetricDataOutput`](crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetLoadBalancerMetricDataOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<crate::types::LoadBalancerMetricName>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,

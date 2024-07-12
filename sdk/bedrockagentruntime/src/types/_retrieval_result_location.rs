@@ -72,8 +72,8 @@ impl RetrievalResultLocation {
 }
 
 /// A builder for [`RetrievalResultLocation`](crate::types::RetrievalResultLocation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct RetrievalResultLocationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RetrievalResultLocationType>,
     pub(crate) s3_location: ::std::option::Option<crate::types::RetrievalResultS3Location>,

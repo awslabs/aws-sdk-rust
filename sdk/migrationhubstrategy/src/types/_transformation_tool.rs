@@ -33,8 +33,8 @@ impl TransformationTool {
 }
 
 /// A builder for [`TransformationTool`](crate::types::TransformationTool).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransformationToolBuilder {
     pub(crate) name: ::std::option::Option<crate::types::TransformationToolName>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

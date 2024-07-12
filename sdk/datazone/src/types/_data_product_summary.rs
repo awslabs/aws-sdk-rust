@@ -107,8 +107,8 @@ impl DataProductSummary {
 }
 
 /// A builder for [`DataProductSummary`](crate::types::DataProductSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct DataProductSummaryBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,

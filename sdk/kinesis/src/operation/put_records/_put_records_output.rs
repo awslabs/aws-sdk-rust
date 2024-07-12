@@ -52,8 +52,8 @@ impl PutRecordsOutput {
 }
 
 /// A builder for [`PutRecordsOutput`](crate::operation::put_records::PutRecordsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRecordsOutputBuilder {
     pub(crate) failed_record_count: ::std::option::Option<i32>,
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>>,

@@ -32,8 +32,8 @@ impl PutClusterPolicyInput {
 }
 
 /// A builder for [`PutClusterPolicyInput`](crate::operation::put_cluster_policy::PutClusterPolicyInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutClusterPolicyInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl DescribeScalableTargetsOutput {
 }
 
 /// A builder for [`DescribeScalableTargetsOutput`](crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeScalableTargetsOutputBuilder {
     pub(crate) scalable_targets: ::std::option::Option<::std::vec::Vec<crate::types::ScalableTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -38,8 +38,8 @@ impl GetDataSourceIntrospectionInput {
 }
 
 /// A builder for [`GetDataSourceIntrospectionInput`](crate::operation::get_data_source_introspection::GetDataSourceIntrospectionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetDataSourceIntrospectionInputBuilder {
     pub(crate) introspection_id: ::std::option::Option<::std::string::String>,
     pub(crate) include_models_sdl: ::std::option::Option<bool>,

@@ -26,8 +26,8 @@ impl DisassociateLinkOutput {
 }
 
 /// A builder for [`DisassociateLinkOutput`](crate::operation::disassociate_link::DisassociateLinkOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateLinkOutputBuilder {
     pub(crate) link_association: ::std::option::Option<crate::types::LinkAssociation>,
     _request_id: Option<String>,

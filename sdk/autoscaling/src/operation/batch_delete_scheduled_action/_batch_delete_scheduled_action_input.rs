@@ -28,8 +28,8 @@ impl BatchDeleteScheduledActionInput {
 }
 
 /// A builder for [`BatchDeleteScheduledActionInput`](crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchDeleteScheduledActionInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

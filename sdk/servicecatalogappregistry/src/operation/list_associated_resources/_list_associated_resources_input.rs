@@ -32,8 +32,8 @@ impl ListAssociatedResourcesInput {
 }
 
 /// A builder for [`ListAssociatedResourcesInput`](crate::operation::list_associated_resources::ListAssociatedResourcesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAssociatedResourcesInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

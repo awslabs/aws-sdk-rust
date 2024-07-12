@@ -63,8 +63,8 @@ impl CreateOutboundConnectionOutput {
 }
 
 /// A builder for [`CreateOutboundConnectionOutput`](crate::operation::create_outbound_connection::CreateOutboundConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateOutboundConnectionOutputBuilder {
     pub(crate) local_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,
     pub(crate) remote_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,

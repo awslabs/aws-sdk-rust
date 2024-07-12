@@ -166,8 +166,8 @@ impl DescribeNotebookInstanceOutput {
 }
 
 /// A builder for [`DescribeNotebookInstanceOutput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeNotebookInstanceOutputBuilder {
     pub(crate) notebook_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) notebook_instance_name: ::std::option::Option<::std::string::String>,

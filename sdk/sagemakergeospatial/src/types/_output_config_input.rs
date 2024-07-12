@@ -21,8 +21,8 @@ impl OutputConfigInput {
 }
 
 /// A builder for [`OutputConfigInput`](crate::types::OutputConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputConfigInputBuilder {
     pub(crate) s3_data: ::std::option::Option<crate::types::ExportS3DataInput>,
 }

@@ -18,8 +18,8 @@ impl UpdateAccessKeyOutput {
 }
 
 /// A builder for [`UpdateAccessKeyOutput`](crate::operation::update_access_key::UpdateAccessKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAccessKeyOutputBuilder {
     _request_id: Option<String>,
 }

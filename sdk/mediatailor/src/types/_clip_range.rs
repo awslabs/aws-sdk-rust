@@ -27,8 +27,8 @@ impl ClipRange {
 }
 
 /// A builder for [`ClipRange`](crate::types::ClipRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClipRangeBuilder {
     pub(crate) end_offset_millis: ::std::option::Option<i64>,
     pub(crate) start_offset_millis: ::std::option::Option<i64>,

@@ -27,8 +27,8 @@ impl UsageMetricBasis {
 }
 
 /// A builder for [`UsageMetricBasis`](crate::types::UsageMetricBasis).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UsageMetricBasisBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) percentage_adjust: ::std::option::Option<f64>,

@@ -34,8 +34,8 @@ impl ListAnalyzersOutput {
 }
 
 /// A builder for [`ListAnalyzersOutput`](crate::operation::list_analyzers::ListAnalyzersOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListAnalyzersOutputBuilder {
     pub(crate) analyzers: ::std::option::Option<::std::vec::Vec<crate::types::AnalyzerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -48,8 +48,8 @@ impl UpdateStreamProcessorInput {
 }
 
 /// A builder for [`UpdateStreamProcessorInput`](crate::operation::update_stream_processor::UpdateStreamProcessorInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStreamProcessorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) settings_for_update: ::std::option::Option<crate::types::StreamProcessorSettingsForUpdate>,

@@ -18,8 +18,8 @@ impl ClearDefaultAuthorizerOutput {
 }
 
 /// A builder for [`ClearDefaultAuthorizerOutput`](crate::operation::clear_default_authorizer::ClearDefaultAuthorizerOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ClearDefaultAuthorizerOutputBuilder {
     _request_id: Option<String>,
 }

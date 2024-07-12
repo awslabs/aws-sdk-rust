@@ -29,8 +29,8 @@ impl UpdateUsagePlanInput {
 }
 
 /// A builder for [`UpdateUsagePlanInput`](crate::operation::update_usage_plan::UpdateUsagePlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateUsagePlanInputBuilder {
     pub(crate) usage_plan_id: ::std::option::Option<::std::string::String>,
     pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,

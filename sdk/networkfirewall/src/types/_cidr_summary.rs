@@ -33,8 +33,8 @@ impl CidrSummary {
 }
 
 /// A builder for [`CidrSummary`](crate::types::CidrSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CidrSummaryBuilder {
     pub(crate) available_cidr_count: ::std::option::Option<i32>,
     pub(crate) utilized_cidr_count: ::std::option::Option<i32>,

@@ -57,8 +57,8 @@ impl AgentConfiguration {
 }
 
 /// A builder for [`AgentConfiguration`](crate::types::AgentConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AgentConfigurationBuilder {
     pub(crate) should_profile: ::std::option::Option<bool>,
     pub(crate) period_in_seconds: ::std::option::Option<i32>,

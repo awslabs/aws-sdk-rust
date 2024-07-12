@@ -38,8 +38,8 @@ impl DisassociateDiscoveredResourceInput {
 }
 
 /// A builder for [`DisassociateDiscoveredResourceInput`](crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DisassociateDiscoveredResourceInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,

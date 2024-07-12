@@ -113,8 +113,8 @@ impl AwsCloudFrontDistributionDetails {
 }
 
 /// A builder for [`AwsCloudFrontDistributionDetails`](crate::types::AwsCloudFrontDistributionDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsCloudFrontDistributionDetailsBuilder {
     pub(crate) cache_behaviors: ::std::option::Option<crate::types::AwsCloudFrontDistributionCacheBehaviors>,
     pub(crate) default_cache_behavior: ::std::option::Option<crate::types::AwsCloudFrontDistributionDefaultCacheBehavior>,

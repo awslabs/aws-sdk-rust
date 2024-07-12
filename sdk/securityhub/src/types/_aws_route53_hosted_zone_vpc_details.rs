@@ -27,8 +27,8 @@ impl AwsRoute53HostedZoneVpcDetails {
 }
 
 /// A builder for [`AwsRoute53HostedZoneVpcDetails`](crate::types::AwsRoute53HostedZoneVpcDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsRoute53HostedZoneVpcDetailsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,

@@ -18,8 +18,8 @@ impl DeleteApplicationReferenceDataSourceOutput {
 }
 
 /// A builder for [`DeleteApplicationReferenceDataSourceOutput`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteApplicationReferenceDataSourceOutputBuilder {
     _request_id: Option<String>,
 }

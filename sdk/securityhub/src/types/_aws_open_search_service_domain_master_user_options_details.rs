@@ -33,8 +33,8 @@ impl AwsOpenSearchServiceDomainMasterUserOptionsDetails {
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
     pub(crate) master_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_name: ::std::option::Option<::std::string::String>,

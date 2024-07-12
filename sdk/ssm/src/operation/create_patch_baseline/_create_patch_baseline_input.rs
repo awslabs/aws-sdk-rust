@@ -132,8 +132,8 @@ impl CreatePatchBaselineInput {
 }
 
 /// A builder for [`CreatePatchBaselineInput`](crate::operation::create_patch_baseline::CreatePatchBaselineInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePatchBaselineInputBuilder {
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

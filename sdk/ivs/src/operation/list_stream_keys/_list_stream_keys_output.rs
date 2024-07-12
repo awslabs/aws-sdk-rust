@@ -33,8 +33,8 @@ impl ListStreamKeysOutput {
 }
 
 /// A builder for [`ListStreamKeysOutput`](crate::operation::list_stream_keys::ListStreamKeysOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamKeysOutputBuilder {
     pub(crate) stream_keys: ::std::option::Option<::std::vec::Vec<crate::types::StreamKeySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

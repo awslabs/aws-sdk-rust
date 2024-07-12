@@ -36,8 +36,8 @@ impl DeleteTaskDefinitionsOutput {
 }
 
 /// A builder for [`DeleteTaskDefinitionsOutput`](crate::operation::delete_task_definitions::DeleteTaskDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteTaskDefinitionsOutputBuilder {
     pub(crate) task_definitions: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinition>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,

@@ -32,8 +32,8 @@ impl ListStreamsInput {
 }
 
 /// A builder for [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListStreamsInputBuilder {
     pub(crate) filter_by: ::std::option::Option<crate::types::StreamFilters>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

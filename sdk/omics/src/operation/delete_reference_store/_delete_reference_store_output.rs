@@ -18,8 +18,8 @@ impl DeleteReferenceStoreOutput {
 }
 
 /// A builder for [`DeleteReferenceStoreOutput`](crate::operation::delete_reference_store::DeleteReferenceStoreOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteReferenceStoreOutputBuilder {
     _request_id: Option<String>,
 }

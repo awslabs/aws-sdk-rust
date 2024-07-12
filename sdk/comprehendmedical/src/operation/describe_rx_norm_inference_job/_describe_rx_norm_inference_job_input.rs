@@ -20,8 +20,8 @@ impl DescribeRxNormInferenceJobInput {
 }
 
 /// A builder for [`DescribeRxNormInferenceJobInput`](crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeRxNormInferenceJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }

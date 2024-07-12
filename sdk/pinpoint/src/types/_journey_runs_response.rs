@@ -29,8 +29,8 @@ impl JourneyRunsResponse {
 }
 
 /// A builder for [`JourneyRunsResponse`](crate::types::JourneyRunsResponse).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct JourneyRunsResponseBuilder {
     pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::JourneyRunResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -111,8 +111,8 @@ impl CertificateAuthority {
 }
 
 /// A builder for [`CertificateAuthority`](crate::types::CertificateAuthority).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CertificateAuthorityBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,

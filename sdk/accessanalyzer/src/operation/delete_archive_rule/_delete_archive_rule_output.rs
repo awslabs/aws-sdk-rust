@@ -18,8 +18,8 @@ impl DeleteArchiveRuleOutput {
 }
 
 /// A builder for [`DeleteArchiveRuleOutput`](crate::operation::delete_archive_rule::DeleteArchiveRuleOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteArchiveRuleOutputBuilder {
     _request_id: Option<String>,
 }

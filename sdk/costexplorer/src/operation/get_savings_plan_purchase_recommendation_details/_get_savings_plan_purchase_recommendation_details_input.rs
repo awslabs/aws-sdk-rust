@@ -22,8 +22,8 @@ impl GetSavingsPlanPurchaseRecommendationDetailsInput {
 }
 
 /// A builder for [`GetSavingsPlanPurchaseRecommendationDetailsInput`](crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetSavingsPlanPurchaseRecommendationDetailsInputBuilder {
     pub(crate) recommendation_detail_id: ::std::option::Option<::std::string::String>,
 }

@@ -58,8 +58,8 @@ impl CreateUpdatedImageInput {
 }
 
 /// A builder for [`CreateUpdatedImageInput`](crate::operation::create_updated_image::CreateUpdatedImageInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateUpdatedImageInputBuilder {
     pub(crate) existing_image_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_image_name: ::std::option::Option<::std::string::String>,

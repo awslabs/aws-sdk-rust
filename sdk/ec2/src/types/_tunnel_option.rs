@@ -182,8 +182,8 @@ impl TunnelOption {
 }
 
 /// A builder for [`TunnelOption`](crate::types::TunnelOption).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TunnelOptionBuilder {
     pub(crate) outside_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) tunnel_inside_cidr: ::std::option::Option<::std::string::String>,

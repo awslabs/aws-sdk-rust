@@ -32,8 +32,8 @@ impl GetPipelineBlueprintOutput {
 }
 
 /// A builder for [`GetPipelineBlueprintOutput`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetPipelineBlueprintOutputBuilder {
     pub(crate) blueprint: ::std::option::Option<crate::types::PipelineBlueprint>,
     pub(crate) format: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl CheckDomainTransferabilityOutput {
 }
 
 /// A builder for [`CheckDomainTransferabilityOutput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CheckDomainTransferabilityOutputBuilder {
     pub(crate) transferability: ::std::option::Option<crate::types::DomainTransferability>,
     pub(crate) message: ::std::option::Option<::std::string::String>,

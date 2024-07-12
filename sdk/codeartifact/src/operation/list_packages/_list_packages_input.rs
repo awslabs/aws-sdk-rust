@@ -96,8 +96,8 @@ impl ListPackagesInput {
 }
 
 /// A builder for [`ListPackagesInput`](crate::operation::list_packages::ListPackagesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPackagesInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,

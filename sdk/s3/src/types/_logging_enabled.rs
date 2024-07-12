@@ -45,8 +45,8 @@ impl LoggingEnabled {
 }
 
 /// A builder for [`LoggingEnabled`](crate::types::LoggingEnabled).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoggingEnabledBuilder {
     pub(crate) target_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) target_grants: ::std::option::Option<::std::vec::Vec<crate::types::TargetGrant>>,

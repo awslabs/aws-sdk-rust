@@ -33,8 +33,8 @@ impl InstanceProperty {
 }
 
 /// A builder for [`InstanceProperty`](crate::types::InstanceProperty).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InstancePropertyBuilder {
     pub(crate) seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,

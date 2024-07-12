@@ -18,8 +18,8 @@ impl PutDataCatalogEncryptionSettingsOutput {
 }
 
 /// A builder for [`PutDataCatalogEncryptionSettingsOutput`](crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDataCatalogEncryptionSettingsOutputBuilder {
     _request_id: Option<String>,
 }

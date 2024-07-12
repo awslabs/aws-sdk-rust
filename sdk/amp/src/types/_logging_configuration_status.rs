@@ -27,8 +27,8 @@ impl LoggingConfigurationStatus {
 }
 
 /// A builder for [`LoggingConfigurationStatus`](crate::types::LoggingConfigurationStatus).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct LoggingConfigurationStatusBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::LoggingConfigurationStatusCode>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,

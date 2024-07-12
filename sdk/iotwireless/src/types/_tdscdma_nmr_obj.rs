@@ -45,8 +45,8 @@ impl TdscdmaNmrObj {
 }
 
 /// A builder for [`TdscdmaNmrObj`](crate::types::TdscdmaNmrObj).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TdscdmaNmrObjBuilder {
     pub(crate) uarfcn: ::std::option::Option<i32>,
     pub(crate) cell_params: ::std::option::Option<i32>,

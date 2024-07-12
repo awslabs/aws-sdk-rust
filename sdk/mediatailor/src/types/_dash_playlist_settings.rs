@@ -39,8 +39,8 @@ impl DashPlaylistSettings {
 }
 
 /// A builder for [`DashPlaylistSettings`](crate::types::DashPlaylistSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DashPlaylistSettingsBuilder {
     pub(crate) manifest_window_seconds: ::std::option::Option<i32>,
     pub(crate) min_buffer_time_seconds: ::std::option::Option<i32>,

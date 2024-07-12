@@ -21,8 +21,8 @@ impl FileCacheLustreMetadataConfiguration {
 }
 
 /// A builder for [`FileCacheLustreMetadataConfiguration`](crate::types::FileCacheLustreMetadataConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FileCacheLustreMetadataConfigurationBuilder {
     pub(crate) storage_capacity: ::std::option::Option<i32>,
 }

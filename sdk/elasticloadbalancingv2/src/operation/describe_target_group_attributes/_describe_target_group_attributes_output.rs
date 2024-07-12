@@ -28,8 +28,8 @@ impl DescribeTargetGroupAttributesOutput {
 }
 
 /// A builder for [`DescribeTargetGroupAttributesOutput`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTargetGroupAttributesOutputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
     _request_id: Option<String>,

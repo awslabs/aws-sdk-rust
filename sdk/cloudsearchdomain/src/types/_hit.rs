@@ -39,8 +39,8 @@ impl Hit {
 }
 
 /// A builder for [`Hit`](crate::types::Hit).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HitBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,

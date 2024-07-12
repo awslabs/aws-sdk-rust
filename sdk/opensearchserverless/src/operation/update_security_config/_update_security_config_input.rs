@@ -44,8 +44,8 @@ impl UpdateSecurityConfigInput {
 }
 
 /// A builder for [`UpdateSecurityConfigInput`](crate::operation::update_security_config::UpdateSecurityConfigInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateSecurityConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) config_version: ::std::option::Option<::std::string::String>,

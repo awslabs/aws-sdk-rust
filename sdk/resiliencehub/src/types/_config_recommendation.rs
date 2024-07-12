@@ -84,8 +84,8 @@ impl ConfigRecommendation {
 }
 
 /// A builder for [`ConfigRecommendation`](crate::types::ConfigRecommendation).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ConfigRecommendationBuilder {
     pub(crate) cost: ::std::option::Option<crate::types::Cost>,
     pub(crate) app_component_name: ::std::option::Option<::std::string::String>,

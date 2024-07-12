@@ -92,8 +92,8 @@ impl ListMonitoringSchedulesInput {
 }
 
 /// A builder for [`ListMonitoringSchedulesInput`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMonitoringSchedulesInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::MonitoringScheduleSortKey>,

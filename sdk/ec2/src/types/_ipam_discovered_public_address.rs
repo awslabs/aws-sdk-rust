@@ -131,8 +131,8 @@ impl IpamDiscoveredPublicAddress {
 }
 
 /// A builder for [`IpamDiscoveredPublicAddress`](crate::types::IpamDiscoveredPublicAddress).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IpamDiscoveredPublicAddressBuilder {
     pub(crate) ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     pub(crate) address_region: ::std::option::Option<::std::string::String>,

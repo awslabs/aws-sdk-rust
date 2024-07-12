@@ -28,8 +28,8 @@ impl StateMachineVersionListItem {
 }
 
 /// A builder for [`StateMachineVersionListItem`](crate::types::StateMachineVersionListItem).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StateMachineVersionListItemBuilder {
     pub(crate) state_machine_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,

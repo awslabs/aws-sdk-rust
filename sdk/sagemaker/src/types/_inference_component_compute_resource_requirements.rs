@@ -39,8 +39,8 @@ impl InferenceComponentComputeResourceRequirements {
 }
 
 /// A builder for [`InferenceComponentComputeResourceRequirements`](crate::types::InferenceComponentComputeResourceRequirements).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct InferenceComponentComputeResourceRequirementsBuilder {
     pub(crate) number_of_cpu_cores_required: ::std::option::Option<f32>,
     pub(crate) number_of_accelerator_devices_required: ::std::option::Option<f32>,

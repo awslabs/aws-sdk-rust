@@ -19,8 +19,8 @@ impl StartInputDeviceMaintenanceWindowOutput {
 }
 
 /// A builder for [`StartInputDeviceMaintenanceWindowOutput`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartInputDeviceMaintenanceWindowOutputBuilder {
     _request_id: Option<String>,
 }

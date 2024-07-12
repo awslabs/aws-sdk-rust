@@ -38,8 +38,8 @@ impl UpdateAvailabilityConfigurationInput {
 }
 
 /// A builder for [`UpdateAvailabilityConfigurationInput`](crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateAvailabilityConfigurationInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,

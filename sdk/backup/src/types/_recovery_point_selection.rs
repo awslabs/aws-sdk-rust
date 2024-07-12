@@ -39,8 +39,8 @@ impl RecoveryPointSelection {
 }
 
 /// A builder for [`RecoveryPointSelection`](crate::types::RecoveryPointSelection).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RecoveryPointSelectionBuilder {
     pub(crate) vault_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

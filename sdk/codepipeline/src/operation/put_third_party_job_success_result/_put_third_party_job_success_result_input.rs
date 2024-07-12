@@ -45,8 +45,8 @@ impl PutThirdPartyJobSuccessResultInput {
 }
 
 /// A builder for [`PutThirdPartyJobSuccessResultInput`](crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutThirdPartyJobSuccessResultInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,

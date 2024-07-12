@@ -64,8 +64,8 @@ impl SearchAssociatedTranscriptsInput {
 }
 
 /// A builder for [`SearchAssociatedTranscriptsInput`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchAssociatedTranscriptsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,

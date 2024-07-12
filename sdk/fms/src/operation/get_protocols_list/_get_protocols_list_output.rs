@@ -32,8 +32,8 @@ impl GetProtocolsListOutput {
 }
 
 /// A builder for [`GetProtocolsListOutput`](crate::operation::get_protocols_list::GetProtocolsListOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetProtocolsListOutputBuilder {
     pub(crate) protocols_list: ::std::option::Option<crate::types::ProtocolsListData>,
     pub(crate) protocols_list_arn: ::std::option::Option<::std::string::String>,

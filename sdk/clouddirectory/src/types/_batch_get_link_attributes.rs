@@ -28,8 +28,8 @@ impl BatchGetLinkAttributes {
 }
 
 /// A builder for [`BatchGetLinkAttributes`](crate::types::BatchGetLinkAttributes).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchGetLinkAttributesBuilder {
     pub(crate) typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

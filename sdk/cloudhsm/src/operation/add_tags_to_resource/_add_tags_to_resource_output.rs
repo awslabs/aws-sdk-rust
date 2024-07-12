@@ -27,8 +27,8 @@ impl AddTagsToResourceOutput {
 }
 
 /// A builder for [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AddTagsToResourceOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

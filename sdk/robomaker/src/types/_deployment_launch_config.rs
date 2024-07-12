@@ -47,8 +47,8 @@ impl DeploymentLaunchConfig {
 }
 
 /// A builder for [`DeploymentLaunchConfig`](crate::types::DeploymentLaunchConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeploymentLaunchConfigBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) pre_launch_file: ::std::option::Option<::std::string::String>,

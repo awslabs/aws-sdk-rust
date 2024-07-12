@@ -133,8 +133,8 @@ impl CreateFileSystemWindowsConfiguration {
 }
 
 /// A builder for [`CreateFileSystemWindowsConfiguration`](crate::types::CreateFileSystemWindowsConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateFileSystemWindowsConfigurationBuilder {
     pub(crate) active_directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) self_managed_active_directory_configuration: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration>,

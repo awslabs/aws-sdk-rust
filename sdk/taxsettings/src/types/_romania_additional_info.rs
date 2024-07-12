@@ -21,8 +21,8 @@ impl RomaniaAdditionalInfo {
 }
 
 /// A builder for [`RomaniaAdditionalInfo`](crate::types::RomaniaAdditionalInfo).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RomaniaAdditionalInfoBuilder {
     pub(crate) tax_registration_number_type: ::std::option::Option<crate::types::TaxRegistrationNumberType>,
 }

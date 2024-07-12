@@ -26,8 +26,8 @@ impl UpdateContainerServiceOutput {
 }
 
 /// A builder for [`UpdateContainerServiceOutput`](crate::operation::update_container_service::UpdateContainerServiceOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateContainerServiceOutputBuilder {
     pub(crate) container_service: ::std::option::Option<crate::types::ContainerService>,
     _request_id: Option<String>,

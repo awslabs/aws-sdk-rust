@@ -34,8 +34,8 @@ impl CreateBucketAccessKeyOutput {
 }
 
 /// A builder for [`CreateBucketAccessKeyOutput`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateBucketAccessKeyOutputBuilder {
     pub(crate) access_key: ::std::option::Option<crate::types::AccessKey>,
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,

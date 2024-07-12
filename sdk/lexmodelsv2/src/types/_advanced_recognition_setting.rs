@@ -21,8 +21,8 @@ impl AdvancedRecognitionSetting {
 }
 
 /// A builder for [`AdvancedRecognitionSetting`](crate::types::AdvancedRecognitionSetting).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AdvancedRecognitionSettingBuilder {
     pub(crate) audio_recognition_strategy: ::std::option::Option<crate::types::AudioRecognitionStrategy>,
 }

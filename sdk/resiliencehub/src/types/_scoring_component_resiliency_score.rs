@@ -45,8 +45,8 @@ impl ScoringComponentResiliencyScore {
 }
 
 /// A builder for [`ScoringComponentResiliencyScore`](crate::types::ScoringComponentResiliencyScore).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScoringComponentResiliencyScoreBuilder {
     pub(crate) score: ::std::option::Option<f64>,
     pub(crate) possible_score: ::std::option::Option<f64>,

@@ -18,8 +18,8 @@ impl BatchUpdateAttendeeCapabilitiesExceptOutput {
 }
 
 /// A builder for [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchUpdateAttendeeCapabilitiesExceptOutputBuilder {
     _request_id: Option<String>,
 }

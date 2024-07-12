@@ -52,8 +52,8 @@ impl ListTopicRefreshSchedulesOutput {
 }
 
 /// A builder for [`ListTopicRefreshSchedulesOutput`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListTopicRefreshSchedulesOutputBuilder {
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,

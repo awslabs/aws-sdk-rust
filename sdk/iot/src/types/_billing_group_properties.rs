@@ -21,8 +21,8 @@ impl BillingGroupProperties {
 }
 
 /// A builder for [`BillingGroupProperties`](crate::types::BillingGroupProperties).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BillingGroupPropertiesBuilder {
     pub(crate) billing_group_description: ::std::option::Option<::std::string::String>,
 }

@@ -33,8 +33,8 @@ impl ListBatchJobDefinitionsOutput {
 }
 
 /// A builder for [`ListBatchJobDefinitionsOutput`](crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListBatchJobDefinitionsOutputBuilder {
     pub(crate) batch_job_definitions: ::std::option::Option<::std::vec::Vec<crate::types::BatchJobDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

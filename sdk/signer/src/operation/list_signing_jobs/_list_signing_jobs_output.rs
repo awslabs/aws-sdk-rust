@@ -34,8 +34,8 @@ impl ListSigningJobsOutput {
 }
 
 /// A builder for [`ListSigningJobsOutput`](crate::operation::list_signing_jobs::ListSigningJobsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListSigningJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::SigningJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

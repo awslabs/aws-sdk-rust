@@ -51,8 +51,8 @@ impl PricingPlan {
 }
 
 /// A builder for [`PricingPlan`](crate::types::PricingPlan).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PricingPlanBuilder {
     pub(crate) billable_entity_count: ::std::option::Option<i64>,
     pub(crate) bundle_information: ::std::option::Option<crate::types::BundleInformation>,

@@ -74,8 +74,8 @@ impl RestoreTableFromSnapshotInput {
 }
 
 /// A builder for [`RestoreTableFromSnapshotInput`](crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RestoreTableFromSnapshotInputBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,

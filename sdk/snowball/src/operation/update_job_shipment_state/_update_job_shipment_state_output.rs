@@ -18,8 +18,8 @@ impl UpdateJobShipmentStateOutput {
 }
 
 /// A builder for [`UpdateJobShipmentStateOutput`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateJobShipmentStateOutputBuilder {
     _request_id: Option<String>,
 }

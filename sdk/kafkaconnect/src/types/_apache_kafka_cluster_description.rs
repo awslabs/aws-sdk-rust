@@ -27,8 +27,8 @@ impl ApacheKafkaClusterDescription {
 }
 
 /// A builder for [`ApacheKafkaClusterDescription`](crate::types::ApacheKafkaClusterDescription).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ApacheKafkaClusterDescriptionBuilder {
     pub(crate) bootstrap_servers: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<crate::types::VpcDescription>,

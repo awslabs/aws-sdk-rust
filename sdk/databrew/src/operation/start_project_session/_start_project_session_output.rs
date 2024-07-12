@@ -42,8 +42,8 @@ impl StartProjectSessionOutput {
 }
 
 /// A builder for [`StartProjectSessionOutput`](crate::operation::start_project_session::StartProjectSessionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct StartProjectSessionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_session_id: ::std::option::Option<::std::string::String>,

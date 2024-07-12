@@ -34,8 +34,8 @@ impl ListKxScalingGroupsOutput {
 }
 
 /// A builder for [`ListKxScalingGroupsOutput`](crate::operation::list_kx_scaling_groups::ListKxScalingGroupsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListKxScalingGroupsOutputBuilder {
     pub(crate) scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::KxScalingGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

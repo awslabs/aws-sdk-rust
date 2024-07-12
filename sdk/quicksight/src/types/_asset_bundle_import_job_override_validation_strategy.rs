@@ -21,8 +21,8 @@ impl AssetBundleImportJobOverrideValidationStrategy {
 }
 
 /// A builder for [`AssetBundleImportJobOverrideValidationStrategy`](crate::types::AssetBundleImportJobOverrideValidationStrategy).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct AssetBundleImportJobOverrideValidationStrategyBuilder {
     pub(crate) strict_mode_for_all_resources: ::std::option::Option<bool>,
 }

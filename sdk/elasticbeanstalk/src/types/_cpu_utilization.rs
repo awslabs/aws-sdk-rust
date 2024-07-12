@@ -75,8 +75,8 @@ impl CpuUtilization {
 }
 
 /// A builder for [`CpuUtilization`](crate::types::CpuUtilization).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CpuUtilizationBuilder {
     pub(crate) user: ::std::option::Option<f64>,
     pub(crate) nice: ::std::option::Option<f64>,

@@ -26,8 +26,8 @@ impl UpdateStreamModeInput {
 }
 
 /// A builder for [`UpdateStreamModeInput`](crate::operation::update_stream_mode::UpdateStreamModeInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateStreamModeInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,

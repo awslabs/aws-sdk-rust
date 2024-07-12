@@ -91,8 +91,8 @@ impl TaskSearchSummary {
 }
 
 /// A builder for [`TaskSearchSummary`](crate::types::TaskSearchSummary).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct TaskSearchSummaryBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_id: ::std::option::Option<::std::string::String>,

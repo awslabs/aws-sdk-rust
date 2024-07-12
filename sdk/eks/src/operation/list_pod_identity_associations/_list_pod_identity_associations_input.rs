@@ -48,8 +48,8 @@ impl ListPodIdentityAssociationsInput {
 }
 
 /// A builder for [`ListPodIdentityAssociationsInput`](crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPodIdentityAssociationsInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,

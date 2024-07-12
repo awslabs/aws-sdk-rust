@@ -34,8 +34,8 @@ impl DescribeTransitGatewayVpcAttachmentsOutput {
 }
 
 /// A builder for [`DescribeTransitGatewayVpcAttachmentsOutput`](crate::operation::describe_transit_gateway_vpc_attachments::DescribeTransitGatewayVpcAttachmentsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeTransitGatewayVpcAttachmentsOutputBuilder {
     pub(crate) transit_gateway_vpc_attachments: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayVpcAttachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

@@ -27,8 +27,8 @@ impl RunConfigurationUpdate {
 }
 
 /// A builder for [`RunConfigurationUpdate`](crate::types::RunConfigurationUpdate).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RunConfigurationUpdateBuilder {
     pub(crate) flink_run_configuration: ::std::option::Option<crate::types::FlinkRunConfiguration>,
     pub(crate) application_restore_configuration: ::std::option::Option<crate::types::ApplicationRestoreConfiguration>,

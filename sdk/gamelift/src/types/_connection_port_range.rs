@@ -37,8 +37,8 @@ impl ConnectionPortRange {
 }
 
 /// A builder for [`ConnectionPortRange`](crate::types::ConnectionPortRange).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
 pub struct ConnectionPortRangeBuilder {
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,

@@ -38,8 +38,8 @@ impl CreateScalingPlanInput {
 }
 
 /// A builder for [`CreateScalingPlanInput`](crate::operation::create_scaling_plan::CreateScalingPlanInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateScalingPlanInputBuilder {
     pub(crate) scaling_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) application_source: ::std::option::Option<crate::types::ApplicationSource>,

@@ -19,8 +19,8 @@ impl PutPositionConfigurationOutput {
 }
 
 /// A builder for [`PutPositionConfigurationOutput`](crate::operation::put_position_configuration::PutPositionConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutPositionConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -18,8 +18,8 @@ impl RemoveTagsFromOnPremisesInstancesOutput {
 }
 
 /// A builder for [`RemoveTagsFromOnPremisesInstancesOutput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RemoveTagsFromOnPremisesInstancesOutputBuilder {
     _request_id: Option<String>,
 }

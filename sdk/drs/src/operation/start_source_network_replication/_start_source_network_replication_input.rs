@@ -20,8 +20,8 @@ impl StartSourceNetworkReplicationInput {
 }
 
 /// A builder for [`StartSourceNetworkReplicationInput`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StartSourceNetworkReplicationInputBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
 }

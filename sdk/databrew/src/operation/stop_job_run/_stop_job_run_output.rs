@@ -27,8 +27,8 @@ impl StopJobRunOutput {
 }
 
 /// A builder for [`StopJobRunOutput`](crate::operation::stop_job_run::StopJobRunOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct StopJobRunOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

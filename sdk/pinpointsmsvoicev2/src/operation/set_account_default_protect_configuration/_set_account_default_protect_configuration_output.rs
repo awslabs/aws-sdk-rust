@@ -34,8 +34,8 @@ impl SetAccountDefaultProtectConfigurationOutput {
 }
 
 /// A builder for [`SetAccountDefaultProtectConfigurationOutput`](crate::operation::set_account_default_protect_configuration::SetAccountDefaultProtectConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SetAccountDefaultProtectConfigurationOutputBuilder {
     pub(crate) default_protect_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_protect_configuration_id: ::std::option::Option<::std::string::String>,

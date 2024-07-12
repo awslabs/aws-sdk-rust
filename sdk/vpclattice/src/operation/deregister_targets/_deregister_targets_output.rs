@@ -36,8 +36,8 @@ impl DeregisterTargetsOutput {
 }
 
 /// A builder for [`DeregisterTargetsOutput`](crate::operation::deregister_targets::DeregisterTargetsOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeregisterTargetsOutputBuilder {
     pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>>,

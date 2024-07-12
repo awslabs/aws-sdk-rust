@@ -27,8 +27,8 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetails {
 }
 
 /// A builder for [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,

@@ -34,8 +34,8 @@ impl CreatePortfolioOutput {
 }
 
 /// A builder for [`CreatePortfolioOutput`](crate::operation::create_portfolio::CreatePortfolioOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreatePortfolioOutputBuilder {
     pub(crate) portfolio_detail: ::std::option::Option<crate::types::PortfolioDetail>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,

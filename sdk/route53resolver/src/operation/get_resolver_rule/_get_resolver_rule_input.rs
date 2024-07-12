@@ -20,8 +20,8 @@ impl GetResolverRuleInput {
 }
 
 /// A builder for [`GetResolverRuleInput`](crate::operation::get_resolver_rule::GetResolverRuleInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetResolverRuleInputBuilder {
     pub(crate) resolver_rule_id: ::std::option::Option<::std::string::String>,
 }

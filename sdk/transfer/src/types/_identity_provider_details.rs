@@ -65,8 +65,8 @@ impl IdentityProviderDetails {
 }
 
 /// A builder for [`IdentityProviderDetails`](crate::types::IdentityProviderDetails).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct IdentityProviderDetailsBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) invocation_role: ::std::option::Option<::std::string::String>,

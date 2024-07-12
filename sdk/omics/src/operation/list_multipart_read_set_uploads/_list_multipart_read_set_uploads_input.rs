@@ -32,8 +32,8 @@ impl ListMultipartReadSetUploadsInput {
 }
 
 /// A builder for [`ListMultipartReadSetUploadsInput`](crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListMultipartReadSetUploadsInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,

@@ -49,8 +49,8 @@ impl TransitGatewayConnectPeerConfiguration {
 }
 
 /// A builder for [`TransitGatewayConnectPeerConfiguration`](crate::types::TransitGatewayConnectPeerConfiguration).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TransitGatewayConnectPeerConfigurationBuilder {
     pub(crate) transit_gateway_address: ::std::option::Option<::std::string::String>,
     pub(crate) peer_address: ::std::option::Option<::std::string::String>,

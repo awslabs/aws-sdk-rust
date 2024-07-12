@@ -21,8 +21,8 @@ impl ScalingConfig {
 }
 
 /// A builder for [`ScalingConfig`](crate::types::ScalingConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScalingConfigBuilder {
     pub(crate) maximum_concurrency: ::std::option::Option<i32>,
 }

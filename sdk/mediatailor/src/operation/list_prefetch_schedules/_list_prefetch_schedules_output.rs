@@ -34,8 +34,8 @@ impl ListPrefetchSchedulesOutput {
 }
 
 /// A builder for [`ListPrefetchSchedulesOutput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListPrefetchSchedulesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::PrefetchSchedule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

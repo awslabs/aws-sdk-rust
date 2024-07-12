@@ -27,8 +27,8 @@ impl DocumentReviewCommentSource {
 }
 
 /// A builder for [`DocumentReviewCommentSource`](crate::types::DocumentReviewCommentSource).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DocumentReviewCommentSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DocumentReviewCommentType>,
     pub(crate) content: ::std::option::Option<::std::string::String>,

@@ -11,8 +11,8 @@ impl GetRevealConfigurationInput {
 }
 
 /// A builder for [`GetRevealConfigurationInput`](crate::operation::get_reveal_configuration::GetRevealConfigurationInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetRevealConfigurationInputBuilder {}
 impl GetRevealConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetRevealConfigurationInput`](crate::operation::get_reveal_configuration::GetRevealConfigurationInput).

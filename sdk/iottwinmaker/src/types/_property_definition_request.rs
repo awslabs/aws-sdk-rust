@@ -63,8 +63,8 @@ impl PropertyDefinitionRequest {
 }
 
 /// A builder for [`PropertyDefinitionRequest`](crate::types::PropertyDefinitionRequest).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PropertyDefinitionRequestBuilder {
     pub(crate) data_type: ::std::option::Option<crate::types::DataType>,
     pub(crate) is_required_in_entity: ::std::option::Option<bool>,

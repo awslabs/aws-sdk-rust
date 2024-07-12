@@ -26,8 +26,8 @@ impl ListDistributionsByKeyGroupOutput {
 }
 
 /// A builder for [`ListDistributionsByKeyGroupOutput`](crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListDistributionsByKeyGroupOutputBuilder {
     pub(crate) distribution_id_list: ::std::option::Option<crate::types::DistributionIdList>,
     _request_id: Option<String>,

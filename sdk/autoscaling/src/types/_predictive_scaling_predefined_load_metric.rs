@@ -68,8 +68,8 @@ impl PredictiveScalingPredefinedLoadMetric {
 }
 
 /// A builder for [`PredictiveScalingPredefinedLoadMetric`](crate::types::PredictiveScalingPredefinedLoadMetric).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PredictiveScalingPredefinedLoadMetricBuilder {
     pub(crate) predefined_metric_type: ::std::option::Option<crate::types::PredefinedLoadMetricType>,
     pub(crate) resource_label: ::std::option::Option<::std::string::String>,

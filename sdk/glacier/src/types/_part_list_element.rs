@@ -27,8 +27,8 @@ impl PartListElement {
 }
 
 /// A builder for [`PartListElement`](crate::types::PartListElement).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PartListElementBuilder {
     pub(crate) range_in_bytes: ::std::option::Option<::std::string::String>,
     pub(crate) sha256_tree_hash: ::std::option::Option<::std::string::String>,

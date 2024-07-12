@@ -33,8 +33,8 @@ impl ScheduledActionType {
 }
 
 /// A builder for [`ScheduledActionType`](crate::types::ScheduledActionType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ScheduledActionTypeBuilder {
     pub(crate) resize_cluster: ::std::option::Option<crate::types::ResizeClusterMessage>,
     pub(crate) pause_cluster: ::std::option::Option<crate::types::PauseClusterMessage>,

@@ -21,8 +21,8 @@ impl CampaignFilters {
 }
 
 /// A builder for [`CampaignFilters`](crate::types::CampaignFilters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CampaignFiltersBuilder {
     pub(crate) instance_id_filter: ::std::option::Option<crate::types::InstanceIdFilter>,
 }

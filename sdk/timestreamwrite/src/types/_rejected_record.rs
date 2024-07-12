@@ -69,8 +69,8 @@ impl RejectedRecord {
 }
 
 /// A builder for [`RejectedRecord`](crate::types::RejectedRecord).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RejectedRecordBuilder {
     pub(crate) record_index: ::std::option::Option<i32>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

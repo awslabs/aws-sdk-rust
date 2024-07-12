@@ -62,8 +62,8 @@ impl SearchAvailablePhoneNumbersInput {
 }
 
 /// A builder for [`SearchAvailablePhoneNumbersInput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchAvailablePhoneNumbersInputBuilder {
     pub(crate) area_code: ::std::option::Option<::std::string::String>,
     pub(crate) city: ::std::option::Option<::std::string::String>,

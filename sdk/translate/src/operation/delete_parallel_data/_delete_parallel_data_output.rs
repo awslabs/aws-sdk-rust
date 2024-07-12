@@ -32,8 +32,8 @@ impl DeleteParallelDataOutput {
 }
 
 /// A builder for [`DeleteParallelDataOutput`](crate::operation::delete_parallel_data::DeleteParallelDataOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteParallelDataOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ParallelDataStatus>,

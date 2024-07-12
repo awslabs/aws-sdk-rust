@@ -27,8 +27,8 @@ impl VideoFeatures {
 }
 
 /// A builder for [`VideoFeatures`](crate::types::VideoFeatures).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VideoFeaturesBuilder {
     pub(crate) max_resolution: ::std::option::Option<crate::types::VideoResolution>,
 }

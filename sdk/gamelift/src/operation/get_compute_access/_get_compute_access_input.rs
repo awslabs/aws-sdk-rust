@@ -26,8 +26,8 @@ impl GetComputeAccessInput {
 }
 
 /// A builder for [`GetComputeAccessInput`](crate::operation::get_compute_access::GetComputeAccessInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetComputeAccessInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,

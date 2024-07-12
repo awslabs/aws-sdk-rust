@@ -39,8 +39,8 @@ impl NexGuardFileMarkerSettings {
 }
 
 /// A builder for [`NexGuardFileMarkerSettings`](crate::types::NexGuardFileMarkerSettings).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct NexGuardFileMarkerSettingsBuilder {
     pub(crate) license: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<i32>,

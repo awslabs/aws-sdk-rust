@@ -54,8 +54,8 @@ impl CreateScheduledAuditInput {
 }
 
 /// A builder for [`CreateScheduledAuditInput`](crate::operation::create_scheduled_audit::CreateScheduledAuditInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateScheduledAuditInputBuilder {
     pub(crate) frequency: ::std::option::Option<crate::types::AuditFrequency>,
     pub(crate) day_of_month: ::std::option::Option<::std::string::String>,

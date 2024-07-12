@@ -27,8 +27,8 @@ impl PutDedicatedIpWarmupAttributesInput {
 }
 
 /// A builder for [`PutDedicatedIpWarmupAttributesInput`](crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutDedicatedIpWarmupAttributesInputBuilder {
     pub(crate) ip: ::std::option::Option<::std::string::String>,
     pub(crate) warmup_percentage: ::std::option::Option<i32>,

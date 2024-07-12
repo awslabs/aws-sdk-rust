@@ -22,8 +22,8 @@ impl S3Detail {
 }
 
 /// A builder for [`S3Detail`](crate::types::S3Detail).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct S3DetailBuilder {
     pub(crate) recording_prefix: ::std::option::Option<::std::string::String>,
 }

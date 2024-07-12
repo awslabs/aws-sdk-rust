@@ -27,8 +27,8 @@ impl TestConnectionOutput {
 }
 
 /// A builder for [`TestConnectionOutput`](crate::operation::test_connection::TestConnectionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct TestConnectionOutputBuilder {
     pub(crate) connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,

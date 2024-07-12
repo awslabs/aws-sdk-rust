@@ -90,8 +90,8 @@ impl PipeTargetTimestreamParameters {
 }
 
 /// A builder for [`PipeTargetTimestreamParameters`](crate::types::PipeTargetTimestreamParameters).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PipeTargetTimestreamParametersBuilder {
     pub(crate) time_value: ::std::option::Option<::std::string::String>,
     pub(crate) epoch_time_unit: ::std::option::Option<crate::types::EpochTimeUnit>,

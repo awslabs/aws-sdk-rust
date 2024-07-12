@@ -51,8 +51,8 @@ impl VerificationMessageTemplateType {
 }
 
 /// A builder for [`VerificationMessageTemplateType`](crate::types::VerificationMessageTemplateType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct VerificationMessageTemplateTypeBuilder {
     pub(crate) sms_message: ::std::option::Option<::std::string::String>,
     pub(crate) email_message: ::std::option::Option<::std::string::String>,

@@ -78,8 +78,8 @@ impl SearchInput {
 }
 
 /// A builder for [`SearchInput`](crate::operation::search::SearchInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct SearchInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) owning_project_identifier: ::std::option::Option<::std::string::String>,

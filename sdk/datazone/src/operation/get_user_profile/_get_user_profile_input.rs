@@ -32,8 +32,8 @@ impl GetUserProfileInput {
 }
 
 /// A builder for [`GetUserProfileInput`](crate::operation::get_user_profile::GetUserProfileInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetUserProfileInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) user_identifier: ::std::option::Option<::std::string::String>,

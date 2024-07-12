@@ -51,8 +51,8 @@ impl MaintenanceWindowExecution {
 }
 
 /// A builder for [`MaintenanceWindowExecution`](crate::types::MaintenanceWindowExecution).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct MaintenanceWindowExecutionBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,

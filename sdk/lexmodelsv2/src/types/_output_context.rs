@@ -34,8 +34,8 @@ impl OutputContext {
 }
 
 /// A builder for [`OutputContext`](crate::types::OutputContext).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct OutputContextBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) time_to_live_in_seconds: ::std::option::Option<i32>,

@@ -27,8 +27,8 @@ impl DriftCheckModelDataQuality {
 }
 
 /// A builder for [`DriftCheckModelDataQuality`](crate::types::DriftCheckModelDataQuality).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DriftCheckModelDataQualityBuilder {
     pub(crate) statistics: ::std::option::Option<crate::types::MetricsSource>,
     pub(crate) constraints: ::std::option::Option<crate::types::MetricsSource>,

@@ -28,8 +28,8 @@ impl EvaluateExpressionOutput {
 }
 
 /// A builder for [`EvaluateExpressionOutput`](crate::operation::evaluate_expression::EvaluateExpressionOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct EvaluateExpressionOutputBuilder {
     pub(crate) evaluated_expression: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -30,8 +30,8 @@ impl PutRolePermissionsBoundaryInput {
 }
 
 /// A builder for [`PutRolePermissionsBoundaryInput`](crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct PutRolePermissionsBoundaryInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) permissions_boundary: ::std::option::Option<::std::string::String>,

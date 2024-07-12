@@ -38,8 +38,8 @@ impl UpdateTemplateGroupAccessControlEntryInput {
 }
 
 /// A builder for [`UpdateTemplateGroupAccessControlEntryInput`](crate::operation::update_template_group_access_control_entry::UpdateTemplateGroupAccessControlEntryInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct UpdateTemplateGroupAccessControlEntryInputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) group_security_identifier: ::std::option::Option<::std::string::String>,

@@ -33,8 +33,8 @@ impl ListActionTypesInput {
 }
 
 /// A builder for [`ListActionTypesInput`](crate::operation::list_action_types::ListActionTypesInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ListActionTypesInputBuilder {
     pub(crate) action_owner_filter: ::std::option::Option<crate::types::ActionOwner>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,

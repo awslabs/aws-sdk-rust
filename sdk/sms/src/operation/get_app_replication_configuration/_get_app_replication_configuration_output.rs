@@ -28,8 +28,8 @@ impl GetAppReplicationConfigurationOutput {
 }
 
 /// A builder for [`GetAppReplicationConfigurationOutput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct GetAppReplicationConfigurationOutputBuilder {
     pub(crate) server_group_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
     _request_id: Option<String>,

@@ -28,8 +28,8 @@ impl BatchReadOutput {
 }
 
 /// A builder for [`BatchReadOutput`](crate::operation::batch_read::BatchReadOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct BatchReadOutputBuilder {
     pub(crate) responses: ::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperationResponse>>,
     _request_id: Option<String>,

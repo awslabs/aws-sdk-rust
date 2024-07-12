@@ -29,8 +29,8 @@ impl ModifyMountTargetSecurityGroupsInput {
 }
 
 /// A builder for [`ModifyMountTargetSecurityGroupsInput`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsInput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ModifyMountTargetSecurityGroupsInputBuilder {
     pub(crate) mount_target_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,

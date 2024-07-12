@@ -63,8 +63,8 @@ impl ResponseHeadersPolicySecurityHeadersConfig {
 }
 
 /// A builder for [`ResponseHeadersPolicySecurityHeadersConfig`](crate::types::ResponseHeadersPolicySecurityHeadersConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct ResponseHeadersPolicySecurityHeadersConfigBuilder {
     pub(crate) xss_protection: ::std::option::Option<crate::types::ResponseHeadersPolicyXssProtection>,
     pub(crate) frame_options: ::std::option::Option<crate::types::ResponseHeadersPolicyFrameOptions>,

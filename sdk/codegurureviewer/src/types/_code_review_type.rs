@@ -35,8 +35,8 @@ impl CodeReviewType {
 }
 
 /// A builder for [`CodeReviewType`](crate::types::CodeReviewType).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CodeReviewTypeBuilder {
     pub(crate) repository_analysis: ::std::option::Option<crate::types::RepositoryAnalysis>,
     pub(crate) analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>>,

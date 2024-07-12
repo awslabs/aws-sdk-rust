@@ -34,8 +34,8 @@ impl CreateLayoutOutput {
 }
 
 /// A builder for [`CreateLayoutOutput`](crate::operation::create_layout::CreateLayoutOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct CreateLayoutOutputBuilder {
     pub(crate) layout_id: ::std::option::Option<::std::string::String>,
     pub(crate) layout_arn: ::std::option::Option<::std::string::String>,

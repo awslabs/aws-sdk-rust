@@ -65,8 +65,8 @@ impl RxNormAttribute {
 }
 
 /// A builder for [`RxNormAttribute`](crate::types::RxNormAttribute).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct RxNormAttributeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RxNormAttributeType>,
     pub(crate) score: ::std::option::Option<f32>,

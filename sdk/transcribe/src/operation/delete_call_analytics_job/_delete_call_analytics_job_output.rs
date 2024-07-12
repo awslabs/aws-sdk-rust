@@ -18,8 +18,8 @@ impl DeleteCallAnalyticsJobOutput {
 }
 
 /// A builder for [`DeleteCallAnalyticsJobOutput`](crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DeleteCallAnalyticsJobOutputBuilder {
     _request_id: Option<String>,
 }

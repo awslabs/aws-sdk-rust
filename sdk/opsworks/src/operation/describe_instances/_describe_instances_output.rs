@@ -29,8 +29,8 @@ impl DescribeInstancesOutput {
 }
 
 /// A builder for [`DescribeInstancesOutput`](crate::operation::describe_instances::DescribeInstancesOutput).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct DescribeInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     _request_id: Option<String>,

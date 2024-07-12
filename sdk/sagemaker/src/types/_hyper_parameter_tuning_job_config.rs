@@ -91,8 +91,8 @@ impl HyperParameterTuningJobConfig {
 }
 
 /// A builder for [`HyperParameterTuningJobConfig`](crate::types::HyperParameterTuningJobConfig).
-#[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[non_exhaustive]
 pub struct HyperParameterTuningJobConfigBuilder {
     pub(crate) strategy: ::std::option::Option<crate::types::HyperParameterTuningJobStrategyType>,
     pub(crate) strategy_config: ::std::option::Option<crate::types::HyperParameterTuningJobStrategyConfig>,
