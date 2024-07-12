@@ -181,6 +181,7 @@ struct LogBuffer<const N: usize> {
     // polling gap. Once the length reaches N, it will never change again.
     length: usize,
 }
+
 impl<const N: usize> LogBuffer<N> {
     fn new() -> Self {
         Self {
@@ -246,6 +247,11 @@ impl<const N: usize> LogBuffer<N> {
             }
         }
         counts
+    }
+
+    /// If this LogBuffer is empty, returns `true`. Else, returns `false`.
+    fn is_empty(&self) -> bool {
+        self.length == 0
     }
 }
 
@@ -334,7 +340,11 @@ impl ThroughputLogs {
 
     fn push(&mut self, now: SystemTime, value: Bin) {
         self.catch_up(now);
-        self.buffer.tail_mut().merge(value);
+        if self.buffer.is_empty() {
+            self.buffer.push(value)
+        } else {
+            self.buffer.tail_mut().merge(value);
+        }
         self.buffer.fill_gaps();
     }
 
@@ -551,5 +561,14 @@ mod test {
 
         let report = logs.report(start + Duration::from_millis(999));
         assert_eq!(ThroughputReport::Pending, report);
+    }
+
+    #[test]
+    fn test_first_push_succeeds_although_time_window_has_not_elapsed() {
+        let t0 = SystemTime::UNIX_EPOCH;
+        let t1 = t0 + Duration::from_secs(1);
+        let mut tl = ThroughputLogs::new(Duration::from_secs(1), t1);
+
+        tl.push_pending(t0);
     }
 }
