@@ -95,7 +95,7 @@ version = "1.2.1"
 
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
-version = "0.60.7"
+version = "0.60.8"
 
 [dev-dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
